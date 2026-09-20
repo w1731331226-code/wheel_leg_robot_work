@@ -11,6 +11,16 @@
 - 编辑任务开始暂停 `wheelleg-git-sync.service`，结束更新此记忆、提交后恢复；可用 `.git/project-write.lock` 排他锁代替。用户暂存内容优先，不自动提交已有暂存区。
 - `.githooks/commit-msg` 在本地强制检查中文标题、随提交更新本记忆、凭据路径和文件大小。新克隆须执行 `git config core.hooksPath .githooks`；本地钩子不是 GitHub 服务端规则，不允许代理主动绕过。
 
+## 最新任务：CPU / GPU 正式训练对照（2026-09-21）
+
+- 用户最新明确授权同时进行CPU/GPU两个基线的正式训练，最后比较效果；此前“本轮只做工程验收”的范围限制由本次授权更新。GPU对齐失败仍保留，不能重标为等价CPU基线。
+- 冻结新协议 `wheelleg_warp/results/formal_cpu_warp_v1_20260921/protocol.json`：M3，CPU/Warp各3种子1609/1610/1611，每种子200万策略步，合计1200万新策略步；每侧8环境，双队列并行，队列内串行种子。
+- 新两侧重新同种子初始化；历史CPU续训继续保留且不计入配对。PPO网络两侧均用CPU，以隔离物理后端变量；Warp物理使用GPU，控制与奖励仍在CPU，不承诺GPU端到端加速。
+- 新增 `gpu_env.py` 独立环境适配，无需修改冻结CPU源码；修正GPU对外episode时钟的float32累加偏差，使用整数物理步时钟。真实非零动作/重置/结束与CPU模块隔离检查通过。
+- 两侧4000步短更新均已通过：CPU采样/更新35.31秒、全程59.49秒；GPU采样/更新186.56秒、全程215.49秒。初始策略权重SHA256完全一致。短更新证据仅作管线准入，正式权重从同种子重新初始化。
+- 两侧使用同一32例CPU选择集；全部训练完成后自动在提前固定的64例新IID场景比较selected和last检查点，输出 `COMPARISON.md` 与 `comparison.json`。原研究门控/最终集不用于本次比较。
+- 合成汇总、真实GPU环境适配、两侧PPO短更新均通过，准入记录为实验目录 `readiness.json`。用户服务 `wheelleg-cpu-warp-formal.service` 已于北京时间2026-09-21 07:16:55实际启动（监督PID 35212），自动启动CPU/Warp队列并在双方全部完成后终评。实时状态见 `status.json` 和各run的 `progress.json`；不能把active或中途进度称为完整预算完成。
+
 ## CPU / PPO 已知状态
 
 - GPU 分支的原始 CPU 源码基点为 `0f70b834bd8071f485bc81b1d6b1f99cf266d5de`；本轮开始时未提交变更均为在跑训练的日志/检查点。本轮未将这些训练结果归为 GPU 实验。
@@ -173,3 +183,9 @@
 - `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1.log`
 - `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_820000.pkl`
 - `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_820000.zip`
+
+### 双后端正式训练交付说明
+
+- 正式监督服务单次运行，不自动重启覆盖中断目录；用户退出登录后继续运行（Linger已启用）。系统关机/崩溃后需显式审核断点恢复，不能默认为精确续训。
+- 两队列完成后自动共同终评并写比较报告，Git同步守护归档推送；本轮结束时尚无最终效果结论。
+- 已有CPU历史实验继续运行，资源竞争已在协议披露。GPU接触数值差异和当前逐步回读较慢均未隐瞒，不为求提速改变预算、控制、奖励或评估。

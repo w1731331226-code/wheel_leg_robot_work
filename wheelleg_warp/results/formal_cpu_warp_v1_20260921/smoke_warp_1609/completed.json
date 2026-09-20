@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "backend": "warp",
+  "seed": 1609,
+  "smoke": true,
+  "policy_steps": 4000,
+  "train_seconds": 186.55628410099962,
+  "total_seconds": 215.48998772199957,
+  "losses": {
+    "train/learning_rate": 0.0003,
+    "train/entropy_loss": -4.2269026160240175,
+    "train/policy_gradient_loss": -0.004525555645947588,
+    "train/value_loss": 2.871051435172558,
+    "train/approx_kl": 0.005212842486798763,
+    "train/clip_fraction": 0.015650000254390763,
+    "train/loss": 0.9610748887062073,
+    "train/explained_variance": 0.015145361423492432,
+    "train/std": 0.9915912747383118,
+    "train/n_updates": 20.0,
+    "train/clip_range": 0.2
+  },
+  "initial_policy_sha256": "03f7522ec9266fbaab30f63ce16010d0817fce012233c61c778da222fb4cf9b0",
+  "formal_training_started": false,
+  "policy_parameter_count": 12807,
+  "evaluation_backend": "cpu",
+  "final_set_evaluated": false
+}
