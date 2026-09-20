@@ -6,7 +6,7 @@ After=network.target
 Type=simple
 WorkingDirectory=/home/wmt/wheel_leg_robot_work
 Environment=OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
-ExecStart=/home/wmt/wheel_leg_robot_work/.venv/bin/python -u /home/wmt/wheel_leg_robot_work/wheelleg_warp/train_compare.py orchestrate --output /home/wmt/wheel_leg_robot_work/wheelleg_warp/results/formal_cpu_warp_v1_20260921
+ExecStart=/home/wmt/wheel_leg_robot_work/.venv/bin/python -u /home/wmt/wheel_leg_robot_work/wheelleg_warp/train_compare.py orchestrate --output /home/wmt/wheel_leg_robot_work/wheelleg_warp/results/formal_cpu_warp_live_v1_20260921
 Restart=no
 KillMode=control-group
 TimeoutStopSec=90

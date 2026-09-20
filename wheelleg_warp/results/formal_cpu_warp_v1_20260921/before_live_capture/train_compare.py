@@ -51,7 +51,7 @@ def initialize(output):
     for path, digest in reference['source_sha256'].items():
         assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == digest, path
     paths = [ROOT / 'wheelleg_warp' / name for name in
-             ('train_compare.py', 'gpu_env.py', 'baseline.py', 'requirements.txt', 'CPU_REFERENCE.json', 'dashboard/live_env.py')]
+             ('train_compare.py', 'gpu_env.py', 'baseline.py', 'requirements.txt', 'CPU_REFERENCE.json')]
     paths += [FROZEN / 'training_config.json', FROZEN / 'protocol_manifest.json']
     hashes = dict(reference['source_sha256'])
     hashes.update({str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in paths})
@@ -59,7 +59,7 @@ def initialize(output):
     final_cases = [dict(seed=seed, scenario=asdict(sample_scenario('test_iid', seed, 3)))
                    for seed in range(91000, 91064)]
     output.mkdir(parents=True, exist_ok=False)
-    protocol = dict(name='cpu-warp-formal-live-comparison-v1', created=datetime.now().astimezone().isoformat(),
+    protocol = dict(name='cpu-warp-formal-backend-comparison-v1', created=datetime.now().astimezone().isoformat(),
         method='M3', backends=['cpu', 'warp'], seeds=original['training_seeds'], config=original,
         policy_device='cpu', physics_devices={'cpu':'cpu', 'warp':'cuda:0'},
         total_policy_steps=2 * len(original['training_seeds']) * original['policy_steps'],
@@ -70,8 +70,7 @@ def initialize(output):
         timing='采样与更新总耗时（含周期选择评估）及端到端耗时；并发资源竞争下不作独占硬件速度结论',
         known_limitations=['GPU非对称接触全状态门未通过，属于不同仿真后端的效果比较',
                           'GPU物理逐步回传CPU控制器，当前不是GPU原生批量闭环，不承诺提速',
-                          '现有CPU分段运行及旧无画面对照不纳入配对；新两组从相同种子重新初始化',
-                          '仅环境0采集真实训练状态，每个策略步50Hz保存；渲染独立执行，不增加物理步'],
+                          '现有CPU分段运行不纳入配对，保留为历史实验；新两组从相同种子重新初始化'],
         original_research_holdouts_used=False, source_sha256=hashes,
         versions={**original['versions'], 'mujoco-warp':version('mujoco-warp'), 'warp-lang':version('warp-lang')})
     write(output / 'protocol.json', protocol)
@@ -95,11 +94,12 @@ def run_one(output, backend, seed, smoke=False):
         if json.loads((run / 'completed.json').read_text())['passed']:
             return
     run.mkdir(exist_ok=False)  # 失败/中断必须显式处理，不能自动覆盖或伪装连续恢复。
-    from dashboard.live_env import make_env
+    factory = WheelLegEnv
+    if backend == 'warp':
+        from gpu_env import WarpEnv
+        factory = WarpEnv
     torch.set_num_threads(1)
-    raw = SubprocVecEnv([partial(make_env, backend=backend, recording=str(run/'live') if i==0 else None,
-                               environments=config['environments'], rollout_steps=config['ppo']['n_steps'],
-                               mode='diff3', stage=1) for i in range(config['environments'])], start_method='spawn')
+    raw = SubprocVecEnv([partial(factory, mode='diff3', stage=1) for _ in range(config['environments'])], start_method='spawn')
     env = VecNormalize(VecCheckNan(raw, raise_exception=True), **config['normalization'])
     env.seed(seed)
     model = PPO('MlpPolicy', env, device='cpu', seed=seed, **config['ppo'])

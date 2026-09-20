@@ -1,0 +1,12 @@
+[Unit]
+Description=WheelLeg local training dashboard
+After=network.target
+
+[Service]
+WorkingDirectory=/home/wmt/wheel_leg_robot_work
+ExecStart=/usr/bin/python3 -u /home/wmt/wheel_leg_robot_work/wheelleg_warp/dashboard/server.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

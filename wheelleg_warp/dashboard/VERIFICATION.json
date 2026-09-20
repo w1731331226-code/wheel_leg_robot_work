@@ -1,0 +1,23 @@
+{
+  "date": "2026-09-21T07:46:08.151373+08:00",
+  "actual_training_frames": true,
+  "recorded_environment": 0,
+  "cpu_policy_4000_identical_without_recording": true,
+  "cpu_and_warp_smoke_passed": true,
+  "http_bound": "127.0.0.1:8765",
+  "http_path_security_check": "passed",
+  "eta_boundary_check": "passed",
+  "browser_live_pause_resume": "passed",
+  "replay": {
+    "frames": 167,
+    "pixel_mae_at_start_middle_end": [
+      0,
+      0.0010402199074074075,
+      0
+    ],
+    "source": "saved_original_training_states"
+  },
+  "original_runs_preserved": true,
+  "current_run": "formal_cpu_warp_live_v1_20260921",
+  "media_local_only": true
+}

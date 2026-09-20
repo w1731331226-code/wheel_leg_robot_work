@@ -23,3 +23,7 @@ MUJOCO_LOG.txt
 !.env.example
 *.pem
 *.key
+
+# Local original training frames and rendered recordings (reproducible, kept on disk)
+/wheelleg_warp/dashboard/local_data/
+/wheelleg_warp/results/*/*/live/

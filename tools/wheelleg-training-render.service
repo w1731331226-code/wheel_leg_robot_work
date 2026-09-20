@@ -1,0 +1,13 @@
+[Unit]
+Description=Render real WheelLeg training states and archive animations
+After=wheelleg-dashboard.service
+
+[Service]
+WorkingDirectory=/home/wmt/wheel_leg_robot_work
+Environment=MUJOCO_GL=egl OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1
+ExecStart=/home/wmt/wheel_leg_robot_work/.venv/bin/python -u /home/wmt/wheel_leg_robot_work/wheelleg_warp/dashboard/record.py
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=default.target

@@ -1,7 +1,9 @@
 {
-  "status": "training",
+  "status": "superseded_for_live_capture",
   "pids": {
     "cpu": 35223,
     "warp": 35224
-  }
+  },
+  "stopped_at": "2026-09-21T07:28:08.855402+08:00",
+  "reason": "用户选择训练进程原始逐帧画面，两后端新版本从相同种子重新开始，原目录保留不纳入新比较"
 }
