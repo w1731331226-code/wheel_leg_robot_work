@@ -53,3 +53,78 @@
 ### 同步服务上线
 
 - `wheelleg-git-sync.service` 已实际启动且active，enabled和Linger=yes已核验；本轮提交由守护进程推送，最终同步结果以远程HEAD校验为准。
+
+### 自动同步快照 2026-09-21T06:51:23+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1.log`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/selection.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_320000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_320000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_320000.zip`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_340000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_340000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_340000.zip`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_360000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_360000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_360000.zip`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_380000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_380000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_380000.zip`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_400000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_400000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_400000.zip`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_420000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_420000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_420000.zip`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_440000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_440000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_440000.zip`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_460000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_460000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_460000.zip`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_480000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_480000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_480000.zip`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_500000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_500000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_500000.zip`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_520000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_520000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_520000.zip`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_540000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_540000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_540000.zip`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_560000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_560000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_560000.zip`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_580000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_580000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_580000.zip`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_600000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_600000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_600000.zip`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_620000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_620000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_620000.zip`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_640000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_640000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_640000.zip`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_660000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_660000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_660000.zip`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_680000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_680000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_680000.zip`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_700000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_700000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_700000.zip`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_720000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_720000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_720000.zip`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_740000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_740000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_740000.zip`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_760000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_760000.zip`
