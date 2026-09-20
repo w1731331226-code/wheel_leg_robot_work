@@ -211,3 +211,9 @@
 - `wheelleg_warp/results/formal_cpu_warp_v1_20260921/warp.log`
 - `wheelleg_warp/results/formal_cpu_warp_v1_20260921/warp_1609/progress.json`
 - `wheelleg_warp/results/formal_cpu_warp_v1_20260921/warp_1609/run_config.json`
+
+### 自动同步快照 2026-09-21T07:19:51+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_warp/results/formal_cpu_warp_v1_20260921/warp_1609/progress.json`
