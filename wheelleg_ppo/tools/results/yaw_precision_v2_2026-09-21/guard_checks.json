@@ -1,0 +1,20 @@
+[
+  {
+    "method": "M1",
+    "flag": "--train",
+    "expected_rejection": "Pre-training readiness is not complete",
+    "returncode": 1
+  },
+  {
+    "method": "M",
+    "flag": "--smoke",
+    "expected_rejection": "Method is not registered",
+    "returncode": 1
+  },
+  {
+    "method": "M1",
+    "flag": "--smoke",
+    "expected_rejection": "FileExistsError",
+    "returncode": 1
+  }
+]

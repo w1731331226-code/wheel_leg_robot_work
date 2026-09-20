@@ -1,0 +1,1265 @@
+{
+  "method": "B0",
+  "protocol": "preppo-v1",
+  "test_set_evaluated": false,
+  "success_count": 0,
+  "total": 28,
+  "runs": [
+    {
+      "name": "nominal_-1.0",
+      "scenario": {
+        "speed": -1.0,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100
+      },
+      "success": false,
+      "reason": "completed",
+      "physical_steps": 10010,
+      "duration_s": 5.004999999999946,
+      "arrival_s": 4.0050000000005,
+      "peak_deg": [
+        3.719724176650239e-10,
+        1.0092404730513345,
+        9.813064400010043e-09
+      ],
+      "rms_deg": [
+        9.686091933854138e-11,
+        0.16848120066785552,
+        5.798363219619725e-09
+      ],
+      "velocity_rmse": 0.2364831846850285,
+      "velocity_window_s": 3.005000000000171,
+      "stop_distance_m": 0.2643818303872325,
+      "tail_speed_m_s": 0.10196711817917356,
+      "residual_saturation_fraction": 0.0,
+      "mapping_failures": 0,
+      "recovery_s": null,
+      "first_contacts": {},
+      "actual_contact_mu": {
+        "wheel_collide_L": 0.8,
+        "wheel_collide_R": 0.8
+      }
+    },
+    {
+      "name": "nominal_-0.5",
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100
+      },
+      "success": false,
+      "reason": "completed",
+      "physical_steps": 15490,
+      "duration_s": 7.744999999998427,
+      "arrival_s": 6.744999999998981,
+      "peak_deg": [
+        7.795268674354464e-11,
+        0.3142369521646106,
+        1.923072955050867e-09
+      ],
+      "rms_deg": [
+        1.3834833182793897e-11,
+        0.04944471218104272,
+        1.275205888719593e-09
+      ],
+      "velocity_rmse": 0.08486222404891011,
+      "velocity_window_s": 5.744999999999536,
+      "stop_distance_m": 0.13283887785429416,
+      "tail_speed_m_s": 0.053537556448922274,
+      "residual_saturation_fraction": 0.0,
+      "mapping_failures": 0,
+      "recovery_s": null,
+      "first_contacts": {},
+      "actual_contact_mu": {
+        "wheel_collide_L": 0.8,
+        "wheel_collide_R": 0.8
+      }
+    },
+    {
+      "name": "nominal_0.5",
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100
+      },
+      "success": false,
+      "reason": "completed",
+      "physical_steps": 15490,
+      "duration_s": 7.744999999998427,
+      "arrival_s": 6.744999999998981,
+      "peak_deg": [
+        7.175533228607049e-11,
+        0.3219158910017228,
+        1.5413232949484403e-09
+      ],
+      "rms_deg": [
+        9.622636169574179e-12,
+        0.049029315272446486,
+        1.0084543861166803e-09
+      ],
+      "velocity_rmse": 0.08494976665343822,
+      "velocity_window_s": 5.744999999999536,
+      "stop_distance_m": 0.1332549539948893,
+      "tail_speed_m_s": 0.054228259810313276,
+      "residual_saturation_fraction": 0.0,
+      "mapping_failures": 0,
+      "recovery_s": null,
+      "first_contacts": {},
+      "actual_contact_mu": {
+        "wheel_collide_L": 0.8,
+        "wheel_collide_R": 0.8
+      }
+    },
+    {
+      "name": "nominal_1.0",
+      "scenario": {
+        "speed": 1.0,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100
+      },
+      "success": false,
+      "reason": "completed",
+      "physical_steps": 10004,
+      "duration_s": 5.001999999999947,
+      "arrival_s": 4.002000000000502,
+      "peak_deg": [
+        2.2341161258164126e-10,
+        1.2143968225734578,
+        6.8224238338786065e-09
+      ],
+      "rms_deg": [
+        5.837508501744398e-11,
+        0.1727612782264889,
+        4.069695881789253e-09
+      ],
+      "velocity_rmse": 0.23524217034006953,
+      "velocity_window_s": 3.00200000000017,
+      "stop_distance_m": 0.26653847469530234,
+      "tail_speed_m_s": 0.10425117812504009,
+      "residual_saturation_fraction": 0.0,
+      "mapping_failures": 0,
+      "recovery_s": null,
+      "first_contacts": {},
+      "actual_contact_mu": {
+        "wheel_collide_L": 0.8,
+        "wheel_collide_R": 0.8
+      }
+    },
+    {
+      "name": "symmetric_-1.0",
+      "scenario": {
+        "speed": -1.0,
+        "mass": 7.0,
+        "height_l": 0.015,
+        "height_r": 0.015,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100
+      },
+      "success": false,
+      "reason": "completed",
+      "physical_steps": 10057,
+      "duration_s": 5.028499999999933,
+      "arrival_s": 4.028500000000487,
+      "peak_deg": [
+        0.0003664359776492719,
+        1.0025431103721658,
+        0.006614289496897407
+      ],
+      "rms_deg": [
+        5.1368866851098023e-05,
+        0.17607187112010517,
+        0.0015227834901258921
+      ],
+      "velocity_rmse": 0.23646908782954537,
+      "velocity_window_s": 3.0285000000001787,
+      "stop_distance_m": 0.2645416542864325,
+      "tail_speed_m_s": 0.10198137904542104,
+      "residual_saturation_fraction": 0.0,
+      "mapping_failures": 0,
+      "recovery_s": null,
+      "first_contacts": {
+        "bump_L": 3.047000000000185,
+        "bump_R": 3.047000000000185
+      },
+      "actual_contact_mu": {
+        "wheel_collide_L": 0.8,
+        "wheel_collide_R": 0.8
+      }
+    },
+    {
+      "name": "symmetric_1.0",
+      "scenario": {
+        "speed": 1.0,
+        "mass": 7.0,
+        "height_l": 0.015,
+        "height_r": 0.015,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100
+      },
+      "success": false,
+      "reason": "completed",
+      "physical_steps": 10049,
+      "duration_s": 5.024499999999935,
+      "arrival_s": 4.024500000000489,
+      "peak_deg": [
+        0.002294749593493193,
+        1.2142244882122808,
+        0.11961676188535499
+      ],
+      "rms_deg": [
+        0.0004825366849862554,
+        0.179383370264334,
+        0.029167613894847042
+      ],
+      "velocity_rmse": 0.23519611127087184,
+      "velocity_window_s": 3.0245000000001774,
+      "stop_distance_m": 0.26658577620194207,
+      "tail_speed_m_s": 0.10424701960451689,
+      "residual_saturation_fraction": 0.0,
+      "mapping_failures": 0,
+      "recovery_s": 0.000500000000000167,
+      "first_contacts": {
+        "bump_L": 2.894500000000134,
+        "bump_R": 2.894500000000134
+      },
+      "actual_contact_mu": {
+        "wheel_collide_L": 0.8,
+        "wheel_collide_R": 0.8
+      }
+    },
+    {
+      "name": "legacy_bump_-1.0_l_0.01",
+      "scenario": {
+        "speed": -1.0,
+        "mass": 7.0,
+        "height_l": 0.01,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100
+      },
+      "success": false,
+      "reason": "completed",
+      "physical_steps": 10026,
+      "duration_s": 5.012999999999941,
+      "arrival_s": 4.0130000000004955,
+      "peak_deg": [
+        0.572815947816997,
+        1.003137706207066,
+        2.9240525511131548
+      ],
+      "rms_deg": [
+        0.16545783598997274,
+        0.16952556249563436,
+        0.8540803667449296
+      ],
+      "velocity_rmse": 0.236246224709887,
+      "velocity_window_s": 3.0130000000001735,
+      "stop_distance_m": 0.26442725517344473,
+      "tail_speed_m_s": 0.10193838603343841,
+      "residual_saturation_fraction": 0.0,
+      "mapping_failures": 0,
+      "recovery_s": null,
+      "first_contacts": {
+        "bump_L": 3.0525000000001867
+      },
+      "actual_contact_mu": {
+        "wheel_collide_L": 0.8,
+        "wheel_collide_R": 0.8
+      }
+    },
+    {
+      "name": "legacy_bump_-1.0_l_0.015",
+      "scenario": {
+        "speed": -1.0,
+        "mass": 7.0,
+        "height_l": 0.015,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100
+      },
+      "success": false,
+      "reason": "completed",
+      "physical_steps": 10038,
+      "duration_s": 5.018999999999938,
+      "arrival_s": 4.019000000000492,
+      "peak_deg": [
+        0.8653975797163499,
+        1.0025431103721658,
+        4.923095277404689
+      ],
+      "rms_deg": [
+        0.2545977395526334,
+        0.17074861717262924,
+        1.4094232398908855
+      ],
+      "velocity_rmse": 0.2361809024722528,
+      "velocity_window_s": 3.0190000000001755,
+      "stop_distance_m": 0.2644576376462031,
+      "tail_speed_m_s": 0.10193963389212625,
+      "residual_saturation_fraction": 0.0,
+      "mapping_failures": 0,
+      "recovery_s": null,
+      "first_contacts": {
+        "bump_L": 3.047000000000185
+      },
+      "actual_contact_mu": {
+        "wheel_collide_L": 0.8,
+        "wheel_collide_R": 0.8
+      }
+    },
+    {
+      "name": "legacy_bump_-1.0_r_0.01",
+      "scenario": {
+        "speed": -1.0,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.01,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100
+      },
+      "success": false,
+      "reason": "completed",
+      "physical_steps": 10026,
+      "duration_s": 5.012999999999941,
+      "arrival_s": 4.0130000000004955,
+      "peak_deg": [
+        0.5726338687695575,
+        1.0031367262305089,
+        2.926670460548441
+      ],
+      "rms_deg": [
+        0.1654508249450587,
+        0.16952594403987797,
+        0.8548650622057138
+      ],
+      "velocity_rmse": 0.23624626790963266,
+      "velocity_window_s": 3.0130000000001735,
+      "stop_distance_m": 0.26442737243551134,
+      "tail_speed_m_s": 0.1019381904200567,
+      "residual_saturation_fraction": 0.0,
+      "mapping_failures": 0,
+      "recovery_s": null,
+      "first_contacts": {
+        "bump_R": 3.0525000000001867
+      },
+      "actual_contact_mu": {
+        "wheel_collide_L": 0.8,
+        "wheel_collide_R": 0.8
+      }
+    },
+    {
+      "name": "legacy_bump_-1.0_r_0.015",
+      "scenario": {
+        "speed": -1.0,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.015,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100
+      },
+      "success": false,
+      "reason": "completed",
+      "physical_steps": 10038,
+      "duration_s": 5.018999999999938,
+      "arrival_s": 4.019000000000492,
+      "peak_deg": [
+        0.8661272572544441,
+        1.0025431103721658,
+        4.924705959388828
+      ],
+      "rms_deg": [
+        0.2546818217383874,
+        0.17074830180055994,
+        1.4109830585555794
+      ],
+      "velocity_rmse": 0.23618076748606812,
+      "velocity_window_s": 3.0190000000001755,
+      "stop_distance_m": 0.26445903039103197,
+      "tail_speed_m_s": 0.10194297539942034,
+      "residual_saturation_fraction": 0.0,
+      "mapping_failures": 0,
+      "recovery_s": null,
+      "first_contacts": {
+        "bump_R": 3.047000000000185
+      },
+      "actual_contact_mu": {
+        "wheel_collide_L": 0.8,
+        "wheel_collide_R": 0.8
+      }
+    },
+    {
+      "name": "legacy_bump_1.0_l_0.01",
+      "scenario": {
+        "speed": 1.0,
+        "mass": 7.0,
+        "height_l": 0.01,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100
+      },
+      "success": false,
+      "reason": "completed",
+      "physical_steps": 10020,
+      "duration_s": 5.009999999999943,
+      "arrival_s": 4.010000000000497,
+      "peak_deg": [
+        0.5685401908674645,
+        1.2181987815517634,
+        2.882096368513659
+      ],
+      "rms_deg": [
+        0.16329545957914493,
+        0.1751350137956723,
+        0.8285123484206679
+      ],
+      "velocity_rmse": 0.23500414086127874,
+      "velocity_window_s": 3.0100000000001725,
+      "stop_distance_m": 0.26672733979367635,
+      "tail_speed_m_s": 0.1043624594800679,
+      "residual_saturation_fraction": 0.0,
+      "mapping_failures": 0,
+      "recovery_s": null,
+      "first_contacts": {
+        "bump_L": 2.900000000000136
+      },
+      "actual_contact_mu": {
+        "wheel_collide_L": 0.8,
+        "wheel_collide_R": 0.8
+      }
+    },
+    {
+      "name": "legacy_bump_1.0_l_0.015",
+      "scenario": {
+        "speed": 1.0,
+        "mass": 7.0,
+        "height_l": 0.015,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100
+      },
+      "success": false,
+      "reason": "completed",
+      "physical_steps": 10032,
+      "duration_s": 5.01599999999994,
+      "arrival_s": 4.016000000000494,
+      "peak_deg": [
+        0.8580877446248298,
+        1.2134405407853557,
+        4.625175839800854
+      ],
+      "rms_deg": [
+        0.25063073094734123,
+        0.1751486486576398,
+        1.3348414882331336
+      ],
+      "velocity_rmse": 0.23492854229002014,
+      "velocity_window_s": 3.0160000000001745,
+      "stop_distance_m": 0.2665990564638269,
+      "tail_speed_m_s": 0.10428221165653033,
+      "residual_saturation_fraction": 0.0,
+      "mapping_failures": 0,
+      "recovery_s": null,
+      "first_contacts": {
+        "bump_L": 2.894500000000134
+      },
+      "actual_contact_mu": {
+        "wheel_collide_L": 0.8,
+        "wheel_collide_R": 0.8
+      }
+    },
+    {
+      "name": "legacy_bump_1.0_r_0.01",
+      "scenario": {
+        "speed": 1.0,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.01,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100
+      },
+      "success": false,
+      "reason": "completed",
+      "physical_steps": 10020,
+      "duration_s": 5.009999999999943,
+      "arrival_s": 4.010000000000497,
+      "peak_deg": [
+        0.5687980887787585,
+        1.2181989645898372,
+        2.879919978075813
+      ],
+      "rms_deg": [
+        0.16331893844886392,
+        0.175134944441653,
+        0.8280219275086204
+      ],
+      "velocity_rmse": 0.23500412035367943,
+      "velocity_window_s": 3.0100000000001725,
+      "stop_distance_m": 0.26672727138501157,
+      "tail_speed_m_s": 0.10436250520696974,
+      "residual_saturation_fraction": 0.0,
+      "mapping_failures": 0,
+      "recovery_s": null,
+      "first_contacts": {
+        "bump_R": 2.900000000000136
+      },
+      "actual_contact_mu": {
+        "wheel_collide_L": 0.8,
+        "wheel_collide_R": 0.8
+      }
+    },
+    {
+      "name": "legacy_bump_1.0_r_0.015",
+      "scenario": {
+        "speed": 1.0,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.015,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100
+      },
+      "success": false,
+      "reason": "completed",
+      "physical_steps": 10032,
+      "duration_s": 5.01599999999994,
+      "arrival_s": 4.016000000000494,
+      "peak_deg": [
+        0.8573247722622167,
+        1.2134399437482242,
+        4.624373466984491
+      ],
+      "rms_deg": [
+        0.25054563195262153,
+        0.17515054819010265,
+        1.3334985919294824
+      ],
+      "velocity_rmse": 0.23492869248348933,
+      "velocity_window_s": 3.0160000000001745,
+      "stop_distance_m": 0.26659990582308984,
+      "tail_speed_m_s": 0.10428113633519684,
+      "residual_saturation_fraction": 0.0,
+      "mapping_failures": 0,
+      "recovery_s": null,
+      "first_contacts": {
+        "bump_R": 2.894500000000134
+      },
+      "actual_contact_mu": {
+        "wheel_collide_L": 0.8,
+        "wheel_collide_R": 0.8
+      }
+    },
+    {
+      "name": "validation_0",
+      "scenario": {
+        "speed": 0.9049876397710312,
+        "mass": 7.24648196093265,
+        "height_l": 0.010218050542901164,
+        "height_r": 0.0,
+        "center": 1.8335359604118957,
+        "offset": -0.04733559507820755,
+        "mu_l": 0.8103021792437824,
+        "mu_r": 0.6162868397415845,
+        "drive_difference": 0.02695649642551276,
+        "delay_ms": 5.0,
+        "solver_iterations": 100
+      },
+      "success": false,
+      "reason": "completed",
+      "physical_steps": 10281,
+      "duration_s": 5.140499999999871,
+      "arrival_s": 4.140500000000425,
+      "peak_deg": [
+        0.5935570161275319,
+        1.0412921274456979,
+        1.8921273502073659
+      ],
+      "rms_deg": [
+        0.2137090558196418,
+        0.1492225693917032,
+        0.6865645260797262
+      ],
+      "velocity_rmse": 0.20934150289541073,
+      "velocity_window_s": 3.140500000000216,
+      "stop_distance_m": 0.2434467962297314,
+      "tail_speed_m_s": 0.0971681952626012,
+      "residual_saturation_fraction": 0.0,
+      "mapping_failures": 0,
+      "recovery_s": 0.000500000000000167,
+      "first_contacts": {
+        "bump_L": 2.91300000000014
+      },
+      "actual_contact_mu": {
+        "wheel_collide_L": 0.8103021792437824,
+        "wheel_collide_R": 0.6162868397415845
+      }
+    },
+    {
+      "name": "validation_1",
+      "scenario": {
+        "speed": -0.9800323146366026,
+        "mass": 7.004744370052092,
+        "height_l": 0.015216675326342743,
+        "height_r": 0.014641130756587737,
+        "center": 2.0238466549881236,
+        "offset": 0.025202525497344863,
+        "mu_l": 0.607433581495126,
+        "mu_r": 0.7223835705701439,
+        "drive_difference": -0.02639754748219375,
+        "delay_ms": 5.0,
+        "solver_iterations": 100
+      },
+      "success": false,
+      "reason": "completed",
+      "physical_steps": 10127,
+      "duration_s": 5.063499999999913,
+      "arrival_s": 4.0635000000004675,
+      "peak_deg": [
+        1.9126122302255457,
+        1.2893126147855716,
+        4.955809111620647
+      ],
+      "rms_deg": [
+        0.4685979754234843,
+        0.2052176013344284,
+        2.4926061972852116
+      ],
+      "velocity_rmse": 0.2326917239549116,
+      "velocity_window_s": 3.0635000000001904,
+      "stop_distance_m": 0.2623443155503738,
+      "tail_speed_m_s": 0.10340277730501578,
+      "residual_saturation_fraction": 0.0,
+      "mapping_failures": 0,
+      "recovery_s": null,
+      "first_contacts": {},
+      "actual_contact_mu": {
+        "wheel_collide_L": 0.607433581495126,
+        "wheel_collide_R": 0.7223835705701439
+      }
+    },
+    {
+      "name": "validation_2",
+      "scenario": {
+        "speed": 0.8348109327622206,
+        "mass": 7.285617532262398,
+        "height_l": 0.00929476637724472,
+        "height_r": 0.010752236413423679,
+        "center": 1.82100764001824,
+        "offset": 0.011089675670845539,
+        "mu_l": 0.7904213865785923,
+        "mu_r": 0.8977162554610256,
+        "drive_difference": -0.007384914243067545,
+        "delay_ms": 3.5,
+        "solver_iterations": 100
+      },
+      "success": false,
+      "reason": "completed",
+      "physical_steps": 10710,
+      "duration_s": 5.354999999999752,
+      "arrival_s": 4.355000000000306,
+      "peak_deg": [
+        0.30053908987029454,
+        0.6414511143708888,
+        0.7835449750387544
+      ],
+      "rms_deg": [
+        0.08066172000657912,
+        0.09917811396260791,
+        0.3798766648542429
+      ],
+      "velocity_rmse": 0.1863728708188219,
+      "velocity_window_s": 3.3550000000002878,
+      "stop_distance_m": 0.22317253957101882,
+      "tail_speed_m_s": 0.08874738851301088,
+      "residual_saturation_fraction": 0.0,
+      "mapping_failures": 0,
+      "recovery_s": 0.000500000000000167,
+      "first_contacts": {
+        "bump_L": 3.0075000000001717,
+        "bump_R": 3.0155000000001744
+      },
+      "actual_contact_mu": {
+        "wheel_collide_L": 0.7904213865785923,
+        "wheel_collide_R": 0.8977162554610256
+      }
+    },
+    {
+      "name": "validation_3",
+      "scenario": {
+        "speed": -0.9786994613787425,
+        "mass": 7.345959062848381,
+        "height_l": 0.005907178797361643,
+        "height_r": 0.019094083566643185,
+        "center": 1.7356890637849256,
+        "offset": -0.04932852499087484,
+        "mu_l": 0.7284485761424434,
+        "mu_r": 0.9266632798259357,
+        "drive_difference": 0.010178075098087914,
+        "delay_ms": 6.0,
+        "solver_iterations": 100
+      },
+      "success": false,
+      "reason": "completed",
+      "physical_steps": 9630,
+      "duration_s": 4.815000000000051,
+      "arrival_s": 3.8150000000004414,
+      "peak_deg": [
+        1.2693275782671938,
+        0.8981884009728194,
+        4.18337286909524
+      ],
+      "rms_deg": [
+        0.41439820330513083,
+        0.1565312757149609,
+        1.4056395214913227
+      ],
+      "velocity_rmse": 0.2399189651221104,
+      "velocity_window_s": 2.8150000000001074,
+      "stop_distance_m": 0.2583386056792918,
+      "tail_speed_m_s": 0.09915705252816163,
+      "residual_saturation_fraction": 0.0,
+      "mapping_failures": 0,
+      "recovery_s": null,
+      "first_contacts": {
+        "bump_R": 2.774500000000094,
+        "bump_L": 2.976000000000161
+      },
+      "actual_contact_mu": {
+        "wheel_collide_L": 0.7284485761424434,
+        "wheel_collide_R": 0.9266632798259357
+      }
+    },
+    {
+      "name": "validation_4",
+      "scenario": {
+        "speed": -0.7954703762450727,
+        "mass": 7.0492150025554166,
+        "height_l": 0.015913637595770996,
+        "height_r": 0.0,
+        "center": 2.1037565690569813,
+        "offset": 0.08056923663438556,
+        "mu_l": 0.6167664735311178,
+        "mu_r": 0.7027077468275418,
+        "drive_difference": -0.0020682744345966453,
+        "delay_ms": 5.5,
+        "solver_iterations": 100
+      },
+      "success": false,
+      "reason": "completed",
+      "physical_steps": 11800,
+      "duration_s": 5.89999999999945,
+      "arrival_s": 4.900000000000004,
+      "peak_deg": [
+        0.5287721064160391,
+        0.6183198360231627,
+        4.669575947310899
+      ],
+      "rms_deg": [
+        0.14033710861742446,
+        0.09837990621251261,
+        1.5317547569974788
+      ],
+      "velocity_rmse": 0.16593925494592876,
+      "velocity_window_s": 3.9000000000004698,
+      "stop_distance_m": 0.2131396390743992,
+      "tail_speed_m_s": 0.0854951364526184,
+      "residual_saturation_fraction": 0.0,
+      "mapping_failures": 0,
+      "recovery_s": null,
+      "first_contacts": {
+        "bump_L": 3.5885000000003657
+      },
+      "actual_contact_mu": {
+        "wheel_collide_L": 0.6167664735311178,
+        "wheel_collide_R": 0.7027077468275418
+      }
+    },
+    {
+      "name": "validation_5",
+      "scenario": {
+        "speed": -0.5345983858425508,
+        "mass": 7.123878073056212,
+        "height_l": 0.010145051648470743,
+        "height_r": 0.014821709794907743,
+        "center": 1.8272337968454764,
+        "offset": -0.006742345862803159,
+        "mu_l": 0.7122392880728278,
+        "mu_r": 0.9880075678163747,
+        "drive_difference": -0.016462727918046483,
+        "delay_ms": 0.5,
+        "solver_iterations": 100
+      },
+      "success": false,
+      "reason": "completed",
+      "physical_steps": 14227,
+      "duration_s": 7.113499999998777,
+      "arrival_s": 6.113499999999331,
+      "peak_deg": [
+        0.2967523265942772,
+        0.29968088741844706,
+        1.8716013351386656
+      ],
+      "rms_deg": [
+        0.1025422423832746,
+        0.059746850656202395,
+        0.5183650701271932
+      ],
+      "velocity_rmse": 0.09754369847653746,
+      "velocity_window_s": 5.113499999999886,
+      "stop_distance_m": 0.14215537874733036,
+      "tail_speed_m_s": 0.05730736439753241,
+      "residual_saturation_fraction": 0.0,
+      "mapping_failures": 0,
+      "recovery_s": 0.0004999999999997229,
+      "first_contacts": {
+        "bump_R": 4.270500000000353,
+        "bump_L": 4.29350000000034
+      },
+      "actual_contact_mu": {
+        "wheel_collide_L": 0.7122392880728278,
+        "wheel_collide_R": 0.9880075678163747
+      }
+    },
+    {
+      "name": "validation_6",
+      "scenario": {
+        "speed": -0.8335652430139888,
+        "mass": 7.121258449776787,
+        "height_l": 0.0,
+        "height_r": 0.01195164561345824,
+        "center": 1.84187687584803,
+        "offset": 0.07629979188789121,
+        "mu_l": 0.8253859864033695,
+        "mu_r": 0.723010076878523,
+        "drive_difference": -0.020887212702541832,
+        "delay_ms": 4.0,
+        "solver_iterations": 100
+      },
+      "success": false,
+      "reason": "completed",
+      "physical_steps": 10803,
+      "duration_s": 5.401499999999726,
+      "arrival_s": 4.40150000000028,
+      "peak_deg": [
+        0.9214333323797473,
+        0.5762784164778654,
+        2.8801034804544146
+      ],
+      "rms_deg": [
+        0.23118460157795254,
+        0.09523292103877568,
+        1.2599015726843437
+      ],
+      "velocity_rmse": 0.1856179613911005,
+      "velocity_window_s": 3.4015000000003033,
+      "stop_distance_m": 0.2216615299018621,
+      "tail_speed_m_s": 0.08755550697702802,
+      "residual_saturation_fraction": 0.0,
+      "mapping_failures": 0,
+      "recovery_s": null,
+      "first_contacts": {
+        "bump_R": 3.2610000000002564
+      },
+      "actual_contact_mu": {
+        "wheel_collide_L": 0.8253859864033695,
+        "wheel_collide_R": 0.723010076878523
+      }
+    },
+    {
+      "name": "validation_7",
+      "scenario": {
+        "speed": 0.7751030371928321,
+        "mass": 7.10208970552061,
+        "height_l": 0.0,
+        "height_r": 0.016643400160333218,
+        "center": 2.108494793506253,
+        "offset": 0.09763802790835818,
+        "mu_l": 0.6556531955566863,
+        "mu_r": 0.7381874897787414,
+        "drive_difference": -0.0072713672756513845,
+        "delay_ms": 3.5,
+        "solver_iterations": 100
+      },
+      "success": false,
+      "reason": "completed",
+      "physical_steps": 12040,
+      "duration_s": 6.019999999999383,
+      "arrival_s": 5.019999999999937,
+      "peak_deg": [
+        0.9721685731364251,
+        0.65879349848483,
+        4.746061794969704
+      ],
+      "rms_deg": [
+        0.30407267935767546,
+        0.09163261075185651,
+        1.4180253822515712
+      ],
+      "velocity_rmse": 0.15846608763442535,
+      "velocity_window_s": 4.020000000000492,
+      "stop_distance_m": 0.20885654418177146,
+      "tail_speed_m_s": 0.08475966959472826,
+      "residual_saturation_fraction": 0.0,
+      "mapping_failures": 0,
+      "recovery_s": null,
+      "first_contacts": {
+        "bump_R": 3.57100000000036
+      },
+      "actual_contact_mu": {
+        "wheel_collide_L": 0.6556531955566863,
+        "wheel_collide_R": 0.7381874897787414
+      }
+    },
+    {
+      "name": "validation_8",
+      "scenario": {
+        "speed": -0.6558654346542279,
+        "mass": 7.398858862730201,
+        "height_l": 0.015731854869274562,
+        "height_r": 0.001755623552074901,
+        "center": 2.1390107966914518,
+        "offset": -0.05697770173598023,
+        "mu_l": 0.9541427795950363,
+        "mu_r": 0.9248095058249928,
+        "drive_difference": -0.02080352509436151,
+        "delay_ms": 6.0,
+        "solver_iterations": 100
+      },
+      "success": false,
+      "reason": "completed",
+      "physical_steps": 13444,
+      "duration_s": 6.721999999998994,
+      "arrival_s": 5.721999999999548,
+      "peak_deg": [
+        0.9166687329114068,
+        0.21965731979703176,
+        5.432512226334433
+      ],
+      "rms_deg": [
+        0.2795397626511011,
+        0.059945570942456526,
+        1.6119934112373262
+      ],
+      "velocity_rmse": 0.12384894736809879,
+      "velocity_window_s": 4.722000000000103,
+      "stop_distance_m": 0.17386861738890677,
+      "tail_speed_m_s": 0.06885277570410167,
+      "residual_saturation_fraction": 0.0,
+      "mapping_failures": 0,
+      "recovery_s": null,
+      "first_contacts": {
+        "bump_R": 4.183500000000401,
+        "bump_L": 4.237000000000371
+      },
+      "actual_contact_mu": {
+        "wheel_collide_L": 0.9541427795950363,
+        "wheel_collide_R": 0.9248095058249928
+      }
+    },
+    {
+      "name": "validation_9",
+      "scenario": {
+        "speed": -0.5229146975939427,
+        "mass": 7.197333780722708,
+        "height_l": 0.01652625868088537,
+        "height_r": 0.012736725572157022,
+        "center": 2.1849751385383844,
+        "offset": -0.09078447542773627,
+        "mu_l": 0.8224703497638298,
+        "mu_r": 0.9359018059870254,
+        "drive_difference": 0.021702153513581172,
+        "delay_ms": 9.5,
+        "solver_iterations": 100
+      },
+      "success": false,
+      "reason": "completed",
+      "physical_steps": 16048,
+      "duration_s": 8.023999999998315,
+      "arrival_s": 7.023999999998827,
+      "peak_deg": [
+        0.41984711043095585,
+        0.2880286203231075,
+        11.790810998879111
+      ],
+      "rms_deg": [
+        0.10288293932001785,
+        0.06482995156504538,
+        3.6033251595176203
+      ],
+      "velocity_rmse": 0.08963728500650767,
+      "velocity_window_s": 6.023999999999381,
+      "stop_distance_m": 0.13910994490025283,
+      "tail_speed_m_s": 0.05601685415157759,
+      "residual_saturation_fraction": 0.0,
+      "mapping_failures": 0,
+      "recovery_s": null,
+      "first_contacts": {
+        "bump_R": 4.948499999999977,
+        "bump_L": 5.107499999999889
+      },
+      "actual_contact_mu": {
+        "wheel_collide_L": 0.8224703497638298,
+        "wheel_collide_R": 0.9359018059870254
+      }
+    },
+    {
+      "name": "validation_10",
+      "scenario": {
+        "speed": -0.8164568739301815,
+        "mass": 7.3042395680699155,
+        "height_l": 0.0,
+        "height_r": 0.013103440532767826,
+        "center": 1.71387650652355,
+        "offset": 0.09927196321226903,
+        "mu_l": 0.6132179292519125,
+        "mu_r": 0.8092554696262046,
+        "drive_difference": -0.0038107635836188355,
+        "delay_ms": 6.5,
+        "solver_iterations": 100
+      },
+      "success": false,
+      "reason": "completed",
+      "physical_steps": 10643,
+      "duration_s": 5.32149999999977,
+      "arrival_s": 4.3215000000003245,
+      "peak_deg": [
+        0.9587634573924148,
+        0.5811641379983906,
+        2.534126202249786
+      ],
+      "rms_deg": [
+        0.24102764986995584,
+        0.09572490313185372,
+        1.1255746564842848
+      ],
+      "velocity_rmse": 0.1842667510510583,
+      "velocity_window_s": 3.3215000000002766,
+      "stop_distance_m": 0.21776018037554837,
+      "tail_speed_m_s": 0.08625846987874504,
+      "residual_saturation_fraction": 0.0,
+      "mapping_failures": 0,
+      "recovery_s": 0.000500000000000167,
+      "first_contacts": {
+        "bump_R": 3.1690000000002256
+      },
+      "actual_contact_mu": {
+        "wheel_collide_L": 0.6132179292519125,
+        "wheel_collide_R": 0.8092554696262046
+      }
+    },
+    {
+      "name": "validation_11",
+      "scenario": {
+        "speed": -0.716130046172817,
+        "mass": 7.238504547568849,
+        "height_l": 0.002669288859446679,
+        "height_r": 0.004951901867033302,
+        "center": 2.18663417461268,
+        "offset": 0.09490678798289429,
+        "mu_l": 0.9202371640898095,
+        "mu_r": 0.8349857144930098,
+        "drive_difference": -0.02415318913685778,
+        "delay_ms": 2.0,
+        "solver_iterations": 100
+      },
+      "success": false,
+      "reason": "completed",
+      "physical_steps": 12839,
+      "duration_s": 6.419499999999162,
+      "arrival_s": 5.419499999999716,
+      "peak_deg": [
+        0.5482867968633891,
+        0.2592360933887224,
+        1.4916351018422869
+      ],
+      "rms_deg": [
+        0.1347842162599184,
+        0.057845605573175495,
+        0.6333317232465464
+      ],
+      "velocity_rmse": 0.1394503078854756,
+      "velocity_window_s": 4.41950000000027,
+      "stop_distance_m": 0.18982464246363429,
+      "tail_speed_m_s": 0.07503019099089614,
+      "residual_saturation_fraction": 0.0,
+      "mapping_failures": 0,
+      "recovery_s": 0.0004999999999997229,
+      "first_contacts": {
+        "bump_L": 3.9715000000004936,
+        "bump_R": 4.092500000000451
+      },
+      "actual_contact_mu": {
+        "wheel_collide_L": 0.9202371640898095,
+        "wheel_collide_R": 0.8349857144930098
+      }
+    },
+    {
+      "name": "development_friction",
+      "scenario": {
+        "speed": 1.0,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.6,
+        "mu_r": 1.0,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100
+      },
+      "success": false,
+      "reason": "completed",
+      "physical_steps": 9973,
+      "duration_s": 4.986499999999956,
+      "arrival_s": 3.9865000000004986,
+      "peak_deg": [
+        1.215583423943777,
+        1.2577070868058577,
+        2.1249713032939286
+      ],
+      "rms_deg": [
+        0.3183638007013466,
+        0.18228261722038827,
+        1.0974442074078579
+      ],
+      "velocity_rmse": 0.23624031535866655,
+      "velocity_window_s": 2.9865000000001647,
+      "stop_distance_m": 0.26689236297484953,
+      "tail_speed_m_s": 0.10486974846208198,
+      "residual_saturation_fraction": 0.0,
+      "mapping_failures": 0,
+      "recovery_s": null,
+      "first_contacts": {},
+      "actual_contact_mu": {
+        "wheel_collide_L": 0.6,
+        "wheel_collide_R": 1.0
+      }
+    },
+    {
+      "name": "development_solver",
+      "scenario": {
+        "speed": 1.0,
+        "mass": 7.0,
+        "height_l": 0.015,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 50
+      },
+      "success": false,
+      "reason": "completed",
+      "physical_steps": 10032,
+      "duration_s": 5.01599999999994,
+      "arrival_s": 4.016000000000494,
+      "peak_deg": [
+        0.8580877446248298,
+        1.2134405407853557,
+        4.625175839800854
+      ],
+      "rms_deg": [
+        0.25063073094734123,
+        0.1751486486576398,
+        1.3348414882331336
+      ],
+      "velocity_rmse": 0.23492854229002014,
+      "velocity_window_s": 3.0160000000001745,
+      "stop_distance_m": 0.2665990564638269,
+      "tail_speed_m_s": 0.10428221165653033,
+      "residual_saturation_fraction": 0.0,
+      "mapping_failures": 0,
+      "recovery_s": null,
+      "first_contacts": {
+        "bump_L": 2.894500000000134
+      },
+      "actual_contact_mu": {
+        "wheel_collide_L": 0.8,
+        "wheel_collide_R": 0.8
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "smoke": true,
+  "checkpoints": [
+    {
+      "steps": 4000,
+      "path": "wheelleg_ppo/tools/results/pretrain_yaw_2026-09-21/smoke_B2/step_4000",
+      "total": 4,
+      "success_count": 4,
+      "complete": true,
+      "mean_yaw_score_deg": 0.851345182567216
+    }
+  ],
+  "best": {
+    "steps": 4000,
+    "path": "wheelleg_ppo/tools/results/pretrain_yaw_2026-09-21/smoke_B2/step_4000",
+    "total": 4,
+    "success_count": 4,
+    "complete": true,
+    "mean_yaw_score_deg": 0.851345182567216
+  },
+  "gate_evaluated": false,
+  "test_set_evaluated": false
+}

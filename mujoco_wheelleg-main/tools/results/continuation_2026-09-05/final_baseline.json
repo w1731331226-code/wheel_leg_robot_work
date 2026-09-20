@@ -1,0 +1,101 @@
+[
+  {
+    "name": "final_baseline_stand",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--test",
+      "stand"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "final_baseline_stop",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--test",
+      "stop"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "final_baseline_jump",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--test",
+      "jump"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "final_baseline_jumpfwd",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--test",
+      "jumpfwd"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "final_baseline_jumpback",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--test",
+      "jumpback"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "final_baseline_stress_clean",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/test_jump_stress.py",
+      "--no-disturbance"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "final_baseline_stress_push",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/test_jump_stress.py"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "final_baseline_jump_height",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/test_jump_height.py"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "final_baseline_robustness",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/test_robustness.py"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "final_baseline_sizing",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/check_hardware_sizing.py"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "final_baseline_jump_stop",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/test_jump_stop.py"
+    ],
+    "returncode": 1
+  }
+]

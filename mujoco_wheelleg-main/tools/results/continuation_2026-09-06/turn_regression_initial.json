@@ -1,0 +1,38 @@
+[
+  {
+    "name": "turn_regression_candidate_base",
+    "args": [
+      "tools/wheelleg_sim.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state",
+      "--test",
+      "stop"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "turn_regression_default_base",
+    "args": [
+      "tools/wheelleg_sim.py",
+      "--test",
+      "stop"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "turn_estimation_noise",
+    "args": [
+      "tools/test_state_estimation.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state",
+      "--noise",
+      "--report",
+      "tools/results/continuation_2026-09-06/turn_estimation_noise.json"
+    ],
+    "returncode": 0
+  }
+]

@@ -1,0 +1,84 @@
+[
+  {
+    "scenario": "terrain",
+    "speed": -1,
+    "slope_deg": 0,
+    "bump_height": 0.025,
+    "side": 1,
+    "hardware": true,
+    "track_width": 0.18,
+    "six_state": true,
+    "peak_roll_pitch_yaw_deg": [
+      1.2856837268902626,
+      0.5880341840013091,
+      58.53201576062528
+    ],
+    "startup_peak_roll_pitch_deg": [
+      1.2856837268902626,
+      0.5880341840013091
+    ],
+    "touched_bump": true,
+    "traversed": true,
+    "final_time": 6.9995,
+    "final_position": [
+      -3.8545804534963515,
+      0.14557676342496503,
+      0.1607180895729762
+    ],
+    "stop_distance": 0.2897884714563667,
+    "tail_speed": 0.005534649806615928,
+    "fell": false,
+    "invalid": false,
+    "nonwheel": false,
+    "passed": false,
+    "bvh_rebuilt": false,
+    "first_contact": {
+      "t": 3.011000000000173,
+      "distance": -2.3553580505317067e-05,
+      "x": -1.7375022378626797,
+      "yaw": -4.905641380946232e-05
+    },
+    "min_distance": -0.01986812941372721
+  },
+  {
+    "scenario": "terrain",
+    "speed": -1,
+    "slope_deg": 0,
+    "bump_height": 0.025,
+    "side": 1,
+    "hardware": true,
+    "track_width": 0.18,
+    "six_state": true,
+    "peak_roll_pitch_yaw_deg": [
+      2.2792640575846708,
+      0.5187473585734449,
+      58.22465976436849
+    ],
+    "startup_peak_roll_pitch_deg": [
+      2.2792640575846708,
+      0.5187473585734449
+    ],
+    "touched_bump": true,
+    "traversed": true,
+    "final_time": 6.9995,
+    "final_position": [
+      -3.885292213973436,
+      0.20275616399953136,
+      0.16071808889137762
+    ],
+    "stop_distance": 0.2897760009961068,
+    "tail_speed": 0.005525140521102052,
+    "fell": false,
+    "invalid": false,
+    "nonwheel": false,
+    "passed": false,
+    "bvh_rebuilt": true,
+    "first_contact": {
+      "t": 3.011000000000173,
+      "distance": -2.3553580505317067e-05,
+      "x": -1.7375022378626797,
+      "yaw": -4.905641380946232e-05
+    },
+    "min_distance": -0.0035559859833431263
+  }
+]

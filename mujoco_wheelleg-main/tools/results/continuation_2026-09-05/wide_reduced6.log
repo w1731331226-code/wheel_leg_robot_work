@@ -1,0 +1,42 @@
+L=0.0550 qacc=0.00e+00 pitch=-0.000deg open=1.007041 closed=0.999107
+u_eq= [-2.20384575e-01  2.20766586e-01 -2.20384575e-01  2.20766586e-01
+ -2.38908389e-29 -2.38908389e-29]
+linearization error=0.002% wheel_dvx_dtau=-0.000664
+reduction {"order": 6, "vmc_condition": 1.0870864545946082, "frequencies_hz": [0.2, 0.5, 1.0, 2.0, 5.0], "relative_frf_errors": [0.04859047876918722, 0.060309292519856894, 0.1347312645381431, 0.335135822471975, 0.20624564762026054], "omitted_radius": 0.9910973794616357, "reduced_closed_radius": 0.999087369621593, "full_closed_radius": 0.9991517448327458, "linear_pass": false}
+nonlinear impulse=-0.200Ns r/p/y=[0.   0.03 0.  ]deg peak_x=0.0139 final_x=-0.00001 final_v=-0.00021 recovery=0.21s nonwheel=False
+nonlinear impulse=+0.200Ns r/p/y=[0.   0.03 0.  ]deg peak_x=0.0139 final_x=0.00001 final_v=0.00022 recovery=0.21s nonwheel=False
+L=0.0900 qacc=0.00e+00 pitch=-0.000deg open=1.006875 closed=0.998888
+u_eq= [-4.96933484e-01  4.97015920e-01 -4.96933484e-01  4.97015920e-01
+ -2.57850780e-27 -2.57850780e-27]
+linearization error=0.002% wheel_dvx_dtau=-0.001429
+reduction {"order": 6, "vmc_condition": 1.0651435835855856, "frequencies_hz": [0.2, 0.5, 1.0, 2.0, 5.0], "relative_frf_errors": [0.04618935778459076, 0.04982594469126966, 0.14832812897683048, 0.2945065752163264, 0.24328527538582415], "omitted_radius": 0.9856769258556081, "reduced_closed_radius": 0.9989891431861591, "full_closed_radius": 0.9990415039969722, "linear_pass": false}
+nonlinear impulse=-0.200Ns r/p/y=[0.    0.017 0.   ]deg peak_x=0.0134 final_x=-0.00005 final_v=0.00002 recovery=0.20s nonwheel=False
+nonlinear impulse=+0.200Ns r/p/y=[0.    0.017 0.   ]deg peak_x=0.0134 final_x=0.00005 final_v=-0.00002 recovery=0.20s nonwheel=False
+L=0.1119 qacc=0.00e+00 pitch=0.000deg open=1.006548 closed=0.998845
+u_eq= [-4.97594627e-01  4.97597811e-01 -4.97594627e-01  4.97597811e-01
+ -1.77128953e-24 -1.77128953e-24]
+linearization error=0.003% wheel_dvx_dtau=-0.001444
+reduction {"order": 6, "vmc_condition": 1.1683748389161588, "frequencies_hz": [0.2, 0.5, 1.0, 2.0, 5.0], "relative_frf_errors": [0.0578548160769273, 0.10585902466282332, 0.3011939185021124, 0.31513721384550825, 0.2894693423496319], "omitted_radius": 0.9856501244371181, "reduced_closed_radius": 0.998951514105763, "full_closed_radius": 0.9989982656244921, "linear_pass": false}
+nonlinear impulse=-0.200Ns r/p/y=[0.    0.015 0.   ]deg peak_x=0.0132 final_x=-0.00004 final_v=0.00006 recovery=0.20s nonwheel=False
+nonlinear impulse=+0.200Ns r/p/y=[0.    0.014 0.   ]deg peak_x=0.0132 final_x=0.00004 final_v=-0.00006 recovery=0.20s nonwheel=False
+L=0.1350 qacc=0.00e+00 pitch=0.000deg open=1.006200 closed=0.998865
+u_eq= [-3.71536070e-01  3.71441068e-01 -3.71536070e-01  3.71441068e-01
+ -2.83975518e-30 -2.83975518e-30]
+linearization error=0.003% wheel_dvx_dtau=-0.001342
+reduction {"order": 6, "vmc_condition": 1.7090388359207327, "frequencies_hz": [0.2, 0.5, 1.0, 2.0, 5.0], "relative_frf_errors": [0.25631344409801327, 0.37607336674672326, 0.4120537140502303, 0.4070921176666064, 0.4128368977106159], "omitted_radius": 0.989751304055136, "reduced_closed_radius": 0.9989247191170593, "full_closed_radius": 0.9989657523812464, "linear_pass": false}
+nonlinear impulse=-0.200Ns r/p/y=[0.    0.018 0.   ]deg peak_x=0.0130 final_x=-0.00003 final_v=0.00007 recovery=0.20s nonwheel=False
+nonlinear impulse=+0.200Ns r/p/y=[0.    0.018 0.   ]deg peak_x=0.0130 final_x=0.00003 final_v=-0.00007 recovery=0.20s nonwheel=False
+interpolated L=0.0725 closed=0.998963
+nonlinear impulse=-0.200Ns r/p/y=[0.    0.007 0.   ]deg peak_x=0.0130 final_x=-0.00002 final_v=-0.00001 recovery=0.20s nonwheel=False
+nonlinear impulse=+0.200Ns r/p/y=[0.    0.007 0.   ]deg peak_x=0.0130 final_x=0.00002 final_v=0.00001 recovery=0.20s nonwheel=False
+interpolated L=0.1009 closed=0.999001
+nonlinear impulse=-0.200Ns r/p/y=[0.    0.015 0.   ]deg peak_x=0.0132 final_x=-0.00004 final_v=0.00005 recovery=0.20s nonwheel=False
+nonlinear impulse=+0.200Ns r/p/y=[0.    0.014 0.   ]deg peak_x=0.0132 final_x=0.00004 final_v=-0.00005 recovery=0.20s nonwheel=False
+interpolated L=0.1235 closed=0.998941
+nonlinear impulse=-0.200Ns r/p/y=[0.   0.02 0.  ]deg peak_x=0.0129 final_x=-0.00003 final_v=0.00006 recovery=0.20s nonwheel=False
+nonlinear impulse=+0.200Ns r/p/y=[0.   0.02 0.  ]deg peak_x=0.0129 final_x=0.00003 final_v=-0.00006 recovery=0.20s nonwheel=False
+nonlinear checks: 14/14 PASS
+Traceback (most recent call last):
+  File "/home/wmt/wheel_leg_robot_work/mujoco_wheelleg-main/tools/model_lqr.py", line 367, in <module>
+    assert all(r.get('linear_pass', True) for r in reports), '降阶误差/被消去动态未过门，不能接入正式控制' 
+AssertionError: 降阶误差/被消去动态未过门，不能接入正式控制

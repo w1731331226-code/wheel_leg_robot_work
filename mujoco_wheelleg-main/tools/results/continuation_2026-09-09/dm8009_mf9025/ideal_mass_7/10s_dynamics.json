@@ -1,0 +1,917 @@
+{
+  "hip_bus_V": 42.0,
+  "wheel_bus_V": 24.0,
+  "mass_kg": 7.0,
+  "controller_mass_kg": 7.0,
+  "added_payload_position_m": [
+    0.075,
+    0,
+    0.039
+  ],
+  "runs": [
+    {
+      "mode": "stand",
+      "action_pass": true,
+      "duration_s": 19.99999999999874,
+      "motors": {
+        "motor_alphaL": {
+          "peak_torque_Nm": 2.2444679203445137,
+          "peak_rpm": 0.11764492335827992,
+          "over_rated_longest_s": 0.0,
+          "at_peak_longest_s": 0.0,
+          "over_rated_total_s": 0.0,
+          "torque_squared_integral_Nm2_s": 99.22474352554377,
+          "torque_rms_Nm": 2.227383482087784
+        },
+        "motor_betaL": {
+          "peak_torque_Nm": 2.2443954198093925,
+          "peak_rpm": 0.13865061995182093,
+          "over_rated_longest_s": 0.0,
+          "at_peak_longest_s": 0.0,
+          "over_rated_total_s": 0.0,
+          "torque_squared_integral_Nm2_s": 99.22498033816612,
+          "torque_rms_Nm": 2.227386140054889
+        },
+        "motor_alphaR": {
+          "peak_torque_Nm": 2.244467920344514,
+          "peak_rpm": 0.11764492335828013,
+          "over_rated_longest_s": 0.0,
+          "at_peak_longest_s": 0.0,
+          "over_rated_total_s": 0.0,
+          "torque_squared_integral_Nm2_s": 99.22474352549274,
+          "torque_rms_Nm": 2.227383482087211
+        },
+        "motor_betaR": {
+          "peak_torque_Nm": 2.244395419809392,
+          "peak_rpm": 0.13865061995182146,
+          "over_rated_longest_s": 0.0,
+          "at_peak_longest_s": 0.0,
+          "over_rated_total_s": 0.0,
+          "torque_squared_integral_Nm2_s": 99.22498033862078,
+          "torque_rms_Nm": 2.227386140059992
+        },
+        "motor_wheelL": {
+          "peak_torque_Nm": 0.01969034503656468,
+          "peak_rpm": 0.13414358336948487,
+          "over_rated_longest_s": 0.0,
+          "at_peak_longest_s": 0.0,
+          "over_rated_total_s": 0.0,
+          "torque_squared_integral_Nm2_s": 9.813626238153908e-07,
+          "torque_rms_Nm": 0.0002215132754278457
+        },
+        "motor_wheelR": {
+          "peak_torque_Nm": 0.01969034503656468,
+          "peak_rpm": 0.13414358336948504,
+          "over_rated_longest_s": 0.0,
+          "at_peak_longest_s": 0.0,
+          "over_rated_total_s": 0.0,
+          "torque_squared_integral_Nm2_s": 9.813626238153908e-07,
+          "torque_rms_Nm": 0.0002215132754278457
+        }
+      },
+      "rails": {
+        "hip_bus": {
+          "mechanical_positive_peak_W": 0.11602209697496879,
+          "mechanical_absorbed_peak_W": 0.05450758969801406,
+          "mechanical_positive_J": 0.002760127072881542,
+          "mechanical_absorbed_J": 0.0028139821794516237
+        },
+        "wheel_24V": {
+          "mechanical_positive_peak_W": 0.00034861026375664663,
+          "mechanical_absorbed_peak_W": 0.00011266937445894438,
+          "mechanical_positive_J": 9.426888972167721e-07,
+          "mechanical_absorbed_J": 4.025435699555493e-07
+        }
+      },
+      "mechanical_positive_peak_W": 0.11607604680922393,
+      "mechanical_absorbed_peak_W": 0.05450758969801406,
+      "mechanical_positive_J": 0.002761069761778758,
+      "mechanical_absorbed_J": 0.0028143847230215915,
+      "lossless_battery_current_equivalent_A": 0.0027637154002196174,
+      "peak_window_pass": true
+    },
+    {
+      "mode": "jump",
+      "action_pass": true,
+      "duration_s": 12.000000000003174,
+      "motors": {
+        "motor_alphaL": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 193.37464982141526,
+          "over_rated_longest_s": 0.04150000000000003,
+          "at_peak_longest_s": 0.0045000000000000005,
+          "over_rated_total_s": 0.05200000000000004,
+          "torque_squared_integral_Nm2_s": 149.23161641867196,
+          "torque_rms_Nm": 3.5264667919726738
+        },
+        "motor_betaL": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 191.3599848816619,
+          "over_rated_longest_s": 0.04100000000000003,
+          "at_peak_longest_s": 0.005000000000000001,
+          "over_rated_total_s": 0.05200000000000004,
+          "torque_squared_integral_Nm2_s": 149.6710129760381,
+          "torque_rms_Nm": 3.5316546284520154
+        },
+        "motor_alphaR": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 193.3746498361363,
+          "over_rated_longest_s": 0.04150000000000003,
+          "at_peak_longest_s": 0.0045000000000000005,
+          "over_rated_total_s": 0.05200000000000004,
+          "torque_squared_integral_Nm2_s": 149.23161644366573,
+          "torque_rms_Nm": 3.526466792267985
+        },
+        "motor_betaR": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 191.35998487234795,
+          "over_rated_longest_s": 0.04100000000000003,
+          "at_peak_longest_s": 0.005000000000000001,
+          "over_rated_total_s": 0.05200000000000004,
+          "torque_squared_integral_Nm2_s": 149.671012992036,
+          "torque_rms_Nm": 3.5316546286407595
+        },
+        "motor_wheelL": {
+          "peak_torque_Nm": 1.2336245896198708,
+          "peak_rpm": 113.14048512630914,
+          "over_rated_longest_s": 0.0,
+          "at_peak_longest_s": 0.0,
+          "over_rated_total_s": 0.0,
+          "torque_squared_integral_Nm2_s": 0.014230015893519035,
+          "torque_rms_Nm": 0.034435950078267615
+        },
+        "motor_wheelR": {
+          "peak_torque_Nm": 1.2336245896198708,
+          "peak_rpm": 113.14048510361917,
+          "over_rated_longest_s": 0.0,
+          "at_peak_longest_s": 0.0,
+          "over_rated_total_s": 0.0,
+          "torque_squared_integral_Nm2_s": 0.014230015893515165,
+          "torque_rms_Nm": 0.03443595007826293
+        }
+      },
+      "rails": {
+        "hip_bus": {
+          "mechanical_positive_peak_W": 2907.6726828483143,
+          "mechanical_absorbed_peak_W": 1992.0916771987306,
+          "mechanical_positive_J": 86.22041876924295,
+          "mechanical_absorbed_J": 76.68358616086651
+        },
+        "wheel_24V": {
+          "mechanical_positive_peak_W": 11.14090042149004,
+          "mechanical_absorbed_peak_W": 20.125963895396858,
+          "mechanical_positive_J": 0.8912033919057833,
+          "mechanical_absorbed_J": 0.11806727018639628
+        }
+      },
+      "mechanical_positive_peak_W": 2908.422874441176,
+      "mechanical_absorbed_peak_W": 1992.0916771987306,
+      "mechanical_positive_J": 87.11162216114857,
+      "mechanical_absorbed_J": 76.8016534310529,
+      "lossless_battery_current_equivalent_A": 69.24816367717087,
+      "peak_window_pass": true
+    },
+    {
+      "mode": "jumpfwd",
+      "action_pass": true,
+      "duration_s": 18.0000000000034,
+      "motors": {
+        "motor_alphaL": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 190.7997263743546,
+          "over_rated_longest_s": 0.04200000000000003,
+          "at_peak_longest_s": 0.0045000000000000005,
+          "over_rated_total_s": 0.05250000000000004,
+          "torque_squared_integral_Nm2_s": 175.7216358797475,
+          "torque_rms_Nm": 3.124470051773352
+        },
+        "motor_betaL": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 192.1121906821875,
+          "over_rated_longest_s": 0.04100000000000003,
+          "at_peak_longest_s": 0.005000000000000001,
+          "over_rated_total_s": 0.05200000000000004,
+          "torque_squared_integral_Nm2_s": 176.56542869873098,
+          "torque_rms_Nm": 3.1319627206052405
+        },
+        "motor_alphaR": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 190.79972637931348,
+          "over_rated_longest_s": 0.04200000000000003,
+          "at_peak_longest_s": 0.0045000000000000005,
+          "over_rated_total_s": 0.05250000000000004,
+          "torque_squared_integral_Nm2_s": 175.72163588367277,
+          "torque_rms_Nm": 3.1244700518082493
+        },
+        "motor_betaR": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 192.11219068332989,
+          "over_rated_longest_s": 0.04100000000000003,
+          "at_peak_longest_s": 0.005000000000000001,
+          "over_rated_total_s": 0.05200000000000004,
+          "torque_squared_integral_Nm2_s": 176.56542870070732,
+          "torque_rms_Nm": 3.1319627206227687
+        },
+        "motor_wheelL": {
+          "peak_torque_Nm": 4.5,
+          "peak_rpm": 683.131941622368,
+          "over_rated_longest_s": 0.01550000000000001,
+          "at_peak_longest_s": 0.013000000000000008,
+          "over_rated_total_s": 0.02600000000000002,
+          "torque_squared_integral_Nm2_s": 0.8828356184438565,
+          "torque_rms_Nm": 0.22146427081331121
+        },
+        "motor_wheelR": {
+          "peak_torque_Nm": 4.5,
+          "peak_rpm": 683.1319416224185,
+          "over_rated_longest_s": 0.01550000000000001,
+          "at_peak_longest_s": 0.013000000000000008,
+          "over_rated_total_s": 0.02600000000000002,
+          "torque_squared_integral_Nm2_s": 0.8828356184449194,
+          "torque_rms_Nm": 0.22146427081344455
+        }
+      },
+      "rails": {
+        "hip_bus": {
+          "mechanical_positive_peak_W": 2830.9622872725367,
+          "mechanical_absorbed_peak_W": 1910.6000629309124,
+          "mechanical_positive_J": 88.26824841949751,
+          "mechanical_absorbed_J": 78.90038095373207
+        },
+        "wheel_24V": {
+          "mechanical_positive_peak_W": 450.63721146368675,
+          "mechanical_absorbed_peak_W": 256.0493363985756,
+          "mechanical_positive_J": 85.23069351039076,
+          "mechanical_absorbed_J": 4.744709612232544
+        }
+      },
+      "mechanical_positive_peak_W": 2836.7834592143136,
+      "mechanical_absorbed_peak_W": 1910.6000629309124,
+      "mechanical_positive_J": 173.4989419298898,
+      "mechanical_absorbed_J": 83.64509056596468,
+      "lossless_battery_current_equivalent_A": 67.54246331462652,
+      "peak_window_pass": true
+    },
+    {
+      "mode": "jumpback",
+      "action_pass": true,
+      "duration_s": 18.0000000000034,
+      "motors": {
+        "motor_alphaL": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 191.03052855524083,
+          "over_rated_longest_s": 0.04050000000000003,
+          "at_peak_longest_s": 0.005000000000000001,
+          "over_rated_total_s": 0.05150000000000004,
+          "torque_squared_integral_Nm2_s": 175.29911150432562,
+          "torque_rms_Nm": 3.1207113817231242
+        },
+        "motor_betaL": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 188.23267199416685,
+          "over_rated_longest_s": 0.04100000000000003,
+          "at_peak_longest_s": 0.0045000000000000005,
+          "over_rated_total_s": 0.05200000000000004,
+          "torque_squared_integral_Nm2_s": 174.37490108124345,
+          "torque_rms_Nm": 3.112474016680572
+        },
+        "motor_alphaR": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 191.0305285508785,
+          "over_rated_longest_s": 0.04050000000000003,
+          "at_peak_longest_s": 0.005000000000000001,
+          "over_rated_total_s": 0.05150000000000004,
+          "torque_squared_integral_Nm2_s": 175.29911150384908,
+          "torque_rms_Nm": 3.1207113817188823
+        },
+        "motor_betaR": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 188.23267198075746,
+          "over_rated_longest_s": 0.04100000000000003,
+          "at_peak_longest_s": 0.0045000000000000005,
+          "over_rated_total_s": 0.05200000000000004,
+          "torque_squared_integral_Nm2_s": 174.3749010706482,
+          "torque_rms_Nm": 3.1124740165860136
+        },
+        "motor_wheelL": {
+          "peak_torque_Nm": 4.5,
+          "peak_rpm": 669.3951867416972,
+          "over_rated_longest_s": 0.01500000000000001,
+          "at_peak_longest_s": 0.012500000000000008,
+          "over_rated_total_s": 0.019000000000000013,
+          "torque_squared_integral_Nm2_s": 0.8672755581247081,
+          "torque_rms_Nm": 0.2195039303779401
+        },
+        "motor_wheelR": {
+          "peak_torque_Nm": 4.5,
+          "peak_rpm": 669.3951867417733,
+          "over_rated_longest_s": 0.01500000000000001,
+          "at_peak_longest_s": 0.012500000000000008,
+          "over_rated_total_s": 0.019000000000000013,
+          "torque_squared_integral_Nm2_s": 0.867275558129876,
+          "torque_rms_Nm": 0.2195039303785941
+        }
+      },
+      "rails": {
+        "hip_bus": {
+          "mechanical_positive_peak_W": 2844.9887247383035,
+          "mechanical_absorbed_peak_W": 1869.2836653767329,
+          "mechanical_positive_J": 86.57023845467425,
+          "mechanical_absorbed_J": 78.17331123931451
+        },
+        "wheel_24V": {
+          "mechanical_positive_peak_W": 456.6379656582727,
+          "mechanical_absorbed_peak_W": 200.67161377231548,
+          "mechanical_positive_J": 93.51888872662936,
+          "mechanical_absorbed_J": 4.28111385102194
+        }
+      },
+      "mechanical_positive_peak_W": 2876.800975184488,
+      "mechanical_absorbed_peak_W": 1869.2836653767329,
+      "mechanical_positive_J": 180.0891271813072,
+      "mechanical_absorbed_J": 82.45442509033631,
+      "lossless_battery_current_equivalent_A": 68.49526131391637,
+      "peak_window_pass": true
+    },
+    {
+      "mode": "stop",
+      "action_pass": true,
+      "duration_s": 7.999999999998286,
+      "motors": {
+        "motor_alphaL": {
+          "peak_torque_Nm": 12.013689912474248,
+          "peak_rpm": 49.166702503138744,
+          "over_rated_longest_s": 0.0,
+          "at_peak_longest_s": 0.0,
+          "over_rated_total_s": 0.0,
+          "torque_squared_integral_Nm2_s": 40.9205483043261,
+          "torque_rms_Nm": 2.2616517278400443
+        },
+        "motor_betaL": {
+          "peak_torque_Nm": 12.014245623486454,
+          "peak_rpm": 49.407566341921445,
+          "over_rated_longest_s": 0.0,
+          "at_peak_longest_s": 0.0,
+          "over_rated_total_s": 0.0,
+          "torque_squared_integral_Nm2_s": 40.59242425359307,
+          "torque_rms_Nm": 2.2525658773275024
+        },
+        "motor_alphaR": {
+          "peak_torque_Nm": 12.013689912120038,
+          "peak_rpm": 49.1667025008383,
+          "over_rated_longest_s": 0.0,
+          "at_peak_longest_s": 0.0,
+          "over_rated_total_s": 0.0,
+          "torque_squared_integral_Nm2_s": 40.920548304832316,
+          "torque_rms_Nm": 2.2616517278540336
+        },
+        "motor_betaR": {
+          "peak_torque_Nm": 12.014245623486454,
+          "peak_rpm": 49.40756634172227,
+          "over_rated_longest_s": 0.0,
+          "at_peak_longest_s": 0.0,
+          "over_rated_total_s": 0.0,
+          "torque_squared_integral_Nm2_s": 40.59242425395443,
+          "torque_rms_Nm": 2.2525658773375286
+        },
+        "motor_wheelL": {
+          "peak_torque_Nm": 4.5,
+          "peak_rpm": 681.5645315984488,
+          "over_rated_longest_s": 0.017500000000000012,
+          "at_peak_longest_s": 0.013500000000000009,
+          "over_rated_total_s": 0.035000000000000024,
+          "torque_squared_integral_Nm2_s": 1.1705965203134863,
+          "torque_rms_Nm": 0.3825239404785237
+        },
+        "motor_wheelR": {
+          "peak_torque_Nm": 4.5,
+          "peak_rpm": 681.5645315985889,
+          "over_rated_longest_s": 0.017500000000000012,
+          "at_peak_longest_s": 0.013500000000000009,
+          "over_rated_total_s": 0.035000000000000024,
+          "torque_squared_integral_Nm2_s": 1.1705965203124602,
+          "torque_rms_Nm": 0.3825239404783561
+        }
+      },
+      "rails": {
+        "hip_bus": {
+          "mechanical_positive_peak_W": 46.64135270939983,
+          "mechanical_absorbed_peak_W": 24.243634173407216,
+          "mechanical_positive_J": 8.10888270669357,
+          "mechanical_absorbed_J": 8.207231533374607
+        },
+        "wheel_24V": {
+          "mechanical_positive_peak_W": 456.7297836849631,
+          "mechanical_absorbed_peak_W": 198.2223202541756,
+          "mechanical_positive_J": 35.142217491145274,
+          "mechanical_absorbed_J": 12.812407022613616
+        }
+      },
+      "mechanical_positive_peak_W": 495.19869531189966,
+      "mechanical_absorbed_peak_W": 210.27137815126508,
+      "mechanical_positive_J": 43.251100197838575,
+      "mechanical_absorbed_J": 21.019638555988145,
+      "lossless_battery_current_equivalent_A": 11.790445126473802,
+      "peak_window_pass": true
+    },
+    {
+      "mode": "landing_1_0.0",
+      "action_pass": true,
+      "duration_s": 16.00000000000806,
+      "motors": {
+        "motor_alphaL": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 190.7997263743546,
+          "over_rated_longest_s": 0.04200000000000003,
+          "at_peak_longest_s": 0.0025,
+          "over_rated_total_s": 0.05050000000000004,
+          "torque_squared_integral_Nm2_s": 160.27757442803548,
+          "torque_rms_Nm": 3.1650194946867503
+        },
+        "motor_betaL": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 235.69983336101924,
+          "over_rated_longest_s": 0.04100000000000003,
+          "at_peak_longest_s": 0.007500000000000003,
+          "over_rated_total_s": 0.05350000000000004,
+          "torque_squared_integral_Nm2_s": 165.84264128118943,
+          "torque_rms_Nm": 3.219497644053978
+        },
+        "motor_alphaR": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 190.79972637931348,
+          "over_rated_longest_s": 0.04200000000000003,
+          "at_peak_longest_s": 0.0025,
+          "over_rated_total_s": 0.05050000000000004,
+          "torque_squared_integral_Nm2_s": 160.27757443155787,
+          "torque_rms_Nm": 3.1650194947215287
+        },
+        "motor_betaR": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 235.6998333632681,
+          "over_rated_longest_s": 0.04100000000000003,
+          "at_peak_longest_s": 0.007500000000000003,
+          "over_rated_total_s": 0.05350000000000004,
+          "torque_squared_integral_Nm2_s": 165.84264128282422,
+          "torque_rms_Nm": 3.2194976440698464
+        },
+        "motor_wheelL": {
+          "peak_torque_Nm": 4.5,
+          "peak_rpm": 683.131941622368,
+          "over_rated_longest_s": 0.01600000000000001,
+          "at_peak_longest_s": 0.013000000000000008,
+          "over_rated_total_s": 0.07000000000000005,
+          "torque_squared_integral_Nm2_s": 1.605209425043704,
+          "torque_rms_Nm": 0.31674214917686744
+        },
+        "motor_wheelR": {
+          "peak_torque_Nm": 4.5,
+          "peak_rpm": 683.1319416224185,
+          "over_rated_longest_s": 0.01600000000000001,
+          "at_peak_longest_s": 0.013000000000000008,
+          "over_rated_total_s": 0.07000000000000005,
+          "torque_squared_integral_Nm2_s": 1.6052094250350388,
+          "torque_rms_Nm": 0.31674214917601257
+        }
+      },
+      "rails": {
+        "hip_bus": {
+          "mechanical_positive_peak_W": 2830.9622872725367,
+          "mechanical_absorbed_peak_W": 1910.6000629309124,
+          "mechanical_positive_J": 87.86420679892318,
+          "mechanical_absorbed_J": 76.70592702530523
+        },
+        "wheel_24V": {
+          "mechanical_positive_peak_W": 457.15270552975676,
+          "mechanical_absorbed_peak_W": 331.68175738702644,
+          "mechanical_positive_J": 46.565428209702205,
+          "mechanical_absorbed_J": 12.627732554017964
+        }
+      },
+      "mechanical_positive_peak_W": 2836.7834592143136,
+      "mechanical_absorbed_peak_W": 1910.6000629309124,
+      "mechanical_positive_J": 134.42963500862345,
+      "mechanical_absorbed_J": 89.33365957932406,
+      "lossless_battery_current_equivalent_A": 67.54246331462652,
+      "peak_window_pass": true
+    },
+    {
+      "mode": "landing_1_0.25",
+      "action_pass": true,
+      "duration_s": 16.00000000000806,
+      "motors": {
+        "motor_alphaL": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 190.7997263743546,
+          "over_rated_longest_s": 0.04200000000000003,
+          "at_peak_longest_s": 0.0045000000000000005,
+          "over_rated_total_s": 0.05250000000000004,
+          "torque_squared_integral_Nm2_s": 166.64963938435585,
+          "torque_rms_Nm": 3.227321251675605
+        },
+        "motor_betaL": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 192.1121906821875,
+          "over_rated_longest_s": 0.04100000000000003,
+          "at_peak_longest_s": 0.005000000000000001,
+          "over_rated_total_s": 0.05200000000000004,
+          "torque_squared_integral_Nm2_s": 166.86598993454626,
+          "torque_rms_Nm": 3.2294154844033134
+        },
+        "motor_alphaR": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 190.79972637931348,
+          "over_rated_longest_s": 0.04200000000000003,
+          "at_peak_longest_s": 0.0045000000000000005,
+          "over_rated_total_s": 0.05250000000000004,
+          "torque_squared_integral_Nm2_s": 166.64963938794764,
+          "torque_rms_Nm": 3.227321251710384
+        },
+        "motor_betaR": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 192.11219068332989,
+          "over_rated_longest_s": 0.04100000000000003,
+          "at_peak_longest_s": 0.005000000000000001,
+          "over_rated_total_s": 0.05200000000000004,
+          "torque_squared_integral_Nm2_s": 166.86598993551814,
+          "torque_rms_Nm": 3.229415484412718
+        },
+        "motor_wheelL": {
+          "peak_torque_Nm": 4.5,
+          "peak_rpm": 683.131941622368,
+          "over_rated_longest_s": 0.01550000000000001,
+          "at_peak_longest_s": 0.013000000000000008,
+          "over_rated_total_s": 0.03900000000000003,
+          "torque_squared_integral_Nm2_s": 1.1548667818442089,
+          "torque_rms_Nm": 0.26866182063186184
+        },
+        "motor_wheelR": {
+          "peak_torque_Nm": 4.5,
+          "peak_rpm": 683.1319416224185,
+          "over_rated_longest_s": 0.01550000000000001,
+          "at_peak_longest_s": 0.013000000000000008,
+          "over_rated_total_s": 0.03900000000000003,
+          "torque_squared_integral_Nm2_s": 1.154866781841061,
+          "torque_rms_Nm": 0.2686618206314957
+        }
+      },
+      "rails": {
+        "hip_bus": {
+          "mechanical_positive_peak_W": 2830.9622872725367,
+          "mechanical_absorbed_peak_W": 1910.6000629309124,
+          "mechanical_positive_J": 90.50686881805672,
+          "mechanical_absorbed_J": 81.23655241768769
+        },
+        "wheel_24V": {
+          "mechanical_positive_peak_W": 453.580431711655,
+          "mechanical_absorbed_peak_W": 256.0493363985756,
+          "mechanical_positive_J": 45.3401305370456,
+          "mechanical_absorbed_J": 11.636227400885677
+        }
+      },
+      "mechanical_positive_peak_W": 2836.7834592143136,
+      "mechanical_absorbed_peak_W": 1910.6000629309124,
+      "mechanical_positive_J": 135.84699935510184,
+      "mechanical_absorbed_J": 92.87277981857365,
+      "lossless_battery_current_equivalent_A": 67.54246331462652,
+      "peak_window_pass": true
+    },
+    {
+      "mode": "landing_1_0.5",
+      "action_pass": true,
+      "duration_s": 16.00000000000806,
+      "motors": {
+        "motor_alphaL": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 190.7997263743546,
+          "over_rated_longest_s": 0.04200000000000003,
+          "at_peak_longest_s": 0.0045000000000000005,
+          "over_rated_total_s": 0.05250000000000004,
+          "torque_squared_integral_Nm2_s": 166.44081182564966,
+          "torque_rms_Nm": 3.225298550382253
+        },
+        "motor_betaL": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 192.1121906821875,
+          "over_rated_longest_s": 0.04100000000000003,
+          "at_peak_longest_s": 0.005000000000000001,
+          "over_rated_total_s": 0.05200000000000004,
+          "torque_squared_integral_Nm2_s": 166.73775973652582,
+          "torque_rms_Nm": 3.228174404137362
+        },
+        "motor_alphaR": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 190.79972637931348,
+          "over_rated_longest_s": 0.04200000000000003,
+          "at_peak_longest_s": 0.0045000000000000005,
+          "over_rated_total_s": 0.05250000000000004,
+          "torque_squared_integral_Nm2_s": 166.44081183082164,
+          "torque_rms_Nm": 3.2252985504323646
+        },
+        "motor_betaR": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 192.11219068332989,
+          "over_rated_longest_s": 0.04100000000000003,
+          "at_peak_longest_s": 0.005000000000000001,
+          "over_rated_total_s": 0.05200000000000004,
+          "torque_squared_integral_Nm2_s": 166.73775973927408,
+          "torque_rms_Nm": 3.2281744041639664
+        },
+        "motor_wheelL": {
+          "peak_torque_Nm": 4.5,
+          "peak_rpm": 687.4818845200648,
+          "over_rated_longest_s": 0.01550000000000001,
+          "at_peak_longest_s": 0.013000000000000008,
+          "over_rated_total_s": 0.03900000000000003,
+          "torque_squared_integral_Nm2_s": 1.2193183775837648,
+          "torque_rms_Nm": 0.2760568756596128
+        },
+        "motor_wheelR": {
+          "peak_torque_Nm": 4.5,
+          "peak_rpm": 687.4818845205884,
+          "over_rated_longest_s": 0.01550000000000001,
+          "at_peak_longest_s": 0.013000000000000008,
+          "over_rated_total_s": 0.03900000000000003,
+          "torque_squared_integral_Nm2_s": 1.21931837757999,
+          "torque_rms_Nm": 0.27605687565918546
+        }
+      },
+      "rails": {
+        "hip_bus": {
+          "mechanical_positive_peak_W": 2830.9622872725367,
+          "mechanical_absorbed_peak_W": 1910.6000629309124,
+          "mechanical_positive_J": 91.44688252067535,
+          "mechanical_absorbed_J": 82.1948046782358
+        },
+        "wheel_24V": {
+          "mechanical_positive_peak_W": 458.68823534868636,
+          "mechanical_absorbed_peak_W": 256.0493363985756,
+          "mechanical_positive_J": 49.35024732388972,
+          "mechanical_absorbed_J": 12.569482765744038
+        }
+      },
+      "mechanical_positive_peak_W": 2836.7834592143136,
+      "mechanical_absorbed_peak_W": 1910.6000629309124,
+      "mechanical_positive_J": 140.79712984456665,
+      "mechanical_absorbed_J": 94.76428744397923,
+      "lossless_battery_current_equivalent_A": 67.54246331462652,
+      "peak_window_pass": true
+    },
+    {
+      "mode": "landing_-1_0.0",
+      "action_pass": true,
+      "duration_s": 16.00000000000806,
+      "motors": {
+        "motor_alphaL": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 238.35304333191917,
+          "over_rated_longest_s": 0.04050000000000003,
+          "at_peak_longest_s": 0.007500000000000003,
+          "over_rated_total_s": 0.05350000000000004,
+          "torque_squared_integral_Nm2_s": 165.2714759850829,
+          "torque_rms_Nm": 3.213948856012254
+        },
+        "motor_betaL": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 188.23267199416685,
+          "over_rated_longest_s": 0.04100000000000003,
+          "at_peak_longest_s": 0.0025,
+          "over_rated_total_s": 0.04950000000000004,
+          "torque_squared_integral_Nm2_s": 159.3549310490321,
+          "torque_rms_Nm": 3.1558965747564494
+        },
+        "motor_alphaR": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 238.3530433311682,
+          "over_rated_longest_s": 0.04050000000000003,
+          "at_peak_longest_s": 0.007500000000000003,
+          "over_rated_total_s": 0.05350000000000004,
+          "torque_squared_integral_Nm2_s": 165.27147598834213,
+          "torque_rms_Nm": 3.2139488560439444
+        },
+        "motor_betaR": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 188.23267198075746,
+          "over_rated_longest_s": 0.04100000000000003,
+          "at_peak_longest_s": 0.0025,
+          "over_rated_total_s": 0.04950000000000004,
+          "torque_squared_integral_Nm2_s": 159.35493104020603,
+          "torque_rms_Nm": 3.1558965746690526
+        },
+        "motor_wheelL": {
+          "peak_torque_Nm": 4.5,
+          "peak_rpm": 669.3951867416972,
+          "over_rated_longest_s": 0.022500000000000017,
+          "at_peak_longest_s": 0.01550000000000001,
+          "over_rated_total_s": 0.07950000000000006,
+          "torque_squared_integral_Nm2_s": 1.8966974504074299,
+          "torque_rms_Nm": 0.34430159838491114
+        },
+        "motor_wheelR": {
+          "peak_torque_Nm": 4.5,
+          "peak_rpm": 669.3951867417733,
+          "over_rated_longest_s": 0.022500000000000017,
+          "at_peak_longest_s": 0.01550000000000001,
+          "over_rated_total_s": 0.07950000000000006,
+          "torque_squared_integral_Nm2_s": 1.8966974504174101,
+          "torque_rms_Nm": 0.344301598385817
+        }
+      },
+      "rails": {
+        "hip_bus": {
+          "mechanical_positive_peak_W": 2844.9887247383035,
+          "mechanical_absorbed_peak_W": 1869.2836653767329,
+          "mechanical_positive_J": 87.05773790635752,
+          "mechanical_absorbed_J": 75.81511309478552
+        },
+        "wheel_24V": {
+          "mechanical_positive_peak_W": 460.0036363495052,
+          "mechanical_absorbed_peak_W": 301.6164172353157,
+          "mechanical_positive_J": 59.765625126654264,
+          "mechanical_absorbed_J": 9.802020150611037
+        }
+      },
+      "mechanical_positive_peak_W": 2876.800975184488,
+      "mechanical_absorbed_peak_W": 1869.2836653767329,
+      "mechanical_positive_J": 146.82336303301435,
+      "mechanical_absorbed_J": 85.61713324539707,
+      "lossless_battery_current_equivalent_A": 68.49526131391637,
+      "peak_window_pass": true
+    },
+    {
+      "mode": "landing_-1_0.25",
+      "action_pass": true,
+      "duration_s": 16.00000000000806,
+      "motors": {
+        "motor_alphaL": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 191.03052855524083,
+          "over_rated_longest_s": 0.04050000000000003,
+          "at_peak_longest_s": 0.005000000000000001,
+          "over_rated_total_s": 0.05150000000000004,
+          "torque_squared_integral_Nm2_s": 165.99554413234887,
+          "torque_rms_Nm": 3.220981451090114
+        },
+        "motor_betaL": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 188.23267199416685,
+          "over_rated_longest_s": 0.04100000000000003,
+          "at_peak_longest_s": 0.0045000000000000005,
+          "over_rated_total_s": 0.05200000000000004,
+          "torque_squared_integral_Nm2_s": 165.8037407255643,
+          "torque_rms_Nm": 3.2191200343172275
+        },
+        "motor_alphaR": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 191.0305285508785,
+          "over_rated_longest_s": 0.04050000000000003,
+          "at_peak_longest_s": 0.005000000000000001,
+          "over_rated_total_s": 0.05150000000000004,
+          "torque_squared_integral_Nm2_s": 165.99554413198973,
+          "torque_rms_Nm": 3.2209814510866295
+        },
+        "motor_betaR": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 188.23267198075746,
+          "over_rated_longest_s": 0.04100000000000003,
+          "at_peak_longest_s": 0.0045000000000000005,
+          "over_rated_total_s": 0.05200000000000004,
+          "torque_squared_integral_Nm2_s": 165.80374071510658,
+          "torque_rms_Nm": 3.219120034215708
+        },
+        "motor_wheelL": {
+          "peak_torque_Nm": 4.5,
+          "peak_rpm": 679.3344548808532,
+          "over_rated_longest_s": 0.01500000000000001,
+          "at_peak_longest_s": 0.012500000000000008,
+          "over_rated_total_s": 0.03200000000000002,
+          "torque_squared_integral_Nm2_s": 1.138916287879317,
+          "torque_rms_Nm": 0.2668000524595553
+        },
+        "motor_wheelR": {
+          "peak_torque_Nm": 4.5,
+          "peak_rpm": 679.3344548810612,
+          "over_rated_longest_s": 0.01500000000000001,
+          "at_peak_longest_s": 0.012500000000000008,
+          "over_rated_total_s": 0.03200000000000002,
+          "torque_squared_integral_Nm2_s": 1.1389162878837649,
+          "torque_rms_Nm": 0.26680005246007626
+        }
+      },
+      "rails": {
+        "hip_bus": {
+          "mechanical_positive_peak_W": 2844.9887247383035,
+          "mechanical_absorbed_peak_W": 1869.2836653767329,
+          "mechanical_positive_J": 89.2571326772624,
+          "mechanical_absorbed_J": 80.56255147056008
+        },
+        "wheel_24V": {
+          "mechanical_positive_peak_W": 460.3810412957356,
+          "mechanical_absorbed_peak_W": 200.67161377231548,
+          "mechanical_positive_J": 53.51240778322421,
+          "mechanical_absorbed_J": 11.693573247497723
+        }
+      },
+      "mechanical_positive_peak_W": 2876.800975184488,
+      "mechanical_absorbed_peak_W": 1869.2836653767329,
+      "mechanical_positive_J": 142.76954046048508,
+      "mechanical_absorbed_J": 92.25612471805837,
+      "lossless_battery_current_equivalent_A": 68.49526131391637,
+      "peak_window_pass": true
+    },
+    {
+      "mode": "landing_-1_0.5",
+      "action_pass": true,
+      "duration_s": 16.00000000000806,
+      "motors": {
+        "motor_alphaL": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 191.03052855524083,
+          "over_rated_longest_s": 0.04050000000000003,
+          "at_peak_longest_s": 0.005000000000000001,
+          "over_rated_total_s": 0.05150000000000004,
+          "torque_squared_integral_Nm2_s": 166.1251125746155,
+          "torque_rms_Nm": 3.222238280436169
+        },
+        "motor_betaL": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 188.23267199416685,
+          "over_rated_longest_s": 0.04100000000000003,
+          "at_peak_longest_s": 0.0045000000000000005,
+          "over_rated_total_s": 0.05200000000000004,
+          "torque_squared_integral_Nm2_s": 165.628815618607,
+          "torque_rms_Nm": 3.2174214794082734
+        },
+        "motor_alphaR": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 191.0305285508785,
+          "over_rated_longest_s": 0.04050000000000003,
+          "at_peak_longest_s": 0.005000000000000001,
+          "over_rated_total_s": 0.05150000000000004,
+          "torque_squared_integral_Nm2_s": 166.12511257450896,
+          "torque_rms_Nm": 3.2222382804351355
+        },
+        "motor_betaR": {
+          "peak_torque_Nm": 40.0,
+          "peak_rpm": 188.23267198075746,
+          "over_rated_longest_s": 0.04100000000000003,
+          "at_peak_longest_s": 0.0045000000000000005,
+          "over_rated_total_s": 0.05200000000000004,
+          "torque_squared_integral_Nm2_s": 165.6288156083118,
+          "torque_rms_Nm": 3.2174214793082787
+        },
+        "motor_wheelL": {
+          "peak_torque_Nm": 4.5,
+          "peak_rpm": 689.3274207382067,
+          "over_rated_longest_s": 0.01500000000000001,
+          "at_peak_longest_s": 0.012500000000000008,
+          "over_rated_total_s": 0.03250000000000002,
+          "torque_squared_integral_Nm2_s": 1.2039697828078233,
+          "torque_rms_Nm": 0.27431389214812113
+        },
+        "motor_wheelR": {
+          "peak_torque_Nm": 4.5,
+          "peak_rpm": 689.3274207380421,
+          "over_rated_longest_s": 0.01500000000000001,
+          "at_peak_longest_s": 0.012500000000000008,
+          "over_rated_total_s": 0.03250000000000002,
+          "torque_squared_integral_Nm2_s": 1.2039697828144436,
+          "torque_rms_Nm": 0.27431389214887536
+        }
+      },
+      "rails": {
+        "hip_bus": {
+          "mechanical_positive_peak_W": 2844.9887247383035,
+          "mechanical_absorbed_peak_W": 1869.2836653767329,
+          "mechanical_positive_J": 89.93608507819704,
+          "mechanical_absorbed_J": 81.79670510765837
+        },
+        "wheel_24V": {
+          "mechanical_positive_peak_W": 458.3264691131143,
+          "mechanical_absorbed_peak_W": 200.67161377231548,
+          "mechanical_positive_J": 57.4486327329315,
+          "mechanical_absorbed_J": 12.10198634291817
+        }
+      },
+      "mechanical_positive_peak_W": 2876.800975184488,
+      "mechanical_absorbed_peak_W": 1869.2836653767329,
+      "mechanical_positive_J": 147.38471781113097,
+      "mechanical_absorbed_J": 93.89869145057631,
+      "lossless_battery_current_equivalent_A": 68.49526131391637,
+      "peak_window_pass": true
+    }
+  ],
+  "hardware_dynamic_acceptance": false,
+  "idealized_power_model": true,
+  "note": "Ideal constant-bus, lossless, thermally unlimited and regen-absorbing simulation. Geometry, mass, inertia and nominal torque/speed boundaries are retained; current, temperature, voltage sag and regenerative hardware are intentionally omitted.",
+  "source_sha256": {
+    "tools/hardware_profile.py": "221d35a3c97d8a5aaefdba48cc0990a82fb409fef95020781bb9b76e45ab8202",
+    "tools/wheelleg_sim.py": "0241780908ad5537de10b3a4a321ba26eaa7cd29bc0dbd423880fa0affe63414",
+    "tools/rm_controller.py": "9496148077be47a89127eac7e4c76554b215c0727ae3e76a5d54e456ee1eb9ca",
+    "tools/model_lqr.py": "429dfa9d89b18b7ab9c045c5b148ee064fc7a678a31d92abc9680833ea35b2cf",
+    "tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+    "tools/test_dm8009_dynamics.py": "c6e22f8ddcee9edb8cc117a6841a8f7ee590d05061e6aa9fd5c47553f8396175",
+    "tools/test_jump_stop.py": "15d61635e2091af07cbe34154c5297559972b26bdf90cae4b913b138ef9723a8",
+    "xml/wheelleg_dm8009.xml": "be441e6cfcde6079391f32d9e3a8b9ca2daacab4ed9172e4825b13a26b764c64"
+  }
+}

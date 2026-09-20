@@ -1,0 +1,49 @@
+{
+  "versions": {
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "mujoco": "3.12.0",
+    "gymnasium": "1.3.0",
+    "stable-baselines3": "2.9.0",
+    "torch": "2.14.0+cpu"
+  },
+  "python": "3.10.12",
+  "cpu_count": 24,
+  "first_reset_s": 0.28412538400004905,
+  "cached_reset_median_s": 0.025001636000069993,
+  "single_nominal_rollout_steps_per_s": 44.6614096718764,
+  "torch_cuda_available": false,
+  "nvidia_smi_returncode": 9,
+  "nvidia_smi": "NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running.\n\n",
+  "runs": [
+    {
+      "environments": 1,
+      "policy_steps": 256,
+      "nominal_physical_steps": 10240,
+      "total_s": 7.3717358229999945,
+      "update_s": 0.009789770999987013,
+      "rollout_and_overhead_s": 7.3619460520000075,
+      "aggregate_steps_per_s": 34.72723469027115
+    },
+    {
+      "environments": 4,
+      "policy_steps": 1024,
+      "nominal_physical_steps": 40960,
+      "total_s": 7.941035254999974,
+      "update_s": 0.033550643000012315,
+      "rollout_and_overhead_s": 7.907484611999962,
+      "aggregate_steps_per_s": 128.95044123563753
+    },
+    {
+      "environments": 8,
+      "policy_steps": 2048,
+      "nominal_physical_steps": 81920,
+      "total_s": 9.655956058000015,
+      "update_s": 0.06653998599995248,
+      "rollout_and_overhead_s": 9.589416072000063,
+      "aggregate_steps_per_s": 212.09707124787712
+    }
+  ],
+  "save_reload_and_frozen_normalization_pass": true,
+  "note": "CPU smoke updates only; no convergence claim. GPU not benchmarked without working driver."
+}

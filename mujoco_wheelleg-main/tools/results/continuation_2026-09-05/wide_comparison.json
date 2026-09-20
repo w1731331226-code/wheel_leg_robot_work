@@ -1,0 +1,208 @@
+[
+  {
+    "name": "wide_legacy_stand",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--test",
+      "stand",
+      "--hardware",
+      "--track-width",
+      "0.18"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "wide_legacy_stop",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--test",
+      "stop",
+      "--hardware",
+      "--track-width",
+      "0.18"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "wide_legacy_jump",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--test",
+      "jump",
+      "--hardware",
+      "--track-width",
+      "0.18"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "wide_legacy_jumpfwd",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--test",
+      "jumpfwd",
+      "--hardware",
+      "--track-width",
+      "0.18"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "wide_legacy_jumpback",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--test",
+      "jumpback",
+      "--hardware",
+      "--track-width",
+      "0.18"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "wide_legacy_stress_clean",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/test_jump_stress.py",
+      "--no-disturbance",
+      "--hardware",
+      "--track-width",
+      "0.18"
+    ],
+    "returncode": 1
+  },
+  {
+    "name": "wide_legacy_stress_push",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/test_jump_stress.py",
+      "--hardware",
+      "--track-width",
+      "0.18"
+    ],
+    "returncode": 1
+  },
+  {
+    "name": "wide_legacy_jump_stop",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/test_jump_stop.py",
+      "--hardware",
+      "--track-width",
+      "0.18"
+    ],
+    "returncode": 1
+  },
+  {
+    "name": "wide_six_stand",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--test",
+      "stand",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "wide_six_stop",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--test",
+      "stop",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "wide_six_jump",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--test",
+      "jump",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "wide_six_jumpfwd",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--test",
+      "jumpfwd",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "wide_six_jumpback",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--test",
+      "jumpback",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "wide_six_stress_clean",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/test_jump_stress.py",
+      "--no-disturbance",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state"
+    ],
+    "returncode": 1
+  },
+  {
+    "name": "wide_six_stress_push",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/test_jump_stress.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state"
+    ],
+    "returncode": 1
+  },
+  {
+    "name": "wide_six_jump_stop",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/test_jump_stop.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state"
+    ],
+    "returncode": 1
+  }
+]

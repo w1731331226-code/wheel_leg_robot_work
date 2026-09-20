@@ -1,0 +1,439 @@
+{
+  "protocol": "preppo-v2-ramp",
+  "split": "development_extension_only",
+  "generator_split": "validation",
+  "stage": 3,
+  "seeds": [
+    1000,
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    1006,
+    1007,
+    1008,
+    1009,
+    1010,
+    1011,
+    1012,
+    1013,
+    1014,
+    1015,
+    1016,
+    1017,
+    1018,
+    1019,
+    1020,
+    1021,
+    1022,
+    1023
+  ],
+  "test_set_evaluated": false,
+  "source_sha256": {
+    "tools/hardware_profile.py": "844688aae7e408bb2ca11d00b192ffaa9e4ad5de06cc8a815d3cf3ddfbe02eba",
+    "tools/model_lqr.py": "98947f8440eccb728fd7c0c8eb41c7679322d383f093c4b432aeb78954e92d98",
+    "tools/ppo_env.py": "9e001c11da492f36124fc7d0c8407c0c45d341748390f276071b59752e99f1e2",
+    "tools/prepare_ppo.py": "21639c8f650ef66138734796764687a42bff638004bcf79716d829ec4a70f522",
+    "tools/rm_controller.py": "d58a6157ebc2b8ab2343a0394e3ba4f64b66444bf5063f2fd3fc8886faa08b0a",
+    "tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+    "tools/test_dm8009_closed_loop.py": "ba9a99d3b9f54dc285e4cfa2accedcb49e880821cbbc65b2c83bf57aae0e3963",
+    "tools/test_dm8009_dynamics.py": "ffcdca8dc2df02ab646eecaa682141caf488a568a8ff213d96541cfc0f0e76a9",
+    "tools/test_dm8009_model.py": "7adae2386ec5aee286cdb95bee167350e6f13cc81a5fb22275cf50578104aa7e",
+    "tools/test_high_leg_jump.py": "337329d29184f9207648d287eb8656957e515c902c433162490f1ab06b8781d0",
+    "tools/test_jump_height.py": "397aa12a80de13bbfb8b87f629354c5b30f127b5628a639736d7c6dd554e3a25",
+    "tools/test_jump_stop.py": "15d61635e2091af07cbe34154c5297559972b26bdf90cae4b913b138ef9723a8",
+    "tools/test_jump_stress.py": "00f604bf17b1393668f0acad65b60c1c1a918f0a2f88fda2a10e7bbcb109ef30",
+    "tools/test_preppo.py": "4307fddce138960c185c4fa290611f6cb9194552c9cb4f82f4f01302ef5ebfca",
+    "tools/test_robustness.py": "6a75fd326e9c1b1efd5d13a531a62fcde4ea2ed3ae97c3369e65fcf814d9c563",
+    "tools/wheelleg_sim.py": "c2dfaae4dc562119fd7916684849ec22fcac3d75dbcfec6a2a0f9452d8f6ee0f",
+    "xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f",
+    "requirements.txt": "14df0888d2d55ff4ab14f9183560e71c6e786804fb6a575f7c85bd824b5f6f71"
+  },
+  "cases": [
+    {
+      "name": "development_1000",
+      "scenario": {
+        "speed": 0.5131111250614243,
+        "mass": 7.013178156210653,
+        "height_l": 0.010940277484690557,
+        "height_r": 0.009445719526677282,
+        "center": 1.9213646879869133,
+        "offset": -0.09912392345786346,
+        "mu_l": 0.7036113276091932,
+        "mu_r": 0.8219043263222069,
+        "drive_difference": -0.004698815371070603,
+        "delay_ms": 6.0,
+        "solver_iterations": 100
+      }
+    },
+    {
+      "name": "development_1001",
+      "scenario": {
+        "speed": -0.6934700382798024,
+        "mass": 7.056926288061673,
+        "height_l": 0.013065497880503776,
+        "height_r": 0.011821427996588516,
+        "center": 1.839124430544349,
+        "offset": -0.005214431078811879,
+        "mu_l": 0.813900278119807,
+        "mu_r": 0.6392318977796468,
+        "drive_difference": 0.009159441304859267,
+        "delay_ms": 2.0,
+        "solver_iterations": 100
+      }
+    },
+    {
+      "name": "development_1002",
+      "scenario": {
+        "speed": -0.9092559880709361,
+        "mass": 7.286667501295765,
+        "height_l": 0.0,
+        "height_r": 0.005249840460423039,
+        "center": 2.0466165875804916,
+        "offset": 0.01632954629570163,
+        "mu_l": 0.9185053880106074,
+        "mu_r": 0.9940318365947785,
+        "drive_difference": -0.017847934216867256,
+        "delay_ms": 6.5,
+        "solver_iterations": 100
+      }
+    },
+    {
+      "name": "development_1003",
+      "scenario": {
+        "speed": -0.8832872400751224,
+        "mass": 7.2259230988211485,
+        "height_l": 0.01066639353835502,
+        "height_r": 0.0,
+        "center": 1.9558250426384567,
+        "offset": -0.07766332639537438,
+        "mu_l": 0.6158536139180322,
+        "mu_r": 0.7097407446573618,
+        "drive_difference": 0.02903158709313436,
+        "delay_ms": 5.0,
+        "solver_iterations": 100
+      }
+    },
+    {
+      "name": "development_1004",
+      "scenario": {
+        "speed": -0.8900588174696468,
+        "mass": 7.1266249042314,
+        "height_l": 0.008009657380744627,
+        "height_r": 0.011778254084388604,
+        "center": 1.8841891186450739,
+        "offset": 0.013117491416499608,
+        "mu_l": 0.6597965437909946,
+        "mu_r": 0.6654743254669894,
+        "drive_difference": 0.020741953040572227,
+        "delay_ms": 0.0,
+        "solver_iterations": 100
+      }
+    },
+    {
+      "name": "development_1005",
+      "scenario": {
+        "speed": -0.9437890527324495,
+        "mass": 7.064054140750576,
+        "height_l": 0.011073114353489314,
+        "height_r": 0.009390807699641977,
+        "center": 1.802570227955826,
+        "offset": 0.06772031594423697,
+        "mu_l": 0.9583118887375563,
+        "mu_r": 0.931139058542231,
+        "drive_difference": -0.0221273675727786,
+        "delay_ms": 10.0,
+        "solver_iterations": 100
+      }
+    },
+    {
+      "name": "development_1006",
+      "scenario": {
+        "speed": -0.6778799381775331,
+        "mass": 7.180926025070253,
+        "height_l": 0.0,
+        "height_r": 0.016796114177596334,
+        "center": 1.9852648487209819,
+        "offset": 0.0040356014950617,
+        "mu_l": 0.7800319254240724,
+        "mu_r": 0.96614826863228,
+        "drive_difference": -0.022164880634131308,
+        "delay_ms": 0.5,
+        "solver_iterations": 100
+      }
+    },
+    {
+      "name": "development_1007",
+      "scenario": {
+        "speed": 0.704542687128165,
+        "mass": 7.0722638707864,
+        "height_l": 0.003306339821612083,
+        "height_r": 0.00974431472305246,
+        "center": 2.0818783178534357,
+        "offset": -0.07286906513115665,
+        "mu_l": 0.7665232068201779,
+        "mu_r": 0.6716033078722904,
+        "drive_difference": 0.02355636836808063,
+        "delay_ms": 0.0,
+        "solver_iterations": 100
+      }
+    },
+    {
+      "name": "development_1008",
+      "scenario": {
+        "speed": 0.7884738793325593,
+        "mass": 7.277540566748425,
+        "height_l": 0.0069164998304940255,
+        "height_r": 0.0,
+        "center": 1.6118527036633392,
+        "offset": -0.06948573589430784,
+        "mu_l": 0.6337062326730095,
+        "mu_r": 0.6541586831781767,
+        "drive_difference": 0.019963698256459196,
+        "delay_ms": 10.0,
+        "solver_iterations": 100
+      }
+    },
+    {
+      "name": "development_1009",
+      "scenario": {
+        "speed": -0.6991485490518641,
+        "mass": 7.330351779451275,
+        "height_l": 0.008338574043847462,
+        "height_r": 0.012605445922509896,
+        "center": 2.11759451421095,
+        "offset": 0.00884159456817428,
+        "mu_l": 0.9353563146448839,
+        "mu_r": 0.7392844953404378,
+        "drive_difference": -0.017742997367733944,
+        "delay_ms": 10.0,
+        "solver_iterations": 100
+      }
+    },
+    {
+      "name": "development_1010",
+      "scenario": {
+        "speed": -0.743618066143664,
+        "mass": 7.037830366464145,
+        "height_l": 0.0,
+        "height_r": 0.0049369413355816304,
+        "center": 1.9601654009408382,
+        "offset": -0.055147951524465194,
+        "mu_l": 0.8081082932220026,
+        "mu_r": 0.703525548492923,
+        "drive_difference": 0.026035397334028598,
+        "delay_ms": 7.0,
+        "solver_iterations": 100
+      }
+    },
+    {
+      "name": "development_1011",
+      "scenario": {
+        "speed": 0.8547620279843533,
+        "mass": 7.0588876658698,
+        "height_l": 0.0,
+        "height_r": 0.0025286811472423577,
+        "center": 1.6409151791509973,
+        "offset": 0.028956903755684577,
+        "mu_l": 0.6238950216306637,
+        "mu_r": 0.6916647388463213,
+        "drive_difference": 0.022248293568481195,
+        "delay_ms": 6.5,
+        "solver_iterations": 100
+      }
+    },
+    {
+      "name": "development_1012",
+      "scenario": {
+        "speed": 0.8122789887008528,
+        "mass": 7.259209021607596,
+        "height_l": 2.0610006178767293e-05,
+        "height_r": 0.0,
+        "center": 2.1352471251532643,
+        "offset": 0.08221693505950198,
+        "mu_l": 0.8169819136639854,
+        "mu_r": 0.8459258897092206,
+        "drive_difference": -0.028892861652525983,
+        "delay_ms": 10.0,
+        "solver_iterations": 100
+      }
+    },
+    {
+      "name": "development_1013",
+      "scenario": {
+        "speed": 0.6359653659378095,
+        "mass": 7.177597094732733,
+        "height_l": 0.012390348395765978,
+        "height_r": 0.014256435106367656,
+        "center": 1.9082838011478827,
+        "offset": -0.09883543016533858,
+        "mu_l": 0.8532586684604515,
+        "mu_r": 0.7781356847772554,
+        "drive_difference": 0.01689680954388432,
+        "delay_ms": 3.5,
+        "solver_iterations": 100
+      }
+    },
+    {
+      "name": "development_1014",
+      "scenario": {
+        "speed": -0.5688302540514238,
+        "mass": 7.390997853821739,
+        "height_l": 0.0025438483395769174,
+        "height_r": 0.008024204891266843,
+        "center": 1.6091617798677227,
+        "offset": -0.06559259070396135,
+        "mu_l": 0.6563924161367439,
+        "mu_r": 0.7290011717847958,
+        "drive_difference": 0.02926006374788928,
+        "delay_ms": 2.5,
+        "solver_iterations": 100
+      }
+    },
+    {
+      "name": "development_1015",
+      "scenario": {
+        "speed": 0.6477537824276389,
+        "mass": 7.128454232101104,
+        "height_l": 0.0,
+        "height_r": 0.015148097965514449,
+        "center": 1.784220084220427,
+        "offset": -0.05508876877010489,
+        "mu_l": 0.6035477227520872,
+        "mu_r": 0.612697049091686,
+        "drive_difference": 0.01855375355841246,
+        "delay_ms": 4.5,
+        "solver_iterations": 100
+      }
+    },
+    {
+      "name": "development_1016",
+      "scenario": {
+        "speed": 0.7371645066117353,
+        "mass": 7.384668604567184,
+        "height_l": 0.0,
+        "height_r": 0.0023013928960982466,
+        "center": 1.5884906539090486,
+        "offset": 0.034248255493539326,
+        "mu_l": 0.7828970779028711,
+        "mu_r": 0.8613389378274137,
+        "drive_difference": 0.01780181043317431,
+        "delay_ms": 4.0,
+        "solver_iterations": 100
+      }
+    },
+    {
+      "name": "development_1017",
+      "scenario": {
+        "speed": 0.6835788118968702,
+        "mass": 7.222131787778638,
+        "height_l": 0.0002711880428987379,
+        "height_r": 0.0,
+        "center": 1.7677790710866566,
+        "offset": 0.00038263488571430027,
+        "mu_l": 0.905535882487724,
+        "mu_r": 0.7698106928333275,
+        "drive_difference": -0.011852575617846146,
+        "delay_ms": 4.5,
+        "solver_iterations": 100
+      }
+    },
+    {
+      "name": "development_1018",
+      "scenario": {
+        "speed": 0.9871515607280138,
+        "mass": 7.210854006589964,
+        "height_l": 0.001517231127159573,
+        "height_r": 0.011615910080907732,
+        "center": 1.6965110278440751,
+        "offset": 0.06653318681089973,
+        "mu_l": 0.6967641605477093,
+        "mu_r": 0.7309722293218422,
+        "drive_difference": -0.0002292762523258482,
+        "delay_ms": 7.5,
+        "solver_iterations": 100
+      }
+    },
+    {
+      "name": "development_1019",
+      "scenario": {
+        "speed": 0.537630838846946,
+        "mass": 7.476956040590163,
+        "height_l": 0.0,
+        "height_r": 0.006585856367999368,
+        "center": 2.147160111018278,
+        "offset": -0.02481556263249418,
+        "mu_l": 0.8122155004274838,
+        "mu_r": 0.9824215867534191,
+        "drive_difference": -0.029913671652734945,
+        "delay_ms": 7.0,
+        "solver_iterations": 100
+      }
+    },
+    {
+      "name": "development_1020",
+      "scenario": {
+        "speed": -0.6022088605711993,
+        "mass": 7.450922270906413,
+        "height_l": 0.0,
+        "height_r": 0.0027410413149120093,
+        "center": 2.1279632656236833,
+        "offset": 0.006321990491964441,
+        "mu_l": 0.9752424886718383,
+        "mu_r": 0.8153425769098439,
+        "drive_difference": -0.015211192705943392,
+        "delay_ms": 8.0,
+        "solver_iterations": 100
+      }
+    },
+    {
+      "name": "development_1021",
+      "scenario": {
+        "speed": -0.8878403886522177,
+        "mass": 7.164666928640707,
+        "height_l": 0.0,
+        "height_r": 0.002636161793259619,
+        "center": 1.599600135338708,
+        "offset": -0.03983697793988272,
+        "mu_l": 0.6485510709804023,
+        "mu_r": 0.9937534937704852,
+        "drive_difference": 0.016218916521510952,
+        "delay_ms": 5.0,
+        "solver_iterations": 100
+      }
+    },
+    {
+      "name": "development_1022",
+      "scenario": {
+        "speed": 0.9458684729627915,
+        "mass": 7.148007292069515,
+        "height_l": 0.00788797324167629,
+        "height_r": 0.004151073635537037,
+        "center": 1.9356363147637494,
+        "offset": -0.061572537598183354,
+        "mu_l": 0.8548206231753555,
+        "mu_r": 0.6875628274715264,
+        "drive_difference": -0.02049383684106331,
+        "delay_ms": 1.0,
+        "solver_iterations": 100
+      }
+    },
+    {
+      "name": "development_1023",
+      "scenario": {
+        "speed": -0.607576437462835,
+        "mass": 7.3140953493009135,
+        "height_l": 0.0,
+        "height_r": 0.019888424205849586,
+        "center": 1.539670772783133,
+        "offset": 0.07279864218655105,
+        "mu_l": 0.9105710846635005,
+        "mu_r": 0.771449134555779,
+        "drive_difference": -0.0296278187481889,
+        "delay_ms": 0.0,
+        "solver_iterations": 100
+      }
+    }
+  ]
+}

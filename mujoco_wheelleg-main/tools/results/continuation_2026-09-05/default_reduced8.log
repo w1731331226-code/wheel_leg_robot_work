@@ -1,0 +1,30 @@
+L=0.0550 qacc=0.00e+00 pitch=0.000deg open=1.004819 closed=0.998896
+u_eq= [-4.99663675e-02  5.00153088e-02 -4.99663675e-02  5.00153088e-02
+ -1.82842671e-29 -1.82842671e-29]
+linearization error=0.000% wheel_dvx_dtau=0.001330
+reduction {"order": 8, "vmc_condition": 1.0870732225857873, "frequencies_hz": [0.2, 0.5, 1.0, 2.0, 5.0], "relative_frf_errors": [0.09704842777920573, 0.2119014689045693, 0.5147654158515637, 0.9277114797648284, 1.5612126196306104], "omitted_radius": 0.9950009821973109, "reduced_closed_radius": 0.9988981458038164, "full_closed_radius": 0.9989767943244944, "linear_pass": false}
+nonlinear impulse=-0.200Ns r/p/y=[0.006 0.16  4.26 ]deg peak_x=0.0511 final_x=-0.00012 final_v=0.00009 recovery=1.31s nonwheel=False
+nonlinear impulse=+0.200Ns r/p/y=[0.008 0.164 3.929]deg peak_x=0.0511 final_x=0.00012 final_v=-0.00008 recovery=1.32s nonwheel=False
+L=0.0900 qacc=0.00e+00 pitch=-0.000deg open=1.004533 closed=0.998701
+u_eq= [-1.19652429e-01  1.19664119e-01 -1.19652429e-01  1.19664119e-01
+ -2.04740047e-30 -2.04740047e-30]
+linearization error=0.000% wheel_dvx_dtau=-0.002650
+reduction {"order": 8, "vmc_condition": 1.0651434545960408, "frequencies_hz": [0.2, 0.5, 1.0, 2.0, 5.0], "relative_frf_errors": [0.32946582777834194, 0.6230456302302366, 1.2743692654447611, 2.3257984650086416, 3.4218513651521785], "omitted_radius": 1.0447209402049402, "reduced_closed_radius": 0.9988520928337141, "full_closed_radius": 1.023226065651576, "linear_pass": false}
+L=0.1119 qacc=0.00e+00 pitch=-0.000deg open=1.004310 closed=0.998679
+u_eq= [-1.20786053e-01  1.20787130e-01 -1.20786053e-01  1.20787130e-01
+ -3.30477382e-30 -3.30477382e-30]
+linearization error=0.000% wheel_dvx_dtau=-0.002925
+reduction {"order": 8, "vmc_condition": 1.16837482251944, "frequencies_hz": [0.2, 0.5, 1.0, 2.0, 5.0], "relative_frf_errors": [0.3897694587447869, 0.7987612633428881, 1.8222593585934233, 3.5307028000523246, 4.770434836250823], "omitted_radius": 1.0370292091754327, "reduced_closed_radius": 0.9988321100537908, "full_closed_radius": 1.0176459473525843, "linear_pass": false}
+L=0.1350 qacc=0.00e+00 pitch=0.000deg open=1.004088 closed=0.998727
+u_eq= [-9.08333767e-02  9.08213551e-02 -9.08333767e-02  9.08213551e-02
+ -1.49774286e-26 -1.49774286e-26]
+linearization error=0.000% wheel_dvx_dtau=-0.002591
+reduction {"order": 8, "vmc_condition": 1.7090387235951856, "frequencies_hz": [0.2, 0.5, 1.0, 2.0, 5.0], "relative_frf_errors": [0.3751025249378972, 0.5566767411762873, 1.2778915733827934, 3.1252940059482945, 6.163138441372724], "omitted_radius": 1.0199111934676461, "reduced_closed_radius": 0.9988210935452052, "full_closed_radius": 1.0070140313080511, "linear_pass": false}
+interpolated L=0.0725 closed=1.009913
+interpolated L=0.1009 closed=1.019530
+interpolated L=0.1235 closed=1.012601
+nonlinear checks: 2/14 PASS
+Traceback (most recent call last):
+  File "/home/wmt/wheel_leg_robot_work/mujoco_wheelleg-main/tools/model_lqr.py", line 366, in <module>
+    assert all(passed), '非线性脉冲恢复未过门，不能接入正式控制'
+AssertionError: 非线性脉冲恢复未过门，不能接入正式控制

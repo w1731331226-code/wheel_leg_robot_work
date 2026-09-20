@@ -1,0 +1,75 @@
+reduction {"order": 6, "vmc_condition": 1.0870864545946082, "frequencies_hz": [0.2, 0.5, 1.0, 2.0, 5.0], "relative_frf_errors": [0.04859047876918722, 0.060309292519856894, 0.1347312645381431, 0.335135822471975, 0.20624564762026054], "omitted_radius": 0.9910973794616357, "reduced_closed_radius": 0.999087369621593, "full_closed_radius": 0.9991517448327458, "linear_pass": false}
+reduction {"order": 6, "vmc_condition": 1.0651435835855856, "frequencies_hz": [0.2, 0.5, 1.0, 2.0, 5.0], "relative_frf_errors": [0.04618935778459076, 0.04982594469126966, 0.14832812897683048, 0.2945065752163264, 0.24328527538582415], "omitted_radius": 0.9856769258556081, "reduced_closed_radius": 0.9989891431861591, "full_closed_radius": 0.9990415039969722, "linear_pass": false}
+reduction {"order": 6, "vmc_condition": 1.1683748389161588, "frequencies_hz": [0.2, 0.5, 1.0, 2.0, 5.0], "relative_frf_errors": [0.0578548160769273, 0.10585902466282332, 0.3011939185021124, 0.31513721384550825, 0.2894693423496319], "omitted_radius": 0.9856501244371181, "reduced_closed_radius": 0.998951514105763, "full_closed_radius": 0.9989982656244921, "linear_pass": false}
+reduction {"order": 6, "vmc_condition": 1.7090388359207327, "frequencies_hz": [0.2, 0.5, 1.0, 2.0, 5.0], "relative_frf_errors": [0.25631344409801327, 0.37607336674672326, 0.4120537140502303, 0.4070921176666064, 0.4128368977106159], "omitted_radius": 0.989751304055136, "reduced_closed_radius": 0.9989247191170593, "full_closed_radius": 0.9989657523812464, "linear_pass": false}
+  t=3.500 DRIVE->PREP r/p/y=(0.01, 0.12, -0.34) gyro=(-0.0, 0.0, -0.013) vx/vy=1.01/-0.01 wdiff=-0.06 qdiff=0.0016/0.0003
+  t=4.681 PREP->SQUAT r/p/y=(0.01, 0.14, -0.48) gyro=(0.0, 0.001, 0.003) vx/vy=1.01/-0.01 wdiff=-0.01 qdiff=0.0003/-0.0010
+  t=4.881 SQUAT->JUMP r/p/y=(0.02, 0.72, -0.7) gyro=(-0.004, 0.015, -0.037) vx/vy=1.02/-0.01 wdiff=-0.13 qdiff=0.0018/-0.0015
+  t=4.913 JUMP->FLY r/p/y=(0.23, 0.72, -0.77) gyro=(0.112, 0.035, -0.048) vx/vy=1.05/-0.04 wdiff=0.36 qdiff=0.0115/-0.0109
+  t=5.337 FLY->LAND r/p/y=(-0.63, 0.46, -1.62) gyro=(0.133, 0.184, 0.126) vx/vy=1.05/-0.08 wdiff=-2.69 qdiff=-0.0038/0.0033
+  t=5.838 LAND->DRIVE r/p/y=(-0.06, 0.13, -0.57) gyro=(0.004, -0.0, 0.02) vx/vy=1.02/-0.01 wdiff=0.07 qdiff=-0.0031/0.0029
+  t=7.500 DRIVE->PREP r/p/y=(0.02, 0.12, -0.32) gyro=(-0.0, 0.0, -0.002) vx/vy=1.01/-0.01 wdiff=-0.03 qdiff=0.0014/-0.0004
+  t=8.732 PREP->SQUAT r/p/y=(0.01, 0.14, -0.48) gyro=(0.0, 0.001, 0.002) vx/vy=1.01/-0.01 wdiff=-0.01 qdiff=0.0006/-0.0006
+  t=8.932 SQUAT->JUMP r/p/y=(0.02, 0.72, -0.7) gyro=(-0.004, 0.015, -0.037) vx/vy=1.02/-0.01 wdiff=-0.13 qdiff=0.0019/-0.0016
+  t=8.963 JUMP->FLY r/p/y=(0.23, 0.72, -0.77) gyro=(0.112, 0.035, -0.048) vx/vy=1.05/-0.04 wdiff=0.36 qdiff=0.0116/-0.0110
+  t=9.389 FLY->LAND r/p/y=(-0.63, 0.46, -1.63) gyro=(0.122, 0.19, 0.132) vx/vy=1.05/-0.08 wdiff=-2.78 qdiff=-0.0040/0.0034
+  t=9.889 LAND->DRIVE r/p/y=(-0.06, 0.13, -0.57) gyro=(0.004, -0.0, 0.02) vx/vy=1.02/-0.01 wdiff=0.07 qdiff=-0.0030/0.0029
+  t=11.500 DRIVE->PREP r/p/y=(0.02, 0.12, -0.33) gyro=(0.0, -0.0, 0.009) vx/vy=1.01/-0.01 wdiff=0.00 qdiff=0.0007/-0.0011
+  t=12.698 PREP->SQUAT r/p/y=(0.01, 0.15, -0.48) gyro=(0.0, 0.001, 0.003) vx/vy=1.01/-0.01 wdiff=-0.01 qdiff=0.0003/-0.0010
+  t=12.898 SQUAT->JUMP r/p/y=(0.02, 0.72, -0.69) gyro=(-0.004, 0.015, -0.037) vx/vy=1.02/-0.01 wdiff=-0.13 qdiff=0.0018/-0.0015
+  t=12.930 JUMP->FLY r/p/y=(0.23, 0.72, -0.76) gyro=(0.112, 0.035, -0.048) vx/vy=1.05/-0.04 wdiff=0.36 qdiff=0.0116/-0.0110
+  t=13.354 FLY->LAND r/p/y=(-0.63, 0.46, -1.62) gyro=(0.139, 0.18, 0.122) vx/vy=1.05/-0.08 wdiff=-2.63 qdiff=-0.0037/0.0032
+  t=13.854 LAND->DRIVE r/p/y=(-0.06, 0.13, -0.57) gyro=(0.004, -0.0, 0.02) vx/vy=1.02/-0.01 wdiff=0.07 qdiff=-0.0029/0.0028
+v=+1.0: PASS jumps=3/3 roll/pitch/yaw=0.65/0.79/1.66° takeoff=(np.float64(1.01), np.float64(1.01), np.float64(1.01))m/s height=(0.234, 0.234, 0.234)m plateau=(0.03, 0.0, 0.046)s vmin=0.96m/s@7.61/PREP
+  valid=True nonwheel=False fell_at=None startup_r/p/y=(np.float64(0.015), np.float64(0.314), np.float64(0.593))
+  PREP=(0.0, 0.1, 1.1) SQUAT=(0.0, 0.7, 0.7) JUMP=(0.2, 0.8, 0.8) FLY=(0.6, 0.7, 1.6) LAND=(0.6, 0.5, 1.7) DRIVE=(0.1, 0.1, 0.6)
+reduction {"order": 6, "vmc_condition": 1.0870864545946082, "frequencies_hz": [0.2, 0.5, 1.0, 2.0, 5.0], "relative_frf_errors": [0.04859047876918722, 0.060309292519856894, 0.1347312645381431, 0.335135822471975, 0.20624564762026054], "omitted_radius": 0.9910973794616357, "reduced_closed_radius": 0.999087369621593, "full_closed_radius": 0.9991517448327458, "linear_pass": false}
+reduction {"order": 6, "vmc_condition": 1.0651435835855856, "frequencies_hz": [0.2, 0.5, 1.0, 2.0, 5.0], "relative_frf_errors": [0.04618935778459076, 0.04982594469126966, 0.14832812897683048, 0.2945065752163264, 0.24328527538582415], "omitted_radius": 0.9856769258556081, "reduced_closed_radius": 0.9989891431861591, "full_closed_radius": 0.9990415039969722, "linear_pass": false}
+reduction {"order": 6, "vmc_condition": 1.1683748389161588, "frequencies_hz": [0.2, 0.5, 1.0, 2.0, 5.0], "relative_frf_errors": [0.0578548160769273, 0.10585902466282332, 0.3011939185021124, 0.31513721384550825, 0.2894693423496319], "omitted_radius": 0.9856501244371181, "reduced_closed_radius": 0.998951514105763, "full_closed_radius": 0.9989982656244921, "linear_pass": false}
+reduction {"order": 6, "vmc_condition": 1.7090388359207327, "frequencies_hz": [0.2, 0.5, 1.0, 2.0, 5.0], "relative_frf_errors": [0.25631344409801327, 0.37607336674672326, 0.4120537140502303, 0.4070921176666064, 0.4128368977106159], "omitted_radius": 0.989751304055136, "reduced_closed_radius": 0.9989247191170593, "full_closed_radius": 0.9989657523812464, "linear_pass": false}
+  t=3.750 DRIVE->PREP r/p/y=(0.01, -0.12, 0.32) gyro=(0.0, 0.0, -0.01) vx/vy=-1.01/-0.01 wdiff=-0.00 qdiff=0.0009/-0.0005
+  t=4.987 PREP->SQUAT r/p/y=(0.01, -0.14, 0.48) gyro=(0.0, -0.001, -0.002) vx/vy=-1.01/-0.01 wdiff=0.01 qdiff=0.0006/-0.0006
+  t=5.188 SQUAT->JUMP r/p/y=(0.02, -0.71, 0.7) gyro=(-0.004, -0.014, 0.038) vx/vy=-1.02/-0.01 wdiff=0.14 qdiff=0.0015/-0.0018
+  t=5.218 JUMP->FLY r/p/y=(0.22, -1.05, 0.77) gyro=(0.111, -0.069, 0.035) vx/vy=-1.05/-0.04 wdiff=0.97 qdiff=0.0111/-0.0107
+  t=5.636 FLY->LAND r/p/y=(-1.02, -0.74, 1.41) gyro=(0.092, 0.174, 0.174) vx/vy=-1.04/-0.08 wdiff=-2.33 qdiff=-0.0045/0.0026
+  t=6.136 LAND->DRIVE r/p/y=(-0.21, -0.13, 0.5) gyro=(0.01, 0.001, -0.017) vx/vy=-1.02/-0.01 wdiff=-0.04 qdiff=-0.0100/0.0105
+  t=7.750 DRIVE->PREP r/p/y=(0.02, -0.12, 0.31) gyro=(0.0, 0.0, 0.001) vx/vy=-1.01/-0.01 wdiff=0.03 qdiff=0.0004/-0.0012
+  t=8.957 PREP->SQUAT r/p/y=(0.01, -0.14, 0.48) gyro=(0.0, -0.001, -0.003) vx/vy=-1.01/-0.01 wdiff=0.01 qdiff=0.0009/-0.0003
+  t=9.156 SQUAT->JUMP r/p/y=(0.02, -0.71, 0.69) gyro=(-0.004, -0.014, 0.037) vx/vy=-1.02/-0.01 wdiff=0.14 qdiff=0.0014/-0.0018
+  t=9.187 JUMP->FLY r/p/y=(0.22, -1.05, 0.76) gyro=(0.111, -0.069, 0.035) vx/vy=-1.05/-0.04 wdiff=0.97 qdiff=0.0111/-0.0107
+  t=9.604 FLY->LAND r/p/y=(-1.02, -0.74, 1.4) gyro=(0.112, 0.164, 0.162) vx/vy=-1.04/-0.08 wdiff=-2.17 qdiff=-0.0042/0.0024
+  t=10.104 LAND->DRIVE r/p/y=(-0.16, -0.13, 0.49) gyro=(0.008, 0.001, -0.016) vx/vy=-1.02/-0.01 wdiff=-0.04 qdiff=-0.0074/0.0078
+  t=11.750 DRIVE->PREP r/p/y=(0.02, -0.12, 0.32) gyro=(-0.0, -0.0, 0.008) vx/vy=-1.01/-0.01 wdiff=0.05 qdiff=0.0001/-0.0016
+  t=12.973 PREP->SQUAT r/p/y=(0.01, -0.14, 0.48) gyro=(0.0, -0.001, -0.002) vx/vy=-1.01/-0.01 wdiff=0.01 qdiff=0.0006/-0.0006
+  t=13.174 SQUAT->JUMP r/p/y=(0.02, -0.71, 0.7) gyro=(-0.004, -0.014, 0.038) vx/vy=-1.02/-0.01 wdiff=0.14 qdiff=0.0015/-0.0018
+  t=13.204 JUMP->FLY r/p/y=(0.22, -1.05, 0.76) gyro=(0.111, -0.069, 0.035) vx/vy=-1.05/-0.04 wdiff=0.97 qdiff=0.0111/-0.0107
+  t=13.622 FLY->LAND r/p/y=(-1.02, -0.74, 1.4) gyro=(0.096, 0.172, 0.172) vx/vy=-1.04/-0.08 wdiff=-2.30 qdiff=-0.0044/0.0025
+  t=14.122 LAND->DRIVE r/p/y=(-0.21, -0.13, 0.5) gyro=(0.01, 0.001, -0.017) vx/vy=-1.02/-0.01 wdiff=-0.04 qdiff=-0.0098/0.0103
+v=-1.0: PASS jumps=3/3 roll/pitch/yaw=1.03/1.08/1.43° takeoff=(np.float64(-1.01), np.float64(-1.01), np.float64(-1.01))m/s height=(0.227, 0.227, 0.228)m plateau=(0.0, 0.06, 0.0)s vmin=0.96m/s@3.86/PREP
+  valid=True nonwheel=False fell_at=None startup_r/p/y=(np.float64(0.015), np.float64(0.275), np.float64(0.58))
+  PREP=(0.0, 0.1, 1.1) SQUAT=(0.0, 0.7, 0.7) JUMP=(0.2, 1.0, 0.8) FLY=(1.0, 1.1, 1.4) LAND=(1.0, 0.7, 1.4) DRIVE=(0.2, 0.1, 0.5)
+reduction {"order": 6, "vmc_condition": 1.0870864545946082, "frequencies_hz": [0.2, 0.5, 1.0, 2.0, 5.0], "relative_frf_errors": [0.04859047876918722, 0.060309292519856894, 0.1347312645381431, 0.335135822471975, 0.20624564762026054], "omitted_radius": 0.9910973794616357, "reduced_closed_radius": 0.999087369621593, "full_closed_radius": 0.9991517448327458, "linear_pass": false}
+reduction {"order": 6, "vmc_condition": 1.0651435835855856, "frequencies_hz": [0.2, 0.5, 1.0, 2.0, 5.0], "relative_frf_errors": [0.04618935778459076, 0.04982594469126966, 0.14832812897683048, 0.2945065752163264, 0.24328527538582415], "omitted_radius": 0.9856769258556081, "reduced_closed_radius": 0.9989891431861591, "full_closed_radius": 0.9990415039969722, "linear_pass": false}
+reduction {"order": 6, "vmc_condition": 1.1683748389161588, "frequencies_hz": [0.2, 0.5, 1.0, 2.0, 5.0], "relative_frf_errors": [0.0578548160769273, 0.10585902466282332, 0.3011939185021124, 0.31513721384550825, 0.2894693423496319], "omitted_radius": 0.9856501244371181, "reduced_closed_radius": 0.998951514105763, "full_closed_radius": 0.9989982656244921, "linear_pass": false}
+reduction {"order": 6, "vmc_condition": 1.7090388359207327, "frequencies_hz": [0.2, 0.5, 1.0, 2.0, 5.0], "relative_frf_errors": [0.25631344409801327, 0.37607336674672326, 0.4120537140502303, 0.4070921176666064, 0.4128368977106159], "omitted_radius": 0.989751304055136, "reduced_closed_radius": 0.9989247191170593, "full_closed_radius": 0.9989657523812464, "linear_pass": false}
+  t=4.000 DRIVE->PREP r/p/y=(0.01, 0.0, -0.0) gyro=(0.0, 0.0, -0.0) vx/vy=0.00/0.00 wdiff=-0.00 qdiff=0.0006/-0.0007
+  t=5.862 PREP->SQUAT r/p/y=(0.01, 0.0, 0.25) gyro=(0.0, -0.0, -0.0) vx/vy=-0.00/0.00 wdiff=-0.00 qdiff=0.0006/-0.0006
+  t=6.062 SQUAT->JUMP r/p/y=(0.01, 0.07, 0.24) gyro=(-0.0, 0.002, -0.0) vx/vy=0.00/-0.00 wdiff=-0.00 qdiff=0.0009/-0.0009
+  t=6.093 JUMP->FLY r/p/y=(0.22, -0.12, 0.24) gyro=(0.162, 0.158, 0.003) vx/vy=0.00/-0.03 wdiff=0.36 qdiff=0.0102/-0.0098
+  t=6.508 FLY->LAND r/p/y=(2.1, -0.1, 0.27) gyro=(-0.034, 0.175, -0.152) vx/vy=0.01/0.02 wdiff=2.66 qdiff=0.0045/-0.0032
+  t=7.008 LAND->DRIVE r/p/y=(1.06, -0.0, 0.26) gyro=(-0.044, 0.0, 0.004) vx/vy=-0.00/0.01 wdiff=-0.04 qdiff=0.0500/-0.0505
+  t=8.000 DRIVE->PREP r/p/y=(0.11, -0.0, 0.46) gyro=(-0.004, 0.0, -0.013) vx/vy=0.00/0.00 wdiff=-0.05 qdiff=0.0062/-0.0046
+  t=10.104 PREP->SQUAT r/p/y=(0.01, 0.0, 0.12) gyro=(0.0, -0.0, 0.0) vx/vy=-0.00/0.00 wdiff=-0.00 qdiff=0.0007/-0.0007
+  t=10.304 SQUAT->JUMP r/p/y=(0.01, 0.06, 0.12) gyro=(-0.0, 0.003, -0.0) vx/vy=0.00/-0.00 wdiff=-0.00 qdiff=0.0009/-0.0009
+  t=10.335 JUMP->FLY r/p/y=(0.22, -0.13, 0.12) gyro=(0.162, 0.159, 0.003) vx/vy=0.00/-0.03 wdiff=0.36 qdiff=0.0102/-0.0098
+  t=10.749 FLY->LAND r/p/y=(2.1, -0.1, 0.15) gyro=(-0.036, 0.173, -0.15) vx/vy=0.01/0.02 wdiff=2.64 qdiff=0.0044/-0.0032
+  t=11.249 LAND->DRIVE r/p/y=(1.06, -0.0, 0.13) gyro=(-0.044, 0.0, 0.003) vx/vy=-0.00/0.01 wdiff=-0.04 qdiff=0.0500/-0.0506
+  t=12.000 DRIVE->PREP r/p/y=(0.19, -0.0, 0.34) gyro=(-0.007, 0.0, 0.004) vx/vy=0.00/0.00 wdiff=0.01 qdiff=0.0090/-0.0090
+  t=14.311 PREP->SQUAT r/p/y=(0.01, 0.0, 0.47) gyro=(-0.0, -0.0, -0.0) vx/vy=0.00/0.00 wdiff=-0.00 qdiff=0.0007/-0.0007
+  t=14.511 SQUAT->JUMP r/p/y=(0.01, 0.08, 0.46) gyro=(-0.0, 0.004, -0.0) vx/vy=0.00/-0.00 wdiff=-0.00 qdiff=0.0009/-0.0009
+  t=14.542 JUMP->FLY r/p/y=(0.22, -0.11, 0.46) gyro=(0.162, 0.16, 0.003) vx/vy=0.00/-0.03 wdiff=0.36 qdiff=0.0102/-0.0098
+  t=14.956 FLY->LAND r/p/y=(2.1, -0.1, 0.49) gyro=(-0.035, 0.174, -0.151) vx/vy=0.01/0.02 wdiff=2.65 qdiff=0.0044/-0.0032
+  t=15.456 LAND->DRIVE r/p/y=(1.06, 0.0, -0.17) gyro=(-0.044, -0.0, -0.011) vx/vy=-0.00/0.01 wdiff=-0.09 qdiff=0.0497/-0.0506
+v=+0.0: PASS jumps=3/3 roll/pitch/yaw=2.63/0.19/1.15° takeoff=(np.float64(-0.0), np.float64(-0.0), np.float64(0.0))m/s height=(0.225, 0.225, 0.225)m plateau=(0.053, 0.053, 0.053)s vmin=0.00m/s@0.00/DRIVE
+  valid=True nonwheel=False fell_at=None startup_r/p/y=(np.float64(0.014), np.float64(0.002), np.float64(0.004))
+  PREP=(0.2, 0.0, 1.1) SQUAT=(0.0, 0.2, 0.5) JUMP=(0.2, 0.2, 0.5) FLY=(2.1, 0.1, 0.5) LAND=(2.6, 0.1, 0.5) DRIVE=(1.1, 0.0, 0.4)

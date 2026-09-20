@@ -1,0 +1,47 @@
+flat PASS
+unequal_height PASS
+single_contact PASS
+[
+  {
+    "condition": "flat",
+    "method": "N3+",
+    "requested_rms_ratio_to_M3": 0.9999999999999707,
+    "actual_rms_ratio_to_M3": 0.9999999999999707,
+    "saturation_delta": 0.0
+  },
+  {
+    "condition": "flat",
+    "method": "N3-",
+    "requested_rms_ratio_to_M3": 1.0000000000000293,
+    "actual_rms_ratio_to_M3": 1.0000000000000293,
+    "saturation_delta": 0.0
+  },
+  {
+    "condition": "unequal_height",
+    "method": "N3+",
+    "requested_rms_ratio_to_M3": 1.0002149886312282,
+    "actual_rms_ratio_to_M3": 1.0002149886312282,
+    "saturation_delta": 0.0
+  },
+  {
+    "condition": "unequal_height",
+    "method": "N3-",
+    "requested_rms_ratio_to_M3": 0.9997849651387202,
+    "actual_rms_ratio_to_M3": 0.9997849651387202,
+    "saturation_delta": 0.0
+  },
+  {
+    "condition": "single_contact",
+    "method": "N3+",
+    "requested_rms_ratio_to_M3": 1.0001057686111572,
+    "actual_rms_ratio_to_M3": 1.0001057686111576,
+    "saturation_delta": 0.0
+  },
+  {
+    "condition": "single_contact",
+    "method": "N3-",
+    "requested_rms_ratio_to_M3": 0.99989422020066,
+    "actual_rms_ratio_to_M3": 0.9998942202006602,
+    "saturation_delta": 0.0
+  }
+]

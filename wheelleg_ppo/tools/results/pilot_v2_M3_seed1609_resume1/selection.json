@@ -1,0 +1,135 @@
+{
+  "smoke": false,
+  "checkpoints": [
+    {
+      "steps": 20000,
+      "path": "wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_2026-09-21/step_20000",
+      "total": 32,
+      "success_count": 16,
+      "complete": true,
+      "mean_yaw_score_deg": 1.4256727255319752
+    },
+    {
+      "steps": 40000,
+      "path": "wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_2026-09-21/step_40000",
+      "total": 32,
+      "success_count": 20,
+      "complete": true,
+      "mean_yaw_score_deg": 1.4566162234469227
+    },
+    {
+      "steps": 60000,
+      "path": "wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_2026-09-21/step_60000",
+      "total": 32,
+      "success_count": 28,
+      "complete": true,
+      "mean_yaw_score_deg": 0.9725664405430454
+    },
+    {
+      "steps": 80000,
+      "path": "/home/wmt/wheel_leg_robot_work/wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_80000",
+      "total": 32,
+      "success_count": 26,
+      "complete": true,
+      "mean_yaw_score_deg": 0.9005509508966472
+    },
+    {
+      "steps": 100000,
+      "path": "/home/wmt/wheel_leg_robot_work/wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_100000",
+      "total": 32,
+      "success_count": 28,
+      "complete": true,
+      "mean_yaw_score_deg": 0.8108037524905933
+    },
+    {
+      "steps": 120000,
+      "path": "/home/wmt/wheel_leg_robot_work/wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_120000",
+      "total": 32,
+      "success_count": 28,
+      "complete": true,
+      "mean_yaw_score_deg": 0.8561967599837953
+    },
+    {
+      "steps": 140000,
+      "path": "/home/wmt/wheel_leg_robot_work/wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_140000",
+      "total": 32,
+      "success_count": 28,
+      "complete": true,
+      "mean_yaw_score_deg": 0.8050770969867502
+    },
+    {
+      "steps": 160000,
+      "path": "/home/wmt/wheel_leg_robot_work/wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_160000",
+      "total": 32,
+      "success_count": 28,
+      "complete": true,
+      "mean_yaw_score_deg": 0.8039412348172126
+    },
+    {
+      "steps": 180000,
+      "path": "/home/wmt/wheel_leg_robot_work/wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_180000",
+      "total": 32,
+      "success_count": 28,
+      "complete": true,
+      "mean_yaw_score_deg": 0.9692873123109329
+    },
+    {
+      "steps": 200000,
+      "path": "/home/wmt/wheel_leg_robot_work/wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_200000",
+      "total": 32,
+      "success_count": 28,
+      "complete": true,
+      "mean_yaw_score_deg": 1.0070974957140402
+    },
+    {
+      "steps": 220000,
+      "path": "/home/wmt/wheel_leg_robot_work/wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_220000",
+      "total": 32,
+      "success_count": 28,
+      "complete": true,
+      "mean_yaw_score_deg": 1.0010639107164494
+    },
+    {
+      "steps": 240000,
+      "path": "/home/wmt/wheel_leg_robot_work/wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_240000",
+      "total": 32,
+      "success_count": 29,
+      "complete": true,
+      "mean_yaw_score_deg": 0.9377797687385663
+    },
+    {
+      "steps": 260000,
+      "path": "/home/wmt/wheel_leg_robot_work/wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_260000",
+      "total": 32,
+      "success_count": 28,
+      "complete": true,
+      "mean_yaw_score_deg": 0.9725172909960068
+    },
+    {
+      "steps": 280000,
+      "path": "/home/wmt/wheel_leg_robot_work/wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_280000",
+      "total": 32,
+      "success_count": 28,
+      "complete": true,
+      "mean_yaw_score_deg": 0.9755662606485435
+    },
+    {
+      "steps": 300000,
+      "path": "/home/wmt/wheel_leg_robot_work/wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_300000",
+      "total": 32,
+      "success_count": 27,
+      "complete": true,
+      "mean_yaw_score_deg": 0.9405994324364708
+    }
+  ],
+  "best": {
+    "steps": 240000,
+    "path": "/home/wmt/wheel_leg_robot_work/wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_240000",
+    "total": 32,
+    "success_count": 29,
+    "complete": true,
+    "mean_yaw_score_deg": 0.9377797687385663
+  },
+  "gate_evaluated": false,
+  "test_set_evaluated": false
+}

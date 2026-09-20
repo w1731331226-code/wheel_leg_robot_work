@@ -1,0 +1,62 @@
+reduction {"order": 6, "vmc_condition": 1.0870864545946082, "frequencies_hz": [0.2, 0.5, 1.0, 2.0, 5.0], "relative_frf_errors": [0.04859047876918722, 0.060309292519856894, 0.1347312645381431, 0.335135822471975, 0.20624564762026054], "omitted_radius": 0.9910973794616357, "reduced_closed_radius": 0.999087369621593, "full_closed_radius": 0.9991517448327458, "linear_pass": false}
+reduction {"order": 6, "vmc_condition": 1.0651435835855856, "frequencies_hz": [0.2, 0.5, 1.0, 2.0, 5.0], "relative_frf_errors": [0.04618935778459076, 0.04982594469126966, 0.14832812897683048, 0.2945065752163264, 0.24328527538582415], "omitted_radius": 0.9856769258556081, "reduced_closed_radius": 0.9989891431861591, "full_closed_radius": 0.9990415039969722, "linear_pass": false}
+reduction {"order": 6, "vmc_condition": 1.1683748387929387, "frequencies_hz": [0.2, 0.5, 1.0, 2.0, 5.0], "relative_frf_errors": [0.0578548162960518, 0.10585902846607603, 0.3011939284696688, 0.3151372205630646, 0.2894693436965099], "omitted_radius": 0.985650124485686, "reduced_closed_radius": 0.9989515141054848, "full_closed_radius": 0.9989982656241906, "linear_pass": false}
+reduction {"order": 6, "vmc_condition": 1.7090388359207327, "frequencies_hz": [0.2, 0.5, 1.0, 2.0, 5.0], "relative_frf_errors": [0.25631344409801327, 0.37607336674672326, 0.4120537140502303, 0.4070921176666064, 0.4128368977106159], "omitted_radius": 0.989751304055136, "reduced_closed_radius": 0.9989247191170593, "full_closed_radius": 0.9989657523812464, "linear_pass": false}
+jf t= 4.00 z=0.1608 pitch=+0.002 vx=1.01 bx=2.73
+jf t= 4.25 z=0.1558 pitch=+0.002 vx=1.01 bx=2.99
+jf t= 4.50 z=0.1470 pitch=+0.002 vx=1.01 bx=3.24
+jf t= 4.75 z=0.1168 pitch=+0.010 vx=1.01 bx=3.49
+jf t= 5.00 z=0.3555 pitch=+0.010 vx=1.05 bx=3.75
+jf t= 5.25 z=0.2812 pitch=+0.008 vx=1.05 bx=4.01
+jf t= 5.50 z=0.1609 pitch=+0.003 vx=1.04 bx=4.27
+jf t= 5.75 z=0.1608 pitch=+0.002 vx=1.02 bx=4.53
+jf t= 6.00 z=0.1608 pitch=+0.002 vx=1.01 bx=4.78
+jf t= 6.25 z=0.1608 pitch=+0.002 vx=1.01 bx=5.04
+jf t= 6.50 z=0.1608 pitch=+0.002 vx=1.01 bx=5.29
+jf t= 6.75 z=0.1608 pitch=+0.002 vx=1.01 bx=5.54
+jf t= 7.00 z=0.1608 pitch=+0.002 vx=1.01 bx=5.79
+jf t= 7.25 z=0.1608 pitch=+0.002 vx=1.01 bx=6.04
+jf t= 7.50 z=0.1608 pitch=+0.002 vx=1.01 bx=6.29
+jf t= 7.75 z=0.1608 pitch=+0.002 vx=1.01 bx=6.55
+jf t= 8.00 z=0.1608 pitch=+0.002 vx=1.01 bx=6.80
+jf t= 8.25 z=0.1608 pitch=+0.002 vx=1.01 bx=7.05
+jf t= 8.50 z=0.1608 pitch=+0.002 vx=1.01 bx=7.30
+jf t= 8.75 z=0.1608 pitch=+0.002 vx=1.01 bx=7.55
+jf t= 9.00 z=0.1608 pitch=+0.002 vx=1.01 bx=7.81
+jf t= 9.25 z=0.1608 pitch=+0.002 vx=1.01 bx=8.06
+jf t= 9.50 z=0.1608 pitch=+0.002 vx=1.01 bx=8.31
+jf t= 9.75 z=0.1608 pitch=+0.002 vx=1.01 bx=8.56
+jf t=10.00 z=0.1608 pitch=+0.002 vx=1.01 bx=8.81
+jf t=10.25 z=0.1608 pitch=+0.002 vx=1.01 bx=9.06
+jf t=10.50 z=0.1608 pitch=+0.002 vx=1.01 bx=9.32
+jf t=10.75 z=0.1608 pitch=+0.002 vx=1.01 bx=9.57
+jf t=11.00 z=0.1608 pitch=+0.002 vx=1.01 bx=9.82
+jf t=11.25 z=0.1608 pitch=+0.002 vx=1.01 bx=10.07
+jf t=11.50 z=0.1608 pitch=+0.002 vx=1.01 bx=10.32
+jf t=11.75 z=0.1608 pitch=+0.002 vx=1.01 bx=10.58
+jf t=12.00 z=0.1608 pitch=+0.002 vx=1.01 bx=10.83
+jf t=12.25 z=0.1608 pitch=+0.002 vx=1.01 bx=11.08
+jf t=12.50 z=0.1608 pitch=+0.002 vx=1.01 bx=11.33
+jf t=12.75 z=0.1608 pitch=+0.002 vx=1.01 bx=11.58
+jf t=13.00 z=0.1608 pitch=+0.002 vx=1.01 bx=11.83
+jf t=13.25 z=0.1608 pitch=+0.002 vx=1.01 bx=12.09
+jf t=13.50 z=0.1608 pitch=+0.002 vx=1.01 bx=12.34
+jf t=13.75 z=0.1608 pitch=+0.002 vx=1.01 bx=12.59
+jf t=14.00 z=0.1608 pitch=+0.002 vx=1.01 bx=12.84
+jf t=14.25 z=0.1608 pitch=+0.002 vx=1.01 bx=13.09
+jf t=14.50 z=0.1608 pitch=+0.002 vx=1.01 bx=13.35
+jf t=14.75 z=0.1608 pitch=+0.002 vx=1.01 bx=13.60
+jf t=15.00 z=0.1608 pitch=+0.002 vx=1.01 bx=13.85
+jf t=15.25 z=0.1608 pitch=+0.002 vx=1.01 bx=14.10
+jf t=15.50 z=0.1608 pitch=+0.002 vx=1.01 bx=14.35
+jf t=15.75 z=0.1608 pitch=+0.002 vx=1.01 bx=14.60
+jf t=16.00 z=0.1608 pitch=+0.002 vx=1.01 bx=14.86
+jf t=16.25 z=0.1608 pitch=+0.002 vx=1.01 bx=15.11
+jf t=16.50 z=0.1608 pitch=+0.002 vx=1.01 bx=15.36
+jf t=16.75 z=0.1608 pitch=+0.002 vx=1.01 bx=15.61
+jf t=17.00 z=0.1608 pitch=+0.002 vx=1.01 bx=15.86
+jf t=17.25 z=0.1608 pitch=+0.002 vx=1.01 bx=16.12
+jf t=17.50 z=0.1608 pitch=+0.002 vx=1.01 bx=16.37
+jf t=17.75 z=0.1608 pitch=+0.002 vx=1.01 bx=16.62
+前进跳: 通过 (起跳速度=1.01m/s, COM跳高=0.233m, 最大平台俯仰=0.79°, 最大偏航=0.00°, bx=16.87)
+输出/状态有效=True 非轮碰撞=False roll峰值=0.000°

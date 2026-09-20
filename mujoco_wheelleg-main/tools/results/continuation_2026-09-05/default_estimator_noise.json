@@ -1,0 +1,130 @@
+[
+  {
+    "mode": "stand",
+    "hardware": false,
+    "noise": true,
+    "seed": 5,
+    "delay_s": 0.002,
+    "velocity_rmse": 0.00042178503337918715,
+    "velocity_max": 0.0010533494331486045,
+    "position_max": 0.002538292652081074,
+    "attitude_max_deg": 0.5508029235536988,
+    "contact_error_fraction": [
+      0.0,
+      0.0
+    ],
+    "contact_states": [
+      [
+        true,
+        true
+      ]
+    ],
+    "flight_samples": 0,
+    "flight_wheel_updates": 0,
+    "passed": true
+  },
+  {
+    "mode": "drive",
+    "hardware": false,
+    "noise": true,
+    "seed": 5,
+    "delay_s": 0.002,
+    "velocity_rmse": 0.10575805064249563,
+    "velocity_max": 0.11846739274084328,
+    "position_max": 0.8167650745166881,
+    "attitude_max_deg": 0.9716673495141901,
+    "contact_error_fraction": [
+      0.0,
+      0.0
+    ],
+    "contact_states": [
+      [
+        true,
+        true
+      ]
+    ],
+    "flight_samples": 0,
+    "flight_wheel_updates": 0,
+    "passed": false
+  },
+  {
+    "mode": "stop",
+    "hardware": false,
+    "noise": true,
+    "seed": 5,
+    "delay_s": 0.002,
+    "velocity_rmse": 0.04683772564235278,
+    "velocity_max": 0.12684626519042097,
+    "position_max": 0.19001131185030773,
+    "attitude_max_deg": 0.6570890287264074,
+    "contact_error_fraction": [
+      0.0,
+      0.0
+    ],
+    "contact_states": [
+      [
+        true,
+        true
+      ]
+    ],
+    "flight_samples": 0,
+    "flight_wheel_updates": 0,
+    "passed": false
+  },
+  {
+    "mode": "jump",
+    "hardware": false,
+    "noise": true,
+    "seed": 5,
+    "delay_s": 0.002,
+    "velocity_rmse": 0.10269720299337694,
+    "velocity_max": 0.13509435710734174,
+    "position_max": 0.7900226766258891,
+    "attitude_max_deg": 0.9748322092541776,
+    "contact_error_fraction": [
+      0.04359844201532856,
+      0.04353562005277045
+    ],
+    "contact_states": [
+      [
+        false,
+        false
+      ],
+      [
+        true,
+        true
+      ]
+    ],
+    "flight_samples": 897,
+    "flight_wheel_updates": 11,
+    "passed": false
+  },
+  {
+    "mode": "backjump",
+    "hardware": false,
+    "noise": true,
+    "seed": 5,
+    "delay_s": 0.002,
+    "velocity_rmse": 0.11574164468613891,
+    "velocity_max": 0.21837535615414305,
+    "position_max": 0.8831608341375974,
+    "attitude_max_deg": 0.9655510527064514,
+    "contact_error_fraction": [
+      0.04196243482630819,
+      0.04183679879389409
+    ],
+    "contact_states": [
+      [
+        false,
+        false
+      ],
+      [
+        true,
+        true
+      ]
+    ],
+    "flight_samples": 919,
+    "flight_wheel_updates": 0,
+    "passed": false
+  }
+]

@@ -1,0 +1,40 @@
+[
+  {
+    "name": "terrain_bump_valid",
+    "args": [
+      "tools/test_robustness.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state",
+      "--scenario",
+      "bump",
+      "--speeds",
+      "1",
+      "-1",
+      "--report",
+      "tools/results/continuation_2026-09-06/terrain_bump_valid.json"
+    ],
+    "returncode": 1
+  },
+  {
+    "name": "turn_jump_final",
+    "args": [
+      "tools/test_robustness.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state",
+      "--scenario",
+      "turn",
+      "--speeds",
+      "0",
+      "1",
+      "-1",
+      "--jump-after-turn",
+      "--report",
+      "tools/results/continuation_2026-09-06/turn_jump_final.json"
+    ],
+    "returncode": 1
+  }
+]

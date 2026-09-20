@@ -1,0 +1,46 @@
+[
+  {
+    "name": "default_estimator_clean",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/test_state_estimation.py",
+      "--report",
+      "tools/results/continuation_2026-09-05/default_estimator_clean.json"
+    ],
+    "returncode": 1
+  },
+  {
+    "name": "default_estimator_noise",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/test_state_estimation.py",
+      "--noise",
+      "--report",
+      "tools/results/continuation_2026-09-05/default_estimator_noise.json"
+    ],
+    "returncode": 1
+  },
+  {
+    "name": "hardware_estimator_clean",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/test_state_estimation.py",
+      "--hardware",
+      "--report",
+      "tools/results/continuation_2026-09-05/hardware_estimator_clean.json"
+    ],
+    "returncode": 1
+  },
+  {
+    "name": "hardware_estimator_noise",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/test_state_estimation.py",
+      "--hardware",
+      "--noise",
+      "--report",
+      "tools/results/continuation_2026-09-05/hardware_estimator_noise.json"
+    ],
+    "returncode": 1
+  }
+]

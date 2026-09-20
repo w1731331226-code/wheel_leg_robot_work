@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 轮腿机器人 v3 —— 真五连杆结构 (参照 gitee shuo_kai/balance-simulation 五连杆建模)
+  每腿五连杆: 髋电机 A(0,0) 与 E(l5=60mm); 主动杆(大腿) l1=l4≈50mm 由髋电机直驱;
+            被动杆(小腿) l2=l3≈105mm 从被动膝 B/D 汇于轮心 C(轮毂); 膝为被动铰链。
+  关键修正 (相对 v2): 轮毂不再固定于机身 —— 轮毂挂在 A 链小腿末端(轮轴铰), B 链小腿
+  末端用 1 个 connect 约束到轮轴, 形成真正的 2 自由度五连杆闭环:
+      * 膝盖(被动铰)随闭环几何自由转动
+      * 腿长可变化: 蹲姿 leg_len≈0.100m -> 站姿 0.1119m -> 伸展 0.155m
+      * 轮地接触: MuJoCo 圆柱-平面接触会穿透下沉, 碰撞用球体、视觉用圆柱
+  关节零位 = 站立位形 (alpha=beta=0, 轮心在电机轴正下方 0.1119m)
+  坐标系: +x 前, +z 上, +y 左。左右腿位于 y=±0.054。 -->
+<mujoco model="wheelleg5bar">
+    <compiler angle="radian" autolimits="true" />
+    <option timestep="0.0005" gravity="0 0 -9.81" wind="0 0 0" integrator="implicitfast"
+        density="1.225" viscosity="1.8e-5" />
+
+    <visual>
+        <global realtime="1" />
+        <quality shadowsize="2048" numslices="16" offsamples="4" />
+        <headlight diffuse="1 1 1" specular="0.5 0.5 0.5" active="1" />
+    </visual>
+
+    <asset>
+        <texture type="skybox" file="../asset/desert.png"
+            gridsize="3 4" gridlayout=".U..LFRB.D.." />
+        <texture name="plane" type="2d" builtin="checker" rgb1=".1 .1 .1" rgb2=".9 .9 .9"
+            width="512" height="512" mark="cross" markrgb=".8 .8 .8" />
+        <material name="plane" reflectance="0.3" texture="plane" texrepeat="1 1" texuniform="true" />
+        <material name="chassis" rgba="0.3 0.3 0.35 1" />
+        <material name="active" rgba="0.85 0.2 0.1 1" />
+        <material name="coupler" rgba="0.1 0.5 0.9 1" />
+        <material name="wheel" rgba="0.1 0.1 0.1 1" />
+    </asset>
+
+    <worldbody>
+        <camera name="demo" mode="trackcom" pos="0 -0.9 0.3" xyaxes="1 0 0 0 0.32 0.95"/>
+        <geom name="floor" type="plane" pos="0 0 0" size="5 5 0.05" material="plane"
+            condim="3" friction="2.0 0.05 0.0001" />
+        <light directional="true" ambient=".05 .05 .05" pos="30 30 30" dir="0 -2 -1"
+            diffuse=".6 .6 .6" specular=".4 .4 .4" />
+
+        <!-- 车身: 载体罩挂在电机轴下方(电池/控制盒在下, 降低质心), 原点 = 电机轴平面 -->
+        <body name="chassis" pos="0 0 0.137">
+            <freejoint />
+            <geom name="chassis_box" type="box" pos="0.03 0 0" size="0.05 0.042 0.026"
+                mass="0.62" material="chassis" contype="0" conaffinity="0" />
+            <geom name="chassis_lid" type="box" pos="0.03 0 0.03" size="0.032 0.038 0.004"
+                mass="0.04" material="chassis" contype="0" conaffinity="0" />
+
+            <!-- IMU 位于箱体中间 (箱体质心, x=0.03 即髋轴中点) -->
+            <site name="body_imu" pos="0.03 0 0" size="0.02" rgba="1 0 1 1" />
+
+            <!-- 髋关节电机壳体 (装于箱体侧面, 有厚度; 髋轴在电机外端面 ±0.048) -->
+            <geom name="motor_alphaL" type="cylinder" size="0.018 0.006" euler="1.5708 0 0"
+                pos="0 -0.048 0" mass="0.005" rgba="0.3 0.3 0.35 1"
+                contype="0" conaffinity="0" />
+            <geom name="motor_betaL" type="cylinder" size="0.018 0.006" euler="1.5708 0 0"
+                pos="0.06 -0.048 0" mass="0.005" rgba="0.3 0.3 0.35 1"
+                contype="0" conaffinity="0" />
+            <geom name="motor_alphaR" type="cylinder" size="0.018 0.006" euler="1.5708 0 0"
+                pos="0 0.048 0" mass="0.005" rgba="0.3 0.3 0.35 1"
+                contype="0" conaffinity="0" />
+            <geom name="motor_betaR" type="cylinder" size="0.018 0.006" euler="1.5708 0 0"
+                pos="0.06 0.048 0" mass="0.005" rgba="0.3 0.3 0.35 1"
+                contype="0" conaffinity="0" />
+
+            <!-- ============ L腿: A链 = 髋电机alphaL -> 大腿 -> 被动膝B -> 小腿 -> 轮毂(轮轴铰) ============ -->
+            <body name="legL" pos="0 -0.054 0">
+                <joint name="alphaL" type="hinge" axis="0 1 0" pos="0 0 0"
+                    damping="0.01" armature="1e-5" limited="true" range="-1.5 1.5" />
+                <geom name="thighA_L" type="capsule" fromto="0 0 0 -0.0383 0 -0.0321" size="0.005"
+                    mass="0.016" material="active" contype="0" conaffinity="0" />
+                <body name="kneeA_L" pos="-0.0383 0 -0.0321">
+                    <!-- 被动膝 B: 铰链, 角度由五连杆闭环几何决定 -->
+                    <joint name="passA_L" type="hinge" axis="0 1 0" pos="0 0 0"
+                        damping="0.01" armature="1e-5" limited="true" range="-2.5 2.5" />
+                    <geom name="shankA_L" type="capsule" fromto="0 0 0 0.0683 0 -0.0798" size="0.005"
+                        mass="0.016" material="coupler" contype="0" conaffinity="0" />
+                    <!-- 轮毂挂在 A 链末端: 轮轴铰 (wheel1) 即车轮自转轴 -->
+                    <body name="wheelL" pos="0.0683 0 -0.0798">
+                        <joint name="wheel1" type="hinge" axis="0 1 0" pos="0 0 0"
+                            damping="0.005" armature="1.2e-4" />
+                        <!-- 碰撞用球体 (圆柱-平面接触在 MuJoCo 中会穿透下沉), 视觉用圆柱 -->
+                        <geom name="wheel_collide_L" type="sphere" size="0.025" pos="0 0 0"
+                            mass="0.10" contype="1" conaffinity="1"
+                            friction="2.0 0.05 0.0001" solref="0.003 2" solimp="0.9 0.95 0.001" />
+                        <geom name="wheel_geom_L" type="cylinder" size="0.025 0.01" euler="1.5708 0 0"
+                            mass="0.0" material="wheel" contype="0" conaffinity="0" />
+                        <site name="wheel_contact_L" pos="0 0 0" size="0.01" rgba="0 1 0 0.5" />
+                        <site name="wheel_axle_L" pos="0 0 0" size="0.012"
+                            rgba="0.9 0.9 0 0.8" />
+                    </body>
+                </body>
+            </body>
+
+            <!-- ============ L腿: B链 = 髋电机betaL -> 大腿 -> 被动膝D -> 小腿 -> 轮心(connect闭环) ============ -->
+            <body name="legL_D" pos="0.06 -0.054 0">
+                <joint name="betaL" type="hinge" axis="0 1 0" pos="0 0 0"
+                    damping="0.01" armature="1e-5" limited="true" range="-1.5 1.5" />
+                <geom name="thighB_L" type="capsule" fromto="0 0 0 0.0383 0 -0.0321" size="0.005"
+                    mass="0.016" material="active" contype="0" conaffinity="0" />
+                <body name="kneeB_L" pos="0.0383 0 -0.0321">
+                    <!-- 被动膝 D: 铰链 -->
+                    <joint name="passC_L" type="hinge" axis="0 1 0" pos="0 0 0"
+                        damping="0.01" armature="1e-5" limited="true" range="-2.5 2.5" />
+                    <geom name="shankB_L" type="capsule" fromto="0 0 0 -0.0683 0 -0.0798" size="0.005"
+                        mass="0.016" material="coupler" contype="0" conaffinity="0" />
+                    <site name="couplerB_L_end" pos="-0.0683 0 -0.0798" size="0.01"
+                        rgba="0.9 0.9 0 0.8" />
+                </body>
+            </body>
+
+            <!-- ============ R腿: A链 = 髋电机alphaR -> 大腿 -> 被动膝B -> 小腿 -> 轮毂 ============ -->
+            <body name="legR" pos="0 0.054 0">
+                <joint name="alphaR" type="hinge" axis="0 1 0" pos="0 0 0"
+                    damping="0.01" armature="1e-5" limited="true" range="-1.5 1.5" />
+                <geom name="thighA_R" type="capsule" fromto="0 0 0 -0.0383 0 -0.0321" size="0.005"
+                    mass="0.016" material="active" contype="0" conaffinity="0" />
+                <body name="kneeA_R" pos="-0.0383 0 -0.0321">
+                    <joint name="passA_R" type="hinge" axis="0 1 0" pos="0 0 0"
+                        damping="0.01" armature="1e-5" limited="true" range="-2.5 2.5" />
+                    <geom name="shankA_R" type="capsule" fromto="0 0 0 0.0683 0 -0.0798" size="0.005"
+                        mass="0.016" material="coupler" contype="0" conaffinity="0" />
+                    <body name="wheelR" pos="0.0683 0 -0.0798">
+                        <joint name="wheel2" type="hinge" axis="0 1 0" pos="0 0 0"
+                            damping="0.005" armature="1.2e-4" />
+                        <geom name="wheel_collide_R" type="sphere" size="0.025" pos="0 0 0"
+                            mass="0.10" contype="1" conaffinity="1"
+                            friction="2.0 0.05 0.0001" solref="0.003 2" solimp="0.9 0.95 0.001" />
+                        <geom name="wheel_geom_R" type="cylinder" size="0.025 0.01" euler="1.5708 0 0"
+                            mass="0.0" material="wheel" contype="0" conaffinity="0" />
+                        <site name="wheel_contact_R" pos="0 0 0" size="0.01" rgba="0 1 0 0.5" />
+                        <site name="wheel_axle_R" pos="0 0 0" size="0.012"
+                            rgba="0.9 0.9 0 0.8" />
+                    </body>
+                </body>
+            </body>
+
+            <!-- ============ R腿: B链 = 髋电机betaR -> 大腿 -> 被动膝D -> 小腿 -> 轮心 ============ -->
+            <body name="legR_D" pos="0.06 0.054 0">
+                <joint name="betaR" type="hinge" axis="0 1 0" pos="0 0 0"
+                    damping="0.01" armature="1e-5" limited="true" range="-1.5 1.5" />
+                <geom name="thighB_R" type="capsule" fromto="0 0 0 0.0383 0 -0.0321" size="0.005"
+                    mass="0.016" material="active" contype="0" conaffinity="0" />
+                <body name="kneeB_R" pos="0.0383 0 -0.0321">
+                    <joint name="passC_R" type="hinge" axis="0 1 0" pos="0 0 0"
+                        damping="0.01" armature="1e-5" limited="true" range="-2.5 2.5" />
+                    <geom name="shankB_R" type="capsule" fromto="0 0 0 -0.0683 0 -0.0798" size="0.005"
+                        mass="0.016" material="coupler" contype="0" conaffinity="0" />
+                    <site name="couplerB_R_end" pos="-0.0683 0 -0.0798" size="0.01"
+                        rgba="0.9 0.9 0 0.8" />
+                </body>
+            </body>
+
+            <!-- 支承小轮(前后各一, 安全/视觉件): 抬升至任何工作腿长都不触地, 纯双轮平衡 -->
+            <geom name="caster_front" type="sphere" size="0.012" pos="0.092 0 -0.0367"
+                mass="0.005" rgba="0.5 0.5 0.5 1" contype="1" conaffinity="1"
+                friction="0.8 0.05 0.001" solref="0.01 1" solimp="0.8 0.9 0.001" />
+            <geom name="caster_back" type="sphere" size="0.012" pos="-0.032 0 -0.0367"
+                mass="0.005" rgba="0.5 0.5 0.5 1" contype="1" conaffinity="1"
+                friction="0.8 0.05 0.001" solref="0.01 1" solimp="0.8 0.9 0.001" />
+        </body>
+    </worldbody>
+
+    <equality>
+        <!-- 五连杆闭环: B链小腿末端约束到轮毂轮轴 (点重合, 3 自由度约束) -->
+        <connect name="l_loop" site1="couplerB_L_end" site2="wheel_axle_L"
+            solref="0.002 1" solimp="0.95 0.99 0.001" />
+        <connect name="r_loop" site1="couplerB_R_end" site2="wheel_axle_R"
+            solref="0.002 1" solimp="0.95 0.99 0.001" />
+    </equality>
+
+    <actuator>
+        <!-- 4 个髋关节电机: 力矩驱动 (VMC 五连杆映射输出, 参照 balance-simulation) -->
+        <motor name="motor_alphaL" joint="alphaL" gear="1" ctrllimited="true" ctrlrange="-3.0 3.0" />
+        <motor name="motor_betaL"  joint="betaL"  gear="1" ctrllimited="true" ctrlrange="-3.0 3.0" />
+        <motor name="motor_alphaR" joint="alphaR" gear="1" ctrllimited="true" ctrlrange="-3.0 3.0" />
+        <motor name="motor_betaR"  joint="betaR"  gear="1" ctrllimited="true" ctrlrange="-3.0 3.0" />
+        <!-- 2 个轮毂电机 -->
+        <motor name="motor_wheelL" joint="wheel1" gear="1" ctrllimited="true" ctrlrange="-1.0 1.0" />
+        <motor name="motor_wheelR" joint="wheel2" gear="1" ctrllimited="true" ctrlrange="-1.0 1.0" />
+    </actuator>
+
+    <sensor>
+        <!-- 机身 IMU -->
+        <framequat name="body_orientation" objtype="site" objname="body_imu" />
+        <gyro name="body_gyro" site="body_imu" />
+        <accelerometer name="body_accel" site="body_imu" />
+        <!-- 腿关节 -->
+        <jointpos name="alpha_L" joint="alphaL" />
+        <jointpos name="beta_L" joint="betaL" />
+        <jointpos name="alpha_R" joint="alphaR" />
+        <jointpos name="beta_R" joint="betaR" />
+        <!-- 被动膝 (监测用) -->
+        <jointpos name="passA_L_s" joint="passA_L" />
+        <jointpos name="passC_L_s" joint="passC_L" />
+        <jointpos name="passA_R_s" joint="passA_R" />
+        <jointpos name="passC_R_s" joint="passC_R" />
+        <!-- 轮子 -->
+        <jointpos name="wheel_joint_angle1" joint="wheel1" />
+        <jointpos name="wheel_joint_angle2" joint="wheel2" />
+        <jointvel name="wheel_joint_speed1" joint="wheel1" />
+        <jointvel name="wheel_joint_speed2" joint="wheel2" />
+        <!-- 轮地反力 -->
+        <force name="wheel1_ground_force" site="wheel_contact_L" />
+        <force name="wheel2_ground_force" site="wheel_contact_R" />
+    </sensor>
+
+    <keyframe>
+        <!-- 站立位形: 所有关节角 0 (= 站姿, 五连杆闭环精确闭合), 轮心离地 R=0.025m -->
+        <key name="stand" qpos="0 0 0.1369 1 0 0 0  0 0 0 0 0 0 0 0 0 0" />
+        <!-- 蹲姿: leg_len=0.100 (五连杆逆解: aL=+0.177527 bL=-0.177527 膝A=-0.242895 膝C=+0.242895),
+             支承轮+大轮 4 点触地 (机身高 0.125m)
+             qpos 顺序: free(7) + aL pA w1 bL pC aR pA_R w2 bR pC_R -->
+        <key name="crouch" qpos="0 0 0.125 1 0 0 0  0.177527 -0.242895 0 -0.177527 0.242895  0.177527 -0.242895 0 -0.177527 0.242895" />
+    </keyframe>
+</mujoco>

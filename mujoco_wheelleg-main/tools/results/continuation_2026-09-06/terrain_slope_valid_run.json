@@ -1,0 +1,18 @@
+{
+  "args": [
+    "tools/test_robustness.py",
+    "--hardware",
+    "--track-width",
+    "0.18",
+    "--six-state",
+    "--scenario",
+    "slope",
+    "--speeds",
+    "0",
+    "1",
+    "-1",
+    "--report",
+    "tools/results/continuation_2026-09-06/terrain_slope_valid.json"
+  ],
+  "returncode": 0
+}

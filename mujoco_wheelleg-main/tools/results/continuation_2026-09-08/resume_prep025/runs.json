@@ -1,0 +1,440 @@
+[
+  {
+    "name": "stand",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "-u",
+      "tools/wheelleg_sim.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state",
+      "--test",
+      "stand"
+    ],
+    "returncode": 0,
+    "sha256": {
+      "tools/check_hardware_sizing.py": "2dcb287bbc61e5cc6ae5814da21b857efb69006a6b42c9d9f7298a3068d6a36a",
+      "tools/check_track_width.py": "0439d959a83930250060bf231fa9add2aa474f25a8230f92e76b76eeaa683d41",
+      "tools/hardware_profile.py": "5d33600ce5e4a85d112ed370dcdeeb63673e49b0f873ad8568b3d28ec826d355",
+      "tools/model_lqr.py": "8fb2fd8126ecb8284b19a3a70688b858f213d8d97b4d495175a6b530255084c4",
+      "tools/rm_controller.py": "440fa67e961ecb7cc7bbdc50021c339f0555f84f43ddc4627a9d1aee5366e929",
+      "tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+      "tools/test_hardware_collision.py": "b316455e102f5e77907c8a13e68fce32a140020ebd332f9fd5e2a1527a0ca7bc",
+      "tools/test_jump_height.py": "bdbecef05c712b6fdddd88c9b579a02d6c178b79b8fc275a800efe6b3de63046",
+      "tools/test_jump_stop.py": "992759097f4465d4639d53f010554ff8b31f24860719eeca6afb4dc191d6823d",
+      "tools/test_jump_stress.py": "185570dc47ed365ce62479f5c77dbf562eb0f0a432c41608e86bf7ef74b958a8",
+      "tools/test_robustness.py": "f1cb66d2ccaf28f716699b5c911090fa8c1c772932edbbfe47946d066776557c",
+      "tools/test_state_estimation.py": "92decd3c435ad5aa11a6a0eafe1147ddd7be51a2dbde3e9805210b8543f475b0",
+      "tools/test_step_stress.py": "39bd81ab53d4116335d9ae8494102fc34b4f53870f7f74cfaad9eabed640951f",
+      "tools/wheelleg_sim.py": "2656c4055d1243a5ab93143e132ea6c2828dcd606e5a76decf4b6ce7de58234f",
+      "xml/wheelleg.xml": "5a3c9a804cc722437c6d2a754a0b8d1bcfe0bd69fe6980cf3ed8a544b88acb75"
+    }
+  },
+  {
+    "name": "stop",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "-u",
+      "tools/wheelleg_sim.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state",
+      "--test",
+      "stop"
+    ],
+    "returncode": 0,
+    "sha256": {
+      "tools/check_hardware_sizing.py": "2dcb287bbc61e5cc6ae5814da21b857efb69006a6b42c9d9f7298a3068d6a36a",
+      "tools/check_track_width.py": "0439d959a83930250060bf231fa9add2aa474f25a8230f92e76b76eeaa683d41",
+      "tools/hardware_profile.py": "5d33600ce5e4a85d112ed370dcdeeb63673e49b0f873ad8568b3d28ec826d355",
+      "tools/model_lqr.py": "8fb2fd8126ecb8284b19a3a70688b858f213d8d97b4d495175a6b530255084c4",
+      "tools/rm_controller.py": "440fa67e961ecb7cc7bbdc50021c339f0555f84f43ddc4627a9d1aee5366e929",
+      "tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+      "tools/test_hardware_collision.py": "b316455e102f5e77907c8a13e68fce32a140020ebd332f9fd5e2a1527a0ca7bc",
+      "tools/test_jump_height.py": "bdbecef05c712b6fdddd88c9b579a02d6c178b79b8fc275a800efe6b3de63046",
+      "tools/test_jump_stop.py": "992759097f4465d4639d53f010554ff8b31f24860719eeca6afb4dc191d6823d",
+      "tools/test_jump_stress.py": "185570dc47ed365ce62479f5c77dbf562eb0f0a432c41608e86bf7ef74b958a8",
+      "tools/test_robustness.py": "f1cb66d2ccaf28f716699b5c911090fa8c1c772932edbbfe47946d066776557c",
+      "tools/test_state_estimation.py": "92decd3c435ad5aa11a6a0eafe1147ddd7be51a2dbde3e9805210b8543f475b0",
+      "tools/test_step_stress.py": "39bd81ab53d4116335d9ae8494102fc34b4f53870f7f74cfaad9eabed640951f",
+      "tools/wheelleg_sim.py": "2656c4055d1243a5ab93143e132ea6c2828dcd606e5a76decf4b6ce7de58234f",
+      "xml/wheelleg.xml": "5a3c9a804cc722437c6d2a754a0b8d1bcfe0bd69fe6980cf3ed8a544b88acb75"
+    }
+  },
+  {
+    "name": "jump",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "-u",
+      "tools/wheelleg_sim.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state",
+      "--test",
+      "jump"
+    ],
+    "returncode": 0,
+    "sha256": {
+      "tools/check_hardware_sizing.py": "2dcb287bbc61e5cc6ae5814da21b857efb69006a6b42c9d9f7298a3068d6a36a",
+      "tools/check_track_width.py": "0439d959a83930250060bf231fa9add2aa474f25a8230f92e76b76eeaa683d41",
+      "tools/hardware_profile.py": "5d33600ce5e4a85d112ed370dcdeeb63673e49b0f873ad8568b3d28ec826d355",
+      "tools/model_lqr.py": "8fb2fd8126ecb8284b19a3a70688b858f213d8d97b4d495175a6b530255084c4",
+      "tools/rm_controller.py": "440fa67e961ecb7cc7bbdc50021c339f0555f84f43ddc4627a9d1aee5366e929",
+      "tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+      "tools/test_hardware_collision.py": "b316455e102f5e77907c8a13e68fce32a140020ebd332f9fd5e2a1527a0ca7bc",
+      "tools/test_jump_height.py": "bdbecef05c712b6fdddd88c9b579a02d6c178b79b8fc275a800efe6b3de63046",
+      "tools/test_jump_stop.py": "992759097f4465d4639d53f010554ff8b31f24860719eeca6afb4dc191d6823d",
+      "tools/test_jump_stress.py": "185570dc47ed365ce62479f5c77dbf562eb0f0a432c41608e86bf7ef74b958a8",
+      "tools/test_robustness.py": "f1cb66d2ccaf28f716699b5c911090fa8c1c772932edbbfe47946d066776557c",
+      "tools/test_state_estimation.py": "92decd3c435ad5aa11a6a0eafe1147ddd7be51a2dbde3e9805210b8543f475b0",
+      "tools/test_step_stress.py": "39bd81ab53d4116335d9ae8494102fc34b4f53870f7f74cfaad9eabed640951f",
+      "tools/wheelleg_sim.py": "2656c4055d1243a5ab93143e132ea6c2828dcd606e5a76decf4b6ce7de58234f",
+      "xml/wheelleg.xml": "5a3c9a804cc722437c6d2a754a0b8d1bcfe0bd69fe6980cf3ed8a544b88acb75"
+    }
+  },
+  {
+    "name": "jumpfwd",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "-u",
+      "tools/wheelleg_sim.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state",
+      "--test",
+      "jumpfwd"
+    ],
+    "returncode": 0,
+    "sha256": {
+      "tools/check_hardware_sizing.py": "2dcb287bbc61e5cc6ae5814da21b857efb69006a6b42c9d9f7298a3068d6a36a",
+      "tools/check_track_width.py": "0439d959a83930250060bf231fa9add2aa474f25a8230f92e76b76eeaa683d41",
+      "tools/hardware_profile.py": "5d33600ce5e4a85d112ed370dcdeeb63673e49b0f873ad8568b3d28ec826d355",
+      "tools/model_lqr.py": "8fb2fd8126ecb8284b19a3a70688b858f213d8d97b4d495175a6b530255084c4",
+      "tools/rm_controller.py": "440fa67e961ecb7cc7bbdc50021c339f0555f84f43ddc4627a9d1aee5366e929",
+      "tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+      "tools/test_hardware_collision.py": "b316455e102f5e77907c8a13e68fce32a140020ebd332f9fd5e2a1527a0ca7bc",
+      "tools/test_jump_height.py": "bdbecef05c712b6fdddd88c9b579a02d6c178b79b8fc275a800efe6b3de63046",
+      "tools/test_jump_stop.py": "992759097f4465d4639d53f010554ff8b31f24860719eeca6afb4dc191d6823d",
+      "tools/test_jump_stress.py": "185570dc47ed365ce62479f5c77dbf562eb0f0a432c41608e86bf7ef74b958a8",
+      "tools/test_robustness.py": "f1cb66d2ccaf28f716699b5c911090fa8c1c772932edbbfe47946d066776557c",
+      "tools/test_state_estimation.py": "92decd3c435ad5aa11a6a0eafe1147ddd7be51a2dbde3e9805210b8543f475b0",
+      "tools/test_step_stress.py": "39bd81ab53d4116335d9ae8494102fc34b4f53870f7f74cfaad9eabed640951f",
+      "tools/wheelleg_sim.py": "2656c4055d1243a5ab93143e132ea6c2828dcd606e5a76decf4b6ce7de58234f",
+      "xml/wheelleg.xml": "5a3c9a804cc722437c6d2a754a0b8d1bcfe0bd69fe6980cf3ed8a544b88acb75"
+    }
+  },
+  {
+    "name": "jumpback",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "-u",
+      "tools/wheelleg_sim.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state",
+      "--test",
+      "jumpback"
+    ],
+    "returncode": 0,
+    "sha256": {
+      "tools/check_hardware_sizing.py": "2dcb287bbc61e5cc6ae5814da21b857efb69006a6b42c9d9f7298a3068d6a36a",
+      "tools/check_track_width.py": "0439d959a83930250060bf231fa9add2aa474f25a8230f92e76b76eeaa683d41",
+      "tools/hardware_profile.py": "5d33600ce5e4a85d112ed370dcdeeb63673e49b0f873ad8568b3d28ec826d355",
+      "tools/model_lqr.py": "8fb2fd8126ecb8284b19a3a70688b858f213d8d97b4d495175a6b530255084c4",
+      "tools/rm_controller.py": "440fa67e961ecb7cc7bbdc50021c339f0555f84f43ddc4627a9d1aee5366e929",
+      "tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+      "tools/test_hardware_collision.py": "b316455e102f5e77907c8a13e68fce32a140020ebd332f9fd5e2a1527a0ca7bc",
+      "tools/test_jump_height.py": "bdbecef05c712b6fdddd88c9b579a02d6c178b79b8fc275a800efe6b3de63046",
+      "tools/test_jump_stop.py": "992759097f4465d4639d53f010554ff8b31f24860719eeca6afb4dc191d6823d",
+      "tools/test_jump_stress.py": "185570dc47ed365ce62479f5c77dbf562eb0f0a432c41608e86bf7ef74b958a8",
+      "tools/test_robustness.py": "f1cb66d2ccaf28f716699b5c911090fa8c1c772932edbbfe47946d066776557c",
+      "tools/test_state_estimation.py": "92decd3c435ad5aa11a6a0eafe1147ddd7be51a2dbde3e9805210b8543f475b0",
+      "tools/test_step_stress.py": "39bd81ab53d4116335d9ae8494102fc34b4f53870f7f74cfaad9eabed640951f",
+      "tools/wheelleg_sim.py": "2656c4055d1243a5ab93143e132ea6c2828dcd606e5a76decf4b6ce7de58234f",
+      "xml/wheelleg.xml": "5a3c9a804cc722437c6d2a754a0b8d1bcfe0bd69fe6980cf3ed8a544b88acb75"
+    }
+  },
+  {
+    "name": "stress_clean",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "-u",
+      "tools/test_jump_stress.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state",
+      "--no-disturbance"
+    ],
+    "returncode": 0,
+    "sha256": {
+      "tools/check_hardware_sizing.py": "2dcb287bbc61e5cc6ae5814da21b857efb69006a6b42c9d9f7298a3068d6a36a",
+      "tools/check_track_width.py": "0439d959a83930250060bf231fa9add2aa474f25a8230f92e76b76eeaa683d41",
+      "tools/hardware_profile.py": "5d33600ce5e4a85d112ed370dcdeeb63673e49b0f873ad8568b3d28ec826d355",
+      "tools/model_lqr.py": "8fb2fd8126ecb8284b19a3a70688b858f213d8d97b4d495175a6b530255084c4",
+      "tools/rm_controller.py": "440fa67e961ecb7cc7bbdc50021c339f0555f84f43ddc4627a9d1aee5366e929",
+      "tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+      "tools/test_hardware_collision.py": "b316455e102f5e77907c8a13e68fce32a140020ebd332f9fd5e2a1527a0ca7bc",
+      "tools/test_jump_height.py": "bdbecef05c712b6fdddd88c9b579a02d6c178b79b8fc275a800efe6b3de63046",
+      "tools/test_jump_stop.py": "992759097f4465d4639d53f010554ff8b31f24860719eeca6afb4dc191d6823d",
+      "tools/test_jump_stress.py": "185570dc47ed365ce62479f5c77dbf562eb0f0a432c41608e86bf7ef74b958a8",
+      "tools/test_robustness.py": "f1cb66d2ccaf28f716699b5c911090fa8c1c772932edbbfe47946d066776557c",
+      "tools/test_state_estimation.py": "92decd3c435ad5aa11a6a0eafe1147ddd7be51a2dbde3e9805210b8543f475b0",
+      "tools/test_step_stress.py": "39bd81ab53d4116335d9ae8494102fc34b4f53870f7f74cfaad9eabed640951f",
+      "tools/wheelleg_sim.py": "2656c4055d1243a5ab93143e132ea6c2828dcd606e5a76decf4b6ce7de58234f",
+      "xml/wheelleg.xml": "5a3c9a804cc722437c6d2a754a0b8d1bcfe0bd69fe6980cf3ed8a544b88acb75"
+    }
+  },
+  {
+    "name": "stress_push",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "-u",
+      "tools/test_jump_stress.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state"
+    ],
+    "returncode": 0,
+    "sha256": {
+      "tools/check_hardware_sizing.py": "2dcb287bbc61e5cc6ae5814da21b857efb69006a6b42c9d9f7298a3068d6a36a",
+      "tools/check_track_width.py": "0439d959a83930250060bf231fa9add2aa474f25a8230f92e76b76eeaa683d41",
+      "tools/hardware_profile.py": "5d33600ce5e4a85d112ed370dcdeeb63673e49b0f873ad8568b3d28ec826d355",
+      "tools/model_lqr.py": "8fb2fd8126ecb8284b19a3a70688b858f213d8d97b4d495175a6b530255084c4",
+      "tools/rm_controller.py": "440fa67e961ecb7cc7bbdc50021c339f0555f84f43ddc4627a9d1aee5366e929",
+      "tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+      "tools/test_hardware_collision.py": "b316455e102f5e77907c8a13e68fce32a140020ebd332f9fd5e2a1527a0ca7bc",
+      "tools/test_jump_height.py": "bdbecef05c712b6fdddd88c9b579a02d6c178b79b8fc275a800efe6b3de63046",
+      "tools/test_jump_stop.py": "992759097f4465d4639d53f010554ff8b31f24860719eeca6afb4dc191d6823d",
+      "tools/test_jump_stress.py": "185570dc47ed365ce62479f5c77dbf562eb0f0a432c41608e86bf7ef74b958a8",
+      "tools/test_robustness.py": "f1cb66d2ccaf28f716699b5c911090fa8c1c772932edbbfe47946d066776557c",
+      "tools/test_state_estimation.py": "92decd3c435ad5aa11a6a0eafe1147ddd7be51a2dbde3e9805210b8543f475b0",
+      "tools/test_step_stress.py": "39bd81ab53d4116335d9ae8494102fc34b4f53870f7f74cfaad9eabed640951f",
+      "tools/wheelleg_sim.py": "2656c4055d1243a5ab93143e132ea6c2828dcd606e5a76decf4b6ce7de58234f",
+      "xml/wheelleg.xml": "5a3c9a804cc722437c6d2a754a0b8d1bcfe0bd69fe6980cf3ed8a544b88acb75"
+    }
+  },
+  {
+    "name": "mismatch_plus",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "-u",
+      "tools/test_jump_stress.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state",
+      "--actuator-mismatch",
+      "0.01"
+    ],
+    "returncode": 0,
+    "sha256": {
+      "tools/check_hardware_sizing.py": "2dcb287bbc61e5cc6ae5814da21b857efb69006a6b42c9d9f7298a3068d6a36a",
+      "tools/check_track_width.py": "0439d959a83930250060bf231fa9add2aa474f25a8230f92e76b76eeaa683d41",
+      "tools/hardware_profile.py": "5d33600ce5e4a85d112ed370dcdeeb63673e49b0f873ad8568b3d28ec826d355",
+      "tools/model_lqr.py": "8fb2fd8126ecb8284b19a3a70688b858f213d8d97b4d495175a6b530255084c4",
+      "tools/rm_controller.py": "440fa67e961ecb7cc7bbdc50021c339f0555f84f43ddc4627a9d1aee5366e929",
+      "tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+      "tools/test_hardware_collision.py": "b316455e102f5e77907c8a13e68fce32a140020ebd332f9fd5e2a1527a0ca7bc",
+      "tools/test_jump_height.py": "bdbecef05c712b6fdddd88c9b579a02d6c178b79b8fc275a800efe6b3de63046",
+      "tools/test_jump_stop.py": "992759097f4465d4639d53f010554ff8b31f24860719eeca6afb4dc191d6823d",
+      "tools/test_jump_stress.py": "185570dc47ed365ce62479f5c77dbf562eb0f0a432c41608e86bf7ef74b958a8",
+      "tools/test_robustness.py": "f1cb66d2ccaf28f716699b5c911090fa8c1c772932edbbfe47946d066776557c",
+      "tools/test_state_estimation.py": "92decd3c435ad5aa11a6a0eafe1147ddd7be51a2dbde3e9805210b8543f475b0",
+      "tools/test_step_stress.py": "39bd81ab53d4116335d9ae8494102fc34b4f53870f7f74cfaad9eabed640951f",
+      "tools/wheelleg_sim.py": "2656c4055d1243a5ab93143e132ea6c2828dcd606e5a76decf4b6ce7de58234f",
+      "xml/wheelleg.xml": "5a3c9a804cc722437c6d2a754a0b8d1bcfe0bd69fe6980cf3ed8a544b88acb75"
+    }
+  },
+  {
+    "name": "mismatch_minus",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "-u",
+      "tools/test_jump_stress.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state",
+      "--actuator-mismatch",
+      "-0.01"
+    ],
+    "returncode": 0,
+    "sha256": {
+      "tools/check_hardware_sizing.py": "2dcb287bbc61e5cc6ae5814da21b857efb69006a6b42c9d9f7298a3068d6a36a",
+      "tools/check_track_width.py": "0439d959a83930250060bf231fa9add2aa474f25a8230f92e76b76eeaa683d41",
+      "tools/hardware_profile.py": "5d33600ce5e4a85d112ed370dcdeeb63673e49b0f873ad8568b3d28ec826d355",
+      "tools/model_lqr.py": "8fb2fd8126ecb8284b19a3a70688b858f213d8d97b4d495175a6b530255084c4",
+      "tools/rm_controller.py": "440fa67e961ecb7cc7bbdc50021c339f0555f84f43ddc4627a9d1aee5366e929",
+      "tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+      "tools/test_hardware_collision.py": "b316455e102f5e77907c8a13e68fce32a140020ebd332f9fd5e2a1527a0ca7bc",
+      "tools/test_jump_height.py": "bdbecef05c712b6fdddd88c9b579a02d6c178b79b8fc275a800efe6b3de63046",
+      "tools/test_jump_stop.py": "992759097f4465d4639d53f010554ff8b31f24860719eeca6afb4dc191d6823d",
+      "tools/test_jump_stress.py": "185570dc47ed365ce62479f5c77dbf562eb0f0a432c41608e86bf7ef74b958a8",
+      "tools/test_robustness.py": "f1cb66d2ccaf28f716699b5c911090fa8c1c772932edbbfe47946d066776557c",
+      "tools/test_state_estimation.py": "92decd3c435ad5aa11a6a0eafe1147ddd7be51a2dbde3e9805210b8543f475b0",
+      "tools/test_step_stress.py": "39bd81ab53d4116335d9ae8494102fc34b4f53870f7f74cfaad9eabed640951f",
+      "tools/wheelleg_sim.py": "2656c4055d1243a5ab93143e132ea6c2828dcd606e5a76decf4b6ce7de58234f",
+      "xml/wheelleg.xml": "5a3c9a804cc722437c6d2a754a0b8d1bcfe0bd69fe6980cf3ed8a544b88acb75"
+    }
+  },
+  {
+    "name": "height",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "-u",
+      "tools/test_jump_height.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state"
+    ],
+    "returncode": 0,
+    "sha256": {
+      "tools/check_hardware_sizing.py": "2dcb287bbc61e5cc6ae5814da21b857efb69006a6b42c9d9f7298a3068d6a36a",
+      "tools/check_track_width.py": "0439d959a83930250060bf231fa9add2aa474f25a8230f92e76b76eeaa683d41",
+      "tools/hardware_profile.py": "5d33600ce5e4a85d112ed370dcdeeb63673e49b0f873ad8568b3d28ec826d355",
+      "tools/model_lqr.py": "8fb2fd8126ecb8284b19a3a70688b858f213d8d97b4d495175a6b530255084c4",
+      "tools/rm_controller.py": "440fa67e961ecb7cc7bbdc50021c339f0555f84f43ddc4627a9d1aee5366e929",
+      "tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+      "tools/test_hardware_collision.py": "b316455e102f5e77907c8a13e68fce32a140020ebd332f9fd5e2a1527a0ca7bc",
+      "tools/test_jump_height.py": "bdbecef05c712b6fdddd88c9b579a02d6c178b79b8fc275a800efe6b3de63046",
+      "tools/test_jump_stop.py": "992759097f4465d4639d53f010554ff8b31f24860719eeca6afb4dc191d6823d",
+      "tools/test_jump_stress.py": "185570dc47ed365ce62479f5c77dbf562eb0f0a432c41608e86bf7ef74b958a8",
+      "tools/test_robustness.py": "f1cb66d2ccaf28f716699b5c911090fa8c1c772932edbbfe47946d066776557c",
+      "tools/test_state_estimation.py": "92decd3c435ad5aa11a6a0eafe1147ddd7be51a2dbde3e9805210b8543f475b0",
+      "tools/test_step_stress.py": "39bd81ab53d4116335d9ae8494102fc34b4f53870f7f74cfaad9eabed640951f",
+      "tools/wheelleg_sim.py": "2656c4055d1243a5ab93143e132ea6c2828dcd606e5a76decf4b6ce7de58234f",
+      "xml/wheelleg.xml": "5a3c9a804cc722437c6d2a754a0b8d1bcfe0bd69fe6980cf3ed8a544b88acb75"
+    }
+  },
+  {
+    "name": "landing_stop",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "-u",
+      "tools/test_jump_stop.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state"
+    ],
+    "returncode": 1,
+    "sha256": {
+      "tools/check_hardware_sizing.py": "2dcb287bbc61e5cc6ae5814da21b857efb69006a6b42c9d9f7298a3068d6a36a",
+      "tools/check_track_width.py": "0439d959a83930250060bf231fa9add2aa474f25a8230f92e76b76eeaa683d41",
+      "tools/hardware_profile.py": "5d33600ce5e4a85d112ed370dcdeeb63673e49b0f873ad8568b3d28ec826d355",
+      "tools/model_lqr.py": "8fb2fd8126ecb8284b19a3a70688b858f213d8d97b4d495175a6b530255084c4",
+      "tools/rm_controller.py": "440fa67e961ecb7cc7bbdc50021c339f0555f84f43ddc4627a9d1aee5366e929",
+      "tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+      "tools/test_hardware_collision.py": "b316455e102f5e77907c8a13e68fce32a140020ebd332f9fd5e2a1527a0ca7bc",
+      "tools/test_jump_height.py": "bdbecef05c712b6fdddd88c9b579a02d6c178b79b8fc275a800efe6b3de63046",
+      "tools/test_jump_stop.py": "992759097f4465d4639d53f010554ff8b31f24860719eeca6afb4dc191d6823d",
+      "tools/test_jump_stress.py": "185570dc47ed365ce62479f5c77dbf562eb0f0a432c41608e86bf7ef74b958a8",
+      "tools/test_robustness.py": "f1cb66d2ccaf28f716699b5c911090fa8c1c772932edbbfe47946d066776557c",
+      "tools/test_state_estimation.py": "92decd3c435ad5aa11a6a0eafe1147ddd7be51a2dbde3e9805210b8543f475b0",
+      "tools/test_step_stress.py": "39bd81ab53d4116335d9ae8494102fc34b4f53870f7f74cfaad9eabed640951f",
+      "tools/wheelleg_sim.py": "2656c4055d1243a5ab93143e132ea6c2828dcd606e5a76decf4b6ce7de58234f",
+      "xml/wheelleg.xml": "5a3c9a804cc722437c6d2a754a0b8d1bcfe0bd69fe6980cf3ed8a544b88acb75"
+    }
+  },
+  {
+    "name": "push",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "-u",
+      "tools/test_robustness.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state"
+    ],
+    "returncode": 0,
+    "sha256": {
+      "tools/check_hardware_sizing.py": "2dcb287bbc61e5cc6ae5814da21b857efb69006a6b42c9d9f7298a3068d6a36a",
+      "tools/check_track_width.py": "0439d959a83930250060bf231fa9add2aa474f25a8230f92e76b76eeaa683d41",
+      "tools/hardware_profile.py": "5d33600ce5e4a85d112ed370dcdeeb63673e49b0f873ad8568b3d28ec826d355",
+      "tools/model_lqr.py": "8fb2fd8126ecb8284b19a3a70688b858f213d8d97b4d495175a6b530255084c4",
+      "tools/rm_controller.py": "440fa67e961ecb7cc7bbdc50021c339f0555f84f43ddc4627a9d1aee5366e929",
+      "tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+      "tools/test_hardware_collision.py": "b316455e102f5e77907c8a13e68fce32a140020ebd332f9fd5e2a1527a0ca7bc",
+      "tools/test_jump_height.py": "bdbecef05c712b6fdddd88c9b579a02d6c178b79b8fc275a800efe6b3de63046",
+      "tools/test_jump_stop.py": "992759097f4465d4639d53f010554ff8b31f24860719eeca6afb4dc191d6823d",
+      "tools/test_jump_stress.py": "185570dc47ed365ce62479f5c77dbf562eb0f0a432c41608e86bf7ef74b958a8",
+      "tools/test_robustness.py": "f1cb66d2ccaf28f716699b5c911090fa8c1c772932edbbfe47946d066776557c",
+      "tools/test_state_estimation.py": "92decd3c435ad5aa11a6a0eafe1147ddd7be51a2dbde3e9805210b8543f475b0",
+      "tools/test_step_stress.py": "39bd81ab53d4116335d9ae8494102fc34b4f53870f7f74cfaad9eabed640951f",
+      "tools/wheelleg_sim.py": "2656c4055d1243a5ab93143e132ea6c2828dcd606e5a76decf4b6ce7de58234f",
+      "xml/wheelleg.xml": "5a3c9a804cc722437c6d2a754a0b8d1bcfe0bd69fe6980cf3ed8a544b88acb75"
+    }
+  },
+  {
+    "name": "turn_jump",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "-u",
+      "tools/test_robustness.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state",
+      "--scenario",
+      "turn",
+      "--speeds",
+      "0",
+      "1",
+      "-1",
+      "--jump-after-turn"
+    ],
+    "returncode": 0,
+    "sha256": {
+      "tools/check_hardware_sizing.py": "2dcb287bbc61e5cc6ae5814da21b857efb69006a6b42c9d9f7298a3068d6a36a",
+      "tools/check_track_width.py": "0439d959a83930250060bf231fa9add2aa474f25a8230f92e76b76eeaa683d41",
+      "tools/hardware_profile.py": "5d33600ce5e4a85d112ed370dcdeeb63673e49b0f873ad8568b3d28ec826d355",
+      "tools/model_lqr.py": "8fb2fd8126ecb8284b19a3a70688b858f213d8d97b4d495175a6b530255084c4",
+      "tools/rm_controller.py": "440fa67e961ecb7cc7bbdc50021c339f0555f84f43ddc4627a9d1aee5366e929",
+      "tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+      "tools/test_hardware_collision.py": "b316455e102f5e77907c8a13e68fce32a140020ebd332f9fd5e2a1527a0ca7bc",
+      "tools/test_jump_height.py": "bdbecef05c712b6fdddd88c9b579a02d6c178b79b8fc275a800efe6b3de63046",
+      "tools/test_jump_stop.py": "992759097f4465d4639d53f010554ff8b31f24860719eeca6afb4dc191d6823d",
+      "tools/test_jump_stress.py": "185570dc47ed365ce62479f5c77dbf562eb0f0a432c41608e86bf7ef74b958a8",
+      "tools/test_robustness.py": "f1cb66d2ccaf28f716699b5c911090fa8c1c772932edbbfe47946d066776557c",
+      "tools/test_state_estimation.py": "92decd3c435ad5aa11a6a0eafe1147ddd7be51a2dbde3e9805210b8543f475b0",
+      "tools/test_step_stress.py": "39bd81ab53d4116335d9ae8494102fc34b4f53870f7f74cfaad9eabed640951f",
+      "tools/wheelleg_sim.py": "2656c4055d1243a5ab93143e132ea6c2828dcd606e5a76decf4b6ce7de58234f",
+      "xml/wheelleg.xml": "5a3c9a804cc722437c6d2a754a0b8d1bcfe0bd69fe6980cf3ed8a544b88acb75"
+    }
+  },
+  {
+    "name": "collision",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "-u",
+      "tools/test_hardware_collision.py"
+    ],
+    "returncode": 0,
+    "sha256": {
+      "tools/check_hardware_sizing.py": "2dcb287bbc61e5cc6ae5814da21b857efb69006a6b42c9d9f7298a3068d6a36a",
+      "tools/check_track_width.py": "0439d959a83930250060bf231fa9add2aa474f25a8230f92e76b76eeaa683d41",
+      "tools/hardware_profile.py": "5d33600ce5e4a85d112ed370dcdeeb63673e49b0f873ad8568b3d28ec826d355",
+      "tools/model_lqr.py": "8fb2fd8126ecb8284b19a3a70688b858f213d8d97b4d495175a6b530255084c4",
+      "tools/rm_controller.py": "440fa67e961ecb7cc7bbdc50021c339f0555f84f43ddc4627a9d1aee5366e929",
+      "tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+      "tools/test_hardware_collision.py": "b316455e102f5e77907c8a13e68fce32a140020ebd332f9fd5e2a1527a0ca7bc",
+      "tools/test_jump_height.py": "bdbecef05c712b6fdddd88c9b579a02d6c178b79b8fc275a800efe6b3de63046",
+      "tools/test_jump_stop.py": "992759097f4465d4639d53f010554ff8b31f24860719eeca6afb4dc191d6823d",
+      "tools/test_jump_stress.py": "185570dc47ed365ce62479f5c77dbf562eb0f0a432c41608e86bf7ef74b958a8",
+      "tools/test_robustness.py": "f1cb66d2ccaf28f716699b5c911090fa8c1c772932edbbfe47946d066776557c",
+      "tools/test_state_estimation.py": "92decd3c435ad5aa11a6a0eafe1147ddd7be51a2dbde3e9805210b8543f475b0",
+      "tools/test_step_stress.py": "39bd81ab53d4116335d9ae8494102fc34b4f53870f7f74cfaad9eabed640951f",
+      "tools/wheelleg_sim.py": "2656c4055d1243a5ab93143e132ea6c2828dcd606e5a76decf4b6ce7de58234f",
+      "xml/wheelleg.xml": "5a3c9a804cc722437c6d2a754a0b8d1bcfe0bd69fe6980cf3ed8a544b88acb75"
+    }
+  }
+]

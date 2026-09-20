@@ -1,0 +1,118 @@
+[
+  {
+    "name": "default_reduced6",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/model_lqr.py",
+      "--heights",
+      "0.055",
+      "0.09",
+      "0.1119",
+      "0.135",
+      "--check-midpoints",
+      "--reduction",
+      "6",
+      "--report",
+      "tools/results/continuation_2026-09-05/default_reduced6.json"
+    ],
+    "returncode": 1
+  },
+  {
+    "name": "default_reduced8",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/model_lqr.py",
+      "--heights",
+      "0.055",
+      "0.09",
+      "0.1119",
+      "0.135",
+      "--check-midpoints",
+      "--reduction",
+      "8",
+      "--report",
+      "tools/results/continuation_2026-09-05/default_reduced8.json"
+    ],
+    "returncode": 1
+  },
+  {
+    "name": "hardware_reduced6",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/model_lqr.py",
+      "--hardware",
+      "--heights",
+      "0.055",
+      "0.09",
+      "0.1119",
+      "0.135",
+      "--check-midpoints",
+      "--reduction",
+      "6",
+      "--report",
+      "tools/results/continuation_2026-09-05/hardware_reduced6.json"
+    ],
+    "returncode": 1
+  },
+  {
+    "name": "hardware_reduced8",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/model_lqr.py",
+      "--hardware",
+      "--heights",
+      "0.055",
+      "0.09",
+      "0.1119",
+      "0.135",
+      "--check-midpoints",
+      "--reduction",
+      "8",
+      "--report",
+      "tools/results/continuation_2026-09-05/hardware_reduced8.json"
+    ],
+    "returncode": 1
+  },
+  {
+    "name": "wide_reduced6",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/model_lqr.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--heights",
+      "0.055",
+      "0.09",
+      "0.1119",
+      "0.135",
+      "--check-midpoints",
+      "--reduction",
+      "6",
+      "--report",
+      "tools/results/continuation_2026-09-05/wide_reduced6.json"
+    ],
+    "returncode": 1
+  },
+  {
+    "name": "wide_reduced8",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/model_lqr.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--heights",
+      "0.055",
+      "0.09",
+      "0.1119",
+      "0.135",
+      "--check-midpoints",
+      "--reduction",
+      "8",
+      "--report",
+      "tools/results/continuation_2026-09-05/wide_reduced8.json"
+    ],
+    "returncode": 1
+  }
+]

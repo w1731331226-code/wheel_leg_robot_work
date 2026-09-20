@@ -1,0 +1,18 @@
+{
+  "main_entry": "tools/wheelleg_sim.py",
+  "model": "xml/wheelleg.xml",
+  "model_equivalence": "raw and hardware-configured main model matched accepted candidate arrays at rtol=atol=1e-12",
+  "default_jump_exit": 0,
+  "terrain_exit": 1,
+  "terrain_passed": 0,
+  "terrain_total": 8,
+  "source_sha256": {
+    "xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f",
+    "xml/wheelleg_dm8009.xml": "3adc23db052dd2ab885a92fabc38dbcc9eea0fe69204187323804d4e997c3862",
+    "tools/wheelleg_sim.py": "84adc084aff0df2ece83a072e3756014e8edeb58101d17caf09261f427d9508c",
+    "tools/hardware_profile.py": "844688aae7e408bb2ca11d00b192ffaa9e4ad5de06cc8a815d3cf3ddfbe02eba",
+    "tools/rm_controller.py": "9496148077be47a89127eac7e4c76554b215c0727ae3e76a5d54e456ee1eb9ca",
+    "tools/model_lqr.py": "48682b24c885c06cbce7f0a957a281228c0ca28e038179cbaf24484e476cd14d",
+    "tools/test_robustness.py": "6a75fd326e9c1b1efd5d13a531a62fcde4ea2ed3ae97c3369e65fcf814d9c563"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "r25_bump",
+  "args": [
+    "tools/test_robustness.py",
+    "--hardware",
+    "--track-width",
+    "0.18",
+    "--six-state",
+    "--scenario",
+    "bump",
+    "--speeds",
+    "1",
+    "-1",
+    "--report",
+    "tools/results/continuation_2026-09-08/r25_bump.json"
+  ],
+  "returncode": 1,
+  "wheel_radius": 0.025
+}

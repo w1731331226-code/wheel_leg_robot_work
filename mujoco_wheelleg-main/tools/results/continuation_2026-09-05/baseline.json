@@ -1,0 +1,156 @@
+[
+  {
+    "name": "stand",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--test",
+      "stand"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "stop",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--test",
+      "stop"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "jump",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--test",
+      "jump"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "jumpfwd",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--test",
+      "jumpfwd"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "jumpback",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--test",
+      "jumpback"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "stress_clean",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/test_jump_stress.py",
+      "--no-disturbance"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "stress_push",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/test_jump_stress.py"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "robustness",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/test_robustness.py"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "jump_height",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/test_jump_height.py"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "sizing",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/check_hardware_sizing.py"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "hardware_stand",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--hardware",
+      "--test",
+      "stand"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "hardware_jump",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--hardware",
+      "--test",
+      "jump"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "hardware_jumpfwd",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--hardware",
+      "--test",
+      "jumpfwd"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "hardware_jumpback",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--hardware",
+      "--test",
+      "jumpback"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "hardware_stop",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--hardware",
+      "--test",
+      "stop"
+    ],
+    "returncode": 1
+  },
+  {
+    "name": "jump_stop",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/test_jump_stop.py"
+    ],
+    "returncode": 1
+  }
+]

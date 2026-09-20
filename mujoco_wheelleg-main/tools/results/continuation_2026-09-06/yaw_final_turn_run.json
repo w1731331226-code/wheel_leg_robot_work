@@ -1,0 +1,25 @@
+{
+  "name": "yaw_final_turn",
+  "args": [
+    "tools/test_robustness.py",
+    "--hardware",
+    "--track-width",
+    "0.18",
+    "--six-state",
+    "--scenario",
+    "turn",
+    "--speeds",
+    "0",
+    "1",
+    "-1",
+    "--report",
+    "tools/results/continuation_2026-09-06/yaw_final_turn.json",
+    "--jump-after-turn"
+  ],
+  "returncode": 0,
+  "sha256": {
+    "tools/wheelleg_sim.py": "5807782c510fecb858bace17e6d75209b8ce2fc91c1e4e9851d1b7a009f4ff38",
+    "tools/rm_controller.py": "60a1d13d9e0d84e7cdd0755d487259d7fbc7f31798c3f50b475a6723e964da50",
+    "tools/test_robustness.py": "459b5210bf127accceec1d7017a036a2a6abdbeb98b95d930bdbcf2512ad8c93"
+  }
+}

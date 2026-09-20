@@ -1,0 +1,23 @@
+[
+  {
+    "name": "default",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--test",
+      "stop"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "hardware",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--hardware",
+      "--test",
+      "stop"
+    ],
+    "returncode": 1
+  }
+]

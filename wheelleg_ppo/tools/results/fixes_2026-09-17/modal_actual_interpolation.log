@@ -1,0 +1,38 @@
+L=0.1600 qacc=0.00e+00 pitch=0.000deg open=1.004402 closed=0.998776
+u_eq= [-1.74470363e+00  1.74486131e+00 -1.74470363e+00  1.74486131e+00
+  8.81047908e-28  8.81047908e-28]
+linearization error=0.000% wheel_dvx_dtau=0.000286
+reduction {"order": 6, "method": "modal", "vmc_condition": 1.4999430560359601, "projection_condition": 20.927270009449636, "omitted_radius": 0.9870748210524375, "max_relative_frf_error": 0.0025988345424261435, "reduced_closed_radius": 0.9989220057139586, "full_closed_radius": 0.9989229199995769, "linear_pass": true}
+nonlinear impulse=-0.200Ns r/p/y=[0.    0.017 0.   ]deg peak_x=0.0086 final_x=-0.00002 final_v=0.00004 recovery=0.10s nonwheel=False
+nonlinear impulse=+0.200Ns r/p/y=[0.    0.017 0.   ]deg peak_x=0.0086 final_x=0.00002 final_v=-0.00004 recovery=0.10s nonwheel=False
+L=0.2500 qacc=0.00e+00 pitch=-0.000deg open=1.004119 closed=0.998679
+u_eq= [-2.34720710e+00  2.34724455e+00 -2.34720710e+00  2.34724455e+00
+  3.83194510e-28  3.83194510e-28]
+linearization error=0.001% wheel_dvx_dtau=-0.000198
+reduction {"order": 6, "method": "modal", "vmc_condition": 1.1692020288503353, "projection_condition": 24.77954529917417, "omitted_radius": 0.9865248329640839, "max_relative_frf_error": 0.0028353847996350056, "reduced_closed_radius": 0.998875822776472, "full_closed_radius": 0.9988768546432709, "linear_pass": true}
+nonlinear impulse=-0.200Ns r/p/y=[0.    0.013 0.   ]deg peak_x=0.0086 final_x=-0.00001 final_v=0.00004 recovery=0.11s nonwheel=False
+nonlinear impulse=+0.200Ns r/p/y=[0.    0.013 0.   ]deg peak_x=0.0086 final_x=0.00001 final_v=-0.00004 recovery=0.11s nonwheel=False
+L=0.3000 qacc=0.00e+00 pitch=0.000deg open=1.003915 closed=0.998672
+u_eq= [-2.22738299e+00  2.22738560e+00 -2.22738299e+00  2.22738560e+00
+ -7.76478286e-29 -7.76478286e-29]
+linearization error=0.001% wheel_dvx_dtau=-0.000307
+reduction {"order": 6, "method": "modal", "vmc_condition": 1.0703721088466125, "projection_condition": 26.86518990156714, "omitted_radius": 0.9865208575083134, "max_relative_frf_error": 0.0029161310892778748, "reduced_closed_radius": 0.9988611909147412, "full_closed_radius": 0.9988622275746445, "linear_pass": true}
+nonlinear impulse=-0.200Ns r/p/y=[0.    0.014 0.   ]deg peak_x=0.0086 final_x=-0.00001 final_v=0.00004 recovery=0.11s nonwheel=False
+nonlinear impulse=+0.200Ns r/p/y=[0.    0.014 0.   ]deg peak_x=0.0086 final_x=0.00001 final_v=-0.00004 recovery=0.11s nonwheel=False
+L=0.3800 qacc=0.00e+00 pitch=0.000deg open=1.003914 closed=0.998759
+u_eq= [-1.37002774e+00  1.36995398e+00 -1.37002774e+00  1.36995398e+00
+  1.96454726e-26  1.96454726e-26]
+linearization error=0.001% wheel_dvx_dtau=-0.000375
+reduction {"order": 6, "method": "modal", "vmc_condition": 1.898231218528725, "projection_condition": 30.430514512924493, "omitted_radius": 0.9900095341205083, "max_relative_frf_error": 0.003464656240716812, "reduced_closed_radius": 0.9988503518062063, "full_closed_radius": 0.9988515290564789, "linear_pass": true}
+nonlinear impulse=-0.200Ns r/p/y=[0.    0.029 0.   ]deg peak_x=0.0087 final_x=-0.00000 final_v=0.00003 recovery=0.11s nonwheel=False
+nonlinear impulse=+0.200Ns r/p/y=[0.    0.029 0.   ]deg peak_x=0.0087 final_x=0.00000 final_v=-0.00003 recovery=0.11s nonwheel=False
+interpolated L=0.2050 closed=0.998880
+nonlinear impulse=-0.200Ns r/p/y=[0.    0.013 0.   ]deg peak_x=0.0086 final_x=-0.00001 final_v=0.00004 recovery=0.10s nonwheel=False
+nonlinear impulse=+0.200Ns r/p/y=[0.    0.013 0.   ]deg peak_x=0.0086 final_x=0.00001 final_v=-0.00004 recovery=0.10s nonwheel=False
+interpolated L=0.2750 closed=0.998866
+nonlinear impulse=-0.200Ns r/p/y=[0.    0.013 0.   ]deg peak_x=0.0086 final_x=-0.00001 final_v=0.00004 recovery=0.11s nonwheel=False
+nonlinear impulse=+0.200Ns r/p/y=[0.    0.013 0.   ]deg peak_x=0.0086 final_x=0.00001 final_v=-0.00004 recovery=0.11s nonwheel=False
+interpolated L=0.3400 closed=0.998853
+nonlinear impulse=-0.200Ns r/p/y=[0.    0.018 0.   ]deg peak_x=0.0087 final_x=-0.00001 final_v=0.00004 recovery=0.11s nonwheel=False
+nonlinear impulse=+0.200Ns r/p/y=[0.    0.018 0.   ]deg peak_x=0.0087 final_x=0.00001 final_v=-0.00004 recovery=0.11s nonwheel=False
+nonlinear checks: 14/14 PASS

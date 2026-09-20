@@ -1,0 +1,139 @@
+{
+  "protocol": "yaw-precision-v2",
+  "automation_id": null,
+  "cancelled_automation_id": "ppo",
+  "followup_mode": "current_thread_only; scheduled follow-up cancelled by user",
+  "updated_utc": "2026-09-20 20:59:23 UTC",
+  "execution": "serial_systemd_user_service",
+  "policy_steps_per_run": 2000000,
+  "total_pilot_policy_step_budget": 36000000,
+  "queue": [
+    {
+      "method": "M3",
+      "seed": 1609,
+      "status": "running_segmented"
+    },
+    {
+      "method": "B2-V",
+      "seed": 1609,
+      "status": "pending"
+    },
+    {
+      "method": "M1",
+      "seed": 1609,
+      "status": "pending"
+    },
+    {
+      "method": "N3+",
+      "seed": 1609,
+      "status": "pending"
+    },
+    {
+      "method": "N3-",
+      "seed": 1609,
+      "status": "pending"
+    },
+    {
+      "method": "B2",
+      "seed": 1609,
+      "status": "pending"
+    },
+    {
+      "method": "M3",
+      "seed": 1610,
+      "status": "pending"
+    },
+    {
+      "method": "B2-V",
+      "seed": 1610,
+      "status": "pending"
+    },
+    {
+      "method": "M1",
+      "seed": 1610,
+      "status": "pending"
+    },
+    {
+      "method": "N3+",
+      "seed": 1610,
+      "status": "pending"
+    },
+    {
+      "method": "N3-",
+      "seed": 1610,
+      "status": "pending"
+    },
+    {
+      "method": "B2",
+      "seed": 1610,
+      "status": "pending"
+    },
+    {
+      "method": "M3",
+      "seed": 1611,
+      "status": "pending"
+    },
+    {
+      "method": "B2-V",
+      "seed": 1611,
+      "status": "pending"
+    },
+    {
+      "method": "M1",
+      "seed": 1611,
+      "status": "pending"
+    },
+    {
+      "method": "N3+",
+      "seed": 1611,
+      "status": "pending"
+    },
+    {
+      "method": "N3-",
+      "seed": 1611,
+      "status": "pending"
+    },
+    {
+      "method": "B2",
+      "seed": 1611,
+      "status": "pending"
+    }
+  ],
+  "current": {
+    "method": "M3",
+    "seed": 1609,
+    "service": "wheelleg-m3-1609-v2-resume1.service",
+    "output": "tools/results/pilot_v2_M3_seed1609_resume1",
+    "log": "tools/results/pilot_v2_M3_seed1609_resume1.log",
+    "start_policy_steps": 80000,
+    "remaining_policy_steps_at_resume": 1920000,
+    "segments": [
+      "tools/results/pilot_v2_M3_seed1609_2026-09-21",
+      "tools/results/pilot_v2_M3_seed1609_resume1"
+    ],
+    "stage_200k_reviewed": true,
+    "stage_200k_review": "tools/results/pilot_v2_M3_seed1609_resume1/stage_200000_review.json",
+    "stage_engineering_pass": true,
+    "stage_best_policy_steps": 160000,
+    "stage_best_success_count": 28,
+    "stage_best_yaw_score_deg": 0.8039412348172126,
+    "stage_method_advantage_demonstrated": false
+  },
+  "interruption": {
+    "old_process_id": 14162,
+    "last_fully_evaluated_steps": 60000,
+    "last_saved_optimizer_steps": 80000,
+    "cause": "Not established: process absent, exec session missing, no Python traceback at log tail.",
+    "recovery": "Restore policy/optimizer/normalization, reset simulator and random streams, retain global step count.",
+    "exact_trajectory_resume": false,
+    "partial_checkpoint_evaluation_repeated": true
+  },
+  "next_run_instructions": "Verify no active worker/service, use frozen train_yaw.py --protocol v2 --method METHOD --seed SEED --train --output a new directory under tools/results. Launch with systemd-run --user, WorkingDirectory=/home/wmt/wheel_leg_robot_work, OPENBLAS_NUM_THREADS=1, OMP_NUM_THREADS=1 and file logging. Update current/queue only on actual launch/completion; never infer completion from absence of process.",
+  "stop_before": [
+    "64-case research gate evaluation",
+    "all final test splits",
+    "five-seed formal extension"
+  ],
+  "gate_evaluated": false,
+  "test_set_evaluated": false
+}

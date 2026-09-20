@@ -1,0 +1,450 @@
+[
+  {
+    "name": "nominal_-1.0",
+    "scenario": {
+      "speed": -1.0,
+      "mass": 7.0,
+      "height_l": 0.0,
+      "height_r": 0.0,
+      "center": 2.0,
+      "offset": 0.0,
+      "mu_l": 0.8,
+      "mu_r": 0.8,
+      "drive_difference": 0.0,
+      "delay_ms": 0.0,
+      "solver_iterations": 100
+    }
+  },
+  {
+    "name": "nominal_-0.5",
+    "scenario": {
+      "speed": -0.5,
+      "mass": 7.0,
+      "height_l": 0.0,
+      "height_r": 0.0,
+      "center": 2.0,
+      "offset": 0.0,
+      "mu_l": 0.8,
+      "mu_r": 0.8,
+      "drive_difference": 0.0,
+      "delay_ms": 0.0,
+      "solver_iterations": 100
+    }
+  },
+  {
+    "name": "nominal_0.5",
+    "scenario": {
+      "speed": 0.5,
+      "mass": 7.0,
+      "height_l": 0.0,
+      "height_r": 0.0,
+      "center": 2.0,
+      "offset": 0.0,
+      "mu_l": 0.8,
+      "mu_r": 0.8,
+      "drive_difference": 0.0,
+      "delay_ms": 0.0,
+      "solver_iterations": 100
+    }
+  },
+  {
+    "name": "nominal_1.0",
+    "scenario": {
+      "speed": 1.0,
+      "mass": 7.0,
+      "height_l": 0.0,
+      "height_r": 0.0,
+      "center": 2.0,
+      "offset": 0.0,
+      "mu_l": 0.8,
+      "mu_r": 0.8,
+      "drive_difference": 0.0,
+      "delay_ms": 0.0,
+      "solver_iterations": 100
+    }
+  },
+  {
+    "name": "symmetric_-1.0",
+    "scenario": {
+      "speed": -1.0,
+      "mass": 7.0,
+      "height_l": 0.015,
+      "height_r": 0.015,
+      "center": 2.0,
+      "offset": 0.0,
+      "mu_l": 0.8,
+      "mu_r": 0.8,
+      "drive_difference": 0.0,
+      "delay_ms": 0.0,
+      "solver_iterations": 100
+    }
+  },
+  {
+    "name": "symmetric_1.0",
+    "scenario": {
+      "speed": 1.0,
+      "mass": 7.0,
+      "height_l": 0.015,
+      "height_r": 0.015,
+      "center": 2.0,
+      "offset": 0.0,
+      "mu_l": 0.8,
+      "mu_r": 0.8,
+      "drive_difference": 0.0,
+      "delay_ms": 0.0,
+      "solver_iterations": 100
+    }
+  },
+  {
+    "name": "legacy_bump_-1.0_l_0.01",
+    "scenario": {
+      "speed": -1.0,
+      "mass": 7.0,
+      "height_l": 0.01,
+      "height_r": 0.0,
+      "center": 2.0,
+      "offset": 0.0,
+      "mu_l": 0.8,
+      "mu_r": 0.8,
+      "drive_difference": 0.0,
+      "delay_ms": 0.0,
+      "solver_iterations": 100
+    }
+  },
+  {
+    "name": "legacy_bump_-1.0_l_0.015",
+    "scenario": {
+      "speed": -1.0,
+      "mass": 7.0,
+      "height_l": 0.015,
+      "height_r": 0.0,
+      "center": 2.0,
+      "offset": 0.0,
+      "mu_l": 0.8,
+      "mu_r": 0.8,
+      "drive_difference": 0.0,
+      "delay_ms": 0.0,
+      "solver_iterations": 100
+    }
+  },
+  {
+    "name": "legacy_bump_-1.0_r_0.01",
+    "scenario": {
+      "speed": -1.0,
+      "mass": 7.0,
+      "height_l": 0.0,
+      "height_r": 0.01,
+      "center": 2.0,
+      "offset": 0.0,
+      "mu_l": 0.8,
+      "mu_r": 0.8,
+      "drive_difference": 0.0,
+      "delay_ms": 0.0,
+      "solver_iterations": 100
+    }
+  },
+  {
+    "name": "legacy_bump_-1.0_r_0.015",
+    "scenario": {
+      "speed": -1.0,
+      "mass": 7.0,
+      "height_l": 0.0,
+      "height_r": 0.015,
+      "center": 2.0,
+      "offset": 0.0,
+      "mu_l": 0.8,
+      "mu_r": 0.8,
+      "drive_difference": 0.0,
+      "delay_ms": 0.0,
+      "solver_iterations": 100
+    }
+  },
+  {
+    "name": "legacy_bump_1.0_l_0.01",
+    "scenario": {
+      "speed": 1.0,
+      "mass": 7.0,
+      "height_l": 0.01,
+      "height_r": 0.0,
+      "center": 2.0,
+      "offset": 0.0,
+      "mu_l": 0.8,
+      "mu_r": 0.8,
+      "drive_difference": 0.0,
+      "delay_ms": 0.0,
+      "solver_iterations": 100
+    }
+  },
+  {
+    "name": "legacy_bump_1.0_l_0.015",
+    "scenario": {
+      "speed": 1.0,
+      "mass": 7.0,
+      "height_l": 0.015,
+      "height_r": 0.0,
+      "center": 2.0,
+      "offset": 0.0,
+      "mu_l": 0.8,
+      "mu_r": 0.8,
+      "drive_difference": 0.0,
+      "delay_ms": 0.0,
+      "solver_iterations": 100
+    }
+  },
+  {
+    "name": "legacy_bump_1.0_r_0.01",
+    "scenario": {
+      "speed": 1.0,
+      "mass": 7.0,
+      "height_l": 0.0,
+      "height_r": 0.01,
+      "center": 2.0,
+      "offset": 0.0,
+      "mu_l": 0.8,
+      "mu_r": 0.8,
+      "drive_difference": 0.0,
+      "delay_ms": 0.0,
+      "solver_iterations": 100
+    }
+  },
+  {
+    "name": "legacy_bump_1.0_r_0.015",
+    "scenario": {
+      "speed": 1.0,
+      "mass": 7.0,
+      "height_l": 0.0,
+      "height_r": 0.015,
+      "center": 2.0,
+      "offset": 0.0,
+      "mu_l": 0.8,
+      "mu_r": 0.8,
+      "drive_difference": 0.0,
+      "delay_ms": 0.0,
+      "solver_iterations": 100
+    }
+  },
+  {
+    "name": "validation_0",
+    "scenario": {
+      "speed": 0.9049876397710312,
+      "mass": 7.24648196093265,
+      "height_l": 0.010218050542901164,
+      "height_r": 0.0,
+      "center": 1.8335359604118957,
+      "offset": -0.04733559507820755,
+      "mu_l": 0.8103021792437824,
+      "mu_r": 0.6162868397415845,
+      "drive_difference": 0.02695649642551276,
+      "delay_ms": 5.0,
+      "solver_iterations": 100
+    }
+  },
+  {
+    "name": "validation_1",
+    "scenario": {
+      "speed": -0.9800323146366026,
+      "mass": 7.004744370052092,
+      "height_l": 0.015216675326342743,
+      "height_r": 0.014641130756587737,
+      "center": 2.0238466549881236,
+      "offset": 0.025202525497344863,
+      "mu_l": 0.607433581495126,
+      "mu_r": 0.7223835705701439,
+      "drive_difference": -0.02639754748219375,
+      "delay_ms": 5.0,
+      "solver_iterations": 100
+    }
+  },
+  {
+    "name": "validation_2",
+    "scenario": {
+      "speed": 0.8348109327622206,
+      "mass": 7.285617532262398,
+      "height_l": 0.00929476637724472,
+      "height_r": 0.010752236413423679,
+      "center": 1.82100764001824,
+      "offset": 0.011089675670845539,
+      "mu_l": 0.7904213865785923,
+      "mu_r": 0.8977162554610256,
+      "drive_difference": -0.007384914243067545,
+      "delay_ms": 3.5,
+      "solver_iterations": 100
+    }
+  },
+  {
+    "name": "validation_3",
+    "scenario": {
+      "speed": -0.9786994613787425,
+      "mass": 7.345959062848381,
+      "height_l": 0.005907178797361643,
+      "height_r": 0.019094083566643185,
+      "center": 1.7356890637849256,
+      "offset": -0.04932852499087484,
+      "mu_l": 0.7284485761424434,
+      "mu_r": 0.9266632798259357,
+      "drive_difference": 0.010178075098087914,
+      "delay_ms": 6.0,
+      "solver_iterations": 100
+    }
+  },
+  {
+    "name": "validation_4",
+    "scenario": {
+      "speed": -0.7954703762450727,
+      "mass": 7.0492150025554166,
+      "height_l": 0.015913637595770996,
+      "height_r": 0.0,
+      "center": 2.1037565690569813,
+      "offset": 0.08056923663438556,
+      "mu_l": 0.6167664735311178,
+      "mu_r": 0.7027077468275418,
+      "drive_difference": -0.0020682744345966453,
+      "delay_ms": 5.5,
+      "solver_iterations": 100
+    }
+  },
+  {
+    "name": "validation_5",
+    "scenario": {
+      "speed": -0.5345983858425508,
+      "mass": 7.123878073056212,
+      "height_l": 0.010145051648470743,
+      "height_r": 0.014821709794907743,
+      "center": 1.8272337968454764,
+      "offset": -0.006742345862803159,
+      "mu_l": 0.7122392880728278,
+      "mu_r": 0.9880075678163747,
+      "drive_difference": -0.016462727918046483,
+      "delay_ms": 0.5,
+      "solver_iterations": 100
+    }
+  },
+  {
+    "name": "validation_6",
+    "scenario": {
+      "speed": -0.8335652430139888,
+      "mass": 7.121258449776787,
+      "height_l": 0.0,
+      "height_r": 0.01195164561345824,
+      "center": 1.84187687584803,
+      "offset": 0.07629979188789121,
+      "mu_l": 0.8253859864033695,
+      "mu_r": 0.723010076878523,
+      "drive_difference": -0.020887212702541832,
+      "delay_ms": 4.0,
+      "solver_iterations": 100
+    }
+  },
+  {
+    "name": "validation_7",
+    "scenario": {
+      "speed": 0.7751030371928321,
+      "mass": 7.10208970552061,
+      "height_l": 0.0,
+      "height_r": 0.016643400160333218,
+      "center": 2.108494793506253,
+      "offset": 0.09763802790835818,
+      "mu_l": 0.6556531955566863,
+      "mu_r": 0.7381874897787414,
+      "drive_difference": -0.0072713672756513845,
+      "delay_ms": 3.5,
+      "solver_iterations": 100
+    }
+  },
+  {
+    "name": "validation_8",
+    "scenario": {
+      "speed": -0.6558654346542279,
+      "mass": 7.398858862730201,
+      "height_l": 0.015731854869274562,
+      "height_r": 0.001755623552074901,
+      "center": 2.1390107966914518,
+      "offset": -0.05697770173598023,
+      "mu_l": 0.9541427795950363,
+      "mu_r": 0.9248095058249928,
+      "drive_difference": -0.02080352509436151,
+      "delay_ms": 6.0,
+      "solver_iterations": 100
+    }
+  },
+  {
+    "name": "validation_9",
+    "scenario": {
+      "speed": -0.5229146975939427,
+      "mass": 7.197333780722708,
+      "height_l": 0.01652625868088537,
+      "height_r": 0.012736725572157022,
+      "center": 2.1849751385383844,
+      "offset": -0.09078447542773627,
+      "mu_l": 0.8224703497638298,
+      "mu_r": 0.9359018059870254,
+      "drive_difference": 0.021702153513581172,
+      "delay_ms": 9.5,
+      "solver_iterations": 100
+    }
+  },
+  {
+    "name": "validation_10",
+    "scenario": {
+      "speed": -0.8164568739301815,
+      "mass": 7.3042395680699155,
+      "height_l": 0.0,
+      "height_r": 0.013103440532767826,
+      "center": 1.71387650652355,
+      "offset": 0.09927196321226903,
+      "mu_l": 0.6132179292519125,
+      "mu_r": 0.8092554696262046,
+      "drive_difference": -0.0038107635836188355,
+      "delay_ms": 6.5,
+      "solver_iterations": 100
+    }
+  },
+  {
+    "name": "validation_11",
+    "scenario": {
+      "speed": -0.716130046172817,
+      "mass": 7.238504547568849,
+      "height_l": 0.002669288859446679,
+      "height_r": 0.004951901867033302,
+      "center": 2.18663417461268,
+      "offset": 0.09490678798289429,
+      "mu_l": 0.9202371640898095,
+      "mu_r": 0.8349857144930098,
+      "drive_difference": -0.02415318913685778,
+      "delay_ms": 2.0,
+      "solver_iterations": 100
+    }
+  },
+  {
+    "name": "development_friction",
+    "scenario": {
+      "speed": 1.0,
+      "mass": 7.0,
+      "height_l": 0.0,
+      "height_r": 0.0,
+      "center": 2.0,
+      "offset": 0.0,
+      "mu_l": 0.6,
+      "mu_r": 1.0,
+      "drive_difference": 0.0,
+      "delay_ms": 0.0,
+      "solver_iterations": 100
+    }
+  },
+  {
+    "name": "development_solver",
+    "scenario": {
+      "speed": 1.0,
+      "mass": 7.0,
+      "height_l": 0.015,
+      "height_r": 0.0,
+      "center": 2.0,
+      "offset": 0.0,
+      "mu_l": 0.8,
+      "mu_r": 0.8,
+      "drive_difference": 0.0,
+      "delay_ms": 0.0,
+      "solver_iterations": 50
+    }
+  }
+]

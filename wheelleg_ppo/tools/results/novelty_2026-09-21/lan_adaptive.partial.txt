@@ -1,0 +1,65 @@
+                                                                                                                                             1
+
+
+
+
+   Adaptive and Robust Wheel-Legged Biped Robot
+       for Semi-Structured Community Tasks
+                                        Bowen Lan, Hailong Huang, Senior Member, IEEE
+
+
+
+
+   Abstract—This paper presents the development and optimiza-               their compact and energy-efficient design while maintaining
+tion of a wheel-legged biped robot designed for community                   the ability to handle moderate terrain variations.
+inspection tasks. The robot combines the efficiency of wheeled                 The integration of wheel-legged biped robots into commu-
+robots with the adaptability of legged systems, making it suitable
+for navigating diverse terrains in semi-structured environments.            nity inspection workflows presents several key advantages.
+The main innovations of this research include the development               First, their compact form factor and high agility make them
+of an integrated control system that combines balance control,              well-suited for navigating crowded or confined spaces, such
+state estimation, and terrain adaptation using multi-sensor fusion.         as office buildings, residential complexes, or urban streets.
+The robot’s mechanical structure is designed to withstand jumps             Second, their ability to balance dynamically on two wheels
+and falls, while its electronic hardware and software architecture
+ensure real-time control and robust performance. Experiments                enables them to quickly change direction or adapt to obstacles,
+demonstrate the robot’s capabilities including tracking velocity            ensuring efficient and safe operation in environments shared
+as high as 2 m/s, resisting severe disturbance or slippage, and             with pedestrians. Third, these robots can be equipped with
+traversing steps over 10 cm automatically. The results show that            advanced sensing and perception systems, such as LiDAR,
+the proposed control methods and hardware design effectively                cameras, and environmental sensors, to autonomously identify
+ensure the robot’s robustness and adaptability, validating its
+potential for practical community inspection applications. This             and respond to potential issues, such as structural damage, fire
+work contributes to the growing field of autonomous robots in               hazards, or environmental anomalies.
+public service and provides a foundation for future research and               Beyond their functional capabilities, deploying wheel-
+development.                                                                legged biped robots for community inspection also holds
+   Index Terms—wheel-legged biped robot, linear quadratic reg-              societal significance. These robots can reduce the reliance on
+ulator, multi-sensor fusion, feedforward control                            human inspectors for repetitive or hazardous tasks, minimizing
+                                                                            risks and freeing up human resources for more complex
+                                                                            decision-making roles. Additionally, their presence in commu-
+                         I. I NTRODUCTION                                   nities can enhance public trust in technology, as they provide
+   In recent years, the deployment of autonomous robots for                 visible, tangible benefits in maintaining safety, cleanliness, and
+community-based tasks has gained significant attention due to               functionality within shared spaces.
+their potential to improve efficiency, safety, and accessibility in            In this paper, we focus on the development and optimization
+public and private spaces [1]–[4]. Among these, wheel-legged                of a wheel-legged biped robot system specifically tailored for
+biped robots stand out as a promising platform for applications             community inspection tasks. By addressing the challenges of
+such as community inspection and monitoring. Combining                      perception and locomotion in semi-structured environments,
+their stability and maneuverability with the adaptability and               we aim to demonstrate the feasibility and practicality of
+versatility of legged systems, these robots are uniquely suited             these robots as a reliable solution for improving community
+for navigating the diverse and often unpredictable environ-                 infrastructure and safety. Through this work, we contribute to
+ments found in community settings [5], [6].                                 the growing body of research on autonomous robots in public
+   Community inspection tasks, such as monitoring infrastruc-               service, paving the way for their broader adoption in real-
+ture and detecting hazards, often require robots to operate                 world applications.
+in environments that are highly dynamic and contain a mix                      We address the stability and terrain traversal capability
+of structured and unstructured terrains [1]. For example, a                 of a wheel-legged biped robot equipped with two-degree-
+robot may need to traverse smooth sidewalks, ascend ramps,                  of-freedom legs in semi-structured urban environments by
+cross uneven pavements, or navigate narrow corridors within                 significantly enhancing its perception and control algorithms.
+buildings. Traditional wheeled robots, while efficient on flat              The main contributions are as follows:
+surfaces, struggle with uneven terrains or obstacles. Con-                     1) Building upon the conventional linear control method,
+versely, legged robots excel in challenging terrains but often                     we design a Kalman filter to fuse IMU and wheel odom-
+suffer from lower energy efficiency and slower speeds. Wheel-                      etry measurements. By detecting and isolating abnormal
+legged biped robots offer an optimal middle ground, leveraging                     data induced by wheel slippage through measurement
+                                                                                   residual analysis, we substantially improve the accuracy
+  This work was supported by the Research Centre for Unmanned Au-                  of velocity estimation as well as the robot’s control
+tonomous Systems (RCUAS), the Hong Kong Polytechnic University. The                stability in complex terrains.
+authors are with the Department of Aeronautical and Aviation Engineering,
+the Hong Kong Polytechnic University, Hung Hom, Hong Kong. (e-mail:            2) We propose a feedforward control method based on the
+bowen.lan@connect.polyu.hk; hailong.huang@polyu.edu.hk)                            wheel–ground contact angle, addressing the limitations
+

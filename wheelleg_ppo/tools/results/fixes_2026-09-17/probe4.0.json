@@ -1,0 +1,140 @@
+[
+  {
+    "seed": 3,
+    "success": false,
+    "reason": "completed",
+    "physical_steps": 12682,
+    "duration_s": 6.340999999999205,
+    "arrival_s": 4.341000000000314,
+    "peak_deg": [
+      0.7859809465161927,
+      1.1621688813655464,
+      5.488578058048849
+    ],
+    "rms_deg": [
+      0.21582273935506605,
+      0.1426797212451223,
+      2.4725688377652326
+    ],
+    "velocity_rmse": 0.12975950668958638,
+    "velocity_window_s": 3.340500000000283,
+    "stop_distance_m": 0.2544661249840366,
+    "tail_speed_m_s": 0.0030356262252402193,
+    "residual_saturation_fraction": 0.006465857120328024,
+    "motor_saturation_fraction": 0.007885191610156127,
+    "peak_actual_torque_Nm": [
+      8.90544914955627,
+      13.747812502089298,
+      8.939895752390129,
+      13.701778856389904,
+      4.545801337941396,
+      4.454198662058604
+    ],
+    "peak_command_slew_Nm_s": [
+      22662.949011019347,
+      22648.26225779797,
+      22642.293512434993,
+      22630.301671458532,
+      8870.072668739514,
+      8736.561024790328
+    ],
+    "last_requested_residual_Nm": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "last_executed_residual_Nm": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "last_lambda": 1.0,
+    "base_infeasible_steps": 82,
+    "final_clip_steps": 0,
+    "mapping_failures": 0,
+    "recovery_s": null,
+    "first_contacts": {
+      "bump_R": 3.287000000000265,
+      "bump_L": 3.343500000000284
+    },
+    "actual_contact_mu": {
+      "wheel_collide_L": 0.7284485761424434,
+      "wheel_collide_R": 0.9266632798259357
+    }
+  },
+  {
+    "seed": 9,
+    "success": true,
+    "reason": "completed",
+    "physical_steps": 18965,
+    "duration_s": 9.482500000000098,
+    "arrival_s": 7.482499999998573,
+    "peak_deg": [
+      0.6619753376685539,
+      0.2508700466495596,
+      1.86107824367097
+    ],
+    "rms_deg": [
+      0.122355446075276,
+      0.04690913363014922,
+      0.34602250998754513
+    ],
+    "velocity_rmse": 0.0508354301444405,
+    "velocity_window_s": 6.481999999999127,
+    "stop_distance_m": 0.1373275321232717,
+    "tail_speed_m_s": 0.0038392323231921277,
+    "residual_saturation_fraction": 0.0,
+    "motor_saturation_fraction": 0.000738201950962299,
+    "peak_actual_torque_Nm": [
+      5.667077455481011,
+      8.383673183473242,
+      5.284364066269473,
+      8.367401667665803,
+      4.597659690811115,
+      4.402340309188885
+    ],
+    "peak_command_slew_Nm_s": [
+      12099.543985017079,
+      12096.456772897558,
+      12092.785145674303,
+      12091.574453584013,
+      8893.888186537417,
+      8893.888186537417
+    ],
+    "last_requested_residual_Nm": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "last_executed_residual_Nm": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "last_lambda": 1.0,
+    "base_infeasible_steps": 0,
+    "final_clip_steps": 0,
+    "mapping_failures": 0,
+    "recovery_s": 0.0004999999999997229,
+    "first_contacts": {
+      "bump_R": 5.443499999999703,
+      "bump_L": 5.633999999999597
+    },
+    "actual_contact_mu": {
+      "wheel_collide_L": 0.8224703497638298,
+      "wheel_collide_R": 0.9359018059870254
+    }
+  }
+]

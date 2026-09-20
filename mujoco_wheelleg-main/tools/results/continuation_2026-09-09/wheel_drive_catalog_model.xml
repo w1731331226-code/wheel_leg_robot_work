@@ -1,0 +1,154 @@
+<mujoco model="wheelleg5bar">
+  <compiler angle="radian"/>
+
+  <option timestep="0.0005" density="1.225" viscosity="1.8e-05" integrator="implicitfast"/>
+
+  <size nkey="2"/>
+
+  <visual>
+    <quality shadowsize="2048" numslices="16"/>
+    <headlight diffuse="1 1 1"/>
+  </visual>
+
+  <asset>
+    <texture type="skybox" colorspace="sRGB" name="desert" file="../asset/desert.png" gridsize="3 4" gridlayout=".U..LFRB.D.."/>
+    <texture type="2d" colorspace="auto" name="plane" builtin="checker" mark="cross" rgb1="0.1 0.1 0.1" rgb2="0.9 0.9 0.9" markrgb="0.8 0.8 0.8" width="512" height="512"/>
+    <material name="plane" texture="plane" texuniform="true" reflectance="0.3"/>
+    <material name="chassis" rgba="0.3 0.3 0.35 1"/>
+    <material name="active" rgba="0.85 0.2 0.1 1"/>
+    <material name="coupler" rgba="0.1 0.5 0.9 1"/>
+    <material name="wheel" rgba="0.1 0.1 0.1 1"/>
+  </asset>
+
+  <worldbody>
+    <geom name="floor" size="5 5 0.05" type="plane" friction="0.8 0.02 0.001" material="plane"/>
+    <camera name="demo" quat="0.812163 0.58343 0 0" pos="0 -0.9 0.3" mode="trackcom"/>
+    <light pos="30 30 30" dir="0 -0.894427 -0.447214" ambient="0.05 0.05 0.05" diffuse="0.6 0.6 0.6" specular="0.4 0.4 0.4" type="directional"/>
+    <body name="chassis" pos="0 0 0.137">
+      <inertial pos="0.03 0 0.00120725" quat="0 0.707107 0 0.707107" mass="3.0256" diaginertia="0.00446863 0.00341568 0.00272178"/>
+      <joint type="free"/>
+      <geom name="chassis_box" size="0.05 0.042 0.026" pos="0.03 0 0" type="box" contype="0" conaffinity="0" mass="0.62" material="chassis"/>
+      <geom name="chassis_lid" size="0.032 0.038 0.004" pos="0.03 0 0.03" type="box" contype="0" conaffinity="0" mass="0.04" material="chassis"/>
+      <geom name="motor_alphaL" size="0.018 0.006" pos="0 -0.048 0" quat="0.707105 0.707108 0 0" type="cylinder" contype="0" conaffinity="0" rgba="0.3 0.3 0.35 1" mass="0.005"/>
+      <geom name="motor_betaL" size="0.018 0.006" pos="0.06 -0.048 0" quat="0.707105 0.707108 0 0" type="cylinder" contype="0" conaffinity="0" rgba="0.3 0.3 0.35 1" mass="0.005"/>
+      <geom name="motor_alphaR" size="0.018 0.006" pos="0 0.048 0" quat="0.707105 0.707108 0 0" type="cylinder" contype="0" conaffinity="0" rgba="0.3 0.3 0.35 1" mass="0.005"/>
+      <geom name="motor_betaR" size="0.018 0.006" pos="0.06 0.048 0" quat="0.707105 0.707108 0 0" type="cylinder" contype="0" conaffinity="0" rgba="0.3 0.3 0.35 1" mass="0.005"/>
+      <geom name="caster_front" size="0.012" pos="0.092 0 -0.0418625" friction="0.8 0.05 0.001" solref="0.01" solimp="0.8 0.9" mass="0.005"/>
+      <geom name="caster_back" size="0.012" pos="-0.032 0 -0.0418625" friction="0.8 0.05 0.001" solref="0.01" solimp="0.8 0.9" mass="0.005"/>
+      <site name="body_imu" size="0.02" pos="0.03 0 0" rgba="1 0 1 1"/>
+      <body name="legL" pos="0 -0.09 0">
+        <joint name="alphaL" range="-1.5 1.5" armature="0.0010432" damping="0.01" axis="0 1 0" limited="true"/>
+        <geom name="thighA_L" size="0.005 0.0249865" pos="-0.01915 0 -0.01605" quat="0.906186 0 0.422879 0" type="capsule" contype="0" conaffinity="0" mass="0.016" material="active"/>
+        <body name="kneeA_L" pos="-0.0383 0 -0.0321">
+          <joint name="passA_L" range="-2.5 2.5" armature="1e-05" damping="0.01" axis="0 1 0" limited="true"/>
+          <geom name="shankA_L" size="0.005 0.0525189" pos="0.03415 0 -0.0399" quat="0.93801 0 -0.346607 0" type="capsule" contype="0" conaffinity="0" mass="0.016" material="coupler"/>
+          <body name="wheelL" pos="0.0683 0 -0.0798">
+            <inertial pos="0 0 0" mass="0.0755145" diaginertia="1.86369e-05 3.32125e-05 1.86369e-05"/>
+            <joint name="wheel1" damping="0.005" axis="0 1 0"/>
+            <geom name="wheel_collide_L" size="0.0301625 0.00762 0.0301625" type="ellipsoid" friction="0.8 0.02 0.001" solref="0.003 2" mass="0.1"/>
+            <geom name="wheel_geom_L" size="0.0301625 0.00762" quat="0.707105 0.707108 0 0" type="cylinder" contype="0" conaffinity="0" mass="0" material="wheel"/>
+            <site name="wheel_contact_L" size="0.01" rgba="0 1 0 0.5"/>
+            <site name="wheel_axle_L" size="0.012" rgba="0.9 0.9 0 0.8"/>
+          </body>
+          <body name="wheel_drive_L" pos="-0.00285759 -0.0281 0.00333874">
+            <inertial pos="-0.00285759 -0.0281 0.00333874" mass="0.386" diaginertia="0.000352937 0.000621569 0.000352937"/>
+            <geom name="wheel_drive_case_L" size="0.05675 0.0181" quat="0.707107 0.707107 0 0" type="cylinder" rgba="0.8 0.45 0.1 1" mass="0"/>
+            <body name="wheel_drive_rotor_L">
+              <inertial pos="0 0 0" mass="0.324" diaginertia="0.000470382 0.00087 0.000470382"/>
+              <joint name="wheel_drive_spin_L" axis="0 1 0"/>
+            </body>
+          </body>
+          <body name="wheel_drive_support_L" pos="0.0327212 -0.0281 -0.0382306">
+            <inertial pos="0.0327212 -0.0281 -0.0382306" mass="0.1" diaginertia="6.51004e-05 9.97954e-05 4.9695e-05"/>
+          </body>
+        </body>
+      </body>
+      <body name="legL_D" pos="0.06 -0.09 0">
+        <joint name="betaL" range="-1.5 1.5" armature="0.0010432" damping="0.01" axis="0 1 0" limited="true"/>
+        <geom name="thighB_L" size="0.005 0.0249865" pos="0.01915 0 -0.01605" quat="0.906186 0 -0.422879 0" type="capsule" contype="0" conaffinity="0" mass="0.016" material="active"/>
+        <body name="kneeB_L" pos="0.0383 0 -0.0321">
+          <joint name="passC_L" range="-2.5 2.5" armature="1e-05" damping="0.01" axis="0 1 0" limited="true"/>
+          <geom name="shankB_L" size="0.005 0.0525189" pos="-0.03415 0 -0.0399" quat="0.93801 0 0.346607 0" type="capsule" contype="0" conaffinity="0" mass="0.016" material="coupler"/>
+          <site name="couplerB_L_end" size="0.01" pos="-0.0683 0 -0.0798" rgba="0.9 0.9 0 0.8"/>
+        </body>
+      </body>
+      <body name="legR" pos="0 0.09 0">
+        <joint name="alphaR" range="-1.5 1.5" armature="0.0010432" damping="0.01" axis="0 1 0" limited="true"/>
+        <geom name="thighA_R" size="0.005 0.0249865" pos="-0.01915 0 -0.01605" quat="0.906186 0 0.422879 0" type="capsule" contype="0" conaffinity="0" mass="0.016" material="active"/>
+        <body name="kneeA_R" pos="-0.0383 0 -0.0321">
+          <joint name="passA_R" range="-2.5 2.5" armature="1e-05" damping="0.01" axis="0 1 0" limited="true"/>
+          <geom name="shankA_R" size="0.005 0.0525189" pos="0.03415 0 -0.0399" quat="0.93801 0 -0.346607 0" type="capsule" contype="0" conaffinity="0" mass="0.016" material="coupler"/>
+          <body name="wheelR" pos="0.0683 0 -0.0798">
+            <inertial pos="0 0 0" mass="0.0755145" diaginertia="1.86369e-05 3.32125e-05 1.86369e-05"/>
+            <joint name="wheel2" damping="0.005" axis="0 1 0"/>
+            <geom name="wheel_collide_R" size="0.0301625 0.00762 0.0301625" type="ellipsoid" friction="0.8 0.02 0.001" solref="0.003 2" mass="0.1"/>
+            <geom name="wheel_geom_R" size="0.0301625 0.00762" quat="0.707105 0.707108 0 0" type="cylinder" contype="0" conaffinity="0" mass="0" material="wheel"/>
+            <site name="wheel_contact_R" size="0.01" rgba="0 1 0 0.5"/>
+            <site name="wheel_axle_R" size="0.012" rgba="0.9 0.9 0 0.8"/>
+          </body>
+          <body name="wheel_drive_R" pos="-0.00285759 0.0281 0.00333874">
+            <inertial pos="-0.00285759 0.0281 0.00333874" mass="0.386" diaginertia="0.000352937 0.000621569 0.000352937"/>
+            <geom name="wheel_drive_case_R" size="0.05675 0.0181" quat="0.707107 0.707107 0 0" type="cylinder" rgba="0.8 0.45 0.1 1" mass="0"/>
+            <body name="wheel_drive_rotor_R">
+              <inertial pos="0 0 0" mass="0.324" diaginertia="0.000470382 0.00087 0.000470382"/>
+              <joint name="wheel_drive_spin_R" axis="0 1 0"/>
+            </body>
+          </body>
+          <body name="wheel_drive_support_R" pos="0.0327212 0.0281 -0.0382306">
+            <inertial pos="0.0327212 0.0281 -0.0382306" mass="0.1" diaginertia="6.51004e-05 9.97954e-05 4.9695e-05"/>
+          </body>
+        </body>
+      </body>
+      <body name="legR_D" pos="0.06 0.09 0">
+        <joint name="betaR" range="-1.5 1.5" armature="0.0010432" damping="0.01" axis="0 1 0" limited="true"/>
+        <geom name="thighB_R" size="0.005 0.0249865" pos="0.01915 0 -0.01605" quat="0.906186 0 -0.422879 0" type="capsule" contype="0" conaffinity="0" mass="0.016" material="active"/>
+        <body name="kneeB_R" pos="0.0383 0 -0.0321">
+          <joint name="passC_R" range="-2.5 2.5" armature="1e-05" damping="0.01" axis="0 1 0" limited="true"/>
+          <geom name="shankB_R" size="0.005 0.0525189" pos="-0.03415 0 -0.0399" quat="0.93801 0 0.346607 0" type="capsule" contype="0" conaffinity="0" mass="0.016" material="coupler"/>
+          <site name="couplerB_R_end" size="0.01" pos="-0.0683 0 -0.0798" rgba="0.9 0.9 0 0.8"/>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <equality>
+    <connect name="l_loop" site1="couplerB_L_end" site2="wheel_axle_L" solref="0.002" solimp="0.95 0.99"/>
+    <connect name="r_loop" site1="couplerB_R_end" site2="wheel_axle_R" solref="0.002" solimp="0.95 0.99"/>
+    <joint name="wheel_drive_belt_L" joint1="wheel_drive_spin_L" joint2="wheel1" polycoef="0 0.631579 0 0 0" solref="0.002"/>
+    <joint name="wheel_drive_belt_R" joint1="wheel_drive_spin_R" joint2="wheel2" polycoef="0 0.631579 0 0 0" solref="0.002"/>
+  </equality>
+
+  <actuator>
+    <general name="motor_alphaL" joint="alphaL" ctrlrange="-18 18" ctrllimited="true"/>
+    <general name="motor_betaL" joint="betaL" ctrlrange="-18 18" ctrllimited="true"/>
+    <general name="motor_alphaR" joint="alphaR" ctrlrange="-18 18" ctrllimited="true"/>
+    <general name="motor_betaR" joint="betaR" ctrlrange="-18 18" ctrllimited="true"/>
+    <general name="motor_wheelL" joint="wheel_drive_spin_L" ctrlrange="-12 12" ctrllimited="true"/>
+    <general name="motor_wheelR" joint="wheel_drive_spin_R" ctrlrange="-12 12" ctrllimited="true"/>
+  </actuator>
+
+  <sensor>
+    <framequat objtype="site" objname="body_imu" name="body_orientation"/>
+    <gyro site="body_imu" name="body_gyro"/>
+    <accelerometer site="body_imu" name="body_accel"/>
+    <jointpos joint="alphaL" name="alpha_L"/>
+    <jointpos joint="betaL" name="beta_L"/>
+    <jointpos joint="alphaR" name="alpha_R"/>
+    <jointpos joint="betaR" name="beta_R"/>
+    <jointpos joint="passA_L" name="passA_L_s"/>
+    <jointpos joint="passC_L" name="passC_L_s"/>
+    <jointpos joint="passA_R" name="passA_R_s"/>
+    <jointpos joint="passC_R" name="passC_R_s"/>
+    <jointpos joint="wheel1" name="wheel_joint_angle1"/>
+    <jointpos joint="wheel2" name="wheel_joint_angle2"/>
+    <jointvel joint="wheel1" name="wheel_joint_speed1"/>
+    <jointvel joint="wheel2" name="wheel_joint_speed2"/>
+    <force site="wheel_contact_L" name="wheel1_ground_force"/>
+    <force site="wheel_contact_R" name="wheel2_ground_force"/>
+  </sensor>
+
+  <keyframe>
+    <key name="stand" qpos="0 0 0.142062 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"/>
+    <key name="crouch" qpos="0 0 0.125 1 0 0 0 0.177527 -0.242895 0 -0.177527 0.242895 0.177527 -0.242895 0 -0.177527 0.242895 0 0"/>
+  </keyframe>
+</mujoco>

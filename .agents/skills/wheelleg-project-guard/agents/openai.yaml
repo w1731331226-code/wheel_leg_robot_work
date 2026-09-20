@@ -1,0 +1,6 @@
+interface:
+  display_name: "轮腿项目约束"
+  short_description: "按项目计划约束每项工作，复用证据，限制重复检索、无关改动与过度回归"
+  default_prompt: "使用 $wheelleg-project-guard 约束当前轮腿项目任务，先核对范围和验收，再完成最小必要工作。"
+policy:
+  allow_implicit_invocation: true

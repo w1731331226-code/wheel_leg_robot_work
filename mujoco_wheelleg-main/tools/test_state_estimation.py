@@ -1,0 +1,165 @@
+"""影子估计回归：真值只用于适配传感器和评分，估计值不回写控制器。
+
+--noise 为固定 seed 的工程假设：并非已标定的实机噪声范围。
+"""
+import argparse
+from collections import deque
+import json
+from pathlib import Path
+
+import mujoco
+import numpy as np
+from scipy.spatial.transform import Rotation
+
+import wheelleg_sim as sim
+from state_estimation import Estimator, leg_kinematics
+
+
+XML = str(Path(__file__).resolve().parents[1] / 'xml' / 'wheelleg_dm8009.xml')
+
+
+def self_check():
+    est = Estimator(4.274, 0.0492125, 0.18, 0.56)
+    q = np.zeros((2, 2))
+    for height in (0.055, 0.09, 0.1119, 0.135):
+        pose = sim.ik(height)
+        _, _, _, jac = leg_kinematics(pose, [0, 0])
+        assert np.allclose(jac @ [3.0, 0.2], sim.vmc(*pose, 3, 0.2, False), atol=1e-8)
+    est.velocity[0] = 1.0
+    # 腾空且轮子停转：不能把不可用的滚动速度当成车身速度为零。
+    for _ in range(100):
+        value = est.update([0, 0, 0], [0, 0, 0], q, q, [0, 0], q, 0.001)
+    assert abs(value['vx'] - 1) < 1e-12 and not value['wheel_update']
+    assert not value['contact'].any()
+    # 自由飞行中内力可使机身比力非零：轮总成惯性应抵消同向腿力，不能误判地面支撑。
+    est = Estimator(4.274, 0.0492125, 0.18, 0.56)
+    airborne_torque = np.array([sim.vmc(0, 0, -0.56 * 4.0, 0, False)] * 2)
+    value = est.update([0, 0, 0], [0, 0, 4.0], q, q, [0, 0], airborne_torque, 0.001)
+    assert max(abs(value['support'])) < 1e-8 and not value['contact'].any()
+    # 单侧支撑必须保留两个独立接触标志。
+    est = Estimator(1.018, 0.025, 0.108)
+    torque = np.array([sim.vmc(0, 0, 5, 0, False), [0, 0]])
+    for _ in range(100):
+        value = est.update([0, 0, 0], [0, 0, 9.81], q, q, [0, 0], torque, 0.001)
+    assert value['contact'].tolist() == [True, False]
+    for bad_dt in (0, float('nan'), 0.1):
+        try:
+            est.update([0, 0, 0], [0, 0, 9.81], q, q, [0, 0], torque, bad_dt)
+        except ValueError:
+            continue
+        raise AssertionError('无效 dt 未拒绝')
+    print('kinematics/flight/split-contact/input self-check PASS', flush=True)
+
+
+def run(mode, hardware=False, noise=False, track_width=None, six_state=False):
+    model, data = sim.load_model(XML, hardware, track_width)
+    state = sim.make_state(model, hardware, six_state)
+    dt = model.opt.timestep
+    radius = sim.hw.WHEEL_RADIUS if hardware else 0.025
+    est = Estimator(sum(model.body_mass), radius, track_width or 0.108,
+                    float(model.body('wheelL').mass[0]),
+                    hip_inertia=float(model.dof_armature[model.joint('alphaL').dofadr[0]]),
+                    hip_damping=float(model.dof_damping[model.joint('alphaL').dofadr[0]]),
+                    max_leg_rate=1.0)
+    joints = np.array([[model.joint(n).id for n in names] for names in
+                       [('alphaL', 'betaL'), ('alphaR', 'betaR')]])
+    qa, va = model.jnt_qposadr[joints], model.jnt_dofadr[joints]
+    motors = [[model.actuator(n).id for n in names] for names in
+              [('motor_alphaL', 'motor_betaL'), ('motor_alphaR', 'motor_betaR')]]
+    wheels = [model.geom(n).id for n in ('wheel_collide_L', 'wheel_collide_R')]
+    rng = np.random.default_rng(5)
+    pending = deque()
+    # 模拟整个测量包固定 2ms 延迟；预测/评分用当前时刻，不对齐真值掩盖延迟。
+    delay = round(0.002 / dt) if noise else 0
+    samples = []
+    transition = np.zeros(2)
+    last_contact = np.ones(2, dtype=bool)
+    contact_errors = np.zeros(2)
+    contact_count = np.zeros(2)
+    observed_states = set()
+    false_flight_support = []
+    for step in range(round(9 / dt)):
+        t = step * dt
+        speed = -1.0 if mode == 'backjump' else 1.0
+        state.cmd_vel = speed if mode != 'stand' and t > 1 and (mode != 'stop' or t < 3) else 0.0
+        state.cmd_jump = mode in ('jump', 'backjump') and step == round(4 / dt)
+        sim.control(model, data, state)
+        mujoco.mj_forward(model, data)  # 当前时间、当前实际力矩对应的传感器
+        gyro = data.sensor('body_gyro').data.copy()
+        accel = data.sensor('body_accel').data.copy()
+        q, dq = data.qpos[qa].copy(), data.qvel[va].copy()
+        wheel_speed = np.array([data.sensor(n).data[0] for n in
+                                ('wheel_joint_speed1', 'wheel_joint_speed2')])
+        torque = data.actuator_force[motors].copy()  # gear=1；实际施加力矩的理想电流适配
+        if noise:
+            gyro += rng.normal(0, 0.002, 3) + np.array([0.001, -0.001, 0.001])
+            accel += rng.normal(0, 0.05, 3) + np.array([0.02, 0, 0.02])
+            q += rng.normal(0, 1e-4, (2, 2))
+            dq += rng.normal(0, 0.005, (2, 2))
+            wheel_speed += rng.normal(0, 0.01, 2)
+            torque *= 1 + rng.normal(0, 0.01, (2, 2))
+        pending.append((gyro, accel, q, dq, wheel_speed, torque))
+        if len(pending) > delay:
+            result = est.update(*pending.popleft(), dt)
+            # 以下真值只评分，不传入 Estimator。
+            contact = np.array([any(w in (c.geom1, c.geom2) and c.efc_address >= 0
+                                    for c in data.contact) for w in wheels])
+            transition[contact != last_contact] = t
+            last_contact = contact
+            if t >= 1:
+                valid = t - transition > 0.020
+                contact_errors += valid & (result['contact'] != contact)
+                contact_count += valid
+                observed_states.add(tuple(bool(v) for v in contact))
+                if not contact.any() and result['wheel_update']:
+                    false_flight_support.append(result['support'].tolist())
+                truth_rotation = Rotation.from_quat(data.qpos[[4, 5, 6, 3]])
+                error_angle = (est.rotation.inv() * truth_rotation).magnitude()
+                samples.append([result['vx'] - data.qvel[0], result['x'] - data.qpos[0],
+                                error_angle, not contact.any(), result['wheel_update']])
+        mujoco.mj_step(model, data)
+        assert np.isfinite(data.qpos).all() and np.isfinite(data.qvel).all()
+    values = np.array(samples)
+    rmse = float(np.sqrt(np.mean(values[:, 0]**2)))
+    contact_error = contact_errors / np.maximum(1, contact_count)
+    flight = values[:, 3].astype(bool)
+    report = dict(mode=mode, hardware=hardware, noise=noise, seed=5, delay_s=delay*dt,
+                  wheel_radius=radius,
+                  track_width=track_width or 0.108, six_state=six_state,
+                  velocity_rmse=rmse, velocity_max=float(max(abs(values[:, 0]))),
+                  position_max=float(max(abs(values[:, 1]))),
+                  attitude_max_deg=float(np.degrees(max(values[:, 2]))),
+                  contact_error_fraction=contact_error.tolist(),
+                  contact_states=sorted([list(v) for v in observed_states]),
+                  flight_samples=int(sum(flight)),
+                  flight_wheel_updates=int(sum(values[flight, 4])),
+                  false_flight_support_range=(np.array(false_flight_support).min(axis=0).tolist(),
+                                              np.array(false_flight_support).max(axis=0).tolist())
+                  if false_flight_support else None)
+    report['passed'] = bool(rmse <= 0.05 and report['velocity_max'] <= 0.20
+                            and report['position_max'] <= 0.05
+                            and report['attitude_max_deg'] <= 1.0
+                            and max(contact_error) <= 0.01
+                            and report['flight_wheel_updates'] == 0)
+    print(json.dumps(report), flush=True)
+    return report
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--hardware', action='store_true')
+    parser.add_argument('--noise', action='store_true')
+    parser.add_argument('--track-width', type=float)
+    parser.add_argument('--six-state', action='store_true')
+    parser.add_argument('--self-check', action='store_true')
+    parser.add_argument('--modes', nargs='+', choices=('stand', 'drive', 'stop', 'jump', 'backjump'),
+                        default=['stand', 'drive', 'stop', 'jump', 'backjump'])
+    parser.add_argument('--report', type=Path)
+    args = parser.parse_args()
+    self_check()
+    if not args.self_check:
+        results = [run(mode, args.hardware, args.noise, args.track_width, args.six_state)
+                   for mode in args.modes]
+        if args.report:
+            args.report.write_text(json.dumps(results, indent=2, allow_nan=False) + '\n')
+        assert all(r['passed'] for r in results), '影子估计未过门，不能替换正式真值反馈'

@@ -1,0 +1,72 @@
+{
+  "status": "PRELIMINARY_ONLY",
+  "source": "50mm six-state baseline; not 60.325mm dynamics",
+  "sample_count": 96000,
+  "torque_scale": 1.3250495671958646,
+  "ratio": 0.631578947368421,
+  "motor_teeth": 38,
+  "wheel_teeth": 24,
+  "design_min_bus_voltage": 42.0,
+  "design_voltage_source": "https://genstattu.com/bw/ (generic reference, not measured)",
+  "worst_paired_sample": {
+    "command_speed": -1.0,
+    "time": 1.0015,
+    "phase": "DRIVE",
+    "side": "L",
+    "torque": 5.0,
+    "rpm": 196.7407559417433
+  },
+  "paired_voltage_estimate": 32.506211804010874,
+  "motor_peak_torque_estimate": 11.655528600333994,
+  "extrapolated_above_rated": true,
+  "voltage_for_2x_speed_at_rated_torque": 40.67694806295988,
+  "unresolved": [
+    "Standard KV55 joint curve (Lite PDF curve labeled KV50)",
+    "peak duration/thermal",
+    "FOC current convention",
+    "regeneration",
+    "loaded battery voltage and driver/wiring voltage loss",
+    "new mass/inertia/geometry and transmission strength"
+  ],
+  "voltage_screens": {
+    "50.4": {
+      "paired_load": true,
+      "original_speed_reserve": true,
+      "peak_torque": true
+    },
+    "48.0": {
+      "paired_load": true,
+      "original_speed_reserve": true,
+      "peak_torque": true
+    },
+    "44.4": {
+      "paired_load": true,
+      "original_speed_reserve": true,
+      "peak_torque": true
+    },
+    "42.0": {
+      "paired_load": true,
+      "original_speed_reserve": true,
+      "peak_torque": true
+    }
+  },
+  "stress_38_4_from_same_measurements": {
+    "paired_load": true,
+    "original_speed_reserve": false,
+    "peak_torque": true
+  },
+  "run": {
+    "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 /home/wmt/wheel_leg_robot_work/.venv/bin/python3 tools/check_wheel_drive_voltage.py --motor-teeth 38",
+    "returncode": 0,
+    "source_sha256": {
+      "tools/check_wheel_drive_voltage.py": "75c86bee93e1c850864adaef26e8e62209aa8ab2b40a947f2f8148cedb109cb9",
+      "tools/check_hardware_sizing.py": "029b304b551f65be9dda7ccbd1c3033627b05c69a7ff3e7463123f6b41c937b1",
+      "tools/hardware_profile.py": "5d33600ce5e4a85d112ed370dcdeeb63673e49b0f873ad8568b3d28ec826d355",
+      "tools/wheelleg_sim.py": "2656c4055d1243a5ab93143e132ea6c2828dcd606e5a76decf4b6ce7de58234f",
+      "tools/rm_controller.py": "0d503cbde0731d68657b5630b3cc069dc6da92ca0655e73194c37444718f0e45",
+      "tools/model_lqr.py": "8fb2fd8126ecb8284b19a3a70688b858f213d8d97b4d495175a6b530255084c4",
+      "tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+      "xml/wheelleg.xml": "5a3c9a804cc722437c6d2a754a0b8d1bcfe0bd69fe6980cf3ed8a544b88acb75"
+    }
+  }
+}

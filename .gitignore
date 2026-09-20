@@ -1,0 +1,25 @@
+# Local environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.vscode/
+.idea/
+.DS_Store
+
+# Reproducible builds and local backups
+build/
+install/
+log/
+.ppt_build/
+/backups/
+/*.log
+MUJOCO_LOG.txt
+
+# Local credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key

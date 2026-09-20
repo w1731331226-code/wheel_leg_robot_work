@@ -1,0 +1,111 @@
+[
+  {
+    "name": "r25_stand",
+    "args": [
+      "tools/wheelleg_sim.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state",
+      "--test",
+      "stand"
+    ],
+    "returncode": 0,
+    "wheel_radius": 0.025
+  },
+  {
+    "name": "r25_stop",
+    "args": [
+      "tools/wheelleg_sim.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state",
+      "--test",
+      "stop"
+    ],
+    "returncode": 0,
+    "wheel_radius": 0.025
+  },
+  {
+    "name": "r25_jump",
+    "args": [
+      "tools/wheelleg_sim.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state",
+      "--test",
+      "jump"
+    ],
+    "returncode": 0,
+    "wheel_radius": 0.025
+  },
+  {
+    "name": "r25_jumpfwd",
+    "args": [
+      "tools/wheelleg_sim.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state",
+      "--test",
+      "jumpfwd"
+    ],
+    "returncode": 0,
+    "wheel_radius": 0.025
+  },
+  {
+    "name": "r25_jumpback",
+    "args": [
+      "tools/wheelleg_sim.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state",
+      "--test",
+      "jumpback"
+    ],
+    "returncode": 0,
+    "wheel_radius": 0.025
+  },
+  {
+    "name": "r25_bump",
+    "args": [
+      "tools/test_robustness.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state",
+      "--scenario",
+      "bump",
+      "--speeds",
+      "1",
+      "-1",
+      "--report",
+      "tools/results/continuation_2026-09-08/r25_bump.json"
+    ],
+    "returncode": 1,
+    "wheel_radius": 0.025
+  },
+  {
+    "name": "r25_turn",
+    "args": [
+      "tools/test_robustness.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state",
+      "--scenario",
+      "turn",
+      "--speeds",
+      "0",
+      "1",
+      "-1",
+      "--report",
+      "tools/results/continuation_2026-09-08/r25_turn.json"
+    ],
+    "returncode": 0,
+    "wheel_radius": 0.025
+  }
+]

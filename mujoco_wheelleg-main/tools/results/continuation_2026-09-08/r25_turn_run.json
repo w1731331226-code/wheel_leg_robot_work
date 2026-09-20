@@ -1,0 +1,20 @@
+{
+  "name": "r25_turn",
+  "args": [
+    "tools/test_robustness.py",
+    "--hardware",
+    "--track-width",
+    "0.18",
+    "--six-state",
+    "--scenario",
+    "turn",
+    "--speeds",
+    "0",
+    "1",
+    "-1",
+    "--report",
+    "tools/results/continuation_2026-09-08/r25_turn.json"
+  ],
+  "returncode": 0,
+  "wheel_radius": 0.025
+}

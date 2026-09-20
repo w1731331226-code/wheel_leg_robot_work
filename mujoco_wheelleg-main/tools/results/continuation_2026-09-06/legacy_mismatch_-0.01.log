@@ -1,0 +1,9 @@
+v=+1.0: PASS jumps=3/3 roll/pitch/yaw=0.66/1.17/3.16° takeoff=(np.float64(1.02), np.float64(1.0), np.float64(1.0))m/s height=(0.234, 0.234, 0.234)m plateau=(0.0, 0.0, 0.0)s vmin=0.94m/s@7.60/PREP
+  valid=True nonwheel=False fell_at=None startup_r/p/y=(np.float64(0.054), np.float64(0.794), np.float64(4.937))
+  PREP=(0.0, 1.1, 1.8) SQUAT=(0.0, 0.7, 0.5) JUMP=(0.2, 0.8, 0.6) FLY=(0.7, 0.7, 1.5) LAND=(0.6, 1.0, 1.5) DRIVE=(0.1, 1.2, 3.2)
+v=-1.0: PASS jumps=3/3 roll/pitch/yaw=1.05/1.09/4.74° takeoff=(np.float64(-1.02), np.float64(-1.0), np.float64(-1.0))m/s height=(0.227, 0.227, 0.227)m plateau=(0.0, 0.0, 0.0)s vmin=0.95m/s@11.85/PREP
+  valid=True nonwheel=False fell_at=None startup_r/p/y=(np.float64(0.119), np.float64(0.808), np.float64(3.729))
+  PREP=(0.0, 1.1, 2.0) SQUAT=(0.0, 0.7, 0.7) JUMP=(0.2, 1.1, 0.8) FLY=(1.0, 1.1, 1.4) LAND=(1.0, 1.0, 1.5) DRIVE=(0.2, 0.7, 4.7)
+v=+0.0: PASS jumps=3/3 roll/pitch/yaw=2.10/1.18/1.15° takeoff=(np.float64(0.0), np.float64(0.0), np.float64(0.0))m/s height=(0.225, 0.226, 0.226)m plateau=(0.049, 0.049, 0.049)s vmin=0.00m/s@0.00/DRIVE
+  valid=True nonwheel=False fell_at=None startup_r/p/y=(np.float64(0.014), np.float64(0.405), np.float64(0.004))
+  PREP=(0.1, 1.2, 1.1) SQUAT=(0.0, 0.3, 0.4) JUMP=(0.2, 0.2, 0.4) FLY=(2.1, 0.1, 0.5) LAND=(2.1, 0.4, 0.5) DRIVE=(0.6, 0.2, 0.5)

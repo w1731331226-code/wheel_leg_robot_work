@@ -1,0 +1,12 @@
+[
+  {
+    "flag": "--train",
+    "returncode": 1,
+    "expected_rejection": "Pre-training readiness is not complete"
+  },
+  {
+    "flag": "--smoke",
+    "returncode": 1,
+    "expected_rejection": "FileExistsError"
+  }
+]

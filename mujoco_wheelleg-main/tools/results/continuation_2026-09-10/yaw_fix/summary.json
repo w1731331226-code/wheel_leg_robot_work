@@ -1,0 +1,47 @@
+{
+  "yaw_damping_before": 0.15,
+  "yaw_damping_after": 0.6,
+  "track_width_m": 0.3,
+  "terrain_mass_kg": 7,
+  "terrain_speeds_m_s": [
+    1,
+    -1
+  ],
+  "terrain_heights_m": [
+    0.01,
+    0.015
+  ],
+  "bump": {
+    "passed": 8,
+    "total": 8,
+    "failed": []
+  },
+  "max_terrain_yaw_deg": 4.9247059427645725,
+  "turn": {
+    "passed": 6,
+    "total": 6,
+    "failed": []
+  },
+  "adjacent": {
+    "passed": 15,
+    "total": 16,
+    "failed": [
+      "height_max"
+    ]
+  },
+  "mass7": {
+    "passed": 11,
+    "total": 11
+  },
+  "mass8": {
+    "passed": 11,
+    "total": 11
+  },
+  "known_failure": "380 mm maximum-height jump fails to initiate with both original 0.15 and new 0.60 yaw damping; not fixed in this task",
+  "source_sha256": {
+    "tools/wheelleg_sim.py": "f0bf4a2874f82cc0ba7a75f71ca06e8d3768aced7980226351e7568506839d27",
+    "tools/rm_controller.py": "9496148077be47a89127eac7e4c76554b215c0727ae3e76a5d54e456ee1eb9ca",
+    "tools/test_robustness.py": "6a75fd326e9c1b1efd5d13a531a62fcde4ea2ed3ae97c3369e65fcf814d9c563",
+    "xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f"
+  }
+}

@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/home/wmt/wheel_leg_robot_work/mujoco_wheelleg-main/tools/test_robustness.py", line 251, in <module>
+    reports = [run_terrain(speed, 0, height, side, args.hardware, args.track_width, args.six_state)
+  File "/home/wmt/wheel_leg_robot_work/mujoco_wheelleg-main/tools/test_robustness.py", line 251, in <listcomp>
+    reports = [run_terrain(speed, 0, height, side, args.hardware, args.track_width, args.six_state)
+  File "/home/wmt/wheel_leg_robot_work/mujoco_wheelleg-main/tools/test_robustness.py", line 106, in run_terrain
+    state = sim.make_state(model, hardware, six_state)
+  File "/home/wmt/wheel_leg_robot_work/mujoco_wheelleg-main/tools/wheelleg_sim.py", line 833, in make_state
+    state.lqr6 = SixStateController(model)
+  File "/home/wmt/wheel_leg_robot_work/mujoco_wheelleg-main/tools/rm_controller.py", line 22, in __init__
+    ref, a, b, _ = ml.design(model, height)
+  File "/home/wmt/wheel_leg_robot_work/mujoco_wheelleg-main/tools/model_lqr.py", line 111, in design
+    data = equilibrium(model, height)
+  File "/home/wmt/wheel_leg_robot_work/mujoco_wheelleg-main/tools/model_lqr.py", line 87, in equilibrium
+    raise RuntimeError(f'平衡点未收敛: residual={max(abs(error)):.3g}, '
+RuntimeError: 平衡点未收敛: residual=41.9, qacc=50.2

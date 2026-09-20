@@ -1,0 +1,35 @@
+{
+  "status": "GEOMETRY_ONLY",
+  "poses": 729,
+  "mass_kg": 4.9246291,
+  "wheel_diameter_mm": 60.324999999999996,
+  "belt_center_distance_mm": 109.43240769060561,
+  "width_over_motor_cases_m": 0.2724,
+  "minimum_clearance": {
+    "distance_m": 0.004999999999999972,
+    "side": "L",
+    "other": "thighA_L",
+    "height_m": 0.07400000000000001,
+    "roll_deg": -5,
+    "pitch_deg": 0
+  },
+  "clearance_pass": true,
+  "transmission_check": true,
+  "production_controller_compatible": false,
+  "limitations": [
+    "kinematic grid only, not motion acceptance",
+    "legacy hip/frame shapes",
+    "support/belt/pulley/shaft collision envelopes absent",
+    "ideal lossless belt; efficiency, elasticity, current and thermal limits absent"
+  ],
+  "source_sha256": {
+    "tools/check_wheel_drive_model.py": "6e46e23a93b79a56424c68dbea032a3ef0ccc221662e8417c94955d7b7ab8c21",
+    "tools/check_wheel_drive_transmission.py": "43bd2768e38be265430d9ac07e09d61d4b74f0f98a5d46ae05a96a0febf8ee4b",
+    "tools/check_wheel_drive_voltage.py": "75c86bee93e1c850864adaef26e8e62209aa8ab2b40a947f2f8148cedb109cb9",
+    "tools/hardware_profile.py": "5d33600ce5e4a85d112ed370dcdeeb63673e49b0f873ad8568b3d28ec826d355",
+    "tools/wheelleg_sim.py": "2656c4055d1243a5ab93143e132ea6c2828dcd606e5a76decf4b6ce7de58234f",
+    "xml/wheelleg.xml": "5a3c9a804cc722437c6d2a754a0b8d1bcfe0bd69fe6980cf3ed8a544b88acb75"
+  },
+  "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 tools/check_wheel_drive_model.py",
+  "returncode": 0
+}

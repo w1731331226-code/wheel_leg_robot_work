@@ -1,0 +1,31 @@
+{
+  "smoke": true,
+  "checkpoints": [
+    {
+      "steps": 4000,
+      "path": "wheelleg_ppo/tools/results/yaw_precision_v2_2026-09-21/smoke_M1/step_4000",
+      "total": 4,
+      "success_count": 4,
+      "complete": true,
+      "mean_yaw_score_deg": 0.5717540048393627
+    },
+    {
+      "steps": 6000,
+      "path": "wheelleg_ppo/tools/results/yaw_precision_v2_2026-09-21/resume_smoke_M1/step_6000",
+      "total": 4,
+      "success_count": 1,
+      "complete": true,
+      "mean_yaw_score_deg": 1.7979067887128757
+    }
+  ],
+  "best": {
+    "steps": 4000,
+    "path": "wheelleg_ppo/tools/results/yaw_precision_v2_2026-09-21/smoke_M1/step_4000",
+    "total": 4,
+    "success_count": 4,
+    "complete": true,
+    "mean_yaw_score_deg": 0.5717540048393627
+  },
+  "gate_evaluated": false,
+  "test_set_evaluated": false
+}

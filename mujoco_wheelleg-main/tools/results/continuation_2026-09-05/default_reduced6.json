@@ -1,0 +1,121 @@
+{
+  "hardware": false,
+  "track_width": null,
+  "timestep": 0.0005,
+  "results": [
+    {
+      "order": 6,
+      "vmc_condition": 1.0870732225857873,
+      "frequencies_hz": [
+        0.2,
+        0.5,
+        1.0,
+        2.0,
+        5.0
+      ],
+      "relative_frf_errors": [
+        0.07479154387014048,
+        0.16592070475519832,
+        0.34822562118392736,
+        0.5174111117539404,
+        0.7113766030427808
+      ],
+      "omitted_radius": 0.9933501621197477,
+      "reduced_closed_radius": 0.9988981285739628,
+      "full_closed_radius": 0.9989702749713903,
+      "linear_pass": false,
+      "height": 0.055,
+      "nonlinear_pass": true
+    },
+    {
+      "order": 6,
+      "vmc_condition": 1.0651434545960408,
+      "frequencies_hz": [
+        0.2,
+        0.5,
+        1.0,
+        2.0,
+        5.0
+      ],
+      "relative_frf_errors": [
+        0.07790084645399901,
+        0.1673318237453686,
+        0.3353026293799846,
+        0.5286735300878094,
+        0.6712745004458944
+      ],
+      "omitted_radius": 0.991980767560261,
+      "reduced_closed_radius": 0.9988520938159366,
+      "full_closed_radius": 0.9988957766932444,
+      "linear_pass": false,
+      "height": 0.09,
+      "nonlinear_pass": false
+    },
+    {
+      "order": 6,
+      "vmc_condition": 1.16837482251944,
+      "frequencies_hz": [
+        0.2,
+        0.5,
+        1.0,
+        2.0,
+        5.0
+      ],
+      "relative_frf_errors": [
+        0.13388301099456376,
+        0.25185290259044874,
+        0.4269132908594941,
+        0.6202276456641314,
+        0.7540807323550659
+      ],
+      "omitted_radius": 0.9929887882112983,
+      "reduced_closed_radius": 0.9988321166670199,
+      "full_closed_radius": 0.9988673621967736,
+      "linear_pass": false,
+      "height": 0.1119,
+      "nonlinear_pass": false
+    },
+    {
+      "order": 6,
+      "vmc_condition": 1.7090387235951856,
+      "frequencies_hz": [
+        0.2,
+        0.5,
+        1.0,
+        2.0,
+        5.0
+      ],
+      "relative_frf_errors": [
+        0.36926812122168107,
+        0.48567646606876974,
+        0.7035764694543466,
+        0.920278443599347,
+        1.0933068025931332
+      ],
+      "omitted_radius": 0.9958308108906455,
+      "reduced_closed_radius": 0.9988211206975606,
+      "full_closed_radius": 0.9988519271894983,
+      "linear_pass": false,
+      "height": 0.135,
+      "nonlinear_pass": false
+    },
+    {
+      "height": 0.0725,
+      "interpolated": true,
+      "full_closed_radius": 0.9987542842149917,
+      "nonlinear_pass": false
+    },
+    {
+      "height": 0.10095,
+      "interpolated": true,
+      "full_closed_radius": 0.9988612609972493,
+      "nonlinear_pass": false
+    },
+    {
+      "height": 0.12345,
+      "interpolated": true,
+      "full_closed_radius": 0.9988115154494709,
+      "nonlinear_pass": false
+    }
+  ]
+}

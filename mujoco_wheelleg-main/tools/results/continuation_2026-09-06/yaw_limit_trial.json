@@ -1,0 +1,94 @@
+[
+  {
+    "scenario": "turn",
+    "speed": -1,
+    "sign": 1,
+    "hardware": true,
+    "track_width": 0.18,
+    "six_state": true,
+    "reached_at": 3.386,
+    "peak_roll_pitch_deg": [
+      0.39260682466978425,
+      1.0773422903268075
+    ],
+    "heading_error_deg": 2.032120213821808,
+    "speed_error": 0.0072774715494585696,
+    "stop_distance": 0.28980366956554765,
+    "tail_speed": 0.0006896198741426869,
+    "fell": false,
+    "jump": true,
+    "jump_completed": true,
+    "jump_height": 0.22582107334224596,
+    "takeoff_speed": -1.0072211543400507,
+    "min_forward_speed": 1.0000930424702812,
+    "invalid": false,
+    "nonwheel": false,
+    "passed": true
+  },
+  {
+    "scenario": "terrain",
+    "speed": 0,
+    "slope_deg": 8,
+    "bump_height": 0,
+    "side": 0,
+    "hardware": true,
+    "track_width": 0.18,
+    "six_state": true,
+    "peak_roll_pitch_yaw_deg": [
+      0.45119847989067874,
+      0.001095222339609431,
+      0.31908674055702546
+    ],
+    "startup_peak_roll_pitch_deg": [
+      0.45119847989067874,
+      0.005155968338415832
+    ],
+    "touched_bump": false,
+    "traversed": true,
+    "final_time": 6.9995,
+    "final_position": [
+      3.823687663838819e-05,
+      -0.022384177545484663,
+      0.1577604787434531
+    ],
+    "stop_distance": 0.0059926933929673794,
+    "tail_speed": 0.002996328928015536,
+    "fell": false,
+    "invalid": false,
+    "nonwheel": false,
+    "passed": true
+  },
+  {
+    "scenario": "terrain",
+    "speed": 1,
+    "slope_deg": 0,
+    "bump_height": 0.02,
+    "side": 1,
+    "hardware": true,
+    "track_width": 0.18,
+    "six_state": true,
+    "peak_roll_pitch_yaw_deg": [
+      0.49637295249704555,
+      0.31944448625694066,
+      24.79602577685673
+    ],
+    "startup_peak_roll_pitch_deg": [
+      0.49637295249704555,
+      0.31944448625694066
+    ],
+    "touched_bump": true,
+    "traversed": true,
+    "final_time": 6.9995,
+    "final_position": [
+      3.971426712310158,
+      0.13099575836019134,
+      0.16071619910243867
+    ],
+    "stop_distance": 0.2879645958237496,
+    "tail_speed": 0.005584656119244662,
+    "fell": false,
+    "invalid": false,
+    "nonwheel": false,
+    "passed": false
+  }
+]

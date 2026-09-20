@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "cause": "3s request timeout shorter than 0.13m / 0.035m/s PREP travel plus readiness hold",
+  "change": "add travel time above L_STAND to existing bounded request timeout",
+  "max_request_timeout_s": 5.2857142857142865,
+  "tests": "test_high_leg_jump.py: max-height static/forward/backward jumps, cancel, prepare/commit 5/5",
+  "jump_height_m": [
+    0.396,
+    0.377,
+    0.369
+  ],
+  "max_pitch_deg": 1.91,
+  "scope": "7kg nominal 300mm model; no later plan item executed",
+  "source_sha256": {
+    "tools/wheelleg_sim.py": "bb6d13000ee04d3107ff40377d0a724e9135a950b5413b9196d3fcc60e1814ee",
+    "tools/test_high_leg_jump.py": "337329d29184f9207648d287eb8656957e515c902c433162490f1ab06b8781d0",
+    "tools/test_jump_height.py": "397aa12a80de13bbfb8b87f629354c5b30f127b5628a639736d7c6dd554e3a25",
+    "xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f",
+    "tools/hardware_profile.py": "844688aae7e408bb2ca11d00b192ffaa9e4ad5de06cc8a815d3cf3ddfbe02eba"
+  }
+}

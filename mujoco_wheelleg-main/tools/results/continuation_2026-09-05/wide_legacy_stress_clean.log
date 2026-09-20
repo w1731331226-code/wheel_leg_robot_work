@@ -1,0 +1,6 @@
+v=+1.0: FAIL jumps=3/3 roll/pitch/yaw=0.00/1.01/0.00° takeoff=(np.float64(1.02), np.float64(1.0), np.float64(1.0))m/s height=(0.232, 0.232, 0.232)m plateau=(inf, inf, inf)s vmin=0.97m/s@5.94/DRIVE
+  PREP=(0.0, 0.1, 0.0) SQUAT=(0.0, 0.7, 0.0) JUMP=(0.0, 0.8, 0.0) FLY=(0.0, 0.7, 0.0) LAND=(0.0, 1.0, 0.0) DRIVE=(0.0, 0.8, 0.0)
+v=-1.0: FAIL jumps=3/3 roll/pitch/yaw=0.00/7.21/0.00° takeoff=(np.float64(-1.02), np.float64(-1.0), np.float64(-1.0))m/s height=(0.225, 0.226, 0.226)m plateau=(inf, inf, inf)s vmin=0.95m/s@10.36/DRIVE
+  PREP=(0.0, 0.1, 0.0) SQUAT=(0.0, 0.7, 0.0) JUMP=(0.0, 1.1, 0.0) FLY=(0.0, 1.1, 0.0) LAND=(0.0, 1.0, 0.0) DRIVE=(0.0, 7.2, 0.0)
+v=+0.0: PASS jumps=3/3 roll/pitch/yaw=0.00/0.42/0.00° takeoff=(np.float64(0.0), np.float64(0.0), np.float64(0.0))m/s height=(0.225, 0.225, 0.225)m plateau=(0.048, 0.048, 0.048)s vmin=0.00m/s@0.00/DRIVE
+  PREP=(0.0, 0.3, 0.0) SQUAT=(0.0, 0.3, 0.0) JUMP=(0.0, 0.2, 0.0) FLY=(0.0, 0.1, 0.0) LAND=(0.0, 0.4, 0.0) DRIVE=(0.0, 0.2, 0.0)

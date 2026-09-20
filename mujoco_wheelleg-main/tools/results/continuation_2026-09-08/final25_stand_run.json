@@ -1,0 +1,23 @@
+{
+  "name": "final25_stand",
+  "args": [
+    "tools/wheelleg_sim.py",
+    "--hardware",
+    "--track-width",
+    "0.18",
+    "--six-state",
+    "--test",
+    "stand"
+  ],
+  "returncode": 0,
+  "wheel_radius": 0.025,
+  "sha256": {
+    "tools/hardware_profile.py": "28175408443c2142a4e742560090a9612da4af7fb1e526957a90588352a18e60",
+    "tools/wheelleg_sim.py": "78a01e65c89749861af3d3fb19fa9ab86047c7fe43ca2052e60b8c54251030bc",
+    "tools/rm_controller.py": "440fa67e961ecb7cc7bbdc50021c339f0555f84f43ddc4627a9d1aee5366e929",
+    "tools/test_robustness.py": "f1cb66d2ccaf28f716699b5c911090fa8c1c772932edbbfe47946d066776557c",
+    "tools/test_state_estimation.py": "92decd3c435ad5aa11a6a0eafe1147ddd7be51a2dbde3e9805210b8543f475b0",
+    "tools/check_hardware_sizing.py": "2dcb287bbc61e5cc6ae5814da21b857efb69006a6b42c9d9f7298a3068d6a36a",
+    "tools/test_hardware_collision.py": "b316455e102f5e77907c8a13e68fce32a140020ebd332f9fd5e2a1527a0ca7bc"
+  }
+}

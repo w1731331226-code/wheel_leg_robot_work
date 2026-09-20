@@ -1,0 +1,88 @@
+{
+  "passed": true,
+  "device": "cuda",
+  "environments": 8,
+  "runs": [
+    {
+      "mode": "diff3",
+      "device": "cuda",
+      "passed": true,
+      "policy_steps": 4096,
+      "updates": 2,
+      "epochs_per_update": 10,
+      "seconds": 25.25569275600003,
+      "policy_steps_per_s": 162.18125709606232,
+      "losses": {
+        "train/learning_rate": 0.0003,
+        "train/entropy_loss": -4.224465864896774,
+        "train/policy_gradient_loss": -0.005466393008828163,
+        "train/value_loss": 3.1140840500593185,
+        "train/approx_kl": 0.006450098007917404,
+        "train/clip_fraction": 0.019970703125,
+        "train/loss": 1.4601385593414307,
+        "train/explained_variance": 0.0002810359001159668,
+        "train/std": 0.9879251718521118,
+        "train/n_updates": 20.0,
+        "train/clip_range": 0.2
+      },
+      "peak_cuda_memory_bytes": 67849216,
+      "note": "Smoke policy only; not a usable controller or convergence result."
+    },
+    {
+      "mode": "virtual6",
+      "device": "cuda",
+      "passed": true,
+      "policy_steps": 4096,
+      "updates": 2,
+      "epochs_per_update": 10,
+      "seconds": 25.150731076,
+      "policy_steps_per_s": 162.8580890003867,
+      "losses": {
+        "train/learning_rate": 0.0003,
+        "train/entropy_loss": -8.480010378360749,
+        "train/policy_gradient_loss": -0.010202754044439644,
+        "train/value_loss": 3.208342233300209,
+        "train/approx_kl": 0.006321858614683151,
+        "train/clip_fraction": 0.02275390625,
+        "train/loss": 1.5181318521499634,
+        "train/explained_variance": -0.08472335338592529,
+        "train/std": 0.9929105639457703,
+        "train/n_updates": 20.0,
+        "train/clip_range": 0.2
+      },
+      "peak_cuda_memory_bytes": 68031488,
+      "note": "Smoke policy only; not a usable controller or convergence result."
+    }
+  ],
+  "host": {
+    "memory": {
+      "returncode": 0,
+      "output": "               total        used        free      shared  buff/cache   available\n内存：33348194304  4997398528 23938433024   796250112  4412362752 27123466240\n交换： 2147479552           0  2147479552\n"
+    },
+    "disk": {
+      "returncode": 0,
+      "output": "文件系统             1B的块        已用         可用 已用% 挂载点\n/dev/nvme0n1p6 210241560576 34031013888 165456351232   18% /\n"
+    },
+    "cpu": {
+      "returncode": 0,
+      "output": "架构：                                   x86_64\nCPU 运行模式：                           32-bit, 64-bit\nAddress sizes:                           39 bits physical, 48 bits virtual\n字节序：                                 Little Endian\nCPU:                                     24\n在线 CPU 列表：                          0-23\n厂商 ID：                                GenuineIntel\n型号名称：                               Intel(R) Core(TM) i7-14650HX\nCPU 系列：                               6\n型号：                                   183\n每个核的线程数：                         2\n每个座的核数：                           16\n座：                                     1\n步进：                                   1\nCPU 最大 MHz：                           5200.0000\nCPU 最小 MHz：                           800.0000\nBogoMIPS：                               4838.40\n标记：                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb intel_pt sha_ni xsaveopt xsavec xgetbv1 xsaves split_lock_detect user_shstk avx_vnni dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp hwp_pkg_req hfi vnmi umip pku ospke waitpkg gfni vaes vpclmulqdq rdpid movdiri movdir64b fsrm md_clear serialize arch_lbr ibt flush_l1d arch_capabilities ibpb_exit_to_user\n虚拟化：                                 VT-x\nL1d 缓存：                               640 KiB (16 instances)\nL1i 缓存：                               768 KiB (16 instances)\nL2 缓存：                                24 MiB (10 instances)\nL3 缓存：                                30 MiB (1 instance)\nNUMA 节点：                              1\nNUMA 节点0 CPU：                         0-23\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Not affected\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Not affected\nVulnerability Mds:                       Not affected\nVulnerability Meltdown:                  Not affected\nVulnerability Mmio stale data:           Not affected\nVulnerability Reg file data sampling:    Mitigation; Clear Register File\nVulnerability Retbleed:                  Not affected\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl\nVulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI BHI_DIS_S\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Not affected\nVulnerability Vmscape:                   Mitigation; IBPB before exit to userspace\n"
+    },
+    "kernel": {
+      "returncode": 0,
+      "output": "Linux wmt-JIGUANG-Series 6.8.0-138-generic #138~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Aug  7 13:43:15 UTC  x86_64 x86_64 x86_64 GNU/Linux\n"
+    },
+    "gpu": {
+      "returncode": 0,
+      "output": "Wed Sep 16 23:34:50 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 580.178.04             Driver Version: 580.178.04     CUDA Version: 13.0     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 5060 ...    Off |   00000000:02:00.0 Off |                  N/A |\n| N/A   66C    P4             12W /   50W |     222MiB /   8151MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A            1980      G   /usr/bin/gnome-shell                      2MiB |\n|    0   N/A  N/A            5734      C   .venv/bin/python3                       202MiB |\n+-----------------------------------------------------------------------------------------+\n"
+    }
+  },
+  "formal_training_started": false,
+  "cuda_build": "13.0",
+  "torch_version": "2.14.0+cu130",
+  "gpu_name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "gpu_capability": [
+    12,
+    0
+  ],
+  "cuda_basic_autograd_pass": true
+}

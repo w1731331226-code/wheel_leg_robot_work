@@ -1,0 +1,31 @@
+{
+  "status": "GEOMETRY_ONLY",
+  "poses": 729,
+  "mass_kg": 4.9246291,
+  "width_over_motor_cases_m": 0.2724,
+  "minimum_clearance": {
+    "distance_m": 0.004999999999999974,
+    "side": "R",
+    "other": "shankA_R",
+    "height_m": 0.098,
+    "roll_deg": -5,
+    "pitch_deg": 0
+  },
+  "clearance_pass": true,
+  "transmission_check": true,
+  "production_controller_compatible": false,
+  "limitations": [
+    "kinematic grid only, not motion acceptance",
+    "legacy hip/frame shapes",
+    "support/belt/pulley/shaft collision envelopes absent",
+    "ideal lossless belt; efficiency, elasticity, current and thermal limits absent"
+  ],
+  "source_sha256": {
+    "tools/check_wheel_drive_model.py": "2f081c37a1a1e93585edaa482f42dcb3f40e008a897daf76e44cf79d11d8e94a",
+    "tools/hardware_profile.py": "5d33600ce5e4a85d112ed370dcdeeb63673e49b0f873ad8568b3d28ec826d355",
+    "tools/wheelleg_sim.py": "2656c4055d1243a5ab93143e132ea6c2828dcd606e5a76decf4b6ce7de58234f",
+    "xml/wheelleg.xml": "5a3c9a804cc722437c6d2a754a0b8d1bcfe0bd69fe6980cf3ed8a544b88acb75"
+  },
+  "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 tools/check_wheel_drive_model.py",
+  "returncode": 0
+}

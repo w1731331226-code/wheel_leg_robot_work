@@ -1,0 +1,14 @@
+{
+  "name": "r25_stop",
+  "args": [
+    "tools/wheelleg_sim.py",
+    "--hardware",
+    "--track-width",
+    "0.18",
+    "--six-state",
+    "--test",
+    "stop"
+  ],
+  "returncode": 0,
+  "wheel_radius": 0.025
+}

@@ -1,0 +1,77 @@
+{
+  "result": {
+    "scenario": "terrain",
+    "speed": -1,
+    "slope_deg": 0,
+    "bump_height": 0.025,
+    "side": 1,
+    "hardware": true,
+    "track_width": 0.18,
+    "six_state": true,
+    "peak_roll_pitch_yaw_deg": [
+      1.2856837268902626,
+      0.5880341840013091,
+      58.53201576062528
+    ],
+    "startup_peak_roll_pitch_deg": [
+      1.2856837268902626,
+      0.5880341840013091
+    ],
+    "touched_bump": true,
+    "traversed": true,
+    "final_time": 6.9995,
+    "final_position": [
+      -3.8545804534963515,
+      0.14557676342496503,
+      0.1607180895729762
+    ],
+    "stop_distance": 0.2897884714563667,
+    "tail_speed": 0.005534649806615928,
+    "fell": false,
+    "invalid": false,
+    "nonwheel": false,
+    "passed": false
+  },
+  "first_contact": {
+    "t": 3.011500000000173,
+    "yaw_deg": -0.0028107254693294803,
+    "yaw_rate": 1.6067936217036812e-11,
+    "yaw_request": 0.0,
+    "raw_yaw_request": 1.9622563113594497e-05,
+    "wheel_torque": [
+      -0.22263383368738002,
+      -0.22263383368738002
+    ],
+    "bump": true,
+    "forward_speed": -1.0072237884744384
+  },
+  "peak_yaw": {
+    "t": 3.266000000000258,
+    "yaw_deg": -58.53201576062528,
+    "yaw_rate": -1.7382552178696848,
+    "yaw_request": 0.33058784028487226,
+    "raw_yaw_request": 0.6693688398213025,
+    "wheel_torque": [
+      -0.505067351365426,
+      -1.1662430319351706
+    ],
+    "bump": false,
+    "forward_speed": -0.7695389796285516
+  },
+  "peak_yaw_rate": {
+    "t": 3.353000000000287,
+    "yaw_deg": -34.83512961143679,
+    "yaw_rate": 5.805253908245556,
+    "yaw_request": -0.33058784028487226,
+    "raw_yaw_request": -0.6275930034054154,
+    "wheel_torque": [
+      -0.6521036118954424,
+      0.009072068674302158
+    ],
+    "bump": false,
+    "forward_speed": -0.8825440954068059
+  },
+  "max_wheel_torque": 4.73967383846761,
+  "yaw_saturated_samples": 1060,
+  "samples": 6000
+}

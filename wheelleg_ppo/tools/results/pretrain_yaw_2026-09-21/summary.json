@@ -1,0 +1,116 @@
+{
+  "candidates": [
+    {
+      "candidate": {
+        "name": "B0",
+        "kp": 0,
+        "kd": 0,
+        "roll_gain": 0
+      },
+      "total": 32,
+      "success_count": 28,
+      "complete": true,
+      "mean_yaw_score_deg": 0.7629518497356917
+    },
+    {
+      "candidate": {
+        "name": "B1_1",
+        "kp": 0.4,
+        "kd": 0,
+        "roll_gain": 0
+      },
+      "total": 32,
+      "success_count": 28,
+      "complete": true,
+      "mean_yaw_score_deg": 0.6432642769469838
+    },
+    {
+      "candidate": {
+        "name": "B1_2",
+        "kp": 0,
+        "kd": 0.3,
+        "roll_gain": 0
+      },
+      "total": 32,
+      "success_count": 27,
+      "complete": true,
+      "mean_yaw_score_deg": 0.8694680489972266
+    },
+    {
+      "candidate": {
+        "name": "B1_3",
+        "kp": 0.4,
+        "kd": 0.3,
+        "roll_gain": 0
+      },
+      "total": 32,
+      "success_count": 28,
+      "complete": true,
+      "mean_yaw_score_deg": 0.7090483999222571
+    },
+    {
+      "candidate": {
+        "name": "B1_4",
+        "kp": 0.8,
+        "kd": 0.6,
+        "roll_gain": 0
+      },
+      "total": 32,
+      "success_count": 27,
+      "complete": true,
+      "mean_yaw_score_deg": 0.6869968805039466
+    },
+    {
+      "candidate": {
+        "name": "B1_5",
+        "kp": 0.4,
+        "kd": 0.3,
+        "roll_gain": 1
+      },
+      "total": 32,
+      "success_count": 28,
+      "complete": true,
+      "mean_yaw_score_deg": 0.6890985180495854
+    },
+    {
+      "candidate": {
+        "name": "B1_6",
+        "kp": 0.8,
+        "kd": 0.3,
+        "roll_gain": 1
+      },
+      "total": 32,
+      "success_count": 28,
+      "complete": true,
+      "mean_yaw_score_deg": 0.613519439013687
+    },
+    {
+      "candidate": {
+        "name": "B1_7",
+        "kp": 0.4,
+        "kd": 0.6,
+        "roll_gain": 1
+      },
+      "total": 32,
+      "success_count": 27,
+      "complete": true,
+      "mean_yaw_score_deg": 0.7404267847110175
+    }
+  ],
+  "selected_b1": {
+    "candidate": {
+      "name": "B1_6",
+      "kp": 0.8,
+      "kd": 0.3,
+      "roll_gain": 1
+    },
+    "total": 32,
+    "success_count": 28,
+    "complete": true,
+    "mean_yaw_score_deg": 0.613519439013687
+  },
+  "classical_reference_score_deg": 0.613519439013687,
+  "absolute_headroom_pass": true,
+  "gate_evaluated": false,
+  "test_set_evaluated": false
+}

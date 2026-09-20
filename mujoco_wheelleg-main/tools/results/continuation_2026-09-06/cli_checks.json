@@ -1,0 +1,68 @@
+[
+  {
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--size",
+      "640x480",
+      "--fullscreen",
+      "--test",
+      "stand"
+    ],
+    "returncode": 0,
+    "expected": 0,
+    "output": "\u7ad9\u7acb20s: \u901a\u8fc7 (\u6f02\u79fb=0.0002m, \u6700\u5927\u4fef\u4ef0=0.16\u00b0, \u8f6e\u901f=0.001rad/s)\n\u8f93\u51fa/\u72b6\u6001\u6709\u6548=True \u975e\u8f6e\u78b0\u649e=False roll\u5cf0\u503c=0.000\u00b0\n"
+  },
+  {
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--size",
+      "0x720",
+      "--test",
+      "stand"
+    ],
+    "returncode": 2,
+    "expected": 2,
+    "output": "usage: wheelleg_sim.py [-h] [--hardware] [--track-width TRACK_WIDTH]\n                       [--six-state] [--size WxH] [--fullscreen]\n                       [--test {stand,stop,jump,jumpfwd,jumpback}]\nwheelleg_sim.py: error: --size \u5fc5\u987b\u4e3a\u6b63\u6574\u6570 WxH\n"
+  },
+  {
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--size",
+      "abc",
+      "--test",
+      "stand"
+    ],
+    "returncode": 2,
+    "expected": 2,
+    "output": "usage: wheelleg_sim.py [-h] [--hardware] [--track-width TRACK_WIDTH]\n                       [--six-state] [--size WxH] [--fullscreen]\n                       [--test {stand,stop,jump,jumpfwd,jumpback}]\nwheelleg_sim.py: error: --size \u5fc5\u987b\u4e3a\u6b63\u6574\u6570 WxH\n"
+  },
+  {
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--six-state",
+      "--test",
+      "stand"
+    ],
+    "returncode": 2,
+    "expected": 2,
+    "output": "usage: wheelleg_sim.py [-h] [--hardware] [--track-width TRACK_WIDTH]\n                       [--six-state] [--size WxH] [--fullscreen]\n                       [--test {stand,stop,jump,jumpfwd,jumpback}]\nwheelleg_sim.py: error: --track-width/--six-state \u9700\u8981 --hardware\n"
+  },
+  {
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--hardware",
+      "--track-width",
+      "nan",
+      "--test",
+      "stand"
+    ],
+    "returncode": 2,
+    "expected": 2,
+    "output": "usage: wheelleg_sim.py [-h] [--hardware] [--track-width TRACK_WIDTH]\n                       [--six-state] [--size WxH] [--fullscreen]\n                       [--test {stand,stop,jump,jumpfwd,jumpback}]\nwheelleg_sim.py: error: --track-width \u5fc5\u987b\u4e3a 0.108\uff5e0.30 m \u5185\u7684\u6709\u9650\u6570\n"
+  }
+]

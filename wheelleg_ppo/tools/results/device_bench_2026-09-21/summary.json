@@ -1,0 +1,90 @@
+{
+  "cpu_median_seconds": 12.86351636900008,
+  "cuda_median_seconds": 13.455729856999824,
+  "cuda_speedup": 0.9559880070205432,
+  "paired_speedups": [
+    0.9490257099920183,
+    0.9847893959521373,
+    0.9280074032409845
+  ],
+  "switch_to_cuda": false,
+  "rows": [
+    {
+      "device": "cpu",
+      "seed": 7100,
+      "policy_steps": 2000,
+      "seconds": 12.769833581000057,
+      "update_seconds": 0.19734570600030565,
+      "rollout_and_overhead_seconds": 12.572487874999752,
+      "policy_steps_per_second": 156.6191123254538,
+      "finite": true,
+      "cuda_peak_allocated_bytes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 7100,
+      "policy_steps": 2000,
+      "seconds": 13.455729856999824,
+      "update_seconds": 0.4777216160000535,
+      "rollout_and_overhead_seconds": 12.97800824099977,
+      "policy_steps_per_second": 148.63556427298346,
+      "finite": true,
+      "cuda_peak_allocated_bytes": 67788288
+    },
+    {
+      "device": "cuda",
+      "seed": 7101,
+      "policy_steps": 2000,
+      "seconds": 13.359954040000048,
+      "update_seconds": 0.17848393499980375,
+      "rollout_and_overhead_seconds": 13.181470105000244,
+      "policy_steps_per_second": 149.7011137921544,
+      "finite": true,
+      "cuda_peak_allocated_bytes": 68018176
+    },
+    {
+      "device": "cpu",
+      "seed": 7101,
+      "policy_steps": 2000,
+      "seconds": 13.156741068999963,
+      "update_seconds": 0.10681578899993838,
+      "rollout_and_overhead_seconds": 13.049925280000025,
+      "policy_steps_per_second": 152.01332833952466,
+      "finite": true,
+      "cuda_peak_allocated_bytes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 7102,
+      "policy_steps": 2000,
+      "seconds": 12.86351636900008,
+      "update_seconds": 0.10594147499978135,
+      "rollout_and_overhead_seconds": 12.7575748940003,
+      "policy_steps_per_second": 155.4784821372654,
+      "finite": true,
+      "cuda_peak_allocated_bytes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 7102,
+      "policy_steps": 2000,
+      "seconds": 13.861437229999865,
+      "update_seconds": 0.1770467699998335,
+      "rollout_and_overhead_seconds": 13.684390460000031,
+      "policy_steps_per_second": 144.28518246805345,
+      "finite": true,
+      "cuda_peak_allocated_bytes": 68250112
+    }
+  ],
+  "source_sha256": {
+    "tools/benchmark_yaw_device.py": "b5182155bc7634552324f7b25739a2b6f8a3953d6ac05cd8a1f9520426424a2e",
+    "tools/results/pilot_v2_M3_seed1609_resume1/step_240000.zip": "cb010c67f41a99b3a9cbb9ee2216f8682cea5d82d1509167f61318ef2c87799d",
+    "tools/results/pilot_v2_M3_seed1609_resume1/step_240000.pkl": "dd73613a808be7a4c1b3a7017ec136b6b1113fbac5f9431a67c9cff9e019c64e",
+    "tools/results/pilot_v2_M3_seed1609_resume1/run_config.json": "e1ea42dc625ae049d2ac1ec3561c020eec0f40f02049c47ba69019cfe1827378"
+  },
+  "cuda_name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "torch_version": "2.14.0+cu130",
+  "gate_evaluated": false,
+  "test_set_evaluated": false,
+  "diagnostic_models_discarded": true
+}

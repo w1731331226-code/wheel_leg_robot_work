@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_ppo/tools/prepare_ppo.py", line 270, in <module>
+    training_gate(args.device)
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_ppo/tools/prepare_ppo.py", line 206, in training_gate
+    raise RuntimeError('CUDA不可用，不能自动回退CPU并宣称GPU验收通过')
+RuntimeError: CUDA不可用，不能自动回退CPU并宣称GPU验收通过

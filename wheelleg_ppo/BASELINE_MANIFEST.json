@@ -1,0 +1,35 @@
+{
+  "date": "2026-09-15",
+  "source": "/home/wmt/wheel_leg_robot_work/mujoco_wheelleg-main",
+  "role": "论文研究，优先开发；PPO尚未实现",
+  "versions": {
+    "mujoco": "3.12.0",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "glfw": "2.10.2"
+  },
+  "sha256": {
+    "LICENSE": "52e493747b07a9d7fda7347e9b72cc5466f22948e0e07fc9970532ed9e15d864",
+    "xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f",
+    "xml/wheelleg_dm8009.xml": "3adc23db052dd2ab885a92fabc38dbcc9eea0fe69204187323804d4e997c3862",
+    "asset/desert.png": "0551f33e79fd3ac9cabb921470892bc691c85a5d937445c75d14614c06a95404",
+    "tools/wheelleg_sim.py": "bb6d13000ee04d3107ff40377d0a724e9135a950b5413b9196d3fcc60e1814ee",
+    "tools/hardware_profile.py": "844688aae7e408bb2ca11d00b192ffaa9e4ad5de06cc8a815d3cf3ddfbe02eba",
+    "tools/model_lqr.py": "48682b24c885c06cbce7f0a957a281228c0ca28e038179cbaf24484e476cd14d",
+    "tools/rm_controller.py": "9496148077be47a89127eac7e4c76554b215c0727ae3e76a5d54e456ee1eb9ca",
+    "tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+    "tools/test_robustness.py": "6a75fd326e9c1b1efd5d13a531a62fcde4ea2ed3ae97c3369e65fcf814d9c563",
+    "tools/test_jump_height.py": "397aa12a80de13bbfb8b87f629354c5b30f127b5628a639736d7c6dd554e3a25",
+    "tools/test_high_leg_jump.py": "337329d29184f9207648d287eb8656957e515c902c433162490f1ab06b8781d0",
+    "tools/test_jump_stop.py": "15d61635e2091af07cbe34154c5297559972b26bdf90cae4b913b138ef9723a8",
+    "tools/test_jump_stress.py": "00f604bf17b1393668f0acad65b60c1c1a918f0a2f88fda2a10e7bbcb109ef30",
+    "tools/test_dm8009_model.py": "7adae2386ec5aee286cdb95bee167350e6f13cc81a5fb22275cf50578104aa7e",
+    "tools/test_dm8009_closed_loop.py": "ba9a99d3b9f54dc285e4cfa2accedcb49e880821cbbc65b2c83bf57aae0e3963",
+    "tools/test_dm8009_dynamics.py": "0f74263060321eed6e26964fe2a1d853603d0668eabc295f98ccf5e9c700f796"
+  },
+  "split_verification": {
+    "copied_file_hashes": "PASS",
+    "baseline_check": "20s headless stand PASS",
+    "not_implemented": "PPO training"
+  }
+}

@@ -1,0 +1,10 @@
+前进 delay=0.00s: FAIL slide=0.602m stop=0.86s jitter=0.0002m wheel=0.005rad/s pitch/roll=3.95/0.00° valid=True nonwheel=False
+前进 delay=0.25s: PASS slide=0.436m stop=0.77s jitter=0.0001m wheel=0.002rad/s pitch/roll=1.88/0.01° valid=True nonwheel=False
+前进 delay=0.50s: PASS slide=0.436m stop=0.78s jitter=0.0007m wheel=0.015rad/s pitch/roll=2.36/0.01° valid=True nonwheel=False
+后退 delay=0.00s: FAIL slide=0.866m stop=1.01s jitter=0.0032m wheel=0.072rad/s pitch/roll=5.75/0.02° valid=True nonwheel=False
+后退 delay=0.25s: FAIL slide=0.528m stop=0.81s jitter=0.0036m wheel=0.081rad/s pitch/roll=3.79/0.01° valid=True nonwheel=False
+后退 delay=0.50s: PASS slide=0.421m stop=0.77s jitter=0.0019m wheel=0.043rad/s pitch/roll=2.02/0.00° valid=True nonwheel=False
+Traceback (most recent call last):
+  File "/home/wmt/wheel_leg_robot_work/mujoco_wheelleg-main/tools/test_jump_stop.py", line 72, in <module>
+    assert all([run(direction, delay, args.hardware, args.track_width, args.six_state)
+AssertionError

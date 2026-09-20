@@ -1,0 +1,25 @@
+{
+  "method": "B2-V",
+  "smoke": true,
+  "passed": true,
+  "policy_steps": 4000,
+  "train_seconds": 25.149748548999924,
+  "total_seconds": 42.653767060000064,
+  "losses": {
+    "train/learning_rate": 0.0003,
+    "train/entropy_loss": -8.501437664031982,
+    "train/policy_gradient_loss": -0.007904469525859903,
+    "train/value_loss": 3.2719132199883463,
+    "train/approx_kl": 0.005006216466426849,
+    "train/clip_fraction": 0.013350000145146623,
+    "train/loss": 1.4623594284057617,
+    "train/explained_variance": -0.012293219566345215,
+    "train/std": 0.9940626621246338,
+    "train/n_updates": 20.0,
+    "train/clip_range": 0.2
+  },
+  "save_reload_pass": true,
+  "evaluation_normalization_frozen": true,
+  "curriculum_reset_pass": true,
+  "formal_training_started": false
+}

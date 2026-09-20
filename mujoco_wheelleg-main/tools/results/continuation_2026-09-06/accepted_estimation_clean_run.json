@@ -1,0 +1,16 @@
+{
+  "name": "accepted_estimation_clean",
+  "args": [
+    "tools/test_state_estimation.py",
+    "--hardware",
+    "--track-width",
+    "0.18",
+    "--six-state"
+  ],
+  "returncode": 0,
+  "sha256": {
+    "tools/wheelleg_sim.py": "1d8e72560c82e9f9b450b5df947ae910f07387cf556af8972b4f6997b2c323f3",
+    "tools/rm_controller.py": "440fa67e961ecb7cc7bbdc50021c339f0555f84f43ddc4627a9d1aee5366e929",
+    "tools/test_robustness.py": "459b5210bf127accceec1d7017a036a2a6abdbeb98b95d930bdbcf2512ad8c93"
+  }
+}

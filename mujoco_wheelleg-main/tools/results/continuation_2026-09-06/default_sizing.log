@@ -1,0 +1,12 @@
+design mass: 4.274 kg (baseline 1.018 kg, x4.20)
+  6 motors                         2.466 kg
+  4 belt reducers                  0.400 kg
+  2 tires                          0.198 kg
+  2 x 6S 1400mAh batteries         0.444 kg
+  6 moteus-n1 controllers          0.088 kg
+  existing links                   0.128 kg
+  frame, bearings, compute, wiring 0.550 kg
+hip: need 12.60 N·m @ 602 rpm; available 18.00 peak / 7.20 rated N·m @ 760 rpm
+wheel: need 4.20 N·m @ 1389 rpm; available 5.00 peak / 2.00 rated N·m
+peak bus: 88.5 A; derated battery budget 105.0 A; estimated runtime 16.8 min
+1.4 m/s -> 0 in 0.45 m: 0.229 N·m/wheel; wheel inertia estimate 0.0003055 kg·m²

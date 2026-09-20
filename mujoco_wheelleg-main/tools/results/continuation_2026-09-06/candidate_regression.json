@@ -1,0 +1,121 @@
+[
+  {
+    "name": "candidate_stand",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state",
+      "--test",
+      "stand"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "candidate_stop",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state",
+      "--test",
+      "stop"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "candidate_jump",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state",
+      "--test",
+      "jump"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "candidate_jumpfwd",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state",
+      "--test",
+      "jumpfwd"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "candidate_jumpback",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/wheelleg_sim.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state",
+      "--test",
+      "jumpback"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "candidate_clean",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/test_jump_stress.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state",
+      "--no-disturbance"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "candidate_push",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/test_jump_stress.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "candidate_landstop",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/test_jump_stop.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "candidate_heights",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "tools/test_jump_height.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--six-state"
+    ],
+    "returncode": 0
+  }
+]

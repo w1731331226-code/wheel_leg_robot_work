@@ -1,0 +1,61 @@
+[
+  {
+    "scenario": "turn",
+    "speed": 1,
+    "sign": 1,
+    "hardware": true,
+    "track_width": 0.18,
+    "six_state": true,
+    "reached_at": 3.086,
+    "peak_roll_pitch_deg": [
+      0.431895625152339,
+      0.7922352469424534
+    ],
+    "heading_error_deg": 1.7976462179928845,
+    "speed_error": 0.007277182612061006,
+    "stop_distance": 0.28953273715420375,
+    "tail_speed": 0.0006947596328348327,
+    "fell": false,
+    "jump": true,
+    "jump_completed": true,
+    "jump_height": 0.23269330537858676,
+    "takeoff_speed": 1.0073532838158286,
+    "min_forward_speed": 0.994352609348217,
+    "invalid": false,
+    "nonwheel": false,
+    "passed": true
+  },
+  {
+    "scenario": "terrain",
+    "speed": 1,
+    "slope_deg": 0,
+    "bump_height": 0.02,
+    "side": 1,
+    "hardware": true,
+    "track_width": 0.18,
+    "six_state": true,
+    "peak_roll_pitch_yaw_deg": [
+      0.4168918821429035,
+      0.34398871056681446,
+      22.25951778575819
+    ],
+    "startup_peak_roll_pitch_deg": [
+      0.4168918821429035,
+      0.34398871056681446
+    ],
+    "touched_bump": true,
+    "traversed": true,
+    "final_time": 6.9995,
+    "final_position": [
+      3.961291280469767,
+      0.10374919467885486,
+      0.1607241486671204
+    ],
+    "stop_distance": 0.2832985915083766,
+    "tail_speed": 0.030876947958266253,
+    "fell": false,
+    "invalid": false,
+    "nonwheel": false,
+    "passed": false
+  }
+]

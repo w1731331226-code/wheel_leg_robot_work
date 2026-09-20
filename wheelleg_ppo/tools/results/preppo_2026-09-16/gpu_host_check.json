@@ -1,0 +1,11 @@
+{
+  "date": "2026-09-16",
+  "sandbox_nvidia_smi_returncode": 9,
+  "sandbox_result": "Could not communicate with NVIDIA driver",
+  "host_nvidia_smi_returncode": 6,
+  "host_result": "No devices were found",
+  "pci_observation": "NVIDIA VGA 10de:2d19 present; lspci reports nvidia kernel driver",
+  "torch_build": "2.14.0+cpu",
+  "cuda_training_ready": false,
+  "driver_modified": false
+}

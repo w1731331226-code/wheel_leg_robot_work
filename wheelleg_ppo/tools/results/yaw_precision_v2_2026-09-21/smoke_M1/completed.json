@@ -1,0 +1,27 @@
+{
+  "method": "M1",
+  "protocol": "yaw-precision-v2",
+  "smoke": true,
+  "passed": true,
+  "policy_steps": 4000,
+  "policy_parameter_count": 12675,
+  "train_seconds": 25.892978750999646,
+  "total_seconds": 43.94701986200016,
+  "losses": {
+    "train/learning_rate": 0.0003,
+    "train/entropy_loss": -1.4029066920280457,
+    "train/policy_gradient_loss": -0.002402737204498773,
+    "train/value_loss": 3.4233612567186356,
+    "train/approx_kl": 0.0027845874428749084,
+    "train/clip_fraction": 0.006450000056065619,
+    "train/loss": 1.685325026512146,
+    "train/explained_variance": 0.026434123516082764,
+    "train/std": 0.980401873588562,
+    "train/n_updates": 20.0,
+    "train/clip_range": 0.2
+  },
+  "save_reload_pass": true,
+  "evaluation_normalization_frozen": true,
+  "curriculum_reset_pass": true,
+  "formal_training_started": false
+}

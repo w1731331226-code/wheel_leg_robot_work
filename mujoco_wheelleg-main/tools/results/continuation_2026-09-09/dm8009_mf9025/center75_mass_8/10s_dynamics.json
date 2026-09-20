@@ -1,0 +1,79 @@
+{
+  "hip_bus_V": 42.0,
+  "wheel_bus_V": 24.0,
+  "mass_kg": 8.0,
+  "controller_mass_kg": 7.5,
+  "added_payload_position_m": [
+    0.075,
+    0,
+    0.039
+  ],
+  "runs": [
+    {
+      "mode": "stand",
+      "action_pass": false,
+      "duration_s": 19.99999999999874,
+      "motors": {
+        "motor_alphaL": {
+          "peak_torque_Nm": 3.589808549456818,
+          "peak_rpm": 47.25132923857315,
+          "over_rated_longest_s": 0.0,
+          "at_peak_longest_s": 0.0,
+          "torque_rms_Nm": 1.8600057396578116
+        },
+        "motor_betaL": {
+          "peak_torque_Nm": 7.102569373448692,
+          "peak_rpm": 39.74994715921424,
+          "over_rated_longest_s": 0.0,
+          "at_peak_longest_s": 0.0,
+          "torque_rms_Nm": 1.7931185549364357
+        },
+        "motor_alphaR": {
+          "peak_torque_Nm": 6.759007595834251,
+          "peak_rpm": 41.27698718242843,
+          "over_rated_longest_s": 0.0,
+          "at_peak_longest_s": 0.0,
+          "torque_rms_Nm": 1.789421046878063
+        },
+        "motor_betaR": {
+          "peak_torque_Nm": 2.8037077845351055,
+          "peak_rpm": 47.22508372597646,
+          "over_rated_longest_s": 0.0,
+          "at_peak_longest_s": 0.0,
+          "torque_rms_Nm": 1.8746086748176976
+        },
+        "motor_wheelL": {
+          "peak_torque_Nm": 0.2819601091766597,
+          "peak_rpm": 146.71911613320927,
+          "over_rated_longest_s": 0.0,
+          "at_peak_longest_s": 0.0,
+          "torque_rms_Nm": 0.08796975988880554
+        },
+        "motor_wheelR": {
+          "peak_torque_Nm": 0.2997466017961592,
+          "peak_rpm": 131.2968541010028,
+          "over_rated_longest_s": 0.0,
+          "at_peak_longest_s": 0.0,
+          "torque_rms_Nm": 0.08805801549101087
+        }
+      },
+      "mechanical_positive_peak_W": 7.5791456341239565,
+      "mechanical_absorbed_peak_W": 53.315268416453996,
+      "mechanical_positive_J": 10.203045222548932,
+      "mechanical_absorbed_J": 15.058480261260042,
+      "lossless_battery_current_equivalent_A": 0.18045584843152276,
+      "peak_window_pass": true
+    }
+  ],
+  "hardware_dynamic_acceptance": false,
+  "note": "Full-charge nominal speed scaling only. P/V is a lossless mechanical demand equivalent, not measured bus current. RMS torque is not temperature. Thermal parameters, losses, battery sag and regenerative absorption remain unvalidated.",
+  "source_sha256": {
+    "tools/hardware_profile.py": "b294ce7350843b1835875779f1ee942d072a5a83e31f70866afd0fe608c0d812",
+    "tools/wheelleg_sim.py": "d68467fb3ab722a5ed17fd18afdc5abadfc839175a73c7822ae1cf1962ac0f1a",
+    "tools/rm_controller.py": "9496148077be47a89127eac7e4c76554b215c0727ae3e76a5d54e456ee1eb9ca",
+    "tools/model_lqr.py": "429dfa9d89b18b7ab9c045c5b148ee064fc7a678a31d92abc9680833ea35b2cf",
+    "tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+    "tools/test_dm8009_dynamics.py": "2a732622c2359229850e4aba2849cafff22d83a65b0afda98fa778645984bdfc",
+    "xml/wheelleg_dm8009.xml": "be441e6cfcde6079391f32d9e3a8b9ca2daacab4ed9172e4825b13a26b764c64"
+  }
+}

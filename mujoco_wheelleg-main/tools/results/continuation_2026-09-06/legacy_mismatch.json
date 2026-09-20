@@ -1,0 +1,30 @@
+[
+  {
+    "name": "legacy_mismatch_0.01",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "-u",
+      "tools/test_jump_stress.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--actuator-mismatch",
+      "0.01"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "legacy_mismatch_-0.01",
+    "command": [
+      "/home/wmt/wheel_leg_robot_work/.venv/bin/python3",
+      "-u",
+      "tools/test_jump_stress.py",
+      "--hardware",
+      "--track-width",
+      "0.18",
+      "--actuator-mismatch",
+      "-0.01"
+    ],
+    "returncode": 0
+  }
+]

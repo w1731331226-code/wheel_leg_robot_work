@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "checks": [
+    "original baseline: all frozen SHA256 hashes unchanged",
+    "SB3/Gymnasium interface",
+    "old/current drive-stop trajectories retained; model-change differences reported",
+    "Gym zero residual: nominal compiled model and 6,000 physics steps bit-identical",
+    "unknown mass: complete frozen design and identical-state commands",
+    "same VMC mapping; configuration-dependent recomputation",
+    "single final-output timer; residual not overwritten; common lambda",
+    "seed replay, reset filters/anchors/actions/timers, environment isolation",
+    "40 substeps: identical reward integration and transient peak capture",
+    "Actor delay buffer and effective left/right contact friction",
+    "timeouts versus terminations; invalid action boundaries",
+    "held-out joint region and all five action parameterizations"
+  ]
+}

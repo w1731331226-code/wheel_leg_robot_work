@@ -1,0 +1,81 @@
+{
+  "context": {
+    "time_s": 1.9999999999998352,
+    "lengths_m": [
+      0.300005181405643,
+      0.3000051814057244
+    ],
+    "contact_wheels": [
+      "wheel_collide_L",
+      "wheel_collide_R"
+    ]
+  },
+  "distributions": [
+    {
+      "mode": "diff1",
+      "per_motor_rms_Nm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.2160441657896142,
+        0.2160441657896142
+      ],
+      "normalized_rms": 0.02771847939455154,
+      "saturation_fraction": 0.0
+    },
+    {
+      "mode": "diff2",
+      "per_motor_rms_Nm": [
+        0.2571251309840507,
+        0.2568243605412072,
+        0.257125130984256,
+        0.25682436054089725,
+        0.2051548007801399,
+        0.2051548007801399
+      ],
+      "normalized_rms": 0.02683895872659879,
+      "saturation_fraction": 0.0
+    },
+    {
+      "mode": "diff3",
+      "per_motor_rms_Nm": [
+        0.354171527653511,
+        0.36340156951910896,
+        0.35417152765347193,
+        0.3634015695190579,
+        0.20917079701592872,
+        0.20917079701592872
+      ],
+      "normalized_rms": 0.027818158370887743,
+      "saturation_fraction": 0.0
+    },
+    {
+      "mode": "virtual6",
+      "per_motor_rms_Nm": [
+        0.36016744936123823,
+        0.3522526935558717,
+        0.3458346481563245,
+        0.35058081603076047,
+        0.2254534453866495,
+        0.21326680795934722
+      ],
+      "normalized_rms": 0.029058395062624063,
+      "saturation_fraction": 0.0
+    },
+    {
+      "mode": "torque6",
+      "per_motor_rms_Nm": [
+        0.7239839618189599,
+        0.6820106201885712,
+        0.6788912148285905,
+        0.6880674212346242,
+        0.2254534453866495,
+        0.21326680795934722
+      ],
+      "normalized_rms": 0.03151298899418163,
+      "saturation_fraction": 0.0
+    }
+  ],
+  "note": "Steady held targets; same clipped N(0,1) sampling. Reachable sets are intentionally different."
+}

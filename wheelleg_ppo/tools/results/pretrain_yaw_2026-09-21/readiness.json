@@ -1,0 +1,254 @@
+{
+  "engineering_ready": true,
+  "date": "2026-09-21",
+  "protocol": "yaw-precision-v1",
+  "selected_b1": {
+    "name": "B1_6",
+    "kp": 0.8,
+    "kd": 0.3,
+    "roll_gain": 1
+  },
+  "selection": {
+    "candidates": [
+      {
+        "candidate": {
+          "name": "B0",
+          "kp": 0,
+          "kd": 0,
+          "roll_gain": 0
+        },
+        "total": 32,
+        "success_count": 28,
+        "complete": true,
+        "mean_yaw_score_deg": 0.7629518497356917
+      },
+      {
+        "candidate": {
+          "name": "B1_1",
+          "kp": 0.4,
+          "kd": 0,
+          "roll_gain": 0
+        },
+        "total": 32,
+        "success_count": 28,
+        "complete": true,
+        "mean_yaw_score_deg": 0.6432642769469838
+      },
+      {
+        "candidate": {
+          "name": "B1_2",
+          "kp": 0,
+          "kd": 0.3,
+          "roll_gain": 0
+        },
+        "total": 32,
+        "success_count": 27,
+        "complete": true,
+        "mean_yaw_score_deg": 0.8694680489972266
+      },
+      {
+        "candidate": {
+          "name": "B1_3",
+          "kp": 0.4,
+          "kd": 0.3,
+          "roll_gain": 0
+        },
+        "total": 32,
+        "success_count": 28,
+        "complete": true,
+        "mean_yaw_score_deg": 0.7090483999222571
+      },
+      {
+        "candidate": {
+          "name": "B1_4",
+          "kp": 0.8,
+          "kd": 0.6,
+          "roll_gain": 0
+        },
+        "total": 32,
+        "success_count": 27,
+        "complete": true,
+        "mean_yaw_score_deg": 0.6869968805039466
+      },
+      {
+        "candidate": {
+          "name": "B1_5",
+          "kp": 0.4,
+          "kd": 0.3,
+          "roll_gain": 1
+        },
+        "total": 32,
+        "success_count": 28,
+        "complete": true,
+        "mean_yaw_score_deg": 0.6890985180495854
+      },
+      {
+        "candidate": {
+          "name": "B1_6",
+          "kp": 0.8,
+          "kd": 0.3,
+          "roll_gain": 1
+        },
+        "total": 32,
+        "success_count": 28,
+        "complete": true,
+        "mean_yaw_score_deg": 0.613519439013687
+      },
+      {
+        "candidate": {
+          "name": "B1_7",
+          "kp": 0.4,
+          "kd": 0.6,
+          "roll_gain": 1
+        },
+        "total": 32,
+        "success_count": 27,
+        "complete": true,
+        "mean_yaw_score_deg": 0.7404267847110175
+      }
+    ],
+    "selected_b1": {
+      "candidate": {
+        "name": "B1_6",
+        "kp": 0.8,
+        "kd": 0.3,
+        "roll_gain": 1
+      },
+      "total": 32,
+      "success_count": 28,
+      "complete": true,
+      "mean_yaw_score_deg": 0.613519439013687
+    },
+    "classical_reference_score_deg": 0.613519439013687,
+    "absolute_headroom_pass": true,
+    "gate_evaluated": false,
+    "test_set_evaluated": false
+  },
+  "short_update_checks": {
+    "M": {
+      "method": "M",
+      "smoke": true,
+      "passed": true,
+      "policy_steps": 4000,
+      "train_seconds": 25.5847297170003,
+      "total_seconds": 43.44317429700004,
+      "losses": {
+        "train/learning_rate": 0.0003,
+        "train/entropy_loss": -4.227446293830871,
+        "train/policy_gradient_loss": -0.004535542086103117,
+        "train/value_loss": 2.8690040558576584,
+        "train/approx_kl": 0.00518416240811348,
+        "train/clip_fraction": 0.015300000255228952,
+        "train/loss": 0.9602806568145752,
+        "train/explained_variance": 0.015473663806915283,
+        "train/std": 0.9917755722999573,
+        "train/n_updates": 20.0,
+        "train/clip_range": 0.2
+      },
+      "save_reload_pass": true,
+      "evaluation_normalization_frozen": true,
+      "curriculum_reset_pass": true,
+      "formal_training_started": false
+    },
+    "B2-V": {
+      "method": "B2-V",
+      "smoke": true,
+      "passed": true,
+      "policy_steps": 4000,
+      "train_seconds": 25.149748548999924,
+      "total_seconds": 42.653767060000064,
+      "losses": {
+        "train/learning_rate": 0.0003,
+        "train/entropy_loss": -8.501437664031982,
+        "train/policy_gradient_loss": -0.007904469525859903,
+        "train/value_loss": 3.2719132199883463,
+        "train/approx_kl": 0.005006216466426849,
+        "train/clip_fraction": 0.013350000145146623,
+        "train/loss": 1.4623594284057617,
+        "train/explained_variance": -0.012293219566345215,
+        "train/std": 0.9940626621246338,
+        "train/n_updates": 20.0,
+        "train/clip_range": 0.2
+      },
+      "save_reload_pass": true,
+      "evaluation_normalization_frozen": true,
+      "curriculum_reset_pass": true,
+      "formal_training_started": false
+    },
+    "B2": {
+      "method": "B2",
+      "smoke": true,
+      "passed": true,
+      "policy_steps": 4000,
+      "train_seconds": 21.792349996000667,
+      "total_seconds": 37.037925779000034,
+      "losses": {
+        "train/learning_rate": 0.0003,
+        "train/entropy_loss": -8.50107491016388,
+        "train/policy_gradient_loss": -0.008482386222855354,
+        "train/value_loss": 3.313300609588623,
+        "train/approx_kl": 0.0055607957765460014,
+        "train/clip_fraction": 0.01715000012773089,
+        "train/loss": 1.5579732656478882,
+        "train/explained_variance": -0.047478318214416504,
+        "train/std": 0.995128333568573,
+        "train/n_updates": 20.0,
+        "train/clip_range": 0.2
+      },
+      "save_reload_pass": true,
+      "evaluation_normalization_frozen": true,
+      "curriculum_reset_pass": true,
+      "formal_training_started": false
+    }
+  },
+  "total_smoke_policy_steps": 12000,
+  "historical_control_hashes_matched": 18,
+  "selection_evaluated": true,
+  "gate_evaluated": false,
+  "test_set_evaluated": false,
+  "formal_training_started": false,
+  "research_advantage_proven": false,
+  "remaining_research": [
+    "IEEE 10.1109/TASE.2025.3620908 full text remains unavailable; novelty provisional"
+  ],
+  "source_sha256": {
+    "tools/hardware_profile.py": "844688aae7e408bb2ca11d00b192ffaa9e4ad5de06cc8a815d3cf3ddfbe02eba",
+    "tools/model_lqr.py": "98947f8440eccb728fd7c0c8eb41c7679322d383f093c4b432aeb78954e92d98",
+    "tools/ppo_env.py": "9e001c11da492f36124fc7d0c8407c0c45d341748390f276071b59752e99f1e2",
+    "tools/prepare_ppo.py": "21639c8f650ef66138734796764687a42bff638004bcf79716d829ec4a70f522",
+    "tools/rm_controller.py": "d58a6157ebc2b8ab2343a0394e3ba4f64b66444bf5063f2fd3fc8886faa08b0a",
+    "tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+    "tools/test_dm8009_closed_loop.py": "ba9a99d3b9f54dc285e4cfa2accedcb49e880821cbbc65b2c83bf57aae0e3963",
+    "tools/test_dm8009_dynamics.py": "ffcdca8dc2df02ab646eecaa682141caf488a568a8ff213d96541cfc0f0e76a9",
+    "tools/test_dm8009_model.py": "7adae2386ec5aee286cdb95bee167350e6f13cc81a5fb22275cf50578104aa7e",
+    "tools/test_high_leg_jump.py": "337329d29184f9207648d287eb8656957e515c902c433162490f1ab06b8781d0",
+    "tools/test_jump_height.py": "397aa12a80de13bbfb8b87f629354c5b30f127b5628a639736d7c6dd554e3a25",
+    "tools/test_jump_stop.py": "15d61635e2091af07cbe34154c5297559972b26bdf90cae4b913b138ef9723a8",
+    "tools/test_jump_stress.py": "00f604bf17b1393668f0acad65b60c1c1a918f0a2f88fda2a10e7bbcb109ef30",
+    "tools/test_preppo.py": "4307fddce138960c185c4fa290611f6cb9194552c9cb4f82f4f01302ef5ebfca",
+    "tools/test_robustness.py": "6a75fd326e9c1b1efd5d13a531a62fcde4ea2ed3ae97c3369e65fcf814d9c563",
+    "tools/wheelleg_sim.py": "c2dfaae4dc562119fd7916684849ec22fcac3d75dbcfec6a2a0f9452d8f6ee0f",
+    "xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f",
+    "requirements.txt": "14df0888d2d55ff4ab14f9183560e71c6e786804fb6a575f7c85bd824b5f6f71",
+    "tools/pretrain_yaw.py": "18eb48a6d2a4bc699a57fdd16977d4a9454c410729699a7860a052afbee360f9",
+    "tools/train_yaw.py": "2e33bdfd8feb8ee6de71416f415216b73759f0c973cf08c5a13e5576b8a3412c",
+    "tools/test_yaw_training.py": "e1d29408fec9b1eb9d9632ce1baa32407a89e209d64fff9f45d08a6cf2babdc5",
+    "tools/results/yaw_precision_v1_2026-09-20/training_config.json": "cecb00d392fb2bf930c918b07c8ce855dc634a079bf0e241b0f89e49e7c423f9",
+    "tools/results/yaw_precision_v1_2026-09-20/protocol_manifest.json": "b8ea9d2593dd134b80051f4f8c91872ba46269a8e0153f0ac089dd42c40b80d0",
+    "tools/results/pretrain_yaw_2026-09-21/summary.json": "a6be58bd64f627512c1ceda20c221f1cfb2246e28361aef4eea1f6e4640d480e",
+    "tools/results/pretrain_yaw_2026-09-21/checks.log": "bc527802385fd027867675f12627ce788fd8ac620c42c0762170a28a72aa248b",
+    "tools/results/pretrain_yaw_2026-09-21/guard_checks.json": "5462aa5f91f5e4f0084df09ef0ddfa8532b4aba9b5bc6880806d999453244912",
+    "tools/results/pretrain_yaw_2026-09-21/smoke_M/completed.json": "59b0c055ebba6b0680b2bae3328696655f6f3ebff981fcbccf5e11d4d3afefcd",
+    "tools/results/pretrain_yaw_2026-09-21/smoke_M/run_config.json": "c6c1a4a9ee0fd770255e0644dc6dcf953c09bfde21290ac1f80a95223f273805",
+    "tools/results/pretrain_yaw_2026-09-21/smoke_M/selection.json": "36dab71b1146490b8b9a83deb6f251fb465ae5c26aef8b9a86ce8b194a2c5333",
+    "tools/results/pretrain_yaw_2026-09-21/smoke_B2V/completed.json": "164d122169614c619da7018a04a33d9ff5db96152c2eef4d5841c24412d12aab",
+    "tools/results/pretrain_yaw_2026-09-21/smoke_B2V/run_config.json": "0bb86ad7ffef5d1b43d85cf949ec6a362e53dedc9b9cdcfb1b921495a243c445",
+    "tools/results/pretrain_yaw_2026-09-21/smoke_B2V/selection.json": "bb581d6e2e9be6a66288b437206b04bbd166ced27c584f90acf9d2637c1e9faf",
+    "tools/results/pretrain_yaw_2026-09-21/smoke_B2/completed.json": "db7ce75d13a02e273b4904372c6786e4ecce71c1f3dba147e7f0f11ebbc1eae3",
+    "tools/results/pretrain_yaw_2026-09-21/smoke_B2/run_config.json": "cad214bbf7438d2aa73a5a915af319a3a1e0634ef2e415f4a7892794d6a40e78",
+    "tools/results/pretrain_yaw_2026-09-21/smoke_B2/selection.json": "b4f779348f013ae9ea785ca096b373496668a3a84b4025cb0b6b282d2528375b"
+  },
+  "research_ready": false,
+  "training_authorized": false,
+  "research_hold_reason": "2026-09-21 user requires novelty and direction review before training; key fulltext and contribution-identification design remain open"
+}

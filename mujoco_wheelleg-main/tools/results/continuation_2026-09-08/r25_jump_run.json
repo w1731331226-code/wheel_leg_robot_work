@@ -1,0 +1,14 @@
+{
+  "name": "r25_jump",
+  "args": [
+    "tools/wheelleg_sim.py",
+    "--hardware",
+    "--track-width",
+    "0.18",
+    "--six-state",
+    "--test",
+    "jump"
+  ],
+  "returncode": 0,
+  "wheel_radius": 0.025
+}

@@ -1,0 +1,62 @@
+reduction {"order": 6, "vmc_condition": 1.0870864545946082, "frequencies_hz": [0.2, 0.5, 1.0, 2.0, 5.0], "relative_frf_errors": [0.04859047876918722, 0.060309292519856894, 0.1347312645381431, 0.335135822471975, 0.20624564762026054], "omitted_radius": 0.9910973794616357, "reduced_closed_radius": 0.999087369621593, "full_closed_radius": 0.9991517448327458, "linear_pass": false}
+reduction {"order": 6, "vmc_condition": 1.0651435835855856, "frequencies_hz": [0.2, 0.5, 1.0, 2.0, 5.0], "relative_frf_errors": [0.04618935778459076, 0.04982594469126966, 0.14832812897683048, 0.2945065752163264, 0.24328527538582415], "omitted_radius": 0.9856769258556081, "reduced_closed_radius": 0.9989891431861591, "full_closed_radius": 0.9990415039969722, "linear_pass": false}
+reduction {"order": 6, "vmc_condition": 1.1683748389161588, "frequencies_hz": [0.2, 0.5, 1.0, 2.0, 5.0], "relative_frf_errors": [0.0578548160769273, 0.10585902466282332, 0.3011939185021124, 0.31513721384550825, 0.2894693423496319], "omitted_radius": 0.9856501244371181, "reduced_closed_radius": 0.998951514105763, "full_closed_radius": 0.9989982656244921, "linear_pass": false}
+reduction {"order": 6, "vmc_condition": 1.7090388359207327, "frequencies_hz": [0.2, 0.5, 1.0, 2.0, 5.0], "relative_frf_errors": [0.25631344409801327, 0.37607336674672326, 0.4120537140502303, 0.4070921176666064, 0.4128368977106159], "omitted_radius": 0.989751304055136, "reduced_closed_radius": 0.9989247191170593, "full_closed_radius": 0.9989657523812464, "linear_pass": false}
+jb t= 4.00 z=0.1607 roll=-0.000 pitch=-0.002 vx=-1.01 bx=-2.73
+jb t= 4.25 z=0.1556 roll=-0.000 pitch=-0.002 vx=-1.01 bx=-2.99
+jb t= 4.50 z=0.1468 roll=-0.000 pitch=-0.002 vx=-1.01 bx=-3.24
+jb t= 4.75 z=0.1163 roll=+0.000 pitch=-0.010 vx=-1.01 bx=-3.49
+jb t= 5.00 z=0.3494 roll=-0.000 pitch=-0.015 vx=-1.04 bx=-3.75
+jb t= 5.25 z=0.2649 roll=-0.000 pitch=-0.013 vx=-1.04 bx=-4.01
+jb t= 5.50 z=0.1606 roll=-0.000 pitch=-0.003 vx=-1.06 bx=-4.27
+jb t= 5.75 z=0.1606 roll=-0.000 pitch=-0.002 vx=-1.03 bx=-4.53
+jb t= 6.00 z=0.1606 roll=-0.000 pitch=-0.002 vx=-1.01 bx=-4.79
+jb t= 6.25 z=0.1607 roll=-0.000 pitch=-0.002 vx=-1.01 bx=-5.04
+jb t= 6.50 z=0.1607 roll=-0.000 pitch=-0.002 vx=-1.01 bx=-5.29
+jb t= 6.75 z=0.1607 roll=-0.000 pitch=-0.002 vx=-1.01 bx=-5.54
+jb t= 7.00 z=0.1607 roll=-0.000 pitch=-0.002 vx=-1.01 bx=-5.79
+jb t= 7.25 z=0.1607 roll=-0.000 pitch=-0.002 vx=-1.01 bx=-6.04
+jb t= 7.50 z=0.1607 roll=-0.000 pitch=-0.002 vx=-1.01 bx=-6.30
+jb t= 7.75 z=0.1607 roll=-0.000 pitch=-0.002 vx=-1.01 bx=-6.55
+jb t= 8.00 z=0.1607 roll=-0.000 pitch=-0.002 vx=-1.01 bx=-6.80
+jb t= 8.25 z=0.1607 roll=+0.000 pitch=-0.002 vx=-1.01 bx=-7.05
+jb t= 8.50 z=0.1607 roll=+0.000 pitch=-0.002 vx=-1.01 bx=-7.30
+jb t= 8.75 z=0.1607 roll=+0.000 pitch=-0.002 vx=-1.01 bx=-7.56
+jb t= 9.00 z=0.1607 roll=+0.000 pitch=-0.002 vx=-1.01 bx=-7.81
+jb t= 9.25 z=0.1607 roll=+0.000 pitch=-0.002 vx=-1.01 bx=-8.06
+jb t= 9.50 z=0.1607 roll=+0.000 pitch=-0.002 vx=-1.01 bx=-8.31
+jb t= 9.75 z=0.1607 roll=+0.000 pitch=-0.002 vx=-1.01 bx=-8.56
+jb t=10.00 z=0.1607 roll=+0.000 pitch=-0.002 vx=-1.01 bx=-8.81
+jb t=10.25 z=0.1607 roll=+0.000 pitch=-0.002 vx=-1.01 bx=-9.07
+jb t=10.50 z=0.1607 roll=-0.000 pitch=-0.002 vx=-1.01 bx=-9.32
+jb t=10.75 z=0.1607 roll=+0.000 pitch=-0.002 vx=-1.01 bx=-9.57
+jb t=11.00 z=0.1607 roll=+0.000 pitch=-0.002 vx=-1.01 bx=-9.82
+jb t=11.25 z=0.1607 roll=-0.000 pitch=-0.002 vx=-1.01 bx=-10.07
+jb t=11.50 z=0.1607 roll=-0.000 pitch=-0.002 vx=-1.01 bx=-10.33
+jb t=11.75 z=0.1607 roll=-0.000 pitch=-0.002 vx=-1.01 bx=-10.58
+jb t=12.00 z=0.1607 roll=+0.000 pitch=-0.002 vx=-1.01 bx=-10.83
+jb t=12.25 z=0.1607 roll=+0.000 pitch=-0.002 vx=-1.01 bx=-11.08
+jb t=12.50 z=0.1607 roll=+0.000 pitch=-0.002 vx=-1.01 bx=-11.33
+jb t=12.75 z=0.1607 roll=-0.000 pitch=-0.002 vx=-1.01 bx=-11.58
+jb t=13.00 z=0.1607 roll=-0.000 pitch=-0.002 vx=-1.01 bx=-11.84
+jb t=13.25 z=0.1607 roll=-0.000 pitch=-0.002 vx=-1.01 bx=-12.09
+jb t=13.50 z=0.1607 roll=-0.000 pitch=-0.002 vx=-1.01 bx=-12.34
+jb t=13.75 z=0.1607 roll=+0.000 pitch=-0.002 vx=-1.01 bx=-12.59
+jb t=14.00 z=0.1607 roll=+0.000 pitch=-0.002 vx=-1.01 bx=-12.84
+jb t=14.25 z=0.1607 roll=-0.000 pitch=-0.002 vx=-1.01 bx=-13.10
+jb t=14.50 z=0.1607 roll=-0.000 pitch=-0.002 vx=-1.01 bx=-13.35
+jb t=14.75 z=0.1607 roll=-0.000 pitch=-0.002 vx=-1.01 bx=-13.60
+jb t=15.00 z=0.1607 roll=+0.000 pitch=-0.002 vx=-1.01 bx=-13.85
+jb t=15.25 z=0.1607 roll=+0.000 pitch=-0.002 vx=-1.01 bx=-14.10
+jb t=15.50 z=0.1607 roll=+0.000 pitch=-0.002 vx=-1.01 bx=-14.35
+jb t=15.75 z=0.1607 roll=+0.000 pitch=-0.002 vx=-1.01 bx=-14.61
+jb t=16.00 z=0.1607 roll=-0.000 pitch=-0.002 vx=-1.01 bx=-14.86
+jb t=16.25 z=0.1607 roll=+0.000 pitch=-0.002 vx=-1.01 bx=-15.11
+jb t=16.50 z=0.1607 roll=+0.000 pitch=-0.002 vx=-1.01 bx=-15.36
+jb t=16.75 z=0.1607 roll=+0.000 pitch=-0.002 vx=-1.01 bx=-15.61
+jb t=17.00 z=0.1607 roll=-0.000 pitch=-0.002 vx=-1.01 bx=-15.87
+jb t=17.25 z=0.1607 roll=-0.000 pitch=-0.002 vx=-1.01 bx=-16.12
+jb t=17.50 z=0.1607 roll=+0.000 pitch=-0.002 vx=-1.01 bx=-16.37
+jb t=17.75 z=0.1607 roll=-0.000 pitch=-0.002 vx=-1.01 bx=-16.62
+后退跳: 通过 (起跳速度=-1.01m/s, COM跳高=0.226m, 最大横滚=0.00°, 最大平台俯仰=1.08°, 最大偏航=0.00°, bx=-16.87)
+输出/状态有效=True 非轮碰撞=False roll峰值=0.000°
