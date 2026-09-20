@@ -312,15 +312,23 @@
       "success_count": 29,
       "complete": true,
       "mean_yaw_score_deg": 1.1253889292930521
+    },
+    {
+      "steps": 800000,
+      "path": "/home/wmt/wheel_leg_robot_work/wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_800000",
+      "total": 32,
+      "success_count": 31,
+      "complete": true,
+      "mean_yaw_score_deg": 1.0666702047195376
     }
   ],
   "best": {
-    "steps": 620000,
-    "path": "/home/wmt/wheel_leg_robot_work/wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_620000",
+    "steps": 800000,
+    "path": "/home/wmt/wheel_leg_robot_work/wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_800000",
     "total": 32,
-    "success_count": 30,
+    "success_count": 31,
     "complete": true,
-    "mean_yaw_score_deg": 1.0099957048445578
+    "mean_yaw_score_deg": 1.0666702047195376
   },
   "gate_evaluated": false,
   "test_set_evaluated": false
