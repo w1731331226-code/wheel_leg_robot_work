@@ -165,3 +165,11 @@
 
 - `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/selection.json`
 - `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_800000.json`
+
+### 自动同步快照 2026-09-21T07:02:19+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1.log`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_820000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_820000.zip`
