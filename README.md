@@ -381,3 +381,7 @@ Git 已忽略本地虚拟环境、缓存、构建目录、备份和常见凭据�
 - [参考子模块来源](https://gitee.com/shuo_kai/balance-simulation)：外部参考工程。
 
 各子项目保留原有 [MIT 许可证](wheelleg_ppo/LICENSE) 与版权声明；MuJoCo 示例等文件另有文件级声明。第三方论文、手册、图片及参考子模块遵循各自许可，不应视为自动适用本项目代码许可证。
+
+## GPU 新基线与长期维护
+
+[MuJoCo Warp 基线](wheelleg_warp/README.md) 独立运行GPU物理并与原CPU校对；[长期项目记忆](PROJECT_MEMORY.md) 记录跨对话决策、验收和未完成项。[项目执行约束](AGENTS.md) 要求及时中文提交，GitHub同步守护负责稳定文件快照与远程推送。原 `wheelleg_ppo/` CPU 模型、控制器与历史实验继续保留。

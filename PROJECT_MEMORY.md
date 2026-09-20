@@ -1,0 +1,55 @@
+# 长期项目记忆
+
+维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
+
+## 当前约定（2026-09-21）
+
+- 用户要求：新增 MuJoCo Warp GPU 基线；原 CPU 仿真继续作为原始效果校对；运行 GitHub 同步守护；为每轮实质工作更新长期记忆并及时写中文提交说明。
+- 项目约束入口：`AGENTS.md`、`.agents/skills/wheelleg-project-guard/SKILL.md`。GPU 基线独立放在 `wheelleg_warp/`；CPU 控制、物理模型、环境和历史证据不覆盖。
+- Git 远程：`origin` → `https://github.com/w1731331226-code/wheel_leg_robot_work.git`，工作分支 `main`。禁止 force push；远程分叉时保留本地提交并人工处理。
+- 同步覆盖 Git 已跟踪文件及未忽略的新文件，连续两次30秒扫描保持稳定才自动快照；缓存、凭据及 `.gitignore` 排除内容不上传。超过95MiB的单文件拒绝提交。后台训练产生的稳定检查点属于用户授权同步范围，记录为独立自动归档提交。
+- 编辑任务开始暂停 `wheelleg-git-sync.service`，结束更新此记忆、提交后恢复；可用 `.git/project-write.lock` 排他锁代替。用户暂存内容优先，不自动提交已有暂存区。
+- `.githooks/commit-msg` 在本地强制检查中文标题、随提交更新本记忆、凭据路径和文件大小。新克隆须执行 `git config core.hooksPath .githooks`；本地钩子不是 GitHub 服务端规则，不允许代理主动绕过。
+
+## CPU / PPO 已知状态
+
+- GPU 分支的原始 CPU 源码基点为 `0f70b834bd8071f485bc81b1d6b1f99cf266d5de`；本轮开始时未提交变更均为在跑训练的日志/检查点。本轮未将这些训练结果归为 GPU 实验。
+- `wheelleg_ppo/PAPER_PLAN.md` 第12节为 v2 研究协议；28例开发场景基线已有通过记录，困难组12/12，不能仍用不可达的“再提高10个百分点”主门。研究门沿已有v2协议，不在本轮重调。
+- CPU 实验服务 `wheelleg-m3-1609-v2-resume1.service` 本轮开始时仍运行。输出目录 `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/`；当前进度以其中完整指标JSON和 selection/completed 为准，不用本文件中的静态数字替代实时状态。
+- 原15分钟自动跟进任务已取消，不代表训练服务已停止。没有自动调度后续18项队列的承诺。
+- 之前只把 PPO 网络置于 CUDA 的比较没有提速，见计划12.10。新 Warp 基线改变物理执行后端，不能直接继承旧实验训练成绩或协议源码哈希。
+
+## 本轮实施与验证
+
+- 新增 `wheelleg_warp/baseline.py`、固定版本依赖及运行文档；复用 CPU 模型构建、VMC＋六状态LQR＋零残差和最终电机限幅。GPU 使用 `cuda:0`、MuJoCo Warp 3.12.0、Warp 1.17.0、MuJoCo 3.12.0。只增加两个GPU依赖，原CPU依赖版本保持不变。
+- CPU/GPU 分别运行独立控制器状态，测试站立、已见参数范围的非对称接触、跳跃；CPU模型原参数不改。固定工程校对阈值 qpos 0.02、qvel 0.5、ctrl 2.0，接触障碍集合一致。阈值不是论文成功门，也不是逐位一致承诺。
+- 批量吞吐为相同初态、同一CPU控制轨迹的开环物理回放，CUDA graph 执行；CPU对照采用8线程原生 `mujoco.rollout`，不以Python循环人为压低CPU速度。
+- 冒烟首轮因 Python tuple 使用 abs 报错；修正为 NumPy abs，失败记录保留于 `wheelleg_warp/results/smoke_20260921/summary.json`。
+- 修正后冒烟通过，见 `wheelleg_warp/results/smoke_fix_20260921/summary.json`：0.1秒轨迹 qpos 最大误差2.51e-7；256环境×200步物理回放单次GPU/CPU速度比2.496，末态qpos误差7.09e-7。与原CPU训练同时运行，非独占机器性能结论。
+- 完整校对首轮站立6秒通过；非对称接触暴露MJWarp 3.12回读未同步geom1/geom2的问题，失败保留于 `wheelleg_warp/results/paired_20260921/summary.json`。已在GPU唯一回读入口同步contact.geom到旧字段，原CPU控制器不改。针对真实接触、主动污染旧字段的 `wheelleg_warp/test_contact_bridge.py` 已通过。修正后的完整6秒×3场景运行于 `wheelleg_warp/results/paired_contact_fix_20260921/summary.json`；三项均已完整运行6秒：站立与跳跃通过，非对称接触全状态校对失败，总状态alignment_failed（入口按设计退出1）。非对称场景 qpos最大误差0.17224、qvel最大误差11.33987、ctrl最大误差1.31268；双方均接触bump_L，末态车体位置差约0.28mm，但不能据此绕过已设全状态门。GPU保留为候选基线，原CPU仍为正式效果参照。
+- `python3 tools/test_git_sync.py` 已通过：自动快照/推送、中文和记忆钩子拒绝、保留既有暂存内容、远程分叉不强推。服务已安装并enable，systemd配置检查通过；登录驻留 `Linger=yes` 已开启，收尾提交时启动并核对远程。
+
+## 未关闭项与后续边界
+
+- CPU参考标签 `cpu-reference-pre-warp-20260921` 和 `wheelleg_warp/CPU_REFERENCE.json` 已建立；新入口运行前验证27个CPU源码/模型哈希，变化时拒绝混用原基线。
+- 新基线的 Python 控制器仍在CPU，校对每物理步回读完整状态；该路径预计慢于原CPU。批量物理加速不代表完整闭环或PPO训练加速；尚未迁移 Gym/PPO 采样到 GPU。
+- 只有工程对齐和受控吞吐实测可在本轮验收；新后端长期训练需另行冻结协议及验证，不能直接替换在跑 CPU 训练。
+- 完整校对若失败，保留误差与失败证据，不放宽门槛，不替换原CPU。
+- 同步失败用 `journalctl --user -u wheelleg-git-sync.service -n 30 --no-pager` 排查；后台同步不等于会自动发送聊天通知。身份/网络/分叉问题不能通过强推解决。
+
+### 本轮维护检查
+
+- 依赖一致性 `pip check` 通过；新增代码编译检查、`git diff --check`、systemd服务配置检查通过。
+- 原CPU参考标签已实际推送远程：`cpu-reference-pre-warp-20260921`。
+- 全状态对齐失败属于已记录的基线限制，不能写成“全校对通过”；后续只在用户要求时诊断碰撞/精度差异或迁移GPU原生闭环。
+
+### 最终GPU验收结果（2026-09-21）
+
+- `paired_contact_fix_20260921/summary.json`：站立最大qpos误差2.26e-6；跳跃最大qpos误差0.001499、qvel误差0.01183、ctrl误差0.00358，均通过预设门。非对称接触未通过，原CPU不替换。
+- 256世界×200步回放：GPU 0.07270秒，8线程CPU 0.18369秒，单次倍率2.5266，末态qpos误差7.09e-7。只代表所述物理执行路径，存在输出量及后台负载差异，未验证PPO端到端加速。
+- CPU控制器逐步回读路径约47～50秒完成6秒仿真，CPU配对路径约5.8秒；GPU原生控制/环境/PPO仍未迁移。
+- 所有失败JSON保留，未调整原先门槛；原CPU27项哈希最后核对仍一致。同步脚本的回归、接触字段回归、依赖与配置检查通过。
+
+### 同步服务上线
+
+- `wheelleg-git-sync.service` 已实际启动且active，enabled和Linger=yes已核验；本轮提交由守护进程推送，最终同步结果以远程HEAD校验为准。

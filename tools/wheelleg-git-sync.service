@@ -1,0 +1,19 @@
+[Unit]
+Description=Wheel-leg project GitHub snapshot and push daemon
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/wmt/wheel_leg_robot_work
+ExecStart=/usr/bin/python3 -u /home/wmt/wheel_leg_robot_work/tools/git_sync.py
+Restart=on-failure
+RestartSec=30
+Environment=GIT_TERMINAL_PROMPT=0
+Environment=GIT_LITERAL_PATHSPECS=1
+Environment="GIT_SSH_COMMAND=ssh -oBatchMode=yes -oConnectTimeout=15"
+TimeoutStopSec=90
+KillMode=control-group
+
+[Install]
+WantedBy=default.target

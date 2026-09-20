@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+"""本地硬检查：中文说明、随提交更新长期记忆、阻止超大文件与凭据文件。"""
+from pathlib import Path
+import re
+import subprocess
+import sys
+
+message = Path(sys.argv[1]).read_text().strip()
+subject = message.splitlines()[0] if message else ''
+if len(re.findall(r'[\u4e00-\u9fff]', subject)) < 2:
+    sys.exit('拒绝提交：标题必须写清本次变更，并包含中文说明。')
+paths = subprocess.check_output(['git', 'diff', '--cached', '--name-only', '-z']).decode().split('\0')
+if 'PROJECT_MEMORY.md' not in paths:
+    sys.exit('拒绝提交：每次提交必须同步更新并暂存 PROJECT_MEMORY.md。')
+for path in filter(None, paths):
+    name = Path(path).name
+    if name == '.env' or (name.startswith('.env.') and name != '.env.example') or name.endswith(('.pem', '.key')):
+        sys.exit(f'拒绝提交凭据文件：{path}')
+    blob = subprocess.run(['git', 'cat-file', '-s', ':' + path], capture_output=True)
+    if blob.returncode == 0 and int(blob.stdout) >= 95 * 1024**2:
+        sys.exit(f'拒绝提交超过95MiB的文件：{path}')

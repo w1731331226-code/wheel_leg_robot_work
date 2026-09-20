@@ -1,0 +1,114 @@
+{
+  "cpu_reference_commit": "0f70b834bd8071f485bc81b1d6b1f99cf266d5de",
+  "versions": {
+    "mujoco": "3.12.0",
+    "mujoco_warp": "3.12.0",
+    "warp": "1.17.0"
+  },
+  "device": "cuda:0",
+  "source_sha256": {
+    "wheelleg_ppo/tools/hardware_profile.py": "844688aae7e408bb2ca11d00b192ffaa9e4ad5de06cc8a815d3cf3ddfbe02eba",
+    "wheelleg_ppo/tools/resume_yaw.py": "d130a412a2c073d6a02f03a2d9418b1adc548bbb4af35e9b7edcc2ec27bfc4af",
+    "wheelleg_ppo/tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+    "wheelleg_ppo/tools/test_dm8009_dynamics.py": "ffcdca8dc2df02ab646eecaa682141caf488a568a8ff213d96541cfc0f0e76a9",
+    "wheelleg_ppo/tools/test_dm8009_model.py": "7adae2386ec5aee286cdb95bee167350e6f13cc81a5fb22275cf50578104aa7e",
+    "wheelleg_ppo/tools/test_robustness.py": "6a75fd326e9c1b1efd5d13a531a62fcde4ea2ed3ae97c3369e65fcf814d9c563",
+    "wheelleg_ppo/tools/test_dm8009_closed_loop.py": "ba9a99d3b9f54dc285e4cfa2accedcb49e880821cbbc65b2c83bf57aae0e3963",
+    "wheelleg_ppo/tools/wheelleg_sim.py": "c2dfaae4dc562119fd7916684849ec22fcac3d75dbcfec6a2a0f9452d8f6ee0f",
+    "wheelleg_ppo/tools/score_yaw_gate.py": "68ad1a3e6919e9310c0cb80910705a3e5b532275aac49d3ebbde247485589a87",
+    "wheelleg_ppo/tools/review_yaw_stage.py": "249617435d9e1865ae42e1e3b2a2461c24bbc2a51d546a04b9051ab7189a1d05",
+    "wheelleg_ppo/tools/train_yaw.py": "161f26a44d3885ee3831e9197b1d9acc294551e613bfe9e95379e10a85fbc8ee",
+    "wheelleg_ppo/tools/benchmark_yaw_device.py": "b5182155bc7634552324f7b25739a2b6f8a3953d6ac05cd8a1f9520426424a2e",
+    "wheelleg_ppo/tools/test_yaw_gate.py": "cb202e622ec26ef29d54fe6f762f090c6f49f32ce73946035769f1afe97286f4",
+    "wheelleg_ppo/tools/model_lqr.py": "98947f8440eccb728fd7c0c8eb41c7679322d383f093c4b432aeb78954e92d98",
+    "wheelleg_ppo/tools/check_contrast_physics.py": "cff55382b2e9d5315a3cc4c414f340b9bbfa487bae9eb187070c8f13f4280b91",
+    "wheelleg_ppo/tools/ppo_env.py": "8b282c709f4ed0e7da500fb0e78a1a380b08a5467d4155b9cbe56147bff14296",
+    "wheelleg_ppo/tools/test_high_leg_jump.py": "337329d29184f9207648d287eb8656957e515c902c433162490f1ab06b8781d0",
+    "wheelleg_ppo/tools/pretrain_yaw.py": "ecd5e63a30321a72d7f051198fa00c1bfea4d1008e1ce8d9432e1629c030b24c",
+    "wheelleg_ppo/tools/test_jump_height.py": "397aa12a80de13bbfb8b87f629354c5b30f127b5628a639736d7c6dd554e3a25",
+    "wheelleg_ppo/tools/rm_controller.py": "d58a6157ebc2b8ab2343a0394e3ba4f64b66444bf5063f2fd3fc8886faa08b0a",
+    "wheelleg_ppo/tools/test_yaw_training.py": "ccd96cdcf1d5b905950ace2a03ba60d39997eb626b18c3acd587b91e4ecdcc78",
+    "wheelleg_ppo/tools/prepare_ppo.py": "21639c8f650ef66138734796764687a42bff638004bcf79716d829ec4a70f522",
+    "wheelleg_ppo/tools/test_jump_stress.py": "00f604bf17b1393668f0acad65b60c1c1a918f0a2f88fda2a10e7bbcb109ef30",
+    "wheelleg_ppo/tools/test_preppo.py": "4307fddce138960c185c4fa290611f6cb9194552c9cb4f82f4f01302ef5ebfca",
+    "wheelleg_ppo/tools/test_jump_stop.py": "15d61635e2091af07cbe34154c5297559972b26bdf90cae4b913b138ef9723a8",
+    "wheelleg_ppo/xml/wheelleg_dm8009.xml": "3adc23db052dd2ab885a92fabc38dbcc9eea0fe69204187323804d4e997c3862",
+    "wheelleg_ppo/xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f",
+    "wheelleg_warp/baseline.py": "d03aead52cc2d894f9cdab678f66fa69d289d50c7a0b6bfd3fa76e33021a20c5",
+    "wheelleg_warp/requirements.txt": "0860c724388b5ab1b552b52e96d401a7397fa7d9338d2a6f36bf8d46e7965f2f"
+  },
+  "closed_loop": [
+    {
+      "case": "stand",
+      "scenario": {
+        "speed": 1.0,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100
+      },
+      "seconds": 0.1,
+      "max_abs_error": {
+        "qpos": 2.5072428270464563e-07,
+        "qvel": 2.6090730711220145e-05,
+        "ctrl": 4.619336874700508e-05
+      },
+      "peak_angles_rad": [
+        [
+          1.9312369773376433e-16,
+          8.510204403633423e-06,
+          7.34969278349378e-14
+        ],
+        [
+          1.0275523229540992e-09,
+          8.508674000143295e-06,
+          2.6708373596589188e-09
+        ]
+      ],
+      "final_xyz": [
+        [
+          -7.603139540541916e-07,
+          -2.5732243474030782e-15,
+          0.3496861280544224
+        ],
+        [
+          -7.604002689731715e-07,
+          4.8921908191168484e-11,
+          0.34968605637550354
+        ]
+      ],
+      "contacts": [
+        [],
+        []
+      ],
+      "cpu_wall_s": 0.0996961460014063,
+      "gpu_with_host_controller_wall_s": 0.8297497170060524,
+      "aligned": true
+    }
+  ],
+  "benchmark": {
+    "worlds": 256,
+    "steps": 200,
+    "cpu_threads": 8,
+    "gpu_seconds": 0.07257548300003691,
+    "cpu_seconds": 0.18116652200023964,
+    "gpu_steps_per_second": 705472.3976135848,
+    "cpu_steps_per_second": 282612.92116615386,
+    "speedup": 2.4962496219301427,
+    "final_qpos_max_error": 7.088847952957264e-07,
+    "aligned": true,
+    "scope": "原生物理开环回放；不包含闭环控制/PPO，不代表端到端训练加速"
+  },
+  "tolerances": {
+    "qpos": 0.02,
+    "qvel": 0.5,
+    "ctrl": 2.0
+  },
+  "status": "passed"
+}
