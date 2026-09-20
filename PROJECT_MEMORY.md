@@ -189,3 +189,25 @@
 - 正式监督服务单次运行，不自动重启覆盖中断目录；用户退出登录后继续运行（Linger已启用）。系统关机/崩溃后需显式审核断点恢复，不能默认为精确续训。
 - 两队列完成后自动共同终评并写比较报告，Git同步守护归档推送；本轮结束时尚无最终效果结论。
 - 已有CPU历史实验继续运行，资源竞争已在协议披露。GPU接触数值差异和当前逐步回读较慢均未隐瞒，不为求提速改变预算、控制、奖励或评估。
+
+### 自动同步快照 2026-09-21T07:18:43+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1.log`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/selection.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_820000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_840000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_840000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_840000.zip`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_860000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_860000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_860000.zip`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_880000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_880000.zip`
+- `wheelleg_warp/results/formal_cpu_warp_v1_20260921/cpu.log`
+- `wheelleg_warp/results/formal_cpu_warp_v1_20260921/cpu_1609/run_config.json`
+- `wheelleg_warp/results/formal_cpu_warp_v1_20260921/status.json`
+- `wheelleg_warp/results/formal_cpu_warp_v1_20260921/warp.log`
+- `wheelleg_warp/results/formal_cpu_warp_v1_20260921/warp_1609/progress.json`
+- `wheelleg_warp/results/formal_cpu_warp_v1_20260921/warp_1609/run_config.json`
