@@ -1,0 +1,39 @@
+{
+  "smoke": false,
+  "checkpoints": [
+    {
+      "steps": 20000,
+      "path": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/formal_cpu_warp_live_v1_20260921/cpu_1609/step_20000",
+      "total": 32,
+      "success_count": 16,
+      "complete": true,
+      "mean_yaw_score_deg": 1.4256727255319752
+    },
+    {
+      "steps": 40000,
+      "path": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/formal_cpu_warp_live_v1_20260921/cpu_1609/step_40000",
+      "total": 32,
+      "success_count": 17,
+      "complete": true,
+      "mean_yaw_score_deg": 1.496393111661852
+    },
+    {
+      "steps": 60000,
+      "path": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921/cpu_1609/step_60000",
+      "total": 32,
+      "success_count": 1,
+      "complete": true,
+      "mean_yaw_score_deg": 2.402727701836196
+    }
+  ],
+  "best": {
+    "steps": 40000,
+    "path": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/formal_cpu_warp_live_v1_20260921/cpu_1609/step_40000",
+    "total": 32,
+    "success_count": 17,
+    "complete": true,
+    "mean_yaw_score_deg": 1.496393111661852
+  },
+  "gate_evaluated": false,
+  "test_set_evaluated": false
+}

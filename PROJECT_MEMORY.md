@@ -283,3 +283,57 @@
 - 08:24左右已确认CPU从60000继续至68000、GPU从20000继续至26000，均有新PPO更新，非仅进程active。当前段早期有效采样更新速率约CPU76/GPU63策略步每秒（8环境合计），仍待完整周期评估稳定后判断全程倍率。
 - 4000步CPU权重不变、GPU非逐位一致以及初次Warp内核参数编译错误均保留证据；前者不扩大为整个GPU训练精确可复现。
 - 续训ETA另剔除恢复点一次性补评估，不把继承旧步数或启动补评估误算成新采样吞吐，专项测试通过。
+
+### 自动同步快照 2026-09-21T08:27:47+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1.log`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/selection.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_1000000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_1000000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_1000000.zip`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_1020000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_1020000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_1020000.zip`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_1040000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_1040000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_1040000.zip`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_1060000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_1060000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_1060000.zip`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_1080000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_1080000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_1080000.zip`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_980000.json`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_980000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_980000.zip`
+- `wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921/cpu.log`
+- `wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921/cpu_1609/progress.json`
+- `wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921/cpu_1609/run_config.json`
+- `wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921/cpu_1609/selection.json`
+- `wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921/cpu_1609/step_60000.json`
+- `wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921/cpu_1609/step_60000.pkl`
+- `wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921/cpu_1609/step_60000.zip`
+- `wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921/cpu_1609/step_80000.pkl`
+- `wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921/cpu_1609/step_80000.zip`
+- `wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921/status.json`
+- `wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921/warp_1609/progress.json`
+- `wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921/warp_1609/run_config.json`
+- `wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921/warp_1609/selection.json`
+- `wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921/warp_1609/step_20000.json`
+- `wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921/warp_1609/step_20000.pkl`
+- `wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921/warp_1609/step_20000.zip`
+- `wheelleg_warp/results/formal_cpu_warp_live_v1_20260921/cpu.log`
+- `wheelleg_warp/results/formal_cpu_warp_live_v1_20260921/cpu_1609/progress.json`
+- `wheelleg_warp/results/formal_cpu_warp_live_v1_20260921/cpu_1609/selection.json`
+- `wheelleg_warp/results/formal_cpu_warp_live_v1_20260921/cpu_1609/step_20000.json`
+- `wheelleg_warp/results/formal_cpu_warp_live_v1_20260921/cpu_1609/step_40000.json`
+- `wheelleg_warp/results/formal_cpu_warp_live_v1_20260921/cpu_1609/step_40000.pkl`
+- `wheelleg_warp/results/formal_cpu_warp_live_v1_20260921/cpu_1609/step_40000.zip`
+- `wheelleg_warp/results/formal_cpu_warp_live_v1_20260921/cpu_1609/step_60000.pkl`
+- `wheelleg_warp/results/formal_cpu_warp_live_v1_20260921/cpu_1609/step_60000.zip`
+- `wheelleg_warp/results/formal_cpu_warp_live_v1_20260921/warp.log`
+- `wheelleg_warp/results/formal_cpu_warp_live_v1_20260921/warp_1609/progress.json`
+- `wheelleg_warp/results/formal_cpu_warp_live_v1_20260921/warp_1609/step_20000.pkl`
+- `wheelleg_warp/results/formal_cpu_warp_live_v1_20260921/warp_1609/step_20000.zip`
