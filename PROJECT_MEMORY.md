@@ -345,3 +345,5 @@
 - `wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921/warp.log`
 - `wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921/warp_1609/step_40000.pkl`
 - `wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921/warp_1609/step_40000.zip`
+
+- 录像连续刷新时同步切换图像资源与来源标签，避免新录像标签仍对应旧图像；该前端修正不改训练入口或物理。

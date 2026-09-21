@@ -59,6 +59,8 @@ function update(s){
     const a=$(`${b}-download`);a.hidden=false;a.href=latest.gif;a.textContent=`保存 ${latest.fps} FPS GIF ↓`;
     $(`${b}-replay`).disabled=latest.fps!==50;
     if(modes[b]==='replay'){
+      const media=latest.webp||latest.gif;
+      if($(`${b}-image`).getAttribute('src')!==media)$(`${b}-image`).src=media;
       $(`${b}-source`).textContent=`REPLAY · ${latest.smoke?'预检':'正式'}训练录像`;
       $(`${b}-episode`).textContent=`ENV 0 / 8 · EP ${latest.episode}`;
       $(`${b}-sim`).textContent=`${latest.metrics.duration_s.toFixed(2)} s · ${latest.fps} FPS`;
