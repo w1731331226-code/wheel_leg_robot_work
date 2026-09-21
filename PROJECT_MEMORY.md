@@ -337,3 +337,11 @@
 - `wheelleg_warp/results/formal_cpu_warp_live_v1_20260921/warp_1609/progress.json`
 - `wheelleg_warp/results/formal_cpu_warp_live_v1_20260921/warp_1609/step_20000.pkl`
 - `wheelleg_warp/results/formal_cpu_warp_live_v1_20260921/warp_1609/step_20000.zip`
+
+### 自动同步快照 2026-09-21T08:28:26+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921/warp.log`
+- `wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921/warp_1609/step_40000.pkl`
+- `wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921/warp_1609/step_40000.zip`
