@@ -1,0 +1,89 @@
+{
+  "backend": "cpu",
+  "environments": 16,
+  "device": "cpu",
+  "setup_seconds": 2.269458302002022,
+  "warmup": {
+    "sample_seconds": 18.996720023998932,
+    "update_seconds": 0.42994968100174447,
+    "seconds": 19.426669705000677
+  },
+  "rounds": [
+    {
+      "sample_seconds": 19.355754223000986,
+      "update_seconds": 0.22204063599929214,
+      "seconds": 19.577794859000278
+    },
+    {
+      "sample_seconds": 19.22157782999784,
+      "update_seconds": 0.22740238800179213,
+      "seconds": 19.448980217999633
+    }
+  ],
+  "policy_steps_per_round": 4000,
+  "median_policy_sps": 204.9874729391804,
+  "median_sampling_sps": 207.37566789246424,
+  "total_seconds": 61.49277247400096,
+  "total_policy_steps": 12000,
+  "gpu_mean": [
+    1.0,
+    162.66666666666666,
+    9.158833333333332,
+    59.483333333333334
+  ],
+  "gpu_peak": [
+    1.0,
+    203.0,
+    11.15,
+    60.0
+  ],
+  "gpu_sample_columns": [
+    "util_percent",
+    "memory_MiB",
+    "power_W",
+    "temperature_C"
+  ],
+  "ppo": {
+    "n_steps": 250,
+    "batch_size": 250,
+    "n_epochs": 10,
+    "learning_rate": 0.0003,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "clip_range": 0.2,
+    "clip_range_vf": null,
+    "normalize_advantage": true,
+    "ent_coef": 0,
+    "vf_coef": 0.5,
+    "max_grad_norm": 0.5,
+    "use_sde": false,
+    "target_kl": null,
+    "policy_kwargs": {
+      "net_arch": [
+        64,
+        64
+      ],
+      "log_std_init": 0
+    }
+  },
+  "losses": {
+    "train/learning_rate": 0.0003,
+    "train/entropy_loss": -4.233680647611618,
+    "train/policy_gradient_loss": -0.005831323345979911,
+    "train/value_loss": 2.133602947741747,
+    "train/approx_kl": 0.006469229236245155,
+    "train/clip_fraction": 0.04060000014142133,
+    "train/loss": 0.8490971922874451,
+    "train/explained_variance": 0.057612061500549316,
+    "train/std": 0.9903890490531921,
+    "train/n_updates": 30.0,
+    "train/clip_range": 0.2
+  },
+  "source_sha256": {
+    "wheelleg_warp/benchmark_parallel.py": "82704e929e22d5456929474145815953f86fa377e66db2de4b5adc2e92bc93fb",
+    "wheelleg_warp/fast_physics.py": "abaa4dbb270003a88ab3ee3102787dbc2938fd1e4208775c2ff160acdb1906e8",
+    "wheelleg_ppo/tools/ppo_env.py": "8b282c709f4ed0e7da500fb0e78a1a380b08a5467d4155b9cbe56147bff14296"
+  },
+  "passed": true,
+  "scope": "固定训练场景库，stage3；无录像/周期评估；包含真实PPO更新；不证明学习效果或原生GPU等价"
+}

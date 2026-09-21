@@ -1,0 +1,116 @@
+[
+  {
+    "backend": "WheelLegEnv",
+    "policy_steps": 50,
+    "physics_steps": 2000,
+    "wall_seconds": 3.66162907800026,
+    "process_cpu_seconds": 3.646643535,
+    "functions": [
+      {
+        "file": "/home/wmt/wheel_leg_robot_work/wheelleg_ppo/tools/ppo_env.py",
+        "line": 279,
+        "name": "step",
+        "calls": 50,
+        "self_seconds": 0.505498388,
+        "cumulative_seconds": 3.6613816480000003
+      },
+      {
+        "file": "/home/wmt/wheel_leg_robot_work/wheelleg_ppo/tools/wheelleg_sim.py",
+        "line": 296,
+        "name": "control",
+        "calls": 2000,
+        "self_seconds": 0.350223706,
+        "cumulative_seconds": 2.3552480510000002
+      },
+      {
+        "file": "/home/wmt/wheel_leg_robot_work/wheelleg_ppo/tools/state_estimation.py",
+        "line": 14,
+        "name": "leg_kinematics",
+        "calls": 12000,
+        "self_seconds": 0.363877108,
+        "cumulative_seconds": 0.867213501
+      },
+      {
+        "file": "/home/wmt/wheel_leg_robot_work/wheelleg_ppo/tools/ppo_env.py",
+        "line": 264,
+        "name": "_observation",
+        "calls": 2000,
+        "self_seconds": 0.066832691,
+        "cumulative_seconds": 0.575247488
+      }
+    ]
+  },
+  {
+    "backend": "FastWarpEnv",
+    "policy_steps": 50,
+    "physics_steps": 2000,
+    "wall_seconds": 4.343015308999384,
+    "process_cpu_seconds": 4.357575655000001,
+    "functions": [
+      {
+        "file": "/home/wmt/wheel_leg_robot_work/.venv/lib/python3.10/site-packages/gymnasium/core.py",
+        "line": 323,
+        "name": "step",
+        "calls": 50,
+        "self_seconds": 0.00016213700000000002,
+        "cumulative_seconds": 4.342781627
+      },
+      {
+        "file": "/home/wmt/wheel_leg_robot_work/wheelleg_ppo/tools/ppo_env.py",
+        "line": 279,
+        "name": "step",
+        "calls": 50,
+        "self_seconds": 0.52240377,
+        "cumulative_seconds": 4.342619490000001
+      },
+      {
+        "file": "/home/wmt/wheel_leg_robot_work/wheelleg_ppo/tools/wheelleg_sim.py",
+        "line": 296,
+        "name": "control",
+        "calls": 2000,
+        "self_seconds": 0.36338694000000005,
+        "cumulative_seconds": 2.440115939
+      },
+      {
+        "file": "/home/wmt/wheel_leg_robot_work/wheelleg_ppo/tools/state_estimation.py",
+        "line": 14,
+        "name": "leg_kinematics",
+        "calls": 12000,
+        "self_seconds": 0.386443293,
+        "cumulative_seconds": 0.9076516490000001
+      },
+      {
+        "file": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/fast_physics.py",
+        "line": 60,
+        "name": "step",
+        "calls": 2000,
+        "self_seconds": 0.061459562,
+        "cumulative_seconds": 0.675252511
+      },
+      {
+        "file": "/home/wmt/wheel_leg_robot_work/wheelleg_ppo/tools/ppo_env.py",
+        "line": 264,
+        "name": "_observation",
+        "calls": 2000,
+        "self_seconds": 0.07070707200000001,
+        "cumulative_seconds": 0.602121664
+      },
+      {
+        "file": "/home/wmt/wheel_leg_robot_work/.venv/lib/python3.10/site-packages/warp/_src/context.py",
+        "line": 11933,
+        "name": "synchronize_stream",
+        "calls": 2000,
+        "self_seconds": 0.48927614300000005,
+        "cumulative_seconds": 0.501274479
+      },
+      {
+        "file": "/home/wmt/wheel_leg_robot_work/.venv/lib/python3.10/site-packages/warp/_src/context.py",
+        "line": 13532,
+        "name": "capture_launch",
+        "calls": 2000,
+        "self_seconds": 0.104679776,
+        "cumulative_seconds": 0.107971575
+      }
+    ]
+  }
+]
