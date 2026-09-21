@@ -647,3 +647,18 @@
 
 - `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1610/step_262144.pkl`
 - `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1610/step_262144.zip`
+
+### 自动同步快照 2026-09-22T02:53:05+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_warp/results/terrain_v1_1024_20260922/round_004.log`
+- `wheelleg_warp/results/terrain_v1_1024_20260922/round_004/completed.json`
+- `wheelleg_warp/results/terrain_v1_1024_20260922/round_004/run_config.json`
+- `wheelleg_warp/results/terrain_v1_1024_20260922/round_004/step_6180000.json`
+- `wheelleg_warp/results/terrain_v1_1024_20260922/round_004/step_6180000.pkl`
+- `wheelleg_warp/results/terrain_v1_1024_20260922/round_004/step_6180000.zip`
+- `wheelleg_warp/results/terrain_v1_1024_20260922/round_004/step_6692000.json`
+- `wheelleg_warp/results/terrain_v1_1024_20260922/round_004/step_6692000.pkl`
+- `wheelleg_warp/results/terrain_v1_1024_20260922/round_004/step_6692000.zip`
+- `wheelleg_warp/results/terrain_v1_1024_20260922/selection.json`
