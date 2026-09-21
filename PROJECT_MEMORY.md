@@ -592,3 +592,10 @@
 
 - `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1610/curve.json`
 - `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1610/step_0.json`
+
+### 自动同步快照 2026-09-21T10:29:05+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1610/step_262144.pkl`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1610/step_262144.zip`
