@@ -1,4 +1,6 @@
 """读取真实训练采样状态渲染；轨迹归档可离线重放，不重新运行策略。"""
+from collections import deque
+import base64,io
 import argparse
 import hashlib
 import json
@@ -18,7 +20,7 @@ from ppo_env import build_model,Scenario
 
 HERE=Path(__file__).resolve().parent
 DATA=HERE/'local_data'
-RUN=ROOT/'wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921'
+RUN=ROOT/'wheelleg_warp/results/formal_native_1024_20260921'
 
 
 def read(path):
@@ -31,15 +33,20 @@ def write(path,value):
 
 
 class View:
-    def __init__(self,scenario):
-        self.model=build_model(Scenario(**scenario));self.data=mujoco.MjData(self.model)
-        self.renderer=mujoco.Renderer(self.model,height=360,width=640)
+    def __init__(self,scenario,native=False):
+        factory=build_model
+        if native:
+            from native.models import model as factory
+        self.model=factory(Scenario(**scenario));self.data=mujoco.MjData(self.model)
+        self.model.vis.global_.offwidth=960;self.model.vis.global_.offheight=540
+        self.direction=1 if scenario['speed']>0 else -1
+        self.renderer=mujoco.Renderer(self.model,height=540,width=960)
         self.camera=mujoco.MjvCamera();self.camera.distance=1.65;self.camera.azimuth=125;self.camera.elevation=-19
 
     def image(self,qpos,qvel,ctrl):
         self.data.qpos[:]=qpos;self.data.qvel[:]=qvel;self.data.ctrl[:]=ctrl
         mujoco.mj_forward(self.model,self.data)
-        self.camera.lookat[:]=[qpos[0]+.35,qpos[1],.20]
+        self.camera.lookat[:]=[qpos[0]+.35*self.direction,qpos[1],.20]
         self.renderer.update_scene(self.data,camera=self.camera)
         return Image.fromarray(self.renderer.render())
 
@@ -54,13 +61,13 @@ def replay(folder,target,webp=False):
         protocol=read(folder.parents[3]/'protocol.json') if len(folder.parents)>3 else None
     hashes=metadata.get('model_source_sha256') or (protocol or {}).get('source_sha256',{})
     for name,digest in hashes.items():
-        if name.startswith('wheelleg_ppo/') and hashlib.sha256((ROOT/name).read_bytes()).hexdigest()!=digest:
+        if (name.startswith('wheelleg_ppo/') or name=='wheelleg_warp/native/models.py') and hashlib.sha256((ROOT/name).read_bytes()).hexdigest()!=digest:
             raise RuntimeError('模型/控制源码变化，先恢复归档版本再重放：'+name)
     if not hashes:raise RuntimeError('缺少原始模型源码指纹')
-    view=View(metadata['scenario']);images=[]
+    view=View(metadata['scenario'],native=metadata.get('backend')=='native');images=[]
     try:
         with np.load(folder/'trajectory.npz',allow_pickle=False) as trace:
-            indices=range(len(trace['time']))
+            indices=np.unique(np.minimum(np.searchsorted(trace['time'],np.arange(trace['time'][0],trace['time'][-1]+1e-10,.02)),len(trace['time'])-1))
             for i in indices:images.append(view.image(trace['qpos'][i],trace['qvel'][i],trace['ctrl'][i]))
         temporary=target.with_suffix(target.suffix+'.tmp')
         images[0].save(temporary,format='GIF',save_all=True,append_images=images[1:],duration=20,loop=0,optimize=False)
@@ -73,72 +80,71 @@ def replay(folder,target,webp=False):
     return len(images)
 
 
-def source(backend):
-    folders=[p for p in RUN.glob(backend+'_*') if (p/'live/latest.json').exists()]
-    if not folders:folders=[p for p in RUN.glob('smoke_'+backend+'_*') if (p/'live/latest.json').exists()]
-    return max(folders,key=lambda p:(p/'live/latest.json').stat().st_mtime)/'live' if folders else None
+def source():
+    paths=list(RUN.glob('round_*/live/latest.json'))
+    return max(paths,key=lambda p:p.stat().st_mtime).parent if paths else None
 
 
 def watch():
-    views={};last={};saved={};export=None;last_scan=0.
+    pending_frames=deque(maxlen=120);view=None;view_key=None;last_chunk=None;export=None;archived=set();last_scan=0.
+    counted=0;fps=0.;window=time.monotonic();last_render=0.;dropped=0
     (DATA/'live').mkdir(parents=True,exist_ok=True)
     while True:
-        for backend in ('cpu','warp'):
-            src=source(backend)
-            if not src:continue
-            metadata=read(src/'latest.json')
-            if not metadata:continue
-            key=(str(src),metadata['episode'],metadata['frame'])
-            if key==last.get(backend):continue
-            try:
-                with np.load(src/'latest.npz',allow_pickle=False) as frame:
-                    if int(frame['frame'])!=metadata['frame'] or int(frame['episode'])!=metadata['episode']:continue
-                    model_key=(str(src),metadata['episode'])
-                    if backend not in views or views[backend][0]!=model_key:
-                        if backend in views:views[backend][1].close()
-                        views[backend]=(model_key,View(metadata['scenario']))
-                    image=views[backend][1].image(frame['qpos'],frame['qvel'],frame['ctrl'])
-                temporary=DATA/'live'/f'{backend}.tmp';image.save(temporary,format='JPEG',quality=90)
-                temporary.replace(DATA/'live'/f'{backend}.jpg')
-                write(DATA/'live'/f'{backend}.json',dict(**metadata,rendered_wall_time=time.time(),
-                    smoke=src.parent.name.startswith('smoke_'),image=f'/media/live/{backend}.jpg'))
-                last[backend]=key
-                # 原始NPZ每回合都保留；GIF每约2万采样步抽一个完整回合，控制本地录像体积。
-                bucket=(str(src),metadata['sample_steps']//20000)
-                if saved.get(backend)!=bucket:
-                    complete=[p for p in (src/'episodes').glob('*/trajectory.npz') if read(p.parent/'metadata.json').get('status')=='completed']
-                    if complete:
-                        episode=max(complete,key=lambda p:p.stat().st_mtime).parent
-                        output=DATA/'captures'/backend/(src.parent.parent.name+'__'+src.parent.name+'_'+episode.name)
-                        if not output.exists():
-                            output.mkdir(parents=True)
-                            import shutil
-                            shutil.copy2(episode/'trajectory.npz',output/'trajectory.npz')
-                            meta=read(episode/'metadata.json');meta.update(episode_directory=str(episode),smoke=src.parent.name.startswith('smoke_'),sample_steps_observed=metadata['sample_steps'],archive_time=time.time())
-                            protocol=read(src.parent.parent/'protocol.json')
-                            meta['model_source_sha256']={k:v for k,v in protocol['source_sha256'].items() if k.startswith('wheelleg_ppo/')}
-                            meta['mujoco_version']=mujoco.__version__
-                            write(output/'metadata.json',meta)
-                            # 编码由下方独立子进程执行，不阻塞实时画面。
-                        saved[backend]=bucket
-            except Exception as exc:
-                print('渲染错误：',backend,repr(exc),flush=True)
+        src=source();metadata=read(src/'latest.json') if src else None
+        if metadata:
+            key=(str(src),metadata['episode'],metadata['sequence'])
+            if key!=last_chunk:
+                if pending_frames and pending_frames[-1][0]['environment_index']!=metadata['environment_index']:pending_frames.clear()
+                try:
+                    with np.load(src/'latest.npz',allow_pickle=False) as chunk:
+                        if int(chunk['sequence'])==metadata['sequence'] and int(chunk['episode'])==metadata['episode'] and int(chunk['environment'])==metadata['environment_index']:
+                            count=len(chunk['time']);dropped+=max(0,len(pending_frames)+count-pending_frames.maxlen)
+                            for i in range(count):
+                                pending_frames.append((metadata,{k:chunk[k][i].copy() for k in ('time','qpos','qvel','ctrl')},i))
+                            last_chunk=key
+                except (FileNotFoundError,ValueError,EOFError):pass
+        now=time.monotonic()
+        if pending_frames and now-last_render>=1/50:
+            meta,frame,index=pending_frames.popleft();key=(meta['source_run'],json.dumps(meta['scenario'],sort_keys=True))
+            if key!=view_key:
+                if view:view.close()
+                view=View(meta['scenario'],native=True);view_key=key
+            image=view.image(frame['qpos'],frame['qvel'],frame['ctrl']);buffer=io.BytesIO();image.save(buffer,format='JPEG',quality=88)
+            image_bytes=buffer.getvalue();last_render=time.monotonic();counted+=1
+            if last_render-window>=1:fps=counted/(last_render-window);counted=0;window=last_render
+            display={**meta,'simulation_seconds':float(frame['time']),'frame':meta['sequence']*8+index,
+                'rendered_wall_time':time.time(),'render_fps':fps,'buffered_frames':len(pending_frames),'dropped_display_frames':dropped}
+            temporary=DATA/'live/native.jpg.tmp';temporary.write_bytes(image_bytes);temporary.replace(DATA/'live/native.jpg')
+            write(DATA/'live/native.json',display)
+            # 图像与来源标签处于同一原子包，浏览器解码后同时切换，避免跨回合错配。
+            write(DATA/'live/native.frame.json',dict(metadata=display,jpeg=base64.b64encode(image_bytes).decode()))
         if export is not None and export.poll() is not None:export=None
-        if export is None and time.monotonic()-last_scan>5:
-            last_scan=time.monotonic()
-            pending=[p.parent for p in (DATA/'captures').glob('*/*/metadata.json')
-                     if not (p.parent/'animation_50.webp').exists() and not (p.parent/'export_failed.json').exists()]
-            if pending:
-                folder=max(pending,key=lambda p:p.stat().st_mtime)
-                with (DATA/'export.log').open('a') as log:
-                    export=subprocess.Popen([sys.executable,str(Path(__file__)),'--replay',str(folder),
-                        '--output',str(folder/'animation_50.gif'),'--webp'],stdout=log,stderr=subprocess.STDOUT)
-        time.sleep(1/60)
+        if now-last_scan>3:
+            last_scan=now
+            if src:
+                for metadata_path in (src/'episodes').glob('*/metadata.json'):
+                    meta=read(metadata_path)
+                    if not meta or meta['status']!='completed' or str(metadata_path) in archived:continue
+                    output=DATA/'captures/native'/(RUN.name+'__'+src.parent.name+'_'+metadata_path.parent.name)
+                    output.mkdir(parents=True,exist_ok=True)
+                    import shutil
+                    shutil.copy2(metadata_path.parent/'trajectory.npz',output/'trajectory.npz')
+                    protocol=read(RUN/'protocol.json') or {}
+                    meta.update(archive_time=time.time(),model_source_sha256=protocol.get('source_sha256',{}))
+                    write(output/'metadata.json',meta);archived.add(str(metadata_path))
+            if export is None:
+                waiting=[p.parent for p in (DATA/'captures/native').glob('*/metadata.json') if not (p.parent/'animation_50.webp').exists() and not (p.parent/'export_failed.json').exists()]
+                if waiting:
+                    folder=min(waiting,key=lambda p:p.stat().st_mtime)
+                    with (DATA/'export.log').open('a') as log:
+                        export=subprocess.Popen([sys.executable,str(Path(__file__)),'--replay',str(folder),'--output',str(folder/'animation_50.gif'),'--webp'],stdout=log,stderr=subprocess.STDOUT)
+        time.sleep(.003)
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--replay',type=Path);p.add_argument('--output',type=Path);p.add_argument('--webp',action='store_true')
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--replay',type=Path);p.add_argument('--output',type=Path);p.add_argument('--webp',action='store_true');p.add_argument('--run-root',type=Path)
     args=p.parse_args()
+    if args.run_root:RUN=args.run_root.resolve()
     if args.replay:
         target=args.output or args.replay/'reproduced_50.gif'
         try:print(replay(args.replay,target,args.webp),'frames',target,flush=True)

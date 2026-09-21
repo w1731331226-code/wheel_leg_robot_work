@@ -1,89 +1,99 @@
-const $=id=>document.getElementById(id), names={cpu:'CPU · MuJoCo',warp:'GPU · MuJoCo Warp'}, paused={cpu:false,warp:false}, modes={cpu:'live',warp:'live'}, archives={};
-const number=n=>new Intl.NumberFormat('zh-CN').format(n??0);
-const duration=s=>s==null?'待估算':s<60?'不足 1 分钟':s<3600?`${Math.round(s/60)} 分钟`:s<86400?`${(s/3600).toFixed(1)} 小时`:`${(s/86400).toFixed(1)} 天`;
-const date=t=>new Date(t*1000).toLocaleString('zh-CN',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false});
-const robotIcon='<svg viewBox="0 0 60 55"><path d="M16 36 22 14h16l7 22M22 14l8 20 8-20"/><circle cx="14" cy="42" r="8"/><circle cx="46" cy="42" r="8"/></svg>';
-$('robots').innerHTML=['cpu','warp'].map(b=>`<article class="robot ${b}"><div class="robot-head"><div class="robot-title"><span class="backend-icon">${b==='cpu'?'▦':'◈'}</span><div><h3>${names[b]}</h3><small>${b==='cpu'?'原生 CPU 物理':'CUDA 物理 · CPU 控制器'} / M3</small></div></div><span class="status-pill" id="${b}-phase">读取状态</span></div><div class="view"><div class="view-empty" id="${b}-empty">${robotIcon}<span>等待真实训练状态</span></div><img id="${b}-image" src="/live/${b}.mjpg" alt="${names[b]}真实训练环境0的小车画面"><div class="view-top"><span class="live-badge" id="${b}-source">TRAINING STREAM</span><span id="${b}-episode">ENV 0 / 8</span></div><div class="view-bottom"><span id="${b}-sim">仿真时间 —</span><span id="${b}-lag">等待采样</span></div></div><div class="robot-data"><div class="small-grid"><div><span>当前种子 / 策略步</span><strong id="${b}-steps">—</strong></div><div><span>课程阶段</span><strong id="${b}-stage">—</strong></div><div><span>该队列剩余</span><strong id="${b}-eta">—</strong></div></div><div class="bar"><i id="${b}-bar"></i></div><div class="robot-foot"><span id="${b}-budget">0 / 600 万步</span><span id="${b}-score">等待选择集评估</span></div></div><div class="view-actions"><button id="${b}-pause">暂停画面</button><button id="${b}-replay" disabled>50 FPS录像</button><a class="download" id="${b}-download" hidden download>保存最新 GIF ↓</a><small id="${b}-reward">回合奖励 —</small></div></article>`).join('');
-for(const b of ['cpu','warp']){
-  $(`${b}-image`).onload=()=>$(`${b}-empty`).style.display='none';
-  $(`${b}-pause`).onclick=()=>{modes[b]='live';$(`${b}-replay`).textContent='50 FPS录像';paused[b]=!paused[b];$(`${b}-pause`).textContent=paused[b]?'继续实时画面':'暂停画面';$(`${b}-image`).src=paused[b]?`/media/live/${b}.jpg?t=${Date.now()}`:`/live/${b}.mjpg?t=${Date.now()}`;};
-  $(`${b}-replay`).onclick=()=>{
-    if(modes[b]==='replay'){modes[b]='live';$(`${b}-image`).src=`/live/${b}.mjpg?t=${Date.now()}`;$(`${b}-replay`).textContent='50 FPS录像';}
-    else if(archives[b]){modes[b]='replay';$(`${b}-image`).src=archives[b].webp||archives[b].gif;$(`${b}-replay`).textContent='返回实时';}
-    $(`${b}-pause`).disabled=modes[b]==='replay';refresh();
-  };
+const $=id=>document.getElementById(id),num=n=>new Intl.NumberFormat('zh-CN').format(n??0);
+let mode='live',latestClip=null,etag=null,lastKey=null,activePhase='validating';
+const names={validating:'收敛准入验证',ready:'准备就绪',initializing:'初始化本轮场景',training:'训练中',evaluating:'开发集评估',final_evaluation:'独立终评',completed:'已完成',failed:'需要检查',interrupted:'已中断'};
+const duration=s=>s==null?'等待有效进度':s<60?`${Math.ceil(s)} 秒`:`${(s/60).toFixed(1)} 分钟`;
+function meta(m){
+ $('source').textContent=m.phase==='formal_training'?'LIVE · 正式训练原始帧':m.phase==='preflight_training'?'预检 PPO · 原始训练帧':'工程采集预检';
+ $('episode').textContent=`ENV ${m.environment_index} / ${m.environments} · EP ${m.episode} · FRAME ${m.frame}`;
+ $('sim').textContent=`仿真 ${m.simulation_seconds.toFixed(3)} s · ${num(m.sample_steps)} 策略步`;
+ $('lag').textContent=`源状态延迟 ${Math.max(0,Date.now()/1000-m.wall_time).toFixed(1)} s`;
+ $('fps').textContent=`${(m.render_fps??0).toFixed(1)} FPS / 400 Hz`;
+ $('reward').textContent=Number(m.cumulative_reward??0).toFixed(3);
+ $('stream-status').textContent=names[activePhase]??activePhase;
 }
-function chart(id,series,success=false){
- const w=620,h=185,l=48,r=16,top=12,bottom=30,colors=['#70adff','#53dbba'];
- const points=series.flatMap(s=>s.points),empty=!points.length;
- const xs=points.map(p=>p.x),ys=points.map(p=>p.y);
- let x0=success?0:Math.min(...xs),x1=Math.max(...xs);if(empty){x0=0;x1=1;}if(x1===x0)x1=x0+1;
- const maxY=success?100:Math.max(2000,...ys)*1.12, X=x=>l+(x-x0)/(x1-x0)*(w-l-r),Y=y=>h-bottom-y/maxY*(h-bottom-top);
- let html='';for(let i=0;i<4;i++){const value=maxY*i/3,y=Y(value);html+=`<line x1="${l}" x2="${w-r}" y1="${y}" y2="${y}" stroke="#283448" stroke-dasharray="3 4"/><text x="${l-8}" y="${y+3}" text-anchor="end" fill="#6e829e" font-size="9">${success?Math.round(value)+'%':value>=10000?(value/10000).toFixed(1)+'万':Math.round(value)}</text>`;}
- for(let j=0;j<series.length;j++){const p=series[j].points;if(!p.length)continue;html+=`<path d="${p.map((p,i)=>`${i?'L':'M'}${X(p.x).toFixed(1)},${Y(p.y).toFixed(1)}`).join(' ')}" stroke="${colors[j]}" stroke-width="2" fill="none"/>`;const last=p[p.length-1];html+=`<circle cx="${X(last.x)}" cy="${Y(last.y)}" r="3" fill="${colors[j]}"/>`;}
- for(let i=0;i<3;i++){const x=x0+(x1-x0)*i/2;html+=`<text x="${X(x)}" y="${h-8}" text-anchor="${i===0?'start':i===2?'end':'middle'}" fill="#6e829e" font-size="9">${success?number(Math.round(x))+'步':new Date(x*1000).toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit',hour12:false})}</text>`;}
- if(empty)html+=`<text x="335" y="87" text-anchor="middle" fill="#7f94b0" font-size="12">${success?'等待首个完整检查点评估':'正在采集进度历史'}</text>`;
+async function frames(){
+ if(mode==='live'){
+  try{
+   const r=await fetch('/api/frame',{headers:etag?{'If-None-Match':etag}:{},cache:'no-cache'});
+   if(r.ok){etag=r.headers.get('ETag');const p=await r.json(),m=p.metadata,key=`${m.source_run}/${m.episode}/${m.frame}`;
+    if(key!==lastKey){const image=new Image();image.src='data:image/jpeg;base64,'+p.jpeg;await image.decode();
+     if(mode==='live'){$('scene').src=image.src;$('empty').style.display='none';meta(m);lastKey=key;}}
+   }
+  }catch(e){$('stream-status').textContent='等待图像流';}
+ }
+ setTimeout(frames,20);
+}
+$('pause').onclick=()=>{mode=mode==='paused'?'live':'paused';$('pause').textContent=mode==='paused'?'继续真实画面':'暂停详情';$('stream-status').textContent=mode==='paused'?'画面已暂停':names[activePhase];etag=null;lastKey=null;};
+$('replay').onclick=()=>{
+ if(mode==='replay'){mode='live';etag=null;lastKey=null;$('replay').textContent='50 FPS 回合录像';$('pause').disabled=false;return;}
+ if(!latestClip)return;mode='replay';$('scene').src=latestClip.webp;$('source').textContent='REPLAY · 已记录回合，非当前采样';
+ $('episode').textContent=`ENV 0 / ${latestClip.environments} · EP ${latestClip.episode}`;$('sim').textContent=`真实轨迹 · 50 FPS · ${latestClip.metrics.duration_s.toFixed(2)} s`;
+ $('lag').textContent='历史回合播放';$('fps').textContent='50 FPS 录像 / 400 Hz 原始';$('replay').textContent='返回真实画面';$('pause').disabled=true;$('empty').style.display='none';
+};
+function chart(id,points,percentage){
+ const w=620,h=185,L=44,R=18,T=12,B=30,maxX=Math.max(1,...points.map(p=>p.x)),maxY=percentage?100:Math.max(.1,...points.map(p=>p.y))*1.15;
+ const X=x=>L+x/maxX*(w-L-R),Y=y=>h-B-y/maxY*(h-T-B);let html='';
+ for(let i=0;i<4;i++){const value=maxY*i/3;html+=`<line x1="${L}" x2="${w-R}" y1="${Y(value)}" y2="${Y(value)}" stroke="#283448"/><text x="${L-5}" y="${Y(value)+4}" text-anchor="end" fill="#8593a8" font-size="10">${percentage?value.toFixed(0)+'%':value.toFixed(2)+'°'}</text>`;}
+ if(points.length){html+=`<path d="${points.map((p,i)=>`${i?'L':'M'}${X(p.x)},${Y(p.y)}`).join(' ')}" fill="none" stroke="#53dbba" stroke-width="2"/>`;for(const p of points)html+=`<circle cx="${X(p.x)}" cy="${Y(p.y)}" r="3" fill="#53dbba"/><text x="${X(p.x)}" y="180" text-anchor="middle" font-size="10" fill="#8593a8">${p.x===0?'起点':'第'+p.x+'轮'}</text>`;}
+ else html+='<text x="300" y="85" text-anchor="middle" fill="#8593a8">等待正式检查点评估</text>';
  $(id).innerHTML=html;
 }
 function update(s){
- if(!s.backends)return;
- $('connection').textContent=s.queue.status==='training'?'双队列观测中':s.queue.status==='completed'?'训练与终评已完成':'已连接本地数据';
- $('connection-dot').style.background='#53dbba';$('updated').textContent=`更新于 ${date(s.now)}`;
- $('total').textContent=`${(s.total_done/s.total_budget*100).toFixed(2)}%`;$('total-bar').style.width=`${s.total_done/s.total_budget*100}%`;
- $('total-caption').textContent=`${number(s.total_done)} / ${number(s.total_budget)} 策略步`;
- $('eta').textContent=duration(s.all_remaining_seconds);
- $('eta-date').textContent=s.all_remaining_seconds==null?'等待有效训练数据':`粗估 ${date(s.now+s.all_remaining_seconds)} · 含终评预留`;
- $('eta-range').textContent=s.all_remaining_seconds==null?'等待双方完成首轮策略更新':`早期区间约 ${duration(s.all_remaining_seconds*.5)}–${duration(s.all_remaining_seconds*2)}`;
- $('eta-date').title='吞吐外推，不是保证完成时间；早期估算误差可达一倍以上。';
- $('rates').textContent=['cpu','warp'].map(b=>s.backends[b].estimate.rate?.toFixed(1)??'—').join(' / ');
- const allArchives=[];
- for(const b of ['cpu','warp']){
-  const d=s.backends[b],live=d.live;
-  $(`${b}-phase`).textContent={running:'训练进行中',evaluating:'检查点评估中',stopped:'未运行',failed:'需要检查',completed:'已完成'}[d.phase]??d.phase;
-  $(`${b}-steps`).textContent=`${d.current.seed} · ${number(d.current.steps)}`;
-  $(`${b}-stage`).textContent=d.current.stage?`Stage ${d.current.stage} / 3`:'待开始';
-  $(`${b}-eta`).textContent=duration(d.estimate.remaining_seconds);
-  $(`${b}-eta`).title=d.estimate.confidence+(d.estimate.range_seconds?`；范围 ${duration(d.estimate.range_seconds[0])}—${duration(d.estimate.range_seconds[1])}`:'');
-  $(`${b}-bar`).style.width=`${d.total_steps/d.budget*100}%`;$(`${b}-budget`).textContent=`${number(d.total_steps)} / ${number(d.budget)}`;
-  const last=d.selection.at(-1);$(`${b}-score`).textContent=last?`选择集成功率 ${last.success.toFixed(1)}%`:'等待选择集评估';
-  if(live && modes[b]==='live'){
-   $(`${b}-source`).textContent=live.smoke?'预检训练原始画面':'LIVE · 真实训练采样';
-   $(`${b}-episode`).textContent=`ENV 0 / 8 · SEED ${live.source_run.split('_').at(-1)} · EP ${live.episode}`;
-   $(`${b}-sim`).textContent=`仿真 ${live.simulation_seconds.toFixed(2)} s · 采样 ${number(live.sample_steps)} 步`;
-   const lag=Math.max(0,Date.now()/1000-live.wall_time);$(`${b}-lag`).textContent=lag>15?(d.phase==='evaluating'?'评估期间暂停采样':`画面距今 ${Math.round(lag)} 秒`):`最近状态 ${lag.toFixed(1)} 秒前`;
-   $(`${b}-reward`).textContent=`回合奖励 ${live.cumulative_reward.toFixed(2)}`;
-  }
-  const clips=d.archives.filter(x=>x.status==='completed').sort((a,b)=>(b.archive_time??0)-(a.archive_time??0));
-  if(clips.length){
-    const latest=clips.find(c=>c.fps===50)??clips[0];archives[b]=latest;
-    const a=$(`${b}-download`);a.hidden=false;a.href=latest.gif;a.textContent=`保存 ${latest.fps} FPS GIF ↓`;
-    $(`${b}-replay`).disabled=latest.fps!==50;
-    if(modes[b]==='replay'){
-      const media=latest.webp||latest.gif;
-      if($(`${b}-image`).getAttribute('src')!==media)$(`${b}-image`).src=media;
-      $(`${b}-source`).textContent=`REPLAY · ${latest.smoke?'预检':'正式'}训练录像`;
-      $(`${b}-episode`).textContent=`ENV 0 / 8 · EP ${latest.episode}`;
-      $(`${b}-sim`).textContent=`${latest.metrics.duration_s.toFixed(2)} s · ${latest.fps} FPS`;
-      $(`${b}-lag`).textContent='已保存片段 · 非当前采样';
-      $(`${b}-reward`).textContent='录像中保留真实动作与接触';
-    }
-  }
-  allArchives.push(...clips.map(x=>({...x,backend:b})));
- }
- chart('progress-chart',['cpu','warp'].map(b=>({points:s.history.map(h=>({x:h.time,y:h[b]}))})));
- chart('success-chart',['cpu','warp'].map(b=>({points:s.backends[b].selection.map(h=>({x:h.step,y:h.success}))})),true);
- allArchives.sort((a,b)=>(b.archive_time??0)-(a.archive_time??0));
- $('archive-count').textContent=`${allArchives.length} 个已生成录像`;
- $('archive-list').replaceChildren();
- for(const a of allArchives.slice(0,6)){
-  const row=document.createElement('div');row.className='archive';
-  const label=document.createElement('div');label.className='label';label.textContent=`${a.backend==='cpu'?'CPU':'GPU'} · ${a.smoke?'预检':'正式训练'} · 回合 ${a.episode}`;
-  const small=document.createElement('small');small.textContent=`${a.frames??'—'} 帧状态 · ${date(a.archive_time??a.finished??a.started)}`;label.append(small);row.append(label);
-  for(const [text,url] of [...(a.webp?[['50FPS WebP',a.webp]]:[]),['GIF',a.gif],['轨迹 NPZ',a.trace],['配置',a.metadata]]){const link=document.createElement('a');link.className='download';link.textContent=text+' ↓';link.href=url;link.download='';row.append(link);}
-  $('archive-list').append(row);
- }
- if(!allArchives.length)$('archive-list').textContent='等待第一个完整回合；实时画面和原始状态采集会先开始。';
- $('local-path').textContent=`原始轨迹：${s.run_directory}/<backend_seed>/live/episodes/ · GIF：wheelleg_warp/dashboard/local_data/captures/`;
+ const c=s.current,p=s.protocol,selection=s.selection;activePhase=c.status;
+ $('phase').textContent=names[c.status]??c.status;$('connection').textContent='本机数据已连接';$('updated').textContent=new Date(s.now*1000).toLocaleTimeString('zh-CN');
+ $('round').textContent=`${c.round??0} / ${p.max_rounds??10}`;$('stop-rule').textContent=`停滞 ${selection.stagnant_rounds??0} / ${p.patience??3} 轮`;
+ $('eta').textContent=duration(s.round_remaining_training_seconds);$('rate').textContent=s.rate?num(Math.round(s.rate)):'—';
+ $('steps').textContent=`${num(c.round_steps??(c.status==='evaluating'?p.steps_per_round:0))} / ${num(p.steps_per_round??2048000)}`;
+ $('round-bar').style.width=`${Math.min(100,(c.round_steps??(c.status==='evaluating'?p.steps_per_round:0))/(p.steps_per_round??2048000)*100)}%`;
+ $('total').textContent=`新增 ${num(c.new_steps)} 步 · 继承 ${num(p.inherited_steps)} 步`;
+ if(selection.best){$('best').textContent=`${selection.best.summary.success_count} / 32`;$('best-yaw').textContent=`Jψ ${selection.best.summary.mean_yaw_score_deg.toFixed(3)}°`;$('best-round').textContent=selection.best.round===0?'最佳：准入检查点':`最佳：第 ${selection.best.round} 轮`;$('best-download').hidden=false;}
+ $('config').textContent=`1024环境 · M3 PPO · 每环境采样 ${p.n_steps??'待选定'} 步后更新`;
+ const rows=[...(p.bootstrap_summary?[{round:0,summary:p.bootstrap_summary}]:[]),...selection.rounds];
+ chart('success-chart',rows.map(r=>({x:r.round,y:r.summary.success_count/r.summary.total*100})),true);
+ chart('yaw-chart',rows.filter(r=>r.summary.mean_yaw_score_deg!=null).map(r=>({x:r.round,y:r.summary.mean_yaw_score_deg})),false);
+ $('decision').textContent=c.status==='completed'?`已按${c.stop_reason==='plateau'?'连续3轮停滞':'10轮预算'}停止，保留开发集最佳检查点。`:c.status==='failed'?'本轮异常已停止，请查看保存的错误记录。':'成功数优先，Jψ次之；每轮重新抽样，停滞3轮或最多10轮停止。';
+ if(mode==='live'&&s.live&&Date.now()/1000-s.live.wall_time>3){$('lag').textContent=`最近源状态 ${Math.round(Date.now()/1000-s.live.wall_time)} 秒前`;$('stream-status').textContent=names[c.status]??c.status;}
+ latestClip=s.archives[0]??null;$('replay').disabled=!latestClip;$('archive-count').textContent=`${s.archives.length} 个完整回合`;$('archives').replaceChildren();
+ for(const a of s.archives.slice(0,6)){const row=document.createElement('div');row.className='archive';const label=document.createElement('div');label.className='label';label.textContent=`真实训练 · 回合 ${a.episode}`;row.append(label);for(const [name,url] of [['50FPS WebP',a.webp],['GIF',a.gif],['400Hz轨迹',a.trace],['来源',a.metadata]]){const link=document.createElement('a');link.className='download';link.textContent=name+' ↓';link.href=url;link.download='';row.append(link);}$('archives').append(row);}
+ if(overviewData&&Date.now()/1000-overviewData.meta.wall_time>1)$('overview-time').textContent=`${names[c.status]??c.status} · 总览源状态 ${Math.round(Date.now()/1000-overviewData.meta.wall_time)} 秒前 · 不生成替代运动`;
+ if(s.final_evaluation){const f=s.final_evaluation.summary;$('final-result').textContent=`独立终评：${f.success_count}/64成功 · Jψ ${f.mean_yaw_score_deg?.toFixed(3)??'未完整'}°（未用于选模）`;}
 }
-async function refresh(){try{const response=await fetch('/api/status',{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);update(await response.json());}catch(e){$('connection').textContent='连接中断 · 自动重试';$('connection-dot').style.background='#f46c74';}}
-refresh();setInterval(refresh,5000);
+async function refresh(){try{const r=await fetch('/api/status',{cache:'no-store'});if(!r.ok)throw Error(r.status);update(await r.json());}catch(e){$('connection').textContent='连接中断，自动重试';}setTimeout(refresh,1500);}
+refresh();frames();
+let overviewTag=null,overviewPaused=false,overviewData=null,chosenEnvironment=0,gridCols=32;
+const canvas=$('worlds'),ctx=canvas.getContext('2d');
+async function chooseEnvironment(index){
+ if(!Number.isInteger(index)||index<0||index>=(overviewData?.meta.environments??1024))return;
+ const r=await fetch('/api/environment',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({environment:index})});
+ if(r.ok){chosenEnvironment=index;$('environment').value=index;$('stream-status').textContent=`正在切换环境 ${index}`;mode='live';etag=null;lastKey=null;$('pause').disabled=false;$('pause').textContent='暂停详情';$('replay').textContent='50 FPS 回合录像';if(overviewData)drawWorlds(overviewData);}
+}
+$('choose').onclick=()=>chooseEnvironment(Number($('environment').value));$('environment').onkeydown=e=>{if(e.key==='Enter')chooseEnvironment(Number(e.target.value));};
+canvas.onclick=e=>{const box=canvas.getBoundingClientRect(),rows=Math.ceil((overviewData?.meta.environments??1024)/gridCols);const col=Math.floor((e.clientX-box.left)/box.width*gridCols),row=Math.floor((e.clientY-box.top)/box.height*rows);chooseEnvironment(row*gridCols+col);};
+$('pause-overview').onclick=()=>{overviewPaused=!overviewPaused;$('pause-overview').textContent=overviewPaused?'继续总览':'暂停总览';};
+function drawWorlds({meta:m,values:v}){
+ const width=canvas.clientWidth||1000;gridCols=Math.ceil(Math.sqrt(m.environments));const rows=Math.ceil(m.environments/gridCols),height=Math.min(760,Math.max(220,width*.70));
+ const dpr=window.devicePixelRatio||1;if(canvas.width!==Math.round(width*dpr)||canvas.height!==Math.round(height*dpr)){canvas.width=Math.round(width*dpr);canvas.height=Math.round(height*dpr);canvas.style.height=height+'px';}
+ ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,width,height);const cw=width/gridCols,ch=height/rows,scale=Math.min(cw/.65,(ch-5)/.55);
+ ctx.lineWidth=.8;ctx.font=Math.min(9,cw/4)+'px sans-serif';
+ for(let w=0;w<m.environments;w++){
+  const b=w*m.width,x=(w%gridCols)*cw,y=Math.floor(w/gridCols)*ch,reason=v[b+1];
+  ctx.fillStyle=reason===0?'#101d29':reason===5&&v[b+2]?'#123c31':'#39291d';ctx.fillRect(x+.5,y+.5,cw-1,ch-1);
+  if(w===chosenEnvironment){ctx.strokeStyle='#76edcd';ctx.lineWidth=1.6;ctx.strokeRect(x+1,y+1,cw-2,ch-2);ctx.lineWidth=.8;}
+  const root=12+m.root*3,rx=v[b+root],ry=v[b+root+1];
+  const project=(px,py,pz)=>[x+cw/2+((px-rx)*.76+(py-ry)*.65)*scale,y+ch-3-pz*scale+((px-rx)*.12-(py-ry)*.14)*scale];
+  const at=id=>project(v[b+12+id*3],v[b+13+id*3],v[b+14+id*3]);
+  ctx.strokeStyle='#94adc2';ctx.beginPath();for(let body=1;body<m.bodies;body++){const parent=m.parents[body];if(parent<=0)continue;const a=at(parent),c=at(body);ctx.moveTo(...a);ctx.lineTo(...c);}ctx.stroke();
+  const rz=v[b+root+2],ax=v[b+3],ay=v[b+6],az=v[b+9],a=project(rx-.14*ax,ry-.14*ay,rz-.14*az),c=project(rx+.14*ax,ry+.14*ay,rz+.14*az);
+  ctx.strokeStyle='#78c0ff';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(...a);ctx.lineTo(...c);ctx.stroke();ctx.lineWidth=.8;
+  for(let j=0;j<m.wheels.length;j++){const body=m.wheels[j],point=at(body),radius=Math.max(1,.045*scale),axis=12+m.bodies*3+j*3;
+   ctx.strokeStyle='#69ddbb';ctx.beginPath();ctx.arc(point[0],point[1],radius,0,Math.PI*2);ctx.stroke();const end=project(v[b+12+body*3]+.045*v[b+axis],v[b+13+body*3]+.045*v[b+axis+1],v[b+14+body*3]+.045*v[b+axis+2]);ctx.beginPath();ctx.moveTo(...point);ctx.lineTo(...end);ctx.stroke();}
+  ctx.fillStyle=w===chosenEnvironment?'#bcffee':'#597285';ctx.fillText(String(w),x+2,y+Math.min(9,ch/3));
+ }
+ $('overview-state').textContent=`${m.environments} / ${m.environments} 个真实世界`;$('overview-time').textContent=`采样 ${num(m.sample_steps)} 步 · 状态距今 ${Math.max(0,Date.now()/1000-m.wall_time).toFixed(1)} s · 点击任意环境查看3D详情`;
+ $('environment').max=m.environments-1;
+}
+async function overviewFrames(){
+ if(!overviewPaused){try{const r=await fetch('/api/overview',{headers:overviewTag?{'If-None-Match':overviewTag}:{},cache:'no-cache'});if(r.ok){overviewTag=r.headers.get('ETag');const buffer=await r.arrayBuffer(),length=new DataView(buffer).getUint32(0,true);if(length+4>buffer.byteLength)throw Error('invalid overview');const m=JSON.parse(new TextDecoder().decode(buffer.slice(4,4+length))),v=new Float32Array(buffer,4+length);if(v.length!==m.environments*m.width)throw Error('invalid shape');overviewData={meta:m,values:v};drawWorlds(overviewData);}}catch(e){$('overview-state').textContent='等待真实批量状态';}}
+ setTimeout(overviewFrames,100);
+}
+window.addEventListener('resize',()=>{if(overviewData)drawWorlds(overviewData);});overviewFrames();
