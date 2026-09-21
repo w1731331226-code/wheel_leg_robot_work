@@ -164,9 +164,11 @@ class NativeEnv(VecEnv):
         ids=self.k['ids'].numpy().tolist()+[self.cpu.geom(x).id for x in ('wheel_collide_L','wheel_collide_R','bump_L','bump_R')]
         self.ids=wp.array(ids,dtype=wp.int32)
         p=[]
+        self.required_contact_masks=[]
         for s in self.scenarios:
             goal=s.center+abs(s.offset)/2+.75
-            p.append([s.speed,np.sign(s.speed),goal,1.5+1.5*goal/abs(s.speed),round(s.delay_ms*2),(1 if s.height_l else 0)|(2 if s.height_r else 0)])
+            required=(1 if s.height_l else 0)|(2 if s.height_r else 0);self.required_contact_masks.append(required)
+            p.append([s.speed,np.sign(s.speed),goal,1.5+1.5*goal/abs(s.speed),round(s.delay_ms*2),required])
         self.param=wp.array(p,dtype=D);self.command=wp.zeros(n,dtype=D)
         self.active=wp.ones(n,dtype=wp.int32);self.done=wp.zeros(n,dtype=wp.int32)
         self.state=wp.zeros((n,21),dtype=D);self.diag=wp.zeros((n,15),dtype=D)
@@ -218,6 +220,7 @@ class NativeEnv(VecEnv):
                     rms_deg=(np.sqrt(states[i,11:14]/max(states[i,0]*.0005,.0005))*180/np.pi).tolist(),
                     velocity_rmse=float(np.sqrt(states[i,4]/states[i,5])) if states[i,5]>0 else None,stop_distance_m=float(states[i,6]),tail_speed_m_s=float(states[i,7]),success=bool(states[i,19]),
                     duration_s=states[i,0]*.0005,episode=dict(r=float(states[i,20]),l=int(np.ceil(states[i,0]/40))),peak_deg=(states[i,8:11]*180/np.pi).tolist(),TimeLimit_truncated=int(reasons[i])==6)
+                infos[i]['required_contact_mask']=self.required_contact_masks[i];infos[i]['touched_contact_mask']=int(states[i,14])
                 infos[i]['TimeLimit.truncated']=int(reasons[i])==6
             self.mask.assign(done.astype(np.int32));wp.launch(reset_rows,self.num_envs,self.reset_args)
             refreshed=self.obs.numpy();obs[done]=refreshed[done]

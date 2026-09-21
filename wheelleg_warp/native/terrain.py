@@ -75,8 +75,10 @@ def model(s):
         box(0,s.center,z,[.65,half_width,thickness/2],_quat((1,0,0),angle))
     elif s.terrain in ('rough','mixed'):
         rng=np.random.default_rng(np.random.SeedSequence([s.terrain_seed,889]))
-        for i in range(12):
-            height=float(rng.uniform(.001,s.roughness_m));u=s.center-.66+i*.12
+        offsets=np.arange(-.66,.67,.12)
+        if s.terrain=='mixed':offsets=np.r_[np.arange(-.96,-.35,.12),np.arange(.36,.97,.12)]
+        for i,offset in enumerate(offsets):
+            height=float(rng.uniform(.001,s.roughness_m));u=s.center+float(offset)
             box(i,u,height/2,[.061,.16,height/2])
     elif s.terrain=='step':
         box(0,s.center,s.step_height_m/2,[.25,.16,s.step_height_m/2])

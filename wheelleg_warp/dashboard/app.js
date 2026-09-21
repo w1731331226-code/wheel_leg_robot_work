@@ -43,7 +43,7 @@ function chart(id,points,percentage){
 function update(s){
  const c=s.current,p=s.protocol,selection=s.selection;activePhase=c.status;chosenEnvironment=c.status==='completed'&&s.live?s.live.environment_index:(s.requested_environment??chosenEnvironment);if(document.activeElement!==$('environment'))$('environment').value=chosenEnvironment;
  const roundSteps=c.round_steps??Math.max(0,(c.new_steps??0)-Math.max(0,(c.round??1)-1)*(p.steps_per_round??0));
- const terrain=p.name==='terrain-v1';document.querySelector('.nav-label').textContent=terrain?'非结构化地形训练':'原生 GPU 基线';document.querySelector('#learning .panel-title p').textContent=terrain?'固定GPU地形开发集 · 32场景 · 原场景另行回归':'固定 CPU 开发集 · 32场景 · 每轮候选最佳';
+ const terrain=p.name?.startsWith('terrain-');document.querySelector('.nav-label').textContent=terrain?'非结构化地形训练':'原生 GPU 基线';document.querySelector('#learning .panel-title p').textContent=terrain?'固定GPU地形开发集 · 32场景 · 原场景另行回归':'固定 CPU 开发集 · 32场景 · 每轮候选最佳';
  if(s.validation){const v=s.validation;$('notice-body').textContent=`1024准入验证：${v.current??v.phase??'准备中'} · 最近完成 ${num(v.policy_steps)} / ${num(v.target)} 步。下方显示带来源标签的真实采样帧，正式启动后接入正式训练流。`;}else{$('notice-body').textContent='总览包含全部1024个训练世界，点击任意格子查看真实3D详情。详情采集400 Hz，显示目标50 FPS；评估期间可能暂停。';}
  $('phase').textContent=names[c.status]??c.status;$('connection').textContent='本机数据已连接';$('updated').textContent=new Date(s.now*1000).toLocaleTimeString('zh-CN');
  $('round').textContent=`${c.round??0} / ${p.max_rounds??10}`;$('stop-rule').textContent=`停滞 ${selection.stagnant_rounds??0} / ${p.patience??3} 轮`;

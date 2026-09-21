@@ -1,0 +1,30 @@
+{
+  "status": "complete",
+  "source": "terrain-v1 best checkpoint",
+  "rounds_completed": 4,
+  "new_policy_steps": 4096000,
+  "stop_reason": "plateau_after_2_stagnant_rounds",
+  "best_round": 2,
+  "development": {
+    "terrain_success": "20/32",
+    "terrain_jpsi_deg": 0.5305967331127036,
+    "legacy_success": "11/16",
+    "legacy_jpsi_deg": 0.549815774383718
+  },
+  "final_ood": {
+    "used_for_selection": false,
+    "success": "55/64",
+    "complete_trajectories": "64/64",
+    "mean_yaw_score_deg": 0.5865419228446499,
+    "ramp": "13/13",
+    "cross_slope": "12/13",
+    "rough": "12/13",
+    "step": "13/13",
+    "mixed": "5/12"
+  },
+  "legacy_final": {
+    "success": "11/16",
+    "mean_yaw_score_deg": 0.5462940938324916
+  },
+  "scope": "pure simulation; best under frozen terrain-v2 protocol, not global optimality or hardware safety"
+}

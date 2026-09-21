@@ -30,27 +30,34 @@ def stratified(start,counts,split):
 
 def initialize(output,source):
     selection=json.loads((source/'selection.json').read_text());best=selection['best'];origin=Path(best['path'])
-    assert json.loads((source/'status.json').read_text())['status']=='completed' and best['summary']['success_count']==32
+    source_protocol=json.loads((source/'protocol.json').read_text());assert json.loads((source/'status.json').read_text())['status']=='completed'
+    continuation=source_protocol.get('name')=='terrain-v1'
+    if continuation:
+        assert best['terrain']['success_count']>=24 and best['legacy']['success_count']>=13
+    else:assert best['summary']['success_count']==32
     output.mkdir(parents=True,exist_ok=False);(output/'bootstrap').mkdir()
     for ext in ('.zip','.pkl'):shutil.copy2(str(origin)+ext,output/'bootstrap'/('policy'+ext))
-    development=stratified(130000,dict(legacy=8,ramp=5,cross_slope=5,rough=5,step=5,mixed=4),'development')
+    namespace=230000 if continuation else 130000
+    development=stratified(namespace,dict(legacy=8,ramp=5,cross_slope=5,rough=5,step=5,mixed=4),'development')
     from native.terrain import TerrainScenario
-    legacy=[TerrainScenario(**asdict(sample_scenario('test_iid',140000+i,3)),terrain='legacy',terrain_seed=140000+i) for i in range(16)]
-    ood=stratified(150000,dict(ramp=13,cross_slope=13,rough=13,step=13,mixed=12),'ood')
+    legacy=[TerrainScenario(**asdict(sample_scenario('test_iid',namespace+10000+i,3)),terrain='legacy',terrain_seed=namespace+10000+i) for i in range(16)]
+    ood=stratified(namespace+20000,dict(ramp=13,cross_slope=13,rough=13,step=13,mixed=12),'ood')
     paths=[Path(__file__),ROOT/'wheelleg_warp/terrain_eval.py',ROOT/'wheelleg_warp/native/terrain.py',
            ROOT/'wheelleg_warp/native/terrain_env.py',ROOT/'wheelleg_warp/native/models.py',ROOT/'wheelleg_warp/native/environment.py',
            ROOT/'wheelleg_warp/native/controller.py',ROOT/'wheelleg_warp/native/live.py',ROOT/'wheelleg_warp/dashboard/live_env.py']
     hashes={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}
     hashes.update({str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in (output/'bootstrap').iterdir()})
     inspected=TimedPPO.load(str(origin)+'.zip',device='cpu')
-    protocol=dict(name='terrain-v1',created=time.time(),environments=1024,n_steps=50,steps_per_round=1024000,max_rounds=8,patience=3,
-        inherited_steps=inspected.num_timesteps,bootstrap_summary=best['summary'],curriculum={1:'legacy+ramp+cross_slope',2:'add rough+step',3:'full mix'},
+    protocol=dict(name='terrain-v2' if continuation else 'terrain-v1',created=time.time(),environments=1024,n_steps=50,steps_per_round=1024000,
+        max_rounds=4 if continuation else 8,patience=2 if continuation else 3,continuation_from=source_protocol.get('name'),
+        inherited_steps=inspected.num_timesteps,bootstrap_summary=best['summary'],curriculum={1:'full mix continuation'} if continuation else {1:'legacy+ramp+cross_slope',2:'add rough+step',3:'full mix'},
         terrain_ranges=dict(ramp_deg=[1,3],cross_slope_deg=[-3,3],roughness_mm=[2,6],step_mm=[5,20],legacy_replay_fraction=.3),
         development_cases=[asdict(s) for s in development],legacy_regression_cases=[asdict(s) for s in legacy],
         final_ood_cases=[asdict(s) for s in ood],
         selection='combined failures first, then legacy failures, then combined Jpsi; midpoint and endpoint; patience 3, max 8 rounds',
         final_evaluation='only after stopping: frozen 64 OOD terrain cases plus frozen 16 legacy regression cases; never used to continue training',
         known_limits=['terrain geometry is boxes: ramp/plateau/ramp, split-level cross slope, tiled roughness and full-width step',
+                      'terrain-v2 leaves a clear central obstacle corridor in mixed terrain; terrain-v1 mixed OOD is invalid because rough tiles could cover low bumps',
                       'training slopes limited to 3 degrees because the frozen success gate uses world-frame 5-degree attitude',
                       'OOD slopes extend to 5 degrees; steeper terrain requires terrain-relative attitude metrics before training'],
         source_sha256=hashes)
@@ -79,12 +86,14 @@ def run_round(output,index):
     p=protocol(output);selection=json.loads((output/'selection.json').read_text());previous=Path(selection['best']['path'])
     directory=output/f'round_{index:03d}';directory.mkdir(exist_ok=False);stage=min(index,3)
     model=TimedPPO.load(str(previous)+'.zip',device='cpu');model.timings=[];start_step=model.num_timesteps;torch.set_num_threads(1);started=time.perf_counter()
+    if p.get('continuation_from'):stage=3
+    train_namespace=260000 if p.get('continuation_from') else 160000
     raw=LiveNativeEnv(directory/'live',start_steps=(index-1)*p['steps_per_round'],n=1024,stage=stage,
-                      seed=160000+index*1024,phase='terrain_training',bank_factory=terrain_bank)
+                      seed=train_namespace+index*1024,phase='terrain_training',bank_factory=terrain_bank)
     env=VecNormalize.load(str(previous)+'.pkl',VecCheckNan(raw,raise_exception=True));env.training=True;env.norm_reward=False
     model.set_env(env);model.set_random_seed(730000+index);records=[];train_seconds=0.
     write(directory/'run_config.json',dict(round=index,stage=stage,resume_from=str(previous),start_policy_steps=start_step,
-          terrain_seed=160000+index*1024,exploration_seed=730000+index,exact_trajectory_resume=False))
+          terrain_seed=train_namespace+index*1024,exploration_seed=730000+index,exact_trajectory_resume=False))
     try:
         for extra in (p['steps_per_round']//2,p['steps_per_round']):
             write(output/'status.json',dict(status='training',round=index,new_steps=(index-1)*p['steps_per_round']+extra//2,stage=stage))
