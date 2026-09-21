@@ -961,3 +961,9 @@
 稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
 
 - `wheelleg_warp/results/terrain_v4_diagnostics_20260922/controller_trace.json`
+
+### 自动同步快照 2026-09-22T05:46:27+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_warp/results/terrain_v4_diagnostics_20260922/step_capability.json`
