@@ -128,7 +128,7 @@ def after(qpos:wp.array2d[float],qvel:wp.array2d[float],sensors:wp.array2d[float
         success=success and state[w,6]<=D(.6) and state[w,7]<=D(.03)
         state[w,19]=D(0)
         if success:state[w,19]=D(1);reward[w]=reward[w]+D(10);state[w,20]=state[w,20]+D(10)
-        else:reward[w]=reward[w]-D(10);state[w,20]=state[w,20]-D(10);state[w,20]=state[w,20]-D(10)
+        else:reward[w]=reward[w]-D(10);state[w,20]=state[w,20]-D(10)
         for j in range(qpos.shape[1]):stopped_q[w,j]=qpos[w,j]
         for j in range(qvel.shape[1]):stopped_v[w,j]=qvel[w,j];stopped_w[w,j]=warm[w,j]
 
@@ -156,6 +156,7 @@ def reset_rows(mask:wp.array[int],q0:wp.array[float],q:wp.array2d[float],v:wp.ar
 
 class NativeEnv(VecEnv):
     def __init__(self,n=128,stage=3,seed=730000,scenario=None):
+        if not isinstance(n,int) or not 1 <= n <= 1024:raise ValueError('用户限制：批量环境数须为1～1024')
         wp.init();wp.set_device('cuda:0')
         self.num_envs=n;self.stage=stage
         self.cpu,self.model,self.data,self.scenarios=bank(n,stage,seed,scenario)

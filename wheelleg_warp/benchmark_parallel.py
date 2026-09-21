@@ -53,8 +53,8 @@ def main():
     p.add_argument('--output', type=Path, required=True)
     p.add_argument('--device', choices=['cpu', 'cuda'], default='cpu')
     a = p.parse_args()
-    if a.envs < 1 or a.repeats < 1 or a.output.exists():
-        p.error('环境/重复数必须为正，结果不得覆盖')
+    if not 1 <= a.envs <= 1024 or a.repeats < 1 or a.output.exists():
+        p.error('环境数须为1～1024，重复数必须为正，结果不得覆盖')
     start = time.perf_counter()
     torch.set_num_threads(1)
     config = json.loads((ROOT / 'wheelleg_ppo/tools/results/yaw_precision_v2_2026-09-21/training_config.json').read_text())

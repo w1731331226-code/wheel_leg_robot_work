@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "scenario": {
+        "speed": 1.0,
+        "mass": 7.0,
+        "height_l": 0.012,
+        "height_r": 0.006,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.7,
+        "mu_r": 0.9,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100
+      },
+      "peaks": {
+        "obs": 0.000308990478515625,
+        "reward": 5.397389741222669e-08,
+        "qpos": 7.2479248046875e-05,
+        "qvel": 0.000308990478515625
+      },
+      "episodes": 2,
+      "mismatches": []
+    },
+    {
+      "scenario": {
+        "speed": -0.7,
+        "mass": 7.3,
+        "height_l": 0.008,
+        "height_r": 0.015,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.7,
+        "drive_difference": 0.0,
+        "delay_ms": 10.0,
+        "solver_iterations": 100
+      },
+      "peaks": {
+        "obs": 0.00035953521728515625,
+        "reward": 4.14512599244965e-08,
+        "qpos": 7.2479248046875e-05,
+        "qvel": 0.000911712646484375
+      },
+      "episodes": 2,
+      "mismatches": []
+    }
+  ],
+  "thresholds": {
+    "qpos": 0.02,
+    "qvel": 0.5,
+    "obs": 0.5,
+    "reward": 0.05
+  }
+}
