@@ -585,3 +585,10 @@
 - `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1610/run_config.json`
 - `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1610/step_0.pkl`
 - `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1610/step_0.zip`
+
+### 自动同步快照 2026-09-21T10:28:31+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1610/curve.json`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1610/step_0.json`
