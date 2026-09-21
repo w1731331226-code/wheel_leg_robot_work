@@ -26,6 +26,7 @@ def significant(new,anchor):
 
 def initialize(output,source):
     comparison=json.loads((source/'comparison.json').read_text());assert comparison['complete']
+    if comparison['protocol'].get('warm_start'):assert comparison['admission']['passed'],'三随机流实际续训末次未通过，禁止用起点成绩冒充准入'
     assert all('selected' in r for r in comparison['results']),'正式切换需要选定检查点的完整32例复核'
     groups={n:[r for r in comparison['results'] if r['n_steps']==n] for n in sorted({r['n_steps'] for r in comparison['results']})}
     def rank(rows):
@@ -40,13 +41,17 @@ def initialize(output,source):
     assert min(s['success_count'] for s in summaries)>=30 and sum(s['success_count'] for s in summaries)>=93,'1024候选尚未达到旧CPU成功率参照'
     chosen=min(rows,key=lambda r:selection_key(r['selected']['summary']))
     origin=Path(chosen['selected']['path'])
+    inspected=TimedPPO.load(str(origin)+'.zip',device='cpu')
+    assert inspected.n_envs==1024 and inspected.n_steps==length and inspected.num_timesteps==chosen['selected']['policy_steps']
+    ppo=dict(n_steps=length,batch_size=inspected.batch_size,n_epochs=inspected.n_epochs,learning_rate=float(inspected.learning_rate),target_kl=inspected.target_kl,gamma=inspected.gamma,gae_lambda=inspected.gae_lambda)
     output.mkdir(parents=True,exist_ok=False);(output/'bootstrap').mkdir()
     for ext in ('.zip','.pkl'):shutil.copy2(str(origin)+ext,output/'bootstrap'/('policy'+ext))
     source_paths=[Path(__file__),ROOT/'wheelleg_warp/benchmark_parallel.py',ROOT/'wheelleg_warp/dashboard/live_env.py']+list((ROOT/'wheelleg_warp/native').glob('*.py'))
-    hashes={k:v for k,v in json.loads((ROOT/'wheelleg_warp/CPU_REFERENCE.json').read_text())['source_sha256'].items() if k!='wheelleg_ppo/tools/resume_yaw.py'}
+    hashes=json.loads((ROOT/'wheelleg_warp/CPU_REFERENCE.json').read_text())['source_sha256']
     hashes.update({str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in source_paths})
+    hashes.update({str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in (output/'bootstrap').iterdir()})
     protocol=dict(created=datetime.now().astimezone().isoformat(),name='native-1024-formal-v1',phase='formal_training',environments=1024,
-        n_steps=length,policy_device='cpu',physics_device='cuda:0',seed=chosen['seed'],max_rounds=10,patience=3,
+        n_steps=length,ppo=ppo,policy_device='cpu',physics_device='cuda:0',seed=chosen['seed'],max_rounds=10,patience=3,
         meaningful_yaw_improvement=.005,steps_per_round=2048000,inherited_steps=chosen['selected']['policy_steps'],
         bootstrap_summary=chosen['selected']['summary'],bootstrap_source=str(origin),
         development_cases=comparison['protocol']['development_cases'],

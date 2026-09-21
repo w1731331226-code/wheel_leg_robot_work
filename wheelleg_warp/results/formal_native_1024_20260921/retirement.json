@@ -1,0 +1,37 @@
+{
+  "status": "retired",
+  "authorization": "用户要求通过1024策略验证后清理旧基线与权重",
+  "guarded_by": "warmstart三随机流准入及正式入口预检",
+  "git_before": "69d8fb53a6d3f5f9219ea97d3c85df5cf8c901b1",
+  "paths": [
+    "wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_2026-09-21",
+    "wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1",
+    "wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_2026-09-21.log",
+    "wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_2026-09-21_run.log",
+    "wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1.log",
+    "wheelleg_warp/results/formal_cpu_warp_v1_20260921",
+    "wheelleg_warp/results/formal_cpu_warp_live_v1_20260921",
+    "wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921",
+    "wheelleg_warp/train_compare.py",
+    "wheelleg_warp/train_optimized.py",
+    "wheelleg_warp/optimized_env.py",
+    "wheelleg_warp/test_comparison.py"
+  ],
+  "tracked_files": 340,
+  "weights": 176,
+  "weight_bytes": 16731161,
+  "retained": "公共CPU物理/控制/评估及27项审计源码；新正式bootstrap；全部新实验；Git历史",
+  "completed": 1789963637.605731,
+  "ignored_visuals_removed_to_trash": [
+    "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/formal_cpu_warp_live_v1_20260921",
+    "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921",
+    "/home/wmt/wheel_leg_robot_work/wheelleg_warp/dashboard/local_data/captures/cpu",
+    "/home/wmt/wheel_leg_robot_work/wheelleg_warp/dashboard/local_data/captures/warp",
+    "/home/wmt/wheel_leg_robot_work/wheelleg_warp/dashboard/local_data/live/cpu.jpg",
+    "/home/wmt/wheel_leg_robot_work/wheelleg_warp/dashboard/local_data/live/cpu.json",
+    "/home/wmt/wheel_leg_robot_work/wheelleg_warp/dashboard/local_data/live/warp.jpg",
+    "/home/wmt/wheel_leg_robot_work/wheelleg_warp/dashboard/local_data/live/warp.json",
+    "/home/wmt/wheel_leg_robot_work/wheelleg_warp/dashboard/local_data/history.jsonl"
+  ],
+  "git_history_retained": true
+}

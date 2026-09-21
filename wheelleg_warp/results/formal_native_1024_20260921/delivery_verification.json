@@ -1,0 +1,39 @@
+{
+  "time": 1789964875.0484943,
+  "formal_started": true,
+  "current_status": {
+    "status": "training",
+    "round": 3,
+    "policy_steps": 3312800,
+    "new_steps": 5836800,
+    "round_steps": 1740800,
+    "round_budget": 2048000,
+    "updated": 1789964874.0390403,
+    "updates": 34,
+    "elapsed_round_seconds": 286.2013516480001,
+    "train_seconds": 119.31892255700404,
+    "source_run": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/formal_native_1024_20260921/round_003",
+    "pid": 416881
+  },
+  "best_at_snapshot": {
+    "round": 0,
+    "path": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/formal_native_1024_20260921/bootstrap/policy",
+    "summary": {
+      "total": 32,
+      "success_count": 32,
+      "complete": true,
+      "mean_yaw_score_deg": 1.0531013242757283
+    }
+  },
+  "all_world_overview_verified": 1024,
+  "selected_detail_verified": [
+    3,
+    851
+  ],
+  "render_fps_observed": 49.4,
+  "single_baseline_ui": true,
+  "old_runs_retired": true,
+  "training_memory_max_gib": 24,
+  "render_memory_max_gib": 3,
+  "source_note": "字段只证明当前交付核验，不表示10轮全部完成或全局最优"
+}

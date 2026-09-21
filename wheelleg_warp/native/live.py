@@ -39,7 +39,7 @@ class LiveNativeEnv(NativeEnv):
         super().__init__(**kwargs)
         self.directory=Path(directory);self.directory.mkdir(parents=True,exist_ok=True)
         self.start_steps=start_steps;self.policy_frames=0;self.phase=phase;self.selected=0
-        self.episode_counts=np.zeros(self.num_envs,dtype=int);self.returns=np.zeros(self.num_envs)
+        self.episode_counts=np.zeros(self.num_envs,dtype=int);self.returns=np.zeros(self.num_envs);self.episode_started=np.zeros(self.num_envs)
         self.select_array=wp.zeros(1,dtype=wp.int32);self.last_select=0.;self.last_overview=0.
         self.width=1+self.cpu.nq+self.cpu.nv+self.cpu.nu+32
         self.frames=wp.zeros((16,self.width),dtype=D)
@@ -65,7 +65,7 @@ class LiveNativeEnv(NativeEnv):
     def frame_metadata(self,index):
         return dict(kind='actual_training_physics_frames',backend='native',environment_index=index,environments=self.num_envs,
             episode=int(self.episode_counts[index]),phase=self.phase,scenario=asdict(self.scenarios[index]),source_run=str(self.directory.parent),
-            recorded_policy_hz=50,recorded_physics_hz=400,started=time.time(),status='recording')
+            recorded_policy_hz=50,recorded_physics_hz=400,started=float(self.episode_started[index]),status='recording')
 
     def new_episode(self):
         self.rows=[];self.actions=[];self.rewards=[];self.last_time=0.
@@ -73,7 +73,7 @@ class LiveNativeEnv(NativeEnv):
         self.episode_metadata=self.frame_metadata(0);atomic_json(self.folder/'metadata.json',self.episode_metadata)
 
     def reset(self):
-        result=super().reset();self.episode_counts+=1;self.returns[:]=0;self.new_episode();return result
+        result=super().reset();self.episode_counts+=1;self.returns[:]=0;self.episode_started[:]=time.time();self.new_episode();return result
 
     def step_async(self,actions):
         if time.monotonic()-self.last_select>.2:
@@ -123,6 +123,6 @@ class LiveNativeEnv(NativeEnv):
                 np.savez_compressed(f,**self.split(np.asarray(self.rows)),action=np.asarray(self.actions),reward=np.asarray(self.rewards))
             (self.folder/'trajectory.tmp').replace(self.folder/'trajectory.npz')
             atomic_json(self.folder/'metadata.json',{**self.episode_metadata,'status':'completed','frames':len(self.rows),'finished':time.time(),'metrics':metrics})
-        self.episode_counts[done]+=1;self.returns[done]=0
+        self.episode_counts[done]+=1;self.returns[done]=0;self.episode_started[done]=time.time()
         if done[0]:self.new_episode()
         return result
