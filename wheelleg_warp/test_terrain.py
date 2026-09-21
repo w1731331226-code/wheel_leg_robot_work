@@ -3,7 +3,7 @@ from pathlib import Path
 import sys
 sys.path[:0]=[str(Path(__file__).resolve().parent),str(Path(__file__).resolve().parents[1]/'wheelleg_ppo/tools')]
 import numpy as np
-from native.terrain import TERRAINS,TerrainScenario,model,sample_terrain
+from native.terrain import TERRAINS,V3_TERRAINS,TerrainScenario,model,sample_terrain,sample_terrain_v3
 from native.terrain_env import TerrainEnv
 
 first=sample_terrain(12345,3);assert first==sample_terrain(12345,3)
@@ -25,6 +25,8 @@ for _ in range(450):
     assert np.isfinite(obs).all() and np.isfinite(reward).all()
     for i in np.flatnonzero(done):
         finished.append(infos[i]['reason'])
+        assert infos[i]['attitude_mode']=='world'
+        np.testing.assert_allclose(infos[i]['relative_peak_deg'],infos[i]['peak_deg'])
         assert infos[i]['terrain_passed']==(cases[i].terrain=='legacy' or infos[i]['touched_terrain_contact_mask']==12)
 assert len(finished)>=len(cases) and set(finished)=={'completed'}
 np.testing.assert_allclose(env.data.geom_xpos.numpy()[:,static],env.model.geom_pos.numpy()[:,static])
@@ -32,3 +34,16 @@ try:env.step_async(np.full((len(cases),3),2,dtype=np.float32))
 except ValueError:pass
 else:raise AssertionError('非法动作未拒绝')
 env.close();print('PASS',dict(types=list(TERRAINS),legacy_fraction=legacy,episodes=len(finished)))
+
+new=[]
+for name in V3_TERRAINS[1:]:
+    new.append(next(sample_terrain_v3(seed,split='development') for seed in range(40000,50000) if sample_terrain_v3(seed,split='development').terrain==name))
+env=TerrainEnv(len(new),scenario=new);obs=env.reset();finished=[]
+for _ in range(500):
+    obs,reward,done,infos=env.step(np.zeros((len(new),3),np.float32))
+    assert np.isfinite(obs).all() and np.isfinite(reward).all()
+    for i in np.flatnonzero(done):
+        finished.append(infos[i]['reason']);assert infos[i]['attitude_mode']=='terrain_relative'
+        assert infos[i]['terrain_passed'] and infos[i]['touched_terrain_contact_mask']==12
+assert len(finished)>=len(new) and set(finished)=={'completed'}
+env.close();print('PASS terrain-v3',dict(types=list(V3_TERRAINS),episodes=len(finished)))

@@ -45,6 +45,23 @@ def reduce_contacts(ncon:wp.array[int],world:wp.array[int],geom:wp.array[wp.vec2
     if terrain and (a==ids[12] or b==ids[12]):wp.atomic_or(flags,w,1,8)
 
 
+@wp.func
+def terrain_attitude(param:wp.array2d[D],qpos:wp.array2d[float],w:int):
+    roll=D(0);pitch=D(0)
+    if int(param[w,7])==0:return wp.vec2d(D(0),D(0))
+    kind=int(param[w,8]);angle=param[w,9];relative=param[w,1]*D(qpos[w,0])-param[w,10]
+    if kind==1 and relative>=D(-.65) and relative<D(-.15):pitch=-param[w,1]*angle
+    elif kind==1 and relative>D(.15) and relative<=D(.65):pitch=param[w,1]*angle
+    elif kind==2 and wp.abs(relative)<=D(.65):roll=angle
+    elif kind==3 and relative>=D(-.64) and relative<=D(.64):
+        segment=int((relative+D(.64))/D(.32))
+        if segment>3:segment=3
+        pitch=-param[w,1]*angle
+        if segment==1 or segment==3:pitch=param[w,1]*angle
+    elif kind==4 and wp.abs(relative)<=D(.65):roll=angle
+    return wp.vec2d(roll,pitch)
+
+
 @wp.kernel
 def after(qpos:wp.array2d[float],qvel:wp.array2d[float],sensors:wp.array2d[float],
           warm:wp.array2d[float],clock:wp.array[float],contact_flags:wp.array2d[int],
@@ -75,8 +92,10 @@ def after(qpos:wp.array2d[float],qvel:wp.array2d[float],sensors:wp.array2d[float
     roll=wp.atan2(D(2)*(qw*qx+qy*qz),D(1)-D(2)*(qx*qx+qy*qy))
     pitch=wp.asin(wp.clamp(D(2)*(qw*qy-qz*qx),D(-1),D(1)))
     yaw=wp.atan2(D(2)*(qw*qz+qx*qy),D(1)-D(2)*(qy*qy+qz*qz))
+    reference=terrain_attitude(param,qpos,w);roll_error=roll-reference[0];pitch_error=pitch-reference[1]
     vx=wp.cos(yaw)*D(qvel[w,0])+wp.sin(yaw)*D(qvel[w,1]);err=vx-cmd[w]
     state[w,8]=wp.max(state[w,8],wp.abs(roll));state[w,9]=wp.max(state[w,9],wp.abs(pitch));state[w,10]=wp.max(state[w,10],wp.abs(yaw))
+    state[w,21]=wp.max(state[w,21],wp.abs(roll_error));state[w,22]=wp.max(state[w,22],wp.abs(pitch_error));state[w,23]=wp.max(state[w,23],wp.abs(yaw))
     state[w,11]=state[w,11]+roll*roll*D(.0005);state[w,12]=state[w,12]+pitch*pitch*D(.0005);state[w,13]=state[w,13]+yaw*yaw*D(.0005)
     if cmd[w]!=D(0):state[w,4]=state[w,4]+err*err*D(.0005);state[w,5]=state[w,5]+D(.0005)
     touch=int(state[w,14])|contact_flags[w,1];nonwheel=contact_flags[w,0]!=0
@@ -88,7 +107,7 @@ def after(qpos:wp.array2d[float],qvel:wp.array2d[float],sensors:wp.array2d[float
         residual=diag[w,6+j]/scale;smooth=(residual-last_residual[w,j])/D(.0005)
         penalty=penalty+D(.05)*residual*residual+D(.0001)*smooth*smooth
         last_residual[w,j]=residual
-    value=D(.0005)*(wp.exp(-(err/D(.25))*(err/D(.25)))-(roll*roll+pitch*pitch+yaw*yaw)/(D(.08726646)*D(.08726646))-penalty)
+    value=D(.0005)*(wp.exp(-(err/D(.25))*(err/D(.25)))-(roll_error*roll_error+pitch_error*pitch_error+yaw*yaw)/(D(.08726646)*D(.08726646))-penalty)
     reward[w]=reward[w]+value;state[w,20]=state[w,20]+value
     if state[w,1]<D(0) and param[w,1]*D(qpos[w,0])>=param[w,2]:
         state[w,1]=t;state[w,2]=D(qpos[w,0]);state[w,3]=D(qpos[w,1])
@@ -127,7 +146,9 @@ def after(qpos:wp.array2d[float],qvel:wp.array2d[float],sensors:wp.array2d[float
     state[w,18]=state[w,18]+diag[w,13]
     if reason:
         done[w]=reason;active[w]=0
-        success=reason==5 and (touch&int(param[w,5]))==int(param[w,5]) and (touch&int(param[w,6]))==int(param[w,6]) and wp.max(state[w,8],wp.max(state[w,9],state[w,10]))<=D(.08726646259971647) and state[w,5]>D(0)
+        attitude=wp.max(state[w,8],wp.max(state[w,9],state[w,10]))<=D(.08726646259971647)
+        if int(param[w,7]):attitude=wp.max(state[w,21],wp.max(state[w,22],state[w,23]))<=D(.08726646259971647) and wp.max(state[w,8],state[w,9])<=D(.17453292519943295)
+        success=reason==5 and (touch&int(param[w,5]))==int(param[w,5]) and (touch&int(param[w,6]))==int(param[w,6]) and attitude and state[w,5]>D(0)
         if state[w,5]>D(0):success=success and wp.sqrt(state[w,4]/state[w,5])<=D(.2)*wp.abs(param[w,0])
         success=success and state[w,6]<=D(.6) and state[w,7]<=D(.03)
         state[w,19]=D(0)
@@ -149,7 +170,7 @@ def reset_rows(mask:wp.array[int],q0:wp.array[float],q:wp.array2d[float],v:wp.ar
     for j in range(sensors.shape[1]):sensors[w,j]=0.
     for j in range(19):control_state[w,j]=D(0)
     control_state[w,1]=D(.3);control_state[w,12]=D(-1)
-    for j in range(21):state[w,j]=D(0)
+    for j in range(state.shape[1]):state[w,j]=D(0)
     state[w,1]=D(-1)
     for j in range(6):residual[w,j]=D(0)
     for j in range(3):targets[w,j]=0.
@@ -170,15 +191,16 @@ class NativeEnv(VecEnv):
         ids += [terrain,mujoco.mj_name2id(self.cpu,mujoco.mjtObj.mjOBJ_GEOM,'terrain_15')] if terrain>=0 else [-1,-1]
         self.ids=wp.array(ids,dtype=wp.int32)
         p=[]
-        self.required_contact_masks=[];self.required_terrain_contact_masks=[]
+        self.required_contact_masks=[];self.required_terrain_contact_masks=[];self.relative_attitude=[]
         for s in self.scenarios:
             goal=s.center+abs(s.offset)/2+.75
             required=(1 if s.height_l else 0)|(2 if s.height_r else 0);terrain=12 if getattr(s,'terrain','legacy')!='legacy' else 0
-            self.required_contact_masks.append(required);self.required_terrain_contact_masks.append(terrain)
-            p.append([s.speed,np.sign(s.speed),goal,1.5+1.5*goal/abs(s.speed),round(s.delay_ms*2),required,terrain])
+            relative=bool(getattr(s,'relative_attitude',False));kind={'ramp':1,'cross_slope':2,'rolling_slope':3,'split_level':4}.get(getattr(s,'terrain','legacy'),0)
+            self.required_contact_masks.append(required);self.required_terrain_contact_masks.append(terrain);self.relative_attitude.append(relative)
+            p.append([s.speed,np.sign(s.speed),goal,1.5+1.5*goal/abs(s.speed),round(s.delay_ms*2),required,terrain,relative,kind,np.deg2rad(getattr(s,'grade_deg',0.)),s.center])
         self.param=wp.array(p,dtype=D);self.command=wp.zeros(n,dtype=D)
         self.active=wp.ones(n,dtype=wp.int32);self.done=wp.zeros(n,dtype=wp.int32)
-        self.state=wp.zeros((n,21),dtype=D);self.diag=wp.zeros((n,15),dtype=D)
+        self.state=wp.zeros((n,24),dtype=D);self.diag=wp.zeros((n,15),dtype=D)
         self.residual=wp.zeros((n,6),dtype=D);self.reward=wp.zeros(n,dtype=D);self.contact_flags=wp.zeros((n,2),dtype=wp.int32)
         self.obs=wp.zeros((n,32));self.history=wp.zeros((n,21,32))
         self.targets=wp.zeros((n,3));self.stopped_q=wp.zeros((n,self.cpu.nq));self.stopped_v=wp.zeros((n,self.cpu.nv));self.stopped_w=wp.zeros((n,self.cpu.nv))
@@ -231,6 +253,8 @@ class NativeEnv(VecEnv):
                 infos[i]['required_contact_mask']=self.required_contact_masks[i];infos[i]['touched_contact_mask']=touched&3
                 infos[i]['required_terrain_contact_mask']=required_terrain;infos[i]['touched_terrain_contact_mask']=touched&12
                 infos[i]['terrain_passed']=int(reasons[i])==5 and (touched&required_terrain)==required_terrain
+                infos[i]['attitude_mode']='terrain_relative' if self.relative_attitude[i] else 'world'
+                infos[i]['relative_peak_deg']=(states[i,21:24]*180/np.pi).tolist()
                 infos[i]['TimeLimit.truncated']=int(reasons[i])==6
             self.mask.assign(done.astype(np.int32));wp.launch(reset_rows,self.num_envs,self.reset_args)
             refreshed=self.obs.numpy();obs[done]=refreshed[done]

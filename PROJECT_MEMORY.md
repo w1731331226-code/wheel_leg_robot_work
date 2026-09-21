@@ -26,6 +26,13 @@
 
 ### terrain-v1/v2最终收尾（2026-09-22）
 
+#### terrain-v3修正后扩展与正式训练
+
+- 已在修正后的统一16 geom GPU拓扑加入`rolling_slope`连续四段坡、`multi_step`多级台阶和`split_level`左右异高路面。新场景显式`relative_attitude=true`：局部横滚/俯仰误差与世界偏航门均5°，世界横滚/俯仰另设10°硬边界；奖励也使用局部姿态误差。旧v1/v2场景缺省保持世界5°门，历史语义不变。
+- terrain-v3开发集冻结48例（mixed 12、legacy 8、其余七类各4），另有16例原回归；最终留出64例（mixed 15、其余七类各7）仅写入协议，尚未评估。terrain-v2正式检查点起点为开发46/48、原回归15/16，64/64完整且有通过证据；新增三类均4/4，开发两个失败均为legacy偏航。
+- 工程门通过：原六类语义与terrain-v3八类非legacy闭环、双轮地形接触、相对姿态字段；旧NativeEnv完整回归；1024世界Stage1/2/3分布、有限状态、逐世界静态几何和一步物理。1024初始化41.57秒。102,400步GPU探针完成2次PPO更新，开发48/48、原回归15/16、权重有限且保存重载正常；探针权重未晋升。
+- terrain-v3正式训练从terrain-v2第2轮末点而非探针恢复，目录`wheelleg_warp/results/terrain_v3_1024_20260922/`；1024环境、每轮1,024,000步、连续3轮无改善停止、最多10轮。服务`wheelleg-terrain-v3-formal.service`为24GiB/禁用换页，独立仪表盘/渲染服务在8768和`dashboard/local_data/terrain_v3/`。已确认1024总览、环境111混合地形真实3D详情、约47.7 FPS/400 Hz及第1轮512,000步中点评估；动画页保持可见。第1轮选定开发47/48、原回归16/16，较起点总失败3降至1，停滞0并进入第2轮。最终64例只在停止后打开。
+
 - 后续地形通过判据审计推翻了该小节原有效性：MuJoCo Warp从第一个CPU模型一次性初始化world-body静态`Data.geom_xpos/geom_xmat`，而旧`native.models.batch`只写逐世界`Model`字段，导致同一批次所有世界实际复用第一个世界的障碍/地形位置。该共享缺陷也影响此前60/64原生GPU基线的逐世界静态障碍变化；旧CPU基准不受影响。历史数值和文件保留，但60/64、terrain-v1/v2训练结论及55/64均不得再作有效场景泛化证据。
 - 已在共享批量入口逐世界补写静态geom位置与姿态；六类闭环及1024世界初始化/一步物理均验证`Data.geom_xpos == Model.geom_pos`，1024初始化实测42.00秒。非legacy成功门新增左右轮地形接触掩码，输出required/touched terrain mask与`terrain_passed`；混合地形仍叠加原左右障碍接触门。平地NativeEnv完整回归保持通过。
 - 原混合地形6个“未接触”均为正向场景；历史缺陷复现的轮到障碍最近纵向距离1.842～1.879m且零接触，属于错误静态几何，不是绕过、跨越或接触漏记。修正后6例均满足所需障碍接触，最近距离0.001～0.005m。轨迹证据`mixed_trace_audit.json`，代表动画为本机忽略文件`dashboard/local_data/terrain_audit/seed_250005_before_after.gif`。

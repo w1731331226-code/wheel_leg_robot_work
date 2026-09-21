@@ -1,10 +1,10 @@
-const $=id=>document.getElementById(id),num=n=>new Intl.NumberFormat('zh-CN').format(n??0),terrainNames={legacy:'原左右障碍',ramp:'坡道',cross_slope:'横坡',rough:'粗糙路',step:'全宽台阶',mixed:'粗糙路+左右障碍'};
+const $=id=>document.getElementById(id),num=n=>new Intl.NumberFormat('zh-CN').format(n??0),terrainNames={legacy:'原左右障碍',ramp:'坡道',cross_slope:'横坡',rough:'粗糙路',step:'全宽台阶',mixed:'粗糙路+左右障碍',rolling_slope:'连续坡段',multi_step:'多级台阶',split_level:'左右异高'};
 let mode='live',latestClip=null,etag=null,lastKey=null,activePhase='validating';
 let displayCount=0,displayWindow=performance.now(),displayFPS=0,lastDisplayed=0;
 const names={validating:'收敛准入验证',ready:'准备就绪',initializing:'初始化本轮场景',training:'训练中',evaluating:'开发集评估',final_evaluation:'独立终评',completed:'已完成',failed:'需要检查',interrupted:'已中断'};
 const duration=s=>s==null?'等待有效进度':s<60?`${Math.ceil(s)} 秒`:`${(s/60).toFixed(1)} 分钟`;
 function meta(m){
- $('source').textContent=activePhase==='completed'?'FINAL SNAPSHOT · 正式训练最后实帧':m.phase==='terrain_training'?'LIVE · 非结构化地形训练':m.phase==='formal_training'?'LIVE · 正式训练原始帧':m.phase==='preflight_training'?'预检 PPO · 原始训练帧':m.phase==='validation_training'?'准入续训 · 原始训练帧':'工程采集预检';
+ $('source').textContent=activePhase==='completed'?'FINAL SNAPSHOT · 正式训练最后实帧':m.phase?.startsWith('terrain')?'LIVE · 非结构化地形训练':m.phase==='formal_training'?'LIVE · 正式训练原始帧':m.phase==='preflight_training'?'预检 PPO · 原始训练帧':m.phase==='validation_training'?'准入续训 · 原始训练帧':'工程采集预检';
  $('episode').textContent=`ENV ${m.environment_index} / ${m.environments} · ${terrainNames[m.scenario?.terrain]??'原场景'} · EP ${m.episode} · FRAME ${m.frame}`;
  $('sim').textContent=`仿真 ${m.simulation_seconds.toFixed(3)} s · ${num(m.sample_steps)} 策略步`;
  $('lag').textContent=`源状态延迟 ${Math.max(0,Date.now()/1000-m.wall_time).toFixed(1)} s`;
@@ -43,7 +43,7 @@ function chart(id,points,percentage){
 function update(s){
  const c=s.current,p=s.protocol,selection=s.selection;activePhase=c.status;chosenEnvironment=c.status==='completed'&&s.live?s.live.environment_index:(s.requested_environment??chosenEnvironment);if(document.activeElement!==$('environment'))$('environment').value=chosenEnvironment;
  const roundSteps=c.round_steps??Math.max(0,(c.new_steps??0)-Math.max(0,(c.round??1)-1)*(p.steps_per_round??0));
- const terrain=p.name?.startsWith('terrain-');document.querySelector('.nav-label').textContent=terrain?'非结构化地形训练':'原生 GPU 基线';document.querySelector('#learning .panel-title p').textContent=terrain?'固定GPU地形开发集 · 32场景 · 原场景另行回归':'固定 CPU 开发集 · 32场景 · 每轮候选最佳';
+ const terrain=p.name?.startsWith('terrain-'),total=p.bootstrap_summary?.total??32;document.querySelector('.nav-label').textContent=terrain?'非结构化地形训练':'原生 GPU 基线';document.querySelector('#learning .panel-title p').textContent=terrain?`固定GPU地形开发集 · ${total}场景 · 原场景另行回归`:'固定 CPU 开发集 · 32场景 · 每轮候选最佳';
  if(s.validation){const v=s.validation;$('notice-body').textContent=`1024准入验证：${v.current??v.phase??'准备中'} · 最近完成 ${num(v.policy_steps)} / ${num(v.target)} 步。下方显示带来源标签的真实采样帧，正式启动后接入正式训练流。`;}else{$('notice-body').textContent='总览包含全部1024个训练世界，点击任意格子查看真实3D详情。详情采集400 Hz，显示目标50 FPS；评估期间可能暂停。';}
  $('phase').textContent=names[c.status]??c.status;$('connection').textContent='本机数据已连接';$('updated').textContent=new Date(s.now*1000).toLocaleTimeString('zh-CN');
  $('round').textContent=`${c.round??0} / ${p.max_rounds??10}`;$('stop-rule').textContent=`停滞 ${selection.stagnant_rounds??0} / ${p.patience??3} 轮`;
@@ -51,7 +51,7 @@ function update(s){
  $('steps').textContent=`${num(roundSteps)} / ${num(p.steps_per_round??2048000)}`;
  $('round-bar').style.width=`${Math.min(100,roundSteps/(p.steps_per_round??2048000)*100)}%`;
  $('total').textContent=`新增 ${num(c.new_steps)} 步 · 继承 ${num(p.inherited_steps)} 步`;
- if(selection.best){$('best').textContent=`${selection.best.summary.success_count} / 32`;$('best-yaw').textContent=`Jψ ${selection.best.summary.mean_yaw_score_deg.toFixed(3)}°`;$('best-round').textContent=selection.best.round===0?'最佳：准入检查点':`最佳：第 ${selection.best.round} 轮`;$('best-download').hidden=false;$('norm-download').hidden=false;}
+ if(selection.best){$('best').textContent=`${selection.best.summary.success_count} / ${selection.best.summary.total}`;$('best-yaw').textContent=`Jψ ${selection.best.summary.mean_yaw_score_deg.toFixed(3)}°`;$('best-round').textContent=selection.best.round===0?'最佳：准入检查点':`最佳：第 ${selection.best.round} 轮`;$('best-download').hidden=false;$('norm-download').hidden=false;}
  $('config').textContent=`1024环境 · M3 PPO · 每环境采样 ${p.n_steps??'待选定'} 步 · 本轮已更新 ${c.updates??Math.floor(roundSteps/((p.n_steps??50)*(p.environments??1024)))} 次`;
  const rows=[...(p.bootstrap_summary?[{round:0,summary:p.bootstrap_summary}]:[]),...selection.rounds];
  chart('success-chart',rows.map(r=>({x:r.round,y:r.summary.success_count/r.summary.total*100})),true);
@@ -60,9 +60,9 @@ function update(s){
  if(mode==='live'&&performance.now()-lastDisplayed>1500)$('fps').textContent='0 FPS · 等待新物理帧';
  if(mode==='live'&&s.live&&Date.now()/1000-s.live.wall_time>3){$('lag').textContent=`最近源状态 ${Math.round(Date.now()/1000-s.live.wall_time)} 秒前`;$('stream-status').textContent=names[c.status]??c.status;}
  latestClip=s.archives[0]??null;$('replay').disabled=!latestClip;$('archive-count').textContent=`${s.archives.length} 个完整回合`;$('archives').replaceChildren();
- for(const a of s.archives.slice(0,6)){const row=document.createElement('div');row.className='archive';const label=document.createElement('div');label.className='label';label.textContent=`${a.phase==='terrain_training'?'地形第 '+Number(a.source_run.split('/').at(-1).split('_').at(-1))+' 轮':a.phase==='formal_training'?'正式第 '+Number(a.source_run.split('/').at(-1).split('_').at(-1))+' 轮':'采集预检'} · ${terrainNames[a.scenario?.terrain]??'原场景'} · 环境 ${a.environment_index??0} · 回合 ${a.episode}`;row.append(label);for(const [name,url] of [['50FPS WebP',a.webp],['GIF',a.gif],['400Hz轨迹',a.trace],['来源',a.metadata]]){const link=document.createElement('a');link.className='download';link.textContent=name+' ↓';link.href=url;link.download='';row.append(link);}$('archives').append(row);}
+ for(const a of s.archives.slice(0,6)){const row=document.createElement('div');row.className='archive';const label=document.createElement('div');label.className='label';label.textContent=`${a.phase?.startsWith('terrain')?'地形第 '+Number(a.source_run.split('/').at(-1).split('_').at(-1))+' 轮':a.phase==='formal_training'?'正式第 '+Number(a.source_run.split('/').at(-1).split('_').at(-1))+' 轮':'采集预检'} · ${terrainNames[a.scenario?.terrain]??'原场景'} · 环境 ${a.environment_index??0} · 回合 ${a.episode}`;row.append(label);for(const [name,url] of [['50FPS WebP',a.webp],['GIF',a.gif],['400Hz轨迹',a.trace],['来源',a.metadata]]){const link=document.createElement('a');link.className='download';link.textContent=name+' ↓';link.href=url;link.download='';row.append(link);}$('archives').append(row);}
  if(overviewData&&Date.now()/1000-overviewData.meta.wall_time>1)$('overview-time').textContent=`${names[c.status]??c.status} · 总览源状态 ${Math.round(Date.now()/1000-overviewData.meta.wall_time)} 秒前 · 不生成替代运动`;
- if(s.final_evaluation){const f=s.final_evaluation.summary;$('final-result').textContent=`独立终评：${f.success_count}/64成功 · Jψ ${f.mean_yaw_score_deg?.toFixed(3)??'未完整'}°（未用于选模）`;}
+ if(s.final_evaluation){const f=s.final_evaluation.summary??s.final_evaluation.terrain;$('final-result').textContent=`独立终评：${f.success_count}/${f.total}成功 · Jψ ${f.mean_yaw_score_deg?.toFixed(3)??'未完整'}°（未用于选模）`;}
 }
 async function refresh(){try{const r=await fetch('/api/status',{cache:'no-store'});if(!r.ok)throw Error(r.status);update(await r.json());}catch(e){$('connection').textContent='连接中断，自动重试';}setTimeout(refresh,1500);}
 refresh();frames();
