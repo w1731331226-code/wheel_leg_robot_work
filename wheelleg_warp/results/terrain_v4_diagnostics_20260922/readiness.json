@@ -1,0 +1,28 @@
+{
+  "status": "not_ready_for_formal_training",
+  "formal_training_started": false,
+  "checks": {
+    "advanced_geometry_closed_loop": true,
+    "contact_and_exit_evidence": true,
+    "terrain_v3_beats_zero_residual_on_fresh_yaw_set": false,
+    "cross_slope_completion_not_degraded": false,
+    "step_15_to_21mm_all_speeds_pass": false,
+    "legacy_regression_after_controller_change": null
+  },
+  "evidence": {
+    "fresh_yaw_success": {
+      "zero_residual": "21/48",
+      "terrain_v2": "20/48",
+      "terrain_v3": "21/48"
+    },
+    "cross_slope_complete": {
+      "zero_residual": "23/24",
+      "terrain_v3": "22/24"
+    },
+    "step_stable_region": "15-18mm across 0.5/0.7/0.9m/s",
+    "step_21mm_low_speed": "0/4 at 0.5m/s",
+    "step_30mm": "0/12 with fall or nonwheel-contact failures"
+  },
+  "next_action": "Sweep base yaw P/D gains and residual yaw authority on fresh development scenarios, then rerun legacy regression and the step capability gate.",
+  "holdout_policy": "Do not use terrain-v3 final holdout for tuning or terrain-v4 selection."
+}
