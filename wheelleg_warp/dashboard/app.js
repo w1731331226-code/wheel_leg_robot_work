@@ -1,12 +1,17 @@
-const $=id=>document.getElementById(id), names={cpu:'CPU · MuJoCo',warp:'GPU · MuJoCo Warp'}, paused={cpu:false,warp:false};
+const $=id=>document.getElementById(id), names={cpu:'CPU · MuJoCo',warp:'GPU · MuJoCo Warp'}, paused={cpu:false,warp:false}, modes={cpu:'live',warp:'live'}, archives={};
 const number=n=>new Intl.NumberFormat('zh-CN').format(n??0);
 const duration=s=>s==null?'待估算':s<60?'不足 1 分钟':s<3600?`${Math.round(s/60)} 分钟`:s<86400?`${(s/3600).toFixed(1)} 小时`:`${(s/86400).toFixed(1)} 天`;
 const date=t=>new Date(t*1000).toLocaleString('zh-CN',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false});
 const robotIcon='<svg viewBox="0 0 60 55"><path d="M16 36 22 14h16l7 22M22 14l8 20 8-20"/><circle cx="14" cy="42" r="8"/><circle cx="46" cy="42" r="8"/></svg>';
-$('robots').innerHTML=['cpu','warp'].map(b=>`<article class="robot ${b}"><div class="robot-head"><div class="robot-title"><span class="backend-icon">${b==='cpu'?'▦':'◈'}</span><div><h3>${names[b]}</h3><small>${b==='cpu'?'原生 CPU 物理':'CUDA 物理 · CPU 控制器'} / M3</small></div></div><span class="status-pill" id="${b}-phase">读取状态</span></div><div class="view"><div class="view-empty" id="${b}-empty">${robotIcon}<span>等待真实训练状态</span></div><img id="${b}-image" src="/live/${b}.mjpg" alt="${names[b]}真实训练环境0的小车画面"><div class="view-top"><span class="live-badge" id="${b}-source">TRAINING STREAM</span><span id="${b}-episode">ENV 0 / 8</span></div><div class="view-bottom"><span id="${b}-sim">仿真时间 —</span><span id="${b}-lag">等待采样</span></div></div><div class="robot-data"><div class="small-grid"><div><span>当前种子 / 策略步</span><strong id="${b}-steps">—</strong></div><div><span>课程阶段</span><strong id="${b}-stage">—</strong></div><div><span>该队列剩余</span><strong id="${b}-eta">—</strong></div></div><div class="bar"><i id="${b}-bar"></i></div><div class="robot-foot"><span id="${b}-budget">0 / 600 万步</span><span id="${b}-score">等待选择集评估</span></div></div><div class="view-actions"><button id="${b}-pause">暂停画面</button><a class="download" id="${b}-download" hidden download>保存最新 GIF ↓</a><small id="${b}-reward">回合奖励 —</small></div></article>`).join('');
+$('robots').innerHTML=['cpu','warp'].map(b=>`<article class="robot ${b}"><div class="robot-head"><div class="robot-title"><span class="backend-icon">${b==='cpu'?'▦':'◈'}</span><div><h3>${names[b]}</h3><small>${b==='cpu'?'原生 CPU 物理':'CUDA 物理 · CPU 控制器'} / M3</small></div></div><span class="status-pill" id="${b}-phase">读取状态</span></div><div class="view"><div class="view-empty" id="${b}-empty">${robotIcon}<span>等待真实训练状态</span></div><img id="${b}-image" src="/live/${b}.mjpg" alt="${names[b]}真实训练环境0的小车画面"><div class="view-top"><span class="live-badge" id="${b}-source">TRAINING STREAM</span><span id="${b}-episode">ENV 0 / 8</span></div><div class="view-bottom"><span id="${b}-sim">仿真时间 —</span><span id="${b}-lag">等待采样</span></div></div><div class="robot-data"><div class="small-grid"><div><span>当前种子 / 策略步</span><strong id="${b}-steps">—</strong></div><div><span>课程阶段</span><strong id="${b}-stage">—</strong></div><div><span>该队列剩余</span><strong id="${b}-eta">—</strong></div></div><div class="bar"><i id="${b}-bar"></i></div><div class="robot-foot"><span id="${b}-budget">0 / 600 万步</span><span id="${b}-score">等待选择集评估</span></div></div><div class="view-actions"><button id="${b}-pause">暂停画面</button><button id="${b}-replay" disabled>50 FPS录像</button><a class="download" id="${b}-download" hidden download>保存最新 GIF ↓</a><small id="${b}-reward">回合奖励 —</small></div></article>`).join('');
 for(const b of ['cpu','warp']){
   $(`${b}-image`).onload=()=>$(`${b}-empty`).style.display='none';
-  $(`${b}-pause`).onclick=()=>{paused[b]=!paused[b];$(`${b}-pause`).textContent=paused[b]?'继续实时画面':'暂停画面';$(`${b}-image`).src=paused[b]?`/media/live/${b}.jpg?t=${Date.now()}`:`/live/${b}.mjpg?t=${Date.now()}`;};
+  $(`${b}-pause`).onclick=()=>{modes[b]='live';$(`${b}-replay`).textContent='50 FPS录像';paused[b]=!paused[b];$(`${b}-pause`).textContent=paused[b]?'继续实时画面':'暂停画面';$(`${b}-image`).src=paused[b]?`/media/live/${b}.jpg?t=${Date.now()}`:`/live/${b}.mjpg?t=${Date.now()}`;};
+  $(`${b}-replay`).onclick=()=>{
+    if(modes[b]==='replay'){modes[b]='live';$(`${b}-image`).src=`/live/${b}.mjpg?t=${Date.now()}`;$(`${b}-replay`).textContent='50 FPS录像';}
+    else if(archives[b]){modes[b]='replay';$(`${b}-image`).src=archives[b].webp||archives[b].gif;$(`${b}-replay`).textContent='返回实时';}
+    $(`${b}-pause`).disabled=modes[b]==='replay';refresh();
+  };
 }
 function chart(id,series,success=false){
  const w=620,h=185,l=48,r=16,top=12,bottom=30,colors=['#70adff','#53dbba'];
@@ -41,7 +46,7 @@ function update(s){
   $(`${b}-eta`).title=d.estimate.confidence+(d.estimate.range_seconds?`；范围 ${duration(d.estimate.range_seconds[0])}—${duration(d.estimate.range_seconds[1])}`:'');
   $(`${b}-bar`).style.width=`${d.total_steps/d.budget*100}%`;$(`${b}-budget`).textContent=`${number(d.total_steps)} / ${number(d.budget)}`;
   const last=d.selection.at(-1);$(`${b}-score`).textContent=last?`选择集成功率 ${last.success.toFixed(1)}%`:'等待选择集评估';
-  if(live){
+  if(live && modes[b]==='live'){
    $(`${b}-source`).textContent=live.smoke?'预检训练原始画面':'LIVE · 真实训练采样';
    $(`${b}-episode`).textContent=`ENV 0 / 8 · SEED ${live.source_run.split('_').at(-1)} · EP ${live.episode}`;
    $(`${b}-sim`).textContent=`仿真 ${live.simulation_seconds.toFixed(2)} s · 采样 ${number(live.sample_steps)} 步`;
@@ -49,7 +54,18 @@ function update(s){
    $(`${b}-reward`).textContent=`回合奖励 ${live.cumulative_reward.toFixed(2)}`;
   }
   const clips=d.archives.filter(x=>x.status==='completed').sort((a,b)=>(b.archive_time??0)-(a.archive_time??0));
-  if(clips.length){const a=$(`${b}-download`);a.hidden=false;a.href=clips[0].gif;}
+  if(clips.length){
+    const latest=clips.find(c=>c.fps===50)??clips[0];archives[b]=latest;
+    const a=$(`${b}-download`);a.hidden=false;a.href=latest.gif;a.textContent=`保存 ${latest.fps} FPS GIF ↓`;
+    $(`${b}-replay`).disabled=latest.fps!==50;
+    if(modes[b]==='replay'){
+      $(`${b}-source`).textContent=`REPLAY · ${latest.smoke?'预检':'正式'}训练录像`;
+      $(`${b}-episode`).textContent=`ENV 0 / 8 · EP ${latest.episode}`;
+      $(`${b}-sim`).textContent=`${latest.metrics.duration_s.toFixed(2)} s · ${latest.fps} FPS`;
+      $(`${b}-lag`).textContent='已保存片段 · 非当前采样';
+      $(`${b}-reward`).textContent='录像中保留真实动作与接触';
+    }
+  }
   allArchives.push(...clips.map(x=>({...x,backend:b})));
  }
  chart('progress-chart',['cpu','warp'].map(b=>({points:s.history.map(h=>({x:h.time,y:h[b]}))})));
@@ -61,7 +77,7 @@ function update(s){
   const row=document.createElement('div');row.className='archive';
   const label=document.createElement('div');label.className='label';label.textContent=`${a.backend==='cpu'?'CPU':'GPU'} · ${a.smoke?'预检':'正式训练'} · 回合 ${a.episode}`;
   const small=document.createElement('small');small.textContent=`${a.frames??'—'} 帧状态 · ${date(a.archive_time??a.finished??a.started)}`;label.append(small);row.append(label);
-  for(const [text,url] of [['GIF',a.gif],['轨迹 NPZ',a.trace],['配置',a.metadata]]){const link=document.createElement('a');link.className='download';link.textContent=text+' ↓';link.href=url;link.download='';row.append(link);}
+  for(const [text,url] of [...(a.webp?[['50FPS WebP',a.webp]]:[]),['GIF',a.gif],['轨迹 NPZ',a.trace],['配置',a.metadata]]){const link=document.createElement('a');link.className='download';link.textContent=text+' ↓';link.href=url;link.download='';row.append(link);}
   $('archive-list').append(row);
  }
  if(!allArchives.length)$('archive-list').textContent='等待第一个完整回合；实时画面和原始状态采集会先开始。';

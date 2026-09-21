@@ -1,7 +1,9 @@
 {
-  "status": "training",
+  "status": "paused_for_packed_transfer_upgrade",
   "pids": {
     "cpu": 41081,
     "warp": 41082
-  }
+  },
+  "stopped_at": "2026-09-21T08:03:27.520562+08:00",
+  "reason": "保留CPU60000/GPU20000更新检查点，验证打包回读后分段续训，不从零开始"
 }

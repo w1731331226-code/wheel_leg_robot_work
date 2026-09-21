@@ -1,0 +1,23 @@
+{
+  "smoke": true,
+  "checkpoints": [
+    {
+      "steps": 4000,
+      "path": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921/smoke_warp_1609/step_4000",
+      "total": 4,
+      "success_count": 4,
+      "complete": true,
+      "mean_yaw_score_deg": 0.7644963770043729
+    }
+  ],
+  "best": {
+    "steps": 4000,
+    "path": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921/smoke_warp_1609/step_4000",
+    "total": 4,
+    "success_count": 4,
+    "complete": true,
+    "mean_yaw_score_deg": 0.7644963770043729
+  },
+  "gate_evaluated": false,
+  "test_set_evaluated": false
+}

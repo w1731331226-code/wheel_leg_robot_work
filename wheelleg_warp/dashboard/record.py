@@ -5,6 +5,7 @@ import json
 import os
 from pathlib import Path
 import sys
+import subprocess
 import time
 
 os.environ.setdefault('MUJOCO_GL','egl')
@@ -17,7 +18,7 @@ from ppo_env import build_model,Scenario
 
 HERE=Path(__file__).resolve().parent
 DATA=HERE/'local_data'
-RUN=ROOT/'wheelleg_warp/results/formal_cpu_warp_live_v1_20260921'
+RUN=ROOT/'wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921'
 
 
 def read(path):
@@ -45,7 +46,7 @@ class View:
     def close(self):self.renderer.close()
 
 
-def replay(folder,target):
+def replay(folder,target,webp=False):
     metadata=read(folder/'metadata.json')
     if not metadata or metadata['status']!='completed':raise ValueError('仅重放完整归档回合')
     protocol=read(Path(metadata['source_run']).parent/'protocol.json')
@@ -59,9 +60,15 @@ def replay(folder,target):
     view=View(metadata['scenario']);images=[]
     try:
         with np.load(folder/'trajectory.npz',allow_pickle=False) as trace:
-            indices=sorted(set(range(0,len(trace['time']),2))|{len(trace['time'])-1})
+            indices=range(len(trace['time']))
             for i in indices:images.append(view.image(trace['qpos'][i],trace['qvel'][i],trace['ctrl'][i]))
-        images[0].save(target,format='GIF',save_all=True,append_images=images[1:],duration=40,loop=0,optimize=False)
+        temporary=target.with_suffix(target.suffix+'.tmp')
+        images[0].save(temporary,format='GIF',save_all=True,append_images=images[1:],duration=20,loop=0,optimize=False)
+        temporary.replace(target)
+        if webp:
+            alternate=target.with_suffix('.webp');temporary=alternate.with_suffix('.webp.tmp')
+            images[0].save(temporary,format='WEBP',save_all=True,append_images=images[1:],duration=20,loop=0,quality=85,method=3)
+            temporary.replace(alternate)
     finally:view.close()
     return len(images)
 
@@ -73,7 +80,7 @@ def source(backend):
 
 
 def watch():
-    views={};last={};saved={}
+    views={};last={};saved={};export=None;last_scan=0.
     (DATA/'live').mkdir(parents=True,exist_ok=True)
     while True:
         for backend in ('cpu','warp'):
@@ -102,7 +109,7 @@ def watch():
                     complete=[p for p in (src/'episodes').glob('*/trajectory.npz') if read(p.parent/'metadata.json').get('status')=='completed']
                     if complete:
                         episode=max(complete,key=lambda p:p.stat().st_mtime).parent
-                        output=DATA/'captures'/backend/(src.parent.name+'_'+episode.name)
+                        output=DATA/'captures'/backend/(src.parent.parent.name+'__'+src.parent.name+'_'+episode.name)
                         if not output.exists():
                             output.mkdir(parents=True)
                             import shutil
@@ -112,17 +119,30 @@ def watch():
                             meta['model_source_sha256']={k:v for k,v in protocol['source_sha256'].items() if k.startswith('wheelleg_ppo/')}
                             meta['mujoco_version']=mujoco.__version__
                             write(output/'metadata.json',meta)
-                            replay(episode,output/'animation.tmp')
-                            (output/'animation.tmp').replace(output/'animation.gif')
+                            # 编码由下方独立子进程执行，不阻塞实时画面。
                         saved[backend]=bucket
             except Exception as exc:
                 print('渲染错误：',backend,repr(exc),flush=True)
-        time.sleep(.1)
+        if export is not None and export.poll() is not None:export=None
+        if export is None and time.monotonic()-last_scan>5:
+            last_scan=time.monotonic()
+            pending=[p.parent for p in (DATA/'captures').glob('*/*/metadata.json')
+                     if not (p.parent/'animation_50.webp').exists() and not (p.parent/'export_failed.json').exists()]
+            if pending:
+                folder=max(pending,key=lambda p:p.stat().st_mtime)
+                with (DATA/'export.log').open('a') as log:
+                    export=subprocess.Popen([sys.executable,str(Path(__file__)),'--replay',str(folder),
+                        '--output',str(folder/'animation_50.gif'),'--webp'],stdout=log,stderr=subprocess.STDOUT)
+        time.sleep(1/60)
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--replay',type=Path);p.add_argument('--output',type=Path)
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--replay',type=Path);p.add_argument('--output',type=Path);p.add_argument('--webp',action='store_true')
     args=p.parse_args()
     if args.replay:
-        target=args.output or args.replay/'reproduced.gif';print(replay(args.replay,target),'frames',target)
+        target=args.output or args.replay/'reproduced_50.gif'
+        try:print(replay(args.replay,target,args.webp),'frames',target,flush=True)
+        except Exception as exc:
+            write(args.replay/'export_failed.json',dict(error=repr(exc)))
+            raise
     else:watch()

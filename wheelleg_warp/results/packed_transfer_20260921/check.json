@@ -1,0 +1,29 @@
+{
+  "same_gpu_state_readback_exact": true,
+  "benchmarks": [
+    {
+      "backend": "WarpEnv",
+      "seconds": [
+        5.271354078000513,
+        5.167762323000716,
+        5.3663769620015955
+      ],
+      "median": 5.271354078000513,
+      "policy_steps": 20,
+      "physics_steps": 800
+    },
+    {
+      "backend": "FastWarpEnv",
+      "seconds": [
+        1.251470077999329,
+        1.2333861150000303,
+        1.2424816060010926
+      ],
+      "median": 1.2424816060010926,
+      "policy_steps": 20,
+      "physics_steps": 800
+    }
+  ],
+  "speedup": 4.242601300928939,
+  "caveat": "同机训练仍在运行；这是单环境真实闭环，不是完整PPO速度或独占硬件倍率"
+}

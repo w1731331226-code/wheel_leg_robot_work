@@ -1,0 +1,186 @@
+{
+  "backend": "warp",
+  "seed": 1609,
+  "smoke": true,
+  "config": {
+    "protocol": "yaw-precision-v2",
+    "frozen_date": "2026-09-21",
+    "methods": {
+      "M3": "diff3",
+      "M1": "diff1",
+      "N3+": "mixed3_plus",
+      "N3-": "mixed3_minus",
+      "B2-V": "virtual6",
+      "B2": "torque6"
+    },
+    "device": "cpu",
+    "environments": 8,
+    "policy_steps": 2000000,
+    "evaluation_interval": 20000,
+    "training_seeds": [
+      1609,
+      1610,
+      1611
+    ],
+    "curriculum": [
+      {
+        "start": 0,
+        "stage": 1
+      },
+      {
+        "start": 20000,
+        "stage": 2
+      },
+      {
+        "start": 100000,
+        "stage": 3
+      }
+    ],
+    "curriculum_note": "Stage changes at next episode reset; stage1 includes terrain, stage2 adds friction/drive, stage3 adds mass/delay.",
+    "ppo": {
+      "n_steps": 250,
+      "batch_size": 250,
+      "n_epochs": 10,
+      "learning_rate": 0.0003,
+      "gamma": 0.99,
+      "gae_lambda": 0.95,
+      "clip_range": 0.2,
+      "clip_range_vf": null,
+      "normalize_advantage": true,
+      "ent_coef": 0,
+      "vf_coef": 0.5,
+      "max_grad_norm": 0.5,
+      "use_sde": false,
+      "target_kl": null,
+      "policy_kwargs": {
+        "net_arch": [
+          64,
+          64
+        ],
+        "log_std_init": 0
+      }
+    },
+    "normalization": {
+      "norm_obs": true,
+      "norm_reward": false,
+      "clip_obs": 10,
+      "epsilon": 1e-08
+    },
+    "residual": {
+      "slew": 20,
+      "force_fraction": 0.1,
+      "leg_torque_Nm": 1,
+      "wheel_torque_Nm": 0.3,
+      "torque6_Nm": [
+        1,
+        1,
+        1,
+        1,
+        0.3,
+        0.3
+      ],
+      "initial_action": "clipped N(0,1), no method-specific retuning"
+    },
+    "b1_formula": "a=[0,0,clip(-(1+g*min(abs(obs[0])/rad(2),1))*(kp*obs[2]+kd*obs[5])/.3,-1,1)]; 50 Hz delayed common obs, same 2 kHz residual slew/limits",
+    "b1_candidates": [
+      {
+        "name": "B0",
+        "kp": 0,
+        "kd": 0,
+        "roll_gain": 0
+      },
+      {
+        "name": "B1_1",
+        "kp": 0.4,
+        "kd": 0,
+        "roll_gain": 0
+      },
+      {
+        "name": "B1_2",
+        "kp": 0,
+        "kd": 0.3,
+        "roll_gain": 0
+      },
+      {
+        "name": "B1_3",
+        "kp": 0.4,
+        "kd": 0.3,
+        "roll_gain": 0
+      },
+      {
+        "name": "B1_4",
+        "kp": 0.8,
+        "kd": 0.6,
+        "roll_gain": 0
+      },
+      {
+        "name": "B1_5",
+        "kp": 0.4,
+        "kd": 0.3,
+        "roll_gain": 1
+      },
+      {
+        "name": "B1_6",
+        "kp": 0.8,
+        "kd": 0.3,
+        "roll_gain": 1
+      },
+      {
+        "name": "B1_7",
+        "kp": 0.4,
+        "kd": 0.6,
+        "roll_gain": 1
+      }
+    ],
+    "versions": {
+      "numpy": "2.2.6",
+      "scipy": "1.15.3",
+      "mujoco": "3.12.0",
+      "gymnasium": "1.3.0",
+      "stable-baselines3": "2.9.0",
+      "torch": "2.14.0+cu130"
+    },
+    "controls_unchanged": true,
+    "gate_evaluated": false,
+    "test_set_evaluated": false,
+    "b1_selected": {
+      "name": "B1_6",
+      "kp": 0.8,
+      "kd": 0.3,
+      "roll_gain": 1
+    },
+    "reference_methods": [
+      "B0",
+      "B1",
+      "B2",
+      "B2-V",
+      "M1",
+      "N3+",
+      "N3-"
+    ],
+    "paired_direction_methods": [
+      "B2-V",
+      "M1",
+      "N3+",
+      "N3-"
+    ],
+    "total_pilot_policy_steps": 36000000,
+    "mixed_basis_degrees": 30
+  },
+  "physical_device": "cuda:0",
+  "policy_device": "cpu",
+  "initial_policy_sha256": "03f7522ec9266fbaab30f63ce16010d0817fce012233c61c778da222fb4cf9b0",
+  "resume_from": null,
+  "start_policy_steps": 0,
+  "resume_policy_sha256": "03f7522ec9266fbaab30f63ce16010d0817fce012233c61c778da222fb4cf9b0",
+  "exact_trajectory_resume": null,
+  "protocol_sha256": "1ae7d4cca525dd6404a81e8397035d8261e0c8c84a0a7f3522f005c45f19c7ff",
+  "known_limitations": [
+    "GPU非对称接触全状态门未通过，属于不同仿真后端的效果比较",
+    "GPU物理逐步回传CPU控制器，当前不是GPU原生批量闭环，不承诺提速",
+    "现有CPU分段运行及旧无画面对照不纳入配对；新两组从相同种子重新初始化",
+    "仅环境0采集真实训练状态，每个策略步50Hz保存；渲染独立执行，不增加物理步",
+    "优化切换保留模型/优化器/归一化，但重置环境和随机流；分段运行并非精确轨迹续训",
+    "两侧从各自最新完整更新检查点恢复，恢复步数可能不同，须连同结果披露"
+  ]
+}

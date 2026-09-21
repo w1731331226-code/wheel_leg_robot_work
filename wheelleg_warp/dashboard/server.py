@@ -15,7 +15,7 @@ from urllib.parse import unquote, urlparse
 
 ROOT = Path(__file__).resolve().parents[2]
 HERE = Path(__file__).resolve().parent
-RUN = ROOT/'wheelleg_warp/results/formal_cpu_warp_live_v1_20260921'
+RUN = ROOT/'wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921'
 DATA = HERE/'local_data'
 LOCK = threading.Lock()
 STATE = {}
@@ -50,14 +50,15 @@ def status(now=None):
     result = dict(now=now, queue=queue, backends={}, history=HISTORY[::max(1,len(HISTORY)//1440)], total_budget=2*len(protocol['seeds'])*per_seed,
                   run_directory=str(RUN), final_evaluation_cases=len(protocol['final_cases']))
     for backend in ('cpu','warp'):
-        done=0; all_points=[]; cycles=[]; current=None; starts=[]
+        done=0; inherited_steps=0; all_points=[]; cycles=[]; current=None; starts=[]
         for index,seed in enumerate(protocol['seeds']):
             folder=RUN/f'{backend}_{seed}'
             config=folder/'run_config.json'
             if config.exists():starts.append(config.stat().st_mtime)
+            start_steps=read(config,{}).get('start_policy_steps',0);inherited_steps+=start_steps
             completion=read(folder/'completed.json')
             progress=read(folder/'progress.json', {})
-            steps=per_seed if completion and completion.get('passed') else progress.get('policy_steps',0)
+            steps=per_seed if completion and completion.get('passed') else progress.get('policy_steps',start_steps)
             done+=steps
             selected=read(folder/'selection.json',{})
             for row in selected.get('checkpoints',[]):
@@ -67,20 +68,24 @@ def status(now=None):
                 check=folder/f"step_{row['steps']}.json"
                 if check.exists():cycles.append((point['step'],check.stat().st_mtime))
             if current is None and not (completion and completion.get('passed')):
-                current=dict(seed=seed,steps=steps,stage=progress.get('stage'),updated=progress.get('updated'),
+                current=dict(seed=seed,steps=steps,stage=progress.get('stage',max(c['stage'] for c in protocol['config']['curriculum'] if steps>=c['start'])),updated=progress.get('updated'),
                              error=read(folder/'failed.json'),directory=str(folder))
         current=current or dict(seed=protocol['seeds'][-1],steps=per_seed,stage=3,updated=None,error=None,directory=str(folder))
         total=per_seed*len(protocol['seeds']);started=min(starts) if starts else now
+        speed_started=started
+        if inherited_steps:
+            anchor=RUN/f'{backend}_{protocol["seeds"][0]}'/f'step_{inherited_steps}.json'
+            if anchor.exists():speed_started=max(started,anchor.stat().st_mtime)
         # 完整检查点评估周期包含选模开销；未有检查点时仅能用早期吞吐粗估。
-        if cycles:
+        if cycles and cycles[-1][0]>inherited_steps:
             work, end = cycles[-1]
-            speed=estimate(total,work,end-started,len(cycles))
+            speed=estimate(total-inherited_steps,work-inherited_steps,end-speed_started,len(cycles))
             if speed['rate']:
                 speed['remaining_seconds']=max(0,total-done)/speed['rate']
                 factor=(.75,1.5) if len(cycles)>=3 else (.5,2)
                 speed['range_seconds']=[speed['remaining_seconds']*x for x in factor]
         else:
-            speed=estimate(total,done,(stamp(current['updated']) if current['updated'] else now)-started,0)
+            speed=estimate(total-inherited_steps,done-inherited_steps,(stamp(current['updated']) if current['updated'] else now)-speed_started,0)
         pid=queue.get('pids',{}).get(backend)
         alive=bool(pid and Path(f'/proc/{pid}').exists())
         stale=bool(current['updated'] and now-stamp(current['updated'])>900)
@@ -93,12 +98,14 @@ def status(now=None):
         archive=[]
         for meta in sorted((DATA/'captures'/backend).glob('*/metadata.json'))[-60:]:
             value=read(meta)
-            if value and (meta.parent/'animation.gif').exists():
+            if value and ((meta.parent/'animation.gif').exists() or (meta.parent/'animation_50.gif').exists()):
                 rel=meta.parent.relative_to(DATA).as_posix()
                 archive.append(dict(**value, id=rel, live=read(meta.parent/'live.json',{}),
-                                    gif='/media/'+rel+'/animation.gif', trace='/media/'+rel+'/trajectory.npz',
+                                    gif='/media/'+rel+('/animation_50.gif' if (meta.parent/'animation_50.gif').exists() else '/animation.gif'),
+                                    fps=50 if (meta.parent/'animation_50.gif').exists() else 25,
+                                    webp='/media/'+rel+'/animation_50.webp' if (meta.parent/'animation_50.webp').exists() else None,trace='/media/'+rel+'/trajectory.npz',
                                     metadata='/media/'+rel+'/metadata.json', still='/media/'+rel+'/current.jpg'))
-        result['backends'][backend]=dict(phase=phase,current=current,total_steps=done,budget=total,started=started,
+        result['backends'][backend]=dict(phase=phase,current=current,total_steps=done,inherited_steps=inherited_steps,budget=total,started=started,
                      elapsed_seconds=now-started,estimate=speed,stale=stale,selection=all_points,archives=archive,live=read(DATA/'live'/f'{backend}.json'))
     times=[b['estimate']['remaining_seconds'] for b in result['backends'].values()]
     smoke=read(RUN/'smoke_cpu_1609/completed.json',{})
@@ -153,7 +160,7 @@ class Handler(BaseHTTPRequestHandler):
                             content=image.read_bytes();last=key
                             self.wfile.write(b'--frame\r\nContent-Type: image/jpeg\r\nContent-Length: '+str(len(content)).encode()+b'\r\n\r\n'+content+b'\r\n')
                             self.wfile.flush()
-                    time.sleep(.2)
+                    time.sleep(1/60)
             except (BrokenPipeError,ConnectionResetError):pass
             return
         base=DATA if path.startswith('/media/') else HERE

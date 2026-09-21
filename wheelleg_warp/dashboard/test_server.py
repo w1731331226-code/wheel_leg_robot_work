@@ -26,3 +26,24 @@ with tempfile.TemporaryDirectory() as tmp:
         else:raise AssertionError('禁止任意本地文件读取')
     http.shutdown();http.server_close()
 print('PASS：ETA空进度/完成边界，API，越界/符号链接/源文件访问拒绝')
+
+# 恢复检查点的旧步数和一次性补评估不能算成新速度，也不能拉低稳态预测。
+import json,os
+from datetime import datetime,timezone
+with tempfile.TemporaryDirectory() as tmp:
+    root=Path(tmp);server.RUN=root/'run';server.DATA=root/'data';server.RUN.mkdir()
+    protocol={'seeds':[1609,1610,1611],'config':{'policy_steps':2000000,'curriculum':[{'start':0,'stage':1},{'start':20000,'stage':2}]},'final_cases':[]}
+    (server.RUN/'protocol.json').write_text(json.dumps(protocol))
+    (server.RUN/'status.json').write_text(json.dumps({'status':'training','pids':{'cpu':os.getpid(),'warp':os.getpid()}}))
+    t=1700000000
+    for backend in ('cpu','warp'):
+        folder=server.RUN/f'{backend}_1609';folder.mkdir()
+        config=folder/'run_config.json';config.write_text(json.dumps({'start_policy_steps':60000}));os.utime(config,(t,t))
+        (folder/'progress.json').write_text(json.dumps({'policy_steps':62000,'stage':2,'updated':datetime.fromtimestamp(t+140,timezone.utc).isoformat()}))
+        (folder/'selection.json').write_text(json.dumps({'checkpoints':[{'steps':60000,'success_count':1,'total':1,'mean_yaw_score_deg':0}]}))
+        anchor=folder/'step_60000.json';anchor.write_text('{}');os.utime(anchor,(t+120,t+120))
+    state=server.status(now=t+141)
+    assert state['backends']['cpu']['estimate']['rate']==100
+    assert state['backends']['cpu']['total_steps']==62000
+    assert state['backends']['cpu']['estimate']['remaining_seconds']==59380
+print('PASS：续训继承步数与启动补评估从吞吐估算中剔除')

@@ -1,0 +1,19 @@
+{
+  "old_policy_steps": 4000,
+  "new_policy_steps": 4000,
+  "old_sampling_update_seconds": 167.88160356700064,
+  "new_sampling_update_seconds": 58.331038329000876,
+  "observed_speedup": 2.8780835791077233,
+  "full_wall_seconds_old": 193.47003367800062,
+  "full_wall_seconds_new": 86.90758333200029,
+  "limitations": [
+    "非独占机器单次短更新，不能外推整个训练固定倍率",
+    "GPU短更新权重非逐位一致；接触附近初次状态差异约5.1e-9，保留原记录，不宣称跨运行逐位可复现"
+  ],
+  "first_episode": {
+    "same_scenario": true,
+    "first_difference_policy_frame": 159,
+    "first_qpos_abs_difference": 5.122274160385132e-09,
+    "first_action_abs_difference": 2.9802322387695312e-08
+  }
+}
