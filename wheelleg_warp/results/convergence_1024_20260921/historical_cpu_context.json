@@ -1,0 +1,24 @@
+[
+  {
+    "path": "wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921/cpu_1609/step_180000.json",
+    "steps": 180000,
+    "summary": {
+      "total": 32,
+      "success_count": 13,
+      "complete": true,
+      "mean_yaw_score_deg": 1.9678629748016743
+    },
+    "scope": "历史CPU质量参照；训练预算/课程/运行分段不同，不用于声称配对加速或优越性"
+  },
+  {
+    "path": "wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_1200000.json",
+    "steps": 1200000,
+    "summary": {
+      "total": 32,
+      "success_count": 31,
+      "complete": true,
+      "mean_yaw_score_deg": 1.3163692631640462
+    },
+    "scope": "历史CPU质量参照；训练预算/课程/运行分段不同，不用于声称配对加速或优越性"
+  }
+]

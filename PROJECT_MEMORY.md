@@ -496,3 +496,47 @@
 - `wheelleg_warp/results/parallel_sweep_20260921/warp_4.log`
 - `wheelleg_warp/results/parallel_sweep_20260921/warp_8.json`
 - `wheelleg_warp/results/parallel_sweep_20260921/warp_8.log`
+
+### 自动同步快照 2026-09-21T10:22:29+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_warp/results/convergence_1024_20260921/cpu_reference_check.json`
+- `wheelleg_warp/results/convergence_1024_20260921/historical_cpu_context.json`
+- `wheelleg_warp/results/convergence_1024_20260921/resource_snapshot.json`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1609.log`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1609/completed.json`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1609/curve.json`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1609/progress.json`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1609/run_config.json`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1609/step_0.json`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1609/step_0.pkl`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1609/step_0.zip`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1609/step_1032192.json`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1609/step_1032192.pkl`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1609/step_1032192.zip`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1609/step_2048000.json`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1609/step_2048000.pkl`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1609/step_2048000.zip`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1609/step_262144.json`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1609/step_262144.pkl`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1609/step_262144.zip`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1609/step_524288.json`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1609/step_524288.pkl`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_16_seed_1609/step_524288.zip`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_250_seed_1609/curve.json`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_250_seed_1609/run_config.json`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_250_seed_1609/step_0.json`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_250_seed_1609/step_0.pkl`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_250_seed_1609/step_0.zip`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_250_seed_1609/step_256000.json`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_250_seed_1609/step_256000.pkl`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_250_seed_1609/step_256000.zip`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_250_seed_1609/step_512000.json`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_250_seed_1609/step_512000.pkl`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_250_seed_1609/step_512000.zip`
+- `wheelleg_warp/results/convergence_1024_20260921/status.json`
+- `wheelleg_warp/results/parallel_sweep_20260921/episode_return_after.log`
+- `wheelleg_warp/results/parallel_sweep_20260921/episode_return_before.log`
+- `wheelleg_warp/results/parallel_sweep_20260921/native_pair.log`
+- `wheelleg_warp/results/parallel_sweep_20260921/native_pair_initial_failure.log`
