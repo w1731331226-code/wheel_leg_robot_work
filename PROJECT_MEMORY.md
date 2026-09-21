@@ -566,3 +566,14 @@
 - `wheelleg_warp/results/convergence_1024_20260921/rollout_250_seed_1609/progress.json`
 - `wheelleg_warp/results/convergence_1024_20260921/rollout_250_seed_1609/step_2048000.pkl`
 - `wheelleg_warp/results/convergence_1024_20260921/rollout_250_seed_1609/step_2048000.zip`
+
+### 自动同步快照 2026-09-21T10:27:21+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_250_seed_1609.log`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_250_seed_1609/completed.json`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_250_seed_1609/curve.json`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_250_seed_1609/progress.json`
+- `wheelleg_warp/results/convergence_1024_20260921/rollout_250_seed_1609/step_2048000.json`
+- `wheelleg_warp/results/convergence_1024_20260921/status.json`
