@@ -854,3 +854,11 @@
 - `wheelleg_warp/results/terrain_v3_1024_20260922/round_004.log`
 - `wheelleg_warp/results/terrain_v3_1024_20260922/selection.json`
 - `wheelleg_warp/results/terrain_v3_1024_20260922/status.json`
+
+### 自动同步快照 2026-09-22T04:47:44+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_warp/results/terrain_v3_1024_20260922/round_004/run_config.json`
+- `wheelleg_warp/results/terrain_v3_1024_20260922/round_004/step_12836000.pkl`
+- `wheelleg_warp/results/terrain_v3_1024_20260922/round_004/step_12836000.zip`
