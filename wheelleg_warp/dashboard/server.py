@@ -29,9 +29,15 @@ def status():
         rel=meta.parent.relative_to(DATA).as_posix()
         archives.append({**item,'webp':'/media/'+rel+'/animation_50.webp','gif':'/media/'+rel+'/animation_50.gif',
             'trace':'/media/'+rel+'/trajectory.npz','metadata':'/media/'+rel+'/metadata.json'})
+    validation=None
+    if not p:
+        test=ROOT/'wheelleg_warp/results/convergence_1024_rollout50_20260921'
+        phase=read(test/'status.json',{})
+        progress=read(test/phase.get('current','')/'progress.json',{})
+        validation=dict(phase=phase.get('status'),current=phase.get('current'),policy_steps=progress.get('policy_steps'),target=2048000)
     live=read(DATA/'live/native.json')
-    return dict(now=time.time(),current=current,protocol={k:p.get(k) for k in ('environments','n_steps','max_rounds','patience','steps_per_round','inherited_steps','bootstrap_summary')},
-        selection={**selection,'rounds':[{k:r[k] for k in ('round','summary','policy_steps','train_seconds','total_seconds')} for r in selection['rounds']]},rate=rate,round_remaining_training_seconds=eta,live=live,archives=archives,
+    return dict(now=time.time(),current=current,validation=validation,requested_environment=read(DATA/'selected_environment.json',{'environment':0}).get('environment',0),protocol={k:p.get(k) for k in ('environments','n_steps','max_rounds','patience','steps_per_round','inherited_steps','bootstrap_summary')},
+        selection={**selection,'rounds':[{k:r[k] for k in ('round','summary','policy_steps','train_seconds','total_seconds','updates')} for r in selection['rounds']]},rate=rate,round_remaining_training_seconds=eta,live=live,archives=archives,
         final_evaluation=read(RUN/'final_evaluation.json'),run_directory=str(RUN))
 
 
@@ -64,7 +70,8 @@ class Handler(BaseHTTPRequestHandler):
         path=unquote(urlparse(self.path).path)
         if path=='/api/overview':
             paths=list(RUN.glob('round_*/live/overview.bin'))
-            if not paths:paths=list((ROOT/'wheelleg_warp/results/native_live_preflight_20260921').glob('round_*/live/overview.bin'))
+            if not paths:
+                for name in ('native_live_preflight_20260921','native_formal_probe_20260921'):paths.extend((ROOT/'wheelleg_warp/results'/name).glob('round_*/live/overview.bin'))
             if not paths:return self.send_error(404)
             target=max(paths,key=lambda p:p.stat().st_mtime)
             tag=str(target.stat().st_mtime_ns)

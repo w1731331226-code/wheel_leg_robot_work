@@ -1,0 +1,155 @@
+[
+  {
+    "policy_steps": 0,
+    "requested_steps": 0,
+    "ppo_updates": 0,
+    "train_seconds": 0.0,
+    "evaluation_seconds": 33.23436147600023,
+    "total_seconds": 75.13718300000028,
+    "summary": {
+      "total": 8,
+      "success_count": 6,
+      "complete": true,
+      "mean_yaw_score_deg": 1.1591508281833407
+    },
+    "curve_summary": {
+      "total": 8,
+      "success_count": 6,
+      "complete": true,
+      "mean_yaw_score_deg": 1.1591508281833407
+    },
+    "losses": {}
+  },
+  {
+    "policy_steps": 262144,
+    "requested_steps": 256000,
+    "ppo_updates": 16,
+    "train_seconds": 22.48024393300011,
+    "evaluation_seconds": 66.33347454400018,
+    "total_seconds": 130.72271185800037,
+    "summary": {
+      "total": 8,
+      "success_count": 7,
+      "complete": true,
+      "mean_yaw_score_deg": 0.796115954137728
+    },
+    "curve_summary": {
+      "total": 8,
+      "success_count": 7,
+      "complete": true,
+      "mean_yaw_score_deg": 0.796115954137728
+    },
+    "losses": {
+      "train/learning_rate": 0.0003,
+      "train/entropy_loss": -3.9012566841009892,
+      "train/policy_gradient_loss": -0.00735689243519367,
+      "train/value_loss": 0.008937820116283766,
+      "train/approx_kl": 0.007126800715923309,
+      "train/clip_fraction": 0.07543410242563396,
+      "train/loss": 0.0016976692713797092,
+      "train/explained_variance": 0.6310815215110779,
+      "train/std": 0.8869968056678772,
+      "train/n_updates": 160.0,
+      "train/clip_range": 0.2
+    }
+  },
+  {
+    "policy_steps": 524288,
+    "requested_steps": 512000,
+    "ppo_updates": 32,
+    "train_seconds": 45.28480760899993,
+    "evaluation_seconds": 100.051258082,
+    "total_seconds": 187.25150673200005,
+    "summary": {
+      "total": 8,
+      "success_count": 7,
+      "complete": true,
+      "mean_yaw_score_deg": 0.6399222713034827
+    },
+    "curve_summary": {
+      "total": 8,
+      "success_count": 7,
+      "complete": true,
+      "mean_yaw_score_deg": 0.6399222713034827
+    },
+    "losses": {
+      "train/learning_rate": 0.0003,
+      "train/entropy_loss": -3.702444217783032,
+      "train/policy_gradient_loss": -0.0070392028120969015,
+      "train/value_loss": 0.027877966218599767,
+      "train/approx_kl": 0.009127856232225895,
+      "train/clip_fraction": 0.09703609251106779,
+      "train/loss": 0.005516666918992996,
+      "train/explained_variance": 0.8134039044380188,
+      "train/std": 0.8284165859222412,
+      "train/n_updates": 320.0,
+      "train/clip_range": 0.2
+    }
+  },
+  {
+    "policy_steps": 1032192,
+    "requested_steps": 1024000,
+    "ppo_updates": 63,
+    "train_seconds": 90.60037387899956,
+    "evaluation_seconds": 133.56961767799976,
+    "total_seconds": 266.09141795000005,
+    "summary": {
+      "total": 8,
+      "success_count": 8,
+      "complete": true,
+      "mean_yaw_score_deg": 1.0380638970817229
+    },
+    "curve_summary": {
+      "total": 8,
+      "success_count": 8,
+      "complete": true,
+      "mean_yaw_score_deg": 1.0380638970817229
+    },
+    "losses": {
+      "train/learning_rate": 0.0003,
+      "train/entropy_loss": -3.640750235860998,
+      "train/policy_gradient_loss": -0.004771574589391424,
+      "train/value_loss": 1.6606788370645407,
+      "train/approx_kl": 0.008285032585263252,
+      "train/clip_fraction": 0.08377213964492759,
+      "train/loss": 0.8372000455856323,
+      "train/explained_variance": 0.5255963802337646,
+      "train/std": 0.8148282170295715,
+      "train/n_updates": 630.0,
+      "train/clip_range": 0.2
+    }
+  },
+  {
+    "policy_steps": 2048000,
+    "requested_steps": 2048000,
+    "ppo_updates": 125,
+    "train_seconds": 180.8553991089998,
+    "evaluation_seconds": 254.1688041059997,
+    "total_seconds": 476.9518304010003,
+    "summary": {
+      "total": 32,
+      "success_count": 0,
+      "complete": true,
+      "mean_yaw_score_deg": 2.415150272472019
+    },
+    "curve_summary": {
+      "total": 8,
+      "success_count": 0,
+      "complete": true,
+      "mean_yaw_score_deg": 2.474426580988508
+    },
+    "losses": {
+      "train/learning_rate": 0.0003,
+      "train/entropy_loss": -3.0185912630774756,
+      "train/policy_gradient_loss": -0.00961178191330934,
+      "train/value_loss": 0.7566695531435085,
+      "train/approx_kl": 0.011505442671477795,
+      "train/clip_fraction": 0.12343401222729661,
+      "train/loss": 0.29893648624420166,
+      "train/explained_variance": 0.7365715503692627,
+      "train/std": 0.6620940566062927,
+      "train/n_updates": 1250.0,
+      "train/clip_range": 0.2
+    }
+  }
+]

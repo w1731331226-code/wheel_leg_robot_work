@@ -1,0 +1,29 @@
+{
+  "seed": 1611,
+  "n_steps": 250,
+  "initial_policy_sha256": "ffea3ab3432f0476a9d28d0650dda640c742a3193bc9e0397727cebcd51ddcc4",
+  "setup_seconds": 40.81660659099998,
+  "ppo": {
+    "n_steps": 250,
+    "batch_size": 250,
+    "n_epochs": 10,
+    "learning_rate": 0.0003,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "clip_range": 0.2,
+    "clip_range_vf": null,
+    "normalize_advantage": true,
+    "ent_coef": 0,
+    "vf_coef": 0.5,
+    "max_grad_norm": 0.5,
+    "use_sde": false,
+    "target_kl": null,
+    "policy_kwargs": {
+      "net_arch": [
+        64,
+        64
+      ],
+      "log_std_init": 0
+    }
+  }
+}

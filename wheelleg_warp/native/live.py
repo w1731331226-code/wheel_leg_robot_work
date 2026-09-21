@@ -47,6 +47,7 @@ class LiveNativeEnv(NativeEnv):
         columns=[]
         for i in self.wheel_bodies:
             joint=int(self.cpu.body_jntadr[i]);columns.append(1 if joint>=0 and abs(self.cpu.jnt_axis[joint,0])>.9 else 0)
+        self.wheel_radii=[float(max(self.cpu.geom_size[next(i for i in range(self.cpu.ngeom) if self.cpu.geom_bodyid[i]==b and self.cpu.geom(i).name.startswith('wheel_collide'))][[0,2]])) for b in self.wheel_bodies]
         self.wheel_ids=wp.array(self.wheel_bodies,dtype=wp.int32);self.wheel_columns=wp.array(columns,dtype=wp.int32)
         self.overview_array=wp.zeros((self.num_envs,12+self.cpu.nbody*3+3*len(columns)),dtype=wp.float32)
         self.root_body=int(self.cpu.jnt_bodyid[0]);n=self.num_envs
@@ -61,7 +62,7 @@ class LiveNativeEnv(NativeEnv):
                 if i%5==4:wp.launch(snapshot,(2,self.width),[self.data.qpos,self.data.qvel,self.data.ctrl,self.state,self.obs,self.frames,self.select_array,i//5])
         self.graph=capture.graph
 
-    def metadata(self,index):
+    def frame_metadata(self,index):
         return dict(kind='actual_training_physics_frames',backend='native',environment_index=index,environments=self.num_envs,
             episode=int(self.episode_counts[index]),phase=self.phase,scenario=asdict(self.scenarios[index]),source_run=str(self.directory.parent),
             recorded_policy_hz=50,recorded_physics_hz=400,started=time.time(),status='recording')
@@ -69,7 +70,7 @@ class LiveNativeEnv(NativeEnv):
     def new_episode(self):
         self.rows=[];self.actions=[];self.rewards=[];self.last_time=0.
         self.folder=self.directory/'episodes'/f'{self.episode_counts[0]:06d}';self.folder.mkdir(parents=True,exist_ok=False)
-        self.episode_metadata=self.metadata(0);atomic_json(self.folder/'metadata.json',self.episode_metadata)
+        self.episode_metadata=self.frame_metadata(0);atomic_json(self.folder/'metadata.json',self.episode_metadata)
 
     def reset(self):
         result=super().reset();self.episode_counts+=1;self.returns[:]=0;self.new_episode();return result
@@ -92,7 +93,7 @@ class LiveNativeEnv(NativeEnv):
         wp.launch(overview,self.num_envs,[self.data.xpos,self.data.xmat,self.state,self.done,self.overview_array,self.root_body,self.wheel_ids,self.wheel_columns])
         values=self.overview_array.numpy()
         meta=dict(environments=self.num_envs,bodies=self.cpu.nbody,width=values.shape[1],root=self.root_body,
-            parents=self.cpu.body_parentid.tolist(),wheels=self.wheel_bodies,
+            parents=self.cpu.body_parentid.tolist(),wheels=self.wheel_bodies,wheel_radii=self.wheel_radii,
             sequence=self.policy_frames,wall_time=time.time(),sample_steps=self.start_steps+self.policy_frames*self.num_envs,
             source_run=str(self.directory.parent),kinematics_lag_seconds=.0005)
         header=json.dumps(meta,separators=(',',':')).encode();header+=b' '*((-len(header))%4)
@@ -110,7 +111,7 @@ class LiveNativeEnv(NativeEnv):
             self.last_time=float(frames[-1,0]);self.rows.extend(frames.copy());self.actions.extend([self.recorded_action.copy() for _ in frames])
             self.rewards.extend([0.]*(len(frames)-1)+[float(rewards[0])])
         preview=packed[8:];preview=preview[np.r_[True,np.diff(preview[:,0])>1e-10]]
-        metadata=self.metadata(self.selected);seq=self.policy_frames
+        metadata=self.frame_metadata(self.selected);seq=self.policy_frames
         with (self.directory/'latest.tmp').open('wb') as f:np.savez(f,**self.split(preview),sequence=seq,episode=metadata['episode'],environment=self.selected)
         (self.directory/'latest.tmp').replace(self.directory/'latest.npz')
         atomic_json(self.directory/'latest.json',dict(**metadata,wall_time=time.time(),sequence=seq,frame=seq*8,

@@ -39,6 +39,8 @@ class View:
             from native.models import model as factory
         self.model=factory(Scenario(**scenario));self.data=mujoco.MjData(self.model)
         self.model.vis.global_.offwidth=960;self.model.vis.global_.offheight=540
+        self.model.mat_reflectance[:]=0
+        self.model.vis.headlight.ambient[:]=[.3,.3,.3]
         self.direction=1 if scenario['speed']>0 else -1
         self.renderer=mujoco.Renderer(self.model,height=540,width=960)
         self.camera=mujoco.MjvCamera();self.camera.distance=1.65;self.camera.azimuth=125;self.camera.elevation=-19
@@ -110,7 +112,7 @@ def watch():
                 if view:view.close()
                 view=View(meta['scenario'],native=True);view_key=key
             image=view.image(frame['qpos'],frame['qvel'],frame['ctrl']);buffer=io.BytesIO();image.save(buffer,format='JPEG',quality=88)
-            image_bytes=buffer.getvalue();last_render=time.monotonic();counted+=1
+            image_bytes=buffer.getvalue();last_render=now;counted+=1
             if last_render-window>=1:fps=counted/(last_render-window);counted=0;window=last_render
             display={**meta,'simulation_seconds':float(frame['time']),'frame':meta['sequence']*8+index,
                 'rendered_wall_time':time.time(),'render_fps':fps,'buffered_frames':len(pending_frames),'dropped_display_frames':dropped}
@@ -138,7 +140,7 @@ def watch():
                     folder=min(waiting,key=lambda p:p.stat().st_mtime)
                     with (DATA/'export.log').open('a') as log:
                         export=subprocess.Popen([sys.executable,str(Path(__file__)),'--replay',str(folder),'--output',str(folder/'animation_50.gif'),'--webp'],stdout=log,stderr=subprocess.STDOUT)
-        time.sleep(.003)
+        time.sleep(max(.001,min(.01,1/50-(time.monotonic()-last_render))) if pending_frames else .01)
 
 
 if __name__=='__main__':

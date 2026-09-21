@@ -1,0 +1,34 @@
+{
+  "status": "training",
+  "policy_steps": 2048000,
+  "requested_steps": 2048000,
+  "ppo_updates": 125,
+  "train_seconds": 186.53075697699978,
+  "evaluation_seconds": 252.36486060999982,
+  "total_seconds": 480.2330762749998,
+  "summary": {
+    "total": 32,
+    "success_count": 28,
+    "complete": true,
+    "mean_yaw_score_deg": 0.9592337286762358
+  },
+  "curve_summary": {
+    "total": 8,
+    "success_count": 7,
+    "complete": true,
+    "mean_yaw_score_deg": 0.9196858073928944
+  },
+  "losses": {
+    "train/learning_rate": 0.0003,
+    "train/entropy_loss": -2.940503893476544,
+    "train/policy_gradient_loss": -0.008946598159594359,
+    "train/value_loss": 0.6528112631855589,
+    "train/approx_kl": 0.012674162164330482,
+    "train/clip_fraction": 0.12886431511971308,
+    "train/loss": 0.13418379426002502,
+    "train/explained_variance": 0.8710955381393433,
+    "train/std": 0.6449131369590759,
+    "train/n_updates": 1250.0,
+    "train/clip_range": 0.2
+  }
+}

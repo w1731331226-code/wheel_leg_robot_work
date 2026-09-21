@@ -26,33 +26,34 @@ def significant(new,anchor):
 
 def initialize(output,source):
     comparison=json.loads((source/'comparison.json').read_text());assert comparison['complete']
+    assert all('selected' in r for r in comparison['results']),'正式切换需要选定检查点的完整32例复核'
     groups={n:[r for r in comparison['results'] if r['n_steps']==n] for n in sorted({r['n_steps'] for r in comparison['results']})}
     def rank(rows):
-        summaries=[r['records'][-1]['summary'] for r in rows]
+        summaries=[r['selected']['summary'] for r in rows]
         assert len(rows)==3 and all(s['complete'] for s in summaries)
         return (-sum(s['success_count'] for s in summaries),sum(s['mean_yaw_score_deg'] for s in summaries))
-    eligible={n:rows for n,rows in groups.items() if len(rows)==3 and all(r['records'][-1]['summary']['complete'] and r['records'][-1]['summary']['success_count']>=30 for r in rows) and sum(r['records'][-1]['summary']['success_count'] for r in rows)>=93}
+    eligible={n:rows for n,rows in groups.items() if len(rows)==3 and all(r['selected']['summary']['complete'] and r['selected']['summary']['success_count']>=30 for r in rows) and sum(r['selected']['summary']['success_count'] for r in rows)>=93}
     assert eligible,'没有配置达到三种子成功率准入门，禁止清理旧基线'
     length=min(eligible,key=lambda n:rank(eligible[n]));rows=eligible[length]
-    summaries=[r['records'][-1]['summary'] for r in rows]
+    summaries=[r['selected']['summary'] for r in rows]
     # 旧CPU已有31/32；先守住成功率，再比较偏航。未过门不清理旧模型。
     assert min(s['success_count'] for s in summaries)>=30 and sum(s['success_count'] for s in summaries)>=93,'1024候选尚未达到旧CPU成功率参照'
-    chosen=min(rows,key=lambda r:selection_key(r['records'][-1]['summary']))
-    origin=Path(chosen.get('run_directory',str(source/f"rollout_{length}_seed_{chosen['seed']}")))/f"step_{chosen['policy_steps']}"
+    chosen=min(rows,key=lambda r:selection_key(r['selected']['summary']))
+    origin=Path(chosen['selected']['path'])
     output.mkdir(parents=True,exist_ok=False);(output/'bootstrap').mkdir()
     for ext in ('.zip','.pkl'):shutil.copy2(str(origin)+ext,output/'bootstrap'/('policy'+ext))
     source_paths=[Path(__file__),ROOT/'wheelleg_warp/benchmark_parallel.py',ROOT/'wheelleg_warp/dashboard/live_env.py']+list((ROOT/'wheelleg_warp/native').glob('*.py'))
     hashes={k:v for k,v in json.loads((ROOT/'wheelleg_warp/CPU_REFERENCE.json').read_text())['source_sha256'].items() if k!='wheelleg_ppo/tools/resume_yaw.py'}
     hashes.update({str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in source_paths})
-    protocol=dict(created=datetime.now().astimezone().isoformat(),name='native-1024-formal-v1',environments=1024,
+    protocol=dict(created=datetime.now().astimezone().isoformat(),name='native-1024-formal-v1',phase='formal_training',environments=1024,
         n_steps=length,policy_device='cpu',physics_device='cuda:0',seed=chosen['seed'],max_rounds=10,patience=3,
-        meaningful_yaw_improvement=.005,steps_per_round=2048000,inherited_steps=chosen['policy_steps'],
-        bootstrap_summary=chosen['records'][-1]['summary'],bootstrap_source=str(origin),
+        meaningful_yaw_improvement=.005,steps_per_round=2048000,inherited_steps=chosen['selected']['policy_steps'],
+        bootstrap_summary=chosen['selected']['summary'],bootstrap_source=str(origin),
         development_cases=comparison['protocol']['development_cases'],
         final_cases=[dict(seed=s,scenario=asdict(sample_scenario('test_iid',s,3))) for s in range(95000,95064)],
         selection='开发集成功数优先，完整轨迹Jpsi次之；任何严格改善保留最佳，停滞以成功数增加或相对锚点Jpsi降低0.5%计',
         stopping='连续3轮无实质改善或最多10轮；最终保留集只在停止后评估一次，不据此重选模型或继续训练',
-        environment_protocol='每轮独立1024个stage3训练场景；回合内/本轮场景固定，下轮重新抽样；恢复策略、优化器和归一化，重置环境及随机流',
+        environment_protocol='每轮从开发集最佳检查点恢复策略、优化器和归一化；独立抽样1024个stage3场景，重置环境和随机流；中点和末点评估并保留优胜，回退不把已消耗训练步数抹掉',
         exact_trajectory_resume=False,source_sha256=hashes,
         known_limitations=['开发集反复用于选模，不冒充最终泛化成绩','历史CPU/GPU物理全状态等价门未全通过','不能保证全局最优，只报告固定预算和停止规则下的最佳检查点'])
     write(output/'protocol.json',protocol)
@@ -71,35 +72,41 @@ class Progress(BaseCallback):
         super().__init__();self.output=output;self.directory=directory;self.p=p;self.round=round_index;self.start=round_start;self.started=started
     def _on_step(self):return True
     def _on_rollout_start(self):
-        row=dict(status='training',round=self.round,policy_steps=self.num_timesteps,new_steps=self.num_timesteps-self.p['inherited_steps'],
+        row=dict(status='training',round=self.round,policy_steps=self.num_timesteps,new_steps=(self.round-1)*self.p['steps_per_round']+self.num_timesteps-self.start,
             round_steps=self.num_timesteps-self.start,round_budget=self.p['steps_per_round'],updated=time.time(),
-            elapsed_round_seconds=time.perf_counter()-self.started,train_seconds=sum(t['seconds'] for t in self.model.timings),source_run=str(self.directory),pid=os.getpid())
+            updates=len(self.model.timings),elapsed_round_seconds=time.perf_counter()-self.started,train_seconds=sum(t['seconds'] for t in self.model.timings),source_run=str(self.directory),pid=os.getpid())
         write(self.directory/'progress.json',row);write(self.output/'status.json',row)
 
 
 def run_round(output,round_index):
     p=protocol(output);directory=output/f'round_{round_index:03d}';directory.mkdir(exist_ok=False)
-    previous=output/'bootstrap/policy' if round_index==1 else output/f'round_{round_index-1:03d}/last'
+    previous=Path(json.loads((output/'selection.json').read_text())['best']['path'])
     from native.live import LiveNativeEnv
     torch.set_num_threads(1);started=time.perf_counter()
     model=TimedPPO.load(str(previous)+'.zip',device='cpu');model.timings=[];round_start=model.num_timesteps
-    raw=LiveNativeEnv(directory/'live',start_steps=round_start,n=1024,stage=3,seed=800000+round_index*1024)
+    raw=LiveNativeEnv(directory/'live',start_steps=p['inherited_steps']+(round_index-1)*p['steps_per_round'],n=1024,stage=3,seed=800000+round_index*1024,phase=p.get('phase','formal_training'))
     env=VecNormalize.load(str(previous)+'.pkl',VecCheckNan(raw,raise_exception=True));env.training=True;env.norm_reward=False
     model.set_env(env);model.set_random_seed(p['seed']+round_index*100003)
     write(directory/'run_config.json',dict(round=round_index,stage=3,start_policy_steps=round_start,
         train_bank_seed=800000+round_index*1024,exploration_seed=p['seed']+round_index*100003,resume_from=str(previous),exact_trajectory_resume=False))
     try:
-        start=time.perf_counter();model.learn(total_timesteps=p['steps_per_round'],reset_num_timesteps=False,
-            callback=Progress(output,directory,p,round_index,round_start,started));train_seconds=time.perf_counter()-start
-        assert model.num_timesteps==round_start+p['steps_per_round']
-        assert all(torch.isfinite(v).all() for v in model.policy.state_dict().values())
-        prefix=directory/'last';model.save(prefix);env.save(str(prefix)+'.pkl')
-        write(output/'status.json',dict(status='evaluating',round=round_index,new_steps=model.num_timesteps-p['inherited_steps'],
-            policy_steps=model.num_timesteps,source_run=str(directory),updated=time.time(),pid=os.getpid(),train_seconds=train_seconds))
-        rows=evaluate(model,str(prefix)+'.pkl','diff3',p['development_cases']);summary=summarize(rows,[c['seed'] for c in p['development_cases']])
-        protocol(output)
+        records=[];train_seconds=0.
+        for additional in (p['steps_per_round']//2,p['steps_per_round']):
+            start=time.perf_counter();model.learn(total_timesteps=round_start+additional-model.num_timesteps,reset_num_timesteps=False,
+                callback=Progress(output,directory,p,round_index,round_start,started));train_seconds+=time.perf_counter()-start
+            assert all(torch.isfinite(v).all() for v in model.policy.state_dict().values())
+            prefix=directory/f'step_{model.num_timesteps}';model.save(prefix);env.save(str(prefix)+'.pkl')
+            work=(round_index-1)*p['steps_per_round']+model.num_timesteps-round_start
+            write(output/'status.json',dict(status='evaluating',round=round_index,new_steps=work,
+                policy_steps=model.num_timesteps,round_steps=model.num_timesteps-round_start,source_run=str(directory),updated=time.time(),pid=os.getpid(),updates=len(model.timings),train_seconds=train_seconds))
+            rows=evaluate(model,str(prefix)+'.pkl','diff3',p['development_cases']);summary=summarize(rows,[c['seed'] for c in p['development_cases']])
+            record=dict(policy_steps=model.num_timesteps,summary=summary,path=str(prefix),train_seconds=train_seconds,round_steps=model.num_timesteps-round_start,runs=rows)
+            write(directory/(prefix.name+'.json'),record);records.append(record)
+        assert model.num_timesteps==round_start+p['steps_per_round'];protocol(output)
+        selected=min(records,key=lambda r:selection_key(r['summary']))
         write(directory/'completed.json',dict(passed=True,round=round_index,policy_steps=model.num_timesteps,train_seconds=train_seconds,
-            total_seconds=time.perf_counter()-started,summary=summary,runs=rows,path=str(prefix),updates=len(model.timings)))
+            total_seconds=time.perf_counter()-started,summary=selected['summary'],runs=selected['runs'],path=selected['path'],
+            last_summary=records[-1]['summary'],last_path=records[-1]['path'],records=records,updates=len(model.timings)))
     except Exception as exc:write(directory/'failed.json',dict(error=repr(exc),policy_steps=model.num_timesteps));raise
     finally:env.close()
 
@@ -134,4 +141,8 @@ if __name__=='__main__':
     a=parser.parse_args()
     if a.command=='init':initialize(a.output.resolve(),a.source.resolve())
     elif a.command=='round':run_round(a.output.resolve(),a.round)
-    else:orchestrate(a.output.resolve())
+    else:
+        try:orchestrate(a.output.resolve())
+        except Exception as exc:
+            path=a.output/'status.json';previous=json.loads(path.read_text()) if path.exists() else {}
+            write(path,{**previous,'status':'failed','error':repr(exc),'updated':time.time()});raise
