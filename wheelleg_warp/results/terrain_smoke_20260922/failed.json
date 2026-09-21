@@ -1,0 +1,8 @@
+{
+  "passed": false,
+  "stage": "budget_assertion",
+  "error": "test harness passed cumulative timesteps where Stable-Baselines3 expected additional timesteps with reset_num_timesteps=false",
+  "physics_error": false,
+  "weights_promoted": false,
+  "resolution": "fixed the admission harness and reran in terrain_smoke_fix_20260922"
+}

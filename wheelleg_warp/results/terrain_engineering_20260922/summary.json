@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "terrain_types": ["legacy", "ramp", "cross_slope", "rough", "step", "mixed"],
+  "uniform_topology": true,
+  "closed_loop_episodes": 6,
+  "episode_reasons": ["completed", "completed", "completed", "completed", "completed", "completed"],
+  "finite_observation_and_reward": true,
+  "invalid_action_rejected": true,
+  "stage3_legacy_fraction_1024": 0.306640625,
+  "existing_native_regression": {
+    "passed": true,
+    "padded_model_cpu_6s_equivalence": true,
+    "batched_model_step_max_qpos_error": 0.0,
+    "episodes_completed": 8
+  },
+  "scope": "engineering admission only; not learning convergence or OOD evidence"
+}

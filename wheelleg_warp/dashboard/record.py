@@ -35,9 +35,12 @@ def write(path,value):
 class View:
     def __init__(self,scenario,native=False):
         factory=build_model
-        if native:
+        scenario_type=Scenario
+        if native and 'terrain' in scenario:
+            from native.terrain import model as factory,TerrainScenario as scenario_type
+        elif native:
             from native.models import model as factory
-        self.model=factory(Scenario(**scenario));self.data=mujoco.MjData(self.model)
+        self.model=factory(scenario_type(**scenario));self.data=mujoco.MjData(self.model)
         self.model.vis.global_.offwidth=960;self.model.vis.global_.offheight=540
         self.model.mat_reflectance[:]=0
         self.model.vis.headlight.ambient[:]=[.3,.3,.3]
@@ -63,7 +66,7 @@ def replay(folder,target,webp=False):
         protocol=read(folder.parents[3]/'protocol.json') if len(folder.parents)>3 else None
     hashes=metadata.get('model_source_sha256') or (protocol or {}).get('source_sha256',{})
     for name,digest in hashes.items():
-        if (name.startswith('wheelleg_ppo/') or name=='wheelleg_warp/native/models.py') and hashlib.sha256((ROOT/name).read_bytes()).hexdigest()!=digest:
+        if (name.startswith('wheelleg_ppo/') or name.startswith('wheelleg_warp/native/')) and hashlib.sha256((ROOT/name).read_bytes()).hexdigest()!=digest:
             raise RuntimeError('模型/控制源码变化，先恢复归档版本再重放：'+name)
     if not hashes:raise RuntimeError('缺少原始模型源码指纹')
     view=View(metadata['scenario'],native=metadata.get('backend')=='native');images=[]
@@ -144,9 +147,10 @@ def watch():
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--replay',type=Path);p.add_argument('--output',type=Path);p.add_argument('--webp',action='store_true');p.add_argument('--run-root',type=Path)
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--replay',type=Path);p.add_argument('--output',type=Path);p.add_argument('--webp',action='store_true');p.add_argument('--run-root',type=Path);p.add_argument('--data-root',type=Path)
     args=p.parse_args()
     if args.run_root:RUN=args.run_root.resolve()
+    if args.data_root:DATA=args.data_root.resolve()
     if args.replay:
         target=args.output or args.replay/'reproduced_50.gif'
         try:print(replay(args.replay,target,args.webp),'frames',target,flush=True)

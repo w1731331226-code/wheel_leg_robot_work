@@ -3,7 +3,7 @@ from pathlib import Path
 import json,tempfile,threading,urllib.request,urllib.error
 import server
 with tempfile.TemporaryDirectory() as tmp:
-    root=Path(tmp);server.RUN=root/'run';server.RUN.mkdir();server.DATA=root/'data';server.DATA.mkdir()
+    root=Path(tmp);server.RUN=root/'run';server.RUN.mkdir();server.DATA=root/'data';server.DATA.mkdir();server.SELECTED=server.DATA/'selected_environment.json'
     state=server.status();assert state['current']['status']=='validating' and state['archives']==[]
     private=root/'private';private.write_text('secret');(server.DATA/'escape').symlink_to(private)
     (server.DATA/'clip.gif').write_bytes(b'GIF89a');server.STATE={'ok':True}

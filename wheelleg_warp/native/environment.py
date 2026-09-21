@@ -155,11 +155,11 @@ def reset_rows(mask:wp.array[int],q0:wp.array[float],q:wp.array2d[float],v:wp.ar
 
 
 class NativeEnv(VecEnv):
-    def __init__(self,n=128,stage=3,seed=730000,scenario=None):
+    def __init__(self,n=128,stage=3,seed=730000,scenario=None,bank_factory=bank):
         if not isinstance(n,int) or not 1 <= n <= 1024:raise ValueError('用户限制：批量环境数须为1～1024')
         wp.init();wp.set_device('cuda:0')
         self.num_envs=n;self.stage=stage
-        self.cpu,self.model,self.data,self.scenarios=bank(n,stage,seed,scenario)
+        self.cpu,self.model,self.data,self.scenarios=bank_factory(n,stage,seed,scenario)
         self.k=constants(self.cpu,n)
         ids=self.k['ids'].numpy().tolist()+[self.cpu.geom(x).id for x in ('wheel_collide_L','wheel_collide_R','bump_L','bump_R')]
         self.ids=wp.array(ids,dtype=wp.int32)

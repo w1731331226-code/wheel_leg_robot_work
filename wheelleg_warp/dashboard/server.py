@@ -6,6 +6,7 @@ from pathlib import Path
 from urllib.parse import unquote,urlparse
 ROOT=Path(__file__).resolve().parents[2];HERE=Path(__file__).resolve().parent
 RUN=ROOT/'wheelleg_warp/results/formal_native_1024_20260921';DATA=HERE/'local_data'
+SELECTED=HERE/'local_data/selected_environment.json'
 STATE={};LOCK=threading.Lock()
 
 
@@ -41,7 +42,7 @@ def status():
         if phase.get('checkpoint'):steps=int(Path(phase['checkpoint']).name.split('_')[-1])
         validation=dict(phase=phase.get('status'),current=phase.get('current'),policy_steps=steps,target=read(test/'protocol.json',{}).get('policy_steps',2048000))
     live=read(DATA/'live/native.json')
-    return dict(now=time.time(),current=current,validation=validation,requested_environment=read(DATA/'selected_environment.json',{'environment':0}).get('environment',0),protocol={k:p.get(k) for k in ('environments','n_steps','max_rounds','patience','steps_per_round','inherited_steps','bootstrap_summary')},
+    return dict(now=time.time(),current=current,validation=validation,requested_environment=read(SELECTED,{'environment':0}).get('environment',0),protocol={k:p.get(k) for k in ('name','environments','n_steps','max_rounds','patience','steps_per_round','inherited_steps','bootstrap_summary')},
         selection={**selection,'rounds':[{k:r[k] for k in ('round','summary','policy_steps','train_seconds','total_seconds','updates')} for r in selection['rounds']]},rate=rate,round_remaining_training_seconds=eta,live=live,archives=archives,
         final_evaluation=read(RUN/'final_evaluation.json'),run_directory=str(RUN))
 
@@ -66,7 +67,7 @@ class Handler(BaseHTTPRequestHandler):
             index=json.loads(self.rfile.read(length))['environment']
             if type(index) is not int or not 0<=index<1024:raise ValueError('environment')
         except (ValueError,KeyError,TypeError):return self.send_error(400)
-        path=DATA/'selected_environment.json';DATA.mkdir(parents=True,exist_ok=True)
+        path=SELECTED;path.parent.mkdir(parents=True,exist_ok=True)
         with LOCK:
             temp=path.with_suffix('.tmp');temp.write_text(json.dumps({'environment':index}));temp.replace(path)
         return self.send_bytes(json.dumps({'environment':index}).encode(),'application/json')
@@ -135,7 +136,9 @@ class Handler(BaseHTTPRequestHandler):
 
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('--port',type=int,default=8765);a=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--port',type=int,default=8765);parser.add_argument('--run-root',type=Path);parser.add_argument('--data-root',type=Path);a=parser.parse_args()
+    if a.run_root:RUN=a.run_root.resolve()
+    if a.data_root:DATA=a.data_root.resolve()
     DATA.mkdir(parents=True,exist_ok=True);STATE=status()
     threading.Thread(target=collect,daemon=True).start()
     ThreadingHTTPServer(('127.0.0.1',a.port),Handler).serve_forever()
