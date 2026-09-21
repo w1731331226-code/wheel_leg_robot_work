@@ -347,3 +347,11 @@
 - `wheelleg_warp/results/formal_cpu_warp_fast_v1_20260921/warp_1609/step_40000.zip`
 
 - 录像连续刷新时同步切换图像资源与来源标签，避免新录像标签仍对应旧图像；该前端修正不改训练入口或物理。
+
+### 自动同步快照 2026-09-21T08:31:12+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1.log`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_1100000.pkl`
+- `wheelleg_ppo/tools/results/pilot_v2_M3_seed1609_resume1/step_1100000.zip`
