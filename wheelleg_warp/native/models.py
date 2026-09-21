@@ -47,6 +47,15 @@ def batch(cpu,scenarios):
     seed_data=mujoco.MjData(cpu[0]);mujoco.mj_resetDataKeyframe(cpu[0],seed_data,cpu[0].keyframe('stand').id)
     mujoco.mj_forward(cpu[0],seed_data)
     data=mjw.put_data(cpu[0],seed_data,nworld=n,nconmax=64,njmax=256)
+    # MuJoCo Warp initializes world-body geoms once from cpu[0] and deliberately
+    # skips them in later kinematics, so seed every world's static poses here.
+    body=cpu[0].geom_bodyid;static=(cpu[0].body_weldid[body]==0)&(cpu[0].body_mocapid[cpu[0].body_rootid[body]]==-1)
+    xpos=data.geom_xpos.numpy();xmat=data.geom_xmat.numpy()
+    for world,m in enumerate(cpu):
+        xpos[world,static]=m.geom_pos[static]
+        for geom in np.flatnonzero(static):
+            matrix=np.empty(9);mujoco.mju_quat2Mat(matrix,m.geom_quat[geom]);xmat[world,geom]=matrix.reshape(3,3)
+    data.geom_xpos.assign(xpos);data.geom_xmat.assign(xmat)
     return cpu[0],template,data,scenarios
 
 

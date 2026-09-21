@@ -3,6 +3,7 @@ from pathlib import Path
 import sys
 sys.path[:0]=[str(Path(__file__).resolve().parents[1]),str(Path(__file__).resolve().parents[2]/'wheelleg_ppo/tools')]
 import numpy as np
+import mujoco
 import warp as wp
 import mujoco_warp as mjw
 from mujoco_warp._src.types import vec5
@@ -39,6 +40,9 @@ def reduce_contacts(ncon:wp.array[int],world:wp.array[int],geom:wp.array[wp.vec2
     if a!=ids[11] and a!=ids[12] and b!=ids[11] and b!=ids[12]:wp.atomic_or(flags,w,0,1)
     if a==ids[13] or b==ids[13]:wp.atomic_or(flags,w,1,1)
     if a==ids[14] or b==ids[14]:wp.atomic_or(flags,w,1,2)
+    terrain=(a>=ids[15] and a<=ids[16]) or (b>=ids[15] and b<=ids[16])
+    if terrain and (a==ids[11] or b==ids[11]):wp.atomic_or(flags,w,1,4)
+    if terrain and (a==ids[12] or b==ids[12]):wp.atomic_or(flags,w,1,8)
 
 
 @wp.kernel
@@ -123,7 +127,7 @@ def after(qpos:wp.array2d[float],qvel:wp.array2d[float],sensors:wp.array2d[float
     state[w,18]=state[w,18]+diag[w,13]
     if reason:
         done[w]=reason;active[w]=0
-        success=reason==5 and (touch&int(param[w,5]))==int(param[w,5]) and wp.max(state[w,8],wp.max(state[w,9],state[w,10]))<=D(.08726646259971647) and state[w,5]>D(0)
+        success=reason==5 and (touch&int(param[w,5]))==int(param[w,5]) and (touch&int(param[w,6]))==int(param[w,6]) and wp.max(state[w,8],wp.max(state[w,9],state[w,10]))<=D(.08726646259971647) and state[w,5]>D(0)
         if state[w,5]>D(0):success=success and wp.sqrt(state[w,4]/state[w,5])<=D(.2)*wp.abs(param[w,0])
         success=success and state[w,6]<=D(.6) and state[w,7]<=D(.03)
         state[w,19]=D(0)
@@ -162,13 +166,16 @@ class NativeEnv(VecEnv):
         self.cpu,self.model,self.data,self.scenarios=bank_factory(n,stage,seed,scenario)
         self.k=constants(self.cpu,n)
         ids=self.k['ids'].numpy().tolist()+[self.cpu.geom(x).id for x in ('wheel_collide_L','wheel_collide_R','bump_L','bump_R')]
+        terrain=mujoco.mj_name2id(self.cpu,mujoco.mjtObj.mjOBJ_GEOM,'terrain_00')
+        ids += [terrain,mujoco.mj_name2id(self.cpu,mujoco.mjtObj.mjOBJ_GEOM,'terrain_15')] if terrain>=0 else [-1,-1]
         self.ids=wp.array(ids,dtype=wp.int32)
         p=[]
-        self.required_contact_masks=[]
+        self.required_contact_masks=[];self.required_terrain_contact_masks=[]
         for s in self.scenarios:
             goal=s.center+abs(s.offset)/2+.75
-            required=(1 if s.height_l else 0)|(2 if s.height_r else 0);self.required_contact_masks.append(required)
-            p.append([s.speed,np.sign(s.speed),goal,1.5+1.5*goal/abs(s.speed),round(s.delay_ms*2),required])
+            required=(1 if s.height_l else 0)|(2 if s.height_r else 0);terrain=12 if getattr(s,'terrain','legacy')!='legacy' else 0
+            self.required_contact_masks.append(required);self.required_terrain_contact_masks.append(terrain)
+            p.append([s.speed,np.sign(s.speed),goal,1.5+1.5*goal/abs(s.speed),round(s.delay_ms*2),required,terrain])
         self.param=wp.array(p,dtype=D);self.command=wp.zeros(n,dtype=D)
         self.active=wp.ones(n,dtype=wp.int32);self.done=wp.zeros(n,dtype=wp.int32)
         self.state=wp.zeros((n,21),dtype=D);self.diag=wp.zeros((n,15),dtype=D)
@@ -220,7 +227,10 @@ class NativeEnv(VecEnv):
                     rms_deg=(np.sqrt(states[i,11:14]/max(states[i,0]*.0005,.0005))*180/np.pi).tolist(),
                     velocity_rmse=float(np.sqrt(states[i,4]/states[i,5])) if states[i,5]>0 else None,stop_distance_m=float(states[i,6]),tail_speed_m_s=float(states[i,7]),success=bool(states[i,19]),
                     duration_s=states[i,0]*.0005,episode=dict(r=float(states[i,20]),l=int(np.ceil(states[i,0]/40))),peak_deg=(states[i,8:11]*180/np.pi).tolist(),TimeLimit_truncated=int(reasons[i])==6)
-                infos[i]['required_contact_mask']=self.required_contact_masks[i];infos[i]['touched_contact_mask']=int(states[i,14])
+                touched=int(states[i,14]);required_terrain=self.required_terrain_contact_masks[i]
+                infos[i]['required_contact_mask']=self.required_contact_masks[i];infos[i]['touched_contact_mask']=touched&3
+                infos[i]['required_terrain_contact_mask']=required_terrain;infos[i]['touched_terrain_contact_mask']=touched&12
+                infos[i]['terrain_passed']=int(reasons[i])==5 and (touched&required_terrain)==required_terrain
                 infos[i]['TimeLimit.truncated']=int(reasons[i])==6
             self.mask.assign(done.astype(np.int32));wp.launch(reset_rows,self.num_envs,self.reset_args)
             refreshed=self.obs.numpy();obs[done]=refreshed[done]
