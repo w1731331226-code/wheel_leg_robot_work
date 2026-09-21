@@ -4,13 +4,13 @@ let displayCount=0,displayWindow=performance.now(),displayFPS=0,lastDisplayed=0;
 const names={validating:'收敛准入验证',ready:'准备就绪',initializing:'初始化本轮场景',training:'训练中',evaluating:'开发集评估',final_evaluation:'独立终评',completed:'已完成',failed:'需要检查',interrupted:'已中断'};
 const duration=s=>s==null?'等待有效进度':s<60?`${Math.ceil(s)} 秒`:`${(s/60).toFixed(1)} 分钟`;
 function meta(m){
- $('source').textContent=m.phase==='formal_training'?'LIVE · 正式训练原始帧':m.phase==='preflight_training'?'预检 PPO · 原始训练帧':m.phase==='validation_training'?'准入续训 · 原始训练帧':'工程采集预检';
+ $('source').textContent=activePhase==='completed'?'FINAL SNAPSHOT · 正式训练最后实帧':m.phase==='formal_training'?'LIVE · 正式训练原始帧':m.phase==='preflight_training'?'预检 PPO · 原始训练帧':m.phase==='validation_training'?'准入续训 · 原始训练帧':'工程采集预检';
  $('episode').textContent=`ENV ${m.environment_index} / ${m.environments} · EP ${m.episode} · FRAME ${m.frame}`;
  $('sim').textContent=`仿真 ${m.simulation_seconds.toFixed(3)} s · ${num(m.sample_steps)} 策略步`;
  $('lag').textContent=`源状态延迟 ${Math.max(0,Date.now()/1000-m.wall_time).toFixed(1)} s`;
  $('fps').textContent=`${displayFPS.toFixed(1)} FPS / 400 Hz`;
  $('reward-label').textContent='当前回合累计奖励';$('reward').textContent=Number(m.cumulative_reward??0).toFixed(3);
- $('stream-status').textContent=m.environment_index===chosenEnvironment?(names[activePhase]??activePhase):`等待环境 ${chosenEnvironment} 的新帧`;
+ $('stream-status').textContent=activePhase==='completed'?'训练已完成 · 最后实帧':m.environment_index===chosenEnvironment?(names[activePhase]??activePhase):`等待环境 ${chosenEnvironment} 的新帧`;
 }
 async function frames(){
  const tick=performance.now();
@@ -41,7 +41,7 @@ function chart(id,points,percentage){
  $(id).innerHTML=html;
 }
 function update(s){
- const c=s.current,p=s.protocol,selection=s.selection;activePhase=c.status;chosenEnvironment=s.requested_environment??chosenEnvironment;if(document.activeElement!==$('environment'))$('environment').value=chosenEnvironment;
+ const c=s.current,p=s.protocol,selection=s.selection;activePhase=c.status;chosenEnvironment=c.status==='completed'&&s.live?s.live.environment_index:(s.requested_environment??chosenEnvironment);if(document.activeElement!==$('environment'))$('environment').value=chosenEnvironment;
  if(s.validation){const v=s.validation;$('notice-body').textContent=`1024准入验证：${v.current??v.phase??'准备中'} · 最近完成 ${num(v.policy_steps)} / ${num(v.target)} 步。下方显示带来源标签的真实采样帧，正式启动后接入正式训练流。`;}else{$('notice-body').textContent='总览包含全部1024个训练世界，点击任意格子查看真实3D详情。详情采集400 Hz，显示目标50 FPS；评估期间可能暂停。';}
  $('phase').textContent=names[c.status]??c.status;$('connection').textContent='本机数据已连接';$('updated').textContent=new Date(s.now*1000).toLocaleTimeString('zh-CN');
  $('round').textContent=`${c.round??0} / ${p.max_rounds??10}`;$('stop-rule').textContent=`停滞 ${selection.stagnant_rounds??0} / ${p.patience??3} 轮`;

@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "rounds_completed": 6,
+  "new_policy_steps": 12288000,
+  "stop_reason": "plateau_after_3_stagnant_rounds",
+  "best_round": 3,
+  "best_checkpoint_phase": "midpoint",
+  "development": {
+    "total": 32,
+    "success_count": 32,
+    "mean_yaw_score_deg": 0.9399237315801979
+  },
+  "final_iid": {
+    "used_for_selection": false,
+    "total": 64,
+    "success_count": 60,
+    "mean_yaw_score_deg": 0.9371690106154231,
+    "failure_count": 4,
+    "failure_note": "all completed; peak yaw exceeded the frozen 5 degree success gate"
+  },
+  "services": {
+    "training": "inactive_success",
+    "dashboard": "active",
+    "renderer": "stopped_after_training"
+  },
+  "scope": "best under the frozen budget, development ranking and stopping rule; not a global optimum or hardware-safety claim"
+}
