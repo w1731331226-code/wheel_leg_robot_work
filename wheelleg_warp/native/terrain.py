@@ -8,6 +8,8 @@ from native.models import build_spec,compile_spec,batch
 
 TERRAINS=('legacy','ramp','cross_slope','rough','step','mixed')
 V3_TERRAINS=TERRAINS+('rolling_slope','multi_step','split_level')
+ADVANCED_TERRAINS=('single_side_ramp','asymmetric_rough')
+V4_TERRAINS=V3_TERRAINS+ADVANCED_TERRAINS
 TERRAIN_GEOMS=16
 
 
@@ -23,7 +25,7 @@ class TerrainScenario(Scenario):
     def __post_init__(self):
         # Reuse the frozen base validation without passing terrain's string fields into it.
         Scenario(**{name:getattr(self,name) for name in Scenario.__dataclass_fields__})
-        if self.terrain not in V3_TERRAINS or not -5<=self.grade_deg<=5 or not 0<=self.roughness_m<=.012 or not 0<=self.step_height_m<=.03:
+        if self.terrain not in V4_TERRAINS or not -5<=self.grade_deg<=5 or not 0<=self.roughness_m<=.012 or not 0<=self.step_height_m<=.03:
             raise ValueError('地形参数超出terrain-v1冻结范围')
 
 
@@ -66,6 +68,21 @@ def sample_terrain_v3(seed,stage=3,split='train'):
     if terrain in ('ramp','rolling_slope'):grade=float(rng.uniform(*limits))
     elif terrain in ('cross_slope','split_level'):grade=float(rng.choice((-1,1))*rng.uniform(*limits))
     if terrain in ('rough','mixed'):rough=float(rng.uniform(.006,.010) if split=='ood' else rng.uniform(.002,.006))
+    if terrain=='step':step=float(rng.uniform(.020,.030) if split=='ood' else rng.uniform(.005,.020))
+    elif terrain=='multi_step':step=float(rng.uniform(.008,.012) if split=='ood' else rng.uniform(.004,.008))
+    elif terrain=='split_level':step=float(.3*math.tan(math.radians(abs(grade))))
+    return TerrainScenario(**values,terrain=terrain,grade_deg=grade,roughness_m=rough,step_height_m=step,terrain_seed=int(seed),relative_attitude=True)
+
+
+def sample_terrain_v4(seed,split='development'):
+    if split not in ('train','development','ood'):raise ValueError('无效terrain-v4划分')
+    base=sample_scenario('train',seed,3);rng=np.random.default_rng(np.random.SeedSequence([int(seed),103091,{'train':1,'development':2,'ood':3}[split]]));terrain=str(rng.choice(V4_TERRAINS))
+    values=asdict(base)
+    if terrain not in ('legacy','mixed'):values.update(height_l=0.,height_r=0.)
+    limit=(3.,5.) if split=='ood' else (1.,3.);grade=0.;rough=0.;step=0.
+    if terrain in ('ramp','rolling_slope'):grade=float(rng.uniform(*limit))
+    elif terrain in ('cross_slope','split_level','single_side_ramp'):grade=float(rng.choice((-1,1))*rng.uniform(*limit))
+    if terrain in ('rough','mixed','asymmetric_rough'):rough=float(rng.uniform(.006,.010) if split=='ood' else rng.uniform(.002,.006))
     if terrain=='step':step=float(rng.uniform(.020,.030) if split=='ood' else rng.uniform(.005,.020))
     elif terrain=='multi_step':step=float(rng.uniform(.008,.012) if split=='ood' else rng.uniform(.004,.008))
     elif terrain=='split_level':step=float(.3*math.tan(math.radians(abs(grade))))
@@ -115,6 +132,16 @@ def model(s):
         high_right=s.grade_deg>0
         for i,(y,high) in enumerate(((-.09,not high_right),(.09,high_right))):
             height=s.step_height_m if high else .001;box(i,s.center,height/2,[.65,.09,height/2],y=y)
+    elif s.terrain=='single_side_ramp':
+        angle=math.radians(abs(s.grade_deg));run=.5;plateau=.3;height=run*math.sin(angle);y=.09 if s.grade_deg>0 else -.09;z=height/2-math.cos(angle)*thickness/2
+        box(0,s.center-plateau/2-run/2,z,[run/2,.09,thickness/2],_quat((0,1,0),-direction*angle),y)
+        box(1,s.center,height-thickness/2,[plateau/2,.09,thickness/2],y=y)
+        box(2,s.center+plateau/2+run/2,z,[run/2,.09,thickness/2],_quat((0,1,0),direction*angle),y)
+    elif s.terrain=='asymmetric_rough':
+        rng=np.random.default_rng(np.random.SeedSequence([s.terrain_seed,1089]))
+        for i,offset in enumerate(np.arange(-.42,.43,.12)):
+            for side,y in enumerate((-.09,.09)):
+                height=float(rng.uniform(.001,s.roughness_m));box(2*i+side,s.center+float(offset),height/2,[.061,.09,height/2],y=y)
     return compile_spec(spec,s)
 
 

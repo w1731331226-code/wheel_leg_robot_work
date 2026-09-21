@@ -3,7 +3,7 @@ from pathlib import Path
 import sys
 sys.path[:0]=[str(Path(__file__).resolve().parent),str(Path(__file__).resolve().parents[1]/'wheelleg_ppo/tools')]
 import numpy as np
-from native.terrain import TERRAINS,V3_TERRAINS,TerrainScenario,model,sample_terrain,sample_terrain_v3
+from native.terrain import ADVANCED_TERRAINS,TERRAINS,V3_TERRAINS,TerrainScenario,model,sample_terrain,sample_terrain_v3,sample_terrain_v4
 from native.terrain_env import TerrainEnv
 
 first=sample_terrain(12345,3);assert first==sample_terrain(12345,3)
@@ -28,6 +28,7 @@ for _ in range(450):
         assert infos[i]['attitude_mode']=='world'
         np.testing.assert_allclose(infos[i]['relative_peak_deg'],infos[i]['peak_deg'])
         assert infos[i]['terrain_passed']==(cases[i].terrain=='legacy' or infos[i]['touched_terrain_contact_mask']==12)
+        assert infos[i]['terrain_evidence_passed']==infos[i]['terrain_passed']
 assert len(finished)>=len(cases) and set(finished)=={'completed'}
 np.testing.assert_allclose(env.data.geom_xpos.numpy()[:,static],env.model.geom_pos.numpy()[:,static])
 try:env.step_async(np.full((len(cases),3),2,dtype=np.float32))
@@ -47,3 +48,13 @@ for _ in range(500):
         assert infos[i]['terrain_passed'] and infos[i]['touched_terrain_contact_mask']==12
 assert len(finished)>=len(new) and set(finished)=={'completed'}
 env.close();print('PASS terrain-v3',dict(types=list(V3_TERRAINS),episodes=len(finished)))
+
+advanced=[next(sample_terrain_v4(seed) for seed in range(50000,60000) if sample_terrain_v4(seed).terrain=='single_side_ramp' and sample_terrain_v4(seed).grade_deg>0),next(sample_terrain_v4(seed) for seed in range(50000,60000) if sample_terrain_v4(seed).terrain=='single_side_ramp' and sample_terrain_v4(seed).grade_deg<0),next(sample_terrain_v4(seed) for seed in range(50000,60000) if sample_terrain_v4(seed).terrain=='asymmetric_rough')]
+env=TerrainEnv(len(advanced),scenario=advanced);env.reset();finished=[]
+for _ in range(500):
+    _,_,done,infos=env.step(np.zeros((len(advanced),3),np.float32))
+    for i in np.flatnonzero(done):
+        finished.append(infos[i]['reason']);assert infos[i]['terrain_evidence_passed']
+        if advanced[i].terrain=='single_side_ramp':assert infos[i]['required_terrain_contact_mask']==(8 if advanced[i].grade_deg>0 else 4)
+assert len(finished)>=len(advanced) and set(finished)=={'completed'}
+env.close();print('PASS advanced terrain',dict(types=list(ADVANCED_TERRAINS),episodes=len(finished)))
