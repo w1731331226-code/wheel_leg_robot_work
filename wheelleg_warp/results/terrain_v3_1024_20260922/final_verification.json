@@ -1,0 +1,41 @@
+{
+  "status": "complete",
+  "backend": "MuJoCo Warp GPU cuda:0 with corrected per-world static geometry",
+  "rounds_completed": 6,
+  "new_policy_steps": 6144000,
+  "stop_reason": "plateau_after_3_stagnant_rounds",
+  "best_round": 3,
+  "best_checkpoint": "round_003/step_12324000",
+  "development": {
+    "terrain_success": "47/48",
+    "terrain_jpsi_deg": 0.5757992693371783,
+    "legacy_success": "16/16",
+    "legacy_jpsi_deg": 0.5513058729810999
+  },
+  "final_holdout": {
+    "used_for_selection": false,
+    "success": "47/64",
+    "complete_trajectories": "61/64",
+    "terrain_pass_evidence": "61/64",
+    "mean_yaw_score_deg": null,
+    "mixed": "15/15",
+    "rough": "7/7",
+    "ramp": "7/7",
+    "multi_step": "7/7",
+    "rolling_slope": "5/7",
+    "split_level": "3/7",
+    "step": "2/7",
+    "cross_slope": "1/7"
+  },
+  "failure_gates": {
+    "not_completed": 3,
+    "terrain_contact": 3,
+    "attitude_or_yaw": 17,
+    "velocity_rmse": 1
+  },
+  "legacy_final": {
+    "success": "16/16",
+    "mean_yaw_score_deg": 0.5452091589991417
+  },
+  "scope": "pure simulation; final holdout opened once after stopping and never used for selection"
+}
