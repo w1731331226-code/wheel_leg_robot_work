@@ -22,7 +22,7 @@ for i in range(12000):
     mjw.get_data_into(ref,m,gd);ref.contact.geom1[:]=ref.contact.geom[:,0];ref.contact.geom2[:]=ref.contact.geom[:,1]
     velocity=min(1.,max(0.,(i*.0005-1))) if i*.0005<4.5 else 0.
     st.cmd_vel=velocity;sim.control(m,ref,st,res);cmd.assign([velocity])
-    wp.launch(control,1,[gd.qpos,gd.qvel,gd.sensordata,target,cmd,active,k['state'],k['ids'],k['heights'],k['gains'],k['feed'],k['angles'],k['reference'],gd.ctrl,diag])
+    wp.launch(control,1,[gd.qpos,gd.qvel,gd.sensordata,target,cmd,active,k['state'],k['ids'],k['heights'],k['gains'],k['feed'],k['angles'],k['reference'],k['yaw'],gd.ctrl,diag])
     error=float(np.max(abs(ref.ctrl-gd.ctrl.numpy()[0])));peak=max(peak,error)
     if error>1e-4:
         print('MISMATCH',i,error,ref.ctrl,gd.ctrl.numpy()[0],flush=True);raise SystemExit(1)

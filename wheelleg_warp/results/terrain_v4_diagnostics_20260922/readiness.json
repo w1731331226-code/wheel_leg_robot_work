@@ -23,6 +23,7 @@
     "step_21mm_low_speed": "0/4 at 0.5m/s",
     "step_30mm": "0/12 with fall or nonwheel-contact failures"
   },
-  "next_action": "Sweep base yaw P/D gains and residual yaw authority on fresh development scenarios, then rerun legacy regression and the step capability gate.",
+  "yaw_gain_sweep_result": "Twelve configurations scanned; best development candidate failed independent validation and was rejected.",
+  "next_action": "Test slip-aware wheel-speed-difference feedback and speed-dependent yaw authority on fresh development scenarios, then rerun legacy regression and the step capability gate.",
   "holdout_policy": "Do not use terrain-v3 final holdout for tuning or terrain-v4 selection."
 }

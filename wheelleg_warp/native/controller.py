@@ -69,7 +69,7 @@ def allowed(speed:D,hip:bool):
 def control(qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.array2d[float],
             targets:wp.array2d[float],command:wp.array[D],active:wp.array[int],state:wp.array2d[D],
             ids:wp.array[int],heights:wp.array[D],gains:wp.array3d[D],feed:wp.array2d[D],angles:wp.array[D],
-            reference:wp.array[D],ctrl:wp.array2d[float],diagnostic:wp.array2d[D]):
+            reference:wp.array[D],yaw_cfg:wp.array[D],ctrl:wp.array2d[float],diagnostic:wp.array2d[D]):
     w=wp.tid()
     if active[w]==0:return
     dt=D(.0005);boot=state[w,0]+dt;state[w,0]=boot
@@ -147,7 +147,7 @@ def control(qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.array2d[floa
     tl=jl*V2(support+D(MASS)*(D(500)*(D(.3)+offset-left[3])-D(25)*rate_l),vl[1]+hub-average)
     tr=jr*V2(support+D(MASS)*(D(500)*(D(.3)-offset-right[3])-D(25)*rate_r),vr[1]+hub-average)
     yaw_torque=D(0)
-    if wp.abs(error)>=D(PI)/D(360) or wp.abs(state[w,8])>=D(.05):yaw_torque=wp.clamp(-D(.4)*error-D(2)*state[w,8],-D(.24)*D(MASS),D(.24)*D(MASS))
+    if wp.abs(error)>=D(PI)/D(360) or wp.abs(state[w,8])>=D(.05):yaw_torque=wp.clamp(-yaw_cfg[0]*error-yaw_cfg[1]*state[w,8],-yaw_cfg[2]*D(MASS),yaw_cfg[2]*D(MASS))
     base=V6(tl[0],tl[1],tr[0],tr[1],wheel+yaw_torque,wheel-yaw_torque)
     speeds=V6(va,vb,vc,vd,D(qvel[w,ids[8]]),D(qvel[w,ids[9]]))
     invalid_base=int(0);bad_control=bool(False)
@@ -162,7 +162,7 @@ def control(qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.array2d[floa
     for j in range(3):state[w,16+j]=state[w,16+j]+wp.clamp(D(targets[w,j])-state[w,16+j],D(-.01),D(.01))
     rr_l=jl*V2(state[w,16]*D(.1)*D(7)*D(9.81)/D(2),state[w,17])
     rr_r=jr*V2(-state[w,16]*D(.1)*D(7)*D(9.81)/D(2),-state[w,17])
-    residual=V6(rr_l[0],rr_l[1],rr_r[0],rr_r[1],state[w,18]*D(.3),-state[w,18]*D(.3))
+    residual=V6(rr_l[0],rr_l[1],rr_r[0],rr_r[1],state[w,18]*yaw_cfg[3],-state[w,18]*yaw_cfg[3])
     diagnostic[w,14]=D(0)
     if bad_control:diagnostic[w,14]=D(2)
     bad_map=bool(False)
@@ -191,7 +191,7 @@ def control(qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.array2d[floa
     diagnostic[w,12]=lam;diagnostic[w,13]=D(invalid_base)
 
 
-def constants(model,worlds):
+def constants(model,worlds,yaw_config=(.4,2.,.24,.3)):
     h,t,_,_=nominal_design()
     ids=[int(model.jnt_qposadr[model.joint(n).id]) for n in ('alphaL','betaL','alphaR','betaR')]
     ids += [int(model.jnt_dofadr[model.joint(n).id]) for n in ('alphaL','betaL','alphaR','betaR','wheel1','wheel2')]
@@ -199,5 +199,5 @@ def constants(model,worlds):
     state=np.zeros((worlds,19));state[:,1]=sim.L_STAND;state[:,12]=-1
     return dict(state=wp.array(state,dtype=D),ids=wp.array(ids,dtype=wp.int32),
         heights=wp.array(h,dtype=D),gains=wp.array(np.stack([r[0] for r in t]),dtype=D),
-        feed=wp.array(np.stack([r[1] for r in t]),dtype=D),angles=wp.array([r[2] for r in t],dtype=D),
+        feed=wp.array(np.stack([r[1] for r in t]),dtype=D),angles=wp.array([r[2] for r in t],dtype=D),yaw=wp.array(yaw_config,dtype=D),
         reference=wp.array(sim.ik(sim.L_STAND),dtype=D))

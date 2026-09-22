@@ -181,12 +181,13 @@ def reset_rows(mask:wp.array[int],q0:wp.array[float],q:wp.array2d[float],v:wp.ar
 
 
 class NativeEnv(VecEnv):
-    def __init__(self,n=128,stage=3,seed=730000,scenario=None,bank_factory=bank):
+    def __init__(self,n=128,stage=3,seed=730000,scenario=None,bank_factory=bank,yaw_config=(.4,2.,.24,.3)):
         if not isinstance(n,int) or not 1 <= n <= 1024:raise ValueError('用户限制：批量环境数须为1～1024')
         wp.init();wp.set_device('cuda:0')
         self.num_envs=n;self.stage=stage
         self.cpu,self.model,self.data,self.scenarios=bank_factory(n,stage,seed,scenario)
-        self.k=constants(self.cpu,n)
+        if len(yaw_config)!=4 or not np.isfinite(yaw_config).all() or min(yaw_config)<=0:raise ValueError('无效偏航控制参数')
+        self.yaw_config=tuple(float(x) for x in yaw_config);self.k=constants(self.cpu,n,self.yaw_config)
         ids=self.k['ids'].numpy().tolist()+[self.cpu.geom(x).id for x in ('wheel_collide_L','wheel_collide_R','bump_L','bump_R')]
         terrain=mujoco.mj_name2id(self.cpu,mujoco.mjtObj.mjOBJ_GEOM,'terrain_00')
         ids += [terrain,mujoco.mj_name2id(self.cpu,mujoco.mjtObj.mjOBJ_GEOM,'terrain_15')] if terrain>=0 else [-1,-1]
@@ -224,7 +225,7 @@ class NativeEnv(VecEnv):
             for _ in range(40):
                 wp.launch(command_step,n,[self.state,self.param,self.command,self.active,self.data.qpos,self.data.qvel,self.data.qacc_warmstart,self.stopped_q,self.stopped_v,self.stopped_w,self.contact_flags])
                 wp.launch(control,n,[self.data.qpos,self.data.qvel,self.data.sensordata,self.targets,self.command,self.active,
-                    self.k['state'],self.ids,self.k['heights'],self.k['gains'],self.k['feed'],self.k['angles'],self.k['reference'],self.data.ctrl,self.diag],block_dim=32)
+                    self.k['state'],self.ids,self.k['heights'],self.k['gains'],self.k['feed'],self.k['angles'],self.k['reference'],self.k['yaw'],self.data.ctrl,self.diag],block_dim=32)
                 mjw.step(self.model,self.data)
                 wp.launch(reduce_contacts,self.data.naconmax,[self.data.nacon,self.data.contact.worldid,self.data.contact.geom,self.ids,self.contact_flags])
                 wp.launch(after,n,[self.data.qpos,self.data.qvel,self.data.sensordata,self.data.qacc_warmstart,self.data.time,self.contact_flags,self.ids,self.param,self.command,self.state,self.k['state'],self.diag,
@@ -264,6 +265,7 @@ class NativeEnv(VecEnv):
                 infos[i]['attitude_mode']='terrain_relative' if self.relative_attitude[i] else 'world'
                 infos[i]['relative_peak_deg']=(states[i,21:24]*180/np.pi).tolist()
                 infos[i]['residual_limited_steps']=int(states[i,16]);infos[i]['mean_residual_lambda']=float(states[i,17]/max(states[i,0],1));infos[i]['base_infeasible_steps']=int(states[i,18])
+                infos[i]['yaw_config']=self.yaw_config
                 infos[i]['TimeLimit.truncated']=int(reasons[i])==6
             self.mask.assign(done.astype(np.int32));wp.launch(reset_rows,self.num_envs,self.reset_args)
             refreshed=self.obs.numpy();obs[done]=refreshed[done]

@@ -1,0 +1,26 @@
+{
+  "status": "not_ready_for_formal_training",
+  "formal_training_started": false,
+  "development_best_yaw_config": [0.8, 3.0, 0.24, 0.3],
+  "development": {
+    "default_success": "20/48",
+    "candidate_success": "21/48",
+    "default_complete": "45/48",
+    "candidate_complete": "47/48",
+    "default_yaw_p95_deg": 65.01555609125265,
+    "candidate_yaw_p95_deg": 21.48672347192424
+  },
+  "independent_validation": {
+    "default_yaw_success": "17/48",
+    "candidate_yaw_success": "17/48",
+    "default_yaw_complete": "47/48",
+    "candidate_yaw_complete": "46/48",
+    "default_legacy": "16/16",
+    "candidate_legacy": "16/16",
+    "default_step_15_21mm": "32/36",
+    "candidate_step_15_21mm": "29/36"
+  },
+  "decision": "reject_candidate",
+  "reason": "No independent yaw-success gain; completion and step capability regress.",
+  "next_action": "Test slip-aware wheel-speed-difference feedback and speed-dependent yaw authority on fresh development scenarios before any PPO training."
+}

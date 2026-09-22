@@ -5,8 +5,8 @@ from stable_baselines3.common.vec_env import VecNormalize
 from native.terrain_env import TerrainEnv
 
 
-def evaluate_terrain(model,normalization,cases):
-    raw=TerrainEnv(len(cases),scenario=cases)
+def evaluate_terrain(model,normalization,cases,env_kwargs=None):
+    raw=TerrainEnv(len(cases),scenario=cases,**(env_kwargs or {}))
     env=VecNormalize.load(str(normalization),raw);env.training=False;env.norm_reward=False
     stats=(env.obs_rms.mean.copy(),env.obs_rms.var.copy(),env.obs_rms.count);rows=[]
     try:
