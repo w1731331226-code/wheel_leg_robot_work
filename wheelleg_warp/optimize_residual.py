@@ -1,6 +1,6 @@
 """Small paired policy interventions; fixed geometry, commands, and success gates."""
 from pathlib import Path
-import argparse,hashlib,json,os,sys,time
+import argparse,json,os,sys,time
 from dataclasses import asdict,replace
 for key in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS'):os.environ[key]='1'
 ROOT=Path(__file__).resolve().parents[1]
@@ -10,7 +10,8 @@ import torch
 from stable_baselines3 import PPO
 from native.terrain import TerrainScenario,sample_terrain_v4
 from ppo_env import sample_scenario
-from terrain_eval import evaluate_terrain
+from terrain_eval import evaluate_terrain,validate_terrain_rows
+from training_contract import TASK_CONTRACT_VERSION,checkpoint_hashes,verify_checkpoint,source_hashes,verify_protocol
 from dashboard.live_env import atomic_json as write
 from stable_baselines3.common.vec_env import VecNormalize
 from stable_baselines3.common.logger import configure
@@ -42,10 +43,13 @@ def cases(start):
     return rows,labels
 
 def summary(rows,labels):
+    validate_terrain_rows(rows)
+    if len(rows)!=len(labels) or set(labels)-{'step','legacy','surface','advanced'}:
+        raise ValueError('评估场景与分组标签不匹配')
     result={}
     for label in ('step','legacy','surface','advanced'):
         rs=[r for r,k in zip(rows,labels) if k==label]
-        result[label]=dict(total=len(rs),success=sum(r['success'] and r['terrain_evidence_passed'] for r in rs),complete=sum(r['reason']=='completed' for r in rs),yaw_mean=float(np.mean([r['peak_deg'][2] for r in rs])))
+        result[label]=dict(total=len(rs),success=sum(r['success'] for r in rs),complete=sum(r['reason']=='completed' for r in rs),yaw_mean=float(np.mean([r['peak_deg'][2] for r in rs])) if rs else None)
     return result
 
 def evaluate(policy,norm,rows,labels):
@@ -67,7 +71,7 @@ def transferred_virtual6(source,env):
     return model
 
 def train(output):
-    protocol=json.loads((output/'protocol.json').read_text());ck=protocol['checkpoint']
+    protocol=verify_protocol(output,__file__);ck=protocol['checkpoint']
     dev=[TerrainScenario(**s) for s in protocol['development_cases']];labels=protocol['labels']
     # Optional training-only termination is explicit in the frozen protocol;
     # evaluation always uses complete trajectories and unchanged success gates.
@@ -90,14 +94,18 @@ def train(output):
     model.timings=[];model.set_random_seed(train_seed+1);start=model.num_timesteps
     try:
         for budget in (budget_total//2,budget_total):
+            verify_protocol(output,__file__,protocol)
             write(output/'status.json',dict(status='training',round=1,new_steps=model.num_timesteps-start))
             model.learn(total_timesteps=start+budget-model.num_timesteps,reset_num_timesteps=False)
             assert model.num_timesteps==start+budget and all(torch.isfinite(v).all() for v in model.policy.state_dict().values())
             prefix=directory/f'step_{budget}';model.save(prefix);env.save(str(prefix)+'.pkl')
+            artifacts=checkpoint_hashes(prefix)
             write(output/'status.json',dict(status='evaluating',round=1,new_steps=budget))
             result_rows=evaluate_terrain(model,str(prefix)+'.pkl',dev,dict(residual_mode=mode))
-            result=dict(summary=summary(result_rows,labels),runs=result_rows,checkpoint=str(prefix.resolve()),additional_steps=budget,updates=len(model.timings))
+            result=dict(summary=summary(result_rows,labels),runs=result_rows,checkpoint=str(prefix.resolve()),**artifacts,additional_steps=budget,updates=len(model.timings))
+            verify_protocol(output,__file__,protocol);verify_checkpoint(prefix,result)
             write(output/f'targeted_{budget}.json',result);print('targeted',budget,result['summary'],flush=True)
+        verify_protocol(output,__file__,protocol)
         write(output/'status.json',dict(status='completed',round=1,new_steps=budget_total,stop_reason='round_budget',promoted=False))
     except Exception as exc:
         write(output/'status.json',dict(status='failed',error=repr(exc)));raise
@@ -110,14 +118,14 @@ def prepare_feedback(output):
     protocol.update(training_budget_steps=1024000,train_seed=750000,residual_mode='diff3',holdout_evaluated=False,
         selection='Endpoint-only paired comparison; no promotion without >=20pp gain, success>=85%, complete>=95%, repeatability and no original regression.',
         common_fix='Task deadline is terminal in both arms; no TimeLimit bootstrap.',
-        source_sha256={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in
-            (Path(__file__),ROOT/'wheelleg_warp/native/environment.py',ROOT/'wheelleg_warp/native/controller.py',ROOT/'wheelleg_warp/native/terrain.py',ROOT/'wheelleg_warp/native/models.py')})
+        task_contract_version=TASK_CONTRACT_VERSION,source_sha256=source_hashes(__file__),**checkpoint_hashes(protocol['checkpoint']))
     for name,early in (('control',False),('early',True)):
         directory=output/name;directory.mkdir(parents=True,exist_ok=False)
         write(directory/'protocol.json',{**protocol,'terminate_on_attitude_failure':early})
     model=PPO.load(protocol['checkpoint']+'.zip',device='cpu')
     rows=[TerrainScenario(**s) for s in protocol['development_cases']]
     baseline=evaluate(model,protocol['checkpoint']+'.pkl',rows,protocol['labels'])
+    for name in ('control','early'):verify_protocol(output/name,__file__)
     write(output/'baseline.json',baseline);print('paired baseline',baseline['summary'],flush=True)
 
 if __name__=='__main__':
@@ -130,8 +138,10 @@ if __name__=='__main__':
     ck=Path(json.loads((ROOT/'wheelleg_warp/results/terrain_v3_1024_20260922/selection.json').read_text())['best']['path'])
     dev,labels=cases(600000)
     masks={'baseline':[1,1,1],'no_leg_force':[0,1,1],'no_leg_moment':[1,0,1],'no_wheel_yaw':[1,1,0],'zero_residual':[0,0,0]}
-    write(a.output/'protocol.json',dict(checkpoint=str(ck),checkpoint_sha256=hashlib.sha256(Path(str(ck)+'.zip').read_bytes()).hexdigest(),development_cases=[asdict(s) for s in dev],labels=labels,masks=masks,holdout_start=610000,holdout_evaluated=False,selection='step success gain with no legacy/surface/advanced success regression; repeat candidate before holdout',training_budget_steps=512000))
+    protocol=dict(checkpoint=str(ck),**checkpoint_hashes(ck),task_contract_version=TASK_CONTRACT_VERSION,source_sha256=source_hashes(__file__),development_cases=[asdict(s) for s in dev],labels=labels,masks=masks,holdout_start=610000,holdout_evaluated=False,selection='step success gain with no legacy/surface/advanced success regression; repeat candidate before holdout',training_budget_steps=512000)
+    write(a.output/'protocol.json',protocol);verify_protocol(a.output,__file__,protocol)
     model=PPO.load(str(ck)+'.zip',device='cpu')
     for name,mask in masks.items():
         start=time.perf_counter();r=evaluate(MaskedPolicy(model,mask),str(ck)+'.pkl',dev,labels);r.update(mask=mask,seconds=time.perf_counter()-start)
+        verify_protocol(a.output,__file__,protocol)
         write(a.output/(name+'.json'),r);print(name,r['summary'],flush=True)

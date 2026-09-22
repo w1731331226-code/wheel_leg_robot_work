@@ -5,7 +5,7 @@ import json,struct,time
 import numpy as np
 import warp as wp
 import mujoco_warp as mjw
-from native.environment import NativeEnv,begin,command_step,reduce_contacts,after
+from native.environment import NativeEnv,begin,command_step,reduce_contacts,after,TASK_CONTRACT_VERSION
 from native.controller import control,D
 from dashboard.live_env import atomic_json
 SELECTED=Path(__file__).resolve().parents[1]/'dashboard/local_data/selected_environment.json'
@@ -58,7 +58,7 @@ class LiveNativeEnv(NativeEnv):
                 wp.launch(control,n,[self.data.qpos,self.data.qvel,self.data.sensordata,self.targets,self.command,self.active,self.k['state'],self.ids,self.k['heights'],self.k['gains'],self.k['feed'],self.k['angles'],self.k['reference'],self.k['yaw'],self.data.ctrl,self.diag,int(self.project_clipped_base)],block_dim=32)
                 mjw.step(self.model,self.data)
                 wp.launch(reduce_contacts,self.data.naconmax,[self.data.nacon,self.data.contact.worldid,self.data.contact.geom,self.ids,self.contact_flags])
-                wp.launch(after,n,[self.data.qpos,self.data.qvel,self.data.sensordata,self.data.qacc_warmstart,self.data.time,self.contact_flags,self.ids,self.param,self.command,self.state,self.k['state'],self.diag,self.residual,self.active,self.done,self.reward,self.obs,self.history,self.stopped_q,self.stopped_v,self.stopped_w],block_dim=32)
+                wp.launch(after,n,[self.data.qpos,self.data.qvel,self.data.sensordata,self.data.qacc_warmstart,self.data.time,self.contact_flags,self.ids,self.param,self.command,self.state,self.k['state'],self.diag,self.residual,self.active,self.done,self.reward,self.obs,self.history,self.stopped_q,self.stopped_v,self.stopped_w,self.wheel_offsets],block_dim=32)
                 if i%5==4:wp.launch(snapshot,(2,self.width),[self.data.qpos,self.data.qvel,self.data.ctrl,self.state,self.obs,self.frames,self.select_array,i//5])
         self.graph=capture.graph
 
@@ -67,6 +67,7 @@ class LiveNativeEnv(NativeEnv):
             residual_scale=self.residual_scale,
             residual_mode=self.residual_mode,
             project_clipped_base=self.project_clipped_base,
+            task_contract_version=TASK_CONTRACT_VERSION,control_limit_scope='nominal_command',
             terminate_on_attitude_failure=self.terminate_on_attitude_failure,
             episode=int(self.episode_counts[index]),phase=self.phase,scenario=asdict(self.scenarios[index]),source_run=str(self.directory.parent),
             recorded_policy_hz=50,recorded_physics_hz=400,started=float(self.episode_started[index]),status='recording')

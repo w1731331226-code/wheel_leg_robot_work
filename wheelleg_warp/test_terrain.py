@@ -20,7 +20,7 @@ models=[model(x) for x in cases];assert len({(m.nq,m.nv,m.ngeom,m.nu) for m in m
 env=TerrainEnv(len(cases),scenario=cases);obs=env.reset();finished=[]
 static=env.cpu.geom('terrain_00').id
 np.testing.assert_allclose(env.data.geom_xpos.numpy()[:,static],env.model.geom_pos.numpy()[:,static])
-for _ in range(450):
+for _ in range(int(np.ceil(np.max(env.param.numpy()[:,3]+2)/.02))+1):
     obs,reward,done,infos=env.step(np.zeros((len(cases),3),np.float32))
     assert np.isfinite(obs).all() and np.isfinite(reward).all()
     for i in np.flatnonzero(done):
@@ -28,7 +28,8 @@ for _ in range(450):
         assert infos[i]['attitude_mode']=='world'
         np.testing.assert_allclose(infos[i]['relative_peak_deg'],infos[i]['peak_deg'])
         assert infos[i]['terrain_passed']==(cases[i].terrain=='legacy' or infos[i]['touched_terrain_contact_mask']==12)
-        assert infos[i]['terrain_evidence_passed']==infos[i]['terrain_passed']
+        assert infos[i]['terrain_evidence_passed']==(infos[i]['terrain_passed'] and infos[i]['terrain_exit_passed'])
+        assert not infos[i]['success'] or infos[i]['terrain_evidence_passed']
 assert len(finished)>=len(cases) and set(finished)=={'completed'}
 np.testing.assert_allclose(env.data.geom_xpos.numpy()[:,static],env.model.geom_pos.numpy()[:,static])
 try:env.step_async(np.full((len(cases),3),2,dtype=np.float32))
@@ -40,7 +41,7 @@ new=[]
 for name in V3_TERRAINS[1:]:
     new.append(next(sample_terrain_v3(seed,split='development') for seed in range(40000,50000) if sample_terrain_v3(seed,split='development').terrain==name))
 env=TerrainEnv(len(new),scenario=new);obs=env.reset();finished=[]
-for _ in range(500):
+for _ in range(int(np.ceil(np.max(env.param.numpy()[:,3]+2)/.02))+1):
     obs,reward,done,infos=env.step(np.zeros((len(new),3),np.float32))
     assert np.isfinite(obs).all() and np.isfinite(reward).all()
     for i in np.flatnonzero(done):
@@ -51,7 +52,7 @@ env.close();print('PASS terrain-v3',dict(types=list(V3_TERRAINS),episodes=len(fi
 
 advanced=[next(sample_terrain_v4(seed) for seed in range(50000,60000) if sample_terrain_v4(seed).terrain=='single_side_ramp' and sample_terrain_v4(seed).grade_deg>0),next(sample_terrain_v4(seed) for seed in range(50000,60000) if sample_terrain_v4(seed).terrain=='single_side_ramp' and sample_terrain_v4(seed).grade_deg<0),next(sample_terrain_v4(seed) for seed in range(50000,60000) if sample_terrain_v4(seed).terrain=='asymmetric_rough')]
 env=TerrainEnv(len(advanced),scenario=advanced);env.reset();finished=[]
-for _ in range(500):
+for _ in range(int(np.ceil(np.max(env.param.numpy()[:,3]+2)/.02))+1):
     _,_,done,infos=env.step(np.zeros((len(advanced),3),np.float32))
     for i in np.flatnonzero(done):
         finished.append(infos[i]['reason']);assert infos[i]['terrain_evidence_passed']

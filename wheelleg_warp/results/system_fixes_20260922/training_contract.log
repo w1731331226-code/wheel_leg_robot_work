@@ -1,0 +1,4 @@
+PASS: None scoring, incomplete rejection, per-case legacy veto, fallback, source/zip/pkl/protocol freezing
+PASS: v3 initializer re-evaluates source, incomplete initial score serializes, targeted training rejects stale input before physics
+PASS: actual-goal yaw normalization, legacy equality and invalid evidence/goal rejection
+PASS: both supervisors retain best but record current-round workload; dashboard status survives all-rejected rounds

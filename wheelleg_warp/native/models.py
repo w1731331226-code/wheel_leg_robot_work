@@ -37,6 +37,14 @@ def model(s):
 
 def batch(cpu,scenarios):
     """Batch identical model topology; callers only provide the per-world models."""
+    if not cpu or len(cpu)!=len(scenarios):raise ValueError('模型和场景必须非空且数量相同')
+    # Options are shared by this bank, even where Warp can represent arrays.
+    # Reject every mismatch rather than silently adopting world zero's solver.
+    option_names=[name for name in dir(cpu[0].opt) if not name.startswith('_') and not callable(getattr(cpu[0].opt,name))]
+    for world,m in enumerate(cpu[1:],1):
+        for name in option_names:
+            if not np.array_equal(getattr(m.opt,name),getattr(cpu[0].opt,name)):
+                raise ValueError(f'批量模型共享 opt.{name}，世界{world}与世界0不一致')
     n=len(cpu);batched=[f.name for f in fields(mjw.Model) if getattr(f.type,'shape',())[0:1]==('*',)]
     template=mjw.put_model(cpu[0],batch_sizes={k:n for k in batched})
     values={k:[] for k in batched}
@@ -44,6 +52,9 @@ def batch(cpu,scenarios):
         single=mjw.put_model(m)
         for k in batched:values[k].append(getattr(single,k).numpy()[0])
     for k,items in values.items():getattr(template,k).assign(np.stack(items))
+    # Nested Statistic fields are not covered by put_model(batch_sizes=...).
+    stat=template.stat.meaninertia
+    template.stat.meaninertia=wp.array([m.stat.meaninertia for m in cpu],dtype=stat.dtype,device=stat.device)
     seed_data=mujoco.MjData(cpu[0]);mujoco.mj_resetDataKeyframe(cpu[0],seed_data,cpu[0].keyframe('stand').id)
     mujoco.mj_forward(cpu[0],seed_data)
     data=mjw.put_data(cpu[0],seed_data,nworld=n,nconmax=64,njmax=256)

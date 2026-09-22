@@ -9,6 +9,7 @@ import mujoco_warp as mjw
 from mujoco_warp._src.types import vec5
 from native.controller import control,constants,D,fk,polar_jac
 from native.models import bank
+from training_contract import TASK_CONTRACT_VERSION
 from stable_baselines3.common.vec_env import VecEnv
 import gymnasium as gym
 
@@ -69,13 +70,28 @@ def attitude_passed(state:wp.array2d[D],param:wp.array2d[D],w:int):
     return passed
 
 
+@wp.func
+def rotate_y(point:wp.vec3d,angle:D):
+    c=wp.cos(angle);s=wp.sin(angle)
+    return wp.vec3d(c*point[0]+s*point[2],point[1],-s*point[0]+c*point[2])
+
+
+@wp.func
+def wheel_center(qpos:wp.array2d[float],ids:wp.array[int],offsets:wp.array3d[wp.vec3d],w:int,side:int):
+    # Use the actual passive-joint chain, not ideal closed-link FK or stale geom_xpos.
+    alpha=D(qpos[w,ids[2*side]]);passive=D(qpos[w,ids[17+side]])
+    local=offsets[w,side,0]+rotate_y(offsets[w,side,1],alpha)+rotate_y(offsets[w,side,2],alpha+passive)
+    rotation=wp.quatd(D(qpos[w,4]),D(qpos[w,5]),D(qpos[w,6]),D(qpos[w,3]))
+    return wp.vec3d(D(qpos[w,0]),D(qpos[w,1]),D(qpos[w,2]))+wp.quat_rotate(rotation,local)
+
+
 @wp.kernel
 def after(qpos:wp.array2d[float],qvel:wp.array2d[float],sensors:wp.array2d[float],
           warm:wp.array2d[float],clock:wp.array[float],contact_flags:wp.array2d[int],
           ids:wp.array[int],param:wp.array2d[D],cmd:wp.array[D],state:wp.array2d[D],controller_state:wp.array2d[D],
           diag:wp.array2d[D],last_residual:wp.array2d[D],active:wp.array[int],done:wp.array[int],
           reward:wp.array[D],obs:wp.array2d[float],history:wp.array3d[float],
-          stopped_q:wp.array2d[float],stopped_v:wp.array2d[float],stopped_w:wp.array2d[float]):
+          stopped_q:wp.array2d[float],stopped_v:wp.array2d[float],stopped_w:wp.array2d[float],wheel_offsets:wp.array3d[wp.vec3d]):
     w=wp.tid()
     if active[w]==0:
         for j in range(qpos.shape[1]):qpos[w,j]=stopped_q[w,j]
@@ -107,6 +123,11 @@ def after(qpos:wp.array2d[float],qvel:wp.array2d[float],sensors:wp.array2d[float
     if cmd[w]!=D(0):state[w,4]=state[w,4]+err*err*D(.0005);state[w,5]=state[w,5]+D(.0005)
     touch=int(state[w,14])|contact_flags[w,1];nonwheel=contact_flags[w,0]!=0
     state[w,14]=D(touch)
+    left_wheel=wheel_center(qpos,ids,wheel_offsets,w,0);right_wheel=wheel_center(qpos,ids,wheel_offsets,w,1)
+    state[w,24]=param[w,1]*left_wheel[0]-param[w,10];state[w,25]=param[w,1]*right_wheel[0]-param[w,10]
+    exited=int(param[w,6])==0 or wp.min(state[w,24],state[w,25])>=param[w,12]
+    state[w,26]=D(0)
+    if exited:state[w,26]=D(1)
     penalty=D(0)
     for j in range(6):
         scale=D(4.5)
@@ -116,7 +137,7 @@ def after(qpos:wp.array2d[float],qvel:wp.array2d[float],sensors:wp.array2d[float
         last_residual[w,j]=residual
     value=D(.0005)*(wp.exp(-(err/D(.25))*(err/D(.25)))-(roll_error*roll_error+pitch_error*pitch_error+yaw*yaw)/(D(.08726646)*D(.08726646))-penalty)
     reward[w]=reward[w]+value;state[w,20]=state[w,20]+value
-    if state[w,1]<D(0) and param[w,1]*D(qpos[w,0])>=param[w,2]:
+    if state[w,1]<D(0) and param[w,1]*D(qpos[w,0])>=param[w,2] and exited:
         state[w,1]=t;state[w,2]=D(qpos[w,0]);state[w,3]=D(qpos[w,1])
     if state[w,1]>=D(0):
         dx=D(qpos[w,0])-state[w,2];dy=D(qpos[w,1])-state[w,3]
@@ -124,7 +145,7 @@ def after(qpos:wp.array2d[float],qvel:wp.array2d[float],sensors:wp.array2d[float
         if t-state[w,1]>=D(1.5):state[w,7]=wp.max(state[w,7],wp.sqrt(D(qvel[w,0])*D(qvel[w,0])+D(qvel[w,1])*D(qvel[w,1])))
     next_cmd=param[w,0]*wp.clamp(t-D(1),D(0),D(1))
     if state[w,1]>=D(0):next_cmd=D(0)
-    slot=int(state[w,0])%21
+    slot=int(state[w,0])%history.shape[1]
     history[w,slot,0]=float(roll);history[w,slot,1]=float(pitch);history[w,slot,2]=float(yaw)
     for j in range(3):history[w,slot,3+j]=sensors[w,ids[10]+j]
     history[w,slot,6]=float(vx);history[w,slot,7]=float(-wp.sin(yaw)*D(qvel[w,0])+wp.cos(yaw)*D(qvel[w,1]));history[w,slot,8]=qvel[w,2]
@@ -140,7 +161,7 @@ def after(qpos:wp.array2d[float],qvel:wp.array2d[float],sensors:wp.array2d[float
         scale=D(4.5)
         if j<4:scale=D(40)
         history[w,slot,26+j]=float(diag[w,6+j]/scale)
-    delayed=(int(state[w,0])-int(param[w,4])+21)%21
+    delayed=(int(state[w,0])-int(param[w,4])+history.shape[1])%history.shape[1]
     for j in range(32):obs[w,j]=history[w,delayed,j]
     reason=int(0)
     if not wp.isfinite(qpos[w,0]) or not wp.isfinite(qpos[w,2]):reason=1
@@ -158,7 +179,10 @@ def after(qpos:wp.array2d[float],qvel:wp.array2d[float],sensors:wp.array2d[float
     if reason:
         done[w]=reason;active[w]=0
         attitude=attitude_passed(state,param,w)
-        success=reason==5 and (touch&int(param[w,5]))==int(param[w,5]) and (touch&int(param[w,6]))==int(param[w,6]) and attitude and state[w,5]>D(0)
+        terrain_passed=reason==5 and (touch&int(param[w,6]))==int(param[w,6])
+        state[w,27]=D(0)
+        if terrain_passed and exited:state[w,27]=D(1)
+        success=state[w,27]>D(0) and (touch&int(param[w,5]))==int(param[w,5]) and attitude and state[w,5]>D(0)
         if state[w,5]>D(0):success=success and wp.sqrt(state[w,4]/state[w,5])<=D(.2)*wp.abs(param[w,0])
         success=success and state[w,6]<=D(.6) and state[w,7]<=D(.03)
         state[w,19]=D(0)
@@ -186,7 +210,7 @@ def reset_rows(mask:wp.array[int],q0:wp.array[float],q:wp.array2d[float],v:wp.ar
     for j in range(targets.shape[1]):targets[w,j]=0.
     for j in range(32):
         obs[w,j]=obs0[w,j]
-        for t in range(21):history[w,t,j]=obs0[w,j]
+        for t in range(history.shape[1]):history[w,t,j]=obs0[w,j]
 
 
 class NativeEnv(VecEnv):
@@ -208,26 +232,47 @@ class NativeEnv(VecEnv):
         ids=self.k['ids'].numpy().tolist()+[self.cpu.geom(x).id for x in ('wheel_collide_L','wheel_collide_R','bump_L','bump_R')]
         terrain=mujoco.mj_name2id(self.cpu,mujoco.mjtObj.mjOBJ_GEOM,'terrain_00')
         ids += [terrain,mujoco.mj_name2id(self.cpu,mujoco.mjtObj.mjOBJ_GEOM,'terrain_15')] if terrain>=0 else [-1,-1]
+        ids += [int(self.cpu.jnt_qposadr[self.cpu.joint('passA_'+side).id]) for side in ('L','R')]
         self.ids=wp.array(ids,dtype=wp.int32)
         self.wheel_geom_ids=np.asarray(ids[11:13],dtype=int)
+        chains=[]
+        for side in ('L','R'):
+            bodies=[self.cpu.body(name).id for name in ('leg'+side,'kneeA_'+side,'wheel'+side)];chains.append(bodies)
+            if list(self.cpu.body_parentid[bodies[1:]])!=bodies[:2] or self.cpu.body_parentid[bodies[0]]!=self.cpu.jnt_bodyid[0]:raise ValueError('不支持的轮心关节链拓扑')
+            joints=[self.cpu.joint(name).id for name in ('alpha'+side,'passA_'+side)]
+            if not np.allclose(self.cpu.jnt_axis[joints],[0,1,0]) or not np.allclose(self.cpu.jnt_pos[joints],0):raise ValueError('轮心链需过原点的Y轴铰链')
+        if not np.allclose(self.model.body_quat.numpy()[:,chains],[1,0,0,0]):raise ValueError('轮心链需单位body旋转')
+        if not np.allclose(self.model.geom_pos.numpy()[:,self.wheel_geom_ids],0):raise ValueError('轮碰撞几何必须以轮轴为中心')
+        self.wheel_offsets=wp.array(self.model.body_pos.numpy()[:,chains],dtype=wp.vec3d)
+        # Actual world-aligned box extents, including rotated thickness and entry/exit ramps.
+        ends=[None]*n
+        if terrain>=0:
+            positions=self.data.geom_xpos.numpy()[:,ids[15]:ids[16]+1]
+            matrices=self.data.geom_xmat.numpy()[:,ids[15]:ids[16]+1]
+            sizes=self.model.geom_size.numpy()[:,ids[15]:ids[16]+1]
+            radii=np.sum(abs(matrices[:,:,0,:])*sizes,axis=-1)
+            for i,s in enumerate(self.scenarios):
+                if getattr(s,'terrain','legacy')=='legacy':continue
+                present=positions[i,:,2]>-1.
+                if not present.any():raise ValueError('目标地形没有有效几何')
+                ends[i]=float(np.max(np.sign(s.speed)*positions[i,present,0]+radii[i,present])-s.center)
         p=[]
         self.required_contact_masks=[];self.required_terrain_contact_masks=[];self.required_terrain_end=[];self.relative_attitude=[]
-        for s in self.scenarios:
+        for i,s in enumerate(self.scenarios):
             goal=s.center+abs(s.offset)/2+.75
-            transition=getattr(s,'transition_run_m',0.)
-            if transition:goal=max(goal,s.center+.65+transition+.15)
+            end=ends[i]
+            if end is not None:goal=max(goal,s.center+end+.15)
             required=(1 if s.height_l else 0)|(2 if s.height_r else 0);terrain=12 if getattr(s,'terrain','legacy')!='legacy' else 0
             if getattr(s,'terrain','legacy')=='single_side_ramp':terrain=8 if s.grade_deg>0 else 4
-            end={'ramp':.65,'cross_slope':.65,'rough':.721,'step':.25,'mixed':.35,'rolling_slope':.64,'multi_step':.55,'split_level':.65,'single_side_ramp':.65,'asymmetric_rough':.481}.get(getattr(s,'terrain','legacy'))
-            if transition:end+=transition
             relative=bool(getattr(s,'relative_attitude',False));kind={'ramp':1,'cross_slope':2,'rolling_slope':3,'split_level':4}.get(getattr(s,'terrain','legacy'),0)
             self.required_contact_masks.append(required);self.required_terrain_contact_masks.append(terrain);self.required_terrain_end.append(end);self.relative_attitude.append(relative)
-            p.append([s.speed,np.sign(s.speed),goal,1.5+1.5*goal/abs(s.speed),round(s.delay_ms*2),required,terrain,relative,kind,np.deg2rad(getattr(s,'grade_deg',0.)),s.center,terminate_on_attitude_failure])
+            p.append([s.speed,np.sign(s.speed),goal,1.5+1.5*goal/abs(s.speed),round(s.delay_ms*2),required,terrain,relative,kind,np.deg2rad(getattr(s,'grade_deg',0.)),s.center,terminate_on_attitude_failure,end or 0.])
+        self.task_goals=[row[2] for row in p]
         self.param=wp.array(p,dtype=D);self.command=wp.zeros(n,dtype=D)
         self.active=wp.ones(n,dtype=wp.int32);self.done=wp.zeros(n,dtype=wp.int32)
-        self.state=wp.zeros((n,24),dtype=D);self.diag=wp.zeros((n,15),dtype=D)
+        self.state=wp.zeros((n,28),dtype=D);self.diag=wp.zeros((n,15),dtype=D)
         self.residual=wp.zeros((n,6),dtype=D);self.reward=wp.zeros(n,dtype=D);self.contact_flags=wp.zeros((n,2),dtype=wp.int32)
-        self.obs=wp.zeros((n,32));self.history=wp.zeros((n,21,32))
+        self.obs=wp.zeros((n,32));self.history=wp.zeros((n,max(round(s.delay_ms*2) for s in self.scenarios)+1,32))
         self.targets=wp.zeros((n,self.action_dim));self.stopped_q=wp.zeros((n,self.cpu.nq));self.stopped_v=wp.zeros((n,self.cpu.nv));self.stopped_w=wp.zeros((n,self.cpu.nv))
         self.q0=wp.array(self.cpu.key_qpos[self.cpu.keyframe('stand').id],dtype=wp.float32)
         initial=np.zeros((n,32),dtype=np.float32)
@@ -249,7 +294,7 @@ class NativeEnv(VecEnv):
                 mjw.step(self.model,self.data)
                 wp.launch(reduce_contacts,self.data.naconmax,[self.data.nacon,self.data.contact.worldid,self.data.contact.geom,self.ids,self.contact_flags])
                 wp.launch(after,n,[self.data.qpos,self.data.qvel,self.data.sensordata,self.data.qacc_warmstart,self.data.time,self.contact_flags,self.ids,self.param,self.command,self.state,self.k['state'],self.diag,
-                    self.residual,self.active,self.done,self.reward,self.obs,self.history,self.stopped_q,self.stopped_v,self.stopped_w],block_dim=32)
+                    self.residual,self.active,self.done,self.reward,self.obs,self.history,self.stopped_q,self.stopped_v,self.stopped_w,self.wheel_offsets],block_dim=32)
         self.graph=capture.graph
         super().__init__(n,gym.spaces.Box(-np.inf,np.inf,(32,),dtype=np.float32),gym.spaces.Box(-1.,1.,(self.action_dim,),dtype=np.float32))
 
@@ -268,21 +313,23 @@ class NativeEnv(VecEnv):
         if not np.isfinite(obs).all() or not np.isfinite(reward).all():raise FloatingPointError('原生GPU非有限状态')
         infos=[{} for _ in range(self.num_envs)]
         if done.any():
-            states=self.state.numpy();geom_xpos=self.data.geom_xpos.numpy()
+            states=self.state.numpy()
             for i in np.flatnonzero(done):
                 infos[i]=dict(terminal_observation=obs[i].copy(),reason=['ongoing','invalid','fall','nonwheel_contact','invalid_mapping','completed','timeout','attitude_failure'][int(reasons[i])],physical_steps=int(states[i,0]),arrival_s=float(states[i,1]) if states[i,1]>=0 else None,
                     rms_deg=(np.sqrt(states[i,11:14]/max(states[i,0]*.0005,.0005))*180/np.pi).tolist(),
                     velocity_rmse=float(np.sqrt(states[i,4]/states[i,5])) if states[i,5]>0 else None,stop_distance_m=float(states[i,6]),tail_speed_m_s=float(states[i,7]),success=bool(states[i,19]),
                     duration_s=states[i,0]*.0005,episode=dict(r=float(states[i,20]),l=int(np.ceil(states[i,0]/40))),peak_deg=(states[i,8:11]*180/np.pi).tolist(),TimeLimit_truncated=False)
                 touched=int(states[i,14]);required_terrain=self.required_terrain_contact_masks[i]
-                direction=np.sign(self.scenarios[i].speed);wheel_progress=(direction*geom_xpos[i,self.wheel_geom_ids,0]-self.scenarios[i].center).tolist();end=self.required_terrain_end[i]
+                wheel_progress=states[i,24:26].tolist();end=self.required_terrain_end[i]
                 infos[i]['required_contact_mask']=self.required_contact_masks[i];infos[i]['touched_contact_mask']=touched&3
                 infos[i]['required_terrain_contact_mask']=required_terrain;infos[i]['touched_terrain_contact_mask']=touched&12
                 infos[i]['terrain_passed']=int(reasons[i])==5 and (touched&required_terrain)==required_terrain
                 infos[i]['terrain_required_end_m']=end;infos[i]['wheel_progress_m']=wheel_progress
                 infos[i]['terrain_entry_profile']='ramped' if getattr(self.scenarios[i],'transition_run_m',0.) else 'abrupt_or_original'
-                infos[i]['terrain_exit_passed']=end is None or min(wheel_progress)>=end
-                infos[i]['terrain_evidence_passed']=infos[i]['terrain_passed'] and infos[i]['terrain_exit_passed']
+                infos[i]['terrain_exit_passed']=bool(states[i,26])
+                infos[i]['terrain_evidence_passed']=bool(states[i,27])
+                infos[i]['task_contract_version']=TASK_CONTRACT_VERSION
+                infos[i]['task_goal_progress_m']=float(self.task_goals[i])
                 infos[i]['attitude_mode']='terrain_relative' if self.relative_attitude[i] else 'world'
                 infos[i]['relative_peak_deg']=(states[i,21:24]*180/np.pi).tolist()
                 infos[i]['residual_limited_steps']=int(states[i,16]);infos[i]['mean_residual_lambda']=float(states[i,17]/max(states[i,0],1));infos[i]['base_infeasible_steps']=int(states[i,18])
@@ -290,6 +337,7 @@ class NativeEnv(VecEnv):
                 infos[i]['residual_scale']=self.residual_scale
                 infos[i]['residual_mode']=self.residual_mode
                 infos[i]['project_clipped_base']=self.project_clipped_base
+                infos[i]['control_limit_scope']='nominal_command'
                 infos[i]['terminate_on_attitude_failure']=self.terminate_on_attitude_failure
                 # This deadline is task failure, not an external collection cutoff.
                 # SB3 must not add gamma*V(terminal_observation) to its -10 reward.

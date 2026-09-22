@@ -37,7 +37,8 @@ def check():
         else:raise AssertionError(args)
     env=TerrainEnv(len(cases),scenario=cases);env.reset();pending=set(range(len(cases)))
     try:
-        np.testing.assert_allclose(env.param.numpy()[:,2],np.array([s.center+1.2 for s in cases]),atol=1e-12,rtol=0.)
+        np.testing.assert_allclose(env.param.numpy()[:,2],np.array([s.center+end+.15 for s,end in zip(cases,env.required_terrain_end)]),atol=1e-12,rtol=0.)
+        assert all(end>=1.05 for end in env.required_terrain_end)
         while pending:
             _,_,done,infos=env.step(np.zeros((len(cases),3),np.float32))
             for i in list(pending):

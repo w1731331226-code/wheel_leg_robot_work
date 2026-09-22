@@ -28,7 +28,7 @@ def check(output):
         env.data.qpos.assign(q);env.stopped_q.assign(q);env.state.assign(state);env.param.assign(param)
         args=[env.data.qpos,env.data.qvel,env.data.sensordata,env.data.qacc_warmstart,env.data.time,
               env.contact_flags,env.ids,env.param,env.command,env.state,env.k['state'],env.diag,env.residual,
-              env.active,env.done,env.reward,env.obs,env.history,env.stopped_q,env.stopped_v,env.stopped_w]
+              env.active,env.done,env.reward,env.obs,env.history,env.stopped_q,env.stopped_v,env.stopped_w,env.wheel_offsets]
         wp.launch(after,9,args,block_dim=32)
         np.testing.assert_array_equal(env.done.numpy(),[0,7,7,0,7,0,6,5,5])
         first=env.reward.numpy();terminal=env.done.numpy()!=0

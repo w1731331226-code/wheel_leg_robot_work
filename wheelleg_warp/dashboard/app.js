@@ -1,8 +1,9 @@
-const $=id=>document.getElementById(id),num=n=>new Intl.NumberFormat('zh-CN').format(n??0),terrainNames={legacy:'原左右障碍',ramp:'坡道',cross_slope:'横坡',rough:'粗糙路',step:'全宽台阶',mixed:'粗糙路+左右障碍',rolling_slope:'连续坡段',multi_step:'多级台阶',split_level:'左右异高'};
+const $=id=>document.getElementById(id),num=n=>new Intl.NumberFormat('zh-CN').format(n??0),terrainNames={legacy:'原左右障碍',ramp:'坡道',cross_slope:'横坡',rough:'粗糙路',step:'全宽台阶',mixed:'粗糙路+左右障碍',rolling_slope:'连续坡段',multi_step:'多级台阶',split_level:'左右异高',single_side_ramp:'单侧坡道',asymmetric_rough:'左右独立粗糙路'};
 let mode='live',latestClip=null,etag=null,lastKey=null,activePhase='validating';
 let displayCount=0,displayWindow=performance.now(),displayFPS=0,lastDisplayed=0;
 const names={validating:'收敛准入验证',ready:'准备就绪',initializing:'初始化本轮场景',training:'训练中',evaluating:'开发集评估',final_evaluation:'独立终评',completed:'已完成',failed:'需要检查',interrupted:'已中断'};
 const duration=s=>s==null?'等待有效进度':s<60?`${Math.ceil(s)} 秒`:`${(s/60).toFixed(1)} 分钟`;
+function yawLabel(value){return Number.isFinite(value)?`Jψ ${value.toFixed(3)}°`:'Jψ —（轨迹未完整）';}
 function meta(m){
  $('source').textContent=activePhase==='completed'?'FINAL SNAPSHOT · 正式训练最后实帧':m.phase?.startsWith('terrain')?'LIVE · 非结构化地形训练':m.phase==='formal_training'?'LIVE · 正式训练原始帧':m.phase==='preflight_training'?'预检 PPO · 原始训练帧':m.phase==='validation_training'?'准入续训 · 原始训练帧':'工程采集预检';
  $('episode').textContent=`ENV ${m.environment_index} / ${m.environments} · ${terrainNames[m.scenario?.terrain]??'原场景'} · EP ${m.episode} · FRAME ${m.frame}`;
@@ -51,7 +52,7 @@ function update(s){
  $('steps').textContent=`${num(roundSteps)} / ${num(p.steps_per_round??2048000)}`;
  $('round-bar').style.width=`${Math.min(100,roundSteps/(p.steps_per_round??2048000)*100)}%`;
  $('total').textContent=`新增 ${num(c.new_steps)} 步 · 继承 ${num(p.inherited_steps)} 步`;
- if(selection.best){$('best').textContent=`${selection.best.summary.success_count} / ${selection.best.summary.total}`;$('best-yaw').textContent=`Jψ ${selection.best.summary.mean_yaw_score_deg.toFixed(3)}°`;$('best-round').textContent=selection.best.round===0?'最佳：准入检查点':`最佳：第 ${selection.best.round} 轮`;$('best-download').hidden=false;$('norm-download').hidden=false;}
+ if(selection.best){$('best').textContent=`${selection.best.summary.success_count} / ${selection.best.summary.total}`;$('best-yaw').textContent=yawLabel(selection.best.summary.mean_yaw_score_deg);$('best-round').textContent=selection.best.round===0?'最佳：准入检查点':`最佳：第 ${selection.best.round} 轮`;$('best-download').hidden=false;$('norm-download').hidden=false;}
  $('config').textContent=`1024环境 · ${p.residual_mode==='virtual6'?'Virtual6':'M3'} PPO · 每环境采样 ${p.n_steps??'待选定'} 步 · 本轮已更新 ${c.updates??Math.floor(roundSteps/((p.n_steps??50)*(p.environments??1024)))} 次`;
  document.querySelector('.aside-note p').firstChild.textContent=`MuJoCo Warp · ${p.residual_mode==='virtual6'?'Virtual6':'M3'} PPO`;
  const rows=[...(p.bootstrap_summary?[{round:0,summary:p.bootstrap_summary}]:[]),...selection.rounds];

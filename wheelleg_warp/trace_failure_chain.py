@@ -126,7 +126,7 @@ class RecordedEnv(TerrainEnv):
                 wp.launch(contacts,self.data.naconmax,[slot,self.data.nacon,c.worldid,c.geom,c.dist,c.pos,c.frame,c.friction,c.dim,c.efc_address,self.data.efc.force,self.data.njmax,self.model.opt.cone,self.ids,self.model.geom_bodyid,self.model.body_rootid,self.data.cvel,self.data.subtree_com,self.trace])
                 wp.launch(reduce_contacts,self.data.naconmax,[self.data.nacon,c.worldid,c.geom,self.ids,self.contact_flags])
                 wp.launch(reward_parts,n,[slot,self.data.qpos,self.data.qvel,self.param,self.command,self.diag,self.residual,self.data.actuator_force,self.trace])
-                wp.launch(after,n,[self.data.qpos,self.data.qvel,self.data.sensordata,self.data.qacc_warmstart,self.data.time,self.contact_flags,self.ids,self.param,self.command,self.state,self.k['state'],self.diag,self.residual,self.active,self.done,self.reward,self.obs,self.history,self.stopped_q,self.stopped_v,self.stopped_w],block_dim=32)
+                wp.launch(after,n,[self.data.qpos,self.data.qvel,self.data.sensordata,self.data.qacc_warmstart,self.data.time,self.contact_flags,self.ids,self.param,self.command,self.state,self.k['state'],self.diag,self.residual,self.active,self.done,self.reward,self.obs,self.history,self.stopped_q,self.stopped_v,self.stopped_w,self.wheel_offsets],block_dim=32)
                 wp.launch(after_physics,n,[slot,self.state,self.done,self.trace])
         self.graph=capture.graph
 

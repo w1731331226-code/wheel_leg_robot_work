@@ -10,8 +10,7 @@ from benchmark_parallel import TimedPPO
 from dashboard.live_env import atomic_json as write
 from native.terrain import TerrainScenario
 from native.terrain_env import TerrainEnv
-from pretrain_yaw import summarize
-from terrain_eval import evaluate_terrain
+from terrain_eval import evaluate_terrain,summarize_terrain as summarize
 from train_terrain import protocol
 
 

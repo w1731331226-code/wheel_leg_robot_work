@@ -1,0 +1,131 @@
+{
+  "task_contract_version": 2,
+  "deterministic_bug_fixes_verified": true,
+  "training_started": false,
+  "policy_changed": false,
+  "old_results_rewritten": false,
+  "new_holdout_opened": false,
+  "formal_training_ready": false,
+  "task": {
+    "passed": true,
+    "worlds": 8,
+    "wheel_center_cpu_max_error": 4.1719171006704414e-08,
+    "mixed_end": [
+      1.021000038832426,
+      1.021000038832426,
+      1.021000038832426,
+      1.021000038832426
+    ],
+    "terminal_reward_and_evidence_consistent": true,
+    "terminal_evidence_frozen": true,
+    "parking_requires_exit": true,
+    "delay_samples": [
+      {
+        "step": 1,
+        "observed": [
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "step": 20,
+        "observed": [
+          20,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "step": 40,
+        "observed": [
+          40,
+          20,
+          10,
+          0
+        ]
+      },
+      {
+        "step": 41,
+        "observed": [
+          41,
+          21,
+          11,
+          1
+        ]
+      },
+      {
+        "step": 80,
+        "observed": [
+          80,
+          60,
+          50,
+          40
+        ]
+      }
+    ],
+    "reset_clears_history": true
+  },
+  "scale": {
+    "passed": true,
+    "environments": 1024,
+    "physics_steps_per_world": 120,
+    "training_steps": 0,
+    "terrain_types": [
+      "asymmetric_rough",
+      "cross_slope",
+      "legacy",
+      "mixed",
+      "multi_step",
+      "ramp",
+      "rolling_slope",
+      "rough",
+      "single_side_ramp",
+      "split_level",
+      "step"
+    ],
+    "history_slots": 41,
+    "per_world_inertia": true,
+    "overview_worlds": 1024,
+    "seconds": 40.96646687199973,
+    "full_terrain_traversal_claimed": false
+  },
+  "mixed_recheck": {
+    "summary": {
+      "total": 15,
+      "success_count": 15,
+      "complete": true,
+      "mean_yaw_score_deg": 0.5589952447337723
+    },
+    "complete_count": 15,
+    "contact_count": 15,
+    "exit_count": 15,
+    "evidence_count": 15,
+    "new_holdout": false,
+    "policy_gain_claimed": false
+  },
+  "source_sha256": {
+    "native/environment.py": "0797b0a70c65b71e715438f8cc47f5e37d27bdeeca8170d9ddbf7b860cf75342",
+    "native/models.py": "59420b688a25e63fb8e0e644f0702025836bea0ed90377e452bcbd919c7216eb",
+    "native/live.py": "0fbd4aa3174cea17a9cf6fa4a56f7ec4df5df84e5a4f50c533fd46128165f446",
+    "terrain_eval.py": "ed0beafa14e882985ca5c0efe23dad6ff63bd5ae653e54ed0fbbdb7ac881d451",
+    "training_contract.py": "ca732a74a90c2d2ab09d15b1e3301a094c809f3181cfdb8349fd89b7df4f5968",
+    "train_terrain.py": "9f30267432f5e3bb516bc18e36d29cab9c448f2aeb8c9bec1bc29c8a20b2ef23",
+    "train_terrain_v3.py": "5753cdaee83248420eece381683714ed78baf69087925fb27b185b3ac450e893",
+    "optimize_residual.py": "3b3e4ccb3b578c5cb0b531f4115ddd692939b4ba88cc0532e3f42bf3e12dadaf",
+    "trace_failure_chain.py": "cf9134d85c6de6ede2a816ed1f2272305e6dd760610d80d312b6947e3d792091",
+    "test_task_contract.py": "59a2724dc7513e721aa7a87a0b344ba58af0485c09fa32bd43b1c4548423f059",
+    "test_training_contract.py": "44e47175d52ac24eb76723c76d3a618a831a6ad1fdb6938a9161d95b2f650427",
+    "test_batch_parameters.py": "19788ffa44797870e6dfd7e3ea086cda6fff47e3968957b03ef09e52c7b9ff14",
+    "dashboard/app.js": "c5b0dfe0f0db93c989181a0cb4d39e225963103adb0dc64af2952d64269762ec"
+  },
+  "deferred": [
+    "Terrain attitude target/control alignment requires design choice",
+    "Actual torque hard cap versus nominal uncertainty requires design choice",
+    "Longitudinal phase-shift terrain remains a later curriculum feature",
+    "Corrected baseline/repeatability and new holdout protocol required before formal training"
+  ],
+  "dashboard_incomplete_metric_and_labels_verified": true
+}

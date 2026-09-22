@@ -8,8 +8,7 @@ from benchmark_parallel import TimedPPO
 from dashboard.live_env import atomic_json
 from native.environment import NativeEnv
 from native.terrain import TerrainScenario,bank_v3
-from pretrain_yaw import summarize
-from terrain_eval import evaluate_terrain
+from terrain_eval import evaluate_terrain,summarize_terrain as summarize
 
 
 def cases(items):return [TerrainScenario(**x) for x in items]
