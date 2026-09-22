@@ -24,6 +24,7 @@
     "step_30mm": "0/12 with fall or nonwheel-contact failures"
   },
   "yaw_gain_sweep_result": "Twelve configurations scanned; best development candidate failed independent validation and was rejected.",
-  "next_action": "Test slip-aware wheel-speed-difference feedback and speed-dependent yaw authority on fresh development scenarios, then rerun legacy regression and the step capability gate.",
+  "causal_interpretation_superseded_by": "../terrain_root_cause_20260922/REPORT.md",
+  "next_action": "Separate surface-traversal geometry from abrupt-entry obstacles; verify the remaining actual step capability independently.",
   "holdout_policy": "Do not use terrain-v3 final holdout for tuning or terrain-v4 selection."
 }

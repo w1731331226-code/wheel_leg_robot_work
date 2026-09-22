@@ -1,0 +1,15 @@
+{
+  "description": "Final reproducible implementation. Initial ablations used equivalent model-level lateral-margin argument before it became an explicit scenario field. Existing historical results are not overwritten.",
+  "source_sha256": {
+    "wheelleg_warp/native/terrain.py": "615f353174e8058c2a8c621f68b2c0086d5de7c3f70927f8100d5431a047f9c3",
+    "wheelleg_warp/native/environment.py": "dd7ba2889f0beee1638876acd7034d09e09d9cf08fc5d609f0e4607d094b4c39",
+    "wheelleg_warp/native/controller.py": "a1050c4e6f40126faf992c33eadf0d90b1ed1f566f8ff8182daadff1ae7133ab",
+    "wheelleg_warp/native/models.py": "b388a7f2753df0edbe57dd538d0c36100ae0051f834759a7d5dad425aca65f81",
+    "wheelleg_warp/diagnose_terrain_root.py": "02e6c2644653bb351cdbb0f6abf810a49bd8444ebb2c73ce22658d9c598e1d99",
+    "wheelleg_warp/test_terrain_transition.py": "b03adab49e7123f9a6948746ba9942421c3ee3138829f27bc99ffdd005d808b6"
+  },
+  "checkpoint": "wheelleg_warp/results/terrain_v3_1024_20260922/round_003/step_12324000",
+  "physics": "MuJoCo Warp cuda:0",
+  "policy": "Frozen terrain-v3, deterministic CPU inference",
+  "training": false
+}

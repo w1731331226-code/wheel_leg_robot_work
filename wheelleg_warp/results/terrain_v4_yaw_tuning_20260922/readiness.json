@@ -22,5 +22,6 @@
   },
   "decision": "reject_candidate",
   "reason": "No independent yaw-success gain; completion and step capability regress.",
-  "next_action": "Test slip-aware wheel-speed-difference feedback and speed-dependent yaw authority on fresh development scenarios before any PPO training."
+  "causal_interpretation_superseded_by": "../terrain_root_cause_20260922/REPORT.md",
+  "next_action": "Use verified smooth-entry surface geometry for slope traversal; retain abrupt-entry tasks and resolve their separate step/repeatability gates before formal training."
 }

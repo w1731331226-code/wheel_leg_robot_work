@@ -1,0 +1,25 @@
+{
+  "status": "surface_geometry_fix_verified",
+  "formal_training_started": false,
+  "control_or_policy_changed": false,
+  "geometry_intervention_is_policy_improvement": false,
+  "ablation_success": {
+    "abrupt_narrow": "19/48",
+    "abrupt_wide": "18/48",
+    "transition_narrow": "44/48",
+    "transition_wide": "48/48"
+  },
+  "independent_validation": {
+    "original_surface": "17/48",
+    "fixed_surface": "48/48",
+    "legacy_before_after": ["16/16", "16/16"],
+    "surface_repeat_success": ["48/48", "48/48"],
+    "both_wheels_contacted_central_target": "48/48",
+    "unchanged_step_repeat_success": ["34/36", "34/36"]
+  },
+  "remaining": [
+    "Actual abrupt-entry and vertical-step tasks remain unsolved; retain them explicitly in stress testing.",
+    "Freeze separate surface-traversal and abrupt-obstacle protocol quotas and independent holdouts before formal training.",
+    "Investigate sensitive impact-trajectory repeatability without attributing batch-dependent changes to geometry fixes."
+  ]
+}

@@ -21,12 +21,17 @@ class TerrainScenario(Scenario):
     step_height_m:float=0.
     terrain_seed:int=0
     relative_attitude:bool=False
+    transition_run_m:float=0.
+    lateral_margin_m:float=0.
 
     def __post_init__(self):
         # Reuse the frozen base validation without passing terrain's string fields into it.
         Scenario(**{name:getattr(self,name) for name in Scenario.__dataclass_fields__})
         if self.terrain not in V4_TERRAINS or not -5<=self.grade_deg<=5 or not 0<=self.roughness_m<=.012 or not 0<=self.step_height_m<=.03:
             raise ValueError('地形参数超出terrain-v1冻结范围')
+        if not math.isfinite(self.transition_run_m) or not 0<=self.transition_run_m<=.6 or (self.transition_run_m and self.terrain not in ('cross_slope','split_level')):
+            raise ValueError('入口过渡仅用于横坡/左右异高，长度须在0～0.6m')
+        if not math.isfinite(self.lateral_margin_m) or not 0<=self.lateral_margin_m<=.5:raise ValueError('横向余量须在0～0.5m')
 
 
 def sample_terrain(seed,stage=3,split='train'):
@@ -86,7 +91,8 @@ def sample_terrain_v4(seed,split='development'):
     if terrain=='step':step=float(rng.uniform(.020,.030) if split=='ood' else rng.uniform(.005,.020))
     elif terrain=='multi_step':step=float(rng.uniform(.008,.012) if split=='ood' else rng.uniform(.004,.008))
     elif terrain=='split_level':step=float(.3*math.tan(math.radians(abs(grade))))
-    return TerrainScenario(**values,terrain=terrain,grade_deg=grade,roughness_m=rough,step_height_m=step,terrain_seed=int(seed),relative_attitude=True)
+    return TerrainScenario(**values,terrain=terrain,grade_deg=grade,roughness_m=rough,step_height_m=step,terrain_seed=int(seed),relative_attitude=True,
+        transition_run_m=.4 if terrain in ('cross_slope','split_level') else 0.,lateral_margin_m=.35 if terrain in ('cross_slope','split_level') else 0.)
 
 
 def _quat(axis,angle):
@@ -94,12 +100,17 @@ def _quat(axis,angle):
 
 
 def model(s):
+    lateral_margin=s.lateral_margin_m
     spec=build_spec(s);tiles=[]
     for i in range(TERRAIN_GEOMS):
         tiles.append(spec.worldbody.add_geom(name=f'terrain_{i:02d}',type=mujoco.mjtGeom.mjGEOM_BOX,
             pos=[0,0,-10],size=[.05,.16,.001],friction=[(s.mu_l+s.mu_r)/2,.02,.001]))
     direction=1 if s.speed>0 else -1;thickness=.012
     def box(index,u,z,size,quat=(1,0,0,0),y=0.):
+        size=list(size)
+        if y==0.:size[1]+=lateral_margin
+        else:
+            size[1]+=lateral_margin/2;y+=math.copysign(lateral_margin/2,y)
         g=tiles[index];g.pos=[direction*u,y,z];g.size=size;g.quat=quat
     if s.terrain=='ramp':
         angle=math.radians(abs(s.grade_deg));run=.5;plateau=.3;height=run*math.sin(angle)
@@ -142,6 +153,17 @@ def model(s):
         for i,offset in enumerate(np.arange(-.42,.43,.12)):
             for side,y in enumerate((-.09,.09)):
                 height=float(rng.uniform(.001,s.roughness_m));box(2*i+side,s.center+float(offset),height/2,[.061,.09,height/2],y=y)
+    if s.transition_run_m:
+        # Two wheel-lane approach/departure ramps. The central surface and its
+        # wheel-track heights stay unchanged; abrupt entries remain reproducible.
+        for side,y in enumerate((-.15,.15)):
+            if s.terrain=='cross_slope':
+                a=math.radians(s.grade_deg)
+                h=abs(math.sin(a))*.16+thickness*math.sin(a)**2/(2*math.cos(a))+y*math.tan(a)
+            else:h=s.step_height_m if (y>0)==(s.grade_deg>0) else .001
+            run=s.transition_run_m;angle=math.atan2(h,run);length=math.hypot(run,h)
+            for end,sign in enumerate((-1,1)):
+                box(12+2*side+end,s.center+sign*(.65+run/2),h/2-thickness/(2*math.cos(angle)),[length/2,.075,thickness/2],_quat((0,1,0),direction*sign*angle),y)
     return compile_spec(spec,s)
 
 

@@ -197,9 +197,12 @@ class NativeEnv(VecEnv):
         self.required_contact_masks=[];self.required_terrain_contact_masks=[];self.required_terrain_end=[];self.relative_attitude=[]
         for s in self.scenarios:
             goal=s.center+abs(s.offset)/2+.75
+            transition=getattr(s,'transition_run_m',0.)
+            if transition:goal=max(goal,s.center+.65+transition+.15)
             required=(1 if s.height_l else 0)|(2 if s.height_r else 0);terrain=12 if getattr(s,'terrain','legacy')!='legacy' else 0
             if getattr(s,'terrain','legacy')=='single_side_ramp':terrain=8 if s.grade_deg>0 else 4
             end={'ramp':.65,'cross_slope':.65,'rough':.721,'step':.25,'mixed':.35,'rolling_slope':.64,'multi_step':.55,'split_level':.65,'single_side_ramp':.65,'asymmetric_rough':.481}.get(getattr(s,'terrain','legacy'))
+            if transition:end+=transition
             relative=bool(getattr(s,'relative_attitude',False));kind={'ramp':1,'cross_slope':2,'rolling_slope':3,'split_level':4}.get(getattr(s,'terrain','legacy'),0)
             self.required_contact_masks.append(required);self.required_terrain_contact_masks.append(terrain);self.required_terrain_end.append(end);self.relative_attitude.append(relative)
             p.append([s.speed,np.sign(s.speed),goal,1.5+1.5*goal/abs(s.speed),round(s.delay_ms*2),required,terrain,relative,kind,np.deg2rad(getattr(s,'grade_deg',0.)),s.center])
@@ -260,6 +263,7 @@ class NativeEnv(VecEnv):
                 infos[i]['required_terrain_contact_mask']=required_terrain;infos[i]['touched_terrain_contact_mask']=touched&12
                 infos[i]['terrain_passed']=int(reasons[i])==5 and (touched&required_terrain)==required_terrain
                 infos[i]['terrain_required_end_m']=end;infos[i]['wheel_progress_m']=wheel_progress
+                infos[i]['terrain_entry_profile']='ramped' if getattr(self.scenarios[i],'transition_run_m',0.) else 'abrupt_or_original'
                 infos[i]['terrain_exit_passed']=end is None or min(wheel_progress)>=end
                 infos[i]['terrain_evidence_passed']=infos[i]['terrain_passed'] and infos[i]['terrain_exit_passed']
                 infos[i]['attitude_mode']='terrain_relative' if self.relative_attitude[i] else 'world'
