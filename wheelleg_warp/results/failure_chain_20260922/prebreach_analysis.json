@@ -1,0 +1,418 @@
+{
+  "runs": [
+    {
+      "policy": "source",
+      "seed": 700000,
+      "trace_sha256": "5e5a6b5d5a9a82de9c3d4184c18e678c5bc4c0eb77cc8fcb98e84858b0b72bd1",
+      "success": true,
+      "failure_axis": [],
+      "window_start_s": 5.304,
+      "window_end_s": 5.5040000000000004,
+      "left_first_target_contact_s": 5.304,
+      "right_first_target_contact_s": 5.3365,
+      "invalid_base_fraction": 0.012468827930174564,
+      "reclaimable_fraction": 0.004987531172069825,
+      "blocked_after_clipped_base_fraction": 0.007481296758104738,
+      "same_sign_wheel_saturation_fraction": 0.0,
+      "command_filter_lag_fraction": 0.9850374064837906,
+      "wheel_command_vs_filter": [
+        {
+          "channel": 2,
+          "opposite_fraction": 0.20947630922693267,
+          "both_above_point05_fraction": 0.9251870324189526
+        }
+      ],
+      "requested_rms": [
+        0.2769153422185966,
+        0.18753891605871298,
+        0.27470322246976414,
+        0.18876811216931602,
+        0.11305804443957873,
+        0.11305804443957873
+      ],
+      "executed_rms": [
+        0.27667317830320404,
+        0.1852418689794551,
+        0.2744660095170907,
+        0.18649943897306712,
+        0.11274199020557535,
+        0.11274199020557535
+      ],
+      "hypothetical_feasible_rms": [
+        0.27688702982396285,
+        0.18661326578176593,
+        0.27467400244574613,
+        0.1878636097040331,
+        0.11305698846983486,
+        0.11305698846983486
+      ]
+    },
+    {
+      "policy": "source",
+      "seed": 700102,
+      "trace_sha256": "9d84685d18d55b626716e01d56f77c0eda8913ed71fd5269c2256c2f8fb0cbf4",
+      "success": false,
+      "failure_axis": [
+        "yaw"
+      ],
+      "window_start_s": 4.5065,
+      "window_end_s": 4.776,
+      "left_first_target_contact_s": 4.5065,
+      "right_first_target_contact_s": 4.595,
+      "invalid_base_fraction": 0.3648148148148148,
+      "reclaimable_fraction": 0.2759259259259259,
+      "blocked_after_clipped_base_fraction": 0.08888888888888889,
+      "same_sign_wheel_saturation_fraction": 0.0,
+      "command_filter_lag_fraction": 0.9481481481481482,
+      "wheel_command_vs_filter": [
+        {
+          "channel": 2,
+          "opposite_fraction": 0.32592592592592595,
+          "both_above_point05_fraction": 0.9629629629629629
+        }
+      ],
+      "requested_rms": [
+        0.17741312922463337,
+        0.45842473885062274,
+        0.18008833797032306,
+        0.44740462927732844,
+        0.18490641958051524,
+        0.18490641958051524
+      ],
+      "executed_rms": [
+        0.1449584340511292,
+        0.3007772451812338,
+        0.14199895551195968,
+        0.29803992253180783,
+        0.1489888719100869,
+        0.1489888719100869
+      ],
+      "hypothetical_feasible_rms": [
+        0.16838111640806064,
+        0.4344629064460603,
+        0.16868909766195989,
+        0.4248315430368246,
+        0.18316177003426667,
+        0.18316177003426667
+      ]
+    },
+    {
+      "policy": "source",
+      "seed": 700202,
+      "trace_sha256": "490d3793631d508e368248aba126e69cdb1544f5ea0f6619a6424ce7b739cedf",
+      "success": false,
+      "failure_axis": [
+        "yaw"
+      ],
+      "window_start_s": 4.855,
+      "window_end_s": 5.0255,
+      "left_first_target_contact_s": 4.855,
+      "right_first_target_contact_s": 4.9275,
+      "invalid_base_fraction": 0.6754385964912281,
+      "reclaimable_fraction": 0.14327485380116958,
+      "blocked_after_clipped_base_fraction": 0.5321637426900585,
+      "same_sign_wheel_saturation_fraction": 0.4152046783625731,
+      "command_filter_lag_fraction": 0.9736842105263158,
+      "wheel_command_vs_filter": [
+        {
+          "channel": 2,
+          "opposite_fraction": 0.31871345029239767,
+          "both_above_point05_fraction": 0.9415204678362573
+        }
+      ],
+      "requested_rms": [
+        0.2233792667100209,
+        0.31339233218146045,
+        0.22462224842041847,
+        0.31423797437274015,
+        0.18568387726122204,
+        0.18568387726122204
+      ],
+      "executed_rms": [
+        0.018696405666259925,
+        0.2643140688715824,
+        0.020253537455739937,
+        0.2633946039226995,
+        0.11477122987369066,
+        0.11477122987369066
+      ],
+      "hypothetical_feasible_rms": [
+        0.11566825247894572,
+        0.2674193096041491,
+        0.11521352783739089,
+        0.2663209550845877,
+        0.11618866025958466,
+        0.11618866025958466
+      ]
+    },
+    {
+      "policy": "source",
+      "seed": 700302,
+      "trace_sha256": "8f022344a83cc40613e1de8f9179cb6226b4217cbe9b05950345d31b2c6cde57",
+      "success": false,
+      "failure_axis": [
+        "pitch_error"
+      ],
+      "window_start_s": 5.015,
+      "window_end_s": 5.2895,
+      "left_first_target_contact_s": 5.015,
+      "right_first_target_contact_s": 5.0715,
+      "invalid_base_fraction": 0.8072727272727273,
+      "reclaimable_fraction": 0.1509090909090909,
+      "blocked_after_clipped_base_fraction": 0.6709090909090909,
+      "same_sign_wheel_saturation_fraction": 0.6381818181818182,
+      "command_filter_lag_fraction": 0.9945454545454545,
+      "wheel_command_vs_filter": [
+        {
+          "channel": 2,
+          "opposite_fraction": 0.19818181818181818,
+          "both_above_point05_fraction": 0.9545454545454546
+        }
+      ],
+      "requested_rms": [
+        0.17316912676334495,
+        0.3243773355549562,
+        0.16749003454005196,
+        0.32240044045032346,
+        0.2090928484370715,
+        0.2090928484370715
+      ],
+      "executed_rms": [
+        0.0259604027657757,
+        0.21700233383221637,
+        0.02898486076052504,
+        0.2160576511084578,
+        0.04246751028398508,
+        0.04246751028398508
+      ],
+      "hypothetical_feasible_rms": [
+        0.03554442503303118,
+        0.2198658279964342,
+        0.03761486899102749,
+        0.21891648065685715,
+        0.07173358400325223,
+        0.07173358400325223
+      ]
+    },
+    {
+      "policy": "trained",
+      "seed": 700000,
+      "trace_sha256": "ff7257a102af0fdd2a6fc969ce682106fdff040e4dcdd4bb02b998ed61a5a669",
+      "success": false,
+      "failure_axis": [
+        "yaw"
+      ],
+      "window_start_s": 5.345,
+      "window_end_s": 5.5065,
+      "left_first_target_contact_s": 5.772,
+      "right_first_target_contact_s": 5.345,
+      "invalid_base_fraction": 0.5030864197530864,
+      "reclaimable_fraction": 0.5030864197530864,
+      "blocked_after_clipped_base_fraction": 0.0,
+      "same_sign_wheel_saturation_fraction": 0.0,
+      "command_filter_lag_fraction": 0.9320987654320988,
+      "wheel_command_vs_filter": [
+        {
+          "channel": 4,
+          "opposite_fraction": 0.08641975308641975,
+          "both_above_point05_fraction": 0.8240740740740741
+        },
+        {
+          "channel": 5,
+          "opposite_fraction": 0.07098765432098765,
+          "both_above_point05_fraction": 0.8179012345679012
+        }
+      ],
+      "requested_rms": [
+        0.29807380093829783,
+        0.4399907305462997,
+        0.3387558507372926,
+        0.4075086249829584,
+        0.19979059700185814,
+        0.19808162909929025
+      ],
+      "executed_rms": [
+        0.1420749239424049,
+        0.33825316175878456,
+        0.15557695625295723,
+        0.3214867022965792,
+        0.03771047975091403,
+        0.03477636661095399
+      ],
+      "hypothetical_feasible_rms": [
+        0.29807380093829783,
+        0.4399907305462997,
+        0.3387558507372926,
+        0.4075086249829584,
+        0.19979059700185814,
+        0.19808162909929025
+      ]
+    },
+    {
+      "policy": "trained",
+      "seed": 700102,
+      "trace_sha256": "4ba7fb64ddb05980200a3e3aeef8dfdaa39a8fcc8996c121723391a90833eb15",
+      "success": true,
+      "failure_axis": [],
+      "window_start_s": 4.5135000000000005,
+      "window_end_s": 4.713500000000001,
+      "left_first_target_contact_s": 4.5135000000000005,
+      "right_first_target_contact_s": 4.5875,
+      "invalid_base_fraction": 0.1596009975062344,
+      "reclaimable_fraction": 0.1596009975062344,
+      "blocked_after_clipped_base_fraction": 0.0,
+      "same_sign_wheel_saturation_fraction": 0.0,
+      "command_filter_lag_fraction": 0.9625935162094763,
+      "wheel_command_vs_filter": [
+        {
+          "channel": 4,
+          "opposite_fraction": 0.1371571072319202,
+          "both_above_point05_fraction": 0.9750623441396509
+        },
+        {
+          "channel": 5,
+          "opposite_fraction": 0.12718204488778054,
+          "both_above_point05_fraction": 0.9750623441396509
+        }
+      ],
+      "requested_rms": [
+        0.18040156428170256,
+        0.37525985115690935,
+        0.1673780618067343,
+        0.364852620442008,
+        0.2257802477430733,
+        0.22726983945838164
+      ],
+      "executed_rms": [
+        0.17072177106187103,
+        0.35310368214836757,
+        0.16009021211711005,
+        0.34550564711697723,
+        0.20309584502381145,
+        0.20475053582946015
+      ],
+      "hypothetical_feasible_rms": [
+        0.18040156428170256,
+        0.37525985115690935,
+        0.1673780618067343,
+        0.364852620442008,
+        0.2257802477430733,
+        0.22726983945838164
+      ]
+    },
+    {
+      "policy": "trained",
+      "seed": 700202,
+      "trace_sha256": "8252099b935afa11cb67525f649948b6645c2137c4b81a7b3d9382ee39c93123",
+      "success": false,
+      "failure_axis": [
+        "yaw"
+      ],
+      "window_start_s": 4.8585,
+      "window_end_s": 5.0265,
+      "left_first_target_contact_s": 4.8585,
+      "right_first_target_contact_s": 4.9225,
+      "invalid_base_fraction": 0.6528189910979229,
+      "reclaimable_fraction": 0.32344213649851633,
+      "blocked_after_clipped_base_fraction": 0.3293768545994065,
+      "same_sign_wheel_saturation_fraction": 0.2403560830860534,
+      "command_filter_lag_fraction": 1.0,
+      "wheel_command_vs_filter": [
+        {
+          "channel": 4,
+          "opposite_fraction": 0.44807121661721067,
+          "both_above_point05_fraction": 0.8813056379821959
+        },
+        {
+          "channel": 5,
+          "opposite_fraction": 0.44807121661721067,
+          "both_above_point05_fraction": 0.8813056379821959
+        }
+      ],
+      "requested_rms": [
+        0.1740335863863236,
+        0.3699838660189528,
+        0.1691747087519149,
+        0.3665353662293296,
+        0.13400517362380762,
+        0.13834418518496328
+      ],
+      "executed_rms": [
+        0.03323804347558872,
+        0.33111689611362943,
+        0.027382909684539988,
+        0.3337843469314812,
+        0.03429981128759388,
+        0.03743621228086295
+      ],
+      "hypothetical_feasible_rms": [
+        0.1212356787524555,
+        0.34728140435768284,
+        0.1173085143068123,
+        0.3480015154630465,
+        0.12234373532794426,
+        0.1267336077882951
+      ]
+    },
+    {
+      "policy": "trained",
+      "seed": 700302,
+      "trace_sha256": "d0b4642d46586f988745593a0d548dedb0b0ee654b8782ed472cb3e5215238d6",
+      "success": false,
+      "failure_axis": [
+        "yaw"
+      ],
+      "window_start_s": 5.0025,
+      "window_end_s": 5.15,
+      "left_first_target_contact_s": 5.0025,
+      "right_first_target_contact_s": 5.0795,
+      "invalid_base_fraction": 0.6148648648648649,
+      "reclaimable_fraction": 0.23648648648648649,
+      "blocked_after_clipped_base_fraction": 0.3783783783783784,
+      "same_sign_wheel_saturation_fraction": 0.32432432432432434,
+      "command_filter_lag_fraction": 1.0,
+      "wheel_command_vs_filter": [
+        {
+          "channel": 4,
+          "opposite_fraction": 0.3918918918918919,
+          "both_above_point05_fraction": 0.9662162162162162
+        },
+        {
+          "channel": 5,
+          "opposite_fraction": 0.3783783783783784,
+          "both_above_point05_fraction": 0.9662162162162162
+        }
+      ],
+      "requested_rms": [
+        0.22214875681443552,
+        0.36785154589214764,
+        0.2210283802642169,
+        0.3640283384450941,
+        0.18646959123388215,
+        0.18675635069946678
+      ],
+      "executed_rms": [
+        0.07909213670825575,
+        0.2799215127007193,
+        0.06700912576417815,
+        0.2836605493870049,
+        0.056611245240118055,
+        0.056275793039145976
+      ],
+      "hypothetical_feasible_rms": [
+        0.13587283812137824,
+        0.2930797586278102,
+        0.1377462648666794,
+        0.2916581556047591,
+        0.14053972327326275,
+        0.14091997689957375
+      ]
+    }
+  ],
+  "new_simulation": false,
+  "policy_or_control_changed": false,
+  "provenance": "Original failure_chain traces: source M3 and prior virtual6 endpoint, NOT the later early-termination candidate.",
+  "windows": "Failures: first target contact through first 5deg breach inclusive; successes: fixed first 0.2s. Different durations; not matched success/failure statistics.",
+  "interpretation": "Reclaimable means torque-envelope feasibility only, not stable or useful control. Opposite target/filter sign is lag, not proof either is the correct stabilizing action. Mapping guards still required.",
+  "analysis_sha256": "09d556c6f8789d349b874439f9d5b0aae2d795925a0002a5d0448a88b5bfce1a"
+}
