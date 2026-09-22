@@ -1,0 +1,14 @@
+{
+  "protocol_sha256": "ba87b5b45587174d098d5866010a08b9e74e655697eb2bf5f53b7599d979719a",
+  "task_contract_version": 2,
+  "cases": 160,
+  "action": "zero M3 residual",
+  "max_policy_steps": 500,
+  "scope": "first episode only; step_wait is not called, so completed worlds stay inactive",
+  "initial_mismatch": {
+    "sensordata": 7.152557373046875e-05
+  },
+  "first_contact_difference": null,
+  "first_state_difference": null,
+  "policy_steps_run": 0
+}
