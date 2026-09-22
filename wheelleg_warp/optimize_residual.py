@@ -13,6 +13,7 @@ from ppo_env import sample_scenario
 from terrain_eval import evaluate_terrain
 from dashboard.live_env import atomic_json as write
 from stable_baselines3.common.vec_env import VecNormalize
+from stable_baselines3.common.logger import configure
 from benchmark_parallel import TimedPPO
 from native.live import LiveNativeEnv
 from native.terrain import bank
@@ -68,8 +69,8 @@ def transferred_virtual6(source,env):
 def train(output):
     protocol=json.loads((output/'protocol.json').read_text());ck=protocol['checkpoint']
     dev=[TerrainScenario(**s) for s in protocol['development_cases']];labels=protocol['labels']
-    # Only change the replay distribution; keep controller, observation, action,
-    # reward, geometry, PPO hyperparameters and optimizer from the source policy.
+    # Optional training-only termination is explicit in the frozen protocol;
+    # evaluation always uses complete trajectories and unchanged success gates.
     train_seed=protocol.get('train_seed',620000);train_cases=[];rng=np.random.default_rng(train_seed+1)
     for i in range(1024):
         seed=train_seed+i;s=sample_terrain_v4(seed,'train')
@@ -79,11 +80,13 @@ def train(output):
         train_cases.append(s)
     directory=output/'round_001';directory.mkdir(exist_ok=False)
     budget_total=protocol['training_budget_steps'];mode=protocol.get('residual_mode','diff3')
-    write(directory/'run_config.json',dict(training_cases=[asdict(s) for s in train_cases],checkpoint=ck,budget=budget_total,source_checkpoint_used=True,residual_mode=mode,optimizer_restored=mode=='diff3'))
-    raw=LiveNativeEnv(directory/'live',n=1024,scenario=train_cases,bank_factory=bank,phase='terrain_targeted_probe',residual_mode=mode)
+    early=protocol.get('terminate_on_attitude_failure',False)
+    write(directory/'run_config.json',dict(training_cases=[asdict(s) for s in train_cases],checkpoint=ck,budget=budget_total,source_checkpoint_used=True,residual_mode=mode,optimizer_restored=mode=='diff3',terminate_on_attitude_failure=early))
+    raw=LiveNativeEnv(directory/'live',n=1024,scenario=train_cases,bank_factory=bank,phase='terrain_targeted_probe',residual_mode=mode,terminate_on_attitude_failure=early)
     env=VecNormalize.load(ck+'.pkl',raw);env.training=True;env.norm_reward=False
     if mode=='virtual6':env.action_space=raw.action_space
     model=transferred_virtual6(PPO.load(ck+'.zip',device='cpu'),env) if mode=='virtual6' else TimedPPO.load(ck+'.zip',env=env,device='cpu')
+    model.set_logger(configure(str(directory),['json']))
     model.timings=[];model.set_random_seed(train_seed+1);start=model.num_timesteps
     try:
         for budget in (budget_total//2,budget_total):
@@ -100,9 +103,28 @@ def train(output):
         write(output/'status.json',dict(status='failed',error=repr(exc)));raise
     finally:env.close()
 
+def prepare_feedback(output):
+    source=ROOT/'wheelleg_warp/results/virtual6_capability_20260922'
+    previous=json.loads((source/'protocol.json').read_text())
+    protocol={k:previous[k] for k in ('checkpoint','development_cases','labels')}
+    protocol.update(training_budget_steps=1024000,train_seed=750000,residual_mode='diff3',holdout_evaluated=False,
+        selection='Endpoint-only paired comparison; no promotion without >=20pp gain, success>=85%, complete>=95%, repeatability and no original regression.',
+        common_fix='Task deadline is terminal in both arms; no TimeLimit bootstrap.',
+        source_sha256={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in
+            (Path(__file__),ROOT/'wheelleg_warp/native/environment.py',ROOT/'wheelleg_warp/native/controller.py',ROOT/'wheelleg_warp/native/terrain.py',ROOT/'wheelleg_warp/native/models.py')})
+    for name,early in (('control',False),('early',True)):
+        directory=output/name;directory.mkdir(parents=True,exist_ok=False)
+        write(directory/'protocol.json',{**protocol,'terminate_on_attitude_failure':early})
+    model=PPO.load(protocol['checkpoint']+'.zip',device='cpu')
+    rows=[TerrainScenario(**s) for s in protocol['development_cases']]
+    baseline=evaluate(model,protocol['checkpoint']+'.pkl',rows,protocol['labels'])
+    write(output/'baseline.json',baseline);print('paired baseline',baseline['summary'],flush=True)
+
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);p.add_argument('--train',action='store_true');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True)
+    mode=p.add_mutually_exclusive_group();mode.add_argument('--train',action='store_true');mode.add_argument('--prepare-feedback',action='store_true');a=p.parse_args()
     torch.set_num_threads(1)
+    if a.prepare_feedback:prepare_feedback(a.output);sys.exit(0)
     if a.train:train(a.output);sys.exit(0)
     a.output.mkdir(parents=True,exist_ok=False)
     ck=Path(json.loads((ROOT/'wheelleg_warp/results/terrain_v3_1024_20260922/selection.json').read_text())['best']['path'])

@@ -62,6 +62,13 @@ def terrain_attitude(param:wp.array2d[D],qpos:wp.array2d[float],w:int):
     return wp.vec2d(roll,pitch)
 
 
+@wp.func
+def attitude_passed(state:wp.array2d[D],param:wp.array2d[D],w:int):
+    passed=wp.max(state[w,8],wp.max(state[w,9],state[w,10]))<=D(.08726646259971647)
+    if int(param[w,7]):passed=wp.max(state[w,21],wp.max(state[w,22],state[w,23]))<=D(.08726646259971647) and wp.max(state[w,8],state[w,9])<=D(.17453292519943295)
+    return passed
+
+
 @wp.kernel
 def after(qpos:wp.array2d[float],qvel:wp.array2d[float],sensors:wp.array2d[float],
           warm:wp.array2d[float],clock:wp.array[float],contact_flags:wp.array2d[int],
@@ -142,13 +149,15 @@ def after(qpos:wp.array2d[float],qvel:wp.array2d[float],sensors:wp.array2d[float
     elif diag[w,14]==D(1):reason=4
     elif state[w,1]>=D(0) and t-state[w,1]>=D(2)-D(1.e-10):reason=5
     elif state[w,1]<D(0) and t>=param[w,3]-D(1.e-10):reason=6
+    # Training only: an irreversible evaluation failure has no recoverable success.
+    # Full-trajectory evaluation leaves this flag off and preserves every safety gate.
+    if reason==0 and int(param[w,11]) and not attitude_passed(state,param,w):reason=7
     if diag[w,12]<D(1)-D(1.e-10):state[w,16]=state[w,16]+D(1)
     state[w,17]=state[w,17]+diag[w,12]
     state[w,18]=state[w,18]+diag[w,13]
     if reason:
         done[w]=reason;active[w]=0
-        attitude=wp.max(state[w,8],wp.max(state[w,9],state[w,10]))<=D(.08726646259971647)
-        if int(param[w,7]):attitude=wp.max(state[w,21],wp.max(state[w,22],state[w,23]))<=D(.08726646259971647) and wp.max(state[w,8],state[w,9])<=D(.17453292519943295)
+        attitude=attitude_passed(state,param,w)
         success=reason==5 and (touch&int(param[w,5]))==int(param[w,5]) and (touch&int(param[w,6]))==int(param[w,6]) and attitude and state[w,5]>D(0)
         if state[w,5]>D(0):success=success and wp.sqrt(state[w,4]/state[w,5])<=D(.2)*wp.abs(param[w,0])
         success=success and state[w,6]<=D(.6) and state[w,7]<=D(.03)
@@ -181,8 +190,10 @@ def reset_rows(mask:wp.array[int],q0:wp.array[float],q:wp.array2d[float],v:wp.ar
 
 
 class NativeEnv(VecEnv):
-    def __init__(self,n=128,stage=3,seed=730000,scenario=None,bank_factory=bank,yaw_config=(.4,2.,.24,.3),residual_scale=1.,residual_mode='diff3'):
+    def __init__(self,n=128,stage=3,seed=730000,scenario=None,bank_factory=bank,yaw_config=(.4,2.,.24,.3),residual_scale=1.,residual_mode='diff3',terminate_on_attitude_failure=False):
         if not isinstance(n,int) or not 1 <= n <= 1024:raise ValueError('用户限制：批量环境数须为1～1024')
+        if type(terminate_on_attitude_failure) is not bool:raise ValueError('训练姿态终止开关须为布尔值')
+        self.terminate_on_attitude_failure=terminate_on_attitude_failure
         if residual_mode not in ('diff3','virtual6'):raise ValueError('无效残差模式')
         self.residual_mode=residual_mode;self.action_dim=3 if residual_mode=='diff3' else 6
         if not np.isscalar(residual_scale) or not np.isfinite(residual_scale) or not 0<=residual_scale<=1:raise ValueError('残差强度须为0～1有限数')
@@ -209,7 +220,7 @@ class NativeEnv(VecEnv):
             if transition:end+=transition
             relative=bool(getattr(s,'relative_attitude',False));kind={'ramp':1,'cross_slope':2,'rolling_slope':3,'split_level':4}.get(getattr(s,'terrain','legacy'),0)
             self.required_contact_masks.append(required);self.required_terrain_contact_masks.append(terrain);self.required_terrain_end.append(end);self.relative_attitude.append(relative)
-            p.append([s.speed,np.sign(s.speed),goal,1.5+1.5*goal/abs(s.speed),round(s.delay_ms*2),required,terrain,relative,kind,np.deg2rad(getattr(s,'grade_deg',0.)),s.center])
+            p.append([s.speed,np.sign(s.speed),goal,1.5+1.5*goal/abs(s.speed),round(s.delay_ms*2),required,terrain,relative,kind,np.deg2rad(getattr(s,'grade_deg',0.)),s.center,terminate_on_attitude_failure])
         self.param=wp.array(p,dtype=D);self.command=wp.zeros(n,dtype=D)
         self.active=wp.ones(n,dtype=wp.int32);self.done=wp.zeros(n,dtype=wp.int32)
         self.state=wp.zeros((n,24),dtype=D);self.diag=wp.zeros((n,15),dtype=D)
@@ -257,10 +268,10 @@ class NativeEnv(VecEnv):
         if done.any():
             states=self.state.numpy();geom_xpos=self.data.geom_xpos.numpy()
             for i in np.flatnonzero(done):
-                infos[i]=dict(terminal_observation=obs[i].copy(),reason=['ongoing','invalid','fall','nonwheel_contact','invalid_mapping','completed','timeout'][int(reasons[i])],physical_steps=int(states[i,0]),arrival_s=float(states[i,1]) if states[i,1]>=0 else None,
+                infos[i]=dict(terminal_observation=obs[i].copy(),reason=['ongoing','invalid','fall','nonwheel_contact','invalid_mapping','completed','timeout','attitude_failure'][int(reasons[i])],physical_steps=int(states[i,0]),arrival_s=float(states[i,1]) if states[i,1]>=0 else None,
                     rms_deg=(np.sqrt(states[i,11:14]/max(states[i,0]*.0005,.0005))*180/np.pi).tolist(),
                     velocity_rmse=float(np.sqrt(states[i,4]/states[i,5])) if states[i,5]>0 else None,stop_distance_m=float(states[i,6]),tail_speed_m_s=float(states[i,7]),success=bool(states[i,19]),
-                    duration_s=states[i,0]*.0005,episode=dict(r=float(states[i,20]),l=int(np.ceil(states[i,0]/40))),peak_deg=(states[i,8:11]*180/np.pi).tolist(),TimeLimit_truncated=int(reasons[i])==6)
+                    duration_s=states[i,0]*.0005,episode=dict(r=float(states[i,20]),l=int(np.ceil(states[i,0]/40))),peak_deg=(states[i,8:11]*180/np.pi).tolist(),TimeLimit_truncated=False)
                 touched=int(states[i,14]);required_terrain=self.required_terrain_contact_masks[i]
                 direction=np.sign(self.scenarios[i].speed);wheel_progress=(direction*geom_xpos[i,self.wheel_geom_ids,0]-self.scenarios[i].center).tolist();end=self.required_terrain_end[i]
                 infos[i]['required_contact_mask']=self.required_contact_masks[i];infos[i]['touched_contact_mask']=touched&3
@@ -276,7 +287,10 @@ class NativeEnv(VecEnv):
                 infos[i]['yaw_config']=self.yaw_config
                 infos[i]['residual_scale']=self.residual_scale
                 infos[i]['residual_mode']=self.residual_mode
-                infos[i]['TimeLimit.truncated']=int(reasons[i])==6
+                infos[i]['terminate_on_attitude_failure']=self.terminate_on_attitude_failure
+                # This deadline is task failure, not an external collection cutoff.
+                # SB3 must not add gamma*V(terminal_observation) to its -10 reward.
+                infos[i]['TimeLimit.truncated']=False
             self.mask.assign(done.astype(np.int32));wp.launch(reset_rows,self.num_envs,self.reset_args)
             refreshed=self.obs.numpy();obs[done]=refreshed[done]
         return obs,reward,done,infos

@@ -66,6 +66,7 @@ class LiveNativeEnv(NativeEnv):
         return dict(kind='actual_training_physics_frames',backend='native',environment_index=index,environments=self.num_envs,
             residual_scale=self.residual_scale,
             residual_mode=self.residual_mode,
+            terminate_on_attitude_failure=self.terminate_on_attitude_failure,
             episode=int(self.episode_counts[index]),phase=self.phase,scenario=asdict(self.scenarios[index]),source_run=str(self.directory.parent),
             recorded_policy_hz=50,recorded_physics_hz=400,started=float(self.episode_started[index]),status='recording')
 

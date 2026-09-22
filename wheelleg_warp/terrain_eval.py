@@ -6,6 +6,7 @@ from native.terrain_env import TerrainEnv
 
 
 def evaluate_terrain(model,normalization,cases,env_kwargs=None):
+    if (env_kwargs or {}).get('terminate_on_attitude_failure',False):raise ValueError('评估必须保留完整物理轨迹，不能启用训练姿态终止')
     raw=TerrainEnv(len(cases),scenario=cases,**(env_kwargs or {}))
     env=VecNormalize.load(str(normalization),raw);env.training=False;env.norm_reward=False
     stats=(env.obs_rms.mean.copy(),env.obs_rms.var.copy(),env.obs_rms.count);rows=[]
