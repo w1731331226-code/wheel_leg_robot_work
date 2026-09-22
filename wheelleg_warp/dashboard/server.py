@@ -42,7 +42,7 @@ def status():
         if phase.get('checkpoint'):steps=int(Path(phase['checkpoint']).name.split('_')[-1])
         validation=dict(phase=phase.get('status'),current=phase.get('current'),policy_steps=steps,target=read(test/'protocol.json',{}).get('policy_steps',2048000))
     live=read(DATA/'live/native.json')
-    return dict(now=time.time(),current=current,validation=validation,requested_environment=read(SELECTED,{'environment':0}).get('environment',0),protocol={k:p.get(k) for k in ('name','environments','n_steps','max_rounds','patience','steps_per_round','inherited_steps','bootstrap_summary')},
+    return dict(now=time.time(),current=current,validation=validation,requested_environment=read(SELECTED,{'environment':0}).get('environment',0),protocol={k:p.get(k) for k in ('name','environments','n_steps','max_rounds','patience','steps_per_round','inherited_steps','bootstrap_summary','residual_mode')},
         selection={**selection,'rounds':[{k:r[k] for k in ('round','summary','policy_steps','train_seconds','total_seconds','updates')} for r in selection['rounds']]},rate=rate,round_remaining_training_seconds=eta,live=live,archives=archives,
         final_evaluation=read(RUN/'final_evaluation.json'),run_directory=str(RUN))
 
@@ -76,7 +76,7 @@ class Handler(BaseHTTPRequestHandler):
         path=unquote(urlparse(self.path).path)
         if path=='/api/overview':
             paths=list(RUN.glob('round_*/live/overview.bin'))
-            if not paths:
+            if not paths and not (RUN/'protocol.json').is_file():
                 for name in ('native_live_preflight_20260921','native_formal_probe_20260921','warmstart_1024_20260921'):paths.extend((ROOT/'wheelleg_warp/results'/name).glob('round_*/live/overview.bin'))
             if not paths:return self.send_error(404)
             target=max(paths,key=lambda p:p.stat().st_mtime)

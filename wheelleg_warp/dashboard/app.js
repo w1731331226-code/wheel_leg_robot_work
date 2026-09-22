@@ -52,11 +52,12 @@ function update(s){
  $('round-bar').style.width=`${Math.min(100,roundSteps/(p.steps_per_round??2048000)*100)}%`;
  $('total').textContent=`新增 ${num(c.new_steps)} 步 · 继承 ${num(p.inherited_steps)} 步`;
  if(selection.best){$('best').textContent=`${selection.best.summary.success_count} / ${selection.best.summary.total}`;$('best-yaw').textContent=`Jψ ${selection.best.summary.mean_yaw_score_deg.toFixed(3)}°`;$('best-round').textContent=selection.best.round===0?'最佳：准入检查点':`最佳：第 ${selection.best.round} 轮`;$('best-download').hidden=false;$('norm-download').hidden=false;}
- $('config').textContent=`1024环境 · M3 PPO · 每环境采样 ${p.n_steps??'待选定'} 步 · 本轮已更新 ${c.updates??Math.floor(roundSteps/((p.n_steps??50)*(p.environments??1024)))} 次`;
+ $('config').textContent=`1024环境 · ${p.residual_mode==='virtual6'?'Virtual6':'M3'} PPO · 每环境采样 ${p.n_steps??'待选定'} 步 · 本轮已更新 ${c.updates??Math.floor(roundSteps/((p.n_steps??50)*(p.environments??1024)))} 次`;
+ document.querySelector('.aside-note p').firstChild.textContent=`MuJoCo Warp · ${p.residual_mode==='virtual6'?'Virtual6':'M3'} PPO`;
  const rows=[...(p.bootstrap_summary?[{round:0,summary:p.bootstrap_summary}]:[]),...selection.rounds];
  chart('success-chart',rows.map(r=>({x:r.round,y:r.summary.success_count/r.summary.total*100})),true);
  chart('yaw-chart',rows.filter(r=>r.summary.mean_yaw_score_deg!=null).map(r=>({x:r.round,y:r.summary.mean_yaw_score_deg})),false);
- $('decision').textContent=c.status==='completed'?`已按${c.stop_reason==='plateau'?`连续${p.patience}轮停滞`:`${p.max_rounds}轮预算`}停止，保留开发集最佳检查点。`:c.status==='failed'?'本轮异常已停止，请查看保存的错误记录。':`成功数优先，Jψ次之；每轮重新抽样，停滞${p.patience}轮或最多${p.max_rounds}轮停止。`;
+ $('decision').textContent=c.status==='completed'&&c.promoted===false?'试验已完成；候选未达到优化准入，未晋升。':c.status==='completed'?`已按${c.stop_reason==='plateau'?`连续${p.patience}轮停滞`:`${p.max_rounds}轮预算`}停止，保留开发集最佳检查点。`:c.status==='failed'?'本轮异常已停止，请查看保存的错误记录。':`成功数优先，Jψ次之；每轮重新抽样，停滞${p.patience}轮或最多${p.max_rounds}轮停止。`;
  if(mode==='live'&&performance.now()-lastDisplayed>1500)$('fps').textContent='0 FPS · 等待新物理帧';
  if(mode==='live'&&s.live&&Date.now()/1000-s.live.wall_time>3){$('lag').textContent=`最近源状态 ${Math.round(Date.now()/1000-s.live.wall_time)} 秒前`;$('stream-status').textContent=names[c.status]??c.status;}
  latestClip=s.archives[0]??null;$('replay').disabled=!latestClip;$('archive-count').textContent=`${s.archives.length} 个完整回合`;$('archives').replaceChildren();

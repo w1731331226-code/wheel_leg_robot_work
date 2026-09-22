@@ -169,25 +169,29 @@ def reset_rows(mask:wp.array[int],q0:wp.array[float],q:wp.array2d[float],v:wp.ar
     for j in range(v.shape[1]):v[w,j]=0.;warm[w,j]=0.
     clock[w]=0.;active[w]=1;done[w]=0
     for j in range(sensors.shape[1]):sensors[w,j]=0.
-    for j in range(19):control_state[w,j]=D(0)
+    for j in range(control_state.shape[1]):control_state[w,j]=D(0)
     control_state[w,1]=D(.3);control_state[w,12]=D(-1)
     for j in range(state.shape[1]):state[w,j]=D(0)
     state[w,1]=D(-1)
     for j in range(6):residual[w,j]=D(0)
-    for j in range(3):targets[w,j]=0.
+    for j in range(targets.shape[1]):targets[w,j]=0.
     for j in range(32):
         obs[w,j]=obs0[w,j]
         for t in range(21):history[w,t,j]=obs0[w,j]
 
 
 class NativeEnv(VecEnv):
-    def __init__(self,n=128,stage=3,seed=730000,scenario=None,bank_factory=bank,yaw_config=(.4,2.,.24,.3)):
+    def __init__(self,n=128,stage=3,seed=730000,scenario=None,bank_factory=bank,yaw_config=(.4,2.,.24,.3),residual_scale=1.,residual_mode='diff3'):
         if not isinstance(n,int) or not 1 <= n <= 1024:raise ValueError('用户限制：批量环境数须为1～1024')
+        if residual_mode not in ('diff3','virtual6'):raise ValueError('无效残差模式')
+        self.residual_mode=residual_mode;self.action_dim=3 if residual_mode=='diff3' else 6
+        if not np.isscalar(residual_scale) or not np.isfinite(residual_scale) or not 0<=residual_scale<=1:raise ValueError('残差强度须为0～1有限数')
+        self.residual_scale=float(residual_scale)
         wp.init();wp.set_device('cuda:0')
         self.num_envs=n;self.stage=stage
         self.cpu,self.model,self.data,self.scenarios=bank_factory(n,stage,seed,scenario)
         if len(yaw_config)!=4 or not np.isfinite(yaw_config).all() or min(yaw_config)<=0:raise ValueError('无效偏航控制参数')
-        self.yaw_config=tuple(float(x) for x in yaw_config);self.k=constants(self.cpu,n,self.yaw_config)
+        self.yaw_config=tuple(float(x) for x in yaw_config);self.k=constants(self.cpu,n,self.yaw_config,self.action_dim)
         ids=self.k['ids'].numpy().tolist()+[self.cpu.geom(x).id for x in ('wheel_collide_L','wheel_collide_R','bump_L','bump_R')]
         terrain=mujoco.mj_name2id(self.cpu,mujoco.mjtObj.mjOBJ_GEOM,'terrain_00')
         ids += [terrain,mujoco.mj_name2id(self.cpu,mujoco.mjtObj.mjOBJ_GEOM,'terrain_15')] if terrain>=0 else [-1,-1]
@@ -211,7 +215,7 @@ class NativeEnv(VecEnv):
         self.state=wp.zeros((n,24),dtype=D);self.diag=wp.zeros((n,15),dtype=D)
         self.residual=wp.zeros((n,6),dtype=D);self.reward=wp.zeros(n,dtype=D);self.contact_flags=wp.zeros((n,2),dtype=wp.int32)
         self.obs=wp.zeros((n,32));self.history=wp.zeros((n,21,32))
-        self.targets=wp.zeros((n,3));self.stopped_q=wp.zeros((n,self.cpu.nq));self.stopped_v=wp.zeros((n,self.cpu.nv));self.stopped_w=wp.zeros((n,self.cpu.nv))
+        self.targets=wp.zeros((n,self.action_dim));self.stopped_q=wp.zeros((n,self.cpu.nq));self.stopped_v=wp.zeros((n,self.cpu.nv));self.stopped_w=wp.zeros((n,self.cpu.nv))
         self.q0=wp.array(self.cpu.key_qpos[self.cpu.keyframe('stand').id],dtype=wp.float32)
         initial=np.zeros((n,32),dtype=np.float32)
         q=self.q0.numpy()
@@ -234,7 +238,7 @@ class NativeEnv(VecEnv):
                 wp.launch(after,n,[self.data.qpos,self.data.qvel,self.data.sensordata,self.data.qacc_warmstart,self.data.time,self.contact_flags,self.ids,self.param,self.command,self.state,self.k['state'],self.diag,
                     self.residual,self.active,self.done,self.reward,self.obs,self.history,self.stopped_q,self.stopped_v,self.stopped_w],block_dim=32)
         self.graph=capture.graph
-        super().__init__(n,gym.spaces.Box(-np.inf,np.inf,(32,),dtype=np.float32),gym.spaces.Box(-1.,1.,(3,),dtype=np.float32))
+        super().__init__(n,gym.spaces.Box(-np.inf,np.inf,(32,),dtype=np.float32),gym.spaces.Box(-1.,1.,(self.action_dim,),dtype=np.float32))
 
     def reset(self):
         self.mask.fill_(1);wp.launch(reset_rows,self.num_envs,self.reset_args);mjw.forward(self.model,self.data)
@@ -242,8 +246,8 @@ class NativeEnv(VecEnv):
 
     def step_async(self,actions):
         a=np.asarray(actions,dtype=np.float32)
-        if a.shape!=(self.num_envs,3) or not np.isfinite(a).all() or np.any(abs(a)>1.000001):raise ValueError('无效动作')
-        self.targets.assign(a);wp.capture_launch(self.graph)
+        if a.shape!=(self.num_envs,self.action_dim) or not np.isfinite(a).all() or np.any(abs(a)>1.000001):raise ValueError('无效动作')
+        self.targets.assign(a*self.residual_scale);wp.capture_launch(self.graph)
 
     def step_wait(self):
         obs=self.obs.numpy().copy();reward=self.reward.numpy().copy();reasons=self.done.numpy();done=reasons!=0
@@ -270,6 +274,8 @@ class NativeEnv(VecEnv):
                 infos[i]['relative_peak_deg']=(states[i,21:24]*180/np.pi).tolist()
                 infos[i]['residual_limited_steps']=int(states[i,16]);infos[i]['mean_residual_lambda']=float(states[i,17]/max(states[i,0],1));infos[i]['base_infeasible_steps']=int(states[i,18])
                 infos[i]['yaw_config']=self.yaw_config
+                infos[i]['residual_scale']=self.residual_scale
+                infos[i]['residual_mode']=self.residual_mode
                 infos[i]['TimeLimit.truncated']=int(reasons[i])==6
             self.mask.assign(done.astype(np.int32));wp.launch(reset_rows,self.num_envs,self.reset_args)
             refreshed=self.obs.numpy();obs[done]=refreshed[done]

@@ -1,0 +1,21 @@
+{
+  "status": "rejected_under_strong_success_gate",
+  "candidate_promoted": false,
+  "formal_training_started": false,
+  "bounded_probe_training_steps": 2048000,
+  "ppo_updates": 40,
+  "hard_group": {
+    "total": 48,
+    "baseline_success": 33,
+    "required_success": 43,
+    "required_complete": 46,
+    "midpoint_success": 32,
+    "midpoint_complete": 41,
+    "endpoint_success": 32,
+    "endpoint_complete": 44
+  },
+  "other_groups": "legacy, surface, advanced each 16/16; this does not compensate for hard-group failure",
+  "independent_holdout_evaluated": false,
+  "weights_promoted": false,
+  "reason": "No large success gain; hard-group completion declined. More action dimensions alone did not solve performance."
+}

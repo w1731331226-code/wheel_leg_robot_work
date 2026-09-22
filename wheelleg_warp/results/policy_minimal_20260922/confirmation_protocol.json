@@ -1,0 +1,8 @@
+{
+  "purpose": "Confirm the already frozen scale=0.5 on two further independent case panels; no parameter reselection.",
+  "case_starts": [640000, 650000],
+  "scales": [1.0, 0.5],
+  "cases_per_panel": 96,
+  "gate": "Report each panel and aggregate; promote only if aggregate step and total success improve, aggregate original-scene success and completion do not decline. Retain per-case regressions.",
+  "candidate_locked": true
+}

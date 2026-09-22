@@ -1,0 +1,17 @@
+{
+  "selection_data": "development_only",
+  "candidate": "original_terrain_v3_policy_with_half_residual",
+  "residual_scale": 0.5,
+  "development_step_success_repeats": {
+    "baseline": [35, 34],
+    "candidate": [39, 38]
+  },
+  "development_step_complete_repeats": {
+    "baseline": [45, 45],
+    "candidate": [46, 46]
+  },
+  "regression_groups": "legacy/surface/advanced all 16/16 in both repeats",
+  "rejected": "channel removal and targeted PPO training lacked robust combined improvement",
+  "holdout_start": 610000,
+  "holdout_rule": "Evaluate frozen candidate, original, and zero-residual comparator; do not select another scale from holdout results."
+}

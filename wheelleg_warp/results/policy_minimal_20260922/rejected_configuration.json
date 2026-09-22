@@ -1,0 +1,16 @@
+{
+  "checkpoint": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/terrain_v3_1024_20260922/round_003/step_12324000",
+  "normalization": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/terrain_v3_1024_20260922/round_003/step_12324000.pkl",
+  "env_kwargs": {
+    "residual_scale": 0.5
+  },
+  "policy_weights_changed": false,
+  "weights_sha256": "9b9594122d824ad7cbb503e9805df9a5d56c7b063088dc9a869ef2428c32f86f",
+  "normalization_sha256": "1a7d5c84c89f90041603bd53c69366105919f911f567270494b55ebb3547337e",
+  "purpose": "Stability-first bounded residual profile; retain original scale=1 as paired baseline and report abrupt-step regressions.",
+  "validated_on": "final_verification.json",
+  "accepted_as_strategy_optimization": false,
+  "superseded_selection": true,
+  "status": "rejected_under_strong_success_gate",
+  "recommendation": "Do not deploy; retained only as an unsuccessful ablation experiment."
+}

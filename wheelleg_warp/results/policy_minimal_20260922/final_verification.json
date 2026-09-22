@@ -1,0 +1,95 @@
+{
+  "status": "rejected_under_strong_success_gate",
+  "residual_scale": 0.5,
+  "historical_weak_aggregate_gate_result": true,
+  "eligible_under_declared_aggregate_gate": false,
+  "independent_panels": 3,
+  "total_cases": 288,
+  "aggregate": {
+    "baseline": {
+      "step": {
+        "total": 144,
+        "success": 96,
+        "complete": 135,
+        "yaw_peak_mean_deg": 12.795563640914537
+      },
+      "legacy": {
+        "total": 48,
+        "success": 45,
+        "complete": 48,
+        "yaw_peak_mean_deg": 2.619851565824789
+      },
+      "surface": {
+        "total": 48,
+        "success": 48,
+        "complete": 48,
+        "yaw_peak_mean_deg": 1.5569915565684038
+      },
+      "advanced": {
+        "total": 48,
+        "success": 48,
+        "complete": 48,
+        "yaw_peak_mean_deg": 1.5394716389026322
+      }
+    },
+    "candidate": {
+      "step": {
+        "total": 144,
+        "success": 98,
+        "complete": 135,
+        "yaw_peak_mean_deg": 14.188939641459973
+      },
+      "legacy": {
+        "total": 48,
+        "success": 45,
+        "complete": 48,
+        "yaw_peak_mean_deg": 2.561777608661496
+      },
+      "surface": {
+        "total": 48,
+        "success": 48,
+        "complete": 48,
+        "yaw_peak_mean_deg": 1.0028378461841807
+      },
+      "advanced": {
+        "total": 48,
+        "success": 48,
+        "complete": 48,
+        "yaw_peak_mean_deg": 1.0007702678031034
+      }
+    }
+  },
+  "paired": {
+    "step": {
+      "both_pass": 89,
+      "gain": 9,
+      "loss": 7,
+      "both_fail": 39
+    },
+    "legacy": {
+      "both_pass": 44,
+      "gain": 1,
+      "loss": 1,
+      "both_fail": 2
+    },
+    "surface": {
+      "both_pass": 48,
+      "gain": 0,
+      "loss": 0,
+      "both_fail": 0
+    },
+    "advanced": {
+      "both_pass": 48,
+      "gain": 0,
+      "loss": 0,
+      "both_fail": 0
+    }
+  },
+  "step_mcnemar_exact_p": 0.803619384765625,
+  "formal_training_started": false,
+  "probe_training_steps": 512000,
+  "probe_promoted": false,
+  "universal_improvement_claimed": false,
+  "accepted_as_strategy_optimization": false,
+  "recommendation": "Do not deploy; retained only as an unsuccessful ablation experiment."
+}

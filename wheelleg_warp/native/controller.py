@@ -159,10 +159,14 @@ def control(qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.array2d[floa
         bound=allowed(speeds[j],j<4)
         if base[j]<-bound-D(1.e-9) or base[j]>bound+D(1.e-9):invalid_base=1
         base[j]=wp.clamp(base[j],-bound,bound)
-    for j in range(3):state[w,16+j]=state[w,16+j]+wp.clamp(D(targets[w,j])-state[w,16+j],D(-.01),D(.01))
+    for j in range(targets.shape[1]):state[w,16+j]=state[w,16+j]+wp.clamp(D(targets[w,j])-state[w,16+j],D(-.01),D(.01))
     rr_l=jl*V2(state[w,16]*D(.1)*D(7)*D(9.81)/D(2),state[w,17])
     rr_r=jr*V2(-state[w,16]*D(.1)*D(7)*D(9.81)/D(2),-state[w,17])
     residual=V6(rr_l[0],rr_l[1],rr_r[0],rr_r[1],state[w,18]*yaw_cfg[3],-state[w,18]*yaw_cfg[3])
+    if targets.shape[1]==6:
+        rr_l=jl*V2(state[w,16]*D(.1)*D(7)*D(9.81)/D(2),state[w,18])
+        rr_r=jr*V2(state[w,17]*D(.1)*D(7)*D(9.81)/D(2),state[w,19])
+        residual=V6(rr_l[0],rr_l[1],rr_r[0],rr_r[1],state[w,20]*yaw_cfg[3],state[w,21]*yaw_cfg[3])
     diagnostic[w,14]=D(0)
     if bad_control:diagnostic[w,14]=D(2)
     bad_map=bool(False)
@@ -174,7 +178,10 @@ def control(qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.array2d[floa
         maximum=(square+wp.sqrt(wp.max(D(0),square*square-D(4)*det*det)))/D(2)
         if det==D(0) or maximum/det>D(1.e6):bad_map=True
     lam=D(1)
-    if invalid_base==0 and bad_map and (state[w,16]!=D(0) or state[w,17]!=D(0) or state[w,18]!=D(0)):
+    nonzero=bool(False)
+    for j in range(targets.shape[1]):
+        if state[w,16+j]!=D(0):nonzero=True
+    if invalid_base==0 and bad_map and nonzero:
         if not bad_control:diagnostic[w,14]=D(1)
         lam=D(0)
     if invalid_base:lam=D(0)
@@ -191,12 +198,12 @@ def control(qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.array2d[floa
     diagnostic[w,12]=lam;diagnostic[w,13]=D(invalid_base)
 
 
-def constants(model,worlds,yaw_config=(.4,2.,.24,.3)):
+def constants(model,worlds,yaw_config=(.4,2.,.24,.3),action_dim=3):
     h,t,_,_=nominal_design()
     ids=[int(model.jnt_qposadr[model.joint(n).id]) for n in ('alphaL','betaL','alphaR','betaR')]
     ids += [int(model.jnt_dofadr[model.joint(n).id]) for n in ('alphaL','betaL','alphaR','betaR','wheel1','wheel2')]
     ids += [int(model.sensor('body_gyro').adr[0])]
-    state=np.zeros((worlds,19));state[:,1]=sim.L_STAND;state[:,12]=-1
+    state=np.zeros((worlds,16+action_dim));state[:,1]=sim.L_STAND;state[:,12]=-1
     return dict(state=wp.array(state,dtype=D),ids=wp.array(ids,dtype=wp.int32),
         heights=wp.array(h,dtype=D),gains=wp.array(np.stack([r[0] for r in t]),dtype=D),
         feed=wp.array(np.stack([r[1] for r in t]),dtype=D),angles=wp.array([r[2] for r in t],dtype=D),yaw=wp.array(yaw_config,dtype=D),
