@@ -152,6 +152,7 @@ def control(qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.array2d[floa
     speeds=V6(va,vb,vc,vd,D(qvel[w,ids[8]]),D(qvel[w,ids[9]]))
     invalid_base=int(0);bad_control=bool(False)
     for j in range(6):
+        if diagnostic.shape[1]>=21:diagnostic[w,15+j]=base[j]
         if not wp.isfinite(base[j]):bad_control=True
         maximum=D(4.5)
         if j<4:maximum=D(40)
