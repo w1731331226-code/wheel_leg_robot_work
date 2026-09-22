@@ -65,11 +65,30 @@ def allowed(speed:D,hip:bool):
     return peak
 
 
+@wp.func
+def residual_projection(base:V6,residual:V6,speeds:V6,invalid_base:int,bad_map:bool,nonzero:bool,bad_control:bool,project_clipped_base:int):
+    lam=D(1);error=int(0)
+    if bad_control:error=2
+    if project_clipped_base:
+        for j in range(6):
+            if not wp.isfinite(base[j]) or not wp.isfinite(residual[j]) or not wp.isfinite(speeds[j]):error=2
+        if error==2:return D(0),error
+    if (invalid_base==0 or project_clipped_base!=0) and bad_map and nonzero:
+        if not bad_control:error=1
+        lam=D(0)
+    if invalid_base and project_clipped_base==0:lam=D(0)
+    for j in range(6):
+        bound=allowed(speeds[j],j<4)
+        if residual[j]>D(0):lam=wp.min(lam,(bound-base[j])/residual[j])
+        elif residual[j]<D(0):lam=wp.min(lam,(-bound-base[j])/residual[j])
+    return wp.clamp(lam,D(0),D(1)),error
+
+
 @wp.kernel
 def control(qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.array2d[float],
             targets:wp.array2d[float],command:wp.array[D],active:wp.array[int],state:wp.array2d[D],
             ids:wp.array[int],heights:wp.array[D],gains:wp.array3d[D],feed:wp.array2d[D],angles:wp.array[D],
-            reference:wp.array[D],yaw_cfg:wp.array[D],ctrl:wp.array2d[float],diagnostic:wp.array2d[D]):
+            reference:wp.array[D],yaw_cfg:wp.array[D],ctrl:wp.array2d[float],diagnostic:wp.array2d[D],project_clipped_base:int):
     w=wp.tid()
     if active[w]==0:return
     dt=D(.0005);boot=state[w,0]+dt;state[w,0]=boot
@@ -168,8 +187,6 @@ def control(qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.array2d[floa
         rr_l=jl*V2(state[w,16]*D(.1)*D(7)*D(9.81)/D(2),state[w,18])
         rr_r=jr*V2(state[w,17]*D(.1)*D(7)*D(9.81)/D(2),state[w,19])
         residual=V6(rr_l[0],rr_l[1],rr_r[0],rr_r[1],state[w,20]*yaw_cfg[3],state[w,21]*yaw_cfg[3])
-    diagnostic[w,14]=D(0)
-    if bad_control:diagnostic[w,14]=D(2)
     bad_map=bool(False)
     for side in range(2):
         matrix=jl
@@ -178,19 +195,17 @@ def control(qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.array2d[floa
         det=wp.abs(matrix[0,0]*matrix[1,1]-matrix[0,1]*matrix[1,0])
         maximum=(square+wp.sqrt(wp.max(D(0),square*square-D(4)*det*det)))/D(2)
         if det==D(0) or maximum/det>D(1.e6):bad_map=True
-    lam=D(1)
     nonzero=bool(False)
     for j in range(targets.shape[1]):
         if state[w,16+j]!=D(0):nonzero=True
-    if invalid_base==0 and bad_map and nonzero:
-        if not bad_control:diagnostic[w,14]=D(1)
-        lam=D(0)
-    if invalid_base:lam=D(0)
-    for j in range(6):
-        bound=allowed(speeds[j],j<4)
-        if residual[j]>D(0):lam=wp.min(lam,(bound-base[j])/residual[j])
-        elif residual[j]<D(0):lam=wp.min(lam,(-bound-base[j])/residual[j])
-    lam=wp.clamp(lam,D(0),D(1))
+    lam,projection_error=residual_projection(base,residual,speeds,invalid_base,bad_map,nonzero,bad_control,project_clipped_base)
+    diagnostic[w,14]=D(projection_error)
+    if project_clipped_base and projection_error:
+        # Do not send 0*NaN or a singular mapping to physics; after() terminates it.
+        for j in range(6):
+            ctrl[w,j]=0.;diagnostic[w,j]=D(0);diagnostic[w,6+j]=D(0)
+        diagnostic[w,12]=D(0);diagnostic[w,13]=D(invalid_base)
+        return
     for j in range(6):
         ctrl[w,j]=float(wp.clamp(base[j]+lam*residual[j],-allowed(speeds[j],j<4),allowed(speeds[j],j<4)))
         diagnostic[w,j]=base[j];diagnostic[w,6+j]=lam*residual[j]

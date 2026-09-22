@@ -55,7 +55,7 @@ class LiveNativeEnv(NativeEnv):
             wp.launch(begin,n,[self.reward])
             for i in range(40):
                 wp.launch(command_step,n,[self.state,self.param,self.command,self.active,self.data.qpos,self.data.qvel,self.data.qacc_warmstart,self.stopped_q,self.stopped_v,self.stopped_w,self.contact_flags])
-                wp.launch(control,n,[self.data.qpos,self.data.qvel,self.data.sensordata,self.targets,self.command,self.active,self.k['state'],self.ids,self.k['heights'],self.k['gains'],self.k['feed'],self.k['angles'],self.k['reference'],self.k['yaw'],self.data.ctrl,self.diag],block_dim=32)
+                wp.launch(control,n,[self.data.qpos,self.data.qvel,self.data.sensordata,self.targets,self.command,self.active,self.k['state'],self.ids,self.k['heights'],self.k['gains'],self.k['feed'],self.k['angles'],self.k['reference'],self.k['yaw'],self.data.ctrl,self.diag,int(self.project_clipped_base)],block_dim=32)
                 mjw.step(self.model,self.data)
                 wp.launch(reduce_contacts,self.data.naconmax,[self.data.nacon,self.data.contact.worldid,self.data.contact.geom,self.ids,self.contact_flags])
                 wp.launch(after,n,[self.data.qpos,self.data.qvel,self.data.sensordata,self.data.qacc_warmstart,self.data.time,self.contact_flags,self.ids,self.param,self.command,self.state,self.k['state'],self.diag,self.residual,self.active,self.done,self.reward,self.obs,self.history,self.stopped_q,self.stopped_v,self.stopped_w],block_dim=32)
@@ -66,6 +66,7 @@ class LiveNativeEnv(NativeEnv):
         return dict(kind='actual_training_physics_frames',backend='native',environment_index=index,environments=self.num_envs,
             residual_scale=self.residual_scale,
             residual_mode=self.residual_mode,
+            project_clipped_base=self.project_clipped_base,
             terminate_on_attitude_failure=self.terminate_on_attitude_failure,
             episode=int(self.episode_counts[index]),phase=self.phase,scenario=asdict(self.scenarios[index]),source_run=str(self.directory.parent),
             recorded_policy_hz=50,recorded_physics_hz=400,started=float(self.episode_started[index]),status='recording')

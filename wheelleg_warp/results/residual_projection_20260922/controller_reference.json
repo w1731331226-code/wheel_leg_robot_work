@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "script": "wheelleg_warp/native/check_controller.py",
+  "comparison": "Default GPU controller vs unchanged CPU controller on identical states",
+  "physical_steps": 12000,
+  "max_control_absolute_error": 4.6996187919035037e-7,
+  "tolerance": 0.0001,
+  "full_cpu_gpu_trajectory_equivalence_claimed": false
+}

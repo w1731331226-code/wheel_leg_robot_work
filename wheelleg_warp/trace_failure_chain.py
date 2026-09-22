@@ -119,7 +119,7 @@ class RecordedEnv(TerrainEnv):
             wp.launch(begin,n,[self.reward])
             for slot in range(40):
                 wp.launch(command_step,n,[self.state,self.param,self.command,self.active,self.data.qpos,self.data.qvel,self.data.qacc_warmstart,self.stopped_q,self.stopped_v,self.stopped_w,self.contact_flags])
-                wp.launch(control,n,[self.data.qpos,self.data.qvel,self.data.sensordata,self.targets,self.command,self.active,self.k['state'],self.ids,self.k['heights'],self.k['gains'],self.k['feed'],self.k['angles'],self.k['reference'],self.k['yaw'],self.data.ctrl,self.diag],block_dim=32)
+                wp.launch(control,n,[self.data.qpos,self.data.qvel,self.data.sensordata,self.targets,self.command,self.active,self.k['state'],self.ids,self.k['heights'],self.k['gains'],self.k['feed'],self.k['angles'],self.k['reference'],self.k['yaw'],self.data.ctrl,self.diag,int(self.project_clipped_base)],block_dim=32)
                 wp.launch(before_physics,n,[slot,self.active,self.state,self.data.qpos,self.data.qvel,self.ids,self.targets,self.k['state'],self.diag,self.k['yaw'],self.trace])
                 mjw.step(self.model,self.data)
                 c=self.data.contact
