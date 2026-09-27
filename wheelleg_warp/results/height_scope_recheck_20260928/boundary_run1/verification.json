@@ -1,0 +1,2113 @@
+{
+  "protocol": "public training-range boundary engineering panel, no PPO",
+  "selection": "single-side 20 mm boundary, either side, speeds ±0.5/±1.0 m/s, nominal other parameters",
+  "heights_m": [
+    0.16,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.38
+  ],
+  "residual_scale": 0,
+  "source_sha256": {
+    "wheelleg_warp/probe_height_inrange.py": "088287dc007bc2d23a3e131cc8883f21906320302897926516b48859726dec67",
+    "wheelleg_warp/native/environment.py": "c88abf130655c7f11f383ca51d500cca535f0709908ddfcb94d85b31678da4f7",
+    "wheelleg_warp/native/controller.py": "aa0a871dc97cc24ab75c54424604e1a1649de359655126e199192cd006f42c26",
+    "wheelleg_warp/native/terrain.py": "a6c50c922bd5da757131eec80afcc3db7745142d7563c5576ae14dd5d957ef58",
+    "wheelleg_warp/native/models.py": "59420b688a25e63fb8e0e644f0702025836bea0ed90377e452bcbd919c7216eb",
+    "wheelleg_ppo/tools/ppo_env.py": "8b282c709f4ed0e7da500fb0e78a1a380b08a5467d4155b9cbe56147bff14296"
+  },
+  "counts_by_height": {
+    "0.16": {
+      "success": 4,
+      "total": 8
+    },
+    "0.2": {
+      "success": 4,
+      "total": 8
+    },
+    "0.25": {
+      "success": 4,
+      "total": 8
+    },
+    "0.3": {
+      "success": 2,
+      "total": 8
+    },
+    "0.35": {
+      "success": 2,
+      "total": 8
+    },
+    "0.38": {
+      "success": 1,
+      "total": 8
+    }
+  },
+  "rows": [
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.16
+      },
+      "result": {
+        "reason": "completed",
+        "success": true,
+        "duration_s": 9.3175,
+        "peak_deg": [
+          1.2782235406814564,
+          0.5134357148986184,
+          3.517425067730572
+        ],
+        "relative_peak_deg": [
+          1.2782235406814564,
+          0.5134357148986184,
+          3.517425067730572
+        ],
+        "height_rmse_m": 0.0001900489205205785,
+        "velocity_rmse": 0.05411201881476135,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.2
+      },
+      "result": {
+        "reason": "completed",
+        "success": true,
+        "duration_s": 9.2975,
+        "peak_deg": [
+          1.2804771903326524,
+          0.46739661638072866,
+          3.901605324914076
+        ],
+        "relative_peak_deg": [
+          1.2804771903326524,
+          0.46739661638072866,
+          3.901605324914076
+        ],
+        "height_rmse_m": 0.00019829108708755184,
+        "velocity_rmse": 0.05189668353551251,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.25
+      },
+      "result": {
+        "reason": "completed",
+        "success": true,
+        "duration_s": 9.284,
+        "peak_deg": [
+          1.2854862897957746,
+          0.46386570339621913,
+          4.594903170519531
+        ],
+        "relative_peak_deg": [
+          1.2854862897957746,
+          0.46386570339621913,
+          4.594903170519531
+        ],
+        "height_rmse_m": 0.00020143665813583927,
+        "velocity_rmse": 0.050533571823657406,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.3
+      },
+      "result": {
+        "reason": "completed",
+        "success": true,
+        "duration_s": 9.2765,
+        "peak_deg": [
+          1.2904827996168733,
+          0.4552501022946036,
+          4.910581125071348
+        ],
+        "relative_peak_deg": [
+          1.2904827996168733,
+          0.4552501022946036,
+          4.910581125071348
+        ],
+        "height_rmse_m": 0.00020248454036082678,
+        "velocity_rmse": 0.04957923970244347,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.35
+      },
+      "result": {
+        "reason": "completed",
+        "success": true,
+        "duration_s": 9.275500000000001,
+        "peak_deg": [
+          1.2946189369680643,
+          0.5063694473100461,
+          4.88928220023033
+        ],
+        "relative_peak_deg": [
+          1.2946189369680643,
+          0.5063694473100461,
+          4.88928220023033
+        ],
+        "height_rmse_m": 0.00021261320728581154,
+        "velocity_rmse": 0.04899491335946037,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.38
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 9.275,
+        "peak_deg": [
+          1.297788611911612,
+          0.5513772933129227,
+          5.0250354025367745
+        ],
+        "relative_peak_deg": [
+          1.297788611911612,
+          0.5513772933129227,
+          5.0250354025367745
+        ],
+        "height_rmse_m": 0.0002538666647911026,
+        "velocity_rmse": 0.048888164479708514,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.16
+      },
+      "result": {
+        "reason": "completed",
+        "success": true,
+        "duration_s": 9.3175,
+        "peak_deg": [
+          1.2782406649021272,
+          0.5212330388738845,
+          3.5811783468460683
+        ],
+        "relative_peak_deg": [
+          1.2782406649021272,
+          0.5212330388738845,
+          3.5811783468460683
+        ],
+        "height_rmse_m": 0.00019059561947367692,
+        "velocity_rmse": 0.054153309376493444,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.2
+      },
+      "result": {
+        "reason": "completed",
+        "success": true,
+        "duration_s": 9.298,
+        "peak_deg": [
+          1.2804769179015802,
+          0.4684858250691231,
+          4.066300605162446
+        ],
+        "relative_peak_deg": [
+          1.2804769179015802,
+          0.4684858250691231,
+          4.066300605162446
+        ],
+        "height_rmse_m": 0.0001976193566897849,
+        "velocity_rmse": 0.05198333790717731,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.25
+      },
+      "result": {
+        "reason": "completed",
+        "success": true,
+        "duration_s": 9.285,
+        "peak_deg": [
+          1.2863946449726598,
+          0.474591018226164,
+          4.8012836244608526
+        ],
+        "relative_peak_deg": [
+          1.2863946449726598,
+          0.474591018226164,
+          4.8012836244608526
+        ],
+        "height_rmse_m": 0.00020663022414502764,
+        "velocity_rmse": 0.050592066850524316,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.3
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 9.277000000000001,
+        "peak_deg": [
+          1.292030387741048,
+          0.5018994635808915,
+          5.347263691057205
+        ],
+        "relative_peak_deg": [
+          1.292030387741048,
+          0.5018994635808915,
+          5.347263691057205
+        ],
+        "height_rmse_m": 0.00021210801355683214,
+        "velocity_rmse": 0.0496510787694405,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.35
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 9.2765,
+        "peak_deg": [
+          1.295550884165422,
+          0.5491748847839973,
+          5.260305077794424
+        ],
+        "relative_peak_deg": [
+          1.295550884165422,
+          0.5491748847839973,
+          5.260305077794424
+        ],
+        "height_rmse_m": 0.0002201582934747509,
+        "velocity_rmse": 0.049068246908482625,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.38
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 9.277000000000001,
+        "peak_deg": [
+          1.2987306188202836,
+          0.6194065583966656,
+          5.726538083218978
+        ],
+        "relative_peak_deg": [
+          1.2987306188202836,
+          0.6194065583966656,
+          5.726538083218978
+        ],
+        "height_rmse_m": 0.00023130225203245512,
+        "velocity_rmse": 0.049005963961809486,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": 1.0,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.16
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 6.545,
+        "peak_deg": [
+          1.0988224328268217,
+          0.9986594751412035,
+          7.8420398125828354
+        ],
+        "relative_peak_deg": [
+          1.0988224328268217,
+          0.9986594751412035,
+          7.8420398125828354
+        ],
+        "height_rmse_m": 0.0004324863125772859,
+        "velocity_rmse": 0.13740098078504115,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": 1.0,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.2
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 6.533,
+        "peak_deg": [
+          1.1095978560713442,
+          0.8954592632531903,
+          7.389464878554341
+        ],
+        "relative_peak_deg": [
+          1.1095978560713442,
+          0.8954592632531903,
+          7.389464878554341
+        ],
+        "height_rmse_m": 0.00036914345909775574,
+        "velocity_rmse": 0.13317473530102458,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": 1.0,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.25
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 6.526,
+        "peak_deg": [
+          1.1321006078959053,
+          1.210624229870116,
+          7.004675267110296
+        ],
+        "relative_peak_deg": [
+          1.1321006078959053,
+          1.210624229870116,
+          7.004675267110296
+        ],
+        "height_rmse_m": 0.00036733882622190034,
+        "velocity_rmse": 0.13072453989177696,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": 1.0,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.3
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 6.5205,
+        "peak_deg": [
+          1.1532494823002275,
+          1.616525106718326,
+          6.6943009960805755
+        ],
+        "relative_peak_deg": [
+          1.1532494823002275,
+          1.616525106718326,
+          6.6943009960805755
+        ],
+        "height_rmse_m": 0.0003748143139317118,
+        "velocity_rmse": 0.1288535628761186,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": 1.0,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.35
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 6.5200000000000005,
+        "peak_deg": [
+          1.154551617406781,
+          2.0179418147081876,
+          6.763993261356879
+        ],
+        "relative_peak_deg": [
+          1.154551617406781,
+          2.0179418147081876,
+          6.763993261356879
+        ],
+        "height_rmse_m": 0.00040336077905579184,
+        "velocity_rmse": 0.12782373459913246,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": 1.0,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.38
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 6.5205,
+        "peak_deg": [
+          1.1018579211214643,
+          2.1273179095543604,
+          8.0866076448018
+        ],
+        "relative_peak_deg": [
+          1.1018579211214643,
+          2.1273179095543604,
+          8.0866076448018
+        ],
+        "height_rmse_m": 0.0010374708799901402,
+        "velocity_rmse": 0.12792342985961397,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": -1.0,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.16
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 6.546,
+        "peak_deg": [
+          1.0900779659150572,
+          0.9950453883296732,
+          8.2370784219275
+        ],
+        "relative_peak_deg": [
+          1.0900779659150572,
+          0.9950453883296732,
+          8.2370784219275
+        ],
+        "height_rmse_m": 0.0004138511577903498,
+        "velocity_rmse": 0.1373340964919726,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": -1.0,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.2
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 6.5325,
+        "peak_deg": [
+          1.101101564144852,
+          0.9138618947504463,
+          8.038247471945258
+        ],
+        "relative_peak_deg": [
+          1.101101564144852,
+          0.9138618947504463,
+          8.038247471945258
+        ],
+        "height_rmse_m": 0.00039827603385491175,
+        "velocity_rmse": 0.13325436175889577,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": -1.0,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.25
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 6.526,
+        "peak_deg": [
+          1.1154355922195887,
+          1.033982296481647,
+          7.975748477715485
+        ],
+        "relative_peak_deg": [
+          1.1154355922195887,
+          1.033982296481647,
+          7.975748477715485
+        ],
+        "height_rmse_m": 0.0004167619031666873,
+        "velocity_rmse": 0.13083427052592525,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": -1.0,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.3
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 6.5215000000000005,
+        "peak_deg": [
+          1.1251963730372767,
+          1.3861736216170615,
+          7.830414022317755
+        ],
+        "relative_peak_deg": [
+          1.1251963730372767,
+          1.3861736216170615,
+          7.830414022317755
+        ],
+        "height_rmse_m": 0.0004523578511786726,
+        "velocity_rmse": 0.12893134230831385,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": -1.0,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.35
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 6.5205,
+        "peak_deg": [
+          1.1289957555587309,
+          1.7277395900246872,
+          8.167637779953758
+        ],
+        "relative_peak_deg": [
+          1.1289957555587309,
+          1.7277395900246872,
+          8.167637779953758
+        ],
+        "height_rmse_m": 0.000490526415486409,
+        "velocity_rmse": 0.1279070851154749,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": -1.0,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.38
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 6.524,
+        "peak_deg": [
+          1.132463278868979,
+          1.6964914864521923,
+          9.818779573991439
+        ],
+        "relative_peak_deg": [
+          1.132463278868979,
+          1.6964914864521923,
+          9.818779573991439
+        ],
+        "height_rmse_m": 0.0004533013261419924,
+        "velocity_rmse": 0.12794335128557605,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.16
+      },
+      "result": {
+        "reason": "completed",
+        "success": true,
+        "duration_s": 9.3175,
+        "peak_deg": [
+          1.2781241503478593,
+          0.5128243029099906,
+          3.4957294612579313
+        ],
+        "relative_peak_deg": [
+          1.2781241503478593,
+          0.5128243029099906,
+          3.4957294612579313
+        ],
+        "height_rmse_m": 0.00019145635720087256,
+        "velocity_rmse": 0.05412049602461366,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.2
+      },
+      "result": {
+        "reason": "completed",
+        "success": true,
+        "duration_s": 9.2975,
+        "peak_deg": [
+          1.2803833848852317,
+          0.45478683643179346,
+          3.9413650308437593
+        ],
+        "relative_peak_deg": [
+          1.2803833848852317,
+          0.45478683643179346,
+          3.9413650308437593
+        ],
+        "height_rmse_m": 0.00019769325395087848,
+        "velocity_rmse": 0.05192581422062389,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.25
+      },
+      "result": {
+        "reason": "completed",
+        "success": true,
+        "duration_s": 9.2845,
+        "peak_deg": [
+          1.2853489666284272,
+          0.44556268300328483,
+          4.550055522216165
+        ],
+        "relative_peak_deg": [
+          1.2853489666284272,
+          0.44556268300328483,
+          4.550055522216165
+        ],
+        "height_rmse_m": 0.00020049495173368712,
+        "velocity_rmse": 0.05052920917239937,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.3
+      },
+      "result": {
+        "reason": "completed",
+        "success": true,
+        "duration_s": 9.2765,
+        "peak_deg": [
+          1.290428946135708,
+          0.4624115956163055,
+          4.911807136229935
+        ],
+        "relative_peak_deg": [
+          1.290428946135708,
+          0.4624115956163055,
+          4.911807136229935
+        ],
+        "height_rmse_m": 0.0002038895407196338,
+        "velocity_rmse": 0.04957937299827643,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.35
+      },
+      "result": {
+        "reason": "completed",
+        "success": true,
+        "duration_s": 9.275500000000001,
+        "peak_deg": [
+          1.2945139921155147,
+          0.5044104183898638,
+          4.855524321946323
+        ],
+        "relative_peak_deg": [
+          1.2945139921155147,
+          0.5044104183898638,
+          4.855524321946323
+        ],
+        "height_rmse_m": 0.00021217957521290276,
+        "velocity_rmse": 0.04899113753820651,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.38
+      },
+      "result": {
+        "reason": "completed",
+        "success": true,
+        "duration_s": 9.275,
+        "peak_deg": [
+          1.2977564174715956,
+          0.513401989190562,
+          4.607111366351731
+        ],
+        "relative_peak_deg": [
+          1.2977564174715956,
+          0.513401989190562,
+          4.607111366351731
+        ],
+        "height_rmse_m": 0.0002566014635794091,
+        "velocity_rmse": 0.04885698411954162,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.16
+      },
+      "result": {
+        "reason": "completed",
+        "success": true,
+        "duration_s": 9.3175,
+        "peak_deg": [
+          1.2784501339818095,
+          0.5209377762213085,
+          3.5775180378379243
+        ],
+        "relative_peak_deg": [
+          1.2784501339818095,
+          0.5209377762213085,
+          3.5775180378379243
+        ],
+        "height_rmse_m": 0.00018992389242761918,
+        "velocity_rmse": 0.05415068440899128,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.2
+      },
+      "result": {
+        "reason": "completed",
+        "success": true,
+        "duration_s": 9.2975,
+        "peak_deg": [
+          1.281094630275607,
+          0.478430700896764,
+          4.106121654615938
+        ],
+        "relative_peak_deg": [
+          1.281094630275607,
+          0.478430700896764,
+          4.106121654615938
+        ],
+        "height_rmse_m": 0.00019894583260575096,
+        "velocity_rmse": 0.05197626767951044,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.25
+      },
+      "result": {
+        "reason": "completed",
+        "success": true,
+        "duration_s": 9.285,
+        "peak_deg": [
+          1.2866368986429098,
+          0.4743583602325712,
+          4.80836083359643
+        ],
+        "relative_peak_deg": [
+          1.2866368986429098,
+          0.4743583602325712,
+          4.80836083359643
+        ],
+        "height_rmse_m": 0.00020532795822550195,
+        "velocity_rmse": 0.05059579537171006,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.3
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 9.277000000000001,
+        "peak_deg": [
+          1.2921032611362693,
+          0.5093794445710234,
+          5.358572134865527
+        ],
+        "relative_peak_deg": [
+          1.2921032611362693,
+          0.5093794445710234,
+          5.358572134865527
+        ],
+        "height_rmse_m": 0.00021101561580934113,
+        "velocity_rmse": 0.04964883098843848,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.35
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 9.2765,
+        "peak_deg": [
+          1.2953861656493957,
+          0.547749185748837,
+          5.287303660598278
+        ],
+        "relative_peak_deg": [
+          1.2953861656493957,
+          0.547749185748837,
+          5.287303660598278
+        ],
+        "height_rmse_m": 0.0002200030319775663,
+        "velocity_rmse": 0.04907750020653562,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.38
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 9.2765,
+        "peak_deg": [
+          1.2983569893504714,
+          0.6137086893224011,
+          5.747246404123996
+        ],
+        "relative_peak_deg": [
+          1.2983569893504714,
+          0.6137086893224011,
+          5.747246404123996
+        ],
+        "height_rmse_m": 0.00023133934196230765,
+        "velocity_rmse": 0.04901049219656331,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": 1.0,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.16
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 6.545,
+        "peak_deg": [
+          1.0988718901755001,
+          0.9986445954764301,
+          7.83679593858972
+        ],
+        "relative_peak_deg": [
+          1.0988718901755001,
+          0.9986445954764301,
+          7.83679593858972
+        ],
+        "height_rmse_m": 0.00043258394357060224,
+        "velocity_rmse": 0.13740000648666473,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": 1.0,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.2
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 6.533,
+        "peak_deg": [
+          1.1099766267491806,
+          0.8954668622677611,
+          7.390054920014101
+        ],
+        "relative_peak_deg": [
+          1.1099766267491806,
+          0.8954668622677611,
+          7.390054920014101
+        ],
+        "height_rmse_m": 0.0003690347942328542,
+        "velocity_rmse": 0.13317492487175075,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": 1.0,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.25
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 6.526,
+        "peak_deg": [
+          1.1314277163494564,
+          1.210613803993184,
+          7.004530694980289
+        ],
+        "relative_peak_deg": [
+          1.1314277163494564,
+          1.210613803993184,
+          7.004530694980289
+        ],
+        "height_rmse_m": 0.00036733314413431154,
+        "velocity_rmse": 0.13072448108487136,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": 1.0,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.3
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 6.5205,
+        "peak_deg": [
+          1.1524081622380629,
+          1.6165278181347915,
+          6.694644160688694
+        ],
+        "relative_peak_deg": [
+          1.1524081622380629,
+          1.6165278181347915,
+          6.694644160688694
+        ],
+        "height_rmse_m": 0.00037472666970831027,
+        "velocity_rmse": 0.1288533240657785,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": 1.0,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.35
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 6.5200000000000005,
+        "peak_deg": [
+          1.1545093855583588,
+          2.0179126971183896,
+          6.761898150146672
+        ],
+        "relative_peak_deg": [
+          1.1545093855583588,
+          2.0179126971183896,
+          6.761898150146672
+        ],
+        "height_rmse_m": 0.00040309257894013923,
+        "velocity_rmse": 0.12782497514508048,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": 1.0,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.38
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 6.5205,
+        "peak_deg": [
+          1.1022236488779062,
+          2.127337584909691,
+          8.0876315004452
+        ],
+        "relative_peak_deg": [
+          1.1022236488779062,
+          2.127337584909691,
+          8.0876315004452
+        ],
+        "height_rmse_m": 0.0010275140060317062,
+        "velocity_rmse": 0.12792356411699327,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": -1.0,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.16
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 6.546,
+        "peak_deg": [
+          1.09007536798752,
+          0.9950435870445509,
+          8.237421498348855
+        ],
+        "relative_peak_deg": [
+          1.09007536798752,
+          0.9950435870445509,
+          8.237421498348855
+        ],
+        "height_rmse_m": 0.0004139851147309294,
+        "velocity_rmse": 0.137340547894052,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": -1.0,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.2
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 6.5325,
+        "peak_deg": [
+          1.1011608127539028,
+          0.9138543543991345,
+          8.038227902381173
+        ],
+        "relative_peak_deg": [
+          1.1011608127539028,
+          0.9138543543991345,
+          8.038227902381173
+        ],
+        "height_rmse_m": 0.0003986749739108485,
+        "velocity_rmse": 0.13325405805906107,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": -1.0,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.25
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 6.526,
+        "peak_deg": [
+          1.1154275118266581,
+          1.0407192132106429,
+          7.919334101123676
+        ],
+        "relative_peak_deg": [
+          1.1154275118266581,
+          1.0407192132106429,
+          7.919334101123676
+        ],
+        "height_rmse_m": 0.00041524628333499384,
+        "velocity_rmse": 0.13082153163597957,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": -1.0,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.3
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 6.5215000000000005,
+        "peak_deg": [
+          1.1252588139582353,
+          1.3861630592442327,
+          7.828857336794871
+        ],
+        "relative_peak_deg": [
+          1.1252588139582353,
+          1.3861630592442327,
+          7.828857336794871
+        ],
+        "height_rmse_m": 0.00045202437646597025,
+        "velocity_rmse": 0.1289315626586721,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": -1.0,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.35
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 6.5205,
+        "peak_deg": [
+          1.1286088643941499,
+          1.726158836022876,
+          8.16534174290318
+        ],
+        "relative_peak_deg": [
+          1.1286088643941499,
+          1.726158836022876,
+          8.16534174290318
+        ],
+        "height_rmse_m": 0.000490430974897336,
+        "velocity_rmse": 0.127907626831528,
+        "terrain_evidence_passed": true
+      }
+    },
+    {
+      "seed": -1,
+      "scenario": {
+        "speed": -1.0,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.38
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "duration_s": 6.524,
+        "peak_deg": [
+          1.1313747705040895,
+          1.696495278750227,
+          9.817519625604092
+        ],
+        "relative_peak_deg": [
+          1.1313747705040895,
+          1.696495278750227,
+          9.817519625604092
+        ],
+        "height_rmse_m": 0.0004524690803318361,
+        "velocity_rmse": 0.127943697294686,
+        "terrain_evidence_passed": true
+      }
+    }
+  ]
+}

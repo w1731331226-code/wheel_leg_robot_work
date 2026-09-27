@@ -1,0 +1,79 @@
+{
+  "passed": true,
+  "role": "engineering_preflight_only_not_a_candidate",
+  "steps": 12800,
+  "updates": 2,
+  "environment_count": 128,
+  "policy_n_steps": 50,
+  "height_min_m": 0.16,
+  "height_max_m": 0.38,
+  "unique_initial_heights": 107,
+  "target_observation_mean": -0.0296085046176659,
+  "target_observation_variance": 0.005208111153521957,
+  "endpoint_counts": {
+    "minimum": 8,
+    "maximum": 8
+  },
+  "timings": [
+    {
+      "sample_seconds": 1.0821706589995301,
+      "update_seconds": 0.34158893700077897,
+      "seconds": 1.423759596000309
+    },
+    {
+      "sample_seconds": 1.0641413289995398,
+      "update_seconds": 0.3341237370004819,
+      "seconds": 1.3982650660000218
+    }
+  ],
+  "losses": {
+    "train/learning_rate": 0.0003,
+    "train/entropy_loss": -4.234520527032705,
+    "train/policy_gradient_loss": -0.007723474114331138,
+    "train/value_loss": 0.027423854247451973,
+    "train/approx_kl": 0.005818474572151899,
+    "train/clip_fraction": 0.04240512833930552,
+    "train/loss": -0.003363337367773056,
+    "train/explained_variance": 0.7143025398254395,
+    "train/std": 0.9933042526245117,
+    "train/n_updates": 20.0,
+    "train/clip_range": 0.2
+  },
+  "ppo": {
+    "n_steps": 50,
+    "batch_size": 250,
+    "n_epochs": 10,
+    "learning_rate": 0.0003,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "clip_range": 0.2,
+    "clip_range_vf": null,
+    "normalize_advantage": true,
+    "ent_coef": 0,
+    "vf_coef": 0.5,
+    "max_grad_norm": 0.5,
+    "use_sde": false,
+    "target_kl": null,
+    "policy_kwargs": {
+      "net_arch": [
+        64,
+        64
+      ],
+      "log_std_init": 0
+    }
+  },
+  "normalization": {
+    "norm_obs": true,
+    "norm_reward": false,
+    "clip_obs": 10,
+    "epsilon": 1e-08
+  },
+  "source_sha256": {
+    "wheelleg_warp/test_height_training_link.py": "3164ba218ec72be22ae606ba2e6b98ff0c1f9a6be905a7018627a26c8472291b",
+    "wheelleg_warp/native/environment.py": "c88abf130655c7f11f383ca51d500cca535f0709908ddfcb94d85b31678da4f7",
+    "wheelleg_warp/native/controller.py": "aa0a871dc97cc24ab75c54424604e1a1649de359655126e199192cd006f42c26",
+    "wheelleg_warp/native/terrain.py": "a6c50c922bd5da757131eec80afcc3db7745142d7563c5576ae14dd5d957ef58",
+    "wheelleg_warp/native/models.py": "59420b688a25e63fb8e0e644f0702025836bea0ed90377e452bcbd919c7216eb"
+  },
+  "training_config_sha256": "162ce708cde9e2589f95d9dbf8f9be3648b8a3472ead5101b80ef5d66ba09d88"
+}
