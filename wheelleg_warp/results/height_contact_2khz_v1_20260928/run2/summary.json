@@ -1,0 +1,637 @@
+{
+  "source_sha256": {
+    "probe_height_2khz.py": "9830152d03a6fb44c8152b1aeefea9b81e99d7d9e3b1fe2a77a8e9568ce22dff",
+    "trace_first_divergence_v2.py": "5ceef2a29660f91ca30639c21fc91f4ca9bf7d1f90280f45829a3f32c55c37f8",
+    "native/environment.py": "c88abf130655c7f11f383ca51d500cca535f0709908ddfcb94d85b31678da4f7",
+    "native/controller.py": "aa0a871dc97cc24ab75c54424604e1a1649de359655126e199192cd006f42c26",
+    "native/terrain.py": "a6c50c922bd5da757131eec80afcc3db7745142d7563c5576ae14dd5d957ef58",
+    "native/models.py": "59420b688a25e63fb8e0e644f0702025836bea0ed90377e452bcbd919c7216eb"
+  },
+  "sample_period_s": 0.0005,
+  "recorded_interval_s": [
+    4.7805,
+    5.7
+  ],
+  "columns": {
+    "qpos": 1,
+    "qvel": 18,
+    "ctrl": 34,
+    "contact_mask": 40,
+    "lambda_col": 44,
+    "base_infeasible": 45
+  },
+  "rows": [
+    {
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.16
+      },
+      "contact_s": 5.031,
+      "yaw5_s": 5.1105,
+      "first_lambda_zero_s": 5.08,
+      "first_base_infeasible_s": 5.08,
+      "first_wheel1_saturated_s": 5.08,
+      "first_wheel1_below_1Nm_s": 5.084,
+      "wheel_rpm_at_contact": [
+        96.04,
+        96.04
+      ],
+      "wheel_rpm_at_lambda_zero": [
+        598.0,
+        61.71
+      ],
+      "wheel_rpm_at_yaw5": [
+        431.97,
+        69.3
+      ],
+      "max_wheel1_rpm_before_yaw5": 692.04,
+      "min_wheel1_bound_nm_before_yaw5": 0.367,
+      "wheel1_saturated_steps_before_yaw5": 56,
+      "left_floor_contact_steps_before_yaw5": 10,
+      "left_bump_contact_steps_before_yaw5": 74,
+      "left_no_contact_steps_before_yaw5": 86,
+      "last_left_bump_contact_s": 5.1095,
+      "right_floor_contact_steps_before_yaw5": 160,
+      "window_physical_steps": 160
+    },
+    {
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.2
+      },
+      "contact_s": 5.0215,
+      "yaw5_s": 5.104,
+      "first_lambda_zero_s": 5.072,
+      "first_base_infeasible_s": 5.072,
+      "first_wheel1_saturated_s": 5.072,
+      "first_wheel1_below_1Nm_s": 5.0765,
+      "wheel_rpm_at_contact": [
+        96.05,
+        96.05
+      ],
+      "wheel_rpm_at_lambda_zero": [
+        591.64,
+        71.94
+      ],
+      "wheel_rpm_at_yaw5": [
+        669.48,
+        61.32
+      ],
+      "max_wheel1_rpm_before_yaw5": 691.51,
+      "min_wheel1_bound_nm_before_yaw5": 0.378,
+      "wheel1_saturated_steps_before_yaw5": 56,
+      "left_floor_contact_steps_before_yaw5": 10,
+      "left_bump_contact_steps_before_yaw5": 76,
+      "left_no_contact_steps_before_yaw5": 90,
+      "last_left_bump_contact_s": 5.0945,
+      "right_floor_contact_steps_before_yaw5": 166,
+      "window_physical_steps": 166
+    },
+    {
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.25
+      },
+      "contact_s": 5.017,
+      "yaw5_s": 5.105,
+      "first_lambda_zero_s": 5.07,
+      "first_base_infeasible_s": 5.07,
+      "first_wheel1_saturated_s": 5.07,
+      "first_wheel1_below_1Nm_s": 5.0745,
+      "wheel_rpm_at_contact": [
+        96.07,
+        96.07
+      ],
+      "wheel_rpm_at_lambda_zero": [
+        588.09,
+        84.48
+      ],
+      "wheel_rpm_at_yaw5": [
+        690.16,
+        69.85
+      ],
+      "max_wheel1_rpm_before_yaw5": 690.16,
+      "min_wheel1_bound_nm_before_yaw5": 0.406,
+      "wheel1_saturated_steps_before_yaw5": 66,
+      "left_floor_contact_steps_before_yaw5": 10,
+      "left_bump_contact_steps_before_yaw5": 78,
+      "left_no_contact_steps_before_yaw5": 99,
+      "last_left_bump_contact_s": 5.087,
+      "right_floor_contact_steps_before_yaw5": 177,
+      "window_physical_steps": 177
+    },
+    {
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.3
+      },
+      "contact_s": 5.013,
+      "yaw5_s": 5.106,
+      "first_lambda_zero_s": 5.0685,
+      "first_base_infeasible_s": 5.0685,
+      "first_wheel1_saturated_s": 5.0685,
+      "first_wheel1_below_1Nm_s": 5.073,
+      "wheel_rpm_at_contact": [
+        96.08,
+        96.08
+      ],
+      "wheel_rpm_at_lambda_zero": [
+        586.82,
+        94.78
+      ],
+      "wheel_rpm_at_yaw5": [
+        646.6,
+        86.34
+      ],
+      "max_wheel1_rpm_before_yaw5": 690.46,
+      "min_wheel1_bound_nm_before_yaw5": 0.4,
+      "wheel1_saturated_steps_before_yaw5": 74,
+      "left_floor_contact_steps_before_yaw5": 11,
+      "left_bump_contact_steps_before_yaw5": 82,
+      "left_no_contact_steps_before_yaw5": 105,
+      "last_left_bump_contact_s": 5.102,
+      "right_floor_contact_steps_before_yaw5": 187,
+      "window_physical_steps": 187
+    },
+    {
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.35
+      },
+      "contact_s": 5.011,
+      "yaw5_s": 5.105,
+      "first_lambda_zero_s": 5.0675,
+      "first_base_infeasible_s": 5.0675,
+      "first_wheel1_saturated_s": 5.0675,
+      "first_wheel1_below_1Nm_s": 5.072,
+      "wheel_rpm_at_contact": [
+        96.07,
+        96.07
+      ],
+      "wheel_rpm_at_lambda_zero": [
+        590.09,
+        99.33
+      ],
+      "wheel_rpm_at_yaw5": [
+        691.06,
+        92.07
+      ],
+      "max_wheel1_rpm_before_yaw5": 691.06,
+      "min_wheel1_bound_nm_before_yaw5": 0.387,
+      "wheel1_saturated_steps_before_yaw5": 72,
+      "left_floor_contact_steps_before_yaw5": 12,
+      "left_bump_contact_steps_before_yaw5": 81,
+      "left_no_contact_steps_before_yaw5": 108,
+      "last_left_bump_contact_s": 5.0825,
+      "right_floor_contact_steps_before_yaw5": 189,
+      "window_physical_steps": 189
+    },
+    {
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.38
+      },
+      "contact_s": 5.0115,
+      "yaw5_s": 5.1045,
+      "first_lambda_zero_s": 5.0665,
+      "first_base_infeasible_s": 5.0665,
+      "first_wheel1_saturated_s": 5.0665,
+      "first_wheel1_below_1Nm_s": 5.071,
+      "wheel_rpm_at_contact": [
+        96.07,
+        96.06
+      ],
+      "wheel_rpm_at_lambda_zero": [
+        589.26,
+        102.45
+      ],
+      "wheel_rpm_at_yaw5": [
+        688.84,
+        99.2
+      ],
+      "max_wheel1_rpm_before_yaw5": 690.67,
+      "min_wheel1_bound_nm_before_yaw5": 0.395,
+      "wheel1_saturated_steps_before_yaw5": 75,
+      "left_floor_contact_steps_before_yaw5": 13,
+      "left_bump_contact_steps_before_yaw5": 79,
+      "left_no_contact_steps_before_yaw5": 108,
+      "last_left_bump_contact_s": 5.088,
+      "right_floor_contact_steps_before_yaw5": 187,
+      "window_physical_steps": 187
+    },
+    {
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.16
+      },
+      "contact_s": 5.33,
+      "yaw5_s": 5.409,
+      "first_lambda_zero_s": 5.3785,
+      "first_base_infeasible_s": 5.3785,
+      "first_wheel1_saturated_s": 5.3785,
+      "first_wheel1_below_1Nm_s": 5.383,
+      "wheel_rpm_at_contact": [
+        96.04,
+        96.04
+      ],
+      "wheel_rpm_at_lambda_zero": [
+        596.91,
+        64.63
+      ],
+      "wheel_rpm_at_yaw5": [
+        492.74,
+        68.32
+      ],
+      "max_wheel1_rpm_before_yaw5": 692.17,
+      "min_wheel1_bound_nm_before_yaw5": 0.365,
+      "wheel1_saturated_steps_before_yaw5": 55,
+      "left_floor_contact_steps_before_yaw5": 10,
+      "left_bump_contact_steps_before_yaw5": 72,
+      "left_no_contact_steps_before_yaw5": 87,
+      "last_left_bump_contact_s": 5.407,
+      "right_floor_contact_steps_before_yaw5": 159,
+      "window_physical_steps": 159
+    },
+    {
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.2
+      },
+      "contact_s": 5.3205,
+      "yaw5_s": 5.4025,
+      "first_lambda_zero_s": 5.3705,
+      "first_base_infeasible_s": 5.3705,
+      "first_wheel1_saturated_s": 5.3705,
+      "first_wheel1_below_1Nm_s": 5.375,
+      "wheel_rpm_at_contact": [
+        96.05,
+        96.05
+      ],
+      "wheel_rpm_at_lambda_zero": [
+        592.24,
+        76.29
+      ],
+      "wheel_rpm_at_yaw5": [
+        672.43,
+        64.99
+      ],
+      "max_wheel1_rpm_before_yaw5": 692.02,
+      "min_wheel1_bound_nm_before_yaw5": 0.368,
+      "wheel1_saturated_steps_before_yaw5": 59,
+      "left_floor_contact_steps_before_yaw5": 10,
+      "left_bump_contact_steps_before_yaw5": 74,
+      "left_no_contact_steps_before_yaw5": 91,
+      "last_left_bump_contact_s": 5.393,
+      "right_floor_contact_steps_before_yaw5": 165,
+      "window_physical_steps": 165
+    },
+    {
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.25
+      },
+      "contact_s": 5.316,
+      "yaw5_s": 5.403,
+      "first_lambda_zero_s": 5.3685,
+      "first_base_infeasible_s": 5.3685,
+      "first_wheel1_saturated_s": 5.3685,
+      "first_wheel1_below_1Nm_s": 5.373,
+      "wheel_rpm_at_contact": [
+        96.07,
+        96.07
+      ],
+      "wheel_rpm_at_lambda_zero": [
+        593.3,
+        89.2
+      ],
+      "wheel_rpm_at_yaw5": [
+        689.79,
+        73.81
+      ],
+      "max_wheel1_rpm_before_yaw5": 691.34,
+      "min_wheel1_bound_nm_before_yaw5": 0.382,
+      "wheel1_saturated_steps_before_yaw5": 65,
+      "left_floor_contact_steps_before_yaw5": 10,
+      "left_bump_contact_steps_before_yaw5": 77,
+      "left_no_contact_steps_before_yaw5": 98,
+      "last_left_bump_contact_s": 5.387,
+      "right_floor_contact_steps_before_yaw5": 175,
+      "window_physical_steps": 175
+    },
+    {
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.3
+      },
+      "contact_s": 5.312,
+      "yaw5_s": 5.404,
+      "first_lambda_zero_s": 5.367,
+      "first_base_infeasible_s": 5.367,
+      "first_wheel1_saturated_s": 5.367,
+      "first_wheel1_below_1Nm_s": 5.371,
+      "wheel_rpm_at_contact": [
+        96.08,
+        96.08
+      ],
+      "wheel_rpm_at_lambda_zero": [
+        596.96,
+        98.56
+      ],
+      "wheel_rpm_at_yaw5": [
+        616.44,
+        86.85
+      ],
+      "max_wheel1_rpm_before_yaw5": 689.83,
+      "min_wheel1_bound_nm_before_yaw5": 0.412,
+      "wheel1_saturated_steps_before_yaw5": 74,
+      "left_floor_contact_steps_before_yaw5": 11,
+      "left_bump_contact_steps_before_yaw5": 81,
+      "left_no_contact_steps_before_yaw5": 104,
+      "last_left_bump_contact_s": 5.4035,
+      "right_floor_contact_steps_before_yaw5": 185,
+      "window_physical_steps": 185
+    },
+    {
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.35
+      },
+      "contact_s": 5.31,
+      "yaw5_s": 5.403,
+      "first_lambda_zero_s": 5.3655,
+      "first_base_infeasible_s": 5.3655,
+      "first_wheel1_saturated_s": 5.3655,
+      "first_wheel1_below_1Nm_s": 5.37,
+      "wheel_rpm_at_contact": [
+        96.07,
+        96.07
+      ],
+      "wheel_rpm_at_lambda_zero": [
+        584.95,
+        105.41
+      ],
+      "wheel_rpm_at_yaw5": [
+        645.31,
+        95.22
+      ],
+      "max_wheel1_rpm_before_yaw5": 690.81,
+      "min_wheel1_bound_nm_before_yaw5": 0.393,
+      "wheel1_saturated_steps_before_yaw5": 75,
+      "left_floor_contact_steps_before_yaw5": 12,
+      "left_bump_contact_steps_before_yaw5": 81,
+      "left_no_contact_steps_before_yaw5": 106,
+      "last_left_bump_contact_s": 5.399,
+      "right_floor_contact_steps_before_yaw5": 187,
+      "window_physical_steps": 187
+    },
+    {
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.38
+      },
+      "contact_s": 5.3105,
+      "yaw5_s": 5.402,
+      "first_lambda_zero_s": 5.3645,
+      "first_base_infeasible_s": 5.3645,
+      "first_wheel1_saturated_s": 5.3645,
+      "first_wheel1_below_1Nm_s": 5.369,
+      "wheel_rpm_at_contact": [
+        96.07,
+        96.07
+      ],
+      "wheel_rpm_at_lambda_zero": [
+        585.06,
+        110.13
+      ],
+      "wheel_rpm_at_yaw5": [
+        687.53,
+        100.28
+      ],
+      "max_wheel1_rpm_before_yaw5": 692.79,
+      "min_wheel1_bound_nm_before_yaw5": 0.352,
+      "wheel1_saturated_steps_before_yaw5": 73,
+      "left_floor_contact_steps_before_yaw5": 13,
+      "left_bump_contact_steps_before_yaw5": 77,
+      "left_no_contact_steps_before_yaw5": 107,
+      "last_left_bump_contact_s": 5.388,
+      "right_floor_contact_steps_before_yaw5": 184,
+      "window_physical_steps": 184
+    }
+  ]
+}

@@ -42,8 +42,13 @@ def run(control=False,feedback=False):
             contact=row['events'].get('contact')
             if contact and t<=contact['time_s']+.100001:
                 row['wheel_command_samples'].append(dict(time_s=t,command_over_nominal_4_5Nm=np.round(abs(ctrl[i,4:6])/4.5,3).tolist(),
-                                                       wheel_base_clipped=(abs(diag[i,19:21])>abs(ctrl[i,4:6])+1e-6).tolist(),
+                                                       wheel_base_clipped=(abs(diag[i,19:21])>abs(diag[i,4:6])+1e-6).tolist(),
+                                                       wheel_base_before_nm=np.round(diag[i,19:21],3).tolist(),
+                                                       wheel_base_after_nm=np.round(diag[i,4:6],3).tolist(),
+                                                       executed_wheel_residual_nm=np.round(diag[i,10:12],3).tolist(),
+                                                       residual_lambda=round(float(diag[i,12]),3),
                                                        filtered_action3=round(float(filtered[i,18]),3),
+                                                       cumulative_residual_limited_steps=int(state[i,16]),
                                                        cumulative_base_infeasible_steps=int(state[i,18])))
             if done[i]:
                 row['result']=dict(reason=int(done[i]),success=bool(state[i,19]),

@@ -1,0 +1,517 @@
+{
+  "mode": "contact_oracle_opposite_2khz",
+  "source_sha256": {
+    "probe_height_reflex_2khz.py": "6636a8a2ce5b1743d4eca713276d00084457f169d85e9c67c25dc686debd0531",
+    "native/environment.py": "c88abf130655c7f11f383ca51d500cca535f0709908ddfcb94d85b31678da4f7",
+    "native/controller.py": "aa0a871dc97cc24ab75c54424604e1a1649de359655126e199192cd006f42c26",
+    "native/terrain.py": "a6c50c922bd5da757131eec80afcc3db7745142d7563c5576ae14dd5d957ef58",
+    "native/models.py": "59420b688a25e63fb8e0e644f0702025836bea0ed90377e452bcbd919c7216eb"
+  },
+  "sample_period_s": 0.0005,
+  "rows": [
+    {
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.16
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "peak_deg": [
+          1.5045170883215184,
+          0.9705760752592913,
+          15.13118702277965
+        ],
+        "height_rmse_m": 0.00015974969327905232
+      },
+      "contact_s": 5.031,
+      "gyro_threshold_s": 5.0315,
+      "requested_s": 5.0315,
+      "filtered_s": 5.032,
+      "executed_s": 5.0315,
+      "lambda_zero_s": 5.0845,
+      "yaw5_s": 5.109,
+      "executed_steps_before_yaw5": 114
+    },
+    {
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.2
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "peak_deg": [
+          1.5066652340038622,
+          0.8815847599205509,
+          17.725060147434554
+        ],
+        "height_rmse_m": 0.0001819310431776595
+      },
+      "contact_s": 5.0215,
+      "gyro_threshold_s": 5.0225,
+      "requested_s": 5.022,
+      "filtered_s": 5.0225,
+      "executed_s": 5.022,
+      "lambda_zero_s": 5.077,
+      "yaw5_s": 5.103,
+      "executed_steps_before_yaw5": 121
+    },
+    {
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.25
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "peak_deg": [
+          1.4452867522351502,
+          0.873587477085982,
+          23.617557581950088
+        ],
+        "height_rmse_m": 0.00017694911508855975
+      },
+      "contact_s": 5.017,
+      "gyro_threshold_s": 5.018,
+      "requested_s": 5.0175,
+      "filtered_s": 5.018,
+      "executed_s": 5.0175,
+      "lambda_zero_s": 5.076,
+      "yaw5_s": 5.104,
+      "executed_steps_before_yaw5": 123
+    },
+    {
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.3
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "peak_deg": [
+          1.1553336834905699,
+          1.0399362804322616,
+          72.09089724369471
+        ],
+        "height_rmse_m": 0.0003434907535719188
+      },
+      "contact_s": 5.013,
+      "gyro_threshold_s": 5.0145,
+      "requested_s": 5.0135,
+      "filtered_s": 5.014,
+      "executed_s": 5.0135,
+      "lambda_zero_s": 5.075,
+      "yaw5_s": 5.105,
+      "executed_steps_before_yaw5": 131
+    },
+    {
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.35
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "peak_deg": [
+          1.7036893411917167,
+          1.1903028668852216,
+          76.48177713375873
+        ],
+        "height_rmse_m": 0.0003579828741831936
+      },
+      "contact_s": 5.011,
+      "gyro_threshold_s": 5.0125,
+      "requested_s": 5.0115,
+      "filtered_s": 5.012,
+      "executed_s": 5.0115,
+      "lambda_zero_s": 5.074,
+      "yaw5_s": 5.104,
+      "executed_steps_before_yaw5": 132
+    },
+    {
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.38
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "peak_deg": [
+          1.1591296630567143,
+          1.6009565520947986,
+          78.59915813648084
+        ],
+        "height_rmse_m": 0.0004028044450004169
+      },
+      "contact_s": 5.0115,
+      "gyro_threshold_s": 5.013,
+      "requested_s": 5.012,
+      "filtered_s": 5.0125,
+      "executed_s": 5.012,
+      "lambda_zero_s": 5.0725,
+      "yaw5_s": 5.1035,
+      "executed_steps_before_yaw5": 126
+    },
+    {
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.16
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "peak_deg": [
+          1.4918215807302453,
+          0.974121789989169,
+          17.00893268597377
+        ],
+        "height_rmse_m": 0.00016864101463367044
+      },
+      "contact_s": 5.33,
+      "gyro_threshold_s": 5.331,
+      "requested_s": 5.3305,
+      "filtered_s": 5.331,
+      "executed_s": 5.3305,
+      "lambda_zero_s": 5.3835,
+      "yaw5_s": 5.408,
+      "executed_steps_before_yaw5": 111
+    },
+    {
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.2
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "peak_deg": [
+          1.5121734204077264,
+          0.9132382489929972,
+          20.137251747063956
+        ],
+        "height_rmse_m": 0.00019877859938816753
+      },
+      "contact_s": 5.3205,
+      "gyro_threshold_s": 5.3215,
+      "requested_s": 5.321,
+      "filtered_s": 5.3215,
+      "executed_s": 5.321,
+      "lambda_zero_s": 5.3755,
+      "yaw5_s": 5.4015,
+      "executed_steps_before_yaw5": 113
+    },
+    {
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.25
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "peak_deg": [
+          1.029722221270273,
+          1.0744228418037813,
+          68.14523940125736
+        ],
+        "height_rmse_m": 0.00033716770879267265
+      },
+      "contact_s": 5.316,
+      "gyro_threshold_s": 5.317,
+      "requested_s": 5.3165,
+      "filtered_s": 5.317,
+      "executed_s": 5.3165,
+      "lambda_zero_s": 5.374,
+      "yaw5_s": 5.4025,
+      "executed_steps_before_yaw5": 120
+    },
+    {
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.3
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "peak_deg": [
+          1.274958109411627,
+          1.0201403725559455,
+          72.32688247470851
+        ],
+        "height_rmse_m": 0.0003643856232351859
+      },
+      "contact_s": 5.312,
+      "gyro_threshold_s": 5.3135,
+      "requested_s": 5.3125,
+      "filtered_s": 5.313,
+      "executed_s": 5.3125,
+      "lambda_zero_s": 5.373,
+      "yaw5_s": 5.4025,
+      "executed_steps_before_yaw5": 126
+    },
+    {
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.35
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "peak_deg": [
+          1.874726886826013,
+          1.2079345254631737,
+          76.8052454940868
+        ],
+        "height_rmse_m": 0.0003498880219831401
+      },
+      "contact_s": 5.31,
+      "gyro_threshold_s": 5.3115,
+      "requested_s": 5.3105,
+      "filtered_s": 5.311,
+      "executed_s": 5.3105,
+      "lambda_zero_s": 5.372,
+      "yaw5_s": 5.402,
+      "executed_steps_before_yaw5": 130
+    },
+    {
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.38
+      },
+      "result": {
+        "reason": "completed",
+        "success": false,
+        "peak_deg": [
+          1.2556826564569805,
+          1.431129962935777,
+          77.99437376044868
+        ],
+        "height_rmse_m": 0.0004177096135970534
+      },
+      "contact_s": 5.3105,
+      "gyro_threshold_s": 5.312,
+      "requested_s": 5.311,
+      "filtered_s": 5.3115,
+      "executed_s": 5.311,
+      "lambda_zero_s": 5.3705,
+      "yaw5_s": 5.401,
+      "executed_steps_before_yaw5": 121
+    }
+  ]
+}
