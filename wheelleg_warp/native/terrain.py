@@ -34,6 +34,23 @@ class TerrainScenario(Scenario):
         if not math.isfinite(self.lateral_margin_m) or not 0<=self.lateral_margin_m<=.5:raise ValueError('横向余量须在0～0.5m')
 
 
+@dataclass(frozen=True)
+class HeightTerrainScenario(TerrainScenario):
+    stand_height_m:float=.3
+
+    def __post_init__(self):
+        super().__post_init__()
+        if not math.isfinite(self.stand_height_m) or not .16<=self.stand_height_m<=.38:
+            raise ValueError('目标腿长须在0.16～0.38m')
+
+
+def sample_height_terrain_v3(seed,stage=3,split='train'):
+    base=sample_terrain_v3(seed,stage,split)
+    rng=np.random.default_rng(np.random.SeedSequence([int(seed),113091,stage,{'train':1,'development':2,'ood':3}[split]]))
+    height={0:.16,1:.38,2:.3}.get(int(seed)%16,float(rng.uniform(.16,.38)))
+    return HeightTerrainScenario(**asdict(base),stand_height_m=height)
+
+
 def sample_terrain(seed,stage=3,split='train'):
     if stage not in (1,2,3) or split not in ('train','development','ood'):
         raise ValueError('无效地形课程或划分')
@@ -176,4 +193,11 @@ def bank(n,stage=3,seed=730000,scenario=None):
 def bank_v3(n,stage=3,seed=930000,scenario=None):
     scenarios=list(scenario) if isinstance(scenario,(list,tuple)) else [scenario or sample_terrain_v3(seed+i,stage) for i in range(n)]
     if len(scenarios)!=n:raise ValueError('固定terrain-v3场景数量与环境数不一致')
+    return batch([model(s) for s in scenarios],scenarios)
+
+
+def bank_height_v3(n,stage=3,seed=1130000,scenario=None):
+    scenarios=list(scenario) if isinstance(scenario,(list,tuple)) else [scenario or sample_height_terrain_v3(seed+i,stage) for i in range(n)]
+    if len(scenarios)!=n or not all(isinstance(s,HeightTerrainScenario) for s in scenarios):
+        raise ValueError('多高度地形场景数量或类型无效')
     return batch([model(s) for s in scenarios],scenarios)

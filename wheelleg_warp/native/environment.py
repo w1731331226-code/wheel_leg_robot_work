@@ -8,6 +8,7 @@ import warp as wp
 import mujoco_warp as mjw
 from mujoco_warp._src.types import vec5
 from native.controller import control,constants,D,fk,polar_jac
+import wheelleg_sim as sim
 from native.models import bank
 from training_contract import TASK_CONTRACT_VERSION
 from stable_baselines3.common.vec_env import VecEnv
@@ -150,6 +151,7 @@ def after(qpos:wp.array2d[float],qvel:wp.array2d[float],sensors:wp.array2d[float
     for j in range(3):history[w,slot,3+j]=sensors[w,ids[10]+j]
     history[w,slot,6]=float(vx);history[w,slot,7]=float(-wp.sin(yaw)*D(qvel[w,0])+wp.cos(yaw)*D(qvel[w,1]));history[w,slot,8]=qvel[w,2]
     history[w,slot,9]=float(next_cmd);history[w,slot,10]=float(vx-next_cmd);history[w,slot,11]=float(yaw)
+    if int(param[w,14]):history[w,slot,11]=float(param[w,13]-D(.3))
     for j in range(4):history[w,slot,12+j]=qpos[w,ids[j]];history[w,slot,16+j]=qvel[w,ids[4+j]]
     history[w,slot,20]=qvel[w,ids[8]];history[w,slot,21]=qvel[w,ids[9]]
     for side in range(2):
@@ -163,6 +165,10 @@ def after(qpos:wp.array2d[float],qvel:wp.array2d[float],sensors:wp.array2d[float
         history[w,slot,26+j]=float(diag[w,6+j]/scale)
     delayed=(int(state[w,0])-int(param[w,4])+history.shape[1])%history.shape[1]
     for j in range(32):obs[w,j]=history[w,delayed,j]
+    if int(param[w,14]) and t>=D(1):
+        height_error=(D(history[w,slot,22])+D(history[w,slot,23]))/D(2)-param[w,13]
+        state[w,28]=state[w,28]+height_error*height_error*D(.0005)
+        state[w,29]=state[w,29]+D(.0005)
     reason=int(0)
     if not wp.isfinite(qpos[w,0]) or not wp.isfinite(qpos[w,2]):reason=1
     elif wp.max(wp.abs(roll),wp.abs(pitch))>D(.6981317007977318) or qpos[w,2]<.02:reason=2
@@ -185,6 +191,9 @@ def after(qpos:wp.array2d[float],qvel:wp.array2d[float],sensors:wp.array2d[float
         success=state[w,27]>D(0) and (touch&int(param[w,5]))==int(param[w,5]) and attitude and state[w,5]>D(0)
         if state[w,5]>D(0):success=success and wp.sqrt(state[w,4]/state[w,5])<=D(.2)*wp.abs(param[w,0])
         success=success and state[w,6]<=D(.6) and state[w,7]<=D(.03)
+        if int(param[w,14]):
+            success=success and state[w,29]>D(0) and wp.sqrt(state[w,28]/state[w,29])<=D(.02)
+            success=success and wp.abs((D(history[w,slot,22])+D(history[w,slot,23]))/D(2)-param[w,13])<=D(.02)
         state[w,19]=D(0)
         if success:state[w,19]=D(1);reward[w]=reward[w]+D(10);state[w,20]=state[w,20]+D(10)
         else:reward[w]=reward[w]-D(10);state[w,20]=state[w,20]-D(10)
@@ -193,17 +202,17 @@ def after(qpos:wp.array2d[float],qvel:wp.array2d[float],sensors:wp.array2d[float
 
 
 @wp.kernel
-def reset_rows(mask:wp.array[int],q0:wp.array[float],q:wp.array2d[float],v:wp.array2d[float],warm:wp.array2d[float],clock:wp.array[float],sensors:wp.array2d[float],
+def reset_rows(mask:wp.array[int],q0:wp.array2d[float],q:wp.array2d[float],v:wp.array2d[float],warm:wp.array2d[float],clock:wp.array[float],sensors:wp.array2d[float],
                control_state:wp.array2d[D],state:wp.array2d[D],residual:wp.array2d[D],active:wp.array[int],done:wp.array[int],
-               obs0:wp.array2d[float],obs:wp.array2d[float],history:wp.array3d[float],targets:wp.array2d[float]):
+               obs0:wp.array2d[float],obs:wp.array2d[float],history:wp.array3d[float],targets:wp.array2d[float],reference:wp.array2d[D]):
     w=wp.tid()
     if not mask[w]:return
-    for j in range(q.shape[1]):q[w,j]=q0[j]
+    for j in range(q.shape[1]):q[w,j]=q0[w,j]
     for j in range(v.shape[1]):v[w,j]=0.;warm[w,j]=0.
     clock[w]=0.;active[w]=1;done[w]=0
     for j in range(sensors.shape[1]):sensors[w,j]=0.
     for j in range(control_state.shape[1]):control_state[w,j]=D(0)
-    control_state[w,1]=D(.3);control_state[w,12]=D(-1)
+    control_state[w,1]=reference[w,2];control_state[w,12]=D(-1)
     for j in range(state.shape[1]):state[w,j]=D(0)
     state[w,1]=D(-1)
     for j in range(6):residual[w,j]=D(0)
@@ -214,7 +223,7 @@ def reset_rows(mask:wp.array[int],q0:wp.array[float],q:wp.array2d[float],v:wp.ar
 
 
 class NativeEnv(VecEnv):
-    def __init__(self,n=128,stage=3,seed=730000,scenario=None,bank_factory=bank,yaw_config=(.4,2.,.24,.3),residual_scale=1.,residual_mode='diff3',terminate_on_attitude_failure=False,project_clipped_base=False,grouped_residual=False):
+    def __init__(self,n=128,stage=3,seed=730000,scenario=None,bank_factory=bank,yaw_config=(.4,2.,.24,.3),residual_scale=1.,residual_mode='diff3',terminate_on_attitude_failure=False,project_clipped_base=False,grouped_residual=False,height_conditioned=False):
         if not isinstance(n,int) or not 1 <= n <= 1024:raise ValueError('用户限制：批量环境数须为1～1024')
         if type(project_clipped_base) is not bool:raise ValueError('基础限幅后残差投影开关须为布尔值')
         self.project_clipped_base=project_clipped_base
@@ -229,6 +238,13 @@ class NativeEnv(VecEnv):
         wp.init();wp.set_device('cuda:0')
         self.num_envs=n;self.stage=stage
         self.cpu,self.model,self.data,self.scenarios=bank_factory(n,stage,seed,scenario)
+        if type(height_conditioned) is not bool:raise ValueError('多高度开关须为布尔值')
+        if any(hasattr(s,'stand_height_m')!=height_conditioned for s in self.scenarios):
+            raise ValueError('多高度场景与多高度观测模式必须同时启用')
+        self.height_conditioned=height_conditioned
+        self.stand_heights=np.asarray([s.stand_height_m if height_conditioned else sim.L_STAND for s in self.scenarios],dtype=float)
+        if not np.isfinite(self.stand_heights).all() or np.any((self.stand_heights<sim.L_SQUAT_MIN)|(self.stand_heights>sim.L_MAX)):
+            raise ValueError('目标腿长超出0.16～0.38m')
         if len(yaw_config)!=4 or not np.isfinite(yaw_config).all() or min(yaw_config)<=0:raise ValueError('无效偏航控制参数')
         self.yaw_config=tuple(float(x) for x in yaw_config);self.k=constants(self.cpu,n,self.yaw_config,self.action_dim)
         ids=self.k['ids'].numpy().tolist()+[self.cpu.geom(x).id for x in ('wheel_collide_L','wheel_collide_R','bump_L','bump_R')]
@@ -268,23 +284,43 @@ class NativeEnv(VecEnv):
             if getattr(s,'terrain','legacy')=='single_side_ramp':terrain=8 if s.grade_deg>0 else 4
             relative=bool(getattr(s,'relative_attitude',False));kind={'ramp':1,'cross_slope':2,'rolling_slope':3,'split_level':4}.get(getattr(s,'terrain','legacy'),0)
             self.required_contact_masks.append(required);self.required_terrain_contact_masks.append(terrain);self.required_terrain_end.append(end);self.relative_attitude.append(relative)
-            p.append([s.speed,np.sign(s.speed),goal,1.5+1.5*goal/abs(s.speed),round(s.delay_ms*2),required,terrain,relative,kind,np.deg2rad(getattr(s,'grade_deg',0.)),s.center,terminate_on_attitude_failure,end or 0.])
+            p.append([s.speed,np.sign(s.speed),goal,1.5+1.5*goal/abs(s.speed),round(s.delay_ms*2),required,terrain,relative,kind,np.deg2rad(getattr(s,'grade_deg',0.)),s.center,terminate_on_attitude_failure,end or 0.,self.stand_heights[i],height_conditioned])
         self.task_goals=[row[2] for row in p]
         self.param=wp.array(p,dtype=D);self.command=wp.zeros(n,dtype=D)
         self.active=wp.ones(n,dtype=wp.int32);self.done=wp.zeros(n,dtype=wp.int32)
-        self.state=wp.zeros((n,28),dtype=D);self.diag=wp.zeros((n,15),dtype=D)
+        self.state=wp.zeros((n,30),dtype=D);self.diag=wp.zeros((n,15),dtype=D)
         self.residual=wp.zeros((n,6),dtype=D);self.reward=wp.zeros(n,dtype=D);self.contact_flags=wp.zeros((n,2),dtype=wp.int32)
         self.obs=wp.zeros((n,32));self.history=wp.zeros((n,max(round(s.delay_ms*2) for s in self.scenarios)+1,32))
         self.targets=wp.zeros((n,self.action_dim));self.stopped_q=wp.zeros((n,self.cpu.nq));self.stopped_v=wp.zeros((n,self.cpu.nv));self.stopped_w=wp.zeros((n,self.cpu.nv))
-        self.q0=wp.array(self.cpu.key_qpos[self.cpu.keyframe('stand').id],dtype=wp.float32)
+        q0=np.tile(self.cpu.key_qpos[self.cpu.keyframe('stand').id],(n,1))
+        references=np.tile([0.,0.,sim.L_STAND],(n,1))
+        passive_ids=np.asarray([self.cpu.jnt_qposadr[self.cpu.joint(name).id] for name in ('passA_L','passC_L','passA_R','passC_R')])
+        avec=self.cpu.body_pos[self.cpu.body('wheelL').id][[0,2]]
+        cvec=self.cpu.site_pos[self.cpu.site('couplerB_L_end').id][[0,2]]
+        for i,h in enumerate(self.stand_heights):
+            if h!=sim.L_STAND:
+                alpha,beta=sim.ik(h)
+                bpos=sim.L1*np.array([np.cos(sim.PHI1_STAND-alpha),np.sin(sim.PHI1_STAND-alpha)])
+                dpos=np.array([sim.L5,0.])+sim.L4*np.array([np.cos(sim.PHI4_STAND-beta),np.sin(sim.PHI4_STAND-beta)])
+                cpos=np.array([sim.L5/2,-h])
+                passive_a=np.arctan2(avec[1],avec[0])-np.arctan2(*(cpos-bpos)[::-1])-alpha
+                passive_c=np.arctan2(cvec[1],cvec[0])-np.arctan2(*(cpos-dpos)[::-1])-beta
+                q0[i,2]+=h-sim.L_STAND
+                q0[i,np.asarray(ids[:4])]=[alpha,beta,alpha,beta]
+                q0[i,passive_ids]=[passive_a,passive_c,passive_a,passive_c]
+                references[i]=[alpha,beta,h]
+        self.k['reference'].assign(references)
+        self.q0=wp.array(q0,dtype=wp.float32)
         initial=np.zeros((n,32),dtype=np.float32)
         q=self.q0.numpy()
-        initial[:,12:16]=q[np.array(ids[:4])]
+        initial[:,12:16]=q[:,np.array(ids[:4])]
         from state_estimation import leg_kinematics
-        initial[:,22:24]=[np.linalg.norm(leg_kinematics(q[np.array(ids[:2])],np.zeros(2))[0]),np.linalg.norm(leg_kinematics(q[np.array(ids[2:4])],np.zeros(2))[0])]
+        for i in range(n):
+            initial[i,22:24]=[np.linalg.norm(leg_kinematics(q[i,np.array(ids[:2])],np.zeros(2))[0]),np.linalg.norm(leg_kinematics(q[i,np.array(ids[2:4])],np.zeros(2))[0])]
+        if height_conditioned:initial[:,11]=self.stand_heights-sim.L_STAND
         self.obs0=wp.array(initial,dtype=wp.float32)
         self.mask=wp.ones(n,dtype=wp.int32)
-        self.reset_args=[self.mask,self.q0,self.data.qpos,self.data.qvel,self.data.qacc_warmstart,self.data.time,self.data.sensordata,self.k['state'],self.state,self.residual,self.active,self.done,self.obs0,self.obs,self.history,self.targets]
+        self.reset_args=[self.mask,self.q0,self.data.qpos,self.data.qvel,self.data.qacc_warmstart,self.data.time,self.data.sensordata,self.k['state'],self.state,self.residual,self.active,self.done,self.obs0,self.obs,self.history,self.targets,self.k['reference']]
         wp.launch(reset_rows,n,self.reset_args)
         mjw.forward(self.model,self.data)
         with wp.ScopedCapture() as capture:
@@ -342,6 +378,10 @@ class NativeEnv(VecEnv):
                 infos[i]['grouped_residual']=self.grouped_residual
                 infos[i]['control_limit_scope']='nominal_command'
                 infos[i]['terminate_on_attitude_failure']=self.terminate_on_attitude_failure
+                if self.height_conditioned:
+                    infos[i]['target_leg_m']=float(self.stand_heights[i])
+                    infos[i]['height_rmse_m']=float(np.sqrt(states[i,28]/states[i,29])) if states[i,29]>0 else None
+                    infos[i]['height_tolerance_m']=.02
                 # This deadline is task failure, not an external collection cutoff.
                 # SB3 must not add gamma*V(terminal_observation) to its -10 reward.
                 infos[i]['TimeLimit.truncated']=False

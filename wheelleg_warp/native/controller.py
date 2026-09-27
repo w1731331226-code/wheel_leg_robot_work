@@ -88,7 +88,7 @@ def residual_projection(base:V6,residual:V6,speeds:V6,invalid_base:int,bad_map:b
 def control(qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.array2d[float],
             targets:wp.array2d[float],command:wp.array[D],active:wp.array[int],state:wp.array2d[D],
             ids:wp.array[int],heights:wp.array[D],gains:wp.array3d[D],feed:wp.array2d[D],angles:wp.array[D],
-            reference:wp.array[D],yaw_cfg:wp.array[D],ctrl:wp.array2d[float],diagnostic:wp.array2d[D],project_clipped_base:int,grouped_residual:int):
+            reference:wp.array2d[D],yaw_cfg:wp.array[D],ctrl:wp.array2d[float],diagnostic:wp.array2d[D],project_clipped_base:int,grouped_residual:int):
     w=wp.tid()
     if active[w]==0:return
     dt=D(.0005);boot=state[w,0]+dt;state[w,0]=boot
@@ -131,12 +131,12 @@ def control(qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.array2d[floa
     if braking:hub_old=-(D(4)*(th-thcmd)+D(.5)*state[w,4]-D(2)*pitch)*D(1.5)-D(4)*pitch-D(.5)*state[w,6]
     offset=wp.clamp(D(.30)*roll+D(.12)*state[w,5],D(-.035),D(.035))
     height=length*wp.cos(th);gravity=D(4)*D(MASS)*wp.min(D(1),boot/D(.15))
-    fl=wp.clamp(D(MASS)*(D(500)*(D(.3)+offset-height)-D(25)*state[w,3]*wp.cos(th))+gravity,-D(40)*D(MASS),D(40)*D(MASS))
-    fr=wp.clamp(D(MASS)*(D(500)*(D(.3)-offset-height)-D(25)*state[w,3]*wp.cos(th))+gravity,-D(40)*D(MASS),D(40)*D(MASS))
+    fl=wp.clamp(D(MASS)*(D(500)*(reference[w,2]+offset-height)-D(25)*state[w,3]*wp.cos(th))+gravity,-D(40)*D(MASS),D(40)*D(MASS))
+    fr=wp.clamp(D(MASS)*(D(500)*(reference[w,2]-offset-height)-D(25)*state[w,3]*wp.cos(th))+gravity,-D(40)*D(MASS),D(40)*D(MASS))
     kp=D(.8)*D(MASS);damping=D(.08)*D(MASS)
     if braking:kp=kp*wp.clamp((D(.3)-wp.abs(state[w,7]))/D(.2),D(0),D(1))
-    old_l=legacy_vmc(qa,qb,fl,hub_old)+V2(kp*(reference[0]-qa)-damping*va,kp*(reference[1]-qb)-damping*vb)
-    old_r=legacy_vmc(qc,qd,fr,hub_old)+V2(kp*(reference[0]-qc)-damping*vc,kp*(reference[1]-qd)-damping*vd)
+    old_l=legacy_vmc(qa,qb,fl,hub_old)+V2(kp*(reference[w,0]-qa)-damping*va,kp*(reference[w,1]-qb)-damping*vb)
+    old_r=legacy_vmc(qc,qd,fr,hub_old)+V2(kp*(reference[w,0]-qc)-damping*vc,kp*(reference[w,1]-qd)-damping*vd)
     limit=D(.8)*D(MASS)
     if braking:limit=D(2)*D(MASS)
     old_l=V2(wp.clamp(old_l[0],-wp.min(limit,allowed(va,True)),wp.min(limit,allowed(va,True))),wp.clamp(old_l[1],-wp.min(limit,allowed(vb,True)),wp.min(limit,allowed(vb,True))))
@@ -163,8 +163,8 @@ def control(qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.array2d[floa
         wheel=wheel-((D(1)-ratio)*gains[index,0,j]+ratio*gains[index+1,0,j])*x[j]
         hub=hub-((D(1)-ratio)*gains[index,1,j]+ratio*gains[index+1,1,j])*x[j]
     vl=inverse2(jl)*old_l;vr=inverse2(jr)*old_r;average=(vl[1]+vr[1])/D(2)
-    tl=jl*V2(support+D(MASS)*(D(500)*(D(.3)+offset-left[3])-D(25)*rate_l),vl[1]+hub-average)
-    tr=jr*V2(support+D(MASS)*(D(500)*(D(.3)-offset-right[3])-D(25)*rate_r),vr[1]+hub-average)
+    tl=jl*V2(support+D(MASS)*(D(500)*(reference[w,2]+offset-left[3])-D(25)*rate_l),vl[1]+hub-average)
+    tr=jr*V2(support+D(MASS)*(D(500)*(reference[w,2]-offset-right[3])-D(25)*rate_r),vr[1]+hub-average)
     yaw_torque=D(0)
     if wp.abs(error)>=D(PI)/D(360) or wp.abs(state[w,8])>=D(.05):yaw_torque=wp.clamp(-yaw_cfg[0]*error-yaw_cfg[1]*state[w,8],-yaw_cfg[2]*D(MASS),yaw_cfg[2]*D(MASS))
     base=V6(tl[0],tl[1],tr[0],tr[1],wheel+yaw_torque,wheel-yaw_torque)
@@ -239,4 +239,4 @@ def constants(model,worlds,yaw_config=(.4,2.,.24,.3),action_dim=3):
     return dict(state=wp.array(state,dtype=D),ids=wp.array(ids,dtype=wp.int32),
         heights=wp.array(h,dtype=D),gains=wp.array(np.stack([r[0] for r in t]),dtype=D),
         feed=wp.array(np.stack([r[1] for r in t]),dtype=D),angles=wp.array([r[2] for r in t],dtype=D),yaw=wp.array(yaw_config,dtype=D),
-        reference=wp.array(sim.ik(sim.L_STAND),dtype=D))
+        reference=wp.array(np.tile([0.,0.,sim.L_STAND],(worlds,1)),dtype=D))
