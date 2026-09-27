@@ -88,7 +88,7 @@ def residual_projection(base:V6,residual:V6,speeds:V6,invalid_base:int,bad_map:b
 def control(qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.array2d[float],
             targets:wp.array2d[float],command:wp.array[D],active:wp.array[int],state:wp.array2d[D],
             ids:wp.array[int],heights:wp.array[D],gains:wp.array3d[D],feed:wp.array2d[D],angles:wp.array[D],
-            reference:wp.array[D],yaw_cfg:wp.array[D],ctrl:wp.array2d[float],diagnostic:wp.array2d[D],project_clipped_base:int):
+            reference:wp.array[D],yaw_cfg:wp.array[D],ctrl:wp.array2d[float],diagnostic:wp.array2d[D],project_clipped_base:int,grouped_residual:int):
     w=wp.tid()
     if active[w]==0:return
     dt=D(.0005);boot=state[w,0]+dt;state[w,0]=boot
@@ -169,7 +169,7 @@ def control(qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.array2d[floa
     if wp.abs(error)>=D(PI)/D(360) or wp.abs(state[w,8])>=D(.05):yaw_torque=wp.clamp(-yaw_cfg[0]*error-yaw_cfg[1]*state[w,8],-yaw_cfg[2]*D(MASS),yaw_cfg[2]*D(MASS))
     base=V6(tl[0],tl[1],tr[0],tr[1],wheel+yaw_torque,wheel-yaw_torque)
     speeds=V6(va,vb,vc,vd,D(qvel[w,ids[8]]),D(qvel[w,ids[9]]))
-    invalid_base=int(0);bad_control=bool(False)
+    invalid_base=int(0);invalid_leg_base=int(0);invalid_wheel_base=int(0);bad_control=bool(False)
     for j in range(6):
         if diagnostic.shape[1]>=21:diagnostic[w,15+j]=base[j]
         if not wp.isfinite(base[j]):bad_control=True
@@ -177,7 +177,10 @@ def control(qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.array2d[floa
         if j<4:maximum=D(40)
         base[j]=wp.clamp(base[j],-maximum,maximum)
         bound=allowed(speeds[j],j<4)
-        if base[j]<-bound-D(1.e-9) or base[j]>bound+D(1.e-9):invalid_base=1
+        if base[j]<-bound-D(1.e-9) or base[j]>bound+D(1.e-9):
+            invalid_base=1
+            if j<4:invalid_leg_base=1
+            else:invalid_wheel_base=1
         base[j]=wp.clamp(base[j],-bound,bound)
     for j in range(targets.shape[1]):state[w,16+j]=state[w,16+j]+wp.clamp(D(targets[w,j])-state[w,16+j],D(-.01),D(.01))
     rr_l=jl*V2(state[w,16]*D(.1)*D(7)*D(9.81)/D(2),state[w,17])
@@ -195,20 +198,33 @@ def control(qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.array2d[floa
         det=wp.abs(matrix[0,0]*matrix[1,1]-matrix[0,1]*matrix[1,0])
         maximum=(square+wp.sqrt(wp.max(D(0),square*square-D(4)*det*det)))/D(2)
         if det==D(0) or maximum/det>D(1.e6):bad_map=True
-    nonzero=bool(False)
+    nonzero=bool(False);leg_nonzero=bool(False);wheel_nonzero=bool(False)
     for j in range(targets.shape[1]):
-        if state[w,16+j]!=D(0):nonzero=True
+        if state[w,16+j]!=D(0):
+            nonzero=True
+            if j<2:leg_nonzero=True
+            else:wheel_nonzero=True
     lam,projection_error=residual_projection(base,residual,speeds,invalid_base,bad_map,nonzero,bad_control,project_clipped_base)
+    leg_lam=lam;wheel_lam=lam
+    if grouped_residual:
+        leg_residual=V6(residual[0],residual[1],residual[2],residual[3],D(0),D(0))
+        wheel_residual=V6(D(0),D(0),D(0),D(0),residual[4],residual[5])
+        leg_lam,leg_error=residual_projection(base,leg_residual,speeds,invalid_leg_base,bad_map,leg_nonzero,bad_control,0)
+        wheel_lam,wheel_error=residual_projection(base,wheel_residual,speeds,invalid_wheel_base,bad_map,wheel_nonzero,bad_control,0)
+        lam=wp.min(leg_lam,wheel_lam);projection_error=leg_error
+        if wheel_error>projection_error:projection_error=wheel_error
     diagnostic[w,14]=D(projection_error)
-    if project_clipped_base and projection_error:
+    if (project_clipped_base and projection_error) or (grouped_residual and projection_error==2):
         # Do not send 0*NaN or a singular mapping to physics; after() terminates it.
         for j in range(6):
             ctrl[w,j]=0.;diagnostic[w,j]=D(0);diagnostic[w,6+j]=D(0)
         diagnostic[w,12]=D(0);diagnostic[w,13]=D(invalid_base)
         return
     for j in range(6):
-        ctrl[w,j]=float(wp.clamp(base[j]+lam*residual[j],-allowed(speeds[j],j<4),allowed(speeds[j],j<4)))
-        diagnostic[w,j]=base[j];diagnostic[w,6+j]=lam*residual[j]
+        group_lam=leg_lam
+        if j>=4:group_lam=wheel_lam
+        ctrl[w,j]=float(wp.clamp(base[j]+group_lam*residual[j],-allowed(speeds[j],j<4),allowed(speeds[j],j<4)))
+        diagnostic[w,j]=base[j];diagnostic[w,6+j]=group_lam*residual[j]
     for j in range(6):
         if not wp.isfinite(ctrl[w,j]) or not wp.isfinite(residual[j]):diagnostic[w,14]=D(2)
     diagnostic[w,12]=lam;diagnostic[w,13]=D(invalid_base)

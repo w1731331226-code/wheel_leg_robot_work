@@ -63,7 +63,7 @@ def check(output):
         b.reset();assert np.all(b.k['state'].numpy()[:,16:]==0)
         # Actual controller, without stepping nonfinite physics: guard emits finite zero torque.
         velocity=b.data.qvel.numpy();velocity[0,0]=np.nan;b.data.qvel.assign(velocity)
-        wp.launch(control,1,[b.data.qpos,b.data.qvel,b.data.sensordata,b.targets,b.command,b.active,b.k['state'],b.ids,b.k['heights'],b.k['gains'],b.k['feed'],b.k['angles'],b.k['reference'],b.k['yaw'],b.data.ctrl,b.diag,1])
+        wp.launch(control,1,[b.data.qpos,b.data.qvel,b.data.sensordata,b.targets,b.command,b.active,b.k['state'],b.ids,b.k['heights'],b.k['gains'],b.k['feed'],b.k['angles'],b.k['reference'],b.k['yaw'],b.data.ctrl,b.diag,1,0])
         assert b.diag.numpy()[0,14]==2;np.testing.assert_array_equal(b.data.ctrl.numpy(),0)
     finally:a.close();b.close()
     result=dict(passed=True,projection_cases=n,torque_bounds_verified=True,singular_guard_verified=True,

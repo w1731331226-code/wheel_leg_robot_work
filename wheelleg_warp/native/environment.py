@@ -214,10 +214,12 @@ def reset_rows(mask:wp.array[int],q0:wp.array[float],q:wp.array2d[float],v:wp.ar
 
 
 class NativeEnv(VecEnv):
-    def __init__(self,n=128,stage=3,seed=730000,scenario=None,bank_factory=bank,yaw_config=(.4,2.,.24,.3),residual_scale=1.,residual_mode='diff3',terminate_on_attitude_failure=False,project_clipped_base=False):
+    def __init__(self,n=128,stage=3,seed=730000,scenario=None,bank_factory=bank,yaw_config=(.4,2.,.24,.3),residual_scale=1.,residual_mode='diff3',terminate_on_attitude_failure=False,project_clipped_base=False,grouped_residual=False):
         if not isinstance(n,int) or not 1 <= n <= 1024:raise ValueError('用户限制：批量环境数须为1～1024')
         if type(project_clipped_base) is not bool:raise ValueError('基础限幅后残差投影开关须为布尔值')
         self.project_clipped_base=project_clipped_base
+        if type(grouped_residual) is not bool or (grouped_residual and (project_clipped_base or residual_mode!='diff3')):raise ValueError('分组残差仅允许独立的diff3试验')
+        self.grouped_residual=grouped_residual
         if type(terminate_on_attitude_failure) is not bool:raise ValueError('训练姿态终止开关须为布尔值')
         self.terminate_on_attitude_failure=terminate_on_attitude_failure
         if residual_mode not in ('diff3','virtual6'):raise ValueError('无效残差模式')
@@ -290,7 +292,7 @@ class NativeEnv(VecEnv):
             for _ in range(40):
                 wp.launch(command_step,n,[self.state,self.param,self.command,self.active,self.data.qpos,self.data.qvel,self.data.qacc_warmstart,self.stopped_q,self.stopped_v,self.stopped_w,self.contact_flags])
                 wp.launch(control,n,[self.data.qpos,self.data.qvel,self.data.sensordata,self.targets,self.command,self.active,
-                    self.k['state'],self.ids,self.k['heights'],self.k['gains'],self.k['feed'],self.k['angles'],self.k['reference'],self.k['yaw'],self.data.ctrl,self.diag,int(self.project_clipped_base)],block_dim=32)
+                    self.k['state'],self.ids,self.k['heights'],self.k['gains'],self.k['feed'],self.k['angles'],self.k['reference'],self.k['yaw'],self.data.ctrl,self.diag,int(self.project_clipped_base),int(self.grouped_residual)],block_dim=32)
                 mjw.step(self.model,self.data)
                 wp.launch(reduce_contacts,self.data.naconmax,[self.data.nacon,self.data.contact.worldid,self.data.contact.geom,self.ids,self.contact_flags])
                 wp.launch(after,n,[self.data.qpos,self.data.qvel,self.data.sensordata,self.data.qacc_warmstart,self.data.time,self.contact_flags,self.ids,self.param,self.command,self.state,self.k['state'],self.diag,
@@ -337,6 +339,7 @@ class NativeEnv(VecEnv):
                 infos[i]['residual_scale']=self.residual_scale
                 infos[i]['residual_mode']=self.residual_mode
                 infos[i]['project_clipped_base']=self.project_clipped_base
+                infos[i]['grouped_residual']=self.grouped_residual
                 infos[i]['control_limit_scope']='nominal_command'
                 infos[i]['terminate_on_attitude_failure']=self.terminate_on_attitude_failure
                 # This deadline is task failure, not an external collection cutoff.
