@@ -1,0 +1,270 @@
+{
+  "cases": [
+    {
+      "seed": 700202,
+      "first_state_difference_substep": 4,
+      "first_policy_action_difference": {
+        "policy_step": 2,
+        "max_abs": 2.384185791015625e-07
+      },
+      "a": {
+        "first_left_contact_s": 4.849,
+        "first_right_contact_s": 4.9295,
+        "contact_gap_ms": 80.4999999999998,
+        "first_world_attitude_5deg_s": 5.0635,
+        "peak_attitude_deg": 45.39970987405855
+      },
+      "b": {
+        "first_left_contact_s": 4.865,
+        "first_right_contact_s": 4.912,
+        "contact_gap_ms": 46.99999999999971,
+        "first_world_attitude_5deg_s": 5.0085,
+        "peak_attitude_deg": 60.260198065046616
+      },
+      "growth": [
+        {
+          "relative_to_first_contact_s": -0.1,
+          "time_s": 4.7490000000000006,
+          "base_position_gap_m": 0.0011077318158400767,
+          "yaw_a_deg": -0.7814834067559859,
+          "yaw_b_deg": 0.47351832849055914,
+          "qvel_max_abs": 1.9327850341796875
+        },
+        {
+          "relative_to_first_contact_s": 0.0,
+          "time_s": 4.849,
+          "base_position_gap_m": 0.0012179455957416327,
+          "yaw_a_deg": -0.3031458153347731,
+          "yaw_b_deg": -0.02389808775294086,
+          "qvel_max_abs": 2.2496328353881836
+        },
+        {
+          "relative_to_first_contact_s": 0.1,
+          "time_s": 4.949000000000001,
+          "base_position_gap_m": 0.002210988218236222,
+          "yaw_a_deg": -3.9072998432784503,
+          "yaw_b_deg": -3.852642336529511,
+          "qvel_max_abs": 44.950477600097656
+        },
+        {
+          "relative_to_first_contact_s": 0.3,
+          "time_s": 5.149,
+          "base_position_gap_m": 0.0037656073245629887,
+          "yaw_a_deg": -8.351104966086334,
+          "yaw_b_deg": -11.212212193667536,
+          "qvel_max_abs": 17.11823272705078
+        }
+      ],
+      "outcome_a": {
+        "seed": 700202,
+        "reason": 5,
+        "success": false
+      },
+      "outcome_b": {
+        "seed": 700202,
+        "reason": 5,
+        "success": false
+      }
+    },
+    {
+      "seed": 700203,
+      "first_state_difference_substep": 27,
+      "first_policy_action_difference": {
+        "policy_step": 2,
+        "max_abs": 2.384185791015625e-07
+      },
+      "a": {
+        "first_left_contact_s": 4.183999999999999,
+        "first_right_contact_s": 4.2625,
+        "contact_gap_ms": 78.50000000000091,
+        "first_world_attitude_5deg_s": null,
+        "peak_attitude_deg": 3.9271019812607153
+      },
+      "b": {
+        "first_left_contact_s": 4.188,
+        "first_right_contact_s": 4.2615,
+        "contact_gap_ms": 73.50000000000011,
+        "first_world_attitude_5deg_s": null,
+        "peak_attitude_deg": 3.829187725391314
+      },
+      "growth": [
+        {
+          "relative_to_first_contact_s": -0.1,
+          "time_s": 4.084,
+          "base_position_gap_m": 0.0013597101720662606,
+          "yaw_a_deg": -0.39617911675467016,
+          "yaw_b_deg": 0.2438440300376435,
+          "qvel_max_abs": 0.8878087997436523
+        },
+        {
+          "relative_to_first_contact_s": 0.0,
+          "time_s": 4.183999999999999,
+          "base_position_gap_m": 0.0006204130515069683,
+          "yaw_a_deg": 0.09880513267667529,
+          "yaw_b_deg": 0.511043566760624,
+          "qvel_max_abs": 0.9244050979614258
+        },
+        {
+          "relative_to_first_contact_s": 0.1,
+          "time_s": 4.284,
+          "base_position_gap_m": 0.00010321917536054903,
+          "yaw_a_deg": -2.9667645383527166,
+          "yaw_b_deg": -2.7012637528650605,
+          "qvel_max_abs": 0.8954391479492188
+        },
+        {
+          "relative_to_first_contact_s": 0.3,
+          "time_s": 4.484,
+          "base_position_gap_m": 0.001306783677126551,
+          "yaw_a_deg": -2.6477773978420966,
+          "yaw_b_deg": -2.87996784300779,
+          "qvel_max_abs": 0.8825206756591797
+        }
+      ],
+      "outcome_a": {
+        "seed": 700203,
+        "reason": 5,
+        "success": true
+      },
+      "outcome_b": {
+        "seed": 700203,
+        "reason": 5,
+        "success": true
+      }
+    },
+    {
+      "seed": 700300,
+      "first_state_difference_substep": null,
+      "first_policy_action_difference": {
+        "policy_step": 10,
+        "max_abs": 9.179115295410156e-06
+      },
+      "a": {
+        "first_left_contact_s": 4.716,
+        "first_right_contact_s": 4.7604999999999995,
+        "contact_gap_ms": 44.49999999999932,
+        "first_world_attitude_5deg_s": 4.895,
+        "peak_attitude_deg": 56.49550312608803
+      },
+      "b": {
+        "first_left_contact_s": 4.7204999999999995,
+        "first_right_contact_s": 4.7575,
+        "contact_gap_ms": 37.00000000000081,
+        "first_world_attitude_5deg_s": 4.851999999999999,
+        "peak_attitude_deg": 40.07067450374828
+      },
+      "growth": [
+        {
+          "relative_to_first_contact_s": -0.1,
+          "time_s": 4.6160000000000005,
+          "base_position_gap_m": 0.0022545501380206684,
+          "yaw_a_deg": 0.6753795854548401,
+          "yaw_b_deg": 0.32739736894406024,
+          "qvel_max_abs": 0.6030731201171875
+        },
+        {
+          "relative_to_first_contact_s": 0.0,
+          "time_s": 4.716,
+          "base_position_gap_m": 0.0026268460354182174,
+          "yaw_a_deg": 0.8462917430946141,
+          "yaw_b_deg": 0.4764523771567992,
+          "qvel_max_abs": 1.2558298110961914
+        },
+        {
+          "relative_to_first_contact_s": 0.1,
+          "time_s": 4.816,
+          "base_position_gap_m": 0.004882466526963412,
+          "yaw_a_deg": 4.3501571061706406,
+          "yaw_b_deg": 3.858667291869379,
+          "qvel_max_abs": 35.36585235595703
+        },
+        {
+          "relative_to_first_contact_s": 0.3,
+          "time_s": 5.016,
+          "base_position_gap_m": 0.019261111657026993,
+          "yaw_a_deg": 4.08290107560435,
+          "yaw_b_deg": 6.058964714387495,
+          "qvel_max_abs": 41.628103256225586
+        }
+      ],
+      "outcome_a": {
+        "seed": 700300,
+        "reason": 5,
+        "success": false
+      },
+      "outcome_b": {
+        "seed": 700300,
+        "reason": 2,
+        "success": false
+      }
+    },
+    {
+      "seed": 700312,
+      "first_state_difference_substep": null,
+      "first_policy_action_difference": {
+        "policy_step": 6,
+        "max_abs": 3.445148468017578e-05
+      },
+      "a": {
+        "first_left_contact_s": 3.9055,
+        "first_right_contact_s": 3.9499999999999997,
+        "contact_gap_ms": 44.49999999999976,
+        "first_world_attitude_5deg_s": null,
+        "peak_attitude_deg": 3.6834400697860112
+      },
+      "b": {
+        "first_left_contact_s": 3.9085,
+        "first_right_contact_s": 3.9465,
+        "contact_gap_ms": 37.999999999999815,
+        "first_world_attitude_5deg_s": 4.085,
+        "peak_attitude_deg": 8.324500661512444
+      },
+      "growth": [
+        {
+          "relative_to_first_contact_s": -0.1,
+          "time_s": 3.8055000000000003,
+          "base_position_gap_m": 0.00024264097244058823,
+          "yaw_a_deg": -0.24479155890705412,
+          "yaw_b_deg": -0.13860877799925478,
+          "qvel_max_abs": 0.031470298767089844
+        },
+        {
+          "relative_to_first_contact_s": 0.0,
+          "time_s": 3.9055,
+          "base_position_gap_m": 0.00021421490412098205,
+          "yaw_a_deg": -0.20738128529338876,
+          "yaw_b_deg": -0.396460843723825,
+          "qvel_max_abs": 0.873448371887207
+        },
+        {
+          "relative_to_first_contact_s": 0.1,
+          "time_s": 4.0055,
+          "base_position_gap_m": 0.0014817522281050765,
+          "yaw_a_deg": -3.3579383919018193,
+          "yaw_b_deg": -3.197031219405575,
+          "qvel_max_abs": 0.39322155714035034
+        },
+        {
+          "relative_to_first_contact_s": 0.3,
+          "time_s": 4.2055,
+          "base_position_gap_m": 0.00727587686064648,
+          "yaw_a_deg": 2.786334683832511,
+          "yaw_b_deg": -5.055757665831966,
+          "qvel_max_abs": 62.12791728973389
+        }
+      ],
+      "outcome_a": {
+        "seed": 700312,
+        "reason": 5,
+        "success": true
+      },
+      "outcome_b": {
+        "seed": 700312,
+        "reason": 5,
+        "success": false
+      }
+    }
+  ],
+  "source_sha256": "00984a363e7b05df3c81c74b7e6875dbc10627246e0d32cd88636a128acd83db",
+  "note": "Task contract v2 step terrains have zero local attitude reference. Observed divergence does not identify the unique solver cause."
+}
