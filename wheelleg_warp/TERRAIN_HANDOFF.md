@@ -6,6 +6,8 @@
 
 证据以 [项目记忆](../PROJECT_MEMORY.md) 顶部当前状态、[地形计划](TERRAIN_PLAN.md) 的“接触前动作时序与干预已完成”段、[任务契约 v2 基线](results/contract_v2_baseline_checked_20260923/REPORT.md)、[接触前动作试验](results/hard_prefix_probe_v2_20260923/REPORT.md)、[首轮 24～27 mm 动作探针](results/step_action_probe_v2_20260927/REPORT.md)、[第 1 通道时窗/分组余量核查](results/step_support_followup_v2_20260927/REPORT.md)、[分组闭环消融](results/grouped_projection_probe_v2_20260927/REPORT.md)和[首子步分歧记录](results/first_substep_pair_v2_20260928/REPORT.md)为准。旧计划按时间累积，早期“下一步”不覆盖这些最新结论。检查点路径、场景面板、源码与归一化哈希见各结果目录的 `protocol.json`，不要靠目录日期推断协议相同。
 
+**2026-09-28 新进展：** [700302 磁盘前缀重放](results/replay_prefix_probe_v2_20260928/REPORT.md)已保存全部 195 个可见 Warp/环境/控制数组，跨新环境和独立进程逐字节恢复通过，静态模型哈希一致；但原动作重放未来轨迹仍有跌倒/非轮接触差异。两次短时合法差动支撑 `+1` 都未成功。后续受限动作对照须以**多次同前缀原动作**量化背景波动；数组可恢复不等于物理轨迹确定性可重放。
+
 ## 已验证事实与证据边界
 
 | 对照 | 48 例困难台阶成功 | 完成 | 解释 |
