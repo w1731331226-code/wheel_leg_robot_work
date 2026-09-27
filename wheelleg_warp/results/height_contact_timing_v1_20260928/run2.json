@@ -1,0 +1,1706 @@
+{
+  "description": "single-batch 50 Hz end-of-step engineering diagnosis",
+  "control_cases": false,
+  "gyro_feedback": false,
+  "sample_period_s": 0.02,
+  "source_sha256": {
+    "probe_height_contact_timing.py": "c8c2c8cf5f82f0777d1f410d9cc3930f5d32dd99c058bb37ccce098a9e051907",
+    "native/environment.py": "c88abf130655c7f11f383ca51d500cca535f0709908ddfcb94d85b31678da4f7",
+    "native/controller.py": "aa0a871dc97cc24ab75c54424604e1a1649de359655126e199192cd006f42c26",
+    "native/terrain.py": "a6c50c922bd5da757131eec80afcc3db7745142d7563c5576ae14dd5d957ef58"
+  },
+  "rows": [
+    {
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.16
+      },
+      "events": {
+        "contact": {
+          "time_s": 5.04,
+          "x_m": 1.635,
+          "yaw_deg": -0.236
+        },
+        "gyro_z_0.05rad_s": {
+          "time_s": 5.04,
+          "x_m": 1.635,
+          "yaw_deg": -0.236
+        },
+        "wheel_speed_diff_1rad_s": {
+          "time_s": 5.04,
+          "x_m": 1.635,
+          "yaw_deg": -0.236
+        },
+        "yaw_1deg": {
+          "time_s": 5.06,
+          "x_m": 1.644,
+          "yaw_deg": -1.438
+        },
+        "yaw_5deg": {
+          "time_s": 5.12,
+          "x_m": 1.665,
+          "yaw_deg": -5.755
+        }
+      },
+      "wheel_command_samples": [
+        {
+          "time_s": 5.04,
+          "command_over_nominal_4_5Nm": [
+            0.4359999895095825,
+            0.30300000309944153
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.06,
+          "command_over_nominal_4_5Nm": [
+            0.546999990940094,
+            0.10599999874830246
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.08,
+          "command_over_nominal_4_5Nm": [
+            0.5090000033378601,
+            0.18000000715255737
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 1
+        },
+        {
+          "time_s": 5.1,
+          "command_over_nominal_4_5Nm": [
+            0.08299999684095383,
+            0.04399999976158142
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 41
+        },
+        {
+          "time_s": 5.12,
+          "command_over_nominal_4_5Nm": [
+            0.19300000369548798,
+            0.08100000023841858
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 67
+        },
+        {
+          "time_s": 5.14,
+          "command_over_nominal_4_5Nm": [
+            0.08299999684095383,
+            0.05700000002980232
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 107
+        }
+      ],
+      "result": {
+        "reason": 5,
+        "success": false,
+        "peak_deg": [
+          1.507,
+          1.0,
+          15.182
+        ],
+        "height_rmse_m": 0.000162
+      }
+    },
+    {
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.2
+      },
+      "events": {
+        "contact": {
+          "time_s": 5.04,
+          "x_m": 1.639,
+          "yaw_deg": -0.597
+        },
+        "gyro_z_0.05rad_s": {
+          "time_s": 5.04,
+          "x_m": 1.639,
+          "yaw_deg": -0.597
+        },
+        "wheel_speed_diff_1rad_s": {
+          "time_s": 5.04,
+          "x_m": 1.639,
+          "yaw_deg": -0.597
+        },
+        "yaw_1deg": {
+          "time_s": 5.06,
+          "x_m": 1.648,
+          "yaw_deg": -1.833
+        },
+        "yaw_5deg": {
+          "time_s": 5.12,
+          "x_m": 1.671,
+          "yaw_deg": -6.289
+        }
+      },
+      "wheel_command_samples": [
+        {
+          "time_s": 5.04,
+          "command_over_nominal_4_5Nm": [
+            0.3569999933242798,
+            0.03999999910593033
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.06,
+          "command_over_nominal_4_5Nm": [
+            0.5619999766349792,
+            0.17100000381469727
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.08,
+          "command_over_nominal_4_5Nm": [
+            0.13099999725818634,
+            0.05299999937415123
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 17
+        },
+        {
+          "time_s": 5.1,
+          "command_over_nominal_4_5Nm": [
+            0.4000000059604645,
+            0.08100000023841858
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 48
+        },
+        {
+          "time_s": 5.12,
+          "command_over_nominal_4_5Nm": [
+            0.08500000089406967,
+            0.04899999871850014
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 88
+        },
+        {
+          "time_s": 5.14,
+          "command_over_nominal_4_5Nm": [
+            0.10100000351667404,
+            0.014999999664723873
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 121
+        }
+      ],
+      "result": {
+        "reason": 5,
+        "success": false,
+        "peak_deg": [
+          1.515,
+          0.909,
+          16.226
+        ],
+        "height_rmse_m": 0.000178
+      }
+    },
+    {
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.25
+      },
+      "events": {
+        "contact": {
+          "time_s": 5.02,
+          "x_m": 1.632,
+          "yaw_deg": -0.022
+        },
+        "gyro_z_0.05rad_s": {
+          "time_s": 5.02,
+          "x_m": 1.632,
+          "yaw_deg": -0.022
+        },
+        "wheel_speed_diff_1rad_s": {
+          "time_s": 5.02,
+          "x_m": 1.632,
+          "yaw_deg": -0.022
+        },
+        "yaw_1deg": {
+          "time_s": 5.06,
+          "x_m": 1.65,
+          "yaw_deg": -1.784
+        },
+        "yaw_5deg": {
+          "time_s": 5.12,
+          "x_m": 1.674,
+          "yaw_deg": -6.296
+        }
+      },
+      "wheel_command_samples": [
+        {
+          "time_s": 5.02,
+          "command_over_nominal_4_5Nm": [
+            0.328000009059906,
+            0.328000009059906
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.04,
+          "command_over_nominal_4_5Nm": [
+            0.3580000102519989,
+            0.02800000086426735
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.06,
+          "command_over_nominal_4_5Nm": [
+            0.531000018119812,
+            0.15600000321865082
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.08,
+          "command_over_nominal_4_5Nm": [
+            0.11100000143051147,
+            0.03500000014901161
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 21
+        },
+        {
+          "time_s": 5.1,
+          "command_over_nominal_4_5Nm": [
+            0.11400000005960464,
+            0.0020000000949949026
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 56
+        },
+        {
+          "time_s": 5.12,
+          "command_over_nominal_4_5Nm": [
+            0.1809999942779541,
+            0.0
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 96
+        }
+      ],
+      "result": {
+        "reason": 5,
+        "success": false,
+        "peak_deg": [
+          1.437,
+          0.887,
+          22.362
+        ],
+        "height_rmse_m": 0.000187
+      }
+    },
+    {
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.3
+      },
+      "events": {
+        "contact": {
+          "time_s": 5.02,
+          "x_m": 1.634,
+          "yaw_deg": -0.07
+        },
+        "gyro_z_0.05rad_s": {
+          "time_s": 5.02,
+          "x_m": 1.634,
+          "yaw_deg": -0.07
+        },
+        "wheel_speed_diff_1rad_s": {
+          "time_s": 5.02,
+          "x_m": 1.634,
+          "yaw_deg": -0.07
+        },
+        "yaw_1deg": {
+          "time_s": 5.06,
+          "x_m": 1.653,
+          "yaw_deg": -1.751
+        },
+        "yaw_5deg": {
+          "time_s": 5.12,
+          "x_m": 1.677,
+          "yaw_deg": -6.213
+        }
+      },
+      "wheel_command_samples": [
+        {
+          "time_s": 5.02,
+          "command_over_nominal_4_5Nm": [
+            0.38499999046325684,
+            0.38499999046325684
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.04,
+          "command_over_nominal_4_5Nm": [
+            0.36899998784065247,
+            0.03200000151991844
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.06,
+          "command_over_nominal_4_5Nm": [
+            0.5099999904632568,
+            0.14100000262260437
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.08,
+          "command_over_nominal_4_5Nm": [
+            0.10199999809265137,
+            0.02800000086426735
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 24
+        },
+        {
+          "time_s": 5.1,
+          "command_over_nominal_4_5Nm": [
+            0.09099999815225601,
+            0.026000000536441803
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 62
+        },
+        {
+          "time_s": 5.12,
+          "command_over_nominal_4_5Nm": [
+            0.41200000047683716,
+            0.1120000034570694
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 102
+        }
+      ],
+      "result": {
+        "reason": 5,
+        "success": false,
+        "peak_deg": [
+          1.58,
+          1.059,
+          73.006
+        ],
+        "height_rmse_m": 0.000389
+      }
+    },
+    {
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.35
+      },
+      "events": {
+        "contact": {
+          "time_s": 5.02,
+          "x_m": 1.635,
+          "yaw_deg": -0.092
+        },
+        "gyro_z_0.05rad_s": {
+          "time_s": 5.02,
+          "x_m": 1.635,
+          "yaw_deg": -0.092
+        },
+        "wheel_speed_diff_1rad_s": {
+          "time_s": 5.02,
+          "x_m": 1.635,
+          "yaw_deg": -0.092
+        },
+        "yaw_1deg": {
+          "time_s": 5.06,
+          "x_m": 1.654,
+          "yaw_deg": -1.766
+        },
+        "yaw_5deg": {
+          "time_s": 5.12,
+          "x_m": 1.679,
+          "yaw_deg": -6.334
+        }
+      },
+      "wheel_command_samples": [
+        {
+          "time_s": 5.02,
+          "command_over_nominal_4_5Nm": [
+            0.3840000033378601,
+            0.3319999873638153
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.04,
+          "command_over_nominal_4_5Nm": [
+            0.37599998712539673,
+            0.041999999433755875
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.06,
+          "command_over_nominal_4_5Nm": [
+            0.5180000066757202,
+            0.13500000536441803
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.08,
+          "command_over_nominal_4_5Nm": [
+            0.3149999976158142,
+            0.014999999664723873
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 26
+        },
+        {
+          "time_s": 5.1,
+          "command_over_nominal_4_5Nm": [
+            0.09099999815225601,
+            0.032999999821186066
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 64
+        },
+        {
+          "time_s": 5.12,
+          "command_over_nominal_4_5Nm": [
+            0.09600000083446503,
+            0.04600000008940697
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 104
+        }
+      ],
+      "result": {
+        "reason": 5,
+        "success": false,
+        "peak_deg": [
+          1.831,
+          1.298,
+          77.328
+        ],
+        "height_rmse_m": 0.000303
+      }
+    },
+    {
+      "scenario": {
+        "speed": 0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.38
+      },
+      "events": {
+        "contact": {
+          "time_s": 5.02,
+          "x_m": 1.635,
+          "yaw_deg": -0.087
+        },
+        "gyro_z_0.05rad_s": {
+          "time_s": 5.02,
+          "x_m": 1.635,
+          "yaw_deg": -0.087
+        },
+        "wheel_speed_diff_1rad_s": {
+          "time_s": 5.02,
+          "x_m": 1.635,
+          "yaw_deg": -0.087
+        },
+        "yaw_1deg": {
+          "time_s": 5.06,
+          "x_m": 1.654,
+          "yaw_deg": -1.793
+        },
+        "yaw_5deg": {
+          "time_s": 5.12,
+          "x_m": 1.68,
+          "yaw_deg": -6.41
+        }
+      },
+      "wheel_command_samples": [
+        {
+          "time_s": 5.02,
+          "command_over_nominal_4_5Nm": [
+            0.3959999978542328,
+            0.3479999899864197
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.04,
+          "command_over_nominal_4_5Nm": [
+            0.3889999985694885,
+            0.050999999046325684
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.06,
+          "command_over_nominal_4_5Nm": [
+            0.5339999794960022,
+            0.13199999928474426
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.08,
+          "command_over_nominal_4_5Nm": [
+            0.09700000286102295,
+            0.014000000432133675
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 28
+        },
+        {
+          "time_s": 5.1,
+          "command_over_nominal_4_5Nm": [
+            0.12800000607967377,
+            0.03799999877810478
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 64
+        },
+        {
+          "time_s": 5.12,
+          "command_over_nominal_4_5Nm": [
+            0.3109999895095825,
+            0.06199999898672104
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 104
+        }
+      ],
+      "result": {
+        "reason": 5,
+        "success": false,
+        "peak_deg": [
+          1.203,
+          1.662,
+          78.565
+        ],
+        "height_rmse_m": 0.000406
+      }
+    },
+    {
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.16
+      },
+      "events": {
+        "contact": {
+          "time_s": 5.34,
+          "x_m": -1.785,
+          "yaw_deg": 0.278
+        },
+        "gyro_z_0.05rad_s": {
+          "time_s": 5.34,
+          "x_m": -1.785,
+          "yaw_deg": 0.278
+        },
+        "wheel_speed_diff_1rad_s": {
+          "time_s": 5.34,
+          "x_m": -1.785,
+          "yaw_deg": 0.278
+        },
+        "yaw_1deg": {
+          "time_s": 5.36,
+          "x_m": -1.794,
+          "yaw_deg": 1.517
+        },
+        "yaw_5deg": {
+          "time_s": 5.42,
+          "x_m": -1.815,
+          "yaw_deg": 5.849
+        }
+      },
+      "wheel_command_samples": [
+        {
+          "time_s": 5.34,
+          "command_over_nominal_4_5Nm": [
+            0.42800000309944153,
+            0.2720000147819519
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.36,
+          "command_over_nominal_4_5Nm": [
+            0.5690000057220459,
+            0.11100000143051147
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.38,
+          "command_over_nominal_4_5Nm": [
+            0.36500000953674316,
+            0.17100000381469727
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 4
+        },
+        {
+          "time_s": 5.4,
+          "command_over_nominal_4_5Nm": [
+            0.0820000022649765,
+            0.04600000008940697
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 44
+        },
+        {
+          "time_s": 5.42,
+          "command_over_nominal_4_5Nm": [
+            0.12600000202655792,
+            0.024000000208616257
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 74
+        },
+        {
+          "time_s": 5.44,
+          "command_over_nominal_4_5Nm": [
+            0.5649999976158142,
+            0.08100000023841858
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 105
+        }
+      ],
+      "result": {
+        "reason": 5,
+        "success": false,
+        "peak_deg": [
+          1.511,
+          0.974,
+          16.004
+        ],
+        "height_rmse_m": 0.000163
+      }
+    },
+    {
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.2
+      },
+      "events": {
+        "contact": {
+          "time_s": 5.34,
+          "x_m": -1.79,
+          "yaw_deg": 0.654
+        },
+        "gyro_z_0.05rad_s": {
+          "time_s": 5.34,
+          "x_m": -1.79,
+          "yaw_deg": 0.654
+        },
+        "wheel_speed_diff_1rad_s": {
+          "time_s": 5.34,
+          "x_m": -1.79,
+          "yaw_deg": 0.654
+        },
+        "yaw_1deg": {
+          "time_s": 5.36,
+          "x_m": -1.798,
+          "yaw_deg": 1.923
+        },
+        "yaw_5deg": {
+          "time_s": 5.42,
+          "x_m": -1.82,
+          "yaw_deg": 6.423
+        }
+      },
+      "wheel_command_samples": [
+        {
+          "time_s": 5.34,
+          "command_over_nominal_4_5Nm": [
+            0.36800000071525574,
+            0.02500000037252903
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.36,
+          "command_over_nominal_4_5Nm": [
+            0.5609999895095825,
+            0.1720000058412552
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.38,
+          "command_over_nominal_4_5Nm": [
+            0.1120000034570694,
+            0.03200000151991844
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 20
+        },
+        {
+          "time_s": 5.4,
+          "command_over_nominal_4_5Nm": [
+            0.2639999985694885,
+            0.05999999865889549
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 54
+        },
+        {
+          "time_s": 5.42,
+          "command_over_nominal_4_5Nm": [
+            0.3779999911785126,
+            0.014999999664723873
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 94
+        },
+        {
+          "time_s": 5.44,
+          "command_over_nominal_4_5Nm": [
+            0.4740000069141388,
+            0.04899999871850014
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 134
+        }
+      ],
+      "result": {
+        "reason": 5,
+        "success": false,
+        "peak_deg": [
+          1.514,
+          0.922,
+          19.026
+        ],
+        "height_rmse_m": 0.000196
+      }
+    },
+    {
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.25
+      },
+      "events": {
+        "contact": {
+          "time_s": 5.32,
+          "x_m": -1.783,
+          "yaw_deg": 0.034
+        },
+        "gyro_z_0.05rad_s": {
+          "time_s": 5.32,
+          "x_m": -1.783,
+          "yaw_deg": 0.034
+        },
+        "wheel_speed_diff_1rad_s": {
+          "time_s": 5.32,
+          "x_m": -1.783,
+          "yaw_deg": 0.034
+        },
+        "yaw_1deg": {
+          "time_s": 5.36,
+          "x_m": -1.801,
+          "yaw_deg": 1.879
+        },
+        "yaw_5deg": {
+          "time_s": 5.42,
+          "x_m": -1.824,
+          "yaw_deg": 6.48
+        }
+      },
+      "wheel_command_samples": [
+        {
+          "time_s": 5.32,
+          "command_over_nominal_4_5Nm": [
+            0.37700000405311584,
+            0.37700000405311584
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.34,
+          "command_over_nominal_4_5Nm": [
+            0.37599998712539673,
+            0.020999999716877937
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.36,
+          "command_over_nominal_4_5Nm": [
+            0.5490000247955322,
+            0.16599999368190765
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.38,
+          "command_over_nominal_4_5Nm": [
+            0.09700000286102295,
+            0.017999999225139618
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 24
+        },
+        {
+          "time_s": 5.4,
+          "command_over_nominal_4_5Nm": [
+            0.11100000143051147,
+            0.0020000000949949026
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 59
+        },
+        {
+          "time_s": 5.42,
+          "command_over_nominal_4_5Nm": [
+            0.2540000081062317,
+            0.01899999938905239
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 98
+        }
+      ],
+      "result": {
+        "reason": 5,
+        "success": false,
+        "peak_deg": [
+          1.022,
+          1.074,
+          68.325
+        ],
+        "height_rmse_m": 0.00032
+      }
+    },
+    {
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.3
+      },
+      "events": {
+        "contact": {
+          "time_s": 5.32,
+          "x_m": -1.785,
+          "yaw_deg": 0.087
+        },
+        "gyro_z_0.05rad_s": {
+          "time_s": 5.32,
+          "x_m": -1.785,
+          "yaw_deg": 0.087
+        },
+        "wheel_speed_diff_1rad_s": {
+          "time_s": 5.32,
+          "x_m": -1.785,
+          "yaw_deg": 0.087
+        },
+        "yaw_1deg": {
+          "time_s": 5.36,
+          "x_m": -1.803,
+          "yaw_deg": 1.852
+        },
+        "yaw_5deg": {
+          "time_s": 5.42,
+          "x_m": -1.827,
+          "yaw_deg": 6.436
+        }
+      },
+      "wheel_command_samples": [
+        {
+          "time_s": 5.32,
+          "command_over_nominal_4_5Nm": [
+            0.4059999883174896,
+            0.3580000102519989
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.34,
+          "command_over_nominal_4_5Nm": [
+            0.3889999985694885,
+            0.028999999165534973
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.36,
+          "command_over_nominal_4_5Nm": [
+            0.5320000052452087,
+            0.14900000393390656
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.38,
+          "command_over_nominal_4_5Nm": [
+            0.3070000112056732,
+            0.008999999612569809
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 27
+        },
+        {
+          "time_s": 5.4,
+          "command_over_nominal_4_5Nm": [
+            0.1770000010728836,
+            0.04600000008940697
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 66
+        },
+        {
+          "time_s": 5.42,
+          "command_over_nominal_4_5Nm": [
+            0.11100000143051147,
+            0.041999999433755875
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 106
+        }
+      ],
+      "result": {
+        "reason": 5,
+        "success": false,
+        "peak_deg": [
+          1.195,
+          1.027,
+          71.953
+        ],
+        "height_rmse_m": 0.000372
+      }
+    },
+    {
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.35
+      },
+      "events": {
+        "contact": {
+          "time_s": 5.32,
+          "x_m": -1.786,
+          "yaw_deg": 0.11
+        },
+        "gyro_z_0.05rad_s": {
+          "time_s": 5.32,
+          "x_m": -1.786,
+          "yaw_deg": 0.11
+        },
+        "wheel_speed_diff_1rad_s": {
+          "time_s": 5.32,
+          "x_m": -1.786,
+          "yaw_deg": 0.11
+        },
+        "yaw_1deg": {
+          "time_s": 5.36,
+          "x_m": -1.804,
+          "yaw_deg": 1.861
+        },
+        "yaw_5deg": {
+          "time_s": 5.42,
+          "x_m": -1.829,
+          "yaw_deg": 6.559
+        }
+      },
+      "wheel_command_samples": [
+        {
+          "time_s": 5.32,
+          "command_over_nominal_4_5Nm": [
+            0.3840000033378601,
+            0.3230000138282776
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.34,
+          "command_over_nominal_4_5Nm": [
+            0.39800000190734863,
+            0.041999999433755875
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.36,
+          "command_over_nominal_4_5Nm": [
+            0.5389999747276306,
+            0.1420000046491623
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.38,
+          "command_over_nominal_4_5Nm": [
+            0.3109999895095825,
+            0.004000000189989805
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 30
+        },
+        {
+          "time_s": 5.4,
+          "command_over_nominal_4_5Nm": [
+            0.5899999737739563,
+            0.16300000250339508
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 69
+        },
+        {
+          "time_s": 5.42,
+          "command_over_nominal_4_5Nm": [
+            0.21899999678134918,
+            0.09300000220537186
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 109
+        }
+      ],
+      "result": {
+        "reason": 5,
+        "success": false,
+        "peak_deg": [
+          1.888,
+          1.304,
+          77.457
+        ],
+        "height_rmse_m": 0.000378
+      }
+    },
+    {
+      "scenario": {
+        "speed": -0.5,
+        "mass": 7.0,
+        "height_l": 0.027,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.38
+      },
+      "events": {
+        "contact": {
+          "time_s": 5.32,
+          "x_m": -1.786,
+          "yaw_deg": 0.105
+        },
+        "gyro_z_0.05rad_s": {
+          "time_s": 5.32,
+          "x_m": -1.786,
+          "yaw_deg": 0.105
+        },
+        "wheel_speed_diff_1rad_s": {
+          "time_s": 5.32,
+          "x_m": -1.786,
+          "yaw_deg": 0.105
+        },
+        "yaw_1deg": {
+          "time_s": 5.36,
+          "x_m": -1.804,
+          "yaw_deg": 1.905
+        },
+        "yaw_5deg": {
+          "time_s": 5.42,
+          "x_m": -1.829,
+          "yaw_deg": 6.692
+        }
+      },
+      "wheel_command_samples": [
+        {
+          "time_s": 5.32,
+          "command_over_nominal_4_5Nm": [
+            0.39800000190734863,
+            0.3400000035762787
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.34,
+          "command_over_nominal_4_5Nm": [
+            0.4169999957084656,
+            0.05299999937415123
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.36,
+          "command_over_nominal_4_5Nm": [
+            0.5609999895095825,
+            0.13899999856948853
+          ],
+          "wheel_base_clipped": [
+            false,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 0
+        },
+        {
+          "time_s": 5.38,
+          "command_over_nominal_4_5Nm": [
+            0.08299999684095383,
+            0.003000000026077032
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 32
+        },
+        {
+          "time_s": 5.4,
+          "command_over_nominal_4_5Nm": [
+            0.11999999731779099,
+            0.04600000008940697
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 69
+        },
+        {
+          "time_s": 5.42,
+          "command_over_nominal_4_5Nm": [
+            0.5839999914169312,
+            0.22699999809265137
+          ],
+          "wheel_base_clipped": [
+            true,
+            false
+          ],
+          "filtered_action3": 0.0,
+          "cumulative_base_infeasible_steps": 109
+        }
+      ],
+      "result": {
+        "reason": 5,
+        "success": false,
+        "peak_deg": [
+          1.136,
+          1.707,
+          78.555
+        ],
+        "height_rmse_m": 0.000414
+      }
+    }
+  ]
+}

@@ -288,7 +288,7 @@ class NativeEnv(VecEnv):
         self.task_goals=[row[2] for row in p]
         self.param=wp.array(p,dtype=D);self.command=wp.zeros(n,dtype=D)
         self.active=wp.ones(n,dtype=wp.int32);self.done=wp.zeros(n,dtype=wp.int32)
-        self.state=wp.zeros((n,30),dtype=D);self.diag=wp.zeros((n,15),dtype=D)
+        self.state=wp.zeros((n,30),dtype=D);self.diag=wp.zeros((n,21 if height_conditioned else 15),dtype=D)
         self.residual=wp.zeros((n,6),dtype=D);self.reward=wp.zeros(n,dtype=D);self.contact_flags=wp.zeros((n,2),dtype=wp.int32)
         self.obs=wp.zeros((n,32));self.history=wp.zeros((n,max(round(s.delay_ms*2) for s in self.scenarios)+1,32))
         self.targets=wp.zeros((n,self.action_dim));self.stopped_q=wp.zeros((n,self.cpu.nq));self.stopped_v=wp.zeros((n,self.cpu.nv));self.stopped_w=wp.zeros((n,self.cpu.nv))
