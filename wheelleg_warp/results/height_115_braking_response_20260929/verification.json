@@ -1,0 +1,16 @@
+{
+  "status": "failed_fixed_live_model_gate_before_effect_scoring",
+  "role": "one_public_reverse_flat_alarm_stopping_action_10ms_not_online_controller",
+  "world": 5,
+  "error": "current live stopping acceleration minimum slack -0.005185357801892155 < -1e-5",
+  "current_model_slack": -0.005185357801892155,
+  "required_tolerance": -1e-05,
+  "physical_trajectory_not_scored": true,
+  "training": false,
+  "final_holdout_opened": false,
+  "source_sha256": {
+    "wheelleg_warp/probe_height_115_braking_response.py": "872e16df61f82a2b843e7d60e995dfd06a43f0b1764d19bcbcc58562db024482"
+  },
+  "budget_sha256": "716fe89a5e137c2137faa77bbb4bcc93c8f5867aceb236ef1f461b48f4b4ff8a",
+  "log_sha256": "07efcd621b9e5ca9c167885e853d05a072889c04cb61e380c363e33924a14d86"
+}

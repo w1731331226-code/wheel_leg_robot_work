@@ -1,0 +1,2149 @@
+{
+  "role": "frozen_model_constant_acceleration_stopping_budget_not_viability_proof",
+  "training": false,
+  "final_holdout_opened": false,
+  "physical_action_executed": false,
+  "constraints": "two FK leg distances and four active-joint upper/lower distances; prior positional reserves retained",
+  "assumptions": "last-step nominal acceleration and action gain remain constant; no acceleration-error bound",
+  "limitations": "scalar stopping and simultaneous acceleration LP are necessary within this frozen model only; dynamic absolute motor box omitted; optimization never extrapolates beyond 1Nm start increment",
+  "summary": {
+    "15ms_before_failure": {
+      "0.0": 4,
+      "0.5": 4,
+      "1.0": 4
+    },
+    "first_alarm": {
+      "0.0": 1,
+      "0.5": 1,
+      "1.0": 1
+    }
+  },
+  "rows": [
+    {
+      "world": 0,
+      "state": "15ms_before_failure",
+      "time_s": 7.382999897003174,
+      "assessments": [
+        {
+          "delay_ms": 0.0,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": false,
+          "minimum_model_peak_motor_delta_Nm": null,
+          "within_1Nm_calibration": false,
+          "solver_status": 2,
+          "action": null,
+          "directional_hessian_step_halving_error": 7.131073509469843e-12,
+          "closing_constraints": [
+            {
+              "name": "left_leg",
+              "distance_after_delay": 0.0009870475478205726,
+              "closing_speed": 0.01915678829089179,
+              "required_constant_braking_acceleration": 0.18589911825035993,
+              "maximum_model_acceleration_in_1Nm_box": 4.409238324982864,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "right_leg",
+              "distance_after_delay": 0.0009869020046876936,
+              "closing_speed": 0.01914929338261001,
+              "required_constant_braking_acceleration": 0.18578107821825368,
+              "maximum_model_acceleration_in_1Nm_box": 4.271719640168185,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaL_lower",
+              "distance_after_delay": 2.2435221652454693,
+              "closing_speed": 1.321848750114441,
+              "required_constant_braking_acceleration": 0.3894064755067697,
+              "maximum_model_acceleration_in_1Nm_box": 95.13751215581583,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_lower",
+              "distance_after_delay": 0.04943150085872028,
+              "closing_speed": 3.4397196769714355,
+              "required_constant_braking_acceleration": 119.67744505634644,
+              "maximum_model_acceleration_in_1Nm_box": 106.15338393905667,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "alphaR_lower",
+              "distance_after_delay": 2.2435252646869976,
+              "closing_speed": 1.3219695091247559,
+              "required_constant_braking_acceleration": 0.38947709004279085,
+              "maximum_model_acceleration_in_1Nm_box": 92.35926598079166,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.04943185848658893,
+              "closing_speed": 3.4396603107452393,
+              "required_constant_braking_acceleration": 119.6724482504123,
+              "maximum_model_acceleration_in_1Nm_box": 106.78935550713837,
+              "scalar_stopping_condition_possible": false
+            }
+          ]
+        },
+        {
+          "delay_ms": 0.5,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": false,
+          "minimum_model_peak_motor_delta_Nm": null,
+          "within_1Nm_calibration": false,
+          "solver_status": 2,
+          "action": null,
+          "directional_hessian_step_halving_error": 7.131073509469843e-12,
+          "closing_constraints": [
+            {
+              "name": "left_leg",
+              "distance_after_delay": 0.000977424415654419,
+              "closing_speed": 0.019335740373721905,
+              "required_constant_braking_acceleration": 0.19125307789127613,
+              "maximum_model_acceleration_in_1Nm_box": 4.409238324982864,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "right_leg",
+              "distance_after_delay": 0.0009772830214190755,
+              "closing_speed": 0.019326639691862307,
+              "required_constant_braking_acceleration": 0.1911007321280865,
+              "maximum_model_acceleration_in_1Nm_box": 4.271719640168185,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaL_lower",
+              "distance_after_delay": 2.242864499188121,
+              "closing_speed": 1.3088154792785645,
+              "required_constant_braking_acceleration": 0.38187727333043403,
+              "maximum_model_acceleration_in_1Nm_box": 95.13751215581583,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_lower",
+              "distance_after_delay": 0.047713524407800176,
+              "closing_speed": 3.4321861267089844,
+              "required_constant_braking_acceleration": 123.44405233715925,
+              "maximum_model_acceleration_in_1Nm_box": 106.15338393905667,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "alphaR_lower",
+              "distance_after_delay": 2.24286753267711,
+              "closing_speed": 1.3089585304260254,
+              "required_constant_braking_acceleration": 0.3819602382691681,
+              "maximum_model_acceleration_in_1Nm_box": 92.35926598079166,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.04771391684478137,
+              "closing_speed": 3.4321062564849854,
+              "required_constant_braking_acceleration": 123.43729182958207,
+              "maximum_model_acceleration_in_1Nm_box": 106.78935550713837,
+              "scalar_stopping_condition_possible": false
+            }
+          ]
+        },
+        {
+          "delay_ms": 1.0,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": false,
+          "minimum_model_peak_motor_delta_Nm": null,
+          "within_1Nm_calibration": false,
+          "solver_status": 2,
+          "action": null,
+          "directional_hessian_step_halving_error": 7.131073509469843e-12,
+          "closing_constraints": [
+            {
+              "name": "left_leg",
+              "distance_after_delay": 0.0009677118074468507,
+              "closing_speed": 0.019514692456552015,
+              "required_constant_braking_acceleration": 0.19676479027291602,
+              "maximum_model_acceleration_in_1Nm_box": 4.409238324982864,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "right_leg",
+              "distance_after_delay": 0.0009675753649958313,
+              "closing_speed": 0.019503986001114602,
+              "required_constant_braking_acceleration": 0.1965766614641503,
+              "maximum_model_acceleration_in_1Nm_box": 4.271719640168185,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaL_lower",
+              "distance_after_delay": 2.2422133497661907,
+              "closing_speed": 1.295782208442688,
+              "required_constant_braking_acceleration": 0.37441832461921937,
+              "maximum_model_acceleration_in_1Nm_box": 95.13751215581583,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_lower",
+              "distance_after_delay": 0.04599931473201129,
+              "closing_speed": 3.424652576446533,
+              "required_constant_braking_acceleration": 127.48282596914534,
+              "maximum_model_acceleration_in_1Nm_box": 106.15338393905667,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "alphaR_lower",
+              "distance_after_delay": 2.2422163061565716,
+              "closing_speed": 1.295947551727295,
+              "required_constant_braking_acceleration": 0.37451338932299544,
+              "maximum_model_acceleration_in_1Nm_box": 92.35926598079166,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.04599975223010395,
+              "closing_speed": 3.4245522022247314,
+              "required_constant_braking_acceleration": 127.47414080729882,
+              "maximum_model_acceleration_in_1Nm_box": 106.78935550713837,
+              "scalar_stopping_condition_possible": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "world": 0,
+      "state": "first_alarm",
+      "time_s": 7.39300012588501,
+      "assessments": [
+        {
+          "delay_ms": 0.0,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": false,
+          "minimum_model_peak_motor_delta_Nm": null,
+          "within_1Nm_calibration": false,
+          "solver_status": 2,
+          "action": null,
+          "directional_hessian_step_halving_error": 2.546929334101833e-11,
+          "closing_constraints": [
+            {
+              "name": "left_leg",
+              "distance_after_delay": 0.0007776169384989411,
+              "closing_speed": 0.0221551486224814,
+              "required_constant_braking_acceleration": 0.3156120875091431,
+              "maximum_model_acceleration_in_1Nm_box": 4.541900729802425,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "right_leg",
+              "distance_after_delay": 0.0007775385389816879,
+              "closing_speed": 0.022138520596373418,
+              "required_constant_braking_acceleration": 0.31517029036138416,
+              "maximum_model_acceleration_in_1Nm_box": 4.417433360712702,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaL_lower",
+              "distance_after_delay": 2.2316064218944867,
+              "closing_speed": 1.078478455543518,
+              "required_constant_braking_acceleration": 0.26060056281880645,
+              "maximum_model_acceleration_in_1Nm_box": 90.70569697159527,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_lower",
+              "distance_after_delay": 0.01583629650538776,
+              "closing_speed": 3.2863659858703613,
+              "required_constant_braking_acceleration": 340.99517489494065,
+              "maximum_model_acceleration_in_1Nm_box": 112.00876019334034,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "alphaR_lower",
+              "distance_after_delay": 2.231608448452409,
+              "closing_speed": 1.0787197351455688,
+              "required_constant_braking_acceleration": 0.26071694337765494,
+              "maximum_model_acceleration_in_1Nm_box": 87.77312291868554,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.015837250179704165,
+              "closing_speed": 3.286158323287964,
+              "required_constant_braking_acceleration": 340.9315507168581,
+              "maximum_model_acceleration_in_1Nm_box": 112.84616908219783,
+              "scalar_stopping_condition_possible": false
+            }
+          ]
+        },
+        {
+          "delay_ms": 0.5,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": false,
+          "minimum_model_peak_motor_delta_Nm": null,
+          "within_1Nm_calibration": false,
+          "solver_status": 2,
+          "action": null,
+          "directional_hessian_step_halving_error": 2.546929334101833e-11,
+          "closing_constraints": [
+            {
+              "name": "left_leg",
+              "distance_after_delay": 0.0007665064513464458,
+              "closing_speed": 0.02228679998749991,
+              "required_constant_braking_acceleration": 0.32400343976904555,
+              "maximum_model_acceleration_in_1Nm_box": 4.541900729802425,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "right_leg",
+              "distance_after_delay": 0.0007664382878180365,
+              "closing_speed": 0.022262484058232192,
+              "required_constant_braking_acceleration": 0.3233255725350124,
+              "maximum_model_acceleration_in_1Nm_box": 4.417433360712702,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaL_lower",
+              "distance_after_delay": 2.2310700587696393,
+              "closing_speed": 1.0669740438461304,
+              "required_constant_braking_acceleration": 0.2551317485003524,
+              "maximum_model_acceleration_in_1Nm_box": 90.70569697159527,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_lower",
+              "distance_after_delay": 0.014195045716222262,
+              "closing_speed": 3.278637170791626,
+              "required_constant_braking_acceleration": 378.63427538707776,
+              "maximum_model_acceleration_in_1Nm_box": 112.00876019334034,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "alphaR_lower",
+              "distance_after_delay": 2.2310719380742867,
+              "closing_speed": 1.06732177734375,
+              "required_constant_braking_acceleration": 0.25529785861039567,
+              "maximum_model_acceleration_in_1Nm_box": 87.77312291868554,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.014196129984315372,
+              "closing_speed": 3.278322458267212,
+              "required_constant_braking_acceleration": 378.53267588608526,
+              "maximum_model_acceleration_in_1Nm_box": 112.84616908219783,
+              "scalar_stopping_condition_possible": false
+            }
+          ]
+        },
+        {
+          "delay_ms": 1.0,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": false,
+          "minimum_model_peak_motor_delta_Nm": null,
+          "within_1Nm_calibration": false,
+          "solver_status": 2,
+          "action": null,
+          "directional_hessian_step_halving_error": 2.546929334101833e-11,
+          "closing_constraints": [
+            {
+              "name": "left_leg",
+              "distance_after_delay": 0.000755330138511441,
+              "closing_speed": 0.022418451352518423,
+              "required_constant_braking_acceleration": 0.33269357028153485,
+              "maximum_model_acceleration_in_1Nm_box": 4.541900729802425,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "right_leg",
+              "distance_after_delay": 0.0007552760549234557,
+              "closing_speed": 0.022386447520090964,
+              "required_constant_braking_acceleration": 0.33176811928757416,
+              "maximum_model_acceleration_in_1Nm_box": 4.417433360712702,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaL_lower",
+              "distance_after_delay": 2.230539447850641,
+              "closing_speed": 1.0554696321487427,
+              "required_constant_braking_acceleration": 0.24971899633106104,
+              "maximum_model_acceleration_in_1Nm_box": 90.70569697159527,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_lower",
+              "distance_after_delay": 0.012557659334596134,
+              "closing_speed": 3.2709083557128906,
+              "required_constant_braking_acceleration": 425.9886809477815,
+              "maximum_model_acceleration_in_1Nm_box": 112.00876019334034,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "alphaR_lower",
+              "distance_after_delay": 2.2305411266750657,
+              "closing_speed": 1.0559238195419312,
+              "required_constant_braking_acceleration": 0.2499337715279089,
+              "maximum_model_acceleration_in_1Nm_box": 87.77312291868554,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.012558927721436955,
+              "closing_speed": 3.27048659324646,
+              "required_constant_braking_acceleration": 425.8358195002424,
+              "maximum_model_acceleration_in_1Nm_box": 112.84616908219783,
+              "scalar_stopping_condition_possible": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "world": 1,
+      "state": "15ms_before_failure",
+      "time_s": 5.043000221252441,
+      "assessments": [
+        {
+          "delay_ms": 0.0,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": true,
+          "minimum_model_peak_motor_delta_Nm": 0.003956785711888121,
+          "within_1Nm_calibration": true,
+          "solver_status": 0,
+          "action": [
+            0.0649927081186,
+            -0.0047353782081402266,
+            -0.003956785711888121
+          ],
+          "directional_hessian_step_halving_error": 1.0274198640624101e-16,
+          "closing_constraints": [
+            {
+              "name": "right_leg",
+              "distance_after_delay": 0.00023557861116568868,
+              "closing_speed": 9.886977202870888e-07,
+              "required_constant_braking_acceleration": 2.074728213363497e-09,
+              "maximum_model_acceleration_in_1Nm_box": 4.4321443678240176,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaL_lower",
+              "distance_after_delay": 2.5475169679683516,
+              "closing_speed": 9.196500468533486e-05,
+              "required_constant_braking_acceleration": 1.6599618752527056e-09,
+              "maximum_model_acceleration_in_1Nm_box": 92.55645156807957,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_lower",
+              "distance_after_delay": 0.44977047653616187,
+              "closing_speed": 3.248310895287432e-05,
+              "required_constant_braking_acceleration": 1.1729898051228233e-09,
+              "maximum_model_acceleration_in_1Nm_box": 52.03729989681842,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaR_lower",
+              "distance_after_delay": 2.5475180408519575,
+              "closing_speed": 6.471223605331033e-05,
+              "required_constant_braking_acceleration": 8.219124316032103e-10,
+              "maximum_model_acceleration_in_1Nm_box": 89.79319382484496,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.44977047653616187,
+              "closing_speed": 8.852782775647938e-05,
+              "required_constant_braking_acceleration": 8.712417439710238e-09,
+              "maximum_model_acceleration_in_1Nm_box": 52.271648289741705,
+              "scalar_stopping_condition_possible": true
+            }
+          ]
+        },
+        {
+          "delay_ms": 0.5,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": true,
+          "minimum_model_peak_motor_delta_Nm": 0.3881625980765922,
+          "within_1Nm_calibration": true,
+          "solver_status": 0,
+          "action": [
+            1.567587917713286,
+            0.3949484790548924,
+            -0.3881625980765922
+          ],
+          "directional_hessian_step_halving_error": 1.0274198640624101e-16,
+          "closing_constraints": [
+            {
+              "name": "right_leg",
+              "distance_after_delay": 0.00023557740087064248,
+              "closing_speed": 3.852482464614082e-06,
+              "required_constant_braking_acceleration": 3.150051975551901e-08,
+              "maximum_model_acceleration_in_1Nm_box": 4.4321443678240176,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaL_lower",
+              "distance_after_delay": 2.5475169153648425,
+              "closing_speed": 0.00011844903201563284,
+              "required_constant_braking_acceleration": 2.7536957852605824e-09,
+              "maximum_model_acceleration_in_1Nm_box": 92.55645156807957,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_upper",
+              "distance_after_delay": 2.549443753401477,
+              "closing_speed": 9.738643711898476e-06,
+              "required_constant_braking_acceleration": 1.860036747638819e-11,
+              "maximum_model_acceleration_in_1Nm_box": 51.86841288615933,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaR_lower",
+              "distance_after_delay": 2.5475180151032455,
+              "closing_speed": 3.828261105809361e-05,
+              "required_constant_braking_acceleration": 2.876443465240569e-10,
+              "maximum_model_acceleration_in_1Nm_box": 89.79319382484496,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.4497704217265824,
+              "closing_speed": 0.00013071049033896998,
+              "required_constant_braking_acceleration": 1.8993281304567597e-08,
+              "maximum_model_acceleration_in_1Nm_box": 52.271648289741705,
+              "scalar_stopping_condition_possible": true
+            }
+          ]
+        },
+        {
+          "delay_ms": 1.0,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": true,
+          "minimum_model_peak_motor_delta_Nm": 0.3881661349829001,
+          "within_1Nm_calibration": true,
+          "solver_status": 0,
+          "action": [
+            1.567602342287192,
+            0.3949520316172919,
+            -0.3881661349829001
+          ],
+          "directional_hessian_step_halving_error": 1.0274198640624101e-16,
+          "closing_constraints": [
+            {
+              "name": "right_leg",
+              "distance_after_delay": 0.00023557475868322405,
+              "closing_speed": 6.716267208941074e-06,
+              "required_constant_braking_acceleration": 9.574082867374156e-08,
+              "maximum_model_acceleration_in_1Nm_box": 4.4321443678240176,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaL_lower",
+              "distance_after_delay": 2.5475168495193197,
+              "closing_speed": 0.00014493305934593081,
+              "required_constant_braking_acceleration": 4.122758146886165e-09,
+              "maximum_model_acceleration_in_1Nm_box": 92.55645156807957,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_upper",
+              "distance_after_delay": 2.549443737976717,
+              "closing_speed": 5.196039637667127e-05,
+              "required_constant_braking_acceleration": 5.295042897795946e-10,
+              "maximum_model_acceleration_in_1Nm_box": 51.86841288615933,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaR_lower",
+              "distance_after_delay": 2.5475180025693467,
+              "closing_speed": 1.185298606287688e-05,
+              "required_constant_braking_acceleration": 2.7574540879604472e-11,
+              "maximum_model_acceleration_in_1Nm_box": 89.79319382484496,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.44977034582567155,
+              "closing_speed": 0.00017289315292146057,
+              "required_constant_braking_acceleration": 3.323033922150743e-08,
+              "maximum_model_acceleration_in_1Nm_box": 52.271648289741705,
+              "scalar_stopping_condition_possible": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "world": 1,
+      "state": "first_alarm",
+      "time_s": 5.052499771118164,
+      "assessments": [
+        {
+          "delay_ms": 0.0,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": false,
+          "minimum_model_peak_motor_delta_Nm": null,
+          "within_1Nm_calibration": false,
+          "solver_status": 2,
+          "action": null,
+          "directional_hessian_step_halving_error": 1.21317886292438e-12,
+          "closing_constraints": [
+            {
+              "name": "left_leg",
+              "distance_after_delay": 0.00019604794574142148,
+              "closing_speed": 0.02255604915917356,
+              "required_constant_braking_acceleration": 1.2975788951701293,
+              "maximum_model_acceleration_in_1Nm_box": -3.0518622365559045,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "right_leg",
+              "distance_after_delay": 0.0001959982094024575,
+              "closing_speed": 0.022553458054497398,
+              "required_constant_braking_acceleration": 1.2976099928839344,
+              "maximum_model_acceleration_in_1Nm_box": -3.1582908664495974,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "alphaL_upper",
+              "distance_after_delay": 0.45089700432241675,
+              "closing_speed": 0.44469377398490906,
+              "required_constant_braking_acceleration": 0.21928794239619429,
+              "maximum_model_acceleration_in_1Nm_box": -44.41303236811058,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "betaL_lower",
+              "distance_after_delay": 0.4496226570171189,
+              "closing_speed": 0.09604460746049881,
+              "required_constant_braking_acceleration": 0.010258120312974005,
+              "maximum_model_acceleration_in_1Nm_box": 6.157963465827429,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaR_upper",
+              "distance_after_delay": 0.45089581222952124,
+              "closing_speed": 0.4446759819984436,
+              "required_constant_braking_acceleration": 0.21927097524874045,
+              "maximum_model_acceleration_in_1Nm_box": -47.049740329076215,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.4496226570171189,
+              "closing_speed": 0.09600123018026352,
+              "required_constant_braking_acceleration": 0.010248856515890659,
+              "maximum_model_acceleration_in_1Nm_box": 6.708108156750477,
+              "scalar_stopping_condition_possible": true
+            }
+          ]
+        },
+        {
+          "delay_ms": 0.5,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": false,
+          "minimum_model_peak_motor_delta_Nm": null,
+          "within_1Nm_calibration": false,
+          "solver_status": 2,
+          "action": null,
+          "directional_hessian_step_halving_error": 1.21317886292438e-12,
+          "closing_constraints": [
+            {
+              "name": "left_leg",
+              "distance_after_delay": 0.00018381858088002738,
+              "closing_speed": 0.02636141028640289,
+              "required_constant_braking_acceleration": 1.8902440356168975,
+              "maximum_model_acceleration_in_1Nm_box": -3.0518622365559045,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "right_leg",
+              "distance_after_delay": 0.00018377212123947298,
+              "closing_speed": 0.02635089459744067,
+              "required_constant_braking_acceleration": 1.8892137757407625,
+              "maximum_model_acceleration_in_1Nm_box": -3.1582908664495974,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "alphaL_upper",
+              "distance_after_delay": 0.45065752271682735,
+              "closing_speed": 0.5132326483726501,
+              "required_constant_braking_acceleration": 0.2922482573547516,
+              "maximum_model_acceleration_in_1Nm_box": -44.41303236811058,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "betaL_lower",
+              "distance_after_delay": 0.4495689088714194,
+              "closing_speed": 0.11894797533750534,
+              "required_constant_braking_acceleration": 0.015735764370816852,
+              "maximum_model_acceleration_in_1Nm_box": 6.157963465827429,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaR_upper",
+              "distance_after_delay": 0.4506563686069917,
+              "closing_speed": 0.5130985081195831,
+              "required_constant_braking_acceleration": 0.292096259338714,
+              "maximum_model_acceleration_in_1Nm_box": -47.049740329076215,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.4495689489480924,
+              "closing_speed": 0.11883104592561722,
+              "required_constant_braking_acceleration": 0.015704840724449755,
+              "maximum_model_acceleration_in_1Nm_box": 6.708108156750477,
+              "scalar_stopping_condition_possible": true
+            }
+          ]
+        },
+        {
+          "delay_ms": 1.0,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": false,
+          "minimum_model_peak_motor_delta_Nm": null,
+          "within_1Nm_calibration": false,
+          "solver_status": 2,
+          "action": null,
+          "directional_hessian_step_halving_error": 1.21317886292438e-12,
+          "closing_constraints": [
+            {
+              "name": "left_leg",
+              "distance_after_delay": 0.0001696865354550186,
+              "closing_speed": 0.030166771413632217,
+              "required_constant_braking_acceleration": 2.6815153455813663,
+              "maximum_model_acceleration_in_1Nm_box": -3.0518622365559045,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "right_leg",
+              "distance_after_delay": 0.0001696473148050168,
+              "closing_speed": 0.030148331140383944,
+              "required_constant_braking_acceleration": 2.678857226814667,
+              "maximum_model_acceleration_in_1Nm_box": -3.1582908664495974,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "alphaL_upper",
+              "distance_after_delay": 0.4503837716740441,
+              "closing_speed": 0.5817715227603912,
+              "required_constant_braking_acceleration": 0.3757441164419846,
+              "maximum_model_acceleration_in_1Nm_box": -44.41303236811058,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "betaL_lower",
+              "distance_after_delay": 0.4495037090417814,
+              "closing_speed": 0.14185134321451187,
+              "required_constant_braking_acceleration": 0.02238224420289591,
+              "maximum_model_acceleration_in_1Nm_box": 6.157963465827429,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaR_upper",
+              "distance_after_delay": 0.45038271372140165,
+              "closing_speed": 0.5815210342407227,
+              "required_constant_braking_acceleration": 0.3754215059345987,
+              "maximum_model_acceleration_in_1Nm_box": -47.049740329076215,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.44950382597119326,
+              "closing_speed": 0.14166086167097092,
+              "required_constant_braking_acceleration": 0.022322167876996018,
+              "maximum_model_acceleration_in_1Nm_box": 6.708108156750477,
+              "scalar_stopping_condition_possible": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "world": 2,
+      "state": "15ms_before_failure",
+      "time_s": 4.25,
+      "assessments": [
+        {
+          "delay_ms": 0.0,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": true,
+          "minimum_model_peak_motor_delta_Nm": 1.1925860718364876e-06,
+          "within_1Nm_calibration": true,
+          "solver_status": 0,
+          "action": [
+            3.223749010679311e-08,
+            -4.52769929171653e-06,
+            -1.1925860718364876e-06
+          ],
+          "directional_hessian_step_halving_error": 8.009226566388103e-16,
+          "closing_constraints": [
+            {
+              "name": "left_leg",
+              "distance_after_delay": 0.00023871341134688962,
+              "closing_speed": 1.2339267823807817e-06,
+              "required_constant_braking_acceleration": 3.1891281174479927e-09,
+              "maximum_model_acceleration_in_1Nm_box": 4.459209413136273,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaL_lower",
+              "distance_after_delay": 2.547478854970343,
+              "closing_speed": 3.7983161746524274e-05,
+              "required_constant_braking_acceleration": 2.831663496338267e-10,
+              "maximum_model_acceleration_in_1Nm_box": 90.22769468700275,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_lower",
+              "distance_after_delay": 0.44973236353815293,
+              "closing_speed": 6.763177225366235e-05,
+              "required_constant_braking_acceleration": 5.085309607458585e-09,
+              "maximum_model_acceleration_in_1Nm_box": 52.40338742298266,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaR_lower",
+              "distance_after_delay": 2.547479927853949,
+              "closing_speed": 8.967434405349195e-05,
+              "required_constant_braking_acceleration": 1.5783221476053724e-09,
+              "maximum_model_acceleration_in_1Nm_box": 90.22698925129305,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.44973236353815293,
+              "closing_speed": 2.0860970835201442e-05,
+              "required_constant_braking_acceleration": 4.838212006397075e-10,
+              "maximum_model_acceleration_in_1Nm_box": 52.40413382351575,
+              "scalar_stopping_condition_possible": true
+            }
+          ]
+        },
+        {
+          "delay_ms": 0.5,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": true,
+          "minimum_model_peak_motor_delta_Nm": 1.1925860807335726e-06,
+          "within_1Nm_calibration": true,
+          "solver_status": 0,
+          "action": [
+            3.223749034729541e-08,
+            -4.527699325494658e-06,
+            -1.1925860807335726e-06
+          ],
+          "directional_hessian_step_halving_error": 8.009226566388103e-16,
+          "closing_constraints": [
+            {
+              "name": "left_leg",
+              "distance_after_delay": 0.00023871279555971587,
+              "closing_speed": 1.2292219125880625e-06,
+              "required_constant_braking_acceleration": 3.16486283620408e-09,
+              "maximum_model_acceleration_in_1Nm_box": 4.459209413136273,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaL_lower",
+              "distance_after_delay": 2.5474788359653115,
+              "closing_speed": 3.8036963815102354e-05,
+              "required_constant_braking_acceleration": 2.839691140600131e-10,
+              "maximum_model_acceleration_in_1Nm_box": 90.22769468700275,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_lower",
+              "distance_after_delay": 0.4497323297369915,
+              "closing_speed": 6.757287337677553e-05,
+              "required_constant_braking_acceleration": 5.07645649920703e-09,
+              "maximum_model_acceleration_in_1Nm_box": 52.40338742298266,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaR_lower",
+              "distance_after_delay": 2.5474798830052334,
+              "closing_speed": 8.972051728051156e-05,
+              "required_constant_braking_acceleration": 1.5799479467500933e-09,
+              "maximum_model_acceleration_in_1Nm_box": 90.22698925129305,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.449732353116737,
+              "closing_speed": 2.0824692910537124e-05,
+              "required_constant_braking_acceleration": 4.821399125644047e-10,
+              "maximum_model_acceleration_in_1Nm_box": 52.40413382351575,
+              "scalar_stopping_condition_possible": true
+            }
+          ]
+        },
+        {
+          "delay_ms": 1.0,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": true,
+          "minimum_model_peak_motor_delta_Nm": 1.192586089643251e-06,
+          "within_1Nm_calibration": true,
+          "solver_status": 0,
+          "action": [
+            3.223749058813813e-08,
+            -4.527699359320598e-06,
+            -1.192586089643251e-06
+          ],
+          "directional_hessian_step_halving_error": 8.009226566388103e-16,
+          "closing_constraints": [
+            {
+              "name": "left_leg",
+              "distance_after_delay": 0.00023871218212497702,
+              "closing_speed": 1.224517042795343e-06,
+              "required_constant_braking_acceleration": 3.140690128900133e-09,
+              "maximum_model_acceleration_in_1Nm_box": 4.459209413136273,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaL_lower",
+              "distance_after_delay": 2.547478816933379,
+              "closing_speed": 3.809076588368043e-05,
+              "required_constant_braking_acceleration": 2.847730147864262e-10,
+              "maximum_model_acceleration_in_1Nm_box": 90.22769468700275,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_lower",
+              "distance_after_delay": 0.4497322959652796,
+              "closing_speed": 6.751397449988872e-05,
+              "required_constant_braking_acceleration": 5.067611102943253e-09,
+              "maximum_model_acceleration_in_1Nm_box": 52.40338742298266,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaR_lower",
+              "distance_after_delay": 2.5474798381334316,
+              "closing_speed": 8.976669050753117e-05,
+              "required_constant_braking_acceleration": 1.5815745828589404e-09,
+              "maximum_model_acceleration_in_1Nm_box": 90.22698925129305,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.44973234271346,
+              "closing_speed": 2.0788414985872805e-05,
+              "required_constant_braking_acceleration": 4.804615507719932e-10,
+              "maximum_model_acceleration_in_1Nm_box": 52.40413382351575,
+              "scalar_stopping_condition_possible": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "world": 2,
+      "state": "first_alarm",
+      "time_s": 4.259500026702881,
+      "assessments": [
+        {
+          "delay_ms": 0.0,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": false,
+          "minimum_model_peak_motor_delta_Nm": null,
+          "within_1Nm_calibration": false,
+          "solver_status": 2,
+          "action": null,
+          "directional_hessian_step_halving_error": 7.495653403521985e-13,
+          "closing_constraints": [
+            {
+              "name": "right_leg",
+              "distance_after_delay": 0.0002116696738370265,
+              "closing_speed": 0.021213827337815717,
+              "required_constant_braking_acceleration": 1.0630395515825097,
+              "maximum_model_acceleration_in_1Nm_box": -5.793246369364777,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "alphaL_lower",
+              "distance_after_delay": 2.547311604337103,
+              "closing_speed": 0.1358586847782135,
+              "required_constant_braking_acceleration": 0.00362295335172967,
+              "maximum_model_acceleration_in_1Nm_box": 15.386091901031534,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_lower",
+              "distance_after_delay": 0.44969815047205186,
+              "closing_speed": 0.02374846301972866,
+              "required_constant_braking_acceleration": 0.0006270756230678237,
+              "maximum_model_acceleration_in_1Nm_box": 44.84672280469589,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaR_upper",
+              "distance_after_delay": 0.4510696533483336,
+              "closing_speed": 0.4600091278553009,
+              "required_constant_braking_acceleration": 0.2345628841792005,
+              "maximum_model_acceleration_in_1Nm_box": -125.85009954019512,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.44967418940485215,
+              "closing_speed": 0.048292480409145355,
+              "required_constant_braking_acceleration": 0.0025931704765558452,
+              "maximum_model_acceleration_in_1Nm_box": 22.523838982026923,
+              "scalar_stopping_condition_possible": true
+            }
+          ]
+        },
+        {
+          "delay_ms": 0.5,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": false,
+          "minimum_model_peak_motor_delta_Nm": null,
+          "within_1Nm_calibration": false,
+          "solver_status": 2,
+          "action": null,
+          "directional_hessian_step_halving_error": 7.495653403521985e-13,
+          "closing_constraints": [
+            {
+              "name": "right_leg",
+              "distance_after_delay": 0.00019978180142604947,
+              "closing_speed": 0.02633766230609245,
+              "required_constant_braking_acceleration": 1.736075185022622,
+              "maximum_model_acceleration_in_1Nm_box": -5.793246369364777,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "alphaL_lower",
+              "distance_after_delay": 2.547234321155853,
+              "closing_speed": 0.17327404022216797,
+              "required_constant_braking_acceleration": 0.005893429741730554,
+              "maximum_model_acceleration_in_1Nm_box": 15.386091901031534,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_lower",
+              "distance_after_delay": 0.449685331587016,
+              "closing_speed": 0.02752707712352276,
+              "required_constant_braking_acceleration": 0.0008425224504101309,
+              "maximum_model_acceleration_in_1Nm_box": 44.84672280469589,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaR_upper",
+              "distance_after_delay": 0.4508126405116985,
+              "closing_speed": 0.5680422186851501,
+              "required_constant_braking_acceleration": 0.3578781218761929,
+              "maximum_model_acceleration_in_1Nm_box": -125.85009954019512,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.4496463080516899,
+              "closing_speed": 0.06323293223977089,
+              "required_constant_braking_acceleration": 0.004446165406054899,
+              "maximum_model_acceleration_in_1Nm_box": 22.523838982026923,
+              "scalar_stopping_condition_possible": true
+            }
+          ]
+        },
+        {
+          "delay_ms": 1.0,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": false,
+          "minimum_model_peak_motor_delta_Nm": null,
+          "within_1Nm_calibration": false,
+          "solver_status": 2,
+          "action": null,
+          "directional_hessian_step_halving_error": 7.495653403521985e-13,
+          "closing_constraints": [
+            {
+              "name": "right_leg",
+              "distance_after_delay": 0.00018533201153093408,
+              "closing_speed": 0.031461497274369185,
+              "required_constant_braking_acceleration": 2.670412419766798,
+              "maximum_model_acceleration_in_1Nm_box": -5.793246369364777,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "alphaL_lower",
+              "distance_after_delay": 2.547138330296881,
+              "closing_speed": 0.21068939566612244,
+              "required_constant_braking_acceleration": 0.008713704496956399,
+              "maximum_model_acceleration_in_1Nm_box": 15.386091901031534,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_lower",
+              "distance_after_delay": 0.44967062339492836,
+              "closing_speed": 0.031305691227316856,
+              "required_constant_braking_acceleration": 0.001089737968450039,
+              "maximum_model_acceleration_in_1Nm_box": 44.84672280469589,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaR_upper",
+              "distance_after_delay": 0.4505016111296484,
+              "closing_speed": 0.6760753095149994,
+              "required_constant_braking_acceleration": 0.5072987674668507,
+              "maximum_model_acceleration_in_1Nm_box": -125.85009954019512,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.44961095647261234,
+              "closing_speed": 0.07817338407039642,
+              "required_constant_braking_acceleration": 0.0067959620301089796,
+              "maximum_model_acceleration_in_1Nm_box": 22.523838982026923,
+              "scalar_stopping_condition_possible": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "world": 3,
+      "state": "15ms_before_failure",
+      "time_s": 4.147500038146973,
+      "assessments": [
+        {
+          "delay_ms": 0.0,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": true,
+          "minimum_model_peak_motor_delta_Nm": 4.350984247937068e-05,
+          "within_1Nm_calibration": true,
+          "solver_status": 0,
+          "action": [
+            0.000721020358154106,
+            -5.106574838418738e-05,
+            -4.350984247937068e-05
+          ],
+          "directional_hessian_step_halving_error": 1.2825460771399984e-16,
+          "closing_constraints": [
+            {
+              "name": "left_leg",
+              "distance_after_delay": 0.0002370848535191854,
+              "closing_speed": 1.7027977668471858e-06,
+              "required_constant_braking_acceleration": 6.114941953778435e-09,
+              "maximum_model_acceleration_in_1Nm_box": 4.490716384300254,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaL_lower",
+              "distance_after_delay": 2.5475112864891183,
+              "closing_speed": 2.7114248950965703e-05,
+              "required_constant_braking_acceleration": 1.4429425692322347e-10,
+              "maximum_model_acceleration_in_1Nm_box": 90.86713814446755,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_lower",
+              "distance_after_delay": 0.44976479505692835,
+              "closing_speed": 6.798501271987334e-05,
+              "required_constant_braking_acceleration": 5.138198904536672e-09,
+              "maximum_model_acceleration_in_1Nm_box": 52.51597743574862,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaR_lower",
+              "distance_after_delay": 2.5475123593727242,
+              "closing_speed": 8.069122850429267e-05,
+              "required_constant_braking_acceleration": 1.2779279232103901e-09,
+              "maximum_model_acceleration_in_1Nm_box": 87.99716467803113,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.44976479505692835,
+              "closing_speed": 1.6893702195375226e-05,
+              "required_constant_braking_acceleration": 3.172738028883541e-10,
+              "maximum_model_acceleration_in_1Nm_box": 52.92041818218875,
+              "scalar_stopping_condition_possible": true
+            }
+          ]
+        },
+        {
+          "delay_ms": 0.5,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": true,
+          "minimum_model_peak_motor_delta_Nm": 4.3509971718092085e-05,
+          "within_1Nm_calibration": true,
+          "solver_status": 0,
+          "action": [
+            0.0007210227241386352,
+            -5.106586450467982e-05,
+            -4.3509971718092085e-05
+          ],
+          "directional_hessian_step_halving_error": 1.2825460771399984e-16,
+          "closing_constraints": [
+            {
+              "name": "left_leg",
+              "distance_after_delay": 0.0002370839941775468,
+              "closing_speed": 1.734568787533979e-06,
+              "required_constant_braking_acceleration": 6.3452804756484934e-09,
+              "maximum_model_acceleration_in_1Nm_box": 4.490716384300254,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaL_lower",
+              "distance_after_delay": 2.5475112729988374,
+              "closing_speed": 2.6846875698538497e-05,
+              "required_constant_braking_acceleration": 1.4146252116959834e-10,
+              "maximum_model_acceleration_in_1Nm_box": 90.86713814446755,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_lower",
+              "distance_after_delay": 0.44976476094095624,
+              "closing_speed": 6.847887561889365e-05,
+              "required_constant_braking_acceleration": 5.213121183857612e-09,
+              "maximum_model_acceleration_in_1Nm_box": 52.51597743574862,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaR_lower",
+              "distance_after_delay": 2.5475123189814477,
+              "closing_speed": 8.087387686828151e-05,
+              "required_constant_braking_acceleration": 1.2837197902778015e-09,
+              "maximum_model_acceleration_in_1Nm_box": 87.99716467803113,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.44976478664704045,
+              "closing_speed": 1.674584927968681e-05,
+              "required_constant_braking_acceleration": 3.117445789704004e-10,
+              "maximum_model_acceleration_in_1Nm_box": 52.92041818218875,
+              "scalar_stopping_condition_possible": true
+            }
+          ]
+        },
+        {
+          "delay_ms": 1.0,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": true,
+          "minimum_model_peak_motor_delta_Nm": 4.351010334481127e-05,
+          "within_1Nm_calibration": true,
+          "solver_status": 0,
+          "action": [
+            0.0007210251338599688,
+            -5.106598276768422e-05,
+            -4.351010334481127e-05
+          ],
+          "directional_hessian_step_halving_error": 1.2825460771399984e-16,
+          "closing_constraints": [
+            {
+              "name": "left_leg",
+              "distance_after_delay": 0.00023708311895039786,
+              "closing_speed": 1.766339808220772e-06,
+              "required_constant_braking_acceleration": 6.579878676976039e-09,
+              "maximum_model_acceleration_in_1Nm_box": 4.490716384300254,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaL_lower",
+              "distance_after_delay": 2.5475112596422425,
+              "closing_speed": 2.657950244611129e-05,
+              "required_constant_braking_acceleration": 1.386588474553099e-10,
+              "maximum_model_acceleration_in_1Nm_box": 90.86713814446755,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_lower",
+              "distance_after_delay": 0.4497647265780527,
+              "closing_speed": 6.897273851791397e-05,
+              "required_constant_braking_acceleration": 5.288585762221791e-09,
+              "maximum_model_acceleration_in_1Nm_box": 52.51597743574862,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaR_lower",
+              "distance_after_delay": 2.5475122784988473,
+              "closing_speed": 8.105652523227036e-05,
+              "required_constant_braking_acceleration": 1.2895247528701273e-09,
+              "maximum_model_acceleration_in_1Nm_box": 87.99716467803113,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.449764778311079,
+              "closing_speed": 1.659799636399839e-05,
+              "required_constant_braking_acceleration": 3.0626395905634837e-10,
+              "maximum_model_acceleration_in_1Nm_box": 52.92041818218875,
+              "scalar_stopping_condition_possible": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "world": 3,
+      "state": "first_alarm",
+      "time_s": 4.156000137329102,
+      "assessments": [
+        {
+          "delay_ms": 0.0,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": false,
+          "minimum_model_peak_motor_delta_Nm": null,
+          "within_1Nm_calibration": false,
+          "solver_status": 2,
+          "action": null,
+          "directional_hessian_step_halving_error": 3.4904232282251257e-12,
+          "closing_constraints": [
+            {
+              "name": "left_leg",
+              "distance_after_delay": 0.00015829817982328343,
+              "closing_speed": 0.025599128602274444,
+              "required_constant_braking_acceleration": 2.069876564365265,
+              "maximum_model_acceleration_in_1Nm_box": 1.272936089815674,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "right_leg",
+              "distance_after_delay": 0.0001582882233318882,
+              "closing_speed": 0.02559446482758603,
+              "required_constant_braking_acceleration": 2.0692525824774006,
+              "maximum_model_acceleration_in_1Nm_box": 1.137482248430366,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "alphaL_upper",
+              "distance_after_delay": 0.45052511190568323,
+              "closing_speed": 0.3748934864997864,
+              "required_constant_braking_acceleration": 0.1559792367904549,
+              "maximum_model_acceleration_in_1Nm_box": 43.38487843231843,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_lower",
+              "distance_after_delay": 0.4490421483436715,
+              "closing_speed": 0.23964948952198029,
+              "required_constant_braking_acceleration": 0.0639493174972415,
+              "maximum_model_acceleration_in_1Nm_box": 22.45248458842319,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaR_upper",
+              "distance_after_delay": 0.4505245158592355,
+              "closing_speed": 0.37483134865760803,
+              "required_constant_braking_acceleration": 0.1559277408783449,
+              "maximum_model_acceleration_in_1Nm_box": 40.37896785449867,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.44904250597154016,
+              "closing_speed": 0.23959989845752716,
+              "required_constant_braking_acceleration": 0.06392280305029274,
+              "maximum_model_acceleration_in_1Nm_box": 22.672322962212853,
+              "scalar_stopping_condition_possible": true
+            }
+          ]
+        },
+        {
+          "delay_ms": 0.5,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": false,
+          "minimum_model_peak_motor_delta_Nm": null,
+          "within_1Nm_calibration": false,
+          "solver_status": 2,
+          "action": null,
+          "directional_hessian_step_halving_error": 3.4904232282251257e-12,
+          "closing_constraints": [
+            {
+              "name": "left_leg",
+              "distance_after_delay": 0.00014509665841529244,
+              "closing_speed": 0.027206957029689467,
+              "required_constant_braking_acceleration": 2.550777250488885,
+              "maximum_model_acceleration_in_1Nm_box": 1.272936089815674,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "right_leg",
+              "distance_after_delay": 0.0001450873691878953,
+              "closing_speed": 0.027208951748385533,
+              "required_constant_braking_acceleration": 2.5513146299014218,
+              "maximum_model_acceleration_in_1Nm_box": 1.137482248430366,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "alphaL_upper",
+              "distance_after_delay": 0.45033171937559957,
+              "closing_speed": 0.39867663383483887,
+              "required_constant_braking_acceleration": 0.17647331014819276,
+              "maximum_model_acceleration_in_1Nm_box": 43.38487843231843,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_lower",
+              "distance_after_delay": 0.44891856034417865,
+              "closing_speed": 0.25470250844955444,
+              "required_constant_braking_acceleration": 0.07225516334272077,
+              "maximum_model_acceleration_in_1Nm_box": 22.45248458842319,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaR_upper",
+              "distance_after_delay": 0.4503311373511445,
+              "closing_speed": 0.39868268370628357,
+              "required_constant_braking_acceleration": 0.17647889420014207,
+              "maximum_model_acceleration_in_1Nm_box": 40.37896785449867,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.4489189198607694,
+              "closing_speed": 0.2547445446252823,
+              "required_constant_braking_acceleration": 0.07227895745234944,
+              "maximum_model_acceleration_in_1Nm_box": 22.672322962212853,
+              "scalar_stopping_condition_possible": true
+            }
+          ]
+        },
+        {
+          "delay_ms": 1.0,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": false,
+          "minimum_model_peak_motor_delta_Nm": null,
+          "within_1Nm_calibration": false,
+          "solver_status": 2,
+          "action": null,
+          "directional_hessian_step_halving_error": 3.4904232282251257e-12,
+          "closing_constraints": [
+            {
+              "name": "left_leg",
+              "distance_after_delay": 0.00013109122279359394,
+              "closing_speed": 0.028814785457104485,
+              "required_constant_braking_acceleration": 3.1668476471772378,
+              "maximum_model_acceleration_in_1Nm_box": 1.272936089815674,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "right_leg",
+              "distance_after_delay": 0.00013107927158350266,
+              "closing_speed": 0.028823438669185037,
+              "required_constant_braking_acceleration": 3.169038882654398,
+              "maximum_model_acceleration_in_1Nm_box": 1.137482248430366,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "alphaL_upper",
+              "distance_after_delay": 0.4501264352718484,
+              "closing_speed": 0.42245978116989136,
+              "required_constant_braking_acceleration": 0.19824681769503974,
+              "maximum_model_acceleration_in_1Nm_box": 43.38487843231843,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_lower",
+              "distance_after_delay": 0.44878744583522195,
+              "closing_speed": 0.2697555273771286,
+              "required_constant_braking_acceleration": 0.08107183615072701,
+              "maximum_model_acceleration_in_1Nm_box": 22.45248458842319,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaR_upper",
+              "distance_after_delay": 0.4501258331755292,
+              "closing_speed": 0.4225340187549591,
+              "required_constant_braking_acceleration": 0.19831676372104085,
+              "maximum_model_acceleration_in_1Nm_box": 40.37896785449867,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.4487877614269149,
+              "closing_speed": 0.2698891907930374,
+              "required_constant_braking_acceleration": 0.08115214090879634,
+              "maximum_model_acceleration_in_1Nm_box": 22.672322962212853,
+              "scalar_stopping_condition_possible": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "world": 4,
+      "state": "15ms_before_failure",
+      "time_s": 4.578000068664551,
+      "assessments": [
+        {
+          "delay_ms": 0.0,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": false,
+          "minimum_model_peak_motor_delta_Nm": null,
+          "within_1Nm_calibration": false,
+          "solver_status": 2,
+          "action": null,
+          "directional_hessian_step_halving_error": 5.08759701034478e-09,
+          "closing_constraints": [
+            {
+              "name": "alphaL_lower",
+              "distance_after_delay": 2.247673784098681,
+              "closing_speed": 6.78889274597168,
+              "required_constant_braking_acceleration": 10.252614290019991,
+              "maximum_model_acceleration_in_1Nm_box": 160.1616745062346,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_lower",
+              "distance_after_delay": 0.13503668149476877,
+              "closing_speed": 8.943273544311523,
+              "required_constant_braking_acceleration": 296.1496861557608,
+              "maximum_model_acceleration_in_1Nm_box": 55.58335263599709,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "alphaR_lower",
+              "distance_after_delay": 2.2476725920057854,
+              "closing_speed": 6.788813591003418,
+              "required_constant_braking_acceleration": 10.252380648612299,
+              "maximum_model_acceleration_in_1Nm_box": 157.264081472672,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.13503715833192698,
+              "closing_speed": 8.943313598632812,
+              "required_constant_braking_acceleration": 296.1512931384759,
+              "maximum_model_acceleration_in_1Nm_box": 56.27063123432798,
+              "scalar_stopping_condition_possible": false
+            }
+          ]
+        },
+        {
+          "delay_ms": 0.5,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": false,
+          "minimum_model_peak_motor_delta_Nm": null,
+          "within_1Nm_calibration": false,
+          "solver_status": 2,
+          "action": null,
+          "directional_hessian_step_halving_error": 5.08759701034478e-09,
+          "closing_constraints": [
+            {
+              "name": "alphaL_lower",
+              "distance_after_delay": 2.2442903983212075,
+              "closing_speed": 6.744650363922119,
+              "required_constant_braking_acceleration": 10.134675210833413,
+              "maximum_model_acceleration_in_1Nm_box": 160.1616745062346,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_lower",
+              "distance_after_delay": 0.13056233986383312,
+              "closing_speed": 8.954092979431152,
+              "required_constant_braking_acceleration": 307.0402275568731,
+              "maximum_model_acceleration_in_1Nm_box": 55.58335263599709,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "alphaR_lower",
+              "distance_after_delay": 2.244289228639658,
+              "closing_speed": 6.744639873504639,
+              "required_constant_braking_acceleration": 10.134648966533124,
+              "maximum_model_acceleration_in_1Nm_box": 157.264081472672,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.13056281598573558,
+              "closing_speed": 8.954055786132812,
+              "required_constant_braking_acceleration": 307.0365571386646,
+              "maximum_model_acceleration_in_1Nm_box": 56.27063123432798,
+              "scalar_stopping_condition_possible": false
+            }
+          ]
+        },
+        {
+          "delay_ms": 1.0,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": false,
+          "minimum_model_peak_motor_delta_Nm": null,
+          "within_1Nm_calibration": false,
+          "solver_status": 2,
+          "action": null,
+          "directional_hessian_step_halving_error": 5.08759701034478e-09,
+          "closing_constraints": [
+            {
+              "name": "alphaL_lower",
+              "distance_after_delay": 2.2409291337347588,
+              "closing_speed": 6.700407981872559,
+              "required_constant_braking_acceleration": 10.01715459174699,
+              "maximum_model_acceleration_in_1Nm_box": 160.1616745062346,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_lower",
+              "distance_after_delay": 0.12608258851533763,
+              "closing_speed": 8.964912414550781,
+              "required_constant_braking_acceleration": 318.71829229929693,
+              "maximum_model_acceleration_in_1Nm_box": 55.58335263599709,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "alphaR_lower",
+              "distance_after_delay": 2.240927952132281,
+              "closing_speed": 6.700466156005859,
+              "required_constant_braking_acceleration": 10.01733381589988,
+              "maximum_model_acceleration_in_1Nm_box": 157.264081472672,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.12608310254579416,
+              "closing_speed": 8.964797973632812,
+              "required_constant_braking_acceleration": 318.7088558471226,
+              "maximum_model_acceleration_in_1Nm_box": 56.27063123432798,
+              "scalar_stopping_condition_possible": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "world": 4,
+      "state": "first_alarm",
+      "time_s": 4.5879998207092285,
+      "assessments": [
+        {
+          "delay_ms": 0.0,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": false,
+          "minimum_model_peak_motor_delta_Nm": null,
+          "within_1Nm_calibration": false,
+          "solver_status": 2,
+          "action": null,
+          "directional_hessian_step_halving_error": 2.7423578963237105e-09,
+          "closing_constraints": [
+            {
+              "name": "alphaL_lower",
+              "distance_after_delay": 2.184576426348742,
+              "closing_speed": 5.8720316886901855,
+              "required_constant_braking_acceleration": 7.891863094625664,
+              "maximum_model_acceleration_in_1Nm_box": 160.40508136087345,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_lower",
+              "distance_after_delay": 0.04460201104646555,
+              "closing_speed": 9.128737449645996,
+              "required_constant_braking_acceleration": 934.1938341945347,
+              "maximum_model_acceleration_in_1Nm_box": 68.37146994010632,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "alphaR_lower",
+              "distance_after_delay": 2.1845763071394524,
+              "closing_speed": 5.872069835662842,
+              "required_constant_braking_acceleration": 7.89196606275844,
+              "maximum_model_acceleration_in_1Nm_box": 157.59063946184278,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.044601891837176,
+              "closing_speed": 9.128687858581543,
+              "required_constant_braking_acceleration": 934.1861812008999,
+              "maximum_model_acceleration_in_1Nm_box": 69.03526936477837,
+              "scalar_stopping_condition_possible": false
+            }
+          ]
+        },
+        {
+          "delay_ms": 0.5,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": false,
+          "minimum_model_peak_motor_delta_Nm": null,
+          "within_1Nm_calibration": false,
+          "solver_status": 2,
+          "action": null,
+          "directional_hessian_step_halving_error": 2.7423578963237105e-09,
+          "closing_constraints": [
+            {
+              "name": "alphaL_lower",
+              "distance_after_delay": 2.181651873550471,
+              "closing_speed": 5.826179504394531,
+              "required_constant_braking_acceleration": 7.779510569251603,
+              "maximum_model_acceleration_in_1Nm_box": 160.40508136087345,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_lower",
+              "distance_after_delay": 0.04003543909555307,
+              "closing_speed": 9.137550354003906,
+              "required_constant_braking_acceleration": 1042.7614678170357,
+              "maximum_model_acceleration_in_1Nm_box": 68.37146994010632,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "alphaR_lower",
+              "distance_after_delay": 2.181651725015696,
+              "closing_speed": 5.826258659362793,
+              "required_constant_braking_acceleration": 7.77972248653843,
+              "maximum_model_acceleration_in_1Nm_box": 157.59063946184278,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.040035354933794655,
+              "closing_speed": 9.137459754943848,
+              "required_constant_braking_acceleration": 1042.7429819379495,
+              "maximum_model_acceleration_in_1Nm_box": 69.03526936477837,
+              "scalar_stopping_condition_possible": false
+            }
+          ]
+        },
+        {
+          "delay_ms": 1.0,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": false,
+          "minimum_model_peak_motor_delta_Nm": null,
+          "within_1Nm_calibration": false,
+          "solver_status": 2,
+          "action": null,
+          "directional_hessian_step_halving_error": 2.7423578963237105e-09,
+          "closing_constraints": [
+            {
+              "name": "alphaL_lower",
+              "distance_after_delay": 2.1787502468443476,
+              "closing_speed": 5.780327320098877,
+              "required_constant_braking_acceleration": 7.667740709582228,
+              "maximum_model_acceleration_in_1Nm_box": 160.40508136087345,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_lower",
+              "distance_after_delay": 0.03546446069246164,
+              "closing_speed": 9.146363258361816,
+              "required_constant_braking_acceleration": 1179.4337094162124,
+              "maximum_model_acceleration_in_1Nm_box": 68.37146994010632,
+              "scalar_stopping_condition_possible": false
+            },
+            {
+              "name": "alphaR_lower",
+              "distance_after_delay": 2.1787500484800897,
+              "closing_speed": 5.780447483062744,
+              "required_constant_braking_acceleration": 7.668060209053338,
+              "maximum_model_acceleration_in_1Nm_box": 157.59063946184278,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_lower",
+              "distance_after_delay": 0.035464432082232156,
+              "closing_speed": 9.146231651306152,
+              "required_constant_braking_acceleration": 1179.4007193656046,
+              "maximum_model_acceleration_in_1Nm_box": 69.03526936477837,
+              "scalar_stopping_condition_possible": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "world": 5,
+      "state": "15ms_before_failure",
+      "time_s": 2.0460000038146973,
+      "assessments": [
+        {
+          "delay_ms": 0.0,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": true,
+          "minimum_model_peak_motor_delta_Nm": 0.2271476401013011,
+          "within_1Nm_calibration": true,
+          "solver_status": 0,
+          "action": [
+            0.5037255474810244,
+            0.5503825577772161,
+            0.2271476401013011
+          ],
+          "directional_hessian_step_halving_error": 1.1041592987148796e-12,
+          "closing_constraints": [
+            {
+              "name": "left_leg",
+              "distance_after_delay": 0.00010078990751452677,
+              "closing_speed": 0.008887690655308485,
+              "required_constant_braking_acceleration": 0.3918598951639719,
+              "maximum_model_acceleration_in_1Nm_box": 4.64253428202443,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "right_leg",
+              "distance_after_delay": 0.00010081005288410761,
+              "closing_speed": 0.00889030892032905,
+              "required_constant_braking_acceleration": 0.39201245529423934,
+              "maximum_model_acceleration_in_1Nm_box": 4.504681700537792,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaL_upper",
+              "distance_after_delay": 0.7382313911757432,
+              "closing_speed": 0.31586480140686035,
+              "required_constant_braking_acceleration": 0.06757405195740583,
+              "maximum_model_acceleration_in_1Nm_box": 62.6016091097454,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_upper",
+              "distance_after_delay": 2.9508254830679856,
+              "closing_speed": 0.2685045897960663,
+              "required_constant_braking_acceleration": 0.012216024830210672,
+              "maximum_model_acceleration_in_1Nm_box": 83.83115629482285,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaR_upper",
+              "distance_after_delay": 0.7382315103850328,
+              "closing_speed": 0.31589725613594055,
+              "required_constant_braking_acceleration": 0.06758792806213927,
+              "maximum_model_acceleration_in_1Nm_box": 59.863577776475594,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_upper",
+              "distance_after_delay": 2.950824887021538,
+              "closing_speed": 0.2684612572193146,
+              "required_constant_braking_acceleration": 0.012212084652119334,
+              "maximum_model_acceleration_in_1Nm_box": 84.43650531182112,
+              "scalar_stopping_condition_possible": true
+            }
+          ]
+        },
+        {
+          "delay_ms": 0.5,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": true,
+          "minimum_model_peak_motor_delta_Nm": 0.23477299241248806,
+          "within_1Nm_calibration": true,
+          "solver_status": 0,
+          "action": [
+            0.6043141155500347,
+            0.5578135196261582,
+            0.23477299241248806
+          ],
+          "directional_hessian_step_halving_error": 1.1041592987148796e-12,
+          "closing_constraints": [
+            {
+              "name": "left_leg",
+              "distance_after_delay": 9.633055412532761e-05,
+              "closing_speed": 0.008949722901488186,
+              "required_constant_braking_acceleration": 0.41574317069334993,
+              "maximum_model_acceleration_in_1Nm_box": 4.64253428202443,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "right_leg",
+              "distance_after_delay": 9.634935123162962e-05,
+              "closing_speed": 0.008952497689582936,
+              "required_constant_braking_acceleration": 0.4159198471887428,
+              "maximum_model_acceleration_in_1Nm_box": 4.504681700537792,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaL_upper",
+              "distance_after_delay": 0.7380725995591843,
+              "closing_speed": 0.31930166482925415,
+              "required_constant_braking_acceleration": 0.06906742861313736,
+              "maximum_model_acceleration_in_1Nm_box": 62.6016091097454,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_upper",
+              "distance_after_delay": 2.9506901700488295,
+              "closing_speed": 0.2727474868297577,
+              "required_constant_braking_acceleration": 0.012605727352715887,
+              "maximum_model_acceleration_in_1Nm_box": 83.83115629482285,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaR_upper",
+              "distance_after_delay": 0.7380727019823157,
+              "closing_speed": 0.3193363547325134,
+              "required_constant_braking_acceleration": 0.06908242723241444,
+              "maximum_model_acceleration_in_1Nm_box": 59.863577776475594,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_upper",
+              "distance_after_delay": 2.9506895961678588,
+              "closing_speed": 0.272702157497406,
+              "required_constant_braking_acceleration": 0.012601540128165598,
+              "maximum_model_acceleration_in_1Nm_box": 84.43650531182112,
+              "scalar_stopping_condition_possible": true
+            }
+          ]
+        },
+        {
+          "delay_ms": 1.0,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": true,
+          "minimum_model_peak_motor_delta_Nm": 0.24319959528664808,
+          "within_1Nm_calibration": true,
+          "solver_status": 0,
+          "action": [
+            0.7154824695932906,
+            0.5660239567119391,
+            0.24319959528664808
+          ],
+          "directional_hessian_step_halving_error": 1.1041592987148796e-12,
+          "closing_constraints": [
+            {
+              "name": "left_leg",
+              "distance_after_delay": 9.184018461303859e-05,
+              "closing_speed": 0.009011755147667888,
+              "required_constant_braking_acceleration": 0.44213614761173414,
+              "maximum_model_acceleration_in_1Nm_box": 4.64253428202443,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "right_leg",
+              "distance_after_delay": 9.185755519452467e-05,
+              "closing_speed": 0.009014686458836822,
+              "required_constant_braking_acceleration": 0.44234016341412424,
+              "maximum_model_acceleration_in_1Nm_box": 4.504681700537792,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaL_upper",
+              "distance_after_delay": 0.7379120895109139,
+              "closing_speed": 0.32273852825164795,
+              "required_constant_braking_acceleration": 0.07057761967762097,
+              "maximum_model_acceleration_in_1Nm_box": 62.6016091097454,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_upper",
+              "distance_after_delay": 2.950552735581156,
+              "closing_speed": 0.2769903838634491,
+              "required_constant_braking_acceleration": 0.013001576251730507,
+              "maximum_model_acceleration_in_1Nm_box": 83.83115629482285,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaR_upper",
+              "distance_after_delay": 0.7379121740303003,
+              "closing_speed": 0.3227754533290863,
+              "required_constant_braking_acceleration": 0.07059376233269675,
+              "maximum_model_acceleration_in_1Nm_box": 59.863577776475594,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_upper",
+              "distance_after_delay": 2.9505521848640406,
+              "closing_speed": 0.27694305777549744,
+              "required_constant_braking_acceleration": 0.01299713620445196,
+              "maximum_model_acceleration_in_1Nm_box": 84.43650531182112,
+              "scalar_stopping_condition_possible": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "world": 5,
+      "state": "first_alarm",
+      "time_s": 2.052000045776367,
+      "assessments": [
+        {
+          "delay_ms": 0.0,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": true,
+          "minimum_model_peak_motor_delta_Nm": 0.4134586303894393,
+          "within_1Nm_calibration": true,
+          "solver_status": 0,
+          "action": [
+            2.850922070589668,
+            0.7485696144756996,
+            0.4134586303894393
+          ],
+          "directional_hessian_step_halving_error": 9.509164289323024e-13,
+          "closing_constraints": [
+            {
+              "name": "left_leg",
+              "distance_after_delay": 4.5271073673387345e-05,
+              "closing_speed": 0.009527786314342729,
+              "required_constant_braking_acceleration": 1.0026127578363684,
+              "maximum_model_acceleration_in_1Nm_box": 4.674394853484069,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "right_leg",
+              "distance_after_delay": 4.5279667853310616e-05,
+              "closing_speed": 0.0095281974500424,
+              "required_constant_braking_acceleration": 1.002508973134579,
+              "maximum_model_acceleration_in_1Nm_box": 4.53843281297738,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaL_upper",
+              "distance_after_delay": 0.7362052504858934,
+              "closing_speed": 0.3557572364807129,
+              "required_constant_braking_acceleration": 0.08595647153077386,
+              "maximum_model_acceleration_in_1Nm_box": 63.15058868152704,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_upper",
+              "distance_after_delay": 2.9490461652121507,
+              "closing_speed": 0.3206804394721985,
+              "required_constant_braking_acceleration": 0.017435458534553742,
+              "maximum_model_acceleration_in_1Nm_box": 83.24600873840089,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaR_upper",
+              "distance_after_delay": 0.7362051312766038,
+              "closing_speed": 0.35576319694519043,
+              "required_constant_braking_acceleration": 0.08595936575529584,
+              "maximum_model_acceleration_in_1Nm_box": 60.43536918463772,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_upper",
+              "distance_after_delay": 2.949045569165703,
+              "closing_speed": 0.3206751048564911,
+              "required_constant_braking_acceleration": 0.017434881975020362,
+              "maximum_model_acceleration_in_1Nm_box": 83.82758140119793,
+              "scalar_stopping_condition_possible": true
+            }
+          ]
+        },
+        {
+          "delay_ms": 0.5,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": true,
+          "minimum_model_peak_motor_delta_Nm": 0.4544616492895295,
+          "within_1Nm_calibration": true,
+          "solver_status": 0,
+          "action": [
+            3.393019496947669,
+            0.7885584753627263,
+            0.4544616492895295
+          ],
+          "directional_hessian_step_halving_error": 9.509164289323024e-13,
+          "closing_constraints": [
+            {
+              "name": "left_leg",
+              "distance_after_delay": 4.0496036340559386e-05,
+              "closing_speed": 0.009572363016969097,
+              "required_constant_braking_acceleration": 1.1313469416865403,
+              "maximum_model_acceleration_in_1Nm_box": 4.674394853484069,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "right_leg",
+              "distance_after_delay": 4.0504597125427673e-05,
+              "closing_speed": 0.009572085461489374,
+              "required_constant_braking_acceleration": 1.1310422345188158,
+              "maximum_model_acceleration_in_1Nm_box": 4.53843281297738,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaL_upper",
+              "distance_after_delay": 0.7360265701181256,
+              "closing_speed": 0.3589642345905304,
+              "required_constant_braking_acceleration": 0.0875344226326539,
+              "maximum_model_acceleration_in_1Nm_box": 63.15058868152704,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_upper",
+              "distance_after_delay": 2.9488847133434377,
+              "closing_speed": 0.3251270353794098,
+              "required_constant_braking_acceleration": 0.017923316679062877,
+              "maximum_model_acceleration_in_1Nm_box": 83.24600873840089,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaR_upper",
+              "distance_after_delay": 0.7360264503127896,
+              "closing_speed": 0.35896065831184387,
+              "required_constant_braking_acceleration": 0.08753269271838919,
+              "maximum_model_acceleration_in_1Nm_box": 60.43536918463772,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_upper",
+              "distance_after_delay": 2.9488841176248153,
+              "closing_speed": 0.32513105869293213,
+              "required_constant_braking_acceleration": 0.017923763890039086,
+              "maximum_model_acceleration_in_1Nm_box": 83.82758140119793,
+              "scalar_stopping_condition_possible": true
+            }
+          ]
+        },
+        {
+          "delay_ms": 1.0,
+          "tightened_boundary_crossed_during_delay": false,
+          "coupled_stopping_constraints_feasible": true,
+          "minimum_model_peak_motor_delta_Nm": 0.5066943026811764,
+          "within_1Nm_calibration": true,
+          "solver_status": 0,
+          "action": [
+            4.08362021534265,
+            0.8394943014460556,
+            0.5066943026811764
+          ],
+          "directional_hessian_step_halving_error": 9.509164289323024e-13,
+          "closing_constraints": [
+            {
+              "name": "left_leg",
+              "distance_after_delay": 3.5698710656418243e-05,
+              "closing_speed": 0.009616939719595465,
+              "required_constant_braking_acceleration": 1.2953623235928409,
+              "maximum_model_acceleration_in_1Nm_box": 4.674394853484069,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "right_leg",
+              "distance_after_delay": 3.570758239182124e-05,
+              "closing_speed": 0.00961597347293635,
+              "required_constant_braking_acceleration": 1.2947802628804541,
+              "maximum_model_acceleration_in_1Nm_box": 4.53843281297738,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaL_upper",
+              "distance_after_delay": 0.7358462862513028,
+              "closing_speed": 0.3621712327003479,
+              "required_constant_braking_acceleration": 0.08912731112900776,
+              "maximum_model_acceleration_in_1Nm_box": 63.15058868152704,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaL_upper",
+              "distance_after_delay": 2.9487210381767714,
+              "closing_speed": 0.3295736312866211,
+              "required_constant_braking_acceleration": 0.018417947481836044,
+              "maximum_model_acceleration_in_1Nm_box": 83.24600873840089,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "alphaR_upper",
+              "distance_after_delay": 0.7358461706182919,
+              "closing_speed": 0.3621581196784973,
+              "required_constant_braking_acceleration": 0.08912087124056062,
+              "maximum_model_acceleration_in_1Nm_box": 60.43536918463772,
+              "scalar_stopping_condition_possible": true
+            },
+            {
+              "name": "betaR_upper",
+              "distance_after_delay": 2.94872043810701,
+              "closing_speed": 0.32958701252937317,
+              "required_constant_braking_acceleration": 0.018419446859766205,
+              "maximum_model_acceleration_in_1Nm_box": 83.82758140119793,
+              "scalar_stopping_condition_possible": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "archive_sha256": "b8cea295a23d1950ff486d5c06e5d95daf33da4dbb3238a8c9235cdf16919228",
+  "windows_sha256": "33153efe7d688c5e697c786d101067716284326ee9e3bb9f331b748cb138d30d",
+  "fitted_sha256": "ec9ee2120add9f69c8d745215a9ba42df5365833f7224eff7466d744d4090d89",
+  "alarm_sha256": "83268db9672a19bf9e8275fdaa5bf792af87c0eb6f9bb1e3a160de637c85969f",
+  "source_sha256": {
+    "wheelleg_warp/probe_height_115_braking_budget.py": "c8968f1ee4bce0da390b31fb3b1f452c92122ad8d6f8c7d64a9af0c13f1f0d3e",
+    "wheelleg_warp/probe_height_115_alarm_timing.py": "66c37cd9be626cd371bbe9f562e3c278ecfcc76856e2068f5bc49db837788f11",
+    "wheelleg_warp/probe_height_115_continuous_common_1nm.py": "199199199b3f388acdbdc5d394c0cd934d626cb01ab45f8f41b5f377a3a311dd",
+    "wheelleg_ppo/tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+    "wheelleg_warp/native/terrain.py": "1e462500ae917ba78ce5e4652f7a856bf62658f8573296e9a7d4630517cf1a94",
+    "wheelleg_warp/native/models.py": "59420b688a25e63fb8e0e644f0702025836bea0ed90377e452bcbd919c7216eb",
+    "wheelleg_ppo/tools/wheelleg_sim.py": "c2dfaae4dc562119fd7916684849ec22fcac3d75dbcfec6a2a0f9452d8f6ee0f",
+    "wheelleg_ppo/xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f"
+  }
+}
