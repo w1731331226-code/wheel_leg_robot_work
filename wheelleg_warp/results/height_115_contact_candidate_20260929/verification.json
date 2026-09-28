@@ -1,0 +1,96 @@
+{
+  "role": "independent_one_step_local_oracle_combination_validation",
+  "world": 3,
+  "checks": [
+    {
+      "arm": 0,
+      "action": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "actual_constant_acceleration_slack": {
+        "left_leg": -6.547835357074297,
+        "right_leg": -6.552701535052126,
+        "alphaL_upper": -101.01398935693544,
+        "betaL_lower": -55.243041920885915,
+        "alphaR_upper": -101.06467697361843,
+        "betaR_lower": -55.3105223073056
+      },
+      "braking_gate_pass": false,
+      "actual_geometry_pose_gate_pass": true,
+      "true_A_margin_m": [
+        0.0002744111489203088,
+        0.00027446556235415087
+      ],
+      "joint_min_margin_rad": 0.4501194953918457,
+      "peak_extra_motor_Nm": 0.0,
+      "contacts_equal_zero": true
+    },
+    {
+      "arm": 1,
+      "action": [
+        43.09662942619913,
+        -0.005875205077708631,
+        1.5347668136158958
+      ],
+      "actual_constant_acceleration_slack": {
+        "left_leg": 0.00513463884281868,
+        "right_leg": 0.0007669585175688401,
+        "alphaL_upper": 0.041789206087176,
+        "betaL_lower": 0.6630713162566507,
+        "alphaR_upper": 6.463786228362491e-05,
+        "betaR_lower": 0.5987909542033459
+      },
+      "braking_gate_pass": true,
+      "actual_geometry_pose_gate_pass": true,
+      "true_A_margin_m": [
+        0.0002751210080702837,
+        0.0002751493685121259
+      ],
+      "joint_min_margin_rad": 0.4501335620880127,
+      "peak_extra_motor_Nm": 1.7990623712539673,
+      "contacts_equal_zero": true
+    },
+    {
+      "arm": 2,
+      "action": [
+        47.86888139914687,
+        0.0,
+        0.0
+      ],
+      "actual_constant_acceleration_slack": {
+        "left_leg": 1.1198765839458924,
+        "right_leg": 1.1149852862673026,
+        "alphaL_upper": -11.558526364744123,
+        "betaL_lower": 39.01169766165269,
+        "alphaR_upper": -11.609355542458456,
+        "betaR_lower": 38.9439937578151
+      },
+      "braking_gate_pass": false,
+      "actual_geometry_pose_gate_pass": true,
+      "true_A_margin_m": [
+        0.00027599584840541647,
+        0.00027605026173263547
+      ],
+      "joint_min_margin_rad": 0.45014309883117676,
+      "peak_extra_motor_Nm": 1.9999998807907104,
+      "contacts_equal_zero": true
+    }
+  ],
+  "candidate_predicted_peak_motor_Nm": 1.7990622935529343,
+  "margin_rule": "Axis-fit absolute residual for each barrier family plus fixed 1e-5; empirical, not certified bound.",
+  "limitations": "Candidate uses future paired-state calibration; only first 0.5ms scored. No online, continuous or full-task safety claim.",
+  "trace_sha256": "0f12d8e6c235c5ac928c3329e597cc84d049c6411fe60ec85f3338ef7010ec52",
+  "input_sha256": {
+    "wheelleg_warp/results/height_115_contact_response_2nm_20260929/verification.json": "fa0e291d6952bb8da566dac32446a56c28d35e71dc45fa2f7eb55a6255f703f5",
+    "wheelleg_warp/results/height_115_contact_response_2nm_20260929/world_3.npz": "ae80474ff330ce614992a4c1a5817fbf34f08f3a64ecb5745115b3628757bfdc",
+    "wheelleg_warp/results/height_115_action_predict_1nm_single_graph_20260929/verification.json": "ec9ee2120add9f69c8d745215a9ba42df5365833f7224eff7466d744d4090d89",
+    "wheelleg_warp/results/height_115_local_states_20260928/verification.json": "b8cea295a23d1950ff486d5c06e5d95daf33da4dbb3238a8c9235cdf16919228"
+  },
+  "source_sha256": {
+    "wheelleg_warp/probe_height_115_contact_candidate.py": "134a37a53f92c899784240132c48cac69908553bead1f50df598ed2fa7c49640",
+    "wheelleg_warp/probe_height_115_live_common_local.py": "e4e0835efb38c5640fa842109283c98a514594ac9bf473c34b59b1d68ad13aad",
+    "wheelleg_warp/probe_height_115_braking_budget.py": "c8968f1ee4bce0da390b31fb3b1f452c92122ad8d6f8c7d64a9af0c13f1f0d3e"
+  }
+}
