@@ -139,7 +139,17 @@ def common_basis(m, q, v):
     return basis
 
 
-def simulate(base, starts, coefficients):
+@wp.kernel
+def scheduled_common(state: wp.array2d[D], start: wp.array[int],
+                     schedule: wp.array3d[D], coeff: wp.array2d[D]):
+    w = wp.tid()
+    step = int(state[w, 0]) - start[w]
+    if step >= 0 and step < 40:
+        for j in range(3):
+            coeff[w, j] = schedule[step, w, j]
+
+
+def simulate(base, starts, coefficients, schedule=None):
     assert len(base) == 1
     arms = len(coefficients) // len(base)
     scenarios = base * arms
@@ -149,6 +159,10 @@ def simulate(base, starts, coefficients):
     env.reset()
     start = wp.array(np.tile(starts, arms), dtype=wp.int32)
     coeff = wp.array(np.asarray(coefficients), dtype=D)
+    if schedule is not None:
+        assert np.shape(schedule) == (40, n, 3) and np.isfinite(schedule).all()
+        scheduled = wp.array(np.asarray(schedule), dtype=D)
+        post_velocity = wp.zeros((40, n, env.cpu.nv), dtype=D)
     stats = wp.zeros((n, 4), dtype=D)
     start_state = wp.zeros((n, 1 + env.cpu.nq + 2 * env.cpu.nv + env.cpu.nu), dtype=D)
     previous_qvel = wp.zeros(env.cpu.nv, dtype=D)
@@ -177,6 +191,8 @@ def simulate(base, starts, coefficients):
             wp.launch(capture_start, n, [d.time, d.qpos, d.qvel, d.qacc_warmstart, d.ctrl,
                 env.state, env.active, start, start_state])
             wp.launch(snapshot_pre, n, [slot, d.qpos, d.qvel, d.ctrl, env.active, pre])
+            if schedule is not None:
+                wp.launch(scheduled_common, n, [env.state, start, scheduled, coeff])
             wp.launch(live_common, n, [d.qpos, d.qvel, d.ctrl, env.state, env.active, env.ids,
                 start, coeff, stats])
             wp.launch(snapshot_ctrl, n, [slot, d.ctrl, applied])
@@ -184,6 +200,8 @@ def simulate(base, starts, coefficients):
             wp.launch(sample, n, [slot, d.qpos, env.state, env.active, env.ids,
                 passive, env.wheel_offsets, summary])
             wp.launch(snapshot_post, n, [slot, d.qpos, post])
+            if schedule is not None:
+                wp.launch(snapshot_post, n, [slot, d.qvel, post_velocity])
             wp.launch(ordered_contacts, d.naconmax, [slot, d.nacon, d.contact.worldid, d.contact.geom, pairs])
             wp.launch(reduce_contacts, d.naconmax, [d.nacon, d.contact.worldid, d.contact.geom,
                 env.ids, env.contact_flags])
@@ -193,6 +211,9 @@ def simulate(base, starts, coefficients):
                 env.stopped_q, env.stopped_v, env.stopped_w, env.wheel_offsets], block_dim=32)
     env.targets.assign(np.zeros((n, 3), np.float32))
     records = [dict(pre=[], applied=[], post=[], summary=[], contacts=[], contact_raw=[]) for _ in range(n)]
+    if schedule is not None:
+        for row in records:
+            row['post_velocity'] = []
     last_step = int(max(starts)) + HORIZON
     for period in range((last_step + 39) // 40):
         wp.capture_launch(captured.graph)
@@ -200,6 +221,7 @@ def simulate(base, starts, coefficients):
         if not any(global_step < s + HORIZON and global_step + 40 > s for s in starts):
             continue
         p0, p1, p2, ps, pc = pre.numpy(), applied.numpy(), post.numpy(), summary.numpy(), pairs.numpy()
+        pv = post_velocity.numpy() if schedule is not None else None
         for w in range(n):
             s = starts[w % len(base)]
             slots = np.flatnonzero((np.arange(40) + global_step >= s) &
@@ -209,6 +231,8 @@ def simulate(base, starts, coefficients):
                 r['pre'].append(p0[slot, w].copy())
                 r['applied'].append(p1[slot, w].copy())
                 r['post'].append(p2[slot, w].copy())
+                if pv is not None:
+                    r['post_velocity'].append(pv[slot, w].copy())
                 r['summary'].append(ps[slot, w].copy())
                 raw = pc[slot].copy()
                 r['contact_raw'].append(raw)
@@ -220,6 +244,8 @@ def simulate(base, starts, coefficients):
             r[key] = np.stack(r[key])
         assert len(r['pre']) == HORIZON and len(r['contacts']) == HORIZON
         r['previous_qvel'] = prior_v.copy()
+        if schedule is not None:
+            r['post_velocity'] = np.stack(r['post_velocity'])
     return records, start_state.numpy(), stats.numpy(), env.done.numpy()
 
 
