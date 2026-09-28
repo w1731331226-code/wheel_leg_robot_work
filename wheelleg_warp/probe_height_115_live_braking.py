@@ -50,8 +50,9 @@ def solve_current(m, q, v, previous_v, previous_action, gain, reserve, nominal):
     return c, bs, a0, None
 
 
-def run(output):
+def run(output, horizon_steps=20):
     assert not output.exists(), output
+    assert horizon_steps in (20,40)
     folder = ROOT/'wheelleg_warp/results'
     alarm_path = folder/'height_115_alarm_timing_integer_20260929/verification.json'
     fit_path = folder/'height_115_action_predict_1nm_single_graph_20260929/verification.json'
@@ -90,8 +91,9 @@ def run(output):
         d.sensordata,env.k['state'],env.state,env.command,env.contact_flags,
         env.stopped_q,env.stopped_v,env.stopped_w,env.active])
     prev=np.tile(previous,(3,1));last=np.zeros((3,3));held=None
-    output.mkdir(parents=True);rows=[];traces=[];timings=[];status='completed_10ms';failure=None
-    for step in range(20):
+    complete_status=f'completed_{horizon_steps/2:g}ms'
+    output.mkdir(parents=True);rows=[];traces=[];timings=[];status=complete_status;failure=None
+    for step in range(horizon_steps):
         wp.capture_launch(prepared.graph)
         q=d.qpos.numpy().astype(float);v=d.qvel.numpy().astype(float);nominal=d.ctrl.numpy().astype(float)
         if step==0:
@@ -110,14 +112,18 @@ def run(output):
                 timings.append((perf_counter()-tic)*1000)
             if error is not None:
                 failure=dict(step=step,arm=arm,reason=error,time_after_start_ms=step/2,
-                             q_active=q[arm,qa].tolist(),v_active=v[arm,va].tolist())
+                             q_active=q[arm,qa].tolist(),v_active=v[arm,va].tolist(),
+                             estimated_nominal_active_acceleration=a0.tolist(),previous_action=last[arm].tolist(),
+                             tightened_barrier_distances={b['name']:b['h'] for b in bs},
+                             actual_A_length_m=geometry(m,q[arm])[1].tolist(),
+                             eight_joint_min_margin_rad=float(margins(m,q[arm]).min()))
                 status='failed_receding_model_feasibility';break
             if arm==1 and step==0:held=c.copy()
             actions[arm]=c;controls[arm]+=basis(m,q[arm],v[arm])@c
             if np.max(abs(controls[arm])-torque_box(m,v[arm]))>1e-6:
                 failure=dict(step=step,arm=arm,reason='dynamic_motor_box_exceeded');status='failed_motor_gate';break
             models.append((arm,bs,a0+gain@c))
-        if status!='completed_10ms':break
+        if status!=complete_status:break
         issued=controls.astype(np.float32);d.ctrl.assign(issued)
         wp.capture_launch(advanced.graph)
         qnext=d.qpos.numpy().astype(float);vnext=d.qvel.numpy().astype(float)
@@ -152,12 +158,14 @@ def run(output):
         'wheelleg_ppo/tools/hardware_profile.py','wheelleg_ppo/xml/wheelleg.xml')
     if traces:np.savez_compressed(output/'trace.npz',q=np.stack([t[0] for t in traces]),v=np.stack([t[1] for t in traces]),
         issued=np.stack([t[2] for t in traces]),nominal=np.stack([t[3] for t in traces]))
-    summary=dict(status=status,completed_physical_steps=len(rows),failure=failure,
+    summary=dict(status=status,planned_physical_steps=horizon_steps,completed_physical_steps=len(rows),failure=failure,
         solve_python_host_median_ms=float(np.median(timings)),solve_python_host_max_ms=max(timings),
         solve_time_excludes_gpu_transfer=True,
         all_scored_steps_safe=[bool(rows) and all(r['arms'][a]['actual_safe'] for r in rows) for a in range(3)],
-        completed_10ms_safe=[len(rows)==20 and all(r['arms'][a]['actual_safe'] for r in rows) for a in range(3)])
-    payload=dict(role='current_state_host_in_loop_reverse_flat_braking_10ms',world=5,
+        completed_10ms_safe=[len(rows)>=20 and all(r['arms'][a]['actual_safe'] for r in rows[:20]) for a in range(3)],
+        completed_requested_window_safe=[len(rows)==horizon_steps and all(r['arms'][a]['actual_safe'] for r in rows) for a in range(3)])
+    payload=dict(role='current_state_host_in_loop_reverse_flat_braking',world=5,
+        requested_horizon_ms=horizon_steps/2,previous_10ms_source_git_revision='9bb8726',
         start_s=start*DT,trigger_time_selected_offline=True,training=False,final_holdout_opened=False,
         no_hardware_realtime_claim=True,acceleration_uncertainty_margin=0.,
         previous_action_removed_from_last_measured_acceleration=True,
@@ -168,8 +176,9 @@ def run(output):
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);target=p.parse_args().output
-    try:run(target)
+    p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True)
+    p.add_argument('--duration-ms',type=int,choices=(10,20),default=10);args=p.parse_args();target=args.output
+    try:run(target,args.duration_ms*2)
     except Exception as exc:
         if not (target/'verification.json').exists():
             target.mkdir(parents=True,exist_ok=True)

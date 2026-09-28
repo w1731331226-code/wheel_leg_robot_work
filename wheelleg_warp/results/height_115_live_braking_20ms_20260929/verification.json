@@ -1,0 +1,3478 @@
+{
+  "role": "current_state_host_in_loop_reverse_flat_braking",
+  "world": 5,
+  "requested_horizon_ms": 20.0,
+  "previous_10ms_source_git_revision": "9bb8726",
+  "start_s": 2.052,
+  "trigger_time_selected_offline": true,
+  "training": false,
+  "final_holdout_opened": false,
+  "no_hardware_realtime_claim": true,
+  "acceleration_uncertainty_margin": 0.0,
+  "previous_action_removed_from_last_measured_acceleration": true,
+  "summary": {
+    "status": "failed_receding_model_feasibility",
+    "planned_physical_steps": 40,
+    "completed_physical_steps": 25,
+    "failure": {
+      "step": 25,
+      "arm": 2,
+      "reason": "tightened_position_already_outside",
+      "time_after_start_ms": 12.5,
+      "q_active": [
+        0.7664032578468323,
+        -1.445328950881958,
+        0.7664036750793457,
+        -1.4453285932540894
+      ],
+      "v_active": [
+        0.1645210087299347,
+        0.3198954164981842,
+        0.16448816657066345,
+        0.3199232518672943
+      ],
+      "estimated_nominal_active_acceleration": [
+        41.93163422656468,
+        36.12863256461696,
+        40.20383548955802,
+        36.54471412833923
+      ],
+      "previous_action": [
+        -8.348691606504492,
+        2.775086550984856,
+        0.6120832912667342
+      ],
+      "tightened_barrier_distances": {
+        "left_leg": -7.30652326409444e-08,
+        "right_leg": -8.459934797044783e-08,
+        "alphaL_upper": 0.7332335417113267,
+        "alphaL_lower": 2.2660400574049913,
+        "betaL_upper": 2.944965750440117,
+        "betaL_lower": 0.054307848676200976,
+        "alphaR_upper": 0.7332331244788133,
+        "alphaR_lower": 2.2660404746375047,
+        "betaR_upper": 2.9449653928122483,
+        "betaR_lower": 0.05430820630406963
+      },
+      "actual_A_length_m": [
+        0.1147454250088358,
+        0.11474542945339297
+      ],
+      "eight_joint_min_margin_rad": 0.05467104911804199
+    },
+    "solve_python_host_median_ms": 1.1668780002764834,
+    "solve_python_host_max_ms": 1.9344440001987095,
+    "solve_time_excludes_gpu_transfer": true,
+    "all_scored_steps_safe": [
+      false,
+      true,
+      true
+    ],
+    "completed_10ms_safe": [
+      false,
+      true,
+      true
+    ],
+    "completed_requested_window_safe": [
+      false,
+      false,
+      false
+    ]
+  },
+  "rows": [
+    {
+      "step": 0,
+      "time_after_start_ms": 0.5,
+      "arms": [
+        {
+          "arm": "zero",
+          "action": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_actual_A_m": 0.11478670016863451,
+          "min_eight_joint_margin_rad": 0.050753235816955566,
+          "attitude": {
+            "world_abs_deg": [
+              5.939293663723342e-07,
+              0.34017905694666495,
+              0.00011056603240785957
+            ],
+            "terrain_relative_abs_deg": [
+              5.939293663723342e-07,
+              0.34017905694666495,
+              0.00011056603240785957
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.0
+        },
+        {
+          "arm": "current_once",
+          "action": [
+            2.850922070589668,
+            0.7485696144756996,
+            0.4134586303894393
+          ],
+          "min_actual_A_m": 0.11478695911078172,
+          "min_eight_joint_margin_rad": 0.05075204372406006,
+          "attitude": {
+            "world_abs_deg": [
+              5.941777682274045e-07,
+              0.3398620626162875,
+              0.00011056604452656811
+            ],
+            "terrain_relative_abs_deg": [
+              5.941777682274045e-07,
+              0.3398620626162875,
+              0.00011056604452656811
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.4134586453437805
+        },
+        {
+          "arm": "current_receding",
+          "action": [
+            2.850922070589668,
+            0.7485696144756996,
+            0.4134586303894393
+          ],
+          "min_actual_A_m": 0.11478695911078172,
+          "min_eight_joint_margin_rad": 0.05075204372406006,
+          "attitude": {
+            "world_abs_deg": [
+              5.941777682274045e-07,
+              0.3398620626162875,
+              0.00011056604452656811
+            ],
+            "terrain_relative_abs_deg": [
+              5.941777682274045e-07,
+              0.3398620626162875,
+              0.00011056604452656811
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.4134586453437805
+        }
+      ],
+      "acceleration_errors": [
+        {
+          "arm": 1,
+          "active_acceleration_prediction_error": [
+            4.998555833657555,
+            -4.513294604652719,
+            6.139462300948555,
+            -4.622283883441346
+          ],
+          "maximum_optimistic_leg_acceleration_error": -0.3511401982079827,
+          "maximum_optimistic_joint_acceleration_error": 6.1394623009485585
+        },
+        {
+          "arm": 2,
+          "active_acceleration_prediction_error": [
+            4.998555833657555,
+            -4.513294604652719,
+            6.139462300948555,
+            -4.622283883441346
+          ],
+          "maximum_optimistic_leg_acceleration_error": -0.3511401982079827,
+          "maximum_optimistic_joint_acceleration_error": 6.1394623009485585
+        }
+      ]
+    },
+    {
+      "step": 1,
+      "time_after_start_ms": 1.0,
+      "arms": [
+        {
+          "arm": "zero",
+          "action": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_actual_A_m": 0.1147818923855818,
+          "min_eight_joint_margin_rad": 0.050917983055114746,
+          "attitude": {
+            "world_abs_deg": [
+              1.627588503267971e-07,
+              0.34092860010049636,
+              0.00011048904574828922
+            ],
+            "terrain_relative_abs_deg": [
+              1.627588503267971e-07,
+              0.34092860010049636,
+              0.00011048904574828922
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.0
+        },
+        {
+          "arm": "current_once",
+          "action": [
+            2.850922070589668,
+            0.7485696144756996,
+            0.4134586303894393
+          ],
+          "min_actual_A_m": 0.11478271322371227,
+          "min_eight_joint_margin_rad": 0.050914645195007324,
+          "attitude": {
+            "world_abs_deg": [
+              2.79227453306693e-07,
+              0.3399811122488128,
+              0.00011053100978904578
+            ],
+            "terrain_relative_abs_deg": [
+              2.79227453306693e-07,
+              0.3399811122488128,
+              0.00011053100978904578
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.4134586304426193
+        },
+        {
+          "arm": "current_receding",
+          "action": [
+            0.09219555080291379,
+            0.8184420974949318,
+            0.3052140789212029
+          ],
+          "min_actual_A_m": 0.11478262979113044,
+          "min_eight_joint_margin_rad": 0.05091369152069092,
+          "attitude": {
+            "world_abs_deg": [
+              2.792468560302666e-07,
+              0.34007281408487283,
+              0.00011053086672924694
+            ],
+            "terrain_relative_abs_deg": [
+              2.792468560302666e-07,
+              0.34007281408487283,
+              0.00011053086672924694
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.30521407909691334
+        }
+      ],
+      "acceleration_errors": [
+        {
+          "arm": 1,
+          "active_acceleration_prediction_error": [
+            -2.213716506958008,
+            0.09125471115112305,
+            -2.248048782348633,
+            0.12761354446411133
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.11240598140628189,
+          "maximum_optimistic_joint_acceleration_error": 2.2480487823486293
+        },
+        {
+          "arm": 2,
+          "active_acceleration_prediction_error": [
+            -3.324267288964954,
+            -0.6755432045604746,
+            -3.666852382563242,
+            -0.6366756631140778
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.16274575103242117,
+          "maximum_optimistic_joint_acceleration_error": 3.666852382563242
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "time_after_start_ms": 1.5,
+      "arms": [
+        {
+          "arm": "zero",
+          "action": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_actual_A_m": 0.11477706744754675,
+          "min_eight_joint_margin_rad": 0.05108499526977539,
+          "attitude": {
+            "world_abs_deg": [
+              1.1490778901628965e-07,
+              0.34167667586974865,
+              0.00011047433496197195
+            ],
+            "terrain_relative_abs_deg": [
+              1.1490778901628965e-07,
+              0.34167667586974865,
+              0.00011047433496197195
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.0
+        },
+        {
+          "arm": "current_once",
+          "action": [
+            2.850922070589668,
+            0.7485696144756996,
+            0.4134586303894393
+          ],
+          "min_actual_A_m": 0.11477872238058083,
+          "min_eight_joint_margin_rad": 0.05107831954956055,
+          "attitude": {
+            "world_abs_deg": [
+              3.87314420971359e-10,
+              0.33985549914429214,
+              0.00011050892079806123
+            ],
+            "terrain_relative_abs_deg": [
+              3.87314420971359e-10,
+              0.33985549914429214,
+              0.00011050892079806123
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.4134586304426193
+        },
+        {
+          "arm": "current_receding",
+          "action": [
+            0.6450479432985469,
+            0.899583986240961,
+            0.36179715486792313
+          ],
+          "min_actual_A_m": 0.1147784851875535,
+          "min_eight_joint_margin_rad": 0.05107545852661133,
+          "attitude": {
+            "world_abs_deg": [
+              8.696545975406196e-08,
+              0.3400870082589823,
+              0.0001105514478418145
+            ],
+            "terrain_relative_abs_deg": [
+              8.696545975406196e-08,
+              0.3400870082589823,
+              0.0001105514478418145
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.36179715394973755
+        }
+      ],
+      "acceleration_errors": [
+        {
+          "arm": 1,
+          "active_acceleration_prediction_error": [
+            -4.069805145263672,
+            -0.087738037109375,
+            -4.042267799377441,
+            -0.11658668518066406
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.1955123113054309,
+          "maximum_optimistic_joint_acceleration_error": 4.069805145263672
+        },
+        {
+          "arm": 2,
+          "active_acceleration_prediction_error": [
+            -2.8625322087500713,
+            -0.6470837533695502,
+            -2.687314280068943,
+            -0.6801225054970761
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.12345119243940039,
+          "maximum_optimistic_joint_acceleration_error": 2.8625322087500713
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "time_after_start_ms": 2.0,
+      "arms": [
+        {
+          "arm": "zero",
+          "action": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_actual_A_m": 0.11477222536230254,
+          "min_eight_joint_margin_rad": 0.0512542724609375,
+          "attitude": {
+            "world_abs_deg": [
+              4.132239472342131e-07,
+              0.34242331093482353,
+              0.00011044384792634758
+            ],
+            "terrain_relative_abs_deg": [
+              4.132239472342131e-07,
+              0.34242331093482353,
+              0.00011044384792634758
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.0
+        },
+        {
+          "arm": "current_once",
+          "action": [
+            2.850922070589668,
+            0.7485696144756996,
+            0.4134586303894393
+          ],
+          "min_actual_A_m": 0.11477497783792096,
+          "min_eight_joint_margin_rad": 0.05124318599700928,
+          "attitude": {
+            "world_abs_deg": [
+              2.0005655123338994e-07,
+              0.33955778214423604,
+              0.00011069515654285426
+            ],
+            "terrain_relative_abs_deg": [
+              2.0005655123338994e-07,
+              0.33955778214423604,
+              0.00011069515654285426
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.4134586304426193
+        },
+        {
+          "arm": "current_receding",
+          "action": [
+            1.0477727165616197,
+            0.9684139169949063,
+            0.40656009430483725
+          ],
+          "min_actual_A_m": 0.11477456486644806,
+          "min_eight_joint_margin_rad": 0.05123734474182129,
+          "attitude": {
+            "world_abs_deg": [
+              3.224570186259978e-07,
+              0.33992369521312094,
+              0.00011047750526550486
+            ],
+            "terrain_relative_abs_deg": [
+              3.224570186259978e-07,
+              0.33992369521312094,
+              0.00011047750526550486
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.40656012296676636
+        }
+      ],
+      "acceleration_errors": [
+        {
+          "arm": 1,
+          "active_acceleration_prediction_error": [
+            -3.645777702331543,
+            -0.264585018157959,
+            -3.7019848823547363,
+            -0.20927190780639648
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.17465590615881976,
+          "maximum_optimistic_joint_acceleration_error": 3.7019848823547328
+        },
+        {
+          "arm": 2,
+          "active_acceleration_prediction_error": [
+            -2.3987750226919893,
+            -0.6242310575969423,
+            -2.2281700473313286,
+            -0.6793306517176276
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.10148505254615892,
+          "maximum_optimistic_joint_acceleration_error": 2.3987750226919893
+        }
+      ]
+    },
+    {
+      "step": 4,
+      "time_after_start_ms": 2.5,
+      "arms": [
+        {
+          "arm": "zero",
+          "action": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_actual_A_m": 0.11476734414155722,
+          "min_eight_joint_margin_rad": 0.051425814628601074,
+          "attitude": {
+            "world_abs_deg": [
+              3.746090126270079e-07,
+              0.3431681050840467,
+              0.00011056107896149866
+            ],
+            "terrain_relative_abs_deg": [
+              3.746090126270079e-07,
+              0.3431681050840467,
+              0.00011056107896149866
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.0
+        },
+        {
+          "arm": "current_once",
+          "action": [
+            2.850922070589668,
+            0.7485696144756996,
+            0.4134586303894393
+          ],
+          "min_actual_A_m": 0.11477147963806368,
+          "min_eight_joint_margin_rad": 0.051409363746643066,
+          "attitude": {
+            "world_abs_deg": [
+              8.472210918053787e-08,
+              0.33914732502580214,
+              0.00011074265620677669
+            ],
+            "terrain_relative_abs_deg": [
+              8.472210918053787e-08,
+              0.33914732502580214,
+              0.00011074265620677669
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.4134586304426193
+        },
+        {
+          "arm": "current_receding",
+          "action": [
+            1.346210797249337,
+            1.029417925953408,
+            0.44337934699580867
+          ],
+          "min_actual_A_m": 0.11477089520791225,
+          "min_eight_joint_margin_rad": 0.05139946937561035,
+          "attitude": {
+            "world_abs_deg": [
+              7.596971821030535e-07,
+              0.3396043667861541,
+              0.00011038914247960405
+            ],
+            "terrain_relative_abs_deg": [
+              7.596971821030535e-07,
+              0.3396043667861541,
+              0.00011038914247960405
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.44337935000658035
+        }
+      ],
+      "acceleration_errors": [
+        {
+          "arm": 1,
+          "active_acceleration_prediction_error": [
+            -2.9839277267456055,
+            -0.25147199630737305,
+            -2.8804540634155273,
+            -0.35315752029418945
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.13874281862657745,
+          "maximum_optimistic_joint_acceleration_error": 2.9839277267456055
+        },
+        {
+          "arm": 2,
+          "active_acceleration_prediction_error": [
+            -2.295715256537086,
+            -0.6651467303092922,
+            -2.2170062283382954,
+            -0.6517420663335258
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.09547114719379324,
+          "maximum_optimistic_joint_acceleration_error": 2.295715256537086
+        }
+      ]
+    },
+    {
+      "step": 5,
+      "time_after_start_ms": 3.0,
+      "arms": [
+        {
+          "arm": "zero",
+          "action": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_actual_A_m": 0.11476244138416601,
+          "min_eight_joint_margin_rad": 0.05159962177276611,
+          "attitude": {
+            "world_abs_deg": [
+              2.1767413760313303e-07,
+              0.3439117377000658,
+              0.00011072431949970319
+            ],
+            "terrain_relative_abs_deg": [
+              2.1767413760313303e-07,
+              0.3439117377000658,
+              0.00011072431949970319
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.0
+        },
+        {
+          "arm": "current_once",
+          "action": [
+            2.850922070589668,
+            0.7485696144756996,
+            0.4134586303894393
+          ],
+          "min_actual_A_m": 0.1147681882092281,
+          "min_eight_joint_margin_rad": 0.051576852798461914,
+          "attitude": {
+            "world_abs_deg": [
+              6.612099513621352e-08,
+              0.33866995253318044,
+              0.0001107712001962324
+            ],
+            "terrain_relative_abs_deg": [
+              6.612099513621352e-08,
+              0.33866995253318044,
+              0.0001107712001962324
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.4134586304426193
+        },
+        {
+          "arm": "current_receding",
+          "action": [
+            1.6465114824972105,
+            1.0905593869965298,
+            0.48033086986370405
+          ],
+          "min_actual_A_m": 0.11476744978890734,
+          "min_eight_joint_margin_rad": 0.051561713218688965,
+          "attitude": {
+            "world_abs_deg": [
+              1.0722782763040995e-06,
+              0.3391480187249487,
+              0.00011034889472746395
+            ],
+            "terrain_relative_abs_deg": [
+              1.0722782763040995e-06,
+              0.3391480187249487,
+              0.00011034889472746395
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.4803308844566345
+        }
+      ],
+      "acceleration_errors": [
+        {
+          "arm": 1,
+          "active_acceleration_prediction_error": [
+            -2.2206902503967285,
+            -0.3655552864074707,
+            -2.257823944091797,
+            -0.3286004066467285
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.10161486544042642,
+          "maximum_optimistic_joint_acceleration_error": 2.2578239440917933
+        },
+        {
+          "arm": 2,
+          "active_acceleration_prediction_error": [
+            -2.1297222271848284,
+            -0.7319467409917308,
+            -2.044797534845248,
+            -0.7227993830889687
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.08578632506384076,
+          "maximum_optimistic_joint_acceleration_error": 2.1297222271848284
+        }
+      ]
+    },
+    {
+      "step": 6,
+      "time_after_start_ms": 3.5,
+      "arms": [
+        {
+          "arm": "zero",
+          "action": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_actual_A_m": 0.11475752150359188,
+          "min_eight_joint_margin_rad": 0.05177569389343262,
+          "attitude": {
+            "world_abs_deg": [
+              1.6482777123389977e-07,
+              0.3446537037132878,
+              0.00011097825539329079
+            ],
+            "terrain_relative_abs_deg": [
+              1.6482777123389977e-07,
+              0.3446537037132878,
+              0.00011097825539329079
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.0
+        },
+        {
+          "arm": "current_once",
+          "action": [
+            2.850922070589668,
+            0.7485696144756996,
+            0.4134586303894393
+          ],
+          "min_actual_A_m": 0.11476508597944873,
+          "min_eight_joint_margin_rad": 0.05174577236175537,
+          "attitude": {
+            "world_abs_deg": [
+              9.397902588306922e-08,
+              0.33815914905100475,
+              0.0001108403255246216
+            ],
+            "terrain_relative_abs_deg": [
+              9.397902588306922e-08,
+              0.33815914905100475,
+              0.0001108403255246216
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.4134586304426193
+        },
+        {
+          "arm": "current_receding",
+          "action": [
+            1.8818783039492821,
+            1.15219290526209,
+            0.5143061236856394
+          ],
+          "min_actual_A_m": 0.11476425936407737,
+          "min_eight_joint_margin_rad": 0.05172419548034668,
+          "attitude": {
+            "world_abs_deg": [
+              7.9511463197939e-07,
+              0.33857168722744785,
+              0.00011054534423870298
+            ],
+            "terrain_relative_abs_deg": [
+              7.9511463197939e-07,
+              0.33857168722744785,
+              0.00011054534423870298
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.5143061205744743
+        }
+      ],
+      "acceleration_errors": [
+        {
+          "arm": 1,
+          "active_acceleration_prediction_error": [
+            -1.7328858375549316,
+            -0.34803152084350586,
+            -1.7536282539367676,
+            -0.3260970115661621
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.07718626022660435,
+          "maximum_optimistic_joint_acceleration_error": 1.753628253936764
+        },
+        {
+          "arm": 2,
+          "active_acceleration_prediction_error": [
+            -2.1239781431046154,
+            -0.7234635435518726,
+            -2.0890408823620312,
+            -0.6724218735607366
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.0856864366959812,
+          "maximum_optimistic_joint_acceleration_error": 2.1239781431046154
+        }
+      ]
+    },
+    {
+      "step": 7,
+      "time_after_start_ms": 4.0,
+      "arms": [
+        {
+          "arm": "zero",
+          "action": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_actual_A_m": 0.11475261090909175,
+          "min_eight_joint_margin_rad": 0.05195415019989014,
+          "attitude": {
+            "world_abs_deg": [
+              5.710974985731254e-07,
+              0.34539366872505417,
+              0.00011122365980142777
+            ],
+            "terrain_relative_abs_deg": [
+              5.710974985731254e-07,
+              0.34539366872505417,
+              0.00011122365980142777
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.0
+        },
+        {
+          "arm": "current_once",
+          "action": [
+            2.850922070589668,
+            0.7485696144756996,
+            0.4134586303894393
+          ],
+          "min_actual_A_m": 0.11476214656836667,
+          "min_eight_joint_margin_rad": 0.05191624164581299,
+          "attitude": {
+            "world_abs_deg": [
+              2.196255947630071e-07,
+              0.3376391407281604,
+              0.0001108701868522666
+            ],
+            "terrain_relative_abs_deg": [
+              2.196255947630071e-07,
+              0.3376391407281604,
+              0.0001108701868522666
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.41345861554145813
+        },
+        {
+          "arm": "current_receding",
+          "action": [
+            2.135571877151229,
+            1.2146691681380586,
+            0.5494723904257287
+          ],
+          "min_actual_A_m": 0.11476130191659296,
+          "min_eight_joint_margin_rad": 0.051886796951293945,
+          "attitude": {
+            "world_abs_deg": [
+              6.935142966927634e-08,
+              0.3378887393835844,
+              0.00011093638187103452
+            ],
+            "terrain_relative_abs_deg": [
+              6.935142966927634e-08,
+              0.3378887393835844,
+              0.00011093638187103452
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.5494723916053772
+        }
+      ],
+      "acceleration_errors": [
+        {
+          "arm": 1,
+          "active_acceleration_prediction_error": [
+            -1.3512969017028809,
+            -0.3223419189453125,
+            -1.3216137886047363,
+            -0.3541111946105957
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.057735233929020136,
+          "maximum_optimistic_joint_acceleration_error": 1.3512969017028809
+        },
+        {
+          "arm": 2,
+          "active_acceleration_prediction_error": [
+            -2.0043410819776355,
+            -0.728629389198403,
+            -1.886770606578004,
+            -0.7619542133471846
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.07974009882617106,
+          "maximum_optimistic_joint_acceleration_error": 2.0043410819776355
+        }
+      ]
+    },
+    {
+      "step": 8,
+      "time_after_start_ms": 4.5,
+      "arms": [
+        {
+          "arm": "zero",
+          "action": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_actual_A_m": 0.11474767880137737,
+          "min_eight_joint_margin_rad": 0.05213487148284912,
+          "attitude": {
+            "world_abs_deg": [
+              6.184166859690252e-07,
+              0.3461320062657419,
+              0.00011131459354936696
+            ],
+            "terrain_relative_abs_deg": [
+              6.184166859690252e-07,
+              0.3461320062657419,
+              0.00011131459354936696
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.0
+        },
+        {
+          "arm": "current_once",
+          "action": [
+            2.850922070589668,
+            0.7485696144756996,
+            0.4134586303894393
+          ],
+          "min_actual_A_m": 0.1147593567821707,
+          "min_eight_joint_margin_rad": 0.052088260650634766,
+          "attitude": {
+            "world_abs_deg": [
+              3.087044880575351e-07,
+              0.33712705662298026,
+              0.00011092131783565422
+            ],
+            "terrain_relative_abs_deg": [
+              3.087044880575351e-07,
+              0.33712705662298026,
+              0.00011092131783565422
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.41345861554145813
+        },
+        {
+          "arm": "current_receding",
+          "action": [
+            2.3289305624794228,
+            1.2730114571563786,
+            0.580189119308187
+          ],
+          "min_actual_A_m": 0.11475859942230722,
+          "min_eight_joint_margin_rad": 0.05204963684082031,
+          "attitude": {
+            "world_abs_deg": [
+              8.902938133039689e-07,
+              0.33711358283338594,
+              0.00011142417356904104
+            ],
+            "terrain_relative_abs_deg": [
+              8.902938133039689e-07,
+              0.33711358283338594,
+              0.00011142417356904104
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.580189123749733
+        }
+      ],
+      "acceleration_errors": [
+        {
+          "arm": 1,
+          "active_acceleration_prediction_error": [
+            -1.0460615158081055,
+            -0.3345608711242676,
+            -1.063525676727295,
+            -0.3179311752319336
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.043864242894278815,
+          "maximum_optimistic_joint_acceleration_error": 1.0635256767272914
+        },
+        {
+          "arm": 2,
+          "active_acceleration_prediction_error": [
+            -1.9587120841962857,
+            -0.7383851226318257,
+            -1.8468048913953226,
+            -0.7725548039032546
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.07726667002521026,
+          "maximum_optimistic_joint_acceleration_error": 1.9587120841962857
+        }
+      ]
+    },
+    {
+      "step": 9,
+      "time_after_start_ms": 5.0,
+      "arms": [
+        {
+          "arm": "zero",
+          "action": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_actual_A_m": 0.11474272518839064,
+          "min_eight_joint_margin_rad": 0.05231785774230957,
+          "attitude": {
+            "world_abs_deg": [
+              3.677049696634327e-07,
+              0.34686887641991937,
+              0.00011127918815693634
+            ],
+            "terrain_relative_abs_deg": [
+              3.677049696634327e-07,
+              0.34686887641991937,
+              0.00011127918815693634
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.0
+        },
+        {
+          "arm": "current_once",
+          "action": [
+            2.850922070589668,
+            0.7485696144756996,
+            0.4134586303894393
+          ],
+          "min_actual_A_m": 0.1147567122399487,
+          "min_eight_joint_margin_rad": 0.052261948585510254,
+          "attitude": {
+            "world_abs_deg": [
+              6.054942341449728e-07,
+              0.3366345562314915,
+              0.00011087299333517286
+            ],
+            "terrain_relative_abs_deg": [
+              6.054942341449728e-07,
+              0.3366345562314915,
+              0.00011087299333517286
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.41345861554145813
+        },
+        {
+          "arm": "current_receding",
+          "action": [
+            2.5087083623714492,
+            1.330944714019858,
+            0.6100919059069718
+          ],
+          "min_actual_A_m": 0.11475614745597583,
+          "min_eight_joint_margin_rad": 0.05221259593963623,
+          "attitude": {
+            "world_abs_deg": [
+              1.9676027387649423e-06,
+              0.33625838403040664,
+              0.00011195867647361775
+            ],
+            "terrain_relative_abs_deg": [
+              1.9676027387649423e-06,
+              0.33625838403040664,
+              0.00011195867647361775
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.6100919246673584
+        }
+      ],
+      "acceleration_errors": [
+        {
+          "arm": 1,
+          "active_acceleration_prediction_error": [
+            -0.8779168128967285,
+            -0.28824806213378906,
+            -0.8463263511657715,
+            -0.31626224517822266
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.03556217260412786,
+          "maximum_optimistic_joint_acceleration_error": 0.8779168128967285
+        },
+        {
+          "arm": 2,
+          "active_acceleration_prediction_error": [
+            -1.9484595458241571,
+            -0.7207829094621019,
+            -1.8529748546892435,
+            -0.7423709304890309
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.07717256334646627,
+          "maximum_optimistic_joint_acceleration_error": 1.9484595458241643
+        }
+      ]
+    },
+    {
+      "step": 10,
+      "time_after_start_ms": 5.5,
+      "arms": [
+        {
+          "arm": "zero",
+          "action": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_actual_A_m": 0.11473775448413528,
+          "min_eight_joint_margin_rad": 0.052503108978271484,
+          "attitude": {
+            "world_abs_deg": [
+              1.778836650066132e-07,
+              0.34760358548665876,
+              0.0001111165929815486
+            ],
+            "terrain_relative_abs_deg": [
+              1.778836650066132e-07,
+              0.34760358548665876,
+              0.0001111165929815486
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.0
+        },
+        {
+          "arm": "current_once",
+          "action": [
+            2.850922070589668,
+            0.7485696144756996,
+            0.4134586303894393
+          ],
+          "min_actual_A_m": 0.11475419534481797,
+          "min_eight_joint_margin_rad": 0.052437424659729004,
+          "attitude": {
+            "world_abs_deg": [
+              1.0141224645912435e-06,
+              0.33616956373982054,
+              0.00011077827775387204
+            ],
+            "terrain_relative_abs_deg": [
+              1.0141224645912435e-06,
+              0.33616956373982054,
+              0.00011077827775387204
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.41345861554145813
+        },
+        {
+          "arm": "current_receding",
+          "action": [
+            2.6941506011367253,
+            1.3882344852852915,
+            0.6400283104055781
+          ],
+          "min_actual_A_m": 0.11475394596488642,
+          "min_eight_joint_margin_rad": 0.05237579345703125,
+          "attitude": {
+            "world_abs_deg": [
+              2.6013660050672705e-06,
+              0.33533357517559587,
+              0.00011230786133415712
+            ],
+            "terrain_relative_abs_deg": [
+              2.6013660050672705e-06,
+              0.33533357517559587,
+              0.00011230786133415712
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.6400283128023148
+        }
+      ],
+      "acceleration_errors": [
+        {
+          "arm": 1,
+          "active_acceleration_prediction_error": [
+            -0.6925463676452637,
+            -0.29921531677246094,
+            -0.7044672966003418,
+            -0.29009580612182617
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.02708937882352186,
+          "maximum_optimistic_joint_acceleration_error": 0.7044672966003382
+        },
+        {
+          "arm": 2,
+          "active_acceleration_prediction_error": [
+            -1.844151241149369,
+            -0.7353066734845015,
+            -1.6907988762126749,
+            -0.8156548481939758
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.07174106043097328,
+          "maximum_optimistic_joint_acceleration_error": 1.844151241149369
+        }
+      ]
+    },
+    {
+      "step": 11,
+      "time_after_start_ms": 6.0,
+      "arms": [
+        {
+          "arm": "zero",
+          "action": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_actual_A_m": 0.11473277110297732,
+          "min_eight_joint_margin_rad": 0.052690744400024414,
+          "attitude": {
+            "world_abs_deg": [
+              5.504015278914586e-07,
+              0.3483359852172481,
+              0.00011103345497773601
+            ],
+            "terrain_relative_abs_deg": [
+              5.504015278914586e-07,
+              0.3483359852172481,
+              0.00011103345497773601
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.0
+        },
+        {
+          "arm": "current_once",
+          "action": [
+            2.850922070589668,
+            0.7485696144756996,
+            0.4134586303894393
+          ],
+          "min_actual_A_m": 0.11475179290676032,
+          "min_eight_joint_margin_rad": 0.052614688873291016,
+          "attitude": {
+            "world_abs_deg": [
+              1.3604601728112993e-06,
+              0.3357365881943019,
+              0.00011070424716840657
+            ],
+            "terrain_relative_abs_deg": [
+              1.3604601728112993e-06,
+              0.3357365881943019,
+              0.00011070424716840657
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.41345861554145813
+        },
+        {
+          "arm": "current_receding",
+          "action": [
+            2.813530010702545,
+            1.4445054890962918,
+            0.6663841098837241
+          ],
+          "min_actual_A_m": 0.11475201699386336,
+          "min_eight_joint_margin_rad": 0.05253911018371582,
+          "attitude": {
+            "world_abs_deg": [
+              2.6134093992505504e-06,
+              0.33435000185684216,
+              0.00011239590988552115
+            ],
+            "terrain_relative_abs_deg": [
+              2.6134093992505504e-06,
+              0.33435000185684216,
+              0.00011239590988552115
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.6663841605186462
+        }
+      ],
+      "acceleration_errors": [
+        {
+          "arm": 1,
+          "active_acceleration_prediction_error": [
+            -0.6291866302490234,
+            -0.26088953018188477,
+            -0.6511211395263672,
+            -0.23716688156127752
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.025767764560281126,
+          "maximum_optimistic_joint_acceleration_error": 0.6511211395263636
+        },
+        {
+          "arm": 2,
+          "active_acceleration_prediction_error": [
+            -1.84299624722496,
+            -0.7451514528112853,
+            -1.7494485603395233,
+            -0.7734872362821932
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.07142513126611039,
+          "maximum_optimistic_joint_acceleration_error": 1.84299624722496
+        }
+      ]
+    },
+    {
+      "step": 12,
+      "time_after_start_ms": 6.5,
+      "arms": [
+        {
+          "arm": "zero",
+          "action": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_actual_A_m": 0.11472777942316002,
+          "min_eight_joint_margin_rad": 0.05288064479827881,
+          "attitude": {
+            "world_abs_deg": [
+              1.0130691043454137e-06,
+              0.34906645206392933,
+              0.0001109079050572081
+            ],
+            "terrain_relative_abs_deg": [
+              1.0130691043454137e-06,
+              0.34906645206392933,
+              0.0001109079050572081
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.0
+        },
+        {
+          "arm": "current_once",
+          "action": [
+            2.850922070589668,
+            0.7485696144756996,
+            0.4134586303894393
+          ],
+          "min_actual_A_m": 0.11474949173687747,
+          "min_eight_joint_margin_rad": 0.05279374122619629,
+          "attitude": {
+            "world_abs_deg": [
+              1.2663258810720868e-06,
+              0.335337710690994,
+              0.00011079984789553778
+            ],
+            "terrain_relative_abs_deg": [
+              1.2663258810720868e-06,
+              0.335337710690994,
+              0.00011079984789553778
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.41345861554145813
+        },
+        {
+          "arm": "current_receding",
+          "action": [
+            2.949357223586128,
+            1.500793585919112,
+            0.6935398992836292
+          ],
+          "min_actual_A_m": 0.11475033409079427,
+          "min_eight_joint_margin_rad": 0.05270266532897949,
+          "attitude": {
+            "world_abs_deg": [
+              2.6118966798786085e-06,
+              0.3333157485659712,
+              0.00011249711739200926
+            ],
+            "terrain_relative_abs_deg": [
+              2.6118966798786085e-06,
+              0.3333157485659712,
+              0.00011249711739200926
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.6935399174690247
+        }
+      ],
+      "acceleration_errors": [
+        {
+          "arm": 1,
+          "active_acceleration_prediction_error": [
+            -0.5611181259155273,
+            -0.2392530441284162,
+            -0.6099939346313477,
+            -0.18858909606933416
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.02493654585278804,
+          "maximum_optimistic_joint_acceleration_error": 0.6099939346313441
+        },
+        {
+          "arm": 2,
+          "active_acceleration_prediction_error": [
+            -1.7335944224991024,
+            -0.7944701068793734,
+            -1.7379145900264135,
+            -0.7259655692686771
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.06677399701361475,
+          "maximum_optimistic_joint_acceleration_error": 1.7379145900264135
+        }
+      ]
+    },
+    {
+      "step": 13,
+      "time_after_start_ms": 7.0,
+      "arms": [
+        {
+          "arm": "zero",
+          "action": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_actual_A_m": 0.1147227662701275,
+          "min_eight_joint_margin_rad": 0.05307292938232422,
+          "attitude": {
+            "world_abs_deg": [
+              1.0246329710300184e-06,
+              0.34979486454621317,
+              0.00011096482965299908
+            ],
+            "terrain_relative_abs_deg": [
+              1.0246329710300184e-06,
+              0.34979486454621317,
+              0.00011096482965299908
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.0
+        },
+        {
+          "arm": "current_once",
+          "action": [
+            2.850922070589668,
+            0.7485696144756996,
+            0.4134586303894393
+          ],
+          "min_actual_A_m": 0.11474729623625908,
+          "min_eight_joint_margin_rad": 0.052974700927734375,
+          "attitude": {
+            "world_abs_deg": [
+              1.0829763989060237e-06,
+              0.33497465204645926,
+              0.00011092265144145122
+            ],
+            "terrain_relative_abs_deg": [
+              1.0829763989060237e-06,
+              0.33497465204645926,
+              0.00011092265144145122
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.41345861554145813
+        },
+        {
+          "arm": "current_receding",
+          "action": [
+            3.0875245953719173,
+            1.5549012468112131,
+            0.720006029255117
+          ],
+          "min_actual_A_m": 0.11474889723927338,
+          "min_eight_joint_margin_rad": 0.052866339683532715,
+          "attitude": {
+            "world_abs_deg": [
+              2.151767375770243e-06,
+              0.332238245865224,
+              0.00011239731050615807
+            ],
+            "terrain_relative_abs_deg": [
+              2.151767375770243e-06,
+              0.332238245865224,
+              0.00011239731050615807
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.7200060486793518
+        }
+      ],
+      "acceleration_errors": [
+        {
+          "arm": 1,
+          "active_acceleration_prediction_error": [
+            -0.4832148551940918,
+            -0.221371650695799,
+            -0.4367232322692871,
+            -0.26935338973998846
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.017985771512915194,
+          "maximum_optimistic_joint_acceleration_error": 0.4832148551940918
+        },
+        {
+          "arm": 2,
+          "active_acceleration_prediction_error": [
+            -1.7161085693855611,
+            -0.7474662920713513,
+            -1.5848865027663521,
+            -0.8088895215828202
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.06517407228398897,
+          "maximum_optimistic_joint_acceleration_error": 1.7161085693855611
+        }
+      ]
+    },
+    {
+      "step": 14,
+      "time_after_start_ms": 7.5,
+      "arms": [
+        {
+          "arm": "zero",
+          "action": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_actual_A_m": 0.11471775364591062,
+          "min_eight_joint_margin_rad": 0.053267478942871094,
+          "attitude": {
+            "world_abs_deg": [
+              7.704099375451507e-07,
+              0.35052132938676717,
+              0.00011112302574630977
+            ],
+            "terrain_relative_abs_deg": [
+              7.704099375451507e-07,
+              0.35052132938676717,
+              0.00011112302574630977
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.0
+        },
+        {
+          "arm": "current_once",
+          "action": [
+            2.850922070589668,
+            0.7485696144756996,
+            0.4134586303894393
+          ],
+          "min_actual_A_m": 0.11474518881146523,
+          "min_eight_joint_margin_rad": 0.053157687187194824,
+          "attitude": {
+            "world_abs_deg": [
+              9.81070708977971e-07,
+              0.33464802605212,
+              0.00011099569434266295
+            ],
+            "terrain_relative_abs_deg": [
+              9.81070708977971e-07,
+              0.33464802605212,
+              0.00011099569434266295
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.41345861554145813
+        },
+        {
+          "arm": "current_receding",
+          "action": [
+            3.134022534553769,
+            1.6063112737090695,
+            0.7410369773524244
+          ],
+          "min_actual_A_m": 0.11474771523585789,
+          "min_eight_joint_margin_rad": 0.05303013324737549,
+          "attitude": {
+            "world_abs_deg": [
+              1.2775445328613118e-06,
+              0.3311266719501116,
+              0.0001121300886045784
+            ],
+            "terrain_relative_abs_deg": [
+              1.2775445328613118e-06,
+              0.3311266719501116,
+              0.0001121300886045784
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.7410370111465454
+        }
+      ],
+      "acceleration_errors": [
+        {
+          "arm": 1,
+          "active_acceleration_prediction_error": [
+            -0.4436373710632324,
+            -0.21654367446899236,
+            -0.4222393035888672,
+            -0.23692846298217596
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.016170788355632792,
+          "maximum_optimistic_joint_acceleration_error": 0.4436373710632324
+        },
+        {
+          "arm": 2,
+          "active_acceleration_prediction_error": [
+            -1.797229762699267,
+            -0.713901664987084,
+            -1.7431323475203158,
+            -0.71943415617692
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.06989711763846063,
+          "maximum_optimistic_joint_acceleration_error": 1.79722976269926
+        }
+      ]
+    },
+    {
+      "step": 15,
+      "time_after_start_ms": 8.0,
+      "arms": [
+        {
+          "arm": "zero",
+          "action": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_actual_A_m": 0.11471271515816332,
+          "min_eight_joint_margin_rad": 0.053464412689208984,
+          "attitude": {
+            "world_abs_deg": [
+              4.3948944983976004e-07,
+              0.3512457665426619,
+              0.00011131179382945548
+            ],
+            "terrain_relative_abs_deg": [
+              4.3948944983976004e-07,
+              0.3512457665426619,
+              0.00011131179382945548
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.0
+        },
+        {
+          "arm": "current_once",
+          "action": [
+            2.850922070589668,
+            0.7485696144756996,
+            0.4134586303894393
+          ],
+          "min_actual_A_m": 0.11474318267690752,
+          "min_eight_joint_margin_rad": 0.05334270000457764,
+          "attitude": {
+            "world_abs_deg": [
+              6.893217564410247e-07,
+              0.3343567254074957,
+              0.00011114671479061612
+            ],
+            "terrain_relative_abs_deg": [
+              6.893217564410247e-07,
+              0.3343567254074957,
+              0.00011114671479061612
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.41345861554145813
+        },
+        {
+          "arm": "current_receding",
+          "action": [
+            3.225283547041678,
+            1.6561179336646914,
+            0.7636475340992483
+          ],
+          "min_actual_A_m": 0.11474676166510897,
+          "min_eight_joint_margin_rad": 0.05319416522979736,
+          "attitude": {
+            "world_abs_deg": [
+              6.749486087695915e-07,
+              0.32998856346356154,
+              0.00011198194788340715
+            ],
+            "terrain_relative_abs_deg": [
+              6.749486087695915e-07,
+              0.32998856346356154,
+              0.00011198194788340715
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.7636475563049316
+        }
+      ],
+      "acceleration_errors": [
+        {
+          "arm": 1,
+          "active_acceleration_prediction_error": [
+            -0.4672408103942871,
+            -0.17362833023071111,
+            -0.5030632019042969,
+            -0.14019012451171697
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.020886916363395125,
+          "maximum_optimistic_joint_acceleration_error": 0.5030632019042933
+        },
+        {
+          "arm": 2,
+          "active_acceleration_prediction_error": [
+            -1.6048834603250057,
+            -0.795390119970321,
+            -1.6291837873603612,
+            -0.71458656346487
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.06171256184802365,
+          "maximum_optimistic_joint_acceleration_error": 1.6291837873603612
+        }
+      ]
+    },
+    {
+      "step": 16,
+      "time_after_start_ms": 8.5,
+      "arms": [
+        {
+          "arm": "zero",
+          "action": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_actual_A_m": 0.11470767721477367,
+          "min_eight_joint_margin_rad": 0.05366361141204834,
+          "attitude": {
+            "world_abs_deg": [
+              1.458723668012606e-07,
+              0.35196814933262566,
+              0.00011147717049951593
+            ],
+            "terrain_relative_abs_deg": [
+              1.458723668012606e-07,
+              0.35196814933262566,
+              0.00011147717049951593
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.0
+        },
+        {
+          "arm": "current_once",
+          "action": [
+            2.850922070589668,
+            0.7485696144756996,
+            0.4134586303894393
+          ],
+          "min_actual_A_m": 0.11474125583447978,
+          "min_eight_joint_margin_rad": 0.05352973937988281,
+          "attitude": {
+            "world_abs_deg": [
+              4.919572245318798e-07,
+              0.33410013645147735,
+              0.00011125120402442104
+            ],
+            "terrain_relative_abs_deg": [
+              4.919572245318798e-07,
+              0.33410013645147735,
+              0.00011125120402442104
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.41345861554145813
+        },
+        {
+          "arm": "current_receding",
+          "action": [
+            3.2166663423027604,
+            1.7009885548064545,
+            0.7796059032397125
+          ],
+          "min_actual_A_m": 0.11474604532579545,
+          "min_eight_joint_margin_rad": 0.05335831642150879,
+          "attitude": {
+            "world_abs_deg": [
+              1.0081205619012944e-07,
+              0.3288340603287778,
+              0.0001118431451288911
+            ],
+            "terrain_relative_abs_deg": [
+              1.0081205619012944e-07,
+              0.3288340603287778,
+              0.0001118431451288911
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.7796059250831604
+        }
+      ],
+      "acceleration_errors": [
+        {
+          "arm": 1,
+          "active_acceleration_prediction_error": [
+            -0.392913818359375,
+            -0.17935037612914861,
+            -0.35685300827026367,
+            -0.2149939537048322
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.014591073916796427,
+          "maximum_optimistic_joint_acceleration_error": 0.392913818359375
+        },
+        {
+          "arm": 2,
+          "active_acceleration_prediction_error": [
+            -1.7459054072041695,
+            -0.6776705352178958,
+            -1.667000015332654,
+            -0.7174002474988228
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.06824396134824418,
+          "maximum_optimistic_joint_acceleration_error": 1.7459054072041624
+        }
+      ]
+    },
+    {
+      "step": 17,
+      "time_after_start_ms": 9.0,
+      "arms": [
+        {
+          "arm": "zero",
+          "action": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_actual_A_m": 0.11470263982342799,
+          "min_eight_joint_margin_rad": 0.05386519432067871,
+          "attitude": {
+            "world_abs_deg": [
+              1.0618733141892092e-07,
+              0.3526886378409322,
+              0.0001115374365788897
+            ],
+            "terrain_relative_abs_deg": [
+              1.0618733141892092e-07,
+              0.3526886378409322,
+              0.0001115374365788897
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": false,
+          "peak_extra_motor_Nm": 0.0
+        },
+        {
+          "arm": "current_once",
+          "action": [
+            2.850922070589668,
+            0.7485696144756996,
+            0.4134586303894393
+          ],
+          "min_actual_A_m": 0.11473941268735426,
+          "min_eight_joint_margin_rad": 0.0537189245223999,
+          "attitude": {
+            "world_abs_deg": [
+              3.6672878891942885e-07,
+              0.33387695182372207,
+              0.00011133827823973606
+            ],
+            "terrain_relative_abs_deg": [
+              3.6672878891942885e-07,
+              0.33387695182372207,
+              0.00011133827823973606
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.41345861554145813
+        },
+        {
+          "arm": "current_receding",
+          "action": [
+            3.1266635358390977,
+            1.7353600171819574,
+            0.7877698553277979
+          ],
+          "min_actual_A_m": 0.11474556183547319,
+          "min_eight_joint_margin_rad": 0.053522706031799316,
+          "attitude": {
+            "world_abs_deg": [
+              1.373948421068261e-07,
+              0.32767873022444366,
+              0.00011183669474772025
+            ],
+            "terrain_relative_abs_deg": [
+              1.373948421068261e-07,
+              0.32767873022444366,
+              0.00011183669474772025
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.7877698540687561
+        }
+      ],
+      "acceleration_errors": [
+        {
+          "arm": 1,
+          "active_acceleration_prediction_error": [
+            -0.4023313522338867,
+            -0.15753507614135565,
+            -0.4056096076965332,
+            -0.15765428543090643
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.015720351078185202,
+          "maximum_optimistic_joint_acceleration_error": 0.40560960769652965
+        },
+        {
+          "arm": 2,
+          "active_acceleration_prediction_error": [
+            -1.6757384103890232,
+            -0.6895696081856606,
+            -1.691770299854383,
+            -0.6545578444534215
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.06615774806554953,
+          "maximum_optimistic_joint_acceleration_error": 1.691770299854383
+        }
+      ]
+    },
+    {
+      "step": 18,
+      "time_after_start_ms": 9.5,
+      "arms": [
+        {
+          "arm": "zero",
+          "action": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_actual_A_m": 0.11469757659243987,
+          "min_eight_joint_margin_rad": 0.0540691614151001,
+          "attitude": {
+            "world_abs_deg": [
+              1.049177925354742e-07,
+              0.35340665632137985,
+              0.00011166674066745562
+            ],
+            "terrain_relative_abs_deg": [
+              1.049177925354742e-07,
+              0.35340665632137985,
+              0.00011166674066745562
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": false,
+          "peak_extra_motor_Nm": 0.0
+        },
+        {
+          "arm": "current_once",
+          "action": [
+            2.850922070589668,
+            0.7485696144756996,
+            0.4134586303894393
+          ],
+          "min_actual_A_m": 0.11473763564464062,
+          "min_eight_joint_margin_rad": 0.053910255432128906,
+          "attitude": {
+            "world_abs_deg": [
+              2.5152562871258166e-07,
+              0.3336854906336521,
+              0.00011141015310758445
+            ],
+            "terrain_relative_abs_deg": [
+              2.5152562871258166e-07,
+              0.3336854906336521,
+              0.00011141015310758445
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.41345861554145813
+        },
+        {
+          "arm": "current_receding",
+          "action": [
+            2.8408104791347504,
+            1.7559998506997643,
+            0.781408564397279
+          ],
+          "min_actual_A_m": 0.11474527163650264,
+          "min_eight_joint_margin_rad": 0.053687214851379395,
+          "attitude": {
+            "world_abs_deg": [
+              3.870537754534548e-08,
+              0.32654725284568065,
+              0.00011200343365158414
+            ],
+            "terrain_relative_abs_deg": [
+              3.870537754534548e-08,
+              0.32654725284568065,
+              0.00011200343365158414
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.7814085781574249
+        }
+      ],
+      "acceleration_errors": [
+        {
+          "arm": 1,
+          "active_acceleration_prediction_error": [
+            -0.3885030746459961,
+            -0.1477003097534162,
+            -0.39833784103393555,
+            -0.13339519500732244
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.015946228282300023,
+          "maximum_optimistic_joint_acceleration_error": 0.398337841033932
+        },
+        {
+          "arm": 2,
+          "active_acceleration_prediction_error": [
+            -1.7401448763939484,
+            -0.5971612571373228,
+            -1.7670342379592512,
+            -0.5921498248926511
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.07130019276911825,
+          "maximum_optimistic_joint_acceleration_error": 1.7670342379592583
+        }
+      ]
+    },
+    {
+      "step": 19,
+      "time_after_start_ms": 10.0,
+      "arms": [
+        {
+          "arm": "zero",
+          "action": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_actual_A_m": 0.11469250952266324,
+          "min_eight_joint_margin_rad": 0.0542755126953125,
+          "attitude": {
+            "world_abs_deg": [
+              3.012056370039673e-07,
+              0.3541225557562952,
+              0.00011179349568581063
+            ],
+            "terrain_relative_abs_deg": [
+              3.012056370039673e-07,
+              0.3541225557562952,
+              0.00011179349568581063
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": false,
+          "peak_extra_motor_Nm": 0.0
+        },
+        {
+          "arm": "current_once",
+          "action": [
+            2.850922070589668,
+            0.7485696144756996,
+            0.4134586303894393
+          ],
+          "min_actual_A_m": 0.11473593351680349,
+          "min_eight_joint_margin_rad": 0.054103732109069824,
+          "attitude": {
+            "world_abs_deg": [
+              1.7636548708791392e-07,
+              0.3335244722025591,
+              0.00011145486530463573
+            ],
+            "terrain_relative_abs_deg": [
+              1.7636548708791392e-07,
+              0.3335244722025591,
+              0.00011145486530463573
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.41345861554145813
+        },
+        {
+          "arm": "current_receding",
+          "action": [
+            2.2906354943439826,
+            1.7515482880789315,
+            0.7530415135222341
+          ],
+          "min_actual_A_m": 0.11474513961662929,
+          "min_eight_joint_margin_rad": 0.05385184288024902,
+          "attitude": {
+            "world_abs_deg": [
+              2.2480965392517063e-08,
+              0.3254774202433201,
+              0.00011206996480108988
+            ],
+            "terrain_relative_abs_deg": [
+              2.2480965392517063e-08,
+              0.3254774202433201,
+              0.00011206996480108988
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.7530415058135986
+        }
+      ],
+      "acceleration_errors": [
+        {
+          "arm": 1,
+          "active_acceleration_prediction_error": [
+            -0.34886598587036133,
+            -0.150263309478758,
+            -0.34564733505249023,
+            -0.1540184020996076
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.013132000627572249,
+          "maximum_optimistic_joint_acceleration_error": 0.34886598587036133
+        },
+        {
+          "arm": 2,
+          "active_acceleration_prediction_error": [
+            -1.8830878647506921,
+            -0.37719384662552,
+            -1.8776547984686403,
+            -0.45981814065099513
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.08212077914163407,
+          "maximum_optimistic_joint_acceleration_error": 1.8830878647506921
+        }
+      ]
+    },
+    {
+      "step": 20,
+      "time_after_start_ms": 10.5,
+      "arms": [
+        {
+          "arm": "zero",
+          "action": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_actual_A_m": 0.11468743862170248,
+          "min_eight_joint_margin_rad": 0.05448424816131592,
+          "attitude": {
+            "world_abs_deg": [
+              1.7765444798489554e-07,
+              0.3548362407385333,
+              0.00011162424100785632
+            ],
+            "terrain_relative_abs_deg": [
+              1.7765444798489554e-07,
+              0.3548362407385333,
+              0.00011162424100785632
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": false,
+          "peak_extra_motor_Nm": 0.0
+        },
+        {
+          "arm": "current_once",
+          "action": [
+            2.850922070589668,
+            0.7485696144756996,
+            0.4134586303894393
+          ],
+          "min_actual_A_m": 0.11473431070833169,
+          "min_eight_joint_margin_rad": 0.05429947376251221,
+          "attitude": {
+            "world_abs_deg": [
+              5.260686893932599e-07,
+              0.3333931227863352,
+              0.0001113174243728561
+            ],
+            "terrain_relative_abs_deg": [
+              5.260686893932599e-07,
+              0.3333931227863352,
+              0.0001113174243728561
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.41345861554145813
+        },
+        {
+          "arm": "current_receding",
+          "action": [
+            1.5907168113327321,
+            1.7253138257685232,
+            0.7094365437413448
+          ],
+          "min_actual_A_m": 0.11474511748493435,
+          "min_eight_joint_margin_rad": 0.05401647090911865,
+          "attitude": {
+            "world_abs_deg": [
+              1.7217911729228674e-07,
+              0.32451419178123586,
+              0.00011209352022985514
+            ],
+            "terrain_relative_abs_deg": [
+              1.7217911729228674e-07,
+              0.32451419178123586,
+              0.00011209352022985514
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.7094365358352661
+        }
+      ],
+      "acceleration_errors": [
+        {
+          "arm": 1,
+          "active_acceleration_prediction_error": [
+            -0.32514333724975586,
+            -0.14340877532958807,
+            -0.2747774124145508,
+            -0.19460916519164861
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.012138256722501517,
+          "maximum_optimistic_joint_acceleration_error": 0.32514333724975586
+        },
+        {
+          "arm": 2,
+          "active_acceleration_prediction_error": [
+            -1.5361993095579933,
+            -0.3647888448368519,
+            -1.6796664434784176,
+            -0.3365023432887675
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.07324151747973767,
+          "maximum_optimistic_joint_acceleration_error": 1.6796664434784176
+        }
+      ]
+    },
+    {
+      "step": 21,
+      "time_after_start_ms": 11.0,
+      "arms": [
+        {
+          "arm": "zero",
+          "action": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_actual_A_m": 0.11468236830407208,
+          "min_eight_joint_margin_rad": 0.05469536781311035,
+          "attitude": {
+            "world_abs_deg": [
+              3.738886357541375e-07,
+              0.3555476045453782,
+              0.00011157103819294472
+            ],
+            "terrain_relative_abs_deg": [
+              3.738886357541375e-07,
+              0.3555476045453782,
+              0.00011157103819294472
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": false,
+          "peak_extra_motor_Nm": 0.0
+        },
+        {
+          "arm": "current_once",
+          "action": [
+            2.850922070589668,
+            0.7485696144756996,
+            0.4134586303894393
+          ],
+          "min_actual_A_m": 0.11473276725607712,
+          "min_eight_joint_margin_rad": 0.054497480392456055,
+          "attitude": {
+            "world_abs_deg": [
+              1.1087187949744734e-06,
+              0.3332893612841913,
+              0.0001110771561914154
+            ],
+            "terrain_relative_abs_deg": [
+              1.1087187949744734e-06,
+              0.3332893612841913,
+              0.0001110771561914154
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.41345861554145813
+        },
+        {
+          "arm": "current_receding",
+          "action": [
+            1.03472964221122,
+            1.7050053048450478,
+            0.6749819215914596
+          ],
+          "min_actual_A_m": 0.11474518331761682,
+          "min_eight_joint_margin_rad": 0.05418121814727783,
+          "attitude": {
+            "world_abs_deg": [
+              3.248957819352583e-07,
+              0.3236867950942247,
+              0.00011209892233330074
+            ],
+            "terrain_relative_abs_deg": [
+              3.248957819352583e-07,
+              0.3236867950942247,
+              0.00011209892233330074
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.6749819219112396
+        }
+      ],
+      "acceleration_errors": [
+        {
+          "arm": 1,
+          "active_acceleration_prediction_error": [
+            -0.3744959831237793,
+            -0.10651350021362127,
+            -0.39970874786376953,
+            -0.08100271224975408
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.017255554830476583,
+          "maximum_optimistic_joint_acceleration_error": 0.399708747863766
+        },
+        {
+          "arm": 2,
+          "active_acceleration_prediction_error": [
+            -0.9191344567005615,
+            -0.37484458741064586,
+            -1.0276483165064718,
+            -0.35553503199937
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.04117464970982865,
+          "maximum_optimistic_joint_acceleration_error": 1.0276483165064718
+        }
+      ]
+    },
+    {
+      "step": 22,
+      "time_after_start_ms": 11.5,
+      "arms": [
+        {
+          "arm": "zero",
+          "action": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_actual_A_m": 0.11467728976383415,
+          "min_eight_joint_margin_rad": 0.0549088716506958,
+          "attitude": {
+            "world_abs_deg": [
+              5.005579645407188e-07,
+              0.3562570207076046,
+              0.00011155162360164977
+            ],
+            "terrain_relative_abs_deg": [
+              5.005579645407188e-07,
+              0.3562570207076046,
+              0.00011155162360164977
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": false,
+          "peak_extra_motor_Nm": 0.0
+        },
+        {
+          "arm": "current_once",
+          "action": [
+            2.850922070589668,
+            0.7485696144756996,
+            0.4134586303894393
+          ],
+          "min_actual_A_m": 0.11473129430731427,
+          "min_eight_joint_margin_rad": 0.05469775199890137,
+          "attitude": {
+            "world_abs_deg": [
+              1.4875088728011618e-06,
+              0.3332124939957543,
+              0.0001109195541556442
+            ],
+            "terrain_relative_abs_deg": [
+              1.4875088728011618e-06,
+              0.3332124939957543,
+              0.0001109195541556442
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.41345861554145813
+        },
+        {
+          "arm": "current_receding",
+          "action": [
+            0.4245758190812233,
+            1.6818888857109664,
+            0.6368757518935946
+          ],
+          "min_actual_A_m": 0.11474526239141572,
+          "min_eight_joint_margin_rad": 0.05434608459472656,
+          "attitude": {
+            "world_abs_deg": [
+              6.206926859501227e-07,
+              0.32301670814878186,
+              0.00011203885952183298
+            ],
+            "terrain_relative_abs_deg": [
+              6.206926859501227e-07,
+              0.32301670814878186,
+              0.00011203885952183298
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.6368757486343384
+        }
+      ],
+      "acceleration_errors": [
+        {
+          "arm": 1,
+          "active_acceleration_prediction_error": [
+            -0.22286176681518555,
+            -0.1915693283081037,
+            -0.2785325050354004,
+            -0.13548135757446111
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.010055474668861586,
+          "maximum_optimistic_joint_acceleration_error": 0.27853250503539684
+        },
+        {
+          "arm": 2,
+          "active_acceleration_prediction_error": [
+            -0.5150478509213272,
+            -0.3016714440017694,
+            -0.6034224411089752,
+            -0.3166330809518989
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.021554564247312474,
+          "maximum_optimistic_joint_acceleration_error": 0.6034224411089752
+        }
+      ]
+    },
+    {
+      "step": 23,
+      "time_after_start_ms": 12.0,
+      "arms": [
+        {
+          "arm": "zero",
+          "action": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_actual_A_m": 0.1146722074155198,
+          "min_eight_joint_margin_rad": 0.055124759674072266,
+          "attitude": {
+            "world_abs_deg": [
+              6.34531784660471e-07,
+              0.3569639289276392,
+              0.00011152177213521345
+            ],
+            "terrain_relative_abs_deg": [
+              6.34531784660471e-07,
+              0.3569639289276392,
+              0.00011152177213521345
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": false,
+          "peak_extra_motor_Nm": 0.0
+        },
+        {
+          "arm": "current_once",
+          "action": [
+            2.850922070589668,
+            0.7485696144756996,
+            0.4134586303894393
+          ],
+          "min_actual_A_m": 0.11472986549901468,
+          "min_eight_joint_margin_rad": 0.054900288581848145,
+          "attitude": {
+            "world_abs_deg": [
+              1.3185483478995891e-06,
+              0.3331612669247142,
+              0.00011099182115769293
+            ],
+            "terrain_relative_abs_deg": [
+              1.3185483478995891e-06,
+              0.3331612669247142,
+              0.00011099182115769293
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.41345861554145813
+        },
+        {
+          "arm": "current_receding",
+          "action": [
+            0.45566696398570894,
+            1.7031703676058514,
+            0.6461142993658826
+          ],
+          "min_actual_A_m": 0.11474538988189628,
+          "min_eight_joint_margin_rad": 0.054511070251464844,
+          "attitude": {
+            "world_abs_deg": [
+              9.99566613522847e-07,
+              0.3224798648825261,
+              0.00011194632956848886
+            ],
+            "terrain_relative_abs_deg": [
+              9.99566613522847e-07,
+              0.3224798648825261,
+              0.00011194632956848886
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.646114319562912
+        }
+      ],
+      "acceleration_errors": [
+        {
+          "arm": 1,
+          "active_acceleration_prediction_error": [
+            -0.28717517852783203,
+            -0.13852119445800604,
+            -0.33038854598999023,
+            -0.095486640930174
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.013531992388345349,
+          "maximum_optimistic_joint_acceleration_error": 0.3303885459899867
+        },
+        {
+          "arm": 2,
+          "active_acceleration_prediction_error": [
+            0.34627104039536505,
+            -0.4607763954703117,
+            0.3648901520391732,
+            -0.45815222399292566
+          ],
+          "maximum_optimistic_leg_acceleration_error": -0.027971543722665554,
+          "maximum_optimistic_joint_acceleration_error": 0.4607763954703117
+        }
+      ]
+    },
+    {
+      "step": 24,
+      "time_after_start_ms": 12.5,
+      "arms": [
+        {
+          "arm": "zero",
+          "action": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min_actual_A_m": 0.11466712126692945,
+          "min_eight_joint_margin_rad": 0.055343031883239746,
+          "attitude": {
+            "world_abs_deg": [
+              3.661313836515638e-07,
+              0.35766825988645035,
+              0.00011165569994966882
+            ],
+            "terrain_relative_abs_deg": [
+              3.661313836515638e-07,
+              0.35766825988645035,
+              0.00011165569994966882
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": false,
+          "peak_extra_motor_Nm": 0.0
+        },
+        {
+          "arm": "current_once",
+          "action": [
+            2.850922070589668,
+            0.7485696144756996,
+            0.4134586303894393
+          ],
+          "min_actual_A_m": 0.11472851163751156,
+          "min_eight_joint_margin_rad": 0.05510520935058594,
+          "attitude": {
+            "world_abs_deg": [
+              1.2239722825797535e-06,
+              0.33313485296632056,
+              0.00011102586047619468
+            ],
+            "terrain_relative_abs_deg": [
+              1.2239722825797535e-06,
+              0.33313485296632056,
+              0.00011102586047619468
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.41345861554145813
+        },
+        {
+          "arm": "current_receding",
+          "action": [
+            -8.348691606504492,
+            2.775086550984856,
+            0.6120832912667342
+          ],
+          "min_actual_A_m": 0.1147454250088358,
+          "min_eight_joint_margin_rad": 0.05467104911804199,
+          "attitude": {
+            "world_abs_deg": [
+              1.7441922527453062e-06,
+              0.3221183408058748,
+              0.00011168810000951546
+            ],
+            "terrain_relative_abs_deg": [
+              1.7441922527453062e-06,
+              0.3221183408058748,
+              0.00011168810000951546
+            ]
+          },
+          "contact_pairs": [
+            [
+              0,
+              30
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "nonwheel_contact": false,
+          "actual_safe": true,
+          "peak_extra_motor_Nm": 0.6120833158493042
+        }
+      ],
+      "acceleration_errors": [
+        {
+          "arm": 1,
+          "active_acceleration_prediction_error": [
+            -0.2875328063964844,
+            -0.09942054748534979,
+            -0.20575523376464844,
+            -0.180780887603758
+          ],
+          "maximum_optimistic_leg_acceleration_error": 0.011351320495694817,
+          "maximum_optimistic_joint_acceleration_error": 0.2875328063964844
+        },
+        {
+          "arm": 2,
+          "active_acceleration_prediction_error": [
+            0.7382598574500108,
+            -8.091570864779541,
+            0.6560277158672321,
+            -8.241783848266014
+          ],
+          "maximum_optimistic_leg_acceleration_error": -0.23158495562141423,
+          "maximum_optimistic_joint_acceleration_error": 8.241783848266014
+        }
+      ]
+    }
+  ],
+  "fit_sha256": "ec9ee2120add9f69c8d745215a9ba42df5365833f7224eff7466d744d4090d89",
+  "alarm_sha256": "83268db9672a19bf9e8275fdaa5bf792af87c0eb6f9bb1e3a160de637c85969f",
+  "trace_sha256": "77c7643c138b9c5b8457d5beef118887a19b8df314658c2d34ad70ae34c43c3a",
+  "source_sha256": {
+    "wheelleg_warp/probe_height_115_live_braking.py": "3e6b07997cbf14a5ec613b03ad0d52ffa5525b3bfc668f9e1bf8b7fa59ad531d",
+    "wheelleg_warp/probe_height_115_braking_budget.py": "c8968f1ee4bce0da390b31fb3b1f452c92122ad8d6f8c7d64a9af0c13f1f0d3e",
+    "wheelleg_warp/probe_height_115_live_common_local.py": "a494eaa9762b1ce85eead4639561484f92d0c5660269fd144c0d94ba300bcee0",
+    "wheelleg_warp/probe_height_115_contact_action_pair.py": "4195233cf27b27bdeb65f8e6d40b648a3aa75e656ab7974afc09ac86c7d4d3cb",
+    "wheelleg_warp/probe_height_115_radial_authority.py": "c5e517a6bbfafaca4213d3e38c13ee2e4c893c02d319a81c09126fa836ade5c2",
+    "wheelleg_warp/probe_height_115_passive.py": "8771150926217fd575b1f2f3fc2dd3d13cb495e37e2b516a1e34400ef454bfe8",
+    "wheelleg_warp/native/controller.py": "03d56704bf41ab4987a01affef434bc776771ea24077b6ac6fd5f44bed1bd15f",
+    "wheelleg_warp/native/environment.py": "290e97c39ff07cb4df84239c3b405719291322d961d2d2985f5f50e9f61ec543",
+    "wheelleg_warp/native/models.py": "59420b688a25e63fb8e0e644f0702025836bea0ed90377e452bcbd919c7216eb",
+    "wheelleg_warp/native/terrain.py": "1e462500ae917ba78ce5e4652f7a856bf62658f8573296e9a7d4630517cf1a94",
+    "wheelleg_ppo/tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+    "wheelleg_ppo/tools/wheelleg_sim.py": "c2dfaae4dc562119fd7916684849ec22fcac3d75dbcfec6a2a0f9452d8f6ee0f",
+    "wheelleg_ppo/tools/hardware_profile.py": "844688aae7e408bb2ca11d00b192ffaa9e4ad5de06cc8a815d3cf3ddfbe02eba",
+    "wheelleg_ppo/xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f"
+  }
+}
