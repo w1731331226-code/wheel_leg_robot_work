@@ -79,17 +79,21 @@ def sample(slot:int,q:wp.array2d[float],state:wp.array2d[D],active:wp.array[int]
     out[slot,w,3]=wp.abs(roll);out[slot,w,4]=wp.abs(pitch);out[slot,w,5]=wp.abs(yaw)
 
 
-def run(output):
+def run(output,candidate_source='six_motor'):
     assert not output.exists()
-    source=ROOT/'wheelleg_warp/results/height_115_local_lp_20260928/verification.json'
+    assert candidate_source in ('six_motor','common3')
+    directory='height_115_local_lp_20260928' if candidate_source=='six_motor' else 'height_115_common_local_20260928'
+    source=ROOT/'wheelleg_warp/results'/directory/'verification.json'
     lp=json.loads(source.read_text())
-    assert lp['summary']['nonlinear_verified_same_contact']==3
+    required='nonlinear_verified_same_contact' if candidate_source=='six_motor' else 'nonlinear_verified'
+    assert lp['summary'][required]==3
     ref=ROOT/'wheelleg_warp/results/height_115_local_states_20260928/verification.json'
     archive=json.loads(ref.read_text())
     for record in (lp,archive):
         assert all(hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==digest
                    for name,digest in record['source_sha256'].items())
-    assert hashlib.sha256((source.parent/'linearization.npz').read_bytes()).hexdigest()==lp['linearization_sha256']
+    if candidate_source=='six_motor':
+        assert hashlib.sha256((source.parent/'linearization.npz').read_bytes()).hexdigest()==lp['linearization_sha256']
     assert hashlib.sha256((ref.parent/'windows.npz').read_bytes()).hexdigest()==archive['windows_sha256']
     selected=[next((i,e) for i,e in enumerate(archive['events'])
                    if e['world']==row['world'] and e['kind']==row['event']) for row in lp['rows']]
@@ -106,7 +110,8 @@ def run(output):
         reference_pre.append(pre[k])
         sequences.append(pre[k:k+40,columns['ctrl_start']:columns['ctrl_start']+6])
     archived_ctrl=np.tile(np.asarray(sequences),(3,1,1))
-    delta=np.zeros((n,6));delta[len(base):]=np.tile([row['candidate']['delta_torque_Nm'] for row in lp['rows']],(2,1))
+    candidate_key='delta_torque_Nm' if candidate_source=='six_motor' else 'delta_motor_Nm'
+    delta=np.zeros((n,6));delta[len(base):]=np.tile([row['candidate'][candidate_key] for row in lp['rows']],(2,1))
     env=NativeEnv(n=n,scenario=scenarios,bank_factory=bank_height_115,
                   height_conditioned=True,height_design='range115',residual_scale=0)
     env.reset();mode=wp.array(np.repeat(np.arange(3,dtype=np.int32),len(base)),dtype=wp.int32)
@@ -216,6 +221,7 @@ def run(output):
             summary[name]['max_start_vs_live_baseline_base_ctrl']=max(
                 row['start_vs_live_baseline_pre_max_abs']['base_ctrl'] for row in group)
     sources=('wheelleg_warp/probe_height_115_warp_local_lp.py','wheelleg_warp/probe_height_115_local_lp.py',
+             'wheelleg_warp/probe_height_115_common_local.py',
              'wheelleg_warp/trace_first_divergence_v2.py',
              'wheelleg_warp/native/controller.py','wheelleg_warp/native/environment.py',
              'wheelleg_warp/native/terrain.py','wheelleg_warp/native/models.py',
@@ -229,6 +235,7 @@ def run(output):
                         start_state=recorded_start)
     (output/'verification.json').write_text(json.dumps(dict(role='public_privileged_timed_warp_check_of_cpu_local_lp',
         nominal_target_m=.115,horizon_s=.02,geometric_proxy_min_m=HEIGHT_115_GEOMETRIC_MIN,
+        candidate_source=candidate_source,
         arms=mode_names,archived_ctrl_is_open_loop=True,live_ctrl_recomputed_each_step=True,
         actual_chain_and_joint_gate_scope='selected_40_physics_steps_only',
         training=False,final_holdout_opened=False,summary=summary,rows=rows,
@@ -241,4 +248,5 @@ def run(output):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True)
-    run(parser.parse_args().output)
+    parser.add_argument('--candidate-source',choices=('six_motor','common3'),default='six_motor')
+    args=parser.parse_args();run(args.output,args.candidate_source)

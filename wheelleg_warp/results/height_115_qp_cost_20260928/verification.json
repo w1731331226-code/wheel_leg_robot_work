@@ -1,0 +1,34 @@
+{
+  "role": "cpu_python_current_implementation_cost_not_hardware_deadline_proof",
+  "physical_step_budget_ms": 0.5,
+  "finite_difference_13x40": {
+    "repeats": 5,
+    "median_ms": 111.71953899611253,
+    "p95_ms": 112.48834220168646
+  },
+  "highs_24_constraints": {
+    "repeats": 100,
+    "median_ms": 0.7260085039888509,
+    "p95_ms": 0.8389814523980021
+  },
+  "highs_960_constraints": {
+    "repeats": 100,
+    "median_ms": 1.8776079959934577,
+    "p95_ms": 1.9751525498577394
+  },
+  "python_version": "3.10.12",
+  "training": false,
+  "final_holdout_opened": false,
+  "source_sha256": {
+    "wheelleg_warp/benchmark_height_115_online_qp.py": "4fda0edd0ff86eecf1c74bf12fc0c938f39d677783229d2822f2a90d136b4fc7",
+    "wheelleg_warp/probe_height_115_local_lp.py": "361be037b14516fbbaaf58c59b20a1185dd0ce1376cb92ec42dbef162818ffcc",
+    "wheelleg_warp/probe_height_115_passive.py": "8771150926217fd575b1f2f3fc2dd3d13cb495e37e2b516a1e34400ef454bfe8",
+    "wheelleg_warp/native/terrain.py": "1e462500ae917ba78ce5e4652f7a856bf62658f8573296e9a7d4630517cf1a94",
+    "wheelleg_warp/native/models.py": "59420b688a25e63fb8e0e644f0702025836bea0ed90377e452bcbd919c7216eb",
+    "wheelleg_ppo/xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f"
+  },
+  "linearization_sha256": "908a0ef1cfbda524da8cf4ea632929a67951041360675242210d560be1f6f486",
+  "source_lp_verification_sha256": "e34e997b6636bfbec65afe665aaaff3c29d807e9e6364dbb773a86a2926f399e",
+  "source_state_verification_sha256": "b8cea295a23d1950ff486d5c06e5d95daf33da4dbb3238a8c9235cdf16919228",
+  "state_windows_sha256": "33153efe7d688c5e697c786d101067716284326ee9e3bb9f331b748cb138d30d"
+}

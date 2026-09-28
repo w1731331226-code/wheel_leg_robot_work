@@ -1,0 +1,237 @@
+{
+  "role": "public_fixed_start_jacobian_common_three_local_test",
+  "training": false,
+  "final_holdout_opened": false,
+  "nominal_target_m": 0.115,
+  "horizon_s": 0.02,
+  "local_motor_delta_trust_Nm": 0.1,
+  "numerical_pairing_margin_normalized": 0.001,
+  "action_channels": [
+    "common_radial_force_N",
+    "common_hip_virtual_torque_Nm",
+    "common_wheel_torque_Nm"
+  ],
+  "fixed_start_jacobian_then_constant_motor_delta": true,
+  "actor_and_online_controller_tested": false,
+  "summary": {
+    "states": 3,
+    "linear_feasible": 3,
+    "nonlinear_verified": 3,
+    "max_projection_relative_l2_error": 0.00637878096141816
+  },
+  "rows": [
+    {
+      "world": 0,
+      "event": "active_joint",
+      "start_s": 7.377999782562256,
+      "basis_common_motor_per_unit": [
+        [
+          -0.04991597897702964,
+          -0.3688779526985226,
+          0.0
+        ],
+        [
+          0.025587635407432665,
+          -0.15348305866673498,
+          0.0
+        ],
+        [
+          -0.04991572950201451,
+          -0.36887704282996514,
+          0.0
+        ],
+        [
+          0.025587513560203667,
+          -0.15348266030939617,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "six_motor_candidate_projection_relative_l2_error": 0.00637878096141816,
+      "common_three_linear_feasible": true,
+      "linear_status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "candidate": {
+        "common_virtual_action": [
+          0.11625268915295571,
+          -0.04075072555650351,
+          -0.00922917742648028
+        ],
+        "delta_motor_Nm": [
+          0.00922917742648028,
+          0.009229177426480278,
+          0.009229169350817787,
+          0.009229147028061654,
+          -0.00922917742648028,
+          -0.00922917742648028
+        ],
+        "minimum_peak_motor_delta_Nm": 0.00922917742648028,
+        "linear_min_normalized_margin": 0.0010000000000000002,
+        "min_normalized_margin": 0.001000018425960647,
+        "min_actual_leg_m": 0.11540475981143851,
+        "min_joint_normalized_margin": 0.001000018425960647,
+        "min_attitude_normalized_margin": 0.9753898246353135,
+        "clipped_motor_physical_commands": 0,
+        "peak_motor_torque_Nm": 0.6968938346615761,
+        "contact_pair_steps_equal": 40,
+        "nonlinear_numerical_margin_passed": true,
+        "constant_delta_applied": true
+      }
+    },
+    {
+      "world": 4,
+      "event": "active_joint",
+      "start_s": 4.572999954223633,
+      "basis_common_motor_per_unit": [
+        [
+          -0.051480282128561594,
+          -0.35006401033793877,
+          0.0
+        ],
+        [
+          0.03188790289022856,
+          -0.1878038855611906,
+          0.0
+        ],
+        [
+          -0.05148045254509195,
+          -0.3500643911750688,
+          0.0
+        ],
+        [
+          0.03188803999611959,
+          -0.18780439815685268,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "six_motor_candidate_projection_relative_l2_error": 0.00036778636144988065,
+      "common_three_linear_feasible": true,
+      "linear_status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "candidate": {
+        "common_virtual_action": [
+          0.6117195117801013,
+          -0.3142988767997027,
+          -0.07853324765679356
+        ],
+        "delta_motor_Nm": [
+          0.0785332322072281,
+          0.078533002678204,
+          0.07853324765679356,
+          0.07853324765679356,
+          -0.07853324765679356,
+          -0.07853324765679356
+        ],
+        "minimum_peak_motor_delta_Nm": 0.07853324765679356,
+        "linear_min_normalized_margin": 0.0010000000000000009,
+        "min_normalized_margin": 0.001001500994000093,
+        "min_actual_leg_m": 0.11748089476933792,
+        "min_joint_normalized_margin": 0.001001500994000093,
+        "min_attitude_normalized_margin": 0.8340236131070947,
+        "clipped_motor_physical_commands": 0,
+        "peak_motor_torque_Nm": 0.6663035154294266,
+        "contact_pair_steps_equal": 40,
+        "nonlinear_numerical_margin_passed": true,
+        "constant_delta_applied": true
+      }
+    },
+    {
+      "world": 5,
+      "event": "actual_leg",
+      "start_s": 2.0409998893737793,
+      "basis_common_motor_per_unit": [
+        [
+          -0.04866455100001403,
+          -0.36874050105997574,
+          0.0
+        ],
+        [
+          0.024047133377111337,
+          -0.14586009108217737,
+          0.0
+        ],
+        [
+          -0.04866458990185181,
+          -0.3687404543455633,
+          0.0
+        ],
+        [
+          0.02404719173917391,
+          -0.14586039454843244,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "six_motor_candidate_projection_relative_l2_error": 0.0009520223893976061,
+      "common_three_linear_feasible": true,
+      "linear_status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "candidate": {
+        "common_virtual_action": [
+          0.09811867383503359,
+          -0.0046937863903300904,
+          0.0030441160977241286
+        ],
+        "delta_motor_Nm": [
+          -0.003044112061459922,
+          0.0030441089469101686,
+          -0.0030441160977241278,
+          0.003044116097724128,
+          0.0030441160977241286,
+          0.0030441160977241286
+        ],
+        "minimum_peak_motor_delta_Nm": 0.0030441160977241286,
+        "linear_min_normalized_margin": 0.0010000000000000005,
+        "min_normalized_margin": 0.0010001201155435124,
+        "min_actual_leg_m": 0.11470546618177624,
+        "min_joint_normalized_margin": 0.4767834174106578,
+        "min_attitude_normalized_margin": 0.9299333334240096,
+        "clipped_motor_physical_commands": 0,
+        "peak_motor_torque_Nm": 0.9133493181050178,
+        "contact_pair_steps_equal": 40,
+        "nonlinear_numerical_margin_passed": true,
+        "constant_delta_applied": true
+      }
+    }
+  ],
+  "source_lp_verification_sha256": "e34e997b6636bfbec65afe665aaaff3c29d807e9e6364dbb773a86a2926f399e",
+  "source_linearization_sha256": "908a0ef1cfbda524da8cf4ea632929a67951041360675242210d560be1f6f486",
+  "source_state_windows_sha256": "33153efe7d688c5e697c786d101067716284326ee9e3bb9f331b748cb138d30d",
+  "source_sha256": {
+    "wheelleg_warp/probe_height_115_common_local.py": "21db2de3890a5a344bebaffaed549df8270e95aa0486ebd0920cf03bc3a4b917",
+    "wheelleg_warp/probe_height_115_local_lp.py": "361be037b14516fbbaaf58c59b20a1185dd0ce1376cb92ec42dbef162818ffcc",
+    "wheelleg_warp/probe_height_115_local_states.py": "daecda640b818fbf2636842da271548473e8d7b6ffb23c10df56f46670b76ae6",
+    "wheelleg_warp/probe_height_115_passive.py": "8771150926217fd575b1f2f3fc2dd3d13cb495e37e2b516a1e34400ef454bfe8",
+    "wheelleg_warp/native/terrain.py": "1e462500ae917ba78ce5e4652f7a856bf62658f8573296e9a7d4630517cf1a94",
+    "wheelleg_warp/native/models.py": "59420b688a25e63fb8e0e644f0702025836bea0ed90377e452bcbd919c7216eb",
+    "wheelleg_ppo/tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+    "wheelleg_ppo/tools/wheelleg_sim.py": "c2dfaae4dc562119fd7916684849ec22fcac3d75dbcfec6a2a0f9452d8f6ee0f",
+    "wheelleg_ppo/tools/hardware_profile.py": "844688aae7e408bb2ca11d00b192ffaa9e4ad5de06cc8a815d3cf3ddfbe02eba",
+    "wheelleg_ppo/xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f"
+  }
+}
