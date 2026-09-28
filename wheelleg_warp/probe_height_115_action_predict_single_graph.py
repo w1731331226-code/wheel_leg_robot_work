@@ -22,7 +22,7 @@ from probe_height_115_passive import geometry
 ACTIVE = ('alphaL', 'betaL', 'alphaR', 'betaR')
 
 
-def one_start(world, event_id, lag, archive, windows):
+def one_start(world, event_id, lag, archive, windows, peak_nm=.08):
     event = archive['events'][event_id]
     scenario = HeightTerrainScenario(**event['scenario'])
     m = model(scenario)
@@ -37,6 +37,8 @@ def one_start(world, event_id, lag, archive, windows):
     old_q = old[cols['qpos_start']:cols['qpos_start'] + nq]
     old_v = old[cols['qvel_start']:cols['qvel_start'] + nv]
     coeff, eps = actions(m, old_q, np.zeros(nv))  # B(q) only; no future state or archived velocity.
+    coeff *= peak_nm / .08
+    eps *= peak_nm / .08
     records, start_state, stats, _ = simulate([scenario], [step], coeff)
     qa = np.array([m.joint(name).qposadr[0] for name in ACTIVE])
     va = np.array([m.joint(name).dofadr[0] for name in ACTIVE])
@@ -66,6 +68,8 @@ def one_start(world, event_id, lag, archive, windows):
     peak_delta = 0.
     initial_request = 0.
     initial_applied = 0.
+    initial_request_by_arm = np.zeros(len(ARMS))
+    initial_applied_by_arm = np.zeros(len(ARMS))
     for arm, row in enumerate(records):
         for t in range(STEPS):
             pre = row['pre'][t]
@@ -77,10 +81,14 @@ def one_start(world, event_id, lag, archive, windows):
             motor_clip = max(motor_clip, float(np.max(abs(request - expected))))
             peak_delta = max(peak_delta, float(np.max(abs(row['applied'][t] - base))))
             if t == 0:
-                initial_request = max(initial_request, float(np.max(abs(request - base))))
-                initial_applied = max(initial_applied, float(np.max(abs(row['applied'][t] - base))))
-    require(initial_request <= .080001 and initial_applied <= .080001,
-            f'world{world} {lag} initial action exceeds fixed 0.08 Nm: '
+                initial_request_by_arm[arm] = float(np.max(abs(request - base)))
+                initial_applied_by_arm[arm] = float(np.max(abs(row['applied'][t] - base)))
+                initial_request = max(initial_request, initial_request_by_arm[arm])
+                initial_applied = max(initial_applied, initial_applied_by_arm[arm])
+    require(np.all(abs(initial_request_by_arm[1:7] - peak_nm) <= 1e-5) and
+            np.all(abs(initial_applied_by_arm[1:7] - peak_nm) <= 1e-5) and
+            initial_request <= peak_nm + 1e-5 and initial_applied <= peak_nm + 1e-5,
+            f'world{world} {lag} initial single-axis action is not {peak_nm} Nm: '
             f'request={initial_request:.9g} applied={initial_applied:.9g}')
     require(motor_match <= MOTOR_MATCH_LIMIT,
             f'world{world} {lag} applied motor command mismatch {motor_match:.9g}')
@@ -102,13 +110,16 @@ def one_start(world, event_id, lag, archive, windows):
                 historical_start_qpos_max_abs_difference=float(np.max(abs(base['pre'][0, :nq] - old_q))),
                 historical_start_qvel_max_abs_difference=float(np.max(abs(base['pre'][0, nq:nq + nv] - old_v))),
                 initial_requested_delta_Nm=initial_request, initial_applied_delta_Nm=initial_applied,
+                initial_requested_by_arm_Nm=initial_request_by_arm,
+                initial_applied_by_arm_Nm=initial_applied_by_arm,
                 motor_match=motor_match, motor_clip=motor_clip, peak_delta=peak_delta,
                 same_graph_start_max_abs_difference=float(np.max(abs(start_state - start_state[0]))),
                 previous_qvel_full=prior_v.copy(), full_40_step_kernel_stats=stats.copy())
 
 
-def run(output):
+def run(output, peak_nm=.08):
     require(not output.exists(), f'output already exists: {output}')
+    require(peak_nm in (.08, 1.), f'unregistered initial motor peak {peak_nm} Nm')
     source = ROOT / 'wheelleg_warp/results/height_115_local_states_20260928/verification.json'
     archive = json.loads(source.read_text())
     data_path = source.parent / 'windows.npz'
@@ -118,14 +129,14 @@ def run(output):
     require([archive['events'][i]['scenario'] for i in selected] ==
             [asdict(s) for s in cases()[:6]], 'six public normal worlds changed')
     windows = np.load(data_path)
-    preflight = one_start(1, selected[1], 10, archive, windows)
+    preflight = one_start(1, selected[1], 10, archive, windows, peak_nm)
     print('same-graph world1 late preflight passed', flush=True)
     samples = [preflight]
     for world, event_id in enumerate(selected):
         for lag in (30, 10):
             if world == 1 and lag == 10:
                 continue
-            samples.append(one_start(world, event_id, lag, archive, windows))
+            samples.append(one_start(world, event_id, lag, archive, windows, peak_nm))
         print(f'captured world {world}', flush=True)
     samples.sort(key=lambda s: (s['world'], -s['lag_ms']))
     require(len(samples) == 12, 'two starts per six worlds missing')
@@ -154,6 +165,9 @@ def run(output):
         zero = next(r for r in late if r['action'] == 'zero')
         if not zero['actual_combined_safe']:
             late_actual_only.extend(r for r in late if r['action'] != 'zero' and r['actual_combined_safe'])
+    late_positive = sum(r['predicted_leg_margin_after_reserve_m'] > 0 and
+                        r['predicted_joint_margin_after_reserve_rad'] > 0
+                        for r in heldout_rows if r['lag_ms'] == 5. and r['action'] != 'zero')
     old_failures = []
     for directory in ('height_115_action_predict_loow_20260928',
                       'height_115_action_predict_loow_v2_20260928',
@@ -167,6 +181,8 @@ def run(output):
                                  scientific_loow_result=False))
     old_simulator = hashlib.sha256(subprocess.check_output(
         ['git', 'show', '2b870ee:wheelleg_warp/probe_height_115_live_common_local.py'], cwd=ROOT)).hexdigest()
+    old_single_graph = hashlib.sha256(subprocess.check_output(
+        ['git', 'show', '666716a:wheelleg_warp/probe_height_115_action_predict_single_graph.py'], cwd=ROOT)).hexdigest()
     output.mkdir(parents=True)
     trace = output / 'heldout_inputs.npz'
     np.savez_compressed(trace, q0=np.stack([s['q0'] for s in samples]),
@@ -186,16 +202,25 @@ def run(output):
                'wheelleg_warp/native/terrain.py', 'wheelleg_warp/native/models.py',
                'wheelleg_ppo/tools/state_estimation.py', 'wheelleg_ppo/tools/wheelleg_sim.py',
                'wheelleg_ppo/tools/hardware_profile.py', 'wheelleg_ppo/xml/wheelleg.xml')
-    payload = dict(role='public_115m_single_graph_common3_5ms_world_holdout_prediction',
+    if peak_nm == 1.:
+        sources += ('wheelleg_warp/probe_height_115_action_predict_1nm.py',)
+    payload = dict(role=('public_115m_single_graph_common3_1Nm_5ms_world_holdout_prediction'
+                         if peak_nm == 1. else 'public_115m_single_graph_common3_5ms_world_holdout_prediction'),
         status='completed', training=False, final_holdout_opened=False,
         nominal_height_m=.115, simulated_geometric_proxy_min_m=HEIGHT_115_GEOMETRIC_MIN,
         physical_step_s=DT, horizon_steps=STEPS, arms=ARMS,
-        action_rule='archived current active q only sets B(q) peak0.08Nm per axis; +/- mixed (F,-H,W)/3',
+        action_rule=f'archived current active q only sets B(q) peak{peak_nm}Nm per F/H/W single axis; +/- mixed (F,-H,W)/3',
+        initial_motor_peak_Nm=peak_nm,
+        preflight='world1 step late, all nine same-graph starts and first 10 steps; clipping or mismatch stops run',
+        preflight_passed=True,
         predictor='single-graph current active q/dq, same-graph previous active dq, current common3 command, constant 4x3 G',
         no_contact_or_passive_or_future_state_predictor_input=True,
         historical_archive_use='six scenario specs, approximate event times, current q for action sizing; q/v start differences diagnostic only',
         same_graph_previous_qvel_captured_before_align=True,
         old_simulate_git_revision='2b870ee', old_simulate_source_sha256=old_simulator,
+        previous_single_graph_git_revision='666716a', previous_single_graph_source_sha256=old_single_graph,
+        previous_single_graph_verification_sha256=sha(ROOT / 'wheelleg_warp/results/height_115_action_predict_single_graph_20260928/verification.json'),
+        previous_single_graph_inputs_sha256=sha(ROOT / 'wheelleg_warp/results/height_115_action_predict_single_graph_20260928/heldout_inputs.npz'),
         old_cross_run_preflight_failures=old_failures,
         calibration='outer leave one world; inner leave one world of five training worlds; max positive inner residual',
         simulated_sensors_not_hardware_noise_or_latency_validated=True,
@@ -206,6 +231,8 @@ def run(output):
         max_same_graph_start_difference=max(s['same_graph_start_max_abs_difference'] for s in samples),
         max_initial_requested_motor_delta_Nm=max(s['initial_requested_delta_Nm'] for s in samples),
         max_initial_applied_motor_delta_Nm=max(s['initial_applied_delta_Nm'] for s in samples),
+        max_initial_requested_by_arm_Nm=np.max(np.stack([s['initial_requested_by_arm_Nm'] for s in samples]), axis=0).tolist(),
+        max_initial_applied_by_arm_Nm=np.max(np.stack([s['initial_applied_by_arm_Nm'] for s in samples]), axis=0).tolist(),
         max_5ms_motor_command_match_error_Nm=max(s['motor_match'] for s in samples),
         max_5ms_motor_clip_Nm=max(s['motor_clip'] for s in samples),
         max_5ms_applied_motor_delta_Nm=max(s['peak_delta'] for s in samples),
@@ -214,6 +241,9 @@ def run(output):
             if r['world'] == w and r['lag_ms'] == 5. and r['action'] == 'zero')['actual_combined_safe']
             for w in range(6)),
         late_actual_only_safe_nonzero_actions=len(late_actual_only),
+        critical_late_positive_predicted_nonzero_actions=late_positive,
+        critical_no_positive_candidate_warning=('No late nonzero action has strictly positive leg and joint predicted margins after reserve'
+                                                if late_positive == 0 else None),
         late_predicted_and_actual_safe_actions=sum(r['predicted_leg_margin_after_reserve_m'] > 0 and
             r['predicted_joint_margin_after_reserve_rad'] > 0 for r in late_actual_only),
         summary=summarize(heldout_rows), folds=folds, heldout_rows=heldout_rows,

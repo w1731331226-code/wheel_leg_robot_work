@@ -1076,3 +1076,10 @@
 - `wheelleg_warp/TERRAIN_PLAN.md`
 - `wheelleg_warp/results/terrain_v4_diagnostics_20260922/REPORT.md`
 - `wheelleg_warp/results/terrain_v4_diagnostics_20260922/readiness.json`
+
+### 自动同步快照 2026-09-29T06:00:13+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_warp/probe_height_115_action_predict_1nm.py`
+- `wheelleg_warp/probe_height_115_action_predict_single_graph.py`
