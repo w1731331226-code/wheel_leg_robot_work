@@ -1,0 +1,194 @@
+{
+  "protocol": "static level chassis, one wheel supported, 25mm differential wheel-center lift",
+  "leg_min_m": 0.11470446606166071,
+  "nominal_task_range_m": [
+    0.16,
+    0.38
+  ],
+  "model_joint_limit_min_m": 0.0947044660616607,
+  "simulated_hardware_proxy_min_m": 0.11470446606166071,
+  "training": false,
+  "dynamic_feasibility": false,
+  "rows": [
+    {
+      "height_m": 0.16,
+      "obstacle_side": "L",
+      "obstacle_leg_m": 0.135,
+      "support_leg_m": 0.16,
+      "wheel_clearance_m": [
+        0.02500000000000023,
+        1.5265566588595902e-16
+      ],
+      "loop_error_m": 2.482534153247273e-16,
+      "min_joint_margin_rad": 0.6426662682664133,
+      "caster_clearance_m": 0.15300000000000002,
+      "mean_joint_speed_for_80ms_ramp_rpm": 20.455522487242238
+    },
+    {
+      "height_m": 0.16,
+      "obstacle_side": "R",
+      "obstacle_leg_m": 0.135,
+      "support_leg_m": 0.16,
+      "wheel_clearance_m": [
+        1.5265566588595902e-16,
+        0.02500000000000023
+      ],
+      "loop_error_m": 2.482534153247273e-16,
+      "min_joint_margin_rad": 0.6426662682664133,
+      "caster_clearance_m": 0.15300000000000002,
+      "mean_joint_speed_for_80ms_ramp_rpm": 20.455522487242238
+    },
+    {
+      "height_m": 0.2,
+      "obstacle_side": "L",
+      "obstacle_leg_m": 0.17500000000000002,
+      "support_leg_m": 0.2,
+      "wheel_clearance_m": [
+        0.02500000000000012,
+        1.5265566588595902e-16
+      ],
+      "loop_error_m": 1.1443916996305594e-16,
+      "min_joint_margin_rad": 0.9003548049188277,
+      "caster_clearance_m": 0.193,
+      "mean_joint_speed_for_80ms_ramp_rpm": 15.473630890944635
+    },
+    {
+      "height_m": 0.2,
+      "obstacle_side": "R",
+      "obstacle_leg_m": 0.17500000000000002,
+      "support_leg_m": 0.2,
+      "wheel_clearance_m": [
+        1.5265566588595902e-16,
+        0.02500000000000012
+      ],
+      "loop_error_m": 1.1443916996305594e-16,
+      "min_joint_margin_rad": 0.9003548049188277,
+      "caster_clearance_m": 0.193,
+      "mean_joint_speed_for_80ms_ramp_rpm": 15.473630890944635
+    },
+    {
+      "height_m": 0.25,
+      "obstacle_side": "L",
+      "obstacle_leg_m": 0.225,
+      "support_leg_m": 0.25,
+      "wheel_clearance_m": [
+        0.025000000000000036,
+        -1.3877787807814457e-17
+      ],
+      "loop_error_m": 8.777083671441753e-17,
+      "min_joint_margin_rad": 1.1498637423048155,
+      "caster_clearance_m": 0.243,
+      "mean_joint_speed_for_80ms_ramp_rpm": 13.815397305575084
+    },
+    {
+      "height_m": 0.25,
+      "obstacle_side": "R",
+      "obstacle_leg_m": 0.225,
+      "support_leg_m": 0.25,
+      "wheel_clearance_m": [
+        -1.3877787807814457e-17,
+        0.025000000000000036
+      ],
+      "loop_error_m": 8.777083671441753e-17,
+      "min_joint_margin_rad": 1.1498637423048155,
+      "caster_clearance_m": 0.243,
+      "mean_joint_speed_for_80ms_ramp_rpm": 13.815397305575084
+    },
+    {
+      "height_m": 0.3,
+      "obstacle_side": "L",
+      "obstacle_leg_m": 0.27499999999999997,
+      "support_leg_m": 0.3,
+      "wheel_clearance_m": [
+        0.025000000000000036,
+        -6.938893903907228e-17
+      ],
+      "loop_error_m": 3.433175098891678e-16,
+      "min_joint_margin_rad": 1.3811391707513634,
+      "caster_clearance_m": 0.293,
+      "mean_joint_speed_for_80ms_ramp_rpm": 14.187966386191635
+    },
+    {
+      "height_m": 0.3,
+      "obstacle_side": "R",
+      "obstacle_leg_m": 0.27499999999999997,
+      "support_leg_m": 0.3,
+      "wheel_clearance_m": [
+        -6.938893903907228e-17,
+        0.025000000000000036
+      ],
+      "loop_error_m": 3.433175098891678e-16,
+      "min_joint_margin_rad": 1.3811391707513634,
+      "caster_clearance_m": 0.293,
+      "mean_joint_speed_for_80ms_ramp_rpm": 14.187966386191635
+    },
+    {
+      "height_m": 0.35,
+      "obstacle_side": "L",
+      "obstacle_leg_m": 0.32499999999999996,
+      "support_leg_m": 0.35,
+      "wheel_clearance_m": [
+        0.024999999999999842,
+        -2.3592239273284576e-16
+      ],
+      "loop_error_m": 3.191891195797325e-16,
+      "min_joint_margin_rad": 1.2338023559997464,
+      "caster_clearance_m": 0.34299999999999997,
+      "mean_joint_speed_for_80ms_ramp_rpm": 16.70022434376954
+    },
+    {
+      "height_m": 0.35,
+      "obstacle_side": "R",
+      "obstacle_leg_m": 0.32499999999999996,
+      "support_leg_m": 0.35,
+      "wheel_clearance_m": [
+        -2.3592239273284576e-16,
+        0.024999999999999842
+      ],
+      "loop_error_m": 3.191891195797325e-16,
+      "min_joint_margin_rad": 1.2338023559997464,
+      "caster_clearance_m": 0.34299999999999997,
+      "mean_joint_speed_for_80ms_ramp_rpm": 16.70022434376954
+    },
+    {
+      "height_m": 0.38,
+      "obstacle_side": "L",
+      "obstacle_leg_m": 0.355,
+      "support_leg_m": 0.38,
+      "wheel_clearance_m": [
+        0.024999999999999786,
+        -3.469446951953614e-16
+      ],
+      "loop_error_m": 5.134781488891349e-16,
+      "min_joint_margin_rad": 1.0292086665540787,
+      "caster_clearance_m": 0.373,
+      "mean_joint_speed_for_80ms_ramp_rpm": 20.78123744428085
+    },
+    {
+      "height_m": 0.38,
+      "obstacle_side": "R",
+      "obstacle_leg_m": 0.355,
+      "support_leg_m": 0.38,
+      "wheel_clearance_m": [
+        -3.469446951953614e-16,
+        0.024999999999999786
+      ],
+      "loop_error_m": 5.134781488891349e-16,
+      "min_joint_margin_rad": 1.0292086665540787,
+      "caster_clearance_m": 0.373,
+      "mean_joint_speed_for_80ms_ramp_rpm": 20.78123744428085
+    }
+  ],
+  "summary": {
+    "total": 12,
+    "max_loop_error_m": 5.134781488891349e-16,
+    "min_joint_margin_rad": 0.6426662682664133,
+    "min_caster_clearance_m": 0.15300000000000002,
+    "max_mean_joint_speed_80ms_rpm": 20.78123744428085
+  },
+  "source_sha256": {
+    "wheelleg_ppo/tools/wheelleg_sim.py": "c2dfaae4dc562119fd7916684849ec22fcac3d75dbcfec6a2a0f9452d8f6ee0f",
+    "wheelleg_ppo/xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f",
+    "wheelleg_warp/probe_height_lift_workspace.py": "9ee5896514e2f372f036e97f11d25c980a68c8d1091071ceefb37a91697b87a6"
+  }
+}
