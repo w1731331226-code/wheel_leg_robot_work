@@ -1,0 +1,5168 @@
+{
+  "role": "fixed_rough_contact_candidate_20ms_hold",
+  "action": [
+    43.09662942619913,
+    -0.005875205077708631,
+    1.5347668136158958
+  ],
+  "summaries": [
+    {
+      "arm": "zero",
+      "complete_20ms_safe": false,
+      "first_failure": {
+        "step": 21,
+        "time_ms": 11.0,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -3.0375304396063063e-06,
+          -3.0627751290979166e-06
+        ],
+        "joint_min_margin_rad": 0.4477428197860718,
+        "interval_true_A_rate_m_s": [
+          -0.029295353057207096,
+          -0.029313229942706798
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.03074912806891735,
+          -0.030742683456481734
+        ],
+        "tightened_FK_distance_m": [
+          -3.9400326255919046e-05,
+          -3.940526332055116e-05
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": -4.927632199198475,
+          "betaL_lower": 20.998693193013523,
+          "alphaR_upper": -4.885110931256785,
+          "betaR_lower": 21.048780655107507
+        },
+        "maximum_world_attitude_deg": 0.14381968630511943,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.025054961442947,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      "complete_5ms_safe": true,
+      "complete_10ms_safe": true,
+      "minimum_true_A_margin_m": -0.00021109130734242587,
+      "peak_extra_motor_Nm": 0.0,
+      "contacts_equal_zero_steps": 40,
+      "terminal": {
+        "step": 39,
+        "time_ms": 20.0,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -0.00021105715824769333,
+          -0.00021109130734242587
+        ],
+        "joint_min_margin_rad": 0.44342315196990967,
+        "interval_true_A_rate_m_s": [
+          -0.016181955451055607,
+          -0.01618195205640993
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.016780177527837458,
+          -0.016781371244627637
+        ],
+        "tightened_FK_distance_m": [
+          -0.00025675210821354724,
+          -0.0002567766332385442
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 12.079643253711316,
+          "betaL_upper": -33.17698591054784,
+          "alphaR_upper": 12.062382729682264,
+          "betaR_upper": -33.15008896834778
+        },
+        "maximum_world_attitude_deg": 0.1825718907248241,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.282915070652962,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      }
+    },
+    {
+      "arm": "hold20ms",
+      "complete_20ms_safe": true,
+      "first_failure": null,
+      "complete_5ms_safe": true,
+      "complete_10ms_safe": true,
+      "minimum_true_A_margin_m": 0.0002476827818209265,
+      "peak_extra_motor_Nm": 1.831324189901352,
+      "contacts_equal_zero_steps": 39,
+      "terminal": {
+        "step": 39,
+        "time_ms": 20.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0008699937687582648,
+          0.0008699333964292677
+        ],
+        "joint_min_margin_rad": 0.4571951627731323,
+        "interval_true_A_rate_m_s": [
+          0.08226452815726648,
+          0.082246633654387
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.08156137588771042,
+          0.08156784585200935
+        ],
+        "tightened_FK_distance_m": [
+          0.000828661520304184,
+          0.0008286412663796465
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -51.796319403047065,
+          "betaL_upper": -76.68019450533464,
+          "alphaR_lower": -51.826621969807675,
+          "betaR_upper": -76.7162120542408
+        },
+        "maximum_world_attitude_deg": 0.03502529229354026,
+        "peak_extra_motor_Nm": 1.831324189901352,
+        "absolute_motor_box_excess_Nm": -4.278790101408958,
+        "command_error_Nm": 1.1460916504724139e-07,
+        "contacts_equal_zero": true
+      }
+    },
+    {
+      "arm": "pulse0.5ms",
+      "complete_20ms_safe": false,
+      "first_failure": {
+        "step": 24,
+        "time_ms": 12.5,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -1.2315306686383476e-05,
+          -1.2341338885418773e-05
+        ],
+        "joint_min_margin_rad": 0.4475080966949463,
+        "interval_true_A_rate_m_s": [
+          -0.025649167751135016,
+          -0.025649165677432695
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.026999214455663462,
+          -0.026992305345860133
+        ],
+        "tightened_FK_distance_m": [
+          -5.092746604515208e-05,
+          -5.0922531317247995e-05
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": -0.8591044632259504,
+          "betaL_lower": 25.279810671527663,
+          "alphaR_upper": -0.8240855677696669,
+          "betaR_lower": 25.321045416474604
+        },
+        "maximum_world_attitude_deg": 0.14683010429408924,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.097450286149979,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      "complete_5ms_safe": true,
+      "complete_10ms_safe": true,
+      "minimum_true_A_margin_m": -0.00016311909592828244,
+      "peak_extra_motor_Nm": 1.7990623712539673,
+      "contacts_equal_zero_steps": 40,
+      "terminal": {
+        "step": 39,
+        "time_ms": 20.0,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -0.00016310121454095328,
+          -0.00016311909592828244
+        ],
+        "joint_min_margin_rad": 0.44400954246520996,
+        "interval_true_A_rate_m_s": [
+          -0.014461997492554168,
+          -0.014461997490694545
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.015073167536197724,
+          -0.015070725755666346
+        ],
+        "tightened_FK_distance_m": [
+          -0.00020889960258735251,
+          -0.00020888979697833332
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 11.288473255400097,
+          "betaL_upper": -32.3545085957851,
+          "alphaR_upper": 11.287699366978698,
+          "betaR_upper": -32.34999356888197
+        },
+        "maximum_world_attitude_deg": 0.17727285561239825,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.28386028110981,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      }
+    }
+  ],
+  "rows": [
+    [
+      {
+        "step": 0,
+        "time_ms": 0.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0002744111489203088,
+          0.00027446556235415087
+        ],
+        "joint_min_margin_rad": 0.4501194953918457,
+        "interval_true_A_rate_m_s": [
+          -0.009419626855466934,
+          -0.0093675200949217
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.0066772986728186184,
+          -0.006675484683632023
+        ],
+        "tightened_FK_distance_m": [
+          0.00023203774129565525,
+          0.0002319929202870562
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -6.547835357074297,
+          "right_leg": -6.552701535052126,
+          "alphaL_upper": -101.01398935693544,
+          "betaL_lower": -55.243041920885915,
+          "alphaR_upper": -101.06467697361843,
+          "betaR_lower": -55.3105223073056
+        },
+        "maximum_world_attitude_deg": 0.052272039040972315,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.493514026980847,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 1,
+        "time_ms": 1.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00026797988210601476,
+          0.0002680253552377748
+        ],
+        "joint_min_margin_rad": 0.4500768184661865,
+        "interval_true_A_rate_m_s": [
+          -0.012862533628588135,
+          -0.012880414232752102
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.009764576868770398,
+          -0.009757034261440117
+        ],
+        "tightened_FK_distance_m": [
+          0.00022715065941210466,
+          0.0002271157958486102
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -6.270631964172673,
+          "right_leg": -6.259141085917912,
+          "alphaL_upper": -92.67716268139567,
+          "betaL_lower": -55.30226252926203,
+          "alphaR_upper": -92.55916892693018,
+          "betaR_lower": -55.14575370980478
+        },
+        "maximum_world_attitude_deg": 0.05606057412564715,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.233815044164658,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 2,
+        "time_ms": 1.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00026002217260809313,
+          0.0002600415943012774
+        ],
+        "joint_min_margin_rad": 0.45002055168151855,
+        "interval_true_A_rate_m_s": [
+          -0.015915418995843256,
+          -0.015967521872994883
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.012658332590990175,
+          -0.012649441442007903
+        ],
+        "tightened_FK_distance_m": [
+          0.00022082149351158975,
+          0.00022078663727170922
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -5.997387483701108,
+          "right_leg": -5.99439845726417,
+          "alphaL_upper": -84.16379174157116,
+          "betaL_lower": -54.634515121294115,
+          "alphaR_upper": -84.13464622658343,
+          "betaR_lower": -54.599062485501044
+        },
+        "maximum_world_attitude_deg": 0.06052990085081463,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.976816415786743,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 3,
+        "time_ms": 2.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00025070776217388235,
+          0.00025072718503968416
+        ],
+        "joint_min_margin_rad": 0.449951171875,
+        "interval_true_A_rate_m_s": [
+          -0.018628820868421547,
+          -0.01862881852318643
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.015347399605606648,
+          -0.015340634721514666
+        ],
+        "tightened_FK_distance_m": [
+          0.00021315058168011703,
+          0.00021311573427081166
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -5.740946048651956,
+          "right_leg": -5.744746280534792,
+          "alphaL_upper": -76.50175830346309,
+          "betaL_lower": -52.593104625089616,
+          "alphaR_upper": -76.54433273297565,
+          "betaR_lower": -52.65245797665842
+        },
+        "maximum_world_attitude_deg": 0.06543077740082853,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.7910107374191284,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 4,
+        "time_ms": 2.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00024028531963997402,
+          0.00024026975246245474
+        ],
+        "joint_min_margin_rad": 0.44986939430236816,
+        "interval_true_A_rate_m_s": [
+          -0.020844885067816676,
+          -0.02091486515445884
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.017835739196081484,
+          -0.017825847393538444
+        ],
+        "tightened_FK_distance_m": [
+          0.00020423334650676684,
+          0.000204203484955091
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -5.529205645568153,
+          "right_leg": -5.522555092853185,
+          "alphaL_upper": -69.92592974052248,
+          "betaL_lower": -49.663379397124054,
+          "alphaR_upper": -69.8610988143831,
+          "betaR_lower": -49.57808984392519
+        },
+        "maximum_world_attitude_deg": 0.07057664760032506,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.671132743358612,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 5,
+        "time_ms": 3.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00022889930149153082,
+          0.00022884874588877113
+        ],
+        "joint_min_margin_rad": 0.44977617263793945,
+        "interval_true_A_rate_m_s": [
+          -0.0227720362968864,
+          -0.022842013147367224
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.020111143652759143,
+          -0.020093847331547468
+        ],
+        "tightened_FK_distance_m": [
+          0.00019417518799186395,
+          0.000194155276916395
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -5.329608257614454,
+          "right_leg": -5.3140493676014176,
+          "alphaL_upper": -63.855041614709435,
+          "betaL_lower": -45.64678357953844,
+          "alphaR_upper": -63.70089777019758,
+          "betaR_lower": -45.445274760627164
+        },
+        "maximum_world_attitude_deg": 0.07583269290081789,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.6021618843078613,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 6,
+        "time_ms": 3.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00021666810494684607,
+          0.00021661755254828718
+        ],
+        "joint_min_margin_rad": 0.4496728181838989,
+        "interval_true_A_rate_m_s": [
+          -0.024462393089369483,
+          -0.024462386680967896
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.02216075262873633,
+          -0.022147824451829473
+        ],
+        "tightened_FK_distance_m": [
+          0.00018309639905533904,
+          0.00018307649557788952
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -5.140695246774504,
+          "right_leg": -5.147747510662461,
+          "alphaL_upper": -58.06941914671408,
+          "betaL_lower": -40.72643124769009,
+          "alphaR_upper": -58.157986537453176,
+          "betaR_lower": -40.847067262252395
+        },
+        "maximum_world_attitude_deg": 0.08110325291152237,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.5706496834754944,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 7,
+        "time_ms": 4.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0002037629842371741,
+          0.0002036774462848001
+        ],
+        "joint_min_margin_rad": 0.4495605230331421,
+        "interval_true_A_rate_m_s": [
+          -0.02581024141934396,
+          -0.025880212526974145
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.02399066927001675,
+          -0.023979346907411533
+        ],
+        "tightened_FK_distance_m": [
+          0.00017109734195025584,
+          0.00017108738046919914
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -5.000927262578481,
+          "right_leg": -5.002720237591706,
+          "alphaL_upper": -52.78101169026595,
+          "betaL_lower": -35.596530334918306,
+          "alphaR_upper": -52.811365049998734,
+          "betaR_lower": -35.64258869970491
+        },
+        "maximum_world_attitude_deg": 0.08632080989639701,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.5655158162117004,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 8,
+        "time_ms": 4.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00019025914772144437,
+          0.00019017361429794766
+        ],
+        "joint_min_margin_rad": 0.44944071769714355,
+        "interval_true_A_rate_m_s": [
+          -0.027007673031459456,
+          -0.02700766397370491
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.0255991248760399,
+          -0.025594462965297736
+        ],
+        "tightened_FK_distance_m": [
+          0.00015829817982328343,
+          0.0001582882233318882
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -4.898854968339895,
+          "right_leg": -4.9106865026741495,
+          "alphaL_upper": -47.702994558458535,
+          "betaL_lower": -30.162190846502785,
+          "alphaR_upper": -47.83932828800167,
+          "betaR_lower": -30.345374682941095
+        },
+        "maximum_world_attitude_deg": 0.0914386554565698,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.57841819524765,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 9,
+        "time_ms": 5.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00017628465621477574,
+          0.00017619912753355504
+        ],
+        "joint_min_margin_rad": 0.4493147134780884,
+        "interval_true_A_rate_m_s": [
+          -0.02794898301333726,
+          -0.027948973528785226
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.026995000808584822,
+          -0.026991997021296427
+        ],
+        "tightened_FK_distance_m": [
+          0.0001447991006301035,
+          0.00014478914941704158
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -4.86162782686858,
+          "right_leg": -4.864320393351493,
+          "alphaL_upper": -42.97643280619146,
+          "betaL_lower": -24.791383237403856,
+          "alphaR_upper": -43.00826984483681,
+          "betaR_lower": -24.839070233148654
+        },
+        "maximum_world_attitude_deg": 0.09642572688813877,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.6034045815467834,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 10,
+        "time_ms": 5.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00016193256115629162,
+          0.00016184703740132478
+        ],
+        "joint_min_margin_rad": 0.4491838216781616,
+        "interval_true_A_rate_m_s": [
+          -0.02870419011696823,
+          -0.028704180264460533
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.028181634372783718,
+          -0.028183893139511806
+        ],
+        "tightened_FK_distance_m": [
+          0.00013070514762611552,
+          0.00013069520195097096
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -4.889615867735173,
+          "right_leg": -4.899753916332456,
+          "alphaL_upper": -38.42643622530889,
+          "betaL_lower": -19.39045088829458,
+          "alphaR_upper": -38.53255173122913,
+          "betaR_lower": -19.53718301300105
+        },
+        "maximum_world_attitude_deg": 0.10126233942164424,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.63616681098938,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 11,
+        "time_ms": 6.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00014728772864756878,
+          0.00014720220997745115
+        ],
+        "joint_min_margin_rad": 0.4490494728088379,
+        "interval_true_A_rate_m_s": [
+          -0.029289665017445676,
+          -0.02928965484774726
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.029171223432501572,
+          -0.02917149246101152
+        ],
+        "tightened_FK_distance_m": [
+          0.00011611625982614715,
+          0.00011610631992789544
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -5.017331284577688,
+          "right_leg": -5.01407008067243,
+          "alphaL_upper": -34.190911352637585,
+          "betaL_lower": -14.245800990757003,
+          "alphaR_upper": -34.14836029897509,
+          "betaR_lower": -14.19278056679445
+        },
+        "maximum_world_attitude_deg": 0.10593739040391335,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.673501193523407,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 12,
+        "time_ms": 6.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00013240002022778252,
+          0.00013234055016357604
+        ],
+        "joint_min_margin_rad": 0.44891273975372314,
+        "interval_true_A_rate_m_s": [
+          -0.02977541683957252,
+          -0.02972331962775021
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.029975141539464546,
+          -0.02997412884217668
+        ],
+        "tightened_FK_distance_m": [
+          0.00010112233080088285,
+          0.0001011123968918819
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -5.27209597316644,
+          "right_leg": -5.269913812582043,
+          "alphaL_upper": -30.228828878176312,
+          "betaL_lower": -9.358497139227465,
+          "alphaR_upper": -30.19960909960773,
+          "betaR_lower": -9.326084788465215
+        },
+        "maximum_world_attitude_deg": 0.11044482151276291,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.71314138174057,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 13,
+        "time_ms": 7.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00011735426249896708,
+          0.00011729479670241627
+        ],
+        "joint_min_margin_rad": 0.44877493381500244,
+        "interval_true_A_rate_m_s": [
+          -0.03009151545763089,
+          -0.030091506922319544
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.030600327203557105,
+          -0.03060606768346379
+        ],
+        "tightened_FK_distance_m": [
+          8.581806043937812e-05,
+          8.580318081955019e-05
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -5.693055269480746,
+          "right_leg": -5.706697887934928,
+          "alphaL_upper": -26.42635723990282,
+          "betaL_lower": -4.628478229227452,
+          "alphaR_upper": -26.564611517803876,
+          "betaR_lower": -4.815401308105905
+        },
+        "maximum_world_attitude_deg": 0.1147831386280465,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.7533568143844604,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 14,
+        "time_ms": 7.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00010218317603695459,
+          0.00010214975581605834
+        ],
+        "joint_min_margin_rad": 0.4486370086669922,
+        "interval_true_A_rate_m_s": [
+          -0.030342172924024968,
+          -0.03029008177271586
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.031066625684134645,
+          -0.031068713792617927
+        ],
+        "tightened_FK_distance_m": [
+          7.028314214698006e-05,
+          7.026827095371713e-05
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -6.3882086364283515,
+          "right_leg": -6.383897424418146,
+          "alphaL_upper": -23.03073713209128,
+          "betaL_lower": -0.430152027252827,
+          "alphaR_upper": -22.95347141815747,
+          "betaR_lower": -0.3318051902335962
+        },
+        "maximum_world_attitude_deg": 0.11895362238826351,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.793267548084259,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 15,
+        "time_ms": 8.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          8.697232768943575e-05,
+          8.692997007476999e-05
+        ],
+        "joint_min_margin_rad": 0.44850003719329834,
+        "interval_true_A_rate_m_s": [
+          -0.030421696695037692,
+          -0.0304395714825767
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.03138324817893354,
+          -0.03138103415785268
+        ],
+        "tightened_FK_distance_m": [
+          5.458722306132913e-05,
+          5.4577312068122445e-05
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -7.4992956663005215,
+          "right_leg": -7.493067714843347,
+          "alphaL_upper": -19.82451647335381,
+          "betaL_lower": 3.5294310156685627,
+          "alphaR_upper": -19.732488858888146,
+          "betaR_lower": 3.6447954076057556
+        },
+        "maximum_world_attitude_deg": 0.12295944906435147,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.832022547721863,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 16,
+        "time_ms": 8.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          7.175440210530071e-05,
+          7.171204782699392e-05
+        ],
+        "joint_min_margin_rad": 0.44836485385894775,
+        "interval_true_A_rate_m_s": [
+          -0.03043585116827008,
+          -0.030435844495552145
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.03155867253242883,
+          -0.031558116669908175
+        ],
+        "tightened_FK_distance_m": [
+          3.880478496502793e-05,
+          3.879488011500443e-05
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -9.372266275292095,
+          "right_leg": -9.375947771373673,
+          "alphaL_upper": -16.781916501694223,
+          "betaL_lower": 7.259678474637447,
+          "alphaR_upper": -16.815128461053124,
+          "betaR_lower": 7.213072917643058
+        },
+        "maximum_world_attitude_deg": 0.1268051921589167,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.8691741228103638,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 17,
+        "time_ms": 9.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          5.6562850876393234e-05,
+          5.654653786008046e-05
+        ],
+        "joint_min_margin_rad": 0.4482322931289673,
+        "interval_true_A_rate_m_s": [
+          -0.030383102457814948,
+          -0.03033101993382692
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.03160692290998466,
+          -0.03160977166164656
+        ],
+        "tightened_FK_distance_m": [
+          2.299533245585339e-05,
+          2.298543384005136e-05
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -12.929322956119323,
+          "right_leg": -12.938956398663821,
+          "alphaL_upper": -14.006393173575809,
+          "betaL_lower": 10.595274015038136,
+          "alphaR_upper": -14.07359710307627,
+          "betaR_lower": 10.498348002382993
+        },
+        "maximum_world_attitude_deg": 0.13049554825286785,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.9044535756111145,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 18,
+        "time_ms": 9.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          4.144820854785902e-05,
+          4.1431897784258154e-05
+        ],
+        "joint_min_margin_rad": 0.4481031894683838,
+        "interval_true_A_rate_m_s": [
+          -0.030229284657068423,
+          -0.03022928015164461
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.03153856695907463,
+          -0.03154171705882719
+        ],
+        "tightened_FK_distance_m": [
+          7.223206000718131e-06,
+          7.213313692148616e-06
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -21.585034842994265,
+          "right_leg": -21.598909403416176,
+          "alphaL_upper": -11.433635346726243,
+          "betaL_lower": 13.637502951475664,
+          "alphaR_upper": -11.438887253490172,
+          "betaR_lower": 13.628107651900608
+        },
+        "maximum_world_attitude_deg": 0.13403654710972582,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.9376407861709595,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 19,
+        "time_ms": 10.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          2.6452837543405883e-05,
+          2.6436529038081913e-05
+        ],
+        "joint_min_margin_rad": 0.447978138923645,
+        "interval_true_A_rate_m_s": [
+          -0.02999074200890628,
+          -0.02999073749235248
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.031368813340413346,
+          -0.03137059970529255
+        ],
+        "tightened_FK_distance_m": [
+          -8.46713340404881e-06,
+          -8.477019343768432e-06
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -68.51365891446258,
+          "right_leg": -68.6191301717377,
+          "alphaL_upper": -9.170085137710927,
+          "betaL_lower": 16.26677405418146,
+          "alphaR_upper": -9.140769372839966,
+          "betaR_lower": 16.30315337837294
+        },
+        "maximum_world_attitude_deg": 0.13743377826661193,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.9688844084739685,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 20,
+        "time_ms": 10.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          1.1610146088997242e-05,
+          1.1593839842255482e-05
+        ],
+        "joint_min_margin_rad": 0.4478578567504883,
+        "interval_true_A_rate_m_s": [
+          -0.02968538290881728,
+          -0.02968537839165286
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.031104231822336972,
+          -0.031099694966550337
+        ],
+        "tightened_FK_distance_m": [
+          -2.4021428639802278e-05,
+          -2.403130816348753e-05
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": -7.007549337599103,
+          "betaL_lower": 18.690684464878164,
+          "alphaR_upper": -6.874266575694687,
+          "betaR_lower": 18.8626459527269
+        },
+        "maximum_world_attitude_deg": 0.14069280801182463,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.997958183288574,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 21,
+        "time_ms": 11.0,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -3.0375304396063063e-06,
+          -3.0627751290979166e-06
+        ],
+        "joint_min_margin_rad": 0.4477428197860718,
+        "interval_true_A_rate_m_s": [
+          -0.029295353057207096,
+          -0.029313229942706798
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.03074912806891735,
+          -0.030742683456481734
+        ],
+        "tightened_FK_distance_m": [
+          -3.9400326255919046e-05,
+          -3.940526332055116e-05
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": -4.927632199198475,
+          "betaL_lower": 20.998693193013523,
+          "alphaR_upper": -4.885110931256785,
+          "betaR_lower": 21.048780655107507
+        },
+        "maximum_world_attitude_deg": 0.14381968630511943,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.025054961442947,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 22,
+        "time_ms": 11.5,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -1.7473902447620593e-05,
+          -1.7508085588341382e-05
+        ],
+        "joint_min_margin_rad": 0.44760406017303467,
+        "interval_true_A_rate_m_s": [
+          -0.028872744016028573,
+          -0.02889062091848693
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.030319860830094754,
+          -0.03031207312317371
+        ],
+        "tightened_FK_distance_m": [
+          -5.4564541145953434e-05,
+          -5.456454088305262e-05
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": -3.1508921896819553,
+          "betaL_lower": 22.828179069691245,
+          "alphaR_upper": -3.169500484645286,
+          "betaR_lower": 22.912223397205985
+        },
+        "maximum_world_attitude_deg": 0.14681927201886008,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.050307631492615,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 23,
+        "time_ms": 12.0,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -3.168268928019358e-05,
+          -3.171687018735381e-05
+        ],
+        "joint_min_margin_rad": 0.4473468065261841,
+        "interval_true_A_rate_m_s": [
+          -0.028417573665145968,
+          -0.02841756919802485
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.02981584995252689,
+          -0.029814038672022376
+        ],
+        "tightened_FK_distance_m": [
+          -6.947485429112287e-05,
+          -6.947485265147612e-05
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": -1.3903105006101173,
+          "betaL_lower": 24.709097433232923,
+          "alphaR_upper": -1.5096609590329133,
+          "betaR_lower": 24.539811181036193
+        },
+        "maximum_world_attitude_deg": 0.14969682119366443,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.073618143796921,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 24,
+        "time_ms": 12.5,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -4.5612648381890275e-05,
+          -4.5646827072504115e-05
+        ],
+        "joint_min_margin_rad": 0.44708967208862305,
+        "interval_true_A_rate_m_s": [
+          -0.027859918203393397,
+          -0.027859913770300615
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.029253406406503667,
+          -0.029251841094457345
+        ],
+        "tightened_FK_distance_m": [
+          -8.41019682694667e-05,
+          -8.410196519575874e-05
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 0.05668638805440673,
+          "betaL_lower": 26.121190520000376,
+          "alphaR_upper": 0.057787932619925875,
+          "betaR_lower": 26.10826495682562
+        },
+        "maximum_world_attitude_deg": 0.15245744312423504,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.0953764617443085,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 25,
+        "time_ms": 13.0,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -5.925566748583855e-05,
+          -5.92898439787104e-05
+        ],
+        "joint_min_margin_rad": 0.44683289527893066,
+        "interval_true_A_rate_m_s": [
+          -0.027286038207896546,
+          -0.02728603381241257
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.028634992221917142,
+          -0.028636661620016445
+        ],
+        "tightened_FK_distance_m": [
+          -9.842648284295774e-05,
+          -9.842647827785944e-05
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 1.4726870314485982,
+          "betaL_lower": 27.449652880296377,
+          "alphaR_upper": 1.4107274861471752,
+          "betaR_lower": 27.355155018205433
+        },
+        "maximum_world_attitude_deg": 0.15510546518505253,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.115544468164444,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 26,
+        "time_ms": 13.5,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -7.259549197419224e-05,
+          -7.262966629170697e-05
+        ],
+        "joint_min_margin_rad": 0.44657695293426514,
+        "interval_true_A_rate_m_s": [
+          -0.026679648976707382,
+          -0.02667964462599315
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.02796609672935841,
+          -0.027966752427868218
+        ],
+        "tightened_FK_distance_m": [
+          -0.0001124093221018797,
+          -0.00011241424243187037
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 2.780545453334118,
+          "betaL_lower": 28.625383545985027,
+          "alphaR_upper": 2.805573007848857,
+          "betaR_lower": 28.649211357659574
+        },
+        "maximum_world_attitude_deg": 0.15764601335805759,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.134195268154144,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 27,
+        "time_ms": 14.0,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -8.559799415035207e-05,
+          -8.563216631841952e-05
+        ],
+        "joint_min_margin_rad": 0.44632208347320557,
+        "interval_true_A_rate_m_s": [
+          -0.02600500435231967,
+          -0.026005000053425098
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.02725620864649511,
+          -0.027253508493836717
+        ],
+        "tightened_FK_distance_m": [
+          -0.00012603608108131725,
+          -0.00012604099818415326
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 3.890193644406969,
+          "betaL_lower": 29.542941796685184,
+          "alphaR_upper": 3.9631577109616876,
+          "betaR_lower": 29.632489244123803
+        },
+        "maximum_world_attitude_deg": 0.1600835176270974,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.151601225137711,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 28,
+        "time_ms": 14.5,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -9.825508011000739e-05,
+          -9.828925015635537e-05
+        ],
+        "joint_min_margin_rad": 0.44606852531433105,
+        "interval_true_A_rate_m_s": [
+          -0.025314171919310624,
+          -0.02531416767587169
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.026506567232541137,
+          -0.026501423731268983
+        ],
+        "tightened_FK_distance_m": [
+          -0.00013929236752710416,
+          -0.0001392923581474127
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 4.989028764588827,
+          "betaL_lower": 30.413466450742764,
+          "alphaR_upper": 5.043795487382664,
+          "betaR_lower": 30.477340122978237
+        },
+        "maximum_world_attitude_deg": 0.16242192474910452,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.167590707540512,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 29,
+        "time_ms": 15.0,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -0.00011055865956043076,
+          -0.00011059282751459121
+        ],
+        "joint_min_margin_rad": 0.4458165168762207,
+        "interval_true_A_rate_m_s": [
+          -0.02460715890084675,
+          -0.02460715471647168
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.025717930707551753,
+          -0.02571727636074783
+        ],
+        "tightened_FK_distance_m": [
+          -0.00015215395687408106,
+          -0.00015215394577765173
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 6.0733422330609725,
+          "betaL_lower": 31.263920558078517,
+          "alphaR_upper": 5.984135038283643,
+          "betaR_lower": 31.13575698615611
+        },
+        "maximum_world_attitude_deg": 0.16466554203551442,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.182385742664337,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 30,
+        "time_ms": 15.5,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -0.00012247462202909232,
+          -0.00012250878792421926
+        ],
+        "joint_min_margin_rad": 0.4455662965774536,
+        "interval_true_A_rate_m_s": [
+          -0.023831924937323112,
+          -0.023831920819256114
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.024904183593024567,
+          -0.02490471805368501
+        ],
+        "tightened_FK_distance_m": [
+          -0.00016460648632601782,
+          -0.00016461139383722078
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 6.872750247845601,
+          "betaL_lower": 31.727658494491045,
+          "alphaR_upper": 6.850130073663244,
+          "betaR_lower": 31.692548561673775
+        },
+        "maximum_world_attitude_deg": 0.1668173652713011,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.19612917304039,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 31,
+        "time_ms": 16.0,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -0.00013399488703591533,
+          -0.00013402905090695305
+        ],
+        "joint_min_margin_rad": 0.4453181028366089,
+        "interval_true_A_rate_m_s": [
+          -0.023040530013646032,
+          -0.023040525965467573
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.024063491039746497,
+          -0.024063354894421927
+        ],
+        "tightened_FK_distance_m": [
+          -0.0001766405193905769,
+          -0.00017664542374427783
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 7.71979502302144,
+          "betaL_lower": 32.23299907006746,
+          "alphaR_upper": 7.736858619028297,
+          "betaR_lower": 32.24847487485507
+        },
+        "maximum_world_attitude_deg": 0.16888082287516096,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.208757042884827,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 32,
+        "time_ms": 16.5,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -0.00014512845807813923,
+          -0.00014516261996012914
+        ],
+        "joint_min_margin_rad": 0.4450720548629761,
+        "interval_true_A_rate_m_s": [
+          -0.0222671420844478,
+          -0.02226713810635217
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.023199311749323093,
+          -0.023202398084079777
+        ],
+        "tightened_FK_distance_m": [
+          -0.0001882416940462418,
+          -0.00018825151305663823
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 8.48437717943718,
+          "betaL_lower": 32.6532169639953,
+          "alphaR_upper": 8.419136148297978,
+          "betaR_lower": 32.56203278433958
+        },
+        "maximum_world_attitude_deg": 0.1708593896029769,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.220602095127106,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 33,
+        "time_ms": 17.0,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -0.0001558412369739165,
+          -0.0001558753969054666
+        ],
+        "joint_min_margin_rad": 0.4448283910751343,
+        "interval_true_A_rate_m_s": [
+          -0.021425557791554528,
+          -0.02142555389067491
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.022311462182933985,
+          -0.02232031689833533
+        ],
+        "tightened_FK_distance_m": [
+          -0.00019940057456058102,
+          -0.000199415305899452
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 9.261450034317415,
+          "betaL_lower": 33.06964574314413,
+          "alphaR_upper": 9.142766916096692,
+          "betaR_lower": 32.908218413952206
+        },
+        "maximum_world_attitude_deg": 0.1727567611734015,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.23160994052887,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 34,
+        "time_ms": 17.5,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -0.00016614223085847923,
+          -0.0001661763888783363
+        ],
+        "joint_min_margin_rad": 0.44458723068237305,
+        "interval_true_A_rate_m_s": [
+          -0.020601987769125474,
+          -0.02060198394573942
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.02142217959635757,
+          -0.021421935545751555
+        ],
+        "tightened_FK_distance_m": [
+          -0.0002101126284174405,
+          -0.0002101273544795047
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 9.558138897214969,
+          "betaL_lower": 32.88631246296928,
+          "alphaR_upper": 9.74844089240641,
+          "betaR_lower": 33.13752809289599
+        },
+        "maximum_world_attitude_deg": 0.17457517193055117,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.241790145635605,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 35,
+        "time_ms": 18.0,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -0.0001760144268132674,
+          -0.00017604858296202397
+        ],
+        "joint_min_margin_rad": 0.44434869289398193,
+        "interval_true_A_rate_m_s": [
+          -0.01974439190957633,
+          -0.019744388167375337
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.02051390253345333,
+          -0.020511357023448862
+        ],
+        "tightened_FK_distance_m": [
+          -0.00022036839735695046,
+          -0.00022038311833177848
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 10.246723363556963,
+          "betaL_lower": 33.162078462864436,
+          "alphaR_upper": 10.295985657859482,
+          "betaR_lower": 33.22463919451939
+        },
+        "maximum_world_attitude_deg": 0.17631704978346044,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.251113444566727,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 36,
+        "time_ms": 18.5,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -0.0001854408142944325,
+          -0.0001854749686144852
+        ],
+        "joint_min_margin_rad": 0.4441128969192505,
+        "interval_true_A_rate_m_s": [
+          -0.018852774962330177,
+          -0.018852771304922467
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.019588564026188006,
+          -0.01959065243074591
+        ],
+        "tightened_FK_distance_m": [
+          -0.00023016332866322608,
+          -0.0002301829583018351
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 10.884368010319424,
+          "betaL_lower": 33.39381423990218,
+          "alphaR_upper": 10.790426500076586,
+          "betaR_lower": 33.26269941954101
+        },
+        "maximum_world_attitude_deg": 0.17798536959348887,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.259903818368912,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 37,
+        "time_ms": 19.0,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -0.00019443040188249494,
+          -0.00019446455441635146
+        ],
+        "joint_min_margin_rad": 0.44387996196746826,
+        "interval_true_A_rate_m_s": [
+          -0.017979175176124906,
+          -0.017979171603732524
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.01866170385836739,
+          -0.018660270785909597
+        ],
+        "tightened_FK_distance_m": [
+          -0.0002394977695377155,
+          -0.0002395173936156476
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 11.186064140286051,
+          "betaL_lower": 33.20506173765588,
+          "alphaR_upper": 11.260335985545694,
+          "betaR_lower": 33.30190750413222
+        },
+        "maximum_world_attitude_deg": 0.17958237777604644,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.268169596791267,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 38,
+        "time_ms": 19.5,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -0.00020296618052216553,
+          -0.0002030003313142209
+        ],
+        "joint_min_margin_rad": 0.4436500072479248,
+        "interval_true_A_rate_m_s": [
+          -0.017071557279341176,
+          -0.01707155379573888
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.017723339889964485,
+          -0.017723625270417993
+        ],
+        "tightened_FK_distance_m": [
+          -0.0002483622268844428,
+          -0.00024838184567997537
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 11.709582770720097,
+          "betaL_upper": -33.27779749580301,
+          "alphaR_upper": 11.674817069944801,
+          "betaR_upper": -33.22914889835784
+        },
+        "maximum_world_attitude_deg": 0.18111041147508422,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.275784179568291,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 39,
+        "time_ms": 20.0,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -0.00021105715824769333,
+          -0.00021109130734242587
+        ],
+        "joint_min_margin_rad": 0.44342315196990967,
+        "interval_true_A_rate_m_s": [
+          -0.016181955451055607,
+          -0.01618195205640993
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.016780177527837458,
+          -0.016781371244627637
+        ],
+        "tightened_FK_distance_m": [
+          -0.00025675210821354724,
+          -0.0002567766332385442
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 12.079643253711316,
+          "betaL_upper": -33.17698591054784,
+          "alphaR_upper": 12.062382729682264,
+          "betaR_upper": -33.15008896834778
+        },
+        "maximum_world_attitude_deg": 0.1825718907248241,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.282915070652962,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      }
+    ],
+    [
+      {
+        "step": 0,
+        "time_ms": 0.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0002751210080702837,
+          0.0002751493685121259
+        ],
+        "joint_min_margin_rad": 0.4501335620880127,
+        "interval_true_A_rate_m_s": [
+          -0.007999908555517132,
+          -0.007999907778971638
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.0034008136748600606,
+          -0.0033987504368471755
+        ],
+        "tightened_FK_distance_m": [
+          0.00023368022248791798,
+          0.0002336353990731881
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": 0.00513463884281868,
+          "right_leg": 0.0007669585175688401,
+          "alphaL_upper": 0.041789206087176,
+          "betaL_lower": 0.6630713162566507,
+          "alphaR_upper": 6.463786228362491e-05,
+          "betaR_lower": 0.5987909542033459
+        },
+        "maximum_world_attitude_deg": 0.05115318169532407,
+        "peak_extra_motor_Nm": 1.7990623712539673,
+        "absolute_motor_box_excess_Nm": -2.9717191457748413,
+        "command_error_Nm": 1.100904536421865e-07,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 1,
+        "time_ms": 1.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0002703990243846932,
+          0.00027042738525909216
+        ],
+        "joint_min_margin_rad": 0.45011746883392334,
+        "interval_true_A_rate_m_s": [
+          -0.009443967371181028,
+          -0.009443966506067492
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.003458725282743677,
+          -0.0034552810750344727
+        ],
+        "tightened_FK_distance_m": [
+          0.00023195322330044166,
+          0.000231908402363452
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -0.14056971234272575,
+          "right_leg": -0.13778249708385493,
+          "alphaL_upper": 2.410048053419683,
+          "betaL_lower": -5.203832871844404,
+          "alphaR_upper": 2.439913720351959,
+          "betaR_lower": -5.167513921524186
+        },
+        "maximum_world_attitude_deg": 0.05267285253786957,
+        "peak_extra_motor_Nm": 1.7989807724952698,
+        "absolute_motor_box_excess_Nm": -2.7115514278411865,
+        "command_error_Nm": 8.922902705599256e-08,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 2,
+        "time_ms": 1.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0002654842484955816,
+          0.0002655126098110583
+        ],
+        "joint_min_margin_rad": 0.4501004219055176,
+        "interval_true_A_rate_m_s": [
+          -0.0098295517782232,
+          -0.00982955089606774
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.0034708555475803753,
+          -0.0034653310359518156
+        ],
+        "tightened_FK_distance_m": [
+          0.00023022140173365003,
+          0.00023017658324507684
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -0.05004758365624885,
+          "right_leg": -0.04584061769955658,
+          "alphaL_upper": 3.3348464389339028,
+          "betaL_lower": -3.9348837326415067,
+          "alphaR_upper": 3.379063508969849,
+          "betaR_lower": -3.879389316009135
+        },
+        "maximum_world_attitude_deg": 0.053909754159978465,
+        "peak_extra_motor_Nm": 1.798896074295044,
+        "absolute_motor_box_excess_Nm": -2.714599370956421,
+        "command_error_Nm": 8.725839761858367e-08,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 3,
+        "time_ms": 2.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00026076669767090277,
+          0.0002607950594086944
+        ],
+        "joint_min_margin_rad": 0.4500833749771118,
+        "interval_true_A_rate_m_s": [
+          -0.00943510164935768,
+          -0.009435100804727758
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.003360293375283293,
+          -0.0033509917830836233
+        ],
+        "tightened_FK_distance_m": [
+          0.00022853946580429874,
+          0.0002284996208350858
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": 0.19496075132817695,
+          "right_leg": 0.20259305642735342,
+          "alphaL_upper": 4.820445002037011,
+          "betaL_lower": 0.4616553597668208,
+          "alphaR_upper": 4.897826823560778,
+          "betaR_lower": 0.5653498423132673
+        },
+        "maximum_world_attitude_deg": 0.05481791948925624,
+        "peak_extra_motor_Nm": 1.79880952835083,
+        "absolute_motor_box_excess_Nm": -2.7944973707199097,
+        "command_error_Nm": 9.57096966125448e-08,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 4,
+        "time_ms": 2.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00025654033826626177,
+          0.0002565597596909941
+        ],
+        "joint_min_margin_rad": 0.45006799697875977,
+        "interval_true_A_rate_m_s": [
+          -0.008452718809282,
+          -0.008470599435400628
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.0030698185098830197,
+          -0.003061182194688033
+        ],
+        "tightened_FK_distance_m": [
+          0.00022700189750060707,
+          0.00022697200475785373
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": 0.5562459634922737,
+          "right_leg": 0.5550477007220839,
+          "alphaL_upper": 7.251243050342807,
+          "betaL_lower": 6.657288838717283,
+          "alphaR_upper": 7.2385807614760465,
+          "betaR_lower": 6.63816437591507
+        },
+        "maximum_world_attitude_deg": 0.055389807954657325,
+        "peak_extra_motor_Nm": 1.798724889755249,
+        "absolute_motor_box_excess_Nm": -2.898008108139038,
+        "command_error_Nm": 8.342541990558061e-08,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 5,
+        "time_ms": 3.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0002530120313656986,
+          0.0002529964605168522
+        ],
+        "joint_min_margin_rad": 0.4500560760498047,
+        "interval_true_A_rate_m_s": [
+          -0.007056613801126321,
+          -0.007126598348283775
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.002575043962494058,
+          -0.002566754122747193
+        ],
+        "tightened_FK_distance_m": [
+          0.00022571311329892918,
+          0.00022568820097597464
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": 0.9687920310983232,
+          "right_leg": 0.9682129891475257,
+          "alphaL_upper": 10.199737167867413,
+          "betaL_lower": 13.50572548645806,
+          "alphaR_upper": 10.192482531292494,
+          "betaR_lower": 13.496445469882303
+        },
+        "maximum_world_attitude_deg": 0.055635888282509545,
+        "peak_extra_motor_Nm": 1.7986477613449097,
+        "absolute_motor_box_excess_Nm": -3.006799340248108,
+        "command_error_Nm": 6.921599093878683e-08,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 6,
+        "time_ms": 3.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0002502925973009995,
+          0.00025027702683343145
+        ],
+        "joint_min_margin_rad": 0.4500492811203003,
+        "interval_true_A_rate_m_s": [
+          -0.0054388681293982,
+          -0.0054388673668415155
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.001859064868155519,
+          -0.0018532701001410766
+        ],
+        "tightened_FK_distance_m": [
+          0.0002247825058739199,
+          0.00022475759441254007
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": 1.4172695174876568,
+          "right_leg": 1.412372185308726,
+          "alphaL_upper": 13.60857642548001,
+          "betaL_lower": 20.704997823801634,
+          "alphaR_upper": 13.559287884047116,
+          "betaR_lower": 20.63473857317643
+        },
+        "maximum_world_attitude_deg": 0.05557546709996277,
+        "peak_extra_motor_Nm": 1.7985845804214478,
+        "absolute_motor_box_excess_Nm": -3.113006830215454,
+        "command_error_Nm": 5.198923647142806e-08,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 7,
+        "time_ms": 4.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0002485017973904574,
+          0.0002484862271813215
+        ],
+        "joint_min_margin_rad": 0.4500495195388794,
+        "interval_true_A_rate_m_s": [
+          -0.0035815998210841915,
+          -0.0035815993042198624
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.0009164687013940515,
+          -0.0009132613110022213
+        ],
+        "tightened_FK_distance_m": [
+          0.0002243244282098138,
+          0.00022429951731638243
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": 1.8775046307576035,
+          "right_leg": 1.8723768796996398,
+          "alphaL_upper": 17.29133927388453,
+          "betaL_lower": 27.889441940861555,
+          "alphaR_upper": 17.237979546183695,
+          "betaR_lower": 27.81882432362399
+        },
+        "maximum_world_attitude_deg": 0.05523081590163695,
+        "peak_extra_motor_Nm": 1.7985419034957886,
+        "absolute_motor_box_excess_Nm": -3.2131811380386353,
+        "command_error_Nm": 9.865920036489229e-08,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 8,
+        "time_ms": 4.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0002477244035581083,
+          0.0002476827818209265
+        ],
+        "joint_min_margin_rad": 0.45005834102630615,
+        "interval_true_A_rate_m_s": [
+          -0.0015547876646981873,
+          -0.0016068907207900107
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.00023679424373035352,
+          0.0002436265636620447
+        ],
+        "tightened_FK_distance_m": [
+          0.0002244433122437366,
+          0.00022441840155941573
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": 2.304653791683046,
+          "right_leg": 2.3119165250373865,
+          "alphaL_upper": 20.79648565371769,
+          "betaL_upper": -34.48489748050762,
+          "alphaR_upper": 20.87385294717946,
+          "betaR_upper": -34.58130910421174
+        },
+        "maximum_world_attitude_deg": 0.054622478625504484,
+        "peak_extra_motor_Nm": 1.7985268831253052,
+        "absolute_motor_box_excess_Nm": -3.305786371231079,
+        "command_error_Nm": 1.1852709658199956e-07,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 9,
+        "time_ms": 5.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0002479930903858396,
+          0.00024795146861109063
+        ],
+        "joint_min_margin_rad": 0.4500774145126343,
+        "interval_true_A_rate_m_s": [
+          0.0005373736554625808,
+          0.0005373735803282376
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.0016111126120540726,
+          0.001612214673289669
+        ],
+        "tightened_FK_distance_m": [
+          0.0002252485898228972,
+          0.00022522367892255469
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 24.67616612293209,
+          "betaL_upper": -41.19987929427487,
+          "alphaR_upper": 24.559154454323856,
+          "betaR_upper": -41.04227397803155
+        },
+        "maximum_world_attitude_deg": 0.05377141276455454,
+        "peak_extra_motor_Nm": 1.798545241355896,
+        "absolute_motor_box_excess_Nm": -3.390455484390259,
+        "command_error_Nm": 9.823211932769027e-08,
+        "contacts_equal_zero": false
+      },
+      {
+        "step": 10,
+        "time_ms": 5.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0002493755332552139,
+          0.00024933391122788917
+        ],
+        "joint_min_margin_rad": 0.45010828971862793,
+        "interval_true_A_rate_m_s": [
+          0.002764885738748557,
+          0.002764885233597081
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.003179158751541447,
+          0.0031796942361769355
+        ],
+        "tightened_FK_distance_m": [
+          0.00022683979269561106,
+          0.00022681488109512027
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -28.10442706829521,
+          "betaL_upper": -47.05084484285791,
+          "alphaR_lower": -28.095008374636166,
+          "betaR_upper": -47.03314970077987
+        },
+        "maximum_world_attitude_deg": 0.05269577102764428,
+        "peak_extra_motor_Nm": 1.7986032962799072,
+        "absolute_motor_box_excess_Nm": -3.4679325819015503,
+        "command_error_Nm": 1.1071692984643278e-07,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 11,
+        "time_ms": 6.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0002518962554623472,
+          0.00025184569226270603
+        ],
+        "joint_min_margin_rad": 0.45015227794647217,
+        "interval_true_A_rate_m_s": [
+          0.0050414444142665715,
+          0.005023562069633725
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.004929564157871194,
+          0.0049311230834041195
+        ],
+        "tightened_FK_distance_m": [
+          0.00022930160195491867,
+          0.00022928166853476806
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -31.410617735320564,
+          "betaL_upper": -52.471596196789044,
+          "alphaR_lower": -31.437542398993344,
+          "betaR_upper": -52.493731636177806
+        },
+        "maximum_world_attitude_deg": 0.05141165452610851,
+        "peak_extra_motor_Nm": 1.798707365989685,
+        "absolute_motor_box_excess_Nm": -3.5383411645889282,
+        "command_error_Nm": 1.0659872873297616e-07,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 12,
+        "time_ms": 6.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00025561401521213833,
+          0.00025556345129246205
+        ],
+        "joint_min_margin_rad": 0.4502105712890625,
+        "interval_true_A_rate_m_s": [
+          0.0074355194995823215,
+          0.007435518059512036
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.006846521009351126,
+          0.006847702018367926
+        ],
+        "tightened_FK_distance_m": [
+          0.00023272377707779613,
+          0.00023270384225475383
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -34.47641020822414,
+          "betaL_upper": -57.36598266743111,
+          "alphaR_lower": -34.470971710976876,
+          "betaR_upper": -57.35334652917393
+        },
+        "maximum_world_attitude_deg": 0.04993338490156911,
+        "peak_extra_motor_Nm": 1.7988622188568115,
+        "absolute_motor_box_excess_Nm": -3.6025274991989136,
+        "command_error_Nm": 1.0997979638105448e-07,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 13,
+        "time_ms": 7.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00026053625190373964,
+          0.0002604856870149913
+        ],
+        "joint_min_margin_rad": 0.45028436183929443,
+        "interval_true_A_rate_m_s": [
+          0.009844473383202601,
+          0.009844471445058511
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.008914016663303444,
+          0.008914785172095544
+        ],
+        "tightened_FK_distance_m": [
+          0.00023718125219338127,
+          0.00023716131546734731
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -37.27971134980263,
+          "betaL_upper": -61.744529051147715,
+          "alphaR_lower": -37.27098733958912,
+          "betaR_upper": -61.73353176664534
+        },
+        "maximum_world_attitude_deg": 0.04827403852666963,
+        "peak_extra_motor_Nm": 1.7990729808807373,
+        "absolute_motor_box_excess_Nm": -3.6611655354499817,
+        "command_error_Nm": 1.1672236444049133e-07,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 14,
+        "time_ms": 7.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0002666875321282597,
+          0.0002666630185816643
+        ],
+        "joint_min_margin_rad": 0.4503746032714844,
+        "interval_true_A_rate_m_s": [
+          0.0123025604490401,
+          0.012354663133345989
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.011117898247420693,
+          0.011116055437048869
+        ],
+        "tightened_FK_distance_m": [
+          0.0002427441291957554,
+          0.00024271921622794168
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -39.86092543355912,
+          "betaL_upper": -65.65428639071196,
+          "alphaR_lower": -39.808950933451186,
+          "betaR_upper": -65.5812998972757
+        },
+        "maximum_world_attitude_deg": 0.04644444100081496,
+        "peak_extra_motor_Nm": 1.7993438243865967,
+        "absolute_motor_box_excess_Nm": -3.7148345708847046,
+        "command_error_Nm": 7.293820836196119e-08,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 15,
+        "time_ms": 8.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00027413637486777,
+          0.0002741118601960191
+        ],
+        "joint_min_margin_rad": 0.45048201084136963,
+        "interval_true_A_rate_m_s": [
+          0.014897685479020595,
+          0.014897683228709546
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.013438714217532975,
+          0.013440326444202691
+        ],
+        "tightened_FK_distance_m": [
+          0.0002494627494364364,
+          0.0002494378323541917
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -42.08152475951958,
+          "betaL_upper": -68.97879057870304,
+          "alphaR_lower": -42.15518129869901,
+          "betaR_upper": -69.07069761822943
+        },
+        "maximum_world_attitude_deg": 0.044454814274895074,
+        "peak_extra_motor_Nm": 1.7996788024902344,
+        "absolute_motor_box_excess_Nm": -3.763952136039734,
+        "command_error_Nm": 1.0803356564892397e-07,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 16,
+        "time_ms": 8.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0002828731607183027,
+          0.0002828397040195718
+        ],
+        "joint_min_margin_rad": 0.45060741901397705,
+        "interval_true_A_rate_m_s": [
+          0.01747357170106545,
+          0.017455687647105478
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.015867755345229013,
+          0.015870393604466185
+        ],
+        "tightened_FK_distance_m": [
+          0.0002573925888902938,
+          0.0002573726499415517
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -44.168812007439456,
+          "betaL_upper": -72.00395637308775,
+          "alphaR_lower": -44.19411584989484,
+          "betaR_upper": -72.02773854136672
+        },
+        "maximum_world_attitude_deg": 0.04231403293976701,
+        "peak_extra_motor_Nm": 1.8000810146331787,
+        "absolute_motor_box_excess_Nm": -3.8091971278190613,
+        "command_error_Nm": 9.958498625728396e-08,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 17,
+        "time_ms": 9.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00029293145574220414,
+          0.00029289799749730727
+        ],
+        "joint_min_margin_rad": 0.45075154304504395,
+        "interval_true_A_rate_m_s": [
+          0.020116590047802863,
+          0.020116586955470916
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.018394022034104764,
+          0.018395817994984808
+        ],
+        "tightened_FK_distance_m": [
+          0.00026658931224793445,
+          0.00026656936878488677
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -46.05933237347624,
+          "betaL_upper": -74.68224225671247,
+          "alphaR_lower": -46.043480194789964,
+          "betaR_upper": -74.65780542352212
+        },
+        "maximum_world_attitude_deg": 0.04003095157460521,
+        "peak_extra_motor_Nm": 1.8005534410476685,
+        "absolute_motor_box_excess_Nm": -3.8508232831954956,
+        "command_error_Nm": 1.103059954488117e-07,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 18,
+        "time_ms": 9.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0003043106221009978,
+          0.00030427716209352473
+        ],
+        "joint_min_margin_rad": 0.4509148597717285,
+        "interval_true_A_rate_m_s": [
+          0.022758332717587315,
+          0.022758329192434923
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.021002305837707184,
+          0.021003709270185238
+        ],
+        "tightened_FK_distance_m": [
+          0.00027708885555534455,
+          0.0002770689069078468
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -47.65493828737557,
+          "betaL_upper": -76.90980187719454,
+          "alphaR_lower": -47.64817581730694,
+          "betaR_upper": -76.89782119271771
+        },
+        "maximum_world_attitude_deg": 0.03761366436390758,
+        "peak_extra_motor_Nm": 1.8010990619659424,
+        "absolute_motor_box_excess_Nm": -3.889288067817688,
+        "command_error_Nm": 7.845246075000034e-08,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 19,
+        "time_ms": 10.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00031706215280565,
+          0.000317028690811863
+        ],
+        "joint_min_margin_rad": 0.45109784603118896,
+        "interval_true_A_rate_m_s": [
+          0.02550306140930436,
+          0.02550305743667658
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.023680269788178422,
+          0.023681011953619404
+        ],
+        "tightened_FK_distance_m": [
+          0.0002889273495856752,
+          0.0002889073950642927
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -49.03113449676751,
+          "betaL_upper": -78.74799845926282,
+          "alphaR_lower": -49.019752849083375,
+          "betaR_upper": -78.72779154606538
+        },
+        "maximum_world_attitude_deg": 0.03506839119054365,
+        "peak_extra_motor_Nm": 1.8017199635505676,
+        "absolute_motor_box_excess_Nm": -3.9247131943702698,
+        "command_error_Nm": 8.006445573194299e-08,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 20,
+        "time_ms": 10.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00033119439687670504,
+          0.0003311609326706877
+        ],
+        "joint_min_margin_rad": 0.4513009786605835,
+        "interval_true_A_rate_m_s": [
+          0.028264488142110133,
+          0.028264483717649336
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.02642113273450343,
+          0.026419637028201964
+        ],
+        "tightened_FK_distance_m": [
+          0.00030213614479553217,
+          0.0003021112001725816
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -50.2782060091272,
+          "betaL_upper": -80.37197299302389,
+          "alphaR_lower": -50.23428017283438,
+          "betaR_upper": -80.30914719483853
+        },
+        "maximum_world_attitude_deg": 0.03240194557582462,
+        "peak_extra_motor_Nm": 1.8024182319641113,
+        "absolute_motor_box_excess_Nm": -3.9573336839675903,
+        "command_error_Nm": 8.57444881763314e-08,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 21,
+        "time_ms": 11.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0003467067854331929,
+          0.0003466733187869053
+        ],
+        "joint_min_margin_rad": 0.4515244960784912,
+        "interval_true_A_rate_m_s": [
+          0.031024777112975688,
+          0.03102477223243527
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.029213096806351632,
+          0.029212348424288617
+        ],
+        "tightened_FK_distance_m": [
+          0.0003167418258484693,
+          0.00031671687155532355
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -51.31736965689305,
+          "betaL_upper": -81.62034173636664,
+          "alphaR_lower": -51.29734368697853,
+          "betaR_upper": -81.6762431078919
+        },
+        "maximum_world_attitude_deg": 0.029620420665982763,
+        "peak_extra_motor_Nm": 1.8031954765319824,
+        "absolute_motor_box_excess_Nm": -3.98770534992218,
+        "command_error_Nm": 9.780563225980643e-08,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 22,
+        "time_ms": 11.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0003636166544721403,
+          0.00036358318515546106
+        ],
+        "joint_min_margin_rad": 0.4517686367034912,
+        "interval_true_A_rate_m_s": [
+          0.033819738077894845,
+          0.033819732737111474
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.032052240024334155,
+          0.0320456718338431
+        ],
+        "tightened_FK_distance_m": [
+          0.00033276120701029963,
+          0.00033273624209355466
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -52.2478754079099,
+          "betaL_upper": -82.7706295030898,
+          "alphaR_lower": -52.132779176963076,
+          "betaR_upper": -82.60778594893065
+        },
+        "maximum_world_attitude_deg": 0.02672951273759193,
+        "peak_extra_motor_Nm": 1.8040530681610107,
+        "absolute_motor_box_excess_Nm": -4.015773504972458,
+        "command_error_Nm": 9.5982956249685e-08,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 23,
+        "time_ms": 12.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0003819324234728694,
+          0.0003818989512536508
+        ],
+        "joint_min_margin_rad": 0.4520336389541626,
+        "interval_true_A_rate_m_s": [
+          0.03663153800145813,
+          0.03663153219637949
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.03491774297038658,
+          0.034913147909507614
+        ],
+        "tightened_FK_distance_m": [
+          0.00035021630522305656,
+          0.00035019132871418155
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -52.76968329755744,
+          "betaL_upper": -83.31538307599656,
+          "alphaR_lower": -52.8133080039157,
+          "betaR_upper": -83.36620623004579
+        },
+        "maximum_world_attitude_deg": 0.023733897533787716,
+        "peak_extra_motor_Nm": 1.8049920201301575,
+        "absolute_motor_box_excess_Nm": -4.041787356138229,
+        "command_error_Nm": 1.120074371030455e-07,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 24,
+        "time_ms": 12.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00040167147747834087,
+          0.0004016380021224786
+        ],
+        "joint_min_margin_rad": 0.4523196220397949,
+        "interval_true_A_rate_m_s": [
+          0.03947810801094298,
+          0.039478101737655535
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.037816819243488106,
+          0.037815899083471924
+        ],
+        "tightened_FK_distance_m": [
+          0.00036911936928767195,
+          0.00036909438020998984
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -53.46553791032222,
+          "betaL_upper": -84.0116062248348,
+          "alphaR_lower": -53.54540428085685,
+          "betaR_upper": -84.10731528988876
+        },
+        "maximum_world_attitude_deg": 0.020639037870589683,
+        "peak_extra_motor_Nm": 1.8060135245323181,
+        "absolute_motor_box_excess_Nm": -4.065885990858078,
+        "command_error_Nm": 8.987729982479209e-08,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 25,
+        "time_ms": 13.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0004228512270867124,
+          0.00042281774835820074
+        ],
+        "joint_min_margin_rad": 0.45262670516967773,
+        "interval_true_A_rate_m_s": [
+          0.04235949921674309,
+          0.04235949247144433
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.04073955019305446,
+          0.04073688913656487
+        ],
+        "tightened_FK_distance_m": [
+          0.0003894828567506402,
+          0.0003894578541194109
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -53.944869447803526,
+          "betaL_upper": -84.43160654547852,
+          "alphaR_lower": -53.91441246323717,
+          "betaR_upper": -84.37914794054713
+        },
+        "maximum_world_attitude_deg": 0.017449719548775465,
+        "peak_extra_motor_Nm": 1.8071178197860718,
+        "absolute_motor_box_excess_Nm": -4.088402360677719,
+        "command_error_Nm": 9.168534198522593e-08,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 26,
+        "time_ms": 13.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0004454630471944637,
+          0.00044542956485796315
+        ],
+        "joint_min_margin_rad": 0.45295488834381104,
+        "interval_true_A_rate_m_s": [
+          0.045223640215502625,
+          0.04522363299952481
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.0436782356551879,
+          0.043673881354996266
+        ],
+        "tightened_FK_distance_m": [
+          0.0004113144372190773,
+          0.0004112894200436905
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -54.27198712346498,
+          "betaL_upper": -84.61786624265044,
+          "alphaR_lower": -54.23997836081992,
+          "betaR_upper": -84.56933473941186
+        },
+        "maximum_world_attitude_deg": 0.014170598298242727,
+        "peak_extra_motor_Nm": 1.8083059191703796,
+        "absolute_motor_box_excess_Nm": -4.109213203191757,
+        "command_error_Nm": 1.1283000866946225e-07,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 27,
+        "time_ms": 14.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0004695072751857987,
+          0.0004694737890067746
+        ],
+        "joint_min_margin_rad": 0.4533041715621948,
+        "interval_true_A_rate_m_s": [
+          0.048088455982669975,
+          0.04808844829762293
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.046627648735067986,
+          0.04662510388556524
+        ],
+        "tightened_FK_distance_m": [
+          0.00043461697652409745,
+          0.0004345919438130545
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -54.503392307449474,
+          "betaL_upper": -84.63271227562494,
+          "alphaR_lower": -54.543085433872704,
+          "betaR_upper": -84.6794218236067
+        },
+        "maximum_world_attitude_deg": 0.010805727034848767,
+        "peak_extra_motor_Nm": 1.8095776438713074,
+        "absolute_motor_box_excess_Nm": -4.128536432981491,
+        "command_error_Nm": 8.111990368320221e-08,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 28,
+        "time_ms": 14.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0004950013940061004,
+          0.0004949679037481586
+        ],
+        "joint_min_margin_rad": 0.4536745548248291,
+        "interval_true_A_rate_m_s": [
+          0.05098823764060345,
+          0.05098822948276793
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.04958314449536619,
+          0.04958062779700828
+        ],
+        "tightened_FK_distance_m": [
+          0.00045940355103339756,
+          0.00045937349288985394
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -54.63765202541018,
+          "betaL_upper": -84.50521302887152,
+          "alphaR_lower": -54.64063164732792,
+          "betaR_upper": -84.50412473941364
+        },
+        "maximum_world_attitude_deg": 0.007358655081407851,
+        "peak_extra_motor_Nm": 1.810933232307434,
+        "absolute_motor_box_excess_Nm": -4.146436542272568,
+        "command_error_Nm": 9.666298050881039e-08,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 29,
+        "time_ms": 15.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.000521954729279045,
+          0.000521921234706707
+        ],
+        "joint_min_margin_rad": 0.45406603813171387,
+        "interval_true_A_rate_m_s": [
+          0.053906670545889046,
+          0.05390666191709692
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.05254483570087515,
+          0.052542230505093074
+        ],
+        "tightened_FK_distance_m": [
+          0.0004856623939981662,
+          0.0004856323141154566
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -54.770963564338935,
+          "betaL_upper": -84.36778988986671,
+          "alphaR_lower": -54.770784356020336,
+          "betaR_upper": -84.36395869258526
+        },
+        "maximum_world_attitude_deg": 0.0038340911062252395,
+        "peak_extra_motor_Nm": 1.8123732805252075,
+        "absolute_motor_box_excess_Nm": -4.16309329867363,
+        "command_error_Nm": 8.026640174740862e-08,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 30,
+        "time_ms": 15.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0005503326795905927,
+          0.0005502991804717805
+        ],
+        "joint_min_margin_rad": 0.4543670415878296,
+        "interval_true_A_rate_m_s": [
+          0.056755900623095545,
+          0.05675589153014693
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.05550603210580947,
+          0.055500243707224735
+        ],
+        "tightened_FK_distance_m": [
+          0.0005134019524683102,
+          0.000513371849617376
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -54.77047029814264,
+          "betaL_upper": -84.02874982518199,
+          "alphaR_lower": -54.707765775864154,
+          "betaR_upper": -83.94039771366204
+        },
+        "maximum_world_attitude_deg": 0.0003341859311878815,
+        "peak_extra_motor_Nm": 1.8138970136642456,
+        "absolute_motor_box_excess_Nm": -4.178708642721176,
+        "command_error_Nm": 7.659256606729059e-08,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 31,
+        "time_ms": 16.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0005801706785541899,
+          0.0005801282339585323
+        ],
+        "joint_min_margin_rad": 0.4546276330947876,
+        "interval_true_A_rate_m_s": [
+          0.05967599792719436,
+          0.0596581069735036
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.058455621954763025,
+          0.05845643729665567
+        ],
+        "tightened_FK_distance_m": [
+          0.0005426158162113597,
+          0.00054259071013034
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -54.54425109473592,
+          "betaL_upper": -83.37230474411675,
+          "alphaR_lower": -54.67990472150978,
+          "betaR_upper": -83.55013169193174
+        },
+        "maximum_world_attitude_deg": 0.0034351249035517156,
+        "peak_extra_motor_Nm": 1.8155048489570618,
+        "absolute_motor_box_excess_Nm": -4.193014234304428,
+        "command_error_Nm": 1.0504550340684204e-07,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 32,
+        "time_ms": 16.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0006114341646130672,
+          0.0006113917150070286
+        ],
+        "joint_min_margin_rad": 0.4549018144607544,
+        "interval_true_A_rate_m_s": [
+          0.0625269721177546,
+          0.0625269620969926
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.06140153449728711,
+          0.0614004761014505
+        ],
+        "tightened_FK_distance_m": [
+          0.000573302754735162,
+          0.0005732776273439248
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -54.46975910942892,
+          "betaL_upper": -82.92601273961446,
+          "alphaR_lower": -54.434480142557724,
+          "betaR_upper": -82.87248305251752
+        },
+        "maximum_world_attitude_deg": 0.007173471215704141,
+        "peak_extra_motor_Nm": 1.8171959519386292,
+        "absolute_motor_box_excess_Nm": -4.206386178731918,
+        "command_error_Nm": 5.711258155294274e-08,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 33,
+        "time_ms": 17.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0006441414853067817,
+          0.0006440990304612398
+        ],
+        "joint_min_margin_rad": 0.45518946647644043,
+        "interval_true_A_rate_m_s": [
+          0.06541464138742903,
+          0.06541463090842248
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.06433498518518987,
+          0.06433459523114789
+        ],
+        "tightened_FK_distance_m": [
+          0.0006054516483795801,
+          0.000605426498665838
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -54.22335389277347,
+          "betaL_upper": -82.22116446894324,
+          "alphaR_lower": -54.23825860021673,
+          "betaR_upper": -82.23807769483548
+        },
+        "maximum_world_attitude_deg": 0.010977087054489966,
+        "peak_extra_motor_Nm": 1.8189699053764343,
+        "absolute_motor_box_excess_Nm": -4.218977302312851,
+        "command_error_Nm": 1.0442803533017297e-07,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 34,
+        "time_ms": 17.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0006782670532417129,
+          0.0006782245929310565
+        ],
+        "joint_min_margin_rad": 0.4554905891418457,
+        "interval_true_A_rate_m_s": [
+          0.06825113586986231,
+          0.06825112493963337
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.06725566355708287,
+          0.06725575446309441
+        ],
+        "tightened_FK_distance_m": [
+          0.0006390615771030016,
+          0.0006390364040557854
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -53.96576859765702,
+          "betaL_upper": -81.49933825222958,
+          "alphaR_lower": -53.97781414197027,
+          "betaR_upper": -81.51017430376659
+        },
+        "maximum_world_attitude_deg": 0.014843116799164021,
+        "peak_extra_motor_Nm": 1.8208265900611877,
+        "absolute_motor_box_excess_Nm": -4.230631202459335,
+        "command_error_Nm": 9.419609359184733e-08,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 35,
+        "time_ms": 18.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0007138113703611948,
+          0.0007137689043610757
+        ],
+        "joint_min_margin_rad": 0.4558051824569702,
+        "interval_true_A_rate_m_s": [
+          0.07108863423896383,
+          0.07108862286003825
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.07016156038927157,
+          0.07015703786734723
+        ],
+        "tightened_FK_distance_m": [
+          0.0006741267412249545,
+          0.0006740965006250692
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -53.65646686975454,
+          "betaL_upper": -80.72165170439187,
+          "alphaR_lower": -53.566947777937585,
+          "betaR_upper": -80.59361052751503
+        },
+        "maximum_world_attitude_deg": 0.018768773197406892,
+        "peak_extra_motor_Nm": 1.8227651715278625,
+        "absolute_motor_box_excess_Nm": -4.241561859846115,
+        "command_error_Nm": 8.895579917123086e-08,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 36,
+        "time_ms": 18.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0007507667618068398,
+          0.0007507242898963373
+        ],
+        "joint_min_margin_rad": 0.45613300800323486,
+        "interval_true_A_rate_m_s": [
+          0.07391078289128994,
+          0.07391077107052335
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.07304259510972852,
+          0.07304296533896093
+        ],
+        "tightened_FK_distance_m": [
+          0.0007106263436259123,
+          0.0007105960718893505
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -53.15393685786695,
+          "betaL_upper": -79.6506114878013,
+          "alphaR_lower": -53.25573792095823,
+          "betaR_upper": -79.78027443160441
+        },
+        "maximum_world_attitude_deg": 0.022752336220699807,
+        "peak_extra_motor_Nm": 1.8247852325439453,
+        "absolute_motor_box_excess_Nm": -4.251771315932274,
+        "command_error_Nm": 9.310515602933833e-08,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 37,
+        "time_ms": 19.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.000789116623710881,
+          0.0007890652049765412
+        ],
+        "joint_min_margin_rad": 0.45647406578063965,
+        "interval_true_A_rate_m_s": [
+          0.07669972380808243,
+          0.07668183016040775
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.07590444787502561,
+          0.07590828429846258
+        ],
+        "tightened_FK_distance_m": [
+          0.0007485548154095449,
+          0.0007485295598253376
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -52.75605283997507,
+          "betaL_upper": -78.73317242060698,
+          "alphaR_lower": -52.826991662446346,
+          "betaR_upper": -78.82542950539967
+        },
+        "maximum_world_attitude_deg": 0.02679119788020282,
+        "peak_extra_motor_Nm": 1.8268853724002838,
+        "absolute_motor_box_excess_Nm": -4.261261686682701,
+        "command_error_Nm": 3.852462304720916e-08,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 38,
+        "time_ms": 19.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0008288615046796316,
+          0.0008288100796020742
+        ],
+        "joint_min_margin_rad": 0.45682811737060547,
+        "interval_true_A_rate_m_s": [
+          0.07948976193750124,
+          0.079489749251066
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.07874540856062526,
+          0.07875045605285645
+        ],
+        "tightened_FK_distance_m": [
+          0.000787906710714285,
+          0.0007878814268530025
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -52.31595518986091,
+          "betaL_upper": -77.76728332561663,
+          "alphaR_lower": -52.34100832514281,
+          "betaR_upper": -77.79924023435954
+        },
+        "maximum_world_attitude_deg": 0.030882778536087223,
+        "peak_extra_motor_Nm": 1.8290653228759766,
+        "absolute_motor_box_excess_Nm": -4.270329222083092,
+        "command_error_Nm": 1.0798248983867609e-07,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 39,
+        "time_ms": 20.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0008699937687582648,
+          0.0008699333964292677
+        ],
+        "joint_min_margin_rad": 0.4571951627731323,
+        "interval_true_A_rate_m_s": [
+          0.08226452815726648,
+          0.082246633654387
+        ],
+        "instantaneous_FK_rate_m_s": [
+          0.08156137588771042,
+          0.08156784585200935
+        ],
+        "tightened_FK_distance_m": [
+          0.000828661520304184,
+          0.0008286412663796465
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_lower": -51.796319403047065,
+          "betaL_upper": -76.68019450533464,
+          "alphaR_lower": -51.826621969807675,
+          "betaR_upper": -76.7162120542408
+        },
+        "maximum_world_attitude_deg": 0.03502529229354026,
+        "peak_extra_motor_Nm": 1.831324189901352,
+        "absolute_motor_box_excess_Nm": -4.278790101408958,
+        "command_error_Nm": 1.1460916504724139e-07,
+        "contacts_equal_zero": true
+      }
+    ],
+    [
+      {
+        "step": 0,
+        "time_ms": 0.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0002751210080702837,
+          0.0002751493685121259
+        ],
+        "joint_min_margin_rad": 0.4501335620880127,
+        "interval_true_A_rate_m_s": [
+          -0.007999908555517132,
+          -0.007999907778971638
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.0034008136748600606,
+          -0.0033987504368471755
+        ],
+        "tightened_FK_distance_m": [
+          0.00023368022248791798,
+          0.0002336353990731881
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": 0.00513463884281868,
+          "right_leg": 0.0007669585175688401,
+          "alphaL_upper": 0.041789206087176,
+          "betaL_lower": 0.6630713162566507,
+          "alphaR_upper": 6.463786228362491e-05,
+          "betaR_lower": 0.5987909542033459
+        },
+        "maximum_world_attitude_deg": 0.05115318169532407,
+        "peak_extra_motor_Nm": 1.7990623712539673,
+        "absolute_motor_box_excess_Nm": -2.9717191457748413,
+        "command_error_Nm": 1.100904536421865e-07,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 1,
+        "time_ms": 1.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00026969812757864087,
+          0.00026971754792889935
+        ],
+        "joint_min_margin_rad": 0.45010340213775635,
+        "interval_true_A_rate_m_s": [
+          -0.010845760983285713,
+          -0.010863641166453109
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.006739289473883499,
+          -0.006735860372720103
+        ],
+        "tightened_FK_distance_m": [
+          0.000230305848274313,
+          0.00023027098100157728
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -6.701698094622369,
+          "right_leg": -6.698941092455114,
+          "alphaL_upper": -98.81797303184261,
+          "betaL_lower": -61.14142108671867,
+          "alphaR_upper": -98.78950062348197,
+          "betaR_lower": -61.10455824401488
+        },
+        "maximum_world_attitude_deg": 0.053796298945439566,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.2463182508945465,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 2,
+        "time_ms": 1.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0002630480624927767,
+          0.0002630674836394814
+        ],
+        "joint_min_margin_rad": 0.45005977153778076,
+        "interval_true_A_rate_m_s": [
+          -0.013300130171728375,
+          -0.01330012857883589
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.009781618264108042,
+          -0.00977830353269096
+        ],
+        "tightened_FK_distance_m": [
+          0.00022541411003185286,
+          0.00022537924841308055
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -6.183261291455807,
+          "right_leg": -6.18340462816152,
+          "alphaL_upper": -91.86315841568663,
+          "betaL_lower": -53.96981581500841,
+          "alphaR_upper": -91.8663665790931,
+          "betaR_lower": -53.97221765960497
+        },
+        "maximum_world_attitude_deg": 0.05731119956981425,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.237043768167496,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 3,
+        "time_ms": 2.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00025527053255340604,
+          0.00025528101397773173
+        ],
+        "joint_min_margin_rad": 0.45000362396240234,
+        "interval_true_A_rate_m_s": [
+          -0.015555059878741284,
+          -0.015572939323499346
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.01255444270619607,
+          -0.012546333075017353
+        ],
+        "tightened_FK_distance_m": [
+          0.00021913504778958804,
+          0.0002191051714566804
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -5.757880620359766,
+          "right_leg": -5.748179811495817,
+          "alphaL_upper": -82.78243197366722,
+          "betaL_lower": -50.222983478730356,
+          "alphaR_upper": -82.68400999565114,
+          "betaR_lower": -50.091548672351955
+        },
+        "maximum_world_attitude_deg": 0.061464289825841734,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.056040704250336,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 4,
+        "time_ms": 2.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0002464652671474582,
+          0.0002464668090086247
+        ],
+        "joint_min_margin_rad": 0.44993579387664795,
+        "interval_true_A_rate_m_s": [
+          -0.017610530811895675,
+          -0.017628409938214018
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.015073852022106725,
+          -0.015061190587432851
+        ],
+        "tightened_FK_distance_m": [
+          0.00021159381959060075,
+          0.0002115738964720153
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -5.398446252443867,
+          "right_leg": -5.3889271615933545,
+          "alphaL_upper": -74.32683879611851,
+          "betaL_lower": -46.632487458239915,
+          "alphaR_upper": -74.23265387625011,
+          "betaR_lower": -46.508172011047584
+        },
+        "maximum_world_attitude_deg": 0.06604245318712533,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.8929754495620728,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 5,
+        "time_ms": 3.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00023672382784827029,
+          0.0002367164302903707
+        ],
+        "joint_min_margin_rad": 0.44985735416412354,
+        "interval_true_A_rate_m_s": [
+          -0.01948287859837583,
+          -0.01950075743650803
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.017351792657949252,
+          -0.017341365164594703
+        ],
+        "tightened_FK_distance_m": [
+          0.00020291560717462898,
+          0.0002029006655205622
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -5.0928086148938645,
+          "right_leg": -5.096425356760568,
+          "alphaL_upper": -66.86929158046725,
+          "betaL_lower": -42.62058049373727,
+          "alphaR_upper": -66.91401379133472,
+          "betaR_lower": -42.682669571429514
+        },
+        "maximum_world_attitude_deg": 0.07087716944648602,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.777708649635315,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 6,
+        "time_ms": 3.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00022612960443149643,
+          0.00022612220828009677
+        ],
+        "joint_min_margin_rad": 0.44976937770843506,
+        "interval_true_A_rate_m_s": [
+          -0.021188446833547703,
+          -0.02118844402054787
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.019400703845591713,
+          -0.019391768477306805
+        ],
+        "tightened_FK_distance_m": [
+          0.00019321563970056788,
+          0.00019320070322805072
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -4.839718754367651,
+          "right_leg": -4.84186616064131,
+          "alphaL_upper": -60.34129240648098,
+          "betaL_lower": -38.27524399072511,
+          "alphaR_upper": -60.37031115311768,
+          "betaR_lower": -38.317607091971425
+        },
+        "maximum_world_attitude_deg": 0.07584160417155032,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.706010580062866,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 7,
+        "time_ms": 4.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00021483595974101932,
+          0.00021482856510995907
+        ],
+        "joint_min_margin_rad": 0.4496729373931885,
+        "interval_true_A_rate_m_s": [
+          -0.022587289380954223,
+          -0.022587286340275403
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.0212292500865714,
+          -0.02122257821553275
+        ],
+        "tightened_FK_distance_m": [
+          0.00018259917012585048,
+          0.00018258423932192392
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -4.631100875606122,
+          "right_leg": -4.634806111889748,
+          "alphaL_upper": -54.501865628604065,
+          "betaL_lower": -33.65328833496711,
+          "alphaR_upper": -54.54650215390622,
+          "betaR_lower": -33.717082034682896
+        },
+        "maximum_world_attitude_deg": 0.08084159961124184,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.6682907938957214,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 8,
+        "time_ms": 4.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00020292703474990292,
+          0.00020291070104590248
+        ],
+        "joint_min_margin_rad": 0.44956934452056885,
+        "interval_true_A_rate_m_s": [
+          -0.023817849982232797,
+          -0.023835728128113187
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.022840791044051213,
+          -0.02283414591613136
+        ],
+        "tightened_FK_distance_m": [
+          0.0001711763574006885,
+          0.00017116640303088782
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -4.457153950795206,
+          "right_leg": -4.4565327299783855,
+          "alphaL_upper": -49.09519229988727,
+          "betaL_lower": -28.75288654081532,
+          "alphaR_upper": -49.0938830123822,
+          "betaR_lower": -28.755148031466558
+        },
+        "maximum_world_attitude_deg": 0.08580939080807595,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.6555493474006653,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 9,
+        "time_ms": 5.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00019048695759252277,
+          0.0001904706256008748
+        ],
+        "joint_min_margin_rad": 0.4494597911834717,
+        "interval_true_A_rate_m_s": [
+          -0.024880154314760317,
+          -0.024880150890055353
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.02424023074712552,
+          -0.024236335377554808
+        ],
+        "tightened_FK_distance_m": [
+          0.00015905231553825605,
+          0.00015904236571383335
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -4.322751462547189,
+          "right_leg": -4.3274529913750825,
+          "alphaL_upper": -44.05814323219828,
+          "betaL_lower": -23.70862980097155,
+          "alphaR_upper": -44.11381100818162,
+          "betaR_lower": -23.784828894036327
+        },
+        "maximum_world_attitude_deg": 0.09069706436005426,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.6608532071113586,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 10,
+        "time_ms": 5.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00017760878092420995,
+          0.00017759245072342111
+        ],
+        "joint_min_margin_rad": 0.44934558868408203,
+        "interval_true_A_rate_m_s": [
+          -0.025756353336625626,
+          -0.02575634975490737
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.025438726285989793,
+          -0.025438661286759694
+        ],
+        "tightened_FK_distance_m": [
+          0.00014633205157069218,
+          0.0001463221065373953
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -4.244146790883065,
+          "right_leg": -4.251329431311449,
+          "alphaL_upper": -39.4401358767072,
+          "betaL_lower": -18.769275851235115,
+          "alphaR_upper": -39.51727971487021,
+          "betaR_lower": -18.876038888296474
+        },
+        "maximum_world_attitude_deg": 0.09547151947765946,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.6785985827445984,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 11,
+        "time_ms": 6.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00016440341968960992,
+          0.00016438709134618257
+        ],
+        "joint_min_margin_rad": 0.4492279291152954,
+        "interval_true_A_rate_m_s": [
+          -0.026410722469200065,
+          -0.02641071875447709
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.02644607474850747,
+          -0.02644505745690553
+        ],
+        "tightened_FK_distance_m": [
+          0.00013310556611669067,
+          0.00013309562609671688
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -4.225862517629006,
+          "right_leg": -4.224096918172052,
+          "alphaL_upper": -35.14757812907237,
+          "betaL_lower": -13.962367576219986,
+          "alphaR_upper": -35.12562981872128,
+          "betaR_lower": -13.93856319191919
+        },
+        "maximum_world_attitude_deg": 0.1001113050786937,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.7046164870262146,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 12,
+        "time_ms": 6.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.0001509207373033561,
+          0.00015090441087539652
+        ],
+        "joint_min_margin_rad": 0.4491080045700073,
+        "interval_true_A_rate_m_s": [
+          -0.02696536477250766,
+          -0.026965360941572092
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.027269080715605958,
+          -0.02727073081006038
+        ],
+        "tightened_FK_distance_m": [
+          0.00011946771018572877,
+          0.00011945281882855363
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -4.273230652422853,
+          "right_leg": -4.278559502133824,
+          "alphaL_upper": -31.075824101428314,
+          "betaL_lower": -9.24758121559848,
+          "alphaR_upper": -31.130099757103267,
+          "betaR_lower": -9.321701254118928
+        },
+        "maximum_world_attitude_deg": 0.10460304758263815,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.735892176628113,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 13,
+        "time_ms": 7.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00013724556560811008,
+          0.00013722924114355217
+        ],
+        "joint_min_margin_rad": 0.4489867687225342,
+        "interval_true_A_rate_m_s": [
+          -0.027350343390492027,
+          -0.0273503394636887
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.02792747357189069,
+          -0.02792812688250282
+        ],
+        "tightened_FK_distance_m": [
+          0.00010549833289815003,
+          0.00010548344877936533
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -4.428935271300443,
+          "right_leg": -4.427706374151296,
+          "alphaL_upper": -27.47375217285682,
+          "betaL_lower": -4.997447367404908,
+          "alphaR_upper": -27.45145999132494,
+          "betaR_lower": -4.971868702736838
+        },
+        "maximum_world_attitude_deg": 0.10893901596255771,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.770045816898346,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 14,
+        "time_ms": 7.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.000123419570660116,
+          0.00012339430750432645
+        ],
+        "joint_min_margin_rad": 0.4488654136657715,
+        "interval_true_A_rate_m_s": [
+          -0.02765198989598816,
+          -0.027669867278451443
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.028424032729589647,
+          -0.028423892361689244
+        ],
+        "tightened_FK_distance_m": [
+          9.128211292240663e-05,
+          9.127219359522754e-05
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -4.689592746238566,
+          "right_leg": -4.688699946450894,
+          "alphaL_upper": -23.944229212558756,
+          "betaL_lower": -0.7941897700561624,
+          "alphaR_upper": -23.9254430756052,
+          "betaR_lower": -0.7745946814866258
+        },
+        "maximum_world_attitude_deg": 0.11311636327106166,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.8054739832878113,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 15,
+        "time_ms": 8.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          0.00010951044573895286,
+          0.00010947624392432243
+        ],
+        "joint_min_margin_rad": 0.4487447738647461,
+        "interval_true_A_rate_m_s": [
+          -0.02781824984232628,
+          -0.02783612716000805
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.028771964305886112,
+          -0.028772526897855706
+        ],
+        "tightened_FK_distance_m": [
+          7.68887447993315e-05,
+          7.688378568303334e-05
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -5.121295533302346,
+          "right_leg": -5.123138689161881,
+          "alphaL_upper": -20.708377704479386,
+          "betaL_lower": 3.081387450802272,
+          "alphaR_upper": -20.72200693320348,
+          "betaR_lower": 3.061410337121494
+        },
+        "maximum_world_attitude_deg": 0.11713544880779458,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.8411280512809753,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 16,
+        "time_ms": 8.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          9.555982429242105e-05,
+          9.552562454069602e-05
+        ],
+        "joint_min_margin_rad": 0.4486258029937744,
+        "interval_true_A_rate_m_s": [
+          -0.027901242893063616,
+          -0.02790123876725281
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.02898522904842451,
+          -0.028986251125146828
+        ],
+        "tightened_FK_distance_m": [
+          6.239275859751359e-05,
+          6.23878023695994e-05
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -5.809800678927664,
+          "right_leg": -5.8112774162622705,
+          "alphaL_upper": -17.76775319578486,
+          "betaL_lower": 6.593916094426417,
+          "alphaR_upper": -17.775547486851718,
+          "betaR_lower": 6.579566307564874
+        },
+        "maximum_world_attitude_deg": 0.1209985604042996,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.876073956489563,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 17,
+        "time_ms": 9.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          8.162720535333234e-05,
+          8.159300768349753e-05
+        ],
+        "joint_min_margin_rad": 0.4485093355178833,
+        "interval_true_A_rate_m_s": [
+          -0.027865237878177407,
+          -0.027865233714396975
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.029072096866105606,
+          -0.029072514127261175
+        ],
+        "tightened_FK_distance_m": [
+          4.785371275953343e-05,
+          4.784875946850609e-05
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -6.906436047033946,
+          "right_leg": -6.906236139685343,
+          "alphaL_upper": -14.98041607476009,
+          "betaL_lower": 9.873933536154995,
+          "alphaR_upper": -14.96472985962052,
+          "betaR_lower": 9.887355910781222
+        },
+        "maximum_world_attitude_deg": 0.1247092198625997,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.9097646474838257,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 18,
+        "time_ms": 9.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          6.777207170038935e-05,
+          6.77378761246572e-05
+        ],
+        "joint_min_margin_rad": 0.44839608669281006,
+        "interval_true_A_rate_m_s": [
+          -0.027710267305885994,
+          -0.027710263117680656
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.02904636402800133,
+          -0.029045200126655332
+        ],
+        "tightened_FK_distance_m": [
+          3.332612185991224e-05,
+          3.332117154690551e-05
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -8.779477289902774,
+          "right_leg": -8.777482664438027,
+          "alphaL_upper": -12.47760772065057,
+          "betaL_lower": 12.78547203725219,
+          "alphaR_upper": -12.442064830342291,
+          "betaR_lower": 12.826137608591026
+        },
+        "maximum_world_attitude_deg": 0.1282718180509041,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.9418865442276,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 19,
+        "time_ms": 10.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          5.400181467826726e-05,
+          5.395868050894759e-05
+        ],
+        "joint_min_margin_rad": 0.448286771774292,
+        "interval_true_A_rate_m_s": [
+          -0.02754051404424418,
+          -0.027558391231419233
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.028915059392168603,
+          -0.028913487414602895
+        ],
+        "tightened_FK_distance_m": [
+          1.886440923615329e-05,
+          1.8864407287045748e-05
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -12.395498185206689,
+          "right_leg": -12.39554800379378,
+          "alphaL_upper": -10.109025355588374,
+          "betaL_lower": 15.503204871572343,
+          "alphaR_upper": -10.09849741812594,
+          "betaR_lower": 15.512648290784314
+        },
+        "maximum_world_attitude_deg": 0.13169168755019053,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -3.9722968339920044,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 20,
+        "time_ms": 10.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          4.03498536831054e-05,
+          4.0323817302928555e-05
+        ],
+        "joint_min_margin_rad": 0.44818198680877686,
+        "interval_true_A_rate_m_s": [
+          -0.02730392199032372,
+          -0.027269726412038064
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.028686520383440595,
+          -0.028685298083859324
+        ],
+        "tightened_FK_distance_m": [
+          4.517966115572981e-06,
+          4.522907699131996e-06
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -21.70318815325196,
+          "right_leg": -21.70148036248752,
+          "alphaL_upper": -7.888098792354428,
+          "betaL_lower": 17.976477788082953,
+          "alphaR_upper": -7.893896453644697,
+          "betaR_lower": 17.965717672352707
+        },
+        "maximum_world_attitude_deg": 0.13497395251949876,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.000930190086365,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 21,
+        "time_ms": 11.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          2.6875630826719843e-05,
+          2.6849595497993595e-05
+        ],
+        "joint_min_margin_rad": 0.44808220863342285,
+        "interval_true_A_rate_m_s": [
+          -0.026948445712771107,
+          -0.02694844360986992
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.028372907677423176,
+          -0.028371529713755093
+        ],
+        "tightened_FK_distance_m": [
+          -9.6688378820865e-06,
+          -9.663898081615052e-06
+        ],
+        "actual_constant_acceleration_slack": {
+          "left_leg": -90.44433540302322,
+          "right_leg": -90.33676995101344,
+          "alphaL_upper": -5.916611903313871,
+          "betaL_lower": 20.121418547404204,
+          "alphaR_upper": -5.9118026408186255,
+          "betaR_lower": 20.124186227081207
+        },
+        "maximum_world_attitude_deg": 0.1381239757164721,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.027633219957352,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 22,
+        "time_ms": 11.5,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          1.3578349951567925e-05,
+          1.3552315671808146e-05
+        ],
+        "joint_min_margin_rad": 0.4479879140853882,
+        "interval_true_A_rate_m_s": [
+          -0.026594561750303836,
+          -0.026594559652370897
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.02798269677485457,
+          -0.027978903483733098
+        ],
+        "tightened_FK_distance_m": [
+          -2.366158217362202e-05,
+          -2.365664411349455e-05
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": -4.094891600591166,
+          "betaL_lower": 22.01441189452759,
+          "alphaR_upper": -4.043051429188861,
+          "betaR_lower": 22.079258617497572
+        },
+        "maximum_world_attitude_deg": 0.14114632297049554,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.052578389644623,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 23,
+        "time_ms": 12.0,
+        "gates": {
+          "geometry": true,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": true,
+        "true_A_margin_m": [
+          5.09277189184032e-07,
+          4.832439532975741e-07
+        ],
+        "joint_min_margin_rad": 0.4477522373199463,
+        "interval_true_A_rate_m_s": [
+          -0.026138145524767786,
+          -0.026138143437021144
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.027523010751801524,
+          -0.02751767529599789
+        ],
+        "tightened_FK_distance_m": [
+          -3.7425897705916196e-05,
+          -3.742096133836536e-05
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": -2.4280061082437543,
+          "betaL_lower": 23.72480166434524,
+          "alphaR_upper": -2.394436193370023,
+          "betaR_lower": 23.76587996525279
+        },
+        "maximum_world_attitude_deg": 0.1440465104992167,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.075748801231384,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 24,
+        "time_ms": 12.5,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -1.2315306686383476e-05,
+          -1.2341338885418773e-05
+        ],
+        "joint_min_margin_rad": 0.4475080966949463,
+        "interval_true_A_rate_m_s": [
+          -0.025649167751135016,
+          -0.025649165677432695
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.026999214455663462,
+          -0.026992305345860133
+        ],
+        "tightened_FK_distance_m": [
+          -5.092746604515208e-05,
+          -5.0922531317247995e-05
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": -0.8591044632259504,
+          "betaL_lower": 25.279810671527663,
+          "alphaR_upper": -0.8240855677696669,
+          "betaR_lower": 25.321045416474604
+        },
+        "maximum_world_attitude_deg": 0.14683010429408924,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.097450286149979,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 25,
+        "time_ms": 13.0,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -2.4870188363376733e-05,
+          -2.4896219534054076e-05
+        ],
+        "joint_min_margin_rad": 0.4472641944885254,
+        "interval_true_A_rate_m_s": [
+          -0.025109763353986514,
+          -0.025109761297270605
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.026417601306578525,
+          -0.026413101874645177
+        ],
+        "tightened_FK_distance_m": [
+          -6.413694936638247e-05,
+          -6.41320162210458e-05
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 0.5968659840829934,
+          "betaL_lower": 26.648496951395924,
+          "alphaR_upper": 0.5483979477548049,
+          "betaR_lower": 26.580750858989575
+        },
+        "maximum_world_attitude_deg": 0.149501573323811,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.117515534162521,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 26,
+        "time_ms": 13.5,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -3.7121221835134666e-05,
+          -3.7147251987931784e-05
+        ],
+        "joint_min_margin_rad": 0.4470207691192627,
+        "interval_true_A_rate_m_s": [
+          -0.024502066943515866,
+          -0.024502064907755416
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.025785723755603555,
+          -0.025786491116289712
+        ],
+        "tightened_FK_distance_m": [
+          -7.703490785014488e-05,
+          -7.702997622722929e-05
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 1.900447624239266,
+          "betaL_lower": 27.808202788778686,
+          "alphaR_upper": 1.7915735306477942,
+          "betaR_lower": 27.66256983714636
+        },
+        "maximum_world_attitude_deg": 0.15206530224006637,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.135973185300827,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 27,
+        "time_ms": 14.0,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -4.906923874876956e-05,
+          -4.909526789495522e-05
+        ],
+        "joint_min_margin_rad": 0.44677817821502686,
+        "interval_true_A_rate_m_s": [
+          -0.02389603382726979,
+          -0.02389603181404687
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.025114291470594474,
+          -0.02511148267665652
+        ],
+        "tightened_FK_distance_m": [
+          -8.959206516079187e-05,
+          -8.958713499609871e-05
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 2.9837858280477145,
+          "betaL_lower": 28.67348113760063,
+          "alphaR_upper": 3.060163059014384,
+          "betaR_lower": 28.77010288298858
+        },
+        "maximum_world_attitude_deg": 0.1545257512389278,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.15313446521759,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 28,
+        "time_ms": 14.5,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -6.068010551149583e-05,
+          -6.0706133664073514e-05
+        ],
+        "joint_min_margin_rad": 0.446536660194397,
+        "interval_true_A_rate_m_s": [
+          -0.023221733525452537,
+          -0.02322173153823659
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.02440147158391503,
+          -0.02439993130653035
+        ],
+        "tightened_FK_distance_m": [
+          -0.00010179395941328672,
+          -0.00010178903064042466
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 4.117898679463683,
+          "betaL_lower": 29.57858980014998,
+          "alphaR_upper": 4.092214581151885,
+          "betaR_lower": 29.54300805671483
+        },
+        "maximum_world_attitude_deg": 0.1568867836020341,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.169072538614273,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 29,
+        "time_ms": 15.0,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -7.195466381047788e-05,
+          -7.198069098346416e-05
+        ],
+        "joint_min_margin_rad": 0.4462965726852417,
+        "interval_true_A_rate_m_s": [
+          -0.022549116597964103,
+          -0.022549114638781287
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.023650438117413596,
+          -0.023653989159287746
+        ],
+        "tightened_FK_distance_m": [
+          -0.00011362121696664628,
+          -0.00011361628951698965
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 5.186937094635107,
+          "betaL_lower": 30.397144905334173,
+          "alphaR_upper": 5.080116878787575,
+          "betaR_lower": 30.257578307167357
+        },
+        "maximum_world_attitude_deg": 0.1591528253795943,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.183794021606445,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 30,
+        "time_ms": 15.5,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -8.287587721339529e-05,
+          -8.290190342159776e-05
+        ],
+        "joint_min_margin_rad": 0.4460580348968506,
+        "interval_true_A_rate_m_s": [
+          -0.021842426805834814,
+          -0.021842424876267197
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.02287540267687567,
+          -0.0228748412285327
+        ],
+        "tightened_FK_distance_m": [
+          -0.00012505939512592778,
+          -0.00012505446892828353
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 5.963764839322986,
+          "betaL_lower": 30.820996098013406,
+          "alphaR_upper": 6.049886649339619,
+          "betaR_lower": 30.933945375410453
+        },
+        "maximum_world_attitude_deg": 0.16132709980131732,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.197494208812714,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 31,
+        "time_ms": 16.0,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -9.340068715413263e-05,
+          -9.343565311045743e-05
+        ],
+        "joint_min_margin_rad": 0.4458211660385132,
+        "interval_true_A_rate_m_s": [
+          -0.02104961988147469,
+          -0.021067499377719345
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.022072228985352094,
+          -0.022072728717420137
+        ],
+        "tightened_FK_distance_m": [
+          -0.0001360989795544516,
+          -0.00013608913676137102
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 6.834514076169585,
+          "betaL_lower": 31.351365022205776,
+          "alphaR_upper": 6.813751302650295,
+          "betaR_lower": 31.32097760075641
+        },
+        "maximum_world_attitude_deg": 0.16341259506009334,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.21006715297699,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 32,
+        "time_ms": 16.5,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -0.0001035559718124135,
+          -0.00010359093683709464
+        ],
+        "joint_min_margin_rad": 0.44558632373809814,
+        "interval_true_A_rate_m_s": [
+          -0.020310569316561722,
+          -0.02031056745327442
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.021244558804979136,
+          -0.02124559062577284
+        ],
+        "tightened_FK_distance_m": [
+          -0.00014672554542995053,
+          -0.00014671570579489934
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 7.622022489426212,
+          "betaL_lower": 31.78894886778233,
+          "alphaR_upper": 7.612811754590367,
+          "betaR_lower": 31.772395894006394
+        },
+        "maximum_world_attitude_deg": 0.16541327318706453,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.221795678138733,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 33,
+        "time_ms": 17.0,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -0.00011332470360118918,
+          -0.00011333364429699788
+        ],
+        "joint_min_margin_rad": 0.445353627204895,
+        "interval_true_A_rate_m_s": [
+          -0.019537463577551373,
+          -0.019485414919806487
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.020399825436887235,
+          -0.020401564877755532
+        ],
+        "tightened_FK_distance_m": [
+          -0.0001569246573794304,
+          -0.00015691974365981864
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 8.257214261405446,
+          "betaL_lower": 32.01842840937793,
+          "alphaR_upper": 8.245077807098037,
+          "betaR_lower": 31.996176255917515
+        },
+        "maximum_world_attitude_deg": 0.1673317289021139,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.232805520296097,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 34,
+        "time_ms": 17.5,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -0.0001226638350369652,
+          -0.00012267277573256574
+        ],
+        "joint_min_margin_rad": 0.44512319564819336,
+        "interval_true_A_rate_m_s": [
+          -0.018678262871552054,
+          -0.01867826287113572
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.019542256101116814,
+          -0.01953771610009039
+        ],
+        "tightened_FK_distance_m": [
+          -0.00016669664414846363,
+          -0.00016669173238117907
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 8.799067957964763,
+          "betaL_lower": 32.135286154020285,
+          "alphaR_upper": 8.92938004938927,
+          "betaR_lower": 32.309417332776086
+        },
+        "maximum_world_attitude_deg": 0.16917151034469527,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.242861360311508,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 35,
+        "time_ms": 18.0,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -0.00013160838951156717,
+          -0.0001316173302068624
+        ],
+        "joint_min_margin_rad": 0.4448951482772827,
+        "interval_true_A_rate_m_s": [
+          -0.017889108949203925,
+          -0.017889108948593302
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.018666671041101354,
+          -0.018664434233408793
+        ],
+        "tightened_FK_distance_m": [
+          -0.00017603197817297922,
+          -0.00017602706830646586
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 9.462043594537008,
+          "betaL_lower": 32.38113087162903,
+          "alphaR_upper": 9.414801206628642,
+          "betaR_lower": 32.316831378794795
+        },
+        "maximum_world_attitude_deg": 0.17093478558110523,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.2523205280303955,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 36,
+        "time_ms": 18.5,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -0.0001401153233276664,
+          -0.0001401332047175352
+        ],
+        "joint_min_margin_rad": 0.44466960430145264,
+        "interval_true_A_rate_m_s": [
+          -0.017013867632198476,
+          -0.017031749021345632
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.01778181948954343,
+          -0.017778012613783936
+        ],
+        "tightened_FK_distance_m": [
+          -0.0001849260446018509,
+          -0.00018491622856332723
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 9.93869499596296,
+          "betaL_upper": -32.387846336153196,
+          "alphaR_upper": 9.971655345515817,
+          "betaR_upper": -32.431322333647685
+        },
+        "maximum_world_attitude_deg": 0.17262394249708127,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.260969653725624,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 37,
+        "time_ms": 19.0,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -0.0001482025788922675,
+          -0.0001482204602813869
+        ],
+        "joint_min_margin_rad": 0.4444468021392822,
+        "interval_true_A_rate_m_s": [
+          -0.016174511129202207,
+          -0.016174511127703406
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.016884922079424675,
+          -0.016885277708524472
+        ],
+        "tightened_FK_distance_m": [
+          -0.00019336931064815776,
+          -0.00019335949819608466
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 10.461315620844172,
+          "betaL_upper": -32.48249388807552,
+          "alphaR_upper": 10.376632535277597,
+          "betaR_upper": -32.365341101334494
+        },
+        "maximum_world_attitude_deg": 0.17424182255213833,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.269133880734444,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 38,
+        "time_ms": 19.5,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -0.0001558702157946762,
+          -0.00015588809718293517
+        ],
+        "joint_min_margin_rad": 0.4442267417907715,
+        "interval_true_A_rate_m_s": [
+          -0.015335273804817362,
+          -0.015335273803096516
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.015983189266214323,
+          -0.015980636540918292
+        ],
+        "tightened_FK_distance_m": [
+          -0.0002013620472191686,
+          -0.00020135223824423076
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 10.845384681904113,
+          "betaL_upper": -32.36479852625229,
+          "alphaR_upper": 10.905139879827491,
+          "betaR_upper": -32.44621792568936
+        },
+        "maximum_world_attitude_deg": 0.1757905392125988,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.276799574494362,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      },
+      {
+        "step": 39,
+        "time_ms": 20.0,
+        "gates": {
+          "geometry": false,
+          "pose": true,
+          "nonwheel": true,
+          "motor": true,
+          "active": true
+        },
+        "all_gates": false,
+        "true_A_margin_m": [
+          -0.00016310121454095328,
+          -0.00016311909592828244
+        ],
+        "joint_min_margin_rad": 0.44400954246520996,
+        "interval_true_A_rate_m_s": [
+          -0.014461997492554168,
+          -0.014461997490694545
+        ],
+        "instantaneous_FK_rate_m_s": [
+          -0.015073167536197724,
+          -0.015070725755666346
+        ],
+        "tightened_FK_distance_m": [
+          -0.00020889960258735251,
+          -0.00020888979697833332
+        ],
+        "actual_constant_acceleration_slack": {
+          "alphaL_upper": 11.288473255400097,
+          "betaL_upper": -32.3545085957851,
+          "alphaR_upper": 11.287699366978698,
+          "betaR_upper": -32.34999356888197
+        },
+        "maximum_world_attitude_deg": 0.17727285561239825,
+        "peak_extra_motor_Nm": 0.0,
+        "absolute_motor_box_excess_Nm": -4.28386028110981,
+        "command_error_Nm": 0.0,
+        "contacts_equal_zero": true
+      }
+    ]
+  ],
+  "first_step_q_v_exact_match": true,
+  "zero_replay_q_max_error": 1.1641532182693481e-10,
+  "pulse_comparison_source": "Archived candidate trace arm1; current trace arm2 remains original +F pulse.",
+  "limitations": "Fixed candidate selected with future paired-state calibration, offline contact timing. No online trigger/estimator or full-episode claim. Constant-acceleration slack is a separate diagnostic, not used to replace physical safety gates.",
+  "kernel_clipping_events": 0.0,
+  "trace_sha256": "1c242ad8c735698717f1bf6ef8d3e85fa97f67abc2712e225a710916a22736cd",
+  "input_sha256": {
+    "wheelleg_warp/results/height_115_contact_candidate_20260929/verification.json": "27240bf683f8e37f11457d82dcada56e5bb565e465f067473099365090e998b2",
+    "wheelleg_warp/results/height_115_contact_response_2nm_20260929/verification.json": "fa0e291d6952bb8da566dac32446a56c28d35e71dc45fa2f7eb55a6255f703f5",
+    "wheelleg_warp/results/height_115_action_predict_1nm_single_graph_20260929/verification.json": "ec9ee2120add9f69c8d745215a9ba42df5365833f7224eff7466d744d4090d89",
+    "wheelleg_warp/results/height_115_local_states_20260928/verification.json": "b8cea295a23d1950ff486d5c06e5d95daf33da4dbb3238a8c9235cdf16919228",
+    "wheelleg_warp/results/height_115_contact_candidate_20260929/trace.npz": "0f12d8e6c235c5ac928c3329e597cc84d049c6411fe60ec85f3338ef7010ec52"
+  },
+  "source_sha256": {
+    "wheelleg_warp/probe_height_115_contact_hold.py": "cb15eacd68169b4b0869f4aafb178a0ceb94efaebb6fad52026ff27f2fab2516",
+    "wheelleg_warp/probe_height_115_live_common_local.py": "e4e0835efb38c5640fa842109283c98a514594ac9bf473c34b59b1d68ad13aad",
+    "wheelleg_warp/probe_height_115_braking_budget.py": "c8968f1ee4bce0da390b31fb3b1f452c92122ad8d6f8c7d64a9af0c13f1f0d3e",
+    "wheelleg_warp/native/controller.py": "03d56704bf41ab4987a01affef434bc776771ea24077b6ac6fd5f44bed1bd15f",
+    "wheelleg_warp/native/environment.py": "290e97c39ff07cb4df84239c3b405719291322d961d2d2985f5f50e9f61ec543"
+  }
+}
