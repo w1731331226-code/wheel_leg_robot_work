@@ -149,8 +149,10 @@ def scheduled_common(state: wp.array2d[D], start: wp.array[int],
             coeff[w, j] = schedule[step, w, j]
 
 
-def simulate(base, starts, coefficients, schedule=None):
+def simulate(base, starts, coefficients, schedule=None, followup_steps=0):
     assert len(base) == 1
+    assert followup_steps in (0, 200)
+    record_steps = HORIZON + followup_steps
     arms = len(coefficients) // len(base)
     scenarios = base * arms
     n = len(scenarios)
@@ -214,18 +216,18 @@ def simulate(base, starts, coefficients, schedule=None):
     if schedule is not None:
         for row in records:
             row['post_velocity'] = []
-    last_step = int(max(starts)) + HORIZON
+    last_step = int(max(starts)) + record_steps
     for period in range((last_step + 39) // 40):
         wp.capture_launch(captured.graph)
         global_step = period * 40
-        if not any(global_step < s + HORIZON and global_step + 40 > s for s in starts):
+        if not any(global_step < s + record_steps and global_step + 40 > s for s in starts):
             continue
         p0, p1, p2, ps, pc = pre.numpy(), applied.numpy(), post.numpy(), summary.numpy(), pairs.numpy()
         pv = post_velocity.numpy() if schedule is not None else None
         for w in range(n):
             s = starts[w % len(base)]
             slots = np.flatnonzero((np.arange(40) + global_step >= s) &
-                                   (np.arange(40) + global_step < s + HORIZON))
+                                   (np.arange(40) + global_step < s + record_steps))
             for slot in slots:
                 r = records[w]
                 r['pre'].append(p0[slot, w].copy())
@@ -242,7 +244,7 @@ def simulate(base, starts, coefficients, schedule=None):
     for r in records:
         for key in ('pre', 'applied', 'post', 'summary', 'contact_raw'):
             r[key] = np.stack(r[key])
-        assert len(r['pre']) == HORIZON and len(r['contacts']) == HORIZON
+        assert len(r['pre']) == record_steps and len(r['contacts']) == record_steps
         r['previous_qvel'] = prior_v.copy()
         if schedule is not None:
             r['post_velocity'] = np.stack(r['post_velocity'])
