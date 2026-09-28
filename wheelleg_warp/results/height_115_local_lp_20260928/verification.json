@@ -1,0 +1,322 @@
+{
+  "role": "public_flat_20ms_constant_six_motor_delta_local_feasibility",
+  "training": false,
+  "final_holdout_opened": false,
+  "horizon_s": 0.02,
+  "finite_difference_eps_Nm": 0.1,
+  "local_trust_box_Nm": 0.1,
+  "numerical_pairing_margin_normalized": 0.001,
+  "action_set": "constant_six_motor_delta_on_replayed_baseline_ctrl",
+  "not_evaluated_action_set": "filtered_three_dimensional_M3_residual",
+  "summary": {
+    "states": 3,
+    "linear_feasible": 3,
+    "nonlinear_verified_same_contact": 3,
+    "max_cpu_warp_pair_normalized_diff": 0.00026246415900343933,
+    "all_finite_difference_contacts_stable": true
+  },
+  "rows": [
+    {
+      "world": 0,
+      "event": "active_joint",
+      "reference_s": 7.398000000000001,
+      "start_s": 7.377999782562256,
+      "baseline": {
+        "min_normalized_margin": -0.00018493002034825068,
+        "min_actual_leg_m": 0.11540960375971736,
+        "min_joint_normalized_margin": -0.00018493002034825068,
+        "min_attitude_normalized_margin": 0.9753885908419856,
+        "clipped_motor_physical_commands": 0,
+        "peak_motor_torque_Nm": 0.6895685791969299
+      },
+      "cpu_warp_pair_max_normalized_diff": 6.23260816290383e-05,
+      "delta_bounds_Nm": [
+        [
+          -39.3108856678009,
+          40.58197444677353
+        ],
+        [
+          -40.645909547805786,
+          39.31274390220642
+        ],
+        [
+          -39.31043142080307,
+          40.5827516913414
+        ],
+        [
+          -40.64610493183136,
+          39.312335312366486
+        ],
+        [
+          -4.241108685731888,
+          4.743650391697884
+        ],
+        [
+          -4.241108685731888,
+          4.743650391697884
+        ]
+      ],
+      "trust_bounds_Nm": [
+        [
+          -0.1,
+          0.1
+        ],
+        [
+          -0.1,
+          0.1
+        ],
+        [
+          -0.1,
+          0.1
+        ],
+        [
+          -0.1,
+          0.1
+        ],
+        [
+          -0.1,
+          0.1
+        ],
+        [
+          -0.1,
+          0.1
+        ]
+      ],
+      "finite_difference_eps_Nm": 0.1,
+      "contact_mode_changed_perturbed_steps": 0,
+      "finite_difference_clipped_motor_commands": 0,
+      "linearization_contact_stable": true,
+      "full_box_linear_feasible": true,
+      "linear_feasible": true,
+      "linear_status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "candidate": {
+        "delta_torque_Nm": [
+          0.009200629931743365,
+          0.009200629931743363,
+          0.009200629931743363,
+          0.009200629931743363,
+          -0.009200629931743363,
+          -0.008998065092154246
+        ],
+        "minimum_peak_delta_torque_Nm": 0.009200629931743363,
+        "linear_min_normalized_margin": 0.0009999999999999996,
+        "min_normalized_margin": 0.0010000176722013698,
+        "min_actual_leg_m": 0.115404839685982,
+        "min_joint_normalized_margin": 0.0010000176722013698,
+        "min_attitude_normalized_margin": 0.9753898023431801,
+        "clipped_motor_physical_commands": 0,
+        "peak_motor_torque_Nm": 0.6968653175652577,
+        "contact_pair_steps_equal": 40,
+        "constant_delta_applied": true,
+        "nonlinear_all_constraints_passed": true,
+        "nonlinear_numerical_margin_passed": true
+      }
+    },
+    {
+      "world": 4,
+      "event": "active_joint",
+      "reference_s": 4.593,
+      "start_s": 4.572999954223633,
+      "baseline": {
+        "min_normalized_margin": -0.00926635213746696,
+        "min_actual_leg_m": 0.11748092513706837,
+        "min_joint_normalized_margin": -0.00926635213746696,
+        "min_attitude_normalized_margin": 0.8340132975243646,
+        "clipped_motor_physical_commands": 0,
+        "peak_motor_torque_Nm": 0.5877702832221985
+      },
+      "cpu_warp_pair_max_normalized_diff": 0.00026246415900343933,
+      "delta_bounds_Nm": [
+        [
+          -40.24959693849087,
+          39.4122297167778
+        ],
+        [
+          -39.90538989752531,
+          40.00987424235791
+        ],
+        [
+          -40.24968193471432,
+          39.41225278377533
+        ],
+        [
+          -39.90534007549286,
+          40.0097061349079
+        ],
+        [
+          -4.136415988206863,
+          4.811241060495377
+        ],
+        [
+          -4.136415988206863,
+          4.811241060495377
+        ]
+      ],
+      "trust_bounds_Nm": [
+        [
+          -0.1,
+          0.1
+        ],
+        [
+          -0.1,
+          0.1
+        ],
+        [
+          -0.1,
+          0.1
+        ],
+        [
+          -0.1,
+          0.1
+        ],
+        [
+          -0.1,
+          0.1
+        ],
+        [
+          -0.1,
+          0.1
+        ]
+      ],
+      "finite_difference_eps_Nm": 0.1,
+      "contact_mode_changed_perturbed_steps": 0,
+      "finite_difference_clipped_motor_commands": 0,
+      "linearization_contact_stable": true,
+      "full_box_linear_feasible": true,
+      "linear_feasible": true,
+      "linear_status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "candidate": {
+        "delta_torque_Nm": [
+          0.07851748889823874,
+          0.07851748889823874,
+          0.07851748889823874,
+          0.07851748889823874,
+          -0.07841747527109483,
+          -0.07851748889823874
+        ],
+        "minimum_peak_delta_torque_Nm": 0.07851748889823874,
+        "linear_min_normalized_margin": 0.0009999999999999974,
+        "min_normalized_margin": 0.0010014972626382068,
+        "min_actual_leg_m": 0.11748089479434007,
+        "min_joint_normalized_margin": 0.0010014972626382068,
+        "min_attitude_normalized_margin": 0.8340236019261832,
+        "clipped_motor_physical_commands": 0,
+        "peak_motor_torque_Nm": 0.6662877721204372,
+        "contact_pair_steps_equal": 40,
+        "constant_delta_applied": true,
+        "nonlinear_all_constraints_passed": true,
+        "nonlinear_numerical_margin_passed": true
+      }
+    },
+    {
+      "world": 5,
+      "event": "actual_leg",
+      "reference_s": 2.061,
+      "start_s": 2.0409998893737793,
+      "baseline": {
+        "min_normalized_margin": -0.0018222049324723155,
+        "min_actual_leg_m": 0.11470264385672822,
+        "min_joint_normalized_margin": 0.47678302883810586,
+        "min_attitude_normalized_margin": 0.9294638598499909,
+        "clipped_motor_physical_commands": 0,
+        "peak_motor_torque_Nm": 0.9103052020072937
+      },
+      "cpu_warp_pair_max_normalized_diff": 6.034698943335748e-05,
+      "delta_bounds_Nm": [
+        [
+          -39.089762926101685,
+          40.88188028335571
+        ],
+        [
+          -40.59021317958832,
+          39.377177119255066
+        ],
+        [
+          -39.089694797992706,
+          40.882169127464294
+        ],
+        [
+          -40.59036409854889,
+          39.377134799957275
+        ],
+        [
+          -4.201592564582825,
+          4.793417513370514
+        ],
+        [
+          -4.201592564582825,
+          4.793417513370514
+        ]
+      ],
+      "trust_bounds_Nm": [
+        [
+          -0.1,
+          0.1
+        ],
+        [
+          -0.1,
+          0.1
+        ],
+        [
+          -0.1,
+          0.1
+        ],
+        [
+          -0.1,
+          0.1
+        ],
+        [
+          -0.1,
+          0.1
+        ],
+        [
+          -0.1,
+          0.1
+        ]
+      ],
+      "finite_difference_eps_Nm": 0.1,
+      "contact_mode_changed_perturbed_steps": 0,
+      "finite_difference_clipped_motor_commands": 0,
+      "linearization_contact_stable": true,
+      "full_box_linear_feasible": true,
+      "linear_feasible": true,
+      "linear_status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "candidate": {
+        "delta_torque_Nm": [
+          -0.0030437617322951363,
+          0.0030437617322951363,
+          -0.0030437617322951363,
+          0.0030437617322951363,
+          0.0030337292136472524,
+          0.0030437617322951363
+        ],
+        "minimum_peak_delta_torque_Nm": 0.0030437617322951363,
+        "linear_min_normalized_margin": 0.001,
+        "min_normalized_margin": 0.0010001198226666785,
+        "min_actual_leg_m": 0.11470546618148336,
+        "min_joint_normalized_margin": 0.4767834175556551,
+        "min_attitude_normalized_margin": 0.9299324979720855,
+        "clipped_motor_physical_commands": 0,
+        "peak_motor_torque_Nm": 0.9133489637395888,
+        "contact_pair_steps_equal": 40,
+        "constant_delta_applied": true,
+        "nonlinear_all_constraints_passed": true,
+        "nonlinear_numerical_margin_passed": true
+      }
+    }
+  ],
+  "source_windows_sha256": "33153efe7d688c5e697c786d101067716284326ee9e3bb9f331b748cb138d30d",
+  "linearization_sha256": "908a0ef1cfbda524da8cf4ea632929a67951041360675242210d560be1f6f486",
+  "source_sha256": {
+    "wheelleg_warp/probe_height_115_local_lp.py": "361be037b14516fbbaaf58c59b20a1185dd0ce1376cb92ec42dbef162818ffcc",
+    "wheelleg_warp/probe_height_115_local_states.py": "daecda640b818fbf2636842da271548473e8d7b6ffb23c10df56f46670b76ae6",
+    "wheelleg_warp/probe_height_115_cpu_horizon_pair.py": "4ef8f3d2e59edd8aa2733bd92fab6b6bc9c376800608f2a324b5d2c9249c7b57",
+    "wheelleg_warp/probe_height_115_passive.py": "8771150926217fd575b1f2f3fc2dd3d13cb495e37e2b516a1e34400ef454bfe8",
+    "wheelleg_warp/native/terrain.py": "1e462500ae917ba78ce5e4652f7a856bf62658f8573296e9a7d4630517cf1a94",
+    "wheelleg_warp/native/models.py": "59420b688a25e63fb8e0e644f0702025836bea0ed90377e452bcbd919c7216eb",
+    "wheelleg_ppo/tools/wheelleg_sim.py": "c2dfaae4dc562119fd7916684849ec22fcac3d75dbcfec6a2a0f9452d8f6ee0f",
+    "wheelleg_ppo/tools/hardware_profile.py": "844688aae7e408bb2ca11d00b192ffaa9e4ad5de06cc8a815d3cf3ddfbe02eba",
+    "wheelleg_ppo/tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+    "wheelleg_ppo/xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f"
+  }
+}

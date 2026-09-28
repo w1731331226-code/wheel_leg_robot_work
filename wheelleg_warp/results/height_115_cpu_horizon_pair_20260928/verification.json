@@ -1,0 +1,105 @@
+{
+  "role": "public_flat_cpu_warp_20ms_open_loop_pair",
+  "training": false,
+  "final_holdout_opened": false,
+  "source_windows_sha256": "33153efe7d688c5e697c786d101067716284326ee9e3bb9f331b748cb138d30d",
+  "summary": {
+    "states": 6,
+    "contact_pair_steps_equal": 240,
+    "total_physical_steps": 240,
+    "max_qpos_abs_diff": 1.5821716537800512e-05,
+    "max_qvel_abs_diff": 0.0012169602956788594,
+    "max_end_qpos_abs_diff": 1.2684947087393539e-05,
+    "max_end_qvel_abs_diff": 0.0002267708131498125,
+    "horizon_pass": true
+  },
+  "rows": [
+    {
+      "world": 0,
+      "event": "actual_leg",
+      "reference_s": 7.5795,
+      "start_s": 7.559500217437744,
+      "end_s": 7.579500198364258,
+      "max_qpos_abs_diff": 9.30781703800676e-06,
+      "end_qpos_abs_diff": 7.218905132333475e-06,
+      "max_qvel_abs_diff": 0.0003571861932121223,
+      "end_qvel_abs_diff": 0.00016986481977990242,
+      "contact_pair_steps_equal": 40,
+      "max_shared_contact_normal_abs_diff_N": 0.09276242428510528
+    },
+    {
+      "world": 0,
+      "event": "active_joint",
+      "reference_s": 7.398000000000001,
+      "start_s": 7.377999782562256,
+      "end_s": 7.398000240325928,
+      "max_qpos_abs_diff": 1.4635827788822553e-05,
+      "end_qpos_abs_diff": 1.0274503090101916e-05,
+      "max_qvel_abs_diff": 0.00028567664362810774,
+      "end_qvel_abs_diff": 0.00012141399898624172,
+      "contact_pair_steps_equal": 40,
+      "max_shared_contact_normal_abs_diff_N": 0.08569390783542019
+    },
+    {
+      "world": 4,
+      "event": "actual_leg",
+      "reference_s": 5.031,
+      "start_s": 5.011000156402588,
+      "end_s": 5.031000137329102,
+      "max_qpos_abs_diff": 4.490712171900668e-06,
+      "end_qpos_abs_diff": 2.6623376072620886e-06,
+      "max_qvel_abs_diff": 0.00027829278125257595,
+      "end_qvel_abs_diff": 7.617958523697954e-05,
+      "contact_pair_steps_equal": 40,
+      "max_shared_contact_normal_abs_diff_N": 0.0905854120705456
+    },
+    {
+      "world": 4,
+      "event": "active_joint",
+      "reference_s": 4.593,
+      "start_s": 4.572999954223633,
+      "end_s": 4.593000411987305,
+      "max_qpos_abs_diff": 7.5901666320987715e-06,
+      "end_qpos_abs_diff": 6.9260905419810115e-06,
+      "max_qvel_abs_diff": 0.000546748333633218,
+      "end_qvel_abs_diff": 7.953132079530079e-05,
+      "contact_pair_steps_equal": 40,
+      "max_shared_contact_normal_abs_diff_N": 0.17140017199378832
+    },
+    {
+      "world": 5,
+      "event": "actual_leg",
+      "reference_s": 2.061,
+      "start_s": 2.0409998893737793,
+      "end_s": 2.060999870300293,
+      "max_qpos_abs_diff": 1.200585172611568e-06,
+      "end_qpos_abs_diff": 1.200585172611568e-06,
+      "max_qvel_abs_diff": 8.873463518455083e-05,
+      "end_qvel_abs_diff": 3.395767117808646e-05,
+      "contact_pair_steps_equal": 40,
+      "max_shared_contact_normal_abs_diff_N": 0.031182640829229058
+    },
+    {
+      "world": 5,
+      "event": "active_joint",
+      "reference_s": 4.591,
+      "start_s": 4.571000099182129,
+      "end_s": 4.591000080108643,
+      "max_qpos_abs_diff": 1.5821716537800512e-05,
+      "end_qpos_abs_diff": 1.2684947087393539e-05,
+      "max_qvel_abs_diff": 0.0012169602956788594,
+      "end_qvel_abs_diff": 0.0002267708131498125,
+      "contact_pair_steps_equal": 40,
+      "max_shared_contact_normal_abs_diff_N": 0.21219138660509884
+    }
+  ],
+  "source_sha256": {
+    "wheelleg_warp/probe_height_115_cpu_horizon_pair.py": "4ef8f3d2e59edd8aa2733bd92fab6b6bc9c376800608f2a324b5d2c9249c7b57",
+    "wheelleg_warp/probe_height_115_cpu_step_pair.py": "8e40299994c61e3dd88ded91e76c6f8ce0da9b9e5b1f53c05bec1c8cc340a176",
+    "wheelleg_warp/probe_height_115_local_states.py": "daecda640b818fbf2636842da271548473e8d7b6ffb23c10df56f46670b76ae6",
+    "wheelleg_warp/native/terrain.py": "1e462500ae917ba78ce5e4652f7a856bf62658f8573296e9a7d4630517cf1a94",
+    "wheelleg_warp/native/models.py": "59420b688a25e63fb8e0e644f0702025836bea0ed90377e452bcbd919c7216eb",
+    "wheelleg_ppo/xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f",
+    "wheelleg_ppo/tools/hardware_profile.py": "844688aae7e408bb2ca11d00b192ffaa9e4ad5de06cc8a815d3cf3ddfbe02eba"
+  }
+}
