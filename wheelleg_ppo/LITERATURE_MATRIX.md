@@ -116,6 +116,9 @@ GitHub 代码近邻（仓库均可访问；只核 README 与相关实现，不�
 | 工作 | 已核对的核心内容 | 对本题创新性的约束 |
 |---|---|---|
 | [Klemm 等 LQR-assisted WBC](https://doi.org/10.1109/LRA.2020.2979625)，IEEE RA-L 2020，[作者稿](https://arxiv.org/abs/2005.11431) | Ascento 闭环运动学、全身控制和 LQR 平衡任务，实验有粗糙地形与弯道 | 双轮腿的 LQR＋多任务接触控制已成熟，不能称本机基控制架构首次 |
+| [Cui 等 Modeling and Control of a Wheeled Biped Robot](https://pmc.ncbi.nlm.nih.gov/articles/PMC9146894/)，Micromachines 2022，DOI 10.3390/mi13050747 | 作者全文：液压 Scooter 的变腿长倒立摆时变 LQR＋上体 MPC，QP 含腿工作空间、摩擦/接触与力矩约束，仿真和实机有变高度/速度跟踪 | 变腿长＋LQR/MPC/VMC 及受约束分配已有明确先例；平台质量、闭链和最低高度不同，不能借其结果验收本机0.115 m |
+| [Paredes 与 Hereid Safe Whole-Body Task Space Control](https://cyberboticslab.com/publication/paredes-2024-safe/paredes-2024-safe.pdf)，ACC 2024 作者全文 | Digit 闭链/接触逆动力学QP加入高相对阶安全集、ZMP、摩擦锥与力矩约束，并报仿真/实机 | “闭链机器人加CBF-QP保关节/任务安全”已非独创；本机若做安全层，须说明可得传感器、2 kHz计算、极低位真实轮心和扰动误差的具体差异 |
+| [Yu 等轮式双足障碍规划与控制](https://doi.org/10.1109/TASE.2025.3587848)，IEEE T-ASE 2025，官方摘要 | 前视地形安全区进入CBF接触序列规划，5 Hz规划配200 Hz NMPC；液压轮式双足实机越障 | CBF＋NMPC轮腿越障已有先例；该工作使用环境高度信息并约束轮接触区，不能与本机纯本体感知0.115 m腿长/八关节门直接同口径比较 |
 | [Klemm 等 Non-Smooth Trajectory Optimization](https://marco-tognon-robotics.com/content/non-smooth-trajectory-optimization-wheeled-balancing-robots-contact-switches-and-impacts)，IEEE T-RO，DOI 10.1109/TRO.2023.3326334 | 作者公开稿/项目页：接触切换、冲击、附着及执行器边界进入 Ascento 轨迹优化，LQR 跟踪并实机越台阶/楼梯；2023 在线、2025 卷期 | 受约束越障无需 PPO 也可能实现；本机需说明未知接触与在线差动补偿相比已知接触相位规划的确切不同 |
 | [Lee 等 Wheeled-Legged Navigation](https://arxiv.org/abs/2405.01792)，Science Robotics 2024，DOI 10.1126/scirobotics.adi9641 | 作者稿：四轮腿的学习式地形运动/导航，真实城市长距离任务 | 多地形 RL 与真实部署已有高水平先例；虽与双轮自平衡不同，不能把“复杂地形泛化”本身当创新 |
 | [Chamorro 等盲爬楼梯](https://doi.org/10.1109/ICRA57147.2024.10610069)，ICRA 2024，[作者稿](https://arxiv.org/abs/2402.06143) | 轮腿与双足的 RL 盲爬台阶，Ascento 实机示例 | 台阶 PPO/RL 任务并非空白；机器人尺度与评价协议不同，成功高度不可横比 |
@@ -127,4 +130,4 @@ GitHub 代码近邻（仓库均可访问；只核 README 与相关实现，不�
 
 具有明确研究或工程传承的 GitHub 仓库另核：[ETH Legged Gym](https://github.com/leggedrobotics/legged_gym)（粗糙地形并行 PPO、课程、随机化）、[ETH RSL-RL](https://github.com/leggedrobotics/rsl_rl)（Isaac Lab/Legged Gym/mjlab 使用的 PPO 库）、[DRCL-USC RL-augmented MPC](https://github.com/DRCL-USC/RL_augmented_MPC)（四足 MPC＋学习残差，作者论文报实机）、[mujocolab/mjlab](https://github.com/mujocolab/mjlab) 与 [Google DeepMind MuJoCo Warp](https://github.com/google-deepmind/mujoco_warp)（训练框架/物理后端）。这些分别说明 PPO、模型控制＋残差、GPU 并行物理均已有公开基础；四足/框架并不直接解决本机双轮腿差模问题。未运行外部项目，不能用 star 数、README 曲线或异平台视频给本机方法排名。
 
-**本轮方向排序：** 第一，接触及电机包络约束下的动作可达性、可观测性和残差分配，直接对应现有 2 kHz 失败链且可通过单变量干预证伪；若形成方法，须对 T-RO 接触规划、RA-L 强经典与 TASE 受约束残差说明差异。第二，保留差模 PPO 作为已注册的比较手段，在上述机制允许有效控制后再检验其相对 B1/M1/N3±/B2-V 的额外收益。第三，当前无证据支持优先改 PPO 损失、网络或另建教师/世界模型：物理可达性与观测不足尚未排除，修改优化器只会叠加解释变量。上述排序是根据本机与论文证据作出的研究决策，**不是已确立的新方法或可发表性保证**。
+**本轮方向排序：** 第一，接触及电机包络约束下的动作可达性、可观测性和残差分配，直接对应现有 2 kHz 失败链且可通过单变量干预证伪；若形成方法，须对已有变高度LQR/MPC、闭链CBF-QP、轮腿CBF/NMPC、T-RO接触规划及RA-L强经典说明差异。第二，保留差模 PPO 作为已注册的比较手段，在上述机制允许有效控制后再检验其相对 B1/M1/N3±/B2-V 的额外收益。第三，当前无证据支持优先改 PPO 损失、网络或另建教师/世界模型：物理可达性与观测不足尚未排除，修改优化器只会叠加解释变量。上述排序是根据本机与论文证据作出的研究决策，**不是已确立的新方法或可发表性保证**。

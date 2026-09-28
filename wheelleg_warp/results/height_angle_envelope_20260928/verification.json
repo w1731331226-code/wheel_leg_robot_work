@@ -1,0 +1,290 @@
+{
+  "protocol": "static connected standing-branch geometry only; no passive-joint, load, collision or dynamic-safety claim",
+  "nominal_height_range_m": [
+    0.115,
+    0.38
+  ],
+  "joint_caps_rad": {
+    "hard": 1.5,
+    "joint_reserve_0p1rad": 1.4
+  },
+  "angle_definition": "phi5 + pi/2; positive wheel center forward relative to hip midpoint",
+  "method": {
+    "first_infeasible_scan_step_rad": 0.0005,
+    "bisection_iterations_max": 50,
+    "invalid_acos_domain": "infeasible, never clamped"
+  },
+  "rows": [
+    {
+      "length_m": 0.115,
+      "hard": {
+        "min_deg": -10.790110087601498,
+        "max_deg": 10.790110087601501,
+        "positive_boundary_q_rad": [
+          0.735515250841952,
+          -1.5
+        ],
+        "positive_binding": [
+          "beta_joint"
+        ],
+        "A_chain_outer_reach_margin_m": 0.271408604488415
+      },
+      "joint_reserve_0p1rad": {
+        "min_deg": -8.901144640718234,
+        "max_deg": 8.901144640718245,
+        "positive_boundary_q_rad": [
+          0.7851881286801519,
+          -1.4
+        ],
+        "positive_binding": [
+          "beta_joint"
+        ],
+        "A_chain_outer_reach_margin_m": 0.2733061193161644
+      }
+    },
+    {
+      "length_m": 0.12,
+      "hard": {
+        "min_deg": -12.949155430851091,
+        "max_deg": 12.9491554308511,
+        "positive_boundary_q_rad": [
+          0.6392529495343457,
+          -1.5
+        ],
+        "positive_binding": [
+          "beta_joint"
+        ],
+        "A_chain_outer_reach_margin_m": 0.2648918007071298
+      },
+      "joint_reserve_0p1rad": {
+        "min_deg": -10.93315819976013,
+        "max_deg": 10.933158199760138,
+        "positive_boundary_q_rad": [
+          0.688956977954349,
+          -1.4
+        ],
+        "positive_binding": [
+          "beta_joint"
+        ],
+        "A_chain_outer_reach_margin_m": 0.26690216714906323
+      }
+    },
+    {
+      "length_m": 0.14,
+      "hard": {
+        "min_deg": -20.390791024330557,
+        "max_deg": 20.390791024330564,
+        "positive_boundary_q_rad": [
+          0.3342884923369871,
+          -1.5
+        ],
+        "positive_binding": [
+          "beta_joint"
+        ],
+        "A_chain_outer_reach_margin_m": 0.2396064044282254
+      },
+      "joint_reserve_0p1rad": {
+        "min_deg": -17.980386483450953,
+        "max_deg": 17.980386483450953,
+        "positive_boundary_q_rad": [
+          0.38566853503447796,
+          -1.3999999999999992
+        ],
+        "positive_binding": [
+          "beta_joint"
+        ],
+        "A_chain_outer_reach_margin_m": 0.2419339459246533
+      }
+    },
+    {
+      "length_m": 0.16,
+      "hard": {
+        "min_deg": -26.55106531661819,
+        "max_deg": 26.55106531661819,
+        "positive_boundary_q_rad": [
+          0.09499165261259179,
+          -1.4999999999999996
+        ],
+        "positive_binding": [
+          "beta_joint"
+        ],
+        "A_chain_outer_reach_margin_m": 0.21517596314210904
+      },
+      "joint_reserve_0p1rad": {
+        "min_deg": -23.859241422311005,
+        "max_deg": 23.859241422311012,
+        "positive_boundary_q_rad": [
+          0.14851655963581978,
+          -1.4
+        ],
+        "positive_binding": [
+          "beta_joint"
+        ],
+        "A_chain_outer_reach_margin_m": 0.21768147231297247
+      }
+    },
+    {
+      "length_m": 0.2,
+      "hard": {
+        "min_deg": -36.78743946556,
+        "max_deg": 36.78743946556,
+        "positive_boundary_q_rad": [
+          -0.3036185624641332,
+          -1.4999999999999998
+        ],
+        "positive_binding": [
+          "beta_joint"
+        ],
+        "A_chain_outer_reach_margin_m": 0.16782854767176675
+      },
+      "joint_reserve_0p1rad": {
+        "min_deg": -33.70281068518343,
+        "max_deg": 33.70281068518343,
+        "positive_boundary_q_rad": [
+          -0.24599267981759,
+          -1.3999999999999995
+        ],
+        "positive_binding": [
+          "beta_joint"
+        ],
+        "A_chain_outer_reach_margin_m": 0.17045730392088632
+      }
+    },
+    {
+      "length_m": 0.25,
+      "hard": {
+        "min_deg": -47.711556929959904,
+        "max_deg": 47.711556929959904,
+        "positive_boundary_q_rad": [
+          -0.7537365241496949,
+          -1.4999999999999996
+        ],
+        "positive_binding": [
+          "beta_joint"
+        ],
+        "A_chain_outer_reach_margin_m": 0.11037723572166908
+      },
+      "joint_reserve_0p1rad": {
+        "min_deg": -44.286223641581266,
+        "max_deg": 44.286223641581266,
+        "positive_boundary_q_rad": [
+          -0.6912596951393117,
+          -1.4
+        ],
+        "positive_binding": [
+          "beta_joint"
+        ],
+        "A_chain_outer_reach_margin_m": 0.11290210139499302
+      }
+    },
+    {
+      "length_m": 0.3,
+      "hard": {
+        "min_deg": -57.942481549798934,
+        "max_deg": 57.942481549798934,
+        "positive_boundary_q_rad": [
+          -1.229113464864041,
+          -1.5
+        ],
+        "positive_binding": [
+          "beta_joint"
+        ],
+        "A_chain_outer_reach_margin_m": 0.05426347453463154
+      },
+      "joint_reserve_0p1rad": {
+        "min_deg": -54.243284907256665,
+        "max_deg": 54.24328490725668,
+        "positive_boundary_q_rad": [
+          -1.160777365585525,
+          -1.4
+        ],
+        "positive_binding": [
+          "beta_joint"
+        ],
+        "A_chain_outer_reach_margin_m": 0.05648556068251431
+      }
+    },
+    {
+      "length_m": 0.35,
+      "hard": {
+        "min_deg": -49.34228280270754,
+        "max_deg": 49.34228280270754,
+        "positive_boundary_q_rad": [
+          -1.5,
+          -1.0110863565466286
+        ],
+        "positive_binding": [
+          "alpha_joint"
+        ],
+        "A_chain_outer_reach_margin_m": 0.010180153632520894
+      },
+      "joint_reserve_0p1rad": {
+        "min_deg": -45.40363955506606,
+        "max_deg": 45.40363955506606,
+        "positive_boundary_q_rad": [
+          -1.4,
+          -0.9081903171208376
+        ],
+        "positive_binding": [
+          "alpha_joint"
+        ],
+        "A_chain_outer_reach_margin_m": 0.01317238422039807
+      }
+    },
+    {
+      "length_m": 0.38,
+      "hard": {
+        "min_deg": -27.562718530523657,
+        "max_deg": 27.562718530523657,
+        "positive_boundary_q_rad": [
+          -1.456630767976177,
+          -0.2774936632506104
+        ],
+        "positive_binding": [
+          "A_chain_straight"
+        ],
+        "A_chain_outer_reach_margin_m": 0.0
+      },
+      "joint_reserve_0p1rad": {
+        "min_deg": -27.263334271307052,
+        "max_deg": 27.263334271307052,
+        "positive_boundary_q_rad": [
+          -1.3999999999999975,
+          -0.2694999278835626
+        ],
+        "positive_binding": [
+          "alpha_joint"
+        ],
+        "A_chain_outer_reach_margin_m": 0.0003148732033957935
+      }
+    }
+  ],
+  "peaks": [
+    {
+      "joint_cap_rad": 1.5,
+      "length_m": 0.32364435472570313,
+      "half_angle_deg": 62.80122135996027
+    },
+    {
+      "joint_cap_rad": 1.4,
+      "length_m": 0.32149628893626614,
+      "half_angle_deg": 58.54470595299836
+    }
+  ],
+  "hard_A_chain_reach_switch_length_m": 0.3771532641465214,
+  "verification": {
+    "connected_interior_samples": 3582,
+    "max_FK_length_error_m": 2.220446049250313e-16,
+    "max_FK_angle_error_rad": 1.2212453270876722e-15,
+    "max_positive_negative_asymmetry_rad": 2.220446049250313e-16,
+    "max_bisection_bracket_rad": 2.220446049250313e-16,
+    "scan_reentries": 0
+  },
+  "source_sha256": {
+    "wheelleg_ppo/tools/wheelleg_sim.py": "c2dfaae4dc562119fd7916684849ec22fcac3d75dbcfec6a2a0f9452d8f6ee0f",
+    "wheelleg_warp/probe_height_angle_envelope.py": "44b0a7b46256ed1ab3eaf6056378241f077de9a051c03a7e232315b5fd37e817"
+  },
+  "model_sha256": {
+    "wheelleg_ppo/xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f"
+  }
+}
