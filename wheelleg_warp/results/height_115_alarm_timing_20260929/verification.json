@@ -1,0 +1,447 @@
+{
+  "role": "archived_baseline_fixed_forecast_first_alarm_timing_not_online_control",
+  "training": false,
+  "final_holdout_opened": false,
+  "actual_action_executed": false,
+  "alarm_input": "current active q/dq and prior active dq only; frozen other-world reserve",
+  "contact_and_actual_geometry": "posterior timing labels and failure scoring only",
+  "limitation": "selected failure neighborhoods only; no whole-episode false-alarm or modified-trajectory claim",
+  "summary": {
+    "worlds": 6,
+    "pre_failure_alarms": 6,
+    "left_censored": 0,
+    "model_lp_feasible_at_first_alarm": 5,
+    "nonlinear_forecast_gamma_pass": 5,
+    "minimum_lead_ms": 5.000114440917969
+  },
+  "rows": [
+    {
+      "world": 0,
+      "terrain": "legacy",
+      "speed": 0.5,
+      "event": "active_joint",
+      "failure_s": 7.398000240325928,
+      "first_alarm_s": 7.39300012588501,
+      "lead_ms": 5.000114440917969,
+      "scan_start_s": 7.348499774932861,
+      "first_alarm_left_censored": false,
+      "first_new_contact_s": null,
+      "alarm_after_first_affected_dq": null,
+      "alarm_leg": false,
+      "alarm_joint": true,
+      "candidate": {
+        "feasible": true,
+        "solver_status": 0,
+        "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "numerical_gamma": 0.001,
+        "action": [
+          5.156392342412283,
+          -1.5520542262327857,
+          -0.33334714723377806
+        ],
+        "minimum_peak_motor_delta_Nm": 0.33334714723377806,
+        "reconstructed_peak_motor_delta_Nm": 0.33334714723377806,
+        "nonlinear_forecast_leg_margin_after_reserve_m": 0.0006594236652888164,
+        "nonlinear_forecast_joint_margin_after_reserve_rad": 9.999999999998899e-05,
+        "nonlinear_forecast_min_normalized_margin": 0.0009999999999998899,
+        "nonlinear_forecast_gamma_pass": true,
+        "normalized_action_l1_support": 1.177213198901079,
+        "outside_calibration_convex_hull": true
+      },
+      "schedule_phase_audit": [
+        {
+          "period_ms": 0.5,
+          "phases": 1,
+          "missed_phases": 0,
+          "minimum_detected_lead_ms": 5.000114440917969,
+          "maximum_detected_lead_ms": 5.000114440917969
+        },
+        {
+          "period_ms": 1.0,
+          "phases": 2,
+          "missed_phases": 0,
+          "minimum_detected_lead_ms": 4.500389099121094,
+          "maximum_detected_lead_ms": 5.000114440917969
+        },
+        {
+          "period_ms": 2.0,
+          "phases": 4,
+          "missed_phases": 0,
+          "minimum_detected_lead_ms": 3.5004615783691406,
+          "maximum_detected_lead_ms": 5.000114440917969
+        },
+        {
+          "period_ms": 5.0,
+          "phases": 10,
+          "missed_phases": 0,
+          "minimum_detected_lead_ms": 0.5002021789550781,
+          "maximum_detected_lead_ms": 5.000114440917969
+        },
+        {
+          "period_ms": 20.0,
+          "phases": 40,
+          "missed_phases": 29,
+          "minimum_detected_lead_ms": 0.000476837158203125,
+          "maximum_detected_lead_ms": 5.000114440917969
+        }
+      ]
+    },
+    {
+      "world": 1,
+      "terrain": "step",
+      "speed": 0.5,
+      "event": "actual_leg",
+      "failure_s": 5.058000087738037,
+      "first_alarm_s": 5.052499771118164,
+      "lead_ms": 5.500316619873047,
+      "scan_start_s": 5.008999824523926,
+      "first_alarm_left_censored": false,
+      "first_new_contact_s": 5.049499988555908,
+      "alarm_after_first_affected_dq": true,
+      "alarm_leg": true,
+      "alarm_joint": false,
+      "candidate": {
+        "feasible": true,
+        "solver_status": 0,
+        "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "numerical_gamma": 0.001,
+        "action": [
+          4.877582878235264,
+          -0.0004424770228304185,
+          0.2033854896179268
+        ],
+        "minimum_peak_motor_delta_Nm": 0.2033854896179268,
+        "reconstructed_peak_motor_delta_Nm": 0.20338548961792705,
+        "nonlinear_forecast_leg_margin_after_reserve_m": 1.0020151825218537e-06,
+        "nonlinear_forecast_joint_margin_after_reserve_rad": 0.44725639121757044,
+        "nonlinear_forecast_min_normalized_margin": 0.0010020151825218537,
+        "nonlinear_forecast_gamma_pass": true,
+        "normalized_action_l1_support": 0.407004119001142,
+        "outside_calibration_convex_hull": false
+      },
+      "schedule_phase_audit": [
+        {
+          "period_ms": 0.5,
+          "phases": 1,
+          "missed_phases": 0,
+          "minimum_detected_lead_ms": 5.500316619873047,
+          "maximum_detected_lead_ms": 5.500316619873047
+        },
+        {
+          "period_ms": 1.0,
+          "phases": 2,
+          "missed_phases": 0,
+          "minimum_detected_lead_ms": 5.000114440917969,
+          "maximum_detected_lead_ms": 5.500316619873047
+        },
+        {
+          "period_ms": 2.0,
+          "phases": 4,
+          "missed_phases": 0,
+          "minimum_detected_lead_ms": 4.000186920166016,
+          "maximum_detected_lead_ms": 5.500316619873047
+        },
+        {
+          "period_ms": 5.0,
+          "phases": 10,
+          "missed_phases": 0,
+          "minimum_detected_lead_ms": 0.9999275207519531,
+          "maximum_detected_lead_ms": 5.500316619873047
+        },
+        {
+          "period_ms": 20.0,
+          "phases": 40,
+          "missed_phases": 29,
+          "minimum_detected_lead_ms": 0.5002021789550781,
+          "maximum_detected_lead_ms": 5.500316619873047
+        }
+      ]
+    },
+    {
+      "world": 2,
+      "terrain": "cross_slope",
+      "speed": 0.5,
+      "event": "actual_leg",
+      "failure_s": 4.265000343322754,
+      "first_alarm_s": 4.259500026702881,
+      "lead_ms": 5.500316619873047,
+      "scan_start_s": 4.2154998779296875,
+      "first_alarm_left_censored": false,
+      "first_new_contact_s": 4.257500171661377,
+      "alarm_after_first_affected_dq": true,
+      "alarm_leg": true,
+      "alarm_joint": false,
+      "candidate": {
+        "feasible": true,
+        "solver_status": 0,
+        "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "numerical_gamma": 0.001,
+        "action": [
+          9.410834609067491,
+          -0.0014249875584978623,
+          0.3929383642321587
+        ],
+        "minimum_peak_motor_delta_Nm": 0.3929383642321587,
+        "reconstructed_peak_motor_delta_Nm": 0.3929383642321587,
+        "nonlinear_forecast_leg_margin_after_reserve_m": 1.0075848014268196e-06,
+        "nonlinear_forecast_joint_margin_after_reserve_rad": 0.4465470665465916,
+        "nonlinear_forecast_min_normalized_margin": 0.0010075848014268196,
+        "nonlinear_forecast_gamma_pass": true,
+        "normalized_action_l1_support": 0.7866284005485348,
+        "outside_calibration_convex_hull": false
+      },
+      "schedule_phase_audit": [
+        {
+          "period_ms": 0.5,
+          "phases": 1,
+          "missed_phases": 0,
+          "minimum_detected_lead_ms": 5.500316619873047,
+          "maximum_detected_lead_ms": 5.500316619873047
+        },
+        {
+          "period_ms": 1.0,
+          "phases": 2,
+          "missed_phases": 0,
+          "minimum_detected_lead_ms": 5.000114440917969,
+          "maximum_detected_lead_ms": 5.500316619873047
+        },
+        {
+          "period_ms": 2.0,
+          "phases": 4,
+          "missed_phases": 0,
+          "minimum_detected_lead_ms": 4.000186920166016,
+          "maximum_detected_lead_ms": 5.500316619873047
+        },
+        {
+          "period_ms": 5.0,
+          "phases": 10,
+          "missed_phases": 0,
+          "minimum_detected_lead_ms": 1.0004043579101562,
+          "maximum_detected_lead_ms": 5.500316619873047
+        },
+        {
+          "period_ms": 20.0,
+          "phases": 40,
+          "missed_phases": 28,
+          "minimum_detected_lead_ms": 0.000476837158203125,
+          "maximum_detected_lead_ms": 5.500316619873047
+        }
+      ]
+    },
+    {
+      "world": 3,
+      "terrain": "rough",
+      "speed": 0.5,
+      "event": "actual_leg",
+      "failure_s": 4.162500381469727,
+      "first_alarm_s": 4.156000137329102,
+      "lead_ms": 6.500244140625,
+      "scan_start_s": 4.11299991607666,
+      "first_alarm_left_censored": false,
+      "first_new_contact_s": 4.151000022888184,
+      "alarm_after_first_affected_dq": true,
+      "alarm_leg": true,
+      "alarm_joint": false,
+      "candidate": {
+        "feasible": true,
+        "solver_status": 0,
+        "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "numerical_gamma": 0.001,
+        "action": [
+          4.361872120335592,
+          -0.00046064265215763344,
+          0.18166943464556604
+        ],
+        "minimum_peak_motor_delta_Nm": 0.18166943464556604,
+        "reconstructed_peak_motor_delta_Nm": 0.18166943464556604,
+        "nonlinear_forecast_leg_margin_after_reserve_m": 1.001558973132144e-06,
+        "nonlinear_forecast_joint_margin_after_reserve_rad": 0.4476332130277991,
+        "nonlinear_forecast_min_normalized_margin": 0.001001558973132144,
+        "nonlinear_forecast_gamma_pass": true,
+        "normalized_action_l1_support": 0.36358147641489225,
+        "outside_calibration_convex_hull": false
+      },
+      "schedule_phase_audit": [
+        {
+          "period_ms": 0.5,
+          "phases": 1,
+          "missed_phases": 0,
+          "minimum_detected_lead_ms": 6.500244140625,
+          "maximum_detected_lead_ms": 6.500244140625
+        },
+        {
+          "period_ms": 1.0,
+          "phases": 2,
+          "missed_phases": 0,
+          "minimum_detected_lead_ms": 6.000518798828125,
+          "maximum_detected_lead_ms": 6.500244140625
+        },
+        {
+          "period_ms": 2.0,
+          "phases": 4,
+          "missed_phases": 0,
+          "minimum_detected_lead_ms": 5.000591278076172,
+          "maximum_detected_lead_ms": 6.500244140625
+        },
+        {
+          "period_ms": 5.0,
+          "phases": 10,
+          "missed_phases": 0,
+          "minimum_detected_lead_ms": 2.0003318786621094,
+          "maximum_detected_lead_ms": 6.500244140625
+        },
+        {
+          "period_ms": 20.0,
+          "phases": 40,
+          "missed_phases": 26,
+          "minimum_detected_lead_ms": 0.000476837158203125,
+          "maximum_detected_lead_ms": 6.500244140625
+        }
+      ]
+    },
+    {
+      "world": 4,
+      "terrain": "legacy",
+      "speed": 1.0,
+      "event": "active_joint",
+      "failure_s": 4.593000411987305,
+      "first_alarm_s": 4.5879998207092285,
+      "lead_ms": 5.000591278076172,
+      "scan_start_s": 4.543499946594238,
+      "first_alarm_left_censored": false,
+      "first_new_contact_s": null,
+      "alarm_after_first_affected_dq": null,
+      "alarm_leg": false,
+      "alarm_joint": true,
+      "candidate": {
+        "feasible": false,
+        "solver_status": 2,
+        "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "numerical_gamma": 0.001
+      },
+      "schedule_phase_audit": [
+        {
+          "period_ms": 0.5,
+          "phases": 1,
+          "missed_phases": 0,
+          "minimum_detected_lead_ms": 5.000591278076172,
+          "maximum_detected_lead_ms": 5.000591278076172
+        },
+        {
+          "period_ms": 1.0,
+          "phases": 2,
+          "missed_phases": 0,
+          "minimum_detected_lead_ms": 4.500389099121094,
+          "maximum_detected_lead_ms": 5.000591278076172
+        },
+        {
+          "period_ms": 2.0,
+          "phases": 4,
+          "missed_phases": 0,
+          "minimum_detected_lead_ms": 3.5004615783691406,
+          "maximum_detected_lead_ms": 5.000591278076172
+        },
+        {
+          "period_ms": 5.0,
+          "phases": 10,
+          "missed_phases": 0,
+          "minimum_detected_lead_ms": 0.5002021789550781,
+          "maximum_detected_lead_ms": 5.000591278076172
+        },
+        {
+          "period_ms": 20.0,
+          "phases": 40,
+          "missed_phases": 29,
+          "minimum_detected_lead_ms": 0.000476837158203125,
+          "maximum_detected_lead_ms": 5.000591278076172
+        }
+      ]
+    },
+    {
+      "world": 5,
+      "terrain": "legacy",
+      "speed": -1.0,
+      "event": "actual_leg",
+      "failure_s": 2.060999870300293,
+      "first_alarm_s": 2.052000045776367,
+      "lead_ms": 8.999824523925781,
+      "scan_start_s": 2.01200008392334,
+      "first_alarm_left_censored": false,
+      "first_new_contact_s": null,
+      "alarm_after_first_affected_dq": null,
+      "alarm_leg": true,
+      "alarm_joint": false,
+      "candidate": {
+        "feasible": true,
+        "solver_status": 0,
+        "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "numerical_gamma": 0.001,
+        "action": [
+          1.9189693552453864,
+          -0.0911031493244463,
+          0.059640365857179564
+        ],
+        "minimum_peak_motor_delta_Nm": 0.059640365857179564,
+        "reconstructed_peak_motor_delta_Nm": 0.059640365857179564,
+        "nonlinear_forecast_leg_margin_after_reserve_m": 1.0002204163389594e-06,
+        "nonlinear_forecast_joint_margin_after_reserve_rad": 0.050489366858687434,
+        "nonlinear_forecast_min_normalized_margin": 0.0010002204163389594,
+        "nonlinear_forecast_gamma_pass": true,
+        "normalized_action_l1_support": 0.18624446711242093,
+        "outside_calibration_convex_hull": false
+      },
+      "schedule_phase_audit": [
+        {
+          "period_ms": 0.5,
+          "phases": 1,
+          "missed_phases": 0,
+          "minimum_detected_lead_ms": 8.999824523925781,
+          "maximum_detected_lead_ms": 8.999824523925781
+        },
+        {
+          "period_ms": 1.0,
+          "phases": 2,
+          "missed_phases": 0,
+          "minimum_detected_lead_ms": 8.499860763549805,
+          "maximum_detected_lead_ms": 8.999824523925781
+        },
+        {
+          "period_ms": 2.0,
+          "phases": 4,
+          "missed_phases": 0,
+          "minimum_detected_lead_ms": 7.499933242797852,
+          "maximum_detected_lead_ms": 8.999824523925781
+        },
+        {
+          "period_ms": 5.0,
+          "phases": 10,
+          "missed_phases": 0,
+          "minimum_detected_lead_ms": 4.499912261962891,
+          "maximum_detected_lead_ms": 8.999824523925781
+        },
+        {
+          "period_ms": 20.0,
+          "phases": 40,
+          "missed_phases": 22,
+          "minimum_detected_lead_ms": 0.49996376037597656,
+          "maximum_detected_lead_ms": 8.999824523925781
+        }
+      ]
+    }
+  ],
+  "archive_sha256": "b8cea295a23d1950ff486d5c06e5d95daf33da4dbb3238a8c9235cdf16919228",
+  "windows_sha256": "33153efe7d688c5e697c786d101067716284326ee9e3bb9f331b748cb138d30d",
+  "fitted_verification_sha256": "ec9ee2120add9f69c8d745215a9ba42df5365833f7224eff7466d744d4090d89",
+  "source_sha256": {
+    "wheelleg_warp/probe_height_115_alarm_timing.py": "bc4120db03f1d96000e2dd3d405cc7d23c423be274d8adfa90fa16de02a4541f",
+    "wheelleg_warp/probe_height_115_continuous_common_1nm.py": "199199199b3f388acdbdc5d394c0cd934d626cb01ab45f8f41b5f377a3a311dd",
+    "wheelleg_warp/probe_height_115_live_common_local.py": "a494eaa9762b1ce85eead4639561484f92d0c5660269fd144c0d94ba300bcee0",
+    "wheelleg_warp/probe_height_115_margin.py": "cc361583f33fa672b3bdd544eafeff046e85a69478e52edf56b13c0a22576045",
+    "wheelleg_warp/probe_height_115_passive.py": "8771150926217fd575b1f2f3fc2dd3d13cb495e37e2b516a1e34400ef454bfe8",
+    "wheelleg_warp/native/terrain.py": "1e462500ae917ba78ce5e4652f7a856bf62658f8573296e9a7d4630517cf1a94",
+    "wheelleg_warp/native/models.py": "59420b688a25e63fb8e0e644f0702025836bea0ed90377e452bcbd919c7216eb",
+    "wheelleg_ppo/tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+    "wheelleg_ppo/tools/wheelleg_sim.py": "c2dfaae4dc562119fd7916684849ec22fcac3d75dbcfec6a2a0f9452d8f6ee0f",
+    "wheelleg_ppo/xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f"
+  }
+}

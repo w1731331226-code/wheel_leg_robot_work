@@ -1,0 +1,353 @@
+{
+  "status": "completed",
+  "role": "archived_state_alarm_fixed_action_live_nominal_10ms_followthrough",
+  "training": false,
+  "final_holdout_opened": false,
+  "online_trigger_or_reoptimization_tested": false,
+  "control_duration_s": 0.02,
+  "scoring_horizons_ms": [
+    5,
+    10
+  ],
+  "note": "first alarm selected on archived baseline; candidate rechecked on current state; no future safety in action",
+  "alarm_verification_sha256": "83268db9672a19bf9e8275fdaa5bf792af87c0eb6f9bb1e3a160de637c85969f",
+  "rows": [
+    {
+      "world": 0,
+      "alarm_lead_ms": 5.0,
+      "action": [
+        5.156392342412283,
+        -1.5520542262327857,
+        -0.33334714723377806
+      ],
+      "model_current_gamma": 0.0009999999999998899,
+      "normalized_action_l1_support": 1.177213198901079,
+      "contact_equal_steps": 20,
+      "arms": [
+        {
+          "arm": "zero",
+          "horizons": [
+            {
+              "horizon_ms": 5.0,
+              "min_actual_A_m": 0.11540957356365475,
+              "min_eight_joint_margin_rad": -1.8715858459472656e-05,
+              "safe": false,
+              "max_relative_attitude_deg": 0.027533594194265668,
+              "nonwheel_steps": 0
+            },
+            {
+              "horizon_ms": 10.0,
+              "min_actual_A_m": 0.11535440733419777,
+              "min_eight_joint_margin_rad": -0.0121382474899292,
+              "safe": false,
+              "max_relative_attitude_deg": 0.027533594194265668,
+              "nonwheel_steps": 0
+            }
+          ],
+          "first_geometry_failure_after_alarm_ms": 5.0,
+          "clipping_Nm": 0.0,
+          "command_match_error_Nm": 0.0,
+          "peak_motor_delta_Nm": 0.0
+        },
+        {
+          "arm": "candidate",
+          "horizons": [
+            {
+              "horizon_ms": 5.0,
+              "min_actual_A_m": 0.11540186636877274,
+              "min_eight_joint_margin_rad": 0.00024700164794921875,
+              "safe": true,
+              "max_relative_attitude_deg": 0.02731004387805462,
+              "nonwheel_steps": 0
+            },
+            {
+              "horizon_ms": 10.0,
+              "min_actual_A_m": 0.1153182906763375,
+              "min_eight_joint_margin_rad": -0.012041807174682617,
+              "safe": false,
+              "max_relative_attitude_deg": 0.02731004387805462,
+              "nonwheel_steps": 0
+            }
+          ],
+          "first_geometry_failure_after_alarm_ms": 5.5,
+          "clipping_Nm": 0.0,
+          "command_match_error_Nm": 2.9697128978156684e-08,
+          "peak_motor_delta_Nm": 0.34335052967071533
+        }
+      ]
+    },
+    {
+      "world": 1,
+      "alarm_lead_ms": 5.5,
+      "action": [
+        4.877582878235264,
+        -0.0004424770228304185,
+        0.2033854896179268
+      ],
+      "model_current_gamma": 0.001002076921635675,
+      "normalized_action_l1_support": 0.407004119001142,
+      "contact_equal_steps": 20,
+      "arms": [
+        {
+          "arm": "zero",
+          "horizons": [
+            {
+              "horizon_ms": 5.0,
+              "min_actual_A_m": 0.11472300190665996,
+              "min_eight_joint_margin_rad": 0.44742441177368164,
+              "safe": true,
+              "max_relative_attitude_deg": 0.3240844790044107,
+              "nonwheel_steps": 0
+            },
+            {
+              "horizon_ms": 10.0,
+              "min_actual_A_m": 0.11445084426566235,
+              "min_eight_joint_margin_rad": 0.4414254426956177,
+              "safe": false,
+              "max_relative_attitude_deg": 0.4800847891923506,
+              "nonwheel_steps": 0
+            }
+          ],
+          "first_geometry_failure_after_alarm_ms": 5.5,
+          "clipping_Nm": 0.0,
+          "command_match_error_Nm": 0.0,
+          "peak_motor_delta_Nm": 0.0
+        },
+        {
+          "arm": "candidate",
+          "horizons": [
+            {
+              "horizon_ms": 5.0,
+              "min_actual_A_m": 0.114729740074336,
+              "min_eight_joint_margin_rad": 0.4475365877151489,
+              "safe": true,
+              "max_relative_attitude_deg": 0.32032904270411294,
+              "nonwheel_steps": 0
+            },
+            {
+              "horizon_ms": 10.0,
+              "min_actual_A_m": 0.11448080071632133,
+              "min_eight_joint_margin_rad": 0.4418330192565918,
+              "safe": false,
+              "max_relative_attitude_deg": 0.4696011489886735,
+              "nonwheel_steps": 0
+            }
+          ],
+          "first_geometry_failure_after_alarm_ms": 6.0,
+          "clipping_Nm": 0.0,
+          "command_match_error_Nm": 1.1616718920137714e-07,
+          "peak_motor_delta_Nm": 0.203385591506958
+        }
+      ]
+    },
+    {
+      "world": 2,
+      "alarm_lead_ms": 5.5,
+      "action": [
+        9.410834609067491,
+        -0.0014249875584978623,
+        0.3929383642321587
+      ],
+      "model_current_gamma": 0.0010075848014268196,
+      "normalized_action_l1_support": 0.7866284005485348,
+      "contact_equal_steps": 20,
+      "arms": [
+        {
+          "arm": "zero",
+          "horizons": [
+            {
+              "horizon_ms": 5.0,
+              "min_actual_A_m": 0.11470806085642979,
+              "min_eight_joint_margin_rad": 0.44662678241729736,
+              "safe": true,
+              "max_relative_attitude_deg": 0.15603628731591213,
+              "nonwheel_steps": 0
+            },
+            {
+              "horizon_ms": 10.0,
+              "min_actual_A_m": 0.11426081910521799,
+              "min_eight_joint_margin_rad": 0.4381434917449951,
+              "safe": false,
+              "max_relative_attitude_deg": 0.3358107452249752,
+              "nonwheel_steps": 0
+            }
+          ],
+          "first_geometry_failure_after_alarm_ms": 5.5,
+          "clipping_Nm": 0.0,
+          "command_match_error_Nm": 0.0,
+          "peak_motor_delta_Nm": 0.0
+        },
+        {
+          "arm": "candidate",
+          "horizons": [
+            {
+              "horizon_ms": 5.0,
+              "min_actual_A_m": 0.11472047507460834,
+              "min_eight_joint_margin_rad": 0.44682013988494873,
+              "safe": true,
+              "max_relative_attitude_deg": 0.14581152710206188,
+              "nonwheel_steps": 0
+            },
+            {
+              "horizon_ms": 10.0,
+              "min_actual_A_m": 0.11431621181928293,
+              "min_eight_joint_margin_rad": 0.43886899948120117,
+              "safe": false,
+              "max_relative_attitude_deg": 0.3433455078123562,
+              "nonwheel_steps": 0
+            }
+          ],
+          "first_geometry_failure_after_alarm_ms": 5.5,
+          "clipping_Nm": 0.0,
+          "command_match_error_Nm": 1.802922602323065e-07,
+          "peak_motor_delta_Nm": 0.3974609375
+        }
+      ]
+    },
+    {
+      "world": 3,
+      "alarm_lead_ms": 6.500000000000001,
+      "action": [
+        4.361872120335592,
+        -0.00046064265215763344,
+        0.18166943464556604
+      ],
+      "model_current_gamma": 0.0010014570500649356,
+      "normalized_action_l1_support": 0.36358147641489225,
+      "contact_equal_steps": 20,
+      "arms": [
+        {
+          "arm": "zero",
+          "horizons": [
+            {
+              "horizon_ms": 5.0,
+              "min_actual_A_m": 0.11474589795944495,
+              "min_eight_joint_margin_rad": 0.4481031894683838,
+              "safe": true,
+              "max_relative_attitude_deg": 0.13403653376957866,
+              "nonwheel_steps": 0
+            },
+            {
+              "horizon_ms": 10.0,
+              "min_actual_A_m": 0.11460617681150434,
+              "min_eight_joint_margin_rad": 0.44606852531433105,
+              "safe": false,
+              "max_relative_attitude_deg": 0.16242191140939516,
+              "nonwheel_steps": 0
+            }
+          ],
+          "first_geometry_failure_after_alarm_ms": 6.5,
+          "clipping_Nm": 0.0,
+          "command_match_error_Nm": 0.0,
+          "peak_motor_delta_Nm": 0.0
+        },
+        {
+          "arm": "candidate",
+          "horizons": [
+            {
+              "horizon_ms": 5.0,
+              "min_actual_A_m": 0.11475300768273597,
+              "min_eight_joint_margin_rad": 0.44817543029785156,
+              "safe": true,
+              "max_relative_attitude_deg": 0.12878485497733072,
+              "nonwheel_steps": 0
+            },
+            {
+              "horizon_ms": 10.0,
+              "min_actual_A_m": 0.11463522327206589,
+              "min_eight_joint_margin_rad": 0.44648563861846924,
+              "safe": false,
+              "max_relative_attitude_deg": 0.14991633055681294,
+              "nonwheel_steps": 0
+            }
+          ],
+          "first_geometry_failure_after_alarm_ms": 7.0,
+          "clipping_Nm": 0.0,
+          "command_match_error_Nm": 5.791246882047574e-08,
+          "peak_motor_delta_Nm": 0.1816694736480713
+        }
+      ]
+    },
+    {
+      "world": 5,
+      "alarm_lead_ms": 9.000000000000002,
+      "action": [
+        1.9189693552453864,
+        -0.0911031493244463,
+        0.059640365857179564
+      ],
+      "model_current_gamma": 0.0010002204163389594,
+      "normalized_action_l1_support": 0.18624446711242093,
+      "contact_equal_steps": 20,
+      "arms": [
+        {
+          "arm": "zero",
+          "horizons": [
+            {
+              "horizon_ms": 5.0,
+              "min_actual_A_m": 0.11474272518839064,
+              "min_eight_joint_margin_rad": 0.050753235816955566,
+              "safe": true,
+              "max_relative_attitude_deg": 0.34686887641991937,
+              "nonwheel_steps": 0
+            },
+            {
+              "horizon_ms": 10.0,
+              "min_actual_A_m": 0.11469250952266324,
+              "min_eight_joint_margin_rad": 0.050753235816955566,
+              "safe": false,
+              "max_relative_attitude_deg": 0.3541225557562952,
+              "nonwheel_steps": 0
+            }
+          ],
+          "first_geometry_failure_after_alarm_ms": 9.0,
+          "clipping_Nm": 0.0,
+          "command_match_error_Nm": 0.0,
+          "peak_motor_delta_Nm": 0.0
+        },
+        {
+          "arm": "candidate",
+          "horizons": [
+            {
+              "horizon_ms": 5.0,
+              "min_actual_A_m": 0.11474570854418378,
+              "min_eight_joint_margin_rad": 0.05075395107269287,
+              "safe": true,
+              "max_relative_attitude_deg": 0.3450485260251981,
+              "nonwheel_steps": 0
+            },
+            {
+              "horizon_ms": 10.0,
+              "min_actual_A_m": 0.11470262725867726,
+              "min_eight_joint_margin_rad": 0.05075395107269287,
+              "safe": false,
+              "max_relative_attitude_deg": 0.3500801089783346,
+              "nonwheel_steps": 0
+            }
+          ],
+          "first_geometry_failure_after_alarm_ms": 10.0,
+          "clipping_Nm": 0.0,
+          "command_match_error_Nm": 2.9569332093970502e-08,
+          "peak_motor_delta_Nm": 0.05993610620498657
+        }
+      ]
+    }
+  ],
+  "trace_sha256": "8eafd92e9ec833de301a9aec1e90364d82aa060ec9bfc6f87fa09cf355def4b5",
+  "source_sha256": {
+    "wheelleg_warp/probe_height_115_alarm_response.py": "73b43a4a9449259ddaf1e14a5eb834c807f3a66ddfce48b14297c7f627d9a6e5",
+    "wheelleg_warp/probe_height_115_alarm_timing.py": "66c37cd9be626cd371bbe9f562e3c278ecfcc76856e2068f5bc49db837788f11",
+    "wheelleg_warp/probe_height_115_continuous_common_1nm.py": "199199199b3f388acdbdc5d394c0cd934d626cb01ab45f8f41b5f377a3a311dd",
+    "wheelleg_warp/probe_height_115_live_common_local.py": "a494eaa9762b1ce85eead4639561484f92d0c5660269fd144c0d94ba300bcee0",
+    "wheelleg_warp/probe_height_115_contact_action_pair.py": "4195233cf27b27bdeb65f8e6d40b648a3aa75e656ab7974afc09ac86c7d4d3cb",
+    "wheelleg_warp/probe_height_115_radial_authority.py": "c5e517a6bbfafaca4213d3e38c13ee2e4c893c02d319a81c09126fa836ade5c2",
+    "wheelleg_warp/probe_height_115_passive.py": "8771150926217fd575b1f2f3fc2dd3d13cb495e37e2b516a1e34400ef454bfe8",
+    "wheelleg_warp/native/controller.py": "03d56704bf41ab4987a01affef434bc776771ea24077b6ac6fd5f44bed1bd15f",
+    "wheelleg_warp/native/environment.py": "290e97c39ff07cb4df84239c3b405719291322d961d2d2985f5f50e9f61ec543",
+    "wheelleg_warp/native/models.py": "59420b688a25e63fb8e0e644f0702025836bea0ed90377e452bcbd919c7216eb",
+    "wheelleg_warp/native/terrain.py": "1e462500ae917ba78ce5e4652f7a856bf62658f8573296e9a7d4630517cf1a94",
+    "wheelleg_ppo/tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+    "wheelleg_ppo/tools/wheelleg_sim.py": "c2dfaae4dc562119fd7916684849ec22fcac3d75dbcfec6a2a0f9452d8f6ee0f",
+    "wheelleg_ppo/xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f"
+  }
+}
