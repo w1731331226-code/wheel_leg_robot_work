@@ -1,0 +1,5413 @@
+{
+  "n": 96,
+  "protocol": "sensor force 30 N sustained 3 consecutive 2 kHz samples; zero residual; target collision = wheel-target contact normal >1 N",
+  "event_end_timestamp": true,
+  "source_sha256": {
+    "wheelleg_ppo/xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f",
+    "wheelleg_warp/native/environment.py": "c88abf130655c7f11f383ca51d500cca535f0709908ddfcb94d85b31678da4f7",
+    "wheelleg_warp/native/models.py": "59420b688a25e63fb8e0e644f0702025836bea0ed90377e452bcbd919c7216eb",
+    "wheelleg_warp/native/terrain.py": "a6c50c922bd5da757131eec80afcc3db7745142d7563c5576ae14dd5d957ef58"
+  },
+  "script_sha256": "3c782bb864f4284450a99a8731aac3f173a8e68f554d9f8d269a6d64bce23f17",
+  "summary": {
+    "local_abs_x": {
+      "single": {
+        "n": 48,
+        "correct_first_side_after_contact": 48,
+        "any_trigger": null,
+        "correct_side_no_trigger": 0,
+        "precontact_correct_side": 0,
+        "wrong_side_first_or_equal": 0,
+        "both_sides_trigger": null,
+        "only_one_side_trigger": null,
+        "latency_ms_min_med_max": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "flat": {
+        "n": 24,
+        "correct_first_side_after_contact": null,
+        "any_trigger": 24,
+        "correct_side_no_trigger": null,
+        "precontact_correct_side": null,
+        "wrong_side_first_or_equal": null,
+        "both_sides_trigger": 24,
+        "only_one_side_trigger": 0,
+        "latency_ms_min_med_max": null
+      },
+      "symmetric": {
+        "n": 24,
+        "correct_first_side_after_contact": null,
+        "any_trigger": 24,
+        "correct_side_no_trigger": null,
+        "precontact_correct_side": null,
+        "wrong_side_first_or_equal": null,
+        "both_sides_trigger": 24,
+        "only_one_side_trigger": 0,
+        "latency_ms_min_med_max": null
+      }
+    },
+    "world_abs_x": {
+      "single": {
+        "n": 48,
+        "correct_first_side_after_contact": 48,
+        "any_trigger": null,
+        "correct_side_no_trigger": 0,
+        "precontact_correct_side": 0,
+        "wrong_side_first_or_equal": 0,
+        "both_sides_trigger": null,
+        "only_one_side_trigger": null,
+        "latency_ms_min_med_max": [
+          1.0,
+          1.0,
+          62.5
+        ]
+      },
+      "flat": {
+        "n": 24,
+        "correct_first_side_after_contact": null,
+        "any_trigger": 18,
+        "correct_side_no_trigger": null,
+        "precontact_correct_side": null,
+        "wrong_side_first_or_equal": null,
+        "both_sides_trigger": 18,
+        "only_one_side_trigger": 0,
+        "latency_ms_min_med_max": null
+      },
+      "symmetric": {
+        "n": 24,
+        "correct_first_side_after_contact": null,
+        "any_trigger": 24,
+        "correct_side_no_trigger": null,
+        "precontact_correct_side": null,
+        "wrong_side_first_or_equal": null,
+        "both_sides_trigger": 24,
+        "only_one_side_trigger": 0,
+        "latency_ms_min_med_max": null
+      }
+    },
+    "world_horizontal": {
+      "single": {
+        "n": 48,
+        "correct_first_side_after_contact": 48,
+        "any_trigger": null,
+        "correct_side_no_trigger": 0,
+        "precontact_correct_side": 0,
+        "wrong_side_first_or_equal": 0,
+        "both_sides_trigger": null,
+        "only_one_side_trigger": null,
+        "latency_ms_min_med_max": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "flat": {
+        "n": 24,
+        "correct_first_side_after_contact": null,
+        "any_trigger": 18,
+        "correct_side_no_trigger": null,
+        "precontact_correct_side": null,
+        "wrong_side_first_or_equal": null,
+        "both_sides_trigger": 18,
+        "only_one_side_trigger": 0,
+        "latency_ms_min_med_max": null
+      },
+      "symmetric": {
+        "n": 24,
+        "correct_first_side_after_contact": null,
+        "any_trigger": 24,
+        "correct_side_no_trigger": null,
+        "precontact_correct_side": null,
+        "wrong_side_first_or_equal": null,
+        "both_sides_trigger": 24,
+        "only_one_side_trigger": 0,
+        "latency_ms_min_med_max": null
+      }
+    }
+  },
+  "rows": [
+    {
+      "index": 0,
+      "kind": "single",
+      "height": 0.16,
+      "speed": 0.5,
+      "target_side": "L",
+      "first_contact_s": [
+        5.0395,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          5.0405,
+          5.056
+        ],
+        [
+          5.0405,
+          5.0585
+        ],
+        [
+          5.0405,
+          5.056
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          150.93,
+          57.95
+        ],
+        "world_abs_x": [
+          115.63,
+          45.36
+        ],
+        "world_horizontal": [
+          118.44,
+          45.75
+        ]
+      },
+      "valid_samples": 18635,
+      "end_time_s": 9.3175,
+      "precontact_max_N": {
+        "local_abs_x": [
+          25.78,
+          25.79
+        ],
+        "world_abs_x": [
+          17.04,
+          17.05
+        ],
+        "world_horizontal": [
+          17.04,
+          17.05
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          119.99,
+          32.17
+        ],
+        "world_abs_x": [
+          115.63,
+          38.51
+        ],
+        "world_horizontal": [
+          118.44,
+          42.39
+        ]
+      }
+    },
+    {
+      "index": 1,
+      "kind": "single",
+      "height": 0.2,
+      "speed": 0.5,
+      "target_side": "L",
+      "first_contact_s": [
+        5.03,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          5.031,
+          6.2535
+        ],
+        [
+          5.031,
+          6.256
+        ],
+        [
+          5.031,
+          5.1025
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          106.42,
+          51.08
+        ],
+        "world_abs_x": [
+          100.05,
+          38.09
+        ],
+        "world_horizontal": [
+          101.83,
+          38.19
+        ]
+      },
+      "valid_samples": 18595,
+      "end_time_s": 9.2975,
+      "precontact_max_N": {
+        "local_abs_x": [
+          24.77,
+          24.77
+        ],
+        "world_abs_x": [
+          15.81,
+          15.81
+        ],
+        "world_horizontal": [
+          15.81,
+          15.81
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          102.96,
+          28.35
+        ],
+        "world_abs_x": [
+          100.05,
+          28.95
+        ],
+        "world_horizontal": [
+          101.83,
+          30.84
+        ]
+      }
+    },
+    {
+      "index": 2,
+      "kind": "single",
+      "height": 0.25,
+      "speed": 0.5,
+      "target_side": "L",
+      "first_contact_s": [
+        5.0255,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          5.0265,
+          6.244
+        ],
+        [
+          5.0265,
+          null
+        ],
+        [
+          5.0265,
+          null
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          94.88,
+          55.02
+        ],
+        "world_abs_x": [
+          88.7,
+          29.53
+        ],
+        "world_horizontal": [
+          89.85,
+          29.56
+        ]
+      },
+      "valid_samples": 18569,
+      "end_time_s": 9.2845,
+      "precontact_max_N": {
+        "local_abs_x": [
+          23.11,
+          23.11
+        ],
+        "world_abs_x": [
+          13.42,
+          13.42
+        ],
+        "world_horizontal": [
+          13.42,
+          13.42
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          89.29,
+          24.36
+        ],
+        "world_abs_x": [
+          88.7,
+          21.19
+        ],
+        "world_horizontal": [
+          89.85,
+          22.3
+        ]
+      }
+    },
+    {
+      "index": 3,
+      "kind": "single",
+      "height": 0.3,
+      "speed": 0.5,
+      "target_side": "L",
+      "first_contact_s": [
+        5.0215,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          5.0225,
+          6.24
+        ],
+        [
+          5.0225,
+          null
+        ],
+        [
+          5.0225,
+          null
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          98.32,
+          65.97
+        ],
+        "world_abs_x": [
+          82.01,
+          42.88
+        ],
+        "world_horizontal": [
+          82.87,
+          42.9
+        ]
+      },
+      "valid_samples": 18553,
+      "end_time_s": 9.2765,
+      "precontact_max_N": {
+        "local_abs_x": [
+          21.6,
+          21.6
+        ],
+        "world_abs_x": [
+          10.83,
+          10.83
+        ],
+        "world_horizontal": [
+          10.83,
+          10.83
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          78.73,
+          20.54
+        ],
+        "world_abs_x": [
+          82.01,
+          18.22
+        ],
+        "world_horizontal": [
+          82.87,
+          20.69
+        ]
+      }
+    },
+    {
+      "index": 4,
+      "kind": "single",
+      "height": 0.35,
+      "speed": 0.5,
+      "target_side": "L",
+      "first_contact_s": [
+        5.0195,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          5.0205,
+          6.241
+        ],
+        [
+          5.0205,
+          7.2965
+        ],
+        [
+          5.0205,
+          7.2965
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          136.01,
+          57.08
+        ],
+        "world_abs_x": [
+          110.84,
+          46.34
+        ],
+        "world_horizontal": [
+          110.89,
+          46.35
+        ]
+      },
+      "valid_samples": 18550,
+      "end_time_s": 9.275,
+      "precontact_max_N": {
+        "local_abs_x": [
+          20.4,
+          20.4
+        ],
+        "world_abs_x": [
+          8.14,
+          8.15
+        ],
+        "world_horizontal": [
+          8.14,
+          8.15
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          136.01,
+          17.08
+        ],
+        "world_abs_x": [
+          110.84,
+          17.36
+        ],
+        "world_horizontal": [
+          110.89,
+          28.59
+        ]
+      }
+    },
+    {
+      "index": 5,
+      "kind": "single",
+      "height": 0.38,
+      "speed": 0.5,
+      "target_side": "L",
+      "first_contact_s": [
+        5.02,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          5.021,
+          6.242
+        ],
+        [
+          5.021,
+          7.301
+        ],
+        [
+          5.021,
+          7.301
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          133.08,
+          40.36
+        ],
+        "world_abs_x": [
+          79.44,
+          50.6
+        ],
+        "world_horizontal": [
+          80.63,
+          50.61
+        ]
+      },
+      "valid_samples": 18550,
+      "end_time_s": 9.275,
+      "precontact_max_N": {
+        "local_abs_x": [
+          19.78,
+          19.78
+        ],
+        "world_abs_x": [
+          6.33,
+          6.33
+        ],
+        "world_horizontal": [
+          6.33,
+          6.33
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          111.05,
+          15.57
+        ],
+        "world_abs_x": [
+          79.44,
+          12.99
+        ],
+        "world_horizontal": [
+          80.63,
+          19.98
+        ]
+      }
+    },
+    {
+      "index": 6,
+      "kind": "single",
+      "height": 0.16,
+      "speed": 1.0,
+      "target_side": "L",
+      "first_contact_s": [
+        3.409,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          3.41,
+          3.423
+        ],
+        [
+          3.41,
+          3.424
+        ],
+        [
+          3.41,
+          3.4235
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          222.02,
+          59.28
+        ],
+        "world_abs_x": [
+          214.96,
+          50.24
+        ],
+        "world_horizontal": [
+          222.05,
+          56.93
+        ]
+      },
+      "valid_samples": 13090,
+      "end_time_s": 6.545,
+      "precontact_max_N": {
+        "local_abs_x": [
+          26.24,
+          26.24
+        ],
+        "world_abs_x": [
+          17.22,
+          17.22
+        ],
+        "world_horizontal": [
+          17.22,
+          17.22
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          222.02,
+          40.73
+        ],
+        "world_abs_x": [
+          214.96,
+          50.24
+        ],
+        "world_horizontal": [
+          222.05,
+          56.93
+        ]
+      }
+    },
+    {
+      "index": 7,
+      "kind": "single",
+      "height": 0.2,
+      "speed": 1.0,
+      "target_side": "L",
+      "first_contact_s": [
+        3.4,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          3.401,
+          3.4155
+        ],
+        [
+          3.401,
+          3.418
+        ],
+        [
+          3.401,
+          3.4175
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          189.62,
+          64.69
+        ],
+        "world_abs_x": [
+          182.05,
+          50.96
+        ],
+        "world_horizontal": [
+          186.15,
+          52.89
+        ]
+      },
+      "valid_samples": 13066,
+      "end_time_s": 6.533,
+      "precontact_max_N": {
+        "local_abs_x": [
+          25.11,
+          25.11
+        ],
+        "world_abs_x": [
+          16.02,
+          16.02
+        ],
+        "world_horizontal": [
+          16.02,
+          16.02
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          189.62,
+          34.66
+        ],
+        "world_abs_x": [
+          182.05,
+          43.84
+        ],
+        "world_horizontal": [
+          186.15,
+          48.52
+        ]
+      }
+    },
+    {
+      "index": 8,
+      "kind": "single",
+      "height": 0.25,
+      "speed": 1.0,
+      "target_side": "L",
+      "first_contact_s": [
+        3.3955,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          3.3965,
+          3.514
+        ],
+        [
+          3.3965,
+          3.4175
+        ],
+        [
+          3.3965,
+          3.4165
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          164.06,
+          50.59
+        ],
+        "world_abs_x": [
+          160.8,
+          35.65
+        ],
+        "world_horizontal": [
+          163.42,
+          37.8
+        ]
+      },
+      "valid_samples": 13052,
+      "end_time_s": 6.526,
+      "precontact_max_N": {
+        "local_abs_x": [
+          23.3,
+          23.3
+        ],
+        "world_abs_x": [
+          13.68,
+          13.68
+        ],
+        "world_horizontal": [
+          13.68,
+          13.68
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          164.06,
+          29.33
+        ],
+        "world_abs_x": [
+          160.8,
+          34.42
+        ],
+        "world_horizontal": [
+          163.42,
+          37.8
+        ]
+      }
+    },
+    {
+      "index": 9,
+      "kind": "single",
+      "height": 0.3,
+      "speed": 1.0,
+      "target_side": "L",
+      "first_contact_s": [
+        3.3915,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          3.3925,
+          3.5055
+        ],
+        [
+          3.3925,
+          3.5105
+        ],
+        [
+          3.3925,
+          3.5105
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          145.01,
+          48.32
+        ],
+        "world_abs_x": [
+          149.7,
+          35.79
+        ],
+        "world_horizontal": [
+          151.63,
+          35.86
+        ]
+      },
+      "valid_samples": 13041,
+      "end_time_s": 6.5205,
+      "precontact_max_N": {
+        "local_abs_x": [
+          21.62,
+          21.62
+        ],
+        "world_abs_x": [
+          11.16,
+          11.16
+        ],
+        "world_horizontal": [
+          11.16,
+          11.16
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          145.01,
+          30.03
+        ],
+        "world_abs_x": [
+          149.7,
+          25.61
+        ],
+        "world_horizontal": [
+          151.63,
+          28.08
+        ]
+      }
+    },
+    {
+      "index": 10,
+      "kind": "single",
+      "height": 0.35,
+      "speed": 1.0,
+      "target_side": "L",
+      "first_contact_s": [
+        3.3895,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          3.3905,
+          3.4095
+        ],
+        [
+          3.3905,
+          4.545
+        ],
+        [
+          3.3905,
+          4.545
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          129.65,
+          48.26
+        ],
+        "world_abs_x": [
+          146.34,
+          37.35
+        ],
+        "world_horizontal": [
+          148.27,
+          37.35
+        ]
+      },
+      "valid_samples": 13040,
+      "end_time_s": 6.52,
+      "precontact_max_N": {
+        "local_abs_x": [
+          20.42,
+          20.42
+        ],
+        "world_abs_x": [
+          8.53,
+          8.52
+        ],
+        "world_horizontal": [
+          8.53,
+          8.52
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          129.65,
+          37.76
+        ],
+        "world_abs_x": [
+          146.34,
+          19.21
+        ],
+        "world_horizontal": [
+          148.27,
+          21.66
+        ]
+      }
+    },
+    {
+      "index": 11,
+      "kind": "single",
+      "height": 0.38,
+      "speed": 1.0,
+      "target_side": "L",
+      "first_contact_s": [
+        3.39,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          3.391,
+          3.413
+        ],
+        [
+          3.391,
+          4.5485
+        ],
+        [
+          3.391,
+          3.531
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          131.67,
+          54.73
+        ],
+        "world_abs_x": [
+          150.26,
+          40.02
+        ],
+        "world_horizontal": [
+          153.24,
+          40.02
+        ]
+      },
+      "valid_samples": 13041,
+      "end_time_s": 6.5205,
+      "precontact_max_N": {
+        "local_abs_x": [
+          19.79,
+          19.79
+        ],
+        "world_abs_x": [
+          6.73,
+          6.73
+        ],
+        "world_horizontal": [
+          6.73,
+          6.73
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          124.32,
+          49.48
+        ],
+        "world_abs_x": [
+          150.26,
+          29.87
+        ],
+        "world_horizontal": [
+          153.24,
+          29.91
+        ]
+      }
+    },
+    {
+      "index": 12,
+      "kind": "single",
+      "height": 0.16,
+      "speed": -0.5,
+      "target_side": "L",
+      "first_contact_s": [
+        5.3385,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          5.3395,
+          5.4085
+        ],
+        [
+          5.401,
+          6.573
+        ],
+        [
+          5.3395,
+          5.348
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          159.2,
+          77.49
+        ],
+        "world_abs_x": [
+          134.45,
+          59.26
+        ],
+        "world_horizontal": [
+          134.45,
+          59.26
+        ]
+      },
+      "valid_samples": 18635,
+      "end_time_s": 9.3175,
+      "precontact_max_N": {
+        "local_abs_x": [
+          25.31,
+          25.3
+        ],
+        "world_abs_x": [
+          17.61,
+          17.61
+        ],
+        "world_horizontal": [
+          17.61,
+          17.61
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          151.44,
+          35.04
+        ],
+        "world_abs_x": [
+          126.17,
+          29.13
+        ],
+        "world_horizontal": [
+          126.18,
+          34.31
+        ]
+      }
+    },
+    {
+      "index": 13,
+      "kind": "single",
+      "height": 0.2,
+      "speed": -0.5,
+      "target_side": "L",
+      "first_contact_s": [
+        5.329,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          5.33,
+          5.4875
+        ],
+        [
+          5.3895,
+          6.5555
+        ],
+        [
+          5.33,
+          6.5555
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          159.62,
+          74.92
+        ],
+        "world_abs_x": [
+          114.11,
+          57.28
+        ],
+        "world_horizontal": [
+          114.11,
+          57.28
+        ]
+      },
+      "valid_samples": 18596,
+      "end_time_s": 9.298,
+      "precontact_max_N": {
+        "local_abs_x": [
+          24.47,
+          24.47
+        ],
+        "world_abs_x": [
+          16.46,
+          16.46
+        ],
+        "world_horizontal": [
+          16.46,
+          16.46
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          142.94,
+          28.58
+        ],
+        "world_abs_x": [
+          99.11,
+          26.72
+        ],
+        "world_horizontal": [
+          99.12,
+          27.76
+        ]
+      }
+    },
+    {
+      "index": 14,
+      "kind": "single",
+      "height": 0.25,
+      "speed": -0.5,
+      "target_side": "L",
+      "first_contact_s": [
+        5.3245,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          5.3255,
+          5.5055
+        ],
+        [
+          5.3855,
+          6.551
+        ],
+        [
+          5.3255,
+          6.5505
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          151.78,
+          72.19
+        ],
+        "world_abs_x": [
+          105.23,
+          54.3
+        ],
+        "world_horizontal": [
+          105.23,
+          54.3
+        ]
+      },
+      "valid_samples": 18570,
+      "end_time_s": 9.285,
+      "precontact_max_N": {
+        "local_abs_x": [
+          22.98,
+          22.98
+        ],
+        "world_abs_x": [
+          14.13,
+          14.13
+        ],
+        "world_horizontal": [
+          14.13,
+          14.13
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          122.05,
+          26.12
+        ],
+        "world_abs_x": [
+          89.76,
+          23.93
+        ],
+        "world_horizontal": [
+          89.76,
+          24.41
+        ]
+      }
+    },
+    {
+      "index": 15,
+      "kind": "single",
+      "height": 0.3,
+      "speed": -0.5,
+      "target_side": "L",
+      "first_contact_s": [
+        5.3205,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          5.3215,
+          7.2785
+        ],
+        [
+          5.3215,
+          7.2785
+        ],
+        [
+          5.3215,
+          7.2785
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          147.21,
+          93.13
+        ],
+        "world_abs_x": [
+          102.28,
+          67.16
+        ],
+        "world_horizontal": [
+          102.29,
+          67.16
+        ]
+      },
+      "valid_samples": 18554,
+      "end_time_s": 9.277,
+      "precontact_max_N": {
+        "local_abs_x": [
+          21.66,
+          21.66
+        ],
+        "world_abs_x": [
+          11.59,
+          11.59
+        ],
+        "world_horizontal": [
+          11.59,
+          11.59
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          115.37,
+          23.64
+        ],
+        "world_abs_x": [
+          73.07,
+          21.03
+        ],
+        "world_horizontal": [
+          73.07,
+          21.67
+        ]
+      }
+    },
+    {
+      "index": 16,
+      "kind": "single",
+      "height": 0.35,
+      "speed": -0.5,
+      "target_side": "L",
+      "first_contact_s": [
+        5.319,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          5.32,
+          7.278
+        ],
+        [
+          5.32,
+          7.278
+        ],
+        [
+          5.32,
+          7.278
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          151.28,
+          118.34
+        ],
+        "world_abs_x": [
+          99.58,
+          82.26
+        ],
+        "world_horizontal": [
+          99.6,
+          82.26
+        ]
+      },
+      "valid_samples": 18553,
+      "end_time_s": 9.2765,
+      "precontact_max_N": {
+        "local_abs_x": [
+          20.69,
+          20.69
+        ],
+        "world_abs_x": [
+          8.94,
+          8.94
+        ],
+        "world_horizontal": [
+          8.94,
+          8.94
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          127.41,
+          22.17
+        ],
+        "world_abs_x": [
+          65.42,
+          18.37
+        ],
+        "world_horizontal": [
+          65.42,
+          19.02
+        ]
+      }
+    },
+    {
+      "index": 17,
+      "kind": "single",
+      "height": 0.38,
+      "speed": -0.5,
+      "target_side": "L",
+      "first_contact_s": [
+        5.319,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          5.32,
+          7.2785
+        ],
+        [
+          5.32,
+          7.2785
+        ],
+        [
+          5.32,
+          7.2785
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          158.38,
+          116.66
+        ],
+        "world_abs_x": [
+          100.05,
+          80.78
+        ],
+        "world_horizontal": [
+          100.08,
+          80.79
+        ]
+      },
+      "valid_samples": 18554,
+      "end_time_s": 9.277,
+      "precontact_max_N": {
+        "local_abs_x": [
+          20.34,
+          20.34
+        ],
+        "world_abs_x": [
+          7.14,
+          7.14
+        ],
+        "world_horizontal": [
+          7.14,
+          7.14
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          154.48,
+          21.67
+        ],
+        "world_abs_x": [
+          60.46,
+          16.8
+        ],
+        "world_horizontal": [
+          60.48,
+          21.05
+        ]
+      }
+    },
+    {
+      "index": 18,
+      "kind": "single",
+      "height": 0.16,
+      "speed": -1.0,
+      "target_side": "L",
+      "first_contact_s": [
+        3.558,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          3.559,
+          3.5605
+        ],
+        [
+          3.559,
+          3.5615
+        ],
+        [
+          3.559,
+          3.5615
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          201.44,
+          74.41
+        ],
+        "world_abs_x": [
+          156.03,
+          87.74
+        ],
+        "world_horizontal": [
+          156.03,
+          88.39
+        ]
+      },
+      "valid_samples": 13092,
+      "end_time_s": 6.546,
+      "precontact_max_N": {
+        "local_abs_x": [
+          25.31,
+          25.31
+        ],
+        "world_abs_x": [
+          18.23,
+          18.23
+        ],
+        "world_horizontal": [
+          18.23,
+          18.23
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          88.33,
+          54.8
+        ],
+        "world_abs_x": [
+          68.42,
+          50.51
+        ],
+        "world_horizontal": [
+          80.13,
+          55.22
+        ]
+      }
+    },
+    {
+      "index": 19,
+      "kind": "single",
+      "height": 0.2,
+      "speed": -1.0,
+      "target_side": "L",
+      "first_contact_s": [
+        3.5495,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          3.5505,
+          3.5525
+        ],
+        [
+          3.5505,
+          3.5535
+        ],
+        [
+          3.5505,
+          3.5535
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          177.03,
+          72.61
+        ],
+        "world_abs_x": [
+          133.32,
+          79.77
+        ],
+        "world_horizontal": [
+          133.32,
+          79.86
+        ]
+      },
+      "valid_samples": 13065,
+      "end_time_s": 6.5325,
+      "precontact_max_N": {
+        "local_abs_x": [
+          24.47,
+          24.47
+        ],
+        "world_abs_x": [
+          17.32,
+          17.31
+        ],
+        "world_horizontal": [
+          17.32,
+          17.31
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          85.99,
+          48.95
+        ],
+        "world_abs_x": [
+          72.55,
+          43.82
+        ],
+        "world_horizontal": [
+          79.83,
+          44.09
+        ]
+      }
+    },
+    {
+      "index": 20,
+      "kind": "single",
+      "height": 0.25,
+      "speed": -1.0,
+      "target_side": "L",
+      "first_contact_s": [
+        3.545,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          3.546,
+          3.5485
+        ],
+        [
+          3.546,
+          3.55
+        ],
+        [
+          3.546,
+          3.55
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          118.96,
+          70.93
+        ],
+        "world_abs_x": [
+          116.93,
+          73.6
+        ],
+        "world_horizontal": [
+          116.94,
+          73.66
+        ]
+      },
+      "valid_samples": 13052,
+      "end_time_s": 6.526,
+      "precontact_max_N": {
+        "local_abs_x": [
+          23.49,
+          23.49
+        ],
+        "world_abs_x": [
+          15.17,
+          15.17
+        ],
+        "world_horizontal": [
+          15.17,
+          15.17
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          89.79,
+          42.2
+        ],
+        "world_abs_x": [
+          76.51,
+          36.69
+        ],
+        "world_horizontal": [
+          80.65,
+          36.71
+        ]
+      }
+    },
+    {
+      "index": 21,
+      "kind": "single",
+      "height": 0.3,
+      "speed": -1.0,
+      "target_side": "L",
+      "first_contact_s": [
+        3.541,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          3.542,
+          3.545
+        ],
+        [
+          3.542,
+          3.5585
+        ],
+        [
+          3.542,
+          3.5585
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          95.45,
+          68.65
+        ],
+        "world_abs_x": [
+          110.91,
+          68.66
+        ],
+        "world_horizontal": [
+          110.93,
+          68.69
+        ]
+      },
+      "valid_samples": 13043,
+      "end_time_s": 6.5215,
+      "precontact_max_N": {
+        "local_abs_x": [
+          22.5,
+          22.5
+        ],
+        "world_abs_x": [
+          12.77,
+          12.76
+        ],
+        "world_horizontal": [
+          12.77,
+          12.76
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          95.45,
+          41.52
+        ],
+        "world_abs_x": [
+          80.23,
+          35.11
+        ],
+        "world_horizontal": [
+          83.03,
+          35.57
+        ]
+      }
+    },
+    {
+      "index": 22,
+      "kind": "single",
+      "height": 0.35,
+      "speed": -1.0,
+      "target_side": "L",
+      "first_contact_s": [
+        3.5395,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          3.5405,
+          3.544
+        ],
+        [
+          3.5405,
+          3.5585
+        ],
+        [
+          3.5405,
+          3.5585
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          104.18,
+          71.11
+        ],
+        "world_abs_x": [
+          108.32,
+          68.17
+        ],
+        "world_horizontal": [
+          108.36,
+          68.21
+        ]
+      },
+      "valid_samples": 13041,
+      "end_time_s": 6.5205,
+      "precontact_max_N": {
+        "local_abs_x": [
+          21.78,
+          21.78
+        ],
+        "world_abs_x": [
+          10.23,
+          10.23
+        ],
+        "world_horizontal": [
+          10.23,
+          10.23
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          103.06,
+          48.3
+        ],
+        "world_abs_x": [
+          85.72,
+          40.37
+        ],
+        "world_horizontal": [
+          88.52,
+          40.53
+        ]
+      }
+    },
+    {
+      "index": 23,
+      "kind": "single",
+      "height": 0.38,
+      "speed": -1.0,
+      "target_side": "L",
+      "first_contact_s": [
+        3.54,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          3.541,
+          3.5435
+        ],
+        [
+          3.541,
+          3.561
+        ],
+        [
+          3.541,
+          3.561
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          165.02,
+          69.97
+        ],
+        "world_abs_x": [
+          110.65,
+          67.99
+        ],
+        "world_horizontal": [
+          110.76,
+          68.1
+        ]
+      },
+      "valid_samples": 13048,
+      "end_time_s": 6.524,
+      "precontact_max_N": {
+        "local_abs_x": [
+          21.72,
+          21.72
+        ],
+        "world_abs_x": [
+          8.49,
+          8.49
+        ],
+        "world_horizontal": [
+          8.49,
+          8.49
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          108.17,
+          69.97
+        ],
+        "world_abs_x": [
+          91.95,
+          55.33
+        ],
+        "world_horizontal": [
+          95.66,
+          55.34
+        ]
+      }
+    },
+    {
+      "index": 24,
+      "kind": "single",
+      "height": 0.16,
+      "speed": 0.5,
+      "target_side": "R",
+      "first_contact_s": [
+        null,
+        5.0395
+      ],
+      "first_trigger_s": [
+        [
+          5.056,
+          5.0405
+        ],
+        [
+          5.0585,
+          5.0405
+        ],
+        [
+          5.056,
+          5.0405
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          57.1,
+          144.72
+        ],
+        "world_abs_x": [
+          44.62,
+          115.63
+        ],
+        "world_horizontal": [
+          44.97,
+          118.44
+        ]
+      },
+      "valid_samples": 18635,
+      "end_time_s": 9.3175,
+      "precontact_max_N": {
+        "local_abs_x": [
+          25.78,
+          25.79
+        ],
+        "world_abs_x": [
+          17.04,
+          17.05
+        ],
+        "world_horizontal": [
+          17.04,
+          17.05
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          32.17,
+          118.78
+        ],
+        "world_abs_x": [
+          38.54,
+          115.63
+        ],
+        "world_horizontal": [
+          42.49,
+          118.44
+        ]
+      }
+    },
+    {
+      "index": 25,
+      "kind": "single",
+      "height": 0.2,
+      "speed": 0.5,
+      "target_side": "R",
+      "first_contact_s": [
+        null,
+        5.03
+      ],
+      "first_trigger_s": [
+        [
+          6.2535,
+          5.031
+        ],
+        [
+          6.2565,
+          5.031
+        ],
+        [
+          5.101,
+          5.031
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          50.94,
+          102.96
+        ],
+        "world_abs_x": [
+          37.96,
+          100.05
+        ],
+        "world_horizontal": [
+          38.05,
+          101.83
+        ]
+      },
+      "valid_samples": 18595,
+      "end_time_s": 9.2975,
+      "precontact_max_N": {
+        "local_abs_x": [
+          24.77,
+          24.77
+        ],
+        "world_abs_x": [
+          15.81,
+          15.81
+        ],
+        "world_horizontal": [
+          15.81,
+          15.81
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          28.93,
+          102.96
+        ],
+        "world_abs_x": [
+          28.46,
+          100.05
+        ],
+        "world_horizontal": [
+          30.33,
+          101.83
+        ]
+      }
+    },
+    {
+      "index": 26,
+      "kind": "single",
+      "height": 0.25,
+      "speed": 0.5,
+      "target_side": "R",
+      "first_contact_s": [
+        null,
+        5.0255
+      ],
+      "first_trigger_s": [
+        [
+          6.2435,
+          5.0265
+        ],
+        [
+          null,
+          5.0265
+        ],
+        [
+          null,
+          5.0265
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          57.43,
+          95.14
+        ],
+        "world_abs_x": [
+          29.67,
+          88.7
+        ],
+        "world_horizontal": [
+          29.7,
+          89.85
+        ]
+      },
+      "valid_samples": 18569,
+      "end_time_s": 9.2845,
+      "precontact_max_N": {
+        "local_abs_x": [
+          23.11,
+          23.11
+        ],
+        "world_abs_x": [
+          13.42,
+          13.42
+        ],
+        "world_horizontal": [
+          13.42,
+          13.42
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          24.36,
+          89.29
+        ],
+        "world_abs_x": [
+          21.19,
+          88.7
+        ],
+        "world_horizontal": [
+          22.47,
+          89.85
+        ]
+      }
+    },
+    {
+      "index": 27,
+      "kind": "single",
+      "height": 0.3,
+      "speed": 0.5,
+      "target_side": "R",
+      "first_contact_s": [
+        null,
+        5.0215
+      ],
+      "first_trigger_s": [
+        [
+          6.24,
+          5.0225
+        ],
+        [
+          null,
+          5.0225
+        ],
+        [
+          null,
+          5.0225
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          65.91,
+          99.07
+        ],
+        "world_abs_x": [
+          42.89,
+          82.0
+        ],
+        "world_horizontal": [
+          42.91,
+          82.87
+        ]
+      },
+      "valid_samples": 18553,
+      "end_time_s": 9.2765,
+      "precontact_max_N": {
+        "local_abs_x": [
+          21.6,
+          21.6
+        ],
+        "world_abs_x": [
+          10.83,
+          10.83
+        ],
+        "world_horizontal": [
+          10.83,
+          10.83
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          20.54,
+          78.73
+        ],
+        "world_abs_x": [
+          18.02,
+          82.0
+        ],
+        "world_horizontal": [
+          20.53,
+          82.87
+        ]
+      }
+    },
+    {
+      "index": 28,
+      "kind": "single",
+      "height": 0.35,
+      "speed": 0.5,
+      "target_side": "R",
+      "first_contact_s": [
+        null,
+        5.0195
+      ],
+      "first_trigger_s": [
+        [
+          6.2415,
+          5.0205
+        ],
+        [
+          7.297,
+          5.0205
+        ],
+        [
+          7.297,
+          5.0205
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          57.38,
+          102.5
+        ],
+        "world_abs_x": [
+          48.03,
+          78.72
+        ],
+        "world_horizontal": [
+          48.04,
+          79.58
+        ]
+      },
+      "valid_samples": 18550,
+      "end_time_s": 9.275,
+      "precontact_max_N": {
+        "local_abs_x": [
+          20.4,
+          20.4
+        ],
+        "world_abs_x": [
+          8.14,
+          8.15
+        ],
+        "world_horizontal": [
+          8.14,
+          8.15
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          17.08,
+          88.86
+        ],
+        "world_abs_x": [
+          15.2,
+          78.72
+        ],
+        "world_horizontal": [
+          19.25,
+          79.58
+        ]
+      }
+    },
+    {
+      "index": 29,
+      "kind": "single",
+      "height": 0.38,
+      "speed": 0.5,
+      "target_side": "R",
+      "first_contact_s": [
+        null,
+        5.02
+      ],
+      "first_trigger_s": [
+        [
+          6.2425,
+          5.021
+        ],
+        [
+          7.301,
+          5.021
+        ],
+        [
+          7.301,
+          5.021
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          40.36,
+          147.69
+        ],
+        "world_abs_x": [
+          50.61,
+          79.44
+        ],
+        "world_horizontal": [
+          50.61,
+          80.64
+        ]
+      },
+      "valid_samples": 18550,
+      "end_time_s": 9.275,
+      "precontact_max_N": {
+        "local_abs_x": [
+          19.78,
+          19.78
+        ],
+        "world_abs_x": [
+          6.33,
+          6.33
+        ],
+        "world_horizontal": [
+          6.33,
+          6.33
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          15.57,
+          113.83
+        ],
+        "world_abs_x": [
+          13.07,
+          79.44
+        ],
+        "world_horizontal": [
+          19.82,
+          80.64
+        ]
+      }
+    },
+    {
+      "index": 30,
+      "kind": "single",
+      "height": 0.16,
+      "speed": 1.0,
+      "target_side": "R",
+      "first_contact_s": [
+        null,
+        3.409
+      ],
+      "first_trigger_s": [
+        [
+          3.423,
+          3.41
+        ],
+        [
+          3.424,
+          3.41
+        ],
+        [
+          3.4235,
+          3.41
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          59.31,
+          222.03
+        ],
+        "world_abs_x": [
+          50.24,
+          214.97
+        ],
+        "world_horizontal": [
+          56.94,
+          222.06
+        ]
+      },
+      "valid_samples": 13090,
+      "end_time_s": 6.545,
+      "precontact_max_N": {
+        "local_abs_x": [
+          26.24,
+          26.24
+        ],
+        "world_abs_x": [
+          17.22,
+          17.22
+        ],
+        "world_horizontal": [
+          17.22,
+          17.22
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          40.73,
+          222.03
+        ],
+        "world_abs_x": [
+          50.24,
+          214.97
+        ],
+        "world_horizontal": [
+          56.94,
+          222.06
+        ]
+      }
+    },
+    {
+      "index": 31,
+      "kind": "single",
+      "height": 0.2,
+      "speed": 1.0,
+      "target_side": "R",
+      "first_contact_s": [
+        null,
+        3.4
+      ],
+      "first_trigger_s": [
+        [
+          3.4155,
+          3.401
+        ],
+        [
+          3.418,
+          3.401
+        ],
+        [
+          3.4175,
+          3.401
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          64.69,
+          189.61
+        ],
+        "world_abs_x": [
+          50.96,
+          182.04
+        ],
+        "world_horizontal": [
+          52.9,
+          186.14
+        ]
+      },
+      "valid_samples": 13066,
+      "end_time_s": 6.533,
+      "precontact_max_N": {
+        "local_abs_x": [
+          25.11,
+          25.11
+        ],
+        "world_abs_x": [
+          16.02,
+          16.02
+        ],
+        "world_horizontal": [
+          16.02,
+          16.02
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          34.67,
+          189.61
+        ],
+        "world_abs_x": [
+          43.84,
+          182.04
+        ],
+        "world_horizontal": [
+          48.53,
+          186.14
+        ]
+      }
+    },
+    {
+      "index": 32,
+      "kind": "single",
+      "height": 0.25,
+      "speed": 1.0,
+      "target_side": "R",
+      "first_contact_s": [
+        null,
+        3.3955
+      ],
+      "first_trigger_s": [
+        [
+          3.5155,
+          3.3965
+        ],
+        [
+          3.4175,
+          3.3965
+        ],
+        [
+          3.4165,
+          3.3965
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          50.78,
+          164.06
+        ],
+        "world_abs_x": [
+          35.63,
+          160.8
+        ],
+        "world_horizontal": [
+          37.79,
+          163.42
+        ]
+      },
+      "valid_samples": 13052,
+      "end_time_s": 6.526,
+      "precontact_max_N": {
+        "local_abs_x": [
+          23.3,
+          23.3
+        ],
+        "world_abs_x": [
+          13.68,
+          13.68
+        ],
+        "world_horizontal": [
+          13.68,
+          13.68
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          29.36,
+          164.06
+        ],
+        "world_abs_x": [
+          34.43,
+          160.8
+        ],
+        "world_horizontal": [
+          37.79,
+          163.42
+        ]
+      }
+    },
+    {
+      "index": 33,
+      "kind": "single",
+      "height": 0.3,
+      "speed": 1.0,
+      "target_side": "R",
+      "first_contact_s": [
+        null,
+        3.3915
+      ],
+      "first_trigger_s": [
+        [
+          3.5055,
+          3.3925
+        ],
+        [
+          3.5105,
+          3.3925
+        ],
+        [
+          3.5105,
+          3.3925
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          48.33,
+          145.0
+        ],
+        "world_abs_x": [
+          35.79,
+          149.7
+        ],
+        "world_horizontal": [
+          35.85,
+          151.63
+        ]
+      },
+      "valid_samples": 13041,
+      "end_time_s": 6.5205,
+      "precontact_max_N": {
+        "local_abs_x": [
+          21.62,
+          21.62
+        ],
+        "world_abs_x": [
+          11.16,
+          11.16
+        ],
+        "world_horizontal": [
+          11.16,
+          11.16
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          30.02,
+          145.0
+        ],
+        "world_abs_x": [
+          25.61,
+          149.7
+        ],
+        "world_horizontal": [
+          28.07,
+          151.63
+        ]
+      }
+    },
+    {
+      "index": 34,
+      "kind": "single",
+      "height": 0.35,
+      "speed": 1.0,
+      "target_side": "R",
+      "first_contact_s": [
+        null,
+        3.3895
+      ],
+      "first_trigger_s": [
+        [
+          3.4095,
+          3.3905
+        ],
+        [
+          4.545,
+          3.3905
+        ],
+        [
+          4.545,
+          3.3905
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          48.26,
+          129.64
+        ],
+        "world_abs_x": [
+          37.36,
+          146.33
+        ],
+        "world_horizontal": [
+          37.37,
+          148.26
+        ]
+      },
+      "valid_samples": 13040,
+      "end_time_s": 6.52,
+      "precontact_max_N": {
+        "local_abs_x": [
+          20.42,
+          20.42
+        ],
+        "world_abs_x": [
+          8.53,
+          8.52
+        ],
+        "world_horizontal": [
+          8.53,
+          8.52
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          37.75,
+          129.64
+        ],
+        "world_abs_x": [
+          19.21,
+          146.33
+        ],
+        "world_horizontal": [
+          21.67,
+          148.26
+        ]
+      }
+    },
+    {
+      "index": 35,
+      "kind": "single",
+      "height": 0.38,
+      "speed": 1.0,
+      "target_side": "R",
+      "first_contact_s": [
+        null,
+        3.39
+      ],
+      "first_trigger_s": [
+        [
+          3.413,
+          3.391
+        ],
+        [
+          4.5485,
+          3.391
+        ],
+        [
+          3.531,
+          3.391
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          54.75,
+          132.09
+        ],
+        "world_abs_x": [
+          40.02,
+          150.25
+        ],
+        "world_horizontal": [
+          40.02,
+          153.24
+        ]
+      },
+      "valid_samples": 13041,
+      "end_time_s": 6.5205,
+      "precontact_max_N": {
+        "local_abs_x": [
+          19.79,
+          19.79
+        ],
+        "world_abs_x": [
+          6.73,
+          6.73
+        ],
+        "world_horizontal": [
+          6.73,
+          6.73
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          49.49,
+          124.3
+        ],
+        "world_abs_x": [
+          29.87,
+          150.25
+        ],
+        "world_horizontal": [
+          29.92,
+          153.24
+        ]
+      }
+    },
+    {
+      "index": 36,
+      "kind": "single",
+      "height": 0.16,
+      "speed": -0.5,
+      "target_side": "R",
+      "first_contact_s": [
+        null,
+        5.3385
+      ],
+      "first_trigger_s": [
+        [
+          5.4085,
+          5.3395
+        ],
+        [
+          6.573,
+          5.401
+        ],
+        [
+          5.3475,
+          5.3395
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          77.5,
+          159.45
+        ],
+        "world_abs_x": [
+          59.26,
+          135.3
+        ],
+        "world_horizontal": [
+          59.26,
+          135.3
+        ]
+      },
+      "valid_samples": 18635,
+      "end_time_s": 9.3175,
+      "precontact_max_N": {
+        "local_abs_x": [
+          25.31,
+          25.3
+        ],
+        "world_abs_x": [
+          17.61,
+          17.61
+        ],
+        "world_horizontal": [
+          17.61,
+          17.61
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          35.05,
+          151.38
+        ],
+        "world_abs_x": [
+          29.13,
+          126.15
+        ],
+        "world_horizontal": [
+          34.33,
+          126.16
+        ]
+      }
+    },
+    {
+      "index": 37,
+      "kind": "single",
+      "height": 0.2,
+      "speed": -0.5,
+      "target_side": "R",
+      "first_contact_s": [
+        null,
+        5.329
+      ],
+      "first_trigger_s": [
+        [
+          5.4875,
+          5.33
+        ],
+        [
+          6.5555,
+          5.389
+        ],
+        [
+          6.5555,
+          5.33
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          74.96,
+          160.3
+        ],
+        "world_abs_x": [
+          57.29,
+          114.74
+        ],
+        "world_horizontal": [
+          57.29,
+          114.74
+        ]
+      },
+      "valid_samples": 18596,
+      "end_time_s": 9.298,
+      "precontact_max_N": {
+        "local_abs_x": [
+          24.47,
+          24.48
+        ],
+        "world_abs_x": [
+          16.46,
+          16.46
+        ],
+        "world_horizontal": [
+          16.46,
+          16.46
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          28.57,
+          138.63
+        ],
+        "world_abs_x": [
+          26.72,
+          101.74
+        ],
+        "world_horizontal": [
+          27.8,
+          101.75
+        ]
+      }
+    },
+    {
+      "index": 38,
+      "kind": "single",
+      "height": 0.25,
+      "speed": -0.5,
+      "target_side": "R",
+      "first_contact_s": [
+        null,
+        5.3245
+      ],
+      "first_trigger_s": [
+        [
+          5.5025,
+          5.3255
+        ],
+        [
+          6.551,
+          5.3855
+        ],
+        [
+          6.5505,
+          5.3255
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          72.09,
+          151.09
+        ],
+        "world_abs_x": [
+          54.33,
+          106.04
+        ],
+        "world_horizontal": [
+          54.33,
+          106.04
+        ]
+      },
+      "valid_samples": 18571,
+      "end_time_s": 9.2855,
+      "precontact_max_N": {
+        "local_abs_x": [
+          22.98,
+          22.98
+        ],
+        "world_abs_x": [
+          14.13,
+          14.13
+        ],
+        "world_horizontal": [
+          14.13,
+          14.13
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          26.12,
+          122.09
+        ],
+        "world_abs_x": [
+          23.93,
+          90.13
+        ],
+        "world_horizontal": [
+          24.4,
+          90.13
+        ]
+      }
+    },
+    {
+      "index": 39,
+      "kind": "single",
+      "height": 0.3,
+      "speed": -0.5,
+      "target_side": "R",
+      "first_contact_s": [
+        null,
+        5.3205
+      ],
+      "first_trigger_s": [
+        [
+          5.5285,
+          5.3215
+        ],
+        [
+          7.2785,
+          5.3215
+        ],
+        [
+          7.2785,
+          5.3215
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          92.97,
+          145.74
+        ],
+        "world_abs_x": [
+          67.14,
+          99.96
+        ],
+        "world_horizontal": [
+          67.14,
+          99.97
+        ]
+      },
+      "valid_samples": 18554,
+      "end_time_s": 9.277,
+      "precontact_max_N": {
+        "local_abs_x": [
+          21.66,
+          21.66
+        ],
+        "world_abs_x": [
+          11.59,
+          11.59
+        ],
+        "world_horizontal": [
+          11.59,
+          11.59
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          23.65,
+          111.89
+        ],
+        "world_abs_x": [
+          21.03,
+          72.34
+        ],
+        "world_horizontal": [
+          21.67,
+          72.34
+        ]
+      }
+    },
+    {
+      "index": 40,
+      "kind": "single",
+      "height": 0.35,
+      "speed": -0.5,
+      "target_side": "R",
+      "first_contact_s": [
+        null,
+        5.319
+      ],
+      "first_trigger_s": [
+        [
+          7.278,
+          5.32
+        ],
+        [
+          7.278,
+          5.32
+        ],
+        [
+          7.278,
+          5.32
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          118.25,
+          146.61
+        ],
+        "world_abs_x": [
+          82.24,
+          100.14
+        ],
+        "world_horizontal": [
+          82.24,
+          100.15
+        ]
+      },
+      "valid_samples": 18553,
+      "end_time_s": 9.2765,
+      "precontact_max_N": {
+        "local_abs_x": [
+          20.69,
+          20.69
+        ],
+        "world_abs_x": [
+          8.94,
+          8.94
+        ],
+        "world_horizontal": [
+          8.94,
+          8.94
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          22.17,
+          130.32
+        ],
+        "world_abs_x": [
+          18.36,
+          67.99
+        ],
+        "world_horizontal": [
+          19.02,
+          67.99
+        ]
+      }
+    },
+    {
+      "index": 41,
+      "kind": "single",
+      "height": 0.38,
+      "speed": -0.5,
+      "target_side": "R",
+      "first_contact_s": [
+        null,
+        5.319
+      ],
+      "first_trigger_s": [
+        [
+          7.2785,
+          5.32
+        ],
+        [
+          7.2785,
+          5.32
+        ],
+        [
+          7.2785,
+          5.32
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          115.67,
+          154.59
+        ],
+        "world_abs_x": [
+          80.71,
+          101.19
+        ],
+        "world_horizontal": [
+          80.71,
+          101.23
+        ]
+      },
+      "valid_samples": 18554,
+      "end_time_s": 9.277,
+      "precontact_max_N": {
+        "local_abs_x": [
+          20.34,
+          20.34
+        ],
+        "world_abs_x": [
+          7.14,
+          7.14
+        ],
+        "world_horizontal": [
+          7.14,
+          7.14
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          22.0,
+          151.91
+        ],
+        "world_abs_x": [
+          16.8,
+          62.82
+        ],
+        "world_horizontal": [
+          20.62,
+          62.84
+        ]
+      }
+    },
+    {
+      "index": 42,
+      "kind": "single",
+      "height": 0.16,
+      "speed": -1.0,
+      "target_side": "R",
+      "first_contact_s": [
+        null,
+        3.558
+      ],
+      "first_trigger_s": [
+        [
+          3.5605,
+          3.559
+        ],
+        [
+          3.5615,
+          3.559
+        ],
+        [
+          3.5615,
+          3.559
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          74.47,
+          201.45
+        ],
+        "world_abs_x": [
+          87.75,
+          156.13
+        ],
+        "world_horizontal": [
+          88.4,
+          156.13
+        ]
+      },
+      "valid_samples": 13092,
+      "end_time_s": 6.546,
+      "precontact_max_N": {
+        "local_abs_x": [
+          25.3,
+          25.32
+        ],
+        "world_abs_x": [
+          18.23,
+          18.23
+        ],
+        "world_horizontal": [
+          18.23,
+          18.23
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          54.8,
+          88.33
+        ],
+        "world_abs_x": [
+          50.49,
+          68.42
+        ],
+        "world_horizontal": [
+          55.22,
+          80.1
+        ]
+      }
+    },
+    {
+      "index": 43,
+      "kind": "single",
+      "height": 0.2,
+      "speed": -1.0,
+      "target_side": "R",
+      "first_contact_s": [
+        null,
+        3.5495
+      ],
+      "first_trigger_s": [
+        [
+          3.5525,
+          3.5505
+        ],
+        [
+          3.5535,
+          3.5505
+        ],
+        [
+          3.5535,
+          3.5505
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          72.63,
+          176.95
+        ],
+        "world_abs_x": [
+          79.76,
+          133.25
+        ],
+        "world_horizontal": [
+          79.85,
+          133.25
+        ]
+      },
+      "valid_samples": 13065,
+      "end_time_s": 6.5325,
+      "precontact_max_N": {
+        "local_abs_x": [
+          24.47,
+          24.47
+        ],
+        "world_abs_x": [
+          17.32,
+          17.31
+        ],
+        "world_horizontal": [
+          17.32,
+          17.31
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          48.96,
+          85.99
+        ],
+        "world_abs_x": [
+          43.81,
+          72.55
+        ],
+        "world_horizontal": [
+          44.09,
+          79.83
+        ]
+      }
+    },
+    {
+      "index": 44,
+      "kind": "single",
+      "height": 0.25,
+      "speed": -1.0,
+      "target_side": "R",
+      "first_contact_s": [
+        null,
+        3.545
+      ],
+      "first_trigger_s": [
+        [
+          3.5485,
+          3.546
+        ],
+        [
+          3.55,
+          3.546
+        ],
+        [
+          3.55,
+          3.546
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          70.54,
+          138.77
+        ],
+        "world_abs_x": [
+          73.89,
+          118.22
+        ],
+        "world_horizontal": [
+          73.95,
+          118.23
+        ]
+      },
+      "valid_samples": 13052,
+      "end_time_s": 6.526,
+      "precontact_max_N": {
+        "local_abs_x": [
+          23.49,
+          23.49
+        ],
+        "world_abs_x": [
+          15.17,
+          15.17
+        ],
+        "world_horizontal": [
+          15.17,
+          15.17
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          44.98,
+          89.79
+        ],
+        "world_abs_x": [
+          37.97,
+          76.51
+        ],
+        "world_horizontal": [
+          38.04,
+          80.64
+        ]
+      }
+    },
+    {
+      "index": 45,
+      "kind": "single",
+      "height": 0.3,
+      "speed": -1.0,
+      "target_side": "R",
+      "first_contact_s": [
+        null,
+        3.541
+      ],
+      "first_trigger_s": [
+        [
+          3.545,
+          3.542
+        ],
+        [
+          3.5585,
+          3.542
+        ],
+        [
+          3.5585,
+          3.542
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          68.71,
+          95.45
+        ],
+        "world_abs_x": [
+          68.72,
+          109.96
+        ],
+        "world_horizontal": [
+          68.75,
+          109.98
+        ]
+      },
+      "valid_samples": 13043,
+      "end_time_s": 6.5215,
+      "precontact_max_N": {
+        "local_abs_x": [
+          22.5,
+          22.51
+        ],
+        "world_abs_x": [
+          12.77,
+          12.77
+        ],
+        "world_horizontal": [
+          12.77,
+          12.77
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          41.52,
+          95.45
+        ],
+        "world_abs_x": [
+          35.12,
+          80.23
+        ],
+        "world_horizontal": [
+          35.57,
+          83.02
+        ]
+      }
+    },
+    {
+      "index": 46,
+      "kind": "single",
+      "height": 0.35,
+      "speed": -1.0,
+      "target_side": "R",
+      "first_contact_s": [
+        null,
+        3.5395
+      ],
+      "first_trigger_s": [
+        [
+          3.544,
+          3.5405
+        ],
+        [
+          3.5585,
+          3.5405
+        ],
+        [
+          3.5585,
+          3.5405
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          71.36,
+          104.06
+        ],
+        "world_abs_x": [
+          68.18,
+          108.38
+        ],
+        "world_horizontal": [
+          68.22,
+          108.43
+        ]
+      },
+      "valid_samples": 13041,
+      "end_time_s": 6.5205,
+      "precontact_max_N": {
+        "local_abs_x": [
+          21.78,
+          21.78
+        ],
+        "world_abs_x": [
+          10.23,
+          10.23
+        ],
+        "world_horizontal": [
+          10.23,
+          10.23
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          48.29,
+          103.06
+        ],
+        "world_abs_x": [
+          40.37,
+          85.72
+        ],
+        "world_horizontal": [
+          40.53,
+          88.51
+        ]
+      }
+    },
+    {
+      "index": 47,
+      "kind": "single",
+      "height": 0.38,
+      "speed": -1.0,
+      "target_side": "R",
+      "first_contact_s": [
+        null,
+        3.54
+      ],
+      "first_trigger_s": [
+        [
+          3.5435,
+          3.541
+        ],
+        [
+          3.561,
+          3.541
+        ],
+        [
+          3.561,
+          3.541
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          69.97,
+          165.01
+        ],
+        "world_abs_x": [
+          68.0,
+          110.63
+        ],
+        "world_horizontal": [
+          68.1,
+          110.75
+        ]
+      },
+      "valid_samples": 13048,
+      "end_time_s": 6.524,
+      "precontact_max_N": {
+        "local_abs_x": [
+          21.72,
+          21.72
+        ],
+        "world_abs_x": [
+          8.49,
+          8.49
+        ],
+        "world_horizontal": [
+          8.49,
+          8.49
+        ]
+      },
+      "post100ms_max_N": {
+        "local_abs_x": [
+          69.97,
+          108.17
+        ],
+        "world_abs_x": [
+          55.33,
+          91.95
+        ],
+        "world_horizontal": [
+          55.35,
+          95.66
+        ]
+      }
+    },
+    {
+      "index": 48,
+      "kind": "flat",
+      "height": 0.16,
+      "speed": 0.5,
+      "target_side": null,
+      "first_contact_s": [
+        null,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          7.266,
+          7.266
+        ],
+        [
+          null,
+          null
+        ],
+        [
+          null,
+          null
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          35.08,
+          35.07
+        ],
+        "world_abs_x": [
+          19.39,
+          19.41
+        ],
+        "world_horizontal": [
+          19.39,
+          19.41
+        ]
+      },
+      "valid_samples": 18529,
+      "end_time_s": 9.2645
+    },
+    {
+      "index": 49,
+      "kind": "flat",
+      "height": 0.2,
+      "speed": 0.5,
+      "target_side": null,
+      "first_contact_s": [
+        null,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          7.256,
+          7.256
+        ],
+        [
+          null,
+          null
+        ],
+        [
+          null,
+          null
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          36.19,
+          36.19
+        ],
+        "world_abs_x": [
+          18.8,
+          18.77
+        ],
+        "world_horizontal": [
+          18.8,
+          18.77
+        ]
+      },
+      "valid_samples": 18509,
+      "end_time_s": 9.2545
+    },
+    {
+      "index": 50,
+      "kind": "flat",
+      "height": 0.25,
+      "speed": 0.5,
+      "target_side": null,
+      "first_contact_s": [
+        null,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          7.25,
+          7.25
+        ],
+        [
+          null,
+          null
+        ],
+        [
+          null,
+          null
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          63.95,
+          63.95
+        ],
+        "world_abs_x": [
+          30.61,
+          30.62
+        ],
+        "world_horizontal": [
+          30.61,
+          30.62
+        ]
+      },
+      "valid_samples": 18497,
+      "end_time_s": 9.2485
+    },
+    {
+      "index": 51,
+      "kind": "flat",
+      "height": 0.3,
+      "speed": 0.5,
+      "target_side": null,
+      "first_contact_s": [
+        null,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          7.246,
+          7.246
+        ],
+        [
+          7.264,
+          7.264
+        ],
+        [
+          7.264,
+          7.264
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          75.37,
+          75.37
+        ],
+        "world_abs_x": [
+          43.04,
+          43.04
+        ],
+        "world_horizontal": [
+          43.04,
+          43.04
+        ]
+      },
+      "valid_samples": 18489,
+      "end_time_s": 9.2445
+    },
+    {
+      "index": 52,
+      "kind": "flat",
+      "height": 0.35,
+      "speed": 0.5,
+      "target_side": null,
+      "first_contact_s": [
+        null,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          7.244,
+          7.244
+        ],
+        [
+          7.263,
+          7.263
+        ],
+        [
+          7.263,
+          7.263
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          70.36,
+          70.37
+        ],
+        "world_abs_x": [
+          47.46,
+          47.46
+        ],
+        "world_horizontal": [
+          47.46,
+          47.46
+        ]
+      },
+      "valid_samples": 18485,
+      "end_time_s": 9.2425
+    },
+    {
+      "index": 53,
+      "kind": "flat",
+      "height": 0.38,
+      "speed": 0.5,
+      "target_side": null,
+      "first_contact_s": [
+        null,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          7.2445,
+          7.2445
+        ],
+        [
+          7.2675,
+          7.2675
+        ],
+        [
+          7.2675,
+          7.2675
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          51.45,
+          51.44
+        ],
+        "world_abs_x": [
+          51.16,
+          51.15
+        ],
+        "world_horizontal": [
+          51.16,
+          51.15
+        ]
+      },
+      "valid_samples": 18486,
+      "end_time_s": 9.243
+    },
+    {
+      "index": 54,
+      "kind": "flat",
+      "height": 0.16,
+      "speed": 1.0,
+      "target_side": null,
+      "first_contact_s": [
+        null,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          4.523,
+          4.523
+        ],
+        [
+          null,
+          null
+        ],
+        [
+          null,
+          null
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          46.49,
+          46.47
+        ],
+        "world_abs_x": [
+          22.39,
+          22.4
+        ],
+        "world_horizontal": [
+          22.39,
+          22.4
+        ]
+      },
+      "valid_samples": 13043,
+      "end_time_s": 6.5215
+    },
+    {
+      "index": 55,
+      "kind": "flat",
+      "height": 0.2,
+      "speed": 1.0,
+      "target_side": null,
+      "first_contact_s": [
+        null,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          4.514,
+          4.514
+        ],
+        [
+          null,
+          null
+        ],
+        [
+          null,
+          null
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          53.53,
+          53.52
+        ],
+        "world_abs_x": [
+          25.21,
+          25.2
+        ],
+        "world_horizontal": [
+          25.21,
+          25.2
+        ]
+      },
+      "valid_samples": 13025,
+      "end_time_s": 6.5125
+    },
+    {
+      "index": 56,
+      "kind": "flat",
+      "height": 0.25,
+      "speed": 1.0,
+      "target_side": null,
+      "first_contact_s": [
+        null,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          4.509,
+          4.509
+        ],
+        [
+          null,
+          null
+        ],
+        [
+          null,
+          null
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          56.25,
+          56.27
+        ],
+        "world_abs_x": [
+          30.74,
+          30.75
+        ],
+        "world_horizontal": [
+          30.74,
+          30.75
+        ]
+      },
+      "valid_samples": 13015,
+      "end_time_s": 6.5075
+    },
+    {
+      "index": 57,
+      "kind": "flat",
+      "height": 0.3,
+      "speed": 1.0,
+      "target_side": null,
+      "first_contact_s": [
+        null,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          4.505,
+          4.505
+        ],
+        [
+          4.524,
+          4.524
+        ],
+        [
+          4.524,
+          4.524
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          54.54,
+          54.55
+        ],
+        "world_abs_x": [
+          35.15,
+          35.16
+        ],
+        "world_horizontal": [
+          35.15,
+          35.16
+        ]
+      },
+      "valid_samples": 13007,
+      "end_time_s": 6.5035
+    },
+    {
+      "index": 58,
+      "kind": "flat",
+      "height": 0.35,
+      "speed": 1.0,
+      "target_side": null,
+      "first_contact_s": [
+        null,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          4.503,
+          4.503
+        ],
+        [
+          4.5235,
+          4.5235
+        ],
+        [
+          4.5235,
+          4.5235
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          47.72,
+          47.73
+        ],
+        "world_abs_x": [
+          39.16,
+          39.16
+        ],
+        "world_horizontal": [
+          39.16,
+          39.16
+        ]
+      },
+      "valid_samples": 13003,
+      "end_time_s": 6.5015
+    },
+    {
+      "index": 59,
+      "kind": "flat",
+      "height": 0.38,
+      "speed": 1.0,
+      "target_side": null,
+      "first_contact_s": [
+        null,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          4.504,
+          4.504
+        ],
+        [
+          4.526,
+          4.526
+        ],
+        [
+          4.526,
+          4.526
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          44.0,
+          44.01
+        ],
+        "world_abs_x": [
+          42.25,
+          42.24
+        ],
+        "world_horizontal": [
+          42.25,
+          42.24
+        ]
+      },
+      "valid_samples": 13005,
+      "end_time_s": 6.5025
+    },
+    {
+      "index": 60,
+      "kind": "flat",
+      "height": 0.16,
+      "speed": -0.5,
+      "target_side": null,
+      "first_contact_s": [
+        null,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          7.2655,
+          7.2655
+        ],
+        [
+          7.2655,
+          7.2655
+        ],
+        [
+          7.2655,
+          7.2655
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          75.84,
+          75.84
+        ],
+        "world_abs_x": [
+          59.93,
+          59.95
+        ],
+        "world_horizontal": [
+          59.93,
+          59.95
+        ]
+      },
+      "valid_samples": 18528,
+      "end_time_s": 9.264
+    },
+    {
+      "index": 61,
+      "kind": "flat",
+      "height": 0.2,
+      "speed": -0.5,
+      "target_side": null,
+      "first_contact_s": [
+        null,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          7.256,
+          7.256
+        ],
+        [
+          7.256,
+          7.256
+        ],
+        [
+          7.256,
+          7.256
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          72.65,
+          72.65
+        ],
+        "world_abs_x": [
+          58.07,
+          58.09
+        ],
+        "world_horizontal": [
+          58.07,
+          58.09
+        ]
+      },
+      "valid_samples": 18509,
+      "end_time_s": 9.2545
+    },
+    {
+      "index": 62,
+      "kind": "flat",
+      "height": 0.25,
+      "speed": -0.5,
+      "target_side": null,
+      "first_contact_s": [
+        null,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          7.25,
+          7.25
+        ],
+        [
+          7.25,
+          7.25
+        ],
+        [
+          7.25,
+          7.25
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          77.66,
+          77.66
+        ],
+        "world_abs_x": [
+          55.41,
+          55.41
+        ],
+        "world_horizontal": [
+          55.41,
+          55.41
+        ]
+      },
+      "valid_samples": 18497,
+      "end_time_s": 9.2485
+    },
+    {
+      "index": 63,
+      "kind": "flat",
+      "height": 0.3,
+      "speed": -0.5,
+      "target_side": null,
+      "first_contact_s": [
+        null,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          7.246,
+          7.246
+        ],
+        [
+          7.246,
+          7.246
+        ],
+        [
+          7.246,
+          7.246
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          113.04,
+          113.04
+        ],
+        "world_abs_x": [
+          78.25,
+          78.25
+        ],
+        "world_horizontal": [
+          78.25,
+          78.25
+        ]
+      },
+      "valid_samples": 18489,
+      "end_time_s": 9.2445
+    },
+    {
+      "index": 64,
+      "kind": "flat",
+      "height": 0.35,
+      "speed": -0.5,
+      "target_side": null,
+      "first_contact_s": [
+        null,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          7.244,
+          7.244
+        ],
+        [
+          7.244,
+          7.244
+        ],
+        [
+          7.244,
+          7.244
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          119.74,
+          119.74
+        ],
+        "world_abs_x": [
+          82.77,
+          82.79
+        ],
+        "world_horizontal": [
+          82.77,
+          82.79
+        ]
+      },
+      "valid_samples": 18485,
+      "end_time_s": 9.2425
+    },
+    {
+      "index": 65,
+      "kind": "flat",
+      "height": 0.38,
+      "speed": -0.5,
+      "target_side": null,
+      "first_contact_s": [
+        null,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          7.2445,
+          7.2445
+        ],
+        [
+          7.2445,
+          7.2445
+        ],
+        [
+          7.2445,
+          7.2445
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          118.77,
+          118.78
+        ],
+        "world_abs_x": [
+          82.61,
+          82.62
+        ],
+        "world_horizontal": [
+          82.61,
+          82.62
+        ]
+      },
+      "valid_samples": 18486,
+      "end_time_s": 9.243
+    },
+    {
+      "index": 66,
+      "kind": "flat",
+      "height": 0.16,
+      "speed": -1.0,
+      "target_side": null,
+      "first_contact_s": [
+        null,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          4.5225,
+          4.5225
+        ],
+        [
+          4.5225,
+          4.5225
+        ],
+        [
+          4.5225,
+          4.5225
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          96.28,
+          96.29
+        ],
+        "world_abs_x": [
+          80.15,
+          80.16
+        ],
+        "world_horizontal": [
+          80.15,
+          80.16
+        ]
+      },
+      "valid_samples": 13042,
+      "end_time_s": 6.521
+    },
+    {
+      "index": 67,
+      "kind": "flat",
+      "height": 0.2,
+      "speed": -1.0,
+      "target_side": null,
+      "first_contact_s": [
+        null,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          4.514,
+          4.514
+        ],
+        [
+          4.514,
+          4.514
+        ],
+        [
+          4.514,
+          4.514
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          94.73,
+          94.74
+        ],
+        "world_abs_x": [
+          73.96,
+          73.97
+        ],
+        "world_horizontal": [
+          73.96,
+          73.97
+        ]
+      },
+      "valid_samples": 13025,
+      "end_time_s": 6.5125
+    },
+    {
+      "index": 68,
+      "kind": "flat",
+      "height": 0.25,
+      "speed": -1.0,
+      "target_side": null,
+      "first_contact_s": [
+        null,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          4.509,
+          4.509
+        ],
+        [
+          4.509,
+          4.509
+        ],
+        [
+          4.509,
+          4.509
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          95.72,
+          95.72
+        ],
+        "world_abs_x": [
+          70.29,
+          70.28
+        ],
+        "world_horizontal": [
+          70.29,
+          70.28
+        ]
+      },
+      "valid_samples": 13015,
+      "end_time_s": 6.5075
+    },
+    {
+      "index": 69,
+      "kind": "flat",
+      "height": 0.3,
+      "speed": -1.0,
+      "target_side": null,
+      "first_contact_s": [
+        null,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          4.505,
+          4.505
+        ],
+        [
+          4.505,
+          4.505
+        ],
+        [
+          4.505,
+          4.505
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          97.13,
+          97.13
+        ],
+        "world_abs_x": [
+          68.83,
+          68.83
+        ],
+        "world_horizontal": [
+          68.83,
+          68.83
+        ]
+      },
+      "valid_samples": 13007,
+      "end_time_s": 6.5035
+    },
+    {
+      "index": 70,
+      "kind": "flat",
+      "height": 0.35,
+      "speed": -1.0,
+      "target_side": null,
+      "first_contact_s": [
+        null,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          4.503,
+          4.503
+        ],
+        [
+          4.503,
+          4.503
+        ],
+        [
+          4.503,
+          4.503
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          95.76,
+          95.76
+        ],
+        "world_abs_x": [
+          67.1,
+          67.1
+        ],
+        "world_horizontal": [
+          67.1,
+          67.1
+        ]
+      },
+      "valid_samples": 13003,
+      "end_time_s": 6.5015
+    },
+    {
+      "index": 71,
+      "kind": "flat",
+      "height": 0.38,
+      "speed": -1.0,
+      "target_side": null,
+      "first_contact_s": [
+        null,
+        null
+      ],
+      "first_trigger_s": [
+        [
+          4.504,
+          4.504
+        ],
+        [
+          4.504,
+          4.504
+        ],
+        [
+          4.504,
+          4.504
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          94.39,
+          94.4
+        ],
+        "world_abs_x": [
+          66.01,
+          66.0
+        ],
+        "world_horizontal": [
+          66.01,
+          66.0
+        ]
+      },
+      "valid_samples": 13005,
+      "end_time_s": 6.5025
+    },
+    {
+      "index": 72,
+      "kind": "symmetric",
+      "height": 0.16,
+      "speed": 0.5,
+      "target_side": null,
+      "first_contact_s": [
+        5.0395,
+        5.0395
+      ],
+      "first_trigger_s": [
+        [
+          5.0405,
+          5.0405
+        ],
+        [
+          5.0405,
+          5.0405
+        ],
+        [
+          5.0405,
+          5.0405
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          110.81,
+          115.3
+        ],
+        "world_abs_x": [
+          103.46,
+          103.46
+        ],
+        "world_horizontal": [
+          103.46,
+          103.46
+        ]
+      },
+      "valid_samples": 18803,
+      "end_time_s": 9.4015
+    },
+    {
+      "index": 73,
+      "kind": "symmetric",
+      "height": 0.2,
+      "speed": 0.5,
+      "target_side": null,
+      "first_contact_s": [
+        5.03,
+        5.03
+      ],
+      "first_trigger_s": [
+        [
+          5.031,
+          5.031
+        ],
+        [
+          5.031,
+          5.031
+        ],
+        [
+          5.031,
+          5.031
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          100.83,
+          95.94
+        ],
+        "world_abs_x": [
+          91.25,
+          91.24
+        ],
+        "world_horizontal": [
+          91.25,
+          91.24
+        ]
+      },
+      "valid_samples": 18721,
+      "end_time_s": 9.3605
+    },
+    {
+      "index": 74,
+      "kind": "symmetric",
+      "height": 0.25,
+      "speed": 0.5,
+      "target_side": null,
+      "first_contact_s": [
+        5.0255,
+        5.0255
+      ],
+      "first_trigger_s": [
+        [
+          5.0265,
+          5.0265
+        ],
+        [
+          5.0265,
+          5.0265
+        ],
+        [
+          5.0265,
+          5.0265
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          107.42,
+          112.25
+        ],
+        "world_abs_x": [
+          81.92,
+          81.92
+        ],
+        "world_horizontal": [
+          81.92,
+          81.92
+        ]
+      },
+      "valid_samples": 18669,
+      "end_time_s": 9.3345
+    },
+    {
+      "index": 75,
+      "kind": "symmetric",
+      "height": 0.3,
+      "speed": 0.5,
+      "target_side": null,
+      "first_contact_s": [
+        5.0215,
+        5.0215
+      ],
+      "first_trigger_s": [
+        [
+          5.0225,
+          5.0225
+        ],
+        [
+          5.0225,
+          5.0225
+        ],
+        [
+          5.0225,
+          5.0225
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          127.96,
+          124.2
+        ],
+        "world_abs_x": [
+          75.98,
+          75.98
+        ],
+        "world_horizontal": [
+          75.98,
+          75.98
+        ]
+      },
+      "valid_samples": 18633,
+      "end_time_s": 9.3165
+    },
+    {
+      "index": 76,
+      "kind": "symmetric",
+      "height": 0.35,
+      "speed": 0.5,
+      "target_side": null,
+      "first_contact_s": [
+        5.0195,
+        5.0195
+      ],
+      "first_trigger_s": [
+        [
+          5.0205,
+          5.0205
+        ],
+        [
+          5.0205,
+          5.0205
+        ],
+        [
+          5.0205,
+          5.0205
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          93.24,
+          101.32
+        ],
+        "world_abs_x": [
+          72.14,
+          72.14
+        ],
+        "world_horizontal": [
+          72.14,
+          72.14
+        ]
+      },
+      "valid_samples": 18612,
+      "end_time_s": 9.306
+    },
+    {
+      "index": 77,
+      "kind": "symmetric",
+      "height": 0.38,
+      "speed": 0.5,
+      "target_side": null,
+      "first_contact_s": [
+        5.02,
+        5.02
+      ],
+      "first_trigger_s": [
+        [
+          5.021,
+          5.021
+        ],
+        [
+          5.021,
+          5.021
+        ],
+        [
+          5.021,
+          5.021
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          80.68,
+          86.3
+        ],
+        "world_abs_x": [
+          70.81,
+          70.81
+        ],
+        "world_horizontal": [
+          70.81,
+          70.81
+        ]
+      },
+      "valid_samples": 18604,
+      "end_time_s": 9.302
+    },
+    {
+      "index": 78,
+      "kind": "symmetric",
+      "height": 0.16,
+      "speed": 1.0,
+      "target_side": null,
+      "first_contact_s": [
+        3.409,
+        3.409
+      ],
+      "first_trigger_s": [
+        [
+          3.41,
+          3.41
+        ],
+        [
+          3.41,
+          3.41
+        ],
+        [
+          3.41,
+          3.41
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          192.01,
+          192.01
+        ],
+        "world_abs_x": [
+          190.36,
+          190.38
+        ],
+        "world_horizontal": [
+          190.36,
+          190.38
+        ]
+      },
+      "valid_samples": 13161,
+      "end_time_s": 6.5805
+    },
+    {
+      "index": 79,
+      "kind": "symmetric",
+      "height": 0.2,
+      "speed": 1.0,
+      "target_side": null,
+      "first_contact_s": [
+        3.4,
+        3.4
+      ],
+      "first_trigger_s": [
+        [
+          3.401,
+          3.401
+        ],
+        [
+          3.401,
+          3.401
+        ],
+        [
+          3.401,
+          3.401
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          166.3,
+          166.31
+        ],
+        "world_abs_x": [
+          164.69,
+          164.69
+        ],
+        "world_horizontal": [
+          164.69,
+          164.69
+        ]
+      },
+      "valid_samples": 13123,
+      "end_time_s": 6.5615
+    },
+    {
+      "index": 80,
+      "kind": "symmetric",
+      "height": 0.25,
+      "speed": 1.0,
+      "target_side": null,
+      "first_contact_s": [
+        3.3955,
+        3.3955
+      ],
+      "first_trigger_s": [
+        [
+          3.3965,
+          3.3965
+        ],
+        [
+          3.3965,
+          3.3965
+        ],
+        [
+          3.3965,
+          3.3965
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          144.41,
+          144.41
+        ],
+        "world_abs_x": [
+          147.44,
+          147.44
+        ],
+        "world_horizontal": [
+          147.44,
+          147.44
+        ]
+      },
+      "valid_samples": 13098,
+      "end_time_s": 6.549
+    },
+    {
+      "index": 81,
+      "kind": "symmetric",
+      "height": 0.3,
+      "speed": 1.0,
+      "target_side": null,
+      "first_contact_s": [
+        3.3915,
+        3.3915
+      ],
+      "first_trigger_s": [
+        [
+          3.3925,
+          3.3925
+        ],
+        [
+          3.3925,
+          3.3925
+        ],
+        [
+          3.3925,
+          3.3925
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          126.24,
+          126.24
+        ],
+        "world_abs_x": [
+          137.74,
+          137.74
+        ],
+        "world_horizontal": [
+          137.74,
+          137.74
+        ]
+      },
+      "valid_samples": 13078,
+      "end_time_s": 6.539
+    },
+    {
+      "index": 82,
+      "kind": "symmetric",
+      "height": 0.35,
+      "speed": 1.0,
+      "target_side": null,
+      "first_contact_s": [
+        3.3895,
+        3.3895
+      ],
+      "first_trigger_s": [
+        [
+          3.3905,
+          3.3905
+        ],
+        [
+          3.3905,
+          3.3905
+        ],
+        [
+          3.3905,
+          3.3905
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          126.21,
+          126.6
+        ],
+        "world_abs_x": [
+          132.94,
+          132.96
+        ],
+        "world_horizontal": [
+          132.94,
+          132.96
+        ]
+      },
+      "valid_samples": 13062,
+      "end_time_s": 6.531
+    },
+    {
+      "index": 83,
+      "kind": "symmetric",
+      "height": 0.38,
+      "speed": 1.0,
+      "target_side": null,
+      "first_contact_s": [
+        3.39,
+        3.39
+      ],
+      "first_trigger_s": [
+        [
+          3.391,
+          3.391
+        ],
+        [
+          3.391,
+          3.391
+        ],
+        [
+          3.391,
+          3.391
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          153.68,
+          154.47
+        ],
+        "world_abs_x": [
+          132.37,
+          132.38
+        ],
+        "world_horizontal": [
+          132.37,
+          132.38
+        ]
+      },
+      "valid_samples": 13051,
+      "end_time_s": 6.5255
+    },
+    {
+      "index": 84,
+      "kind": "symmetric",
+      "height": 0.16,
+      "speed": -0.5,
+      "target_side": null,
+      "first_contact_s": [
+        5.3385,
+        5.3385
+      ],
+      "first_trigger_s": [
+        [
+          5.3395,
+          5.3395
+        ],
+        [
+          6.6415,
+          6.6415
+        ],
+        [
+          6.6415,
+          6.6415
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          79.44,
+          79.17
+        ],
+        "world_abs_x": [
+          64.5,
+          63.57
+        ],
+        "world_horizontal": [
+          64.5,
+          63.57
+        ]
+      },
+      "valid_samples": 18804,
+      "end_time_s": 9.402
+    },
+    {
+      "index": 85,
+      "kind": "symmetric",
+      "height": 0.2,
+      "speed": -0.5,
+      "target_side": null,
+      "first_contact_s": [
+        5.329,
+        5.329
+      ],
+      "first_trigger_s": [
+        [
+          5.33,
+          5.33
+        ],
+        [
+          6.6,
+          6.5995
+        ],
+        [
+          6.6,
+          6.5995
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          76.77,
+          76.82
+        ],
+        "world_abs_x": [
+          58.1,
+          58.08
+        ],
+        "world_horizontal": [
+          58.1,
+          58.08
+        ]
+      },
+      "valid_samples": 18723,
+      "end_time_s": 9.3615
+    },
+    {
+      "index": 86,
+      "kind": "symmetric",
+      "height": 0.25,
+      "speed": -0.5,
+      "target_side": null,
+      "first_contact_s": [
+        5.3245,
+        5.3245
+      ],
+      "first_trigger_s": [
+        [
+          5.3255,
+          5.3255
+        ],
+        [
+          6.5735,
+          6.5735
+        ],
+        [
+          6.5735,
+          6.5735
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          81.93,
+          82.22
+        ],
+        "world_abs_x": [
+          55.44,
+          55.37
+        ],
+        "world_horizontal": [
+          55.44,
+          55.37
+        ]
+      },
+      "valid_samples": 18672,
+      "end_time_s": 9.336
+    },
+    {
+      "index": 87,
+      "kind": "symmetric",
+      "height": 0.3,
+      "speed": -0.5,
+      "target_side": null,
+      "first_contact_s": [
+        5.3205,
+        5.3205
+      ],
+      "first_trigger_s": [
+        [
+          5.3215,
+          5.3215
+        ],
+        [
+          6.557,
+          6.557
+        ],
+        [
+          6.557,
+          6.557
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          118.67,
+          119.98
+        ],
+        "world_abs_x": [
+          77.8,
+          78.8
+        ],
+        "world_horizontal": [
+          77.8,
+          78.83
+        ]
+      },
+      "valid_samples": 18638,
+      "end_time_s": 9.319
+    },
+    {
+      "index": 88,
+      "kind": "symmetric",
+      "height": 0.35,
+      "speed": -0.5,
+      "target_side": null,
+      "first_contact_s": [
+        5.319,
+        5.319
+      ],
+      "first_trigger_s": [
+        [
+          5.32,
+          5.32
+        ],
+        [
+          5.32,
+          5.32
+        ],
+        [
+          5.32,
+          5.32
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          114.3,
+          125.21
+        ],
+        "world_abs_x": [
+          82.7,
+          82.86
+        ],
+        "world_horizontal": [
+          82.7,
+          82.86
+        ]
+      },
+      "valid_samples": 18617,
+      "end_time_s": 9.3085
+    },
+    {
+      "index": 89,
+      "kind": "symmetric",
+      "height": 0.38,
+      "speed": -0.5,
+      "target_side": null,
+      "first_contact_s": [
+        5.319,
+        5.319
+      ],
+      "first_trigger_s": [
+        [
+          5.32,
+          5.32
+        ],
+        [
+          5.32,
+          5.32
+        ],
+        [
+          5.32,
+          5.32
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          110.29,
+          117.26
+        ],
+        "world_abs_x": [
+          81.89,
+          85.57
+        ],
+        "world_horizontal": [
+          81.89,
+          85.66
+        ]
+      },
+      "valid_samples": 18611,
+      "end_time_s": 9.3055
+    },
+    {
+      "index": 90,
+      "kind": "symmetric",
+      "height": 0.16,
+      "speed": -1.0,
+      "target_side": null,
+      "first_contact_s": [
+        3.558,
+        3.558
+      ],
+      "first_trigger_s": [
+        [
+          3.559,
+          3.559
+        ],
+        [
+          3.559,
+          3.559
+        ],
+        [
+          3.559,
+          3.559
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          118.37,
+          118.21
+        ],
+        "world_abs_x": [
+          80.0,
+          80.01
+        ],
+        "world_horizontal": [
+          80.0,
+          80.01
+        ]
+      },
+      "valid_samples": 13163,
+      "end_time_s": 6.5815
+    },
+    {
+      "index": 91,
+      "kind": "symmetric",
+      "height": 0.2,
+      "speed": -1.0,
+      "target_side": null,
+      "first_contact_s": [
+        3.5495,
+        3.5495
+      ],
+      "first_trigger_s": [
+        [
+          3.5505,
+          3.5505
+        ],
+        [
+          3.5505,
+          3.5505
+        ],
+        [
+          3.5505,
+          3.5505
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          108.07,
+          108.07
+        ],
+        "world_abs_x": [
+          73.87,
+          73.84
+        ],
+        "world_horizontal": [
+          73.87,
+          73.84
+        ]
+      },
+      "valid_samples": 13126,
+      "end_time_s": 6.563
+    },
+    {
+      "index": 92,
+      "kind": "symmetric",
+      "height": 0.25,
+      "speed": -1.0,
+      "target_side": null,
+      "first_contact_s": [
+        3.545,
+        3.545
+      ],
+      "first_trigger_s": [
+        [
+          3.546,
+          3.546
+        ],
+        [
+          3.546,
+          3.546
+        ],
+        [
+          3.546,
+          3.546
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          112.82,
+          114.08
+        ],
+        "world_abs_x": [
+          76.62,
+          86.09
+        ],
+        "world_horizontal": [
+          76.64,
+          87.98
+        ]
+      },
+      "valid_samples": 13101,
+      "end_time_s": 6.5505
+    },
+    {
+      "index": 93,
+      "kind": "symmetric",
+      "height": 0.3,
+      "speed": -1.0,
+      "target_side": null,
+      "first_contact_s": [
+        3.541,
+        3.541
+      ],
+      "first_trigger_s": [
+        [
+          3.542,
+          3.542
+        ],
+        [
+          3.542,
+          3.542
+        ],
+        [
+          3.542,
+          3.542
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          154.15,
+          154.12
+        ],
+        "world_abs_x": [
+          107.9,
+          107.89
+        ],
+        "world_horizontal": [
+          107.9,
+          107.89
+        ]
+      },
+      "valid_samples": 13082,
+      "end_time_s": 6.541
+    },
+    {
+      "index": 94,
+      "kind": "symmetric",
+      "height": 0.35,
+      "speed": -1.0,
+      "target_side": null,
+      "first_contact_s": [
+        3.5395,
+        3.5395
+      ],
+      "first_trigger_s": [
+        [
+          3.5405,
+          3.5405
+        ],
+        [
+          3.5405,
+          3.5405
+        ],
+        [
+          3.5405,
+          3.5405
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          138.38,
+          126.05
+        ],
+        "world_abs_x": [
+          116.55,
+          111.85
+        ],
+        "world_horizontal": [
+          120.86,
+          111.85
+        ]
+      },
+      "valid_samples": 13062,
+      "end_time_s": 6.531
+    },
+    {
+      "index": 95,
+      "kind": "symmetric",
+      "height": 0.38,
+      "speed": -1.0,
+      "target_side": null,
+      "first_contact_s": [
+        3.54,
+        3.54
+      ],
+      "first_trigger_s": [
+        [
+          3.541,
+          3.541
+        ],
+        [
+          3.541,
+          3.541
+        ],
+        [
+          3.541,
+          3.541
+        ]
+      ],
+      "max_force_N": {
+        "local_abs_x": [
+          153.44,
+          153.87
+        ],
+        "world_abs_x": [
+          116.41,
+          116.51
+        ],
+        "world_horizontal": [
+          116.41,
+          116.51
+        ]
+      },
+      "valid_samples": 13049,
+      "end_time_s": 6.5245
+    }
+  ]
+}
