@@ -1,0 +1,124 @@
+{
+  "role": "offline_heldout_fixed_model_continuous_common3_small_trust_lp",
+  "training": false,
+  "final_holdout_opened": false,
+  "target_height_m": 0.115,
+  "horizon_ms": 5.0,
+  "action_set": "constant common3, start Jacobian |B c|<=0.08 Nm, no absolute motor box",
+  "predictor": "fixed heldout-fold G and inner-world reserves; current active q/dq and same-graph prior dq",
+  "linearization": "leg FK only about each baseline predicted step; active joint constraints exact",
+  "no_future_actual_A_or_passive_or_contact_in_optimizer": true,
+  "no_warp_action_candidate_executed": true,
+  "summary": {
+    "worlds": 6,
+    "linearized_feasible": 0,
+    "nonlinear_forecast_both_safe": 0
+  },
+  "rows": [
+    {
+      "world": 0,
+      "linearized_max_min_normalized_margin": -0.00039069899116549926,
+      "linearized_feasible": false,
+      "common_virtual_action": [
+        1.237482878783079,
+        -0.3724775781913195,
+        -0.08
+      ],
+      "peak_start_motor_delta_Nm": 0.08,
+      "nonlinear_forecast_length_margin_after_reserve_m": 0.0006815780514113634,
+      "nonlinear_forecast_joint_margin_after_reserve_rad": -3.9069899116395135e-05,
+      "nonlinear_forecast_both_safe": false,
+      "training_reserve_length_m": 3.6002956374306394e-05,
+      "training_reserve_joint_rad": 9.410421866729024e-05
+    },
+    {
+      "world": 1,
+      "linearized_max_min_normalized_margin": -0.010139823974511691,
+      "linearized_feasible": false,
+      "common_virtual_action": [
+        1.919306408592589,
+        -0.00014739214762897503,
+        0.08
+      ],
+      "peak_start_motor_delta_Nm": 0.08,
+      "nonlinear_forecast_length_margin_after_reserve_m": -1.0139516895060763e-05,
+      "nonlinear_forecast_joint_margin_after_reserve_rad": 0.4467883070635643,
+      "nonlinear_forecast_both_safe": false,
+      "training_reserve_length_m": 3.2631387594267425e-05,
+      "training_reserve_joint_rad": 9.946305282304557e-05
+    },
+    {
+      "world": 2,
+      "linearized_max_min_normalized_margin": -0.03492574455026372,
+      "linearized_feasible": false,
+      "common_virtual_action": [
+        1.915815565636872,
+        -0.00030381154035917827,
+        0.08
+      ],
+      "peak_start_motor_delta_Nm": 0.08000000000000002,
+      "nonlinear_forecast_length_margin_after_reserve_m": -3.492543374114532e-05,
+      "nonlinear_forecast_joint_margin_after_reserve_rad": 0.44575150577808986,
+      "nonlinear_forecast_both_safe": false,
+      "training_reserve_length_m": 3.614774984733726e-05,
+      "training_reserve_joint_rad": 9.943337352869008e-05
+    },
+    {
+      "world": 3,
+      "linearized_max_min_normalized_margin": -0.027456125344192644,
+      "linearized_feasible": false,
+      "common_virtual_action": [
+        1.9232093854242371,
+        -0.00017157986512953994,
+        0.08
+      ],
+      "peak_start_motor_delta_Nm": 0.08,
+      "nonlinear_forecast_length_margin_after_reserve_m": -2.745582767066379e-05,
+      "nonlinear_forecast_joint_margin_after_reserve_rad": 0.44748379646479286,
+      "nonlinear_forecast_both_safe": false,
+      "training_reserve_length_m": 3.6091591144829516e-05,
+      "training_reserve_joint_rad": 7.475628288378111e-05
+    },
+    {
+      "world": 4,
+      "linearized_max_min_normalized_margin": -0.009110600192091676,
+      "linearized_feasible": false,
+      "common_virtual_action": [
+        1.0114013545304263,
+        -0.3471602757832848,
+        -0.08
+      ],
+      "peak_start_motor_delta_Nm": 0.08,
+      "nonlinear_forecast_length_margin_after_reserve_m": 0.0039684785202086376,
+      "nonlinear_forecast_joint_margin_after_reserve_rad": -0.0009110600192092644,
+      "nonlinear_forecast_both_safe": false,
+      "training_reserve_length_m": 3.600620469471072e-05,
+      "training_reserve_joint_rad": 9.54034159277306e-05
+    },
+    {
+      "world": 5,
+      "linearized_max_min_normalized_margin": -0.019454911949149764,
+      "linearized_feasible": false,
+      "common_virtual_action": [
+        2.5716499271775204,
+        -0.1216766737381555,
+        0.08
+      ],
+      "peak_start_motor_delta_Nm": 0.08000001234312709,
+      "nonlinear_forecast_length_margin_after_reserve_m": -1.9454520197803582e-05,
+      "nonlinear_forecast_joint_margin_after_reserve_rad": 0.05204010606931675,
+      "nonlinear_forecast_both_safe": false,
+      "training_reserve_length_m": 3.6005932720323264e-05,
+      "training_reserve_joint_rad": 9.42345237302522e-05
+    }
+  ],
+  "source_loow_verification_sha256": "1b5c3f62667940d7cb2cd6a54f369dc11ed1baacd9d758dce367b2c47d1d5769",
+  "source_heldout_inputs_sha256": "67bca94aa2954d80ad6b92d1c643aba804c2a168a1248bd46b4cfc2580c0d1d7",
+  "source_sha256": {
+    "wheelleg_warp/probe_height_115_continuous_common_lp.py": "cac661a3ee344669a12ac3fe9b3b5fa56580f19ffe42fc5f82399f4acad1afed",
+    "wheelleg_warp/probe_height_115_margin.py": "cc361583f33fa672b3bdd544eafeff046e85a69478e52edf56b13c0a22576045",
+    "wheelleg_ppo/tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+    "wheelleg_ppo/tools/wheelleg_sim.py": "c2dfaae4dc562119fd7916684849ec22fcac3d75dbcfec6a2a0f9452d8f6ee0f",
+    "wheelleg_ppo/xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f"
+  }
+}
