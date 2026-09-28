@@ -1,0 +1,15 @@
+{
+  "role": "public_115m_live_common3_5ms_world_holdout_action_predictability",
+  "status": "failed_pre_registered_gate_or_execution",
+  "error": "ValueError: world1 10 baseline 5ms mismatch: q=3.52352014e-09, ctrl=3.50475311e-05, A=0, joint=0, contacts=10/10",
+  "training": false,
+  "final_holdout_opened": false,
+  "script_sha256": "fb25e968eda0c1d7dcb41a7bf35ae6ca1ce2e3ad29c1831825ee39841e2c3ad7",
+  "controller_source_audit": {
+    "archive_sha256": "54004e5dc718e9b6a6a97669bf5dcf59cb0743729bfb0dcacd08fb2f3cf42af3",
+    "current_sha256": "03d56704bf41ab4987a01affef434bc776771ea24077b6ac6fd5f44bed1bd15f",
+    "archive_git_revision": "c4fed2c",
+    "current_change": "2b870ee optional four-column target floor",
+    "experiment_reference_columns": 3
+  }
+}

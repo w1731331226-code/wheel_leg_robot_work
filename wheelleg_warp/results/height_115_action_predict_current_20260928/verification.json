@@ -1,0 +1,38 @@
+{
+  "role": "public_115m_live_common3_5ms_world_holdout_action_predictability",
+  "status": "failed_pre_registered_gate_or_execution",
+  "error": "ValueError: world1 late preflight historical start: archived qvel proximity 1.43051147e-06",
+  "training": false,
+  "final_holdout_opened": false,
+  "script_sha256": "36791c1198879aa409131c9540a2e747d951441e74136705e3dac3f1b2a227fd",
+  "controller_source_audit": {
+    "archive_sha256": "54004e5dc718e9b6a6a97669bf5dcf59cb0743729bfb0dcacd08fb2f3cf42af3",
+    "current_sha256": "03d56704bf41ab4987a01affef434bc776771ea24077b6ac6fd5f44bed1bd15f",
+    "archive_git_revision": "c4fed2c",
+    "current_change": "2b870ee optional four-column target floor",
+    "experiment_reference_columns": 3
+  },
+  "historical_preflights": [
+    {
+      "path": "wheelleg_warp/results/height_115_action_predict_loow_20260928/verification.json",
+      "sha256": "4d4b2a48adfbd3e0ea46c3eaa620f25ffd7c6d9f82c968e11e41a57c1c2944f1",
+      "status": "failed_pre_registered_gate_or_execution",
+      "error": "ValueError: input archive source changed: wheelleg_warp/native/controller.py",
+      "scientific_loow_result": false
+    },
+    {
+      "path": "wheelleg_warp/results/height_115_action_predict_loow_v2_20260928/verification.json",
+      "sha256": "920627fd319c5b5bd5877141fda7e879fa031a1abab6db60a65f6e45105cf8be",
+      "status": "failed_pre_registered_gate_or_execution",
+      "error": "ValueError: world1 10 arm0 archive: warmstart mismatch 0.000137329102",
+      "scientific_loow_result": false
+    },
+    {
+      "path": "wheelleg_warp/results/height_115_action_predict_loow_v3_20260928/verification.json",
+      "sha256": "cfba518a26966cd9d4771f7f662df51f131d199fd2f699d801fae071fdfecc4d",
+      "status": "failed_pre_registered_gate_or_execution",
+      "error": "ValueError: world1 10 baseline 5ms mismatch: q=3.52352014e-09, ctrl=3.50475311e-05, A=0, joint=0, contacts=10/10",
+      "scientific_loow_result": false
+    }
+  ]
+}

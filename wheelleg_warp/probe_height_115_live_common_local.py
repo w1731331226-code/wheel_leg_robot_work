@@ -83,6 +83,16 @@ def snapshot_post(slot: int, q: wp.array2d[float], out: wp.array3d[D]):
 
 
 @wp.kernel
+def snapshot_previous_velocity(start: wp.array[int], state: wp.array2d[D],
+                               v: wp.array2d[float], out: wp.array[D], hit: wp.array[int]):
+    if int(state[0, 0]) != start[0] - 1:
+        return
+    for j in range(v.shape[1]):
+        out[j] = D(v[0, j])
+    hit[0] = 1
+
+
+@wp.kernel
 def live_common(q: wp.array2d[float], v: wp.array2d[float], ctrl: wp.array2d[float],
                 state: wp.array2d[D], active: wp.array[int], ids: wp.array[int],
                 start: wp.array[int], coeff: wp.array2d[D], stats: wp.array2d[D]):
@@ -141,6 +151,8 @@ def simulate(base, starts, coefficients):
     coeff = wp.array(np.asarray(coefficients), dtype=D)
     stats = wp.zeros((n, 4), dtype=D)
     start_state = wp.zeros((n, 1 + env.cpu.nq + 2 * env.cpu.nv + env.cpu.nu), dtype=D)
+    previous_qvel = wp.zeros(env.cpu.nv, dtype=D)
+    previous_hit = wp.zeros(1, dtype=wp.int32)
     passive = wp.array([env.cpu.joint(name).qposadr[0] for name in
                         ('passA_L', 'passC_L', 'passA_R', 'passC_R')], dtype=wp.int32)
     d = env.data
@@ -152,6 +164,8 @@ def simulate(base, starts, coefficients):
     with wp.ScopedCapture() as captured:
         wp.launch(begin, n, [env.reward])
         for slot in range(40):
+            wp.launch(snapshot_previous_velocity, 1, [start, env.state, d.qvel,
+                previous_qvel, previous_hit])
             wp.launch(align_start, n, [start, d.qpos, d.qvel, d.qacc_warmstart, d.sensordata,
                 env.k['state'], env.state, env.command, env.contact_flags,
                 env.stopped_q, env.stopped_v, env.stopped_w, env.active])
@@ -199,10 +213,13 @@ def simulate(base, starts, coefficients):
                 raw = pc[slot].copy()
                 r['contact_raw'].append(raw)
                 r['contacts'].append({tuple(sorted((int(a), int(b)))) for world, a, b in raw if int(world) == w})
+    assert previous_hit.numpy()[0] == 1
+    prior_v = previous_qvel.numpy()
     for r in records:
         for key in ('pre', 'applied', 'post', 'summary', 'contact_raw'):
             r[key] = np.stack(r[key])
         assert len(r['pre']) == HORIZON and len(r['contacts']) == HORIZON
+        r['previous_qvel'] = prior_v.copy()
     return records, start_state.numpy(), stats.numpy(), env.done.numpy()
 
 
