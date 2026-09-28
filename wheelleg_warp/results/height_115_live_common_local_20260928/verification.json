@@ -1,0 +1,169 @@
+{
+  "role": "public_flat_20ms_live_nominal_live_jacobian_common3_offline_lp",
+  "nominal_target_m": 0.115,
+  "geometric_proxy_min_m": 0.1147044660616607,
+  "horizon_s": 0.02,
+  "finite_difference_motor_trust_Nm": 0.1,
+  "numerical_pairing_margin_normalized": 0.001,
+  "coefficients_chosen_offline_from_future_window": true,
+  "online_implementability_tested": false,
+  "full_episode_safety_tested": false,
+  "default_controller_changed": false,
+  "training": false,
+  "final_holdout_opened": false,
+  "summary": {
+    "states": 3,
+    "finite_difference_valid": 3,
+    "linear_feasible": 2,
+    "nonlinear_safe_same_contact": 1,
+    "baseline_window_safe": 0,
+    "max_start_vs_archive_qpos_m": 0.0
+  },
+  "rows": [
+    {
+      "event_id": 1,
+      "world": 0,
+      "event": "active_joint",
+      "start_s": 7.378,
+      "max_start_vs_archive_qpos_m": 0.0,
+      "finite_difference_coefficient_eps": [
+        1.6026931984408128,
+        0.20936451610704618,
+        0.08
+      ],
+      "finite_difference_peak_motor_delta_Nm": 0.08002865802372268,
+      "finite_difference_clipped_motor_commands": 0,
+      "finite_difference_contact_pair_steps_equal": 240,
+      "finite_difference_all_40_steps_active": true,
+      "finite_difference_valid": true,
+      "baseline_min_normalized_margin": -0.00018715858459472656,
+      "linear_feasible": true,
+      "linear_status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "candidate": {
+        "common_virtual_action": [
+          0.3546423955410368,
+          -0.016517048277621682,
+          -0.011609547406918077
+        ],
+        "linear_min_normalized_margin": 0.001,
+        "minimum_peak_motor_delta_Nm": 0.011609547406918077
+      },
+      "nonlinear": {
+        "active_physical_steps": 40,
+        "min_normalized_margin": 0.0009989738464355469,
+        "min_actual_leg_m": 0.1154144896188934,
+        "min_joint_margin_rad": 9.989738464355469e-05,
+        "peak_abs_attitude_rad": [
+          2.4954279544310053e-07,
+          0.00214755002968963,
+          6.7893216102022475e-06
+        ],
+        "peak_actual_motor_delta_Nm": 0.011609554290771484,
+        "clipped_motor_physical_commands": 0,
+        "applied_physical_steps": 40,
+        "contact_pair_steps_equal": 40,
+        "window_safe": false
+      }
+    },
+    {
+      "event_id": 9,
+      "world": 4,
+      "event": "active_joint",
+      "start_s": 4.573,
+      "max_start_vs_archive_qpos_m": 0.0,
+      "finite_difference_coefficient_eps": [
+        1.4834212769799267,
+        0.20139426703993954,
+        0.08
+      ],
+      "finite_difference_peak_motor_delta_Nm": 0.08005923214956313,
+      "finite_difference_clipped_motor_commands": 0,
+      "finite_difference_contact_pair_steps_equal": 240,
+      "finite_difference_all_40_steps_active": true,
+      "finite_difference_valid": true,
+      "baseline_min_normalized_margin": -0.00925302505493164,
+      "linear_feasible": false,
+      "linear_status": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+      "candidate": null,
+      "nonlinear": {
+        "active_physical_steps": 40,
+        "min_normalized_margin": -0.00925302505493164,
+        "min_actual_leg_m": 0.11748091617123338,
+        "min_joint_margin_rad": -0.0009253025054931641,
+        "peak_abs_attitude_rad": [
+          1.9033709410095906e-07,
+          0.014485005272167985,
+          5.076007002725385e-06
+        ],
+        "peak_actual_motor_delta_Nm": 0.0,
+        "clipped_motor_physical_commands": 0,
+        "applied_physical_steps": 40,
+        "contact_pair_steps_equal": 40,
+        "window_safe": false
+      }
+    },
+    {
+      "event_id": 10,
+      "world": 5,
+      "event": "actual_leg",
+      "start_s": 2.041,
+      "max_start_vs_archive_qpos_m": 0.0,
+      "finite_difference_coefficient_eps": [
+        1.6439057672395139,
+        0.21695474126122094,
+        0.08
+      ],
+      "finite_difference_peak_motor_delta_Nm": 0.08,
+      "finite_difference_clipped_motor_commands": 0,
+      "finite_difference_contact_pair_steps_equal": 240,
+      "finite_difference_all_40_steps_active": true,
+      "finite_difference_valid": true,
+      "baseline_min_normalized_margin": -0.0018262382327077775,
+      "linear_feasible": true,
+      "linear_status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "candidate": {
+        "common_virtual_action": [
+          0.16476467310257606,
+          -0.007808699443123634,
+          0.005138815091916792
+        ],
+        "linear_min_normalized_margin": 0.001,
+        "minimum_peak_motor_delta_Nm": 0.005138815091916792
+      },
+      "nonlinear": {
+        "active_physical_steps": 40,
+        "min_normalized_margin": 0.0010256864433760837,
+        "min_actual_leg_m": 0.11470551864851807,
+        "min_joint_margin_rad": 0.047678351402282715,
+        "peak_abs_attitude_rad": [
+          5.7626577643657496e-08,
+          0.006143702966875487,
+          1.9472632678694724e-06
+        ],
+        "peak_actual_motor_delta_Nm": 0.005139648914337158,
+        "clipped_motor_physical_commands": 0,
+        "applied_physical_steps": 40,
+        "contact_pair_steps_equal": 40,
+        "window_safe": true
+      }
+    }
+  ],
+  "source_state_windows_sha256": "33153efe7d688c5e697c786d101067716284326ee9e3bb9f331b748cb138d30d",
+  "source_old_lp_sha256": "e34e997b6636bfbec65afe665aaaff3c29d807e9e6364dbb773a86a2926f399e",
+  "trace_sha256": "41eaf42fd42368171098e437698e4eb3cf3104d1702ead0f33620ea68585e7e0",
+  "source_sha256": {
+    "wheelleg_warp/probe_height_115_live_common_local.py": "b2cb8586df044bbcf7014a16588edd27ee95b05e54e0cc3788fc0bd1ec944172",
+    "wheelleg_warp/probe_height_115_local_lp.py": "361be037b14516fbbaaf58c59b20a1185dd0ce1376cb92ec42dbef162818ffcc",
+    "wheelleg_warp/probe_height_115_passive.py": "8771150926217fd575b1f2f3fc2dd3d13cb495e37e2b516a1e34400ef454bfe8",
+    "wheelleg_warp/probe_height_115_warp_local_lp.py": "37e3fc3ebebd5518d4cfc4f8f61de5e834830624c7893d26210f02068eab902c",
+    "wheelleg_warp/trace_first_divergence_v2.py": "5ceef2a29660f91ca30639c21fc91f4ca9bf7d1f90280f45829a3f32c55c37f8",
+    "wheelleg_warp/native/controller.py": "54004e5dc718e9b6a6a97669bf5dcf59cb0743729bfb0dcacd08fb2f3cf42af3",
+    "wheelleg_warp/native/environment.py": "290e97c39ff07cb4df84239c3b405719291322d961d2d2985f5f50e9f61ec543",
+    "wheelleg_warp/native/terrain.py": "1e462500ae917ba78ce5e4652f7a856bf62658f8573296e9a7d4630517cf1a94",
+    "wheelleg_warp/native/models.py": "59420b688a25e63fb8e0e644f0702025836bea0ed90377e452bcbd919c7216eb",
+    "wheelleg_ppo/tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+    "wheelleg_ppo/tools/wheelleg_sim.py": "c2dfaae4dc562119fd7916684849ec22fcac3d75dbcfec6a2a0f9452d8f6ee0f",
+    "wheelleg_ppo/tools/hardware_profile.py": "844688aae7e408bb2ca11d00b192ffaa9e4ad5de06cc8a815d3cf3ddfbe02eba",
+    "wheelleg_ppo/xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f"
+  }
+}

@@ -130,9 +130,13 @@ def control(qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.array2d[floa
     hub_old=D(4)*(thcmd-th)-kd*state[w,4]
     if braking:hub_old=-(D(4)*(th-thcmd)+D(.5)*state[w,4]-D(2)*pitch)*D(1.5)-D(4)*pitch-D(.5)*state[w,6]
     offset=wp.clamp(D(.30)*roll+D(.12)*state[w,5],D(-.035),D(.035))
+    left_target=reference[w,2]+offset;right_target=reference[w,2]-offset
+    if reference.shape[1]>3:
+        left_target=wp.max(left_target,reference[w,3])
+        right_target=wp.max(right_target,reference[w,3])
     height=length*wp.cos(th);gravity=D(4)*D(MASS)*wp.min(D(1),boot/D(.15))
-    fl=wp.clamp(D(MASS)*(D(500)*(reference[w,2]+offset-height)-D(25)*state[w,3]*wp.cos(th))+gravity,-D(40)*D(MASS),D(40)*D(MASS))
-    fr=wp.clamp(D(MASS)*(D(500)*(reference[w,2]-offset-height)-D(25)*state[w,3]*wp.cos(th))+gravity,-D(40)*D(MASS),D(40)*D(MASS))
+    fl=wp.clamp(D(MASS)*(D(500)*(left_target-height)-D(25)*state[w,3]*wp.cos(th))+gravity,-D(40)*D(MASS),D(40)*D(MASS))
+    fr=wp.clamp(D(MASS)*(D(500)*(right_target-height)-D(25)*state[w,3]*wp.cos(th))+gravity,-D(40)*D(MASS),D(40)*D(MASS))
     kp=D(.8)*D(MASS);damping=D(.08)*D(MASS)
     if braking:kp=kp*wp.clamp((D(.3)-wp.abs(state[w,7]))/D(.2),D(0),D(1))
     old_l=legacy_vmc(qa,qb,fl,hub_old)+V2(kp*(reference[w,0]-qa)-damping*va,kp*(reference[w,1]-qb)-damping*vb)
@@ -163,8 +167,8 @@ def control(qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.array2d[floa
         wheel=wheel-((D(1)-ratio)*gains[index,0,j]+ratio*gains[index+1,0,j])*x[j]
         hub=hub-((D(1)-ratio)*gains[index,1,j]+ratio*gains[index+1,1,j])*x[j]
     vl=inverse2(jl)*old_l;vr=inverse2(jr)*old_r;average=(vl[1]+vr[1])/D(2)
-    tl=jl*V2(support+D(MASS)*(D(500)*(reference[w,2]+offset-left[3])-D(25)*rate_l),vl[1]+hub-average)
-    tr=jr*V2(support+D(MASS)*(D(500)*(reference[w,2]-offset-right[3])-D(25)*rate_r),vr[1]+hub-average)
+    tl=jl*V2(support+D(MASS)*(D(500)*(left_target-left[3])-D(25)*rate_l),vl[1]+hub-average)
+    tr=jr*V2(support+D(MASS)*(D(500)*(right_target-right[3])-D(25)*rate_r),vr[1]+hub-average)
     yaw_torque=D(0)
     if wp.abs(error)>=D(PI)/D(360) or wp.abs(state[w,8])>=D(.05):yaw_torque=wp.clamp(-yaw_cfg[0]*error-yaw_cfg[1]*state[w,8],-yaw_cfg[2]*D(MASS),yaw_cfg[2]*D(MASS))
     base=V6(tl[0],tl[1],tr[0],tr[1],wheel+yaw_torque,wheel-yaw_torque)

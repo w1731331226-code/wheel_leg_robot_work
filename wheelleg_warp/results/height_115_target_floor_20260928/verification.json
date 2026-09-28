@@ -1,0 +1,115 @@
+{
+  "protocol": "six public 0.115 m normal cases x baseline vs radial target floor at nominal height",
+  "nominal_target_m": 0.115,
+  "geometric_proxy_min_m": 0.1147044660616607,
+  "floor_m": 0.115,
+  "training": false,
+  "final_holdout_opened": false,
+  "summary": {
+    "baseline": {
+      "total": 6,
+      "task_success": 0,
+      "full_gate": 0,
+      "floor_physical_steps": 0,
+      "worst_actual_chain_leg_m": 0.10777286048401594,
+      "worst_joint_margin_rad": -0.06576716899871826
+    },
+    "target_floor_115": {
+      "total": 6,
+      "task_success": 0,
+      "full_gate": 0,
+      "floor_physical_steps": 101645,
+      "worst_actual_chain_leg_m": 0.11325055621987944,
+      "worst_joint_margin_rad": -0.06576216220855713
+    }
+  },
+  "paired": [
+    {
+      "terrain": "legacy",
+      "speed": 0.5,
+      "baseline_full_gate": false,
+      "candidate_full_gate": false,
+      "baseline_actual_m": 0.11378484522549005,
+      "candidate_actual_m": 0.11378534389398756,
+      "baseline_joint_margin_rad": -0.022578001022338867,
+      "candidate_joint_margin_rad": -0.022572040557861328,
+      "floor_physical_steps": 18548,
+      "max_floor_raise_m": 5.439750665706122e-06
+    },
+    {
+      "terrain": "step",
+      "speed": 0.5,
+      "baseline_full_gate": false,
+      "candidate_full_gate": false,
+      "baseline_actual_m": 0.11298830563566162,
+      "candidate_actual_m": 0.11339272601032432,
+      "baseline_joint_margin_rad": -0.023506641387939453,
+      "candidate_joint_margin_rad": -0.022580623626708984,
+      "floor_physical_steps": 18980,
+      "max_floor_raise_m": 0.0029957689985067176
+    },
+    {
+      "terrain": "cross_slope",
+      "speed": 0.5,
+      "baseline_full_gate": false,
+      "candidate_full_gate": false,
+      "baseline_actual_m": 0.10777286048401594,
+      "candidate_actual_m": 0.11356403697642657,
+      "baseline_joint_margin_rad": -0.023644447326660156,
+      "candidate_joint_margin_rad": -0.022871017456054688,
+      "floor_physical_steps": 18866,
+      "max_floor_raise_m": 0.03013816875944393
+    },
+    {
+      "terrain": "rough",
+      "speed": 0.5,
+      "baseline_full_gate": false,
+      "candidate_full_gate": false,
+      "baseline_actual_m": 0.11377596741047348,
+      "candidate_actual_m": 0.1137803644639821,
+      "baseline_joint_margin_rad": -0.022878527641296387,
+      "candidate_joint_margin_rad": -0.02309095859527588,
+      "floor_physical_steps": 19130,
+      "max_floor_raise_m": 0.006225200850965271
+    },
+    {
+      "terrain": "legacy",
+      "speed": 1.0,
+      "baseline_full_gate": false,
+      "candidate_full_gate": false,
+      "baseline_actual_m": 0.11325007177730982,
+      "candidate_actual_m": 0.11325055621987944,
+      "baseline_joint_margin_rad": -0.06576716899871826,
+      "candidate_joint_margin_rad": -0.06576216220855713,
+      "floor_physical_steps": 13062,
+      "max_floor_raise_m": 4.979680643349416e-06
+    },
+    {
+      "terrain": "legacy",
+      "speed": -1.0,
+      "baseline_full_gate": false,
+      "candidate_full_gate": false,
+      "baseline_actual_m": 0.1139838119781952,
+      "candidate_actual_m": 0.11398416653663897,
+      "baseline_joint_margin_rad": -0.064217209815979,
+      "candidate_joint_margin_rad": -0.06421458721160889,
+      "floor_physical_steps": 13059,
+      "max_floor_raise_m": 7.916357463874646e-06
+    }
+  ],
+  "rows_sha256": "db07a6a92a03cda19981e56c5340b494e4783173e14fa5bec2681d7fa9ec2be9",
+  "source_sha256": {
+    "wheelleg_warp/probe_height_115_target_floor.py": "da8f4d4bc272fb5ef29afb7240267afc9e7f728d62bc113e1de37bcc27af5c9e",
+    "wheelleg_warp/probe_height_115_safety_reflex.py": "ac8e1af33327144d1c311cbcd7fb927b497c9834090282928d491baee8c5ff2a",
+    "wheelleg_warp/probe_height_115_margin.py": "cc361583f33fa672b3bdd544eafeff046e85a69478e52edf56b13c0a22576045",
+    "wheelleg_warp/native/controller.py": "03d56704bf41ab4987a01affef434bc776771ea24077b6ac6fd5f44bed1bd15f",
+    "wheelleg_warp/native/environment.py": "290e97c39ff07cb4df84239c3b405719291322d961d2d2985f5f50e9f61ec543",
+    "wheelleg_warp/native/terrain.py": "1e462500ae917ba78ce5e4652f7a856bf62658f8573296e9a7d4630517cf1a94",
+    "wheelleg_warp/native/models.py": "59420b688a25e63fb8e0e644f0702025836bea0ed90377e452bcbd919c7216eb",
+    "wheelleg_ppo/tools/rm_controller.py": "d831408426647aac0c758c82f0972570ad1373798a5e6705d45572384285b35d",
+    "wheelleg_ppo/tools/model_lqr.py": "d63db108ece884340cff2589cf50729ca1dfd2ffd44adb8260b8155570ffbf82",
+    "wheelleg_ppo/tools/wheelleg_sim.py": "c2dfaae4dc562119fd7916684849ec22fcac3d75dbcfec6a2a0f9452d8f6ee0f",
+    "wheelleg_ppo/tools/hardware_profile.py": "844688aae7e408bb2ca11d00b192ffaa9e4ad5de06cc8a815d3cf3ddfbe02eba",
+    "wheelleg_ppo/xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f"
+  }
+}
