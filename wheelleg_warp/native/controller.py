@@ -5,7 +5,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[2]/'wheelleg_ppo/tools'))
 import numpy as np
 import warp as wp
 import wheelleg_sim as sim
-from rm_controller import nominal_design
+from rm_controller import nominal_design,nominal_design_115
 
 D=wp.float64
 V2=wp.types.vector(length=2,dtype=D)
@@ -145,8 +145,8 @@ def control(qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.array2d[floa
     rate_l=jl[0,0]*va+jl[1,0]*vb;rate_r=jr[0,0]*vc+jr[1,0]*vd
     arate_l=jl[0,1]*va+jl[1,1]*vb;arate_r=jr[0,1]*vc+jr[1,1]*vd
     index=int(0)
-    if length>heights[1]:index=1
-    if length>heights[2]:index=2
+    for knot in range(1,heights.shape[0]-1):
+        if length>heights[knot]:index=knot
     ratio=wp.clamp((length-heights[index])/(heights[index+1]-heights[index]),D(0),D(1))
     theta_eq=(D(1)-ratio)*angles[index]+ratio*angles[index+1]
     if wp.abs(cmd)>D(.01) or wp.abs(vx)>D(.03):state[w,13]=D(0)
@@ -230,8 +230,9 @@ def control(qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.array2d[floa
     diagnostic[w,12]=lam;diagnostic[w,13]=D(invalid_base)
 
 
-def constants(model,worlds,yaw_config=(.4,2.,.24,.3),action_dim=3):
-    h,t,_,_=nominal_design()
+def constants(model,worlds,yaw_config=(.4,2.,.24,.3),action_dim=3,height_design='legacy'):
+    if height_design not in ('legacy','range115'):raise ValueError('无效高度控制设计')
+    h,t,_,_=nominal_design() if height_design=='legacy' else nominal_design_115()
     ids=[int(model.jnt_qposadr[model.joint(n).id]) for n in ('alphaL','betaL','alphaR','betaR')]
     ids += [int(model.jnt_dofadr[model.joint(n).id]) for n in ('alphaL','betaL','alphaR','betaR','wheel1','wheel2')]
     ids += [int(model.sensor('body_gyro').adr[0])]

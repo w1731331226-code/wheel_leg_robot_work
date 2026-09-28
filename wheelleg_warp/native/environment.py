@@ -10,6 +10,7 @@ from mujoco_warp._src.types import vec5
 from native.controller import control,constants,D,fk,polar_jac
 import wheelleg_sim as sim
 from native.models import bank
+from native.terrain import HEIGHT_115_MIN,HEIGHT_115_GEOMETRIC_MIN
 from training_contract import TASK_CONTRACT_VERSION
 from stable_baselines3.common.vec_env import VecEnv
 import gymnasium as gym
@@ -165,6 +166,10 @@ def after(qpos:wp.array2d[float],qvel:wp.array2d[float],sensors:wp.array2d[float
         history[w,slot,26+j]=float(diag[w,6+j]/scale)
     delayed=(int(state[w,0])-int(param[w,4])+history.shape[1])%history.shape[1]
     for j in range(32):obs[w,j]=history[w,delayed,j]
+    if param[w,15]>D(0):
+        left_length=fk(D(qpos[w,ids[0]]),D(qpos[w,ids[1]]))[3]
+        right_length=fk(D(qpos[w,ids[2]]),D(qpos[w,ids[3]]))[3]
+        state[w,30]=wp.min(state[w,30],wp.min(left_length,right_length))
     if int(param[w,14]) and t>=D(1):
         height_error=(D(history[w,slot,22])+D(history[w,slot,23]))/D(2)-param[w,13]
         state[w,28]=state[w,28]+height_error*height_error*D(.0005)
@@ -194,6 +199,7 @@ def after(qpos:wp.array2d[float],qvel:wp.array2d[float],sensors:wp.array2d[float
         if int(param[w,14]):
             success=success and state[w,29]>D(0) and wp.sqrt(state[w,28]/state[w,29])<=D(.02)
             success=success and wp.abs((D(history[w,slot,22])+D(history[w,slot,23]))/D(2)-param[w,13])<=D(.02)
+            if param[w,15]>D(0):success=success and state[w,30]>=param[w,15]
         state[w,19]=D(0)
         if success:state[w,19]=D(1);reward[w]=reward[w]+D(10);state[w,20]=state[w,20]+D(10)
         else:reward[w]=reward[w]-D(10);state[w,20]=state[w,20]-D(10)
@@ -215,6 +221,7 @@ def reset_rows(mask:wp.array[int],q0:wp.array2d[float],q:wp.array2d[float],v:wp.
     control_state[w,1]=reference[w,2];control_state[w,12]=D(-1)
     for j in range(state.shape[1]):state[w,j]=D(0)
     state[w,1]=D(-1)
+    state[w,30]=D(1)
     for j in range(6):residual[w,j]=D(0)
     for j in range(targets.shape[1]):targets[w,j]=0.
     for j in range(32):
@@ -223,7 +230,7 @@ def reset_rows(mask:wp.array[int],q0:wp.array2d[float],q:wp.array2d[float],v:wp.
 
 
 class NativeEnv(VecEnv):
-    def __init__(self,n=128,stage=3,seed=730000,scenario=None,bank_factory=bank,yaw_config=(.4,2.,.24,.3),residual_scale=1.,residual_mode='diff3',terminate_on_attitude_failure=False,project_clipped_base=False,grouped_residual=False,height_conditioned=False):
+    def __init__(self,n=128,stage=3,seed=730000,scenario=None,bank_factory=bank,yaw_config=(.4,2.,.24,.3),residual_scale=1.,residual_mode='diff3',terminate_on_attitude_failure=False,project_clipped_base=False,grouped_residual=False,height_conditioned=False,height_design='legacy'):
         if not isinstance(n,int) or not 1 <= n <= 1024:raise ValueError('用户限制：批量环境数须为1～1024')
         if type(project_clipped_base) is not bool:raise ValueError('基础限幅后残差投影开关须为布尔值')
         self.project_clipped_base=project_clipped_base
@@ -242,11 +249,15 @@ class NativeEnv(VecEnv):
         if any(hasattr(s,'stand_height_m')!=height_conditioned for s in self.scenarios):
             raise ValueError('多高度场景与多高度观测模式必须同时启用')
         self.height_conditioned=height_conditioned
+        if height_design not in ('legacy','range115') or (height_design=='range115' and not height_conditioned):
+            raise ValueError('高度控制设计须与多高度模式匹配')
+        self.height_design=height_design
         self.stand_heights=np.asarray([s.stand_height_m if height_conditioned else sim.L_STAND for s in self.scenarios],dtype=float)
-        if not np.isfinite(self.stand_heights).all() or np.any((self.stand_heights<sim.L_SQUAT_MIN)|(self.stand_heights>sim.L_MAX)):
-            raise ValueError('目标腿长超出0.16～0.38m')
+        low=HEIGHT_115_MIN if height_design=='range115' else sim.L_SQUAT_MIN
+        if not np.isfinite(self.stand_heights).all() or np.any((self.stand_heights<low)|(self.stand_heights>sim.L_MAX)):
+            raise ValueError(f'目标腿长超出{low:.3f}～{sim.L_MAX:.3f}m')
         if len(yaw_config)!=4 or not np.isfinite(yaw_config).all() or min(yaw_config)<=0:raise ValueError('无效偏航控制参数')
-        self.yaw_config=tuple(float(x) for x in yaw_config);self.k=constants(self.cpu,n,self.yaw_config,self.action_dim)
+        self.yaw_config=tuple(float(x) for x in yaw_config);self.k=constants(self.cpu,n,self.yaw_config,self.action_dim,height_design)
         ids=self.k['ids'].numpy().tolist()+[self.cpu.geom(x).id for x in ('wheel_collide_L','wheel_collide_R','bump_L','bump_R')]
         terrain=mujoco.mj_name2id(self.cpu,mujoco.mjtObj.mjOBJ_GEOM,'terrain_00')
         ids += [terrain,mujoco.mj_name2id(self.cpu,mujoco.mjtObj.mjOBJ_GEOM,'terrain_15')] if terrain>=0 else [-1,-1]
@@ -284,11 +295,11 @@ class NativeEnv(VecEnv):
             if getattr(s,'terrain','legacy')=='single_side_ramp':terrain=8 if s.grade_deg>0 else 4
             relative=bool(getattr(s,'relative_attitude',False));kind={'ramp':1,'cross_slope':2,'rolling_slope':3,'split_level':4}.get(getattr(s,'terrain','legacy'),0)
             self.required_contact_masks.append(required);self.required_terrain_contact_masks.append(terrain);self.required_terrain_end.append(end);self.relative_attitude.append(relative)
-            p.append([s.speed,np.sign(s.speed),goal,1.5+1.5*goal/abs(s.speed),round(s.delay_ms*2),required,terrain,relative,kind,np.deg2rad(getattr(s,'grade_deg',0.)),s.center,terminate_on_attitude_failure,end or 0.,self.stand_heights[i],height_conditioned])
+            p.append([s.speed,np.sign(s.speed),goal,1.5+1.5*goal/abs(s.speed),round(s.delay_ms*2),required,terrain,relative,kind,np.deg2rad(getattr(s,'grade_deg',0.)),s.center,terminate_on_attitude_failure,end or 0.,self.stand_heights[i],height_conditioned,HEIGHT_115_GEOMETRIC_MIN if height_design=='range115' else 0.])
         self.task_goals=[row[2] for row in p]
         self.param=wp.array(p,dtype=D);self.command=wp.zeros(n,dtype=D)
         self.active=wp.ones(n,dtype=wp.int32);self.done=wp.zeros(n,dtype=wp.int32)
-        self.state=wp.zeros((n,30),dtype=D);self.diag=wp.zeros((n,21 if height_conditioned else 15),dtype=D)
+        self.state=wp.zeros((n,31),dtype=D);self.diag=wp.zeros((n,21 if height_conditioned else 15),dtype=D)
         self.residual=wp.zeros((n,6),dtype=D);self.reward=wp.zeros(n,dtype=D);self.contact_flags=wp.zeros((n,2),dtype=wp.int32)
         self.obs=wp.zeros((n,32));self.history=wp.zeros((n,max(round(s.delay_ms*2) for s in self.scenarios)+1,32))
         self.targets=wp.zeros((n,self.action_dim));self.stopped_q=wp.zeros((n,self.cpu.nq));self.stopped_v=wp.zeros((n,self.cpu.nv));self.stopped_w=wp.zeros((n,self.cpu.nv))
@@ -382,6 +393,11 @@ class NativeEnv(VecEnv):
                     infos[i]['target_leg_m']=float(self.stand_heights[i])
                     infos[i]['height_rmse_m']=float(np.sqrt(states[i,28]/states[i,29])) if states[i,29]>0 else None
                     infos[i]['height_tolerance_m']=.02
+                    infos[i]['height_design']=self.height_design
+                    if self.height_design=='range115':
+                        infos[i]['min_leg_m']=float(states[i,30])
+                        infos[i]['geometric_limit_m']=HEIGHT_115_GEOMETRIC_MIN
+                        infos[i]['geometric_margin_passed']=bool(states[i,30]>=HEIGHT_115_GEOMETRIC_MIN)
                 # This deadline is task failure, not an external collection cutoff.
                 # SB3 must not add gamma*V(terminal_observation) to its -10 reward.
                 infos[i]['TimeLimit.truncated']=False

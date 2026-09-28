@@ -11,6 +11,10 @@ V3_TERRAINS=TERRAINS+('rolling_slope','multi_step','split_level')
 ADVANCED_TERRAINS=('single_side_ramp','asymmetric_rough')
 V4_TERRAINS=V3_TERRAINS+ADVANCED_TERRAINS
 TERRAIN_GEOMS=16
+HEIGHT_115_MIN=.115
+HEIGHT_MAX=.38
+# 五连杆模型主动关节限位给出0.094704466 m；再留20 mm。仅仿真代理安全边界。
+HEIGHT_115_GEOMETRIC_MIN=.1147044660616607
 
 
 @dataclass(frozen=True)
@@ -40,15 +44,19 @@ class HeightTerrainScenario(TerrainScenario):
 
     def __post_init__(self):
         super().__post_init__()
-        if not math.isfinite(self.stand_height_m) or not .16<=self.stand_height_m<=.38:
-            raise ValueError('目标腿长须在0.16～0.38m')
+        if not math.isfinite(self.stand_height_m) or not HEIGHT_115_MIN<=self.stand_height_m<=HEIGHT_MAX:
+            raise ValueError('目标腿长须在0.115～0.38m')
 
 
-def sample_height_terrain_v3(seed,stage=3,split='train'):
+def sample_height_terrain_v3(seed,stage=3,split='train',_min=.16,_salt=113091):
     base=sample_terrain_v3(seed,stage,split)
-    rng=np.random.default_rng(np.random.SeedSequence([int(seed),113091,stage,{'train':1,'development':2,'ood':3}[split]]))
-    height={0:.16,1:.38,2:.3}.get(int(seed)%16,float(rng.uniform(.16,.38)))
+    rng=np.random.default_rng(np.random.SeedSequence([int(seed),_salt,stage,{'train':1,'development':2,'ood':3}[split]]))
+    height={0:_min,1:HEIGHT_MAX,2:.3}.get(int(seed)%16,float(rng.uniform(_min,HEIGHT_MAX)))
     return HeightTerrainScenario(**asdict(base),stand_height_m=height)
+
+
+def sample_height_terrain_115(seed,stage=3,split='train'):
+    return sample_height_terrain_v3(seed,stage,split,_min=HEIGHT_115_MIN,_salt=115091)
 
 
 def sample_terrain(seed,stage=3,split='train'):
@@ -201,3 +209,8 @@ def bank_height_v3(n,stage=3,seed=1130000,scenario=None):
     if len(scenarios)!=n or not all(isinstance(s,HeightTerrainScenario) for s in scenarios):
         raise ValueError('多高度地形场景数量或类型无效')
     return batch([model(s) for s in scenarios],scenarios)
+
+
+def bank_height_115(n,stage=3,seed=1150000,scenario=None):
+    scenarios=list(scenario) if isinstance(scenario,(list,tuple)) else [scenario or sample_height_terrain_115(seed+i,stage) for i in range(n)]
+    return bank_height_v3(n,stage,seed,scenarios)

@@ -14,13 +14,16 @@ import wheelleg_sim as sim
 from state_estimation import leg_kinematics
 
 
-def design_controller(model):
+def design_controller(model, heights=None):
     """显式离线设计；随机物理模型不得隐式调用此函数。"""
-    heights = np.array([sim.L_SQUAT_MIN, sim.L_PREP, sim.L_STAND, sim.L_MAX])
+    heights = np.array([sim.L_SQUAT_MIN, sim.L_PREP, sim.L_STAND, sim.L_MAX]
+                       if heights is None else heights, dtype=float)
+    if len(heights) < 2 or not np.isfinite(heights).all() or heights[0] < .115 or heights[-1] > sim.L_MAX or np.any(np.diff(heights) <= 0):
+        raise ValueError('名义腿高设计节点无效')
     table = []
     inputs = ml.sagittal_basis(model)[1]
     for height in heights:
-        ref, a, b, _ = ml.design(model, height)
+        ref, a, b, _ = ml.design(model, height, min_height=float(heights[0]))
         gain, report = ml.reduced_design(model, ref, a, b, 6)
         if not report['linear_pass']:
             raise RuntimeError('六状态候选的频响/省略动态/完整闭环未通过')
@@ -41,6 +44,13 @@ def nominal_design():
     """每进程一次：固定名义模型的增益、前馈、平衡角和质量缩放。"""
     model, _ = sim.load_model(ml.XML, True)
     return design_controller(model)
+
+
+@lru_cache(maxsize=1)
+def nominal_design_115():
+    """height-115独立五节点设计；保留旧名义四节点不变。"""
+    model, _ = sim.load_model(ml.XML, True)
+    return design_controller(model, (.115, sim.L_SQUAT_MIN, sim.L_PREP, sim.L_STAND, sim.L_MAX))
 
 
 class SixStateController:

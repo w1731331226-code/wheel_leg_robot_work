@@ -10,7 +10,7 @@ from native.terrain import HeightTerrainScenario,TerrainScenario,bank_height_v3,
 def main():
     heights=(.16,.20,.25,.30,.35,.38)
     assert [sample_height_terrain_v3(1130000+i).stand_height_m for i in range(3)]==[.16,.38,.3]
-    for invalid in (.159,.381,float('nan')):
+    for invalid in (.114,.381,float('nan')):
         try:HeightTerrainScenario(stand_height_m=invalid)
         except ValueError:pass
         else:raise AssertionError(f'非法高度被接受: {invalid}')

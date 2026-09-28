@@ -41,9 +41,9 @@ def sagittal_basis(model):
     return basis, inputs
 
 
-def equilibrium(model, height):
-    if not math.isfinite(height) or not sim.L_SQUAT_MIN <= height <= sim.L_MAX:
-        raise ValueError('工作腿长必须在 0.160～0.380 m 内')
+def equilibrium(model, height, *, min_height=sim.L_SQUAT_MIN):
+    if not math.isfinite(height) or not math.isfinite(min_height) or not .115 <= min_height <= height <= sim.L_MAX:
+        raise ValueError(f'工作腿长必须在 {min_height:.3f}～{sim.L_MAX:.3f} m 内')
     data = mujoco.MjData(model)
     mujoco.mj_resetDataKeyframe(model, data, model.keyframe('stand').id)
     qa = [model.jnt_qposadr[model.joint(n).id] for n in
@@ -115,8 +115,8 @@ def linearize(model, data, eps=1e-6):
     return project @ full_a @ basis, project @ full_b @ inputs
 
 
-def design(model, height):
-    data = equilibrium(model, height)
+def design(model, height, *, min_height=sim.L_SQUAT_MIN):
+    data = equilibrium(model, height, min_height=min_height)
     a, b = linearize(model, data)
     for pole in np.linalg.eigvals(a):
         if abs(pole) >= 1 - 1e-8 and np.linalg.matrix_rank(
