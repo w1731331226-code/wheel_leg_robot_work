@@ -1,0 +1,311 @@
+{
+  "role": "offline_first_contact_detectability_split_not_action_predictor",
+  "training": false,
+  "final_holdout_opened": false,
+  "nominal_target_m": 0.115,
+  "geometric_proxy_min_m": 0.1147044660616607,
+  "prediction_inputs": "current active q/dq and prior active dq only",
+  "contact_sets_used_for_offline_phase_label_only": true,
+  "actual_A_and_eight_joints_used_for_offline_score_only": true,
+  "contact_timing": "contacts[k] solve pre[k]; first affected velocity in post[k]=pre[k+1]",
+  "first_detectable_means": "earliest ideal q/dq access after impact, not a tested contact classifier or noisy sensor",
+  "source_state_verification_sha256": "b8cea295a23d1950ff486d5c06e5d95daf33da4dbb3238a8c9235cdf16919228",
+  "prior_prediction_verification_sha256": "63eca8257d086bc1654cf2ff2d52365e440bd311c5ba356ca9e5fafdf7be62ec",
+  "source_windows_sha256": "33153efe7d688c5e697c786d101067716284326ee9e3bb9f331b748cb138d30d",
+  "rows": [
+    {
+      "world": 1,
+      "terrain": "step",
+      "event_id": 2,
+      "first_new_contact_pre_step_s": 5.049499988555908,
+      "first_detectable_pre_step_s": 5.050000190734863,
+      "first_new_contact_geom_pairs": [
+        [
+          3,
+          30
+        ],
+        [
+          3,
+          37
+        ]
+      ],
+      "horizon_ms": 5.0,
+      "phase": "before_detectable",
+      "starts": 82,
+      "false_safe": 0,
+      "max_forecast_minus_actual_length_m": 0.0001312536256147523,
+      "max_optimistic_length_error_m": 0.0001312536256147523,
+      "max_forecast_minus_actual_eight_joint_margin_rad": 0.00045279480389570637,
+      "first_false_safe_s": null
+    },
+    {
+      "world": 1,
+      "terrain": "step",
+      "event_id": 2,
+      "first_new_contact_pre_step_s": 5.049499988555908,
+      "first_detectable_pre_step_s": 5.050000190734863,
+      "first_new_contact_geom_pairs": [
+        [
+          3,
+          30
+        ],
+        [
+          3,
+          37
+        ]
+      ],
+      "horizon_ms": 5.0,
+      "phase": "after_detectable",
+      "starts": 16,
+      "false_safe": 1,
+      "max_forecast_minus_actual_length_m": 4.348312196092441e-05,
+      "max_optimistic_length_error_m": 4.348312196092441e-05,
+      "max_forecast_minus_actual_eight_joint_margin_rad": -1.0403187661545132e-05,
+      "first_false_safe_s": 5.052999973297119
+    },
+    {
+      "world": 1,
+      "terrain": "step",
+      "event_id": 2,
+      "first_new_contact_pre_step_s": 5.049499988555908,
+      "first_detectable_pre_step_s": 5.050000190734863,
+      "first_new_contact_geom_pairs": [
+        [
+          3,
+          30
+        ],
+        [
+          3,
+          37
+        ]
+      ],
+      "horizon_ms": 10.0,
+      "phase": "before_detectable",
+      "starts": 82,
+      "false_safe": 4,
+      "max_forecast_minus_actual_length_m": 0.00038552680328129973,
+      "max_optimistic_length_error_m": 0.00038552680328129973,
+      "max_forecast_minus_actual_eight_joint_margin_rad": 0.004946835142764172,
+      "first_false_safe_s": 5.047999858856201
+    },
+    {
+      "world": 1,
+      "terrain": "step",
+      "event_id": 2,
+      "first_new_contact_pre_step_s": 5.049499988555908,
+      "first_detectable_pre_step_s": 5.050000190734863,
+      "first_new_contact_geom_pairs": [
+        [
+          3,
+          30
+        ],
+        [
+          3,
+          37
+        ]
+      ],
+      "horizon_ms": 10.0,
+      "phase": "after_detectable",
+      "starts": 16,
+      "false_safe": 0,
+      "max_forecast_minus_actual_length_m": 5.196387744266229e-06,
+      "max_optimistic_length_error_m": 5.196387744266229e-06,
+      "max_forecast_minus_actual_eight_joint_margin_rad": -0.001302849203348222,
+      "first_false_safe_s": null
+    },
+    {
+      "world": 2,
+      "terrain": "cross_slope",
+      "event_id": 4,
+      "first_new_contact_pre_step_s": 4.257500171661377,
+      "first_detectable_pre_step_s": 4.257999897003174,
+      "first_new_contact_geom_pairs": [
+        [
+          3,
+          37
+        ]
+      ],
+      "horizon_ms": 5.0,
+      "phase": "before_detectable",
+      "starts": 85,
+      "false_safe": 0,
+      "max_forecast_minus_actual_length_m": 0.00016654182017178387,
+      "max_optimistic_length_error_m": 0.00016654182017178387,
+      "max_forecast_minus_actual_eight_joint_margin_rad": 0.0010773476580654417,
+      "first_false_safe_s": null
+    },
+    {
+      "world": 2,
+      "terrain": "cross_slope",
+      "event_id": 4,
+      "first_new_contact_pre_step_s": 4.257500171661377,
+      "first_detectable_pre_step_s": 4.257999897003174,
+      "first_new_contact_geom_pairs": [
+        [
+          3,
+          37
+        ]
+      ],
+      "horizon_ms": 5.0,
+      "phase": "after_detectable",
+      "starts": 15,
+      "false_safe": 0,
+      "max_forecast_minus_actual_length_m": 3.3425014100071926e-05,
+      "max_optimistic_length_error_m": 3.3425014100071926e-05,
+      "max_forecast_minus_actual_eight_joint_margin_rad": -4.670560359953946e-05,
+      "first_false_safe_s": null
+    },
+    {
+      "world": 2,
+      "terrain": "cross_slope",
+      "event_id": 4,
+      "first_new_contact_pre_step_s": 4.257500171661377,
+      "first_detectable_pre_step_s": 4.257999897003174,
+      "first_new_contact_geom_pairs": [
+        [
+          3,
+          37
+        ]
+      ],
+      "horizon_ms": 10.0,
+      "phase": "before_detectable",
+      "starts": 85,
+      "false_safe": 6,
+      "max_forecast_minus_actual_length_m": 0.0005380367122902324,
+      "max_optimistic_length_error_m": 0.0005380367122902324,
+      "max_forecast_minus_actual_eight_joint_margin_rad": 0.00826520058635638,
+      "first_false_safe_s": 4.255000114440918
+    },
+    {
+      "world": 2,
+      "terrain": "cross_slope",
+      "event_id": 4,
+      "first_new_contact_pre_step_s": 4.257500171661377,
+      "first_detectable_pre_step_s": 4.257999897003174,
+      "first_new_contact_geom_pairs": [
+        [
+          3,
+          37
+        ]
+      ],
+      "horizon_ms": 10.0,
+      "phase": "after_detectable",
+      "starts": 15,
+      "false_safe": 0,
+      "max_forecast_minus_actual_length_m": 4.1426551108530996e-06,
+      "max_optimistic_length_error_m": 4.1426551108530996e-06,
+      "max_forecast_minus_actual_eight_joint_margin_rad": -0.001163952350616393,
+      "first_false_safe_s": null
+    },
+    {
+      "world": 3,
+      "terrain": "rough",
+      "event_id": 6,
+      "first_new_contact_pre_step_s": 4.151000022888184,
+      "first_detectable_pre_step_s": 4.151500225067139,
+      "first_new_contact_geom_pairs": [
+        [
+          3,
+          30
+        ],
+        [
+          3,
+          37
+        ]
+      ],
+      "horizon_ms": 5.0,
+      "phase": "before_detectable",
+      "starts": 77,
+      "false_safe": 0,
+      "max_forecast_minus_actual_length_m": 0.00010550716552618078,
+      "max_optimistic_length_error_m": 0.00010550716552618078,
+      "max_forecast_minus_actual_eight_joint_margin_rad": 0.0007222951803123046,
+      "first_false_safe_s": null
+    },
+    {
+      "world": 3,
+      "terrain": "rough",
+      "event_id": 6,
+      "first_new_contact_pre_step_s": 4.151000022888184,
+      "first_detectable_pre_step_s": 4.151500225067139,
+      "first_new_contact_geom_pairs": [
+        [
+          3,
+          30
+        ],
+        [
+          3,
+          37
+        ]
+      ],
+      "horizon_ms": 5.0,
+      "phase": "after_detectable",
+      "starts": 22,
+      "false_safe": 1,
+      "max_forecast_minus_actual_length_m": 1.5522999544992366e-05,
+      "max_optimistic_length_error_m": 1.5522999544992366e-05,
+      "max_forecast_minus_actual_eight_joint_margin_rad": -4.360359162092209e-05,
+      "first_false_safe_s": 4.15749979019165
+    },
+    {
+      "world": 3,
+      "terrain": "rough",
+      "event_id": 6,
+      "first_new_contact_pre_step_s": 4.151000022888184,
+      "first_detectable_pre_step_s": 4.151500225067139,
+      "first_new_contact_geom_pairs": [
+        [
+          3,
+          30
+        ],
+        [
+          3,
+          37
+        ]
+      ],
+      "horizon_ms": 10.0,
+      "phase": "before_detectable",
+      "starts": 77,
+      "false_safe": 0,
+      "max_forecast_minus_actual_length_m": 0.0002542488820398703,
+      "max_optimistic_length_error_m": 0.0002542488820398703,
+      "max_forecast_minus_actual_eight_joint_margin_rad": 0.0020594482561864247,
+      "first_false_safe_s": null
+    },
+    {
+      "world": 3,
+      "terrain": "rough",
+      "event_id": 6,
+      "first_new_contact_pre_step_s": 4.151000022888184,
+      "first_detectable_pre_step_s": 4.151500225067139,
+      "first_new_contact_geom_pairs": [
+        [
+          3,
+          30
+        ],
+        [
+          3,
+          37
+        ]
+      ],
+      "horizon_ms": 10.0,
+      "phase": "after_detectable",
+      "starts": 22,
+      "false_safe": 0,
+      "max_forecast_minus_actual_length_m": -3.1373615854951575e-05,
+      "max_optimistic_length_error_m": 0.0,
+      "max_forecast_minus_actual_eight_joint_margin_rad": -0.0005203640460968995,
+      "first_false_safe_s": null
+    }
+  ],
+  "source_sha256": {
+    "wheelleg_warp/probe_height_115_contact_predictability.py": "ce756de413eb5dc759e2f45691db8768515bb6c98dcd5caf3d665760a845f7e6",
+    "wheelleg_warp/probe_height_115_predictability.py": "cf7b2e2959034d778c3dc2239809988c313e109a6c985c4f3eaf3091899eebff",
+    "wheelleg_warp/probe_height_115_margin.py": "cc361583f33fa672b3bdd544eafeff046e85a69478e52edf56b13c0a22576045",
+    "wheelleg_warp/probe_height_115_passive.py": "8771150926217fd575b1f2f3fc2dd3d13cb495e37e2b516a1e34400ef454bfe8",
+    "wheelleg_warp/native/terrain.py": "1e462500ae917ba78ce5e4652f7a856bf62658f8573296e9a7d4630517cf1a94",
+    "wheelleg_warp/native/models.py": "59420b688a25e63fb8e0e644f0702025836bea0ed90377e452bcbd919c7216eb",
+    "wheelleg_ppo/tools/wheelleg_sim.py": "c2dfaae4dc562119fd7916684849ec22fcac3d75dbcfec6a2a0f9452d8f6ee0f",
+    "wheelleg_ppo/xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f"
+  }
+}
