@@ -99,7 +99,7 @@ M1/N3±现已接入环境并完成三类已见状态的物理分布及局部集�
 | [Whole-Body Control with Uneven Terrain Adaptability Strategy](https://www.mdpi.com/2079-9292/14/1/198)，Electronics 2025，DOI 10.3390/electronics14010198 | MPC 力分配、姿态规划、左右轮高差、单侧桥面/坡/阶梯 | 非学习控制已有不对称地形能力；平台、动力学和指标与本机不同，不横比成功率 |
 | [A novel adaptive dynamic optimal balance control method for wheel-legged robot](https://www.sciencedirect.com/science/article/abs/pii/S0307904X24004906)，Applied Mathematical Modelling 2025，DOI 10.1016/j.apm.2024.115737 | 在线增益迭代与 VMC 映射，在不平地仿真验证 | 已核官方摘要与方法预览；提示固定 B1 增益扫描不代表经典控制上限，全文实验细节未核 |
 | [Reinforcement Learning for Blind Stair Climbing with Legged and Wheeled-Legged Robots](https://arxiv.org/abs/2402.06143)，ICRA 2024 作者稿 | 轮腿/双足盲爬台阶，含 Ascento 实机 | 越障 RL 已有先例；其 15 cm 台阶与本机 24～27 mm 不是可直接比较的任务 |
-| [CTBC: Contact-Triggered Blind Climbing](https://arxiv.org/abs/2509.02986)，作者预印本 | 接触触发抬腿、示教与 RL；直指本机接触时序问题 | 作者稿可读，未核实正式 IEEE 发表与 SCI/EI 收录；若本机引入接触触发/预瞄，须具体区别并验证传感可得性 |
+| [CTBC: Contact-Triggered Blind Climbing](https://arxiv.org/html/2509.02986v3)，作者预印本v3，2026-02-07 | 作者全文已核：轮足接触力三帧滑窗（示例阈值30 N）触发单侧优先抬腿；髋/膝位置动作与约0.6 s余弦前馈轨迹、退火示教和PPO协同，已有实机盲爬 | 本机目前只测试100 ms的M3差动支撑残差，**不能**据其失败反驳CTBC；本机0.16 m名义下限无额外收腿余量，直接移植收腿抬轮不能覆盖用户的全高度目标。未核实正式IEEE发表与逐篇SCI/EI收录；接触/预瞄若作为新分支须与其同信息强对照 |
 
 GitHub 代码近邻（仓库均可访问；只核 README 与相关实现，不复现实验）：[Wheel-Legged-Gym](https://github.com/clearlab-sustech/Wheel-Legged-Gym) 与 [wheel_legged_gym](https://github.com/nfhe/wheel_legged_gym) 均已有 PPO＋VMC 六维左右参考；[Wheel-Legged-Lab](https://github.com/zyicome/Wheel-Legged-Lab) 还提供六维 VMC 动作、轮速 PI、障碍课程及检查点；[mjlab_upkie](https://github.com/MarcDcls/mjlab_upkie) 已在 MuJoCo Warp/MjLab 中做并行双轮机器人 RL。仓库平台和任务不同，不能把 README 的收敛步数或视频与本机横比；但 PPO、VMC、课程、轮速积分及 GPU 并行均不能单独作为本论文创新点。
 
