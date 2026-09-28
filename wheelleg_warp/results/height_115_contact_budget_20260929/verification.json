@@ -1,0 +1,641 @@
+{
+  "role": "zero_arm_first_contact_geometry_and_frozen_model_budget",
+  "nominal_target_m": 0.115,
+  "proxy_lower_m": 0.1147044660616607,
+  "nominal_headroom_m": 0.00029553393833930963,
+  "rows": [
+    {
+      "world": 1,
+      "first_contact_step": 7,
+      "first_geometry_failure_step": 23,
+      "contact_to_failure_ms": 8.0,
+      "true_A_pre_contact_margin_m": [
+        0.0002817922439285331,
+        0.00028182060368051043
+      ],
+      "true_A_post_contact_margin_m": [
+        0.0002795611688736904,
+        0.00027958952897193246
+      ],
+      "true_A_single_contact_step_loss_m": [
+        2.2310750548426572e-06,
+        2.2310747085779736e-06
+      ],
+      "true_A_post_contact_step_average_rate_m_s": [
+        -0.0044621501096853144,
+        -0.004462149417155947
+      ],
+      "true_A_following_step_average_rate_m_s": [
+        -0.0080296468707719,
+        -0.008029645563595311
+      ],
+      "eight_joint_post_contact_margin_rad": 0.4501556158065796,
+      "budgets": [
+        {
+          "wait_after_first_contact_observation_ms": 0.0,
+          "zero_arm_true_A_margin_m": [
+            0.0002795611688736904,
+            0.00027958952897193246
+          ],
+          "remaining_zero_arm_time_to_first_geometry_failure_ms": 8.0,
+          "frozen_model_coupled_feasible": false,
+          "solver_error": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+          "action": null,
+          "closing_barriers": [
+            {
+              "name": "left_leg",
+              "tightened_distance": 0.00023359682956984696,
+              "rate": -0.004048774677044523,
+              "required_constant_braking_acceleration": 0.035087326346986004,
+              "maximum_frozen_model_acceleration": -3.5367771925503444,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "right_leg",
+              "tightened_distance": 0.00023355697664430397,
+              "rate": -0.004048040522062881,
+              "required_constant_braking_acceleration": 0.035080587837072345,
+              "maximum_frozen_model_acceleration": -3.6606999068206605,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "alphaL_upper",
+              "tightened_distance": 0.4516564867061448,
+              "rate": -0.0815529152750969,
+              "required_constant_braking_acceleration": 0.007362761507501944,
+              "maximum_frozen_model_acceleration": -70.63239638050862,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "betaL_lower",
+              "tightened_distance": 0.44976272793234107,
+              "rate": -0.015380251221358776,
+              "required_constant_braking_acceleration": 0.0002629743561895298,
+              "maximum_frozen_model_acceleration": 21.330968557247907,
+              "scalar_condition_possible": true
+            },
+            {
+              "name": "alphaR_upper",
+              "tightened_distance": 0.4516554138225388,
+              "rate": -0.08155028522014618,
+              "required_constant_braking_acceleration": 0.007362304110562747,
+              "maximum_frozen_model_acceleration": -73.53273097612734,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "betaR_lower",
+              "tightened_distance": 0.4497628471416306,
+              "rate": -0.015365433879196644,
+              "required_constant_braking_acceleration": 0.0002624678314320803,
+              "maximum_frozen_model_acceleration": 21.729579697598105,
+              "scalar_condition_possible": true
+            }
+          ]
+        },
+        {
+          "wait_after_first_contact_observation_ms": 0.5,
+          "zero_arm_true_A_margin_m": [
+            0.0002755463454383045,
+            0.0002755747061901348
+          ],
+          "remaining_zero_arm_time_to_first_geometry_failure_ms": 7.5,
+          "frozen_model_coupled_feasible": false,
+          "solver_error": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+          "action": null,
+          "closing_barriers": [
+            {
+              "name": "left_leg",
+              "tightened_distance": 0.00022979275815830747,
+              "rate": -0.0076130780722291624,
+              "required_constant_braking_acceleration": 0.12611136703865958,
+              "maximum_frozen_model_acceleration": -2.5675205062006174,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "right_leg",
+              "tightened_distance": 0.00022975291123919595,
+              "rate": -0.0076155648779993364,
+              "required_constant_braking_acceleration": 0.12621565511010327,
+              "maximum_frozen_model_acceleration": -2.696385084748341,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "alphaL_upper",
+              "tightened_distance": 0.4515769741100144,
+              "rate": -0.15911166369915009,
+              "required_constant_braking_acceleration": 0.028031236064467446,
+              "maximum_frozen_model_acceleration": -62.49980002833344,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "betaL_lower",
+              "tightened_distance": 0.44975116463125464,
+              "rate": -0.023170676082372665,
+              "required_constant_braking_acceleration": 0.00059686363519972,
+              "maximum_frozen_model_acceleration": 36.37364236843673,
+              "scalar_condition_possible": true
+            },
+            {
+              "name": "alphaR_upper",
+              "tightened_distance": 0.45157590122640845,
+              "rate": -0.15914131700992584,
+              "required_constant_braking_acceleration": 0.028041751908009737,
+              "maximum_frozen_model_acceleration": -65.43349978061372,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "betaR_lower",
+              "tightened_distance": 0.4497512838405442,
+              "rate": -0.02320089004933834,
+              "required_constant_braking_acceleration": 0.0005984210811862076,
+              "maximum_frozen_model_acceleration": 36.68671882647908,
+              "scalar_condition_possible": true
+            }
+          ]
+        },
+        {
+          "wait_after_first_contact_observation_ms": 2.0,
+          "zero_arm_true_A_margin_m": [
+            0.0002499766484500704,
+            0.00024998790303301655
+          ],
+          "remaining_zero_arm_time_to_first_geometry_failure_ms": 6.0,
+          "frozen_model_coupled_feasible": false,
+          "solver_error": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+          "action": null,
+          "closing_barriers": [
+            {
+              "name": "left_leg",
+              "tightened_distance": 0.00020732803653793308,
+              "rate": -0.018749272540285654,
+              "required_constant_braking_acceleration": 0.8477754062113838,
+              "maximum_frozen_model_acceleration": -3.0325027433345317,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "right_leg",
+              "tightened_distance": 0.00020727827965808066,
+              "rate": -0.01875458688481106,
+              "required_constant_braking_acceleration": 0.848459688589023,
+              "maximum_frozen_model_acceleration": -3.157661129414106,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "alphaL_upper",
+              "tightened_distance": 0.45111932964742896,
+              "rate": -0.3761551082134247,
+              "required_constant_braking_acceleration": 0.15682398883864768,
+              "maximum_frozen_model_acceleration": -48.19559858266982,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "betaL_lower",
+              "tightened_distance": 0.44967069836080786,
+              "rate": -0.07314127683639526,
+              "required_constant_braking_acceleration": 0.005948404462153489,
+              "maximum_frozen_model_acceleration": 10.574880736289188,
+              "scalar_condition_possible": true
+            },
+            {
+              "name": "alphaR_upper",
+              "tightened_distance": 0.45111813755453345,
+              "rate": -0.3762531876564026,
+              "required_constant_braking_acceleration": 0.15690619533612837,
+              "maximum_frozen_model_acceleration": -51.1089025093941,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "betaR_lower",
+              "tightened_distance": 0.44967069836080786,
+              "rate": -0.07317138463258743,
+              "required_constant_braking_acceleration": 0.005953302659665469,
+              "maximum_frozen_model_acceleration": 10.953581367995106,
+              "scalar_condition_possible": true
+            }
+          ]
+        }
+      ],
+      "trace_sha256": "8ecba5e2fe0bccb6f9b75f13279fd8972fcbb96a3451acde5aae6453b32d0ce2"
+    },
+    {
+      "world": 2,
+      "first_contact_step": 9,
+      "first_geometry_failure_step": 23,
+      "contact_to_failure_ms": 7.0,
+      "true_A_pre_contact_margin_m": [
+        0.0002817922439285331,
+        0.00028182060368051043
+      ],
+      "true_A_post_contact_margin_m": [
+        0.00028231880415822974,
+        0.00027854144455094487
+      ],
+      "true_A_single_contact_step_loss_m": [
+        -5.265602296966598e-07,
+        3.2791591295655564e-06
+      ],
+      "true_A_post_contact_step_average_rate_m_s": [
+        0.0010531204593933197,
+        -0.006558318259131113
+      ],
+      "true_A_following_step_average_rate_m_s": [
+        0.002014351463353048,
+        -0.01202254529680813
+      ],
+      "eight_joint_post_contact_margin_rad": 0.45015692710876465,
+      "budgets": [
+        {
+          "wait_after_first_contact_observation_ms": 0.0,
+          "zero_arm_true_A_margin_m": [
+            0.00028231880415822974,
+            0.00027854144455094487
+          ],
+          "remaining_zero_arm_time_to_first_geometry_failure_ms": 7.0,
+          "frozen_model_coupled_feasible": false,
+          "solver_error": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+          "action": null,
+          "closing_barriers": [
+            {
+              "name": "right_leg",
+              "tightened_distance": 0.000235800185121247,
+              "rate": -0.005734129262553537,
+              "required_constant_braking_acceleration": 0.06972055255759438,
+              "maximum_frozen_model_acceleration": -7.012561683680871,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "alphaL_lower",
+              "tightened_distance": 2.5474612119954894,
+              "rate": -0.035342633724212646,
+              "required_constant_braking_acceleration": 0.00024516600148455266,
+              "maximum_frozen_model_acceleration": 19.63261287562129,
+              "scalar_condition_possible": true
+            },
+            {
+              "name": "betaL_lower",
+              "tightened_distance": 0.44972771437586045,
+              "rate": -0.00926477462053299,
+              "required_constant_braking_acceleration": 9.54311309103964e-05,
+              "maximum_frozen_model_acceleration": 33.98682967845694,
+              "scalar_condition_possible": true
+            },
+            {
+              "name": "alphaR_upper",
+              "tightened_distance": 0.45159584315241075,
+              "rate": -0.12451653927564621,
+              "required_constant_braking_acceleration": 0.017166199366399966,
+              "maximum_frozen_model_acceleration": -158.97086692311905,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "betaR_lower",
+              "tightened_distance": 0.4497259262365172,
+              "rate": -0.012755767442286015,
+              "required_constant_braking_acceleration": 0.00018089862463934603,
+              "maximum_frozen_model_acceleration": 26.957272815184872,
+              "scalar_condition_possible": true
+            }
+          ]
+        },
+        {
+          "wait_after_first_contact_observation_ms": 0.5,
+          "zero_arm_true_A_margin_m": [
+            0.00028332597988990627,
+            0.0002725301719025408
+          ],
+          "remaining_zero_arm_time_to_first_geometry_failure_ms": 6.5,
+          "frozen_model_coupled_feasible": false,
+          "solver_error": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+          "action": null,
+          "closing_barriers": [
+            {
+              "name": "right_leg",
+              "tightened_distance": 0.00023032308550637138,
+              "rate": -0.010959531795407004,
+              "required_constant_braking_acceleration": 0.26074532848166115,
+              "maximum_frozen_model_acceleration": -5.990980645036766,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "alphaL_lower",
+              "tightened_distance": 2.5474287870687315,
+              "rate": -0.06482378393411636,
+              "required_constant_braking_acceleration": 0.0008247773175972252,
+              "maximum_frozen_model_acceleration": 31.26222393085554,
+              "scalar_condition_possible": true
+            },
+            {
+              "name": "betaL_lower",
+              "tightened_distance": 0.4497200849813292,
+              "rate": -0.01524975337088108,
+              "required_constant_braking_acceleration": 0.00025855524985319894,
+              "maximum_frozen_model_acceleration": 40.43361441296536,
+              "scalar_condition_possible": true
+            },
+            {
+              "name": "alphaR_upper",
+              "tightened_distance": 0.451475560979254,
+              "rate": -0.2406148463487625,
+              "required_constant_braking_acceleration": 0.06411809330040234,
+              "maximum_frozen_model_acceleration": -141.9728104817624,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "betaR_lower",
+              "tightened_distance": 0.44971507819116807,
+              "rate": -0.02180006541311741,
+              "required_constant_braking_acceleration": 0.0005283821635775556,
+              "maximum_frozen_model_acceleration": 34.31576761097833,
+              "scalar_condition_possible": true
+            }
+          ]
+        },
+        {
+          "wait_after_first_contact_observation_ms": 2.0,
+          "zero_arm_true_A_margin_m": [
+            0.00028956444867264675,
+            0.0002378464995851648
+          ],
+          "remaining_zero_arm_time_to_first_geometry_failure_ms": 5.0,
+          "frozen_model_coupled_feasible": false,
+          "solver_error": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+          "action": null,
+          "closing_barriers": [
+            {
+              "name": "right_leg",
+              "tightened_distance": 0.00019849875823764563,
+              "rate": -0.02633237677949458,
+              "required_constant_braking_acceleration": 1.7465954775070278,
+              "maximum_frozen_model_acceleration": -5.78019143436661,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "alphaL_lower",
+              "tightened_distance": 2.5472239855092833,
+              "rate": -0.17535392940044403,
+              "required_constant_braking_acceleration": 0.006035786552557147,
+              "maximum_frozen_model_acceleration": 11.220517090305762,
+              "scalar_condition_possible": true
+            },
+            {
+              "name": "betaL_lower",
+              "tightened_distance": 0.4496850374502013,
+              "rate": -0.0262557715177536,
+              "required_constant_braking_acceleration": 0.0007664981938261872,
+              "maximum_frozen_model_acceleration": 47.389458568169246,
+              "scalar_condition_possible": true
+            },
+            {
+              "name": "alphaR_upper",
+              "tightened_distance": 0.4507872465413878,
+              "rate": -0.5648069381713867,
+              "required_constant_braking_acceleration": 0.35383307741521025,
+              "maximum_frozen_model_acceleration": -119.38533495436221,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "betaR_lower",
+              "tightened_distance": 0.4496409300130675,
+              "rate": -0.06645001471042633,
+              "required_constant_braking_acceleration": 0.0049101451405764475,
+              "maximum_frozen_model_acceleration": 16.089798586733224,
+              "scalar_condition_possible": true
+            }
+          ]
+        }
+      ],
+      "trace_sha256": "a7c78c3984ab8323c36311a1c88aef453cc83ae6ffcd8f60a158eafe09ca28af"
+    },
+    {
+      "world": 3,
+      "first_contact_step": 1,
+      "first_geometry_failure_step": 23,
+      "contact_to_failure_ms": 11.0,
+      "true_A_pre_contact_margin_m": [
+        0.0002817922439285331,
+        0.00028182060368051043
+      ],
+      "true_A_post_contact_margin_m": [
+        0.0002791209623480423,
+        0.0002791493224016117
+      ],
+      "true_A_single_contact_step_loss_m": [
+        2.671281580490792e-06,
+        2.6712812788987073e-06
+      ],
+      "true_A_post_contact_step_average_rate_m_s": [
+        -0.005342563160981584,
+        -0.0053425625577974145
+      ],
+      "true_A_following_step_average_rate_m_s": [
+        -0.009419626855466934,
+        -0.0093675200949217
+      ],
+      "eight_joint_post_contact_margin_rad": 0.450148344039917,
+      "budgets": [
+        {
+          "wait_after_first_contact_observation_ms": 0.0,
+          "zero_arm_true_A_margin_m": [
+            0.0002791209623480423,
+            0.0002791493224016117
+          ],
+          "remaining_zero_arm_time_to_first_geometry_failure_ms": 11.0,
+          "frozen_model_coupled_feasible": false,
+          "solver_error": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+          "action": null,
+          "closing_barriers": [
+            {
+              "name": "left_leg",
+              "tightened_distance": 0.00023537752183540417,
+              "rate": -0.003415773328242411,
+              "required_constant_braking_acceleration": 0.024784667921882414,
+              "maximum_frozen_model_acceleration": -2.3370792698625076,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "right_leg",
+              "tightened_distance": 0.00023533269594400264,
+              "rate": -0.0034114975995981523,
+              "required_constant_braking_acceleration": 0.024727366984384713,
+              "maximum_frozen_model_acceleration": -2.4595081105478327,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "alphaL_upper",
+              "tightened_distance": 0.4516657063881051,
+              "rate": -0.05183050408959389,
+              "required_constant_braking_acceleration": 0.0029738821391423627,
+              "maximum_frozen_model_acceleration": -12.84728006570738,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "betaL_lower",
+              "tightened_distance": 0.44974977468644495,
+              "rate": -0.029975643381476402,
+              "required_constant_braking_acceleration": 0.0009989323471700355,
+              "maximum_frozen_model_acceleration": -7.297559956294414,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "alphaR_upper",
+              "tightened_distance": 0.45166463350449915,
+              "rate": -0.05177696421742439,
+              "required_constant_braking_acceleration": 0.002967748440664373,
+              "maximum_frozen_model_acceleration": -15.714841567457043,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "betaR_lower",
+              "tightened_distance": 0.44974977468644495,
+              "rate": -0.029926881194114685,
+              "required_constant_braking_acceleration": 0.0009956850102160245,
+              "maximum_frozen_model_acceleration": -6.895879889642828,
+              "scalar_condition_possible": false
+            }
+          ]
+        },
+        {
+          "wait_after_first_contact_observation_ms": 0.5,
+          "zero_arm_true_A_margin_m": [
+            0.0002744111489203088,
+            0.00027446556235415087
+          ],
+          "remaining_zero_arm_time_to_first_geometry_failure_ms": 10.5,
+          "frozen_model_coupled_feasible": false,
+          "solver_error": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+          "action": null,
+          "closing_barriers": [
+            {
+              "name": "left_leg",
+              "tightened_distance": 0.00023203774129565525,
+              "rate": -0.0066772986728186184,
+              "required_constant_braking_acceleration": 0.09607557226911373,
+              "maximum_frozen_model_acceleration": -2.031748752151878,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "right_leg",
+              "tightened_distance": 0.0002319929202870562,
+              "rate": -0.006675484683632023,
+              "required_constant_braking_acceleration": 0.09604193030172402,
+              "maximum_frozen_model_acceleration": -2.1590989994349625,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "alphaL_upper",
+              "tightened_distance": 0.4516145656028878,
+              "rate": -0.10233601182699203,
+              "required_constant_braking_acceleration": 0.011594687277937617,
+              "maximum_frozen_model_acceleration": -10.138869609082803,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "betaL_lower",
+              "tightened_distance": 0.44972092603837366,
+              "rate": -0.05759666487574577,
+              "required_constant_braking_acceleration": 0.003688260444129192,
+              "maximum_frozen_model_acceleration": -2.722521225236335,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "alphaR_upper",
+              "tightened_distance": 0.45161349271928186,
+              "rate": -0.10230781883001328,
+              "required_constant_braking_acceleration": 0.011588327145332797,
+              "maximum_frozen_model_acceleration": -13.058667227824955,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "betaR_lower",
+              "tightened_distance": 0.44972092603837366,
+              "rate": -0.057581644505262375,
+              "required_constant_braking_acceleration": 0.0036863370058607147,
+              "maximum_frozen_model_acceleration": -2.3868525725469922,
+              "scalar_condition_possible": false
+            }
+          ]
+        },
+        {
+          "wait_after_first_contact_observation_ms": 2.0,
+          "zero_arm_true_A_margin_m": [
+            0.00025070776217388235,
+            0.00025072718503968416
+          ],
+          "remaining_zero_arm_time_to_first_geometry_failure_ms": 9.0,
+          "frozen_model_coupled_feasible": false,
+          "solver_error": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+          "action": null,
+          "closing_barriers": [
+            {
+              "name": "left_leg",
+              "tightened_distance": 0.00021315058168011703,
+              "rate": -0.015347399605606648,
+              "required_constant_braking_acceleration": 0.5525264646184797,
+              "maximum_frozen_model_acceleration": -0.8867775162820095,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "right_leg",
+              "tightened_distance": 0.00021311573427081166,
+              "rate": -0.015340634721514666,
+              "required_constant_braking_acceleration": 0.5521297488056303,
+              "maximum_frozen_model_acceleration": -1.013384191499454,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "alphaL_upper",
+              "tightened_distance": 0.45133037065659876,
+              "rate": -0.22896918654441833,
+              "required_constant_braking_acceleration": 0.05808039054688655,
+              "maximum_frozen_model_acceleration": 14.431197740282826,
+              "scalar_condition_possible": true
+            },
+            {
+              "name": "betaL_lower",
+              "tightened_distance": 0.44955260252152796,
+              "rate": -0.138848677277565,
+              "required_constant_braking_acceleration": 0.021442379683260952,
+              "maximum_frozen_model_acceleration": -0.049751363454873854,
+              "scalar_condition_possible": false
+            },
+            {
+              "name": "alphaR_upper",
+              "tightened_distance": 0.45132941698228235,
+              "rate": -0.22888875007629395,
+              "required_constant_braking_acceleration": 0.058039713278366704,
+              "maximum_frozen_model_acceleration": 11.519364163531677,
+              "scalar_condition_possible": true
+            },
+            {
+              "name": "betaR_lower",
+              "tightened_distance": 0.4495527217308175,
+              "rate": -0.13876737654209137,
+              "required_constant_braking_acceleration": 0.02141727083559387,
+              "maximum_frozen_model_acceleration": 0.29400252504729707,
+              "scalar_condition_possible": true
+            }
+          ]
+        }
+      ],
+      "trace_sha256": "414470d9d805944802f58bae922df6e065bec9b8e078d00b73975279f07939cc"
+    }
+  ],
+  "limitations": [
+    "Post-contact delays follow recorded zero-action dynamics, not a new closed-loop rollout.",
+    "Frozen G is already known to fail cross-state error coverage. LP is diagnostic, not certified authority.",
+    "1Nm increment trust region plus absolute motor box; not the full hardware action space.",
+    "Constant acceleration stopping condition does not include a validated acceleration uncertainty margin.",
+    "Finite A-chain differences are interval average rates, not instantaneous measurements."
+  ],
+  "input_sha256": {
+    "wheelleg_warp/results/height_115_switching_error_20260929/verification.json": "71e05c528d6de6850d76037f2c0dfd1d2e462096bd511e0e2577a1b65dea5fb2",
+    "wheelleg_warp/results/height_115_action_predict_1nm_single_graph_20260929/verification.json": "ec9ee2120add9f69c8d745215a9ba42df5365833f7224eff7466d744d4090d89",
+    "wheelleg_warp/results/height_115_local_states_20260928/verification.json": "b8cea295a23d1950ff486d5c06e5d95daf33da4dbb3238a8c9235cdf16919228"
+  },
+  "source_sha256": {
+    "wheelleg_warp/audit_height_115_contact_budget.py": "db74baca4fe77bd58bee99bace2025e40f45c81186d572ea9d3a68a91c162daf",
+    "wheelleg_warp/probe_height_115_live_braking.py": "3e6b07997cbf14a5ec613b03ad0d52ffa5525b3bfc668f9e1bf8b7fa59ad531d",
+    "wheelleg_warp/probe_height_115_braking_budget.py": "c8968f1ee4bce0da390b31fb3b1f452c92122ad8d6f8c7d64a9af0c13f1f0d3e",
+    "wheelleg_warp/probe_height_115_passive.py": "8771150926217fd575b1f2f3fc2dd3d13cb495e37e2b516a1e34400ef454bfe8"
+  }
+}
