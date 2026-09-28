@@ -1,0 +1,22 @@
+{
+  "status": "collected_for_independent_audit",
+  "recovery_steps": 2000,
+  "first_q_error": 0.0,
+  "first_v_error": 0.0,
+  "kernel_clipping_events": 0.0,
+  "trace_sha256": "ee8ad8337e332ca9fd6a80698ecb2ee0d3ee814a2a301787ebb74dd7f485fb69",
+  "previous_source_git_revision": "053d8e8",
+  "input_sha256": {
+    "wheelleg_warp/results/height_115_contact_candidate_20260929/verification.json": "27240bf683f8e37f11457d82dcada56e5bb565e465f067473099365090e998b2",
+    "wheelleg_warp/results/height_115_contact_response_2nm_20260929/verification.json": "fa0e291d6952bb8da566dac32446a56c28d35e71dc45fa2f7eb55a6255f703f5",
+    "wheelleg_warp/results/height_115_action_predict_1nm_single_graph_20260929/verification.json": "ec9ee2120add9f69c8d745215a9ba42df5365833f7224eff7466d744d4090d89",
+    "wheelleg_warp/results/height_115_local_states_20260928/verification.json": "b8cea295a23d1950ff486d5c06e5d95daf33da4dbb3238a8c9235cdf16919228",
+    "wheelleg_warp/results/height_115_contact_candidate_20260929/trace.npz": "0f12d8e6c235c5ac928c3329e597cc84d049c6411fe60ec85f3338ef7010ec52"
+  },
+  "source_sha256": {
+    "wheelleg_warp/probe_height_115_contact_hold.py": "8c5175e778ad7c258cb7f62818a5196c266263a45ed0f5d0fd1f5f829e7a0cc9",
+    "wheelleg_warp/probe_height_115_live_common_local.py": "381537036500162f9ee809734083644bd76822318552be33a57a25a61cefdb32",
+    "wheelleg_warp/native/controller.py": "03d56704bf41ab4987a01affef434bc776771ea24077b6ac6fd5f44bed1bd15f",
+    "wheelleg_warp/native/environment.py": "290e97c39ff07cb4df84239c3b405719291322d961d2d2985f5f50e9f61ec543"
+  }
+}

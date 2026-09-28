@@ -14,8 +14,9 @@ from native.terrain import model, HeightTerrainScenario, HEIGHT_115_GEOMETRIC_MI
 
 def run(recovery_steps=0):
     folder=ROOT/'wheelleg_warp/results';source=folder/'height_115_contact_candidate_20260929'
-    assert recovery_steps in (0,200)
-    output=folder/('height_115_contact_hold_v2_20260929' if recovery_steps==0 else 'height_115_contact_release_20260929')
+    assert recovery_steps in (0,200,2000)
+    output=folder/{0:'height_115_contact_hold_v2_20260929',200:'height_115_contact_release_20260929',
+                   2000:'height_115_contact_release_1s_20260929'}[recovery_steps]
     assert not output.exists()
     paths=[source/'verification.json',folder/'height_115_contact_response_2nm_20260929/verification.json',
         folder/'height_115_action_predict_1nm_single_graph_20260929/verification.json',
@@ -37,6 +38,16 @@ def run(recovery_steps=0):
         **{k:np.stack([r[k] for r in rec]) for k in ('pre','post','post_velocity','applied')},contact_raw=rec[0]['contact_raw'])
     first_q_error=float(abs(rec[1]['post'][0]-old['post'][1,0]).max())
     first_v_error=float(abs(rec[1]['post_velocity'][0]-old['post_velocity'][1,0]).max())
+    if recovery_steps==2000:
+        (output/'verification.json').write_text(json.dumps(dict(status='collected_for_independent_audit',
+            recovery_steps=recovery_steps,first_q_error=first_q_error,first_v_error=first_v_error,
+            kernel_clipping_events=float(stats[:,1].sum()),trace_sha256=sha(output/'trace.npz'),
+            previous_source_git_revision='053d8e8',
+            input_sha256={str(p.relative_to(ROOT)):sha(p) for p in paths+[source/'trace.npz']},
+            source_sha256={str(p.relative_to(ROOT)):sha(p) for p in (Path(__file__),ROOT/'wheelleg_warp/probe_height_115_live_common_local.py',
+                ROOT/'wheelleg_warp/native/controller.py',ROOT/'wheelleg_warp/native/environment.py')}),indent=2)+'\n')
+        print('Collected 20ms hold and 1000ms release; physical results require independent audit.',flush=True)
+        return
     if first_q_error!=0 or first_v_error!=0:
         (output/'verification.json').write_text(json.dumps(dict(status='failed_before_scoring',
             first_q_error=first_q_error,first_v_error=first_v_error,
@@ -107,4 +118,6 @@ def run(recovery_steps=0):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--release-observation',action='store_true')
-    run(200 if parser.parse_args().release_observation else 0)
+    parser.add_argument('--release-1s',action='store_true');args=parser.parse_args()
+    assert not (args.release_1s and args.release_observation)
+    run(2000 if args.release_1s else 200 if args.release_observation else 0)

@@ -151,7 +151,7 @@ def scheduled_common(state: wp.array2d[D], start: wp.array[int],
 
 def simulate(base, starts, coefficients, schedule=None, followup_steps=0):
     assert len(base) == 1
-    assert followup_steps in (0, 200)
+    assert followup_steps in (0, 200, 2000)
     record_steps = HORIZON + followup_steps
     arms = len(coefficients) // len(base)
     scenarios = base * arms
