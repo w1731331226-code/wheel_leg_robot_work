@@ -1,0 +1,62 @@
+{
+  "role": "bounded_frozen_model_authority_diagnostic",
+  "rows": [
+    {
+      "arm": 1,
+      "method": "period1ms_phase0",
+      "sample_ms": 997.0,
+      "ready_failure_ms": 998.0,
+      "diagnostics": [
+        {
+          "scope": "all_constraints",
+          "feasible_with_model_peak_at_most2Nm": true,
+          "minimum_model_peak_Nm": 1.1760851768089764
+        },
+        {
+          "scope": "legs_and_motors_only",
+          "feasible_with_model_peak_at_most2Nm": true,
+          "minimum_model_peak_Nm": 1.134067650799519
+        }
+      ]
+    },
+    {
+      "arm": 2,
+      "method": "period1ms_phase05",
+      "sample_ms": 997.5,
+      "ready_failure_ms": 998.5,
+      "diagnostics": [
+        {
+          "scope": "all_constraints",
+          "feasible_with_model_peak_at_most2Nm": true,
+          "minimum_model_peak_Nm": 1.1299134608671217
+        },
+        {
+          "scope": "legs_and_motors_only",
+          "feasible_with_model_peak_at_most2Nm": true,
+          "minimum_model_peak_Nm": 1.1299134608671217
+        }
+      ]
+    },
+    {
+      "arm": 3,
+      "method": "instant_05ms_reference",
+      "sample_ms": 997.5,
+      "ready_failure_ms": 997.5,
+      "diagnostics": [
+        {
+          "scope": "all_constraints",
+          "feasible_with_model_peak_at_most2Nm": true,
+          "minimum_model_peak_Nm": 1.1024187878025191
+        },
+        {
+          "scope": "legs_and_motors_only",
+          "feasible_with_model_peak_at_most2Nm": true,
+          "minimum_model_peak_Nm": 1.0886482625985086
+        }
+      ]
+    }
+  ],
+  "warning": "1-to-2Nm extension is unvalidated model extrapolation, not measured capability or an allowed controller change. Leg-only removes constraints solely to diagnose which conditions bind.",
+  "verification_sha256": "8f39ad1d9e9ae23132ff4a73687328f5df1433b5e743710ec7722b3b87dcf91d",
+  "trace_sha256": "9af8d7de568da7ba108a5a7fc5cff74a599d6676648ebb83ead0822b216af2b7"
+}
