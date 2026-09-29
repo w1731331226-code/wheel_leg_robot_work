@@ -1,0 +1,27 @@
+{
+  "role": "direct_HiGHS_synchronous_safety_path_microbenchmark",
+  "warm_path": {
+    "count": 132,
+    "median_ms": 1.2231604996486567,
+    "p95_ms": 1.5200202497908317,
+    "max_ms": 4.847551001148531
+  },
+  "max_action_difference": 0.0,
+  "measured_path": "Three GPU downloads, current a0 estimate, 5ms forecast, original barriers/LP assembly/assertions through direct binding, command mapping/current motor check, synchronized control upload.",
+  "exclusions": "No physics or nominal-controller kernel, no real sensors, no OS deadline guarantee; archived history is already available in host memory. Single robot, sequential host execution.",
+  "control_deadline_ms": 0.5,
+  "observed_over_deadline": 132,
+  "input_sha256": {
+    "wheelleg_warp/results/height_115_recovery_feedback_v2_20260929/verification.json": "295d6b653dec6b432c189a9ad6bd788f8eb062068a591552aa08641d59eebebf",
+    "wheelleg_warp/results/height_115_action_predict_1nm_single_graph_20260929/verification.json": "ec9ee2120add9f69c8d745215a9ba42df5365833f7224eff7466d744d4090d89",
+    "wheelleg_warp/results/height_115_local_states_20260928/verification.json": "b8cea295a23d1950ff486d5c06e5d95daf33da4dbb3238a8c9235cdf16919228",
+    "wheelleg_warp/results/height_115_control_timing_20260929/verification.json": "c93469ae20b2e8d637cdaba26ab28e7467f8e749104c7bdd575f98a2260d6c66",
+    "wheelleg_warp/results/height_115_recovery_feedback_v2_20260929/trace.npz": "47d92e0413d331766423fbeaf78986d573bac7adf277883941ecd12abba44997"
+  },
+  "source_sha256": {
+    "wheelleg_warp/audit_height_115_direct_pipeline.py": "987d66320649f7d245e123abbd3a17c517df7b92e2e55007ad09202e0413b51b",
+    "wheelleg_warp/audit_height_115_control_timing.py": "a183747844a93d0178a46aa16b4ffa9e6032ebc6434a7ee9077c50f9f7b7f02c",
+    "wheelleg_warp/probe_height_115_live_braking.py": "aa49239555ddb25c0c46d5da425bbfd9495df064d1b0b635474b33cbda1b061e",
+    "wheelleg_warp/probe_height_115_action_predict_loow.py": "7c5ddb30d6f9c11170aed9720b0692a60b185cb1c95503673b6f12369759aa9e"
+  }
+}

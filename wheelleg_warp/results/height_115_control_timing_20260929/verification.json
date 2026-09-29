@@ -1,0 +1,155 @@
+{
+  "role": "fixed_LP_timing_and_direct_binding_equivalence",
+  "scipy_version": "1.15.3",
+  "highs_version": "1.8.0",
+  "cases": 46,
+  "feasible_cases": 44,
+  "infeasible_cases": 2,
+  "first_cycle": {
+    "total": {
+      "count": 46,
+      "median_ms": 1.266139999643201,
+      "p95_ms": 1.4193419997354795,
+      "max_ms": 1.9063060008193133
+    },
+    "barriers": {
+      "count": 46,
+      "median_ms": 0.28248050057300134,
+      "p95_ms": 0.38798824925834197,
+      "max_ms": 0.408981999498792
+    },
+    "basis": {
+      "count": 46,
+      "median_ms": 0.07743449896224774,
+      "p95_ms": 0.086526250015595,
+      "max_ms": 0.13118600145389792
+    },
+    "torque_box": {
+      "count": 46,
+      "median_ms": 0.01090949990611989,
+      "p95_ms": 0.016083750779216643,
+      "max_ms": 0.02587999915704131
+    },
+    "linprog": {
+      "count": 46,
+      "median_ms": 0.7080160003170022,
+      "p95_ms": 0.8530277495992777,
+      "max_ms": 1.216512000610237
+    },
+    "residual_assembly_and_checks": {
+      "count": 46,
+      "median_ms": 0.16484550087625394,
+      "p95_ms": 0.22053549764677882,
+      "max_ms": 0.28252200172573794
+    }
+  },
+  "warm_cycles": {
+    "total": {
+      "count": 138,
+      "median_ms": 1.249844499398023,
+      "p95_ms": 1.3480832489221939,
+      "max_ms": 2.779775000817608
+    },
+    "barriers": {
+      "count": 138,
+      "median_ms": 0.2826809995895019,
+      "p95_ms": 0.30964020033934503,
+      "max_ms": 0.8914390000427375
+    },
+    "basis": {
+      "count": 138,
+      "median_ms": 0.07706250016781269,
+      "p95_ms": 0.08858794944899273,
+      "max_ms": 0.21220400049060117
+    },
+    "torque_box": {
+      "count": 138,
+      "median_ms": 0.011272499250480905,
+      "p95_ms": 0.015296300443878863,
+      "max_ms": 0.05341999894881155
+    },
+    "linprog": {
+      "count": 138,
+      "median_ms": 0.7166030000007595,
+      "p95_ms": 0.7837456492779893,
+      "max_ms": 1.3143119995220331
+    },
+    "residual_assembly_and_checks": {
+      "count": 138,
+      "median_ms": 0.1601249996383558,
+      "p95_ms": 0.17362965036227251,
+      "max_ms": 0.3699870012496831
+    }
+  },
+  "prediction_only": {
+    "count": 138,
+    "median_ms": 0.03536300027917605,
+    "p95_ms": 0.03842645010081469,
+    "max_ms": 0.08206200072891079
+  },
+  "direct_binding_including_matrix_load": {
+    "count": 138,
+    "median_ms": 0.18297099995834287,
+    "p95_ms": 0.20586610062309774,
+    "max_ms": 0.22721899949829094
+  },
+  "transfers": [
+    {
+      "worlds": 1,
+      "download_three_arrays": {
+        "count": 50,
+        "median_ms": 0.07463099973392673,
+        "p95_ms": 0.08503235067109927,
+        "max_ms": 0.12067699935869314
+      },
+      "upload_control": {
+        "count": 50,
+        "median_ms": 0.017893000404001214,
+        "p95_ms": 0.01984484952117782,
+        "max_ms": 0.06981700062169693
+      }
+    },
+    {
+      "worlds": 7,
+      "download_three_arrays": {
+        "count": 50,
+        "median_ms": 0.07796799945936073,
+        "p95_ms": 0.0826090002192359,
+        "max_ms": 0.09326500003226101
+      },
+      "upload_control": {
+        "count": 50,
+        "median_ms": 0.018626500605023466,
+        "p95_ms": 0.02071114913633209,
+        "max_ms": 0.12831300045945682
+      }
+    }
+  ],
+  "equivalence": {
+    "max_primal_residual": 1.1102230246251565e-15,
+    "max_objective_difference": 0.0,
+    "max_solution_difference": 0.0
+  },
+  "limitations": [
+    "Profiling wrappers add overhead; residual includes assembly, validation and wrapper overhead.",
+    "Direct path is an experiment using a private installed SciPy API, not a production replacement or a new solver.",
+    "Idle GPU transfer microbenchmark excludes waiting for physics/controller kernels and any real sensor link.",
+    "Separate component medians are not an end-to-end deadline bound; observed maxima are not worst-case execution guarantees.",
+    "No controller thresholds, objective or mathematical constraints changed; no physical rollout or training."
+  ],
+  "input_sha256": {
+    "wheelleg_warp/results/height_115_action_predict_1nm_single_graph_20260929/verification.json": "ec9ee2120add9f69c8d745215a9ba42df5365833f7224eff7466d744d4090d89",
+    "wheelleg_warp/results/height_115_local_states_20260928/verification.json": "b8cea295a23d1950ff486d5c06e5d95daf33da4dbb3238a8c9235cdf16919228",
+    "wheelleg_warp/results/height_115_recovery_feedback_v2_20260929/verification.json": "295d6b653dec6b432c189a9ad6bd788f8eb062068a591552aa08641d59eebebf",
+    "wheelleg_warp/results/height_115_recovery_feedback_v2_20260929/trace.npz": "47d92e0413d331766423fbeaf78986d573bac7adf277883941ecd12abba44997",
+    "wheelleg_warp/results/height_115_recovery_feedback_delay2_20260929/verification.json": "533a82ed6aadf03718d92aef1676dcef87c5769f6335c8dcfb829855ee78dfcf",
+    "wheelleg_warp/results/height_115_recovery_feedback_delay2_20260929/trace.npz": "f9e985e9d58a98f5da843949fe630bf7ef5ed8a4b80489b8f658f6b7cb1f369c",
+    "wheelleg_warp/results/height_115_recovery_feedback_delay2_predict_20260929/verification.json": "ca25e2dd40d9bb89e57a717da76effb9ed28eb960b823b1cb3704166bcf68a98",
+    "wheelleg_warp/results/height_115_recovery_feedback_delay2_predict_20260929/trace.npz": "bca0cc3e0df6809f412a6d2aa6ccbf998272735e9e8e9f98fa050f85430b1e77"
+  },
+  "source_sha256": {
+    "wheelleg_warp/audit_height_115_control_timing.py": "a183747844a93d0178a46aa16b4ffa9e6032ebc6434a7ee9077c50f9f7b7f02c",
+    "wheelleg_warp/probe_height_115_live_braking.py": "aa49239555ddb25c0c46d5da425bbfd9495df064d1b0b635474b33cbda1b061e",
+    "wheelleg_warp/probe_height_115_action_predict_loow.py": "7c5ddb30d6f9c11170aed9720b0692a60b185cb1c95503673b6f12369759aa9e"
+  }
+}
