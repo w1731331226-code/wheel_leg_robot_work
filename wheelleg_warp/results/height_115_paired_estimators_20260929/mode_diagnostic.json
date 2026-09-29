@@ -1,0 +1,77 @@
+{
+  "role": "paired_limiter_mode_diagnostic",
+  "limited_failure_time_ms": 999.0,
+  "history_actions_equal": true,
+  "propagation_actions_equal_history": false,
+  "prior_action": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "propagation_actions": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      23.481231884100946,
+      -0.01966141591027043,
+      0.7554220155150159
+    ]
+  ],
+  "last_successful_estimated_a0": [
+    27.702808380126953,
+    -29.87918257713318,
+    32.376885414123535,
+    -30.728816986083984
+  ],
+  "fallback_a0": [
+    44.22363638877869,
+    -37.04255819320679,
+    52.73759365081787,
+    -35.92601418495178
+  ],
+  "same_history_unreset_trend_a0": [
+    24.94165301322937,
+    -24.622976779937744,
+    27.94063091278076,
+    -21.991431713104248
+  ],
+  "zero_controls": [
+    {
+      "arm": 0,
+      "first_failure_ms": 221.5
+    },
+    {
+      "arm": 3,
+      "first_failure_ms": 221.5
+    },
+    {
+      "arm": 4,
+      "first_failure_ms": 221.5
+    },
+    {
+      "arm": 5,
+      "first_failure_ms": 221.5
+    },
+    {
+      "arm": 6,
+      "first_failure_ms": 221.5
+    }
+  ],
+  "zero_control_max_A_spread_m": 2.6061052815773422e-08,
+  "warning": "Unreset trend is a diagnostic counterfactual, not a tested controller. The one-step timing difference is not method superiority.",
+  "verification_sha256": "45745881c6dea71005887515e96ffaa99294a648d506a763bc2cb412f3fc7915",
+  "trace_sha256": "b9d8d60b53dedab8aed6d9536ed555340b61669f4a217f55780fc2285d5330f5"
+}

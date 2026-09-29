@@ -29,6 +29,23 @@ def predict_active(q, v, previous_v, previous_action, gain, executed_actions):
     return qhat,vhat,a0
 
 
+def split_graphs(env):
+    d=env.data;n=d.qpos.shape[0]
+    with wp.ScopedCapture() as prepare:
+        wp.launch(begin,n,[env.reward])
+        wp.launch(command_step,n,[env.state,env.param,env.command,env.active,d.qpos,d.qvel,d.qacc_warmstart,
+            env.stopped_q,env.stopped_v,env.stopped_w,env.contact_flags])
+        wp.launch(control,n,[d.qpos,d.qvel,d.sensordata,env.targets,env.command,env.active,env.k['state'],env.ids,
+            env.k['heights'],env.k['gains'],env.k['feed'],env.k['angles'],env.k['reference'],env.k['yaw'],d.ctrl,env.diag,0,0],block_dim=32)
+    with wp.ScopedCapture() as advance:
+        mjw.step(env.model,d)
+        wp.launch(reduce_contacts,d.naconmax,[d.nacon,d.contact.worldid,d.contact.geom,env.ids,env.contact_flags])
+        wp.launch(after,n,[d.qpos,d.qvel,d.sensordata,d.qacc_warmstart,d.time,env.contact_flags,env.ids,env.param,
+            env.command,env.state,env.k['state'],env.diag,env.residual,env.active,env.done,env.reward,env.obs,env.history,
+            env.stopped_q,env.stopped_v,env.stopped_w,env.wheel_offsets],block_dim=32)
+    return prepare,advance
+
+
 def run(delay_steps=0, predict_delay=False, limited_trend=False):
     assert delay_steps in (0,1,4)
     assert not predict_delay or delay_steps==4
@@ -52,18 +69,7 @@ def run(delay_steps=0, predict_delay=False, limited_trend=False):
     limits=np.array([m.jnt_range[m.joint(x).id] for x in ACTIVE]);gain=np.array(fit['folds'][3]['gain'])
     rs=fit['folds'][3]['reserves'];reserve=(rs['actual_A_length_m'],rs['eight_joint_margin_rad'])
     start=response['rows'][2]['start_step'];assert response['rows'][2]['world']==3
-    with wp.ScopedCapture() as prepare:
-        wp.launch(begin,n,[env.reward])
-        wp.launch(command_step,n,[env.state,env.param,env.command,env.active,d.qpos,d.qvel,d.qacc_warmstart,
-            env.stopped_q,env.stopped_v,env.stopped_w,env.contact_flags])
-        wp.launch(control,n,[d.qpos,d.qvel,d.sensordata,env.targets,env.command,env.active,env.k['state'],env.ids,
-            env.k['heights'],env.k['gains'],env.k['feed'],env.k['angles'],env.k['reference'],env.k['yaw'],d.ctrl,env.diag,0,0],block_dim=32)
-    with wp.ScopedCapture() as advance:
-        mjw.step(env.model,d)
-        wp.launch(reduce_contacts,d.naconmax,[d.nacon,d.contact.worldid,d.contact.geom,env.ids,env.contact_flags])
-        wp.launch(after,n,[d.qpos,d.qvel,d.sensordata,d.qacc_warmstart,d.time,env.contact_flags,env.ids,env.param,
-            env.command,env.state,env.k['state'],env.diag,env.residual,env.active,env.done,env.reward,env.obs,env.history,
-            env.stopped_q,env.stopped_v,env.stopped_w,env.wheel_offsets],block_dim=32)
+    prepare,advance=split_graphs(env)
     for _ in range(start//40):wp.capture_launch(env.graph)
     for _ in range(start%40):wp.capture_launch(prepare.graph);wp.capture_launch(advance.graph)
     assert np.all(env.state.numpy()[:,0]==start)
