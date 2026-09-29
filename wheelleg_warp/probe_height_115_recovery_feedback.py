@@ -9,6 +9,7 @@ import mujoco_warp as mjw
 from probe_height_115_action_predict_loow import ROOT, DT, ACTIVE, forecast, forecast_acceleration, sha, START_LIMITS
 from probe_height_115_continuous_common_1nm import GAMMA, LENGTH_SCALE_M, JOINT_SCALE_RAD
 from probe_height_115_live_braking import solve_current, solve_from_acceleration
+from audit_height_115_acceleration_trend import propagate
 from probe_height_115_live_common_local import align_start, common_basis
 from probe_height_115_radial_authority import torque_box, pose
 from probe_height_115_contact_action_pair import margins, contact_sets
@@ -28,13 +29,15 @@ def predict_active(q, v, previous_v, previous_action, gain, executed_actions):
     return qhat,vhat,a0
 
 
-def run(delay_steps=0, predict_delay=False):
+def run(delay_steps=0, predict_delay=False, limited_trend=False):
     assert delay_steps in (0,1,4)
     assert not predict_delay or delay_steps==4
+    assert not limited_trend or predict_delay
     folder=ROOT/'wheelleg_warp/results'
     output=folder/{0:'height_115_recovery_feedback_v2_20260929',1:'height_115_recovery_feedback_delay05_20260929',
                    4:'height_115_recovery_feedback_delay2_20260929'}[delay_steps]
     if predict_delay:output=folder/'height_115_recovery_feedback_delay2_predict_20260929'
+    if limited_trend:output=folder/'height_115_recovery_feedback_delay2_limited_20260929'
     assert not output.exists()
     paths=[folder/n/'verification.json' for n in ('height_115_contact_response_2nm_20260929',
         'height_115_action_predict_1nm_single_graph_20260929','height_115_local_states_20260928',
@@ -89,15 +92,19 @@ def run(delay_steps=0, predict_delay=False):
                 status='failed_initial_prefix_pairing';failure=dict(step=t,errors=prefix_errors);break
         actions=old['schedule'][t].copy() if t<40 else np.zeros((7,3));alarm=False;predicted=None
         observation_step=None;estimate=None
-        if t>=41+delay_steps:
+        if t>=41+delay_steps+(2 if limited_trend else 0):
             tic=perf_counter()
             observation_step=t-delay_steps
             oq,ov,on=(q,v,nom) if delay_steps==0 else traces[observation_step][:3]
             pv=traces[observation_step-1][1][1,va]
             pa=traces[observation_step-1][3][1]
             if predict_delay:
-                qhat,vhat,a0=predict_active(oq[1,qa],ov[1,va],pv,pa,gain,
-                    [traces[k][3][1] for k in range(observation_step,t)])
+                executed=np.array([traces[k][3][1] for k in range(observation_step,t)])
+                if limited_trend:
+                    k=observation_step
+                    qhat,vhat,a0=propagate(oq[1,qa],ov[1,va],pv,traces[k-2][1][1,va],pa,
+                        traces[k-2][3][1],gain,executed,2,older_v=traces[k-3][1][1,va],older_action=traces[k-3][3][1])
+                else:qhat,vhat,a0=predict_active(oq[1,qa],ov[1,va],pv,pa,gain,executed)
                 eq=oq[1].copy();ev=ov[1].copy();eq[qa]=qhat;ev[va]=vhat
                 estimate=dict(q_active=qhat.tolist(),v_active=vhat.tolist(),nominal_acceleration=a0.tolist())
                 pl,pj=forecast_acceleration(qhat,vhat,a0[None,:],limits)
@@ -145,7 +152,8 @@ def run(delay_steps=0, predict_delay=False):
     result=dict(role='current_state_recovery_feedback_host_in_loop',status=status,failure=failure,
         guard_observation_delay_ms=delay_steps*.5,zero_delay_source_git_revision='dd1609b',
         forward_predict_delay=predict_delay,previous_delay_source_git_revision='71a7f86',
-        delay_scope='Guard observations and nominal command snapshot are aged. Optional active-state propagation uses only already executed actions, holding estimated nominal acceleration and G constant. Wheel/base state and nominal snapshot remain aged. Nominal controller and execution mapping retain fresh simulation state.',
+        limited_acceleration_trend=limited_trend,previous_constant_predictor_git_revision='1754bfa',
+        delay_scope='Guard observations and nominal command snapshot are aged. Active-state prediction uses only recorded past inputs and frozen G, with the declared acceleration estimator. Wheel/base state and nominal snapshot remain aged. Nominal controller and execution mapping retain fresh simulation state.',
         completed_steps=len(rows),first_alarm_ms=None if first_alarm is None else first_alarm*.5,
         recovery_nonzero_action_steps=sum(bool(np.any(r['action'])) for r in rows[40:]),
         initial_prefix_errors=prefix_errors,paired_recovery_fork_step=40,
@@ -155,12 +163,14 @@ def run(delay_steps=0, predict_delay=False):
         input_sha256={str(p.relative_to(ROOT)):sha(p) for p in paths+[prior_path]},
         trace_sha256=sha(output/'trace.npz') if traces else None,
         source_sha256={str(p.relative_to(ROOT)):sha(p) for p in (Path(__file__),ROOT/'wheelleg_warp/probe_height_115_live_braking.py',
-            ROOT/'wheelleg_warp/probe_height_115_action_predict_loow.py',ROOT/'wheelleg_warp/native/controller.py',ROOT/'wheelleg_warp/native/environment.py')})
+            ROOT/'wheelleg_warp/probe_height_115_action_predict_loow.py',ROOT/'wheelleg_warp/audit_height_115_acceleration_trend.py',
+            ROOT/'wheelleg_warp/native/controller.py',ROOT/'wheelleg_warp/native/environment.py')})
     (output/'verification.json').write_text(json.dumps(result,ensure_ascii=False)+'\n')
     print({k:v for k,v in result.items() if k not in ('rows','input_sha256','source_sha256')},flush=True)
 
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--delay-ms',type=float,choices=(0,.5,2),default=0)
-    parser.add_argument('--predict-delay',action='store_true');args=parser.parse_args()
-    run(round(args.delay_ms*2),args.predict_delay)
+    parser.add_argument('--predict-delay',action='store_true')
+    parser.add_argument('--limited-trend',action='store_true');args=parser.parse_args()
+    run(round(args.delay_ms*2),args.predict_delay,args.limited_trend)

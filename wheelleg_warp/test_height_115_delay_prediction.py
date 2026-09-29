@@ -28,6 +28,15 @@ def run():
     assert np.allclose(qh,q+4*DT*v+DT**2*np.sum(np.array([3.5,2.5,1.5,.5])[:,None]*acc,axis=0),atol=1e-12,rtol=0)
     assert np.allclose(vh,v+DT*acc.sum(axis=0),atol=1e-12,rtol=0)
     assert np.allclose(ah,a0+4*DT*jerk,atol=1e-9,rtol=0)
+    zero=np.zeros(3);held=np.zeros((4,3));vv=np.zeros(4)
+    vp=vv-DT*np.full(4,5.);vpp=vp-DT*np.full(4,3.);vppp=vpp-DT*np.full(4,1.)
+    limited=propagate(q,vv,vp,vpp,zero,zero,g,held,2,older_v=vppp,older_action=zero)
+    linear=propagate(q,vv,vp,vpp,zero,zero,g,held,1)
+    assert all(np.allclose(a,b,atol=1e-10,rtol=0) for a,b in zip(limited,linear))
+    for older_velocity,commands in ((vpp-DT*np.full(4,5.),held),(vppp,actions)):
+        limited=propagate(q,vv,vp,vpp,zero,zero,g,commands,2,older_v=older_velocity,older_action=zero)
+        constant=propagate(q,vv,vp,vpp,zero,zero,g,commands,0)
+        assert all(np.array_equal(a,b) for a,b in zip(limited,constant))
     folder=ROOT/'wheelleg_warp/results'
     fit=json.loads((folder/'height_115_action_predict_1nm_single_graph_20260929/verification.json').read_text())
     arc=json.loads((folder/'height_115_local_states_20260928/verification.json').read_text())
