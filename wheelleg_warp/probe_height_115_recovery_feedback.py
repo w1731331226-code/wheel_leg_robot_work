@@ -1,4 +1,5 @@
 """恢复阶段当前状态预警/LP反馈；host-in-loop诊断，不作2kHz部署声明。"""
+import argparse
 import json
 from pathlib import Path
 from time import perf_counter
@@ -17,8 +18,12 @@ from native.environment import NativeEnv, begin, command_step, reduce_contacts, 
 from native.terrain import HeightTerrainScenario, bank_height_115, HEIGHT_115_GEOMETRIC_MIN
 
 
-def run():
-    folder=ROOT/'wheelleg_warp/results';output=folder/'height_115_recovery_feedback_v2_20260929';assert not output.exists()
+def run(delay_steps=0):
+    assert delay_steps in (0,1,4)
+    folder=ROOT/'wheelleg_warp/results'
+    output=folder/{0:'height_115_recovery_feedback_v2_20260929',1:'height_115_recovery_feedback_delay05_20260929',
+                   4:'height_115_recovery_feedback_delay2_20260929'}[delay_steps]
+    assert not output.exists()
     paths=[folder/n/'verification.json' for n in ('height_115_contact_response_2nm_20260929',
         'height_115_action_predict_1nm_single_graph_20260929','height_115_local_states_20260928',
         'height_115_contact_hold_v2_20260929')]
@@ -71,17 +76,22 @@ def run():
             if any(prefix_errors[k]>START_LIMITS[k] for k in prefix_errors):
                 status='failed_initial_prefix_pairing';failure=dict(step=t,errors=prefix_errors);break
         actions=old['schedule'][t].copy() if t<40 else np.zeros((7,3));alarm=False;predicted=None
-        if t>=41:
+        observation_step=None
+        if t>=41+delay_steps:
             tic=perf_counter()
-            corrected_previous=prev[1]+DT*(gain@last[1])
-            pl,pj=forecast(dict(q0=q[1,qa],v0=v[1,va],vprev=corrected_previous,
+            observation_step=t-delay_steps
+            oq,ov,on=(q,v,nom) if delay_steps==0 else traces[observation_step][:3]
+            pv=traces[observation_step-1][1][1,va]
+            pa=traces[observation_step-1][3][1]
+            corrected_previous=pv+DT*(gain@pa)
+            pl,pj=forecast(dict(q0=oq[1,qa],v0=ov[1,va],vprev=corrected_previous,
                 coeff=np.zeros((1,3)),active_joint_limits=limits),np.zeros((4,3)))
             predicted=[float(pl.min()-HEIGHT_115_GEOMETRIC_MIN-reserve[0]-GAMMA*LENGTH_SCALE_M),
                        float(pj.min()-reserve[1]-GAMMA*JOINT_SCALE_RAD)]
             alarm=min(predicted)<0
             if alarm:
                 if first_alarm is None:first_alarm=t
-                c,bs,a0,error=solve_current(m,q[1],v[1],prev[1],last[1],gain,reserve,nom[1])
+                c,bs,a0,error=solve_current(m,oq[1],ov[1],pv,pa,gain,reserve,on[1])
                 if error:
                     failure=dict(step=t,time_ms=t*.5,reason=error,barriers=[dict(name=b['name'],h=b['h'],rate=b['rate']) for b in bs],
                         true_A_margin_m=(geometry(m,q[1])[1]-HEIGHT_115_GEOMETRIC_MIN).tolist())
@@ -100,7 +110,8 @@ def run():
             safe=bool(L.min()>=HEIGHT_115_GEOMETRIC_MIN and J>=0 and att<=5 and not nonwheel and env.active.numpy()[arm])
             checks.append(dict(arm=arm,safe=safe,true_A_margin_m=(L-HEIGHT_115_GEOMETRIC_MIN).tolist(),
                 joint_margin_rad=J,attitude_deg=att,nonwheel=nonwheel,peak_extra_motor_Nm=peak))
-        rows.append(dict(step=t,time_ms=(t+1)*.5,alarm=alarm,predicted_margins=predicted,action=actions[1].tolist(),checks=checks))
+        rows.append(dict(step=t,time_ms=(t+1)*.5,observation_step=observation_step,
+            alarm=alarm,predicted_margins=predicted,action=actions[1].tolist(),checks=checks))
         traces.append((q,v,nom,actions,issued.astype(np.float32),qn,vn))
         prev=v[:,va].copy();last=actions.copy()
         if not checks[0]['safe']:status='failed_feedback_physical_gate';failure=rows[-1];break
@@ -108,6 +119,8 @@ def run():
         np.savez_compressed(output/'trace.npz',**{key:np.stack([r[i] for r in traces]) for i,key in enumerate(
             ('pre_q','pre_v','nominal','actions','issued','post_q','post_v'))})
     result=dict(role='current_state_recovery_feedback_host_in_loop',status=status,failure=failure,
+        guard_observation_delay_ms=delay_steps*.5,zero_delay_source_git_revision='dd1609b',
+        delay_scope='Guard q/dq, nominal command snapshot and previous action aligned to aged frame. No state extrapolation. Nominal controller and execution B(q)/motor check retain fresh simulation state.',
         completed_steps=len(rows),first_alarm_ms=None if first_alarm is None else first_alarm*.5,
         recovery_nonzero_action_steps=sum(bool(np.any(r['action'])) for r in rows[40:]),
         initial_prefix_errors=prefix_errors,paired_recovery_fork_step=40,
@@ -122,4 +135,6 @@ def run():
     print({k:v for k,v in result.items() if k not in ('rows','input_sha256','source_sha256')},flush=True)
 
 
-if __name__=='__main__':run()
+if __name__=='__main__':
+    parser=argparse.ArgumentParser();parser.add_argument('--delay-ms',type=float,choices=(0,.5,2),default=0)
+    run(round(parser.parse_args().delay_ms*2))
