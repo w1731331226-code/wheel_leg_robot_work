@@ -31,8 +31,8 @@ def direct(h,c,A,b):
     return status,x
 
 
-def run():
-    folder=ROOT/'wheelleg_warp/results';out=folder/'height_115_control_timing_20260929';assert not out.exists()
+def load_cases():
+    folder=ROOT/'wheelleg_warp/results'
     fitpath=folder/'height_115_action_predict_1nm_single_graph_20260929/verification.json'
     arcpath=folder/'height_115_local_states_20260928/verification.json'
     fit=json.loads(fitpath.read_text());arc=json.loads(arcpath.read_text())
@@ -58,6 +58,12 @@ def run():
             if kind=='predicted_failure':q[qa],v[va],a0=predict_active(q[qa],v[va],pv,pa,G,z['actions'][k:t,1])
             samples.append((kind,t,q,v,a0,z['nominal'][k,1],None))
     assert len(samples)==46
+    return m,G,reserve,limits,qa,va,samples,inputs
+
+
+def run():
+    folder=ROOT/'wheelleg_warp/results';out=folder/'height_115_control_timing_20260929';assert not out.exists()
+    m,G,reserve,limits,qa,va,samples,inputs=load_cases()
     originals={n:getattr(braking,n) for n in ('barriers','basis','torque_box','linprog')}
     measured=[];problems=[];bucket={};latest=None
     def wrap(name,func):
