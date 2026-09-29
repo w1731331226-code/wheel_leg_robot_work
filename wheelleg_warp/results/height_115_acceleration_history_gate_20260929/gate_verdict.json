@@ -1,0 +1,52 @@
+{
+  "status": "rejected_before_closed_loop",
+  "regressions": [
+    {
+      "case": "switch_w1_a4",
+      "constant": {
+        "method": "constant",
+        "windows": 16,
+        "v_max_rad_s": 0.5396653857212622,
+        "a0_max_rad_s2": 270.1161675242158
+      },
+      "candidate": {
+        "method": "observed_history_only",
+        "windows": 16,
+        "v_max_rad_s": 0.545745171247061,
+        "a0_max_rad_s2": 274.97999594485486
+      }
+    },
+    {
+      "case": "switch_w1_a6",
+      "constant": {
+        "method": "constant",
+        "windows": 16,
+        "v_max_rad_s": 0.2906052264440696,
+        "a0_max_rad_s2": 144.52386543157874
+      },
+      "candidate": {
+        "method": "observed_history_only",
+        "windows": 16,
+        "v_max_rad_s": 0.2963903526394753,
+        "a0_max_rad_s2": 147.075484351403
+      }
+    },
+    {
+      "case": "switch_w2_a3",
+      "constant": {
+        "method": "constant",
+        "windows": 18,
+        "v_max_rad_s": 0.3814838573412245,
+        "a0_max_rad_s2": 207.95072745910014
+      },
+      "candidate": {
+        "method": "observed_history_only",
+        "windows": 18,
+        "v_max_rad_s": 0.39053871557872943,
+        "a0_max_rad_s2": 207.95072745910014
+      }
+    }
+  ],
+  "verification_sha256": "072974843a771eb316ce1463b0313517fdbfd9f852e5a246ecf07d7c3ec30d37",
+  "note": "Pre-registered per-case worst-error gate failed; no controller run or threshold adjustment."
+}

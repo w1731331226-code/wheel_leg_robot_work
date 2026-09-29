@@ -37,6 +37,12 @@ def run():
         limited=propagate(q,vv,vp,vpp,zero,zero,g,commands,2,older_v=older_velocity,older_action=zero)
         constant=propagate(q,vv,vp,vpp,zero,zero,g,commands,0)
         assert all(np.array_equal(a,b) for a,b in zip(limited,constant))
+    history_only=propagate(q,vv,vp,vpp,zero,zero,g,actions,3,older_v=vppp,older_action=zero)
+    linear_with_input=propagate(q,vv,vp,vpp,zero,zero,g,actions,1)
+    assert all(np.allclose(a,b,atol=1e-10,rtol=0) for a,b in zip(history_only,linear_with_input))
+    history_changed=propagate(q,vv,vp,vpp,zero,np.ones(3),g,actions,3,older_v=vppp,older_action=zero)
+    constant_changed=propagate(q,vv,vp,vpp,zero,np.ones(3),g,actions,0)
+    assert all(np.array_equal(a,b) for a,b in zip(history_changed,constant_changed))
     folder=ROOT/'wheelleg_warp/results'
     fit=json.loads((folder/'height_115_action_predict_1nm_single_graph_20260929/verification.json').read_text())
     arc=json.loads((folder/'height_115_local_states_20260928/verification.json').read_text())
