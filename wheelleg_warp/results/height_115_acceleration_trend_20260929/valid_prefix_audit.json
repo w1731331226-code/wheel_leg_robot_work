@@ -1,0 +1,275 @@
+{
+  "role": "exclude_states_after_first_geometry_failure",
+  "metrics": [
+    {
+      "method": "constant",
+      "windows": 770,
+      "q_max_rad": 0.0006663707416918463,
+      "v_max_rad_s": 0.5396653857212622,
+      "a0_max_rad_s2": 293.193318039122
+    },
+    {
+      "method": "linear_trend",
+      "windows": 770,
+      "q_max_rad": 0.0011148413641630661,
+      "v_max_rad_s": 1.5137079142444403,
+      "a0_max_rad_s2": 1209.3324254677268
+    }
+  ],
+  "cases": [
+    {
+      "world": 0,
+      "arm": 0,
+      "valid_current_state_windows": 18,
+      "first_invalid_state_index": 24
+    },
+    {
+      "world": 0,
+      "arm": 1,
+      "valid_current_state_windows": 19,
+      "first_invalid_state_index": 25
+    },
+    {
+      "world": 0,
+      "arm": 2,
+      "valid_current_state_windows": 18,
+      "first_invalid_state_index": 24
+    },
+    {
+      "world": 0,
+      "arm": 3,
+      "valid_current_state_windows": 19,
+      "first_invalid_state_index": 25
+    },
+    {
+      "world": 0,
+      "arm": 4,
+      "valid_current_state_windows": 18,
+      "first_invalid_state_index": 24
+    },
+    {
+      "world": 0,
+      "arm": 5,
+      "valid_current_state_windows": 19,
+      "first_invalid_state_index": 25
+    },
+    {
+      "world": 0,
+      "arm": 6,
+      "valid_current_state_windows": 18,
+      "first_invalid_state_index": 24
+    },
+    {
+      "world": 1,
+      "arm": 0,
+      "valid_current_state_windows": 18,
+      "first_invalid_state_index": 24
+    },
+    {
+      "world": 1,
+      "arm": 1,
+      "valid_current_state_windows": 20,
+      "first_invalid_state_index": 26
+    },
+    {
+      "world": 1,
+      "arm": 2,
+      "valid_current_state_windows": 18,
+      "first_invalid_state_index": 24
+    },
+    {
+      "world": 1,
+      "arm": 3,
+      "valid_current_state_windows": 20,
+      "first_invalid_state_index": 26
+    },
+    {
+      "world": 1,
+      "arm": 4,
+      "valid_current_state_windows": 17,
+      "first_invalid_state_index": 23
+    },
+    {
+      "world": 1,
+      "arm": 5,
+      "valid_current_state_windows": 19,
+      "first_invalid_state_index": 25
+    },
+    {
+      "world": 1,
+      "arm": 6,
+      "valid_current_state_windows": 17,
+      "first_invalid_state_index": 23
+    },
+    {
+      "world": 2,
+      "arm": 0,
+      "valid_current_state_windows": 18,
+      "first_invalid_state_index": 24
+    },
+    {
+      "world": 2,
+      "arm": 1,
+      "valid_current_state_windows": 19,
+      "first_invalid_state_index": 25
+    },
+    {
+      "world": 2,
+      "arm": 2,
+      "valid_current_state_windows": 17,
+      "first_invalid_state_index": 23
+    },
+    {
+      "world": 2,
+      "arm": 3,
+      "valid_current_state_windows": 19,
+      "first_invalid_state_index": 25
+    },
+    {
+      "world": 2,
+      "arm": 4,
+      "valid_current_state_windows": 17,
+      "first_invalid_state_index": 23
+    },
+    {
+      "world": 2,
+      "arm": 5,
+      "valid_current_state_windows": 19,
+      "first_invalid_state_index": 25
+    },
+    {
+      "world": 2,
+      "arm": 6,
+      "valid_current_state_windows": 17,
+      "first_invalid_state_index": 23
+    },
+    {
+      "world": 3,
+      "arm": 0,
+      "valid_current_state_windows": 18,
+      "first_invalid_state_index": 24
+    },
+    {
+      "world": 3,
+      "arm": 1,
+      "valid_current_state_windows": 20,
+      "first_invalid_state_index": 26
+    },
+    {
+      "world": 3,
+      "arm": 2,
+      "valid_current_state_windows": 17,
+      "first_invalid_state_index": 23
+    },
+    {
+      "world": 3,
+      "arm": 3,
+      "valid_current_state_windows": 20,
+      "first_invalid_state_index": 26
+    },
+    {
+      "world": 3,
+      "arm": 4,
+      "valid_current_state_windows": 17,
+      "first_invalid_state_index": 23
+    },
+    {
+      "world": 3,
+      "arm": 5,
+      "valid_current_state_windows": 19,
+      "first_invalid_state_index": 25
+    },
+    {
+      "world": 3,
+      "arm": 6,
+      "valid_current_state_windows": 17,
+      "first_invalid_state_index": 23
+    },
+    {
+      "world": 4,
+      "arm": 0,
+      "valid_current_state_windows": 18,
+      "first_invalid_state_index": 24
+    },
+    {
+      "world": 4,
+      "arm": 1,
+      "valid_current_state_windows": 18,
+      "first_invalid_state_index": 24
+    },
+    {
+      "world": 4,
+      "arm": 2,
+      "valid_current_state_windows": 18,
+      "first_invalid_state_index": 24
+    },
+    {
+      "world": 4,
+      "arm": 3,
+      "valid_current_state_windows": 18,
+      "first_invalid_state_index": 24
+    },
+    {
+      "world": 4,
+      "arm": 4,
+      "valid_current_state_windows": 18,
+      "first_invalid_state_index": 24
+    },
+    {
+      "world": 4,
+      "arm": 5,
+      "valid_current_state_windows": 18,
+      "first_invalid_state_index": 24
+    },
+    {
+      "world": 4,
+      "arm": 6,
+      "valid_current_state_windows": 18,
+      "first_invalid_state_index": 24
+    },
+    {
+      "world": 5,
+      "arm": 0,
+      "valid_current_state_windows": 18,
+      "first_invalid_state_index": 24
+    },
+    {
+      "world": 5,
+      "arm": 1,
+      "valid_current_state_windows": 23,
+      "first_invalid_state_index": 29
+    },
+    {
+      "world": 5,
+      "arm": 2,
+      "valid_current_state_windows": 16,
+      "first_invalid_state_index": 22
+    },
+    {
+      "world": 5,
+      "arm": 3,
+      "valid_current_state_windows": 22,
+      "first_invalid_state_index": 28
+    },
+    {
+      "world": 5,
+      "arm": 4,
+      "valid_current_state_windows": 16,
+      "first_invalid_state_index": 22
+    },
+    {
+      "world": 5,
+      "arm": 5,
+      "valid_current_state_windows": 20,
+      "first_invalid_state_index": 26
+    },
+    {
+      "world": 5,
+      "arm": 6,
+      "valid_current_state_windows": 17,
+      "first_invalid_state_index": 23
+    }
+  ],
+  "source_verification_sha256": "cc991f7df136a0c9aec0520d56d9499dc55288b4e84a4995216c2d1dc5266e33",
+  "error_arrays_sha256": "6ee54e3c4d609d51abbff2aeff32042a81651f1a4af8c5c83d77cade5f4904b4"
+}

@@ -5,6 +5,7 @@ from probe_height_115_recovery_feedback import predict_active
 from probe_height_115_action_predict_loow import ROOT, DT, forecast, forecast_acceleration, ACTIVE
 from probe_height_115_live_braking import solve_current, solve_from_acceleration
 from native.terrain import model, HeightTerrainScenario
+from audit_height_115_acceleration_trend import propagate
 
 
 def run():
@@ -19,6 +20,14 @@ def run():
         assert np.allclose(vh,v+DT*acc.sum(axis=0),atol=1e-12,rtol=0)
         assert np.allclose(ah,a0,atol=1e-10,rtol=0)
     assert np.array_equal(q,[.5,-.7,.52,-.72]) and np.array_equal(v,[.01,-.02,.03,-.04])
+    ppv=pv-DT*(a0-np.array([2.,-3.,4.,-5.])*DT)
+    previous_a=(pv-ppv)/DT
+    jerk=(a0-previous_a)/DT
+    qh,vh,ah=propagate(q,v,pv,ppv,pa,np.zeros(3),g,actions,True)
+    acc=a0[None,:]+np.arange(1,5)[:,None]*DT*jerk+actions@g.T
+    assert np.allclose(qh,q+4*DT*v+DT**2*np.sum(np.array([3.5,2.5,1.5,.5])[:,None]*acc,axis=0),atol=1e-12,rtol=0)
+    assert np.allclose(vh,v+DT*acc.sum(axis=0),atol=1e-12,rtol=0)
+    assert np.allclose(ah,a0+4*DT*jerk,atol=1e-9,rtol=0)
     folder=ROOT/'wheelleg_warp/results'
     fit=json.loads((folder/'height_115_action_predict_1nm_single_graph_20260929/verification.json').read_text())
     arc=json.loads((folder/'height_115_local_states_20260928/verification.json').read_text())
