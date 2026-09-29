@@ -1,6 +1,49 @@
 """实验性双精度预测/屏障/LP装配核；不接入默认控制。"""
 import warp as wp
-from native.controller import D, V3, fk, polar_jac, allowed
+from native.controller import D, V3, V6, fk, polar_jac, allowed
+
+
+@wp.kernel
+def gather_current(qfull:wp.array2d[float],vfull:wp.array2d[float],nom:wp.array2d[float],
+                   previous_v:wp.array2d[D],previous_u:wp.array2d[D],gain:wp.array2d[D],
+                   qa:wp.array[int],va:wp.array[int],motor_dofs:wp.array[int],
+                   q:wp.array2d[D],v:wp.array2d[D],a0:wp.array2d[D],speeds:wp.array2d[D],nominal:wp.array2d[D]):
+    w=wp.tid()
+    for j in range(4):
+        q[w,j]=D(qfull[w,qa[j]]);v[w,j]=D(vfull[w,va[j]])
+        acceleration=(v[w,j]-previous_v[w,j])/D(.0005)
+        for k in range(3):acceleration-=gain[j,k]*previous_u[w,k]
+        a0[w,j]=acceleration
+    for j in range(6):
+        speeds[w,j]=D(vfull[w,motor_dofs[j]]);nominal[w,j]=D(nom[w,j])
+
+
+@wp.kernel
+def pack_problem(A:wp.array3d[D],b:wp.array2d[D],diagnostics:wp.array2d[D],flags:wp.array[int],packet:wp.array2d[D]):
+    w=wp.tid()
+    for r in range(34):
+        for j in range(4):packet[w,4*r+j]=A[w,r,j]
+        packet[w,136+r]=b[w,r]
+    packet[w,170]=D(flags[w])
+    for j in range(3):packet[w,171+j]=diagnostics[w,j]
+
+
+@wp.kernel
+def execute_solution(B:wp.array3d[D],box:wp.array2d[D],nominal:wp.array2d[D],x:wp.array2d[D],
+                     flags:wp.array[int],ctrl:wp.array2d[float],execution_status:wp.array[int]):
+    w=wp.tid();invalid=flags[w];delta=V6()
+    for j in range(4):
+        if not wp.isfinite(x[w,j]):invalid=2
+    if x[w,3]<D(-1.e-6) or x[w,3]>D(1.000001):invalid=2
+    for j in range(6):
+        delta[j]=D(0)
+        for k in range(3):delta[j]+=B[w,j,k]*x[w,k]
+        if wp.abs(delta[j])>D(1.000001) or wp.abs(nominal[w,j]+delta[j])-box[w,j]>D(1.e-6):invalid=2
+    for j in range(6):
+        value=nominal[w,j]
+        if invalid==0:value+=delta[j]
+        ctrl[w,j]=float(value)
+    execution_status[w]=invalid
 
 
 @wp.func

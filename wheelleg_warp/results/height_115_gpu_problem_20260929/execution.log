@@ -1,0 +1,9 @@
+Warp 1.17.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 5060 Laptop GPU" (8 GiB, sm_120, mempool enabled)
+   Kernel cache:
+     /home/wmt/.cache/warp/1.17.0
+Module native.safety_problem bd6c8bb load on device 'cuda:0' took 18908.65 ms  (compiled)
+{'count': 132, 'median_ms': 0.49897249937203014, 'p95_ms': 0.6078327000068382, 'max_ms': 0.7902329998614732} 65
