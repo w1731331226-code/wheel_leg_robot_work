@@ -13,9 +13,8 @@ from audit_height_115_control_timing import load_cases, direct, stats, _core
 import probe_height_115_live_braking as reference
 
 
-def run():
-    out=ROOT/'wheelleg_warp/results/height_115_compiled_problem_20260929';assert not out.exists()
-    m,G,reserve,limits,qa,va,samples,inputs=load_cases();motor_dofs=m.jnt_dofadr[m.actuator_trnid[:,0]]
+def make_builder(m,G,reserve,qa,va):
+    motor_dofs=m.jnt_dofadr[m.actuator_trnid[:,0]]
     wp.init();shapes={'q':(1,4),'v':(1,4),'a0':(1,4),'speeds':(1,6),'nominal':(1,6),
         'A':(1,34,4),'b':(1,34),'B':(1,6,3),'box':(1,6),'info':(1,10,3),'diagnostics':(1,3)}
     buffers={k:wp.zeros(shape,dtype=D,device='cpu') for k,shape in shapes.items()}
@@ -30,6 +29,13 @@ def run():
         wp.launch(assemble,1,args,device='cpu')
         assert flag.numpy()[0]==0
         return views['A'][0],views['b'][0]
+    return build,views
+
+
+def run():
+    out=ROOT/'wheelleg_warp/results/height_115_compiled_problem_20260929';assert not out.exists()
+    m,G,reserve,limits,qa,va,samples,inputs=load_cases();motor_dofs=m.jnt_dofadr[m.actuator_trnid[:,0]]
+    build,views=make_builder(m,G,reserve,qa,va)
     h=_core._Highs()
     for key,value in [('output_flag',False),('log_to_console',False),('presolve','on'),('solver','choose'),
                       ('simplex_strategy',int(_core.simplex_constants.SimplexStrategy.kSimplexStrategyDual))]:
