@@ -260,12 +260,15 @@ def fit_gain(samples, worlds):
 
 
 def forecast(sample, gain):
-    t = np.arange(1, STEPS + 1) * DT
     acceleration = (sample['v0'] - sample['vprev']) / DT + sample['coeff'] @ gain.T
-    q = sample['q0'][None, None, :] + sample['v0'][None, None, :] * t[None, :, None] + \
+    return forecast_acceleration(sample['q0'], sample['v0'], acceleration, sample['active_joint_limits'])
+
+
+def forecast_acceleration(q0, v0, acceleration, limits):
+    t = np.arange(1, STEPS + 1) * DT
+    q = q0[None, None, :] + v0[None, None, :] * t[None, :, None] + \
         .5 * acceleration[:, None, :] * t[None, :, None] ** 2
     leg = np.minimum(lengths(q[..., 0], q[..., 1]), lengths(q[..., 2], q[..., 3]))
-    limits = sample['active_joint_limits']
     active_margin = np.minimum(q - limits[None, None, :, 0], limits[None, None, :, 1] - q).min(axis=-1)
     return leg, active_margin
 

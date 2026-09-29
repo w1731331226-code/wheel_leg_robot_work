@@ -1,0 +1,79 @@
+{
+  "step": 1998,
+  "time_ms": 999.0,
+  "estimated_minus_actual_q_active": [
+    -4.50104475024915e-07,
+    -4.022538661718755e-06,
+    -1.7923116679696705e-07,
+    -4.309207200847709e-06
+  ],
+  "estimated_minus_actual_v_active": [
+    0.023351266980171204,
+    -0.022434771060943604,
+    0.02358385920524597,
+    -0.02288474142551422
+  ],
+  "estimated_nominal_a0": [
+    48.4185516834259,
+    -36.554619669914246,
+    48.39658737182617,
+    -36.98451817035675
+  ],
+  "fresh_measured_acceleration": [
+    30.35569190979004,
+    -18.496572971343994,
+    30.175626277923584,
+    -18.62427592277527
+  ],
+  "scalar_constraints": [
+    {
+      "name": "left_leg",
+      "distance": 0.0001464498318001921,
+      "required": 1.6767264895219236,
+      "maximum": 0.9683666340356285
+    },
+    {
+      "name": "right_leg",
+      "distance": 0.00014553042415199713,
+      "required": 1.6911106150502764,
+      "maximum": 0.8289234662905973
+    },
+    {
+      "name": "alphaL_upper",
+      "distance": 0.4553385178664815,
+      "required": 0.11018672294918339,
+      "maximum": 42.24449407706521
+    },
+    {
+      "name": "betaL_lower",
+      "distance": 0.44391534500514407,
+      "required": 0.05206299430693986,
+      "maximum": 16.225342656840354
+    },
+    {
+      "name": "alphaR_upper",
+      "distance": 0.45532084243689885,
+      "required": 0.10944186903416749,
+      "maximum": 39.398898185265466
+    },
+    {
+      "name": "betaR_lower",
+      "distance": 0.4439110052207602,
+      "required": 0.052892897729564875,
+      "maximum": 16.200504436027686
+    }
+  ],
+  "diagnostic_feasibility": {
+    "legs_only": false,
+    "all_closing": false
+  },
+  "warning": "Leg-only is an offline diagnostic, not an authorized controller relaxation. Frozen G remains unvalidated.",
+  "verification_sha256": "ca25e2dd40d9bb89e57a717da76effb9ed28eb960b823b1cb3704166bcf68a98",
+  "trace_sha256": "bca0cc3e0df6809f412a6d2aa6ccbf998272735e9e8e9f98fa050f85430b1e77",
+  "fresh_acceleration_only_oracle_coupled_feasible": true,
+  "fresh_acceleration_only_oracle_action": [
+    19.660332560238647,
+    0.0,
+    1.0
+  ]
+}

@@ -23,10 +23,15 @@ from probe_height_115_action_predict_loow import sha
 
 
 def solve_current(m, q, v, previous_v, previous_action, gain, reserve, nominal):
-    qa = np.array([m.joint(n).qposadr[0] for n in ACTIVE])
     va = np.array([m.joint(n).dofadr[0] for n in ACTIVE])
     # Measured acceleration already contains the previously issued extra action.
     a0 = (v[va] - previous_v) / DT - gain @ previous_action
+    return solve_from_acceleration(m, q, v, a0, gain, reserve, nominal)
+
+
+def solve_from_acceleration(m, q, v, a0, gain, reserve, nominal):
+    qa = np.array([m.joint(n).qposadr[0] for n in ACTIVE])
+    va = np.array([m.joint(n).dofadr[0] for n in ACTIVE])
     bs, _ = barriers(q[qa], v[va], a0, gain, reserve)
     if any(b['h'] <= 0 for b in bs):
         return None, bs, a0, 'tightened_position_already_outside'
