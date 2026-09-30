@@ -1,0 +1,161 @@
+{
+  "role": "independent_late_combination_one_step_validation",
+  "status": "single_step_pass",
+  "candidate_action": [
+    28.764393218387237,
+    -0.024318916260808347,
+    1.1996036050717103
+  ],
+  "predicted_peak_Nm": 1.1996036050717103,
+  "actual_peak_Nm": 1.1996036767959595,
+  "pairing": {
+    "passed": true,
+    "q_error": 1.6955202113422274e-06,
+    "v_error": 0.00018454683680779738,
+    "contacts_equal": true,
+    "zero_replay_q_error": 0.0,
+    "zero_replay_v_error": 0.0
+  },
+  "rows": [
+    {
+      "backend": "cpu",
+      "arm": "zero",
+      "braking_slack": {
+        "left_leg": -3.1676170506035013,
+        "right_leg": -4.455423464965585,
+        "alphaL_upper": -45.24606867931929,
+        "betaL_lower": -25.135436958009283,
+        "alphaR_upper": -33.37093167260667,
+        "betaR_lower": -29.875293551379745
+      },
+      "braking_gate": false,
+      "physical_gate": true,
+      "true_A_margin_m": [
+        0.00023493512935651717,
+        0.000163983039340454
+      ],
+      "joint_margin_rad": 0.4441473731302126,
+      "attitude_deg": 0.17266374304848345,
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "cpu",
+      "arm": "combination",
+      "braking_slack": {
+        "left_leg": 1.4469467782309668,
+        "right_leg": 0.13413691767326563,
+        "alphaL_upper": 28.860670454417317,
+        "betaL_lower": 11.235472987656243,
+        "alphaR_upper": 40.60143983344484,
+        "betaR_lower": 6.290582611044648
+      },
+      "braking_gate": true,
+      "physical_gate": true,
+      "true_A_margin_m": [
+        0.00023542359778105926,
+        0.00016446359527635956
+      ],
+      "joint_margin_rad": 0.44415641459925315,
+      "attitude_deg": 0.1726646760987428,
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "cpu",
+      "arm": "Fplus2Nm",
+      "braking_slack": {
+        "left_leg": 4.3856605439041605,
+        "right_leg": 3.056781643065028,
+        "alphaL_upper": 43.6626116630399,
+        "betaL_lower": 67.13161052704785,
+        "alphaR_upper": 55.37038929030298,
+        "betaR_lower": 61.984570084492425
+      },
+      "braking_gate": true,
+      "physical_gate": true,
+      "true_A_margin_m": [
+        0.00023646651892197945,
+        0.00016550091770052566
+      ],
+      "joint_margin_rad": 0.4441703380961215,
+      "attitude_deg": 0.1726653746156477,
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "warp",
+      "arm": "zero",
+      "braking_slack": {
+        "left_leg": -3.1672984570397866,
+        "right_leg": -4.4516029695969,
+        "alphaL_upper": -45.24119386798003,
+        "betaL_lower": -25.132714911664095,
+        "alphaR_upper": -33.332408437641,
+        "betaR_lower": -29.821879009405805
+      },
+      "braking_gate": false,
+      "physical_gate": true,
+      "true_A_margin_m": [
+        0.0002349272814403669,
+        0.00016398560683594798
+      ],
+      "joint_margin_rad": 0.44414734840393066,
+      "attitude_deg": 0.17266365890699864,
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "warp",
+      "arm": "combination",
+      "braking_slack": {
+        "left_leg": 1.4474198655005064,
+        "right_leg": 0.13738915186200562,
+        "alphaL_upper": 28.86907567852876,
+        "betaL_lower": 11.238382056986724,
+        "alphaR_upper": 40.629862775890494,
+        "betaR_lower": 6.340467592080401
+      },
+      "braking_gate": true,
+      "physical_gate": true,
+      "true_A_margin_m": [
+        0.00023540905265384549,
+        0.00016444990191984143
+      ],
+      "joint_margin_rad": 0.4441564083099365,
+      "attitude_deg": 0.1726645310797731,
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "warp",
+      "arm": "Fplus2Nm",
+      "braking_slack": {
+        "left_leg": 4.385977523873145,
+        "right_leg": 3.0606024345271337,
+        "alphaL_upper": 43.667567871750805,
+        "betaL_lower": 67.1342768228406,
+        "alphaR_upper": 55.4090728665277,
+        "betaR_lower": 62.037849088509844
+      },
+      "braking_gate": true,
+      "physical_gate": true,
+      "true_A_margin_m": [
+        0.00023646109150590733,
+        0.00016550168671083942
+      ],
+      "joint_margin_rad": 0.44417035579681396,
+      "attitude_deg": 0.17266528364794348,
+      "same_contacts_as_zero": true
+    }
+  ],
+  "margin_rule": "Use 2Nm axis-fit maximum absolute joint/radial errors plus1e-5, frozen before independent combination; not a certified error bound.",
+  "limitations": "Cold numerical state and frozen nominal torque for one0.5ms step. Fitted gain and zero-next-step baseline are offline oracle. No domain expansion of online control or sustained/latency success claim.",
+  "trace_sha256": "f0a46648797d77423098e170e3a014456563cfb10430647eaf8ae73d5fcebe9a",
+  "input_sha256": {
+    "wheelleg_warp/results/height_115_late_response_20260929/verification.json": "b217570b5fe1b7222c54dcaa67fd463eea25c3384bedf2779ce3f5f521ea76ad",
+    "wheelleg_warp/results/height_115_action_predict_1nm_single_graph_20260929/verification.json": "ec9ee2120add9f69c8d745215a9ba42df5365833f7224eff7466d744d4090d89",
+    "wheelleg_warp/results/height_115_local_states_20260928/verification.json": "b8cea295a23d1950ff486d5c06e5d95daf33da4dbb3238a8c9235cdf16919228",
+    "wheelleg_warp/results/height_115_late_response_20260929/trace.npz": "84ece0912baacaddfa43be622999b3d53c561cfcd971fd704bfd33980cf3c5e8"
+  },
+  "source_sha256": {
+    "wheelleg_warp/probe_height_115_late_candidate.py": "0feaf44e50702325f57f003f202af12a88d2ac342d699e043a9b696dfd81aa7a",
+    "wheelleg_warp/probe_height_115_late_response.py": "d6145986a464cc78e776d4ceffcc23583c2bf6be35da7b384c3b5a969ba02691",
+    "wheelleg_warp/probe_height_115_braking_budget.py": "c8968f1ee4bce0da390b31fb3b1f452c92122ad8d6f8c7d64a9af0c13f1f0d3e"
+  }
+}

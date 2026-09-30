@@ -1141,3 +1141,13 @@
 
 - `wheelleg_warp/probe_height_115_action_predict_1nm.py`
 - `wheelleg_warp/probe_height_115_action_predict_single_graph.py`
+
+### 自动同步快照 2026-10-01T02:07:08+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_warp/HEIGHT_115_LOCAL_FEASIBILITY.md`
+- `wheelleg_warp/probe_height_115_late_candidate.py`
+- `wheelleg_warp/probe_height_115_late_response.py`
+- `wheelleg_warp/results/height_115_late_candidate_20260929/trace.npz`
+- `wheelleg_warp/results/height_115_late_candidate_20260929/verification.json`

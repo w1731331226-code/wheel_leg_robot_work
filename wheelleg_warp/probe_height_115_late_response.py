@@ -15,6 +15,21 @@ from probe_height_115_braking_budget import barriers
 from native.terrain import model,bank_height_115,HeightTerrainScenario,HEIGHT_115_GEOMETRIC_MIN
 
 
+def paired_step(m,scenario,q,v,issued):
+    n=len(issued);wp.init();wp.set_device('cuda:0')
+    _,wm,wd,_=bank_height_115(n,scenario=[scenario]*n)
+    wd.qpos.assign(np.tile(q,(n,1)).astype(np.float32));wd.qvel.assign(np.tile(v,(n,1)).astype(np.float32))
+    wd.qacc_warmstart.assign(np.zeros((n,m.nv),np.float32));wd.ctrl.assign(issued)
+    cpu=[]
+    for arm in range(n):
+        data=mujoco.MjData(m);data.qpos[:]=q;data.qvel[:]=v;data.qacc_warmstart[:]=0.;data.ctrl[:]=issued[arm]
+        mujoco.mj_step(m,data);cpu.append(data)
+    mjw.step(wm,wd)
+    cq=np.array([d.qpos.copy() for d in cpu]);cv=np.array([d.qvel.copy() for d in cpu]);gq=wd.qpos.numpy().astype(float);gv=wd.qvel.numpy().astype(float)
+    cp=[set(forces_cpu(m,d)) for d in cpu];gp=contact_sets(wd,n)
+    return cq,cv,gq,gv,cp,gp,np.array([d.actuator_force.copy() for d in cpu]),wd.actuator_force.numpy()
+
+
 def run():
     folder=ROOT/'wheelleg_warp/results';source=folder/'height_115_scheduled_guard_20260929'
     output=folder/'height_115_late_response_20260929';assert not output.exists()
@@ -36,19 +51,9 @@ def run():
             for sign in (1,-1):actions.append(sign*peak*scale[k]*np.eye(3)[k]);labels.append(f'{name}{sign:+d}_{peak:g}Nm')
     actions=np.array(actions);request=nom+actions@B.T;issued=request.astype(np.float32)
     assert np.max(abs(issued)-box)<=1e-6 and np.max(abs(issued-request))<=1e-5
-    n=len(actions);wp.init();wp.set_device('cuda:0')
-    _,wm,wd,_=bank_height_115(n,scenario=[scenario]*n)
-    wd.qpos.assign(np.tile(q,(n,1)).astype(np.float32));wd.qvel.assign(np.tile(v,(n,1)).astype(np.float32))
-    wd.qacc_warmstart.assign(np.zeros((n,m.nv),np.float32));wd.ctrl.assign(issued)
-    cpu=[]
-    for arm in range(n):
-        data=mujoco.MjData(m);data.qpos[:]=q;data.qvel[:]=v;data.qacc_warmstart[:]=0.;data.ctrl[:]=issued[arm]
-        mujoco.mj_step(m,data);cpu.append(data)
-    mjw.step(wm,wd)
-    cq=np.array([d.qpos.copy() for d in cpu]);cv=np.array([d.qvel.copy() for d in cpu]);gq=wd.qpos.numpy().astype(float);gv=wd.qvel.numpy().astype(float)
-    cp=[set(forces_cpu(m,d)) for d in cpu];gp=contact_sets(wd,n)
+    cq,cv,gq,gv,cp,gp,cforce,gforce=paired_step(m,scenario,q,v,issued)
     output.mkdir();np.savez_compressed(output/'trace.npz',initial_q=q,initial_v=v,nominal=nom,actions=actions,issued=issued,
-        cpu_q=cq,cpu_v=cv,warp_q=gq,warp_v=gv,cpu_actuator_force=np.array([d.actuator_force for d in cpu]),warp_actuator_force=wd.actuator_force.numpy())
+        cpu_q=cq,cpu_v=cv,warp_q=gq,warp_v=gv,cpu_actuator_force=cforce,warp_actuator_force=gforce)
     qerr=float(abs(cq-gq).max());verr=float(abs(cv-gv).max());pair_equal=[a==b for a,b in zip(cp,gp)]
     source_q_error=float(abs(gq[0]-z['post_q'][step,3]).max())
     source_v_error=float(abs(gv[0]-z['post_v'][step,3]).max())
