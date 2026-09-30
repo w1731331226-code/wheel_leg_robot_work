@@ -1,0 +1,28 @@
+{
+  "global_pair_gate_passed": false,
+  "global_q_error": 2.255905585002438e-06,
+  "global_v_error": 0.0012842917402586806,
+  "global_q_max_arm": 1,
+  "global_q_max_coordinate": 14,
+  "global_q_max_joint": "wheel2",
+  "global_v_max_arm": 1,
+  "global_v_max_coordinate": 8,
+  "global_v_max_joint": "wheel1",
+  "active_q_error": 4.1309240528253355e-07,
+  "active_v_error": 0.0007993861448907236,
+  "true_A_chain_error_m": 9.472881115635268e-08,
+  "wheel_phase_float32_ulp": 3.814697265625e-06,
+  "archive_warmstart_max": 68.56745910644531,
+  "model_warmstart_disabled": false,
+  "cold_vs_warm_cpu_q_error": 2.541098841762901e-21,
+  "cold_vs_warm_cpu_v_error": 6.661338147750939e-16,
+  "cold_vs_warm_warp_q_error": 1.6342482922482304e-12,
+  "cold_vs_warm_warp_v_error": 1.1920928955078125e-07,
+  "conclusion": "Original full-state gate still failed; do not widen it. Warm initialization did not resolve the discrepancy. Max differences are wheel coordinates; phase quantization may contribute, but does not establish the velocity-error mechanism. Active and real-geometry subset agreements are diagnostics, not a replacement pass.",
+  "input_sha256": {
+    "wheelleg_warp/results/height_joint_hocbf_candidate_20261001/trace.npz": "ff4be5d2e175a6af9e8c01c7e6ba14ed69797082fcca8314715f8a6a4c0f7bac",
+    "wheelleg_warp/results/height_joint_hocbf_candidate_warm_20261001/trace.npz": "224df7c46666410db8753f8ddcaa90f610a2794f9da5162075c00d19f5a136fc",
+    "wheelleg_warp/results/height_joint_hocbf_candidate_20261001/verification.json": "dbeda4bc6be050f93fa04a2c150d40014df0a5c9769e32de672b89801fb4b510",
+    "wheelleg_warp/results/height_joint_hocbf_candidate_warm_20261001/verification.json": "9711c35da87e16b78f2cbdd55c53dc5650d41ebfef7e384065c352cac8128533"
+  }
+}

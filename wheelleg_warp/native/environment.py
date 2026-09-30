@@ -15,6 +15,8 @@ from training_contract import TASK_CONTRACT_VERSION
 from stable_baselines3.common.vec_env import VecEnv
 import gymnasium as gym
 
+PUBLIC_ACTUATOR_GAIN_UPPER=(1.,1.,1.,1.,1.05,1.05)
+
 
 @wp.kernel
 def begin(reward:wp.array[D]):
@@ -315,7 +317,7 @@ class NativeEnv(VecEnv):
                 raise ValueError('实际扭矩分配只支持无动态和偏置的直接力矩电机')
             # Frozen Scenario domain: wheel drive difference <=5%. Do not give the
             # controller each randomized world's hidden actuator calibration.
-            self.actuator_gain_upper=np.array([1.,1.,1.,1.,1.05,1.05])
+            self.actuator_gain_upper=np.array(PUBLIC_ACTUATOR_GAIN_UPPER)
             if np.any(actuator_gains>self.actuator_gain_upper+1e-7):raise ValueError('执行器增益超出公开力矩分配上界')
             self.control_kernel=control_physical
             self.control_extra=[wp.array(np.tile(self.actuator_gain_upper,(n,1)),dtype=D)]

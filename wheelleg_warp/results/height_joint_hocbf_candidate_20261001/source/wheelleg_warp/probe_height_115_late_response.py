@@ -16,16 +16,14 @@ from probe_height_115_braking_budget import barriers
 from native.terrain import model,bank_height_115,HeightTerrainScenario,HEIGHT_115_GEOMETRIC_MIN
 
 
-def paired_step(m,scenario,q,v,issued,*,warmstart=None):
+def paired_step(m,scenario,q,v,issued):
     n=len(issued);wp.init();wp.set_device('cuda:0')
-    warm=np.zeros(m.nv) if warmstart is None else np.asarray(warmstart,dtype=float)
-    assert warm.shape==(m.nv,) and np.isfinite(warm).all()
     _,wm,wd,_=bank_height_115(n,scenario=[scenario]*n)
     wd.qpos.assign(np.tile(q,(n,1)).astype(np.float32));wd.qvel.assign(np.tile(v,(n,1)).astype(np.float32))
-    wd.qacc_warmstart.assign(np.tile(warm,(n,1)).astype(np.float32));wd.ctrl.assign(issued)
+    wd.qacc_warmstart.assign(np.zeros((n,m.nv),np.float32));wd.ctrl.assign(issued)
     cpu=[]
     for arm in range(n):
-        data=mujoco.MjData(m);data.qpos[:]=q;data.qvel[:]=v;data.qacc_warmstart[:]=warm;data.ctrl[:]=issued[arm]
+        data=mujoco.MjData(m);data.qpos[:]=q;data.qvel[:]=v;data.qacc_warmstart[:]=0.;data.ctrl[:]=issued[arm]
         mujoco.mj_step(m,data);cpu.append(data)
     mjw.step(wm,wd)
     cq=np.array([d.qpos.copy() for d in cpu]);cv=np.array([d.qvel.copy() for d in cpu]);gq=wd.qpos.numpy().astype(float);gv=wd.qvel.numpy().astype(float)

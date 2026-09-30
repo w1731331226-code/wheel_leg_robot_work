@@ -1,0 +1,1809 @@
+{
+  "role": "offline_conditional_joint_HOCBF_ablation_not_safety_certificate",
+  "summary": {
+    "cases": 46,
+    "legacy_feasible": 44,
+    "immediate_public_feasible": 44,
+    "joint_hocbf_public_feasible": 44,
+    "safe_hold_steps": 40,
+    "safe_hold_immediate_joint_rejections": 34,
+    "safe_hold_hocbf_joint_rejections": 0,
+    "six_world_states": {
+      "15ms_before_failure": {
+        "immediate_public": 4,
+        "joint_hocbf_public": 6
+      },
+      "first_alarm": {
+        "immediate_public": 1,
+        "joint_hocbf_public": 1
+      }
+    },
+    "joint_hocbf_initial_set_rejections": 2
+  },
+  "joint_hocbf_rate_per_s": 200.0,
+  "rate_rule": "inverse existing5ms predictor horizon, fixed before outcomes",
+  "joint_condition": "h>=0; psi1=rate+k*h>=0; acceleration+2*k*rate+k*k*h>=0",
+  "leg_condition": "unchanged immediate constant-acceleration stopping rows",
+  "motor_condition": "unchanged1Nm increment, absolute nominal command box tightened by public wheel gain upper1.05",
+  "scope": "Archived44 feasible and2 failed LP fixtures, and old40-step safe oracle hold. No new physics, no current-controller performance or recursive-feasibility claim.",
+  "limitations": "Continuous joint invariance is conditional on correct dynamics and maintained inequalities. Frozen G, a0 errors, positional reserves, passive limits, sample-and-hold/latency and initial oracle remain unvalidated. The initial psi1 check can reject recovery from outside the set.",
+  "rows": [
+    {
+      "case": "feasible",
+      "step": 413,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          2.970270499087222,
+          0.01783194966649199,
+          0.12278692666928727
+        ],
+        "minimum_joint_psi1": 80.9747729181149
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          2.970270499087222,
+          0.01783194966649199,
+          0.12278692666928727
+        ],
+        "minimum_joint_psi1": 80.9747729181149
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 414,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          2.9253162385869556,
+          0.017564434011739998,
+          0.1209157493817149
+        ],
+        "minimum_joint_psi1": 80.97271183420204
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          2.9253162385869556,
+          0.017564434011739998,
+          0.1209157493817149
+        ],
+        "minimum_joint_psi1": 80.97271183420204
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 415,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          3.169835958690976,
+          0.0190346605085446,
+          0.13100969728053646
+        ],
+        "minimum_joint_psi1": 80.9710472180345
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          3.169835958690976,
+          0.0190346605085446,
+          0.13100969728053646
+        ],
+        "minimum_joint_psi1": 80.9710472180345
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 416,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          3.4065830156865884,
+          0.020457984047838506,
+          0.14078128383857022
+        ],
+        "minimum_joint_psi1": 80.96996393341803
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          3.4065830156865884,
+          0.020457984047838506,
+          0.14078128383857022
+        ],
+        "minimum_joint_psi1": 80.96996393341803
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 417,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          3.60250810497211,
+          0.021635884385791376,
+          0.1488651168066048
+        ],
+        "minimum_joint_psi1": 80.96947623331332
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          3.60250810497211,
+          0.021635884385791376,
+          0.1488651168066048
+        ],
+        "minimum_joint_psi1": 80.96947623331332
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 418,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          3.7558976179176424,
+          0.02255791658760509,
+          0.15519096470711669
+        ],
+        "minimum_joint_psi1": 80.96958132375264
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          3.7558976179176424,
+          0.02255791658760509,
+          0.15519096470711669
+        ],
+        "minimum_joint_psi1": 80.96958132375264
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 419,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          3.896117746074419,
+          0.02340042647590247,
+          0.16097271830192766
+        ],
+        "minimum_joint_psi1": 80.97025309417629
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          3.896117746074419,
+          0.02340042647590247,
+          0.16097271830192766
+        ],
+        "minimum_joint_psi1": 80.97025309417629
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 420,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          3.959293825909931,
+          0.023779725889222152,
+          0.16357168625787114
+        ],
+        "minimum_joint_psi1": 80.97155621562385
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          3.959293825909931,
+          0.023779725889222152,
+          0.16357168625787114
+        ],
+        "minimum_joint_psi1": 80.97155621562385
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 421,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          3.9786862597792445,
+          0.023895625178671557,
+          0.16436258329036915
+        ],
+        "minimum_joint_psi1": 80.97336480681085
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          3.9786862597792445,
+          0.023895625178671557,
+          0.16436258329036915
+        ],
+        "minimum_joint_psi1": 80.97336480681085
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 422,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          4.037804453756116,
+          0.02424966571115671,
+          0.16679540651158495
+        ],
+        "minimum_joint_psi1": 80.97561758298659
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          4.037804453756116,
+          0.02424966571115671,
+          0.16679540651158495
+        ],
+        "minimum_joint_psi1": 80.97561758298659
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 423,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          4.11651273407724,
+          0.02472087754625711,
+          0.1700381921119023
+        ],
+        "minimum_joint_psi1": 80.9783773525455
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          4.11651273407724,
+          0.02472087754625711,
+          0.1700381921119023
+        ],
+        "minimum_joint_psi1": 80.9783773525455
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 424,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          4.097439525308491,
+          0.024604451130045633,
+          0.16924292246494782
+        ],
+        "minimum_joint_psi1": 80.98174915004753
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          4.097439525308491,
+          0.024604451130045633,
+          0.16924292246494782
+        ],
+        "minimum_joint_psi1": 80.98174915004753
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 425,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          4.063973747349947,
+          0.02440122019065211,
+          0.16785427715466347
+        ],
+        "minimum_joint_psi1": 80.98557439733528
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          4.063973747349947,
+          0.02440122019065211,
+          0.16785427715466347
+        ],
+        "minimum_joint_psi1": 80.98557439733528
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 426,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          3.9992185818935218,
+          0.02400981219698133,
+          0.16517440643316872
+        ],
+        "minimum_joint_psi1": 80.9898170932033
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          3.9992185818935218,
+          0.02400981219698133,
+          0.16517440643316872
+        ],
+        "minimum_joint_psi1": 80.9898170932033
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 427,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          3.856088816552997,
+          0.02314765863020506,
+          0.15925874043365135
+        ],
+        "minimum_joint_psi1": 80.99446363847935
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          3.856088816552997,
+          0.02314765863020506,
+          0.15925874043365135
+        ],
+        "minimum_joint_psi1": 80.99446363847935
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 428,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          3.7272320816561817,
+          0.022371084251232975,
+          0.15393368397357365
+        ],
+        "minimum_joint_psi1": 80.99932609459617
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          3.7272320816561817,
+          0.022371084251232975,
+          0.15393368397357365
+        ],
+        "minimum_joint_psi1": 80.99932609459617
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 429,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          5.475998842798699,
+          -0.18036177041124654,
+          -0.28489294599233916
+        ],
+        "minimum_joint_psi1": 81.00447436592773
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          3.4185651366462944,
+          0.02051539059633177,
+          0.14118362990013597
+        ],
+        "minimum_joint_psi1": 81.00447436592773
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 430,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          2.136446491956784,
+          0.012819948841762343,
+          0.08823236887624748
+        ],
+        "minimum_joint_psi1": 81.0038823059335
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          2.136446491956784,
+          0.012819948841762343,
+          0.08823236887624748
+        ],
+        "minimum_joint_psi1": 81.0038823059335
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 431,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          3.2874363117297194,
+          -0.122302980885856,
+          -0.17489092009058968
+        ],
+        "minimum_joint_psi1": 81.00723194361896
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          2.0282525500309103,
+          0.012169484834436367,
+          0.08376351198147701
+        ],
+        "minimum_joint_psi1": 81.00723194361896
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 432,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          0.24872568822305594,
+          -0.058499827237401526,
+          -0.026798213055628753
+        ],
+        "minimum_joint_psi1": 81.00837025310145
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          0.06155369852683281,
+          0.0003692931145071966,
+          0.002542058281260929
+        ],
+        "minimum_joint_psi1": 81.00837025310145
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 433,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          0.6139505133853937,
+          -0.13772097748754128,
+          -0.06430805396325603
+        ],
+        "minimum_joint_psi1": 81.009532174638
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          0.16440002208505183,
+          0.0009862495948106586,
+          0.00678941315433653
+        ],
+        "minimum_joint_psi1": 81.009532174638
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 1999,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          20.668741336474213,
+          -0.016797794501811982,
+          0.860573558212791
+        ],
+        "minimum_joint_psi1": 88.53980762798571
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          20.668741336474213,
+          -0.016797794501811982,
+          0.860573558212791
+        ],
+        "minimum_joint_psi1": 88.53980762798571
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 2000,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          21.133040556891874,
+          -0.017108661658277905,
+          0.8796672373866322
+        ],
+        "minimum_joint_psi1": 88.52578249115729
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          21.133040556891874,
+          -0.017108661658277905,
+          0.8796672373866322
+        ],
+        "minimum_joint_psi1": 88.52578249115729
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 2001,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          20.9018061781582,
+          -0.016860569546841363,
+          0.8698191700042915
+        ],
+        "minimum_joint_psi1": 88.51323526639723
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          20.9018061781582,
+          -0.016860569546841363,
+          0.8698191700042915
+        ],
+        "minimum_joint_psi1": 88.51323526639723
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 2002,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          20.3537817489175,
+          -0.016362034141508545,
+          0.8468089964724259
+        ],
+        "minimum_joint_psi1": 88.503434862087
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          20.3537817489175,
+          -0.016362034141508545,
+          0.8468089964724259
+        ],
+        "minimum_joint_psi1": 88.503434862087
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 2003,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          19.298922264983492,
+          -0.015460567922352276,
+          0.8027405418420064
+        ],
+        "minimum_joint_psi1": 88.49695299107813
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          19.298922264983492,
+          -0.015460567922352276,
+          0.8027405418420064
+        ],
+        "minimum_joint_psi1": 88.49695299107813
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 2004,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          18.003680057317528,
+          -0.01437125930654976,
+          0.7487070990284445
+        ],
+        "minimum_joint_psi1": 88.49355196494841
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          18.003680057317528,
+          -0.01437125930654976,
+          0.7487070990284445
+        ],
+        "minimum_joint_psi1": 88.49355196494841
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 2005,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          16.452204846082576,
+          -0.013082421398984424,
+          0.6840533461596228
+        ],
+        "minimum_joint_psi1": 88.493157844136
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          16.452204846082576,
+          -0.013082421398984424,
+          0.6840533461596228
+        ],
+        "minimum_joint_psi1": 88.493157844136
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 2006,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          14.740087810065717,
+          -0.01167162792785953,
+          0.6127562489233634
+        ],
+        "minimum_joint_psi1": 88.49554310281061
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          14.740087810065717,
+          -0.01167162792785953,
+          0.6127562489233634
+        ],
+        "minimum_joint_psi1": 88.49554310281061
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 2007,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          13.014536000483703,
+          -0.010256994820201733,
+          0.5409344111723332
+        ],
+        "minimum_joint_psi1": 88.50042644430184
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          13.014536000483703,
+          -0.010256994820201733,
+          0.5409344111723332
+        ],
+        "minimum_joint_psi1": 88.50042644430184
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 2008,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          11.431662178465425,
+          -0.00896246253754851,
+          0.47507224049439023
+        ],
+        "minimum_joint_psi1": 88.5073803170421
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          11.431662178465425,
+          -0.00896246253754851,
+          0.47507224049439023
+        ],
+        "minimum_joint_psi1": 88.5073803170421
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 2009,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          9.733471627225583,
+          -0.007586757088074183,
+          0.4044439794767856
+        ],
+        "minimum_joint_psi1": 88.51650542307877
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          9.733471627225583,
+          -0.007586757088074183,
+          0.4044439794767856
+        ],
+        "minimum_joint_psi1": 88.51650542307877
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 2010,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          8.262969278761235,
+          -0.006399051020869751,
+          0.34329911283707365
+        ],
+        "minimum_joint_psi1": 88.52728846956276
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          8.262969278761235,
+          -0.006399051020869751,
+          0.34329911283707365
+        ],
+        "minimum_joint_psi1": 88.52728846956276
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 2011,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          6.838284185110045,
+          -0.0052580917680792915,
+          0.28407623513253
+        ],
+        "minimum_joint_psi1": 88.53972589139127
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          6.838284185110045,
+          -0.0052580917680792915,
+          0.28407623513253
+        ],
+        "minimum_joint_psi1": 88.53972589139127
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 2012,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          1.5991314336872822,
+          1.8330808788103405,
+          0.5514759449938835
+        ],
+        "minimum_joint_psi1": 88.5535720876255
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          5.571045080496562,
+          -0.004250341610669429,
+          0.23140922619546975
+        ],
+        "minimum_joint_psi1": 88.5535720876255
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 2013,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          7.9454928584374676,
+          -0.0060199177525038835,
+          0.3300075036951143
+        ],
+        "minimum_joint_psi1": 88.54680118251824
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          7.9454928584374676,
+          -0.0060199177525038835,
+          0.3300075036951143
+        ],
+        "minimum_joint_psi1": 88.54680118251824
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 2014,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          -0.0712807145845211,
+          1.8138637525066887,
+          0.47658968583191497
+        ],
+        "minimum_joint_psi1": 88.56438068215036
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          3.747720878966018,
+          -0.002818028147800305,
+          0.15564509260678178
+        ],
+        "minimum_joint_psi1": 88.56438068215036
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 2015,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          3.263306025414267,
+          1.420434890758692,
+          0.511678494313931
+        ],
+        "minimum_joint_psi1": 88.55951908517861
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          6.342983893062873,
+          -0.004737285540339854,
+          0.26340821404020964
+        ],
+        "minimum_joint_psi1": 88.55951908517861
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 2016,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          1.615237459711597,
+          1.552250202479935,
+          0.47772600186074476
+        ],
+        "minimum_joint_psi1": 88.56197541587287
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          4.977117165221827,
+          -0.0036940554099711338,
+          0.20667377459850733
+        ],
+        "minimum_joint_psi1": 88.56197541587287
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 2017,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          1.2515988515296081,
+          1.5257106684605186,
+          0.4555098410069541
+        ],
+        "minimum_joint_psi1": 88.56302839990937
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          4.555077524026707,
+          -0.003361766019608249,
+          0.18913791621656903
+        ],
+        "minimum_joint_psi1": 88.56302839990937
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 2018,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          0.5439893050655631,
+          1.5614779767371378,
+          0.4354205864981243
+        ],
+        "minimum_joint_psi1": 88.56515431784325
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          3.9233905542503313,
+          -0.0028807485087528114,
+          0.16290077361469207
+        ],
+        "minimum_joint_psi1": 88.56515431784325
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 2019,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          -0.05975495210922586,
+          1.5638585991260376,
+          0.4108454000941014
+        ],
+        "minimum_joint_psi1": 88.56760472020366
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          3.206452089997457,
+          -0.0023434744864082287,
+          0.13312763271081224
+        ],
+        "minimum_joint_psi1": 88.56760472020366
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 2020,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          -0.06275372005719719,
+          1.6491137659638486,
+          0.4332358942266957
+        ],
+        "minimum_joint_psi1": 88.57056085912743
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          2.4777641028090827,
+          -0.0018033894754682094,
+          0.10286990392307681
+        ],
+        "minimum_joint_psi1": 88.57056085912743
+      }
+    },
+    {
+      "case": "feasible",
+      "step": 2021,
+      "legacy_feasible": true,
+      "legacy_error": null,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          -0.06373002676937928,
+          1.6808004626192046,
+          0.44155451194258427
+        ],
+        "minimum_joint_psi1": 88.57372998245816
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          1.342741974095787,
+          -0.0009737482560208033,
+          0.05574539574506193
+        ],
+        "minimum_joint_psi1": 88.57372998245816
+      }
+    },
+    {
+      "case": "aged_failure",
+      "step": 429,
+      "legacy_feasible": false,
+      "legacy_error": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+      "immediate_public": {
+        "feasible": false,
+        "error": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "action": null,
+        "minimum_joint_psi1": 80.97494127515935
+      },
+      "joint_hocbf_public": {
+        "feasible": false,
+        "error": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "action": null,
+        "minimum_joint_psi1": 80.97494127515935
+      }
+    },
+    {
+      "case": "predicted_failure",
+      "step": 1998,
+      "legacy_feasible": false,
+      "legacy_error": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+      "immediate_public": {
+        "feasible": false,
+        "error": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "action": null,
+        "minimum_joint_psi1": 88.5654996855953
+      },
+      "joint_hocbf_public": {
+        "feasible": false,
+        "error": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "action": null,
+        "minimum_joint_psi1": 88.5654996855953
+      }
+    }
+  ],
+  "safe_hold_rows": [
+    {
+      "step": 0,
+      "minimum_joint_margin_rad": 0.4501335620880127,
+      "true_A_min_m": 0.11497958706973098,
+      "immediate_joint_slack": 6.463786228362491e-05,
+      "joint_hocbf_minimum_psi1": 89.91997929390752,
+      "joint_hocbf_minimum_acceleration_slack": 17978.620021619365
+    },
+    {
+      "step": 1,
+      "minimum_joint_margin_rad": 0.45011746883392334,
+      "true_A_min_m": 0.11497486508604539,
+      "immediate_joint_slack": -5.203832871844404,
+      "joint_hocbf_minimum_psi1": 89.91735493865096,
+      "joint_hocbf_minimum_acceleration_slack": 17972.339410163924
+    },
+    {
+      "step": 2,
+      "minimum_joint_margin_rad": 0.4501004219055176,
+      "true_A_min_m": 0.11496995031015628,
+      "immediate_joint_slack": -3.9348837326415067,
+      "joint_hocbf_minimum_psi1": 89.91153485987567,
+      "joint_hocbf_minimum_acceleration_slack": 17971.924236990973
+    },
+    {
+      "step": 3,
+      "minimum_joint_margin_rad": 0.4500833749771118,
+      "true_A_min_m": 0.1149652327593316,
+      "immediate_joint_slack": 0.4616553597668208,
+      "joint_hocbf_minimum_psi1": 89.9061586103239,
+      "joint_hocbf_minimum_acceleration_slack": 17974.852298774287
+    },
+    {
+      "step": 4,
+      "minimum_joint_margin_rad": 0.45006799697875977,
+      "true_A_min_m": 0.11496100639992696,
+      "immediate_joint_slack": 6.63816437591507,
+      "joint_hocbf_minimum_psi1": 89.90298070300602,
+      "joint_hocbf_minimum_acceleration_slack": 17980.458628960416
+    },
+    {
+      "step": 5,
+      "minimum_joint_margin_rad": 0.4500560760498047,
+      "true_A_min_m": 0.11495746252217755,
+      "immediate_joint_slack": 10.192482531292494,
+      "joint_hocbf_minimum_psi1": 89.90323438968741,
+      "joint_hocbf_minimum_acceleration_slack": 17988.023420997426
+    },
+    {
+      "step": 6,
+      "minimum_joint_margin_rad": 0.4500492811203003,
+      "true_A_min_m": 0.11495474308849413,
+      "immediate_joint_slack": 13.559287884047116,
+      "joint_hocbf_minimum_psi1": 89.90760358896338,
+      "joint_hocbf_minimum_acceleration_slack": 17997.426136784718
+    },
+    {
+      "step": 7,
+      "minimum_joint_margin_rad": 0.4500495195388794,
+      "true_A_min_m": 0.11495295228884202,
+      "immediate_joint_slack": 17.237979546183695,
+      "joint_hocbf_minimum_psi1": 89.91659741949522,
+      "joint_hocbf_minimum_acceleration_slack": 18008.465071340554
+    },
+    {
+      "step": 8,
+      "minimum_joint_margin_rad": 0.45005834102630615,
+      "true_A_min_m": 0.11495214884348162,
+      "immediate_joint_slack": -34.58130910421174,
+      "joint_hocbf_minimum_psi1": 89.93058992618577,
+      "joint_hocbf_minimum_acceleration_slack": 18020.68286050716
+    },
+    {
+      "step": 9,
+      "minimum_joint_margin_rad": 0.4500774145126343,
+      "true_A_min_m": 0.11495241753027179,
+      "immediate_joint_slack": -41.19987929427487,
+      "joint_hocbf_minimum_psi1": 89.9495966723957,
+      "joint_hocbf_minimum_acceleration_slack": 18034.530720688865
+    },
+    {
+      "step": 10,
+      "minimum_joint_margin_rad": 0.45010828971862793,
+      "true_A_min_m": 0.11495379997288858,
+      "immediate_joint_slack": -47.05084484285791,
+      "joint_hocbf_minimum_psi1": 89.97401127878808,
+      "joint_hocbf_minimum_acceleration_slack": 18049.49275312619
+    },
+    {
+      "step": 11,
+      "minimum_joint_margin_rad": 0.45015227794647217,
+      "true_A_min_m": 0.1149563117539234,
+      "immediate_joint_slack": -52.493731636177806,
+      "joint_hocbf_minimum_psi1": 90.00371159900212,
+      "joint_hocbf_minimum_acceleration_slack": 18065.566672958896
+    },
+    {
+      "step": 12,
+      "minimum_joint_margin_rad": 0.4502105712890625,
+      "true_A_min_m": 0.11496002951295316,
+      "immediate_joint_slack": -57.36598266743111,
+      "joint_hocbf_minimum_psi1": 90.03874466855311,
+      "joint_hocbf_minimum_acceleration_slack": 18082.711424507663
+    },
+    {
+      "step": 13,
+      "minimum_joint_margin_rad": 0.45028436183929443,
+      "true_A_min_m": 0.11496495174867569,
+      "immediate_joint_slack": -61.744529051147715,
+      "joint_hocbf_minimum_psi1": 90.07908556897425,
+      "joint_hocbf_minimum_acceleration_slack": 18100.892557777926
+    },
+    {
+      "step": 14,
+      "minimum_joint_margin_rad": 0.4503746032714844,
+      "true_A_min_m": 0.11497112908024236,
+      "immediate_joint_slack": -65.65428639071196,
+      "joint_hocbf_minimum_psi1": 90.12471460838103,
+      "joint_hocbf_minimum_acceleration_slack": 18120.036520638034
+    },
+    {
+      "step": 15,
+      "minimum_joint_margin_rad": 0.45048201084136963,
+      "true_A_min_m": 0.11497857792185671,
+      "immediate_joint_slack": -69.07069761822943,
+      "joint_hocbf_minimum_psi1": 90.17556477625155,
+      "joint_hocbf_minimum_acceleration_slack": 18140.166213192508
+    },
+    {
+      "step": 16,
+      "minimum_joint_margin_rad": 0.45060741901397705,
+      "true_A_min_m": 0.11498730576568027,
+      "immediate_joint_slack": -72.02773854136672,
+      "joint_hocbf_minimum_psi1": 90.23155562121653,
+      "joint_hocbf_minimum_acceleration_slack": 18153.75208465056
+    },
+    {
+      "step": 17,
+      "minimum_joint_margin_rad": 0.45075154304504395,
+      "true_A_min_m": 0.114997364059158,
+      "immediate_joint_slack": -74.68224225671247,
+      "joint_hocbf_minimum_psi1": 90.29263470608973,
+      "joint_hocbf_minimum_acceleration_slack": 18167.0358618875
+    },
+    {
+      "step": 18,
+      "minimum_joint_margin_rad": 0.4509148597717285,
+      "true_A_min_m": 0.11500874322375422,
+      "immediate_joint_slack": -76.90980187719454,
+      "joint_hocbf_minimum_psi1": 90.35879446108126,
+      "joint_hocbf_minimum_acceleration_slack": 18180.889548935458
+    },
+    {
+      "step": 19,
+      "minimum_joint_margin_rad": 0.45109784603118896,
+      "true_A_min_m": 0.11502149475247256,
+      "immediate_joint_slack": -78.74799845926282,
+      "joint_hocbf_minimum_psi1": 90.42990456063532,
+      "joint_hocbf_minimum_acceleration_slack": 18195.307376064822
+    },
+    {
+      "step": 20,
+      "minimum_joint_margin_rad": 0.4513009786605835,
+      "true_A_min_m": 0.11503562699433138,
+      "immediate_joint_slack": -80.37197299302389,
+      "joint_hocbf_minimum_psi1": 90.50586534578585,
+      "joint_hocbf_minimum_acceleration_slack": 18210.333027519748
+    },
+    {
+      "step": 21,
+      "minimum_joint_margin_rad": 0.4515244960784912,
+      "true_A_min_m": 0.1150511393804476,
+      "immediate_joint_slack": -81.6762431078919,
+      "joint_hocbf_minimum_psi1": 90.58661587078356,
+      "joint_hocbf_minimum_acceleration_slack": 18225.95014778571
+    },
+    {
+      "step": 22,
+      "minimum_joint_margin_rad": 0.4517686367034912,
+      "true_A_min_m": 0.11506804924681616,
+      "immediate_joint_slack": -82.7706295030898,
+      "joint_hocbf_minimum_psi1": 90.6721412940719,
+      "joint_hocbf_minimum_acceleration_slack": 18242.066516556308
+    },
+    {
+      "step": 23,
+      "minimum_joint_margin_rad": 0.4520336389541626,
+      "true_A_min_m": 0.11508636501291435,
+      "immediate_joint_slack": -83.36620623004579,
+      "joint_hocbf_minimum_psi1": 90.75227780182146,
+      "joint_hocbf_minimum_acceleration_slack": 18258.71403423743
+    },
+    {
+      "step": 24,
+      "minimum_joint_margin_rad": 0.4523196220397949,
+      "true_A_min_m": 0.11510610406378317,
+      "immediate_joint_slack": -84.10731528988876,
+      "joint_hocbf_minimum_psi1": 90.80905143458628,
+      "joint_hocbf_minimum_acceleration_slack": 18276.03454796271
+    },
+    {
+      "step": 25,
+      "minimum_joint_margin_rad": 0.45262670516967773,
+      "true_A_min_m": 0.1151272838100189,
+      "immediate_joint_slack": -84.43160654547852,
+      "joint_hocbf_minimum_psi1": 90.86885989744448,
+      "joint_hocbf_minimum_acceleration_slack": 18293.757762589023
+    },
+    {
+      "step": 26,
+      "minimum_joint_margin_rad": 0.45295488834381104,
+      "true_A_min_m": 0.11514989562651866,
+      "immediate_joint_slack": -84.61786624265044,
+      "joint_hocbf_minimum_psi1": 90.93154532749438,
+      "joint_hocbf_minimum_acceleration_slack": 18312.006070293948
+    },
+    {
+      "step": 27,
+      "minimum_joint_margin_rad": 0.4533041715621948,
+      "true_A_min_m": 0.11517393985066747,
+      "immediate_joint_slack": -84.6794218236067,
+      "joint_hocbf_minimum_psi1": 90.99710969168925,
+      "joint_hocbf_minimum_acceleration_slack": 18330.8331629415
+    },
+    {
+      "step": 28,
+      "minimum_joint_margin_rad": 0.4536745548248291,
+      "true_A_min_m": 0.11519943396540885,
+      "immediate_joint_slack": -84.50521302887152,
+      "joint_hocbf_minimum_psi1": 91.06554160554194,
+      "joint_hocbf_minimum_acceleration_slack": 18350.07065741019
+    },
+    {
+      "step": 29,
+      "minimum_joint_margin_rad": 0.45406603813171387,
+      "true_A_min_m": 0.1152263872963674,
+      "immediate_joint_slack": -84.36778988986671,
+      "joint_hocbf_minimum_psi1": 91.13676197368883,
+      "joint_hocbf_minimum_acceleration_slack": 18369.90105120139
+    },
+    {
+      "step": 30,
+      "minimum_joint_margin_rad": 0.4543670415878296,
+      "true_A_min_m": 0.11525476524213248,
+      "immediate_joint_slack": -84.02874982518199,
+      "joint_hocbf_minimum_psi1": 91.21076310713076,
+      "joint_hocbf_minimum_acceleration_slack": 18390.106680073306
+    },
+    {
+      "step": 31,
+      "minimum_joint_margin_rad": 0.4546276330947876,
+      "true_A_min_m": 0.11528459429561923,
+      "immediate_joint_slack": -83.55013169193174,
+      "joint_hocbf_minimum_psi1": 91.28747210938715,
+      "joint_hocbf_minimum_acceleration_slack": 18410.78361479239
+    },
+    {
+      "step": 32,
+      "minimum_joint_margin_rad": 0.4549018144607544,
+      "true_A_min_m": 0.11531585777666772,
+      "immediate_joint_slack": -82.92601273961446,
+      "joint_hocbf_minimum_psi1": 91.36690641481661,
+      "joint_hocbf_minimum_acceleration_slack": 18431.981148399875
+    },
+    {
+      "step": 33,
+      "minimum_joint_margin_rad": 0.45518946647644043,
+      "true_A_min_m": 0.11534856509212194,
+      "immediate_joint_slack": -82.23807769483548,
+      "joint_hocbf_minimum_psi1": 91.4489332540729,
+      "joint_hocbf_minimum_acceleration_slack": 18453.62025705771
+    },
+    {
+      "step": 34,
+      "minimum_joint_margin_rad": 0.4554905891418457,
+      "true_A_min_m": 0.11538269065459175,
+      "immediate_joint_slack": -81.51017430376659,
+      "joint_hocbf_minimum_psi1": 91.53355325300478,
+      "joint_hocbf_minimum_acceleration_slack": 18475.69562403159
+    },
+    {
+      "step": 35,
+      "minimum_joint_margin_rad": 0.4558051824569702,
+      "true_A_min_m": 0.11541823496602177,
+      "immediate_joint_slack": -80.72165170439187,
+      "joint_hocbf_minimum_psi1": 91.62073416549944,
+      "joint_hocbf_minimum_acceleration_slack": 18498.1085201879
+    },
+    {
+      "step": 36,
+      "minimum_joint_margin_rad": 0.45613300800323486,
+      "true_A_min_m": 0.11545519035155703,
+      "immediate_joint_slack": -79.78027443160441,
+      "joint_hocbf_minimum_psi1": 91.71040065128588,
+      "joint_hocbf_minimum_acceleration_slack": 18520.996870674655
+    },
+    {
+      "step": 37,
+      "minimum_joint_margin_rad": 0.45647406578063965,
+      "true_A_min_m": 0.11549353126663724,
+      "immediate_joint_slack": -78.82542950539967,
+      "joint_hocbf_minimum_psi1": 91.80255473692202,
+      "joint_hocbf_minimum_acceleration_slack": 18544.320525803134
+    },
+    {
+      "step": 38,
+      "minimum_joint_margin_rad": 0.45682811737060547,
+      "true_A_min_m": 0.11553327614126277,
+      "immediate_joint_slack": -77.79924023435954,
+      "joint_hocbf_minimum_psi1": 91.89713747341418,
+      "joint_hocbf_minimum_acceleration_slack": 18568.04534403281
+    },
+    {
+      "step": 39,
+      "minimum_joint_margin_rad": 0.4571951627731323,
+      "true_A_min_m": 0.11557439945808996,
+      "immediate_joint_slack": -76.7162120542408,
+      "joint_hocbf_minimum_psi1": 91.99406004984164,
+      "joint_hocbf_minimum_acceleration_slack": 18592.125525154635
+    }
+  ],
+  "six_world_rows": [
+    {
+      "world": 0,
+      "state": "15ms_before_failure",
+      "time_s": 7.383000000000001,
+      "immediate_public": {
+        "feasible": false,
+        "error": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "action": null,
+        "minimum_joint_psi1": 6.44658049477262
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          3.6666854831706424,
+          -0.17668420684942746,
+          0.11682350523554443
+        ],
+        "minimum_joint_psi1": 6.44658049477262
+      }
+    },
+    {
+      "world": 0,
+      "state": "first_alarm",
+      "time_s": 7.393,
+      "immediate_public": {
+        "feasible": false,
+        "error": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "action": null,
+        "minimum_joint_psi1": -0.1191066847928095
+      },
+      "joint_hocbf_public": {
+        "feasible": false,
+        "error": "joint_velocity_outside_hocbf_set:betaL_lower",
+        "action": null,
+        "minimum_joint_psi1": -0.1191066847928095
+      }
+    },
+    {
+      "world": 1,
+      "state": "15ms_before_failure",
+      "time_s": 5.043,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          0.0649927081186,
+          -0.0047353782081402266,
+          -0.003956785711888121
+        ],
+        "minimum_joint_psi1": 89.95400677940462
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          0.03091511653224001,
+          -4.23831979738445e-06,
+          0.001290612177252347
+        ],
+        "minimum_joint_psi1": 89.95400677940462
+      }
+    },
+    {
+      "world": 1,
+      "state": "first_alarm",
+      "time_s": 5.0525,
+      "immediate_public": {
+        "feasible": false,
+        "error": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "action": null,
+        "minimum_joint_psi1": 89.73448646390581
+      },
+      "joint_hocbf_public": {
+        "feasible": false,
+        "error": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "action": null,
+        "minimum_joint_psi1": 89.73448646390581
+      }
+    },
+    {
+      "world": 2,
+      "state": "15ms_before_failure",
+      "time_s": 4.25,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          3.223749010679311e-08,
+          -4.52769929171653e-06,
+          -1.1925860718364876e-06
+        ],
+        "minimum_joint_psi1": 89.94640507585834
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "minimum_joint_psi1": 89.94640507585834
+      }
+    },
+    {
+      "world": 2,
+      "state": "first_alarm",
+      "time_s": 4.2595,
+      "immediate_public": {
+        "feasible": false,
+        "error": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "action": null,
+        "minimum_joint_psi1": 89.75392154181142
+      },
+      "joint_hocbf_public": {
+        "feasible": false,
+        "error": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "action": null,
+        "minimum_joint_psi1": 89.75392154181142
+      }
+    },
+    {
+      "world": 3,
+      "state": "15ms_before_failure",
+      "time_s": 4.1475,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          0.000721020358154106,
+          -5.106574838418738e-05,
+          -4.350984247937068e-05
+        ],
+        "minimum_joint_psi1": 89.95289102637295
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          0.0003389661353415541,
+          -4.647069276162601e-08,
+          1.4150806175734615e-05
+        ],
+        "minimum_joint_psi1": 89.95289102637295
+      }
+    },
+    {
+      "world": 3,
+      "state": "first_alarm",
+      "time_s": 4.156,
+      "immediate_public": {
+        "feasible": false,
+        "error": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "action": null,
+        "minimum_joint_psi1": 89.56878017921233
+      },
+      "joint_hocbf_public": {
+        "feasible": false,
+        "error": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "action": null,
+        "minimum_joint_psi1": 89.56878017921233
+      }
+    },
+    {
+      "world": 4,
+      "state": "15ms_before_failure",
+      "time_s": 4.578,
+      "immediate_public": {
+        "feasible": false,
+        "error": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "action": null,
+        "minimum_joint_psi1": 18.06406275464223
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "minimum_joint_psi1": 18.06406275464223
+      }
+    },
+    {
+      "world": 4,
+      "state": "first_alarm",
+      "time_s": 4.588,
+      "immediate_public": {
+        "feasible": false,
+        "error": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "action": null,
+        "minimum_joint_psi1": -0.20833524035288598
+      },
+      "joint_hocbf_public": {
+        "feasible": false,
+        "error": "joint_velocity_outside_hocbf_set:betaL_lower",
+        "action": null,
+        "minimum_joint_psi1": -0.20833524035288598
+      }
+    },
+    {
+      "world": 5,
+      "state": "15ms_before_failure",
+      "time_s": 2.046,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          0.5037255474810244,
+          0.5503825577772161,
+          0.2271476401013011
+        ],
+        "minimum_joint_psi1": 9.958127799462531
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          3.5932539005468156,
+          -0.1713513835052157,
+          0.11155398259895284
+        ],
+        "minimum_joint_psi1": 9.958127799462531
+      }
+    },
+    {
+      "world": 5,
+      "state": "first_alarm",
+      "time_s": 2.052,
+      "immediate_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          2.850922070589668,
+          0.7485696144756996,
+          0.4134586303894393
+        ],
+        "minimum_joint_psi1": 10.366167220305655
+      },
+      "joint_hocbf_public": {
+        "feasible": true,
+        "error": null,
+        "action": [
+          7.583025951426818,
+          -0.3600044699492604,
+          0.2356756979007363
+        ],
+        "minimum_joint_psi1": 10.366167220305655
+      }
+    }
+  ],
+  "input_sha256": {
+    "wheelleg_warp/results/height_115_action_predict_1nm_single_graph_20260929/verification.json": "ec9ee2120add9f69c8d745215a9ba42df5365833f7224eff7466d744d4090d89",
+    "wheelleg_warp/results/height_115_local_states_20260928/verification.json": "b8cea295a23d1950ff486d5c06e5d95daf33da4dbb3238a8c9235cdf16919228",
+    "wheelleg_warp/results/height_115_recovery_feedback_v2_20260929/verification.json": "295d6b653dec6b432c189a9ad6bd788f8eb062068a591552aa08641d59eebebf",
+    "wheelleg_warp/results/height_115_recovery_feedback_v2_20260929/trace.npz": "47d92e0413d331766423fbeaf78986d573bac7adf277883941ecd12abba44997",
+    "wheelleg_warp/results/height_115_recovery_feedback_delay2_20260929/verification.json": "533a82ed6aadf03718d92aef1676dcef87c5769f6335c8dcfb829855ee78dfcf",
+    "wheelleg_warp/results/height_115_recovery_feedback_delay2_20260929/trace.npz": "f9e985e9d58a98f5da843949fe630bf7ef5ed8a4b80489b8f658f6b7cb1f369c",
+    "wheelleg_warp/results/height_115_recovery_feedback_delay2_predict_20260929/verification.json": "ca25e2dd40d9bb89e57a717da76effb9ed28eb960b823b1cb3704166bcf68a98",
+    "wheelleg_warp/results/height_115_recovery_feedback_delay2_predict_20260929/trace.npz": "bca0cc3e0df6809f412a6d2aa6ccbf998272735e9e8e9f98fa050f85430b1e77",
+    "wheelleg_warp/results/height_115_contact_hold_v2_20260929/verification.json": "831d21d787e1aa2f1c9299ac5cf7675b3ef7e5481c44643d1599a2d8e35e63a1",
+    "wheelleg_warp/results/height_115_contact_hold_v2_20260929/trace.npz": "1c242ad8c735698717f1bf6ef8d3e85fa97f67abc2712e225a710916a22736cd",
+    "wheelleg_warp/results/height_115_alarm_timing_integer_20260929/verification.json": "83268db9672a19bf9e8275fdaa5bf792af87c0eb6f9bb1e3a160de637c85969f",
+    "wheelleg_warp/results/height_115_local_states_20260928/windows.npz": "33153efe7d688c5e697c786d101067716284326ee9e3bb9f331b748cb138d30d"
+  },
+  "source_sha256": {
+    "wheelleg_warp/audit_height_115_joint_hocbf.py": "cc73b456d2b3c543a17927c15378e76c3bacf7d66ff9045ec291411dca3c3086",
+    "wheelleg_warp/probe_height_115_live_braking.py": "e42bc4cefeba058083a0e35fac8e7178a46e761e4f275e5b360e354f76475a9c",
+    "wheelleg_warp/probe_height_115_braking_budget.py": "c8968f1ee4bce0da390b31fb3b1f452c92122ad8d6f8c7d64a9af0c13f1f0d3e",
+    "wheelleg_warp/audit_height_115_control_timing.py": "d1103cbda9b22929a3992342ffeedb418d4d3d599aae025c5b1c73a13d3571ff",
+    "wheelleg_warp/native/environment.py": "387bcccce2e80f351a67e1d20d7b836e55f30c182a609f3e190a154c98bc12b6"
+  }
+}

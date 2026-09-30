@@ -1,0 +1,95 @@
+{
+  "role": "fixed_joint_hocbf_candidate_cold_single_step",
+  "status": "failed_single_step_proxy",
+  "world": 0,
+  "source_time_s": 7.383000000000001,
+  "action": [
+    3.6666854831706424,
+    -0.17668420684942746,
+    0.11682350523554443
+  ],
+  "pairing": {
+    "q_error": 2.255905585002438e-06,
+    "v_error": 0.0012842917402586806,
+    "contacts_equal": true
+  },
+  "rows": [
+    {
+      "backend": "cpu",
+      "arm": 0,
+      "physical_gate": true,
+      "motor_gate": true,
+      "joint_hocbf_proxy_gate": true,
+      "leg_stopping_proxy_gate": false,
+      "minimum_joint_proxy_slack": 616.5238118421255,
+      "minimum_leg_proxy_slack": -0.5339317418068736,
+      "actual_A_margin_m": [
+        0.0010197879167739426,
+        0.0010195498864087188
+      ],
+      "min_eight_joint_margin_rad": 0.048076817231660574,
+      "attitude_deg": 0.09067488257131194
+    },
+    {
+      "backend": "cpu",
+      "arm": 1,
+      "physical_gate": true,
+      "motor_gate": true,
+      "joint_hocbf_proxy_gate": true,
+      "leg_stopping_proxy_gate": true,
+      "minimum_joint_proxy_slack": 622.468495498954,
+      "minimum_leg_proxy_slack": 0.05116499091726484,
+      "actual_A_margin_m": [
+        0.001019897199182912,
+        0.0010196591684115963
+      ],
+      "min_eight_joint_margin_rad": 0.04807830340352215,
+      "attitude_deg": 0.09077673187128046
+    },
+    {
+      "backend": "warp",
+      "arm": 0,
+      "physical_gate": true,
+      "motor_gate": true,
+      "joint_hocbf_proxy_gate": true,
+      "leg_stopping_proxy_gate": false,
+      "minimum_joint_proxy_slack": 617.5954988263502,
+      "minimum_leg_proxy_slack": -0.429532125848279,
+      "actual_A_margin_m": [
+        0.0010197009524921807,
+        0.001019476022730073
+      ],
+      "min_eight_joint_margin_rad": 0.04807710647583008,
+      "attitude_deg": 0.09065319506140036
+    },
+    {
+      "backend": "warp",
+      "arm": 1,
+      "physical_gate": true,
+      "motor_gate": true,
+      "joint_hocbf_proxy_gate": true,
+      "leg_stopping_proxy_gate": true,
+      "minimum_joint_proxy_slack": 623.5402276776686,
+      "minimum_leg_proxy_slack": 0.15559080391661845,
+      "actual_A_margin_m": [
+        0.0010198024703717556,
+        0.0010195775405302393
+      ],
+      "min_eight_joint_margin_rad": 0.04807853698730469,
+      "attitude_deg": 0.09075504102258897
+    }
+  ],
+  "limitations": "Archived state and onset remain offline. Zero numerical warmstart, frozen nominal torque, one0.5ms step only. Discrete average acceleration proxies do not prove continuous or recursive safety; no default control or full-height claim.",
+  "trace_sha256": "ff4be5d2e175a6af9e8c01c7e6ba14ed69797082fcca8314715f8a6a4c0f7bac",
+  "input_sha256": {
+    "wheelleg_warp/results/height_joint_hocbf_heldout_20261001/verification.json": "e281b841df7a0d3030a769f401e9652edc3146a4c13dfcc81fd71f8fb8e48930",
+    "wheelleg_warp/results/height_115_action_predict_1nm_single_graph_20260929/verification.json": "ec9ee2120add9f69c8d745215a9ba42df5365833f7224eff7466d744d4090d89",
+    "wheelleg_warp/results/height_115_local_states_20260928/verification.json": "b8cea295a23d1950ff486d5c06e5d95daf33da4dbb3238a8c9235cdf16919228",
+    "wheelleg_warp/results/height_115_local_states_20260928/windows.npz": "33153efe7d688c5e697c786d101067716284326ee9e3bb9f331b748cb138d30d"
+  },
+  "source_sha256": {
+    "wheelleg_warp/probe_height_115_joint_hocbf_candidate.py": "c15c11bf23b8b79c5ced35302a916f2df5642448424bfe2c60ade545b3540744",
+    "wheelleg_warp/probe_height_115_late_response.py": "c8079645a22cc578a31399555b70d47a097d3d4d44e07158d267f3b94ef01eb8",
+    "wheelleg_warp/probe_height_115_live_braking.py": "e42bc4cefeba058083a0e35fac8e7178a46e761e4f275e5b360e354f76475a9c"
+  }
+}
