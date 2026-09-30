@@ -304,7 +304,6 @@ class NativeEnv(VecEnv):
         self.yaw_config=tuple(float(x) for x in yaw_config);self.k=constants(self.cpu,n,self.yaw_config,self.action_dim,height_design)
         self.control_kernel=control
         self.control_extra=[]
-        self.actuator_gain_upper=None
         if self.height_safety=='physical_v1':
             actuator_gains=self.model.actuator_gainprm.numpy()[:,:,0]
             if not np.isfinite(actuator_gains).all() or np.any(actuator_gains<=0):raise ValueError('实际扭矩分配需要有限正执行器增益')
@@ -313,12 +312,8 @@ class NativeEnv(VecEnv):
                 np.any(self.cpu.actuator_dyntype!=mujoco.mjtDyn.mjDYN_NONE) or
                 not np.allclose(self.cpu.actuator_gear,np.tile([1.,0.,0.,0.,0.,0.],(6,1)))):
                 raise ValueError('实际扭矩分配只支持无动态和偏置的直接力矩电机')
-            # Frozen Scenario domain: wheel drive difference <=5%. Do not give the
-            # controller each randomized world's hidden actuator calibration.
-            self.actuator_gain_upper=np.array([1.,1.,1.,1.,1.05,1.05])
-            if np.any(actuator_gains>self.actuator_gain_upper+1e-7):raise ValueError('执行器增益超出公开力矩分配上界')
             self.control_kernel=control_physical
-            self.control_extra=[wp.array(np.tile(self.actuator_gain_upper,(n,1)),dtype=D)]
+            self.control_extra=[wp.array(actuator_gains,dtype=D)]
         ids=self.k['ids'].numpy().tolist()+[self.cpu.geom(x).id for x in ('wheel_collide_L','wheel_collide_R','bump_L','bump_R')]
         terrain=mujoco.mj_name2id(self.cpu,mujoco.mjtObj.mjOBJ_GEOM,'terrain_00')
         ids += [terrain,mujoco.mj_name2id(self.cpu,mujoco.mjtObj.mjOBJ_GEOM,'terrain_15')] if terrain>=0 else [-1,-1]
@@ -486,7 +481,6 @@ class NativeEnv(VecEnv):
                             infos[i]['physical_safety_passed']=bool(states[i,37]==states[i,0] and states[i,37]>0 and
                                 infos[i]['geometric_margin_passed'] and states[i,33]>=0 and max(states[i,35],states[i,36])<=1e-6)
                             infos[i]['control_limit_scope']='actual_torque_and_nominal_command'
-                            infos[i]['actuator_gain_upper']=self.actuator_gain_upper.tolist()
                 # This deadline is task failure, not an external collection cutoff.
                 # SB3 must not add gamma*V(terminal_observation) to its -10 reward.
                 infos[i]['TimeLimit.truncated']=False

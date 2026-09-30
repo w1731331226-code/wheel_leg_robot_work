@@ -23,6 +23,18 @@
 
 实际/命令扭矩门使用固定1e−6Nm浮点数值容差，没有放宽几何线或关节范围。本轮结果支持“验收口径已接线且能识别失效”，不支持“控制瓶颈已解决”。下一阶段仍需统一名义径向/角域请求、实际扭矩分配与动态制动约束；本轮没有修改控制/PPO或开启长训练。
 
+## 第二阶段实际扭矩分配与采集图修正
+
+range115/physical_v1现采用公开增益上界分配命令：`A_cmd=A_nom/max(1,g_upper)`，髋上界1，两轮统一1.05，来自冻结场景的±5%驱动差异。六状态/VMC输出、残差投影和最终限幅使用同一盒；固定名义LQR设计不读随机世界参数。真实世界增益仅用于检查模型是否超域或不支持，不参与在线分配。旧`control`与`residual_projection`接口保留名义协议。
+
+LiveNativeEnv和RecordedEnv会重建执行图，原先未接第一阶段的监测核。本次三条图都改为继承控制模式并逐子步监测，采集元数据标注公开上界和实际/命令限幅口径，原32维观测与PPO保持不变。
+
+[最终公开上界验证](results/actual_torque_public_bound_20261001/verification.json)覆盖4种域内驱动差异和4种轮速（含超空载及反向），16条件的旧实际扭矩超额峰0.225Nm降到1.788e−7Nm，低于既定1e−6Nm浮点门。同状态不同隐藏增益的控制命令逐值相同，Native、Live、Recorded各40子步证据齐全；向共享函数提供单位增益时，命令和诊断与旧实现完全一致。[旧残差投影回归](results/actual_torque_allocation_20261001/legacy_projection.json)1006例、非有限零命令及非绑定1s配对通过；[12000步CPU/GPU同状态控制校对](results/actual_torque_allocation_recorded_20261001/legacy_controller_pair.log)最大差4.700e−7Nm。
+
+初轮测试误用冻结域外的±.1驱动差异而被拒绝，只修测试输入、不扩大域。两个早期精确增益诊断[第一版](results/actual_torque_allocation_20261001/verification.json)、[含遥测版](results/actual_torque_allocation_recorded_20261001/verification.json)读取了随机世界真实增益，具有额外信息，不能作为同信息在线成绩；结果及对应source源码包保留。当前默认与最终验证使用公开上界。
+
+[最终六正常低位完整回合](results/actual_torque_public_bound_20261001/normal115/verification.json)6/6完成、实际扭矩超额全0，几何/关节/任务联合成功仍0/6，监测计数与物理步数逐例相同。最低A链约0.107773～0.113984m，关节余量最低−0.0229～−0.0660rad。修正实际扭矩门没有解决动态几何瓶颈，下一步仍应统一径向/角域请求与共模安全分配，并审查立即制动约束。独立host/GPU安全LP尚未接同一公开命令盒，初始oracle、模型误差、实时和全高度门仍未关闭，不启动PPO长训练。
+
 ## 原审计时的架构与范围
 
 ```mermaid

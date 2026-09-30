@@ -70,7 +70,6 @@ class LiveNativeEnv(NativeEnv):
             project_clipped_base=self.project_clipped_base,
             task_contract_version=TASK_CONTRACT_VERSION,control_limit_scope='actual_torque_and_nominal_command' if self.height_safety=='physical_v1' else 'nominal_command',
             height_safety_contract=self.height_safety,
-            actuator_gain_upper=self.actuator_gain_upper.tolist() if self.actuator_gain_upper is not None else None,
             terminate_on_attitude_failure=self.terminate_on_attitude_failure,
             episode=int(self.episode_counts[index]),phase=self.phase,scenario=asdict(self.scenarios[index]),source_run=str(self.directory.parent),
             recorded_policy_hz=50,recorded_physics_hz=400,started=float(self.episode_started[index]),status='recording')
