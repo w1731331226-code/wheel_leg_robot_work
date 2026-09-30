@@ -7,7 +7,7 @@ import mujoco
 import warp as wp
 import mujoco_warp as mjw
 from mujoco_warp._src.types import vec5
-from native.controller import control,constants,D,fk,polar_jac
+from native.controller import control,constants,D,fk,polar_jac,allowed
 import wheelleg_sim as sim
 from native.models import bank
 from native.terrain import HEIGHT_115_MIN,HEIGHT_115_GEOMETRIC_MIN
@@ -85,6 +85,44 @@ def wheel_center(qpos:wp.array2d[float],ids:wp.array[int],offsets:wp.array3d[wp.
     local=offsets[w,side,0]+rotate_y(offsets[w,side,1],alpha)+rotate_y(offsets[w,side,2],alpha+passive)
     rotation=wp.quatd(D(qpos[w,4]),D(qpos[w,5]),D(qpos[w,6]),D(qpos[w,3]))
     return wp.vec3d(D(qpos[w,0]),D(qpos[w,1]),D(qpos[w,2]))+wp.quat_rotate(rotation,local)
+
+
+@wp.func
+def physical_passed(state:wp.array2d[D],limit:D,w:int):
+    # Every scored substep must have actual geometry and actuator evidence.
+    return (state[w,37]==state[w,0] and state[w,37]>D(0) and
+            wp.min(state[w,31],state[w,32])>=limit and state[w,33]>=D(0) and
+            wp.max(state[w,35],state[w,36])<=D(1.e-6))
+
+
+@wp.kernel
+def collect_physical(q:wp.array2d[float],pre_v:wp.array2d[float],force:wp.array2d[float],ctrl:wp.array2d[float],
+                     active:wp.array[int],ids:wp.array[int],joints:wp.array[int],limits:wp.array3d[D],
+                     offsets:wp.array3d[wp.vec3d],state:wp.array2d[D]):
+    w=wp.tid()
+    if active[w]==0:return
+    for side in range(2):
+        k=4*side
+        alpha=D(q[w,joints[k]]);beta=D(q[w,joints[k+1]])
+        pa=D(q[w,joints[k+2]]);pc=D(q[w,joints[k+3]])
+        a=offsets[w,side,0]+rotate_y(offsets[w,side,1],alpha)+rotate_y(offsets[w,side,2],alpha+pa)
+        b=offsets[w,side,3]+rotate_y(offsets[w,side,4],beta)+rotate_y(offsets[w,side,5],beta+pc)
+        middle=(offsets[w,side,0]+offsets[w,side,3])/D(2)
+        state[w,31]=wp.min(state[w,31],wp.length(a-middle))
+        state[w,32]=wp.min(state[w,32],wp.length(b-middle))
+        state[w,34]=wp.max(state[w,34],wp.length(a-b))
+    for j in range(8):
+        value=D(q[w,joints[j]])
+        state[w,33]=wp.min(state[w,33],wp.min(value-limits[w,j,0],limits[w,j,1]-value))
+    for j in range(6):
+        bound=allowed(D(pre_v[w,ids[4+j]]),j<4)
+        f=D(force[w,j]);u=D(ctrl[w,j])
+        if not wp.isfinite(f) or not wp.isfinite(u):
+            state[w,35]=D(1.e30);state[w,36]=D(1.e30)
+        else:
+            state[w,35]=wp.max(state[w,35],wp.abs(f)-bound)
+            state[w,36]=wp.max(state[w,36],wp.abs(u)-bound)
+    state[w,37]=state[w,37]+D(1)
 
 
 @wp.kernel
@@ -199,7 +237,8 @@ def after(qpos:wp.array2d[float],qvel:wp.array2d[float],sensors:wp.array2d[float
         if int(param[w,14]):
             success=success and state[w,29]>D(0) and wp.sqrt(state[w,28]/state[w,29])<=D(.02)
             success=success and wp.abs((D(history[w,slot,22])+D(history[w,slot,23]))/D(2)-param[w,13])<=D(.02)
-            if param[w,15]>D(0):success=success and state[w,30]>=param[w,15]
+            if state.shape[1]>31:success=success and physical_passed(state,param[w,15],w)
+            elif param[w,15]>D(0):success=success and state[w,30]>=param[w,15]
         state[w,19]=D(0)
         if success:state[w,19]=D(1);reward[w]=reward[w]+D(10);state[w,20]=state[w,20]+D(10)
         else:reward[w]=reward[w]-D(10);state[w,20]=state[w,20]-D(10)
@@ -222,6 +261,8 @@ def reset_rows(mask:wp.array[int],q0:wp.array2d[float],q:wp.array2d[float],v:wp.
     for j in range(state.shape[1]):state[w,j]=D(0)
     state[w,1]=D(-1)
     state[w,30]=D(1)
+    if state.shape[1]>31:
+        state[w,31]=D(1);state[w,32]=D(1);state[w,33]=D(1.e30)
     for j in range(6):residual[w,j]=D(0)
     for j in range(targets.shape[1]):targets[w,j]=0.
     for j in range(32):
@@ -230,7 +271,7 @@ def reset_rows(mask:wp.array[int],q0:wp.array2d[float],q:wp.array2d[float],v:wp.
 
 
 class NativeEnv(VecEnv):
-    def __init__(self,n=128,stage=3,seed=730000,scenario=None,bank_factory=bank,yaw_config=(.4,2.,.24,.3),residual_scale=1.,residual_mode='diff3',terminate_on_attitude_failure=False,project_clipped_base=False,grouped_residual=False,height_conditioned=False,height_design='legacy'):
+    def __init__(self,n=128,stage=3,seed=730000,scenario=None,bank_factory=bank,yaw_config=(.4,2.,.24,.3),residual_scale=1.,residual_mode='diff3',terminate_on_attitude_failure=False,project_clipped_base=False,grouped_residual=False,height_conditioned=False,height_design='legacy',height_safety=None):
         if not isinstance(n,int) or not 1 <= n <= 1024:raise ValueError('用户限制：批量环境数须为1～1024')
         if type(project_clipped_base) is not bool:raise ValueError('基础限幅后残差投影开关须为布尔值')
         self.project_clipped_base=project_clipped_base
@@ -252,6 +293,9 @@ class NativeEnv(VecEnv):
         if height_design not in ('legacy','range115') or (height_design=='range115' and not height_conditioned):
             raise ValueError('高度控制设计须与多高度模式匹配')
         self.height_design=height_design
+        self.height_safety=('physical_v1' if height_design=='range115' else 'legacy_fk') if height_safety is None else height_safety
+        if self.height_safety not in ('legacy_fk','physical_v1') or (self.height_safety=='physical_v1' and height_design!='range115'):
+            raise ValueError('真实几何安全契约只用于range115独立任务')
         self.stand_heights=np.asarray([s.stand_height_m if height_conditioned else sim.L_STAND for s in self.scenarios],dtype=float)
         low=HEIGHT_115_MIN if height_design=='range115' else sim.L_SQUAT_MIN
         if not np.isfinite(self.stand_heights).all() or np.any((self.stand_heights<low)|(self.stand_heights>sim.L_MAX)):
@@ -299,7 +343,7 @@ class NativeEnv(VecEnv):
         self.task_goals=[row[2] for row in p]
         self.param=wp.array(p,dtype=D);self.command=wp.zeros(n,dtype=D)
         self.active=wp.ones(n,dtype=wp.int32);self.done=wp.zeros(n,dtype=wp.int32)
-        self.state=wp.zeros((n,31),dtype=D);self.diag=wp.zeros((n,21 if height_conditioned else 15),dtype=D)
+        self.state=wp.zeros((n,38 if self.height_safety=='physical_v1' else 31),dtype=D);self.diag=wp.zeros((n,21 if height_conditioned else 15),dtype=D)
         self.residual=wp.zeros((n,6),dtype=D);self.reward=wp.zeros(n,dtype=D);self.contact_flags=wp.zeros((n,2),dtype=wp.int32)
         self.obs=wp.zeros((n,32));self.history=wp.zeros((n,max(round(s.delay_ms*2) for s in self.scenarios)+1,32))
         self.targets=wp.zeros((n,self.action_dim));self.stopped_q=wp.zeros((n,self.cpu.nq));self.stopped_v=wp.zeros((n,self.cpu.nv));self.stopped_w=wp.zeros((n,self.cpu.nv))
@@ -332,6 +376,20 @@ class NativeEnv(VecEnv):
         self.obs0=wp.array(initial,dtype=wp.float32)
         self.mask=wp.ones(n,dtype=wp.int32)
         self.reset_args=[self.mask,self.q0,self.data.qpos,self.data.qvel,self.data.qacc_warmstart,self.data.time,self.data.sensordata,self.k['state'],self.state,self.residual,self.active,self.done,self.obs0,self.obs,self.history,self.targets,self.k['reference']]
+        if self.height_safety=='physical_v1':
+            names=('alphaL','betaL','passA_L','passC_L','alphaR','betaR','passA_R','passC_R')
+            joint_ids=np.array([self.cpu.joint(name).id for name in names])
+            geometry_ids=[[self.cpu.body(name).id for name in ('leg'+s,'kneeA_'+s,'wheel'+s,'leg'+s+'_D','kneeB_'+s)] for s in ('L','R')]
+            # Both chains use origin-centered Y hinges and identity body rotations.
+            if not np.allclose(self.cpu.jnt_axis[joint_ids],[0,1,0]) or not np.allclose(self.cpu.jnt_pos[joint_ids],0) or not np.all(self.cpu.jnt_limited[joint_ids]):
+                raise ValueError('真实链安全契约需受限的原点Y轴关节')
+            if not np.allclose(self.model.body_quat.numpy()[:,geometry_ids],[1,0,0,0]):raise ValueError('真实链安全契约需单位body旋转')
+            offsets=np.empty((n,2,6,3))
+            offsets[:,:,:5]=self.model.body_pos.numpy()[:,geometry_ids]
+            offsets[:,:,5]=self.model.site_pos.numpy()[:,[self.cpu.site('couplerB_'+s+'_end').id for s in ('L','R')]]
+            self.physical_args=[self.data.qpos,self.stopped_v,self.data.actuator_force,self.data.ctrl,self.active,self.ids,
+                wp.array(self.cpu.jnt_qposadr[joint_ids],dtype=wp.int32),wp.array(self.model.jnt_range.numpy()[:,joint_ids],dtype=D),
+                wp.array(offsets,dtype=wp.vec3d),self.state]
         wp.launch(reset_rows,n,self.reset_args)
         mjw.forward(self.model,self.data)
         with wp.ScopedCapture() as capture:
@@ -342,6 +400,7 @@ class NativeEnv(VecEnv):
                     self.k['state'],self.ids,self.k['heights'],self.k['gains'],self.k['feed'],self.k['angles'],self.k['reference'],self.k['yaw'],self.data.ctrl,self.diag,int(self.project_clipped_base),int(self.grouped_residual)],block_dim=32)
                 mjw.step(self.model,self.data)
                 wp.launch(reduce_contacts,self.data.naconmax,[self.data.nacon,self.data.contact.worldid,self.data.contact.geom,self.ids,self.contact_flags])
+                if self.height_safety=='physical_v1':wp.launch(collect_physical,n,self.physical_args)
                 wp.launch(after,n,[self.data.qpos,self.data.qvel,self.data.sensordata,self.data.qacc_warmstart,self.data.time,self.contact_flags,self.ids,self.param,self.command,self.state,self.k['state'],self.diag,
                     self.residual,self.active,self.done,self.reward,self.obs,self.history,self.stopped_q,self.stopped_v,self.stopped_w,self.wheel_offsets],block_dim=32)
         self.graph=capture.graph
@@ -398,6 +457,18 @@ class NativeEnv(VecEnv):
                         infos[i]['min_leg_m']=float(states[i,30])
                         infos[i]['geometric_limit_m']=HEIGHT_115_GEOMETRIC_MIN
                         infos[i]['geometric_margin_passed']=bool(states[i,30]>=HEIGHT_115_GEOMETRIC_MIN)
+                        infos[i]['height_safety_contract']=self.height_safety
+                        if self.height_safety=='physical_v1':
+                            infos[i]['min_fk_leg_m']=float(states[i,30])
+                            infos[i]['min_actual_A_leg_m']=float(states[i,31]);infos[i]['min_actual_B_leg_m']=float(states[i,32])
+                            infos[i]['min_leg_m']=float(min(states[i,31],states[i,32]))
+                            infos[i]['geometric_margin_passed']=bool(infos[i]['min_leg_m']>=HEIGHT_115_GEOMETRIC_MIN)
+                            infos[i]['min_eight_joint_margin_rad']=float(states[i,33]);infos[i]['max_loop_error_m']=float(states[i,34])
+                            infos[i]['max_actual_torque_excess_Nm']=float(states[i,35]);infos[i]['max_command_torque_excess_Nm']=float(states[i,36])
+                            infos[i]['physical_evidence_steps']=int(states[i,37])
+                            infos[i]['physical_safety_passed']=bool(states[i,37]==states[i,0] and states[i,37]>0 and
+                                infos[i]['geometric_margin_passed'] and states[i,33]>=0 and max(states[i,35],states[i,36])<=1e-6)
+                            infos[i]['control_limit_scope']='actual_torque_and_nominal_command'
                 # This deadline is task failure, not an external collection cutoff.
                 # SB3 must not add gamma*V(terminal_observation) to its -10 reward.
                 infos[i]['TimeLimit.truncated']=False

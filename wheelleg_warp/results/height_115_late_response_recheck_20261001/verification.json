@@ -1,0 +1,1266 @@
+{
+  "role": "late_state_one_step_paired_action_calibration",
+  "status": "paired_gate_pass",
+  "source_arm": 3,
+  "source_step": 1995,
+  "source_time_ms": 997.5,
+  "numerical_warmstart": "zero on both backends; source warmstart unavailable",
+  "cpu_warp_q_error": 1.8642428400994504e-06,
+  "cpu_warp_v_error": 0.00019271668026732414,
+  "contact_pairs_equal": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "records": [
+    {
+      "backend": "cpu",
+      "arm": "zero",
+      "radial_acceleration": [
+        -2.9346511582603387,
+        -2.608678622460947
+      ],
+      "active_acceleration": [
+        45.22328291909683,
+        -25.12633313891263,
+        33.25070814097153,
+        -29.822239119305483
+      ],
+      "true_A_margin_m": [
+        0.00023493512935651717,
+        0.000163983039340454
+      ],
+      "joint_margin_rad": 0.4441473731302126,
+      "attitude_deg": 0.17266374304848345,
+      "physical_gate": true,
+      "contact_pairs": [
+        [
+          6,
+          30
+        ],
+        [
+          6,
+          37
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          7,
+          37
+        ]
+      ],
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "cpu",
+      "arm": "F+1_1Nm",
+      "radial_acceleration": [
+        0.8418814623360644,
+        1.1473187338403925
+      ],
+      "active_acceleration": [
+        0.7689452774432559,
+        21.00718795907347,
+        -11.119950558003966,
+        16.10769428994957
+      ],
+      "true_A_margin_m": [
+        0.00023570082250623514,
+        0.00016474197693368275
+      ],
+      "joint_margin_rad": 0.44415885561356494,
+      "attitude_deg": 0.17266455883231596,
+      "physical_gate": true,
+      "contact_pairs": [
+        [
+          6,
+          30
+        ],
+        [
+          6,
+          37
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          7,
+          37
+        ]
+      ],
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "cpu",
+      "arm": "F-1_1Nm",
+      "radial_acceleration": [
+        -6.7109721749396485,
+        -6.364465627694958
+      ],
+      "active_acceleration": [
+        89.6776257314823,
+        -71.2598565860112,
+        77.62136730180936,
+        -75.75217262304257
+      ],
+      "true_A_margin_m": [
+        0.00023416943932910717,
+        0.00016322410490411665
+      ],
+      "joint_margin_rad": 0.4441358906468367,
+      "attitude_deg": 0.17266292725984292,
+      "physical_gate": true,
+      "contact_pairs": [
+        [
+          6,
+          30
+        ],
+        [
+          6,
+          37
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          7,
+          37
+        ]
+      ],
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "cpu",
+      "arm": "H+1_1Nm",
+      "radial_acceleration": [
+        -2.9776847099300396,
+        -2.649293344178627
+      ],
+      "active_acceleration": [
+        -10.470339704823472,
+        -82.4536934441294,
+        -22.472091279014393,
+        -87.09704756722502
+      ],
+      "true_A_margin_m": [
+        0.00023494063836468349,
+        0.00016398951480492419
+      ],
+      "joint_margin_rad": 0.4441330544281006,
+      "attitude_deg": 0.17266409218526732,
+      "physical_gate": true,
+      "contact_pairs": [
+        [
+          6,
+          30
+        ],
+        [
+          6,
+          37
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          7,
+          37
+        ]
+      ],
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "cpu",
+      "arm": "H-1_1Nm",
+      "radial_acceleration": [
+        -2.891498283793016,
+        -2.5679443060328544
+      ],
+      "active_acceleration": [
+        100.91691037407912,
+        32.201021741423254,
+        88.97350785292745,
+        27.452567629678516
+      ],
+      "true_A_margin_m": [
+        0.00023492962165008735,
+        0.000163976565250204
+      ],
+      "joint_margin_rad": 0.4441616918318998,
+      "attitude_deg": 0.17266339390896304,
+      "physical_gate": true,
+      "contact_pairs": [
+        [
+          6,
+          30
+        ],
+        [
+          6,
+          37
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          7,
+          37
+        ]
+      ],
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "cpu",
+      "arm": "W+1_1Nm",
+      "radial_acceleration": [
+        -2.8851106349167543,
+        -2.558651524132843
+      ],
+      "active_acceleration": [
+        27.843710440762337,
+        -41.49699606317422,
+        15.887022641007386,
+        -46.15460956402561
+      ],
+      "true_A_margin_m": [
+        0.00023457250540830088,
+        0.00016362086211771376
+      ],
+      "joint_margin_rad": 0.44414329003760145,
+      "attitude_deg": 0.1726637430950786,
+      "physical_gate": true,
+      "contact_pairs": [
+        [
+          6,
+          30
+        ],
+        [
+          6,
+          37
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          7,
+          37
+        ]
+      ],
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "cpu",
+      "arm": "W-1_1Nm",
+      "radial_acceleration": [
+        -2.9740901308472796,
+        -2.7083307044969835
+      ],
+      "active_acceleration": [
+        62.37925586316734,
+        -8.73833059807061,
+        51.444540670790296,
+        -13.850595639035845
+      ],
+      "true_A_margin_m": [
+        0.00023530099338751886,
+        0.00016432658898433983
+      ],
+      "joint_margin_rad": 0.44415136604108274,
+      "attitude_deg": 0.17266013145645318,
+      "physical_gate": true,
+      "contact_pairs": [
+        [
+          6,
+          30
+        ],
+        [
+          6,
+          37
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          7,
+          37
+        ]
+      ],
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "cpu",
+      "arm": "F+1_2Nm",
+      "radial_acceleration": [
+        4.6186264362473235,
+        4.903526485569666
+      ],
+      "active_acceleration": [
+        -43.68539742326236,
+        67.1407143461445,
+        -55.49061282193812,
+        62.03762451656669
+      ],
+      "true_A_margin_m": [
+        0.00023646651892197945,
+        0.00016550091770052566
+      ],
+      "joint_margin_rad": 0.4441703380961215,
+      "attitude_deg": 0.1726653746156477,
+      "physical_gate": true,
+      "contact_pairs": [
+        [
+          6,
+          30
+        ],
+        [
+          6,
+          37
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          7,
+          37
+        ]
+      ],
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "cpu",
+      "arm": "F-1_2Nm",
+      "radial_acceleration": [
+        -10.4870812638043,
+        -10.120042050536494
+      ],
+      "active_acceleration": [
+        134.1319683124872,
+        -117.39337993953974,
+        121.99202404818166,
+        -121.68210344481767
+      ],
+      "true_A_margin_m": [
+        0.00023340375248996625,
+        0.00016246517367331237
+      ],
+      "joint_margin_rad": 0.4441244081641311,
+      "attitude_deg": 0.17266211146909738,
+      "physical_gate": true,
+      "contact_pairs": [
+        [
+          6,
+          30
+        ],
+        [
+          6,
+          37
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          7,
+          37
+        ]
+      ],
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "cpu",
+      "arm": "H+1_2Nm",
+      "radial_acceleration": [
+        -3.0205982989070232,
+        -2.6897882682737766
+      ],
+      "active_acceleration": [
+        -66.16396806984737,
+        -139.78105442830503,
+        -78.19489391692447,
+        -144.37185635586147
+      ],
+      "true_A_margin_m": [
+        0.00023494614880043008,
+        0.00016399599168966106
+      ],
+      "joint_margin_rad": 0.44411873572590355,
+      "attitude_deg": 0.17266444132594544,
+      "physical_gate": true,
+      "contact_pairs": [
+        [
+          6,
+          30
+        ],
+        [
+          6,
+          37
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          7,
+          37
+        ]
+      ],
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "cpu",
+      "arm": "H-1_2Nm",
+      "radial_acceleration": [
+        -2.848225449806438,
+        -2.527090516522168
+      ],
+      "active_acceleration": [
+        156.6105387411378,
+        89.52838258797944,
+        144.69630997572403,
+        84.72737188019363
+      ],
+      "true_A_margin_m": [
+        0.00023492411536542301,
+        0.00016397009251754857
+      ],
+      "joint_margin_rad": 0.4441760105329624,
+      "attitude_deg": 0.17266304477049782,
+      "physical_gate": true,
+      "contact_pairs": [
+        [
+          6,
+          30
+        ],
+        [
+          6,
+          37
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          7,
+          37
+        ]
+      ],
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "cpu",
+      "arm": "W+1_2Nm",
+      "radial_acceleration": [
+        -2.977521568635559,
+        -2.655760849348626
+      ],
+      "active_acceleration": [
+        12.668000216078667,
+        -59.063441104307415,
+        0.7714796434734605,
+        -63.77138118182057
+      ],
+      "true_A_margin_m": [
+        0.00023415535268785093,
+        0.0001632014271354676
+      ],
+      "joint_margin_rad": 0.4441388858446971,
+      "attitude_deg": 0.17266403644895578,
+      "physical_gate": true,
+      "contact_pairs": [
+        [
+          6,
+          30
+        ],
+        [
+          6,
+          37
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          7,
+          37
+        ]
+      ],
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "cpu",
+      "arm": "W-1_2Nm",
+      "radial_acceleration": [
+        -3.012890551785399,
+        -2.812134774847229
+      ],
+      "active_acceleration": [
+        79.52552487386843,
+        7.655007538130365,
+        69.69186461441512,
+        2.0744932046197206
+      ],
+      "true_A_margin_m": [
+        0.00023566709334706115,
+        0.00016466828170531855
+      ],
+      "joint_margin_rad": 0.44415534731329354,
+      "attitude_deg": 0.17265647928677136,
+      "physical_gate": true,
+      "contact_pairs": [
+        [
+          6,
+          30
+        ],
+        [
+          6,
+          37
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          7,
+          37
+        ]
+      ],
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "warp",
+      "arm": "zero",
+      "radial_acceleration": [
+        -2.934327593781722,
+        -2.604859360889347
+      ],
+      "active_acceleration": [
+        45.21834850311279,
+        -25.12355148792267,
+        33.21218490600586,
+        -29.76885437965393
+      ],
+      "true_A_margin_m": [
+        0.0002349272814403669,
+        0.00016398560683594798
+      ],
+      "joint_margin_rad": 0.44414734840393066,
+      "attitude_deg": 0.17266365890699864,
+      "physical_gate": true,
+      "contact_pairs": [
+        [
+          6,
+          30
+        ],
+        [
+          6,
+          37
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          7,
+          37
+        ]
+      ],
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "warp",
+      "arm": "F+1_1Nm",
+      "radial_acceleration": [
+        0.8421979632186466,
+        1.1511356603607636
+      ],
+      "active_acceleration": [
+        0.764012336730957,
+        21.00987732410431,
+        -11.158525943756104,
+        16.161054372787476
+      ],
+      "true_A_margin_m": [
+        0.0002357027458972094,
+        0.00016474364519376838
+      ],
+      "joint_margin_rad": 0.4441589117050171,
+      "attitude_deg": 0.17266447794803044,
+      "physical_gate": true,
+      "contact_pairs": [
+        [
+          6,
+          30
+        ],
+        [
+          6,
+          37
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          7,
+          37
+        ]
+      ],
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "warp",
+      "arm": "F-1_1Nm",
+      "radial_acceleration": [
+        -6.710642360291366,
+        -6.36064299702143
+      ],
+      "active_acceleration": [
+        89.67259526252747,
+        -71.25702500343323,
+        77.5827169418335,
+        -75.69876313209534
+      ],
+      "true_A_margin_m": [
+        0.00023416894217508089,
+        0.00016322757163750312
+      ],
+      "joint_margin_rad": 0.4441359043121338,
+      "attitude_deg": 0.17266283986623365,
+      "physical_gate": true,
+      "contact_pairs": [
+        [
+          6,
+          30
+        ],
+        [
+          6,
+          37
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          7,
+          37
+        ]
+      ],
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "warp",
+      "arm": "H+1_1Nm",
+      "radial_acceleration": [
+        -2.977366806161251,
+        -2.6454698919878354
+      ],
+      "active_acceleration": [
+        -10.475248098373413,
+        -82.4509859085083,
+        -22.510528564453125,
+        -87.04361319541931
+      ],
+      "true_A_margin_m": [
+        0.00023494979456553655,
+        0.00016399079834233943
+      ],
+      "joint_margin_rad": 0.44413304328918457,
+      "attitude_deg": 0.1726640022561075,
+      "physical_gate": true,
+      "contact_pairs": [
+        [
+          6,
+          30
+        ],
+        [
+          6,
+          37
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          7,
+          37
+        ]
+      ],
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "warp",
+      "arm": "H-1_1Nm",
+      "radial_acceleration": [
+        -2.8911867796527213,
+        -2.5641267515435358
+      ],
+      "active_acceleration": [
+        100.91209411621094,
+        32.203689217567444,
+        88.93507719039917,
+        27.505964040756226
+      ],
+      "true_A_margin_m": [
+        0.0002349218917085394,
+        0.00016396329972361012
+      ],
+      "joint_margin_rad": 0.44416165351867676,
+      "attitude_deg": 0.17266331556222494,
+      "physical_gate": true,
+      "contact_pairs": [
+        [
+          6,
+          30
+        ],
+        [
+          6,
+          37
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          7,
+          37
+        ]
+      ],
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "warp",
+      "arm": "W+1_1Nm",
+      "radial_acceleration": [
+        -2.8846494746332003,
+        -2.5553667707242655
+      ],
+      "active_acceleration": [
+        27.83563733100891,
+        -41.49399697780609,
+        15.857934951782227,
+        -46.104639768600464
+      ],
+      "true_A_margin_m": [
+        0.00023457041478555651,
+        0.00016361162800894447
+      ],
+      "joint_margin_rad": 0.44414329528808594,
+      "attitude_deg": 0.17266361330544125,
+      "physical_gate": true,
+      "contact_pairs": [
+        [
+          6,
+          30
+        ],
+        [
+          6,
+          37
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          7,
+          37
+        ]
+      ],
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "warp",
+      "arm": "W-1_1Nm",
+      "radial_acceleration": [
+        -2.973765607743279,
+        -2.7046481658152195
+      ],
+      "active_acceleration": [
+        62.37432360649109,
+        -8.735552430152893,
+        51.40799283981323,
+        -13.79859447479248
+      ],
+      "true_A_margin_m": [
+        0.00023530127009611934,
+        0.00016433429230050534
+      ],
+      "joint_margin_rad": 0.4441514015197754,
+      "attitude_deg": 0.17266004634645504,
+      "physical_gate": true,
+      "contact_pairs": [
+        [
+          6,
+          30
+        ],
+        [
+          6,
+          37
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          7,
+          37
+        ]
+      ],
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "warp",
+      "arm": "F+1_2Nm",
+      "radial_acceleration": [
+        4.618928107589425,
+        4.9073347864107415
+      ],
+      "active_acceleration": [
+        -43.68998110294342,
+        67.14338809251785,
+        -55.52893877029419,
+        62.09096312522888
+      ],
+      "true_A_margin_m": [
+        0.00023646109150590733,
+        0.00016550168671083942
+      ],
+      "joint_margin_rad": 0.44417035579681396,
+      "attitude_deg": 0.1726652836481507,
+      "physical_gate": true,
+      "contact_pairs": [
+        [
+          6,
+          30
+        ],
+        [
+          6,
+          37
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          7,
+          37
+        ]
+      ],
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "warp",
+      "arm": "F-1_2Nm",
+      "radial_acceleration": [
+        -10.486747466438011,
+        -10.116216705591645
+      ],
+      "active_acceleration": [
+        134.12681221961975,
+        -117.39048361778259,
+        121.95330858230591,
+        -121.62861227989197
+      ],
+      "true_A_margin_m": [
+        0.00023341060605586161,
+        0.00016246953959858645
+      ],
+      "joint_margin_rad": 0.4441244602203369,
+      "attitude_deg": 0.17266203416600226,
+      "physical_gate": true,
+      "contact_pairs": [
+        [
+          6,
+          30
+        ],
+        [
+          6,
+          37
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          7,
+          37
+        ]
+      ],
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "warp",
+      "arm": "H+1_2Nm",
+      "radial_acceleration": [
+        -3.020293777443072,
+        -2.6859658907346096
+      ],
+      "active_acceleration": [
+        -66.16868078708649,
+        -139.77843523025513,
+        -78.23330163955688,
+        -144.3183720111847
+      ],
+      "true_A_margin_m": [
+        0.00023494624641356987,
+        0.00016398705056712426
+      ],
+      "joint_margin_rad": 0.4441187381744385,
+      "attitude_deg": 0.17266435894813897,
+      "physical_gate": true,
+      "contact_pairs": [
+        [
+          6,
+          30
+        ],
+        [
+          6,
+          37
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          7,
+          37
+        ]
+      ],
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "warp",
+      "arm": "H-1_2Nm",
+      "radial_acceleration": [
+        -2.847895303036484,
+        -2.5232717537985656
+      ],
+      "active_acceleration": [
+        156.6055417060852,
+        89.53128755092621,
+        144.65761184692383,
+        84.78063344955444
+      ],
+      "true_A_margin_m": [
+        0.0002349254439918541,
+        0.00016396705164602177
+      ],
+      "joint_margin_rad": 0.4441760778427124,
+      "attitude_deg": 0.17266295887921257,
+      "physical_gate": true,
+      "contact_pairs": [
+        [
+          6,
+          30
+        ],
+        [
+          6,
+          37
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          7,
+          37
+        ]
+      ],
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "warp",
+      "arm": "W+1_2Nm",
+      "radial_acceleration": [
+        -2.9771405377546944,
+        -2.65209040411897
+      ],
+      "active_acceleration": [
+        12.661278247833252,
+        -59.06100571155548,
+        0.7370710372924805,
+        -63.71742486953735
+      ],
+      "true_A_margin_m": [
+        0.00023415400082513194,
+        0.00016319523882439568
+      ],
+      "joint_margin_rad": 0.44413888454437256,
+      "attitude_deg": 0.17266391089518543,
+      "physical_gate": true,
+      "contact_pairs": [
+        [
+          6,
+          30
+        ],
+        [
+          6,
+          37
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          7,
+          37
+        ]
+      ],
+      "same_contacts_as_zero": true
+    },
+    {
+      "backend": "warp",
+      "arm": "W-1_2Nm",
+      "radial_acceleration": [
+        -3.012615305436346,
+        -2.808075479704991
+      ],
+      "active_acceleration": [
+        79.52117919921875,
+        7.657229900360107,
+        69.65053081512451,
+        2.130746841430664
+      ],
+      "true_A_margin_m": [
+        0.000235675258760365,
+        0.00016467403711707684
+      ],
+      "joint_margin_rad": 0.44415533542633057,
+      "attitude_deg": 0.17265639353968681,
+      "physical_gate": true,
+      "contact_pairs": [
+        [
+          6,
+          30
+        ],
+        [
+          6,
+          37
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          7,
+          37
+        ]
+      ],
+      "same_contacts_as_zero": true
+    }
+  ],
+  "models": [
+    {
+      "backend": "cpu",
+      "calibration_peak_Nm": 1.0,
+      "coupled_feasible": false,
+      "minimum_model_peak_Nm": null,
+      "action": null,
+      "axis_fit_max_joint_error": 0.4150735149273075,
+      "axis_fit_max_radial_error": 0.02481249185396628,
+      "gain": [
+        [
+          -1.8639084072396206,
+          -14.765043445584464,
+          -17.2677727112025
+        ],
+        [
+          1.9343141655064695,
+          -15.198165407231283,
+          -16.379332732551806
+        ],
+        [
+          -1.8603997673088322,
+          -14.772777960104959,
+          -17.778759014891456
+        ],
+        [
+          1.9257779707522407,
+          -15.184233777736567,
+          -16.152006962494884
+        ]
+      ],
+      "radial_gain": [
+        [
+          0.15834030289591375,
+          -0.011424524130287661,
+          0.044489747965262616
+        ],
+        [
+          0.15747931420571185,
+          -0.010783299539471625,
+          0.0748395901820702
+        ]
+      ]
+    },
+    {
+      "backend": "cpu",
+      "calibration_peak_Nm": 2.0,
+      "coupled_feasible": true,
+      "minimum_model_peak_Nm": 1.1677504235486922,
+      "action": [
+        28.000609719645595,
+        -0.023673173908231555,
+        1.1677504235486922
+      ],
+      "axis_fit_max_joint_error": 1.980963987972764,
+      "axis_fit_max_radial_error": 0.12526918963698042,
+      "gain": [
+        [
+          -1.8639084578440013,
+          -14.76504388654378,
+          -16.714381164447442
+        ],
+        [
+          1.9343142199666408,
+          -15.198165847660322,
+          -16.679612160609445
+        ],
+        [
+          -1.8603997793684748,
+          -14.772778333168107,
+          -17.230096242735417
+        ],
+        [
+          1.9257779092786194,
+          -15.18423363472513,
+          -16.461468596610075
+        ]
+      ],
+      "radial_gain": [
+        [
+          0.15834030735607102,
+          -0.011424523919957021,
+          0.008842245787460068
+        ],
+        [
+          0.1574793122459213,
+          -0.010783278029620803,
+          0.03909348137465074
+        ]
+      ]
+    },
+    {
+      "backend": "warp",
+      "calibration_peak_Nm": 1.0,
+      "coupled_feasible": false,
+      "minimum_model_peak_Nm": null,
+      "action": null,
+      "axis_fit_max_joint_error": 0.4207789897918701,
+      "axis_fit_max_radial_error": 0.025148107380395412,
+      "gain": [
+        [
+          -1.8639063626281127,
+          -14.765055658717861,
+          -17.26934313774109
+        ],
+        [
+          1.934311184014894,
+          -15.198160097109017,
+          -16.3792222738266
+        ],
+        [
+          -1.8603981955265807,
+          -14.772778838011185,
+          -17.775028944015503
+        ],
+        [
+          1.9257769349457265,
+          -15.184228745815968,
+          -16.15302264690399
+        ]
+      ],
+      "radial_gain": [
+        [
+          0.15834002378211187,
+          -0.011423675821413175,
+          0.044558066555039355
+        ],
+        [
+          0.1574791946221237,
+          -0.01078251776401334,
+          0.07464069754547697
+        ]
+      ]
+    },
+    {
+      "backend": "warp",
+      "calibration_peak_Nm": 2.0,
+      "coupled_feasible": true,
+      "minimum_model_peak_Nm": 1.1667804488574425,
+      "action": [
+        27.97735142556159,
+        -0.023653510134971894,
+        1.1667804488574425
+      ],
+      "axis_fit_max_joint_error": 1.9816160202026367,
+      "axis_fit_max_radial_error": 0.12522358102263342,
+      "gain": [
+        [
+          -1.8639024577226124,
+          -14.765025042533962,
+          -16.714975237846375
+        ],
+        [
+          1.9343118868978841,
+          -15.198184787579903,
+          -16.679558902978897
+        ],
+        [
+          -1.8603956963870605,
+          -14.772759085634476,
+          -17.228364944458008
+        ],
+        [
+          1.9257763101608465,
+          -15.184218869627614,
+          -16.462042927742004
+        ]
+      ],
+      "radial_gain": [
+        [
+          0.15833997060623814,
+          -0.01142622231342739,
+          0.008868691920412841
+        ],
+        [
+          0.15747913358705384,
+          -0.010783038446953927,
+          0.038996268896505204
+        ]
+      ]
+    }
+  ],
+  "source_zero_q_error": 1.1920928955078125e-07,
+  "source_zero_v_error": 6.580352783203125e-05,
+  "limitations": "Archived actual q/v and nominal torque held for one step; controller memory not evolved. Cold numerical solver start, not exact archived trajectory replay. Central axis fits and zero-next-step baseline are offline oracle; combinations and sustained control unvalidated.",
+  "trace_sha256": "d0f1df2ec4df0c3264a45eb8bd48db33fcce220f533048f03228a6d615d391f6",
+  "input_sha256": {
+    "wheelleg_warp/results/height_115_scheduled_guard_20260929/verification.json": "8f39ad1d9e9ae23132ff4a73687328f5df1433b5e743710ec7722b3b87dcf91d",
+    "wheelleg_warp/results/height_115_action_predict_1nm_single_graph_20260929/verification.json": "ec9ee2120add9f69c8d745215a9ba42df5365833f7224eff7466d744d4090d89",
+    "wheelleg_warp/results/height_115_local_states_20260928/verification.json": "b8cea295a23d1950ff486d5c06e5d95daf33da4dbb3238a8c9235cdf16919228",
+    "wheelleg_warp/results/height_115_scheduled_guard_20260929/trace.npz": "9af8d7de568da7ba108a5a7fc5cff74a599d6676648ebb83ead0822b216af2b7"
+  },
+  "source_sha256": {
+    "wheelleg_warp/probe_height_115_late_response.py": "c8079645a22cc578a31399555b70d47a097d3d4d44e07158d267f3b94ef01eb8",
+    "wheelleg_warp/probe_height_115_contact_action_pair.py": "4195233cf27b27bdeb65f8e6d40b648a3aa75e656ab7974afc09ac86c7d4d3cb",
+    "wheelleg_warp/probe_height_115_braking_budget.py": "c8968f1ee4bce0da390b31fb3b1f452c92122ad8d6f8c7d64a9af0c13f1f0d3e",
+    "wheelleg_warp/native/terrain.py": "1e462500ae917ba78ce5e4652f7a856bf62658f8573296e9a7d4630517cf1a94",
+    "wheelleg_warp/native/models.py": "59420b688a25e63fb8e0e644f0702025836bea0ed90377e452bcbd919c7216eb"
+  }
+}

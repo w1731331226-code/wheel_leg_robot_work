@@ -17,6 +17,9 @@ HEIGHTS = (.115, .12, .14, .16, .20, .25, .30, .35, .38)
 
 
 def cases(panel):
+    if panel == "normal115":
+        from probe_height_115_margin import cases as low_cases
+        return low_cases()[:6]
     if panel == "flat":
         return [HeightTerrainScenario(speed=.5, stand_height_m=h) for h in HEIGHTS]
     if panel == "regular":
@@ -52,7 +55,7 @@ def initial_geometry(env):
 
 
 def run(panel, output):
-    assert panel in ("flat", "regular", "boundary") and not output.exists()
+    assert panel in ("flat", "regular", "boundary", "normal115") and not output.exists()
     assert HEIGHTS[0] == HEIGHT_115_MIN
     assert [sample_height_terrain_115(1150000 + i).stand_height_m for i in range(3)] == [.115, .38, .3]
     for invalid in (.114, .381, float("nan")):
@@ -84,6 +87,7 @@ def run(panel, output):
             if found[i] is None:
                 info = infos[i]
                 assert info["height_design"] == "range115"
+                assert info['height_safety_contract']=='physical_v1'
                 found[i] = dict(scenario=asdict(scenarios[i]), success=bool(info["success"]),
                                 reason=info["reason"], peak_deg=info["peak_deg"],
                                 height_rmse_m=info["height_rmse_m"],
@@ -91,13 +95,18 @@ def run(panel, output):
                                 geometric_margin_passed=info["geometric_margin_passed"],
                                 velocity_rmse=info["velocity_rmse"],
                                 terrain_evidence_passed=info["terrain_evidence_passed"],
-                                base_infeasible_steps=info["base_infeasible_steps"])
+                                base_infeasible_steps=info["base_infeasible_steps"],
+                                **{key:info[key] for key in ('height_safety_contract','physical_safety_passed',
+                                    'min_fk_leg_m','min_actual_A_leg_m','min_actual_B_leg_m','min_eight_joint_margin_rad',
+                                    'max_loop_error_m','max_actual_torque_excess_Nm','max_command_torque_excess_Nm',
+                                    'physical_evidence_steps','physical_steps')})
         if all(row is not None for row in found):
             break
     assert all(row is not None for row in found)
     summary = dict(total=len(found), completed=sum(row["reason"] == "completed" for row in found),
                    success=sum(row["success"] for row in found),
                    geometric_margin_passed=sum(row["geometric_margin_passed"] for row in found),
+                   physical_safety_passed=sum(row['physical_safety_passed'] for row in found),
                    geometric_limit_m=HEIGHT_115_GEOMETRIC_MIN,
                    by_height={str(h): sum(row["success"] for row in found if row["scenario"]["stand_height_m"] == h)
                               for h in HEIGHTS}, **geometry)
@@ -106,10 +115,10 @@ def run(panel, output):
              "wheelleg_warp/native/models.py", "wheelleg_ppo/tools/rm_controller.py",
              "wheelleg_ppo/tools/model_lqr.py", "wheelleg_ppo/tools/wheelleg_sim.py",
              "wheelleg_ppo/tools/hardware_profile.py", "wheelleg_ppo/tools/state_estimation.py",
-             "wheelleg_ppo/xml/wheelleg.xml")
+             "wheelleg_ppo/xml/wheelleg.xml", "wheelleg_warp/probe_height_115_margin.py")
     output.mkdir(parents=True)
     (output / "verification.json").write_text(json.dumps(dict(panel=panel, role="public_engineering_not_final_holdout",
-        nominal_height_range_m=[.115, .38], height_design="range115", residual_scale=0,
+        nominal_height_range_m=[.115, .38], height_design="range115", height_safety_contract='physical_v1',residual_scale=0,
         summary=summary, rows=found,
         source_sha256={name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest() for name in names}),
         ensure_ascii=False, indent=2) + "\n")
@@ -120,7 +129,7 @@ def run(panel, output):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--panel", choices=("flat", "regular", "boundary"), required=True)
+    parser.add_argument("--panel", choices=("flat", "regular", "boundary", "normal115"), required=True)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     run(args.panel, args.output)

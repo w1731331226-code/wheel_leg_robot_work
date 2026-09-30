@@ -1,4 +1,5 @@
 """失败附近实际状态的冷数值起点CPU/Warp单步响应，非闭环域扩展。"""
+import argparse
 import json
 from pathlib import Path
 import numpy as np
@@ -30,9 +31,9 @@ def paired_step(m,scenario,q,v,issued):
     return cq,cv,gq,gv,cp,gp,np.array([d.actuator_force.copy() for d in cpu]),wd.actuator_force.numpy()
 
 
-def run():
+def run(output=None):
     folder=ROOT/'wheelleg_warp/results';source=folder/'height_115_scheduled_guard_20260929'
-    output=folder/'height_115_late_response_20260929';assert not output.exists()
+    output=folder/'height_115_late_response_20260929' if output is None else output;assert not output.exists()
     paths=[source/'verification.json',folder/'height_115_action_predict_1nm_single_graph_20260929/verification.json',
            folder/'height_115_local_states_20260928/verification.json']
     log,fit,archive=[json.loads(p.read_text()) for p in paths]
@@ -64,7 +65,7 @@ def run():
     records=[];models=[]
     for backend,Q,V,pairs in [('cpu',cq,cv,cp),('warp',gq,gv,gp)]:
         acceleration=(V[:,va]-v[va])/DT;radial=[]
-        for arm in range(n):
+        for arm in range(len(Q)):
             nxt,_=barriers(Q[arm,qa],V[arm,va],np.zeros(4),G,reserve)
             rad=[(nxt[j]['rate']-base[j]['rate'])/DT for j in range(2)];radial.append(rad)
             L=geometry(m,Q[arm])[1];J=float(margins(m,Q[arm]).min());att=max(pose(Q[arm],scenario)['world_abs_deg']);nonwheel=any(not wheels.intersection(x) for x in pairs[arm])
@@ -104,4 +105,7 @@ def run():
     print(result['status'],qerr,verr,all(pair_equal),flush=True);print(models,flush=True)
 
 
-if __name__=='__main__':run()
+if __name__=='__main__':
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output',type=Path)
+    run(parser.parse_args().output)
