@@ -1,0 +1,23 @@
+{
+  "role": "static_equivalent_nominal_hub_request_diagnostic",
+  "world": 0,
+  "time_s": 7.382999897003174,
+  "actual_mean_leg_angle_deg": 10.208945266934219,
+  "mean_hub_Nm": -1.1157534825047177,
+  "angular_velocity_feedback_Nm": -8.29303668985817,
+  "nominal_hub_theta_gain_Nm_rad": 73.04859077982135,
+  "static_equivalent_request_deg": 15.838458879195,
+  "requested_nominal_height_m": 0.115,
+  "standing_branch_hard_half_angle_deg": 10.790110087601501,
+  "requested_pose_active_q_rad": null,
+  "requested_pose_geometry_reachable": false,
+  "requested_pose_within_active_limits": false,
+  "reconstructed_old_gyro_rad_s": 0.1124820560216904,
+  "definition": "theta_equivalent=mean_leg_angle+(mean_virtual_hub-angular_velocity_feedback)/hub_theta_gain",
+  "limitations": "Reconstructed lagged gyro and nonbinding nominal hips. Static equivalent of hub position component with other states fixed; not an explicit full-LQR desired equilibrium or a full-task causal proof.",
+  "input_sha256": {
+    "wheelleg_warp/results/height_115_action_predict_1nm_single_graph_20260929/verification.json": "ec9ee2120add9f69c8d745215a9ba42df5365833f7224eff7466d744d4090d89",
+    "wheelleg_warp/results/height_115_local_states_20260928/verification.json": "b8cea295a23d1950ff486d5c06e5d95daf33da4dbb3238a8c9235cdf16919228",
+    "wheelleg_warp/results/height_115_local_states_20260928/windows.npz": "33153efe7d688c5e697c786d101067716284326ee9e3bb9f331b748cb138d30d"
+  }
+}
