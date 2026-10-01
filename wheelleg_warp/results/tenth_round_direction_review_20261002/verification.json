@@ -1,0 +1,260 @@
+{
+  "role": "tenth_round_evidence_and_direction_review",
+  "paired_public_groups": {
+    "nominal": {
+      "old_tasks": 4,
+      "new_tasks": 6,
+      "full_gates": 6,
+      "old_mean_yaw_score_deg": 0.16606568439551603,
+      "new_mean_yaw_score_deg": 0.15738164701663646,
+      "minimum_active_design_margin_rad": 7.390975951260259e-07
+    },
+    "training_corner": {
+      "old_tasks": 3,
+      "new_tasks": 3,
+      "full_gates": 3,
+      "old_mean_yaw_score_deg": 0.5024655002222426,
+      "new_mean_yaw_score_deg": 0.5019886366692485,
+      "minimum_active_design_margin_rad": -0.01942608356475839
+    },
+    "pressure_corner": {
+      "old_tasks": 4,
+      "new_tasks": 4,
+      "full_gates": 4,
+      "old_mean_yaw_score_deg": 0.5610128853088733,
+      "new_mean_yaw_score_deg": 0.5565622331637339,
+      "minimum_active_design_margin_rad": -0.0400801658630372
+    }
+  },
+  "optimistic_m3_actuator_authority": [
+    {
+      "world": 0,
+      "samples": 3999,
+      "stats": {
+        "whole_stop": {
+          "F+": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          },
+          "F-": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          },
+          "H+": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          },
+          "H-": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          },
+          "yaw+": {
+            "mean_lambda": 0.9996692018712526,
+            "fully_available_fraction": 0.9994998749687422,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.00025006251562890725
+          },
+          "yaw-": {
+            "mean_lambda": 0.9996692018712526,
+            "fully_available_fraction": 0.9994998749687422,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.00025006251562890725
+          }
+        },
+        "first_075s": {
+          "F+": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          },
+          "F-": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          },
+          "H+": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          },
+          "H-": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          },
+          "yaw+": {
+            "mean_lambda": 0.9991175038579981,
+            "fully_available_fraction": 0.9986657771847899,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.00066711140760507
+          },
+          "yaw-": {
+            "mean_lambda": 0.9991175038579981,
+            "fully_available_fraction": 0.9986657771847899,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.00066711140760507
+          }
+        },
+        "tail_from_15s": {
+          "F+": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          },
+          "F-": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          },
+          "H+": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          },
+          "H-": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          },
+          "yaw+": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          },
+          "yaw-": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          }
+        }
+      },
+      "input_sha256": "b9b36dcc73c1d4e9fece9514d7895c287ae5d64d2bc7fc797f087d0b588e25b6"
+    },
+    {
+      "world": 1,
+      "samples": 3994,
+      "stats": {
+        "whole_stop": {
+          "F+": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          },
+          "F-": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          },
+          "H+": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          },
+          "H-": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          },
+          "yaw+": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          },
+          "yaw-": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          }
+        },
+        "first_075s": {
+          "F+": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          },
+          "F-": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          },
+          "H+": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          },
+          "H-": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          },
+          "yaw+": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          },
+          "yaw-": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          }
+        },
+        "tail_from_15s": {
+          "F+": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          },
+          "F-": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          },
+          "H+": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          },
+          "H-": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          },
+          "yaw+": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          },
+          "yaw-": {
+            "mean_lambda": 1.0,
+            "fully_available_fraction": 1.0,
+            "motor_effect_below_1e_minus6_Nm_fraction": 0.0
+          }
+        }
+      },
+      "input_sha256": "663f4ee685c6f9fdb26d53b7e9a248de181fb6fc2468647bb69899db4b03e906"
+    }
+  ],
+  "scope": "Authority uses archived nominal predicted pre-step states and already accepted total commands as hypothetical shared Nom; it ignores original raw-base invalid flags and joint/geometry constraints, so is an upper bound, not current Actor authority or safe admissibility.",
+  "full_admission": false,
+  "learning_performed": false,
+  "primary_yaw_advantage_proven": false,
+  "input_sha256": {
+    "wheelleg_warp/results/ninth_round_frozen_plan_panel_20261002/verification.json": "71c4d89a3628c46fb0227f35e9200601a35b9ee2c1ff6b0de23be4a64c42edec",
+    "wheelleg_warp/results/ninth_round_frozen_plan_panel_20261002/trace.npz": "479015888b2d85f8e2b59776d153e81b0eb39f164fb521ef32db494d2c1856fd",
+    "wheelleg_warp/results/fifth_round_registered_robustness_20261002/verification.json": "208f6ec4f8ebba61b53117c96a75b626e4fef394630891fe6eeaa72e9ea92701"
+  },
+  "source_sha256": {
+    "wheelleg_warp/results/tenth_round_direction_review_20261002/check.py": "24f3bea62731fe90e2cd5e156c989cb2963faebb69cca64ff2c77cafedeeba02",
+    "wheelleg_warp/native/controller.py": "b010a17559273f6e3e41f0f37d43ecb06adfecf653daca851f916a88d9b2435b",
+    "wheelleg_warp/probe_height_115_contact_action_pair.py": "4195233cf27b27bdeb65f8e6d40b648a3aa75e656ab7974afc09ac86c7d4d3cb",
+    "wheelleg_warp/probe_height_115_radial_authority.py": "c5e517a6bbfafaca4213d3e38c13ee2e4c893c02d319a81c09126fa836ade5c2"
+  },
+  "provisional_field_name_correction": {
+    "old_key": "motor_effect_below_original_1e6Nm_tolerance_fraction",
+    "new_key": "motor_effect_below_1e_minus6_Nm_fraction",
+    "numeric_threshold_Nm": 1e-06,
+    "numeric_values_changed": false,
+    "initial_verification_sha256": "11e00974befed5870fc9dd035dc921bc652b60937f88d49aa4ad793d9ff2d140",
+    "executed_checker_preserved": "source_at_run.py"
+  }
+}

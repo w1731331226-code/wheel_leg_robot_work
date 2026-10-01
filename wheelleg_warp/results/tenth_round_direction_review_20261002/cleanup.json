@@ -1,0 +1,65 @@
+{
+  "scope": "immutable round6-8 snapshots/registered data only, no runtime source, unique result or failure removed",
+  "duplicate_copies_replaced": 7,
+  "duplicate_payload_bytes": 102709,
+  "freed_allocated_file_bytes": 114688,
+  "note": "Hardlinks preserve original paths, contents and file-relative imports. Git already stores identical blobs once; Git clone may recreate separate working-tree copies. Do not edit frozen archives in place.",
+  "entries": [
+    {
+      "path": "wheelleg_warp/results/seventh_round_joint_allocation_20261002/hocbf_all/registered_cases.json",
+      "canonical": "wheelleg_warp/results/sixth_round_coupled_feedback_20261002/registered_cases.json",
+      "sha256": "7cf8538165f1837bc3e5af4e1aa083ee8e12550c070c6e0a9ed986b79db8830d",
+      "duplicate_payload_bytes": 2885,
+      "freed_allocated_file_bytes": 4096,
+      "method": "hardlink; file-relative source resolution preserved"
+    },
+    {
+      "path": "wheelleg_warp/results/seventh_round_joint_allocation_20261002/hocbf_all/source/wheelleg_warp/results/sixth_round_coupled_feedback_20261002/diagnostic.py",
+      "canonical": "wheelleg_warp/results/sixth_round_coupled_feedback_20261002/source/wheelleg_warp/results/sixth_round_coupled_feedback_20261002/diagnostic.py",
+      "sha256": "a548c459b428c2b00ba5bff4ce28b82b3ca34a2a23b46441ec5c3e3f325d0ad0",
+      "duplicate_payload_bytes": 10040,
+      "freed_allocated_file_bytes": 12288,
+      "method": "hardlink; file-relative source resolution preserved"
+    },
+    {
+      "path": "wheelleg_warp/results/seventh_round_joint_allocation_20261002/hocbf_all/source/wheelleg_warp/native/controller.py",
+      "canonical": "wheelleg_warp/results/sixth_round_coupled_feedback_20261002/source/wheelleg_warp/native/controller.py",
+      "sha256": "b010a17559273f6e3e41f0f37d43ecb06adfecf653daca851f916a88d9b2435b",
+      "duplicate_payload_bytes": 21658,
+      "freed_allocated_file_bytes": 24576,
+      "method": "hardlink; file-relative source resolution preserved"
+    },
+    {
+      "path": "wheelleg_warp/results/seventh_round_joint_allocation_20261002/hocbf_all/source/wheelleg_warp/native/environment.py",
+      "canonical": "wheelleg_warp/results/sixth_round_coupled_feedback_20261002/source/wheelleg_warp/native/environment.py",
+      "sha256": "91aef8dd905a05e4ed39aa4bbdddce75e76dc405f93aa427c63e75915a84a261",
+      "duplicate_payload_bytes": 40131,
+      "freed_allocated_file_bytes": 40960,
+      "method": "hardlink; file-relative source resolution preserved"
+    },
+    {
+      "path": "wheelleg_warp/results/seventh_round_joint_allocation_20261002/source/wheelleg_ppo/tools/model_lqr.py",
+      "canonical": "wheelleg_warp/results/sixth_round_coupled_feedback_20261002/source/wheelleg_ppo/tools/model_lqr.py",
+      "sha256": "d63db108ece884340cff2589cf50729ca1dfd2ffd44adb8260b8155570ffbf82",
+      "duplicate_payload_bytes": 21893,
+      "freed_allocated_file_bytes": 24576,
+      "method": "hardlink; file-relative source resolution preserved"
+    },
+    {
+      "path": "wheelleg_warp/results/seventh_round_joint_allocation_20261002/source/wheelleg_warp/training_contract.py",
+      "canonical": "wheelleg_warp/results/sixth_round_coupled_feedback_20261002/source/wheelleg_warp/training_contract.py",
+      "sha256": "ab2ffa1ad62cdab9f940a8a5701b65553eef474cf173a71809ab84ce78427bb7",
+      "duplicate_payload_bytes": 3238,
+      "freed_allocated_file_bytes": 4096,
+      "method": "hardlink; file-relative source resolution preserved"
+    },
+    {
+      "path": "wheelleg_warp/results/seventh_round_joint_allocation_20261002/source/wheelleg_warp/native/design.py",
+      "canonical": "wheelleg_warp/results/sixth_round_coupled_feedback_20261002/source/wheelleg_warp/native/design.py",
+      "sha256": "fcdd61b8a03f7513561a83b67b78c1451a2deede3a6cbc90746096393909598e",
+      "duplicate_payload_bytes": 2864,
+      "freed_allocated_file_bytes": 4096,
+      "method": "hardlink; file-relative source resolution preserved"
+    }
+  ]
+}
