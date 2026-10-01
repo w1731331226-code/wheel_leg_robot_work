@@ -1,0 +1,217 @@
+{
+  "role": "current_state_nominal_absolute_one_step_forecast",
+  "samples": [
+    {
+      "world": 0,
+      "elapsed_s": 0.1,
+      "length_error_m": 3.7541029423993066e-08,
+      "eight_joint_error_rad": 1.4940111658923172e-07,
+      "vx_error_m_s": 7.716145413172448e-06,
+      "active_velocity_error_rad_s": 0.00020094407851067864,
+      "full_qpos_baseline_error": 1.3421012781122954e-06,
+      "full_qvel_baseline_error": 0.0004295440931940675,
+      "current_model_FD_and_baseline_ms": 0.13665499864146113
+    },
+    {
+      "world": 0,
+      "elapsed_s": 0.5,
+      "length_error_m": 1.8658543043947873e-08,
+      "eight_joint_error_rad": 7.263452550532179e-08,
+      "vx_error_m_s": 1.806411462579316e-06,
+      "active_velocity_error_rad_s": 6.340678055238858e-05,
+      "full_qpos_baseline_error": 1.9289777313247214e-06,
+      "full_qvel_baseline_error": 0.00013433408893215315,
+      "current_model_FD_and_baseline_ms": 0.1090059959096834
+    },
+    {
+      "world": 0,
+      "elapsed_s": 1.0,
+      "length_error_m": 2.133271506665757e-08,
+      "eight_joint_error_rad": 1.0693847896092734e-07,
+      "vx_error_m_s": 8.682195851491149e-07,
+      "active_velocity_error_rad_s": 0.00010271512813286865,
+      "full_qpos_baseline_error": 5.17676362221664e-07,
+      "full_qvel_baseline_error": 0.0002283058317663622,
+      "current_model_FD_and_baseline_ms": 0.10705999739002436
+    },
+    {
+      "world": 1,
+      "elapsed_s": 0.1,
+      "length_error_m": 3.050224200995544e-08,
+      "eight_joint_error_rad": 1.3901884865497038e-07,
+      "vx_error_m_s": 6.023904575547245e-06,
+      "active_velocity_error_rad_s": 0.00016029944047080136,
+      "full_qpos_baseline_error": 1.1919362989942783e-06,
+      "full_qvel_baseline_error": 0.0003452452529160155,
+      "current_model_FD_and_baseline_ms": 0.1035189998219721
+    },
+    {
+      "world": 1,
+      "elapsed_s": 0.5,
+      "length_error_m": 2.50029630888271e-08,
+      "eight_joint_error_rad": 9.266444678246444e-08,
+      "vx_error_m_s": 1.17997490045596e-06,
+      "active_velocity_error_rad_s": 5.3819978439284544e-05,
+      "full_qpos_baseline_error": 1.1744132422109033e-06,
+      "full_qvel_baseline_error": 0.00012323163445593366,
+      "current_model_FD_and_baseline_ms": 0.10521199874347076
+    },
+    {
+      "world": 1,
+      "elapsed_s": 1.0,
+      "length_error_m": 1.7780934849498387e-08,
+      "eight_joint_error_rad": 7.401650625737943e-08,
+      "vx_error_m_s": 1.124140944041294e-06,
+      "active_velocity_error_rad_s": 4.9549453725594717e-05,
+      "full_qpos_baseline_error": 1.8978337408270818e-06,
+      "full_qvel_baseline_error": 0.00010806662468132444,
+      "current_model_FD_and_baseline_ms": 0.10745000327005982
+    },
+    {
+      "world": 2,
+      "elapsed_s": 0.1,
+      "length_error_m": 3.771985891687368e-08,
+      "eight_joint_error_rad": 1.8173698657086845e-07,
+      "vx_error_m_s": 8.585172219244264e-06,
+      "active_velocity_error_rad_s": 0.000248933562376763,
+      "full_qpos_baseline_error": 1.6795970836369634e-06,
+      "full_qvel_baseline_error": 0.0005417230183386579,
+      "current_model_FD_and_baseline_ms": 0.0999469993985258
+    },
+    {
+      "world": 2,
+      "elapsed_s": 0.5,
+      "length_error_m": 1.930328159815975e-08,
+      "eight_joint_error_rad": 9.455282889980765e-08,
+      "vx_error_m_s": 8.573089322894134e-07,
+      "active_velocity_error_rad_s": 5.664701536012284e-05,
+      "full_qpos_baseline_error": 2.342060795967882e-06,
+      "full_qvel_baseline_error": 0.00014096435053767564,
+      "current_model_FD_and_baseline_ms": 0.11730799451470375
+    },
+    {
+      "world": 2,
+      "elapsed_s": 1.0,
+      "length_error_m": 2.4202053430788517e-08,
+      "eight_joint_error_rad": 9.227731179173304e-08,
+      "vx_error_m_s": 1.1838653022815202e-06,
+      "active_velocity_error_rad_s": 9.702463751287693e-05,
+      "full_qpos_baseline_error": 2.660272713228551e-06,
+      "full_qvel_baseline_error": 0.00021404386196527403,
+      "current_model_FD_and_baseline_ms": 0.11643399921013042
+    },
+    {
+      "world": 3,
+      "elapsed_s": 0.1,
+      "length_error_m": 3.637415138535438e-08,
+      "eight_joint_error_rad": 1.6328086571704148e-07,
+      "vx_error_m_s": 7.2331807694503425e-06,
+      "active_velocity_error_rad_s": 0.00021404907346922464,
+      "full_qpos_baseline_error": 1.7037019048871116e-06,
+      "full_qvel_baseline_error": 0.0004666300872990803,
+      "current_model_FD_and_baseline_ms": 0.11156500113429502
+    },
+    {
+      "world": 3,
+      "elapsed_s": 0.5,
+      "length_error_m": 1.4300920836429754e-08,
+      "eight_joint_error_rad": 6.219166581722391e-08,
+      "vx_error_m_s": 7.731478628980604e-07,
+      "active_velocity_error_rad_s": 2.179650275541123e-05,
+      "full_qpos_baseline_error": 1.8792356044627923e-06,
+      "full_qvel_baseline_error": 4.2240821618744206e-05,
+      "current_model_FD_and_baseline_ms": 0.10532599844736978
+    },
+    {
+      "world": 3,
+      "elapsed_s": 1.0,
+      "length_error_m": 1.7270328736551654e-08,
+      "eight_joint_error_rad": 8.7265580761553e-08,
+      "vx_error_m_s": 1.497196642245499e-07,
+      "active_velocity_error_rad_s": 5.551457132030313e-05,
+      "full_qpos_baseline_error": 1.0775414409636141e-06,
+      "full_qvel_baseline_error": 0.00012447857249131555,
+      "current_model_FD_and_baseline_ms": 0.10968200513161719
+    },
+    {
+      "world": 4,
+      "elapsed_s": 0.1,
+      "length_error_m": 3.6030338587678123e-08,
+      "eight_joint_error_rad": 1.4739776221794898e-07,
+      "vx_error_m_s": 7.043194763411975e-06,
+      "active_velocity_error_rad_s": 0.00020018634411056446,
+      "full_qpos_baseline_error": 2.0616470308709722e-06,
+      "full_qvel_baseline_error": 0.00043477297731442377,
+      "current_model_FD_and_baseline_ms": 0.10787999781314284
+    },
+    {
+      "world": 4,
+      "elapsed_s": 0.5,
+      "length_error_m": 2.0530403113672158e-08,
+      "eight_joint_error_rad": 9.068768447306752e-08,
+      "vx_error_m_s": 1.0590588978010018e-06,
+      "active_velocity_error_rad_s": 3.949786738401649e-05,
+      "full_qpos_baseline_error": 2.7999361691399827e-06,
+      "full_qvel_baseline_error": 7.666088598590193e-05,
+      "current_model_FD_and_baseline_ms": 0.11138999980175868
+    },
+    {
+      "world": 4,
+      "elapsed_s": 1.0,
+      "length_error_m": 1.9370081039138398e-08,
+      "eight_joint_error_rad": 7.580986727262484e-08,
+      "vx_error_m_s": 3.6152297613889495e-07,
+      "active_velocity_error_rad_s": 4.3224458038393365e-05,
+      "full_qpos_baseline_error": 2.640576468593281e-07,
+      "full_qvel_baseline_error": 0.00011747230856196111,
+      "current_model_FD_and_baseline_ms": 0.09818399848882109
+    },
+    {
+      "world": 5,
+      "elapsed_s": 0.1,
+      "length_error_m": 3.6556649582464296e-08,
+      "eight_joint_error_rad": 1.7018873865737305e-07,
+      "vx_error_m_s": 6.608750536152286e-06,
+      "active_velocity_error_rad_s": 0.00029125665701590364,
+      "full_qpos_baseline_error": 4.335982879410949e-07,
+      "full_qvel_baseline_error": 0.0006364073869633557,
+      "current_model_FD_and_baseline_ms": 0.09991100523620844
+    },
+    {
+      "world": 5,
+      "elapsed_s": 0.5,
+      "length_error_m": 1.6831661439620227e-08,
+      "eight_joint_error_rad": 6.269328589603163e-08,
+      "vx_error_m_s": 4.449506973980277e-08,
+      "active_velocity_error_rad_s": 8.771960708902488e-06,
+      "full_qpos_baseline_error": 3.400276540332925e-07,
+      "full_qvel_baseline_error": 2.2677158876590296e-05,
+      "current_model_FD_and_baseline_ms": 0.09984600183088332
+    },
+    {
+      "world": 5,
+      "elapsed_s": 1.0,
+      "length_error_m": 1.6768384084042687e-08,
+      "eight_joint_error_rad": 6.986106337869558e-08,
+      "vx_error_m_s": 7.238294745526286e-07,
+      "active_velocity_error_rad_s": 3.3590390870530396e-05,
+      "full_qpos_baseline_error": 3.1523176602377134e-06,
+      "full_qvel_baseline_error": 7.568427679949252e-05,
+      "current_model_FD_and_baseline_ms": 0.10044900409411639
+    }
+  ],
+  "sample_count": 18,
+  "heldout_mixes": 12,
+  "future_Warp_zero_baseline_used": false,
+  "native_fitted_G_used": false,
+  "information": "Archived current full q/v, known issued command and previous numerical warmstart; fixed public nominal plant and layout. Absolute baseline and actuator sensitivity both calculated by nominal CPU model.",
+  "limitations": "One0.5ms forecast only. Full simulation state/layout and numerical warmstart are not demonstrated available hardware sensor inputs. No native contact comparison or full CPU/Warp pairing claim; no recursive uncertainty, real-time chain, safety controller or full task pass.",
+  "input_sha256": {
+    "wheelleg_warp/results/braking_motor_response_20261001/native_response.npz": "e54ce412e7ba5df352ef67682409aa5b60cb8ef076660ba1d71dc5f097158e2c",
+    "wheelleg_warp/results/braking_motor_response_20261001/prediction.npz": "9713a0654074163d227f56f8c4c8a76ed563008ef91b3e5a2c9f6748ed4691d8",
+    "wheelleg_warp/results/braking_motor_response_20261001/verification.json": "2befd4710905a58d11732b2f6aa945b94c2b099e4aa9f8e62f87c7c8caa6fd58"
+  },
+  "source_sha256": {
+    "wheelleg_warp/probe_braking_motor_response.py": "eb7a9ab99db11f2255b2a5c7007322bfc43825b8501f956782bc13ab618037cf"
+  }
+}

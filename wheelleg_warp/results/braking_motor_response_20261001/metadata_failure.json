@@ -1,0 +1,7 @@
+{
+  "status": "metadata_path_failure_after_data_saved",
+  "reason": "relative source path was passed to relative_to(absolute root)",
+  "physical_data_saved": "native_response.npz",
+  "prediction_saved": "prediction.npz",
+  "next": "normalize paths and reanalyse saved arrays without rerunning Warp collection"
+}
