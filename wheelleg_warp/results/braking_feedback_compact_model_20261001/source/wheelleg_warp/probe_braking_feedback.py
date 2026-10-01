@@ -9,8 +9,8 @@ import warp as wp
 import mujoco_warp as mjw
 from native.controller import D,V6,command_bounds,control_physical
 from native.environment import NativeEnv,begin,command_step,reduce_contacts,collect_physical,after
-from native.models import batch
-from native.terrain import model,HeightTerrainScenario,bank_height_115
+from native.models import batch,compile_spec
+from native.terrain import model,build_spec,HeightTerrainScenario,bank_height_115
 from probe_height_115_margin import cases
 from probe_height_115_contact_action_pair import basis
 from probe_height_115_local_states import snapshot
@@ -41,8 +41,14 @@ def execute_extra(v:wp.array2d[float],ids:wp.array[int],upper:wp.array2d[D],extr
 class Forecaster:
     # ponytail: thirteen fixed candidates; continuous optimization only if this
     # verified grid is the limiting factor. This is not a real-time controller.
-    def __init__(self,env):
-        self.n=env.num_envs;self.count=self.n*13;self.nom=model(HeightTerrainScenario(stand_height_m=.115))
+    def __init__(self,env,compact_model=False):
+        self.n=env.num_envs;self.count=self.n*13;scene=HeightTerrainScenario(stand_height_m=.115)
+        if compact_model:
+            spec=build_spec(scene)
+            for name in ('bump_L','bump_R'):
+                assert spec.geom(name).pos[2]<=-10;spec.delete(spec.geom(name))
+            self.nom=compile_spec(spec,scene)
+        else:self.nom=model(scene)
         _,self.model,self.data,_=batch([self.nom]*self.count,[HeightTerrainScenario(stand_height_m=.115)]*self.count)
         self.ids=wp.array(env.ids.numpy(),dtype=int);self.upper=wp.array(np.tile(env.actuator_gain_upper,(self.count,1)),dtype=D)
         self.state=wp.zeros((self.count,env.k['state'].shape[1]),dtype=D);self.reference=wp.array(np.repeat(env.k['reference'].numpy(),13,axis=0),dtype=D)
@@ -109,14 +115,14 @@ class Forecaster:
         return out,rows
 
 
-def run(output,incremental=False,current_vmc=False):
+def run(output,incremental=False,current_vmc=False,compact_model=False):
     output=output.resolve();assert not output.exists();output.mkdir(parents=True)
     scenes=cases()[4:6];env=NativeEnv(n=2,scenario=scenes,bank_factory=bank_height_115,height_conditioned=True,height_design='range115',
         residual_scale=0,feasible_reference=True,coordinated_reference=True,radial_guard=True)
     try:
         if current_vmc:
             table,_=current_vmc_table();env.k['gains'].assign(np.stack([t[0] for t in table]));env.k['feed'].assign(np.stack([t[1] for t in table]));env.k['angles'].assign(np.array([t[2] for t in table]))
-        env.reset();predictor=Forecaster(env);extra=wp.zeros((2,6),dtype=D);upper=wp.array(np.tile(env.actuator_gain_upper,(2,1)),dtype=D)
+        env.reset();predictor=Forecaster(env,compact_model);extra=wp.zeros((2,6),dtype=D);upper=wp.array(np.tile(env.actuator_gain_upper,(2,1)),dtype=D)
         with wp.ScopedCapture() as capture:
             wp.launch(begin,2,[env.reward])
             for _ in range(10):
@@ -142,7 +148,7 @@ def run(output,incremental=False,current_vmc=False):
         if completed:infos=[{k:v for k,v in r.items() if k!='terminal_observation'} for r in env.step_wait()[3]]
         result=dict(role='independent_5ms_finite_candidate_feedback_highspeed_pilot',completed=completed,prediction_failure=failure,
             episodes=infos,decisions=rows,decision_ms=dict(median=float(np.median(durations)),p95=float(np.percentile(durations,95)),maximum=float(max(durations))) if durations else None,
-            incremental=incremental,current_vmc=current_vmc,predictor_geom_count=predictor.nom.ngeom,extra_L1_increment_limit_Nm=.1,absolute_per_motor_extra_limit_Nm=1. if incremental else .1,feedback_interval_ms=5.,forecast_horizon_ms=5.,original_cost_and_gates_unchanged=True,
+            incremental=incremental,current_vmc=current_vmc,compact_model=compact_model,predictor_geom_count=predictor.nom.ngeom,extra_L1_increment_limit_Nm=.1,absolute_per_motor_extra_limit_Nm=1. if incremental else .1,feedback_interval_ms=5.,forecast_horizon_ms=5.,original_cost_and_gates_unchanged=True,
             limitations='Fixed13-candidate greedy feedback, two nominal highspeed cases only. Predictor reads current full simulator state and known internal memory; not sensor-only or real-time. No default, CPU or PPO changes. Incremental mode uses0.1Nm L1 changes inside existing1Nm absolute motor-extra box; new visited states still need independent model support.',
             source_sha256={str(p.relative_to(ROOT)):sha(p) for p in (Path(__file__),ROOT/'wheelleg_warp/select_braking_common_action.py',ROOT/'wheelleg_warp/probe_braking_phase_chart.py',ROOT/'wheelleg_warp/probe_current_vmc_design.py',ROOT/'wheelleg_warp/native/controller.py',ROOT/'wheelleg_warp/native/environment.py')})
         (output/'verification.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');print('COMPLETED',completed,'success',sum(r['success'] for r in infos),'failure',failure,flush=True)
@@ -150,5 +156,5 @@ def run(output,incremental=False,current_vmc=False):
 
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',type=Path,required=True);parser.add_argument('--incremental',action='store_true');parser.add_argument('--current-vmc',action='store_true')
-    args=parser.parse_args();run(args.output,args.incremental,args.current_vmc)
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',type=Path,required=True);parser.add_argument('--incremental',action='store_true');parser.add_argument('--current-vmc',action='store_true');parser.add_argument('--compact-model',action='store_true')
+    args=parser.parse_args();run(args.output,args.incremental,args.current_vmc,args.compact_model)
