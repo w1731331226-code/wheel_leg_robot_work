@@ -41,7 +41,7 @@ def execute_extra(v:wp.array2d[float],ids:wp.array[int],upper:wp.array2d[D],extr
 
 
 class Forecaster:
-    # ponytail: thirteen fixed candidates; continuous optimization only if this
+    # ponytail: finite fixed candidates; continuous optimization only if this
     # verified grid is the limiting factor. This is not a real-time controller.
     def __init__(self,env,mixed_signs=False):
         self.n=env.num_envs;self.arms=19 if mixed_signs else 13;self.count=self.n*self.arms;self.nom=model(HeightTerrainScenario(stand_height_m=.115))
@@ -145,7 +145,7 @@ def run(output,incremental=False,current_vmc=False,mixed_signs=False):
         result=dict(role='independent_5ms_finite_candidate_feedback_highspeed_pilot',completed=completed,prediction_failure=failure,
             episodes=infos,decisions=rows,decision_ms=dict(median=float(np.median(durations)),p95=float(np.percentile(durations,95)),maximum=float(max(durations))) if durations else None,
             incremental=incremental,current_vmc=current_vmc,mixed_signs=mixed_signs,candidate_count=predictor.arms,predictor_geom_count=predictor.nom.ngeom,extra_L1_increment_limit_Nm=.1,absolute_per_motor_extra_limit_Nm=1. if incremental else .1,feedback_interval_ms=5.,forecast_horizon_ms=5.,original_cost_and_gates_unchanged=True,
-            limitations='Fixed13-candidate greedy feedback, two nominal highspeed cases only. Predictor reads current full simulator state and known internal memory; not sensor-only or real-time. No default, CPU or PPO changes. Incremental mode uses0.1Nm L1 changes inside existing1Nm absolute motor-extra box; new visited states still need independent model support.',
+            limitations=f'Fixed{predictor.arms}-candidate greedy feedback, two nominal highspeed cases only. Selection screens physical constraints, not the original arrival-distance or tail-speed deadline contract. Predictor reads current full simulator state and known internal memory; not sensor-only or real-time. No default, CPU or PPO changes. Incremental mode uses0.1Nm L1 changes inside existing1Nm absolute motor-extra box; new visited states still need independent model support.',
             source_sha256={str(p.relative_to(ROOT)):sha(p) for p in (Path(__file__),ROOT/'wheelleg_warp/select_braking_common_action.py',ROOT/'wheelleg_warp/probe_braking_phase_chart.py',ROOT/'wheelleg_warp/probe_current_vmc_design.py',ROOT/'wheelleg_warp/native/controller.py',ROOT/'wheelleg_warp/native/environment.py')})
         (output/'verification.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');print('COMPLETED',completed,'success',sum(r['success'] for r in infos),'failure',failure,flush=True)
     finally:env.close()
