@@ -16,7 +16,8 @@ from probe_height_115_contact_action_pair import basis
 from probe_height_115_local_states import snapshot
 from probe_braking_nominal_rollout import apply_extra
 from probe_current_vmc_design import current_vmc_table
-from select_braking_common_action import lqr_cost,batch_scores
+from probe_braking_phase_chart import physical_metrics
+from select_braking_common_action import lqr_cost,trajectory_cost,constraint_rejections
 from model_lqr import sagittal_basis
 from probe_height_115_action_predict_loow import sha
 
@@ -52,10 +53,6 @@ class Forecaster:
         self.ref,self.Q,self.R,self.P=lqr_cost(self.nom);b,u=sagittal_basis(self.nom);self.project=np.linalg.pinv(b);self.input_project=np.linalg.pinv(u)
         self.nq=self.nom.nq;self.nv=self.nom.nv;self.width=1+self.nq+2*self.nv+6
         self.trace=wp.zeros((10,self.count,self.width),dtype=D);self.force=wp.zeros((10,self.count,6),dtype=D)
-        with wp.ScopedCapture() as initialize:
-            self.control();wp.launch(apply_extra,self.count,[self.data.qvel,self.ids,self.upper,self.extra,self.data.ctrl])
-            mjw.forward(self.model,self.data);wp.copy(self.data.qacc_warmstart,self.data.qacc)
-        self.initialize_graph=initialize.graph
         with wp.ScopedCapture() as capture:
             for slot in range(10):
                 self.control();wp.launch(apply_extra,self.count,[self.data.qvel,self.ids,self.upper,self.extra,self.data.ctrl]);mjw.step(self.model,self.data)
@@ -85,21 +82,25 @@ class Forecaster:
         wp.synchronize_device();timing_upload=perf_counter()
         # Calculate current Nom using known past sensor/filter state. Own forward
         # solve initializes numerical warmstart without advancing q/v.
-        wp.capture_launch(self.initialize_graph)
+        self.control();wp.launch(apply_extra,self.count,[self.data.qvel,self.ids,self.upper,self.extra,self.data.ctrl])
+        mjw.forward(self.model,self.data);wp.copy(self.data.qacc_warmstart,self.data.qacc)
         # Restore BEFORE-current-control memory/sensors; rollout computes it once.
         self.state.assign(np.repeat(memory,13,axis=0));self.data.sensordata.assign(np.repeat(sensor,13,axis=0))
         wp.synchronize_device();timing_initialize=perf_counter()
         wp.capture_launch(self.graph);trace=self.trace.numpy();force=self.force.numpy()
         timing_forecast=perf_counter()
-        all_q=trace[:,:,1:1+self.nq];all_v=trace[:,:,1+self.nq:1+self.nq+self.nv];all_cmd=trace[:,:,-6:]
-        all_cost,all_valid=batch_scores(self.nom,all_q,all_v,all_cmd,force,np.repeat(q,13,axis=0),np.repeat(v,13,axis=0),np.repeat(memory,13,axis=0),self.ref,self.Q,self.R,self.P,self.project,self.input_project)
         out=np.zeros((self.n,6));rows=[]
         for i in np.flatnonzero(stopped):
-            values=all_cost[i*13:(i+1)*13];valid=all_valid[i*13:(i+1)*13]
+            values=[];valid=[]
+            for arm in range(13):
+                index=i*13+arm;p=trace[:,index,1:1+self.nq];vel=trace[:,index,1+self.nq:1+self.nq+self.nv];cmd=trace[:,index,-6:]
+                reasons=constraint_rejections(self.nom,p,vel);prior=np.r_[v[i:i+1],vel[:-1]]
+                if physical_metrics(self.nom,p,vel,force[:,index],prior,cmd)['safe_arms']!=10:reasons.append('physical_gate')
+                values.append(trajectory_cost(self.nom,p,vel,cmd,q[i],v[i],memory[i],self.ref,self.Q,self.R,self.P,self.project,self.input_project));valid.append(not reasons)
             choices=np.flatnonzero(valid)
-            if not len(choices):return None,dict(world=int(i),reason='no_valid_candidate',values=values.tolist())
+            if not len(choices):return None,dict(world=int(i),reason='no_valid_candidate',values=values)
             arm=int(choices[np.argmin(np.array(values)[choices])]);out[i]=changes[i*13+arm]
-            rows.append(dict(world=int(i),arm=arm,valid_candidates=len(choices),cost=float(values[arm]),zero_cost=float(values[0])))
+            rows.append(dict(world=int(i),arm=arm,valid_candidates=len(choices),cost=values[arm],zero_cost=values[0]))
         timing_end=perf_counter()
         self.last_timing=dict(read_inputs_ms=(timing_read-timing_start)*1000,candidates_and_upload_ms=(timing_upload-timing_read)*1000,
             own_initialization_ms=(timing_initialize-timing_upload)*1000,rollout_and_download_ms=(timing_forecast-timing_initialize)*1000,

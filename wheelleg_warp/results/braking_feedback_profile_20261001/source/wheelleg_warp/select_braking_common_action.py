@@ -8,7 +8,6 @@ sys.path[:0]=[str(ROOT/'wheelleg_warp'),str(ROOT/'wheelleg_ppo/tools')]
 import mujoco
 import numpy as np
 from scipy.linalg import solve_discrete_are
-from scipy.spatial.transform import Rotation
 import wheelleg_sim as sim
 import model_lqr as ml
 from native.terrain import model,HeightTerrainScenario,HEIGHT_115_GEOMETRIC_MIN as LIMIT
@@ -47,34 +46,6 @@ def constraint_rejections(m,q,v):
     if np.any(200*(caps-joints[-1])-speeds<0) or np.any(200*(caps+joints[-1])+speeds<0):reasons.append('terminal_joint_cone')
     if not np.isfinite(np.c_[q,v]).all():reasons.append('nonfinite_state')
     return reasons
-
-
-def batch_scores(m,q,v,commands,force,initial_q,initial_v,memory,ref,Q,R,P,project,input_project):
-    """Same discrete objective and gates for all candidate traces in one batch."""
-    steps,count=q.shape[:2];poses=np.concatenate([initial_q[None],q]);vels=np.concatenate([initial_v[None],v])
-    reference=np.tile(ref.qpos,(count,1));reference[:,0]=np.where(memory[:,13]>0,memory[:,14],initial_q[:,0])
-    tangent=np.zeros((steps+1,count,m.nv));tangent[:,:,:3]=poses[:,:,:3]-reference[None,:,:3]
-    rotations=Rotation.from_quat(poses[:,:,[4,5,6,3]].reshape(-1,4))
-    base=Rotation.from_quat(reference[:,[4,5,6,3]])
-    tangent[:,:,3:6]=(Rotation.from_quat(np.tile(base.inv().as_quat(),(steps+1,1)))*rotations).as_rotvec().reshape(steps+1,count,3)
-    tangent[:,:,6:]=poses[:,:,7:]-reference[None,:,7:]
-    states=np.concatenate([tangent,vels],axis=2)@project.T;du=(commands-ref.ctrl)@input_project.T
-    costs=np.einsum('tni,ij,tnj->n',states[:-1],Q,states[:-1])+np.einsum('tni,ij,tnj->n',du,R,du)+np.einsum('ni,ij,nj->n',states[-1],P,states[-1])
-    f=features(m,q.reshape(-1,m.nq),v.reshape(-1,m.nv)).reshape(steps,count,-1)
-    joint=f[:,:,4:12];caps=np.array([1.4,1.4,2.5,2.5,1.4,1.4,2.5,2.5]);dofs=[m.joint(n).dofadr[0] for n in JOINTS]
-    valid=np.all(abs(joint)<=caps,axis=(0,2))&np.all(f[:,:,:4]>=LIMIT,axis=(0,2))
-    valid &= np.all(200*(caps-joint[-1])-v[-1,:,dofs].T>=0,axis=1)&np.all(200*(caps+joint[-1])+v[-1,:,dofs].T>=0,axis=1)
-    quat=q[:,:,3:7];pitch=np.arcsin(np.clip(2*(quat[:,:,0]*quat[:,:,2]-quat[:,:,3]*quat[:,:,1]),-1,1))
-    roll=np.arctan2(2*(quat[:,:,0]*quat[:,:,1]+quat[:,:,2]*quat[:,:,3]),1-2*(quat[:,:,1]**2+quat[:,:,2]**2))
-    yaw=np.arctan2(2*(quat[:,:,0]*quat[:,:,3]+quat[:,:,1]*quat[:,:,2]),1-2*(quat[:,:,2]**2+quat[:,:,3]**2))
-    valid &= np.all(np.maximum.reduce([abs(roll),abs(pitch),abs(yaw)])<=np.deg2rad(5),axis=0)
-    motor=[m.joint(n).dofadr[0] for n in ('alphaL','betaL','alphaR','betaR','wheel1','wheel2')]
-    rpm=abs(vels[:-1][:,:,motor])*30/np.pi;rated=np.array([sim.hw.HIP_RATED_RPM]*4+[sim.hw.MOTOR_RATED_RPM]*2)
-    no_load=np.array([sim.hw.HIP_NO_LOAD_RPM]*4+[sim.hw.MOTOR_NO_LOAD_RPM]*2)
-    bound=np.array([40.]*4+[4.5]*2)*np.clip((no_load-rpm)/(no_load-rated),0,1)
-    valid &= np.all(abs(force)<=bound+1e-6,axis=(0,2))&np.all(abs(commands)<=bound/np.array([1.,1.,1.,1.,1.05,1.05])+1e-6,axis=(0,2))
-    valid &= np.isfinite(costs)&np.isfinite(np.concatenate([q,v,commands,force],axis=2)).all(axis=(0,2))
-    return costs,valid
 
 
 def run(source,output):

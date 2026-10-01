@@ -52,10 +52,6 @@ class Forecaster:
         self.ref,self.Q,self.R,self.P=lqr_cost(self.nom);b,u=sagittal_basis(self.nom);self.project=np.linalg.pinv(b);self.input_project=np.linalg.pinv(u)
         self.nq=self.nom.nq;self.nv=self.nom.nv;self.width=1+self.nq+2*self.nv+6
         self.trace=wp.zeros((10,self.count,self.width),dtype=D);self.force=wp.zeros((10,self.count,6),dtype=D)
-        with wp.ScopedCapture() as initialize:
-            self.control();wp.launch(apply_extra,self.count,[self.data.qvel,self.ids,self.upper,self.extra,self.data.ctrl])
-            mjw.forward(self.model,self.data);wp.copy(self.data.qacc_warmstart,self.data.qacc)
-        self.initialize_graph=initialize.graph
         with wp.ScopedCapture() as capture:
             for slot in range(10):
                 self.control();wp.launch(apply_extra,self.count,[self.data.qvel,self.ids,self.upper,self.extra,self.data.ctrl]);mjw.step(self.model,self.data)
@@ -85,7 +81,8 @@ class Forecaster:
         wp.synchronize_device();timing_upload=perf_counter()
         # Calculate current Nom using known past sensor/filter state. Own forward
         # solve initializes numerical warmstart without advancing q/v.
-        wp.capture_launch(self.initialize_graph)
+        self.control();wp.launch(apply_extra,self.count,[self.data.qvel,self.ids,self.upper,self.extra,self.data.ctrl])
+        mjw.forward(self.model,self.data);wp.copy(self.data.qacc_warmstart,self.data.qacc)
         # Restore BEFORE-current-control memory/sensors; rollout computes it once.
         self.state.assign(np.repeat(memory,13,axis=0));self.data.sensordata.assign(np.repeat(sensor,13,axis=0))
         wp.synchronize_device();timing_initialize=perf_counter()
