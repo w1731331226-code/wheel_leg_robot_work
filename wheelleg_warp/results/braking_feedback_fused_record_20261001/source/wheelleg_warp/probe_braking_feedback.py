@@ -43,11 +43,11 @@ def execute_extra(v:wp.array2d[float],ids:wp.array[int],upper:wp.array2d[D],extr
 class Forecaster:
     # ponytail: thirteen fixed candidates; continuous optimization only if this
     # verified grid is the limiting factor. This is not a real-time controller.
-    def __init__(self,env,mixed_signs=False):
-        self.n=env.num_envs;self.arms=19 if mixed_signs else 13;self.count=self.n*self.arms;self.nom=model(HeightTerrainScenario(stand_height_m=.115))
+    def __init__(self,env):
+        self.n=env.num_envs;self.count=self.n*13;self.nom=model(HeightTerrainScenario(stand_height_m=.115))
         _,self.model,self.data,_=batch([self.nom]*self.count,[HeightTerrainScenario(stand_height_m=.115)]*self.count)
         self.ids=wp.array(env.ids.numpy(),dtype=int);self.upper=wp.array(np.tile(env.actuator_gain_upper,(self.count,1)),dtype=D)
-        self.state=wp.zeros((self.count,env.k['state'].shape[1]),dtype=D);self.reference=wp.array(np.repeat(env.k['reference'].numpy(),self.arms,axis=0),dtype=D)
+        self.state=wp.zeros((self.count,env.k['state'].shape[1]),dtype=D);self.reference=wp.array(np.repeat(env.k['reference'].numpy(),13,axis=0),dtype=D)
         self.fixed={k:wp.array(env.k[k].numpy(),dtype=D) for k in ('heights','gains','feed','angles','yaw')}
         self.targets=wp.zeros((self.count,3));self.command=wp.zeros(self.count,dtype=D);self.active=wp.ones(self.count,dtype=int)
         self.diag=wp.zeros((self.count,38),dtype=D);self.extra=wp.zeros((self.count,6),dtype=D)
@@ -76,33 +76,32 @@ class Forecaster:
         for i in range(self.n):
             b=basis(self.nom,q[i],v[i]);b=b/np.sum(abs(b),axis=0)*.1
             dirs=[b[:,j] for j in range(3)]+[(b[:,0]+b[:,1])/2,(b[:,1]+b[:,2])/2,(b[:,0]+b[:,2])/2]
-            if self.arms==19:dirs += [(b[:,0]-b[:,1])/2,(b[:,1]-b[:,2])/2,(b[:,0]-b[:,2])/2]
             changes.append(np.array([np.zeros(6)]+[signed for d in dirs for signed in (d,-d)]))
         changes=np.concatenate(changes);assert np.max(np.sum(abs(changes),axis=1))<=.10000000001
         if current is not None:
-            changes=np.clip(changes+np.repeat(current,self.arms,axis=0),-1.,1.)
-            assert np.max(abs(changes))<=1. and np.max(np.sum(abs(changes-np.repeat(current,self.arms,axis=0)),axis=1))<=.10000000001
-        self.extra.assign(changes);self.data.qpos.assign(np.repeat(q,self.arms,axis=0));self.data.qvel.assign(np.repeat(v,self.arms,axis=0))
-        self.data.sensordata.assign(np.repeat(sensor,self.arms,axis=0));self.data.qacc_warmstart.zero_();self.state.assign(np.repeat(memory,self.arms,axis=0))
+            changes=np.clip(changes+np.repeat(current,13,axis=0),-1.,1.)
+            assert np.max(abs(changes))<=1. and np.max(np.sum(abs(changes-np.repeat(current,13,axis=0)),axis=1))<=.10000000001
+        self.extra.assign(changes);self.data.qpos.assign(np.repeat(q,13,axis=0));self.data.qvel.assign(np.repeat(v,13,axis=0))
+        self.data.sensordata.assign(np.repeat(sensor,13,axis=0));self.data.qacc_warmstart.zero_();self.state.assign(np.repeat(memory,13,axis=0))
         wp.synchronize_device();timing_upload=perf_counter()
         # Calculate current Nom using known past sensor/filter state. Own forward
         # solve initializes numerical warmstart without advancing q/v.
         wp.capture_launch(self.initialize_graph)
         # Restore BEFORE-current-control memory/sensors; rollout computes it once.
-        self.state.assign(np.repeat(memory,self.arms,axis=0));self.data.sensordata.assign(np.repeat(sensor,self.arms,axis=0))
+        self.state.assign(np.repeat(memory,13,axis=0));self.data.sensordata.assign(np.repeat(sensor,13,axis=0))
         wp.synchronize_device();timing_initialize=perf_counter()
         wp.capture_launch(self.graph);wp.synchronize_device();timing_gpu=perf_counter()
         trace=self.trace.numpy();force=trace[:,:,-6:]
         timing_forecast=perf_counter()
         all_q=trace[:,:,:self.nq];all_v=trace[:,:,self.nq:self.nq+self.nv];all_cmd=trace[:,:,-12:-6]
-        all_cost,all_valid=batch_scores(self.nom,all_q,all_v,all_cmd,force,np.repeat(q,self.arms,axis=0),np.repeat(v,self.arms,axis=0),np.repeat(memory,self.arms,axis=0),self.ref,self.Q,self.R,self.P,self.project,self.input_project)
+        all_cost,all_valid=batch_scores(self.nom,all_q,all_v,all_cmd,force,np.repeat(q,13,axis=0),np.repeat(v,13,axis=0),np.repeat(memory,13,axis=0),self.ref,self.Q,self.R,self.P,self.project,self.input_project)
         out=np.zeros((self.n,6));rows=[]
         for i in np.flatnonzero(stopped):
-            values=all_cost[i*self.arms:(i+1)*self.arms];valid=all_valid[i*self.arms:(i+1)*self.arms]
+            values=all_cost[i*13:(i+1)*13];valid=all_valid[i*13:(i+1)*13]
             choices=np.flatnonzero(valid)
             if not len(choices):return None,dict(world=int(i),reason='no_valid_candidate',values=values.tolist())
-            arm=int(choices[np.argmin(np.array(values)[choices])]);out[i]=changes[i*self.arms+arm]
-            rows.append(dict(world=int(i),arm=arm,valid_candidates=len(choices),distinct_candidates=len(np.unique(changes[i*self.arms:(i+1)*self.arms],axis=0)),cost=float(values[arm]),zero_cost=float(values[0])))
+            arm=int(choices[np.argmin(np.array(values)[choices])]);out[i]=changes[i*13+arm]
+            rows.append(dict(world=int(i),arm=arm,valid_candidates=len(choices),distinct_candidates=len(np.unique(changes[i*13:(i+1)*13],axis=0)),cost=float(values[arm]),zero_cost=float(values[0])))
         timing_end=perf_counter()
         self.last_timing=dict(read_inputs_ms=(timing_read-timing_start)*1000,candidates_and_upload_ms=(timing_upload-timing_read)*1000,
             own_initialization_ms=(timing_initialize-timing_upload)*1000,rollout_and_download_ms=(timing_forecast-timing_initialize)*1000,
@@ -111,14 +110,14 @@ class Forecaster:
         return out,rows
 
 
-def run(output,incremental=False,current_vmc=False,mixed_signs=False):
+def run(output,incremental=False,current_vmc=False):
     output=output.resolve();assert not output.exists();output.mkdir(parents=True)
     scenes=cases()[4:6];env=NativeEnv(n=2,scenario=scenes,bank_factory=bank_height_115,height_conditioned=True,height_design='range115',
         residual_scale=0,feasible_reference=True,coordinated_reference=True,radial_guard=True)
     try:
         if current_vmc:
             table,_=current_vmc_table();env.k['gains'].assign(np.stack([t[0] for t in table]));env.k['feed'].assign(np.stack([t[1] for t in table]));env.k['angles'].assign(np.array([t[2] for t in table]))
-        env.reset();predictor=Forecaster(env,mixed_signs);extra=wp.zeros((2,6),dtype=D);upper=wp.array(np.tile(env.actuator_gain_upper,(2,1)),dtype=D)
+        env.reset();predictor=Forecaster(env);extra=wp.zeros((2,6),dtype=D);upper=wp.array(np.tile(env.actuator_gain_upper,(2,1)),dtype=D)
         with wp.ScopedCapture() as capture:
             wp.launch(begin,2,[env.reward])
             for _ in range(10):
@@ -144,7 +143,7 @@ def run(output,incremental=False,current_vmc=False,mixed_signs=False):
         if completed:infos=[{k:v for k,v in r.items() if k!='terminal_observation'} for r in env.step_wait()[3]]
         result=dict(role='independent_5ms_finite_candidate_feedback_highspeed_pilot',completed=completed,prediction_failure=failure,
             episodes=infos,decisions=rows,decision_ms=dict(median=float(np.median(durations)),p95=float(np.percentile(durations,95)),maximum=float(max(durations))) if durations else None,
-            incremental=incremental,current_vmc=current_vmc,mixed_signs=mixed_signs,candidate_count=predictor.arms,predictor_geom_count=predictor.nom.ngeom,extra_L1_increment_limit_Nm=.1,absolute_per_motor_extra_limit_Nm=1. if incremental else .1,feedback_interval_ms=5.,forecast_horizon_ms=5.,original_cost_and_gates_unchanged=True,
+            incremental=incremental,current_vmc=current_vmc,predictor_geom_count=predictor.nom.ngeom,extra_L1_increment_limit_Nm=.1,absolute_per_motor_extra_limit_Nm=1. if incremental else .1,feedback_interval_ms=5.,forecast_horizon_ms=5.,original_cost_and_gates_unchanged=True,
             limitations='Fixed13-candidate greedy feedback, two nominal highspeed cases only. Predictor reads current full simulator state and known internal memory; not sensor-only or real-time. No default, CPU or PPO changes. Incremental mode uses0.1Nm L1 changes inside existing1Nm absolute motor-extra box; new visited states still need independent model support.',
             source_sha256={str(p.relative_to(ROOT)):sha(p) for p in (Path(__file__),ROOT/'wheelleg_warp/select_braking_common_action.py',ROOT/'wheelleg_warp/probe_braking_phase_chart.py',ROOT/'wheelleg_warp/probe_current_vmc_design.py',ROOT/'wheelleg_warp/native/controller.py',ROOT/'wheelleg_warp/native/environment.py')})
         (output/'verification.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');print('COMPLETED',completed,'success',sum(r['success'] for r in infos),'failure',failure,flush=True)
@@ -152,5 +151,5 @@ def run(output,incremental=False,current_vmc=False,mixed_signs=False):
 
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',type=Path,required=True);parser.add_argument('--incremental',action='store_true');parser.add_argument('--current-vmc',action='store_true');parser.add_argument('--mixed-signs',action='store_true')
-    args=parser.parse_args();run(args.output,args.incremental,args.current_vmc,args.mixed_signs)
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',type=Path,required=True);parser.add_argument('--incremental',action='store_true');parser.add_argument('--current-vmc',action='store_true')
+    args=parser.parse_args();run(args.output,args.incremental,args.current_vmc)

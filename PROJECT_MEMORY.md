@@ -1263,3 +1263,15 @@
 
 - `wheelleg_warp/probe_braking_feedback.py`
 - `wheelleg_warp/results/braking_feedback_fused_record_20261001/verification.json`
+
+### 自动同步快照 2026-10-01T19:21:09+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_warp/probe_braking_feedback.py`
+- `wheelleg_warp/results/braking_feedback_fused_record_20261001/source/wheelleg_warp/native/controller.py`
+- `wheelleg_warp/results/braking_feedback_fused_record_20261001/source/wheelleg_warp/native/environment.py`
+- `wheelleg_warp/results/braking_feedback_fused_record_20261001/source/wheelleg_warp/probe_braking_feedback.py`
+- `wheelleg_warp/results/braking_feedback_fused_record_20261001/source/wheelleg_warp/probe_braking_phase_chart.py`
+- `wheelleg_warp/results/braking_feedback_fused_record_20261001/source/wheelleg_warp/probe_current_vmc_design.py`
+- `wheelleg_warp/results/braking_feedback_fused_record_20261001/source/wheelleg_warp/select_braking_common_action.py`
