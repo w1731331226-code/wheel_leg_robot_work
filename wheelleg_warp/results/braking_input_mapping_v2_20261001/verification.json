@@ -1,0 +1,40 @@
+{
+  "role": "current_J_nominal_chain_rule_and_executed_input_audit",
+  "missing_physical_input_jacobian_max_Nm_per_state": 1.4050088536467458,
+  "small_perturbation_samples": 32,
+  "small_perturbation_velocity_relative_error_max": [
+    0.0009002428050089997,
+    2.607542395908054e-05
+  ],
+  "chain_rule_gate_pass": true,
+  "first_mapping_or_clip_difference_s": 0.0005,
+  "planned_to_executed_motor_difference_max_Nm": 3.4617055756297175,
+  "recursive_prediction": {
+    "old_virtual": {
+      "max_vx_error_m_s": 0.09763285417269207,
+      "max_pitch_error_deg": 1.399048962656117,
+      "max_active_joint_error_rad": 0.07556535445677626,
+      "max_linear_length_error_m": 0.00586841222286082
+    },
+    "current_J_equilibrium": {
+      "max_vx_error_m_s": 0.10051986725678597,
+      "max_pitch_error_deg": 1.3345950056662879,
+      "max_active_joint_error_rad": 0.07986254301315715,
+      "max_linear_length_error_m": 0.005875590508639814
+    },
+    "executed_motor": {
+      "max_vx_error_m_s": 0.1051432468660285,
+      "max_pitch_error_deg": 0.828983168350178,
+      "max_active_joint_error_rad": 0.016983410392459874,
+      "max_linear_length_error_m": 0.001363414452804578
+    }
+  },
+  "executed_input_one_step_max_vx_error_m_s": 0.08645170204002595,
+  "executed_input_one_step_max_active_joint_velocity_error_rad_s": 1.8607253257594558,
+  "limitations": "Reuses the rejected74-step CPU prefix. First-order current-J correction is verified only near equilibrium. Executed motor history is known at each step; measured-state one-step check is not recursive safety. Symmetric projection omits differences; this audit does not certify larger inputs or an online controller.",
+  "source_sha256": {
+    "wheelleg_warp/audit_braking_input_mapping.py": "6c7f863bb7b329c0c0dc4960a156457272e3e6667909365309c12d024e5f6be6",
+    "wheelleg_warp/audit_radial_braking_response.py": "0645d5d583b22c83a7313103d34ebaf1ebd05d6fe518fdfd2c3c421eab8137c0",
+    "wheelleg_ppo/tools/model_lqr.py": "d63db108ece884340cff2589cf50729ca1dfd2ffd44adb8260b8155570ffbf82"
+  }
+}
