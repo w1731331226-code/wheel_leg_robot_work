@@ -1,0 +1,103 @@
+{
+  "role": "recorded_projection_coordinate_audit",
+  "rows": [
+    {
+      "world": 0,
+      "algebra_error_Nm": 4.099823779080136e-14,
+      "braking_steps": 4000,
+      "projected_steps": 715,
+      "projected_fraction": 0.17875,
+      "early_effective_reference_min_m_s": -0.0,
+      "early_effective_reference_max_m_s": 0.24627680851722786,
+      "peak_wheel_projection_delta_Nm": 4.607752803010292,
+      "motor_clipped_braking_steps": 2,
+      "original_wheel_mean_early_Nm": 1.1685200607549926,
+      "actual_raw_wheel_mean_early_Nm": -0.09297842974543255,
+      "stop_distance_m": 0.19856357574671973,
+      "task_pass": true
+    },
+    {
+      "world": 1,
+      "algebra_error_Nm": 3.358858330360093e-14,
+      "braking_steps": 4000,
+      "projected_steps": 715,
+      "projected_fraction": 0.17875,
+      "early_effective_reference_min_m_s": -0.0,
+      "early_effective_reference_max_m_s": 0.24621567731793648,
+      "peak_wheel_projection_delta_Nm": 4.60660905968918,
+      "motor_clipped_braking_steps": 2,
+      "original_wheel_mean_early_Nm": 1.1672304259505852,
+      "actual_raw_wheel_mean_early_Nm": -0.09292855397228257,
+      "stop_distance_m": 0.19853027758884642,
+      "task_pass": true
+    },
+    {
+      "world": 2,
+      "algebra_error_Nm": 3.729828945697733e-14,
+      "braking_steps": 4000,
+      "projected_steps": 716,
+      "projected_fraction": 0.179,
+      "early_effective_reference_min_m_s": -0.0,
+      "early_effective_reference_max_m_s": 0.2466567856458826,
+      "peak_wheel_projection_delta_Nm": 4.614908638127295,
+      "motor_clipped_braking_steps": 2,
+      "original_wheel_mean_early_Nm": 1.1696508865647293,
+      "actual_raw_wheel_mean_early_Nm": -0.09302499139144817,
+      "stop_distance_m": 0.1986904454515909,
+      "task_pass": true
+    },
+    {
+      "world": 3,
+      "algebra_error_Nm": 3.7315094590650855e-14,
+      "braking_steps": 4000,
+      "projected_steps": 717,
+      "projected_fraction": 0.17925,
+      "early_effective_reference_min_m_s": -0.0,
+      "early_effective_reference_max_m_s": 0.24728430348743546,
+      "peak_wheel_projection_delta_Nm": 4.626612159209779,
+      "motor_clipped_braking_steps": 2,
+      "original_wheel_mean_early_Nm": 1.1730868866036195,
+      "actual_raw_wheel_mean_early_Nm": -0.09315141635503975,
+      "stop_distance_m": 0.19892321260368612,
+      "task_pass": true
+    },
+    {
+      "world": 4,
+      "algebra_error_Nm": 3.723757413531814e-14,
+      "braking_steps": 4000,
+      "projected_steps": 1821,
+      "projected_fraction": 0.45525,
+      "early_effective_reference_min_m_s": 0.14564254444443928,
+      "early_effective_reference_max_m_s": 0.7464607889628369,
+      "peak_wheel_projection_delta_Nm": 13.966019835116471,
+      "motor_clipped_braking_steps": 2,
+      "original_wheel_mean_early_Nm": 8.820788752908243,
+      "actual_raw_wheel_mean_early_Nm": -0.06945407120666522,
+      "stop_distance_m": 0.6635544300102215,
+      "task_pass": false
+    },
+    {
+      "world": 5,
+      "algebra_error_Nm": 3.953781746446339e-14,
+      "braking_steps": 4000,
+      "projected_steps": 1830,
+      "projected_fraction": 0.4575,
+      "early_effective_reference_min_m_s": 0.14892036050666546,
+      "early_effective_reference_max_m_s": 0.7461847398016753,
+      "peak_wheel_projection_delta_Nm": 13.960855052026382,
+      "motor_clipped_braking_steps": 2,
+      "original_wheel_mean_early_Nm": -8.851104916110778,
+      "actual_raw_wheel_mean_early_Nm": 0.06823434431593045,
+      "stop_distance_m": 0.6665408611297617,
+      "task_pass": false
+    }
+  ],
+  "physical6": 6,
+  "limitations": "Reconstructs recorded commands and equivalent velocity-reference shifts only. Unprojected commands are counterfactual algebra, not safe executable trajectories; no causal rollout or robustness claim.",
+  "input_sha256": {
+    "wheelleg_warp/results/current_vmc_braking_events_20261002/windows.npz": "fc02abf15627e7f652f1c147a98e2d4a45985e1ac3955a1e65b9d00ad4d04968",
+    "wheelleg_warp/results/current_vmc_braking_events_20261002/controller_inputs.npz": "3513a20688e7309fef45582068a2e5153319d979502bc6f8c122a81d609110a7",
+    "wheelleg_warp/results/current_vmc_braking_events_20261002/verification.json": "63367aa92818270f6d15554a4a17b61121f2ad0d764d27abafc1d2c76cd45c7b"
+  },
+  "source_sha256": "4e747d9eb023f5ace23e532170d6f23cef951c4248cebe314c7b7011d2d2987e"
+}
