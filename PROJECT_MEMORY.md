@@ -22,6 +22,7 @@
 
 ## 当前文件清理（2026-10-02）
 
+- 用户再次授权清理当前不用文件后，定向复核`wheelleg_warp/`：无Python/pytest/mypy/ruff缓存，无tmp/bak/orig/rej/编辑器备份；非结果、非历史媒体的活动文件没有逐字节重复项。此前83个GIF均已不存在，清单内249个保留文件的大小及SHA256全部一致，释放1752900301字节属此前删除量，本次没有重复计数。SLSQP两份progress含97/120条独有迭代记录，终态verification不含这些序列，予以保留；未凭“非当前训练入口”删除复现实验、失败证据或CPU基线。本次无新增可证明冗余文件、无代码/控制/训练变更，清理复核不计新的算法工作轮次，第6轮受控诊断尚未执行。
 - 按用户授权删除`wheelleg_warp/dashboard/local_data/`中83个冗余GIF，共1752900301字节（约1.63GiB/1.75GB）。每个删除项均有尺寸/帧数一致的WebP及原始`trajectory.npz`、来源`metadata.json`；保留项哈希逐值不变。无对应WebP的`terrain_audit/seed_250005_before_after.gif`保留。清单和被删文件/保留文件SHA见`wheelleg_warp/results/file_cleanup_20261002/manifest.json`。
 - 原历史录像目录约2.2GB降至538MB；没有删除论文模型、策略、原始轨迹、失败证据、可执行校验或CPU历史校对。当前paper目录没有可清`__pycache__`/pytest缓存；无直接import不作为删实验入口的依据。没有改训练/控制算法。
 - 页面API仅对仍存在的GIF给出下载链接，前端跳过空链接，WebP回放和轨迹下载保留；已有dashboard测试新增WebP-only/双格式两种情况并过，原媒体访问边界及环境选择回归过，JS语法及diff检查过。自动同步编辑期暂停，收尾恢复并核远程HEAD。
