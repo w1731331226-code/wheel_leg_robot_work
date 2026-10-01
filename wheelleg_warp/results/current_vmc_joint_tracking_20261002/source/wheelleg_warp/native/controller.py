@@ -1,0 +1,399 @@
+"""GPU驻留地面M3控制器；不接管跳跃，原CPU控制器保留为逐点参考。"""
+from pathlib import Path
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parents[2]/'wheelleg_ppo/tools'))
+import numpy as np
+import warp as wp
+import wheelleg_sim as sim
+from rm_controller import nominal_design,nominal_design_115
+
+D=wp.float64
+V2=wp.types.vector(length=2,dtype=D)
+V3=wp.types.vector(length=3,dtype=D)
+V4=wp.types.vector(length=4,dtype=D)
+V6=wp.types.vector(length=6,dtype=D)
+M2=wp.types.matrix(shape=(2,2),dtype=D)
+PI=wp.constant(np.pi)
+P1=wp.constant(sim.PHI1_STAND);P4=wp.constant(sim.PHI4_STAND)
+MASS=wp.constant(sim.hw.DESIGN_MASS/sim.hw.BASELINE_MASS)
+HIP_INERTIA=wp.constant(sim.hw.HIP_OUTPUT_INERTIA)
+
+
+@wp.func
+def standing_joints(length:D,angle:D):
+    if length<=D(0) or wp.abs(angle)>D(PI)/D(2):return D(0),D(0),False
+    cx=D(.075)+length*wp.sin(angle);cz=-length*wp.cos(angle)
+    ac=wp.sqrt(cx*cx+cz*cz);ce=wp.sqrt((cx-D(.15))*(cx-D(.15))+cz*cz)
+    ca=(D(.15)*D(.15)+ac*ac-D(.27)*D(.27))/(D(.30)*ac)
+    cb=(D(.15)*D(.15)+ce*ce-D(.27)*D(.27))/(D(.30)*ce)
+    if ca<D(-1) or ca>D(1) or cb<D(-1) or cb>D(1):return D(0),D(0),False
+    qa=D(P1)-wp.atan2(cz,cx)+wp.acos(ca)
+    qb=D(P4)-wp.atan2(cz,cx-D(.15))-wp.acos(cb)
+    return qa,qb,True
+
+
+@wp.func
+def standing_pose_feasible(length:D,angle:D,cap:D):
+    qa,qb,valid=standing_joints(length,angle)
+    return valid and wp.max(wp.abs(qa),wp.abs(qb))<=cap
+
+
+@wp.func
+def project_leg_angle(length:D,requested:D,cap:D):
+    if not wp.isfinite(length) or not wp.isfinite(requested) or not wp.isfinite(cap) or cap<=D(0):return D(0),False
+    if standing_pose_feasible(length,requested,cap):return requested,True
+    if not standing_pose_feasible(length,D(0),cap):return D(0),False
+    inside=D(0);outside=wp.clamp(requested,-D(PI)/D(2),D(PI)/D(2))
+    # Connected standing branch in the declared height range; 26 bisections.
+    for _ in range(26):
+        mid=(inside+outside)/D(2)
+        if standing_pose_feasible(length,mid,cap):inside=mid
+        else:outside=mid
+    return inside,True
+
+
+@wp.func
+def outward_force_headroom(j:V2,base:V2,bound:V2):
+    available=D(1.e30)
+    for k in range(2):
+        if j[k]>D(0):available=wp.min(available,(bound[k]-base[k])/j[k])
+        elif j[k]<D(0):available=wp.min(available,(-bound[k]-base[k])/j[k])
+    return wp.max(D(0),available)
+
+
+@wp.func
+def fk(qa:D,qb:D):
+    p1=D(P1)-qa;p4=D(P4)-qb
+    bx=D(.15)*wp.cos(p1);bz=D(.15)*wp.sin(p1)
+    dx=D(.15)+D(.15)*wp.cos(p4);dz=D(.15)*wp.sin(p4)
+    bd=wp.sqrt((dx-bx)*(dx-bx)+(dz-bz)*(dz-bz))
+    aa=D(.54)*(dx-bx);bb=D(.54)*(dz-bz);cc=D(.27)*D(.27)+bd*bd-D(.27)*D(.27)
+    p2=D(2)*wp.atan2(bb-wp.sqrt(wp.max(D(0),aa*aa+bb*bb-cc*cc)),aa+cc)
+    cx=bx+D(.27)*wp.cos(p2);cz=bz+D(.27)*wp.sin(p2)
+    angle=wp.atan2(cz,cx-D(.075));length=wp.sqrt((cx-D(.075))*(cx-D(.075))+cz*cz)
+    return V4(cx,cz,angle,length)
+
+
+@wp.func
+def inverse2(a:M2):
+    determinant=a[0,0]*a[1,1]-a[0,1]*a[1,0]
+    return M2(a[1,1],-a[0,1],-a[1,0],a[0,0])/determinant
+
+
+@wp.func
+def polar_jac(qa:D,qb:D):
+    p1=D(P1)-qa;p4=D(P4)-qb;r=fk(qa,qb)
+    cb=V2(r[0]-D(.15)*wp.cos(p1),r[1]-D(.15)*wp.sin(p1))
+    cd=V2(r[0]-D(.15)-D(.15)*wp.cos(p4),r[1]-D(.15)*wp.sin(p4))
+    db=V2(D(.15)*wp.sin(p1),-D(.15)*wp.cos(p1));dd=V2(D(.15)*wp.sin(p4),-D(.15)*wp.cos(p4))
+    j=inverse2(M2(cb[0],cb[1],cd[0],cd[1]))*M2(wp.dot(cb,db),D(0),D(0),wp.dot(cd,dd))
+    length=r[3];lx=r[0]-D(.075);lz=r[1]
+    return wp.transpose(M2(lx/length,lz/length,-lz/(length*length),lx/(length*length))*j)
+
+
+@wp.func
+def legacy_vmc(qa:D,qb:D,force:D,hub:D):
+    e=D(1.e-6);r=fk(qa,qb)
+    p=fk(qa+e,qb);m=fk(qa-e,qb);u=fk(qa,qb+e);v=fk(qa,qb-e)
+    fx=force*(r[0]-D(.075))/r[3];fz=force*r[1]/r[3]
+    return V2(((p[0]-m[0])*fx+(p[1]-m[1])*fz+hub*(p[2]-m[2]))/(D(2)*e),
+              ((u[0]-v[0])*fx+(u[1]-v[1])*fz+hub*(u[2]-v[2]))/(D(2)*e))
+
+
+@wp.func
+def allowed(speed:D,hip:bool):
+    rpm=wp.abs(speed)*D(60)/(D(2)*D(PI));rated=D(490);no_load=D(710);peak=D(4.5)
+    if hip:rated=D(175);no_load=D(280);peak=D(40)
+    if rpm>rated:peak=peak*wp.max(D(0),(no_load-rpm)/(no_load-rated))
+    return peak
+
+
+@wp.func
+def command_bounds(speeds:V6,actuator_gains:V6):
+    bounds=V6()
+    for j in range(6):
+        bounds[j]=allowed(speeds[j],j<4)
+        if actuator_gains[j]>D(1):bounds[j]=bounds[j]/actuator_gains[j]
+    return bounds
+
+
+@wp.func
+def project_bounds(base:V6,residual:V6,speeds:V6,bounds:V6,invalid_base:int,bad_map:bool,nonzero:bool,bad_control:bool,project_clipped_base:int):
+    lam=D(1);error=int(0)
+    if bad_control:error=2
+    if project_clipped_base:
+        for j in range(6):
+            if not wp.isfinite(base[j]) or not wp.isfinite(residual[j]) or not wp.isfinite(speeds[j]):error=2
+        if error==2:return D(0),error
+    if (invalid_base==0 or project_clipped_base!=0) and bad_map and nonzero:
+        if not bad_control:error=1
+        lam=D(0)
+    if invalid_base and project_clipped_base==0:lam=D(0)
+    for j in range(6):
+        bound=bounds[j]
+        if residual[j]>D(0):lam=wp.min(lam,(bound-base[j])/residual[j])
+        elif residual[j]<D(0):lam=wp.min(lam,(-bound-base[j])/residual[j])
+    return wp.clamp(lam,D(0),D(1)),error
+
+
+@wp.func
+def residual_projection(base:V6,residual:V6,speeds:V6,invalid_base:int,bad_map:bool,nonzero:bool,bad_control:bool,project_clipped_base:int):
+    bounds=command_bounds(speeds,V6(D(1),D(1),D(1),D(1),D(1),D(1)))
+    return project_bounds(base,residual,speeds,bounds,invalid_base,bad_map,nonzero,bad_control,project_clipped_base)
+
+
+@wp.func
+def control_step(w:int,qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.array2d[float],
+            targets:wp.array2d[float],command:wp.array[D],active:wp.array[int],state:wp.array2d[D],
+            ids:wp.array[int],heights:wp.array[D],gains:wp.array3d[D],feed:wp.array2d[D],angles:wp.array[D],
+            reference:wp.array2d[D],yaw_cfg:wp.array[D],ctrl:wp.array2d[float],diagnostic:wp.array2d[D],project_clipped_base:int,grouped_residual:int,actuator_gains:V6):
+    if active[w]==0:return
+    dt=D(.0005);boot=state[w,0]+dt;state[w,0]=boot
+    qw=D(qpos[w,3]);qx=D(qpos[w,4]);qy=D(qpos[w,5]);qz=D(qpos[w,6])
+    roll=wp.atan2(D(2)*(qw*qx+qy*qz),D(1)-D(2)*(qx*qx+qy*qy))
+    pitch=wp.asin(wp.clamp(D(2)*(qw*qy-qz*qx),D(-1),D(1)))
+    yaw=wp.atan2(D(2)*(qw*qz+qx*qy),D(1)-D(2)*(qy*qy+qz*qz))
+    qa=D(qpos[w,ids[0]]);qb=D(qpos[w,ids[1]]);qc=D(qpos[w,ids[2]]);qd=D(qpos[w,ids[3]])
+    va=D(qvel[w,ids[4]]);vb=D(qvel[w,ids[5]]);vc=D(qvel[w,ids[6]]);vd=D(qvel[w,ids[7]])
+    speeds=V6(va,vb,vc,vd,D(qvel[w,ids[8]]),D(qvel[w,ids[9]]))
+    bounds=command_bounds(speeds,actuator_gains)
+    left=fk(qa,qb);right=fk(qc,qd);length=(left[3]+right[3])/D(2)
+    th=(left[2]+right[2])/D(2)+D(PI)/D(2)-pitch
+    state[w,3]=state[w,3]+((length-state[w,1])/dt-state[w,3])*D(.05);state[w,1]=length
+    state[w,4]=state[w,4]+((th-state[w,2])/dt-state[w,4])*D(.05);state[w,2]=th
+    gyro=ids[10]
+    state[w,5]=state[w,5]+(D(sensor[w,gyro])-state[w,5])*D(.05)
+    state[w,6]=state[w,6]+(D(sensor[w,gyro+1])-state[w,6])*D(.05)
+    vx=wp.cos(yaw)*D(qvel[w,0])+wp.sin(yaw)*D(qvel[w,1])
+    state[w,7]=state[w,7]+(vx-state[w,7])*D(.025)
+    state[w,8]=state[w,8]+(D(sensor[w,gyro+2])-state[w,8])*D(.025)
+    cmd=D(command[w]);error=wp.atan2(wp.sin(yaw-state[w,9]),wp.cos(yaw-state[w,9]))
+    parking_guard=reference.shape[1]>12 and reference[w,10]==D(2)
+    parking_index=20+targets.shape[1]
+    if parking_guard:
+        if wp.abs(cmd)>=D(.01):state[w,parking_index+2]=wp.sign(cmd)
+        elif state[w,12]<D(0) and state[w,parking_index+2]!=D(0):
+            state[w,parking_index]=D(qpos[w,0]);state[w,parking_index+1]=D(qpos[w,1])
+    if wp.abs(cmd)>=D(.01):state[w,12]=D(-1)
+    elif state[w,12]<D(0):state[w,12]=boot
+    if wp.abs(cmd)<D(.01) and wp.abs(state[w,7])<D(.05) and state[w,10]<D(.1):state[w,9]=yaw
+    if wp.abs(cmd)<D(.01):state[w,10]=state[w,10]+dt
+    else:state[w,10]=D(0)
+    if wp.abs(cmd)<D(.01):state[w,11]=D(0)
+    elif wp.abs(state[w,7]-cmd)>D(.08):state[w,11]=wp.clamp(state[w,11]+(state[w,7]-cmd)*dt,D(-.3),D(.3))
+    ktha=D(-.3)
+    if wp.abs(cmd)<D(.01):ktha=D(-.6)
+    vmax=D(0)
+    if wp.abs(state[w,7])>D(1):vmax=wp.sign(state[w,7])*(wp.abs(state[w,7])-D(1))
+    thcmd=wp.clamp((ktha*(cmd-state[w,7])+D(.08)*state[w,11]+D(.5)*pitch)*wp.min(D(1),boot/D(.5))+vmax,D(-.2),D(.2))
+    if boot<D(1):thcmd=D(0)
+    braking=wp.abs(cmd)<D(.01) and wp.abs(state[w,7])>D(.03)
+    if braking:
+        thcmd=wp.sign(state[w,7])*wp.min(D(sim.STOP_LEAN_MAX),D(sim.STOP_LEAN_BASE)+D(sim.STOP_LEAN_GAIN)*wp.abs(state[w,7]))*wp.clamp((boot-state[w,12])/D(.1),D(0),D(1))
+    kd=D(.5)
+    if boot<D(.6):kd=D(1.2)
+    hub_old=D(4)*(thcmd-th)-kd*state[w,4]
+    if braking:hub_old=-(D(4)*(th-thcmd)+D(.5)*state[w,4]-D(2)*pitch)*D(1.5)-D(4)*pitch-D(.5)*state[w,6]
+    offset=wp.clamp(D(.30)*roll+D(.12)*state[w,5],D(-.035),D(.035))
+    if reference.shape[1]>6 and reference[w,4]>D(0):
+        room=wp.max(D(0),wp.min(reference[w,2]-reference[w,3],reference[w,6]-reference[w,2]))
+        offset=wp.clamp(offset,-room,room)
+    left_target=reference[w,2]+offset;right_target=reference[w,2]-offset
+    if reference.shape[1]>3:
+        left_target=wp.max(left_target,reference[w,3])
+        right_target=wp.max(right_target,reference[w,3])
+    height=length*wp.cos(th);gravity=D(4)*D(MASS)*wp.min(D(1),boot/D(.15))
+    fl=wp.clamp(D(MASS)*(D(500)*(left_target-height)-D(25)*state[w,3]*wp.cos(th))+gravity,-D(40)*D(MASS),D(40)*D(MASS))
+    fr=wp.clamp(D(MASS)*(D(500)*(right_target-height)-D(25)*state[w,3]*wp.cos(th))+gravity,-D(40)*D(MASS),D(40)*D(MASS))
+    kp=D(.8)*D(MASS);damping=D(.08)*D(MASS)
+    if braking:kp=kp*wp.clamp((D(.3)-wp.abs(state[w,7]))/D(.2),D(0),D(1))
+    old_l=legacy_vmc(qa,qb,fl,hub_old)+V2(kp*(reference[w,0]-qa)-damping*va,kp*(reference[w,1]-qb)-damping*vb)
+    old_r=legacy_vmc(qc,qd,fr,hub_old)+V2(kp*(reference[w,0]-qc)-damping*vc,kp*(reference[w,1]-qd)-damping*vd)
+    limit=D(.8)*D(MASS)
+    if braking:limit=D(2)*D(MASS)
+    old_l=V2(wp.clamp(old_l[0],-wp.min(limit,bounds[0]),wp.min(limit,bounds[0])),wp.clamp(old_l[1],-wp.min(limit,bounds[1]),wp.min(limit,bounds[1])))
+    old_r=V2(wp.clamp(old_r[0],-wp.min(limit,bounds[2]),wp.min(limit,bounds[2])),wp.clamp(old_r[1],-wp.min(limit,bounds[3]),wp.min(limit,bounds[3])))
+    jl=polar_jac(qa,qb);jr=polar_jac(qc,qd)
+    rate_l=jl[0,0]*va+jl[1,0]*vb;rate_r=jr[0,0]*vc+jr[1,0]*vd
+    arate_l=jl[0,1]*va+jl[1,1]*vb;arate_r=jr[0,1]*vc+jr[1,1]*vd
+    index=int(0)
+    for knot in range(1,heights.shape[0]-1):
+        if length>heights[knot]:index=knot
+    ratio=wp.clamp((length-heights[index])/(heights[index+1]-heights[index]),D(0),D(1))
+    theta_eq=(D(1)-ratio)*angles[index]+ratio*angles[index+1]
+    arrival_hold=reference.shape[1]>10 and reference[w,10]==D(1)
+    if wp.abs(cmd)>D(.01) or (not arrival_hold and wp.abs(vx)>D(.03)):state[w,13]=D(0)
+    elif state[w,13]==D(0):
+        state[w,13]=D(1);state[w,14]=D(qpos[w,0]);state[w,15]=D(qpos[w,1])
+    position=D(0)
+    if state[w,13]>D(0):position=wp.cos(yaw)*(D(qpos[w,0])-state[w,14])+wp.sin(yaw)*(D(qpos[w,1])-state[w,15])
+    pitch_rate=D(sensor[w,gyro+1])
+    x=V6(th-theta_eq,(arate_l+arate_r)/D(2)-pitch_rate,position,vx-cmd,pitch,pitch_rate)
+    wheel=(D(1)-ratio)*feed[index,0]+ratio*feed[index+1,0]
+    hub=(D(1)-ratio)*feed[index,1]+ratio*feed[index+1,1]
+    support=(D(1)-ratio)*feed[index,2]+ratio*feed[index+1,2]
+    for j in range(6):
+        wheel=wheel-((D(1)-ratio)*gains[index,0,j]+ratio*gains[index+1,0,j])*x[j]
+        hub=hub-((D(1)-ratio)*gains[index,1,j]+ratio*gains[index+1,1,j])*x[j]
+    vl=inverse2(jl)*old_l;vr=inverse2(jr)*old_r;average=(vl[1]+vr[1])/D(2)
+    hl=vl[1]+hub-average;hr=vr[1]+hub-average
+    original_hub_mean=(hl+hr)/D(2)
+    if reference.shape[1]>6 and reference[w,5]>D(0):
+        kg=(D(1)-ratio)*gains[index,1,0]+ratio*gains[index+1,1,0]
+        if kg<=D(0) or not wp.isfinite(kg):
+            for j in range(6):ctrl[w,j]=0.
+            diagnostic[w,14]=D(2)
+            return
+        hd=-((D(1)-ratio)*gains[index,1,1]+ratio*gains[index+1,1,1])*x[1]-((D(1)-ratio)*gains[index,1,5]+ratio*gains[index+1,1,5])*x[5]
+        al=left[2]+D(PI)/D(2);ar=right[2]+D(PI)/D(2)
+        requested_l=al+(hl-hd)/kg;requested_r=ar+(hr-hd)/kg
+        safe_l,valid_l=project_leg_angle(left_target,requested_l,reference[w,5])
+        safe_r,valid_r=project_leg_angle(right_target,requested_r,reference[w,5])
+        if not valid_l or not valid_r:
+            for j in range(6):ctrl[w,j]=0.
+            diagnostic[w,14]=D(2)
+            return
+        if safe_l!=requested_l:hl=kg*(safe_l-al)+hd
+        if safe_r!=requested_r:hr=kg*(safe_r-ar)+hd
+        if reference.shape[1]>7 and reference[w,7]>D(0):
+            channel=int(3)
+            if reference[w,7]==D(2):channel=0
+            kh=(D(1)-ratio)*gains[index,1,channel]+ratio*gains[index+1,1,channel]
+            kw=(D(1)-ratio)*gains[index,0,channel]+ratio*gains[index+1,0,channel]
+            # Update BOTH inputs in the same reference coordinate. Angle mode
+            # changes the angle reference and keeps the speed reference fixed.
+            wheel=wheel+(kw/kh)*((hl+hr)/D(2)-original_hub_mean)
+        if diagnostic.shape[1]>=31:
+            diagnostic[w,21]=left_target;diagnostic[w,22]=right_target
+            diagnostic[w,23]=requested_l;diagnostic[w,24]=requested_r
+            diagnostic[w,25]=safe_l;diagnostic[w,26]=safe_r;diagnostic[w,27]=hd
+            diagnostic[w,28]=D(int(safe_l!=requested_l)+int(safe_r!=requested_r))
+            diagnostic[w,29]=hl;diagnostic[w,30]=hr
+    fleft=support+D(MASS)*(D(500)*(left_target-left[3])-D(25)*rate_l)
+    fright=support+D(MASS)*(D(500)*(right_target-right[3])-D(25)*rate_r)
+    tl=jl*V2(fleft,hl);tr=jr*V2(fright,hr)
+    if reference.shape[1]>9 and reference[w,8]>D(0):
+        k=reference[w,8];il=inverse2(jl);ir=inverse2(jr)
+        # Public mass upper bound plus reflected nominal hip-rotor energy.
+        ml=reference[w,9]+D(HIP_INERTIA)*(il[0,0]*il[0,0]+il[0,1]*il[0,1])
+        mr=reference[w,9]+D(HIP_INERTIA)*(ir[0,0]*ir[0,0]+ir[0,1]*ir[0,1])
+        requested=wp.max(D(0),wp.max(ml*(-D(2)*k*rate_l-k*k*(left[3]-reference[w,2])),
+                                   mr*(-D(2)*k*rate_r-k*k*(right[3]-reference[w,2]))))
+        room=wp.min(outward_force_headroom(V2(jl[0,0],jl[1,0]),tl,V2(bounds[0],bounds[1])),
+                    outward_force_headroom(V2(jr[0,0],jr[1,0]),tr,V2(bounds[2],bounds[3])))
+        applied=wp.min(requested,room)
+        if state.shape[1]>=20+targets.shape[1]:
+            base_index=16+targets.shape[1]
+            state[w,base_index]=wp.max(state[w,base_index],requested)
+            state[w,base_index+1]=wp.max(state[w,base_index+1],applied)
+            state[w,base_index+2]+=D(int(applied<requested))
+            state[w,base_index+3]+=D(int(applied>D(0)))
+        fleft+=applied;fright+=applied
+        tl=jl*V2(fleft,hl);tr=jr*V2(fright,hr)
+        if diagnostic.shape[1]>=38:
+            diagnostic[w,31]=requested;diagnostic[w,32]=applied;diagnostic[w,33]=ml;diagnostic[w,34]=mr
+            diagnostic[w,35]=fleft;diagnostic[w,36]=fright;diagnostic[w,37]=D(int(applied<requested))
+    yaw_torque=D(0)
+    if parking_guard and wp.abs(cmd)<D(.01) and state[w,parking_index+2]!=D(0):
+        dx=D(qpos[w,0])-state[w,parking_index];dy=D(qpos[w,1])-state[w,parking_index+1]
+        remaining=reference[w,11]-wp.sqrt(dx*dx+dy*dy)
+        braking_torque=wp.min(bounds[4],bounds[5])
+        if remaining>D(0):braking_torque=D(sim.hw.WHEEL_RADIUS)*reference[w,12]*vx*vx/(D(4)*remaining)
+        wheel-=wp.sign(vx)*braking_torque
+        state[w,parking_index+3]=wp.max(state[w,parking_index+3],braking_torque)
+        state[w,parking_index+4]+=D(int(braking_torque>D(0)))
+    if wp.abs(error)>=D(PI)/D(360) or wp.abs(state[w,8])>=D(.05):yaw_torque=wp.clamp(-yaw_cfg[0]*error-yaw_cfg[1]*state[w,8],-yaw_cfg[2]*D(MASS),yaw_cfg[2]*D(MASS))
+    base=V6(tl[0],tl[1],tr[0],tr[1],wheel+yaw_torque,wheel-yaw_torque)
+    invalid_base=int(0);invalid_leg_base=int(0);invalid_wheel_base=int(0);bad_control=bool(False)
+    for j in range(6):
+        if diagnostic.shape[1]>=21:diagnostic[w,15+j]=base[j]
+        if not wp.isfinite(base[j]):bad_control=True
+        maximum=D(4.5)
+        if j<4:maximum=D(40)
+        base[j]=wp.clamp(base[j],-maximum,maximum)
+        bound=bounds[j]
+        if base[j]<-bound-D(1.e-9) or base[j]>bound+D(1.e-9):
+            invalid_base=1
+            if j<4:invalid_leg_base=1
+            else:invalid_wheel_base=1
+        base[j]=wp.clamp(base[j],-bound,bound)
+    for j in range(targets.shape[1]):state[w,16+j]=state[w,16+j]+wp.clamp(D(targets[w,j])-state[w,16+j],D(-.01),D(.01))
+    rr_l=jl*V2(state[w,16]*D(.1)*D(7)*D(9.81)/D(2),state[w,17])
+    rr_r=jr*V2(-state[w,16]*D(.1)*D(7)*D(9.81)/D(2),-state[w,17])
+    residual=V6(rr_l[0],rr_l[1],rr_r[0],rr_r[1],state[w,18]*yaw_cfg[3],-state[w,18]*yaw_cfg[3])
+    if targets.shape[1]==6:
+        rr_l=jl*V2(state[w,16]*D(.1)*D(7)*D(9.81)/D(2),state[w,18])
+        rr_r=jr*V2(state[w,17]*D(.1)*D(7)*D(9.81)/D(2),state[w,19])
+        residual=V6(rr_l[0],rr_l[1],rr_r[0],rr_r[1],state[w,20]*yaw_cfg[3],state[w,21]*yaw_cfg[3])
+    bad_map=bool(False)
+    for side in range(2):
+        matrix=jl
+        if side==1:matrix=jr
+        square=matrix[0,0]*matrix[0,0]+matrix[0,1]*matrix[0,1]+matrix[1,0]*matrix[1,0]+matrix[1,1]*matrix[1,1]
+        det=wp.abs(matrix[0,0]*matrix[1,1]-matrix[0,1]*matrix[1,0])
+        maximum=(square+wp.sqrt(wp.max(D(0),square*square-D(4)*det*det)))/D(2)
+        if det==D(0) or maximum/det>D(1.e6):bad_map=True
+    nonzero=bool(False);leg_nonzero=bool(False);wheel_nonzero=bool(False)
+    for j in range(targets.shape[1]):
+        if state[w,16+j]!=D(0):
+            nonzero=True
+            if j<2:leg_nonzero=True
+            else:wheel_nonzero=True
+    lam,projection_error=project_bounds(base,residual,speeds,bounds,invalid_base,bad_map,nonzero,bad_control,project_clipped_base)
+    leg_lam=lam;wheel_lam=lam
+    if grouped_residual:
+        leg_residual=V6(residual[0],residual[1],residual[2],residual[3],D(0),D(0))
+        wheel_residual=V6(D(0),D(0),D(0),D(0),residual[4],residual[5])
+        leg_lam,leg_error=project_bounds(base,leg_residual,speeds,bounds,invalid_leg_base,bad_map,leg_nonzero,bad_control,0)
+        wheel_lam,wheel_error=project_bounds(base,wheel_residual,speeds,bounds,invalid_wheel_base,bad_map,wheel_nonzero,bad_control,0)
+        lam=wp.min(leg_lam,wheel_lam);projection_error=leg_error
+        if wheel_error>projection_error:projection_error=wheel_error
+    diagnostic[w,14]=D(projection_error)
+    if (project_clipped_base and projection_error) or (grouped_residual and projection_error==2):
+        # Do not send 0*NaN or a singular mapping to physics; after() terminates it.
+        for j in range(6):
+            ctrl[w,j]=0.;diagnostic[w,j]=D(0);diagnostic[w,6+j]=D(0)
+        diagnostic[w,12]=D(0);diagnostic[w,13]=D(invalid_base)
+        return
+    for j in range(6):
+        group_lam=leg_lam
+        if j>=4:group_lam=wheel_lam
+        ctrl[w,j]=float(wp.clamp(base[j]+group_lam*residual[j],-bounds[j],bounds[j]))
+        diagnostic[w,j]=base[j];diagnostic[w,6+j]=group_lam*residual[j]
+    for j in range(6):
+        if not wp.isfinite(ctrl[w,j]) or not wp.isfinite(residual[j]):diagnostic[w,14]=D(2)
+    diagnostic[w,12]=lam;diagnostic[w,13]=D(invalid_base)
+
+
+@wp.kernel
+def control(qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.array2d[float],
+            targets:wp.array2d[float],command:wp.array[D],active:wp.array[int],state:wp.array2d[D],
+            ids:wp.array[int],heights:wp.array[D],gains:wp.array3d[D],feed:wp.array2d[D],angles:wp.array[D],
+            reference:wp.array2d[D],yaw_cfg:wp.array[D],ctrl:wp.array2d[float],diagnostic:wp.array2d[D],project_clipped_base:int,grouped_residual:int):
+    control_step(wp.tid(),qpos,qvel,sensor,targets,command,active,state,ids,heights,gains,feed,angles,reference,yaw_cfg,ctrl,diagnostic,
+                 project_clipped_base,grouped_residual,V6(D(1),D(1),D(1),D(1),D(1),D(1)))
+
+
+@wp.kernel
+def control_physical(qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.array2d[float],
+            targets:wp.array2d[float],command:wp.array[D],active:wp.array[int],state:wp.array2d[D],
+            ids:wp.array[int],heights:wp.array[D],gains:wp.array3d[D],feed:wp.array2d[D],angles:wp.array[D],
+            reference:wp.array2d[D],yaw_cfg:wp.array[D],ctrl:wp.array2d[float],diagnostic:wp.array2d[D],project_clipped_base:int,grouped_residual:int,
+            actuator_gains:wp.array2d[D]):
+    w=wp.tid();scales=V6()
+    for j in range(6):scales[j]=actuator_gains[w,j]
+    control_step(w,qpos,qvel,sensor,targets,command,active,state,ids,heights,gains,feed,angles,reference,yaw_cfg,ctrl,diagnostic,
+                 project_clipped_base,grouped_residual,scales)
+
+
+def constants(model,worlds,yaw_config=(.4,2.,.24,.3),action_dim=3,height_design='legacy'):
+    if height_design not in ('legacy','range115'):raise ValueError('无效高度控制设计')
+    h,t,_,_=nominal_design() if height_design=='legacy' else nominal_design_115()
+    ids=[int(model.jnt_qposadr[model.joint(n).id]) for n in ('alphaL','betaL','alphaR','betaR')]
+    ids += [int(model.jnt_dofadr[model.joint(n).id]) for n in ('alphaL','betaL','alphaR','betaR','wheel1','wheel2')]
+    ids += [int(model.sensor('body_gyro').adr[0])]
+    state=np.zeros((worlds,16+action_dim));state[:,1]=sim.L_STAND;state[:,12]=-1
+    return dict(state=wp.array(state,dtype=D),ids=wp.array(ids,dtype=wp.int32),
+        heights=wp.array(h,dtype=D),gains=wp.array(np.stack([r[0] for r in t]),dtype=D),
+        feed=wp.array(np.stack([r[1] for r in t]),dtype=D),angles=wp.array([r[2] for r in t],dtype=D),yaw=wp.array(yaw_config,dtype=D),
+        reference=wp.array(np.tile([0.,0.,sim.L_STAND],(worlds,1)),dtype=D))
