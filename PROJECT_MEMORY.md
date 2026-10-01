@@ -1256,3 +1256,10 @@
 - `wheelleg_warp/probe_height_115_late_response.py`
 - `wheelleg_warp/results/height_115_late_candidate_20260929/trace.npz`
 - `wheelleg_warp/results/height_115_late_candidate_20260929/verification.json`
+
+### 自动同步快照 2026-10-01T18:36:06+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_warp/probe_braking_feedback.py`
+- `wheelleg_warp/results/braking_feedback_fused_record_20261001/verification.json`

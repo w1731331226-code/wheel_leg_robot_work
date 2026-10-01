@@ -13,7 +13,6 @@ from native.models import batch
 from native.terrain import model,HeightTerrainScenario,bank_height_115
 from probe_height_115_margin import cases
 from probe_height_115_contact_action_pair import basis
-from probe_height_115_local_states import snapshot
 from probe_braking_nominal_rollout import apply_extra
 from probe_current_vmc_design import current_vmc_table
 from select_braking_common_action import lqr_cost,batch_scores
@@ -22,9 +21,12 @@ from probe_height_115_action_predict_loow import sha
 
 
 @wp.kernel
-def record_force(slot:int,f:wp.array2d[float],out:wp.array3d[D]):
-    w=wp.tid()
-    for j in range(6):out[slot,w,j]=D(f[w,j])
+def record_forecast(slot:int,q:wp.array2d[float],v:wp.array2d[float],ctrl:wp.array2d[float],force:wp.array2d[float],out:wp.array3d[D]):
+    w=wp.tid();nq=q.shape[1];nv=v.shape[1]
+    for j in range(nq):out[slot,w,j]=D(q[w,j])
+    for j in range(nv):out[slot,w,nq+j]=D(v[w,j])
+    for j in range(6):
+        out[slot,w,nq+nv+j]=D(ctrl[w,j]);out[slot,w,nq+nv+6+j]=D(force[w,j])
 
 
 @wp.kernel
@@ -50,8 +52,8 @@ class Forecaster:
         self.targets=wp.zeros((self.count,3));self.command=wp.zeros(self.count,dtype=D);self.active=wp.ones(self.count,dtype=int)
         self.diag=wp.zeros((self.count,38),dtype=D);self.extra=wp.zeros((self.count,6),dtype=D)
         self.ref,self.Q,self.R,self.P=lqr_cost(self.nom);b,u=sagittal_basis(self.nom);self.project=np.linalg.pinv(b);self.input_project=np.linalg.pinv(u)
-        self.nq=self.nom.nq;self.nv=self.nom.nv;self.width=1+self.nq+2*self.nv+6
-        self.trace=wp.zeros((10,self.count,self.width),dtype=D);self.force=wp.zeros((10,self.count,6),dtype=D)
+        self.nq=self.nom.nq;self.nv=self.nom.nv;self.width=self.nq+self.nv+12
+        self.trace=wp.zeros((10,self.count,self.width),dtype=D)
         with wp.ScopedCapture() as initialize:
             self.control();wp.launch(apply_extra,self.count,[self.data.qvel,self.ids,self.upper,self.extra,self.data.ctrl])
             mjw.forward(self.model,self.data);wp.copy(self.data.qacc_warmstart,self.data.qacc)
@@ -59,8 +61,7 @@ class Forecaster:
         with wp.ScopedCapture() as capture:
             for slot in range(10):
                 self.control();wp.launch(apply_extra,self.count,[self.data.qvel,self.ids,self.upper,self.extra,self.data.ctrl]);mjw.step(self.model,self.data)
-                wp.launch(snapshot,self.count,[slot,self.data.time,self.data.qpos,self.data.qvel,self.data.qacc_warmstart,self.data.ctrl,self.trace])
-                wp.launch(record_force,self.count,[slot,self.data.actuator_force,self.force])
+                wp.launch(record_forecast,self.count,[slot,self.data.qpos,self.data.qvel,self.data.ctrl,self.data.actuator_force,self.trace])
         self.graph=capture.graph
 
     def control(self):
@@ -90,9 +91,9 @@ class Forecaster:
         self.state.assign(np.repeat(memory,13,axis=0));self.data.sensordata.assign(np.repeat(sensor,13,axis=0))
         wp.synchronize_device();timing_initialize=perf_counter()
         wp.capture_launch(self.graph);wp.synchronize_device();timing_gpu=perf_counter()
-        trace=self.trace.numpy();force=self.force.numpy()
+        trace=self.trace.numpy();force=trace[:,:,-6:]
         timing_forecast=perf_counter()
-        all_q=trace[:,:,1:1+self.nq];all_v=trace[:,:,1+self.nq:1+self.nq+self.nv];all_cmd=trace[:,:,-6:]
+        all_q=trace[:,:,:self.nq];all_v=trace[:,:,self.nq:self.nq+self.nv];all_cmd=trace[:,:,-12:-6]
         all_cost,all_valid=batch_scores(self.nom,all_q,all_v,all_cmd,force,np.repeat(q,13,axis=0),np.repeat(v,13,axis=0),np.repeat(memory,13,axis=0),self.ref,self.Q,self.R,self.P,self.project,self.input_project)
         out=np.zeros((self.n,6));rows=[]
         for i in np.flatnonzero(stopped):
