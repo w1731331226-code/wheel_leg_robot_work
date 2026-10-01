@@ -1,0 +1,61 @@
+{
+  "role": "shared_height115_candidate_engineering_check_not_training_admission",
+  "passed": true,
+  "baseline_version": "height115-current-vmc-v2-request-state-candidate",
+  "original_design_arrays_match": true,
+  "random_physics_does_not_change_design_or_same_input_commands": true,
+  "same_input_command": [
+    -0.8299837708473206,
+    0.8388686180114746,
+    -0.8323850035667419,
+    0.8307338953018188,
+    0.00010656394442776218,
+    -0.005893436260521412
+  ],
+  "observation_dim": 35,
+  "observation_spec": {
+    "version": "request_state_v1",
+    "dimension": 35,
+    "physical_packet_slice": [
+      0,
+      32
+    ],
+    "physical_packet_timing": "scenario delay in 0.5ms steps",
+    "request_state_slice": [
+      32,
+      35
+    ],
+    "request_state_timing": "current completed substep; not sensor delayed",
+    "request_state_units": "normalized filtered residual requests before mapping/projection",
+    "partial_observability": true,
+    "hidden_physics_parameters": false,
+    "future_terrain": false
+  },
+  "action_dim": 3,
+  "physical_evidence_steps": [
+    40.0,
+    40.0
+  ],
+  "reset_clears_evidence_and_action_filter": true,
+  "lambda_zero_fixture_old_packet_equal": true,
+  "distinct_current_request_observed": true,
+  "future_same_input_command_difference_Nm": 0.256439208984375,
+  "physical20ms_delay_preserved": true,
+  "current_own_request_not_sensor_delayed": true,
+  "masked_reset_preserved_other_world": true,
+  "legacy32_first_packet_and_short_physics_preserved": {
+    "max_qpos_difference": 0.0,
+    "max_qvel_difference": 0.0
+  },
+  "old_checkpoint_and_normalization_rejected": true,
+  "current_policy_normalization_roundtrip_passed": true,
+  "learning_performed": false,
+  "limitations": "Controller alias fixture is not a physical safety rollout. Short native40-step sampling/shape checks only; no whole-episode performance, robustness, full Markov-state or training-admission claim. New and all comparison policies must freeze the same request-state observation contract.",
+  "source_sha256": {
+    "wheelleg_warp/check_height115_candidate.py": "1818b74de24697fa71b6994f02e014ae9fab712aa2bb26a6022de995593ae681",
+    "wheelleg_warp/native/design.py": "fcdd61b8a03f7513561a83b67b78c1451a2deede3a6cbc90746096393909598e",
+    "wheelleg_warp/native/environment.py": "8c5f2e2b4e941b92a221370fc76c19d8fb2a8bf0c09d1a03a8d1572ea5669cf4",
+    "wheelleg_warp/native/controller.py": "b010a17559273f6e3e41f0f37d43ecb06adfecf653daca851f916a88d9b2435b",
+    "wheelleg_warp/training_contract.py": "65b756aea6371f5a40e5911c30aac6f1f5b63e560ec6583d3d431c221fd7bb86"
+  }
+}

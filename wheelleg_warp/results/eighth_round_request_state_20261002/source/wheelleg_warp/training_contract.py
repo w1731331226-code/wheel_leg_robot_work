@@ -16,12 +16,11 @@ def observation_spec(contract='legacy32',action_dim=3):
     """Version the delayed physical packet and causal, current own-request context."""
     if contract not in ('legacy32','request_state_v1') or action_dim not in (3,6):
         raise ValueError('观测契约须为legacy32/request_state_v1，动作维数须为3或6')
-    context=6 if contract=='request_state_v1' else 0
+    context=action_dim if contract=='request_state_v1' else 0
     return dict(version=contract,dimension=32+context,physical_packet_slice=[0,32],
         physical_packet_timing='scenario delay in 0.5ms steps',
         request_state_slice=[32,32+context],request_state_timing='current completed substep; not sensor delayed',
-        request_state_units='normalized filtered virtual F/H/wheel requests before mapping/projection',
-        request_state_channels=['F_left','F_right','H_left','H_right','wheel_left','wheel_right'] if context else [],
+        request_state_units='normalized filtered residual requests before mapping/projection',
         partial_observability=True,hidden_physics_parameters=False,future_terrain=False)
 
 

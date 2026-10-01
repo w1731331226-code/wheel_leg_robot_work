@@ -2,6 +2,10 @@
 
 用户指定最多1024批量，超过上限直接拒绝。训练进程组24GiB内存上限、零换页；不同时启动第二组1024世界。
 
+新0.115～0.38m候选不继承下文旧区间准入。`NativeEnv.height115_candidate`默认使用`request_state_v1`38维包，版本`height115-current-vmc-v2-request-state-candidate`：原32维按场景延迟，末6维为当前已完成子步的归一化滤波虚拟请求`[F_L,F_R,H_L,H_R,W_L,W_R]`。diff3左右反号展开，virtual6直接六通道；请求在映射/投影之前记录，λ不作为持久状态。保留部分可观测声明，不提供隐藏质量/摩擦或未来地形。旧默认NativeEnv仍32维，候选显式`observation_contract='legacy32'`供复现；旧32维权重/VecNormalize不能直接恢复到38维，正式协议需冻结同观测版本与源码，各对照遵守相同信息契约。
+
+接口验收：`python -B wheelleg_warp/check_height115_candidate.py --output <新目录>`核λ0请求歧义、20ms延迟、重置、旧接口短物理配对及SB3形状/保存恢复；`python -B wheelleg_warp/test_request_state.py`核virtual6同格式通道。没有学习更新，不能据此启动整体PPO；当前停车、同版本完整声明范围与公平协议仍待验收。
+
 ## 当前验证
 
 初始16/250采样周期对照暴露了后期退化：16步周期三个种子的末次成功数为31、28、0/32；250步为27、30、28/32。有限损失或吞吐不能证明策略有效。失败不覆盖，不能宣称末次三种子稳定通过。

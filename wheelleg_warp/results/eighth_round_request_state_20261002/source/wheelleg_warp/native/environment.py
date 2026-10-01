@@ -208,13 +208,7 @@ def after(qpos:wp.array2d[float],qvel:wp.array2d[float],sensors:wp.array2d[float
         history[w,slot,26+j]=float(diag[w,6+j]/scale)
     delayed=(int(state[w,0])-int(param[w,4])+history.shape[1])%history.shape[1]
     for j in range(32):obs[w,j]=history[w,delayed,j]
-    if obs.shape[1]>32:
-        if int(param[w,16])==6:
-            for j in range(6):obs[w,32+j]=float(controller_state[w,16+j])
-        else:
-            for j in range(3):
-                obs[w,32+2*j]=float(controller_state[w,16+j])
-                obs[w,33+2*j]=float(-controller_state[w,16+j])
+    for j in range(obs.shape[1]-32):obs[w,32+j]=float(controller_state[w,16+j])
     if param[w,15]>D(0):
         left_length=fk(D(qpos[w,ids[0]]),D(qpos[w,ids[1]]))[3]
         right_length=fk(D(qpos[w,ids[2]]),D(qpos[w,ids[3]]))[3]
@@ -384,7 +378,7 @@ class NativeEnv(VecEnv):
             if getattr(s,'terrain','legacy')=='single_side_ramp':terrain=8 if s.grade_deg>0 else 4
             relative=bool(getattr(s,'relative_attitude',False));kind={'ramp':1,'cross_slope':2,'rolling_slope':3,'split_level':4}.get(getattr(s,'terrain','legacy'),0)
             self.required_contact_masks.append(required);self.required_terrain_contact_masks.append(terrain);self.required_terrain_end.append(end);self.relative_attitude.append(relative)
-            p.append([s.speed,np.sign(s.speed),goal,1.5+1.5*goal/abs(s.speed),round(s.delay_ms*2),required,terrain,relative,kind,np.deg2rad(getattr(s,'grade_deg',0.)),s.center,terminate_on_attitude_failure,end or 0.,self.stand_heights[i],height_conditioned,HEIGHT_115_GEOMETRIC_MIN if height_design=='range115' else 0.,self.action_dim])
+            p.append([s.speed,np.sign(s.speed),goal,1.5+1.5*goal/abs(s.speed),round(s.delay_ms*2),required,terrain,relative,kind,np.deg2rad(getattr(s,'grade_deg',0.)),s.center,terminate_on_attitude_failure,end or 0.,self.stand_heights[i],height_conditioned,HEIGHT_115_GEOMETRIC_MIN if height_design=='range115' else 0.])
         self.task_goals=[row[2] for row in p]
         self.param=wp.array(p,dtype=D);self.command=wp.zeros(n,dtype=D)
         self.active=wp.ones(n,dtype=wp.int32);self.done=wp.zeros(n,dtype=wp.int32)
