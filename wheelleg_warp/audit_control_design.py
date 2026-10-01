@@ -12,9 +12,9 @@ from state_estimation import leg_kinematics
 from native.environment import NativeEnv
 from native.terrain import HeightTerrainScenario,bank_height_115
 from native.controller import D
-from probe_current_vmc_design import current_vmc_table
+from native.design import current_vmc_table
 from probe_height_115_action_predict_loow import sha
-from audit_radial_braking_response import nominal_input_jacobian
+from native.design import nominal_input_jacobian
 
 
 def audit_projection(source,output):

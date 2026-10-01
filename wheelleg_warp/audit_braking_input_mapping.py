@@ -10,7 +10,7 @@ import numpy as np
 import wheelleg_sim as sim
 from model_lqr import sagittal_basis,vmc_coordinates,linearize
 from state_estimation import leg_kinematics
-from audit_radial_braking_response import mapped_input,nominal_input_jacobian
+from native.design import mapped_input,nominal_input_jacobian
 from probe_height_115_action_predict_loow import sha
 
 

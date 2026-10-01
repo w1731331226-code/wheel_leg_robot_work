@@ -14,7 +14,7 @@ from native.terrain import model,HeightTerrainScenario,bank_height_115
 from probe_height_115_margin import cases
 from probe_height_115_contact_action_pair import basis
 from probe_braking_nominal_rollout import apply_extra
-from probe_current_vmc_design import current_vmc_table
+from native.design import current_vmc_table
 from select_braking_common_action import lqr_cost,batch_scores,task_forecast
 from model_lqr import sagittal_basis
 from probe_height_115_action_predict_loow import sha

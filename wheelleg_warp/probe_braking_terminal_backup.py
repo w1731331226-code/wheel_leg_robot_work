@@ -11,7 +11,7 @@ from native.controller import D,fk
 from native.environment import NativeEnv,reduce_contacts
 from native.terrain import bank_height_115
 from probe_height_115_margin import cases
-from probe_current_vmc_design import current_vmc_table
+from native.design import current_vmc_table
 from probe_braking_feedback import Forecaster,execution_graph,record_forecast
 from probe_braking_nominal_rollout import apply_extra
 from select_braking_common_action import batch_scores,task_forecast

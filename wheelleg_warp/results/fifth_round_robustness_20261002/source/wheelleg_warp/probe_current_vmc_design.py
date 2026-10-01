@@ -18,7 +18,7 @@ def run(output,robustness_panel=False):
     scenes=cases()[:6]
     labels=['nominal']*6
     if robustness_panel:
-        variations=[('nominal',{}),('training_corner',dict(mass=7.5,mu_l=.6,mu_r=1.,drive_difference=.03,delay_ms=10.)),
+        variations=[('nominal',{}),('training_corner',dict(mass=7.5,mu_l=.6,mu_r=1.,drive_difference=.05,delay_ms=10.)),
             ('pressure_corner',dict(mass=8.,mu_l=.4,mu_r=1.2,drive_difference=-.05,delay_ms=20.))]
         base=scenes;scenes=[replace(scene,**change) for _,change in variations for scene in base];labels=[name for name,_ in variations for _ in base]
         output.joinpath('registered_cases.json').write_text(json.dumps({'selection':'three fixed parameter settings crossed with existing six normal cases; public development, no final holdout','labels':labels,'scenarios':[asdict(s) for s in scenes]},indent=2)+'\n')

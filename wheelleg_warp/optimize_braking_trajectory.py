@@ -10,7 +10,7 @@ from scipy.optimize import minimize
 from native.environment import NativeEnv
 from native.terrain import bank_height_115,HEIGHT_115_GEOMETRIC_MIN as LIMIT
 from probe_height_115_margin import cases
-from probe_current_vmc_design import current_vmc_table
+from native.design import current_vmc_table
 from probe_braking_feedback import execution_graph,D
 from probe_braking_terminal_backup import FullForecaster
 from probe_height_115_contact_action_pair import basis

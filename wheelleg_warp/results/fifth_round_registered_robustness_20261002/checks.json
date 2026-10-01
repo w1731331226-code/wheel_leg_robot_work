@@ -1,0 +1,31 @@
+{
+  "groups": {
+    "nominal": {
+      "physical_pass": 6,
+      "task_pass": 4,
+      "total": 6,
+      "minimum_actual_leg_m": 0.11490797054201829,
+      "minimum_joint_margin_rad": 0.10450863838195801
+    },
+    "training_corner": {
+      "physical_pass": 6,
+      "task_pass": 3,
+      "total": 6,
+      "minimum_actual_leg_m": 0.11487735969702212,
+      "minimum_joint_margin_rad": 0.09886467456817627
+    },
+    "pressure_corner": {
+      "physical_pass": 6,
+      "task_pass": 4,
+      "total": 6,
+      "minimum_actual_leg_m": 0.11492614106207007,
+      "minimum_joint_margin_rad": 0.10000908374786377
+    }
+  },
+  "training_group_matches_declared_domain": true,
+  "registered_cases_match": true,
+  "all_full_physical_evidence": true,
+  "high_robustness_or_IID_claimed": false,
+  "delay_robustness_with_zero_actor_claimed": false,
+  "overall_training_ready": false
+}

@@ -1,0 +1,31 @@
+{
+  "registered_cases_match": true,
+  "all_full_evidence": true,
+  "groups": {
+    "nominal": {
+      "physical_pass": 6,
+      "task_pass": 4,
+      "total": 6,
+      "min_actual_A_B_m": 0.11490796160132269,
+      "min_joint_margin_rad": 0.10451364517211914
+    },
+    "training_corner": {
+      "physical_pass": 6,
+      "task_pass": 3,
+      "total": 6,
+      "min_actual_A_B_m": 0.11487444606527684,
+      "min_joint_margin_rad": 0.10175478458404541
+    },
+    "pressure_corner": {
+      "physical_pass": 6,
+      "task_pass": 4,
+      "total": 6,
+      "min_actual_A_B_m": 0.11492413007382822,
+      "min_joint_margin_rad": 0.10000908374786377
+    }
+  },
+  "nominal_parameters_fixed": true,
+  "IID_generalization_or_high_robustness_claimed": false,
+  "actor_or_sensor_delay_robustness_claimed": false,
+  "overall_training_ready": false
+}

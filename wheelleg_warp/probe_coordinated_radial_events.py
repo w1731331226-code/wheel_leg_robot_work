@@ -45,7 +45,7 @@ def run(output,braking=False,current_vmc=False):
                   residual_scale=0,feasible_reference=True,coordinated_reference=True,radial_guard=braking)
     try:
         if current_vmc:
-            from probe_current_vmc_design import current_vmc_table
+            from native.design import current_vmc_table
             table,_=current_vmc_table();env.k['gains'].assign(np.stack([t[0] for t in table]));env.k['feed'].assign(np.stack([t[1] for t in table]));env.k['angles'].assign(np.array([t[2] for t in table]))
         env.reset();d=env.data;nq,nv=env.cpu.nq,env.cpu.nv;width=1+nq+2*nv+6
         pre=wp.zeros((40,6,width),dtype=D);post=wp.zeros_like(pre);metrics=wp.zeros((40,6,13),dtype=D)

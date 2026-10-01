@@ -9,7 +9,7 @@ import warp as wp
 from native.environment import NativeEnv
 from native.terrain import bank_height_115
 from probe_height_115_margin import cases
-from probe_current_vmc_design import current_vmc_table
+from native.design import current_vmc_table
 from probe_braking_feedback import D,execution_graph
 from probe_braking_terminal_backup import FullForecaster
 from select_braking_common_action import batch_scores,batch_constraint_margins,task_forecast
@@ -68,7 +68,8 @@ def run(source,output):
             limitations='Retains only the supplied frozen plan, revalidating its full remaining nominal trajectory. Full simulator state, fixed7kg flat predictor. Diagnostic stop on loss is not a certified physical fallback; no robust/recursive/real-time claim.',
             input_sha256={str((source/f'world{w}_best.npz').relative_to(ROOT)):sha(source/f'world{w}_best.npz') for w in range(2)},
             source_sha256={str(path.relative_to(ROOT)):sha(path) for path in (Path(__file__),ROOT/'wheelleg_warp/probe_braking_feedback.py',ROOT/'wheelleg_warp/probe_braking_terminal_backup.py',ROOT/'wheelleg_warp/select_braking_common_action.py')})
-        (output/'verification.json').write_text(json.dumps(result,indent=2)+'\n');print('RETAINED RESULT',completed,failure,'actual passes',sum(e['success'] for e in episodes),flush=True)
+        (output/'verification.json').write_text(json.dumps(result,indent=2)+'\n');(output/'progress.json').unlink(missing_ok=True)
+        print('RETAINED RESULT',completed,failure,'actual passes',sum(e['success'] for e in episodes),flush=True)
     finally:env.close()
 
 
