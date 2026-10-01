@@ -273,7 +273,7 @@ def reset_rows(mask:wp.array[int],q0:wp.array2d[float],q:wp.array2d[float],v:wp.
 
 
 class NativeEnv(VecEnv):
-    def __init__(self,n=128,stage=3,seed=730000,scenario=None,bank_factory=bank,yaw_config=(.4,2.,.24,.3),residual_scale=1.,residual_mode='diff3',terminate_on_attitude_failure=False,project_clipped_base=False,grouped_residual=False,height_conditioned=False,height_design='legacy',height_safety=None,feasible_reference=False,coordinated_reference=False,radial_guard=False,arrival_position_hold=False,parking_guard=False,pose_coordinate_projection=False):
+    def __init__(self,n=128,stage=3,seed=730000,scenario=None,bank_factory=bank,yaw_config=(.4,2.,.24,.3),residual_scale=1.,residual_mode='diff3',terminate_on_attitude_failure=False,project_clipped_base=False,grouped_residual=False,height_conditioned=False,height_design='legacy',height_safety=None,feasible_reference=False,coordinated_reference=False,radial_guard=False,arrival_position_hold=False):
         if not isinstance(n,int) or not 1 <= n <= 1024:raise ValueError('用户限制：批量环境数须为1～1024')
         if type(project_clipped_base) is not bool:raise ValueError('基础限幅后残差投影开关须为布尔值')
         self.project_clipped_base=project_clipped_base
@@ -303,21 +303,17 @@ class NativeEnv(VecEnv):
         self.feasible_reference=feasible_reference
         if type(coordinated_reference) is not bool or (coordinated_reference and not feasible_reference):raise ValueError('轮髋协调投影需要先启用请求投影')
         self.coordinated_reference=coordinated_reference
-        if type(pose_coordinate_projection) is not bool or (pose_coordinate_projection and not coordinated_reference):raise ValueError('角度坐标投影需要轮髋协调')
-        self.pose_coordinate_projection=pose_coordinate_projection
         if type(radial_guard) is not bool or (radial_guard and not coordinated_reference):raise ValueError('径向动态试验需要轮髋协调投影')
         self.radial_guard=radial_guard
         if type(arrival_position_hold) is not bool or (arrival_position_hold and not radial_guard):raise ValueError('到达位置保持试验需要径向保护模式')
         self.arrival_position_hold=arrival_position_hold
-        if type(parking_guard) is not bool or (parking_guard and (not radial_guard or arrival_position_hold)):raise ValueError('停车距离试验需要径向保护且不能提前追返位置')
-        self.parking_guard=parking_guard
         self.stand_heights=np.asarray([s.stand_height_m if height_conditioned else sim.L_STAND for s in self.scenarios],dtype=float)
         low=HEIGHT_115_MIN if height_design=='range115' else sim.L_SQUAT_MIN
         if not np.isfinite(self.stand_heights).all() or np.any((self.stand_heights<low)|(self.stand_heights>sim.L_MAX)):
             raise ValueError(f'目标腿长超出{low:.3f}～{sim.L_MAX:.3f}m')
         if len(yaw_config)!=4 or not np.isfinite(yaw_config).all() or min(yaw_config)<=0:raise ValueError('无效偏航控制参数')
         self.yaw_config=tuple(float(x) for x in yaw_config);self.k=constants(self.cpu,n,self.yaw_config,self.action_dim,height_design)
-        if radial_guard:self.k['state']=wp.array(np.c_[self.k['state'].numpy(),np.zeros((n,9 if parking_guard else 4))],dtype=D)
+        if radial_guard:self.k['state']=wp.array(np.c_[self.k['state'].numpy(),np.zeros((n,4))],dtype=D)
         self.control_kernel=control
         self.control_extra=[]
         self.actuator_gain_upper=None
@@ -399,12 +395,9 @@ class NativeEnv(VecEnv):
                 references[i]=[alpha,beta,h]
         if feasible_reference:
             references=np.c_[references,np.tile([HEIGHT_115_GEOMETRIC_MIN,1.,1.4,sim.L_MAX],(n,1))]
-            if coordinated_reference:references=np.c_[references,np.full(n,2. if pose_coordinate_projection else 1.)]
+            if coordinated_reference:references=np.c_[references,np.ones(n)]
             if radial_guard:references=np.c_[references,np.tile([200.,8.],(n,1))]
             if arrival_position_hold:references=np.c_[references,np.ones(n)]
-            if parking_guard:
-                spin=sim.hw.MOTOR_INERTIA+sim.hw.TIRE_MASS*sim.hw.WHEEL_RADIUS**2+.5*sim.hw.HUB_MASS*sim.hw.WHEEL_HUB_RADIUS**2
-                references=np.c_[references,np.tile([2.,.6,8.+2*spin/sim.hw.WHEEL_RADIUS**2],(n,1))]
             self.k['reference']=wp.array(references,dtype=D)
         else:self.k['reference'].assign(references)
         self.q0=wp.array(q0,dtype=wp.float32)
@@ -492,19 +485,14 @@ class NativeEnv(VecEnv):
                 infos[i]['control_limit_scope']='nominal_command'
                 infos[i]['feasible_reference']=self.feasible_reference
                 infos[i]['coordinated_reference']=self.coordinated_reference
-                infos[i]['pose_coordinate_projection']=self.pose_coordinate_projection
                 infos[i]['radial_guard']=self.radial_guard
                 infos[i]['arrival_position_hold']=self.arrival_position_hold
-                infos[i]['parking_guard']=self.parking_guard
                 if self.radial_guard:
                     j=16+self.action_dim
                     infos[i]['max_requested_radial_guard_N']=float(control_states[i,j])
                     infos[i]['max_applied_radial_guard_N']=float(control_states[i,j+1])
                     infos[i]['radial_guard_limited_steps']=int(control_states[i,j+2])
                     infos[i]['radial_guard_active_steps']=int(control_states[i,j+3])
-                    if self.parking_guard:
-                        infos[i]['max_requested_parking_brake_Nm']=float(control_states[i,j+7])
-                        infos[i]['parking_guard_active_steps']=int(control_states[i,j+8])
                 infos[i]['terminate_on_attitude_failure']=self.terminate_on_attitude_failure
                 if self.height_conditioned:
                     infos[i]['target_leg_m']=float(self.stand_heights[i])

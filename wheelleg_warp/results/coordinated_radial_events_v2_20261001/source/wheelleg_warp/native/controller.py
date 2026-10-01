@@ -16,7 +16,6 @@ M2=wp.types.matrix(shape=(2,2),dtype=D)
 PI=wp.constant(np.pi)
 P1=wp.constant(sim.PHI1_STAND);P4=wp.constant(sim.PHI4_STAND)
 MASS=wp.constant(sim.hw.DESIGN_MASS/sim.hw.BASELINE_MASS)
-HIP_INERTIA=wp.constant(sim.hw.HIP_OUTPUT_INERTIA)
 
 
 @wp.func
@@ -44,15 +43,6 @@ def project_leg_angle(length:D,requested:D,cap:D):
         if standing_pose_feasible(length,mid,cap):inside=mid
         else:outside=mid
     return inside,True
-
-
-@wp.func
-def outward_force_headroom(j:V2,base:V2,bound:V2):
-    available=D(1.e30)
-    for k in range(2):
-        if j[k]>D(0):available=wp.min(available,(bound[k]-base[k])/j[k])
-        elif j[k]<D(0):available=wp.min(available,(-bound[k]-base[k])/j[k])
-    return wp.max(D(0),available)
 
 
 @wp.func
@@ -162,12 +152,6 @@ def control_step(w:int,qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.a
     state[w,7]=state[w,7]+(vx-state[w,7])*D(.025)
     state[w,8]=state[w,8]+(D(sensor[w,gyro+2])-state[w,8])*D(.025)
     cmd=D(command[w]);error=wp.atan2(wp.sin(yaw-state[w,9]),wp.cos(yaw-state[w,9]))
-    parking_guard=reference.shape[1]>12 and reference[w,10]==D(2)
-    parking_index=20+targets.shape[1]
-    if parking_guard:
-        if wp.abs(cmd)>=D(.01):state[w,parking_index+2]=wp.sign(cmd)
-        elif state[w,12]<D(0) and state[w,parking_index+2]!=D(0):
-            state[w,parking_index]=D(qpos[w,0]);state[w,parking_index+1]=D(qpos[w,1])
     if wp.abs(cmd)>=D(.01):state[w,12]=D(-1)
     elif state[w,12]<D(0):state[w,12]=boot
     if wp.abs(cmd)<D(.01) and wp.abs(state[w,7])<D(.05) and state[w,10]<D(.1):state[w,9]=yaw
@@ -215,8 +199,7 @@ def control_step(w:int,qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.a
         if length>heights[knot]:index=knot
     ratio=wp.clamp((length-heights[index])/(heights[index+1]-heights[index]),D(0),D(1))
     theta_eq=(D(1)-ratio)*angles[index]+ratio*angles[index+1]
-    arrival_hold=reference.shape[1]>10 and reference[w,10]==D(1)
-    if wp.abs(cmd)>D(.01) or (not arrival_hold and wp.abs(vx)>D(.03)):state[w,13]=D(0)
+    if wp.abs(cmd)>D(.01) or wp.abs(vx)>D(.03):state[w,13]=D(0)
     elif state[w,13]==D(0):
         state[w,13]=D(1);state[w,14]=D(qpos[w,0]);state[w,15]=D(qpos[w,1])
     position=D(0)
@@ -250,52 +233,19 @@ def control_step(w:int,qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.a
         if safe_l!=requested_l:hl=kg*(safe_l-al)+hd
         if safe_r!=requested_r:hr=kg*(safe_r-ar)+hd
         if reference.shape[1]>7 and reference[w,7]>D(0):
-            channel=int(3)
-            if reference[w,7]==D(2):channel=0
-            kh=(D(1)-ratio)*gains[index,1,channel]+ratio*gains[index+1,1,channel]
-            kw=(D(1)-ratio)*gains[index,0,channel]+ratio*gains[index+1,0,channel]
-            # Update BOTH inputs in the same reference coordinate. Angle mode
-            # changes the angle reference and keeps the speed reference fixed.
-            wheel=wheel+(kw/kh)*((hl+hr)/D(2)-original_hub_mean)
+            khv=(D(1)-ratio)*gains[index,1,3]+ratio*gains[index+1,1,3]
+            kwv=(D(1)-ratio)*gains[index,0,3]+ratio*gains[index+1,0,3]
+            # One effective velocity-reference change must update BOTH LQR inputs.
+            wheel=wheel+(kwv/khv)*((hl+hr)/D(2)-original_hub_mean)
         if diagnostic.shape[1]>=31:
             diagnostic[w,21]=left_target;diagnostic[w,22]=right_target
             diagnostic[w,23]=requested_l;diagnostic[w,24]=requested_r
             diagnostic[w,25]=safe_l;diagnostic[w,26]=safe_r;diagnostic[w,27]=hd
             diagnostic[w,28]=D(int(safe_l!=requested_l)+int(safe_r!=requested_r))
             diagnostic[w,29]=hl;diagnostic[w,30]=hr
-    fleft=support+D(MASS)*(D(500)*(left_target-left[3])-D(25)*rate_l)
-    fright=support+D(MASS)*(D(500)*(right_target-right[3])-D(25)*rate_r)
-    tl=jl*V2(fleft,hl);tr=jr*V2(fright,hr)
-    if reference.shape[1]>9 and reference[w,8]>D(0):
-        k=reference[w,8];il=inverse2(jl);ir=inverse2(jr)
-        # Public mass upper bound plus reflected nominal hip-rotor energy.
-        ml=reference[w,9]+D(HIP_INERTIA)*(il[0,0]*il[0,0]+il[0,1]*il[0,1])
-        mr=reference[w,9]+D(HIP_INERTIA)*(ir[0,0]*ir[0,0]+ir[0,1]*ir[0,1])
-        requested=wp.max(D(0),wp.max(ml*(-D(2)*k*rate_l-k*k*(left[3]-reference[w,2])),
-                                   mr*(-D(2)*k*rate_r-k*k*(right[3]-reference[w,2]))))
-        room=wp.min(outward_force_headroom(V2(jl[0,0],jl[1,0]),tl,V2(bounds[0],bounds[1])),
-                    outward_force_headroom(V2(jr[0,0],jr[1,0]),tr,V2(bounds[2],bounds[3])))
-        applied=wp.min(requested,room)
-        if state.shape[1]>=20+targets.shape[1]:
-            base_index=16+targets.shape[1]
-            state[w,base_index]=wp.max(state[w,base_index],requested)
-            state[w,base_index+1]=wp.max(state[w,base_index+1],applied)
-            state[w,base_index+2]+=D(int(applied<requested))
-            state[w,base_index+3]+=D(int(applied>D(0)))
-        fleft+=applied;fright+=applied
-        tl=jl*V2(fleft,hl);tr=jr*V2(fright,hr)
-        if diagnostic.shape[1]>=38:
-            diagnostic[w,31]=requested;diagnostic[w,32]=applied;diagnostic[w,33]=ml;diagnostic[w,34]=mr
-            diagnostic[w,35]=fleft;diagnostic[w,36]=fright;diagnostic[w,37]=D(int(applied<requested))
+    tl=jl*V2(support+D(MASS)*(D(500)*(left_target-left[3])-D(25)*rate_l),hl)
+    tr=jr*V2(support+D(MASS)*(D(500)*(right_target-right[3])-D(25)*rate_r),hr)
     yaw_torque=D(0)
-    if parking_guard and wp.abs(cmd)<D(.01) and state[w,parking_index+2]!=D(0):
-        dx=D(qpos[w,0])-state[w,parking_index];dy=D(qpos[w,1])-state[w,parking_index+1]
-        remaining=reference[w,11]-wp.sqrt(dx*dx+dy*dy)
-        braking_torque=wp.min(bounds[4],bounds[5])
-        if remaining>D(0):braking_torque=D(sim.hw.WHEEL_RADIUS)*reference[w,12]*vx*vx/(D(4)*remaining)
-        wheel-=wp.sign(vx)*braking_torque
-        state[w,parking_index+3]=wp.max(state[w,parking_index+3],braking_torque)
-        state[w,parking_index+4]+=D(int(braking_torque>D(0)))
     if wp.abs(error)>=D(PI)/D(360) or wp.abs(state[w,8])>=D(.05):yaw_torque=wp.clamp(-yaw_cfg[0]*error-yaw_cfg[1]*state[w,8],-yaw_cfg[2]*D(MASS),yaw_cfg[2]*D(MASS))
     base=V6(tl[0],tl[1],tr[0],tr[1],wheel+yaw_torque,wheel-yaw_torque)
     invalid_base=int(0);invalid_leg_base=int(0);invalid_wheel_base=int(0);bad_control=bool(False)

@@ -23,7 +23,7 @@ def project(inputs:wp.array2d[D],out:wp.array2d[D]):
     out[w,0]=a;out[w,1]=D(int(valid))
 
 
-def run(output,coordinated=False,radial_guard=False,arrival_hold=False,parking_guard=False,pose_coordinate=False):
+def run(output,coordinated=False,radial_guard=False,arrival_hold=False):
     assert not output.exists(),output;wp.init();wp.set_device('cuda:0')
     inputs=np.array([[h,a,1.4] for h in np.linspace(HEIGHT_115_GEOMETRIC_MIN,.38,25) for a in (-.8,-.4,-.15,0,.15,.4,.8)])
     out=wp.zeros((len(inputs),2),dtype=D);wp.launch(project,len(inputs),[wp.array(inputs,dtype=D),out]);got=out.numpy()
@@ -35,7 +35,7 @@ def run(output,coordinated=False,radial_guard=False,arrival_hold=False,parking_g
     scenes=cases()[:6];found=[];counts=[];peaks=[]
     for enabled in (False,True):
         env=NativeEnv(n=6,scenario=scenes,bank_factory=bank_height_115,height_conditioned=True,
-            height_design='range115',residual_scale=0,feasible_reference=enabled,coordinated_reference=enabled and coordinated,radial_guard=enabled and radial_guard,arrival_position_hold=enabled and arrival_hold,parking_guard=enabled and parking_guard,pose_coordinate_projection=enabled and pose_coordinate)
+            height_design='range115',residual_scale=0,feasible_reference=enabled,coordinated_reference=enabled and coordinated,radial_guard=enabled and radial_guard,arrival_position_hold=enabled and arrival_hold)
         try:
             obs=env.reset();assert np.allclose(obs[:,11],-.185,atol=1e-6)
             result=[None]*6;clipped=np.zeros(6,np.int64);delta=np.zeros(6)
@@ -60,10 +60,8 @@ def run(output,coordinated=False,radial_guard=False,arrival_hold=False,parking_g
         projection_rule='Radial targets keep their original mean and fit declared reference interval. Angular static-equivalent position requests use connected standing IK with1.4rad design cap; retain common angular velocity feedback and unchanged wheel LQR.',
         nominal_height_m=.115,nominal_speed_targets_unchanged=True,physical_limits_unchanged=True,coordinated_reference=coordinated,radial_guard=radial_guard,
         radial_guard_rule='Common nonnegative force from public mass8kg plus nominal reflected hip inertia; nominal-target tracking expression -2k*rate-k^2*(L-target), k=200/s from5ms horizon; analytic hip headroom preserves angular requests. Not a certified dynamics bound.' if radial_guard else None,
-        arrival_position_hold=arrival_hold,parking_guard=parking_guard,
-        parking_guard_rule='At declared stop, extra common wheel braking from v^2/(2*remaining_distance), public mass8kg plus nominal wheel spin inertia, old0.6m parking limit; no retarget to arrival anchor, nominal gains and final motor limits unchanged' if parking_guard else None,
-        pose_coordinate_projection=pose_coordinate,
-        coordination_rule=('delta_wheel=(K_wheel_angle/K_hub_angle)*delta_mean_hub, same angle-reference change, speed reference fixed' if pose_coordinate else 'delta_wheel=(K_wheel_v/K_hub_v)*delta_mean_hub, same virtual velocity-reference change') if coordinated else None,
+        arrival_position_hold=arrival_hold,
+        coordination_rule='delta_wheel=(K_wheel_v/K_hub_v)*delta_mean_hub, same virtual velocity-reference change in both LQR inputs' if coordinated else None,
         scenarios=[asdict(s) for s in scenes],baseline=found[0],candidate=found[1],
         policy_boundary_projection_counts=counts[1],maximum_requested_angle_change_rad=peaks[1],
         full_normal_gate_pass=all(r['success'] for r in found[1]),
@@ -76,5 +74,5 @@ def run(output,coordinated=False,radial_guard=False,arrival_hold=False,parking_g
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',type=Path,required=True)
-    parser.add_argument('--coordinated',action='store_true');parser.add_argument('--radial-guard',action='store_true');parser.add_argument('--arrival-hold',action='store_true');parser.add_argument('--parking-guard',action='store_true');parser.add_argument('--pose-coordinate',action='store_true');args=parser.parse_args()
-    run(args.output,args.coordinated,args.radial_guard,args.arrival_hold,args.parking_guard,args.pose_coordinate)
+    parser.add_argument('--coordinated',action='store_true');parser.add_argument('--radial-guard',action='store_true');parser.add_argument('--arrival-hold',action='store_true');args=parser.parse_args()
+    run(args.output,args.coordinated,args.radial_guard,args.arrival_hold)

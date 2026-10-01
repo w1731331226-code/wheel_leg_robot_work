@@ -273,7 +273,7 @@ def reset_rows(mask:wp.array[int],q0:wp.array2d[float],q:wp.array2d[float],v:wp.
 
 
 class NativeEnv(VecEnv):
-    def __init__(self,n=128,stage=3,seed=730000,scenario=None,bank_factory=bank,yaw_config=(.4,2.,.24,.3),residual_scale=1.,residual_mode='diff3',terminate_on_attitude_failure=False,project_clipped_base=False,grouped_residual=False,height_conditioned=False,height_design='legacy',height_safety=None,feasible_reference=False,coordinated_reference=False,radial_guard=False,arrival_position_hold=False,parking_guard=False,pose_coordinate_projection=False):
+    def __init__(self,n=128,stage=3,seed=730000,scenario=None,bank_factory=bank,yaw_config=(.4,2.,.24,.3),residual_scale=1.,residual_mode='diff3',terminate_on_attitude_failure=False,project_clipped_base=False,grouped_residual=False,height_conditioned=False,height_design='legacy',height_safety=None,feasible_reference=False,coordinated_reference=False,radial_guard=False,arrival_position_hold=False,parking_guard=False):
         if not isinstance(n,int) or not 1 <= n <= 1024:raise ValueError('用户限制：批量环境数须为1～1024')
         if type(project_clipped_base) is not bool:raise ValueError('基础限幅后残差投影开关须为布尔值')
         self.project_clipped_base=project_clipped_base
@@ -303,8 +303,6 @@ class NativeEnv(VecEnv):
         self.feasible_reference=feasible_reference
         if type(coordinated_reference) is not bool or (coordinated_reference and not feasible_reference):raise ValueError('轮髋协调投影需要先启用请求投影')
         self.coordinated_reference=coordinated_reference
-        if type(pose_coordinate_projection) is not bool or (pose_coordinate_projection and not coordinated_reference):raise ValueError('角度坐标投影需要轮髋协调')
-        self.pose_coordinate_projection=pose_coordinate_projection
         if type(radial_guard) is not bool or (radial_guard and not coordinated_reference):raise ValueError('径向动态试验需要轮髋协调投影')
         self.radial_guard=radial_guard
         if type(arrival_position_hold) is not bool or (arrival_position_hold and not radial_guard):raise ValueError('到达位置保持试验需要径向保护模式')
@@ -399,7 +397,7 @@ class NativeEnv(VecEnv):
                 references[i]=[alpha,beta,h]
         if feasible_reference:
             references=np.c_[references,np.tile([HEIGHT_115_GEOMETRIC_MIN,1.,1.4,sim.L_MAX],(n,1))]
-            if coordinated_reference:references=np.c_[references,np.full(n,2. if pose_coordinate_projection else 1.)]
+            if coordinated_reference:references=np.c_[references,np.ones(n)]
             if radial_guard:references=np.c_[references,np.tile([200.,8.],(n,1))]
             if arrival_position_hold:references=np.c_[references,np.ones(n)]
             if parking_guard:
@@ -492,7 +490,6 @@ class NativeEnv(VecEnv):
                 infos[i]['control_limit_scope']='nominal_command'
                 infos[i]['feasible_reference']=self.feasible_reference
                 infos[i]['coordinated_reference']=self.coordinated_reference
-                infos[i]['pose_coordinate_projection']=self.pose_coordinate_projection
                 infos[i]['radial_guard']=self.radial_guard
                 infos[i]['arrival_position_hold']=self.arrival_position_hold
                 infos[i]['parking_guard']=self.parking_guard

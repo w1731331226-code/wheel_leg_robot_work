@@ -1,0 +1,1027 @@
+{
+  "role": "coordinated_reference_radial_failure_windows",
+  "events": [
+    {
+      "world": 0,
+      "event": "first_geometry",
+      "step": 14900,
+      "time_s": 7.4505,
+      "stopped": true,
+      "arrival_s": 7.275,
+      "command_m_s": 0.0,
+      "actual_min_leg_m": 0.11470442688316594,
+      "pre_fk_length_m": [
+        0.11472132030384478,
+        0.11472145331940295
+      ],
+      "pre_fk_rate_m_s": [
+        -0.005502567308320314,
+        -0.005504383849153622
+      ],
+      "nominal_radial_force_N": [
+        21.874460681646667,
+        21.840412680392095
+      ],
+      "nominal_hub_Nm": [
+        -0.32883393095040725,
+        -0.3342446922424013
+      ],
+      "mean_wheel_command_Nm": -0.11158610880374908
+    },
+    {
+      "world": 0,
+      "event": "minimum_geometry",
+      "step": 15593,
+      "time_s": 7.797,
+      "stopped": true,
+      "arrival_s": 7.275,
+      "command_m_s": 0.0,
+      "actual_min_leg_m": 0.11442578110666285,
+      "pre_fk_length_m": [
+        0.11443998459748593,
+        0.11444009871706054
+      ],
+      "pre_fk_rate_m_s": [
+        -9.700014903866784e-05,
+        -0.00010336207235963624
+      ],
+      "nominal_radial_force_N": [
+        21.896354733006888,
+        21.895398314930947
+      ],
+      "nominal_hub_Nm": [
+        -0.21817115029155595,
+        -0.21822488263199713
+      ],
+      "mean_wheel_command_Nm": -0.1372193992137909
+    },
+    {
+      "world": 1,
+      "event": "first_geometry",
+      "step": 10115,
+      "time_s": 5.058,
+      "stopped": false,
+      "arrival_s": -1.0,
+      "command_m_s": 0.5,
+      "actual_min_leg_m": 0.11469634768439443,
+      "pre_fk_length_m": [
+        0.1147597504937475,
+        0.11475970111919025
+      ],
+      "pre_fk_rate_m_s": [
+        -0.05108858070240426,
+        -0.05108879468922842
+      ],
+      "nominal_radial_force_N": [
+        29.56067050936945,
+        29.563289418793396
+      ],
+      "nominal_hub_Nm": [
+        -4.260015982602557,
+        -4.259940861778353
+      ],
+      "mean_wheel_command_Nm": 2.9428160190582275
+    },
+    {
+      "world": 1,
+      "event": "minimum_geometry",
+      "step": 13037,
+      "time_s": 6.519,
+      "stopped": false,
+      "arrival_s": -1.0,
+      "command_m_s": 0.5,
+      "actual_min_leg_m": 0.11298198360794566,
+      "pre_fk_length_m": [
+        0.11299661862389705,
+        0.1130034271575485
+      ],
+      "pre_fk_rate_m_s": [
+        -0.0006624994902053343,
+        -0.0012047034096231164
+      ],
+      "nominal_radial_force_N": [
+        26.92936233893085,
+        27.050825863393186
+      ],
+      "nominal_hub_Nm": [
+        -0.07790405968960627,
+        -0.07547997386905826
+      ],
+      "mean_wheel_command_Nm": 0.04176078736782074
+    },
+    {
+      "world": 2,
+      "event": "first_geometry",
+      "step": 8529,
+      "time_s": 4.265,
+      "stopped": false,
+      "arrival_s": -1.0,
+      "command_m_s": 0.5,
+      "actual_min_leg_m": 0.11469847008882222,
+      "pre_fk_length_m": [
+        0.11506003262820892,
+        0.11475505707291002
+      ],
+      "pre_fk_rate_m_s": [
+        0.015070102153137512,
+        -0.05726008175846863
+      ],
+      "nominal_radial_force_N": [
+        18.172497707500074,
+        29.622849772363224
+      ],
+      "nominal_hub_Nm": [
+        -2.631297987661,
+        -1.0021970088233478
+      ],
+      "mean_wheel_command_Nm": 1.3744849562644958
+    },
+    {
+      "world": 2,
+      "event": "minimum_geometry",
+      "step": 8601,
+      "time_s": 4.301,
+      "stopped": false,
+      "arrival_s": -1.0,
+      "command_m_s": 0.5,
+      "actual_min_leg_m": 0.11314442554479319,
+      "pre_fk_length_m": [
+        0.11567390891770851,
+        0.11316170553341443
+      ],
+      "pre_fk_rate_m_s": [
+        0.008843234382717917,
+        -0.007833861314753126
+      ],
+      "nominal_radial_force_N": [
+        17.132355153421152,
+        26.604325192002573
+      ],
+      "nominal_hub_Nm": [
+        -0.21163907562944526,
+        -1.5724840596585428
+      ],
+      "mean_wheel_command_Nm": 0.4943784177303314
+    },
+    {
+      "world": 3,
+      "event": "first_geometry",
+      "step": 8324,
+      "time_s": 4.1625,
+      "stopped": false,
+      "arrival_s": -1.0,
+      "command_m_s": 0.5,
+      "actual_min_leg_m": 0.1147014032865316,
+      "pre_fk_length_m": [
+        0.11473908407419141,
+        0.11473907419466767
+      ],
+      "pre_fk_rate_m_s": [
+        -0.031104228736433957,
+        -0.031099691880068794
+      ],
+      "nominal_radial_force_N": [
+        26.202215228851937,
+        26.192051397784304
+      ],
+      "nominal_hub_Nm": [
+        -1.0349494239027117,
+        -1.0349800691240205
+      ],
+      "mean_wheel_command_Nm": 0.4749450981616974
+    },
+    {
+      "world": 3,
+      "event": "minimum_geometry",
+      "step": 16177,
+      "time_s": 8.089,
+      "stopped": true,
+      "arrival_s": 7.5665000000000004,
+      "command_m_s": 0.0,
+      "actual_min_leg_m": 0.11442399493569365,
+      "pre_fk_length_m": [
+        0.11444232690802686,
+        0.11443818334374398
+      ],
+      "pre_fk_rate_m_s": [
+        -9.661775038284825e-05,
+        -0.0001085481974602818
+      ],
+      "nominal_radial_force_N": [
+        21.89564827656676,
+        21.895461238801794
+      ],
+      "nominal_hub_Nm": [
+        -0.21822260740276417,
+        -0.21767845420379356
+      ],
+      "mean_wheel_command_Nm": -0.13737143576145172
+    },
+    {
+      "world": 4,
+      "event": "first_geometry",
+      "step": 9493,
+      "time_s": 4.747,
+      "stopped": true,
+      "arrival_s": 4.571,
+      "command_m_s": 0.0,
+      "actual_min_leg_m": 0.1147024188213517,
+      "pre_fk_length_m": [
+        0.11471940157358486,
+        0.11471926690955142
+      ],
+      "pre_fk_rate_m_s": [
+        -0.005470967822532245,
+        -0.005467683154369761
+      ],
+      "nominal_radial_force_N": [
+        21.868250379224754,
+        21.848996347891067
+      ],
+      "nominal_hub_Nm": [
+        -0.32861316859048567,
+        -0.3314961211936334
+      ],
+      "mean_wheel_command_Nm": -0.060766998678445816
+    },
+    {
+      "world": 4,
+      "event": "minimum_geometry",
+      "step": 11332,
+      "time_s": 5.6665,
+      "stopped": true,
+      "arrival_s": 4.571,
+      "command_m_s": 0.0,
+      "actual_min_leg_m": 0.1144069437000569,
+      "pre_fk_length_m": [
+        0.11442122415075627,
+        0.11442104456447243
+      ],
+      "pre_fk_rate_m_s": [
+        -6.213441368881229e-05,
+        -7.469077691974524e-05
+      ],
+      "nominal_radial_force_N": [
+        21.959215932158315,
+        21.951624853034893
+      ],
+      "nominal_hub_Nm": [
+        -0.21264095987165907,
+        -0.21265657679086
+      ],
+      "mean_wheel_command_Nm": -0.13695043325424194
+    },
+    {
+      "world": 5,
+      "event": "first_geometry",
+      "step": 4337,
+      "time_s": 2.169,
+      "stopped": false,
+      "arrival_s": -1.0,
+      "command_m_s": -1.0,
+      "actual_min_leg_m": 0.11470176911002292,
+      "pre_fk_length_m": [
+        0.1147195031499274,
+        0.11471959216906386
+      ],
+      "pre_fk_rate_m_s": [
+        -0.007481731126662251,
+        -0.007479159780972132
+      ],
+      "nominal_radial_force_N": [
+        22.207043708708795,
+        22.200180315703626
+      ],
+      "nominal_hub_Nm": [
+        -0.4153020163393983,
+        -0.4152027058805296
+      ],
+      "mean_wheel_command_Nm": -0.26816922426223755
+    },
+    {
+      "world": 5,
+      "event": "minimum_geometry",
+      "step": 4470,
+      "time_s": 2.2355,
+      "stopped": false,
+      "arrival_s": -1.0,
+      "command_m_s": -1.0,
+      "actual_min_leg_m": 0.11440262346220291,
+      "pre_fk_length_m": [
+        0.11441682596942071,
+        0.11441687241414696
+      ],
+      "pre_fk_rate_m_s": [
+        -0.0001108817846130171,
+        -0.00011438780932689107
+      ],
+      "nominal_radial_force_N": [
+        21.97927547632942,
+        21.976234979184827
+      ],
+      "nominal_hub_Nm": [
+        -0.21533600645607445,
+        -0.21540153547861243
+      ],
+      "mean_wheel_command_Nm": -0.23945005238056183
+    }
+  ],
+  "scenarios": [
+    {
+      "speed": 0.5,
+      "mass": 7.0,
+      "height_l": 0.0,
+      "height_r": 0.0,
+      "center": 2.0,
+      "offset": 0.0,
+      "mu_l": 0.8,
+      "mu_r": 0.8,
+      "drive_difference": 0.0,
+      "delay_ms": 0.0,
+      "solver_iterations": 100,
+      "terrain": "legacy",
+      "grade_deg": 0.0,
+      "roughness_m": 0.0,
+      "step_height_m": 0.0,
+      "terrain_seed": 1151234,
+      "relative_attitude": true,
+      "transition_run_m": 0.0,
+      "lateral_margin_m": 0.0,
+      "stand_height_m": 0.115
+    },
+    {
+      "speed": 0.5,
+      "mass": 7.0,
+      "height_l": 0.0,
+      "height_r": 0.0,
+      "center": 2.0,
+      "offset": 0.0,
+      "mu_l": 0.8,
+      "mu_r": 0.8,
+      "drive_difference": 0.0,
+      "delay_ms": 0.0,
+      "solver_iterations": 100,
+      "terrain": "step",
+      "grade_deg": 0.0,
+      "roughness_m": 0.0,
+      "step_height_m": 0.02,
+      "terrain_seed": 1151234,
+      "relative_attitude": true,
+      "transition_run_m": 0.0,
+      "lateral_margin_m": 0.0,
+      "stand_height_m": 0.115
+    },
+    {
+      "speed": 0.5,
+      "mass": 7.0,
+      "height_l": 0.0,
+      "height_r": 0.0,
+      "center": 2.0,
+      "offset": 0.0,
+      "mu_l": 0.8,
+      "mu_r": 0.8,
+      "drive_difference": 0.0,
+      "delay_ms": 0.0,
+      "solver_iterations": 100,
+      "terrain": "cross_slope",
+      "grade_deg": 3.0,
+      "roughness_m": 0.0,
+      "step_height_m": 0.0,
+      "terrain_seed": 1151234,
+      "relative_attitude": true,
+      "transition_run_m": 0.0,
+      "lateral_margin_m": 0.0,
+      "stand_height_m": 0.115
+    },
+    {
+      "speed": 0.5,
+      "mass": 7.0,
+      "height_l": 0.0,
+      "height_r": 0.0,
+      "center": 2.0,
+      "offset": 0.0,
+      "mu_l": 0.8,
+      "mu_r": 0.8,
+      "drive_difference": 0.0,
+      "delay_ms": 0.0,
+      "solver_iterations": 100,
+      "terrain": "rough",
+      "grade_deg": 0.0,
+      "roughness_m": 0.004,
+      "step_height_m": 0.0,
+      "terrain_seed": 1151234,
+      "relative_attitude": true,
+      "transition_run_m": 0.0,
+      "lateral_margin_m": 0.0,
+      "stand_height_m": 0.115
+    },
+    {
+      "speed": 1.0,
+      "mass": 7.0,
+      "height_l": 0.0,
+      "height_r": 0.0,
+      "center": 2.0,
+      "offset": 0.0,
+      "mu_l": 0.8,
+      "mu_r": 0.8,
+      "drive_difference": 0.0,
+      "delay_ms": 0.0,
+      "solver_iterations": 100,
+      "terrain": "legacy",
+      "grade_deg": 0.0,
+      "roughness_m": 0.0,
+      "step_height_m": 0.0,
+      "terrain_seed": 0,
+      "relative_attitude": false,
+      "transition_run_m": 0.0,
+      "lateral_margin_m": 0.0,
+      "stand_height_m": 0.115
+    },
+    {
+      "speed": -1.0,
+      "mass": 7.0,
+      "height_l": 0.0,
+      "height_r": 0.0,
+      "center": 2.0,
+      "offset": 0.0,
+      "mu_l": 0.8,
+      "mu_r": 0.8,
+      "drive_difference": 0.0,
+      "delay_ms": 0.0,
+      "solver_iterations": 100,
+      "terrain": "legacy",
+      "grade_deg": 0.0,
+      "roughness_m": 0.0,
+      "step_height_m": 0.0,
+      "terrain_seed": 0,
+      "relative_attitude": false,
+      "transition_run_m": 0.0,
+      "lateral_margin_m": 0.0,
+      "stand_height_m": 0.115
+    }
+  ],
+  "complete_episodes": [
+    {
+      "reason": "completed",
+      "physical_steps": 18550,
+      "arrival_s": 7.275,
+      "rms_deg": [
+        7.707776059269574e-06,
+        0.10272726772387956,
+        0.0002879977374591269
+      ],
+      "velocity_rmse": 0.05268194836238494,
+      "stop_distance_m": 0.2027652263681093,
+      "tail_speed_m_s": 0.0034760676880614527,
+      "success": false,
+      "duration_s": 9.275,
+      "episode": {
+        "r": -1.4040359831892282,
+        "l": 464
+      },
+      "peak_deg": [
+        3.965351649106029e-05,
+        0.43000563002631464,
+        0.0005333420259657856
+      ],
+      "TimeLimit_truncated": false,
+      "required_contact_mask": 0,
+      "touched_contact_mask": 0,
+      "required_terrain_contact_mask": 0,
+      "touched_terrain_contact_mask": 0,
+      "terrain_passed": true,
+      "terrain_required_end_m": null,
+      "wheel_progress_m": [
+        1.0249200998644001,
+        1.0249228132910106
+      ],
+      "terrain_entry_profile": "abrupt_or_original",
+      "terrain_exit_passed": true,
+      "terrain_evidence_passed": true,
+      "task_contract_version": 2,
+      "task_goal_progress_m": 2.75,
+      "attitude_mode": "terrain_relative",
+      "relative_peak_deg": [
+        3.965351649106029e-05,
+        0.43000563002631464,
+        0.0005333420259657856
+      ],
+      "residual_limited_steps": 2,
+      "mean_residual_lambda": 0.9998921832884097,
+      "base_infeasible_steps": 2,
+      "yaw_config": [
+        0.4,
+        2.0,
+        0.24,
+        0.3
+      ],
+      "residual_scale": 0.0,
+      "residual_mode": "diff3",
+      "project_clipped_base": false,
+      "grouped_residual": false,
+      "control_limit_scope": "actual_torque_and_nominal_command",
+      "feasible_reference": true,
+      "coordinated_reference": true,
+      "terminate_on_attitude_failure": false,
+      "target_leg_m": 0.115,
+      "height_rmse_m": 0.00010303546306702653,
+      "height_tolerance_m": 0.02,
+      "height_design": "range115",
+      "min_leg_m": 0.11442577593792541,
+      "geometric_limit_m": 0.1147044660616607,
+      "geometric_margin_passed": false,
+      "height_safety_contract": "physical_v1",
+      "min_fk_leg_m": 0.11443996547918518,
+      "min_actual_A_leg_m": 0.11442577593792541,
+      "min_actual_B_leg_m": 0.11443659967006473,
+      "min_eight_joint_margin_rad": 0.10919153690338135,
+      "max_loop_error_m": 2.9045806521425773e-05,
+      "max_actual_torque_excess_Nm": 0.0,
+      "max_command_torque_excess_Nm": 0.0,
+      "physical_evidence_steps": 18550,
+      "physical_safety_passed": false,
+      "actuator_gain_upper": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.05,
+        1.05
+      ],
+      "TimeLimit.truncated": false
+    },
+    {
+      "reason": "completed",
+      "physical_steps": 18994,
+      "arrival_s": 7.497,
+      "rms_deg": [
+        0.0008136063894318812,
+        0.137431354746931,
+        0.08814068404647617
+      ],
+      "velocity_rmse": 0.08101899058824065,
+      "stop_distance_m": 0.2027202020833371,
+      "tail_speed_m_s": 0.0034790114355280483,
+      "success": false,
+      "duration_s": 9.497,
+      "episode": {
+        "r": -1.4462249271097196,
+        "l": 475
+      },
+      "peak_deg": [
+        0.010441366206280864,
+        0.7278494006631663,
+        0.23844154699521714
+      ],
+      "TimeLimit_truncated": false,
+      "required_contact_mask": 0,
+      "touched_contact_mask": 0,
+      "required_terrain_contact_mask": 12,
+      "touched_terrain_contact_mask": 12,
+      "terrain_passed": true,
+      "terrain_required_end_m": 0.25,
+      "wheel_progress_m": [
+        1.0254516002689518,
+        1.0242033082734179
+      ],
+      "terrain_entry_profile": "abrupt_or_original",
+      "terrain_exit_passed": true,
+      "terrain_evidence_passed": true,
+      "task_contract_version": 2,
+      "task_goal_progress_m": 2.75,
+      "attitude_mode": "terrain_relative",
+      "relative_peak_deg": [
+        0.010441366206280864,
+        0.7278494006631663,
+        0.23844154699521714
+      ],
+      "residual_limited_steps": 2,
+      "mean_residual_lambda": 0.9998947035906076,
+      "base_infeasible_steps": 2,
+      "yaw_config": [
+        0.4,
+        2.0,
+        0.24,
+        0.3
+      ],
+      "residual_scale": 0.0,
+      "residual_mode": "diff3",
+      "project_clipped_base": false,
+      "grouped_residual": false,
+      "control_limit_scope": "actual_torque_and_nominal_command",
+      "feasible_reference": true,
+      "coordinated_reference": true,
+      "terminate_on_attitude_failure": false,
+      "target_leg_m": 0.115,
+      "height_rmse_m": 0.00033768976917591216,
+      "height_tolerance_m": 0.02,
+      "height_design": "range115",
+      "min_leg_m": 0.1129819786481764,
+      "geometric_limit_m": 0.1147044660616607,
+      "geometric_margin_passed": false,
+      "height_safety_contract": "physical_v1",
+      "min_fk_leg_m": 0.11299654527946162,
+      "min_actual_A_leg_m": 0.1129819786481764,
+      "min_actual_B_leg_m": 0.11299247649289428,
+      "min_eight_joint_margin_rad": 0.10917818546295166,
+      "max_loop_error_m": 7.498913613868108e-05,
+      "max_actual_torque_excess_Nm": 0.0,
+      "max_command_torque_excess_Nm": 0.0,
+      "physical_evidence_steps": 18994,
+      "physical_safety_passed": false,
+      "actuator_gain_upper": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.05,
+        1.05
+      ],
+      "TimeLimit.truncated": false
+    },
+    {
+      "reason": "completed",
+      "physical_steps": 18880,
+      "arrival_s": 7.44,
+      "rms_deg": [
+        1.3351403467565168,
+        0.1115343693460457,
+        0.6969612958119451
+      ],
+      "velocity_rmse": 0.05689654745956464,
+      "stop_distance_m": 0.20283191430663955,
+      "tail_speed_m_s": 0.0034777186793779435,
+      "success": false,
+      "duration_s": 9.44,
+      "episode": {
+        "r": -1.8661419433942985,
+        "l": 472
+      },
+      "peak_deg": [
+        3.606612129906845,
+        0.48513672930619894,
+        2.4197357695323727
+      ],
+      "TimeLimit_truncated": false,
+      "required_contact_mask": 0,
+      "touched_contact_mask": 0,
+      "required_terrain_contact_mask": 12,
+      "touched_terrain_contact_mask": 12,
+      "terrain_passed": true,
+      "terrain_required_end_m": 0.6499999761581421,
+      "wheel_progress_m": [
+        1.0760594591838952,
+        1.073755621438767
+      ],
+      "terrain_entry_profile": "abrupt_or_original",
+      "terrain_exit_passed": true,
+      "terrain_evidence_passed": true,
+      "task_contract_version": 2,
+      "task_goal_progress_m": 2.799999976158142,
+      "attitude_mode": "terrain_relative",
+      "relative_peak_deg": [
+        3.707547167508899,
+        0.48513672930619894,
+        2.4197357695323727
+      ],
+      "residual_limited_steps": 5,
+      "mean_residual_lambda": 0.9997351694915254,
+      "base_infeasible_steps": 5,
+      "yaw_config": [
+        0.4,
+        2.0,
+        0.24,
+        0.3
+      ],
+      "residual_scale": 0.0,
+      "residual_mode": "diff3",
+      "project_clipped_base": false,
+      "grouped_residual": false,
+      "control_limit_scope": "actual_torque_and_nominal_command",
+      "feasible_reference": true,
+      "coordinated_reference": true,
+      "terminate_on_attitude_failure": false,
+      "target_leg_m": 0.115,
+      "height_rmse_m": 0.00012973333258083994,
+      "height_tolerance_m": 0.02,
+      "height_design": "range115",
+      "min_leg_m": 0.1131444206236424,
+      "geometric_limit_m": 0.1147044660616607,
+      "geometric_margin_passed": false,
+      "height_safety_contract": "physical_v1",
+      "min_fk_leg_m": 0.11315806798674484,
+      "min_actual_A_leg_m": 0.1131444206236424,
+      "min_actual_B_leg_m": 0.11315409606843799,
+      "min_eight_joint_margin_rad": 0.10916781425476074,
+      "max_loop_error_m": 6.670069613616153e-05,
+      "max_actual_torque_excess_Nm": 0.0,
+      "max_command_torque_excess_Nm": 0.0,
+      "physical_evidence_steps": 18880,
+      "physical_safety_passed": false,
+      "actuator_gain_upper": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.05,
+        1.05
+      ],
+      "TimeLimit.truncated": false
+    },
+    {
+      "reason": "completed",
+      "physical_steps": 19133,
+      "arrival_s": 7.5665000000000004,
+      "rms_deg": [
+        0.00448759118037221,
+        0.10300793732428284,
+        0.22109133518876978
+      ],
+      "velocity_rmse": 0.052373612244699046,
+      "stop_distance_m": 0.20308840957465252,
+      "tail_speed_m_s": 0.0034820951467293628,
+      "success": false,
+      "duration_s": 9.5665,
+      "episode": {
+        "r": -1.1413425402818298,
+        "l": 479
+      },
+      "peak_deg": [
+        0.06817645373217691,
+        0.43003960292834187,
+        0.5046757340243997
+      ],
+      "TimeLimit_truncated": false,
+      "required_contact_mask": 0,
+      "touched_contact_mask": 0,
+      "required_terrain_contact_mask": 12,
+      "touched_terrain_contact_mask": 12,
+      "terrain_passed": true,
+      "terrain_required_end_m": 0.7210000865161419,
+      "wheel_progress_m": [
+        1.1452992378803524,
+        1.146886407451499
+      ],
+      "terrain_entry_profile": "abrupt_or_original",
+      "terrain_exit_passed": true,
+      "terrain_evidence_passed": true,
+      "task_contract_version": 2,
+      "task_goal_progress_m": 2.871000086516142,
+      "attitude_mode": "terrain_relative",
+      "relative_peak_deg": [
+        0.06817645373217691,
+        0.43003960292834187,
+        0.5046757340243997
+      ],
+      "residual_limited_steps": 2,
+      "mean_residual_lambda": 0.99989546856217,
+      "base_infeasible_steps": 2,
+      "yaw_config": [
+        0.4,
+        2.0,
+        0.24,
+        0.3
+      ],
+      "residual_scale": 0.0,
+      "residual_mode": "diff3",
+      "project_clipped_base": false,
+      "grouped_residual": false,
+      "control_limit_scope": "actual_torque_and_nominal_command",
+      "feasible_reference": true,
+      "coordinated_reference": true,
+      "terminate_on_attitude_failure": false,
+      "target_leg_m": 0.115,
+      "height_rmse_m": 0.00013115049452959592,
+      "height_tolerance_m": 0.02,
+      "height_design": "range115",
+      "min_leg_m": 0.11442398976698148,
+      "geometric_limit_m": 0.1147044660616607,
+      "geometric_margin_passed": false,
+      "height_safety_contract": "physical_v1",
+      "min_fk_leg_m": 0.11443457861543235,
+      "min_actual_A_leg_m": 0.11442398976698148,
+      "min_actual_B_leg_m": 0.11443155786873686,
+      "min_eight_joint_margin_rad": 0.10914373397827148,
+      "max_loop_error_m": 3.269087789328864e-05,
+      "max_actual_torque_excess_Nm": 0.0,
+      "max_command_torque_excess_Nm": 0.0,
+      "physical_evidence_steps": 19133,
+      "physical_safety_passed": false,
+      "actuator_gain_upper": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.05,
+        1.05
+      ],
+      "TimeLimit.truncated": false
+    },
+    {
+      "reason": "completed",
+      "physical_steps": 13142,
+      "arrival_s": 4.571,
+      "rms_deg": [
+        7.452425436584927e-06,
+        0.17909002378282252,
+        0.00011170299620181736
+      ],
+      "velocity_rmse": 0.15407382503628725,
+      "stop_distance_m": 0.684323310853835,
+      "tail_speed_m_s": 0.005734592158824362,
+      "success": false,
+      "duration_s": 6.571,
+      "episode": {
+        "r": -5.210535418125055,
+        "l": 329
+      },
+      "peak_deg": [
+        4.03848877002233e-05,
+        0.4347906285043346,
+        0.00022064181460909336
+      ],
+      "TimeLimit_truncated": false,
+      "required_contact_mask": 0,
+      "touched_contact_mask": 0,
+      "required_terrain_contact_mask": 0,
+      "touched_terrain_contact_mask": 0,
+      "terrain_passed": true,
+      "terrain_required_end_m": null,
+      "wheel_progress_m": [
+        1.507486447528747,
+        1.5074854101065474
+      ],
+      "terrain_entry_profile": "abrupt_or_original",
+      "terrain_exit_passed": true,
+      "terrain_evidence_passed": true,
+      "task_contract_version": 2,
+      "task_goal_progress_m": 2.75,
+      "attitude_mode": "world",
+      "relative_peak_deg": [
+        4.03848877002233e-05,
+        0.4347906285043346,
+        0.00022064181460909336
+      ],
+      "residual_limited_steps": 2,
+      "mean_residual_lambda": 0.9998478161619236,
+      "base_infeasible_steps": 2,
+      "yaw_config": [
+        0.4,
+        2.0,
+        0.24,
+        0.3
+      ],
+      "residual_scale": 0.0,
+      "residual_mode": "diff3",
+      "project_clipped_base": false,
+      "grouped_residual": false,
+      "control_limit_scope": "actual_torque_and_nominal_command",
+      "feasible_reference": true,
+      "coordinated_reference": true,
+      "terminate_on_attitude_failure": false,
+      "target_leg_m": 0.115,
+      "height_rmse_m": 0.00020039743833194415,
+      "height_tolerance_m": 0.02,
+      "height_design": "range115",
+      "min_leg_m": 0.11440693853081016,
+      "geometric_limit_m": 0.1147044660616607,
+      "geometric_margin_passed": false,
+      "height_safety_contract": "physical_v1",
+      "min_fk_leg_m": 0.11442104157932367,
+      "min_actual_A_leg_m": 0.11440693853081016,
+      "min_actual_B_leg_m": 0.11441774785668338,
+      "min_eight_joint_margin_rad": 0.10487890243530273,
+      "max_loop_error_m": 2.9115843003665346e-05,
+      "max_actual_torque_excess_Nm": 0.0,
+      "max_command_torque_excess_Nm": 0.0,
+      "physical_evidence_steps": 13142,
+      "physical_safety_passed": false,
+      "actuator_gain_upper": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.05,
+        1.05
+      ],
+      "TimeLimit.truncated": false
+    },
+    {
+      "reason": "completed",
+      "physical_steps": 13136,
+      "arrival_s": 4.5680000000000005,
+      "rms_deg": [
+        7.754037619500492e-06,
+        0.17447177278593845,
+        7.948246529309917e-05
+      ],
+      "velocity_rmse": 0.1531992856444503,
+      "stop_distance_m": 0.6875240802764918,
+      "tail_speed_m_s": 0.005682992325348964,
+      "success": false,
+      "duration_s": 6.5680000000000005,
+      "episode": {
+        "r": -5.212575217376017,
+        "l": 329
+      },
+      "peak_deg": [
+        5.623854763069053e-05,
+        0.3793034533848692,
+        0.00016694306879329017
+      ],
+      "TimeLimit_truncated": false,
+      "required_contact_mask": 0,
+      "touched_contact_mask": 0,
+      "required_terrain_contact_mask": 0,
+      "touched_terrain_contact_mask": 0,
+      "terrain_passed": true,
+      "terrain_required_end_m": null,
+      "wheel_progress_m": [
+        1.3603713088617462,
+        1.3603721024157522
+      ],
+      "terrain_entry_profile": "abrupt_or_original",
+      "terrain_exit_passed": true,
+      "terrain_evidence_passed": true,
+      "task_contract_version": 2,
+      "task_goal_progress_m": 2.75,
+      "attitude_mode": "world",
+      "relative_peak_deg": [
+        5.623854763069053e-05,
+        0.3793034533848692,
+        0.00016694306879329017
+      ],
+      "residual_limited_steps": 2,
+      "mean_residual_lambda": 0.9998477466504263,
+      "base_infeasible_steps": 2,
+      "yaw_config": [
+        0.4,
+        2.0,
+        0.24,
+        0.3
+      ],
+      "residual_scale": 0.0,
+      "residual_mode": "diff3",
+      "project_clipped_base": false,
+      "grouped_residual": false,
+      "control_limit_scope": "actual_torque_and_nominal_command",
+      "feasible_reference": true,
+      "coordinated_reference": true,
+      "terminate_on_attitude_failure": false,
+      "target_leg_m": 0.115,
+      "height_rmse_m": 0.00019196377836647215,
+      "height_tolerance_m": 0.02,
+      "height_design": "range115",
+      "min_leg_m": 0.11440261829300206,
+      "geometric_limit_m": 0.1147044660616607,
+      "geometric_margin_passed": false,
+      "height_safety_contract": "physical_v1",
+      "min_fk_leg_m": 0.11441680437352406,
+      "min_actual_A_leg_m": 0.11440261829300206,
+      "min_actual_B_leg_m": 0.11441345127404944,
+      "min_eight_joint_margin_rad": 0.10484838485717773,
+      "max_loop_error_m": 1.6714555352997272e-05,
+      "max_actual_torque_excess_Nm": 0.0,
+      "max_command_torque_excess_Nm": 0.0,
+      "physical_evidence_steps": 13136,
+      "physical_safety_passed": false,
+      "actuator_gain_upper": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.05,
+        1.05
+      ],
+      "TimeLimit.truncated": false
+    }
+  ],
+  "columns": {
+    "time": 0,
+    "qpos_start": 1,
+    "qvel_start": 18,
+    "warmstart_start": 34,
+    "ctrl_start": 50
+  },
+  "radial_columns": [
+    "time",
+    "valid",
+    "command",
+    "arrival",
+    "fk_L",
+    "fk_R",
+    "rate_L",
+    "rate_R",
+    "force_L",
+    "force_R",
+    "hub_L",
+    "hub_R",
+    "wheel_mean"
+  ],
+  "windows_sha256": "405edca767f9f8b38ee89cc4d52bb74ce5dde9c8505886bd03e80017856c7e7b",
+  "source_sha256": {
+    "wheelleg_warp/probe_coordinated_radial_events.py": "035d23b42e9e71680b80ed71c42a18b99c172d13987d98d281928421304040eb",
+    "wheelleg_warp/native/controller.py": "2cfe4c3e9f236b9809fee33f2a5e4c39384596094be97a736c479bd21ad8bcdf",
+    "wheelleg_warp/native/environment.py": "2a455398399299acc5f1fd0ca9842491f4a86d3e42b7b0d4b831f0adda131a37"
+  }
+}

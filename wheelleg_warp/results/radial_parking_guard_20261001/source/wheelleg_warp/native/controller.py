@@ -250,13 +250,10 @@ def control_step(w:int,qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.a
         if safe_l!=requested_l:hl=kg*(safe_l-al)+hd
         if safe_r!=requested_r:hr=kg*(safe_r-ar)+hd
         if reference.shape[1]>7 and reference[w,7]>D(0):
-            channel=int(3)
-            if reference[w,7]==D(2):channel=0
-            kh=(D(1)-ratio)*gains[index,1,channel]+ratio*gains[index+1,1,channel]
-            kw=(D(1)-ratio)*gains[index,0,channel]+ratio*gains[index+1,0,channel]
-            # Update BOTH inputs in the same reference coordinate. Angle mode
-            # changes the angle reference and keeps the speed reference fixed.
-            wheel=wheel+(kw/kh)*((hl+hr)/D(2)-original_hub_mean)
+            khv=(D(1)-ratio)*gains[index,1,3]+ratio*gains[index+1,1,3]
+            kwv=(D(1)-ratio)*gains[index,0,3]+ratio*gains[index+1,0,3]
+            # One effective velocity-reference change must update BOTH LQR inputs.
+            wheel=wheel+(kwv/khv)*((hl+hr)/D(2)-original_hub_mean)
         if diagnostic.shape[1]>=31:
             diagnostic[w,21]=left_target;diagnostic[w,22]=right_target
             diagnostic[w,23]=requested_l;diagnostic[w,24]=requested_r
