@@ -1,0 +1,30 @@
+{
+  "role": "nominal_two_input_lp_nonlinear_cpu_replay",
+  "full_braking_gate_pass": false,
+  "completed_steps": 74,
+  "first_failure": {
+    "step": 74,
+    "time_s": 0.037,
+    "reasons": [
+      "actual_A_B_geometry"
+    ],
+    "linear_leg_m": 0.11553667769545724,
+    "actual_fk_m": [
+      0.11458468074223407,
+      0.11458454010137929
+    ],
+    "linear_pitch_deg": -2.036246934515328,
+    "actual_pitch_deg": -0.6481364168423354
+  },
+  "min_actual_A_B_m": 0.11458869552909033,
+  "min_eight_joint_margin_rad": 0.03499518855430206,
+  "max_attitude_deg": 1.963710852675229,
+  "max_actual_torque_excess_Nm": 0.0,
+  "max_distance_m": 0.037082919755681724,
+  "command_clipped_steps": 49,
+  "limitations": "Offline measured Warp initial state and planned5ms inputs, nominal CPU plant. Radial PD matches linear model, no experimental radial guard. Stops at first failure; no failed-prefix endpoint can count as a complete stop. No feedback, deployment, paired backend or six-task claim.",
+  "source_sha256": {
+    "wheelleg_warp/probe_radial_braking_lp_replay.py": "9162cd942cbe98e720351b3ee7a59a869f3edfb397ea5cd1f13f0b99e94db9de",
+    "wheelleg_warp/audit_radial_braking_response.py": "a2c201958bc99423c71a2be9b70cd631b11f3b9b72528a4ec984b247a7144b90"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "role": "fixed_nominal_linear_braking_feasibility",
+  "telemetry": [
+    {
+      "world": 0,
+      "projected_fraction": 0.19525,
+      "max_requested_angle_deg": 18.296120317627942,
+      "max_safe_angle_deg": 8.901144627537835,
+      "steady_mean_deceleration_m_s2": 0.6758952140808105,
+      "steady_peak_wheel_Nm": 0.1795707792043686,
+      "motor_clipped_steps": 2
+    },
+    {
+      "world": 1,
+      "projected_fraction": 0.19525,
+      "max_requested_angle_deg": 18.292616407063555,
+      "max_safe_angle_deg": 8.901144631929732,
+      "steady_mean_deceleration_m_s2": 0.6757687834592966,
+      "steady_peak_wheel_Nm": 0.17957165837287903,
+      "motor_clipped_steps": 2
+    },
+    {
+      "world": 2,
+      "projected_fraction": 0.1955,
+      "max_requested_angle_deg": 18.306745969336273,
+      "max_safe_angle_deg": 8.90114463614806,
+      "steady_mean_deceleration_m_s2": 0.6761122151063039,
+      "steady_peak_wheel_Nm": 0.1795075237751007,
+      "motor_clipped_steps": 2
+    },
+    {
+      "world": 3,
+      "projected_fraction": 0.1955,
+      "max_requested_angle_deg": 18.331240325134075,
+      "max_safe_angle_deg": 8.901144634381962,
+      "steady_mean_deceleration_m_s2": 0.6769081377066098,
+      "steady_peak_wheel_Nm": 0.1796000599861145,
+      "motor_clipped_steps": 2
+    },
+    {
+      "world": 4,
+      "projected_fraction": 0.48125,
+      "max_requested_angle_deg": 36.13353687575822,
+      "max_safe_angle_deg": 8.901144633104243,
+      "steady_mean_deceleration_m_s2": 0.8256484415785887,
+      "steady_peak_wheel_Nm": 0.12274414300918579,
+      "motor_clipped_steps": 2
+    },
+    {
+      "world": 5,
+      "projected_fraction": 0.48375,
+      "max_requested_angle_deg": 36.12507684992607,
+      "max_safe_angle_deg": 8.901144627992085,
+      "steady_mean_deceleration_m_s2": 0.8216402163872352,
+      "steady_peak_wheel_Nm": 0.12139961868524551,
+      "motor_clipped_steps": 2
+    }
+  ],
+  "linear_status": 0,
+  "linear_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+  "horizon_s": 2.0,
+  "input_hold_s": 0.005,
+  "model_check_hz": 2000,
+  "inputs": [
+    "per_wheel_torque",
+    "per_leg_hub_torque"
+  ],
+  "limits": {
+    "distance_m": 0.6,
+    "tail_speed_m_s": 0.03,
+    "tail_start_s": 1.5,
+    "pitch_deg": 5,
+    "active_joint_rad": 1.4,
+    "passive_joint_rad": 2.5,
+    "radial_min_m": 0.1147044660616607
+  },
+  "prediction_velocity_pitch_response_per_Nm": [
+    [
+      1.6448489159583,
+      -0.12233951288471645
+    ],
+    [
+      -64.76124565640372,
+      4.714527810764865
+    ]
+  ],
+  "limitations": "Nominal linear model at0.115m, sagittal common mode, measured arrival initial state. Radial PD retained; experimental radial guard excluded. Linear joint/radial outputs are not nonlinear A/B closure, contact or invariance certificates. Not an online or full task result.",
+  "source_sha256": {
+    "wheelleg_warp/audit_radial_braking_response.py": "a2c201958bc99423c71a2be9b70cd631b11f3b9b72528a4ec984b247a7144b90",
+    "wheelleg_warp/probe_coordinated_radial_events.py": "8bc81920891d2ce668f6c70504e4f2a3197969fd729f72217d1e79f757a5126c",
+    "wheelleg_ppo/tools/model_lqr.py": "d63db108ece884340cff2589cf50729ca1dfd2ffd44adb8260b8155570ffbf82"
+  },
+  "linear_minimum_max_distance_m": 0.361594351311621,
+  "equality_max_error": 1.8577571425648642e-10,
+  "inequality_max_excess": 9.143617163420714e-08
+}
