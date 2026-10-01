@@ -1,0 +1,36 @@
+{
+  "source_base_commit": "b691779631090b3b68ea93f190467a46770fb6a4",
+  "changed_sources_archived": true,
+  "recorded_full_deadline_and_original_domains_checked": true,
+  "forecast_first_forward_arm5_joint_margin_rad": 0.0042647361755370206,
+  "forward_distance_m": 0.610116958619891,
+  "reverse_distance_m": 0.6128547192141379,
+  "finite_backup_family_feasible": false,
+  "actual_replay_performed": false,
+  "continuous_domain_infeasible_claimed": false,
+  "dependencies_source_sha256": {
+    "wheelleg_warp/probe_current_vmc_design.py": "ec4ddd05c6b2dc850ff60af542877aa1603cef7feedf1964588be8bdd5cb3ff7",
+    "wheelleg_warp/audit_radial_braking_response.py": "0645d5d583b22c83a7313103d34ebaf1ebd05d6fe518fdfd2c3c421eab8137c0",
+    "wheelleg_warp/probe_height_115_contact_action_pair.py": "4195233cf27b27bdeb65f8e6d40b648a3aa75e656ab7974afc09ac86c7d4d3cb",
+    "wheelleg_warp/probe_braking_motor_response.py": "eb7a9ab99db11f2255b2a5c7007322bfc43825b8501f956782bc13ab618037cf",
+    "wheelleg_warp/probe_height_115_passive.py": "8771150926217fd575b1f2f3fc2dd3d13cb495e37e2b516a1e34400ef454bfe8",
+    "wheelleg_warp/native/models.py": "59420b688a25e63fb8e0e644f0702025836bea0ed90377e452bcbd919c7216eb",
+    "wheelleg_warp/native/terrain.py": "1e462500ae917ba78ce5e4652f7a856bf62658f8573296e9a7d4630517cf1a94",
+    "wheelleg_ppo/tools/model_lqr.py": "d63db108ece884340cff2589cf50729ca1dfd2ffd44adb8260b8155570ffbf82",
+    "wheelleg_ppo/tools/rm_controller.py": "d831408426647aac0c758c82f0972570ad1373798a5e6705d45572384285b35d",
+    "wheelleg_ppo/tools/hardware_profile.py": "844688aae7e408bb2ca11d00b192ffaa9e4ad5de06cc8a815d3cf3ddfbe02eba",
+    "wheelleg_ppo/tools/wheelleg_sim.py": "c2dfaae4dc562119fd7916684849ec22fcac3d75dbcfec6a2a0f9452d8f6ee0f",
+    "wheelleg_ppo/tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+    "wheelleg_ppo/tools/ppo_env.py": "8b282c709f4ed0e7da500fb0e78a1a380b08a5467d4155b9cbe56147bff14296",
+    "wheelleg_ppo/xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f"
+  },
+  "prediction_sha256": "c4a1b8f75bc600961a3ecca6857e079dbf80bbe1a5137b54920cc662c5ca37e8",
+  "gpu_shared_graph_check_passed": true,
+  "runtime_versions": {
+    "mujoco": "3.12.0",
+    "mujoco-warp": "3.12.0",
+    "warp-lang": "1.17.0",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3"
+  }
+}

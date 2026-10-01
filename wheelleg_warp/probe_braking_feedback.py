@@ -40,6 +40,22 @@ def execute_extra(v:wp.array2d[float],ids:wp.array[int],upper:wp.array2d[D],extr
         old=D(ctrl[w,j]);new=wp.clamp(old+extra[w,j],-bound[j],bound[j]);ctrl[w,j]=float(new);diag[w,6+j]=new-old
 
 
+def execution_graph(env,extra):
+    if env.height_safety!='physical_v1':raise ValueError('独立执行图需要真实物理契约')
+    n=env.num_envs;upper=env.control_extra[0]
+    with wp.ScopedCapture() as capture:
+        wp.launch(begin,n,[env.reward])
+        for _ in range(10):
+            d=env.data;wp.launch(command_step,n,[env.state,env.param,env.command,env.active,d.qpos,d.qvel,d.qacc_warmstart,env.stopped_q,env.stopped_v,env.stopped_w,env.contact_flags])
+            wp.launch(env.control_kernel,n,[d.qpos,d.qvel,d.sensordata,env.targets,env.command,env.active,env.k['state'],env.ids,
+                env.k['heights'],env.k['gains'],env.k['feed'],env.k['angles'],env.k['reference'],env.k['yaw'],d.ctrl,env.diag,0,0]+env.control_extra,block_dim=32)
+            wp.launch(execute_extra,n,[d.qvel,env.ids,upper,extra,env.active,d.ctrl,env.diag]);mjw.step(env.model,d)
+            wp.launch(reduce_contacts,d.naconmax,[d.nacon,d.contact.worldid,d.contact.geom,env.ids,env.contact_flags]);wp.launch(collect_physical,n,env.physical_args)
+            wp.launch(after,n,[d.qpos,d.qvel,d.sensordata,d.qacc_warmstart,d.time,env.contact_flags,env.ids,env.param,env.command,env.state,env.k['state'],env.diag,
+                env.residual,env.active,env.done,env.reward,env.obs,env.history,env.stopped_q,env.stopped_v,env.stopped_w,env.wheel_offsets],block_dim=32)
+    return capture.graph
+
+
 class Forecaster:
     # ponytail: finite fixed candidates; continuous optimization only if this
     # verified grid is the limiting factor. This is not a real-time controller.
@@ -68,10 +84,7 @@ class Forecaster:
         wp.launch(control_physical,self.count,[self.data.qpos,self.data.qvel,self.data.sensordata,self.targets,self.command,self.active,self.state,self.ids,
             self.fixed['heights'],self.fixed['gains'],self.fixed['feed'],self.fixed['angles'],self.reference,self.fixed['yaw'],self.data.ctrl,self.diag,0,0,self.upper],block_dim=32)
 
-    def choose(self,env,stopped,task_state,current=None):
-        timing_start=perf_counter()
-        q=env.data.qpos.numpy();v=env.data.qvel.numpy();memory=env.k['state'].numpy();sensor=env.data.sensordata.numpy()
-        timing_read=perf_counter()
+    def candidate_changes(self,q,v,current=None):
         changes=[]
         for i in range(self.n):
             b=basis(self.nom,q[i],v[i]);b=b/np.sum(abs(b),axis=0)*.1
@@ -82,6 +95,12 @@ class Forecaster:
         if current is not None:
             changes=np.clip(changes+np.repeat(current,self.arms,axis=0),-1.,1.)
             assert np.max(abs(changes))<=1. and np.max(np.sum(abs(changes-np.repeat(current,self.arms,axis=0)),axis=1))<=.10000000001
+        return changes
+
+    def choose(self,env,stopped,task_state,current=None):
+        timing_start=perf_counter()
+        q=env.data.qpos.numpy();v=env.data.qvel.numpy();memory=env.k['state'].numpy();sensor=env.data.sensordata.numpy()
+        timing_read=perf_counter();changes=self.candidate_changes(q,v,current)
         self.extra.assign(changes);self.data.qpos.assign(np.repeat(q,self.arms,axis=0));self.data.qvel.assign(np.repeat(v,self.arms,axis=0))
         self.data.sensordata.assign(np.repeat(sensor,self.arms,axis=0));self.data.qacc_warmstart.zero_();self.state.assign(np.repeat(memory,self.arms,axis=0))
         wp.synchronize_device();timing_upload=perf_counter()
@@ -123,17 +142,7 @@ def run(output,incremental=False,current_vmc=False,mixed_signs=False):
     try:
         if current_vmc:
             table,_=current_vmc_table();env.k['gains'].assign(np.stack([t[0] for t in table]));env.k['feed'].assign(np.stack([t[1] for t in table]));env.k['angles'].assign(np.array([t[2] for t in table]))
-        env.reset();predictor=Forecaster(env,mixed_signs);extra=wp.zeros((2,6),dtype=D);upper=wp.array(np.tile(env.actuator_gain_upper,(2,1)),dtype=D)
-        with wp.ScopedCapture() as capture:
-            wp.launch(begin,2,[env.reward])
-            for _ in range(10):
-                d=env.data;wp.launch(command_step,2,[env.state,env.param,env.command,env.active,d.qpos,d.qvel,d.qacc_warmstart,env.stopped_q,env.stopped_v,env.stopped_w,env.contact_flags])
-                wp.launch(env.control_kernel,2,[d.qpos,d.qvel,d.sensordata,env.targets,env.command,env.active,env.k['state'],env.ids,
-                    env.k['heights'],env.k['gains'],env.k['feed'],env.k['angles'],env.k['reference'],env.k['yaw'],d.ctrl,env.diag,0,0]+env.control_extra,block_dim=32)
-                wp.launch(execute_extra,2,[d.qvel,env.ids,upper,extra,env.active,d.ctrl,env.diag]);mjw.step(env.model,d)
-                wp.launch(reduce_contacts,d.naconmax,[d.nacon,d.contact.worldid,d.contact.geom,env.ids,env.contact_flags]);wp.launch(collect_physical,2,env.physical_args)
-                wp.launch(after,2,[d.qpos,d.qvel,d.sensordata,d.qacc_warmstart,d.time,env.contact_flags,env.ids,env.param,env.command,env.state,env.k['state'],env.diag,
-                    env.residual,env.active,env.done,env.reward,env.obs,env.history,env.stopped_q,env.stopped_v,env.stopped_w,env.wheel_offsets],block_dim=32)
+        env.reset();predictor=Forecaster(env,mixed_signs);extra=wp.zeros((2,6),dtype=D);graph=execution_graph(env,extra)
         rows=[];durations=[];failure=None;current=np.zeros((2,6))
         for iteration in range(1600):
             state=env.state.numpy();stopped=(state[:,1]>=0)&(env.active.numpy()!=0)
@@ -142,7 +151,7 @@ def run(output,incremental=False,current_vmc=False,mixed_signs=False):
                 if chosen is None:failure=dict(iteration=iteration,**decision);break
                 extra.assign(chosen);current=chosen;rows.append(dict(iteration=iteration,decisions=decision,extra=chosen.tolist(),timing=predictor.last_timing))
             else:extra.zero_()
-            wp.capture_launch(capture.graph)
+            wp.capture_launch(graph)
             if np.all(env.done.numpy()!=0):break
             if iteration%200==0:print('PROGRESS',iteration,'planning',len(rows),flush=True)
         completed=bool(np.all(env.done.numpy()!=0));infos=[]
