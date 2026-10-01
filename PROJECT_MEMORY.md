@@ -1275,3 +1275,9 @@
 - `wheelleg_warp/results/braking_feedback_fused_record_20261001/source/wheelleg_warp/probe_braking_phase_chart.py`
 - `wheelleg_warp/results/braking_feedback_fused_record_20261001/source/wheelleg_warp/probe_current_vmc_design.py`
 - `wheelleg_warp/results/braking_feedback_fused_record_20261001/source/wheelleg_warp/select_braking_common_action.py`
+
+### 自动同步快照 2026-10-01T19:21:43+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_warp/results/braking_feedback_mixed_signs_20261001/verification.json`
