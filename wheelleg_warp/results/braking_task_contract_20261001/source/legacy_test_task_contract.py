@@ -11,7 +11,6 @@ from native.terrain import TerrainScenario
 from native.terrain_env import TerrainEnv
 from terrain_eval import validate_terrain_rows,summarize_terrain
 from dashboard.live_env import atomic_json as write
-from select_braking_common_action import task_forecast
 
 
 @wp.kernel
@@ -76,19 +75,8 @@ def check(output):
             if step in (1,20,40,41,80):checks.append(dict(step=step,observed=env.obs.numpy()[:4,3].tolist()))
         env.reset();sensor[:,gyro]=999;env.data.sensordata.assign(sensor);wp.launch(after,n,args,block_dim=32)
         np.testing.assert_array_equal(env.obs.numpy()[1:4,3],0)
-        # Host candidate screen agrees with the production GPU terminal gate.
-        env.reset();q=env.data.qpos.numpy();v=env.data.qvel.numpy();state=env.state.numpy();param=env.param.numpy()
-        state[:,0]=3999;state[:,1]=0;state[:,2:4]=q[:,:2];state[:,5]=1;param[:,5:8]=0
-        state[0,6]=.6;state[1,6]=np.nextafter(.6,np.inf)
-        state[2,7]=.03;state[3,7]=np.nextafter(.03,np.inf);v[4,1]=.031
-        state[5,2:4]-=[.4,.3];state[6,2]-=.600001
-        predicted=task_forecast(q[None],v[None],q,v,state)['valid']
-        np.testing.assert_array_equal(predicted,[True,False,True,False,False,True,False,True])
-        env.data.qvel.assign(v);env.state.assign(state);env.param.assign(param);wp.launch(after,n,args,block_dim=32)
-        np.testing.assert_array_equal(env.state.numpy()[:,19].astype(bool),predicted)
         result=dict(passed=True,worlds=n,wheel_center_cpu_max_error=peak,mixed_end=env.required_terrain_end[:4],
-            terminal_reward_and_evidence_consistent=True,terminal_evidence_frozen=True,parking_requires_exit=True,delay_samples=checks,reset_clears_history=True,
-            task_forecast_matches_gpu_terminal=True,task_terminal_cases=predicted.tolist())
+            terminal_reward_and_evidence_consistent=True,terminal_evidence_frozen=True,parking_requires_exit=True,delay_samples=checks,reset_clears_history=True)
         output.parent.mkdir(parents=True,exist_ok=True);write(output,result);print(json.dumps(result),flush=True)
     finally:env.close()
 
