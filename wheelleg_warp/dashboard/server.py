@@ -29,7 +29,7 @@ def status():
         if p and Path(item.get('source_run','')).parent!=RUN:continue
         if not (meta.parent/'animation_50.webp').exists():continue
         rel=meta.parent.relative_to(DATA).as_posix()
-        archives.append({**item,'webp':'/media/'+rel+'/animation_50.webp','gif':'/media/'+rel+'/animation_50.gif',
+        archives.append({**item,'webp':'/media/'+rel+'/animation_50.webp','gif':'/media/'+rel+'/animation_50.gif' if (meta.parent/'animation_50.gif').exists() else None,
             'trace':'/media/'+rel+'/trajectory.npz','metadata':'/media/'+rel+'/metadata.json'})
     validation=None
     if not p:

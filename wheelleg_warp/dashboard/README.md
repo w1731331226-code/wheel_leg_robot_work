@@ -12,4 +12,6 @@
 
 正式目录为 `results/formal_native_1024_20260921/`，真实帧在各轮 `round_*/live/`，录像在 `dashboard/local_data/captures/native/`。原始轨迹/录像本地保存并由Git忽略，策略、协议、评估与代码进入Git。旧运行资料只在效果准入通过后按用户要求清理。
 
+2026-10-02按用户授权清理重复编码：83个与WebP尺寸/帧数一致的GIF已删除，WebP、400Hz原始轨迹及来源元数据保留；无对应WebP的GIF保留。页面只显示仍存在的下载格式。按需恢复GIF需使用原轨迹及其归档模型源码版本，清单见`../results/file_cleanup_20261002/manifest.json`。
+
 验证：`test_server.py` 检查只读文件边界与环境编号；`../test_native_live.py` 核对观测/奖励、选择世界、全部状态及真实PPO录制；`../test_native_formal.py` 使用独立小预算验证正式恢复/更新/选模/停止流程。预检权重不用于正式训练。

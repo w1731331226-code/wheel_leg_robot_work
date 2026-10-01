@@ -5,6 +5,12 @@ import server
 with tempfile.TemporaryDirectory() as tmp:
     root=Path(tmp);server.RUN=root/'run';server.RUN.mkdir();server.DATA=root/'data';server.DATA.mkdir();server.SELECTED=server.DATA/'selected_environment.json'
     state=server.status();assert state['current']['status']=='validating' and state['archives']==[]
+    clip=server.DATA/'captures/native/one';clip.mkdir(parents=True)
+    (clip/'metadata.json').write_text(json.dumps({'source_run':str(server.RUN/'round_001'),'episode':1}))
+    (clip/'animation_50.webp').write_bytes(b'RIFF')
+    assert server.status()['archives'][0]['gif'] is None
+    (clip/'animation_50.gif').write_bytes(b'GIF89a')
+    assert server.status()['archives'][0]['gif'].endswith('/animation_50.gif')
     private=root/'private';private.write_text('secret');(server.DATA/'escape').symlink_to(private)
     (server.DATA/'clip.gif').write_bytes(b'GIF89a');server.STATE={'ok':True}
     http=server.ThreadingHTTPServer(('127.0.0.1',0),server.Handler)
