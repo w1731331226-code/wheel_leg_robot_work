@@ -27,7 +27,7 @@ def current_vmc_table():
         # first, so its full closed-loop check represents the actual current-J map.
         effective_a=a+b@(actual_input+g@outer)
         gain,report=ml.reduced_design(model,ref,effective_a,b,6)
-        assert report['linear_pass'];reports.append(dict(height_m=height,**report))
+        assert report['linear_pass'];reports.append(dict(height_m=height,model_scope='fixed-node current-J VMC and nominal radial PD; excludes unilateral guard, interpolation derivatives, projection and saturation',**report))
         k=np.linalg.solve(g,gain)[:2]@np.linalg.pinv(c[:6]);mapping=ml.sagittal_basis(model)[1]
         feed=np.linalg.solve(g,np.linalg.pinv(mapping)@ref.ctrl)
         angle=sim.fk_joints(ref.qpos[7],ref.qpos[10])['phi5']+np.pi/2

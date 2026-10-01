@@ -1,0 +1,113 @@
+{
+  "role": "local_command_model_consistency_not_physics_or_robust_certificate",
+  "no_guard_command_error_max_Nm": 1.3003771484977921e-06,
+  "rows": [
+    {
+      "sample": "base",
+      "length_m": 0.11500000285151464,
+      "rate_m_s": 0.0,
+      "base_radial_force_N": 19.95344404629228,
+      "guard_force_N": 0.0,
+      "guard_requested_N": 0.0,
+      "effective_mass_kg": 12.647704426570032,
+      "motor_delta_peak_Nm": 0.0
+    },
+    {
+      "sample": "length_1e-05_-1",
+      "length_m": 0.11499000632814155,
+      "rate_m_s": 5.868661958536289e-22,
+      "base_radial_force_N": 19.987813156917525,
+      "guard_force_N": 5.05978014400973,
+      "guard_requested_N": 5.059781281318958,
+      "effective_mass_kg": 12.650462190156784,
+      "motor_delta_peak_Nm": 0.211198091506958
+    },
+    {
+      "sample": "length_1e-05_1",
+      "length_m": 0.11500999735967878,
+      "rate_m_s": -5.872141327365429e-22,
+      "base_radial_force_N": 19.91934755183914,
+      "guard_force_N": 0.0,
+      "guard_requested_N": 0.0,
+      "effective_mass_kg": 12.644950134068132,
+      "motor_delta_peak_Nm": 0.0
+    },
+    {
+      "sample": "length_5e-06_-1",
+      "length_m": 0.11499499675742482,
+      "rate_m_s": 2.934765234747627e-22,
+      "base_radial_force_N": 19.97065549238761,
+      "guard_force_N": 2.52922185152247,
+      "guard_requested_N": 2.5292214298853435,
+      "effective_mass_kg": 12.649083045931956,
+      "motor_delta_peak_Nm": 0.10558676719665527
+    },
+    {
+      "sample": "length_5e-06_1",
+      "length_m": 0.11500499973549143,
+      "rate_m_s": -2.9356358017535733e-22,
+      "base_radial_force_N": 19.936397061688385,
+      "guard_force_N": 0.0,
+      "guard_requested_N": 0.0,
+      "effective_mass_kg": 12.6463277037194,
+      "motor_delta_peak_Nm": 0.0
+    },
+    {
+      "sample": "rate_1e-05_-1",
+      "length_m": 0.11500000285151464,
+      "rate_m_s": -1.000000093950862e-05,
+      "base_radial_force_N": 19.955163103428248,
+      "guard_force_N": 0.049429234142317896,
+      "guard_requested_N": 0.04942966197650055,
+      "effective_mass_kg": 12.647704426570032,
+      "motor_delta_peak_Nm": 0.0020638108253479004
+    },
+    {
+      "sample": "rate_1e-05_1",
+      "length_m": 0.11500000285151464,
+      "rate_m_s": 1.000000093950862e-05,
+      "base_radial_force_N": 19.951724989156315,
+      "guard_force_N": 0.0,
+      "guard_requested_N": 0.0,
+      "effective_mass_kg": 12.647704426570032,
+      "motor_delta_peak_Nm": 0.0
+    },
+    {
+      "sample": "rate_5e-06_-1",
+      "length_m": 0.11500000285151464,
+      "rate_m_s": -5.00000046975431e-06,
+      "base_radial_force_N": 19.954303574860266,
+      "guard_force_N": 0.024134230467032284,
+      "guard_requested_N": 0.02413425116386729,
+      "effective_mass_kg": 12.647704426570032,
+      "motor_delta_peak_Nm": 0.001007676124572754
+    },
+    {
+      "sample": "rate_5e-06_1",
+      "length_m": 0.11500000285151464,
+      "rate_m_s": 5.00000046975431e-06,
+      "base_radial_force_N": 19.952584517724297,
+      "guard_force_N": 0.0,
+      "guard_requested_N": 0.0,
+      "effective_mass_kg": 12.647704426570032,
+      "motor_delta_peak_Nm": 0.0
+    }
+  ],
+  "fixed_node_sector_check": {
+    "inactive_radius": 0.9989516950214671,
+    "active_radius": 0.9989516865849071
+  },
+  "no_projection_or_clipping_active": true,
+  "radial_guard_is_in_current_linear_design": false,
+  "conclusion": "Online scheduled current-J nominal commands match the independent algebra locally; unilateral max(0,...) radial protection adds a state-dependent command absent from the design Jacobian. No unique two-sided Jacobian at activation. This alone does not prove it causes the highspeed failure.",
+  "original_costs_limits_and_default_controller_unchanged": true,
+  "limitations": "Nine small symmetric sagittal samples, fixed7kg/0.115m, commands only. Both fixed-node affine sectors stable, but this excludes interpolation derivatives, switching, projections and saturation; no full-trajectory or random-domain proof.",
+  "source_sha256": {
+    "wheelleg_warp/audit_control_design.py": "b9baf09a95bafbbd376512d8761c7b68454344673d523fcc266fa0258fe1030d",
+    "wheelleg_warp/native/controller.py": "b010a17559273f6e3e41f0f37d43ecb06adfecf653daca851f916a88d9b2435b",
+    "wheelleg_warp/native/environment.py": "7b9ef5282089582cb9e188fa413d8e988b932454b571c1c6af6b33f999edded6",
+    "wheelleg_warp/probe_current_vmc_design.py": "ec4ddd05c6b2dc850ff60af542877aa1603cef7feedf1964588be8bdd5cb3ff7",
+    "wheelleg_warp/audit_radial_braking_response.py": "0645d5d583b22c83a7313103d34ebaf1ebd05d6fe518fdfd2c3c421eab8137c0",
+    "wheelleg_ppo/tools/model_lqr.py": "d63db108ece884340cff2589cf50729ca1dfd2ffd44adb8260b8155570ffbf82"
+  }
+}
