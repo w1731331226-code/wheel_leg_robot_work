@@ -18,19 +18,6 @@ from probe_height_115_cpu_step_pair import forces_cpu
 from probe_height_115_action_predict_loow import sha
 
 
-def physical_metrics(m,q,v,force,previous_v,commands):
-    f=features(m,q,v);joint=margins(m,q);bound=np.zeros((len(q),6))
-    for j,name in enumerate(('alphaL','betaL','alphaR','betaR','wheel1','wheel2')):
-        for arm in range(len(q)):bound[arm,j]=sim.hw.torque_limit(1e6,previous_v[arm,m.joint(name).dofadr[0]],j<4,0.,.0005)[0]
-    quat=q[:,3:7];pitch=np.arcsin(np.clip(2*(quat[:,0]*quat[:,2]-quat[:,3]*quat[:,1]),-1,1))
-    roll=np.arctan2(2*(quat[:,0]*quat[:,1]+quat[:,2]*quat[:,3]),1-2*(quat[:,1]**2+quat[:,2]**2))
-    yaw=np.arctan2(2*(quat[:,0]*quat[:,3]+quat[:,1]*quat[:,2]),1-2*(quat[:,2]**2+quat[:,3]**2))
-    allowed=bound/np.array([1.,1.,1.,1.,1.05,1.05])
-    safe=(f[:,:4].min(axis=1)>=LIMIT)&(joint.min(axis=1)>=0)&(np.max(abs(np.c_[roll,pitch,yaw]),axis=1)<=np.deg2rad(5))
-    safe &= (np.max(abs(force)-bound,axis=1)<=1e-6)&(np.max(abs(commands)-allowed,axis=1)<=1e-6)&np.isfinite(np.c_[q,v]).all(axis=1)
-    return dict(safe_arms=int(safe.sum()),min_A_B_m=float(f[:,:4].min()),min_joint_margin_rad=float(joint.min()))
-
-
 def run(source,archive,output,steps=1):
     assert steps in (1,10)
     source=source.resolve();archive=archive.resolve();output=output.resolve();assert not output.exists();output.mkdir(parents=True)
@@ -72,8 +59,16 @@ def run(source,archive,output,steps=1):
             now_q.append(d.qpos.copy());now_v.append(d.qvel.copy());rows.append(dict(step=step+1,sample=index//arms,arm=index%arms,qpos_error=qe,qvel_error=ve,contacts_match=equal,
                                                                                passed=qe<=2e-6 and ve<=1e-3 and equal))
         for i,sample in enumerate(info['samples']):
-            m=models[sample['world']];sl=slice(i*arms,(i+1)*arms)
-            physical.append(dict(step=step+1,sample=i,**physical_metrics(m,q[sl],v[sl],force[sl],before_v[sl],commands[sl])))
+            m=models[sample['world']];sl=slice(i*arms,(i+1)*arms);f=features(m,q[sl],v[sl]);joint=margins(m,q[sl]);bound=np.zeros((arms,6))
+            for j,name in enumerate(('alphaL','betaL','alphaR','betaR','wheel1','wheel2')):
+                for arm in range(arms):bound[arm,j]=sim.hw.torque_limit(1e6,before_v[i*arms+arm,m.joint(name).dofadr[0]],j<4,0.,.0005)[0]
+            quat=q[sl,3:7];pitch=np.arcsin(np.clip(2*(quat[:,0]*quat[:,2]-quat[:,3]*quat[:,1]),-1,1))
+            roll=np.arctan2(2*(quat[:,0]*quat[:,1]+quat[:,2]*quat[:,3]),1-2*(quat[:,1]**2+quat[:,2]**2))
+            yaw=np.arctan2(2*(quat[:,0]*quat[:,3]+quat[:,1]*quat[:,2]),1-2*(quat[:,2]**2+quat[:,3]**2))
+            allowed=bound/np.array([1.,1.,1.,1.,1.05,1.05])
+            safe=(f[:,:4].min(axis=1)>=LIMIT)&(joint.min(axis=1)>=0)&(np.max(abs(np.c_[roll,pitch,yaw]),axis=1)<=np.deg2rad(5))
+            safe &= (np.max(abs(force[sl])-bound,axis=1)<=1e-6)&(np.max(abs(commands[sl])-allowed,axis=1)<=1e-6)&np.isfinite(np.c_[q[sl],v[sl]]).all(axis=1)
+            physical.append(dict(step=step+1,sample=i,safe_arms=int(safe.sum()),min_A_B_m=float(f[:,:4].min()),min_joint_margin_rad=float(joint.min())))
         cq.append(now_q);cv.append(now_v);gq.append(q);gv.append(v);before_v=v
     np.savez_compressed(output/'pairing.npz',initial_qpos=Q,initial_qvel=V,commands=commands,cpu_qpos=cq[0] if steps==1 else cq,cpu_qvel=cv[0] if steps==1 else cv,
                         warp_qpos=gq[0] if steps==1 else gq,warp_qvel=gv[0] if steps==1 else gv,cpu_contacts=cpu_contacts,warp_contacts=warp_contacts)
