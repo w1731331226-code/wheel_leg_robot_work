@@ -1,5 +1,13 @@
 # 轮腿论文代码架构与模型约束审计
 
+## 持续推进第4轮：统一可执行候选入口（2026-10-02）
+
+`native/design.py`接收原当前J设计及输入映射/Jacobian的完整公式，原probe/audit路径保留同名导入兼容；生产候选不再反向依赖实验入口。`NativeEnv.height115_candidate`统一固定7kg设计、原32维观测/3维默认动作、原投影/保护和physical_v1，并标记`height115-current-vmc-v1-candidate`；旧默认构造、CPU设计及历史结果不替换。新增文件进入源码冻结清单，不能改设计后复用旧冻结协议。
+
+[共享候选检查](results/shared_height115_candidate_checked_20261002/verification.json)复用原归档表比较1e−10门、不同7/8kg物理模型和不同驱动校准的相同输入命令逐值相等、实际40子步证据及动作/证据重置，全部通过。首fixture越冻结质量域时在创建环境前被拒绝，仅修fixture、不放宽范围；原234候选成本/选择/越界拒绝也保持。
+
+[同版本六正常完整评估](results/shared_height115_normal_20261002/verification.json)仍物理6/6、任务4/6，高速停车0.663554/0.666542m，候选工厂不授予整体训练准入。本轮关闭了“实验装配与训练可调用版本不统一”的代码问题，未声称新增性能或高鲁棒性，未启动长训练。下一轮完成五轮方向评判，重点决定如何以最小控制修正处理动态可行性，避免继续孤立试验。
+
 ## 持续推进第3轮：实际制动参考与坐标反例（2026-10-02）
 
 [当前J完整制动录制](results/current_vmc_braking_events_20261002/verification.json)复用原2kHz图与逐步物理验收，六例物理6/6、任务4/6。前后状态、过去控制器状态和冻结表保存，未改目标或控制增益。[独立投影分析](results/current_vmc_projection_audit_20261002/verification.json)从pitch-rate EMA反演当前已知gyro，再按原6状态公式重建未投影轮指令及协调改变量，峰误差<4.1e−14Nm；首样本因没有前一滤波状态排除代数核对。

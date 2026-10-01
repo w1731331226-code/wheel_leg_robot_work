@@ -1,0 +1,28 @@
+{
+  "role": "shared_height115_candidate_engineering_check_not_training_admission",
+  "passed": true,
+  "baseline_version": "height115-current-vmc-v1-candidate",
+  "original_design_arrays_match": true,
+  "random_physics_does_not_change_design_or_same_input_commands": true,
+  "same_input_command": [
+    -0.8299837708473206,
+    0.8388686180114746,
+    -0.8323850035667419,
+    0.8307338953018188,
+    0.00010656394442776218,
+    -0.005893436260521412
+  ],
+  "observation_dim": 32,
+  "action_dim": 3,
+  "physical_evidence_steps": [
+    40.0,
+    40.0
+  ],
+  "reset_clears_evidence_and_action_filter": true,
+  "source_sha256": {
+    "wheelleg_warp/check_height115_candidate.py": "d900ff39d29120b2820f62f640357178cd498b9b3a2e8a03b0cb94e6a6178d63",
+    "wheelleg_warp/native/design.py": "fcdd61b8a03f7513561a83b67b78c1451a2deede3a6cbc90746096393909598e",
+    "wheelleg_warp/native/environment.py": "91aef8dd905a05e4ed39aa4bbdddce75e76dc405f93aa427c63e75915a84a261",
+    "wheelleg_warp/native/controller.py": "b010a17559273f6e3e41f0f37d43ecb06adfecf653daca851f916a88d9b2435b"
+  }
+}

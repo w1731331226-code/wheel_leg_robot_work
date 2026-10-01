@@ -1,5 +1,7 @@
 # WheelLeg 原生GPU并行基线
 
+当前height-115候选统一入口为`NativeEnv.height115_candidate(...)`，固定7kg当前J设计位于`native/design.py`，投影、径向保护和physical_v1逐步验收统一装配。它保留原32维观测及默认diff3动作；旧`NativeEnv(...)`默认行为不替换。`check_height115_candidate.py`验证设计隔离、采样与重置；`probe_current_vmc_design.py`用同一入口评估。当前六正常物理6/6、任务4/6，高速停车尚未通过，**候选标记不构成整体PPO训练准入**。历史0.30m正式训练记录如下。
+
 唯一1024个MuJoCo Warp并行环境基线已经完成正式分轮训练；旧CPU训练实例和CPU/Warp对照实例已退役，公共控制、物理和评估代码保留。
 
 - [正式训练协议、准入与停止规则](NATIVE_TRAINING.md)
