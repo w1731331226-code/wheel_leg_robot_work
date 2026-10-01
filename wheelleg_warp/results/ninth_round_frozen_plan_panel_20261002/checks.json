@@ -1,0 +1,82 @@
+{
+  "same_registered_scenarios": true,
+  "nominal_same_execution_full_gates_passed": true,
+  "original_full_gate_pass_count": 13,
+  "active_design_pass_count": 14,
+  "physical_pass_count": 18,
+  "baseline_task_count": 11,
+  "new_task_count": 13,
+  "nominal_min_active_design_margin_rad": 7.390975951260259e-07,
+  "failures": [
+    {
+      "world": 7,
+      "group": "training_corner",
+      "old_task": false,
+      "new_task": false,
+      "full_gate": false,
+      "active_design_margin_rad": 0.011131548881530673,
+      "reasons": [
+        "original_task",
+        "drive_speed_rmse"
+      ]
+    },
+    {
+      "world": 10,
+      "group": "training_corner",
+      "old_task": false,
+      "new_task": false,
+      "full_gate": false,
+      "active_design_margin_rad": -0.018933868408203214,
+      "reasons": [
+        "original_task",
+        "active_design_1.4rad",
+        "tail_speed"
+      ]
+    },
+    {
+      "world": 11,
+      "group": "training_corner",
+      "old_task": false,
+      "new_task": false,
+      "full_gate": false,
+      "active_design_margin_rad": -0.01942608356475839,
+      "reasons": [
+        "original_task",
+        "active_design_1.4rad",
+        "stop_distance"
+      ]
+    },
+    {
+      "world": 16,
+      "group": "pressure_corner",
+      "old_task": false,
+      "new_task": false,
+      "full_gate": false,
+      "active_design_margin_rad": -0.0381577968597413,
+      "reasons": [
+        "original_task",
+        "active_design_1.4rad",
+        "stop_distance",
+        "tail_speed"
+      ]
+    },
+    {
+      "world": 17,
+      "group": "pressure_corner",
+      "old_task": false,
+      "new_task": false,
+      "full_gate": false,
+      "active_design_margin_rad": -0.0400801658630372,
+      "reasons": [
+        "original_task",
+        "active_design_1.4rad",
+        "stop_distance"
+      ]
+    }
+  ],
+  "default_promoted": false,
+  "note": "Unified frozen-plan nominal6/6 only; base factory does not contain this diagnostic external action path. Corner failures and sub-microradian nominal reserve prevent robust/full-height or training-admission claims.",
+  "exact_frozen_plan_request_applied_to_all_six_highspeed_cases": true,
+  "other_twelve_worlds_extra_zero": true,
+  "total_recorded_physical_steps": 306210
+}
