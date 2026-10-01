@@ -1,0 +1,102 @@
+{
+  "same_frozen_current_state": true,
+  "joint_rows": [
+    {
+      "joint": 0,
+      "side": "lower",
+      "h": 2.447630190849304,
+      "rate": -0.11953932046890259,
+      "energy_required": 0.0029190784603797975,
+      "maximum_in_first_increment": -226.38889445541187,
+      "hocbf_psi1": 489.40649884939194,
+      "hocbf_required": -97857.3919057846,
+      "energy_scalar_possible": false,
+      "hocbf_zero_satisfies": true
+    },
+    {
+      "joint": 1,
+      "side": "lower",
+      "h": 0.3498952627182006,
+      "rate": -0.1324969083070755,
+      "energy_required": 0.025086693907417093,
+      "maximum_in_first_increment": -253.95714946098298,
+      "hocbf_psi1": 69.84655563533305,
+      "hocbf_required": -13942.811745405194,
+      "energy_scalar_possible": false,
+      "hocbf_zero_satisfies": true
+    },
+    {
+      "joint": 2,
+      "side": "upper",
+      "h": 3.74020254611969,
+      "rate": -0.023113293573260307,
+      "energy_required": 7.141649860085152e-05,
+      "maximum_in_first_increment": -55.07065940758497,
+      "hocbf_psi1": 748.0173959303647,
+      "hocbf_required": -149598.8565273583,
+      "energy_scalar_possible": false,
+      "hocbf_zero_satisfies": true
+    },
+    {
+      "joint": 3,
+      "side": "upper",
+      "h": 1.2589987516403198,
+      "rate": -0.052293743938207626,
+      "energy_required": 0.0010860358882452958,
+      "maximum_in_first_increment": -96.36737613550666,
+      "hocbf_psi1": 251.74745658412576,
+      "hocbf_required": -50339.03256803751,
+      "energy_scalar_possible": false,
+      "hocbf_zero_satisfies": true
+    },
+    {
+      "joint": 4,
+      "side": "lower",
+      "h": 2.447632098197937,
+      "rate": -0.11957339197397232,
+      "energy_required": 0.0029207404329041004,
+      "maximum_in_first_increment": -226.3885418147817,
+      "hocbf_psi1": 489.40684624761343,
+      "hocbf_required": -97857.45457112789,
+      "energy_scalar_possible": false,
+      "hocbf_zero_satisfies": true
+    },
+    {
+      "joint": 5,
+      "side": "lower",
+      "h": 0.3498926401138305,
+      "rate": -0.13244183361530304,
+      "energy_required": 0.025066030662544172,
+      "maximum_in_first_increment": -253.8525608385059,
+      "hocbf_psi1": 69.8460861891508,
+      "hocbf_required": -13942.728871107098,
+      "energy_scalar_possible": false,
+      "hocbf_zero_satisfies": true
+    },
+    {
+      "joint": 6,
+      "side": "upper",
+      "h": 3.7402032613754272,
+      "rate": -0.02312668226659298,
+      "energy_required": 7.149924687024391e-05,
+      "maximum_in_first_increment": -54.93996407699877,
+      "hocbf_psi1": 748.0175255928189,
+      "hocbf_required": -149598.87978211045,
+      "energy_scalar_possible": false,
+      "hocbf_zero_satisfies": true
+    },
+    {
+      "joint": 7,
+      "side": "upper",
+      "h": 1.258997917175293,
+      "rate": -0.05224103480577469,
+      "energy_required": 0.0010838483846348495,
+      "maximum_in_first_increment": -96.54352833733465,
+      "hocbf_psi1": 251.74734240025282,
+      "hocbf_required": -50339.02027308941,
+      "energy_scalar_possible": false,
+      "hocbf_zero_satisfies": true
+    }
+  ],
+  "note": "Energy rule requires nonnegative braking even far from a joint bound; existing200/s HOCBF permits finite transient acceleration. Neither local nominal proxy proves nonlinear invariance."
+}

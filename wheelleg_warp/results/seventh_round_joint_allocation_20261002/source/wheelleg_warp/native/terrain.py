@@ -1,0 +1,216 @@
+"""Uniform-topology terrain bank for the independent terrain-v1 experiment."""
+from dataclasses import asdict,dataclass
+import math
+import numpy as np
+import mujoco
+from ppo_env import Scenario,sample_scenario
+from native.models import build_spec,compile_spec,batch
+
+TERRAINS=('legacy','ramp','cross_slope','rough','step','mixed')
+V3_TERRAINS=TERRAINS+('rolling_slope','multi_step','split_level')
+ADVANCED_TERRAINS=('single_side_ramp','asymmetric_rough')
+V4_TERRAINS=V3_TERRAINS+ADVANCED_TERRAINS
+TERRAIN_GEOMS=16
+HEIGHT_115_MIN=.115
+HEIGHT_MAX=.38
+# 五连杆模型主动关节限位给出0.094704466 m；再留20 mm。仅仿真代理安全边界。
+HEIGHT_115_GEOMETRIC_MIN=.1147044660616607
+
+
+@dataclass(frozen=True)
+class TerrainScenario(Scenario):
+    terrain:str='legacy'
+    grade_deg:float=0.
+    roughness_m:float=0.
+    step_height_m:float=0.
+    terrain_seed:int=0
+    relative_attitude:bool=False
+    transition_run_m:float=0.
+    lateral_margin_m:float=0.
+
+    def __post_init__(self):
+        # Reuse the frozen base validation without passing terrain's string fields into it.
+        Scenario(**{name:getattr(self,name) for name in Scenario.__dataclass_fields__})
+        if self.terrain not in V4_TERRAINS or not -5<=self.grade_deg<=5 or not 0<=self.roughness_m<=.012 or not 0<=self.step_height_m<=.03:
+            raise ValueError('地形参数超出terrain-v1冻结范围')
+        if not math.isfinite(self.transition_run_m) or not 0<=self.transition_run_m<=.6 or (self.transition_run_m and self.terrain not in ('cross_slope','split_level')):
+            raise ValueError('入口过渡仅用于横坡/左右异高，长度须在0～0.6m')
+        if not math.isfinite(self.lateral_margin_m) or not 0<=self.lateral_margin_m<=.5:raise ValueError('横向余量须在0～0.5m')
+
+
+@dataclass(frozen=True)
+class HeightTerrainScenario(TerrainScenario):
+    stand_height_m:float=.3
+
+    def __post_init__(self):
+        super().__post_init__()
+        if not math.isfinite(self.stand_height_m) or not HEIGHT_115_MIN<=self.stand_height_m<=HEIGHT_MAX:
+            raise ValueError('目标腿长须在0.115～0.38m')
+
+
+def sample_height_terrain_v3(seed,stage=3,split='train',_min=.16,_salt=113091):
+    base=sample_terrain_v3(seed,stage,split)
+    rng=np.random.default_rng(np.random.SeedSequence([int(seed),_salt,stage,{'train':1,'development':2,'ood':3}[split]]))
+    height={0:_min,1:HEIGHT_MAX,2:.3}.get(int(seed)%16,float(rng.uniform(_min,HEIGHT_MAX)))
+    return HeightTerrainScenario(**asdict(base),stand_height_m=height)
+
+
+def sample_height_terrain_115(seed,stage=3,split='train'):
+    return sample_height_terrain_v3(seed,stage,split,_min=HEIGHT_115_MIN,_salt=115091)
+
+
+def sample_terrain(seed,stage=3,split='train'):
+    if stage not in (1,2,3) or split not in ('train','development','ood'):
+        raise ValueError('无效地形课程或划分')
+    base=sample_scenario('train',seed,stage)
+    rng=np.random.default_rng(np.random.SeedSequence([int(seed),73091,stage,{'train':1,'development':2,'ood':3}[split]]))
+    if split=='ood':
+        terrain=str(rng.choice(('ramp','cross_slope','rough','step','mixed')))
+    else:
+        choices={1:(('legacy','ramp','cross_slope'),(.4,.3,.3)),
+                 2:(('legacy','ramp','cross_slope','rough','step'),(.3,.2,.15,.2,.15)),
+                 3:(TERRAINS,(.3,.15,.15,.15,.15,.1))}[stage]
+        terrain=str(rng.choice(choices[0],p=choices[1]))
+    values=asdict(base)
+    if terrain not in ('legacy','mixed'):
+        values.update(height_l=0.,height_r=0.)
+    grade=0.;rough=0.;step=0.
+    if terrain in ('ramp','cross_slope'):
+        limit=(3.,5.) if split=='ood' else (1.,3.)
+        grade=float(rng.choice((-1,1))*rng.uniform(*limit)) if terrain=='cross_slope' else float(rng.uniform(*limit))
+    if terrain in ('rough','mixed'):
+        rough=float(rng.uniform(.006,.010) if split=='ood' else rng.uniform(.002,.006 if stage==3 else .004))
+    if terrain=='step':
+        step=float(rng.uniform(.020,.030) if split=='ood' else rng.uniform(.005,.020 if stage==3 else .012))
+    return TerrainScenario(**values,terrain=terrain,grade_deg=grade,roughness_m=rough,step_height_m=step,terrain_seed=int(seed))
+
+
+def sample_terrain_v3(seed,stage=3,split='train'):
+    if stage not in (1,2,3) or split not in ('train','development','ood'):raise ValueError('无效terrain-v3课程或划分')
+    base=sample_scenario('train',seed,3);rng=np.random.default_rng(np.random.SeedSequence([int(seed),93091,{'train':1,'development':2,'ood':3}[split]]))
+    if split=='train':
+        choices={1:(TERRAINS,(.3,.1,.1,.1,.1,.3)),2:(V3_TERRAINS,(.3,.08,.08,.08,.08,.2,.06,.06,.06)),3:(V3_TERRAINS,(.3,.08,.08,.08,.08,.15,.08,.08,.07))}[stage]
+        terrain=str(rng.choice(choices[0],p=choices[1]))
+    else:terrain=str(rng.choice(V3_TERRAINS))
+    values=asdict(base)
+    if terrain not in ('legacy','mixed'):values.update(height_l=0.,height_r=0.)
+    grade=0.;rough=0.;step=0.;limits=(3.,5.) if split=='ood' else (1.,3.)
+    if terrain in ('ramp','rolling_slope'):grade=float(rng.uniform(*limits))
+    elif terrain in ('cross_slope','split_level'):grade=float(rng.choice((-1,1))*rng.uniform(*limits))
+    if terrain in ('rough','mixed'):rough=float(rng.uniform(.006,.010) if split=='ood' else rng.uniform(.002,.006))
+    if terrain=='step':step=float(rng.uniform(.020,.030) if split=='ood' else rng.uniform(.005,.020))
+    elif terrain=='multi_step':step=float(rng.uniform(.008,.012) if split=='ood' else rng.uniform(.004,.008))
+    elif terrain=='split_level':step=float(.3*math.tan(math.radians(abs(grade))))
+    return TerrainScenario(**values,terrain=terrain,grade_deg=grade,roughness_m=rough,step_height_m=step,terrain_seed=int(seed),relative_attitude=True)
+
+
+def sample_terrain_v4(seed,split='development'):
+    if split not in ('train','development','ood'):raise ValueError('无效terrain-v4划分')
+    base=sample_scenario('train',seed,3);rng=np.random.default_rng(np.random.SeedSequence([int(seed),103091,{'train':1,'development':2,'ood':3}[split]]));terrain=str(rng.choice(V4_TERRAINS))
+    values=asdict(base)
+    if terrain not in ('legacy','mixed'):values.update(height_l=0.,height_r=0.)
+    limit=(3.,5.) if split=='ood' else (1.,3.);grade=0.;rough=0.;step=0.
+    if terrain in ('ramp','rolling_slope'):grade=float(rng.uniform(*limit))
+    elif terrain in ('cross_slope','split_level','single_side_ramp'):grade=float(rng.choice((-1,1))*rng.uniform(*limit))
+    if terrain in ('rough','mixed','asymmetric_rough'):rough=float(rng.uniform(.006,.010) if split=='ood' else rng.uniform(.002,.006))
+    if terrain=='step':step=float(rng.uniform(.020,.030) if split=='ood' else rng.uniform(.005,.020))
+    elif terrain=='multi_step':step=float(rng.uniform(.008,.012) if split=='ood' else rng.uniform(.004,.008))
+    elif terrain=='split_level':step=float(.3*math.tan(math.radians(abs(grade))))
+    return TerrainScenario(**values,terrain=terrain,grade_deg=grade,roughness_m=rough,step_height_m=step,terrain_seed=int(seed),relative_attitude=True,
+        transition_run_m=.4 if terrain in ('cross_slope','split_level') else 0.,lateral_margin_m=.35 if terrain in ('cross_slope','split_level') else 0.)
+
+
+def _quat(axis,angle):
+    out=np.zeros(4);mujoco.mju_axisAngle2Quat(out,np.asarray(axis,dtype=float),angle);return out
+
+
+def model(s):
+    lateral_margin=s.lateral_margin_m
+    spec=build_spec(s);tiles=[]
+    for i in range(TERRAIN_GEOMS):
+        tiles.append(spec.worldbody.add_geom(name=f'terrain_{i:02d}',type=mujoco.mjtGeom.mjGEOM_BOX,
+            pos=[0,0,-10],size=[.05,.16,.001],friction=[(s.mu_l+s.mu_r)/2,.02,.001]))
+    direction=1 if s.speed>0 else -1;thickness=.012
+    def box(index,u,z,size,quat=(1,0,0,0),y=0.):
+        size=list(size)
+        if y==0.:size[1]+=lateral_margin
+        else:
+            size[1]+=lateral_margin/2;y+=math.copysign(lateral_margin/2,y)
+        g=tiles[index];g.pos=[direction*u,y,z];g.size=size;g.quat=quat
+    if s.terrain=='ramp':
+        angle=math.radians(abs(s.grade_deg));run=.5;plateau=.3;height=run*math.sin(angle)
+        center=s.center;z=height/2-math.cos(angle)*thickness/2
+        box(0,center-plateau/2-run/2,z,[run/2,.16,thickness/2],_quat((0,1,0),-direction*angle))
+        box(1,center,height-thickness/2,[plateau/2,.16,thickness/2])
+        box(2,center+plateau/2+run/2,z,[run/2,.16,thickness/2],_quat((0,1,0),direction*angle))
+    elif s.terrain=='cross_slope':
+        angle=math.radians(s.grade_deg);half_width=.16
+        z=abs(math.sin(angle))*half_width-math.cos(angle)*thickness/2
+        box(0,s.center,z,[.65,half_width,thickness/2],_quat((1,0,0),angle))
+    elif s.terrain in ('rough','mixed'):
+        rng=np.random.default_rng(np.random.SeedSequence([s.terrain_seed,889]))
+        offsets=np.arange(-.66,.67,.12)
+        if s.terrain=='mixed':offsets=np.r_[np.arange(-.96,-.35,.12),np.arange(.36,.97,.12)]
+        for i,offset in enumerate(offsets):
+            height=float(rng.uniform(.001,s.roughness_m));u=s.center+float(offset)
+            box(i,u,height/2,[.061,.16,height/2])
+    elif s.terrain=='step':
+        box(0,s.center,s.step_height_m/2,[.25,.16,s.step_height_m/2])
+    elif s.terrain=='rolling_slope':
+        angle=math.radians(abs(s.grade_deg));run=.32;height=0.
+        for i,sign in enumerate((1,-1,1,-1)):
+            delta=sign*run*math.sin(angle);z=(height+height+delta)/2-math.cos(angle)*thickness/2
+            box(i,s.center-.64+run*(i+.5),z,[run/2,.16,thickness/2],_quat((0,1,0),-direction*sign*angle));height+=delta
+    elif s.terrain=='multi_step':
+        for i,level in enumerate((1,2,3,2,1)):
+            height=level*s.step_height_m;box(i,s.center-.55+.22*(i+.5),height/2,[.11,.16,height/2])
+    elif s.terrain=='split_level':
+        high_right=s.grade_deg>0
+        for i,(y,high) in enumerate(((-.09,not high_right),(.09,high_right))):
+            height=s.step_height_m if high else .001;box(i,s.center,height/2,[.65,.09,height/2],y=y)
+    elif s.terrain=='single_side_ramp':
+        angle=math.radians(abs(s.grade_deg));run=.5;plateau=.3;height=run*math.sin(angle);y=.09 if s.grade_deg>0 else -.09;z=height/2-math.cos(angle)*thickness/2
+        box(0,s.center-plateau/2-run/2,z,[run/2,.09,thickness/2],_quat((0,1,0),-direction*angle),y)
+        box(1,s.center,height-thickness/2,[plateau/2,.09,thickness/2],y=y)
+        box(2,s.center+plateau/2+run/2,z,[run/2,.09,thickness/2],_quat((0,1,0),direction*angle),y)
+    elif s.terrain=='asymmetric_rough':
+        rng=np.random.default_rng(np.random.SeedSequence([s.terrain_seed,1089]))
+        for i,offset in enumerate(np.arange(-.42,.43,.12)):
+            for side,y in enumerate((-.09,.09)):
+                height=float(rng.uniform(.001,s.roughness_m));box(2*i+side,s.center+float(offset),height/2,[.061,.09,height/2],y=y)
+    if s.transition_run_m:
+        # Two wheel-lane approach/departure ramps. The central surface and its
+        # wheel-track heights stay unchanged; abrupt entries remain reproducible.
+        for side,y in enumerate((-.15,.15)):
+            if s.terrain=='cross_slope':
+                a=math.radians(s.grade_deg)
+                h=abs(math.sin(a))*.16+thickness*math.sin(a)**2/(2*math.cos(a))+y*math.tan(a)
+            else:h=s.step_height_m if (y>0)==(s.grade_deg>0) else .001
+            run=s.transition_run_m;angle=math.atan2(h,run);length=math.hypot(run,h)
+            for end,sign in enumerate((-1,1)):
+                box(12+2*side+end,s.center+sign*(.65+run/2),h/2-thickness/(2*math.cos(angle)),[length/2,.075,thickness/2],_quat((0,1,0),direction*sign*angle),y)
+    return compile_spec(spec,s)
+
+
+def bank(n,stage=3,seed=730000,scenario=None):
+    scenarios=list(scenario) if isinstance(scenario,(list,tuple)) else [scenario or sample_terrain(seed+i,stage) for i in range(n)]
+    if len(scenarios)!=n:raise ValueError('固定地形场景数量与环境数不一致')
+    return batch([model(s) for s in scenarios],scenarios)
+
+
+def bank_v3(n,stage=3,seed=930000,scenario=None):
+    scenarios=list(scenario) if isinstance(scenario,(list,tuple)) else [scenario or sample_terrain_v3(seed+i,stage) for i in range(n)]
+    if len(scenarios)!=n:raise ValueError('固定terrain-v3场景数量与环境数不一致')
+    return batch([model(s) for s in scenarios],scenarios)
+
+
+def bank_height_v3(n,stage=3,seed=1130000,scenario=None):
+    scenarios=list(scenario) if isinstance(scenario,(list,tuple)) else [scenario or sample_height_terrain_v3(seed+i,stage) for i in range(n)]
+    if len(scenarios)!=n or not all(isinstance(s,HeightTerrainScenario) for s in scenarios):
+        raise ValueError('多高度地形场景数量或类型无效')
+    return batch([model(s) for s in scenarios],scenarios)
+
+
+def bank_height_115(n,stage=3,seed=1150000,scenario=None):
+    scenarios=list(scenario) if isinstance(scenario,(list,tuple)) else [scenario or sample_height_terrain_115(seed+i,stage) for i in range(n)]
+    return bank_height_v3(n,stage,seed,scenarios)

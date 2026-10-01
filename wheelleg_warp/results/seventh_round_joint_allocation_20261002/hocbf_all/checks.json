@@ -1,0 +1,261 @@
+{
+  "role": "frozen_infeasibility_constraint_diagnosis_not_relaxed_execution",
+  "executed_allocation_updates": 40,
+  "failure_after_arrival_s": 0.2004999999999999,
+  "original_position_margin_current_rad": 0.010127806663513095,
+  "min_recorded_active_design_margin_rad": 0.004534864425659091,
+  "necessary_scalar_impossible": [],
+  "constraint_subset_diagnoses": [
+    {
+      "scope": "original_all",
+      "status": 2,
+      "feasible": false,
+      "executed": false
+    },
+    {
+      "scope": "diagnosis_only_without_slew",
+      "status": 0,
+      "feasible": true,
+      "executed": false
+    },
+    {
+      "scope": "diagnosis_only_without_hocbf",
+      "status": 2,
+      "feasible": false,
+      "executed": false
+    },
+    {
+      "scope": "diagnosis_only_motor_and_slew",
+      "status": 0,
+      "feasible": true,
+      "executed": false
+    }
+  ],
+  "all_joint_rows": [
+    {
+      "joint": "alphaL",
+      "bound": "upper",
+      "h": 0.6089938521385192,
+      "closing_rate": 0.5987652540206909,
+      "psi1": 122.39753568172453,
+      "required_acceleration": -24599.260187149044,
+      "max_acceleration_full_1Nm_public_box": 44.5434464995074,
+      "scalar_possible": true
+    },
+    {
+      "joint": "alphaL",
+      "bound": "lower",
+      "h": 2.1910061478614806,
+      "closing_rate": -0.5987652540206909,
+      "psi1": 437.60246431827545,
+      "required_acceleration": -87400.73981285095,
+      "max_acceleration_full_1Nm_public_box": 160.75185586450687,
+      "scalar_possible": true
+    },
+    {
+      "joint": "betaL",
+      "bound": "upper",
+      "h": 2.7898712396621703,
+      "closing_rate": 1.079264521598816,
+      "psi1": 559.0535124540329,
+      "required_acceleration": -112026.55539512634,
+      "max_acceleration_full_1Nm_public_box": 30.246711942592896,
+      "scalar_possible": true
+    },
+    {
+      "joint": "betaL",
+      "bound": "lower",
+      "h": 0.010128760337829501,
+      "closing_rate": -1.079264521598816,
+      "psi1": 0.9464875459670843,
+      "required_acceleration": 26.555395126346298,
+      "max_acceleration_full_1Nm_public_box": 120.53442431959647,
+      "scalar_possible": true
+    },
+    {
+      "joint": "passA_L",
+      "bound": "upper",
+      "h": 3.6532416343688965,
+      "closing_rate": -0.2001284509897232,
+      "psi1": 730.4481984227896,
+      "required_acceleration": -146049.61399435997,
+      "max_acceleration_full_1Nm_public_box": 71.45463438367172,
+      "scalar_possible": true
+    },
+    {
+      "joint": "passA_L",
+      "bound": "lower",
+      "h": 1.3467583656311035,
+      "closing_rate": 0.2001284509897232,
+      "psi1": 269.5518015772104,
+      "required_acceleration": -53950.38600564003,
+      "max_acceleration_full_1Nm_public_box": 23.170416996388223,
+      "scalar_possible": true
+    },
+    {
+      "joint": "passC_L",
+      "bound": "upper",
+      "h": 1.140070915222168,
+      "closing_rate": -0.3870044946670532,
+      "psi1": 227.62717854976654,
+      "required_acceleration": -45448.0348110199,
+      "max_acceleration_full_1Nm_public_box": 48.903810596003645,
+      "scalar_possible": true
+    },
+    {
+      "joint": "passC_L",
+      "bound": "lower",
+      "h": 3.859929084777832,
+      "closing_rate": 0.3870044946670532,
+      "psi1": 772.3728214502335,
+      "required_acceleration": -154551.9651889801,
+      "max_acceleration_full_1Nm_public_box": 30.626881370146613,
+      "scalar_possible": true
+    },
+    {
+      "joint": "alphaR",
+      "bound": "upper",
+      "h": 0.608992302417755,
+      "closing_rate": 0.5989124178886414,
+      "psi1": 122.39737290143965,
+      "required_acceleration": -24599.257063865658,
+      "max_acceleration_full_1Nm_public_box": 44.493403126987864,
+      "scalar_possible": true
+    },
+    {
+      "joint": "alphaR",
+      "bound": "lower",
+      "h": 2.191007697582245,
+      "closing_rate": -0.5989124178886414,
+      "psi1": 437.60262709856033,
+      "required_acceleration": -87400.74293613434,
+      "max_acceleration_full_1Nm_public_box": 160.8018286317377,
+      "scalar_possible": true
+    },
+    {
+      "joint": "betaR",
+      "bound": "upper",
+      "h": 2.7898721933364867,
+      "closing_rate": 1.0791946649551392,
+      "psi1": 559.0536333322525,
+      "required_acceleration": -112026.56559944153,
+      "max_acceleration_full_1Nm_public_box": 30.33921546418214,
+      "scalar_possible": true
+    },
+    {
+      "joint": "betaR",
+      "bound": "lower",
+      "h": 0.010127806663513095,
+      "closing_rate": -1.0791946649551392,
+      "psi1": 0.9463666677474798,
+      "required_acceleration": 26.565599441531845,
+      "max_acceleration_full_1Nm_public_box": 120.44180502125727,
+      "scalar_possible": true
+    },
+    {
+      "joint": "passA_R",
+      "bound": "upper",
+      "h": 3.6532427072525024,
+      "closing_rate": -0.20012514293193817,
+      "psi1": 730.4484163075686,
+      "required_acceleration": -146049.65823292732,
+      "max_acceleration_full_1Nm_public_box": 71.41341055998568,
+      "scalar_possible": true
+    },
+    {
+      "joint": "passA_R",
+      "bound": "lower",
+      "h": 1.3467572927474976,
+      "closing_rate": 0.20012514293193817,
+      "psi1": 269.55158369243145,
+      "required_acceleration": -53950.34176707268,
+      "max_acceleration_full_1Nm_public_box": 23.211681121607043,
+      "scalar_possible": true
+    },
+    {
+      "joint": "passC_R",
+      "bound": "upper",
+      "h": 1.140069842338562,
+      "closing_rate": -0.3871060609817505,
+      "psi1": 227.62686240673065,
+      "required_acceleration": -45447.95126914978,
+      "max_acceleration_full_1Nm_public_box": 49.06661003183623,
+      "scalar_possible": true
+    },
+    {
+      "joint": "passC_R",
+      "bound": "lower",
+      "h": 3.859930157661438,
+      "closing_rate": 0.3871060609817505,
+      "psi1": 772.3731375932693,
+      "required_acceleration": -154552.04873085022,
+      "max_acceleration_full_1Nm_public_box": 30.46409951222116,
+      "scalar_possible": true
+    }
+  ],
+  "maximum_prior_lp_excess": 2.3037127760972e-15,
+  "default_changed": false,
+  "notes": "The local constant-model5ms constraints became infeasible before a current original design crossing. Constraint subset probes only diagnose conservatism/authority; no relaxed action executed and no full-domain impossibility inferred.",
+  "actual_evidence_so_far": [
+    {
+      "world": 0,
+      "physical_steps": 9530,
+      "physical_evidence_steps": 9530,
+      "min_actual_A_B_m": 0.11498595154051112,
+      "min_eight_joint_margin_rad": 0.2785114049911499,
+      "max_actual_torque_excess_Nm": 0.0,
+      "max_command_excess_Nm": 0.0,
+      "partial_physical_passed": true
+    },
+    {
+      "world": 1,
+      "physical_steps": 9530,
+      "physical_evidence_steps": 9530,
+      "min_actual_A_B_m": 0.11498595154051112,
+      "min_eight_joint_margin_rad": 0.2785114049911499,
+      "max_actual_torque_excess_Nm": 0.0,
+      "max_command_excess_Nm": 0.0,
+      "partial_physical_passed": true
+    },
+    {
+      "world": 2,
+      "physical_steps": 9530,
+      "physical_evidence_steps": 9530,
+      "min_actual_A_B_m": 0.11491142284146956,
+      "min_eight_joint_margin_rad": 0.2785114049911499,
+      "max_actual_torque_excess_Nm": 0.0,
+      "max_command_excess_Nm": 0.0,
+      "partial_physical_passed": true
+    },
+    {
+      "world": 3,
+      "physical_steps": 9530,
+      "physical_evidence_steps": 9530,
+      "min_actual_A_B_m": 0.11493841444944611,
+      "min_eight_joint_margin_rad": 0.2785114049911499,
+      "max_actual_torque_excess_Nm": 0.0,
+      "max_command_excess_Nm": 0.0,
+      "partial_physical_passed": true
+    },
+    {
+      "world": 4,
+      "physical_steps": 9530,
+      "physical_evidence_steps": 9530,
+      "min_actual_A_B_m": 0.1149725545747395,
+      "min_eight_joint_margin_rad": 0.11012780666351318,
+      "max_actual_torque_excess_Nm": 0.0,
+      "max_command_excess_Nm": 0.0,
+      "partial_physical_passed": true
+    },
+    {
+      "world": 5,
+      "physical_steps": 9530,
+      "physical_evidence_steps": 9530,
+      "min_actual_A_B_m": 0.11497559110504926,
+      "min_eight_joint_margin_rad": 0.10453486442565918,
+      "max_actual_torque_excess_Nm": 0.0,
+      "max_command_excess_Nm": 0.0,
+      "partial_physical_passed": true
+    }
+  ]
+}
