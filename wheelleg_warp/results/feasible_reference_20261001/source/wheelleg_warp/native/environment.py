@@ -273,7 +273,7 @@ def reset_rows(mask:wp.array[int],q0:wp.array2d[float],q:wp.array2d[float],v:wp.
 
 
 class NativeEnv(VecEnv):
-    def __init__(self,n=128,stage=3,seed=730000,scenario=None,bank_factory=bank,yaw_config=(.4,2.,.24,.3),residual_scale=1.,residual_mode='diff3',terminate_on_attitude_failure=False,project_clipped_base=False,grouped_residual=False,height_conditioned=False,height_design='legacy',height_safety=None,feasible_reference=False,coordinated_reference=False):
+    def __init__(self,n=128,stage=3,seed=730000,scenario=None,bank_factory=bank,yaw_config=(.4,2.,.24,.3),residual_scale=1.,residual_mode='diff3',terminate_on_attitude_failure=False,project_clipped_base=False,grouped_residual=False,height_conditioned=False,height_design='legacy',height_safety=None,feasible_reference=False):
         if not isinstance(n,int) or not 1 <= n <= 1024:raise ValueError('用户限制：批量环境数须为1～1024')
         if type(project_clipped_base) is not bool:raise ValueError('基础限幅后残差投影开关须为布尔值')
         self.project_clipped_base=project_clipped_base
@@ -301,8 +301,6 @@ class NativeEnv(VecEnv):
         if type(feasible_reference) is not bool or (feasible_reference and self.height_safety!='physical_v1'):
             raise ValueError('名义请求投影仅用于独立真实高度契约')
         self.feasible_reference=feasible_reference
-        if type(coordinated_reference) is not bool or (coordinated_reference and not feasible_reference):raise ValueError('轮髋协调投影需要先启用请求投影')
-        self.coordinated_reference=coordinated_reference
         self.stand_heights=np.asarray([s.stand_height_m if height_conditioned else sim.L_STAND for s in self.scenarios],dtype=float)
         low=HEIGHT_115_MIN if height_design=='range115' else sim.L_SQUAT_MIN
         if not np.isfinite(self.stand_heights).all() or np.any((self.stand_heights<low)|(self.stand_heights>sim.L_MAX)):
@@ -390,7 +388,6 @@ class NativeEnv(VecEnv):
                 references[i]=[alpha,beta,h]
         if feasible_reference:
             references=np.c_[references,np.tile([HEIGHT_115_GEOMETRIC_MIN,1.,1.4,sim.L_MAX],(n,1))]
-            if coordinated_reference:references=np.c_[references,np.ones(n)]
             self.k['reference']=wp.array(references,dtype=D)
         else:self.k['reference'].assign(references)
         self.q0=wp.array(q0,dtype=wp.float32)
@@ -476,7 +473,6 @@ class NativeEnv(VecEnv):
                 infos[i]['grouped_residual']=self.grouped_residual
                 infos[i]['control_limit_scope']='nominal_command'
                 infos[i]['feasible_reference']=self.feasible_reference
-                infos[i]['coordinated_reference']=self.coordinated_reference
                 infos[i]['terminate_on_attitude_failure']=self.terminate_on_attitude_failure
                 if self.height_conditioned:
                     infos[i]['target_leg_m']=float(self.stand_heights[i])

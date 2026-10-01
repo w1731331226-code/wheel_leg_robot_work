@@ -214,7 +214,6 @@ def control_step(w:int,qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.a
         hub=hub-((D(1)-ratio)*gains[index,1,j]+ratio*gains[index+1,1,j])*x[j]
     vl=inverse2(jl)*old_l;vr=inverse2(jr)*old_r;average=(vl[1]+vr[1])/D(2)
     hl=vl[1]+hub-average;hr=vr[1]+hub-average
-    original_hub_mean=(hl+hr)/D(2)
     if reference.shape[1]>6 and reference[w,5]>D(0):
         kg=(D(1)-ratio)*gains[index,1,0]+ratio*gains[index+1,1,0]
         if kg<=D(0) or not wp.isfinite(kg):
@@ -232,11 +231,6 @@ def control_step(w:int,qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.a
             return
         if safe_l!=requested_l:hl=kg*(safe_l-al)+hd
         if safe_r!=requested_r:hr=kg*(safe_r-ar)+hd
-        if reference.shape[1]>7 and reference[w,7]>D(0):
-            khv=(D(1)-ratio)*gains[index,1,3]+ratio*gains[index+1,1,3]
-            kwv=(D(1)-ratio)*gains[index,0,3]+ratio*gains[index+1,0,3]
-            # One effective velocity-reference change must update BOTH LQR inputs.
-            wheel=wheel+(kwv/khv)*((hl+hr)/D(2)-original_hub_mean)
         if diagnostic.shape[1]>=31:
             diagnostic[w,21]=left_target;diagnostic[w,22]=right_target
             diagnostic[w,23]=requested_l;diagnostic[w,24]=requested_r
