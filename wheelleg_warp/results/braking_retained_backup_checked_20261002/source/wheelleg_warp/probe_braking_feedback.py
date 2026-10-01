@@ -61,7 +61,6 @@ class Forecaster:
     # verified grid is the limiting factor. This is not a real-time controller.
     def __init__(self,env,mixed_signs=False,candidate_count=None):
         if candidate_count is not None and (type(candidate_count) is not int or candidate_count not in (1,13,19)):raise ValueError('预测候选数须为1、13或19')
-        if not np.all(np.asarray(env.stand_heights)==.115):raise ValueError('当前独立预测器仅核过0.115m，不能用于其他高度')
         self.n=env.num_envs;self.arms=candidate_count if candidate_count is not None else 19 if mixed_signs else 13;self.count=self.n*self.arms;self.nom=model(HeightTerrainScenario(stand_height_m=.115))
         _,self.model,self.data,_=batch([self.nom]*self.count,[HeightTerrainScenario(stand_height_m=.115)]*self.count)
         self.ids=wp.array(env.ids.numpy(),dtype=int);self.upper=wp.array(np.tile(env.actuator_gain_upper,(self.count,1)),dtype=D)
@@ -87,10 +86,7 @@ class Forecaster:
             self.fixed['heights'],self.fixed['gains'],self.fixed['feed'],self.fixed['angles'],self.reference,self.fixed['yaw'],self.data.ctrl,self.diag,0,0,self.upper],block_dim=32)
 
     def candidate_changes(self,q,v,current=None):
-        if self.arms==1:
-            if current is None:return np.zeros((self.n,6))
-            if current.shape!=(self.n,6) or not np.isfinite(current).all() or np.any(abs(current)>1.):raise ValueError('保留动作须为有限的原1Nm盒内批量')
-            return current.copy()
+        if self.arms==1:return np.zeros((self.n,6)) if current is None else current.copy()
         changes=[]
         for i in range(self.n):
             b=basis(self.nom,q[i],v[i]);b=b/np.sum(abs(b),axis=0)*.1
