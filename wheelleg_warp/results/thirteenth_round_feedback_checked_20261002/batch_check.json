@@ -1,0 +1,22 @@
+{
+  "role": "fixed_failure_predictor_batching_diagnostic",
+  "rows": [
+    {
+      "arms": 13,
+      "qpos": 1.2150280781497713e-11,
+      "qvel": 9.5367431640625e-07,
+      "command": 2.384185791015625e-07,
+      "pass_original": true
+    },
+    {
+      "arms": 1,
+      "qpos": 6.867395541121368e-12,
+      "qvel": 9.5367431640625e-07,
+      "command": 2.384185791015625e-07,
+      "pass_original": true
+    }
+  ],
+  "actual_future_not_used_for_prediction": true,
+  "new_plant_rollout": false,
+  "original_gates_unchanged": true
+}

@@ -1,0 +1,37 @@
+{
+  "role": "same_frozen_request_same_current_state_numerical_history_comparison",
+  "rows": [
+    {
+      "mode": "current_state_past_command_init",
+      "qpos": 1.1920928955078125e-07,
+      "qvel": 0.0001220703125,
+      "command": 0.00017952919006347656,
+      "initial_command_equal": true,
+      "original_gate_pass": false
+    },
+    {
+      "mode": "past_state_own_step_init",
+      "qpos": 5.820766091346741e-11,
+      "qvel": 1.9073486328125e-06,
+      "command": 7.152557373046875e-07,
+      "initial_command_equal": true,
+      "original_gate_pass": true
+    }
+  ],
+  "original_gates": {
+    "qpos": 2e-06,
+    "qvel": 0.001,
+    "command": 1e-05
+  },
+  "source_request_sha256": "be72640239efeab4fcac8017086623460b977781eb9d8eb4d66766b50e2cece0",
+  "no_actual_numerical_warmstart_copied": true,
+  "actual_future_read_only_after_predictions": true,
+  "default_promoted": false,
+  "learning_performed": false,
+  "source_sha256": {
+    "wheelleg_warp/results/thirteenth_round_past_state_support_20261002/diagnostic.py": "f18b2f15b3ff6acbee36732e0df19705731fdfe2111e80417ed66ee7f1974335",
+    "wheelleg_warp/results/thirteenth_round_past_state_support_20261002/forecaster.py": "a16575b5480e2eefda99b63f774b3ca05245a4aa4e2a7a8071d109532d28c6cd",
+    "wheelleg_warp/native/controller.py": "5a1131dee6440f11252850de2198f3662c74c106ba95d55804150e8362363280",
+    "wheelleg_warp/native/environment.py": "4e53122dc865ac3cff7bc1c232cfd013be41e8a0e24a1b5d70cc3fa63b728266"
+  }
+}
