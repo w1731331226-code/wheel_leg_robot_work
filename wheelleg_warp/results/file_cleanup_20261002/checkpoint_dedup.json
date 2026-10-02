@@ -1,0 +1,35 @@
+{
+  "scope": "Immutable historical bootstrap checkpoint duplicates only; live files and per-directory experiment scripts retained.",
+  "removed_copies": 4,
+  "removed_payload_bytes": 2160657,
+  "items": [
+    {
+      "path": "wheelleg_warp/results/terrain_v3_1024_20260922/bootstrap/policy.zip",
+      "retained": "wheelleg_warp/results/terrain_v2_1024_20260922/round_002/step_11300000.zip",
+      "link": "../../terrain_v2_1024_20260922/round_002/step_11300000.zip",
+      "bytes": 540577,
+      "sha256": "7dd0a48ae5c9808e9af95957810f293fd442e173df0919022d4190340c6e4c47"
+    },
+    {
+      "path": "wheelleg_warp/results/terrain_v2_1024_20260922/bootstrap/policy.zip",
+      "retained": "wheelleg_warp/results/terrain_v1_1024_20260922/round_008/step_9764000.zip",
+      "link": "../../terrain_v1_1024_20260922/round_008/step_9764000.zip",
+      "bytes": 540566,
+      "sha256": "aa4694e70c204855e9d2208f5a981b5ef2cf285051670313416b4e0fd34167a2"
+    },
+    {
+      "path": "wheelleg_warp/results/terrain_v1_1024_20260922/bootstrap/policy.zip",
+      "retained": "wheelleg_warp/results/formal_native_1024_20260921/round_003/step_2596000.zip",
+      "link": "../../formal_native_1024_20260921/round_003/step_2596000.zip",
+      "bytes": 540564,
+      "sha256": "69bfcb8a71321b56f8e33078057533aeb46015fdcc8c0a37d5b673844ee8ac49"
+    },
+    {
+      "path": "wheelleg_warp/results/formal_native_1024_20260921/bootstrap/policy.zip",
+      "retained": "wheelleg_warp/results/warmstart_1024_20260921/round_1611/step_1572000.zip",
+      "link": "../../warmstart_1024_20260921/round_1611/step_1572000.zip",
+      "bytes": 538950,
+      "sha256": "a4cbb9ca1e21dc2586f5919a77d6729444848be15895b69506fc0eee2cb8bdd2"
+    }
+  ]
+}
