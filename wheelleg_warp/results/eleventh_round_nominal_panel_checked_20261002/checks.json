@@ -1,0 +1,27 @@
+{
+  "actual_same_input_command_comparisons": 306224,
+  "max_total_command_difference_Nm": 0.0,
+  "command_bitwise_equal": true,
+  "actor_zero_actual_residual_L1_all_steps": true,
+  "original_full_gate_groups_preserved": {
+    "nominal": {
+      "physical_pass_count": 6,
+      "task_pass_count": 6,
+      "full_design_and_task_pass_count": 6
+    },
+    "training_corner": {
+      "physical_pass_count": 6,
+      "task_pass_count": 3,
+      "full_design_and_task_pass_count": 3
+    },
+    "pressure_corner": {
+      "physical_pass_count": 6,
+      "task_pass_count": 4,
+      "full_design_and_task_pass_count": 4
+    }
+  },
+  "nominal_classic_no_longer_charged_as_actor": true,
+  "independent_episode_bitwise_reproducibility_claimed": false,
+  "full_default_admission": false,
+  "learning_performed": false
+}

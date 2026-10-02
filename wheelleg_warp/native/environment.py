@@ -7,7 +7,7 @@ import mujoco
 import warp as wp
 import mujoco_warp as mjw
 from mujoco_warp._src.types import vec5
-from native.controller import control,control_physical,constants,D,fk,polar_jac,allowed
+from native.controller import control,control_physical,control_physical_nominal,constants,D,fk,polar_jac,allowed
 import wheelleg_sim as sim
 from native.models import bank
 from native.terrain import HEIGHT_115_MIN,HEIGHT_115_GEOMETRIC_MIN
@@ -260,7 +260,7 @@ def after(qpos:wp.array2d[float],qvel:wp.array2d[float],sensors:wp.array2d[float
 @wp.kernel
 def reset_rows(mask:wp.array[int],q0:wp.array2d[float],q:wp.array2d[float],v:wp.array2d[float],warm:wp.array2d[float],clock:wp.array[float],sensors:wp.array2d[float],
                control_state:wp.array2d[D],state:wp.array2d[D],residual:wp.array2d[D],active:wp.array[int],done:wp.array[int],
-               obs0:wp.array2d[float],obs:wp.array2d[float],history:wp.array3d[float],targets:wp.array2d[float],reference:wp.array2d[D]):
+               obs0:wp.array2d[float],obs:wp.array2d[float],history:wp.array3d[float],targets:wp.array2d[float],reference:wp.array2d[D],nominal_correction:wp.array2d[D]):
     w=wp.tid()
     if not mask[w]:return
     for j in range(q.shape[1]):q[w,j]=q0[w,j]
@@ -275,6 +275,7 @@ def reset_rows(mask:wp.array[int],q0:wp.array2d[float],q:wp.array2d[float],v:wp.
     if state.shape[1]>31:
         state[w,31]=D(1);state[w,32]=D(1);state[w,33]=D(1.e30)
     for j in range(6):residual[w,j]=D(0)
+    for j in range(nominal_correction.shape[1]):nominal_correction[w,j]=D(0)
     for j in range(targets.shape[1]):targets[w,j]=0.
     for j in range(32):
         obs[w,j]=obs0[w,j]
@@ -283,7 +284,7 @@ def reset_rows(mask:wp.array[int],q0:wp.array2d[float],q:wp.array2d[float],v:wp.
 
 
 class NativeEnv(VecEnv):
-    def __init__(self,n=128,stage=3,seed=730000,scenario=None,bank_factory=bank,yaw_config=(.4,2.,.24,.3),residual_scale=1.,residual_mode='diff3',terminate_on_attitude_failure=False,project_clipped_base=False,grouped_residual=False,height_conditioned=False,height_design='legacy',height_safety=None,feasible_reference=False,coordinated_reference=False,radial_guard=False,arrival_position_hold=False,parking_guard=False,pose_coordinate_projection=False,observation_contract='legacy32'):
+    def __init__(self,n=128,stage=3,seed=730000,scenario=None,bank_factory=bank,yaw_config=(.4,2.,.24,.3),residual_scale=1.,residual_mode='diff3',terminate_on_attitude_failure=False,project_clipped_base=False,grouped_residual=False,height_conditioned=False,height_design='legacy',height_safety=None,feasible_reference=False,coordinated_reference=False,radial_guard=False,arrival_position_hold=False,parking_guard=False,pose_coordinate_projection=False,observation_contract='legacy32',nominal_correction=False):
         if not isinstance(n,int) or not 1 <= n <= 1024:raise ValueError('用户限制：批量环境数须为1～1024')
         if type(project_clipped_base) is not bool:raise ValueError('基础限幅后残差投影开关须为布尔值')
         self.project_clipped_base=project_clipped_base
@@ -308,6 +309,11 @@ class NativeEnv(VecEnv):
             raise ValueError('高度控制设计须与多高度模式匹配')
         self.height_design=height_design
         self.height_safety=('physical_v1' if height_design=='range115' else 'legacy_fk') if height_safety is None else height_safety
+        if type(nominal_correction) is not bool or (nominal_correction and (self.height_safety!='physical_v1' or observation_contract!='request_state_v1' or grouped_residual)):
+            raise ValueError('共同Nom修正仅用于38维真实高度候选，不能与分组分配混用')
+        self.nominal_correction_enabled=nominal_correction
+        self.nominal_correction=wp.zeros((n,6 if nominal_correction else 0),dtype=D)
+        self._nominal_last_steps=np.zeros(n)
         if self.height_safety not in ('legacy_fk','physical_v1') or (self.height_safety=='physical_v1' and height_design!='range115'):
             raise ValueError('真实几何安全契约只用于range115独立任务')
         if type(feasible_reference) is not bool or (feasible_reference and self.height_safety!='physical_v1'):
@@ -347,6 +353,9 @@ class NativeEnv(VecEnv):
             if np.any(actuator_gains>self.actuator_gain_upper+1e-7):raise ValueError('执行器增益超出公开力矩分配上界')
             self.control_kernel=control_physical
             self.control_extra=[wp.array(np.tile(self.actuator_gain_upper,(n,1)),dtype=D)]
+            if nominal_correction:
+                self.control_kernel=control_physical_nominal
+                self.control_extra.append(self.nominal_correction)
         ids=self.k['ids'].numpy().tolist()+[self.cpu.geom(x).id for x in ('wheel_collide_L','wheel_collide_R','bump_L','bump_R')]
         terrain=mujoco.mj_name2id(self.cpu,mujoco.mjtObj.mjOBJ_GEOM,'terrain_00')
         ids += [terrain,mujoco.mj_name2id(self.cpu,mujoco.mjtObj.mjOBJ_GEOM,'terrain_15')] if terrain>=0 else [-1,-1]
@@ -429,7 +438,7 @@ class NativeEnv(VecEnv):
         if height_conditioned:initial[:,11]=self.stand_heights-sim.L_STAND
         self.obs0=wp.array(initial,dtype=wp.float32)
         self.mask=wp.ones(n,dtype=wp.int32)
-        self.reset_args=[self.mask,self.q0,self.data.qpos,self.data.qvel,self.data.qacc_warmstart,self.data.time,self.data.sensordata,self.k['state'],self.state,self.residual,self.active,self.done,self.obs0,self.obs,self.history,self.targets,self.k['reference']]
+        self.reset_args=[self.mask,self.q0,self.data.qpos,self.data.qvel,self.data.qacc_warmstart,self.data.time,self.data.sensordata,self.k['state'],self.state,self.residual,self.active,self.done,self.obs0,self.obs,self.history,self.targets,self.k['reference'],self.nominal_correction]
         if self.height_safety=='physical_v1':
             names=('alphaL','betaL','passA_L','passC_L','alphaR','betaR','passA_R','passC_R')
             joint_ids=np.array([self.cpu.joint(name).id for name in names])
@@ -461,7 +470,7 @@ class NativeEnv(VecEnv):
         super().__init__(n,gym.spaces.Box(-np.inf,np.inf,(self.observation_dim,),dtype=np.float32),gym.spaces.Box(-1.,1.,(self.action_dim,),dtype=np.float32))
 
     @classmethod
-    def height115_candidate(cls,n=128,stage=3,seed=1150000,scenario=None,residual_scale=1.,residual_mode='diff3',observation_contract='request_state_v1'):
+    def height115_candidate(cls,n=128,stage=3,seed=1150000,scenario=None,residual_scale=1.,residual_mode='diff3',observation_contract='request_state_v1',nominal_correction=False):
         """Shared current-J baseline candidate; this factory does not grant training admission."""
         from native.terrain import bank_height_115
         from native.design import current_vmc_table
@@ -469,15 +478,31 @@ class NativeEnv(VecEnv):
         env=cls(n=n,stage=stage,seed=seed,scenario=scenario,bank_factory=bank_height_115,
             height_conditioned=True,height_design='range115',height_safety='physical_v1',
             residual_scale=residual_scale,residual_mode=residual_mode,feasible_reference=True,
-            coordinated_reference=True,radial_guard=True,observation_contract=observation_contract)
+            coordinated_reference=True,radial_guard=True,observation_contract=observation_contract,nominal_correction=nominal_correction)
         env.k['gains'].assign(np.stack([t[0] for t in table]));env.k['feed'].assign(np.stack([t[1] for t in table]));env.k['angles'].assign(np.array([t[2] for t in table]))
         env.baseline_version='height115-current-vmc-v1-candidate' if observation_contract=='legacy32' else 'height115-current-vmc-v2-request-state-candidate'
         env.design_reports=reports
+        if nominal_correction:env.baseline_version='height115-current-vmc-v3-nominal-boundary-candidate'
         return env
 
     def reset(self):
+        self._nominal_last_steps.fill(0)
         self.mask.fill_(1);wp.launch(reset_rows,self.num_envs,self.reset_args);mjw.forward(self.model,self.data)
         return self.obs.numpy().copy()
+
+    def set_nominal_correction(self,values):
+        """Hold a shared Nom request; original1Nm box and elapsed-time L1 budget."""
+        if not self.nominal_correction_enabled:raise ValueError('共同Nom修正未启用')
+        value=np.asarray(values,dtype=np.float64)
+        if value.shape!=(self.num_envs,6) or not np.isfinite(value).all() or np.any(abs(value)>1):
+            raise ValueError('共同Nom请求须为有限批量且逐电机不超过1Nm')
+        steps=self.state.numpy()[:,0];previous=self.nominal_correction.numpy()
+        last=np.where(steps<self._nominal_last_steps,0,self._nominal_last_steps)
+        budget=.01*np.clip(steps-last,0,10)
+        changed=np.any(value!=previous,axis=1)
+        if np.any(np.sum(abs(value-previous),axis=1)>budget+1e-12):
+            raise ValueError('共同Nom请求超出每5ms L1≤0.1Nm增量')
+        self.nominal_correction.assign(value);self._nominal_last_steps[changed]=steps[changed]
 
     def step_async(self,actions):
         a=np.asarray(actions,dtype=np.float32)
@@ -508,6 +533,8 @@ class NativeEnv(VecEnv):
                 infos[i]['terrain_evidence_passed']=bool(states[i,27])
                 infos[i]['task_contract_version']=TASK_CONTRACT_VERSION
                 infos[i]['observation_spec']=self.observation_spec
+                infos[i]['nominal_correction_enabled']=self.nominal_correction_enabled
+                infos[i]['residual_scope']='Actor contribution after accepted shared Nom'
                 infos[i]['task_goal_progress_m']=float(self.task_goals[i])
                 infos[i]['attitude_mode']='terrain_relative' if self.relative_attitude[i] else 'world'
                 infos[i]['relative_peak_deg']=(states[i,21:24]*180/np.pi).tolist()
@@ -561,6 +588,7 @@ class NativeEnv(VecEnv):
                 # SB3 must not add gamma*V(terminal_observation) to its -10 reward.
                 infos[i]['TimeLimit.truncated']=False
             self.mask.assign(done.astype(np.int32));wp.launch(reset_rows,self.num_envs,self.reset_args)
+            self._nominal_last_steps[done]=0
             refreshed=self.obs.numpy();obs[done]=refreshed[done]
         return obs,reward,done,infos
 

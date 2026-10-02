@@ -42,6 +42,7 @@ def execute_extra(v:wp.array2d[float],ids:wp.array[int],upper:wp.array2d[D],extr
 
 def execution_graph(env,extra):
     if env.height_safety!='physical_v1':raise ValueError('独立执行图需要真实物理契约')
+    if getattr(env,'nominal_correction_enabled',False):raise ValueError('共同Nom模式不能再次外置修正，应使用其原生控制链')
     n=env.num_envs;upper=env.control_extra[0]
     with wp.ScopedCapture() as capture:
         wp.launch(begin,n,[env.reward])
@@ -60,6 +61,7 @@ class Forecaster:
     # ponytail: finite fixed candidates; continuous optimization only if this
     # verified grid is the limiting factor. This is not a real-time controller.
     def __init__(self,env,mixed_signs=False,candidate_count=None):
+        if getattr(env,'nominal_correction_enabled',False):raise ValueError('旧预测器未接共同Nom/Actor分配，禁止复用其准入预测')
         if candidate_count is not None and (type(candidate_count) is not int or candidate_count not in (1,13,19)):raise ValueError('预测候选数须为1、13或19')
         if not np.all(np.asarray(env.stand_heights)==.115):raise ValueError('当前独立预测器仅核过0.115m，不能用于其他高度')
         self.n=env.num_envs;self.arms=candidate_count if candidate_count is not None else 19 if mixed_signs else 13;self.count=self.n*self.arms;self.nom=model(HeightTerrainScenario(stand_height_m=.115))

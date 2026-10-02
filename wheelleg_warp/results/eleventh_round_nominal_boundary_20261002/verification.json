@@ -1,0 +1,24 @@
+{
+  "role": "shared_nominal_actor_boundary_check_not_admission",
+  "passed": true,
+  "zero_actor_external_command_max_difference": 0.0,
+  "actor_actual_contribution_peak_Nm": 0.056999999999999995,
+  "reward_fixture_classic_penalty_removed": [
+    8.027237847222247e-06,
+    8.027237847222247e-06
+  ],
+  "original_request_box_and_elapsed_slew_guarded": true,
+  "invalid_gpu_buffer_fails_closed": true,
+  "hidden_parameters_isolated": true,
+  "native_physical_steps": 80,
+  "masked_reset_clears_only_selected_correction": true,
+  "old_external_graph_and_forecaster_rejected": true,
+  "default_factory_unchanged": true,
+  "limitations": "Controller/reward fixtures and short native path only; no joint invariance, full task, robust/all-height, learning or default-promotion claim.",
+  "source_sha256": {
+    "wheelleg_warp/test_nominal_boundary.py": "e9466ec33a95176bd8c01ebeb5576b3b47a4f68f80568da8fcc9e8e776148d78",
+    "wheelleg_warp/native/controller.py": "5a1131dee6440f11252850de2198f3662c74c106ba95d55804150e8362363280",
+    "wheelleg_warp/native/environment.py": "4e53122dc865ac3cff7bc1c232cfd013be41e8a0e24a1b5d70cc3fa63b728266",
+    "wheelleg_warp/probe_braking_feedback.py": "6cc5366d046c4f729595b030d8e75f49c225cf389ce0d09ba04902de56e36d82"
+  }
+}
