@@ -1,0 +1,11 @@
+{
+  "reason": "LP reported success but independent inequality residual exceeded1e-9; rejected before applying that request",
+  "trace_available": false,
+  "iteration_unrecorded": true,
+  "default_solver_tolerance_used": true,
+  "source_files": [
+    "candidate_at_failure.py",
+    "static_projection_at_failure.py"
+  ],
+  "log": "../candidate.log"
+}

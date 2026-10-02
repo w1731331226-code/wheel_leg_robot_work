@@ -1,0 +1,136 @@
+{
+  "role": "static_reference_order_counterexample_not_dynamic_causality_proof",
+  "rows": [
+    {
+      "world": 4,
+      "group": "nominal",
+      "peak_static_joint_excess_rad": {
+        "projected_reference": -7.549516567451064e-15,
+        "accepted_nom_before": 6.560922916065692e-09,
+        "accepted_nom_after": 0.06447350161866794
+      },
+      "materially_new_infeasible_target_steps": 1636,
+      "first_command_interval_start_after_arrival_s": 0.0005000000000006111,
+      "first_command_interval_end_after_arrival_s": 0.001000000000000334
+    },
+    {
+      "world": 5,
+      "group": "nominal",
+      "peak_static_joint_excess_rad": {
+        "projected_reference": -1.0307310560619953e-12,
+        "accepted_nom_before": 9.268363854175732e-09,
+        "accepted_nom_after": 0.07335013955922198
+      },
+      "materially_new_infeasible_target_steps": 1731,
+      "first_command_interval_start_after_arrival_s": 0.0030000000000001137,
+      "first_command_interval_end_after_arrival_s": 0.0034999999999998366
+    },
+    {
+      "world": 10,
+      "group": "mass_only",
+      "peak_static_joint_excess_rad": {
+        "projected_reference": -3.2884805989397137e-13,
+        "accepted_nom_before": 8.575219645479137e-09,
+        "accepted_nom_after": 0.06483322859669816
+      },
+      "materially_new_infeasible_target_steps": 1648,
+      "first_command_interval_start_after_arrival_s": 0.0034999999999998366,
+      "first_command_interval_end_after_arrival_s": 0.0039999999999995595
+    },
+    {
+      "world": 11,
+      "group": "mass_only",
+      "peak_static_joint_excess_rad": {
+        "projected_reference": -1.7741363933510002e-13,
+        "accepted_nom_before": 1.1923344311881579e-08,
+        "accepted_nom_after": 0.07606710709048436
+      },
+      "materially_new_infeasible_target_steps": 1755,
+      "first_command_interval_start_after_arrival_s": 0.001000000000000334,
+      "first_command_interval_end_after_arrival_s": 0.0015000000000000568
+    },
+    {
+      "world": 16,
+      "group": "friction_only",
+      "peak_static_joint_excess_rad": {
+        "projected_reference": -3.3795188869589765e-13,
+        "accepted_nom_before": 6.942673547172262e-09,
+        "accepted_nom_after": 0.06463826333720224
+      },
+      "materially_new_infeasible_target_steps": 1640,
+      "first_command_interval_start_after_arrival_s": 0.001000000000000334,
+      "first_command_interval_end_after_arrival_s": 0.0015000000000000568
+    },
+    {
+      "world": 17,
+      "group": "friction_only",
+      "peak_static_joint_excess_rad": {
+        "projected_reference": -6.705747068735946e-13,
+        "accepted_nom_before": 6.5194303289217714e-09,
+        "accepted_nom_after": 0.07473483780362544
+      },
+      "materially_new_infeasible_target_steps": 1731,
+      "first_command_interval_start_after_arrival_s": 0.0030000000000001137,
+      "first_command_interval_end_after_arrival_s": 0.0034999999999998366
+    },
+    {
+      "world": 22,
+      "group": "drive_only",
+      "peak_static_joint_excess_rad": {
+        "projected_reference": -2.1160850849355484e-13,
+        "accepted_nom_before": 1.2305954477653813e-08,
+        "accepted_nom_after": 0.06448497342887771
+      },
+      "materially_new_infeasible_target_steps": 1639,
+      "first_command_interval_start_after_arrival_s": 0.0005000000000006111,
+      "first_command_interval_end_after_arrival_s": 0.001000000000000334
+    },
+    {
+      "world": 23,
+      "group": "drive_only",
+      "peak_static_joint_excess_rad": {
+        "projected_reference": -2.3359092438113294e-12,
+        "accepted_nom_before": 6.47485887128596e-09,
+        "accepted_nom_after": 0.07422155977185696
+      },
+      "materially_new_infeasible_target_steps": 1735,
+      "first_command_interval_start_after_arrival_s": 0.0030000000000001137,
+      "first_command_interval_end_after_arrival_s": 0.0034999999999998366
+    }
+  ],
+  "scalar_reconstruction_max_angle_error_rad": 1.3461454173580023e-15,
+  "scalar_checked_frames": 401,
+  "display_rounding_cutoff_rad": 1e-06,
+  "static_projection_candidate": {
+    "actual_request_updates": 800,
+    "changed_from_guide": 371,
+    "active_design_margin_rad": [
+      0.018027448654174716,
+      0.004534864425659091
+    ],
+    "physical_pass": 2,
+    "task_pass": 0,
+    "stop_distance_m": [
+      0.6163210868852419,
+      0.6177129746060722
+    ],
+    "tail_speed_m_s": [
+      0.03241879579529616,
+      0.022935879073530972
+    ],
+    "promoted": false
+  },
+  "full_admission": false,
+  "limitations": "Static-equivalent target violation exists even in successful nominal episodes. It does not prove this is the unique dynamic failure cause, or that enforcing this proxy solves parking. Original actual gates remain unchanged.",
+  "input_sha256": {
+    "wheelleg_warp/results/seventeenth_round_projection_order_20261002/reference_trace.npz": "ff1a2103e6df8fbf5903b0603370bf07ae4cdd43a2575584fc30f4265fc128f1",
+    "wheelleg_warp/results/seventeenth_round_projection_order_20261002/trace.npz": "27306ab397ca630d0f202408cbe546f61905a51f71d405c98c8abc34d941362f",
+    "wheelleg_warp/results/seventeenth_round_projection_order_20261002/verification.json": "1f10a744bb9bb25e7145eafab936ca7a52f79abc506c304fba7a2ab0cad9c948",
+    "wheelleg_warp/results/seventeenth_round_projection_order_20261002/static_candidate_checked/verification.json": "43e3d8617d066b386d59fd1d35c4de04de15a47b26d350ce027964be8d18ce41",
+    "wheelleg_warp/results/seventeenth_round_projection_order_20261002/static_candidate_checked/trace.npz": "02982dab92a25c0ce8f3f5760ee958a3e48c0ba2a5a8dfc2be2ec1df973fa279",
+    "wheelleg_warp/results/seventeenth_round_projection_order_20261002/static_candidate_checked/projection_decisions.json": "7c6a7c12a16c69173659bbcbc5b77284d49963ee269dd765a9df801027c3925e"
+  },
+  "source_sha256": {
+    "wheelleg_warp/results/seventeenth_round_projection_order_20261002/analyze.py": "6a07eeb479b090903f7bc033fed1074b57c6ce14f75f16328b44e5af72582f30"
+  }
+}

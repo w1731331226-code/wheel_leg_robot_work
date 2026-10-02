@@ -1,0 +1,52 @@
+{
+  "labels": [
+    "nominal",
+    "nominal"
+  ],
+  "scenarios": [
+    {
+      "speed": 1.0,
+      "mass": 7.0,
+      "height_l": 0.0,
+      "height_r": 0.0,
+      "center": 2.0,
+      "offset": 0.0,
+      "mu_l": 0.8,
+      "mu_r": 0.8,
+      "drive_difference": 0.0,
+      "delay_ms": 0.0,
+      "solver_iterations": 100,
+      "terrain": "legacy",
+      "grade_deg": 0.0,
+      "roughness_m": 0.0,
+      "step_height_m": 0.0,
+      "terrain_seed": 0,
+      "relative_attitude": false,
+      "transition_run_m": 0.0,
+      "lateral_margin_m": 0.0,
+      "stand_height_m": 0.115
+    },
+    {
+      "speed": -1.0,
+      "mass": 7.0,
+      "height_l": 0.0,
+      "height_r": 0.0,
+      "center": 2.0,
+      "offset": 0.0,
+      "mu_l": 0.8,
+      "mu_r": 0.8,
+      "drive_difference": 0.0,
+      "delay_ms": 0.0,
+      "solver_iterations": 100,
+      "terrain": "legacy",
+      "grade_deg": 0.0,
+      "roughness_m": 0.0,
+      "step_height_m": 0.0,
+      "terrain_seed": 0,
+      "relative_attitude": false,
+      "transition_run_m": 0.0,
+      "lateral_margin_m": 0.0,
+      "stand_height_m": 0.115
+    }
+  ]
+}

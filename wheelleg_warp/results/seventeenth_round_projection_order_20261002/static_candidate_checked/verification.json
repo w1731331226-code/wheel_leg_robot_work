@@ -1,0 +1,389 @@
+{
+  "role": "current_static_geometry_projection_trial",
+  "base_candidate_version": "height115-current-vmc-v3-nominal-boundary-candidate",
+  "observation_spec": {
+    "version": "request_state_v1",
+    "dimension": 38,
+    "physical_packet_slice": [
+      0,
+      32
+    ],
+    "physical_packet_timing": "scenario delay in 0.5ms steps",
+    "request_state_slice": [
+      32,
+      38
+    ],
+    "request_state_timing": "current completed substep; not sensor delayed",
+    "request_state_units": "normalized filtered virtual F/H/wheel requests before mapping/projection",
+    "request_state_channels": [
+      "F_left",
+      "F_right",
+      "H_left",
+      "H_right",
+      "wheel_left",
+      "wheel_right"
+    ],
+    "partial_observability": true,
+    "hidden_physics_parameters": false,
+    "future_terrain": false
+  },
+  "registration": {
+    "selection": "original two nominal high-speed cases; original guide with current static geometry projection; no gain or plan search",
+    "parameter_groups": [
+      "nominal",
+      "nominal"
+    ],
+    "scenarios": [
+      {
+        "speed": 1.0,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.115
+      },
+      {
+        "speed": -1.0,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.0,
+        "center": 2.0,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.115
+      }
+    ],
+    "plan_by_world": [
+      0,
+      1
+    ],
+    "input_sha256": {
+      "wheelleg_warp/results/seventeenth_round_projection_order_20261002/static_candidate_checked/single_factor_cases.json": "62be1a4fb1ef3d32c5c58cc42845cf2e667ff498693be0f0d9353cb25b0cb3cb",
+      "wheelleg_warp/results/braking_trajectory_slsqp_20261001/verification.json": "55830e65d6f3e1864a4a5d24ab5dc7fbaaef5262460702c99bf8d4bc9126ec02",
+      "wheelleg_warp/results/braking_trajectory_slsqp_20261001/world0_best.npz": "b9b36dcc73c1d4e9fece9514d7895c287ae5d64d2bc7fc797f087d0b588e25b6",
+      "wheelleg_warp/results/braking_trajectory_slsqp_20261001/world1_best.npz": "663f4ee685c6f9fdb26d53b7e9a248de181fb6fc2468647bb69899db4b03e906"
+    }
+  },
+  "episodes": [
+    {
+      "reason": "completed",
+      "physical_steps": 13129,
+      "arrival_s": 4.5645,
+      "rms_deg": [
+        8.153452305710407e-06,
+        0.45302198492543805,
+        0.0001450702457039691
+      ],
+      "velocity_rmse": 0.15113962599094874,
+      "stop_distance_m": 0.6163210868852419,
+      "tail_speed_m_s": 0.03241879579529616,
+      "success": false,
+      "duration_s": 6.5645,
+      "episode": {
+        "r": -5.1501982377642905,
+        "l": 329
+      },
+      "peak_deg": [
+        4.02310433466548e-05,
+        1.136316951207923,
+        0.00022635577981518218
+      ],
+      "TimeLimit_truncated": false,
+      "required_contact_mask": 0,
+      "touched_contact_mask": 0,
+      "required_terrain_contact_mask": 0,
+      "touched_terrain_contact_mask": 0,
+      "terrain_passed": true,
+      "terrain_required_end_m": null,
+      "wheel_progress_m": [
+        1.422563074094851,
+        1.4225627325879677
+      ],
+      "terrain_entry_profile": "abrupt_or_original",
+      "terrain_exit_passed": true,
+      "terrain_evidence_passed": true,
+      "task_contract_version": 2,
+      "observation_spec": {
+        "version": "request_state_v1",
+        "dimension": 38,
+        "physical_packet_slice": [
+          0,
+          32
+        ],
+        "physical_packet_timing": "scenario delay in 0.5ms steps",
+        "request_state_slice": [
+          32,
+          38
+        ],
+        "request_state_timing": "current completed substep; not sensor delayed",
+        "request_state_units": "normalized filtered virtual F/H/wheel requests before mapping/projection",
+        "request_state_channels": [
+          "F_left",
+          "F_right",
+          "H_left",
+          "H_right",
+          "wheel_left",
+          "wheel_right"
+        ],
+        "partial_observability": true,
+        "hidden_physics_parameters": false,
+        "future_terrain": false
+      },
+      "nominal_correction_enabled": true,
+      "residual_scope": "Actor contribution after accepted shared Nom",
+      "task_goal_progress_m": 2.75,
+      "attitude_mode": "world",
+      "relative_peak_deg": [
+        4.02310433466548e-05,
+        1.136316951207923,
+        0.00022635577981518218
+      ],
+      "residual_limited_steps": 0,
+      "mean_residual_lambda": 1.0,
+      "base_infeasible_steps": 2,
+      "yaw_config": [
+        0.4,
+        2.0,
+        0.24,
+        0.3
+      ],
+      "residual_scale": 0.0,
+      "residual_mode": "diff3",
+      "project_clipped_base": false,
+      "grouped_residual": false,
+      "control_limit_scope": "actual_torque_and_nominal_command",
+      "feasible_reference": true,
+      "coordinated_reference": true,
+      "pose_coordinate_projection": false,
+      "radial_guard": true,
+      "arrival_position_hold": false,
+      "parking_guard": false,
+      "max_requested_radial_guard_N": 17.395157228121114,
+      "max_applied_radial_guard_N": 17.395157228121114,
+      "radial_guard_limited_steps": 0,
+      "radial_guard_active_steps": 2677,
+      "terminate_on_attitude_failure": false,
+      "baseline_version": "height115-current-vmc-v3-nominal-boundary-candidate",
+      "target_leg_m": 0.115,
+      "height_rmse_m": 0.0010191663563651034,
+      "height_tolerance_m": 0.02,
+      "height_design": "range115",
+      "min_leg_m": 0.1149725545747395,
+      "geometric_limit_m": 0.1147044660616607,
+      "geometric_margin_passed": true,
+      "height_safety_contract": "physical_v1",
+      "min_fk_leg_m": 0.1149900297629292,
+      "min_actual_A_leg_m": 0.1149725545747395,
+      "min_actual_B_leg_m": 0.11498626860096454,
+      "min_eight_joint_margin_rad": 0.1180274486541748,
+      "max_loop_error_m": 3.0316510838327282e-05,
+      "max_actual_torque_excess_Nm": 0.0,
+      "max_command_torque_excess_Nm": 0.0,
+      "physical_evidence_steps": 13129,
+      "physical_safety_passed": true,
+      "actuator_gain_upper": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.05,
+        1.05
+      ],
+      "TimeLimit.truncated": false
+    },
+    {
+      "reason": "completed",
+      "physical_steps": 13124,
+      "arrival_s": 4.562,
+      "rms_deg": [
+        9.185271538559473e-06,
+        0.3340722214933188,
+        0.0005406837845421091
+      ],
+      "velocity_rmse": 0.15036556747203575,
+      "stop_distance_m": 0.6177129746060722,
+      "tail_speed_m_s": 0.022935879073530972,
+      "success": false,
+      "duration_s": 6.562,
+      "episode": {
+        "r": -5.118997733951847,
+        "l": 329
+      },
+      "peak_deg": [
+        4.1469807864212584e-05,
+        1.0569397366691866,
+        0.0010400106742202288
+      ],
+      "TimeLimit_truncated": false,
+      "required_contact_mask": 0,
+      "touched_contact_mask": 0,
+      "required_terrain_contact_mask": 0,
+      "touched_terrain_contact_mask": 0,
+      "terrain_passed": true,
+      "terrain_required_end_m": null,
+      "wheel_progress_m": [
+        1.286110348216324,
+        1.2861158614057322
+      ],
+      "terrain_entry_profile": "abrupt_or_original",
+      "terrain_exit_passed": true,
+      "terrain_evidence_passed": true,
+      "task_contract_version": 2,
+      "observation_spec": {
+        "version": "request_state_v1",
+        "dimension": 38,
+        "physical_packet_slice": [
+          0,
+          32
+        ],
+        "physical_packet_timing": "scenario delay in 0.5ms steps",
+        "request_state_slice": [
+          32,
+          38
+        ],
+        "request_state_timing": "current completed substep; not sensor delayed",
+        "request_state_units": "normalized filtered virtual F/H/wheel requests before mapping/projection",
+        "request_state_channels": [
+          "F_left",
+          "F_right",
+          "H_left",
+          "H_right",
+          "wheel_left",
+          "wheel_right"
+        ],
+        "partial_observability": true,
+        "hidden_physics_parameters": false,
+        "future_terrain": false
+      },
+      "nominal_correction_enabled": true,
+      "residual_scope": "Actor contribution after accepted shared Nom",
+      "task_goal_progress_m": 2.75,
+      "attitude_mode": "world",
+      "relative_peak_deg": [
+        4.1469807864212584e-05,
+        1.0569397366691866,
+        0.0010400106742202288
+      ],
+      "residual_limited_steps": 0,
+      "mean_residual_lambda": 1.0,
+      "base_infeasible_steps": 2,
+      "yaw_config": [
+        0.4,
+        2.0,
+        0.24,
+        0.3
+      ],
+      "residual_scale": 0.0,
+      "residual_mode": "diff3",
+      "project_clipped_base": false,
+      "grouped_residual": false,
+      "control_limit_scope": "actual_torque_and_nominal_command",
+      "feasible_reference": true,
+      "coordinated_reference": true,
+      "pose_coordinate_projection": false,
+      "radial_guard": true,
+      "arrival_position_hold": false,
+      "parking_guard": false,
+      "max_requested_radial_guard_N": 31.220485939659692,
+      "max_applied_radial_guard_N": 31.220485939659692,
+      "radial_guard_limited_steps": 0,
+      "radial_guard_active_steps": 2863,
+      "terminate_on_attitude_failure": false,
+      "baseline_version": "height115-current-vmc-v3-nominal-boundary-candidate",
+      "target_leg_m": 0.115,
+      "height_rmse_m": 0.001395722594805261,
+      "height_tolerance_m": 0.02,
+      "height_design": "range115",
+      "min_leg_m": 0.11497559693128,
+      "geometric_limit_m": 0.1147044660616607,
+      "geometric_margin_passed": true,
+      "height_safety_contract": "physical_v1",
+      "min_fk_leg_m": 0.11498843334204871,
+      "min_actual_A_leg_m": 0.11497559693128,
+      "min_actual_B_leg_m": 0.11498474103304708,
+      "min_eight_joint_margin_rad": 0.10453486442565918,
+      "max_loop_error_m": 1.6746355888107523e-05,
+      "max_actual_torque_excess_Nm": 0.0,
+      "max_command_torque_excess_Nm": 0.0,
+      "physical_evidence_steps": 13124,
+      "physical_safety_passed": true,
+      "actuator_gain_upper": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.05,
+        1.05
+      ],
+      "TimeLimit.truncated": false
+    }
+  ],
+  "active_design_margin_rad": [
+    0.018027448654174716,
+    0.004534864425659091
+  ],
+  "original_full_gates": [
+    false,
+    false
+  ],
+  "groups": {
+    "nominal": {
+      "physical_pass_count": 2,
+      "task_pass_count": 0,
+      "full_design_and_task_pass_count": 0
+    }
+  },
+  "start_boundaries": [
+    {
+      "world": 0,
+      "start_s": 4.565,
+      "arrival_s": 4.5645
+    },
+    {
+      "world": 1,
+      "start_s": 4.565,
+      "arrival_s": 4.562
+    }
+  ],
+  "trace_sha256": "02982dab92a25c0ce8f3f5760ee958a3e48c0ba2a5a8dfc2be2ec1df973fa279",
+  "actual_future_used_for_selection": false,
+  "plans_retuned": false,
+  "default_promoted": false,
+  "learning_performed": false,
+  "limitations": "Current static geometry and public motor domain projection each5ms, closest to original nominal guide. Original1Nm/L1 slew limits; no dynamics forecast, future data, recursive guarantee or training admission. Whole physical trajectory remains the gate.",
+  "source_sha256": {
+    "wheelleg_warp/results/seventeenth_round_projection_order_20261002/candidate.py": "ba36fcf58df6a62a9fe6e3cfd5293cff0e11bbdf2a3ac8e1621b0219ebdfb27f",
+    "wheelleg_warp/results/seventeenth_round_projection_order_20261002/static_projection.py": "bc28494e91a17d5d521661b0a1decc0478a3d42d5c4a33d3bd97918b284ddd15",
+    "wheelleg_warp/native/design.py": "fcdd61b8a03f7513561a83b67b78c1451a2deede3a6cbc90746096393909598e",
+    "wheelleg_warp/native/controller.py": "5a1131dee6440f11252850de2198f3662c74c106ba95d55804150e8362363280",
+    "wheelleg_warp/native/environment.py": "4e53122dc865ac3cff7bc1c232cfd013be41e8a0e24a1b5d70cc3fa63b728266",
+    "wheelleg_warp/probe_braking_feedback.py": "6cc5366d046c4f729595b030d8e75f49c225cf389ce0d09ba04902de56e36d82",
+    "wheelleg_warp/training_contract.py": "95c1eb7662b12021653d720cf889b5f23ab3738467fc2970ffa623faa983ae39"
+  }
+}
