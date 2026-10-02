@@ -1,0 +1,17 @@
+{
+  "reason": "Previous scorer checked1.4rad design only after reference start; native full-episode success checks physical1.5rad and cannot cover the missing design prefix.",
+  "previous_ten_of_ten_scope": "braking segment design plus full physical/task metrics; NOT full-episode design admission",
+  "counterexample": {
+    "world": 10,
+    "first_design_violation_s": 2.038,
+    "arrival_s": 4.5715,
+    "prefix_design_margin_rad": -0.0011353254318238193,
+    "post_design_margin_rad": 9.849071502676665e-05
+  },
+  "full_panel_groups": {
+    "nominal": 6,
+    "training_corner": 4,
+    "pressure_corner": 4
+  },
+  "full_admission": false
+}

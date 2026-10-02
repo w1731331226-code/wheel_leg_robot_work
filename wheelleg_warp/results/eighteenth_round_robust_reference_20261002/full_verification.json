@@ -1,0 +1,124 @@
+{
+  "directions": [
+    {
+      "direction": 0,
+      "evaluations": 120,
+      "solver": {
+        "success": false,
+        "message": "Registered120 full-batch evaluation budget reached"
+      },
+      "selected_evaluation": 40,
+      "braking_batch_feasible": true,
+      "braking_only_independent_valid": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "full_episode_valid": [
+        true,
+        true,
+        true,
+        true,
+        false
+      ],
+      "first_design_violation_step": [
+        -1,
+        -1,
+        -1,
+        -1,
+        4076
+      ],
+      "independent_stop_m": [
+        0.5935232639325584,
+        0.5997986793539515,
+        0.5934600431030178,
+        0.5935146378807669,
+        0.5997005651843498
+      ],
+      "independent_tail_m_s": [
+        0.029452378330718378,
+        0.029950629922861415,
+        0.02946532031833704,
+        0.029450121910189458,
+        0.02995269965775699
+      ],
+      "minimum_full_active_design_margin_rad": -0.0011353254318238193,
+      "nominal_cost_change_vs_initial_fraction": 0.004022798682682405
+    },
+    {
+      "direction": 1,
+      "evaluations": 86,
+      "solver": {
+        "success": false,
+        "message": "Iteration limit reached",
+        "iterations": 40
+      },
+      "selected_evaluation": 84,
+      "braking_batch_feasible": true,
+      "braking_only_independent_valid": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "full_episode_valid": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "first_design_violation_step": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "independent_stop_m": [
+        0.5907146931203056,
+        0.5968451500016677,
+        0.5906107065073316,
+        0.5906904644240782,
+        0.5967416816968574
+      ],
+      "independent_tail_m_s": [
+        0.029954217637843564,
+        0.029497347892478157,
+        0.029957441696944555,
+        0.029957143083440062,
+        0.029499075613853763
+      ],
+      "minimum_full_active_design_margin_rad": 0.00011708736419668853,
+      "nominal_cost_change_vs_initial_fraction": -0.02241961569768136
+    }
+  ],
+  "full_panel_groups": {
+    "nominal": {
+      "physical_pass_count": 6,
+      "task_pass_count": 6,
+      "full_design_and_task_pass_count": 6
+    },
+    "training_corner": {
+      "physical_pass_count": 6,
+      "task_pass_count": 5,
+      "full_design_and_task_pass_count": 4
+    },
+    "pressure_corner": {
+      "physical_pass_count": 6,
+      "task_pass_count": 4,
+      "full_design_and_task_pass_count": 4
+    }
+  },
+  "pre_reference_rejection_guard_checked": true,
+  "learning": false,
+  "default_promoted": false,
+  "full_admission": false,
+  "limitations": "Supersedes the earlier braking-only interpretation. Full design coverage rejects the positive training-combination prefix. No continuous domain, nonzero Actor, final holdout or paper advantage claim.",
+  "source_sha256": {
+    "wheelleg_warp/results/eighteenth_round_robust_reference_20261002/verify.py": "d6f8487a1112e64cd74c47631a6b687c92350ff89d6a5b53e4ff198c84f7f059"
+  }
+}

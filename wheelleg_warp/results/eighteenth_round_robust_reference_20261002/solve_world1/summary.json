@@ -1,0 +1,21 @@
+{
+  "direction": 1,
+  "solver": {
+    "success": false,
+    "message": "Iteration limit reached",
+    "iterations": 40
+  },
+  "evaluations": 86,
+  "wall_s": 795.2922292780058,
+  "best_feasible": true,
+  "best_scaled_violation": 0.0,
+  "best_nominal_cost": 1576296.0724199936,
+  "learning": false,
+  "default_promoted": false,
+  "full_admission": false,
+  "source_sha256": {
+    "wheelleg_warp/results/eighteenth_round_robust_reference_20261002/solve.py": "e3f8abfa8c38d7faa6dd13c8114787bddc865b2ee00e12b716cf007a5288452f",
+    "wheelleg_warp/results/eighteenth_round_robust_reference_20261002/evaluate.py": "50efe1fbd74ff006315fcb04b38d983ee0e3f14604c98a605caa05eee1b78b2e",
+    "wheelleg_warp/optimize_braking_trajectory.py": "c0cc6f395f62397b671a2e6bab3f9834295cba247d0915b24c996401b750f664"
+  }
+}

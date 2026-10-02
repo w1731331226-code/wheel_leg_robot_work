@@ -1,0 +1,7 @@
+{
+  "reason": "Host height RMSE used double FK while native task first rounds each leg into float32 observation history.",
+  "maximum_observed_error_m": 1.85011872e-11,
+  "independent_check_atol_unchanged": 1e-12,
+  "fix": "Record the same per-leg float32-rounded lengths before averaging; no physical/controller change.",
+  "optimization_started": false
+}

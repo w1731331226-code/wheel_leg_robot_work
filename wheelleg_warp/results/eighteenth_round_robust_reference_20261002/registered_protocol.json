@@ -1,0 +1,54 @@
+{
+  "variations": [
+    [
+      "nominal",
+      {}
+    ],
+    [
+      "mass_only",
+      {
+        "mass": 7.5
+      }
+    ],
+    [
+      "friction_only",
+      {
+        "mu_l": 0.6,
+        "mu_r": 1.0
+      }
+    ],
+    [
+      "drive_only",
+      {
+        "drive_difference": 0.03
+      }
+    ],
+    [
+      "training_corner",
+      {
+        "mass": 7.5,
+        "mu_l": 0.6,
+        "mu_r": 1.0,
+        "drive_difference": 0.03,
+        "delay_ms": 10.0
+      }
+    ]
+  ],
+  "knots": [
+    0.005,
+    0.1,
+    0.5,
+    1.0,
+    1.5,
+    2.0
+  ],
+  "cost": "original fixed7kg fifteen-state Q/R/P, nominal arm objective",
+  "constraints": "original48 full-horizon constraints and full episode success for every registered plant",
+  "selection": "same plan per speed sign for all physical parameters; no parameter label in control",
+  "optimizer_budget": {
+    "maxiter": 40,
+    "max_evaluations": 120,
+    "finite_difference": 0.01
+  },
+  "scope": "Offline full simulation from standing, no plant-state prefix restore and no online predictor; no final holdout or learning."
+}

@@ -1,0 +1,73 @@
+{
+  "preflight_passed": true,
+  "independent_full_episode_gate_labels_match": true,
+  "scalar_original_cost_matches": true,
+  "original_schedule_and_domain_checked": true,
+  "schedule_reconstruction_peak_Nm": 1.1102230246251565e-16,
+  "comparisons": [
+    {
+      "direction": 0,
+      "group": "nominal",
+      "stop_difference_m": 9.536746575777855e-07,
+      "tail_difference_m_s": 4.209656244286153e-07
+    },
+    {
+      "direction": 0,
+      "group": "mass_only",
+      "stop_difference_m": 2.3841847862637877e-07,
+      "tail_difference_m_s": 1.4861392230378079e-06
+    },
+    {
+      "direction": 0,
+      "group": "friction_only",
+      "stop_difference_m": 7.081384026941251e-07,
+      "tail_difference_m_s": 3.993824418749292e-08
+    },
+    {
+      "direction": 0,
+      "group": "drive_only",
+      "stop_difference_m": 7.2592176170172e-07,
+      "tail_difference_m_s": 2.546646373884076e-07
+    },
+    {
+      "direction": 0,
+      "group": "training_corner",
+      "stop_difference_m": 0.0,
+      "tail_difference_m_s": 0.0
+    },
+    {
+      "direction": 1,
+      "group": "nominal",
+      "stop_difference_m": 4.7682466253196054e-07,
+      "tail_difference_m_s": 1.0801947780240961e-06
+    },
+    {
+      "direction": 1,
+      "group": "mass_only",
+      "stop_difference_m": 6.198886042918517e-06,
+      "tail_difference_m_s": 1.7431298425657493e-06
+    },
+    {
+      "direction": 1,
+      "group": "friction_only",
+      "stop_difference_m": 2.2858373471823512e-07,
+      "tail_difference_m_s": 1.3004511118623607e-06
+    },
+    {
+      "direction": 1,
+      "group": "drive_only",
+      "stop_difference_m": 0.0,
+      "tail_difference_m_s": 0.0
+    },
+    {
+      "direction": 1,
+      "group": "training_corner",
+      "stop_difference_m": 0.0,
+      "tail_difference_m_s": 0.0
+    }
+  ],
+  "limitations": "Matches full-episode gate conclusions and reports continuous differences; not a bitwise independent rollout or online predictor parity claim.",
+  "source_sha256": {
+    "wheelleg_warp/results/eighteenth_round_robust_reference_20261002/check.py": "a02deb2e6087bb2f8d90b6394d0110b30a0cbbf632a563c323203ea8f1c0844d"
+  }
+}

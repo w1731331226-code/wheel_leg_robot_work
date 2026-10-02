@@ -1,0 +1,78 @@
+{
+  "directions": [
+    {
+      "direction": 0,
+      "evaluations": 120,
+      "solver": {
+        "success": false,
+        "message": "Registered120 full-batch evaluation budget reached"
+      },
+      "selected_evaluation": 40,
+      "batch_feasible": true,
+      "independent_valid": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "independent_stop_m": [
+        0.59352016449205,
+        0.5997986793539515,
+        0.5934600431030178,
+        0.5935146378807669,
+        0.5997005651843498
+      ],
+      "independent_tail_m_s": [
+        0.02944897876404791,
+        0.029950629922861415,
+        0.02946532031833704,
+        0.029450121910189458,
+        0.02995269965775699
+      ],
+      "minimum_independent_joint_design_margin_rad": 9.849071502676665e-05,
+      "nominal_cost_change_vs_initial_fraction": 0.004022798682682405
+    },
+    {
+      "direction": 1,
+      "evaluations": 86,
+      "solver": {
+        "success": false,
+        "message": "Iteration limit reached",
+        "iterations": 40
+      },
+      "selected_evaluation": 84,
+      "batch_feasible": true,
+      "independent_valid": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "independent_stop_m": [
+        0.5907146931203056,
+        0.5968465805123583,
+        0.5906107065073316,
+        0.5906904644240782,
+        0.5967416816968574
+      ],
+      "independent_tail_m_s": [
+        0.029954217637843564,
+        0.029497713308566174,
+        0.029957441696944555,
+        0.029957143083440062,
+        0.029499075613853763
+      ],
+      "minimum_independent_joint_design_margin_rad": 0.00011708736419668853,
+      "nominal_cost_change_vs_initial_fraction": -0.02241961569768136
+    }
+  ],
+  "learning": false,
+  "default_promoted": false,
+  "full_admission": false,
+  "limitations": "Registered ten high-speed cases only; no other four normal tasks, continuous height/parameter domain, nonzero Actor, final holdout or paper advantage claim.",
+  "source_sha256": {
+    "wheelleg_warp/results/eighteenth_round_robust_reference_20261002/verify.py": "68c9c9f8be5e073dc0627bcacb4222e06bf12b3ddd657672da9a9f2fa1f30880"
+  }
+}
