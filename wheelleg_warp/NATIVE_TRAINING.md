@@ -12,7 +12,7 @@
 
 第26轮新增`residual_mode='torque6'`原始电机B2，仅用于共同Nom边界（正式比较使用`shared_reference=True`），复用同一`control_step`，滤波、公共增益上界、λ及最终限幅不变。通道为`[alphaL,betaL,alphaR,betaR,wheelL,wheelR]`，原CPU尺度`[1,1,1,1,.3,.3]Nm`，不经过Actor的VMC映射。38维末6项是归一化滤波电机请求，前32项及延迟不变；不能用当前J转换末6项给B2额外无延迟物理信息。接口、单位和源码需分别冻结，不能声称不同坐标的动作可达集合或实际分布相同。B1复用`pretrain_yaw.b1_action`及原8候选，直接读取未归一化的共同延迟观测，走diff3同一执行链。
 
-原生/CPU同状态核验及8个完整任务通过，边界/高度速度/原面板/新样本标签与第24轮宿主逐例一致。diff3和virtual6各完成真实2000步10次标准PPO更新、精确Adam/归一化恢复及200步续训/评估，探针不作正式初始化；仅说明链路可运行。第26轮torque6/B1同版接口已核验，B2也完成真实2200步/11更新恢复联调及3/4开发探针评估；初始实际电机分布公平性、可执行正式训练/选择评估入口与完整新协议冻结仍待，未启动长预算。独立GPU图回放指标有波动，不能声称不同图逐步等价。相关证据见results/twentyfifth_round_native_admission_20261003/verification.json。
+原生/CPU同状态核验及8个完整任务通过，边界/高度速度/原面板/新样本标签与第24轮宿主逐例一致。diff3和virtual6各完成真实2000步10次标准PPO更新、精确Adam/归一化恢复及200步续训/评估，探针不作正式初始化；仅说明链路可运行。第26轮torque6/B1同版接口已核验，B2也完成真实2200步/11更新恢复联调及3/4开发探针评估；第27轮按共同规则完成888同状态初始电机RMS审计及log_std校准，配置见results/twentyseventh_round_initial_actions_20261003/initial_action_config.json；拟合2.643%、开发整体6.78%，高度分组最多约24.7%差异及映射秩3/6明确保留。它不证明全分布等同，也没有训练/晋升权重。可执行正式训练/选择评估入口、该初始化实际应用/更新/恢复与完整新协议冻结仍待，未启动长预算。独立GPU图回放指标有波动，不能声称不同图逐步等价。相关证据见results/twentyfifth_round_native_admission_20261003/verification.json。
 
 第20轮候选统一`active-1p4-v1`设计契约：每个有效物理子步统计主动关节±1.4rad余量，历史越界即使终态恢复也判任务失败，沿用终态±10奖惩；物理±1.5rad、真实A/B几何与力矩仍以physical_v1独立报告。Actor观测仍38维，内部任务累计状态由38增至39列；旧内部快照缺少设计历史，不能补默认值冒充全程有效。原始NativeEnv未显式启用design_joint_gate时保留原契约，新高度工厂默认强制启用。运行`test_design_joint_contract.py --output <新目录>`验证历史拒绝、原生收集与重置。
 
@@ -56,3 +56,5 @@
 5. 在内存受限的用户服务中运行 `train_native.py orchestrate --output <正式目录>`，启动独立渲染服务并核验真实更新和页面。
 
 中断/失败保留检查点和错误，不自动覆盖目录或假装无缝续训。服务状态与 `status.json`、`selection.json`、各轮 `completed.json` 和最终 `final_evaluation.json` 是实际进度依据。
+
+第27轮条件审计复核：`OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 .venv/bin/python -B wheelleg_warp/results/twentyseventh_round_initial_actions_20261003/check.py`。生成审计使用`audit_initial_actions.py --output <含预注册且未使用的新目录>`；它只采集零Actor状态、查询初始PPO分布、离线机械校准，不调用learn。每方法log_std向量按该模式动作顺序应用，residual_scale仍1，网络64×64；初始化只可用于新建策略，不能在恢复已有策略时覆盖已学习的log_std。前32维共同物理包按场景延迟、末6维自身请求的坐标差异及部分可观测性保持。

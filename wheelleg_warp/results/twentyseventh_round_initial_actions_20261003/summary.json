@@ -1,0 +1,288 @@
+{
+  "passed": true,
+  "snapshots": 888,
+  "fit_states": 504,
+  "validation_states": 384,
+  "training_performed": false,
+  "policy_seeds": [
+    1609,
+    1610,
+    1611
+  ],
+  "max_fit_deviation_from_common_target": 0.026430408715728326,
+  "max_rms_deviation_across_methods": {
+    "1609": {
+      "fit": 0.015671431829922478,
+      "validation": 0.06776118617581117
+    },
+    "1610": {
+      "fit": 0.01627184311473684,
+      "validation": 0.06753396112486554
+    },
+    "1611": {
+      "fit": 0.015871133086650224,
+      "validation": 0.06729187844133566
+    }
+  },
+  "height_group_deviations": {
+    "1609": {
+      "fit": [
+        {
+          "height_interval_m": [
+            0.115,
+            0.12
+          ],
+          "max_rms_relative_deviation": 0.23876481668076344
+        },
+        {
+          "height_interval_m": [
+            0.12,
+            0.16
+          ],
+          "max_rms_relative_deviation": 0.11236348305665689
+        },
+        {
+          "height_interval_m": [
+            0.16,
+            0.25
+          ],
+          "max_rms_relative_deviation": 0.052452127341682475
+        },
+        {
+          "height_interval_m": [
+            0.25,
+            0.3
+          ],
+          "max_rms_relative_deviation": 0.14510648414232952
+        },
+        {
+          "height_interval_m": [
+            0.3,
+            0.3800001
+          ],
+          "max_rms_relative_deviation": 0.05147921532082711
+        }
+      ],
+      "validation": [
+        {
+          "height_interval_m": [
+            0.115,
+            0.12
+          ],
+          "max_rms_relative_deviation": 0.24655555001238216
+        },
+        {
+          "height_interval_m": [
+            0.12,
+            0.16
+          ],
+          "max_rms_relative_deviation": 0.028033360783569883
+        },
+        {
+          "height_interval_m": [
+            0.16,
+            0.25
+          ],
+          "max_rms_relative_deviation": 0.11956031750448048
+        },
+        {
+          "height_interval_m": [
+            0.25,
+            0.3
+          ],
+          "max_rms_relative_deviation": 0.1372401992711897
+        },
+        {
+          "height_interval_m": [
+            0.3,
+            0.3800001
+          ],
+          "max_rms_relative_deviation": 0.0513651628090368
+        }
+      ]
+    },
+    "1610": {
+      "fit": [
+        {
+          "height_interval_m": [
+            0.115,
+            0.12
+          ],
+          "max_rms_relative_deviation": 0.24043448338952667
+        },
+        {
+          "height_interval_m": [
+            0.12,
+            0.16
+          ],
+          "max_rms_relative_deviation": 0.11349349874389159
+        },
+        {
+          "height_interval_m": [
+            0.16,
+            0.25
+          ],
+          "max_rms_relative_deviation": 0.05223142855171714
+        },
+        {
+          "height_interval_m": [
+            0.25,
+            0.3
+          ],
+          "max_rms_relative_deviation": 0.1449353532078841
+        },
+        {
+          "height_interval_m": [
+            0.3,
+            0.3800001
+          ],
+          "max_rms_relative_deviation": 0.05122595932384022
+        }
+      ],
+      "validation": [
+        {
+          "height_interval_m": [
+            0.115,
+            0.12
+          ],
+          "max_rms_relative_deviation": 0.24808274916180917
+        },
+        {
+          "height_interval_m": [
+            0.12,
+            0.16
+          ],
+          "max_rms_relative_deviation": 0.02876988999849761
+        },
+        {
+          "height_interval_m": [
+            0.16,
+            0.25
+          ],
+          "max_rms_relative_deviation": 0.1195269457467123
+        },
+        {
+          "height_interval_m": [
+            0.25,
+            0.3
+          ],
+          "max_rms_relative_deviation": 0.1365967425320761
+        },
+        {
+          "height_interval_m": [
+            0.3,
+            0.3800001
+          ],
+          "max_rms_relative_deviation": 0.050958014474975055
+        }
+      ]
+    },
+    "1611": {
+      "fit": [
+        {
+          "height_interval_m": [
+            0.115,
+            0.12
+          ],
+          "max_rms_relative_deviation": 0.23882122141963813
+        },
+        {
+          "height_interval_m": [
+            0.12,
+            0.16
+          ],
+          "max_rms_relative_deviation": 0.11227943425437181
+        },
+        {
+          "height_interval_m": [
+            0.16,
+            0.25
+          ],
+          "max_rms_relative_deviation": 0.052266407865135034
+        },
+        {
+          "height_interval_m": [
+            0.25,
+            0.3
+          ],
+          "max_rms_relative_deviation": 0.14461851151310123
+        },
+        {
+          "height_interval_m": [
+            0.3,
+            0.3800001
+          ],
+          "max_rms_relative_deviation": 0.050863355898439266
+        }
+      ],
+      "validation": [
+        {
+          "height_interval_m": [
+            0.115,
+            0.12
+          ],
+          "max_rms_relative_deviation": 0.24657551362653174
+        },
+        {
+          "height_interval_m": [
+            0.12,
+            0.16
+          ],
+          "max_rms_relative_deviation": 0.027897668285250532
+        },
+        {
+          "height_interval_m": [
+            0.16,
+            0.25
+          ],
+          "max_rms_relative_deviation": 0.11936644506043914
+        },
+        {
+          "height_interval_m": [
+            0.25,
+            0.3
+          ],
+          "max_rms_relative_deviation": 0.13633988626105775
+        },
+        {
+          "height_interval_m": [
+            0.3,
+            0.3800001
+          ],
+          "max_rms_relative_deviation": 0.050456243261300826
+        }
+      ]
+    }
+  },
+  "mapping_subspace_ranks": {
+    "diff3": [
+      3
+    ],
+    "virtual6": [
+      6
+    ],
+    "torque6": [
+      6
+    ]
+  },
+  "native_check": {
+    "states": 12,
+    "draws_per_state": 16,
+    "substeps": 40,
+    "modes": 3,
+    "checked_ticks": [
+      1,
+      10,
+      40
+    ],
+    "native_host_command_max_difference_Nm": 2.384185791015625e-07,
+    "cpu_direct_motor_force_max_error_Nm": 0.0
+  },
+  "source_sha256": {
+    "wheelleg_warp/results/twentyseventh_round_initial_actions_20261003/check.py": "e8d40d2d0563c0a0f18b02c795ac9a64141a0514214cd117da8cb0b171d6dc11"
+  },
+  "initial_config_sha256": "1b3082df69428bf9aa48bc4d89a8d721c9a685019bf3f5c38b4a9ed57217e9f9",
+  "full_distribution_equivalence_claimed": false,
+  "interpretation": "Matched aggregate end-of20ms RMS on fit states; remaining height/state/temporal/covariance and reachable-set differences are reported, not removed.",
+  "remaining": "Executable new training/selection/evaluation protocol, applied initialization and integrated short PPO admission"
+}

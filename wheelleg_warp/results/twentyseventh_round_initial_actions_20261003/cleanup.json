@@ -1,0 +1,14 @@
+{
+  "removed_path": "wheelleg_warp/results/twentyseventh_round_initial_actions_20261003/state_bank_first_path_failure.npz",
+  "bytes": 425547,
+  "sha256": "72c5ad42c146a970f7c8984f5efa7fa64f500f123da7127d7228ca92a9734f76",
+  "reason": "Unregistered intermediate bank from collection metadata path failure; never used for calibration, verification or initialization. The failure is reproducible from retained code/relative path and log without these state values.",
+  "retained": [
+    "audit_before_path_fix.py",
+    "first_path_failure.log",
+    "first_failure.json",
+    "state_bank.npz",
+    "state_collection.json"
+  ],
+  "unique_physical_failure_evidence_removed": false
+}
