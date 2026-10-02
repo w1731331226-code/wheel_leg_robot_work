@@ -1,0 +1,38 @@
+{
+  "same_public_physical_model_fields_checked": true,
+  "current_vs_known_past_initialization_failures_identical": true,
+  "initial_command_exact": true,
+  "rows": [
+    {
+      "world": 0,
+      "first_post_step_guard_requests": [
+        {
+          "source": "actual",
+          "unclipped_radial_guard_requested_N": 5.534353883581515
+        },
+        {
+          "source": "predicted",
+          "unclipped_radial_guard_requested_N": 5.535489619259111
+        }
+      ],
+      "command_error_second_step_Nm": 4.9948692321777344e-05
+    },
+    {
+      "world": 1,
+      "first_post_step_guard_requests": [
+        {
+          "source": "actual",
+          "unclipped_radial_guard_requested_N": 6.965147609414659
+        },
+        {
+          "source": "predicted",
+          "unclipped_radial_guard_requested_N": 6.961042402561062
+        }
+      ],
+      "command_error_second_step_Nm": 0.00017952919006347656
+    }
+  ],
+  "new_predictor_support_promoted": false,
+  "original_gate_not_relaxed": true,
+  "note": "Unclipped guard sensitivity evaluated from first actual/predicted states only; neither proves sole cause nor permits relaxing the command gate."
+}
