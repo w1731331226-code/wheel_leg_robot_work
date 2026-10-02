@@ -1,0 +1,65 @@
+{
+  "rows": [
+    {
+      "projected": false,
+      "amplitude": 0.0,
+      "old_projection_count": 0.0,
+      "old_differential_H": 0.0,
+      "new_differential_H": 0.0,
+      "motor_difference_max": 0.0,
+      "wheel_mean_difference": 0.0
+    },
+    {
+      "projected": false,
+      "amplitude": 1.0,
+      "old_projection_count": 0.0,
+      "old_differential_H": -0.26896154578689735,
+      "new_differential_H": -0.26896154578689735,
+      "motor_difference_max": 0.0,
+      "wheel_mean_difference": 0.0
+    },
+    {
+      "projected": false,
+      "amplitude": -1.0,
+      "old_projection_count": 0.0,
+      "old_differential_H": 0.26896154578689735,
+      "new_differential_H": 0.26896154578689735,
+      "motor_difference_max": 0.0,
+      "wheel_mean_difference": 0.0
+    },
+    {
+      "projected": true,
+      "amplitude": 0.0,
+      "old_projection_count": 2.0,
+      "old_differential_H": 0.0,
+      "new_differential_H": 0.0,
+      "motor_difference_max": 0.0,
+      "wheel_mean_difference": 0.0
+    },
+    {
+      "projected": true,
+      "amplitude": 1.0,
+      "old_projection_count": 2.0,
+      "old_differential_H": 4.572160575144757e-08,
+      "new_differential_H": -0.2689615712064994,
+      "motor_difference_max": 0.09549319744110107,
+      "wheel_mean_difference": 2.2351741790771484e-08
+    },
+    {
+      "projected": true,
+      "amplitude": -1.0,
+      "old_projection_count": 2.0,
+      "old_differential_H": -4.572160575144757e-08,
+      "new_differential_H": 0.2689615712064994,
+      "motor_difference_max": 0.09549319744110107,
+      "wheel_mean_difference": 2.2351741790771484e-08
+    }
+  ],
+  "command_fixture_only": true,
+  "physical_success_claimed": false,
+  "source_sha256": {
+    "wheelleg_warp/results/nineteenth_round_motion_reference_20261002/fixture.py": "f06ff074dadb3f06d7cd7449b86a3f2082f265844567c93ef084cf66039b9f40",
+    "wheelleg_warp/results/nineteenth_round_motion_reference_20261002/controller_candidate.py": "b93bf242aa51168d745716fd55c22ffe76e8c5ff7ef697d9fa1386007b19047c",
+    "wheelleg_warp/native/controller.py": "5a1131dee6440f11252850de2198f3662c74c106ba95d55804150e8362363280"
+  }
+}

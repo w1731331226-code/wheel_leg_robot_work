@@ -67,7 +67,7 @@ def run(output):
         np.testing.assert_array_equal(env.obs.numpy()[0,32:],0);np.testing.assert_array_equal(env.obs.numpy()[1,32:],obs[1,32:])
         env.reset();assert np.all(env.obs.numpy()[:,32:]==0)
         legacy=NativeEnv.height115_candidate(n=2,scenario=scenarios,observation_contract='legacy32')
-        assert legacy.observation_space.shape==(32,) and legacy.baseline_version=='height115-current-vmc-v1-candidate'
+        assert legacy.observation_space.shape==(32,) and legacy.baseline_version=='height115-current-vmc-v4-damping-preserved-legacy32-candidate'
         legacy.reset();new_obs,new_reward,new_done,_=env.step(action);old_obs,old_reward,old_done,_=legacy.step(action)
         np.testing.assert_allclose(new_obs[:,:32],old_obs,rtol=0,atol=1e-5)
         np.testing.assert_allclose(new_reward,old_reward,rtol=0,atol=1e-5);np.testing.assert_array_equal(new_done,old_done)

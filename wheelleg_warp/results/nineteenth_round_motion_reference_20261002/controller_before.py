@@ -203,13 +203,10 @@ def control_step(w:int,qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.a
     if braking:kp=kp*wp.clamp((D(.3)-wp.abs(state[w,7]))/D(.2),D(0),D(1))
     old_l=legacy_vmc(qa,qb,fl,hub_old)+V2(kp*(reference[w,0]-qa)-damping*va,kp*(reference[w,1]-qb)-damping*vb)
     old_r=legacy_vmc(qc,qd,fr,hub_old)+V2(kp*(reference[w,0]-qc)-damping*vc,kp*(reference[w,1]-qd)-damping*vd)
-    undamped_l=old_l+V2(damping*va,damping*vb);undamped_r=old_r+V2(damping*vc,damping*vd)
     limit=D(.8)*D(MASS)
     if braking:limit=D(2)*D(MASS)
     old_l=V2(wp.clamp(old_l[0],-wp.min(limit,bounds[0]),wp.min(limit,bounds[0])),wp.clamp(old_l[1],-wp.min(limit,bounds[1]),wp.min(limit,bounds[1])))
     old_r=V2(wp.clamp(old_r[0],-wp.min(limit,bounds[2]),wp.min(limit,bounds[2])),wp.clamp(old_r[1],-wp.min(limit,bounds[3]),wp.min(limit,bounds[3])))
-    undamped_l=V2(wp.clamp(undamped_l[0],-wp.min(limit,bounds[0]),wp.min(limit,bounds[0])),wp.clamp(undamped_l[1],-wp.min(limit,bounds[1]),wp.min(limit,bounds[1])))
-    undamped_r=V2(wp.clamp(undamped_r[0],-wp.min(limit,bounds[2]),wp.min(limit,bounds[2])),wp.clamp(undamped_r[1],-wp.min(limit,bounds[3]),wp.min(limit,bounds[3])))
     jl=polar_jac(qa,qb);jr=polar_jac(qc,qd)
     rate_l=jl[0,0]*va+jl[1,0]*vb;rate_r=jr[0,0]*vc+jr[1,0]*vd
     arate_l=jl[0,1]*va+jl[1,1]*vb;arate_r=jr[0,1]*vc+jr[1,1]*vd
@@ -242,21 +239,16 @@ def control_step(w:int,qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.a
             diagnostic[w,14]=D(2)
             return
         hd=-((D(1)-ratio)*gains[index,1,1]+ratio*gains[index+1,1,1])*x[1]-((D(1)-ratio)*gains[index,1,5]+ratio*gains[index+1,1,5])*x[5]
-        # Preserve the existing differential motor-velocity damping. Static
-        # pose projection must not reinterpret it as an infeasible setpoint.
-        vl_without_damping=inverse2(jl)*undamped_l;vr_without_damping=inverse2(jr)*undamped_r
-        differential_damping=((vl[1]-vl_without_damping[1])-(vr[1]-vr_without_damping[1]))/D(2)
-        hdl=hd+differential_damping;hdr=hd-differential_damping
         al=left[2]+D(PI)/D(2);ar=right[2]+D(PI)/D(2)
-        requested_l=al+(hl-hdl)/kg;requested_r=ar+(hr-hdr)/kg
+        requested_l=al+(hl-hd)/kg;requested_r=ar+(hr-hd)/kg
         safe_l,valid_l=project_leg_angle(left_target,requested_l,reference[w,5])
         safe_r,valid_r=project_leg_angle(right_target,requested_r,reference[w,5])
         if not valid_l or not valid_r:
             for j in range(6):ctrl[w,j]=0.
             diagnostic[w,14]=D(2)
             return
-        if safe_l!=requested_l:hl=kg*(safe_l-al)+hdl
-        if safe_r!=requested_r:hr=kg*(safe_r-ar)+hdr
+        if safe_l!=requested_l:hl=kg*(safe_l-al)+hd
+        if safe_r!=requested_r:hr=kg*(safe_r-ar)+hd
         if reference.shape[1]>7 and reference[w,7]>D(0):
             channel=int(3)
             if reference[w,7]==D(2):channel=0

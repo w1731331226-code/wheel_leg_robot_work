@@ -480,9 +480,9 @@ class NativeEnv(VecEnv):
             residual_scale=residual_scale,residual_mode=residual_mode,feasible_reference=True,
             coordinated_reference=True,radial_guard=True,observation_contract=observation_contract,nominal_correction=nominal_correction)
         env.k['gains'].assign(np.stack([t[0] for t in table]));env.k['feed'].assign(np.stack([t[1] for t in table]));env.k['angles'].assign(np.array([t[2] for t in table]))
-        env.baseline_version='height115-current-vmc-v4-damping-preserved'+('-legacy32' if observation_contract=='legacy32' else '')+'-candidate'
+        env.baseline_version='height115-current-vmc-v1-candidate' if observation_contract=='legacy32' else 'height115-current-vmc-v2-request-state-candidate'
         env.design_reports=reports
-        if nominal_correction:env.baseline_version='height115-current-vmc-v4-damping-preserved-nominal-boundary-candidate'
+        if nominal_correction:env.baseline_version='height115-current-vmc-v3-nominal-boundary-candidate'
         return env
 
     def reset(self):

@@ -1,0 +1,426 @@
+{
+  "reports": {
+    "instrumented": {
+      "groups": {
+        "nominal": {
+          "physical_pass_count": 6,
+          "task_pass_count": 6,
+          "full_design_and_task_pass_count": 6
+        },
+        "training_corner": {
+          "physical_pass_count": 6,
+          "task_pass_count": 5,
+          "full_design_and_task_pass_count": 4
+        },
+        "pressure_corner": {
+          "physical_pass_count": 6,
+          "task_pass_count": 4,
+          "full_design_and_task_pass_count": 4
+        }
+      },
+      "full_pass_count": 14,
+      "startup_case_design_margin_rad": -0.0011353254318238193,
+      "step_velocity_rmse": 0.10221188141161314,
+      "physical_steps": 306239,
+      "max_same_state_shadow_delta_Nm": 0.0
+    },
+    "candidate": {
+      "groups": {
+        "nominal": {
+          "physical_pass_count": 6,
+          "task_pass_count": 6,
+          "full_design_and_task_pass_count": 6
+        },
+        "training_corner": {
+          "physical_pass_count": 6,
+          "task_pass_count": 5,
+          "full_design_and_task_pass_count": 5
+        },
+        "pressure_corner": {
+          "physical_pass_count": 6,
+          "task_pass_count": 4,
+          "full_design_and_task_pass_count": 4
+        }
+      },
+      "full_pass_count": 15,
+      "startup_case_design_margin_rad": 0.0008785963058470792,
+      "step_velocity_rmse": 0.10220948892221182,
+      "physical_steps": 306250,
+      "max_same_state_shadow_delta_Nm": 0.24717998504638672
+    },
+    "production_panel": {
+      "groups": {
+        "nominal": {
+          "physical_pass_count": 6,
+          "task_pass_count": 6,
+          "full_design_and_task_pass_count": 6
+        },
+        "training_corner": {
+          "physical_pass_count": 6,
+          "task_pass_count": 5,
+          "full_design_and_task_pass_count": 5
+        },
+        "pressure_corner": {
+          "physical_pass_count": 6,
+          "task_pass_count": 4,
+          "full_design_and_task_pass_count": 4
+        }
+      },
+      "full_pass_count": 15,
+      "startup_case_design_margin_rad": 0.0008785963058470792,
+      "step_velocity_rmse": 0.1024399732599837,
+      "physical_steps": 306240,
+      "max_same_state_shadow_delta_Nm": 0.0
+    }
+  },
+  "motion_timing": [
+    {
+      "run": "instrumented",
+      "world": 1,
+      "rmse": 0.0822879125626751,
+      "first_contact_s": 5.0595,
+      "phases": [
+        {
+          "phase": "ramp",
+          "duration_s": 1.0000000000000004,
+          "squared_error_fraction": 0.35738123104287356,
+          "local_rmse": 0.12553334799536867,
+          "projected_fraction": 0.0,
+          "minimum_equivalent_reference_shift_m_s": -0.0
+        },
+        {
+          "phase": "precontact",
+          "duration_s": 3.059000000000001,
+          "squared_error_fraction": 0.055791698377235646,
+          "local_rmse": 0.028358829009281286,
+          "projected_fraction": 0.0,
+          "minimum_equivalent_reference_shift_m_s": -0.0
+        },
+        {
+          "phase": "contact_onward",
+          "duration_s": 2.4530000000000003,
+          "squared_error_fraction": 0.5868270705798908,
+          "local_rmse": 0.1027068801669696,
+          "projected_fraction": 0.06379942927028129,
+          "minimum_equivalent_reference_shift_m_s": -0.039754282137415456
+        }
+      ]
+    },
+    {
+      "run": "instrumented",
+      "world": 4,
+      "rmse": 0.15113962599095773,
+      "first_contact_s": null,
+      "phases": [
+        {
+          "phase": "ramp",
+          "duration_s": 1.0000000000000004,
+          "squared_error_fraction": 0.8253881627371891,
+          "local_rmse": 0.2592428401779041,
+          "projected_fraction": 0.58,
+          "minimum_equivalent_reference_shift_m_s": -0.06361773338967887
+        },
+        {
+          "phase": "cruise",
+          "duration_s": 2.5645000000000007,
+          "squared_error_fraction": 0.17461183726281068,
+          "local_rmse": 0.07445830439515687,
+          "projected_fraction": 0.027295769155780854,
+          "minimum_equivalent_reference_shift_m_s": -0.06366304583369557
+        }
+      ]
+    },
+    {
+      "run": "instrumented",
+      "world": 7,
+      "rmse": 0.10221188141160595,
+      "first_contact_s": 5.0605,
+      "phases": [
+        {
+          "phase": "ramp",
+          "duration_s": 1.0000000000000004,
+          "squared_error_fraction": 0.22838444167114938,
+          "local_rmse": 0.12663907840863614,
+          "projected_fraction": 0.0,
+          "minimum_equivalent_reference_shift_m_s": -0.0
+        },
+        {
+          "phase": "precontact",
+          "duration_s": 3.060000000000001,
+          "squared_error_fraction": 0.03645269277666883,
+          "local_rmse": 0.028922683047104852,
+          "projected_fraction": 0.0,
+          "minimum_equivalent_reference_shift_m_s": -0.0
+        },
+        {
+          "phase": "contact_onward",
+          "duration_s": 2.6615000000000006,
+          "squared_error_fraction": 0.735162865552182,
+          "local_rmse": 0.1392717490049315,
+          "projected_fraction": 0.13413488634228818,
+          "minimum_equivalent_reference_shift_m_s": -0.114917090292007
+        }
+      ]
+    },
+    {
+      "run": "instrumented",
+      "world": 10,
+      "rmse": 0.15381049259070353,
+      "first_contact_s": null,
+      "phases": [
+        {
+          "phase": "ramp",
+          "duration_s": 1.0000000000000004,
+          "squared_error_fraction": 0.8172407891402103,
+          "local_rmse": 0.2627763691008433,
+          "projected_fraction": 0.5895,
+          "minimum_equivalent_reference_shift_m_s": -0.0722225549520653
+        },
+        {
+          "phase": "cruise",
+          "duration_s": 2.5715000000000003,
+          "squared_error_fraction": 0.18275921085978983,
+          "local_rmse": 0.07749214153273482,
+          "projected_fraction": 0.031888003111024694,
+          "minimum_equivalent_reference_shift_m_s": -0.07227170438088044
+        }
+      ]
+    },
+    {
+      "run": "candidate",
+      "world": 1,
+      "rmse": 0.0822869203089671,
+      "first_contact_s": 5.0595,
+      "phases": [
+        {
+          "phase": "ramp",
+          "duration_s": 1.0000000000000004,
+          "squared_error_fraction": 0.35738985003088247,
+          "local_rmse": 0.12553334799536867,
+          "projected_fraction": 0.0,
+          "minimum_equivalent_reference_shift_m_s": -0.0
+        },
+        {
+          "phase": "precontact",
+          "duration_s": 3.059000000000001,
+          "squared_error_fraction": 0.055793045881720044,
+          "local_rmse": 0.028358829510505692,
+          "projected_fraction": 0.0,
+          "minimum_equivalent_reference_shift_m_s": -0.0
+        },
+        {
+          "phase": "contact_onward",
+          "duration_s": 2.4530000000000003,
+          "squared_error_fraction": 0.5868171040873975,
+          "local_rmse": 0.10270476953048976,
+          "projected_fraction": 0.06339176518548716,
+          "minimum_equivalent_reference_shift_m_s": -0.039750114993985376
+        }
+      ]
+    },
+    {
+      "run": "candidate",
+      "world": 4,
+      "rmse": 0.151139475349579,
+      "first_contact_s": null,
+      "phases": [
+        {
+          "phase": "ramp",
+          "duration_s": 1.0000000000000004,
+          "squared_error_fraction": 0.8253887741176783,
+          "local_rmse": 0.2592426778025874,
+          "projected_fraction": 0.58,
+          "minimum_equivalent_reference_shift_m_s": -0.06361791372067294
+        },
+        {
+          "phase": "cruise",
+          "duration_s": 2.5645000000000007,
+          "squared_error_fraction": 0.1746112258823219,
+          "local_rmse": 0.07445809982932516,
+          "projected_fraction": 0.027295769155780854,
+          "minimum_equivalent_reference_shift_m_s": -0.06366334291871277
+        }
+      ]
+    },
+    {
+      "run": "candidate",
+      "world": 7,
+      "rmse": 0.1022094889222041,
+      "first_contact_s": 5.0605,
+      "phases": [
+        {
+          "phase": "ramp",
+          "duration_s": 1.0000000000000004,
+          "squared_error_fraction": 0.22819143682058257,
+          "local_rmse": 0.12663907840863614,
+          "projected_fraction": 0.0,
+          "minimum_equivalent_reference_shift_m_s": -0.0
+        },
+        {
+          "phase": "precontact",
+          "duration_s": 3.060000000000001,
+          "squared_error_fraction": 0.03642187754351766,
+          "local_rmse": 0.028922679268786486,
+          "projected_fraction": 0.0,
+          "minimum_equivalent_reference_shift_m_s": -0.0
+        },
+        {
+          "phase": "contact_onward",
+          "duration_s": 2.6675000000000004,
+          "squared_error_fraction": 0.7353866856358999,
+          "local_rmse": 0.1391950326343662,
+          "projected_fraction": 0.12389878163074039,
+          "minimum_equivalent_reference_shift_m_s": -0.11542269892418006
+        }
+      ]
+    },
+    {
+      "run": "candidate",
+      "world": 10,
+      "rmse": 0.15380614358580882,
+      "first_contact_s": null,
+      "phases": [
+        {
+          "phase": "ramp",
+          "duration_s": 1.0000000000000004,
+          "squared_error_fraction": 0.8172105432514576,
+          "local_rmse": 0.2627640765232227,
+          "projected_fraction": 0.589,
+          "minimum_equivalent_reference_shift_m_s": -0.07203161127728666
+        },
+        {
+          "phase": "cruise",
+          "duration_s": 2.5715000000000003,
+          "squared_error_fraction": 0.18278945674854227,
+          "local_rmse": 0.0774963623026426,
+          "projected_fraction": 0.03149912502430488,
+          "minimum_equivalent_reference_shift_m_s": -0.072082850573982
+        }
+      ]
+    },
+    {
+      "run": "production_panel",
+      "world": 1,
+      "rmse": 0.08230015898750576,
+      "first_contact_s": 5.0595,
+      "phases": [
+        {
+          "phase": "ramp",
+          "duration_s": 1.0000000000000004,
+          "squared_error_fraction": 0.35730231504770804,
+          "local_rmse": 0.12553334799536867,
+          "projected_fraction": 0.0,
+          "minimum_equivalent_reference_shift_m_s": -0.0
+        },
+        {
+          "phase": "precontact",
+          "duration_s": 3.059000000000001,
+          "squared_error_fraction": 0.0557793783779307,
+          "local_rmse": 0.028358828953004192,
+          "projected_fraction": 0.0,
+          "minimum_equivalent_reference_shift_m_s": -0.0
+        },
+        {
+          "phase": "contact_onward",
+          "duration_s": 2.4525000000000006,
+          "squared_error_fraction": 0.5869183065743613,
+          "local_rmse": 0.10273667749036641,
+          "projected_fraction": 0.06360856269113149,
+          "minimum_equivalent_reference_shift_m_s": -0.03975302582601087
+        }
+      ]
+    },
+    {
+      "run": "production_panel",
+      "world": 4,
+      "rmse": 0.151139475349579,
+      "first_contact_s": null,
+      "phases": [
+        {
+          "phase": "ramp",
+          "duration_s": 1.0000000000000004,
+          "squared_error_fraction": 0.8253887741176783,
+          "local_rmse": 0.2592426778025874,
+          "projected_fraction": 0.58,
+          "minimum_equivalent_reference_shift_m_s": -0.06361791372067294
+        },
+        {
+          "phase": "cruise",
+          "duration_s": 2.5645000000000007,
+          "squared_error_fraction": 0.1746112258823219,
+          "local_rmse": 0.07445809982932516,
+          "projected_fraction": 0.027295769155780854,
+          "minimum_equivalent_reference_shift_m_s": -0.06366334291871277
+        }
+      ]
+    },
+    {
+      "run": "production_panel",
+      "world": 7,
+      "rmse": 0.1024399732599757,
+      "first_contact_s": 5.0605,
+      "phases": [
+        {
+          "phase": "ramp",
+          "duration_s": 1.0000000000000004,
+          "squared_error_fraction": 0.22731780752094066,
+          "local_rmse": 0.12663907840863614,
+          "projected_fraction": 0.0,
+          "minimum_equivalent_reference_shift_m_s": -0.0
+        },
+        {
+          "phase": "precontact",
+          "duration_s": 3.060000000000001,
+          "squared_error_fraction": 0.036282442449615204,
+          "local_rmse": 0.028922681583045368,
+          "projected_fraction": 0.0,
+          "minimum_equivalent_reference_shift_m_s": -0.0
+        },
+        {
+          "phase": "contact_onward",
+          "duration_s": 2.6630000000000007,
+          "squared_error_fraction": 0.7363997500294441,
+          "local_rmse": 0.13967614656133107,
+          "projected_fraction": 0.1271122793841532,
+          "minimum_equivalent_reference_shift_m_s": -0.11640574368914852
+        }
+      ]
+    },
+    {
+      "run": "production_panel",
+      "world": 10,
+      "rmse": 0.15380614358580882,
+      "first_contact_s": null,
+      "phases": [
+        {
+          "phase": "ramp",
+          "duration_s": 1.0000000000000004,
+          "squared_error_fraction": 0.8172105432514576,
+          "local_rmse": 0.2627640765232227,
+          "projected_fraction": 0.589,
+          "minimum_equivalent_reference_shift_m_s": -0.07203161127728666
+        },
+        {
+          "phase": "cruise",
+          "duration_s": 2.5715000000000003,
+          "squared_error_fraction": 0.18278945674854227,
+          "local_rmse": 0.0774963623026426,
+          "projected_fraction": 0.03149912502430488,
+          "minimum_equivalent_reference_shift_m_s": -0.072082850573982
+        }
+      ]
+    }
+  ],
+  "legacy_cpu_gpu_command_peak_Nm": 4.6996187919035037e-07,
+  "production_fix_promoted": true,
+  "braking_references_installed_in_default_factory": false,
+  "learning": false,
+  "full_admission": false,
+  "limitations": "Restores existing differential motor-velocity damping only. Timing correlations and equivalent references do not prove that deleting projection is safe. Same-state fixture is not a physical episode. Full18 remains15/18, with step-speed and pressure failures retained.",
+  "source_sha256": {
+    "wheelleg_warp/results/nineteenth_round_motion_reference_20261002/analyze.py": "f523021a104d1f1fe296d1df2ad4d12ecd7291bdb7145b5c5957569a4ad0069f",
+    "wheelleg_warp/native/controller.py": "b93bf242aa51168d745716fd55c22ffe76e8c5ff7ef697d9fa1386007b19047c",
+    "wheelleg_warp/native/environment.py": "5413dae73a55e899772c9cd26cffc38439e8cdcc63a891e6d3efd82bad4390f7",
+    "wheelleg_warp/test_projection_damping.py": "feec9f4ead690088049fdad5273858749297b98405997525e58ec46dfa6a66fa"
+  }
+}

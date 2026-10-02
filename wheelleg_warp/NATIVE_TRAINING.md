@@ -2,15 +2,15 @@
 
 用户指定最多1024批量，超过上限直接拒绝。训练进程组24GiB内存上限、零换页；不同时启动第二组1024世界。
 
-新0.115～0.38m候选不继承下文旧区间准入。`NativeEnv.height115_candidate`默认使用`request_state_v1`38维包，版本`height115-current-vmc-v2-request-state-candidate`：原32维按场景延迟，末6维为当前已完成子步的归一化滤波虚拟请求`[F_L,F_R,H_L,H_R,W_L,W_R]`。diff3左右反号展开，virtual6直接六通道；请求在映射/投影之前记录，λ不作为持久状态。保留部分可观测声明，不提供隐藏质量/摩擦或未来地形。旧默认NativeEnv仍32维，候选显式`observation_contract='legacy32'`供复现；旧32维权重/VecNormalize不能直接恢复到38维，正式协议需冻结同观测版本与源码，各对照遵守相同信息契约。
+新0.115～0.38m候选不继承下文旧区间准入。`NativeEnv.height115_candidate`默认使用`request_state_v1`38维包，版本`height115-current-vmc-v4-damping-preserved-candidate`：原32维按场景延迟，末6维为当前已完成子步的归一化滤波虚拟请求`[F_L,F_R,H_L,H_R,W_L,W_R]`。diff3左右反号展开，virtual6直接六通道；请求在映射/投影之前记录，λ不作为持久状态。保留部分可观测声明，不提供隐藏质量/摩擦或未来地形。旧默认NativeEnv仍32维，候选显式`observation_contract='legacy32'`保留旧观测格式；历史控制行为按对应提交复现；旧32维权重/VecNormalize不能直接恢复到38维，正式协议需冻结同观测版本与源码，各对照遵守相同信息契约。
 
 接口验收：`python -B wheelleg_warp/check_height115_candidate.py --output <新目录>`核λ0请求歧义、20ms延迟、重置、旧接口短物理配对及SB3形状/保存恢复；`python -B wheelleg_warp/test_request_state.py`核virtual6同格式通道。没有学习更新，不能据此启动整体PPO；当前停车、同版本完整声明范围与公平协议仍待验收。
 
 ## 当前验证
 
-共同Nom/Actor边界提供显式候选开关：height115_candidate(nominal_correction=True)启用v3，默认v2不变。set_nominal_correction(values)输入n×6有限电机请求，逐电机≤1Nm，按已执行物理步限制每5ms L1变化≤.1Nm；reset/自动reset清零。顺序为已接受原Nom→共同修正及公共约束→Actor映射/λ→总命令约束。共同量归Nom，诊断6～11、观测26～31及残差惩罚只计Actor；原始Nom不可行计数仍保留原语义，Actorλ按合成后已接受Nom计算，所有对照须同配置。公开增益上界与Actor请求尺度不变。
+共同Nom/Actor边界提供显式候选开关：height115_candidate(nominal_correction=True)启用`height115-current-vmc-v4-damping-preserved-nominal-boundary-candidate`；共同修正仍为显式开关。set_nominal_correction(values)输入n×6有限电机请求，逐电机≤1Nm，按已执行物理步限制每5ms L1变化≤.1Nm；reset/自动reset清零。顺序为已接受原Nom→共同修正及公共约束→Actor映射/λ→总命令约束。共同量归Nom，诊断6～11、观测26～31及残差惩罚只计Actor；原始Nom不可行计数仍保留原语义，Actorλ按合成后已接受Nom计算，所有对照须同配置。公开增益上界与Actor请求尺度不变。
 
-接口检查用test_nominal_boundary.py（新输出目录）。旧外置执行图/Forecaster未覆盖此Actor分配顺序，遇v3会拒绝，不能借其预测作准入。v3不内置冻结计划或鲁棒反馈，不默认晋升；第11轮完整同注册18例仍13/18全门，关节动态/声明全域仍待。
+接口检查用test_nominal_boundary.py（新输出目录）。旧外置执行图/Forecaster未覆盖此Actor分配顺序，遇共同Nom模式会拒绝，不能借其预测作准入。v4恢复几何投影中被覆盖的原有差动电机速度阻尼，不增加增益或观测；test_projection_damping.py覆盖两种共同边界模式。第19轮v4配合第18轮外置冻结参考的18例全门15/18（名义6、训练组合5、压力4），训练台阶速度仍失败。默认工厂尚未装入这些参考，不能直接继承其名义6/6成绩；统一正式运行配置、声明全域与学习链路仍待。
 
 初始16/250采样周期对照暴露了后期退化：16步周期三个种子的末次成功数为31、28、0/32；250步为27、30、28/32。有限损失或吞吐不能证明策略有效。失败不覆盖，不能宣称末次三种子稳定通过。
 
