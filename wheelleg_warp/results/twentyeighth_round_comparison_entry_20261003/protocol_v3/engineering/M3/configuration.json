@@ -1,0 +1,40 @@
+{
+  "protocol_sha256": "26a300a6cc448b596bc8f6b013c1ba0b00ebc90cf545d07140ca2534adabdd22",
+  "mode": "diff3",
+  "seed": 1609,
+  "n": 10,
+  "curriculum_milestones": [
+    4000,
+    8000
+  ],
+  "policy_steps": 12000,
+  "ppo": {
+    "n_steps": 50,
+    "batch_size": 250,
+    "n_epochs": 10,
+    "learning_rate": 0.0003,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "clip_range": 0.2,
+    "clip_range_vf": null,
+    "normalize_advantage": true,
+    "ent_coef": 0.0,
+    "vf_coef": 0.5,
+    "max_grad_norm": 0.5,
+    "use_sde": false,
+    "target_kl": null,
+    "policy_kwargs": {
+      "net_arch": [
+        64,
+        64
+      ],
+      "log_std_init": 0.0
+    }
+  },
+  "initial_log_std": [
+    -0.8470163941383362,
+    -0.6646498441696167,
+    -1.3854402303695679
+  ],
+  "weights_promoted": false
+}

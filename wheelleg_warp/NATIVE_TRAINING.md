@@ -6,6 +6,12 @@
 
 接口验收：`python -B wheelleg_warp/check_height115_candidate.py --output <新目录>`核λ0请求歧义、20ms延迟、重置、旧接口短物理配对及SB3形状/保存恢复；`python -B wheelleg_warp/test_request_state.py`核virtual6同格式通道。没有学习更新，不能据此启动整体PPO；当前停车、同版本完整声明范围与公平协议仍待验收。
 
+## 当前比较入口（第28轮）
+
+`train_height_comparison.py`提供freeze/classical/smoke/train/lock-gate/gate。当前冻结目录results/twentyeighth_round_comparison_entry_20261003/protocol_v3，统一v6/38维、固定Nom7kg、三个动作空间各初始log_std向量。正式100世界×50采样、batch250/10epoch，2M预算/20k选择评估；三预实验种子，条件正式5种子。每stage固定100采样世界，不声称每episode IID；物理参数/目标仅真实episode结束后原位切换，CPU物理字段及固定Nom检查通过。
+
+三模式真实12000步工程探针及精确策略/Adam/归一化恢复通过，恢复重启物理episode，不称精确轨迹续训；当前formal train缺显式恢复CLI及耗费预算防重启。新32选择集B1_6为30/32、Jψ .295604°，门控64/每最终类别200仍封存未模拟。原28当前B0只有20成功、8航向失败，原CPU28/28保留；这项退化和正式恢复守卫必须关闭后再生成readiness。train在没有当前协议readiness时拒绝启动；目前没有readiness或长训练。
+
 ## 当前验证
 
 2026-10-03原生共享参考配置已可执行：`NativeEnv.height115_candidate(shared_reference=True)`使用v6-public-region-reference，40子步图内每5ms更新，按公开目标高度与巡航速度选完整控制律。仅h<.11828125m、|v|>.75m/s启用固定状态相位/当前J参考，其余零修正；不读质量/摩擦真值、不混合幅值。进入既有位置保持后退出参考。每电机1Nm、每5ms L1≤.1Nm，自动模式拒绝手动覆盖；内部4个参考上下文与所有重置一起清零，观测仍38维。该配置与默认v5区分，正式新协议必须显式冻结它及native/shared_reference.npz。

@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "zero_actor": true,
+  "transitions": [
+    {
+      "step": 319,
+      "world": 3,
+      "old_stage": 1,
+      "new_stage": 2,
+      "source_episode_reason": "completed"
+    },
+    {
+      "step": 337,
+      "world": 0,
+      "old_stage": 1,
+      "new_stage": 2,
+      "source_episode_reason": "completed"
+    },
+    {
+      "step": 359,
+      "world": 2,
+      "old_stage": 1,
+      "new_stage": 2,
+      "source_episode_reason": "completed"
+    },
+    {
+      "step": 420,
+      "world": 1,
+      "old_stage": 1,
+      "new_stage": 2,
+      "source_episode_reason": "completed"
+    },
+    {
+      "step": 639,
+      "world": 3,
+      "old_stage": 2,
+      "new_stage": 3,
+      "source_episode_reason": "completed"
+    },
+    {
+      "step": 676,
+      "world": 0,
+      "old_stage": 2,
+      "new_stage": 3,
+      "source_episode_reason": "completed"
+    },
+    {
+      "step": 748,
+      "world": 2,
+      "old_stage": 2,
+      "new_stage": 3,
+      "source_episode_reason": "completed"
+    },
+    {
+      "step": 809,
+      "world": 1,
+      "old_stage": 2,
+      "new_stage": 3,
+      "source_episode_reason": "completed"
+    }
+  ],
+  "switch_only_after_actual_termination": true,
+  "independent_cpu_model_fields_match": true,
+  "nominal_gains_unchanged": true,
+  "new_target_requests_and_physical_state_reset": true,
+  "final_holdout_opened": false
+}
