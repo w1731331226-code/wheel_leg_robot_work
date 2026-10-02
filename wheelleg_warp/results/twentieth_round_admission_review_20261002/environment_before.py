@@ -118,8 +118,6 @@ def collect_physical(q:wp.array2d[float],pre_v:wp.array2d[float],force:wp.array2
     for j in range(8):
         value=D(q[w,joints[j]])
         state[w,33]=wp.min(state[w,33],wp.min(value-limits[w,j,0],limits[w,j,1]-value))
-    if state.shape[1]>38:
-        for j in range(4):state[w,38]=wp.min(state[w,38],D(1.4)-wp.abs(D(q[w,ids[j]])))
     for j in range(6):
         bound=allowed(D(pre_v[w,ids[4+j]]),j<4)
         f=D(force[w,j]);u=D(ctrl[w,j])
@@ -252,7 +250,6 @@ def after(qpos:wp.array2d[float],qvel:wp.array2d[float],sensors:wp.array2d[float
             success=success and wp.abs((D(history[w,slot,22])+D(history[w,slot,23]))/D(2)-param[w,13])<=D(.02)
             if state.shape[1]>31:success=success and physical_passed(state,param[w,15],w)
             elif param[w,15]>D(0):success=success and state[w,30]>=param[w,15]
-        if state.shape[1]>38:success=success and state[w,38]>=D(0)
         state[w,19]=D(0)
         if success:state[w,19]=D(1);reward[w]=reward[w]+D(10);state[w,20]=state[w,20]+D(10)
         else:reward[w]=reward[w]-D(10);state[w,20]=state[w,20]-D(10)
@@ -277,7 +274,6 @@ def reset_rows(mask:wp.array[int],q0:wp.array2d[float],q:wp.array2d[float],v:wp.
     state[w,30]=D(1)
     if state.shape[1]>31:
         state[w,31]=D(1);state[w,32]=D(1);state[w,33]=D(1.e30)
-    if state.shape[1]>38:state[w,38]=D(1.e30)
     for j in range(6):residual[w,j]=D(0)
     for j in range(nominal_correction.shape[1]):nominal_correction[w,j]=D(0)
     for j in range(targets.shape[1]):targets[w,j]=0.
@@ -288,10 +284,9 @@ def reset_rows(mask:wp.array[int],q0:wp.array2d[float],q:wp.array2d[float],v:wp.
 
 
 class NativeEnv(VecEnv):
-    def __init__(self,n=128,stage=3,seed=730000,scenario=None,bank_factory=bank,yaw_config=(.4,2.,.24,.3),residual_scale=1.,residual_mode='diff3',terminate_on_attitude_failure=False,project_clipped_base=False,grouped_residual=False,height_conditioned=False,height_design='legacy',height_safety=None,feasible_reference=False,coordinated_reference=False,radial_guard=False,arrival_position_hold=False,parking_guard=False,pose_coordinate_projection=False,observation_contract='legacy32',nominal_correction=False,design_joint_gate=False):
+    def __init__(self,n=128,stage=3,seed=730000,scenario=None,bank_factory=bank,yaw_config=(.4,2.,.24,.3),residual_scale=1.,residual_mode='diff3',terminate_on_attitude_failure=False,project_clipped_base=False,grouped_residual=False,height_conditioned=False,height_design='legacy',height_safety=None,feasible_reference=False,coordinated_reference=False,radial_guard=False,arrival_position_hold=False,parking_guard=False,pose_coordinate_projection=False,observation_contract='legacy32',nominal_correction=False):
         if not isinstance(n,int) or not 1 <= n <= 1024:raise ValueError('用户限制：批量环境数须为1～1024')
         if type(project_clipped_base) is not bool:raise ValueError('基础限幅后残差投影开关须为布尔值')
-        if type(design_joint_gate) is not bool:raise ValueError('主动关节设计验收开关须为布尔值')
         self.project_clipped_base=project_clipped_base
         if type(grouped_residual) is not bool or (grouped_residual and (project_clipped_base or residual_mode!='diff3')):raise ValueError('分组残差仅允许独立的diff3试验')
         self.grouped_residual=grouped_residual
@@ -314,8 +309,6 @@ class NativeEnv(VecEnv):
             raise ValueError('高度控制设计须与多高度模式匹配')
         self.height_design=height_design
         self.height_safety=('physical_v1' if height_design=='range115' else 'legacy_fk') if height_safety is None else height_safety
-        if design_joint_gate and self.height_safety!='physical_v1':raise ValueError('主动设计验收需要真实物理监测')
-        self.design_joint_gate=design_joint_gate
         if type(nominal_correction) is not bool or (nominal_correction and (self.height_safety!='physical_v1' or observation_contract!='request_state_v1' or grouped_residual)):
             raise ValueError('共同Nom修正仅用于38维真实高度候选，不能与分组分配混用')
         self.nominal_correction_enabled=nominal_correction
@@ -404,7 +397,7 @@ class NativeEnv(VecEnv):
         self.task_goals=[row[2] for row in p]
         self.param=wp.array(p,dtype=D);self.command=wp.zeros(n,dtype=D)
         self.active=wp.ones(n,dtype=wp.int32);self.done=wp.zeros(n,dtype=wp.int32)
-        self.state=wp.zeros((n,39 if design_joint_gate else 38 if self.height_safety=='physical_v1' else 31),dtype=D);self.diag=wp.zeros((n,38 if radial_guard else 31 if feasible_reference else 21 if height_conditioned else 15),dtype=D)
+        self.state=wp.zeros((n,38 if self.height_safety=='physical_v1' else 31),dtype=D);self.diag=wp.zeros((n,38 if radial_guard else 31 if feasible_reference else 21 if height_conditioned else 15),dtype=D)
         self.residual=wp.zeros((n,6),dtype=D);self.reward=wp.zeros(n,dtype=D);self.contact_flags=wp.zeros((n,2),dtype=wp.int32)
         self.obs=wp.zeros((n,self.observation_dim));self.history=wp.zeros((n,max(round(s.delay_ms*2) for s in self.scenarios)+1,32))
         self.targets=wp.zeros((n,self.action_dim));self.stopped_q=wp.zeros((n,self.cpu.nq));self.stopped_v=wp.zeros((n,self.cpu.nv));self.stopped_w=wp.zeros((n,self.cpu.nv))
@@ -485,11 +478,11 @@ class NativeEnv(VecEnv):
         env=cls(n=n,stage=stage,seed=seed,scenario=scenario,bank_factory=bank_height_115,
             height_conditioned=True,height_design='range115',height_safety='physical_v1',
             residual_scale=residual_scale,residual_mode=residual_mode,feasible_reference=True,
-            coordinated_reference=True,radial_guard=True,observation_contract=observation_contract,nominal_correction=nominal_correction,design_joint_gate=True)
+            coordinated_reference=True,radial_guard=True,observation_contract=observation_contract,nominal_correction=nominal_correction)
         env.k['gains'].assign(np.stack([t[0] for t in table]));env.k['feed'].assign(np.stack([t[1] for t in table]));env.k['angles'].assign(np.array([t[2] for t in table]))
-        env.baseline_version='height115-current-vmc-v5-full-design'+('-legacy32' if observation_contract=='legacy32' else '')+'-candidate'
+        env.baseline_version='height115-current-vmc-v4-damping-preserved'+('-legacy32' if observation_contract=='legacy32' else '')+'-candidate'
         env.design_reports=reports
-        if nominal_correction:env.baseline_version='height115-current-vmc-v5-full-design-nominal-boundary-candidate'
+        if nominal_correction:env.baseline_version='height115-current-vmc-v4-damping-preserved-nominal-boundary-candidate'
         return env
 
     def reset(self):
@@ -589,10 +582,6 @@ class NativeEnv(VecEnv):
                             infos[i]['physical_evidence_steps']=int(states[i,37])
                             infos[i]['physical_safety_passed']=bool(states[i,37]==states[i,0] and states[i,37]>0 and
                                 infos[i]['geometric_margin_passed'] and states[i,33]>=0 and max(states[i,35],states[i,36])<=1e-6)
-                            infos[i]['design_joint_contract']='active-1p4-v1' if self.design_joint_gate else 'not_enforced'
-                            if self.design_joint_gate:
-                                infos[i]['min_active_design_margin_rad']=float(states[i,38])
-                                infos[i]['design_joint_passed']=bool(states[i,37]==states[i,0] and states[i,37]>0 and states[i,38]>=0)
                             infos[i]['control_limit_scope']='actual_torque_and_nominal_command'
                             infos[i]['actuator_gain_upper']=self.actuator_gain_upper.tolist()
                 # This deadline is task failure, not an external collection cutoff.

@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "height_safety_contract": "physical_v1",
+  "false_safe_leg_frames_rejected": 352,
+  "actual_A_archive_max_error_m": 5.269641112359835e-09,
+  "cpu_both_chain_site_max_error_m": 5.245679113308199e-09,
+  "terminal_cases": [
+    "valid",
+    "actual_A_crossing",
+    "joint_crossing",
+    "actual_force_excess",
+    "missing_evidence"
+  ],
+  "actual_force_counterexample_Nm": 4.7250000000000005,
+  "terminal_success": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "graph_evidence_steps": [
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0
+  ],
+  "reset_clears_evidence": true,
+  "closure_is_recorded_not_certified": true,
+  "source_trace_sha256": "88676f7c89f2aa658f8b5605fca2f9cf9fe46a9035f46609fbef467b656ce746",
+  "source_sha256": {
+    "wheelleg_warp/test_height_physical_contract.py": "df29bc721a4210d30b74c4eb57d356877f9e4595698caa37744426e6d0c85fa9",
+    "wheelleg_warp/native/environment.py": "d2948431b027935684252b6e4c4186df3cf5ac551ba6f192a1dbb99ab77148d4",
+    "wheelleg_warp/native/controller.py": "b93bf242aa51168d745716fd55c22ffe76e8c5ff7ef697d9fa1386007b19047c"
+  }
+}

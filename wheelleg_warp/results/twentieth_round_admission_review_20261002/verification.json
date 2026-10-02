@@ -1,0 +1,146 @@
+{
+  "role": "twentieth_round_objective_direction_and_admission_review",
+  "progress": {
+    "round16_single_factor_groups": {
+      "nominal": {
+        "physical_pass_count": 6,
+        "task_pass_count": 6,
+        "full_design_and_task_pass_count": 6
+      },
+      "mass_only": {
+        "physical_pass_count": 6,
+        "task_pass_count": 4,
+        "full_design_and_task_pass_count": 4
+      },
+      "friction_only": {
+        "physical_pass_count": 6,
+        "task_pass_count": 6,
+        "full_design_and_task_pass_count": 4
+      },
+      "drive_only": {
+        "physical_pass_count": 6,
+        "task_pass_count": 6,
+        "full_design_and_task_pass_count": 4
+      }
+    },
+    "round17_static_filter": {
+      "actual_request_updates": 800,
+      "changed_from_guide": 371,
+      "active_design_margin_rad": [
+        0.018027448654174716,
+        0.004534864425659091
+      ],
+      "physical_pass": 2,
+      "task_pass": 0,
+      "stop_distance_m": [
+        0.6163210868852419,
+        0.6177129746060722
+      ],
+      "tail_speed_m_s": [
+        0.03241879579529616,
+        0.022935879073530972
+      ],
+      "promoted": false
+    },
+    "round18_full_gate_groups": {
+      "nominal": {
+        "physical_pass_count": 6,
+        "task_pass_count": 6,
+        "full_design_and_task_pass_count": 6
+      },
+      "training_corner": {
+        "physical_pass_count": 6,
+        "task_pass_count": 5,
+        "full_design_and_task_pass_count": 4
+      },
+      "pressure_corner": {
+        "physical_pass_count": 6,
+        "task_pass_count": 4,
+        "full_design_and_task_pass_count": 4
+      }
+    },
+    "round19_full_gate_groups": {
+      "nominal": {
+        "physical_pass_count": 6,
+        "task_pass_count": 6,
+        "full_design_and_task_pass_count": 6
+      },
+      "training_corner": {
+        "physical_pass_count": 6,
+        "task_pass_count": 5,
+        "full_design_and_task_pass_count": 5
+      },
+      "pressure_corner": {
+        "physical_pass_count": 6,
+        "task_pass_count": 4,
+        "full_design_and_task_pass_count": 4
+      }
+    },
+    "round20_native_full_gate_groups": {
+      "nominal": {
+        "physical_pass_count": 6,
+        "task_pass_count": 6,
+        "full_design_and_task_pass_count": 6
+      },
+      "training_corner": {
+        "physical_pass_count": 6,
+        "task_pass_count": 5,
+        "full_design_and_task_pass_count": 5
+      },
+      "pressure_corner": {
+        "physical_pass_count": 6,
+        "task_pass_count": 4,
+        "full_design_and_task_pass_count": 4
+      }
+    }
+  },
+  "default_factory": {
+    "physical": 6,
+    "task": 4,
+    "has_frozen_braking_reference": false
+  },
+  "native_design_success_reward_history_contract": {
+    "passed": true,
+    "baseline_version": "height115-current-vmc-v5-full-design-candidate",
+    "terminal_success": [
+      true,
+      false
+    ],
+    "physical_pass": [
+      true,
+      true
+    ],
+    "past_design_violation_rejected": true,
+    "terminal_reward_difference": 20.0,
+    "collector_peak_history_preserved": true,
+    "masked_and_auto_reset_passed": true,
+    "native_physical_steps": 40,
+    "observation_dimension": 38,
+    "learning": false,
+    "source_sha256": {
+      "wheelleg_warp/test_design_joint_contract.py": "650ec4a5ff844175c23d373b3eb30dc50ae43e5ca45250c304acee81b5fafe51",
+      "wheelleg_warp/native/environment.py": "d2948431b027935684252b6e4c4186df3cf5ac551ba6f192a1dbb99ab77148d4"
+    }
+  },
+  "previous_physical_contract_preserved": true,
+  "observation_packet_preserved": true,
+  "decision": "Retain VMC/six-state LQR/diff3 research and the minimal damping fix. Next unify the actual shared reference execution/configuration, then verify its declared domain and freeze a same-information protocol before real short PPO update/restore/evaluation. No more online predictor/reset layers or static-filter tuning.",
+  "scope_rule": "Keep original task/design thresholds and failed cases. Engineering readiness, learning performance and method advantage are distinct; historical paper readiness included28/32 classical success, not a blanket zero-Actor100% requirement. This does not grant current readiness: default normal tasks4/6 and missing unified/domain/learning evidence remain.",
+  "full_admission": false,
+  "learning": false,
+  "input_sha256": {
+    "wheelleg_warp/results/sixteenth_round_parameter_isolation_20261002/verification.json": "031a42a08eca57189292696c6e57284a297989858983c9494460bfbed17a8c97",
+    "wheelleg_warp/results/seventeenth_round_projection_order_20261002/analysis.json": "42faa16131f3a6305a2fb010b80ea9b7355e302f2339ab71e1d91a21beed358a",
+    "wheelleg_warp/results/eighteenth_round_robust_reference_20261002/full_verification.json": "cab43c1449fba402d2db9b50e98fe60d3f27f4a05e699603f18dd2537178a5eb",
+    "wheelleg_warp/results/nineteenth_round_motion_reference_20261002/verification.json": "0280621071548038e25d8a0ac287a71ca3b2df29c84d868c8b91c838bf39e49c",
+    "wheelleg_warp/results/twentieth_round_admission_review_20261002/native_panel/verification.json": "8d11668560998c5ee49e8909b49df1d2034e9a8094c472d2a1f1f23c5a1126f4",
+    "wheelleg_warp/results/twentieth_round_admission_review_20261002/default_factory/verification.json": "f2d9e680b7350fb0497262d0bf3a14be03b2efe5066dbb37b912504d7024def2",
+    "wheelleg_warp/results/twentieth_round_admission_review_20261002/native_contract/verification.json": "250549f7f2d2801b882a096a59b0fe74d76a00428c7894fa30dd94d8b8f1c541",
+    "wheelleg_warp/results/twentieth_round_admission_review_20261002/physical_legacy.json": "3c15f4120a830252714deea274a3e6c4d3f930e27f6c9a8487452499e4829278",
+    "wheelleg_warp/results/twentieth_round_admission_review_20261002/packet_check/verification.json": "1a6fd548ffc93cea5a5104042ff8dfe9fc683dba7686d21ed39285f1721d67c0",
+    "wheelleg_warp/results/twentieth_round_admission_review_20261002/native_panel/trace.npz": "a1fc8f288bc2db42c90fbe02328c789e69631b57ee6d8ffa66cc67403b4b2037"
+  },
+  "source_sha256": {
+    "wheelleg_warp/results/twentieth_round_admission_review_20261002/review.py": "505970a91e8165f07d002174b17c9c9343a824fcab51f364562005bfe4ad9ea8"
+  }
+}
