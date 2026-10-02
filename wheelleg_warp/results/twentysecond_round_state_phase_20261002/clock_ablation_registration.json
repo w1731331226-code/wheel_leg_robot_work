@@ -1,0 +1,7 @@
+{
+  "only_change": "Replace state-phase matching with original clock; retain full amplitude, existing position-hold exit and original request slew/box.",
+  "purpose": "Check whether the more complex phase matcher contributes useful performance.",
+  "cases": "same100 public cases",
+  "learning": false,
+  "full_admission": false
+}

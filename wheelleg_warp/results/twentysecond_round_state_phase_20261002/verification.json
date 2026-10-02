@@ -1,0 +1,96 @@
+{
+  "results": {
+    "template": {
+      "total": 2,
+      "physical": 2,
+      "design": 2,
+      "success": 2,
+      "phase_decisions_checked": 0,
+      "phase_differs_from_clock": 0,
+      "physical_evidence_steps": 26253
+    },
+    "state_phase": {
+      "total": 100,
+      "physical": 100,
+      "design": 86,
+      "success": 86,
+      "phase_decisions_checked": 13725,
+      "phase_differs_from_clock": 12723,
+      "physical_evidence_steps": 1393589
+    },
+    "state_phase_full": {
+      "total": 100,
+      "physical": 100,
+      "design": 89,
+      "success": 89,
+      "phase_decisions_checked": 18724,
+      "phase_differs_from_clock": 17778,
+      "physical_evidence_steps": 1393589
+    },
+    "clock_full": {
+      "total": 100,
+      "physical": 100,
+      "design": 70,
+      "success": 70,
+      "phase_decisions_checked": 18627,
+      "phase_differs_from_clock": 0,
+      "physical_evidence_steps": 1393589
+    }
+  },
+  "full_state_vs_full_clock": {
+    "gained_cases": [
+      70,
+      71,
+      72,
+      73,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      85,
+      86,
+      87,
+      88,
+      90,
+      95,
+      96,
+      97
+    ],
+    "lost_cases": []
+  },
+  "full_amplitude_vs_scaled": {
+    "gained_cases": [
+      51,
+      52,
+      53,
+      61,
+      62,
+      63,
+      64,
+      71,
+      72,
+      73
+    ],
+    "lost_cases": [
+      89,
+      91,
+      92,
+      93,
+      94,
+      98,
+      99
+    ]
+  },
+  "all_original_request_domains_checked": true,
+  "all_causal_decisions_reconstructed": true,
+  "production_promoted": false,
+  "learning": false,
+  "full_admission": false,
+  "conclusion": "State phase matters, but neither phase matching nor removing amplitude interpolation meets full design gates; investigate geometry-consistent virtual effort transfer, not more scalar weight/phase tuning.",
+  "source_sha256": {
+    "wheelleg_warp/results/twentysecond_round_state_phase_20261002/check.py": "b412c575bf1008c568934bd9679dfe7fbdfeaed94c2d418d5115c7b3a8819bb1"
+  }
+}
