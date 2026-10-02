@@ -1,0 +1,98 @@
+{
+  "panels": {
+    "registered": {
+      "nominal": {
+        "total": 6,
+        "physical": 6,
+        "design": 6,
+        "task": 6
+      },
+      "training_corner": {
+        "total": 6,
+        "physical": 6,
+        "design": 6,
+        "task": 5
+      },
+      "pressure_corner": {
+        "total": 6,
+        "physical": 6,
+        "design": 4,
+        "task": 4
+      }
+    },
+    "grid": {
+      "nominal": {
+        "total": 42,
+        "physical": 42,
+        "design": 42,
+        "task": 41
+      },
+      "training_corner": {
+        "total": 42,
+        "physical": 42,
+        "design": 38,
+        "task": 38
+      }
+    },
+    "registered_v2": {
+      "nominal": {
+        "total": 6,
+        "physical": 6,
+        "design": 6,
+        "task": 6
+      },
+      "training_corner": {
+        "total": 6,
+        "physical": 6,
+        "design": 6,
+        "task": 5
+      },
+      "pressure_corner": {
+        "total": 6,
+        "physical": 6,
+        "design": 4,
+        "task": 4
+      }
+    },
+    "grid_v2": {
+      "nominal": {
+        "total": 42,
+        "physical": 42,
+        "design": 42,
+        "task": 42
+      },
+      "training_corner": {
+        "total": 42,
+        "physical": 42,
+        "design": 42,
+        "task": 42
+      }
+    },
+    "cell_v2": {
+      "nominal": {
+        "total": 50,
+        "physical": 50,
+        "design": 50,
+        "task": 50
+      },
+      "training_corner": {
+        "total": 50,
+        "physical": 50,
+        "design": 36,
+        "task": 36
+      }
+    }
+  },
+  "paired_failures_pass_without_reference": true,
+  "scheduling_and_request_domain_verified": true,
+  "continuous_reference_rule_rejected": true,
+  "failed_active_branch_removed": true,
+  "production_remains_v5": true,
+  "learning": false,
+  "full_admission": false,
+  "conclusion": "Feasible operating endpoints and a passing coarse grid do not certify interpolated motor sequences; fine-cell failures remain.",
+  "limitations": "Public deterministic panels and descriptive paired reruns only. No universal infeasibility or robust-policy claim. Replay the archived source tree in an isolated checkout to reproduce experiments; active v5 intentionally has no failed automatic-reference option.",
+  "source_sha256": {
+    "wheelleg_warp/results/twentyfirst_round_native_reference_20261002/check.py": "dab3fdbe8bd4d4e2640b862b048e9869da1d7da5312195429d22469f326ad4ab"
+  }
+}
