@@ -1,0 +1,363 @@
+{
+  "results": {
+    "motor": {
+      "total": 100,
+      "physical": 100,
+      "design": 89,
+      "success": 89,
+      "max_request_total_variation_per5ms": 0.10000000000000019,
+      "current_J_virtual_target_error": 0.0
+    },
+    "virtual_current": {
+      "total": 100,
+      "physical": 100,
+      "design": 97,
+      "success": 97,
+      "max_request_total_variation_per5ms": 0.10000000000000024,
+      "current_J_virtual_target_error": 5.329070518200751e-15
+    },
+    "virtual_2khz": {
+      "total": 100,
+      "physical": 100,
+      "design": 97,
+      "success": 97,
+      "max_request_total_variation_per5ms": 0.10000000000000023,
+      "current_J_virtual_target_error": 5.329070518200751e-15
+    },
+    "zero": {
+      "total": 100,
+      "physical": 100,
+      "design": 100,
+      "success": 87,
+      "max_request_total_variation_per5ms": 0.0,
+      "current_J_virtual_target_error": 0.0
+    }
+  },
+  "individual_roundtrip_error_Nm": 2.220446049250313e-16,
+  "template_common_symmetrization_error_Nm": 3.4699133424354045e-06,
+  "recovered_by_geometry": [
+    74,
+    82,
+    83,
+    89,
+    91,
+    92,
+    98,
+    99
+  ],
+  "remaining_failures": [
+    84,
+    93,
+    94
+  ],
+  "faster_remapping_additional_successes": 0,
+  "production_promoted": false,
+  "learning": false,
+  "full_admission": false,
+  "public_operating_point_coverage": [
+    {
+      "height": 0.115,
+      "speed": 0.75,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.115,
+      "speed": 0.8125,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.115,
+      "speed": 0.875,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.115,
+      "speed": 0.9375,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.115,
+      "speed": 1.0,
+      "zero_passes_both_registered_parameters": false,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.115,
+      "speed": -0.75,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.115,
+      "speed": -0.8125,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.115,
+      "speed": -0.875,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.115,
+      "speed": -0.9375,
+      "zero_passes_both_registered_parameters": false,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.115,
+      "speed": -1.0,
+      "zero_passes_both_registered_parameters": false,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.11625,
+      "speed": 0.75,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.11625,
+      "speed": 0.8125,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.11625,
+      "speed": 0.875,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.11625,
+      "speed": 0.9375,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.11625,
+      "speed": 1.0,
+      "zero_passes_both_registered_parameters": false,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.11625,
+      "speed": -0.75,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.11625,
+      "speed": -0.8125,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.11625,
+      "speed": -0.875,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.11625,
+      "speed": -0.9375,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.11625,
+      "speed": -1.0,
+      "zero_passes_both_registered_parameters": false,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.1175,
+      "speed": 0.75,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.1175,
+      "speed": 0.8125,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.1175,
+      "speed": 0.875,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.1175,
+      "speed": 0.9375,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.1175,
+      "speed": 1.0,
+      "zero_passes_both_registered_parameters": false,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.1175,
+      "speed": -0.75,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.1175,
+      "speed": -0.8125,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.1175,
+      "speed": -0.875,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.1175,
+      "speed": -0.9375,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.1175,
+      "speed": -1.0,
+      "zero_passes_both_registered_parameters": false,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.11875,
+      "speed": 0.75,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.11875,
+      "speed": 0.8125,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.11875,
+      "speed": 0.875,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.11875,
+      "speed": 0.9375,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.11875,
+      "speed": 1.0,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": false
+    },
+    {
+      "height": 0.11875,
+      "speed": -0.75,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.11875,
+      "speed": -0.8125,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.11875,
+      "speed": -0.875,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.11875,
+      "speed": -0.9375,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.11875,
+      "speed": -1.0,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.12,
+      "speed": 0.75,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.12,
+      "speed": 0.8125,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.12,
+      "speed": 0.875,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.12,
+      "speed": 0.9375,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": false
+    },
+    {
+      "height": 0.12,
+      "speed": 1.0,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": false
+    },
+    {
+      "height": 0.12,
+      "speed": -0.75,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.12,
+      "speed": -0.8125,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.12,
+      "speed": -0.875,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.12,
+      "speed": -0.9375,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    },
+    {
+      "height": 0.12,
+      "speed": -1.0,
+      "zero_passes_both_registered_parameters": true,
+      "virtual_passes_both_registered_parameters": true
+    }
+  ],
+  "scope": "Target virtual equality is checked before motor slew; finite-rate held requests are not claimed to preserve exact virtual equality at every physical state. Full task gates remain unchanged.",
+  "source_sha256": {
+    "wheelleg_warp/results/twentythird_round_virtual_reference_20261002/check.py": "67e186d2927073122135306e90b6bbebbcfe943df8f1b8ced805dfa83c41bac0"
+  }
+}

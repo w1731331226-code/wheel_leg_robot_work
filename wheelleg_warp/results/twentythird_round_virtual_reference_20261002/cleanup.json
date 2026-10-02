@@ -1,0 +1,27 @@
+{
+  "items": [
+    {
+      "path": "wheelleg_warp/results/twentythird_round_virtual_reference_20261002/virtual_current/metric.npz",
+      "retained": "wheelleg_warp/results/twentythird_round_virtual_reference_20261002/virtual_2khz/metric.npz",
+      "bytes": 2570,
+      "sha256": "61cc9029a6a71a2bd6318a6860a33dafe95da8750ea2f67cb4b401d0aae07d04",
+      "link": "../virtual_2khz/metric.npz"
+    },
+    {
+      "path": "wheelleg_warp/results/twentythird_round_virtual_reference_20261002/motor/metric.npz",
+      "retained": "wheelleg_warp/results/twentythird_round_virtual_reference_20261002/virtual_2khz/metric.npz",
+      "bytes": 2570,
+      "sha256": "61cc9029a6a71a2bd6318a6860a33dafe95da8750ea2f67cb4b401d0aae07d04",
+      "link": "../virtual_2khz/metric.npz"
+    },
+    {
+      "path": "wheelleg_warp/results/twentythird_round_virtual_reference_20261002/zero/metric.npz",
+      "retained": "wheelleg_warp/results/twentythird_round_virtual_reference_20261002/motor/metric.npz",
+      "bytes": 2570,
+      "sha256": "61cc9029a6a71a2bd6318a6860a33dafe95da8750ea2f67cb4b401d0aae07d04",
+      "link": "../motor/metric.npz"
+    }
+  ],
+  "removed_duplicate_bytes": 7710,
+  "unique_failures_retained": true
+}
