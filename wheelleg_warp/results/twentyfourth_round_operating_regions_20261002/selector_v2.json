@@ -1,0 +1,14 @@
+{
+  "accepted": true,
+  "switch_height": 0.11828125,
+  "calibration_overlap": [
+    0.1181875,
+    0.118375
+  ],
+  "selector": "virtual reference only if target height<switch_height and abs(cruise_speed)>0.75; otherwise zero correction",
+  "parameter_truth_used": false,
+  "validation_performed": false,
+  "full_admission": false,
+  "reference_min_speed": 0.75,
+  "reason": "Prefer the already verified zero-correction low-speed controller; retain original height cut. First selector pressure regressions remain archived."
+}

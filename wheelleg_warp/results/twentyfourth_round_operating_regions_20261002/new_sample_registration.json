@@ -1,0 +1,17 @@
+{
+  "selector_file": "selector_v2.json",
+  "unchanged": true,
+  "random_seeds": [
+    1154000,
+    1154063
+  ],
+  "nearcut_seeds": [
+    1154100,
+    1154163
+  ],
+  "generator": "sample_height_terrain_115(stage=3,split=development)",
+  "nearcut_override": "flat terrain, h uniform[.115,.12], rng240024; other sampled training parameters retained",
+  "training_or_holdout_used": false,
+  "failed_episodes_retained": true,
+  "full_admission": false
+}

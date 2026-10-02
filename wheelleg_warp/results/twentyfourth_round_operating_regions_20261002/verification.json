@@ -1,0 +1,136 @@
+{
+  "summaries": {
+    "overlap_zero": {
+      "total": 32,
+      "physical": 32,
+      "design": 32,
+      "success": 29,
+      "reference_worlds": 0
+    },
+    "overlap_virtual": {
+      "total": 32,
+      "physical": 32,
+      "design": 31,
+      "success": 31,
+      "reference_worlds": 32
+    },
+    "refined_zero": {
+      "total": 60,
+      "physical": 60,
+      "design": 60,
+      "success": 60,
+      "reference_worlds": 0
+    },
+    "refined_virtual": {
+      "total": 60,
+      "physical": 60,
+      "design": 60,
+      "success": 60,
+      "reference_worlds": 60
+    },
+    "boundary": {
+      "total": 180,
+      "physical": 180,
+      "design": 180,
+      "success": 180,
+      "reference_worlds": 100
+    },
+    "broad": {
+      "total": 84,
+      "physical": 84,
+      "design": 84,
+      "success": 84,
+      "reference_worlds": 12
+    },
+    "registered": {
+      "total": 18,
+      "physical": 18,
+      "design": 12,
+      "success": 11,
+      "reference_worlds": 18
+    },
+    "speed_boundary_v2": {
+      "total": 144,
+      "physical": 144,
+      "design": 144,
+      "success": 144,
+      "reference_worlds": 36
+    },
+    "broad_v2": {
+      "total": 84,
+      "physical": 84,
+      "design": 84,
+      "success": 84,
+      "reference_worlds": 4
+    },
+    "registered_v2": {
+      "total": 18,
+      "physical": 18,
+      "design": 16,
+      "success": 15,
+      "reference_worlds": 6
+    },
+    "random_v2": {
+      "total": 64,
+      "physical": 64,
+      "design": 64,
+      "success": 62,
+      "reference_worlds": 1
+    },
+    "nearcut_v2": {
+      "total": 64,
+      "physical": 64,
+      "design": 64,
+      "success": 64,
+      "reference_worlds": 27
+    }
+  },
+  "frozen_selector": {
+    "accepted": true,
+    "switch_height": 0.11828125,
+    "calibration_overlap": [
+      0.1181875,
+      0.118375
+    ],
+    "selector": "virtual reference only if target height<switch_height and abs(cruise_speed)>0.75; otherwise zero correction",
+    "parameter_truth_used": false,
+    "validation_performed": false,
+    "full_admission": false,
+    "reference_min_speed": 0.75,
+    "reason": "Prefer the already verified zero-correction low-speed controller; retain original height cut. First selector pressure regressions remain archived."
+  },
+  "public_selection_and_all_requests_reconstructed": true,
+  "learning": false,
+  "production_promoted": false,
+  "full_admission": false,
+  "limitations": "Finite public development coverage, zero Actor. Initial selector pressure regression remains retained. Two new terrain yaw failures remain failures; no continuous guarantee or learning advantage claim. Native implementation and real short PPO update/restore still pending.",
+  "input_sha256": {
+    "wheelleg_warp/results/twentyfourth_round_operating_regions_20261002/overlap_zero/verification.json": "20f9f4225330c556fcd0d683d58089a8dd1cd96a1ee69e4744bf6bc141634f85",
+    "wheelleg_warp/results/twentyfourth_round_operating_regions_20261002/overlap_zero/registered_cases.json": "9c4738d45518d599443b4083e83f0116a9e6f0a5ead195050fe5c3d20748b7fa",
+    "wheelleg_warp/results/twentyfourth_round_operating_regions_20261002/overlap_virtual/verification.json": "77154a646e87f3a0c492b00a30b0f7bd85c4273381f596645d9f1f1ab5810b6f",
+    "wheelleg_warp/results/twentyfourth_round_operating_regions_20261002/overlap_virtual/registered_cases.json": "f008fa3fb057f25ff7d8be4a5f942bf8bbb2e48e53e8041d33077e8ebb56d1a1",
+    "wheelleg_warp/results/twentyfourth_round_operating_regions_20261002/refined_zero/verification.json": "ebe39f5ee9a79a401c4ae266714fe263ec146ae41294b68210a2f309fb39166b",
+    "wheelleg_warp/results/twentyfourth_round_operating_regions_20261002/refined_zero/registered_cases.json": "10048dd2b26201cec3f83fb671b4f654355304e067100e4ae234062c1c3f1c26",
+    "wheelleg_warp/results/twentyfourth_round_operating_regions_20261002/refined_virtual/verification.json": "788ffc57050b39512f66b4e20cb496b677c252d3d4f34683a52f1b12a96a47b1",
+    "wheelleg_warp/results/twentyfourth_round_operating_regions_20261002/refined_virtual/registered_cases.json": "0f2c54919f62329663b89b901969b12a5f788c112c90984a3cb7d437625bf4da",
+    "wheelleg_warp/results/twentyfourth_round_operating_regions_20261002/boundary/verification.json": "e568868e5c68ad9b19a0c691b23d83b05f3e8e9a9370f6921c52dca7eec21b6a",
+    "wheelleg_warp/results/twentyfourth_round_operating_regions_20261002/boundary/registered_cases.json": "ee38c858842e9524a532705538aead400b30ae4f22088f77f49288b5273a136f",
+    "wheelleg_warp/results/twentyfourth_round_operating_regions_20261002/broad/verification.json": "aad0ffe360c73d92c1e9f68d3292e06032bf3d23620cccea191234be49ea1d3b",
+    "wheelleg_warp/results/twentyfourth_round_operating_regions_20261002/broad/registered_cases.json": "fee8596569ea61999571d54c30814796e866234a20aabad2b83c2517aba606af",
+    "wheelleg_warp/results/twentyfourth_round_operating_regions_20261002/registered/verification.json": "4037c36ad52132f81d0ec6fd5acdb48f013572f7f712159f224cedf141993acb",
+    "wheelleg_warp/results/twentyfourth_round_operating_regions_20261002/registered/registered_cases.json": "4ec424c923016cc88ef8d3631816fe3251003e1d853ff6bbdf60c63ee51b09a1",
+    "wheelleg_warp/results/twentyfourth_round_operating_regions_20261002/speed_boundary_v2/verification.json": "36feb17a7a3fa28e7eb0504d327a8b36d40e4f8372d99b442ab68e26e233ae08",
+    "wheelleg_warp/results/twentyfourth_round_operating_regions_20261002/speed_boundary_v2/registered_cases.json": "f0108437b4299f2841b0c1ce0a47c7156589b6afe880dca6ebe9cdc0e9ce748e",
+    "wheelleg_warp/results/twentyfourth_round_operating_regions_20261002/broad_v2/verification.json": "d6b20334a8a1387fdae6707f0b467cf5d0d335fc539442fdaf168bd16da40894",
+    "wheelleg_warp/results/twentyfourth_round_operating_regions_20261002/broad_v2/registered_cases.json": "88af9fbeddb7666447a22d6b676ac5e97eeb2bf8648f1b513d11a6cba4e00472",
+    "wheelleg_warp/results/twentyfourth_round_operating_regions_20261002/registered_v2/verification.json": "8361445122a46cfa317f7debda4f8c5b83f54df8e849ff5979bb1cda469f050b",
+    "wheelleg_warp/results/twentyfourth_round_operating_regions_20261002/registered_v2/registered_cases.json": "d725a40a41965a7932174f75e8c00c5350149271b8c572cae0a88146456ba723",
+    "wheelleg_warp/results/twentyfourth_round_operating_regions_20261002/random_v2/verification.json": "82876c0d3caa3eca6a3e2a38ca3b9c89e0a3ab97833f54d5d4b38b58981e3c9c",
+    "wheelleg_warp/results/twentyfourth_round_operating_regions_20261002/random_v2/registered_cases.json": "f46f6d08c6a7d003d58ba4d7bd087cc2afa89e913e8b9cc5870771bc497f33c5",
+    "wheelleg_warp/results/twentyfourth_round_operating_regions_20261002/nearcut_v2/verification.json": "6962eaf7d2709cecef015912d24491dc33f1eaaebbac25559edeeff29d874cbf",
+    "wheelleg_warp/results/twentyfourth_round_operating_regions_20261002/nearcut_v2/registered_cases.json": "14e8998d93ffdbb7bb49c6d1b8a79adea27043fd17606fb3a1c192ca99742a60"
+  },
+  "source_sha256": {
+    "wheelleg_warp/results/twentyfourth_round_operating_regions_20261002/check.py": "bfc372c427298a3a9e863cfc62ed23ca14b1cb79d6915e9126dcbb33d5bd7653"
+  }
+}
