@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "baseline_version": "height115-current-vmc-v5-full-design-candidate",
+  "terminal_success": [
+    true,
+    false
+  ],
+  "physical_pass": [
+    true,
+    true
+  ],
+  "past_design_violation_rejected": true,
+  "terminal_reward_difference": 20.0,
+  "collector_peak_history_preserved": true,
+  "masked_and_auto_reset_passed": true,
+  "native_physical_steps": 40,
+  "observation_dimension": 38,
+  "learning": false,
+  "source_sha256": {
+    "wheelleg_warp/test_design_joint_contract.py": "650ec4a5ff844175c23d373b3eb30dc50ae43e5ca45250c304acee81b5fafe51",
+    "wheelleg_warp/native/environment.py": "a6e246bb0ac6dbb18c977676857e272551a7417d8154f6d81a3250aa47109816"
+  }
+}

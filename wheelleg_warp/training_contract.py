@@ -58,7 +58,7 @@ def source_files(entrypoint):
     paths=['wheelleg_warp/'+name for name in (
         'training_contract.py','terrain_eval.py','benchmark_parallel.py','native/terrain.py',
         'native/terrain_env.py','native/models.py','native/environment.py','native/controller.py',
-        'native/live.py','native/design.py','dashboard/live_env.py')]
+        'native/live.py','native/design.py','native/shared_reference.py','native/shared_reference.npz','dashboard/live_env.py')]
     paths+=['wheelleg_ppo/tools/'+name+'.py' for name in (
         'ppo_env','pretrain_yaw','wheelleg_sim','hardware_profile','rm_controller','model_lqr','state_estimation')]
     paths.append('wheelleg_ppo/xml/wheelleg.xml')

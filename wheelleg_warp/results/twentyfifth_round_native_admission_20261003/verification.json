@@ -1,0 +1,59 @@
+{
+  "native_panels": {
+    "speed_boundary_v2": {
+      "total": 144,
+      "physical": 144,
+      "design": 144,
+      "success": 144
+    },
+    "broad_v2": {
+      "total": 84,
+      "physical": 84,
+      "design": 84,
+      "success": 84
+    },
+    "registered_v2": {
+      "total": 18,
+      "physical": 18,
+      "design": 16,
+      "success": 15
+    },
+    "random_v2": {
+      "total": 64,
+      "physical": 64,
+      "design": 64,
+      "success": 62
+    },
+    "nearcut_v2": {
+      "total": 64,
+      "physical": 64,
+      "design": 64,
+      "success": 64
+    }
+  },
+  "real_ppo_probes": {
+    "diff3": {
+      "policy_steps": 2200,
+      "updates": 11,
+      "real_episodes": 4,
+      "evaluation_completed": 4,
+      "evaluation_success": 2
+    },
+    "virtual6": {
+      "policy_steps": 2200,
+      "updates": 11,
+      "real_episodes": 4,
+      "evaluation_completed": 4,
+      "evaluation_success": 3
+    }
+  },
+  "native_host_gate_labels_equal": true,
+  "native_cpu_request_peak_Nm": 1.1102230246251565e-16,
+  "stock_ppo_loss_used": true,
+  "probe_weights_not_promoted": true,
+  "full_admission": false,
+  "remaining": "Full new comparison configuration and research protocol remain unfrozen: current NativeEnv supports diff3/virtual6; planned raw6/B1 evaluation and initial motor-distribution fairness still need a verified entry. Learning performance is not proved.",
+  "source_sha256": {
+    "wheelleg_warp/results/twentyfifth_round_native_admission_20261003/check.py": "d16f416eaf3b8743ad04e156624a853ddbfbcfab276579b309912891de49dcba"
+  }
+}

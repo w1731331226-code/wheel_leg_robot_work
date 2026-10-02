@@ -288,9 +288,7 @@ def reset_rows(mask:wp.array[int],q0:wp.array2d[float],q:wp.array2d[float],v:wp.
 
 
 class NativeEnv(VecEnv):
-    def __init__(self,n=128,stage=3,seed=730000,scenario=None,bank_factory=bank,yaw_config=(.4,2.,.24,.3),residual_scale=1.,residual_mode='diff3',terminate_on_attitude_failure=False,project_clipped_base=False,grouped_residual=False,height_conditioned=False,height_design='legacy',height_safety=None,feasible_reference=False,coordinated_reference=False,radial_guard=False,arrival_position_hold=False,parking_guard=False,pose_coordinate_projection=False,observation_contract='legacy32',nominal_correction=False,design_joint_gate=False,shared_reference=False):
-        if type(shared_reference) is not bool or (shared_reference and (not nominal_correction or not design_joint_gate or not radial_guard)):raise ValueError('原生共同参考需要共同Nom、径向保护与设计契约')
-        self.shared_reference_enabled=shared_reference
+    def __init__(self,n=128,stage=3,seed=730000,scenario=None,bank_factory=bank,yaw_config=(.4,2.,.24,.3),residual_scale=1.,residual_mode='diff3',terminate_on_attitude_failure=False,project_clipped_base=False,grouped_residual=False,height_conditioned=False,height_design='legacy',height_safety=None,feasible_reference=False,coordinated_reference=False,radial_guard=False,arrival_position_hold=False,parking_guard=False,pose_coordinate_projection=False,observation_contract='legacy32',nominal_correction=False,design_joint_gate=False):
         if not isinstance(n,int) or not 1 <= n <= 1024:raise ValueError('用户限制：批量环境数须为1～1024')
         if type(project_clipped_base) is not bool:raise ValueError('基础限幅后残差投影开关须为布尔值')
         if type(design_joint_gate) is not bool:raise ValueError('主动关节设计验收开关须为布尔值')
@@ -345,8 +343,6 @@ class NativeEnv(VecEnv):
         if len(yaw_config)!=4 or not np.isfinite(yaw_config).all() or min(yaw_config)<=0:raise ValueError('无效偏航控制参数')
         self.yaw_config=tuple(float(x) for x in yaw_config);self.k=constants(self.cpu,n,self.yaw_config,self.action_dim,height_design)
         if radial_guard:self.k['state']=wp.array(np.c_[self.k['state'].numpy(),np.zeros((n,9 if parking_guard else 4))],dtype=D)
-        self.reference_offset=self.k['state'].shape[1]
-        if shared_reference:self.k['state']=wp.array(np.c_[self.k['state'].numpy(),np.zeros((n,4))],dtype=D)
         self.control_kernel=control
         self.control_extra=[]
         self.actuator_gain_upper=None
@@ -464,16 +460,11 @@ class NativeEnv(VecEnv):
             self.physical_args=[self.data.qpos,self.stopped_v,self.data.actuator_force,self.data.ctrl,self.active,self.ids,
                 wp.array(self.cpu.jnt_qposadr[joint_ids],dtype=wp.int32),wp.array(self.model.jnt_range.numpy()[:,joint_ids],dtype=D),
                 wp.array(offsets,dtype=wp.vec3d),self.state]
-        if shared_reference:
-            from native.shared_reference import load,update as update_shared_reference
-            ref_states,ref_efforts,ref_ends,ref_metric,ref_thresholds=load()
-            self.shared_reference_args=[self.data.qpos,self.data.qvel,self.data.sensordata,self.ids,self.k['heights'],self.k['angles'],self.k['state'],self.reference_offset,self.state,self.param,self.active,wp.array(ref_states,dtype=D),wp.array(ref_efforts,dtype=D),wp.array(ref_ends,dtype=int),wp.array(ref_metric,dtype=D),wp.array(ref_thresholds,dtype=D),self.nominal_correction]
         wp.launch(reset_rows,n,self.reset_args)
         mjw.forward(self.model,self.data)
         with wp.ScopedCapture() as capture:
             wp.launch(begin,n,[self.reward])
-            for slot in range(40):
-                if shared_reference and slot%10==0:wp.launch(update_shared_reference,n,self.shared_reference_args)
+            for _ in range(40):
                 wp.launch(command_step,n,[self.state,self.param,self.command,self.active,self.data.qpos,self.data.qvel,self.data.qacc_warmstart,self.stopped_q,self.stopped_v,self.stopped_w,self.contact_flags])
                 wp.launch(self.control_kernel,n,[self.data.qpos,self.data.qvel,self.data.sensordata,self.targets,self.command,self.active,
                     self.k['state'],self.ids,self.k['heights'],self.k['gains'],self.k['feed'],self.k['angles'],self.k['reference'],self.k['yaw'],self.data.ctrl,self.diag,int(self.project_clipped_base),int(self.grouped_residual)]+self.control_extra,block_dim=32)
@@ -486,21 +477,19 @@ class NativeEnv(VecEnv):
         super().__init__(n,gym.spaces.Box(-np.inf,np.inf,(self.observation_dim,),dtype=np.float32),gym.spaces.Box(-1.,1.,(self.action_dim,),dtype=np.float32))
 
     @classmethod
-    def height115_candidate(cls,n=128,stage=3,seed=1150000,scenario=None,residual_scale=1.,residual_mode='diff3',observation_contract='request_state_v1',nominal_correction=False,shared_reference=False):
+    def height115_candidate(cls,n=128,stage=3,seed=1150000,scenario=None,residual_scale=1.,residual_mode='diff3',observation_contract='request_state_v1',nominal_correction=False):
         """Shared current-J baseline candidate; this factory does not grant training admission."""
-        if type(shared_reference) is not bool or type(nominal_correction) is not bool or (shared_reference and nominal_correction):raise ValueError('原生参考与手动共同修正不能混用')
         from native.terrain import bank_height_115
         from native.design import current_vmc_table
         table,reports=current_vmc_table()
         env=cls(n=n,stage=stage,seed=seed,scenario=scenario,bank_factory=bank_height_115,
             height_conditioned=True,height_design='range115',height_safety='physical_v1',
             residual_scale=residual_scale,residual_mode=residual_mode,feasible_reference=True,
-            coordinated_reference=True,radial_guard=True,observation_contract=observation_contract,nominal_correction=nominal_correction or shared_reference,design_joint_gate=True,shared_reference=shared_reference)
+            coordinated_reference=True,radial_guard=True,observation_contract=observation_contract,nominal_correction=nominal_correction,design_joint_gate=True)
         env.k['gains'].assign(np.stack([t[0] for t in table]));env.k['feed'].assign(np.stack([t[1] for t in table]));env.k['angles'].assign(np.array([t[2] for t in table]))
         env.baseline_version='height115-current-vmc-v5-full-design'+('-legacy32' if observation_contract=='legacy32' else '')+'-candidate'
         env.design_reports=reports
         if nominal_correction:env.baseline_version='height115-current-vmc-v5-full-design-nominal-boundary-candidate'
-        if shared_reference:env.baseline_version='height115-current-vmc-v6-public-region-reference-candidate'
         return env
 
     def reset(self):
@@ -510,7 +499,6 @@ class NativeEnv(VecEnv):
 
     def set_nominal_correction(self,values):
         """Hold a shared Nom request; original1Nm box and elapsed-time L1 budget."""
-        if self.shared_reference_enabled:raise ValueError('原生参考模式不能手动覆盖共同请求')
         if not self.nominal_correction_enabled:raise ValueError('共同Nom修正未启用')
         value=np.asarray(values,dtype=np.float64)
         if value.shape!=(self.num_envs,6) or not np.isfinite(value).all() or np.any(abs(value)>1):
@@ -582,7 +570,6 @@ class NativeEnv(VecEnv):
                 infos[i]['terminate_on_attitude_failure']=self.terminate_on_attitude_failure
                 if self.height_conditioned:
                     if hasattr(self,'baseline_version'):infos[i]['baseline_version']=self.baseline_version
-                    infos[i]['shared_reference_contract']='public-region-v2-state-phase-vmc' if self.shared_reference_enabled else 'disabled'
                     infos[i]['target_leg_m']=float(self.stand_heights[i])
                     infos[i]['height_rmse_m']=float(np.sqrt(states[i,28]/states[i,29])) if states[i,29]>0 else None
                     infos[i]['height_tolerance_m']=.02
