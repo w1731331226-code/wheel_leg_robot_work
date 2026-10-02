@@ -1,0 +1,130 @@
+{
+  "role": "fifteenth_round_direction_and_coverage_review",
+  "current_v2_five_node_normal_cases": {
+    "0.115": {
+      "physical": 6,
+      "task": 4,
+      "completed": 6,
+      "active_design_margin_lower_bound_rad": 0.004512453079223627,
+      "positive_negative_highspeed_stop_m": [
+        0.6635544300102215,
+        0.6665391922436202
+      ]
+    },
+    "0.16": {
+      "physical": 6,
+      "task": 6,
+      "completed": 6,
+      "active_design_margin_lower_bound_rad": 0.09345319271087646,
+      "positive_negative_highspeed_stop_m": [
+        0.30028724670436996,
+        0.3012740612037517
+      ]
+    },
+    "0.25": {
+      "physical": 6,
+      "task": 6,
+      "completed": 6,
+      "active_design_margin_lower_bound_rad": 0.6420424818992615,
+      "positive_negative_highspeed_stop_m": [
+        0.26567363739037675,
+        0.26538324356081705
+      ]
+    },
+    "0.3": {
+      "physical": 6,
+      "task": 6,
+      "completed": 6,
+      "active_design_margin_lower_bound_rad": 0.889445686340332,
+      "positive_negative_highspeed_stop_m": [
+        0.26341700553919234,
+        0.26247119903566446
+      ]
+    },
+    "0.38": {
+      "physical": 6,
+      "task": 6,
+      "completed": 6,
+      "active_design_margin_lower_bound_rad": 0.2268120288848877,
+      "positive_negative_highspeed_stop_m": [
+        0.2636115550995983,
+        0.26077651977550564
+      ]
+    }
+  },
+  "v3_frozen_plan_parameter_groups": {
+    "nominal": {
+      "physical_pass_count": 6,
+      "task_pass_count": 6,
+      "full_design_and_task_pass_count": 6
+    },
+    "training_corner": {
+      "physical_pass_count": 6,
+      "task_pass_count": 3,
+      "full_design_and_task_pass_count": 3
+    },
+    "pressure_corner": {
+      "physical_pass_count": 6,
+      "task_pass_count": 4,
+      "full_design_and_task_pass_count": 4
+    }
+  },
+  "predictor_branches": {
+    "twelfth_round_causal_allocation_20261002": {
+      "executed_updates": 1,
+      "requests_different_from_guide": 0,
+      "measured_decision_ms_median": 35.23954099728144,
+      "measured_decision_ms_p95": 35.23954099728144,
+      "failure": {
+        "step": 0,
+        "reason": "original_predictor_pairing_gate_failed",
+        "qpos": 1.1920928955078125e-07,
+        "qvel": 0.0001220703125,
+        "command": 0.00017952919006347656
+      },
+      "completed": false
+    },
+    "thirteenth_round_feedback_checked_20261002": {
+      "executed_updates": 96,
+      "requests_different_from_guide": 0,
+      "measured_decision_ms_median": 39.5915139997669,
+      "measured_decision_ms_p95": 41.807551750025596,
+      "failure": {
+        "step": 95,
+        "reason": "original_predictor_pairing_gate_failed",
+        "qpos": 1.1920928955078125e-07,
+        "qvel": 0.00014400482177734375,
+        "command": 0.0001518726348876953
+      },
+      "completed": false
+    },
+    "fourteenth_round_model_reset_20261002": {
+      "executed_updates": 96,
+      "requests_different_from_guide": 0,
+      "measured_decision_ms_median": 39.42393599936622,
+      "measured_decision_ms_p95": 41.0075974996289,
+      "failure": {
+        "step": 95,
+        "reason": "original_predictor_pairing_gate_failed",
+        "qpos": 1.1920928955078125e-07,
+        "qvel": 0.00011444091796875,
+        "command": 0.00011837482452392578
+      },
+      "completed": false
+    }
+  },
+  "current_packet_roundtrip_included_learning": false,
+  "full_admission": false,
+  "decision": "Retain VMC/six-state LQR/diff3 research. Stop extending predictor resets; first isolate parameter sensitivity of the existing feasible nominal guide. Keep original constraints and all failed branches as evidence.",
+  "limitations": "Thirty nominal zero-Actor cases cover five nodes only. Conservative active-joint bound follows from all-eight-joint evidence; no invariance, continuous-height, random-domain, learned delay robustness, or PPO advantage proof. Predictor timing is a measured diagnostic cost, not a pure-simulation real-time admission gate.",
+  "input_sha256": {
+    "wheelleg_warp/results/fifteenth_round_direction_review_20261002/height_panel.json": "c97a97220d3a1bb64f06dcad47170ef8cd9170f2a54de62a9e44e7198922219f",
+    "wheelleg_warp/results/eleventh_round_nominal_panel_checked_20261002/verification.json": "a39f0e71a739fd71ec8366c0a2a8bd0cf24362bc02fa19e6c233a19f2d5fb5bc",
+    "wheelleg_warp/results/eighth_round_execution_packet_20261002/verification.json": "41d7449176edd831e7f18179ee83a69d7d3f013193882c3917eec07f31cf3262",
+    "wheelleg_warp/results/braking_trajectory_slsqp_20261001/world0_best.npz": "b9b36dcc73c1d4e9fece9514d7895c287ae5d64d2bc7fc797f087d0b588e25b6",
+    "wheelleg_warp/results/braking_trajectory_slsqp_20261001/world1_best.npz": "663f4ee685c6f9fdb26d53b7e9a248de181fb6fc2468647bb69899db4b03e906",
+    "wheelleg_warp/results/twelfth_round_causal_allocation_20261002/verification.json": "6ae9e1d3d0de33171f0a95799d1706c0a40a8e268ebccd84aaf2297445cd1ba1",
+    "wheelleg_warp/results/thirteenth_round_feedback_checked_20261002/verification.json": "7957389a22997bc0c42886a505cdae4618d81bef6f3f61dc3b4d47c786b93fe9",
+    "wheelleg_warp/results/fourteenth_round_model_reset_20261002/verification.json": "49cbee48dbc91e22c6d68008628d5241ceeb8440dcfa88429be2ffb37a7d254d"
+  }
+}
