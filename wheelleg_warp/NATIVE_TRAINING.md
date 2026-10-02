@@ -10,7 +10,9 @@
 
 2026-10-03原生共享参考配置已可执行：`NativeEnv.height115_candidate(shared_reference=True)`使用v6-public-region-reference，40子步图内每5ms更新，按公开目标高度与巡航速度选完整控制律。仅h<.11828125m、|v|>.75m/s启用固定状态相位/当前J参考，其余零修正；不读质量/摩擦真值、不混合幅值。进入既有位置保持后退出参考。每电机1Nm、每5ms L1≤.1Nm，自动模式拒绝手动覆盖；内部4个参考上下文与所有重置一起清零，观测仍38维。该配置与默认v5区分，正式新协议必须显式冻结它及native/shared_reference.npz。
 
-原生/CPU同状态核验及8个完整任务通过，边界/高度速度/原面板/新样本标签与第24轮宿主逐例一致。diff3和virtual6各完成真实2000步10次标准PPO更新、精确Adam/归一化恢复及200步续训/评估，探针不作正式初始化；仅说明链路可运行。当前整体正式比较仍待raw6/B1同版接口、初始电机分布匹配与完整新协议冻结，未启动长预算。相关证据见results/twentyfifth_round_native_admission_20261003/verification.json。
+第26轮新增`residual_mode='torque6'`原始电机B2，仅用于共同Nom边界（正式比较使用`shared_reference=True`），复用同一`control_step`，滤波、公共增益上界、λ及最终限幅不变。通道为`[alphaL,betaL,alphaR,betaR,wheelL,wheelR]`，原CPU尺度`[1,1,1,1,.3,.3]Nm`，不经过Actor的VMC映射。38维末6项是归一化滤波电机请求，前32项及延迟不变；不能用当前J转换末6项给B2额外无延迟物理信息。接口、单位和源码需分别冻结，不能声称不同坐标的动作可达集合或实际分布相同。B1复用`pretrain_yaw.b1_action`及原8候选，直接读取未归一化的共同延迟观测，走diff3同一执行链。
+
+原生/CPU同状态核验及8个完整任务通过，边界/高度速度/原面板/新样本标签与第24轮宿主逐例一致。diff3和virtual6各完成真实2000步10次标准PPO更新、精确Adam/归一化恢复及200步续训/评估，探针不作正式初始化；仅说明链路可运行。第26轮torque6/B1同版接口已核验，B2也完成真实2200步/11更新恢复联调及3/4开发探针评估；初始实际电机分布公平性、可执行正式训练/选择评估入口与完整新协议冻结仍待，未启动长预算。独立GPU图回放指标有波动，不能声称不同图逐步等价。相关证据见results/twentyfifth_round_native_admission_20261003/verification.json。
 
 第20轮候选统一`active-1p4-v1`设计契约：每个有效物理子步统计主动关节±1.4rad余量，历史越界即使终态恢复也判任务失败，沿用终态±10奖惩；物理±1.5rad、真实A/B几何与力矩仍以physical_v1独立报告。Actor观测仍38维，内部任务累计状态由38增至39列；旧内部快照缺少设计历史，不能补默认值冒充全程有效。原始NativeEnv未显式启用design_joint_gate时保留原契约，新高度工厂默认强制启用。运行`test_design_joint_contract.py --output <新目录>`验证历史拒绝、原生收集与重置。
 

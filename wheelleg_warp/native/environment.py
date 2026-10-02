@@ -7,7 +7,7 @@ import mujoco
 import warp as wp
 import mujoco_warp as mjw
 from mujoco_warp._src.types import vec5
-from native.controller import control,control_physical,control_physical_nominal,constants,D,fk,polar_jac,allowed
+from native.controller import control,control_physical,control_physical_nominal,control_physical_nominal_torque6,constants,D,fk,polar_jac,allowed
 import wheelleg_sim as sim
 from native.models import bank
 from native.terrain import HEIGHT_115_MIN,HEIGHT_115_GEOMETRIC_MIN
@@ -299,9 +299,10 @@ class NativeEnv(VecEnv):
         self.grouped_residual=grouped_residual
         if type(terminate_on_attitude_failure) is not bool:raise ValueError('训练姿态终止开关须为布尔值')
         self.terminate_on_attitude_failure=terminate_on_attitude_failure
-        if residual_mode not in ('diff3','virtual6'):raise ValueError('无效残差模式')
+        if residual_mode not in ('diff3','virtual6','torque6'):raise ValueError('无效残差模式')
+        if residual_mode=='torque6' and not nominal_correction:raise ValueError('torque6对照需要共同Nom修正边界')
         self.residual_mode=residual_mode;self.action_dim=3 if residual_mode=='diff3' else 6
-        self.observation_spec=observation_spec(observation_contract,self.action_dim)
+        self.observation_spec=observation_spec(observation_contract,self.action_dim,residual_mode)
         self.observation_dim=self.observation_spec['dimension']
         if not np.isscalar(residual_scale) or not np.isfinite(residual_scale) or not 0<=residual_scale<=1:raise ValueError('残差强度须为0～1有限数')
         self.residual_scale=float(residual_scale)
@@ -365,7 +366,7 @@ class NativeEnv(VecEnv):
             self.control_kernel=control_physical
             self.control_extra=[wp.array(np.tile(self.actuator_gain_upper,(n,1)),dtype=D)]
             if nominal_correction:
-                self.control_kernel=control_physical_nominal
+                self.control_kernel=control_physical_nominal_torque6 if residual_mode=='torque6' else control_physical_nominal
                 self.control_extra.append(self.nominal_correction)
         ids=self.k['ids'].numpy().tolist()+[self.cpu.geom(x).id for x in ('wheel_collide_L','wheel_collide_R','bump_L','bump_R')]
         terrain=mujoco.mj_name2id(self.cpu,mujoco.mjtObj.mjOBJ_GEOM,'terrain_00')

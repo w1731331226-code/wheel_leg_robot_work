@@ -12,16 +12,19 @@ TAIL_SPEED_M_S=.03
 POST_ARRIVAL_S=2.
 
 
-def observation_spec(contract='legacy32',action_dim=3):
+def observation_spec(contract='legacy32',action_dim=3,residual_mode=None):
     """Version the delayed physical packet and causal, current own-request context."""
     if contract not in ('legacy32','request_state_v1') or action_dim not in (3,6):
         raise ValueError('观测契约须为legacy32/request_state_v1，动作维数须为3或6')
+    if residual_mode not in (None,'diff3','virtual6','torque6') or (residual_mode=='diff3' and action_dim!=3) or (residual_mode in ('virtual6','torque6') and action_dim!=6):
+        raise ValueError('残差模式与观测动作维数不匹配')
+    raw=residual_mode=='torque6'
     context=6 if contract=='request_state_v1' else 0
     return dict(version=contract,dimension=32+context,physical_packet_slice=[0,32],
         physical_packet_timing='scenario delay in 0.5ms steps',
         request_state_slice=[32,32+context],request_state_timing='current completed substep; not sensor delayed',
-        request_state_units='normalized filtered virtual F/H/wheel requests before mapping/projection',
-        request_state_channels=['F_left','F_right','H_left','H_right','wheel_left','wheel_right'] if context else [],
+        request_state_units='normalized filtered motor requests before projection' if raw else 'normalized filtered virtual F/H/wheel requests before mapping/projection',
+        request_state_channels=(['alpha_left','beta_left','alpha_right','beta_right','wheel_left','wheel_right'] if raw else ['F_left','F_right','H_left','H_right','wheel_left','wheel_right']) if context else [],
         partial_observability=True,hidden_physics_parameters=False,future_terrain=False)
 
 

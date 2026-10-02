@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "round": 26,
+  "normal_task_passes": 18,
+  "b1_complete_episodes": 144,
+  "b1_selected": false,
+  "raw_ppo_steps": 2200,
+  "raw_ppo_updates": 11,
+  "raw_probe_evaluation_success": 3,
+  "same_state_zero_actor_command_max_difference_Nm": 0.0,
+  "independent_closed_loop_qpos_max_difference": 0.038822174072265625,
+  "independent_closed_loop_command_max_difference_Nm": 4.235848426818848,
+  "trajectory_bitwise_equivalence_claimed": false,
+  "formal_training_admitted": false,
+  "final_holdout_opened": false,
+  "remaining": [
+    "initial actual motor distribution fairness",
+    "complete new protocol, training/evaluation entrypoint and source freeze"
+  ],
+  "source_sha256": {
+    "wheelleg_warp/results/twentysixth_round_fair_baselines_20261003/check.py": "de86363e09a03a1f184edd6f31155c87eaf57e13593d49273a219533ecf3f1b7"
+  }
+}

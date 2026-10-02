@@ -140,7 +140,7 @@ def residual_projection(base:V6,residual:V6,speeds:V6,invalid_base:int,bad_map:b
 def control_step(w:int,qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.array2d[float],
             targets:wp.array2d[float],command:wp.array[D],active:wp.array[int],state:wp.array2d[D],
             ids:wp.array[int],heights:wp.array[D],gains:wp.array3d[D],feed:wp.array2d[D],angles:wp.array[D],
-            reference:wp.array2d[D],yaw_cfg:wp.array[D],ctrl:wp.array2d[float],diagnostic:wp.array2d[D],project_clipped_base:int,grouped_residual:int,actuator_gains:V6,nominal_correction:V6,nominal_correction_enabled:int):
+            reference:wp.array2d[D],yaw_cfg:wp.array[D],ctrl:wp.array2d[float],diagnostic:wp.array2d[D],project_clipped_base:int,grouped_residual:int,actuator_gains:V6,nominal_correction:V6,nominal_correction_enabled:int,raw_motor:int):
     if active[w]==0:return
     dt=D(.0005);boot=state[w,0]+dt;state[w,0]=boot
     qw=D(qpos[w,3]);qx=D(qpos[w,4]);qy=D(qpos[w,5]);qz=D(qpos[w,6])
@@ -334,6 +334,8 @@ def control_step(w:int,qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.a
         rr_l=jl*V2(state[w,16]*D(.1)*D(7)*D(9.81)/D(2),state[w,18])
         rr_r=jr*V2(state[w,17]*D(.1)*D(7)*D(9.81)/D(2),state[w,19])
         residual=V6(rr_l[0],rr_l[1],rr_r[0],rr_r[1],state[w,20]*yaw_cfg[3],state[w,21]*yaw_cfg[3])
+    if raw_motor:
+        residual=V6(state[w,16],state[w,17],state[w,18],state[w,19],state[w,20]*yaw_cfg[3],state[w,21]*yaw_cfg[3])
     bad_map=bool(False)
     for side in range(2):
         matrix=jl
@@ -341,7 +343,7 @@ def control_step(w:int,qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.a
         square=matrix[0,0]*matrix[0,0]+matrix[0,1]*matrix[0,1]+matrix[1,0]*matrix[1,0]+matrix[1,1]*matrix[1,1]
         det=wp.abs(matrix[0,0]*matrix[1,1]-matrix[0,1]*matrix[1,0])
         maximum=(square+wp.sqrt(wp.max(D(0),square*square-D(4)*det*det)))/D(2)
-        if det==D(0) or maximum/det>D(1.e6):bad_map=True
+        if not raw_motor and (det==D(0) or maximum/det>D(1.e6)):bad_map=True
     nonzero=bool(False);leg_nonzero=bool(False);wheel_nonzero=bool(False)
     for j in range(targets.shape[1]):
         if state[w,16+j]!=D(0):
@@ -380,7 +382,7 @@ def control(qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.array2d[floa
             ids:wp.array[int],heights:wp.array[D],gains:wp.array3d[D],feed:wp.array2d[D],angles:wp.array[D],
             reference:wp.array2d[D],yaw_cfg:wp.array[D],ctrl:wp.array2d[float],diagnostic:wp.array2d[D],project_clipped_base:int,grouped_residual:int):
     control_step(wp.tid(),qpos,qvel,sensor,targets,command,active,state,ids,heights,gains,feed,angles,reference,yaw_cfg,ctrl,diagnostic,
-                 project_clipped_base,grouped_residual,V6(D(1),D(1),D(1),D(1),D(1),D(1)),V6(),0)
+                 project_clipped_base,grouped_residual,V6(D(1),D(1),D(1),D(1),D(1),D(1)),V6(),0,0)
 
 
 @wp.kernel
@@ -392,7 +394,7 @@ def control_physical(qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.arr
     w=wp.tid();scales=V6()
     for j in range(6):scales[j]=actuator_gains[w,j]
     control_step(w,qpos,qvel,sensor,targets,command,active,state,ids,heights,gains,feed,angles,reference,yaw_cfg,ctrl,diagnostic,
-                 project_clipped_base,grouped_residual,scales,V6(),0)
+                 project_clipped_base,grouped_residual,scales,V6(),0,0)
 
 
 @wp.kernel
@@ -404,7 +406,19 @@ def control_physical_nominal(qpos:wp.array2d[float],qvel:wp.array2d[float],senso
     w=wp.tid();scales=V6();correction=V6()
     for j in range(6):scales[j]=actuator_gains[w,j];correction[j]=nominal_correction[w,j]
     control_step(w,qpos,qvel,sensor,targets,command,active,state,ids,heights,gains,feed,angles,reference,yaw_cfg,ctrl,diagnostic,
-                 project_clipped_base,grouped_residual,scales,correction,1)
+                 project_clipped_base,grouped_residual,scales,correction,1,0)
+
+
+@wp.kernel
+def control_physical_nominal_torque6(qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.array2d[float],
+            targets:wp.array2d[float],command:wp.array[D],active:wp.array[int],state:wp.array2d[D],
+            ids:wp.array[int],heights:wp.array[D],gains:wp.array3d[D],feed:wp.array2d[D],angles:wp.array[D],
+            reference:wp.array2d[D],yaw_cfg:wp.array[D],ctrl:wp.array2d[float],diagnostic:wp.array2d[D],project_clipped_base:int,grouped_residual:int,
+            actuator_gains:wp.array2d[D],nominal_correction:wp.array2d[D]):
+    w=wp.tid();scales=V6();correction=V6()
+    for j in range(6):scales[j]=actuator_gains[w,j];correction[j]=nominal_correction[w,j]
+    control_step(w,qpos,qvel,sensor,targets,command,active,state,ids,heights,gains,feed,angles,reference,yaw_cfg,ctrl,diagnostic,
+                 project_clipped_base,grouped_residual,scales,correction,1,1)
 
 
 def constants(model,worlds,yaw_config=(.4,2.,.24,.3),action_dim=3,height_design='legacy'):
