@@ -1,0 +1,227 @@
+{
+  "role": "single_factor_and_first_violation_recalculation",
+  "groups": {
+    "nominal": {
+      "physical_pass_count": 6,
+      "task_pass_count": 6,
+      "full_design_and_task_pass_count": 6
+    },
+    "mass_only": {
+      "physical_pass_count": 6,
+      "task_pass_count": 4,
+      "full_design_and_task_pass_count": 4
+    },
+    "friction_only": {
+      "physical_pass_count": 6,
+      "task_pass_count": 6,
+      "full_design_and_task_pass_count": 4
+    },
+    "drive_only": {
+      "physical_pass_count": 6,
+      "task_pass_count": 6,
+      "full_design_and_task_pass_count": 4
+    }
+  },
+  "factor_registration_checked": true,
+  "exact_frozen_plan_replay": true,
+  "complete_physical_evidence_steps": 407772,
+  "first_violations": [
+    {
+      "world": 10,
+      "group": "mass_only",
+      "speed": 1.0,
+      "first_joint": "betaR",
+      "first_time_s": 4.8415,
+      "after_arrival_s": 0.2699999999999996,
+      "first_joint_angles_rad": [
+        0.7822301983833313,
+        -1.400171160697937,
+        0.7822315692901611,
+        -1.4001723527908325
+      ],
+      "same_plan_phase_nominal_joint_angles_rad": [
+        0.7782719731330872,
+        -1.3913021087646484,
+        0.7782754898071289,
+        -1.3913005590438843
+      ],
+      "common_joint_delta_rad": [
+        0.003957152366638184,
+        -0.008870422840118408
+      ],
+      "differential_joint_delta_rad": [
+        1.0728836059570312e-06,
+        1.3709068298339844e-06
+      ],
+      "peak_design_violation_rad": 0.01686093807220468,
+      "stop_distance_m": 0.5980012416858923,
+      "tail_speed_m_s": 0.03345573742327877
+    },
+    {
+      "world": 11,
+      "group": "mass_only",
+      "speed": -1.0,
+      "first_joint": "alphaR",
+      "first_time_s": 5.3805000000000005,
+      "after_arrival_s": 0.8115000000000006,
+      "first_joint_angles_rad": [
+        1.4001423120498657,
+        -0.7444062829017639,
+        1.400149941444397,
+        -0.7444016337394714
+      ],
+      "same_plan_phase_nominal_joint_angles_rad": [
+        1.387795329093933,
+        -0.7387409806251526,
+        1.3878062963485718,
+        -0.7387322187423706
+      ],
+      "common_joint_delta_rad": [
+        0.012345314025878906,
+        -0.005667358636856079
+      ],
+      "differential_joint_delta_rad": [
+        1.6689300537109375e-06,
+        2.0563602447509766e-06
+      ],
+      "peak_design_violation_rad": 0.016656374931335538,
+      "stop_distance_m": 0.6015603542357246,
+      "tail_speed_m_s": 0.024209151103539293
+    },
+    {
+      "world": 16,
+      "group": "friction_only",
+      "speed": 1.0,
+      "first_joint": "betaL",
+      "first_time_s": 4.876,
+      "after_arrival_s": 0.3120000000000003,
+      "first_joint_angles_rad": [
+        0.7624907493591309,
+        -1.4000204801559448,
+        0.7597954273223877,
+        -1.3971936702728271
+      ],
+      "same_plan_phase_nominal_joint_angles_rad": [
+        0.7611427307128906,
+        -1.398606777191162,
+        0.7611460089683533,
+        -1.398606777191162
+      ],
+      "common_joint_delta_rad": [
+        -1.2814998626708984e-06,
+        -2.980232238769531e-07
+      ],
+      "differential_joint_delta_rad": [
+        0.0013493001461029053,
+        -0.0014134049415588379
+      ],
+      "peak_design_violation_rad": 0.0033950567245484287,
+      "stop_distance_m": 0.5915643812618356,
+      "tail_speed_m_s": 0.029967401385170706
+    },
+    {
+      "world": 17,
+      "group": "friction_only",
+      "speed": -1.0,
+      "first_joint": "alphaR",
+      "first_time_s": 5.4065,
+      "after_arrival_s": 0.8445,
+      "first_joint_angles_rad": [
+        1.3931599855422974,
+        -0.744513750076294,
+        1.4000500440597534,
+        -0.7349912524223328
+      ],
+      "same_plan_phase_nominal_joint_angles_rad": [
+        1.3966141939163208,
+        -0.739713191986084,
+        1.3966232538223267,
+        -0.7397070527076721
+      ],
+      "common_joint_delta_rad": [
+        -1.3709068298339844e-05,
+        -4.2378902435302734e-05
+      ],
+      "differential_joint_delta_rad": [
+        -0.0034404993057250977,
+        -0.004758179187774658
+      ],
+      "peak_design_violation_rad": 0.0035663604736329013,
+      "stop_distance_m": 0.5957805546538394,
+      "tail_speed_m_s": 0.026212190408109255
+    },
+    {
+      "world": 22,
+      "group": "drive_only",
+      "speed": 1.0,
+      "first_joint": "betaR",
+      "first_time_s": 4.898,
+      "after_arrival_s": 0.3334999999999999,
+      "first_joint_angles_rad": [
+        0.7546560168266296,
+        -1.3987932205200195,
+        0.7537940144538879,
+        -1.4000003337860107
+      ],
+      "same_plan_phase_nominal_joint_angles_rad": [
+        0.7542247772216797,
+        -1.3993937969207764,
+        0.7542248964309692,
+        -1.399393916130066
+      ],
+      "common_joint_delta_rad": [
+        1.7881393432617188e-07,
+        -2.9206275939941406e-06
+      ],
+      "differential_joint_delta_rad": [
+        0.000431060791015625,
+        0.0006034970283508301
+      ],
+      "peak_design_violation_rad": 0.0017214775085450107,
+      "stop_distance_m": 0.591587862452923,
+      "tail_speed_m_s": 0.029966715058207177
+    },
+    {
+      "world": 23,
+      "group": "drive_only",
+      "speed": -1.0,
+      "first_joint": "alphaL",
+      "first_time_s": 5.4015,
+      "after_arrival_s": 0.8395000000000001,
+      "first_joint_angles_rad": [
+        1.4000413417816162,
+        -0.7361525893211365,
+        1.390899658203125,
+        -0.7422336339950562
+      ],
+      "same_plan_phase_nominal_joint_angles_rad": [
+        1.3954558372497559,
+        -0.739186704158783,
+        1.3954648971557617,
+        -0.7391802072525024
+      ],
+      "common_joint_delta_rad": [
+        1.0132789611816406e-05,
+        -9.655952453613281e-06
+      ],
+      "differential_joint_delta_rad": [
+        0.004575371742248535,
+        0.0030437707901000977
+      ],
+      "peak_design_violation_rad": 0.004061198234558194,
+      "stop_distance_m": 0.5958368385880765,
+      "tail_speed_m_s": 0.026202241254027803
+    }
+  ],
+  "learning": false,
+  "full_admission": false,
+  "limitations": "One fixed value per factor, no interaction attribution or uncertainty bound. Joint differences aligned by known plan phase, not equal whole-plant state. Physical 1.5rad and design 1.4rad remain distinct. First violated design gate does not mean physical failure.",
+  "input_sha256": {
+    "wheelleg_warp/results/sixteenth_round_parameter_isolation_20261002/verification.json": "031a42a08eca57189292696c6e57284a297989858983c9494460bfbed17a8c97",
+    "wheelleg_warp/results/sixteenth_round_parameter_isolation_20261002/trace.npz": "e465d39f553ec5b89d61a932e2deb9dcec45efea58190ac6475c03a11140a15d",
+    "wheelleg_warp/results/sixteenth_round_parameter_isolation_20261002/single_factor_cases.json": "a1b04efe30474a76fde3ff080c7e6e48304b6779dd1e14c25df1efbb11674fd3"
+  },
+  "source_sha256": {
+    "wheelleg_warp/results/sixteenth_round_parameter_isolation_20261002/analyze.py": "4777ec928d112d888d9f076e7b75c9c885161a5c60bd5d5ead325b8a65fa415d"
+  }
+}
