@@ -41,7 +41,7 @@ def manual_command(inputs:wp.array2d[D],memory:wp.array2d[D],task:wp.array2d[D],
     if wp.abs(target)>D(.01):
         inputs[w,3]=D(1)
         inputs[w,2]+=wp.clamp(target-inputs[w,2],D(-.0005),D(.0005))
-        command[w]=inputs[w,2]*wp.clamp(memory[w,0]-D(1),D(0),D(1))
+        command[w]=inputs[w,2]*wp.clamp(task[w,0]*D(.0005)-D(1),D(0),D(1))
         param[w,0]=target;task[w,1]=D(-1)
     else:
         inputs[w,2]=D(0);command[w]=D(0)
@@ -109,7 +109,7 @@ class Demo:
         ground=cls((height,),jump.env.scenarios[0].speed,scene=jump.scene);e=ground.env
         e.data.qpos.assign(q[None,:].astype(np.float32));e.data.qvel.assign(v[None,:].astype(np.float32))
         e.data.qacc_warmstart.assign(jump.physics.data.qacc_warmstart.numpy())
-        age=max(2.,float(jump.data.time));mjw.forward(e.model,e.data)
+        age=max(2.,float(jump.data.time));e.data.time.assign(np.array([age],np.float32));mjw.forward(e.model,e.data)
         ids=e.ids.numpy();legs=[leg_kinematics(q[ids[2*s:2*s+2]],v[ids[4+2*s:6+2*s]]) for s in range(2)]
         roll,pitch,yaw=sim.euler(jump.data);gyro=e.data.sensordata.numpy()[0,ids[10]:ids[10]+3]
         memory=e.k['state'].numpy();memory[0,0]=age
@@ -119,8 +119,7 @@ class Demo:
         memory[0,4]=np.mean([leg[3][:,1]@v[ids[4+2*s:6+2*s]] for s,leg in enumerate(legs)])-gyro[1]
         memory[0,5:9]=[gyro[0],gyro[1],sim.forward_component(v,yaw),gyro[2]]
         memory[0,9]=yaw;e.k['state'].assign(memory)
-        # A new manual segment starts its evidence counter at zero. Only the
-        # controller is warm; never invent evidence for preceding jump steps.
+        task=e.state.numpy();task[0,0]=round(age/.0005);e.state.assign(task)
         values=ground.inputs.numpy();values[0,2]=np.clip(memory[0,7],-1.,1.);values[0,3]=int(jump.control.ever_driven);ground.inputs.assign(values)
         jump.close();return ground
 

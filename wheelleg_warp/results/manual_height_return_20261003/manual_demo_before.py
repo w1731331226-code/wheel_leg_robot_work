@@ -41,7 +41,7 @@ def manual_command(inputs:wp.array2d[D],memory:wp.array2d[D],task:wp.array2d[D],
     if wp.abs(target)>D(.01):
         inputs[w,3]=D(1)
         inputs[w,2]+=wp.clamp(target-inputs[w,2],D(-.0005),D(.0005))
-        command[w]=inputs[w,2]*wp.clamp(memory[w,0]-D(1),D(0),D(1))
+        command[w]=inputs[w,2]*wp.clamp(task[w,0]*D(.0005)-D(1),D(0),D(1))
         param[w,0]=target;task[w,1]=D(-1)
     else:
         inputs[w,2]=D(0);command[w]=D(0)
@@ -101,29 +101,6 @@ class Demo:
 
     def pose(self):return self.terminal if self.terminal else (self.env.data.qpos.numpy()[0],self.env.data.qvel.numpy()[0])
 
-    @classmethod
-    def after_jump(cls,jump):
-        """Return to the full ground range without resetting position or velocity."""
-        from state_estimation import leg_kinematics
-        q,v=jump.pose();height=float(jump.height[0])
-        ground=cls((height,),jump.env.scenarios[0].speed,scene=jump.scene);e=ground.env
-        e.data.qpos.assign(q[None,:].astype(np.float32));e.data.qvel.assign(v[None,:].astype(np.float32))
-        e.data.qacc_warmstart.assign(jump.physics.data.qacc_warmstart.numpy())
-        age=max(2.,float(jump.data.time));mjw.forward(e.model,e.data)
-        ids=e.ids.numpy();legs=[leg_kinematics(q[ids[2*s:2*s+2]],v[ids[4+2*s:6+2*s]]) for s in range(2)]
-        roll,pitch,yaw=sim.euler(jump.data);gyro=e.data.sensordata.numpy()[0,ids[10]:ids[10]+3]
-        memory=e.k['state'].numpy();memory[0,0]=age
-        memory[0,1]=np.mean([np.linalg.norm(leg[0]) for leg in legs])
-        memory[0,2]=np.mean([np.arctan2(leg[0][1],leg[0][0]) for leg in legs])+np.pi/2-pitch
-        memory[0,3]=np.mean([leg[3][:,0]@v[ids[4+2*s:6+2*s]] for s,leg in enumerate(legs)])
-        memory[0,4]=np.mean([leg[3][:,1]@v[ids[4+2*s:6+2*s]] for s,leg in enumerate(legs)])-gyro[1]
-        memory[0,5:9]=[gyro[0],gyro[1],sim.forward_component(v,yaw),gyro[2]]
-        memory[0,9]=yaw;e.k['state'].assign(memory)
-        # A new manual segment starts its evidence counter at zero. Only the
-        # controller is warm; never invent evidence for preceding jump steps.
-        values=ground.inputs.numpy();values[0,2]=np.clip(memory[0,7],-1.,1.);values[0,3]=int(jump.control.ever_driven);ground.inputs.assign(values)
-        jump.close();return ground
-
 class JumpDemo:
     """Original host jump state machine; actual integration on MuJoCo Warp CUDA."""
     def __init__(self,ground):
@@ -176,7 +153,6 @@ def run_window(height,speed,scene='flat'):
     def key_cb(window,key,scancode,action,mods):
         if action!=glfw.PRESS:return
         if glfw.KEY_1<=key<=glfw.KEY_5:pending.append(('reset',HEIGHTS[key-glfw.KEY_1]))
-        elif glfw.KEY_KP_1<=key<=glfw.KEY_KP_5:pending.append(('reset',HEIGHTS[key-glfw.KEY_KP_1]))
         elif key==glfw.KEY_R:pending.append(('reset',target))
         elif key==glfw.KEY_T:pending.append(('task',target))
         elif key==glfw.KEY_B:pending.append(('direction',None))
@@ -212,8 +188,6 @@ def run_window(height,speed,scene='flat'):
                     target=float(np.clip(target+(held(glfw.KEY_UP)-held(glfw.KEY_DOWN))*.02*.02,low,.38))
                     demo.set_height(target)
                 demo.step(abs(speed)*(held(glfw.KEY_W)-held(glfw.KEY_S)),.3*(held(glfw.KEY_A)-held(glfw.KEY_D)))
-                if isinstance(demo,JumpDemo) and not demo.finished and 'LAND' in demo.phases and demo.control.jp=='DRIVE':
-                    demo=Demo.after_jump(demo);target=float(demo.height[0]);m=demo.env.cpu;show_terrain(m);d=mujoco.MjData(m)
             q,v=demo.pose()
             d.qpos[:]=q;d.qvel[:]=v;mujoco.mj_forward(m,d);cam.lookat[:]=d.xpos[m.body('base').id] if 'base' in [m.body(i).name for i in range(m.nbody)] else q[:3]
             if scene!='flat':cam.lookat[0]+=np.sign(demo.env.scenarios[0].speed)
