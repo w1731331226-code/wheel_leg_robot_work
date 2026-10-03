@@ -1,0 +1,82 @@
+{
+  "passed": true,
+  "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
+  "methods": {
+    "M3": {
+      "mode": "diff3",
+      "action_dimension": 3,
+      "observation_dim": 38,
+      "ppo_device": "cuda",
+      "initial_log_std": [
+        -0.7172602415084839,
+        -0.7255990505218506,
+        -1.3843111991882324
+      ],
+      "same_ppo": true,
+      "actual_runtime_sigma_applied": true,
+      "fresh_only_initialization": true,
+      "nominal_design_mass_kg": 7,
+      "shared_Nom": "same currentVMC/LQR/reference",
+      "actual_torque_and_design_gates_same": true
+    },
+    "B2-V": {
+      "mode": "virtual6",
+      "action_dimension": 6,
+      "observation_dim": 38,
+      "ppo_device": "cuda",
+      "initial_log_std": [
+        -1.0529464483261108,
+        -0.9762622117996216,
+        -0.6149927377700806,
+        -0.809882640838623,
+        -1.39180326461792,
+        -1.382859468460083
+      ],
+      "same_ppo": true,
+      "actual_runtime_sigma_applied": true,
+      "fresh_only_initialization": true,
+      "nominal_design_mass_kg": 7,
+      "shared_Nom": "same currentVMC/LQR/reference",
+      "actual_torque_and_design_gates_same": true
+    },
+    "B2": {
+      "mode": "torque6",
+      "action_dimension": 6,
+      "observation_dim": 38,
+      "ppo_device": "cuda",
+      "initial_log_std": [
+        -2.0755786895751953,
+        -2.065112352371216,
+        -2.0016114711761475,
+        -2.072564125061035,
+        -1.3918040990829468,
+        -1.3828595876693726
+      ],
+      "same_ppo": true,
+      "actual_runtime_sigma_applied": true,
+      "fresh_only_initialization": true,
+      "nominal_design_mass_kg": 7,
+      "shared_Nom": "same currentVMC/LQR/reference",
+      "actual_torque_and_design_gates_same": true
+    }
+  },
+  "common_training_worlds": "Same100fixed world banks perstage/seed; same3stage timing and real-episode switching",
+  "common_selection_cases": 32,
+  "common_steps_per_seed": 2000000,
+  "common_evaluation_interval": 20000,
+  "common_normalization": {
+    "norm_obs": true,
+    "norm_reward": false,
+    "clip_obs": 10.0,
+    "epsilon": 1e-08
+  },
+  "disclosed_differences": [
+    "3vs6dimensions",
+    "virtualvsrawrequest coordinate semantics",
+    "covariance/rank/reachable set and local initial motor-RMS differences"
+  ],
+  "inference": "Whole action-parameterization comparison only; not pure dimension-controlled causal proof of differential prior",
+  "gate_or_final_simulated": false,
+  "extra_physics_evaluations": 0,
+  "verifier_sha256": "f60f26dec1f5a43df6b76bea074d5bd1d28bbe1262862064e0b426af8e27e3b7"
+}
