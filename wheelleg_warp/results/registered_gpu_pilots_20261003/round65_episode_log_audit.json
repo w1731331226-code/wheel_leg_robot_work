@@ -1,0 +1,138 @@
+{
+  "round": 65,
+  "passed": true,
+  "records": [
+    {
+      "method": "M3",
+      "seed": 1610,
+      "policy_steps": 20000,
+      "recorded_recent_training_episodes": 0,
+      "window_capacity": 100,
+      "mean_episode_return": null,
+      "episode_return_range": null,
+      "mean_episode_policy_length": null,
+      "episode_records_have_scene_or_success_fields": false,
+      "development_summary": {
+        "total": 32,
+        "success_count": 31,
+        "complete": true,
+        "mean_yaw_score_deg": 0.609470245446116
+      },
+      "checkpoint_sha256": "cf5d303d0f876d7b1aa1f778509b0b876fd75e9544f85821f60a1e9433cf1a5c",
+      "normalization_sha256": "a4d716e1fe17d144cdef28f3117af30a1594c0f504d1962f85131d80b795a0b1"
+    },
+    {
+      "method": "M3",
+      "seed": 1610,
+      "policy_steps": 200000,
+      "recorded_recent_training_episodes": 100,
+      "window_capacity": 100,
+      "mean_episode_return": 0.28604102277139126,
+      "episode_return_range": [
+        -7.3501344360646,
+        17.360028717903706
+      ],
+      "mean_episode_policy_length": 374.02,
+      "episode_records_have_scene_or_success_fields": false,
+      "development_summary": {
+        "total": 32,
+        "success_count": 19,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9118602965981241
+      },
+      "checkpoint_sha256": "7e2bb0c40650c8b2ffd29e266f143388b4f8ae1fa869f23fc74426ec558f0028",
+      "normalization_sha256": "c31f42043146943c67dfdcf6126c7c2e30d6f1d6b5fed4cdcc822b06d92a71d6"
+    },
+    {
+      "method": "M3",
+      "seed": 1610,
+      "policy_steps": 500000,
+      "recorded_recent_training_episodes": 100,
+      "window_capacity": 100,
+      "mean_episode_return": 10.672685146712368,
+      "episode_return_range": [
+        -7.692586103230399,
+        18.599514970880556
+      ],
+      "mean_episode_policy_length": 377.31,
+      "episode_records_have_scene_or_success_fields": false,
+      "development_summary": {
+        "total": 32,
+        "success_count": 15,
+        "complete": true,
+        "mean_yaw_score_deg": 1.26474079761371
+      },
+      "checkpoint_sha256": "168a34a652fb3a9b7d7698522dd411e3010292363b9d83d51be9b206a41ffd6a",
+      "normalization_sha256": "36ff1236a2525c29753429dbf868125625e3f9280f8c1242c167057190ef2991"
+    },
+    {
+      "method": "B2-V",
+      "seed": 1610,
+      "policy_steps": 20000,
+      "recorded_recent_training_episodes": 0,
+      "window_capacity": 100,
+      "mean_episode_return": null,
+      "episode_return_range": null,
+      "mean_episode_policy_length": null,
+      "episode_records_have_scene_or_success_fields": false,
+      "development_summary": {
+        "total": 32,
+        "success_count": 30,
+        "complete": true,
+        "mean_yaw_score_deg": 0.605178533492952
+      },
+      "checkpoint_sha256": "afd0efa0277c275dddfcb3165568bf42b2b6bad4e2014b0669680682a2a698b5",
+      "normalization_sha256": "4dcc6553819b6783b80afc6dc390dea36e927a1ac9e660285ea35d0b7dda1a40"
+    },
+    {
+      "method": "B2-V",
+      "seed": 1610,
+      "policy_steps": 200000,
+      "recorded_recent_training_episodes": 100,
+      "window_capacity": 100,
+      "mean_episode_return": 6.323543708999028,
+      "episode_return_range": [
+        -7.767010937372323,
+        18.171914347085735
+      ],
+      "mean_episode_policy_length": 374.15,
+      "episode_records_have_scene_or_success_fields": false,
+      "development_summary": {
+        "total": 32,
+        "success_count": 10,
+        "complete": true,
+        "mean_yaw_score_deg": 1.6330695525050594
+      },
+      "checkpoint_sha256": "d9397794cebe33fc094767757af887ed79e296e0efb9748088d4775fd7e08deb",
+      "normalization_sha256": "f8af56ddaac550931b18109eea807ea2d4f08d8bfe4f1678ba429c995d31304a"
+    },
+    {
+      "method": "B2-V",
+      "seed": 1610,
+      "policy_steps": 500000,
+      "recorded_recent_training_episodes": 100,
+      "window_capacity": 100,
+      "mean_episode_return": 5.872100316751273,
+      "episode_return_range": [
+        -6.693801393302232,
+        18.26004966163534
+      ],
+      "mean_episode_policy_length": 377.14,
+      "episode_records_have_scene_or_success_fields": false,
+      "development_summary": {
+        "total": 32,
+        "success_count": 11,
+        "complete": true,
+        "mean_yaw_score_deg": 1.2812477702248075
+      },
+      "checkpoint_sha256": "5efb1fd59b7c30c84437239ccc754e249679f21d212f8528031b634fbd9c8a64",
+      "normalization_sha256": "843f0b1f2038b63b0673c31546ef6829836f94f53f6d3c668767dca764febc92"
+    }
+  ],
+  "inference": "Recent asynchronous training episode windows, not IID/full training success rates. Empty20k logs are not evidence of learning complete tasks. Changing training return and development performance do not identify overfitting or reward causality.",
+  "log_source": "NativeEnv info episode r=state20 accumulator,l=ceil(physical_steps/40); SB3 BaseAlgorithm updates ep_info_buffer from info episode",
+  "extra_task_evaluations": 0,
+  "gate_or_final_simulated": false,
+  "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
+  "verifier_sha256": "af397d270da297567ea8c8164c66222b03502787a0974b96432dd3f2c4d66cfb"
+}

@@ -1,0 +1,93 @@
+{
+  "round": 65,
+  "created_utc": "2026-10-03T09:48:43.392990+00:00",
+  "completed_registered_runs": 4,
+  "registered_runs": 9,
+  "current_V1610_steps_snapshot": 988900,
+  "current_best_steps": 20000,
+  "current_best_summary": {
+    "total": 32,
+    "success_count": 30,
+    "complete": true,
+    "mean_yaw_score_deg": 0.605178533492952
+  },
+  "full_M3_1610": {
+    "total": 32,
+    "success_count": 31,
+    "complete": true,
+    "mean_yaw_score_deg": 0.609470245446116
+  },
+  "full_M3_1610_final": {
+    "total": 32,
+    "success_count": 17,
+    "complete": true,
+    "mean_yaw_score_deg": 1.0393510995227133
+  },
+  "equal_budget_1610_500k": {
+    "M3": {
+      "best_steps": 20000,
+      "best": {
+        "total": 32,
+        "success_count": 31,
+        "complete": true,
+        "mean_yaw_score_deg": 0.609470245446116
+      },
+      "last": {
+        "total": 32,
+        "success_count": 15,
+        "complete": true,
+        "mean_yaw_score_deg": 1.26474079761371
+      }
+    },
+    "B2-V": {
+      "best_steps": 20000,
+      "best": {
+        "total": 32,
+        "success_count": 30,
+        "complete": true,
+        "mean_yaw_score_deg": 0.605178533492952
+      },
+      "last": {
+        "total": 32,
+        "success_count": 11,
+        "complete": true,
+        "mean_yaw_score_deg": 1.2812477702248075
+      }
+    }
+  },
+  "strong_classical": {
+    "total": 32,
+    "success_count": 32,
+    "complete": true,
+    "mean_yaw_score_deg": 0.27242552779014617
+  },
+  "episode_log_audit": "round65_episode_log_audit.json",
+  "plan_assessment": "Conditionally reasonable as a bounded falsifiable comparison, not a demonstrated positive paper contribution; joint effect/nondegradation gates and frozen held-out data remain intact.",
+  "direction_assessment": "Keep the registered action-parameterization comparison and VMC/fixed LQR/standard PPO. Best early checkpoints and finite tensors do not establish learned complete-task competence or innovation.",
+  "continuation": "Finish original9 runs and one-use research gate; only gate pass permits original conditional formal/ablation/final work. Gate fail stops this advantage branch with reproducible negative results; no extra budgets or runtime objective/scene/network changes.",
+  "new_evidence": "Both1610 policies at20k had40epochs800updates but zero recorded training episode ends. M3 recent100episode mean return rose0.286 to10.673 at200k to500k while development success declined19 to15; V window mean6.324 to5.872 while development10 to11. These windows have only reward/length, no scene or success labels, and are asynchronous, so no training success/overfitting/reward-causality inference.",
+  "limitations": [
+    "TwoM3 seeds complete but matched second/third reference runs missing",
+    "No complete-task learning evidence from20k empty episode logs",
+    "Training windows lack scene/success labels and are not IID or full-training metrics",
+    "Fixed100world banks and partial observability",
+    "Covariance/rank/local reachable-set differences and calibrated RMS mismatch",
+    "B2/1609 segmented run100fewer Adam minibatches; no pure parameterization causal claim",
+    "EPA horizon fault not root-cause fixed; guards stay fail-closed",
+    "Static888 mean clipping not rollout clipping or failure causality",
+    "Regular final geometry and asymmetric pressure coverage limit robustness",
+    "Novelty and publication suitability unproven"
+  ],
+  "cleanup_files": 12,
+  "cleanup_bytes": 3990,
+  "extra_task_evaluations": 0,
+  "gate_or_final_simulated": false,
+  "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
+  "evidence": [
+    "M3_1610_completed.json",
+    "paired_M3_B2V_1610_500000.json",
+    "B2-V_1610_halfmillion_audit.json",
+    "round65_episode_log_audit.json",
+    "round65_cleanup.json"
+  ]
+}
