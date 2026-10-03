@@ -1,6 +1,6 @@
 {
   "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
-  "consumed_policy_steps": 1020000,
+  "consumed_policy_steps": 2000000,
   "best": {
     "policy_steps": 20000,
     "path": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2-V/1611/step_20000",
@@ -4943,6 +4943,6 @@
     "checkpoint_sha256": "39d2f4de2d32bc21cc231a40f89dc17ff8bcf344bbac2aa5ca8fbf6d1c7ac1d2",
     "normalization_sha256": "3e53942dae947058a4277891b42a01f1cdd87b830a39d7bacc4ad4f166dc71cb"
   },
-  "evaluation_count": 51,
-  "physical_trajectory_restart_on_resume": false
+  "evaluation_count": 100,
+  "physical_trajectory_restart_on_resume": true
 }
