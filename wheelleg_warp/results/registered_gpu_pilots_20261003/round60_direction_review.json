@@ -1,0 +1,112 @@
+{
+  "round": 60,
+  "created_utc": "2026-10-03T09:05:50.052559+00:00",
+  "completed_registered_runs": 3,
+  "total_registered_runs": 9,
+  "actual_M3_1610_steps_snapshot": 760000,
+  "current_best_steps": 20000,
+  "current_best_summary": {
+    "total": 32,
+    "success_count": 31,
+    "complete": true,
+    "mean_yaw_score_deg": 0.609470245446116
+  },
+  "full_seed1609": {
+    "M3": {
+      "best_steps": 820000,
+      "best": {
+        "total": 32,
+        "success_count": 29,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9575918692280827
+      },
+      "last": {
+        "total": 32,
+        "success_count": 22,
+        "complete": true,
+        "mean_yaw_score_deg": 1.0365181737959928
+      }
+    },
+    "B2-V": {
+      "best_steps": 1220000,
+      "best": {
+        "total": 32,
+        "success_count": 28,
+        "complete": true,
+        "mean_yaw_score_deg": 0.7633825599063806
+      },
+      "last": {
+        "total": 32,
+        "success_count": 15,
+        "complete": true,
+        "mean_yaw_score_deg": 1.2091541766780236
+      }
+    },
+    "B2": {
+      "best_steps": 20000,
+      "best": {
+        "total": 32,
+        "success_count": 26,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9125001785170168
+      },
+      "last": {
+        "total": 32,
+        "success_count": 12,
+        "complete": true,
+        "mean_yaw_score_deg": 1.093667839591347
+      }
+    }
+  },
+  "strong_classical": {
+    "total": 32,
+    "success_count": 32,
+    "complete": true,
+    "mean_yaw_score_deg": 0.27242552779014617
+  },
+  "second_seed_halfmillion": {
+    "total": 32,
+    "success_count": 15,
+    "complete": true,
+    "mean_yaw_score_deg": 1.26474079761371
+  },
+  "second_seed_halfmillion_failures": {
+    "design1p4": 2,
+    "attitude": 5,
+    "terrain": 14,
+    "obstacle_contact": 3
+  },
+  "metric_audit": "round60_metric_audit.json",
+  "metric_cases": 224,
+  "metric_reconstruction_max_error_deg": 0.0,
+  "same_public_goals": true,
+  "completed_failures_included": true,
+  "plan_assessment": "Conditionally reasonable as a bounded falsifiable comparison; strong baselines, original joint gates, frozen selection and independent data kept. Not yet a supported method-advantage or broad robustness paper.",
+  "direction_assessment": "Keep the registered parameterization comparison and existing VMC/LQR/standard PPO; current negative development curves do not justify extra architectures, reward changes, scene expansion or claiming innovation from CUDA/demo jumps.",
+  "continuation_decision": "Complete the registered9 runs and original one-use gate. Gate pass permits original conditional formal/ablation/final work; gate failure ends this advantage branch and preserves reproducible negative results. No budget replay or new success criterion.",
+  "fairness_issue": "B2/1609 consumed2M but one saved interruption discarded2700 charged samples and finished79900 Adam minibatches,100 fewer than uninterrupted methods. Report segmented exposure; do not call optimizer budgets identical or infer pure action-space causality. Its selectedbest20k predates interruption, but later search could still be affected.",
+  "capacity_issue": "EPA horizon24 overflow trigger geometry was not saved/reproduced; resume is not a root-cause fix. Keep fail-closed guard and audit any recurrence; no dependency/physics changes during frozen comparison.",
+  "limitations": [
+    "Remaining seeds and paired references not complete",
+    "Fixed100 worlds per stage/seed and partial observability",
+    "Local action covariance/rank/reachable-set differences",
+    "Static888-state mean audit is not rollout action clipping or failure causality",
+    "Reward-scale risk unproven as causal explanation",
+    "Design violations show no global design-domain safety guarantee",
+    "Final regular geometries plus pressure parameters do not cover all extreme terrains",
+    "Novelty and publication suitability remain unproven"
+  ],
+  "cleanup_files": 8,
+  "cleanup_bytes": 2250,
+  "extra_task_evaluations": 0,
+  "gate_or_final_simulated": false,
+  "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
+  "evidence": [
+    "triple_registered_1609_2000000.json",
+    "B2_1609_completed.json",
+    "B2_1609_interruption_audit.json",
+    "M3_1610_halfmillion_audit.json",
+    "round60_metric_audit.json",
+    "round60_cleanup.json"
+  ]
+}

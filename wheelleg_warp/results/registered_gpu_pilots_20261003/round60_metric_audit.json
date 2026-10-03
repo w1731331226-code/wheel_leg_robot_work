@@ -1,0 +1,99 @@
+{
+  "round": 60,
+  "passed": true,
+  "formula": "Jpsi = yaw_rms_deg * sqrt(duration_s / (3.5 + 1.5 * public_task_goal_progress_m / abs(cruise_speed)))",
+  "scope": "All original32 rows per record, including completed task failures; fixed shared per-case goals. Raw RMS decomposition only describes the registered score, no change of main metric/selection rule.",
+  "records": {
+    "B0": {
+      "success": 32,
+      "cases": 32,
+      "registered_mean_Jpsi_deg": 0.4111518855217877,
+      "independent_reconstructed_Jpsi_deg": 0.4111518855217877,
+      "descriptive_mean_raw_yaw_rms_deg": 0.4512112623354789,
+      "duration_factor_range": [
+        0.8865958990930092,
+        0.9264989736408383
+      ],
+      "completed_failure_rows_included": 0
+    },
+    "B1": {
+      "success": 32,
+      "cases": 32,
+      "registered_mean_Jpsi_deg": 0.27242552779014617,
+      "independent_reconstructed_Jpsi_deg": 0.27242552779014617,
+      "descriptive_mean_raw_yaw_rms_deg": 0.2986404750388865,
+      "duration_factor_range": [
+        0.8866882624539321,
+        0.926463109395808
+      ],
+      "completed_failure_rows_included": 0
+    },
+    "M3/1609 best": {
+      "success": 29,
+      "cases": 32,
+      "registered_mean_Jpsi_deg": 0.9575918692280827,
+      "independent_reconstructed_Jpsi_deg": 0.9575918692280827,
+      "descriptive_mean_raw_yaw_rms_deg": 1.0524271092173823,
+      "duration_factor_range": [
+        0.886064622925218,
+        0.9265348364976379
+      ],
+      "completed_failure_rows_included": 3
+    },
+    "B2-V/1609 best": {
+      "success": 28,
+      "cases": 32,
+      "registered_mean_Jpsi_deg": 0.7633825599063806,
+      "independent_reconstructed_Jpsi_deg": 0.7633825599063806,
+      "descriptive_mean_raw_yaw_rms_deg": 0.8419813856369118,
+      "duration_factor_range": [
+        0.8842605269610818,
+        0.9264989736408383
+      ],
+      "completed_failure_rows_included": 4
+    },
+    "B2/1609 best": {
+      "success": 26,
+      "cases": 32,
+      "registered_mean_Jpsi_deg": 0.9125001785170168,
+      "independent_reconstructed_Jpsi_deg": 0.9125001785170168,
+      "descriptive_mean_raw_yaw_rms_deg": 1.005824734977262,
+      "duration_factor_range": [
+        0.8860415167351646,
+        0.926283767341553
+      ],
+      "completed_failure_rows_included": 6
+    },
+    "M3/1610 20000": {
+      "success": 31,
+      "cases": 32,
+      "registered_mean_Jpsi_deg": 0.609470245446116,
+      "independent_reconstructed_Jpsi_deg": 0.609470245446116,
+      "descriptive_mean_raw_yaw_rms_deg": 0.6699383090187268,
+      "duration_factor_range": [
+        0.8865266202572641,
+        0.9261761454399089
+      ],
+      "completed_failure_rows_included": 1
+    },
+    "M3/1610 500000": {
+      "success": 15,
+      "cases": 32,
+      "registered_mean_Jpsi_deg": 1.26474079761371,
+      "independent_reconstructed_Jpsi_deg": 1.26474079761371,
+      "descriptive_mean_raw_yaw_rms_deg": 1.3966902988827352,
+      "duration_factor_range": [
+        0.8861339378803763,
+        0.9265706979663679
+      ],
+      "completed_failure_rows_included": 17
+    }
+  },
+  "maximum_mean_reconstruction_error_deg": 0.0,
+  "complete_trajectories_audited": 224,
+  "same_public_goal_across_methods": true,
+  "no_success_conditioning_or_failure_penalty": true,
+  "extra_task_evaluations": 0,
+  "gate_or_final_simulated": false,
+  "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef"
+}
