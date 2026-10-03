@@ -15,7 +15,6 @@ import wheelleg_sim as sim
 from fast_physics import PackedPhysics
 
 HEIGHTS=(.115,.16,.25,.30,.38)
-TURN_RATE=.6
 SCENES=(
     ('flat','Flat',{}),
     ('asymmetric','Asymmetric bumps',dict(height_l=.015,height_r=.008,offset=.06)),
@@ -37,7 +36,7 @@ def scenario(height,speed,scene):
 
 @wp.kernel
 def manual_command(inputs:wp.array2d[D],memory:wp.array2d[D],task:wp.array2d[D],param:wp.array2d[D],
-                   command:wp.array[D],q:wp.array2d[float],yaw_cfg:wp.array[D]):
+                   command:wp.array[D],q:wp.array2d[float]):
     w=wp.tid();target=inputs[w,0]
     if wp.abs(target)>D(.01):
         inputs[w,3]=D(1)
@@ -52,23 +51,16 @@ def manual_command(inputs:wp.array2d[D],memory:wp.array2d[D],task:wp.array2d[D],
             if task[w,1]<D(0):task[w,2]=D(q[w,0]);task[w,3]=D(q[w,1])
             task[w,1]=task[w,0]*D(.0005)
     if wp.abs(inputs[w,1])>D(0):
-        yaw=wp.atan2(D(2)*(D(q[w,3])*D(q[w,6])+D(q[w,4])*D(q[w,5])),D(1)-D(2)*(D(q[w,5])*D(q[w,5])+D(q[w,6])*D(q[w,6])))
-        # With the original yaw PD, this reference implements
-        # Kd*(requested_rate-measured_rate), retaining its torque envelope.
-        memory[w,9]=yaw+wp.clamp(inputs[w,1]*yaw_cfg[1]/yaw_cfg[0],D(-3),D(3))
+        memory[w,9]+=inputs[w,1]*D(.0005)
         memory[w,10]=D(.1)
-    elif wp.abs(inputs[w,4])>D(0):
-        memory[w,9]=wp.atan2(D(2)*(D(q[w,3])*D(q[w,6])+D(q[w,4])*D(q[w,5])),D(1)-D(2)*(D(q[w,5])*D(q[w,5])+D(q[w,6])*D(q[w,6])))
-        memory[w,10]=D(0)
-    inputs[w,4]=inputs[w,1]
 
 class Demo:
     def __init__(self,heights=(.3,),speed=1.,task=False,scene='flat'):
         if not np.isfinite(speed) or not .5<=abs(speed)<=1.:raise ValueError('speed must be0.5～1m/s')
         self.scene=scene
         self.env=NativeEnv.height115_candidate(n=len(heights),scenario=[scenario(h,speed,scene) for h in heights],shared_reference=True,residual_scale=0.)
-        self.env.reset();self.task=task;self.finished=False;self.result=None;self.terminal=None;self.jump_status=''
-        self.inputs=wp.zeros((len(heights),5),dtype=D)
+        self.env.reset();self.task=task;self.finished=False;self.result=None;self.terminal=None
+        self.inputs=wp.zeros((len(heights),4),dtype=D)
         self.height=np.asarray(heights,dtype=float)
         if not task:
             e=self.env;p=e.param.numpy();p[:,2:4]=1.e9;e.param.assign(p)
@@ -76,7 +68,7 @@ class Demo:
                 wp.launch(begin,e.num_envs,[e.reward])
                 for slot in range(40):
                     wp.launch(command_step,e.num_envs,[e.state,e.param,e.command,e.active,e.data.qpos,e.data.qvel,e.data.qacc_warmstart,e.stopped_q,e.stopped_v,e.stopped_w,e.contact_flags])
-                    wp.launch(manual_command,e.num_envs,[self.inputs,e.k['state'],e.state,e.param,e.command,e.data.qpos,e.k['yaw']])
+                    wp.launch(manual_command,e.num_envs,[self.inputs,e.k['state'],e.state,e.param,e.command,e.data.qpos])
                     if slot%10==0:wp.launch(update_reference,e.num_envs,e.shared_reference_args)
                     wp.launch(e.control_kernel,e.num_envs,[e.data.qpos,e.data.qvel,e.data.sensordata,e.targets,e.command,e.active,e.k['state'],e.ids,e.k['heights'],e.k['gains'],e.k['feed'],e.k['angles'],e.k['reference'],e.k['yaw'],e.data.ctrl,e.diag,int(e.project_clipped_base),int(e.grouped_residual)]+e.control_extra,block_dim=32)
                     mjw.step(e.model,e.data)
@@ -100,7 +92,7 @@ class Demo:
             if done[0]:
                 self.result=infos[0];self.terminal=(self.env.stopped_q.numpy()[0].copy(),self.env.stopped_v.numpy()[0].copy());self.finished=True
         else:
-            if not np.isfinite([speed,turn]).all() or abs(speed)>1. or abs(turn)>TURN_RATE:raise ValueError('Invalid manual command')
+            if not np.isfinite([speed,turn]).all() or abs(speed)>1. or abs(turn)>.3:raise ValueError('Invalid manual command')
             values=self.inputs.numpy();values[:,0]=speed;values[:,1]=turn;self.inputs.assign(values)
             wp.capture_launch(self.graph)
             self.finished=bool(np.any(self.env.done.numpy()))
@@ -130,7 +122,7 @@ class Demo:
         # A new manual segment starts its evidence counter at zero. Only the
         # controller is warm; never invent evidence for preceding jump steps.
         values=ground.inputs.numpy();values[0,2]=np.clip(memory[0,7],-1.,1.);values[0,3]=int(jump.control.ever_driven);ground.inputs.assign(values)
-        ground.jump_status='COMPLETED' if jump.jump_status=='EXECUTING' else jump.jump_status;jump.close();return ground
+        jump.close();return ground
 
 class JumpDemo:
     """Original host jump state machine; actual integration on MuJoCo Warp CUDA."""
@@ -145,31 +137,20 @@ class JumpDemo:
         st=self.control;st.boot_t=2.;st.L_cur=st.L_prev=length;st.th_prev=angle;st.xy_stop=q[:2].copy()
         st.yaw_target=sim.euler(self.data)[2];st.vf_f=sim.forward_component(v,st.yaw_target)
         st.ever_driven=abs(st.vf_f)>.03;self.set_height(self.height)
-        self.pending=False;self.jump_status='';self.phases=set();self.peak_z=float(q[2]);self.start_z=float(q[2])
+        self.pending=True;self.phases=set();self.peak_z=float(q[2]);self.start_z=float(q[2])
         self.physics=PackedPhysics(self.env.cpu,self.data)
-        self.request_jump()
 
     def pose(self):return self.data.qpos.copy(),self.data.qvel.copy()
     def set_height(self,heights):
         h=float(np.clip(np.asarray(heights).reshape(-1)[0],.16,.38))
         self.height=np.array([h]);self.control.leg_ref=h-sim.L_STAND
-    def request_jump(self):
-        self.pending=True;self.request_deadline=self.control.boot_t+10.;self.jump_status='QUEUED'
+    def request_jump(self):self.pending=True
     def step(self,speed=0.,turn=0.):
         if self.finished:return
         self.control.cmd_vel=speed;self.control.cmd_turn=turn
         for _ in range(40):
-            phase_before=self.control.jp
-            if self.pending and self.control.boot_t>=self.request_deadline:
-                self.pending=False;self.jump_status='EXPIRED: release turn / steady speed, then7'
-                if self.control.jp=='DRIVE':
-                    self.control.jp_pending=False;self.control.jp_preparing=False;self.control.jp_committed=False
-            self.control.cmd_jump=self.pending and self.control.jp=='DRIVE' and not self.control.jp_pending
+            self.control.cmd_jump=self.pending;self.pending=False
             sim.control(self.env.cpu,self.data,self.control);self.physics.step(self.env.cpu,self.data)
-            if self.pending:
-                if phase_before=='DRIVE' and self.control.jp in ('SQUAT','JUMP'):
-                    self.pending=False;self.jump_status='EXECUTING'
-                else:self.jump_status='WAIT LANDING' if self.control.jp!='DRIVE' else 'WAIT BALANCE / SPEED'
             self.phases.add(self.control.jp);self.peak_z=max(self.peak_z,float(self.data.qpos[2]))
             if not np.isfinite(self.data.qpos).all() or not np.isfinite(self.data.qvel).all() or max(abs(a) for a in sim.euler(self.data)[:2])>np.deg2rad(40) or self.data.qpos[2]<.02:
                 self.finished=True;break
@@ -230,8 +211,8 @@ def run_window(height,speed,scene='flat'):
                     low=.16 if isinstance(demo,JumpDemo) else .115
                     target=float(np.clip(target+(held(glfw.KEY_UP)-held(glfw.KEY_DOWN))*.02*.02,low,.38))
                     demo.set_height(target)
-                demo.step(abs(speed)*(held(glfw.KEY_W)-held(glfw.KEY_S)),TURN_RATE*(held(glfw.KEY_A)-held(glfw.KEY_D)))
-                if isinstance(demo,JumpDemo) and not demo.finished and not demo.pending and not demo.control.jp_pending and demo.control.jp=='DRIVE' and ('LAND' in demo.phases or demo.jump_status.startswith('EXPIRED')):
+                demo.step(abs(speed)*(held(glfw.KEY_W)-held(glfw.KEY_S)),.3*(held(glfw.KEY_A)-held(glfw.KEY_D)))
+                if isinstance(demo,JumpDemo) and not demo.finished and 'LAND' in demo.phases and demo.control.jp=='DRIVE':
                     demo=Demo.after_jump(demo);target=float(demo.height[0]);m=demo.env.cpu;show_terrain(m);d=mujoco.MjData(m)
             q,v=demo.pose()
             d.qpos[:]=q;d.qvel[:]=v;mujoco.mj_forward(m,d);cam.lookat[:]=d.xpos[m.body('base').id] if 'base' in [m.body(i).name for i in range(m.nbody)] else q[:3]
@@ -243,8 +224,6 @@ def run_window(height,speed,scene='flat'):
             title=next(s[1] for s in SCENES if s[0]==scene)
             command=demo.control.cmd_vel if isinstance(demo,JumpDemo) else demo.env.command.numpy()[0]
             lines=f'{mode}  {result}\nScene: {title}\nTarget: {target*1000:.1f} mm | Mean FK leg: {actual*1000:.1f} mm\nCommand: {command:+.2f} m/s | World vx: {v[0]:+.2f} m/s\nTask direction: {direction:+.0f} | Speed: {abs(speed):.2f} m/s'
-            lines+=f'\nTurn command: {(demo.control.cmd_turn if isinstance(demo,JumpDemo) else demo.inputs.numpy()[0,1]):+.2f}rad/s | Actual gyro: {d.sensordata[ids[10]+2]:+.2f}rad/s'
-            if demo.jump_status:lines+='\nJump request: '+demo.jump_status
             if demo.result:
                 r=demo.result;lines+=f'\nStop: {r["stop_distance_m"]:.3f}m | Tail: {r["tail_speed_m_s"]:.3f}m/s\nHeight RMSE: {r["height_rmse_m"]*1000:.2f}mm | Reason: {r["reason"]}'
             elif isinstance(demo,JumpDemo):lines+=f'\nGPU physics / host jump control | Target160-380mm\nBody rise from entry: {(demo.peak_z-demo.start_z)*1000:.1f}mm | No ground-task score'
