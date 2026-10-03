@@ -1,0 +1,104 @@
+{
+  "round": 40,
+  "created_utc": "2026-10-03T07:29:20.808253+00:00",
+  "consumed_snapshot": 1824700,
+  "completed_evaluation_snapshot": 91,
+  "selected_checkpoint_steps": 820000,
+  "selected_summary": {
+    "total": 32,
+    "success_count": 29,
+    "complete": true,
+    "mean_yaw_score_deg": 0.9575918692280827
+  },
+  "B0": {
+    "total": 32,
+    "success_count": 32,
+    "complete": true,
+    "mean_yaw_score_deg": 0.4111518855217877
+  },
+  "B1": {
+    "total": 32,
+    "success_count": 32,
+    "complete": true,
+    "mean_yaw_score_deg": 0.27242552779014617
+  },
+  "mathematical_B1_effect_target": 0.22242552779014618,
+  "evidence_strength": "Only partialM3/1609; no completed paired3seed comparison. This is direction review, not research gate.",
+  "plan_judgment": "Controlled comparison plan is coherent: continuous yaw metric avoids success ceiling, strong references and one-use independent gate. Actual method benefit unproved.",
+  "continuation_judgment": "Complete registered9run comparison without added tuning/budget; do not expand to5seeds or claim advantage until original gate passes. If gate fails, stop this advantage branch and report limitations.",
+  "risks": [
+    "Continuous multiobjective reward may underemphasize fine yaw objective; not proven cause and no mid-run change",
+    "100fixedworlds perstage/seed limit training diversity; not IID per-episode sampling",
+    "38Dsingle-packet policy has disclosed partial observability and hidden nominal-controller state",
+    "Aggregate initial motor RMS matching retains local covariance/rank/reachable-set differences; whole parameterization claim only",
+    "B0/B1 both32/32; no development success-rate headroom",
+    "Final pressure geometry/mass/friction/drive/delay is not a full extreme-terrain or full-loop-delay study",
+    "Pressure friction and single-side25/30mm entries use one left/right assignment; does not establish side-symmetric robustness",
+    "Novelty still a hypothesis; demonstration jump andGPUusage are not research contribution"
+  ],
+  "cleanup": {
+    "round": 40,
+    "removed_bytes": 65771,
+    "items": [
+      {
+        "removed": "/tmp/wheelleg_input_turn_check.py",
+        "bytes": 3054,
+        "sha256": "cef850679e0ad32e909fd99d03346d26523ea04d12871d7b460830f4a32c8cda",
+        "retained": "wheelleg_warp/results/manual_input_turn_20261003/check.py"
+      },
+      {
+        "removed": "/tmp/wheelleg_input_turn_window.py",
+        "bytes": 2526,
+        "sha256": "2745e88522988738d3a80ab3f7360d4ddec2ec282e3d50676c6e3d6b931dd892",
+        "retained": "wheelleg_warp/results/manual_input_turn_20261003/check_window.py"
+      },
+      {
+        "removed": "/tmp/wheelleg_input_turn_check.log",
+        "bytes": 16251,
+        "sha256": "34c3492ecea1530551ca1f4c497c55c5e65dfb2f06dd6b29ec0011c0770f01a1",
+        "retained": "wheelleg_warp/results/manual_input_turn_20261003/check.log"
+      },
+      {
+        "removed": "/tmp/wheelleg_input_turn_window.log",
+        "bytes": 11492,
+        "sha256": "4d191f1c4848669060d4fa82b48ed91249aae5a6f486535ba88c2bffc08591ea",
+        "retained": "wheelleg_warp/results/manual_input_turn_20261003/window_check.log"
+      },
+      {
+        "removed": "/tmp/wheelleg_jump35_window.py",
+        "bytes": 1785,
+        "sha256": "b2a00bab4c4f6f3946d371a2754f09c9275f877a2a5562fb16666940a35315bd",
+        "retained": "wheelleg_warp/results/manual_jump_latency_20261003/check_window.py"
+      },
+      {
+        "removed": "/tmp/wheelleg_jump35_check.log",
+        "bytes": 19959,
+        "sha256": "4c1884d89e524207d901ae2e2f9dcadc73857d099636d65b973a496b2bad6f4c",
+        "retained": "wheelleg_warp/results/manual_jump_latency_20261003/check.log"
+      },
+      {
+        "removed": "/tmp/wheelleg_jump35_window.log",
+        "bytes": 9901,
+        "sha256": "87b8006c129e9d25ad30073a9325cb6c958dbae5b11424db2e4d367cdfefdadb",
+        "retained": "wheelleg_warp/results/manual_jump_latency_20261003/window_check.log"
+      },
+      {
+        "removed": "/tmp/wheelleg_halfmillion_audit.log",
+        "bytes": 711,
+        "sha256": "9be0fc32865791cb77dd385afd1a3691306f43c65c84aed610d512773dec66c3",
+        "retained": "wheelleg_warp/results/registered_gpu_pilots_20261003/halfmillion_audit.log"
+      },
+      {
+        "removed": "/tmp/wheelleg_million_nonregression.log",
+        "bytes": 92,
+        "sha256": "7c6d5d978442aabd3f216603ea8e28e60466bdc48f846e80b0e7e41572e38f10",
+        "retained": "wheelleg_warp/results/registered_gpu_pilots_20261003/million_nonregression.log"
+      }
+    ],
+    "scope": "Only completed task-owned/tmp copies byte-identical to retained project evidence",
+    "scientific_failure_or_checkpoint_removed": false
+  },
+  "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
+  "gate_or_final_simulated": false,
+  "next_deep_review_round": 45
+}

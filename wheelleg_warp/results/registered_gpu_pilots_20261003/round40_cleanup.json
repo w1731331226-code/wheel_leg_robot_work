@@ -1,0 +1,62 @@
+{
+  "round": 40,
+  "removed_bytes": 65771,
+  "items": [
+    {
+      "removed": "/tmp/wheelleg_input_turn_check.py",
+      "bytes": 3054,
+      "sha256": "cef850679e0ad32e909fd99d03346d26523ea04d12871d7b460830f4a32c8cda",
+      "retained": "wheelleg_warp/results/manual_input_turn_20261003/check.py"
+    },
+    {
+      "removed": "/tmp/wheelleg_input_turn_window.py",
+      "bytes": 2526,
+      "sha256": "2745e88522988738d3a80ab3f7360d4ddec2ec282e3d50676c6e3d6b931dd892",
+      "retained": "wheelleg_warp/results/manual_input_turn_20261003/check_window.py"
+    },
+    {
+      "removed": "/tmp/wheelleg_input_turn_check.log",
+      "bytes": 16251,
+      "sha256": "34c3492ecea1530551ca1f4c497c55c5e65dfb2f06dd6b29ec0011c0770f01a1",
+      "retained": "wheelleg_warp/results/manual_input_turn_20261003/check.log"
+    },
+    {
+      "removed": "/tmp/wheelleg_input_turn_window.log",
+      "bytes": 11492,
+      "sha256": "4d191f1c4848669060d4fa82b48ed91249aae5a6f486535ba88c2bffc08591ea",
+      "retained": "wheelleg_warp/results/manual_input_turn_20261003/window_check.log"
+    },
+    {
+      "removed": "/tmp/wheelleg_jump35_window.py",
+      "bytes": 1785,
+      "sha256": "b2a00bab4c4f6f3946d371a2754f09c9275f877a2a5562fb16666940a35315bd",
+      "retained": "wheelleg_warp/results/manual_jump_latency_20261003/check_window.py"
+    },
+    {
+      "removed": "/tmp/wheelleg_jump35_check.log",
+      "bytes": 19959,
+      "sha256": "4c1884d89e524207d901ae2e2f9dcadc73857d099636d65b973a496b2bad6f4c",
+      "retained": "wheelleg_warp/results/manual_jump_latency_20261003/check.log"
+    },
+    {
+      "removed": "/tmp/wheelleg_jump35_window.log",
+      "bytes": 9901,
+      "sha256": "87b8006c129e9d25ad30073a9325cb6c958dbae5b11424db2e4d367cdfefdadb",
+      "retained": "wheelleg_warp/results/manual_jump_latency_20261003/window_check.log"
+    },
+    {
+      "removed": "/tmp/wheelleg_halfmillion_audit.log",
+      "bytes": 711,
+      "sha256": "9be0fc32865791cb77dd385afd1a3691306f43c65c84aed610d512773dec66c3",
+      "retained": "wheelleg_warp/results/registered_gpu_pilots_20261003/halfmillion_audit.log"
+    },
+    {
+      "removed": "/tmp/wheelleg_million_nonregression.log",
+      "bytes": 92,
+      "sha256": "7c6d5d978442aabd3f216603ea8e28e60466bdc48f846e80b0e7e41572e38f10",
+      "retained": "wheelleg_warp/results/registered_gpu_pilots_20261003/million_nonregression.log"
+    }
+  ],
+  "scope": "Only completed task-owned/tmp copies byte-identical to retained project evidence",
+  "scientific_failure_or_checkpoint_removed": false
+}
