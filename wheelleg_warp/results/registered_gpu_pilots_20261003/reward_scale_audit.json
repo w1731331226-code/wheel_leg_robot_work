@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "scope": "Reward-unit algebra, constant duration/roll/pitch/speed/control/terminal outcomes; not a policy experiment or causal learning diagnosis",
+  "classic_mean_Jpsi_deg": 0.27242552779014617,
+  "counterfactual_mean_Jpsi_deg": 0.22242552779014618,
+  "uniform_yaw_amplitude_factor": 0.8164636023445064,
+  "mean_episode_yaw_penalty": 0.04708885507868766,
+  "mean_return_improvement_for_absolute_point05deg": 0.015698820888841315,
+  "min_max_return_improvement": [
+    0.0001196547569477289,
+    0.1123234488625418
+  ],
+  "success_vs_failure_terminal_return_difference": 20,
+  "mean_yaw_improvement_fraction_of_terminal_gap": 0.0007849410444420657,
+  "fixed_nominal_reward_terms": "velocity Gaussian width0.25m/s; equal roll/pitch/yaw penalty scaled5deg; physical torque/smoothness penalties; terminal\u00b110",
+  "risk": "Fine yaw improvement is small relative to terminal success difference, so learning may first chase success/contact. This algebra does not establish reward as failure cause.",
+  "configuration_changed": false,
+  "extra_evaluations": 0,
+  "gate_or_final_simulated": false,
+  "source_sha256": {
+    "wheelleg_warp/native/environment.py": "a4fb0a7a5beb08bf23e8e3855f681e8008b79fe5e730d11bc4b5c91674fe8a2b",
+    "wheelleg_warp/terrain_eval.py": "ed0beafa14e882985ca5c0efe23dad6ff63bd5ae653e54ed0fbbdb7ac881d451"
+  },
+  "verifier_sha256": "e630867e479b2b29953f11a672db144487e62037b36d116c9cec218db4b425d4"
+}
