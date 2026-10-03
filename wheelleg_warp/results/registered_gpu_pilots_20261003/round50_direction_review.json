@@ -1,0 +1,363 @@
+{
+  "round": 50,
+  "created_utc": "2026-10-03T08:23:30.804784+00:00",
+  "completed_full_runs": 2,
+  "registered_full_runs": 9,
+  "full_M3": {
+    "total": 32,
+    "success_count": 29,
+    "complete": true,
+    "mean_yaw_score_deg": 0.9575918692280827
+  },
+  "full_B2V": {
+    "total": 32,
+    "success_count": 28,
+    "complete": true,
+    "mean_yaw_score_deg": 0.7633825599063806
+  },
+  "same_budget_200k": {
+    "M3": {
+      "best_steps": 20000,
+      "best": {
+        "total": 32,
+        "success_count": 27,
+        "complete": true,
+        "mean_yaw_score_deg": 0.7394381831641365
+      },
+      "last": {
+        "total": 32,
+        "success_count": 11,
+        "complete": true,
+        "mean_yaw_score_deg": 1.2451261884571951
+      },
+      "series": [
+        {
+          "policy_steps": 20000,
+          "total": 32,
+          "success_count": 27,
+          "complete": true,
+          "mean_yaw_score_deg": 0.7394381831641365
+        },
+        {
+          "policy_steps": 40000,
+          "total": 32,
+          "success_count": 23,
+          "complete": true,
+          "mean_yaw_score_deg": 0.9944139146732055
+        },
+        {
+          "policy_steps": 60000,
+          "total": 32,
+          "success_count": 15,
+          "complete": true,
+          "mean_yaw_score_deg": 1.3486519776119106
+        },
+        {
+          "policy_steps": 80000,
+          "total": 32,
+          "success_count": 18,
+          "complete": true,
+          "mean_yaw_score_deg": 1.1815518012717434
+        },
+        {
+          "policy_steps": 100000,
+          "total": 32,
+          "success_count": 10,
+          "complete": true,
+          "mean_yaw_score_deg": 1.3381285499192979
+        },
+        {
+          "policy_steps": 120000,
+          "total": 32,
+          "success_count": 10,
+          "complete": true,
+          "mean_yaw_score_deg": 1.3429702714745284
+        },
+        {
+          "policy_steps": 140000,
+          "total": 32,
+          "success_count": 11,
+          "complete": true,
+          "mean_yaw_score_deg": 1.4373880080289019
+        },
+        {
+          "policy_steps": 160000,
+          "total": 32,
+          "success_count": 14,
+          "complete": true,
+          "mean_yaw_score_deg": 1.2280757201324581
+        },
+        {
+          "policy_steps": 180000,
+          "total": 32,
+          "success_count": 12,
+          "complete": true,
+          "mean_yaw_score_deg": 1.120455067488416
+        },
+        {
+          "policy_steps": 200000,
+          "total": 32,
+          "success_count": 11,
+          "complete": true,
+          "mean_yaw_score_deg": 1.2451261884571951
+        }
+      ]
+    },
+    "B2-V": {
+      "best_steps": 20000,
+      "best": {
+        "total": 32,
+        "success_count": 22,
+        "complete": true,
+        "mean_yaw_score_deg": 1.1337141290784989
+      },
+      "last": {
+        "total": 32,
+        "success_count": 13,
+        "complete": true,
+        "mean_yaw_score_deg": 1.28414428320302
+      },
+      "series": [
+        {
+          "policy_steps": 20000,
+          "total": 32,
+          "success_count": 22,
+          "complete": true,
+          "mean_yaw_score_deg": 1.1337141290784989
+        },
+        {
+          "policy_steps": 40000,
+          "total": 32,
+          "success_count": 20,
+          "complete": true,
+          "mean_yaw_score_deg": 1.161943741103289
+        },
+        {
+          "policy_steps": 60000,
+          "total": 32,
+          "success_count": 16,
+          "complete": true,
+          "mean_yaw_score_deg": 1.0929761557549103
+        },
+        {
+          "policy_steps": 80000,
+          "total": 32,
+          "success_count": 12,
+          "complete": true,
+          "mean_yaw_score_deg": 1.1484574209604062
+        },
+        {
+          "policy_steps": 100000,
+          "total": 32,
+          "success_count": 11,
+          "complete": true,
+          "mean_yaw_score_deg": 1.3403473028477735
+        },
+        {
+          "policy_steps": 120000,
+          "total": 32,
+          "success_count": 9,
+          "complete": true,
+          "mean_yaw_score_deg": 1.5409405774175027
+        },
+        {
+          "policy_steps": 140000,
+          "total": 32,
+          "success_count": 8,
+          "complete": true,
+          "mean_yaw_score_deg": 1.7220175611960014
+        },
+        {
+          "policy_steps": 160000,
+          "total": 32,
+          "success_count": 8,
+          "complete": true,
+          "mean_yaw_score_deg": 1.5939648996379923
+        },
+        {
+          "policy_steps": 180000,
+          "total": 32,
+          "success_count": 9,
+          "complete": true,
+          "mean_yaw_score_deg": 1.3827045293486737
+        },
+        {
+          "policy_steps": 200000,
+          "total": 32,
+          "success_count": 13,
+          "complete": true,
+          "mean_yaw_score_deg": 1.28414428320302
+        }
+      ]
+    },
+    "B2": {
+      "best_steps": 20000,
+      "best": {
+        "total": 32,
+        "success_count": 26,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9125001785170168
+      },
+      "last": {
+        "total": 32,
+        "success_count": 12,
+        "complete": true,
+        "mean_yaw_score_deg": 1.3295751720233233
+      },
+      "series": [
+        {
+          "policy_steps": 20000,
+          "total": 32,
+          "success_count": 26,
+          "complete": true,
+          "mean_yaw_score_deg": 0.9125001785170168
+        },
+        {
+          "policy_steps": 40000,
+          "total": 32,
+          "success_count": 23,
+          "complete": true,
+          "mean_yaw_score_deg": 0.8789717831792807
+        },
+        {
+          "policy_steps": 60000,
+          "total": 32,
+          "success_count": 21,
+          "complete": true,
+          "mean_yaw_score_deg": 0.9439292403089359
+        },
+        {
+          "policy_steps": 80000,
+          "total": 32,
+          "success_count": 17,
+          "complete": true,
+          "mean_yaw_score_deg": 0.9728400299699127
+        },
+        {
+          "policy_steps": 100000,
+          "total": 32,
+          "success_count": 15,
+          "complete": true,
+          "mean_yaw_score_deg": 1.1132262044515078
+        },
+        {
+          "policy_steps": 120000,
+          "total": 32,
+          "success_count": 15,
+          "complete": true,
+          "mean_yaw_score_deg": 1.1795378859869794
+        },
+        {
+          "policy_steps": 140000,
+          "total": 32,
+          "success_count": 13,
+          "complete": true,
+          "mean_yaw_score_deg": 1.1914013293399102
+        },
+        {
+          "policy_steps": 160000,
+          "total": 32,
+          "success_count": 13,
+          "complete": true,
+          "mean_yaw_score_deg": 1.2333771454704245
+        },
+        {
+          "policy_steps": 180000,
+          "total": 32,
+          "success_count": 16,
+          "complete": true,
+          "mean_yaw_score_deg": 1.1941378571030579
+        },
+        {
+          "policy_steps": 200000,
+          "total": 32,
+          "success_count": 12,
+          "complete": true,
+          "mean_yaw_score_deg": 1.3295751720233233
+        }
+      ]
+    }
+  },
+  "current_B2_steps": 640000,
+  "remaining": "B2 fullbudget and remaining2paired seeds; original independent gate/legacy regression after lock",
+  "decision": "Finish existing registered comparison only; no additional5seed/algorithm/scene/tuning budget. No current advantage over strong classic; gate failure stops this advantage branch.",
+  "interpretation": "Different success/yaw tradeoffs; no metric switching. Whole parameterization comparison retains exploration/reachable-set confounds.",
+  "reward_scale": "Mathematical yaw reward delta~0.016vs terminal difference20; PPOadvantage normalization means this alone is not causal proof.",
+  "cleanup": {
+    "round": 50,
+    "items": [
+      {
+        "removed": "/tmp/wheelleg_stage1m.log",
+        "retained": "wheelleg_warp/results/registered_gpu_pilots_20261003/stage1m_review.log",
+        "bytes": 271,
+        "sha256": "f5e995ecfebce40ea7f02862c2a9dedb00f7dc6ba4295a83de6899c85177a070"
+      },
+      {
+        "removed": "/tmp/wheelleg_b2v_stage1m.log",
+        "retained": "wheelleg_warp/results/registered_gpu_pilots_20261003/B2V_stage1m.log",
+        "bytes": 271,
+        "sha256": "486deb4c724e83cf718e15be934d7d5267d80d0553980056d4aeea91c238e581"
+      },
+      {
+        "removed": "/tmp/wheelleg_b2v_nonreg1m.log",
+        "retained": "wheelleg_warp/results/registered_gpu_pilots_20261003/B2V_nonreg1m.log",
+        "bytes": 108,
+        "sha256": "86cbfc51e88f250248a8a9e09ba2988c5c70d9c3676dceec150742ca7f553c9b"
+      },
+      {
+        "removed": "/tmp/wheelleg_paired1m.log",
+        "retained": "wheelleg_warp/results/registered_gpu_pilots_20261003/paired1m.log",
+        "bytes": 242,
+        "sha256": "e00d3d0433f125b1c5ad876e816e39d33d396616c32200d22426996dd48bb008"
+      },
+      {
+        "removed": "/tmp/wheelleg_stability13m.log",
+        "retained": "wheelleg_warp/results/registered_gpu_pilots_20261003/stability13m.log",
+        "bytes": 1079,
+        "sha256": "49965a43f086284e83edca74edf6ae1dc0ff0b779174e85c76de2dc95713767b"
+      },
+      {
+        "removed": "/tmp/wheelleg_comparison_contract.log",
+        "retained": "wheelleg_warp/results/registered_gpu_pilots_20261003/comparison_contract_check.log",
+        "bytes": 114,
+        "sha256": "e6d4f54205b8654d79d9e411543352f6777d633eebee94e0320746ab22649855"
+      },
+      {
+        "removed": "/tmp/wheelleg_b2v_stage2m.log",
+        "retained": "wheelleg_warp/results/registered_gpu_pilots_20261003/B2V_stage2m.log",
+        "bytes": 272,
+        "sha256": "11e40c816196c814102dd033861f4ea5e380b3e6d46e26be60823437d96ccbbf"
+      },
+      {
+        "removed": "/tmp/wheelleg_b2v_nonreg2m.log",
+        "retained": "wheelleg_warp/results/registered_gpu_pilots_20261003/B2V_nonreg2m.log",
+        "bytes": 109,
+        "sha256": "abc58fd6ac6c29392a90712e2f7397cc7e7d293301f0867b5bcc95d3db26fe5f"
+      },
+      {
+        "removed": "/tmp/wheelleg_paired2m.log",
+        "retained": "wheelleg_warp/results/registered_gpu_pilots_20261003/paired2m.log",
+        "bytes": 243,
+        "sha256": "ef1b4384d3edc1e7fb60ac1ec8c7f6ba73f595e14e2e2914aa7a08f8e395eff1"
+      },
+      {
+        "removed": "/tmp/wheelleg_b2_start20k.log",
+        "retained": "wheelleg_warp/results/registered_gpu_pilots_20261003/B2_start20k.log",
+        "bytes": 268,
+        "sha256": "42cec0423784c657026cf236873af5a51dc995342cf6bdaa29a2a967f1177ece"
+      },
+      {
+        "removed": "/tmp/wheelleg_b2_starthealth.log",
+        "retained": "wheelleg_warp/results/registered_gpu_pilots_20261003/B2_starthealth.log",
+        "bytes": 105,
+        "sha256": "35174ed5095428bf0da221e93a64522728266178a83c04353479227769f0d5aa"
+      }
+    ],
+    "removed_bytes": 3082,
+    "scope": "Completed identical/tmp logs only",
+    "unique_failure_or_weights_removed": false
+  },
+  "gate_or_final_simulated": false,
+  "next_deep_review_round": 55,
+  "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef"
+}

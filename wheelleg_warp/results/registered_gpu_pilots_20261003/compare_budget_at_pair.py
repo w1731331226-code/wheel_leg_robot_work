@@ -8,11 +8,11 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 HERE=Path(__file__).resolve().parent;P=ROOT/'wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3'
-parser=argparse.ArgumentParser();parser.add_argument('--steps',type=int,default=200000);parser.add_argument('--seed',type=int,default=1609);parser.add_argument('--methods',nargs='+',choices=('M3','B2-V','B2'),default=('M3','B2-V'));a=parser.parse_args();assert len(a.methods)==len(set(a.methods))
+parser=argparse.ArgumentParser();parser.add_argument('--steps',type=int,default=200000);parser.add_argument('--seed',type=int,default=1609);a=parser.parse_args()
 p=json.loads((P/'protocol.json').read_text());assert a.steps%p['evaluation_interval']==0
-stem=f'paired_M3_B2V_{a.seed}_{a.steps}' if tuple(a.methods)==('M3','B2-V') else f'triple_registered_{a.seed}_{a.steps}';out=HERE/(stem+'.json');assert not out.exists()
+stem=f'paired_M3_B2V_{a.seed}_{a.steps}';out=HERE/(stem+'.json');assert not out.exists()
 methods={}
-for method in a.methods:
+for method in ('M3','B2-V'):
     rows=[]
     for n in range(p['evaluation_interval'],a.steps+1,p['evaluation_interval']):
         path=P/'runs'/method/str(a.seed)/f'step_{n}.json';r=json.loads(path.read_text());verify_checkpoint(r['path'],r)
