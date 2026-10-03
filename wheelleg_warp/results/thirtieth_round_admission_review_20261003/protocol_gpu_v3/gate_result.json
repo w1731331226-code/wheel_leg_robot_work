@@ -1,0 +1,94 @@
+{
+  "passed": false,
+  "failures": [
+    "legacy attitude: 1609/nominal_-1.0",
+    "legacy attitude: 1609/nominal_-0.5",
+    "legacy attitude: 1609/nominal_0.5",
+    "legacy attitude: 1609/nominal_1.0",
+    "legacy attitude: 1609/symmetric_-1.0",
+    "legacy attitude: 1609/symmetric_1.0",
+    "legacy failure: 1609/validation_3",
+    "legacy failure: 1609/validation_9",
+    "legacy attitude: 1609/validation_11",
+    "legacy attitude: 1609/development_friction",
+    "legacy attitude: 1610/symmetric_-1.0",
+    "legacy failure: 1610/validation_3",
+    "legacy attitude: 1611/nominal_-1.0",
+    "legacy attitude: 1611/nominal_0.5",
+    "legacy attitude: 1611/nominal_1.0",
+    "legacy attitude: 1611/symmetric_-1.0",
+    "legacy attitude: 1611/symmetric_1.0",
+    "legacy attitude: 1611/legacy_bump_1.0_l_0.01",
+    "legacy failure: 1611/legacy_bump_1.0_l_0.015",
+    "legacy attitude: 1611/legacy_bump_1.0_r_0.01",
+    "legacy attitude: 1611/legacy_bump_1.0_r_0.015",
+    "legacy attitude: 1611/validation_0",
+    "legacy attitude: 1611/validation_2",
+    "legacy attitude: 1611/validation_5",
+    "legacy attitude: 1611/development_friction",
+    "effect below15% or0.05deg",
+    "paired direction: 1609",
+    "success count: 1609",
+    "lost B0: 1609/2901006",
+    "lost B0: 1609/2901016",
+    "lost B0: 1609/2901017",
+    "lost B0: 1609/2901019",
+    "lost B0: 1609/2901020",
+    "lost B0: 1609/2901028",
+    "lost B0: 1609/2901038",
+    "lost B0: 1609/2901040",
+    "lost B0: 1609/2901049",
+    "lost B0: 1609/2901059",
+    "lost B0: 1609/2901062",
+    "success count: 1610",
+    "lost B0: 1610/2901002",
+    "lost B0: 1610/2901006",
+    "lost B0: 1610/2901017",
+    "lost B0: 1610/2901049",
+    "paired direction: 1611",
+    "success count: 1611",
+    "lost B0: 1611/2901005",
+    "lost B0: 1611/2901019",
+    "lost B0: 1611/2901024",
+    "lost B0: 1611/2901031",
+    "lost B0: 1611/2901033",
+    "lost B0: 1611/2901040",
+    "lost B0: 1611/2901042",
+    "lost B0: 1611/2901056",
+    "lost B0: 1611/2901057",
+    "lost B0: 1611/2901059",
+    "lost B0: 1611/2901060"
+  ],
+  "scores": {
+    "B0": {
+      "fixed": 0.338886263325135
+    },
+    "B1": {
+      "fixed": 0.2309448646704104
+    },
+    "M3": {
+      "1609": 0.8806519988992428,
+      "1610": 0.5431337759568161,
+      "1611": 0.835389095266464
+    },
+    "B2-V": {
+      "1609": 0.7362587105995426,
+      "1610": 0.5514639358024942,
+      "1611": 0.574855570847348
+    },
+    "B2": {
+      "1609": 0.8651000150344844,
+      "1610": 0.5137430376029298,
+      "1611": 0.369140565744671
+    }
+  },
+  "method_scores": {
+    "B0": 0.338886263325135,
+    "B1": 0.2309448646704104,
+    "M3": 0.753058290040841,
+    "B2-V": 0.6208594057497949,
+    "B2": 0.5826612061273617
+  },
+  "absolute_improvement_deg": -0.5221134253704306,
+  "relative_improvement": -2.260770881896669
+}

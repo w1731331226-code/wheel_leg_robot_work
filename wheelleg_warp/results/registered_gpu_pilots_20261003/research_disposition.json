@@ -1,0 +1,14 @@
+{
+  "protocol": "height115-yaw-v3-v8-gpu",
+  "research_hypothesis_supported": false,
+  "branch_status": "closed_negative",
+  "all9_registered_budgets_completed": true,
+  "original_gate_executed_once": true,
+  "original_gate_passed": false,
+  "stop_rule_source": "wheelleg_ppo/PAPER_PLAN.md: original gate failure -> report negative result; no auxiliary metric substitution",
+  "decision": "Stop current differential-advantage branch; do not expand to conditional five-seed/ablations or simulate final3000; preserve original CPU baseline, models, complete failures and hashes",
+  "scope": "Pure simulation ground-contact residual action parameterization; not a proof allRL useless or global safety. No claim of trained jump policy or hardware superiority.",
+  "evidence": "independent_gate_verification.json",
+  "gate_result_sha256": "fda8101c9924ebae854f3c4b9a36e4a363a6ff6f19017bcd5a1f3140d9379997",
+  "remaining_work_in_this_branch": "Document negative conclusion and completion audit; no further training or task evaluations authorized by the passed-conditional plan"
+}

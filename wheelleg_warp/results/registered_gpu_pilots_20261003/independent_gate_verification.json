@@ -1,0 +1,153 @@
+{
+  "passed": true,
+  "research_gate_passed": false,
+  "source_protocol_and_final_hashes_valid": true,
+  "original_assess_exactly_reproduced": true,
+  "gate_opened_once": true,
+  "gate_episode_count": 704,
+  "original_regression_episode_count": 84,
+  "methods": {
+    "B0": {
+      "by_seed": {
+        "fixed": {
+          "total": 64,
+          "success_count": 64,
+          "complete": true,
+          "mean_yaw_score_deg": 0.338886263325135
+        }
+      },
+      "mean_Jpsi_deg": 0.338886263325135,
+      "success_policy_case_pairs": 64,
+      "policy_case_pairs": 64
+    },
+    "B1": {
+      "by_seed": {
+        "fixed": {
+          "total": 64,
+          "success_count": 64,
+          "complete": true,
+          "mean_yaw_score_deg": 0.2309448646704104
+        }
+      },
+      "mean_Jpsi_deg": 0.2309448646704104,
+      "success_policy_case_pairs": 64,
+      "policy_case_pairs": 64
+    },
+    "M3": {
+      "by_seed": {
+        "1609": {
+          "total": 64,
+          "success_count": 53,
+          "complete": true,
+          "mean_yaw_score_deg": 0.8806519988992428
+        },
+        "1610": {
+          "total": 64,
+          "success_count": 60,
+          "complete": true,
+          "mean_yaw_score_deg": 0.5431337759568161
+        },
+        "1611": {
+          "total": 64,
+          "success_count": 53,
+          "complete": true,
+          "mean_yaw_score_deg": 0.835389095266464
+        }
+      },
+      "mean_Jpsi_deg": 0.753058290040841,
+      "success_policy_case_pairs": 166,
+      "policy_case_pairs": 192
+    },
+    "B2-V": {
+      "by_seed": {
+        "1609": {
+          "total": 64,
+          "success_count": 48,
+          "complete": true,
+          "mean_yaw_score_deg": 0.7362587105995426
+        },
+        "1610": {
+          "total": 64,
+          "success_count": 63,
+          "complete": true,
+          "mean_yaw_score_deg": 0.5514639358024942
+        },
+        "1611": {
+          "total": 64,
+          "success_count": 60,
+          "complete": true,
+          "mean_yaw_score_deg": 0.574855570847348
+        }
+      },
+      "mean_Jpsi_deg": 0.6208594057497949,
+      "success_policy_case_pairs": 171,
+      "policy_case_pairs": 192
+    },
+    "B2": {
+      "by_seed": {
+        "1609": {
+          "total": 64,
+          "success_count": 51,
+          "complete": true,
+          "mean_yaw_score_deg": 0.8651000150344844
+        },
+        "1610": {
+          "total": 64,
+          "success_count": 60,
+          "complete": true,
+          "mean_yaw_score_deg": 0.5137430376029298
+        },
+        "1611": {
+          "total": 64,
+          "success_count": 62,
+          "complete": true,
+          "mean_yaw_score_deg": 0.369140565744671
+        }
+      },
+      "mean_Jpsi_deg": 0.5826612061273617,
+      "success_policy_case_pairs": 173,
+      "policy_case_pairs": 192
+    }
+  },
+  "legacy": {
+    "1609": {
+      "cases": 28,
+      "success": 26,
+      "complete": 28
+    },
+    "1610": {
+      "cases": 28,
+      "success": 27,
+      "complete": 28
+    },
+    "1611": {
+      "cases": 28,
+      "success": 27,
+      "complete": 28
+    }
+  },
+  "failure_counts": {
+    "legacy attitude": 21,
+    "legacy failure": 4,
+    "effect below15% or0.05deg": 1,
+    "paired direction": 2,
+    "success count": 3,
+    "lost B0": 26
+  },
+  "failure_count": 57,
+  "relative_improvement": -2.260770881896669,
+  "absolute_improvement_deg": -0.5221134253704306,
+  "unit_end": {
+    "MainPID": "0",
+    "ExecMainStatus": "0",
+    "ActiveState": "inactive"
+  },
+  "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
+  "gate_lock_sha256": "50854fab9d559eea7574c95b357b13a20c87d457bd76ea2eea24706190250739",
+  "gate_result_sha256": "fda8101c9924ebae854f3c4b9a36e4a363a6ff6f19017bcd5a1f3140d9379997",
+  "disposition": "Original gate failed; stop differential-advantage branch, no conditional five-seed expansion or final3000evaluation, preserve all negative evidence and original CPU baseline",
+  "independent_canonical_Jpsi_reconstruction_passed": true,
+  "canonical_gate_cases_checked": 704,
+  "canonical_mean_max_error_deg": 0.0,
+  "same_per_case_public_goals": true
+}
