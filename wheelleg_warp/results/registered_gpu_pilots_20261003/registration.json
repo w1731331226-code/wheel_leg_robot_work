@@ -1,0 +1,60 @@
+{
+  "created_utc": "2026-10-03T06:54:25.340757+00:00",
+  "protocol": "wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3",
+  "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
+  "readiness_sha256": "569c72c2bffea3a611123d55bdba91b2e62e4c5329c09153a699025906641fff",
+  "queue": [
+    {
+      "method": "M3",
+      "seed": 1609
+    },
+    {
+      "method": "B2-V",
+      "seed": 1609
+    },
+    {
+      "method": "B2",
+      "seed": 1609
+    },
+    {
+      "method": "M3",
+      "seed": 1610
+    },
+    {
+      "method": "B2-V",
+      "seed": 1610
+    },
+    {
+      "method": "B2",
+      "seed": 1610
+    },
+    {
+      "method": "M3",
+      "seed": 1611
+    },
+    {
+      "method": "B2-V",
+      "seed": 1611
+    },
+    {
+      "method": "B2",
+      "seed": 1611
+    }
+  ],
+  "policy_steps_per_run": 2000000,
+  "selection_interval": 20000,
+  "first_run": {
+    "method": "M3",
+    "seed": 1609
+  },
+  "stage_review_steps": 200000,
+  "stage_review": "engineering and development trend within same2M budget; no new threshold or budget reset",
+  "initialization": "fresh registered GPU policy; no smoke weights",
+  "device": "cuda",
+  "environments": 100,
+  "one_gpu_training_process_at_a_time": true,
+  "gate_or_final_simulated": false,
+  "deep_review_every5_substantive_rounds": true,
+  "next_deep_review_round": 40,
+  "cleanup_every5_rounds": true
+}
