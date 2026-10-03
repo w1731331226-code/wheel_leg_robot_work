@@ -1,0 +1,71 @@
+{
+  "method": "B2",
+  "seed": 1609,
+  "consumed_policy_steps": 1782700,
+  "latest_scored_steps": 1780000,
+  "partial_rollout_discarded_charged_steps": 2700,
+  "remaining_registered_steps": 217300,
+  "resumable": true,
+  "finite_policy_adam_rms": true,
+  "training_epochs": 3560,
+  "Adam_updates": 71200,
+  "complete_checkpoints": 89,
+  "original_best": {
+    "total": 32,
+    "success_count": 26,
+    "complete": true,
+    "mean_yaw_score_deg": 0.9125001785170168
+  },
+  "original_best_steps": 20000,
+  "failure": "EPA horizon24 warning followed by overflow fail-closed; exact device bitmask/failed physical state was not saved",
+  "source_trace": "Installed mujoco_warp collision_gjk.py emits EPA_HORIZON overflow flag on this warning; nconmax/njmax changes do not address the horizon",
+  "decision": "Use existing registered --resume with unchanged source/collision/model/reward, preserve consumed budget and saved Adam/RMS; reset physical episodes, not exact trajectory continuation; no from-scratch restart or physics-capacity patch",
+  "failure_snapshot": {
+    "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
+    "completed": [
+      {
+        "method": "M3",
+        "seed": 1609
+      },
+      {
+        "method": "B2-V",
+        "seed": 1609
+      }
+    ],
+    "current": {
+      "method": "B2",
+      "seed": 1609,
+      "unit": "wheelleg-height115-gpu-b2-1609.service"
+    },
+    "error": "{'MainPID': '0', 'ExecMainStatus': '1', 'LoadState': 'loaded', 'ActiveState': 'failed'}",
+    "gate_or_final_simulated": false
+  },
+  "checkpoint_snapshot": {
+    "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
+    "path": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1609/interrupted_1782700",
+    "consumed_policy_steps": 1782700,
+    "resumable": true,
+    "physical_trajectory_restart_on_resume": true,
+    "checkpoint_sha256": "895ed0308af31e2b7b9c82b6666158144954f787a552b3fb031c405664137c1f",
+    "normalization_sha256": "7660bf72081de3e933a60fe7854a9b47f3dbb06743281393e3c6da5aa442b155"
+  },
+  "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
+  "gate_or_final_simulated": false,
+  "resume_verified": {
+    "first_resumed_scored_steps": 1800000,
+    "summary": {
+      "total": 32,
+      "success_count": 7,
+      "complete": true,
+      "mean_yaw_score_deg": 1.1854801078475599
+    },
+    "actual_progress_snapshot": 1840000,
+    "training_epochs": 3600,
+    "Adam_updates": 71900,
+    "nominal_uninterrupted_Adam_updates": 72000,
+    "partial_rollout_effect": "2700 charged steps discarded; resumed2300-step buffer yields100 updates instead of200, total100 fewer Adam minibatches; disclose segmented run rather than claim identical optimizer budget",
+    "service_pid": 239215,
+    "queue_pid": 239217,
+    "original_collision_capacity_and_sources_unchanged": true
+  }
+}
