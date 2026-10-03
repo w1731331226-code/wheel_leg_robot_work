@@ -1,12 +1,12 @@
 {
   "service": "wheelleg-height115-gpu-m3-1610.service",
   "active_state": "active",
-  "executed_policy_steps": 100000,
+  "executed_policy_steps": 280000,
   "next_stage": "M3/1610 original2M, then B2-V/1610 and B2/1610; seed1611 follows",
   "next_deep_review_round": 60,
-  "round": 57,
+  "round": 58,
   "goal": "Continue according to paper plan; every5rounds assess scope/direction/value and delete proven redundant files",
-  "stage200k_review": "M3_1609_stage_200000.json",
+  "stage200k_review": "M3_1610_stage_200000.json",
   "gate_or_final_simulated": false,
   "million_review": "M3_1609_million_nonregression.json",
   "completed_runs": [
@@ -32,6 +32,7 @@
   "main_pid": 245665,
   "completed_B2_review": "B2_1609_completed.json",
   "interruption_audit": "B2_1609_interruption_audit.json",
-  "snapshot_utc": "2026-10-03T08:53:24.931765+00:00",
-  "status_scope": "Historical snapshot; recheck systemd and current progress before use"
+  "snapshot_utc": "2026-10-03T08:56:54.313214+00:00",
+  "status_scope": "Historical snapshot; recheck systemd and current progress before use",
+  "stage200k_nonregression": "M3_1610_nonregression_200000.json"
 }
