@@ -1,0 +1,192 @@
+{
+  "round": 85,
+  "created_utc": "2026-10-03T17:17:16.251749+00:00",
+  "completed_registered_runs": 8,
+  "registered_runs": 9,
+  "current_B2_1611_steps_snapshot": 860000,
+  "current_best_steps": 40000,
+  "current_best_summary": {
+    "total": 32,
+    "success_count": 31,
+    "complete": true,
+    "mean_yaw_score_deg": 0.48425937194718444
+  },
+  "M3_V_full_development": {
+    "methods": {
+      "M3": {
+        "by_seed": {
+          "1609": {
+            "best_steps": 820000,
+            "summary": {
+              "total": 32,
+              "success_count": 29,
+              "complete": true,
+              "mean_yaw_score_deg": 0.9575918692280827
+            }
+          },
+          "1610": {
+            "best_steps": 20000,
+            "summary": {
+              "total": 32,
+              "success_count": 31,
+              "complete": true,
+              "mean_yaw_score_deg": 0.609470245446116
+            }
+          },
+          "1611": {
+            "best_steps": 840000,
+            "summary": {
+              "total": 32,
+              "success_count": 29,
+              "complete": true,
+              "mean_yaw_score_deg": 0.7894704425093462
+            }
+          }
+        },
+        "policy_case_successes": 89,
+        "mean_seed_Jpsi_deg": 0.785510852394515
+      },
+      "B2-V": {
+        "by_seed": {
+          "1609": {
+            "best_steps": 1220000,
+            "summary": {
+              "total": 32,
+              "success_count": 28,
+              "complete": true,
+              "mean_yaw_score_deg": 0.7633825599063806
+            }
+          },
+          "1610": {
+            "best_steps": 20000,
+            "summary": {
+              "total": 32,
+              "success_count": 30,
+              "complete": true,
+              "mean_yaw_score_deg": 0.605178533492952
+            }
+          },
+          "1611": {
+            "best_steps": 20000,
+            "summary": {
+              "total": 32,
+              "success_count": 31,
+              "complete": true,
+              "mean_yaw_score_deg": 0.663465896681962
+            }
+          }
+        },
+        "policy_case_successes": 89,
+        "mean_seed_Jpsi_deg": 0.6773423300270982
+      }
+    },
+    "consumed_steps_each": 2000000,
+    "unique_development_cases": 32,
+    "policy_case_pairs_each_method": 96,
+    "paired_M3_lower_Jpsi_than_V": {
+      "1609": false,
+      "1610": false,
+      "1611": false
+    },
+    "scope": "Three policies per method on same fixed32 development cases; no independent gate or96independent scenes; V/1611 trajectory segmented",
+    "remaining_reference": "B2/1611",
+    "extra_task_evaluations": 0,
+    "gate_or_final_simulated": false,
+    "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef"
+  },
+  "equal_budget_1611_500k": {
+    "M3": {
+      "best_steps": 20000,
+      "best": {
+        "total": 32,
+        "success_count": 28,
+        "complete": true,
+        "mean_yaw_score_deg": 0.956787171593217
+      },
+      "last": {
+        "total": 32,
+        "success_count": 13,
+        "complete": true,
+        "mean_yaw_score_deg": 1.6166122129420808
+      }
+    },
+    "B2-V": {
+      "best_steps": 20000,
+      "best": {
+        "total": 32,
+        "success_count": 31,
+        "complete": true,
+        "mean_yaw_score_deg": 0.663465896681962
+      },
+      "last": {
+        "total": 32,
+        "success_count": 12,
+        "complete": true,
+        "mean_yaw_score_deg": 1.9291134396649956
+      }
+    },
+    "B2": {
+      "best_steps": 40000,
+      "best": {
+        "total": 32,
+        "success_count": 31,
+        "complete": true,
+        "mean_yaw_score_deg": 0.48425937194718444
+      },
+      "last": {
+        "total": 32,
+        "success_count": 20,
+        "complete": true,
+        "mean_yaw_score_deg": 0.8254683414712547
+      }
+    }
+  },
+  "selected_B2_training_snapshot": {
+    "policy_steps": 40000,
+    "summary": {
+      "total": 32,
+      "success_count": 31,
+      "complete": true,
+      "mean_yaw_score_deg": 0.48425937194718444
+    },
+    "training_epochs": 80,
+    "Adam_updates": 1600,
+    "recorded_recent_training_episodes": 71,
+    "mean_episode_return": 14.642445610745,
+    "checkpoint_sha256": "ffeaeb9d85e819b68efc89ccff50e323e12365a7ef4aad6d0b01f6349e84a9ae",
+    "normalization_sha256": "d865f6c9a9c4adc5da67b91246e1d2ba7d9d84a5acdabc1d42c04aea66ea59c4",
+    "scope": "Saved rolling episode records, not training success labels or convergence"
+  },
+  "episode_log_audit": "round85_episode_log_audit.json",
+  "plan_assessment": "Conditionally reasonable bounded falsifiable comparison; original9run completion and one-use gate remain required, no partial development substitution.",
+  "direction_assessment": "M3 full development is weaker than strong classical and V mean score; B2 early and mid-budget improvement cannot be renamed as evidence for differential advantage.",
+  "continuation": "Finish final B2 original2M then verify all9 and open original one-use gate. Gate pass permits original conditional formal/ablation/final work; gate fail ends current advantage branch with reproducible negative findings. No budget expansion, runtime reward/network/scene tuning or metric replacement.",
+  "new_evidence": "B2/1611 selected40k31/.484259 has80epochs1600updates and71recorded training episode ends; not an empty early20k log. Recent100return6.612 to9.548 and development8 to20 recover at200k to500k, but not beyond selected31 or classical32. No scene/success labels or IID/causal/convergence proof.",
+  "limitations": [
+    "Final B2 full budget and independent gate missing",
+    "Fixed32 development reused; policy-case pairs not independent scenes",
+    "Episode windows asynchronous and onlyr/l",
+    "Fixed100world banks and partial observability/hidden Nom memory",
+    "Rank/covariance/local reachable-set differences",
+    "B2/1609 discarded2700charged steps and100fewer Adam minibatches",
+    "V/1611 evaluation-interrupted physical/RNG trajectory restart despite identical update count",
+    "EPA trigger not fixed/reproduced; guarded failure retained",
+    "Design violations preclude global design-safety guarantees",
+    "Static888action means not rollout clipping or cause",
+    "Final regular geometry and asymmetric pressure coverage limited",
+    "Novelty/publication suitability unproven"
+  ],
+  "cleanup_files": 16,
+  "cleanup_bytes": 4723,
+  "extra_task_evaluations": 0,
+  "gate_or_final_simulated": false,
+  "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
+  "evidence": [
+    "M3_V_three_seed_full_development.json",
+    "triple_registered_1611_500000.json",
+    "B2_1611_halfmillion_audit.json",
+    "round85_episode_log_audit.json",
+    "round85_selected_B2_training_snapshot.json",
+    "round85_cleanup.json"
+  ]
+}

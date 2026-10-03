@@ -1,0 +1,16 @@
+{
+  "policy_steps": 40000,
+  "summary": {
+    "total": 32,
+    "success_count": 31,
+    "complete": true,
+    "mean_yaw_score_deg": 0.48425937194718444
+  },
+  "training_epochs": 80,
+  "Adam_updates": 1600,
+  "recorded_recent_training_episodes": 71,
+  "mean_episode_return": 14.642445610745,
+  "checkpoint_sha256": "ffeaeb9d85e819b68efc89ccff50e323e12365a7ef4aad6d0b01f6349e84a9ae",
+  "normalization_sha256": "d865f6c9a9c4adc5da67b91246e1d2ba7d9d84a5acdabc1d42c04aea66ea59c4",
+  "scope": "Saved rolling episode records, not training success labels or convergence"
+}
