@@ -1,0 +1,132 @@
+{
+  "stage_policy_steps": 200000,
+  "method": "M3",
+  "seed": 1611,
+  "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
+  "records": [
+    {
+      "policy_steps": 20000,
+      "summary": {
+        "total": 32,
+        "success_count": 28,
+        "complete": true,
+        "mean_yaw_score_deg": 0.956787171593217
+      },
+      "metrics_sha256": "fbfdaabfd92cf34e0fd372f4ef6257d7644818424b03c1b8eff346decbc49f05"
+    },
+    {
+      "policy_steps": 40000,
+      "summary": {
+        "total": 32,
+        "success_count": 19,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9925818142076993
+      },
+      "metrics_sha256": "99422a4ac3bc5e80f296f3bfc8036ef2834f807d66caa8210dc9f29ffa34f1f0"
+    },
+    {
+      "policy_steps": 60000,
+      "summary": {
+        "total": 32,
+        "success_count": 12,
+        "complete": true,
+        "mean_yaw_score_deg": 1.6181243955418854
+      },
+      "metrics_sha256": "223da3f994eb1a601d3e364410828850f74e0cd6ad80e9bef88c8033885017db"
+    },
+    {
+      "policy_steps": 80000,
+      "summary": {
+        "total": 32,
+        "success_count": 6,
+        "complete": true,
+        "mean_yaw_score_deg": 1.7889704843244467
+      },
+      "metrics_sha256": "dddfd155c1eaf51bf47390c0388d6dce8a6ec66cfef8ae240ba44c689550f1c0"
+    },
+    {
+      "policy_steps": 100000,
+      "summary": {
+        "total": 32,
+        "success_count": 3,
+        "complete": true,
+        "mean_yaw_score_deg": 2.0016391397716378
+      },
+      "metrics_sha256": "2de74dce18c023fcbcbe701bbb05f561a7a92b19b4a0b012e3eb24e310bb1adc"
+    },
+    {
+      "policy_steps": 120000,
+      "summary": {
+        "total": 32,
+        "success_count": 9,
+        "complete": true,
+        "mean_yaw_score_deg": 1.7513524706694663
+      },
+      "metrics_sha256": "4640e11227e43c754d28bfe82d235deb3c281a8b35cc5efcba60af6b64a6dfcb"
+    },
+    {
+      "policy_steps": 140000,
+      "summary": {
+        "total": 32,
+        "success_count": 22,
+        "complete": true,
+        "mean_yaw_score_deg": 1.0801360955218988
+      },
+      "metrics_sha256": "f1db5209c5427e28eb9fcb78d453eefff38dc899ad622e713a7db31f1436fa9a"
+    },
+    {
+      "policy_steps": 160000,
+      "summary": {
+        "total": 32,
+        "success_count": 8,
+        "complete": true,
+        "mean_yaw_score_deg": 2.393034816953171
+      },
+      "metrics_sha256": "d61f1a8d3372f529c0b2cc7de3fc29a2aef1e6c9b6e8d87396dab7ed9568b7f4"
+    },
+    {
+      "policy_steps": 180000,
+      "summary": {
+        "total": 32,
+        "success_count": 5,
+        "complete": true,
+        "mean_yaw_score_deg": 2.4488340647616553
+      },
+      "metrics_sha256": "124b64599b39b126fc468e681a4cda671ece641d87922e345fa93f9cfc5f6078"
+    },
+    {
+      "policy_steps": 200000,
+      "summary": {
+        "total": 32,
+        "success_count": 8,
+        "complete": true,
+        "mean_yaw_score_deg": 2.1764797979445047
+      },
+      "metrics_sha256": "0b074d01d4574161e3d99aa8f4ba19bf712e1aeddefabe0f1ce1865ce79c7747"
+    }
+  ],
+  "best": {
+    "total": 32,
+    "success_count": 28,
+    "complete": true,
+    "mean_yaw_score_deg": 0.956787171593217
+  },
+  "best_policy_steps": 20000,
+  "last": {
+    "total": 32,
+    "success_count": 8,
+    "complete": true,
+    "mean_yaw_score_deg": 2.1764797979445047
+  },
+  "selected_b1": {
+    "total": 32,
+    "success_count": 32,
+    "complete": true,
+    "mean_yaw_score_deg": 0.27242552779014617
+  },
+  "engineering_current_source": "initial_runtime_check.json",
+  "no_current_method_advantage": true,
+  "decision": "Continue unchanged registered2M limit and full paired comparison; this is a development milestone, not a new budget or gate opening",
+  "gate_or_final_simulated": false,
+  "verifier_sha256": "00717b698bc57aeb9db6ac4cef2b3860910f219457ae98ee1def37b1f847000a"
+}
