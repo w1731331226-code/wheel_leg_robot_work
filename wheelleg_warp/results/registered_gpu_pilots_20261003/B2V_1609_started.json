@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "method": "B2-V",
+  "seed": 1609,
+  "checked_steps": 20000,
+  "action_dimension": 6,
+  "finite_policy_adam_rms": true,
+  "summary": {
+    "total": 32,
+    "success_count": 22,
+    "complete": true,
+    "mean_yaw_score_deg": 1.1337141290784989
+  },
+  "paired_same_budget_M3_summary": {
+    "total": 32,
+    "success_count": 27,
+    "complete": true,
+    "mean_yaw_score_deg": 0.7394381831641365
+  },
+  "comparison_scope": "Only20k same-seed development snapshot; not completed-method research comparison",
+  "new_registered_initialization": true,
+  "source_protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
+  "gate_or_final_simulated": false
+}

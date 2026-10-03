@@ -1,0 +1,29 @@
+{
+  "round": 41,
+  "method": "M3",
+  "seed": 1609,
+  "full_budget": 2000000,
+  "evaluations": 100,
+  "selected_steps": 820000,
+  "selected_summary": {
+    "total": 32,
+    "success_count": 29,
+    "complete": true,
+    "mean_yaw_score_deg": 0.9575918692280827
+  },
+  "final_summary": {
+    "total": 32,
+    "success_count": 22,
+    "complete": true,
+    "mean_yaw_score_deg": 1.0365181737959928
+  },
+  "finite_parameters_optimizer_normalization": true,
+  "consumed_from_fresh_random_initialization": true,
+  "process_exit_status": 0,
+  "selected_lost_B0_successes": 3,
+  "speed_passes": 32,
+  "arrival_passes": 32,
+  "queue_adopted_next": "B2-V/1609",
+  "gate_or_final_simulated": false,
+  "scope": "One completed seed; full paired3seed research comparison remains incomplete"
+}
