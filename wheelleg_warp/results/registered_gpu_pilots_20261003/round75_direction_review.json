@@ -1,0 +1,168 @@
+{
+  "round": 75,
+  "created_utc": "2026-10-03T11:11:55.554049+00:00",
+  "completed_registered_runs": 6,
+  "registered_runs": 9,
+  "current_M3_1611_steps_snapshot": 1345000,
+  "current_best_steps": 840000,
+  "current_best_summary": {
+    "total": 32,
+    "success_count": 29,
+    "complete": true,
+    "mean_yaw_score_deg": 0.7894704425093462
+  },
+  "completed_seed_comparisons": {
+    "1609": {
+      "M3": {
+        "best_steps": 820000,
+        "best": {
+          "total": 32,
+          "success_count": 29,
+          "complete": true,
+          "mean_yaw_score_deg": 0.9575918692280827
+        },
+        "last": {
+          "total": 32,
+          "success_count": 22,
+          "complete": true,
+          "mean_yaw_score_deg": 1.0365181737959928
+        }
+      },
+      "B2-V": {
+        "best_steps": 1220000,
+        "best": {
+          "total": 32,
+          "success_count": 28,
+          "complete": true,
+          "mean_yaw_score_deg": 0.7633825599063806
+        },
+        "last": {
+          "total": 32,
+          "success_count": 15,
+          "complete": true,
+          "mean_yaw_score_deg": 1.2091541766780236
+        }
+      },
+      "B2": {
+        "best_steps": 20000,
+        "best": {
+          "total": 32,
+          "success_count": 26,
+          "complete": true,
+          "mean_yaw_score_deg": 0.9125001785170168
+        },
+        "last": {
+          "total": 32,
+          "success_count": 12,
+          "complete": true,
+          "mean_yaw_score_deg": 1.093667839591347
+        }
+      }
+    },
+    "1610": {
+      "M3": {
+        "best_steps": 20000,
+        "best": {
+          "total": 32,
+          "success_count": 31,
+          "complete": true,
+          "mean_yaw_score_deg": 0.609470245446116
+        },
+        "last": {
+          "total": 32,
+          "success_count": 17,
+          "complete": true,
+          "mean_yaw_score_deg": 1.0393510995227133
+        }
+      },
+      "B2-V": {
+        "best_steps": 20000,
+        "best": {
+          "total": 32,
+          "success_count": 30,
+          "complete": true,
+          "mean_yaw_score_deg": 0.605178533492952
+        },
+        "last": {
+          "total": 32,
+          "success_count": 12,
+          "complete": true,
+          "mean_yaw_score_deg": 1.252878377508521
+        }
+      },
+      "B2": {
+        "best_steps": 20000,
+        "best": {
+          "total": 32,
+          "success_count": 30,
+          "complete": true,
+          "mean_yaw_score_deg": 0.5435935824621592
+        },
+        "last": {
+          "total": 32,
+          "success_count": 18,
+          "complete": true,
+          "mean_yaw_score_deg": 0.8735096955230933
+        }
+      }
+    }
+  },
+  "strong_classical": {
+    "total": 32,
+    "success_count": 32,
+    "complete": true,
+    "mean_yaw_score_deg": 0.27242552779014617
+  },
+  "third_seed_halfmillion": {
+    "total": 32,
+    "success_count": 13,
+    "complete": true,
+    "mean_yaw_score_deg": 1.6166122129420808
+  },
+  "third_seed_failures": {
+    "design1p4": 1,
+    "obstacle_contact": 2,
+    "terrain": 16,
+    "attitude": 1
+  },
+  "episode_log_audit": "round75_episode_log_audit.json",
+  "plan_assessment": "Conditionally reasonable as a bounded falsifiable comparison; two completed seed groups do not replace all9 runs or original one-use held-out gate.",
+  "direction_assessment": "No advantage, broad robustness or novelty established. Keep shared VMC/LQR and standard-PPO action-parameterization comparison; engineering success and local recovery are not a substitute contribution.",
+  "continuation": "Complete third-seed matched budgets and original one-use research gate. Gate pass permits original conditional formal/ablation/final work; gate failure stops current advantage branch and retains reproducible negative results. No added budget, metric replacement or runtime reward/network/scene tuning.",
+  "new_evidence": "M3/1611 at20k has40epochs800updates but0 recorded episode ends. At200k to500k, recent100episode mean return6.860 to10.306 and development8 to13 both recover, still below selected28 and classical32. Asynchronousr/l windows lack scene/success labels: not full training success, stability or causal explanation.",
+  "limitations": [
+    "Third seed and its matched reference budgets unfinished",
+    "No independent gate or final outcomes yet",
+    "Recent training episode windows are asynchronous and lack scene/success labels",
+    "Fixed100world banks and partial observability/hidden Nom memory",
+    "Action rank/covariance/local reachable-set differences",
+    "B2/1609 segmented exposure100fewer Adam minibatches",
+    "EPA horizon trigger geometry not reproduced/fixed",
+    "Observed design violations exclude global design-safety claims",
+    "Static888mean clipping not rollout clipping or causality",
+    "Final regular geometry/asymmetric pressure coverage is limited",
+    "Novelty/publication suitability unproven"
+  ],
+  "cleanup_files": 12,
+  "cleanup_bytes": 3652,
+  "extra_task_evaluations": 0,
+  "gate_or_final_simulated": false,
+  "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
+  "evidence": [
+    "triple_registered_1609_2000000.json",
+    "triple_registered_1610_2000000.json",
+    "M3_1611_halfmillion_audit.json",
+    "round75_episode_log_audit.json",
+    "round75_cleanup.json"
+  ],
+  "current_selected_training_snapshot": {
+    "policy_steps": 840000,
+    "training_epochs": 1680,
+    "Adam_updates": 33600,
+    "recorded_recent_training_episodes": 100,
+    "mean_episode_return": 11.900093014653335,
+    "checkpoint_sha256": "1f0b8a4984bd3aa6a312ba11129000832040e6d3a463e72a6428d9bf464bca61",
+    "normalization_sha256": "2ef0968f7ccb6151ee3744ee5c57522b45e52fc70662214b3d35c7d58f3d345c",
+    "inference": "New later selected checkpoint improves development29/.789470, still below classical; saved100window not full training success or convergence proof"
+  }
+}
