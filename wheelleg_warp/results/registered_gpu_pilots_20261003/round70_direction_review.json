@@ -1,0 +1,110 @@
+{
+  "round": 70,
+  "created_utc": "2026-10-03T10:29:24.939090+00:00",
+  "completed_registered_runs": 5,
+  "registered_runs": 9,
+  "current_B2_1610_steps_snapshot": 1120000,
+  "current_best_steps": 20000,
+  "current_best_summary": {
+    "total": 32,
+    "success_count": 30,
+    "complete": true,
+    "mean_yaw_score_deg": 0.5435935824621592
+  },
+  "full_M3_1610": {
+    "total": 32,
+    "success_count": 31,
+    "complete": true,
+    "mean_yaw_score_deg": 0.609470245446116
+  },
+  "full_V_1610": {
+    "total": 32,
+    "success_count": 30,
+    "complete": true,
+    "mean_yaw_score_deg": 0.605178533492952
+  },
+  "equal_budget_1610_500k": {
+    "M3": {
+      "best_steps": 20000,
+      "best": {
+        "total": 32,
+        "success_count": 31,
+        "complete": true,
+        "mean_yaw_score_deg": 0.609470245446116
+      },
+      "last": {
+        "total": 32,
+        "success_count": 15,
+        "complete": true,
+        "mean_yaw_score_deg": 1.26474079761371
+      }
+    },
+    "B2-V": {
+      "best_steps": 20000,
+      "best": {
+        "total": 32,
+        "success_count": 30,
+        "complete": true,
+        "mean_yaw_score_deg": 0.605178533492952
+      },
+      "last": {
+        "total": 32,
+        "success_count": 11,
+        "complete": true,
+        "mean_yaw_score_deg": 1.2812477702248075
+      }
+    },
+    "B2": {
+      "best_steps": 20000,
+      "best": {
+        "total": 32,
+        "success_count": 30,
+        "complete": true,
+        "mean_yaw_score_deg": 0.5435935824621592
+      },
+      "last": {
+        "total": 32,
+        "success_count": 22,
+        "complete": true,
+        "mean_yaw_score_deg": 0.8222109555220296
+      }
+    }
+  },
+  "strong_classical": {
+    "total": 32,
+    "success_count": 32,
+    "complete": true,
+    "mean_yaw_score_deg": 0.27242552779014617
+  },
+  "episode_log_audit": "round70_episode_log_audit.json",
+  "plan_assessment": "Bounded falsifiable comparison remains conditionally reasonable; strong baseline, original joint gate and held-out rules kept. Method advantage is not established.",
+  "direction_assessment": "Keep registered VMC/LQR/standard-PPO parameterization comparison. B2 mid-budget recovery is real descriptive evidence against universal monotonic deterioration, but does not justify causal attribution or a renamed main contribution.",
+  "continuation": "Complete original9 runs and one-use research gate. Only original gate pass permits conditional formal/ablation/final work; gate fail ends the advantage branch with reproducible negative findings. No extra budgets or runtime tuning.",
+  "new_evidence": "B2/1610 at20k has40epochs800updates but0 episode records, matching earlier two methods. Its recent100episode mean return rose3.562 to12.544 at200k to500k, while development improved7 to22. Window onlyr/l has no scene/success labels: not full training success, IID evidence or cause of recovery.",
+  "limitations": [
+    "Second-seed B2 and all third-seed runs incomplete",
+    "All three second-seed500k-selected best checkpoints are20k without recorded training episode ends",
+    "Asynchronous rolling returns lack scene/success labels",
+    "Fixed100world banks, partial observability and hidden Nom memory",
+    "Action covariance/rank/local reachable-set differences",
+    "B2/1609 discarded2700charged samples and100fewer Adam updates",
+    "EPA horizon failure is not root-cause fixed",
+    "Design failures prevent global design-safety claims",
+    "Static888 action means are not rollout clipping or causal evidence",
+    "Final regular geometry and asymmetric pressure limits",
+    "Novelty/publication suitability unproven"
+  ],
+  "cleanup_files": 14,
+  "cleanup_bytes": 4256,
+  "extra_task_evaluations": 0,
+  "gate_or_final_simulated": false,
+  "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
+  "evidence": [
+    "B2V_1610_completed.json",
+    "M3_1610_completed.json",
+    "triple_registered_1610_500000.json",
+    "B2_1610_halfmillion_audit.json",
+    "round70_episode_log_audit.json",
+    "round70_cleanup.json"
+  ]
+}
