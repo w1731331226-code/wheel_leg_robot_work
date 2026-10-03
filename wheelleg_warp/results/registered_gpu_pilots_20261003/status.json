@@ -1,10 +1,10 @@
 {
   "service": null,
-  "active_state": "research_gate_failed_branch_closed",
+  "active_state": "completed_original_registered_plan_negative_exit",
   "executed_policy_steps": 1080000,
-  "next_stage": "Negative-result delivery and original-goal completion audit; no further training",
+  "next_stage": "No further work in failed advantage branch; future hypotheses require a separately registered plan",
   "next_deep_review_round": 90,
-  "round": 88,
+  "round": 89,
   "goal": "Continue according to paper plan; every5rounds assess scope/direction/value and delete proven redundant files",
   "stage200k_review": "B2_1611_stage_200000.json",
   "gate_or_final_simulated": true,
@@ -56,7 +56,7 @@
   "main_pid": 0,
   "completed_B2_review": "B2_1610_completed.json",
   "interruption_audit": "B2_1609_interruption_audit.json",
-  "snapshot_utc": "2026-10-03T17:54:43.496884+00:00",
+  "snapshot_utc": "2026-10-03T18:01:22.736863+00:00",
   "status_scope": "Historical snapshot; recheck systemd and current progress before use",
   "stage200k_nonregression": "B2_1611_nonregression_200000.json",
   "halfmillion_audit": "B2_1611_halfmillion_audit.json",
@@ -79,5 +79,7 @@
   "gate_verification": "independent_gate_verification.json",
   "research_disposition": "research_disposition.json",
   "independent_gate_simulated": true,
-  "sealed_final_simulated": false
+  "sealed_final_simulated": false,
+  "completion_audit": "completion_audit.json",
+  "completed_plan_scope": "9registered pilots plus original one-use gate/regression and negative-result stopping rule"
 }

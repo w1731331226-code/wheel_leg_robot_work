@@ -83,8 +83,12 @@
     },
     {
       "requirement": "Final Chinese memory/plan/result documentation, commit/push and active sync service",
-      "evidence": "Pending final delivery commit and remote/service check",
-      "status": "pending_final_sync"
+      "evidence": {
+        "negative_result_delivery_commit": "3bcca96f261923c3eda416466071a2621749c44c",
+        "remote_main_verified_equal": true,
+        "sync_service_active_verified_before_final_metadata_commit": true
+      },
+      "status": "proved"
     }
   ],
   "original_goal_scope": "Original registered paper-plan comparison with explicit failed-gate negative-result exit; not a claim manuscript publication or all possible research complete",
@@ -212,6 +216,9 @@
       "bytes": 4723
     }
   ],
-  "last_completed_work_round": 88,
-  "gate_result_sha256": "fda8101c9924ebae854f3c4b9a36e4a363a6ff6f19017bcd5a1f3140d9379997"
+  "last_completed_work_round": 89,
+  "gate_result_sha256": "fda8101c9924ebae854f3c4b9a36e4a363a6ff6f19017bcd5a1f3140d9379997",
+  "original_registered_plan_failed_gate_exit_complete": true,
+  "final_delivery_checked_utc": "2026-10-03T18:01:22.735558+00:00",
+  "manuscript_publication_or_unregistered_future_research_not_claimed_complete": true
 }
