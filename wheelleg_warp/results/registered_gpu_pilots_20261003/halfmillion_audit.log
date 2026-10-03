@@ -1,0 +1,3 @@
+AUDIT 20000 {'total': 32, 'success_count': 27, 'complete': True, 'mean_yaw_score_deg': 0.7394381831641365} failures {'terrain': 4, 'attitude': 1} std [0.47756296396255493, 0.47979387640953064, 0.2518818974494934] clip 0.0
+AUDIT 200000 {'total': 32, 'success_count': 11, 'complete': True, 'mean_yaw_score_deg': 1.2451261884571951} failures {'obstacle_contact': 4, 'terrain': 19, 'attitude': 1} std [0.40408119559288025, 0.4238571524620056, 0.2045377939939499] clip 0.0
+AUDIT 500000 {'total': 32, 'success_count': 10, 'complete': True, 'mean_yaw_score_deg': 1.71876461024668} failures {'obstacle_contact': 3, 'attitude': 4, 'terrain': 20} std [0.291050523519516, 0.3078310191631317, 0.15376664698123932] clip 0.0

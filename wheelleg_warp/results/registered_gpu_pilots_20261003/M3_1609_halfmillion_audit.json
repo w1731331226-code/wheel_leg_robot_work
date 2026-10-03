@@ -1,0 +1,627 @@
+{
+  "passed": true,
+  "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
+  "bank_sha256": "61ef3e783c1a9a13e5a476fcd889c13980955fcb7d65d6e8bf828f4ed847b6d0",
+  "method": "M3",
+  "seed": 1609,
+  "reports": [
+    {
+      "policy_steps": 20000,
+      "summary": {
+        "total": 32,
+        "success_count": 27,
+        "complete": true,
+        "mean_yaw_score_deg": 0.7394381831641365
+      },
+      "failure_counts_nonexclusive": {
+        "terrain": 4,
+        "attitude": 1
+      },
+      "terrain_success_total": {
+        "legacy": [
+          4,
+          4
+        ],
+        "multi_step": [
+          4,
+          4
+        ],
+        "rough": [
+          2,
+          3
+        ],
+        "mixed": [
+          3,
+          4
+        ],
+        "ramp": [
+          4,
+          4
+        ],
+        "rolling_slope": [
+          1,
+          2
+        ],
+        "cross_slope": [
+          3,
+          4
+        ],
+        "split_level": [
+          2,
+          2
+        ],
+        "step": [
+          4,
+          5
+        ]
+      },
+      "failed_cases": [
+        {
+          "seed": 2900003,
+          "height": 0.17132622079555535,
+          "terrain": "rough",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900007,
+          "height": 0.1408986169570477,
+          "terrain": "rolling_slope",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900015,
+          "height": 0.31618721261817817,
+          "terrain": "cross_slope",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900017,
+          "height": 0.38,
+          "terrain": "mixed",
+          "failures": [
+            "attitude"
+          ]
+        },
+        {
+          "seed": 2900020,
+          "height": 0.16251779975080805,
+          "terrain": "step",
+          "failures": [
+            "terrain"
+          ]
+        }
+      ],
+      "finite_policy_optimizer_rms": true,
+      "training_epochs": 40,
+      "optimizer_steps": [
+        800
+      ],
+      "learned_std": [
+        0.47756296396255493,
+        0.47979387640953064,
+        0.2518818974494934
+      ],
+      "fixed_zero_request_bank_mean_absolute_policy_output": [
+        0.04061874747276306,
+        0.04398297891020775,
+        0.03033783845603466
+      ],
+      "fixed_zero_request_bank_action_clip_fraction": 0.0,
+      "normalizer_observation_count": 20100.0001,
+      "diagnostic_scope": "Frozen888zero-Actor states, current checkpoint normalization; action audit only, not task replay or causal proof"
+    },
+    {
+      "policy_steps": 200000,
+      "summary": {
+        "total": 32,
+        "success_count": 11,
+        "complete": true,
+        "mean_yaw_score_deg": 1.2451261884571951
+      },
+      "failure_counts_nonexclusive": {
+        "obstacle_contact": 4,
+        "terrain": 19,
+        "attitude": 1
+      },
+      "terrain_success_total": {
+        "legacy": [
+          2,
+          4
+        ],
+        "multi_step": [
+          0,
+          4
+        ],
+        "rough": [
+          1,
+          3
+        ],
+        "mixed": [
+          1,
+          4
+        ],
+        "ramp": [
+          2,
+          4
+        ],
+        "rolling_slope": [
+          0,
+          2
+        ],
+        "cross_slope": [
+          2,
+          4
+        ],
+        "split_level": [
+          2,
+          2
+        ],
+        "step": [
+          1,
+          5
+        ]
+      },
+      "failed_cases": [
+        {
+          "seed": 2900000,
+          "height": 0.115,
+          "terrain": "legacy",
+          "failures": [
+            "obstacle_contact"
+          ]
+        },
+        {
+          "seed": 2900001,
+          "height": 0.38,
+          "terrain": "multi_step",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900002,
+          "height": 0.3,
+          "terrain": "multi_step",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900003,
+          "height": 0.17132622079555535,
+          "terrain": "rough",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900004,
+          "height": 0.13141066237353433,
+          "terrain": "mixed",
+          "failures": [
+            "terrain",
+            "obstacle_contact"
+          ]
+        },
+        {
+          "seed": 2900005,
+          "height": 0.12082529878079787,
+          "terrain": "ramp",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900007,
+          "height": 0.1408986169570477,
+          "terrain": "rolling_slope",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900008,
+          "height": 0.18982523199595835,
+          "terrain": "multi_step",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900009,
+          "height": 0.12141664955193733,
+          "terrain": "legacy",
+          "failures": [
+            "obstacle_contact"
+          ]
+        },
+        {
+          "seed": 2900010,
+          "height": 0.25078655109959375,
+          "terrain": "ramp",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900011,
+          "height": 0.11918927609800414,
+          "terrain": "multi_step",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900013,
+          "height": 0.36571119337353825,
+          "terrain": "cross_slope",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900015,
+          "height": 0.31618721261817817,
+          "terrain": "cross_slope",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900017,
+          "height": 0.38,
+          "terrain": "mixed",
+          "failures": [
+            "attitude",
+            "terrain",
+            "obstacle_contact"
+          ]
+        },
+        {
+          "seed": 2900018,
+          "height": 0.3,
+          "terrain": "step",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900019,
+          "height": 0.3277291933827586,
+          "terrain": "rolling_slope",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900020,
+          "height": 0.16251779975080805,
+          "terrain": "step",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900025,
+          "height": 0.15146744947403132,
+          "terrain": "rough",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900026,
+          "height": 0.15550542248143315,
+          "terrain": "mixed",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900027,
+          "height": 0.37060511027327436,
+          "terrain": "step",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900031,
+          "height": 0.3361541031413361,
+          "terrain": "step",
+          "failures": [
+            "terrain"
+          ]
+        }
+      ],
+      "finite_policy_optimizer_rms": true,
+      "training_epochs": 400,
+      "optimizer_steps": [
+        8000
+      ],
+      "learned_std": [
+        0.40408119559288025,
+        0.4238571524620056,
+        0.2045377939939499
+      ],
+      "fixed_zero_request_bank_mean_absolute_policy_output": [
+        0.23900285363197327,
+        0.1946759968996048,
+        0.14952173829078674
+      ],
+      "fixed_zero_request_bank_action_clip_fraction": 0.0,
+      "normalizer_observation_count": 200100.0001,
+      "diagnostic_scope": "Frozen888zero-Actor states, current checkpoint normalization; action audit only, not task replay or causal proof"
+    },
+    {
+      "policy_steps": 500000,
+      "summary": {
+        "total": 32,
+        "success_count": 10,
+        "complete": true,
+        "mean_yaw_score_deg": 1.71876461024668
+      },
+      "failure_counts_nonexclusive": {
+        "obstacle_contact": 3,
+        "attitude": 4,
+        "terrain": 20
+      },
+      "terrain_success_total": {
+        "legacy": [
+          2,
+          4
+        ],
+        "multi_step": [
+          0,
+          4
+        ],
+        "rough": [
+          1,
+          3
+        ],
+        "mixed": [
+          1,
+          4
+        ],
+        "ramp": [
+          2,
+          4
+        ],
+        "rolling_slope": [
+          0,
+          2
+        ],
+        "cross_slope": [
+          2,
+          4
+        ],
+        "split_level": [
+          1,
+          2
+        ],
+        "step": [
+          1,
+          5
+        ]
+      },
+      "failed_cases": [
+        {
+          "seed": 2900000,
+          "height": 0.115,
+          "terrain": "legacy",
+          "failures": [
+            "obstacle_contact"
+          ]
+        },
+        {
+          "seed": 2900001,
+          "height": 0.38,
+          "terrain": "multi_step",
+          "failures": [
+            "attitude",
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900002,
+          "height": 0.3,
+          "terrain": "multi_step",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900003,
+          "height": 0.17132622079555535,
+          "terrain": "rough",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900004,
+          "height": 0.13141066237353433,
+          "terrain": "mixed",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900005,
+          "height": 0.12082529878079787,
+          "terrain": "ramp",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900007,
+          "height": 0.1408986169570477,
+          "terrain": "rolling_slope",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900008,
+          "height": 0.18982523199595835,
+          "terrain": "multi_step",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900009,
+          "height": 0.12141664955193733,
+          "terrain": "legacy",
+          "failures": [
+            "attitude",
+            "obstacle_contact"
+          ]
+        },
+        {
+          "seed": 2900011,
+          "height": 0.11918927609800414,
+          "terrain": "multi_step",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900013,
+          "height": 0.36571119337353825,
+          "terrain": "cross_slope",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900014,
+          "height": 0.37275142017697305,
+          "terrain": "rough",
+          "failures": [
+            "attitude",
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900016,
+          "height": 0.115,
+          "terrain": "split_level",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900017,
+          "height": 0.38,
+          "terrain": "mixed",
+          "failures": [
+            "attitude",
+            "terrain",
+            "obstacle_contact"
+          ]
+        },
+        {
+          "seed": 2900018,
+          "height": 0.3,
+          "terrain": "step",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900019,
+          "height": 0.3277291933827586,
+          "terrain": "rolling_slope",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900020,
+          "height": 0.16251779975080805,
+          "terrain": "step",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900026,
+          "height": 0.15550542248143315,
+          "terrain": "mixed",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900027,
+          "height": 0.37060511027327436,
+          "terrain": "step",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900028,
+          "height": 0.3425269869102781,
+          "terrain": "cross_slope",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900029,
+          "height": 0.36249941134003816,
+          "terrain": "ramp",
+          "failures": [
+            "terrain"
+          ]
+        },
+        {
+          "seed": 2900031,
+          "height": 0.3361541031413361,
+          "terrain": "step",
+          "failures": [
+            "terrain"
+          ]
+        }
+      ],
+      "finite_policy_optimizer_rms": true,
+      "training_epochs": 1000,
+      "optimizer_steps": [
+        20000
+      ],
+      "learned_std": [
+        0.291050523519516,
+        0.3078310191631317,
+        0.15376664698123932
+      ],
+      "fixed_zero_request_bank_mean_absolute_policy_output": [
+        0.4386318325996399,
+        0.16076543927192688,
+        0.17474155128002167
+      ],
+      "fixed_zero_request_bank_action_clip_fraction": 0.0,
+      "normalizer_observation_count": 500100.0001,
+      "diagnostic_scope": "Frozen888zero-Actor states, current checkpoint normalization; action audit only, not task replay or causal proof"
+    }
+  ],
+  "selected_b1": {
+    "total": 32,
+    "success_count": 32,
+    "complete": true,
+    "mean_yaw_score_deg": 0.27242552779014617
+  },
+  "configuration_changed": false,
+  "extra_task_evaluations": 0,
+  "gate_or_final_simulated": false,
+  "decision": "Continue registered2M and paired reference runs; deterioration is real development evidence, not tensor failure. Investigate reward/partial observability only after frozen comparison, no mid-run tuning.",
+  "verifier_sha256": "56659da406557526486056f3d2e9cde2186604c20e8f05096e6962e229cefd8a"
+}
