@@ -1,0 +1,293 @@
+{
+  "seed": 1609,
+  "equal_budget": 1000000,
+  "group_boundaries": "Existing115/160/250/300/380mm design nodes; no outcome-fitted cuts",
+  "methods": {
+    "M3": {
+      "selected_steps": 820000,
+      "summary": {
+        "total": 32,
+        "success_count": 29,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9575918692280827
+      },
+      "groups": [
+        {
+          "interval_m": [
+            0.115,
+            0.16
+          ],
+          "cases": 10,
+          "success": 8,
+          "nonexclusive_failures": {
+            "design": 1,
+            "attitude": 1,
+            "terrain": 1
+          },
+          "case_ids": [
+            2900000,
+            2900004,
+            2900005,
+            2900007,
+            2900009,
+            2900011,
+            2900016,
+            2900024,
+            2900025,
+            2900026
+          ]
+        },
+        {
+          "interval_m": [
+            0.16,
+            0.25
+          ],
+          "cases": 5,
+          "success": 4,
+          "nonexclusive_failures": {
+            "terrain": 1
+          },
+          "case_ids": [
+            2900003,
+            2900006,
+            2900008,
+            2900020,
+            2900030
+          ]
+        },
+        {
+          "interval_m": [
+            0.25,
+            0.3
+          ],
+          "cases": 4,
+          "success": 4,
+          "nonexclusive_failures": {},
+          "case_ids": [
+            2900010,
+            2900012,
+            2900021,
+            2900023
+          ]
+        },
+        {
+          "interval_m": [
+            0.3,
+            0.38
+          ],
+          "cases": 13,
+          "success": 13,
+          "nonexclusive_failures": {},
+          "case_ids": [
+            2900001,
+            2900002,
+            2900013,
+            2900014,
+            2900015,
+            2900017,
+            2900018,
+            2900019,
+            2900022,
+            2900027,
+            2900028,
+            2900029,
+            2900031
+          ]
+        }
+      ]
+    },
+    "B2-V": {
+      "selected_steps": 940000,
+      "summary": {
+        "total": 32,
+        "success_count": 27,
+        "complete": true,
+        "mean_yaw_score_deg": 0.6620982597753033
+      },
+      "groups": [
+        {
+          "interval_m": [
+            0.115,
+            0.16
+          ],
+          "cases": 10,
+          "success": 8,
+          "nonexclusive_failures": {
+            "design": 1,
+            "terrain": 1
+          },
+          "case_ids": [
+            2900000,
+            2900004,
+            2900005,
+            2900007,
+            2900009,
+            2900011,
+            2900016,
+            2900024,
+            2900025,
+            2900026
+          ]
+        },
+        {
+          "interval_m": [
+            0.16,
+            0.25
+          ],
+          "cases": 5,
+          "success": 3,
+          "nonexclusive_failures": {
+            "terrain": 2
+          },
+          "case_ids": [
+            2900003,
+            2900006,
+            2900008,
+            2900020,
+            2900030
+          ]
+        },
+        {
+          "interval_m": [
+            0.25,
+            0.3
+          ],
+          "cases": 4,
+          "success": 4,
+          "nonexclusive_failures": {},
+          "case_ids": [
+            2900010,
+            2900012,
+            2900021,
+            2900023
+          ]
+        },
+        {
+          "interval_m": [
+            0.3,
+            0.38
+          ],
+          "cases": 13,
+          "success": 12,
+          "nonexclusive_failures": {
+            "attitude": 1
+          },
+          "case_ids": [
+            2900001,
+            2900002,
+            2900013,
+            2900014,
+            2900015,
+            2900017,
+            2900018,
+            2900019,
+            2900022,
+            2900027,
+            2900028,
+            2900029,
+            2900031
+          ]
+        }
+      ]
+    },
+    "B2": {
+      "selected_steps": 20000,
+      "summary": {
+        "total": 32,
+        "success_count": 26,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9125001785170168
+      },
+      "groups": [
+        {
+          "interval_m": [
+            0.115,
+            0.16
+          ],
+          "cases": 10,
+          "success": 10,
+          "nonexclusive_failures": {},
+          "case_ids": [
+            2900000,
+            2900004,
+            2900005,
+            2900007,
+            2900009,
+            2900011,
+            2900016,
+            2900024,
+            2900025,
+            2900026
+          ]
+        },
+        {
+          "interval_m": [
+            0.16,
+            0.25
+          ],
+          "cases": 5,
+          "success": 4,
+          "nonexclusive_failures": {
+            "terrain": 1
+          },
+          "case_ids": [
+            2900003,
+            2900006,
+            2900008,
+            2900020,
+            2900030
+          ]
+        },
+        {
+          "interval_m": [
+            0.25,
+            0.3
+          ],
+          "cases": 4,
+          "success": 3,
+          "nonexclusive_failures": {
+            "terrain": 1
+          },
+          "case_ids": [
+            2900010,
+            2900012,
+            2900021,
+            2900023
+          ]
+        },
+        {
+          "interval_m": [
+            0.3,
+            0.38
+          ],
+          "cases": 13,
+          "success": 9,
+          "nonexclusive_failures": {
+            "terrain": 3,
+            "attitude": 1
+          },
+          "case_ids": [
+            2900001,
+            2900002,
+            2900013,
+            2900014,
+            2900015,
+            2900017,
+            2900018,
+            2900019,
+            2900022,
+            2900027,
+            2900028,
+            2900029,
+            2900031
+          ]
+        }
+      ]
+    }
+  },
+  "inference": "Small correlated development subsets with different terrain/parameters; no significance or height-causality claim, no exclusion of failed cases",
+  "extra_task_evaluations": 0,
+  "gate_or_final_simulated": false,
+  "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
+  "verifier_sha256": "be62726db584090f12d6c259387922658b0d443a64a57dab3d68ad76fdb85831"
+}
