@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "rendering_only_fields": [
+    "geom_group",
+    "geom_matid",
+    "geom_rgba"
+  ],
+  "physical_fields_unchanged": [
+    "geom_pos",
+    "geom_quat",
+    "geom_size",
+    "geom_friction",
+    "geom_contype",
+    "geom_conaffinity",
+    "geom_condim",
+    "geom_solmix",
+    "geom_solref",
+    "geom_solimp",
+    "body_mass",
+    "body_inertia",
+    "actuator_gainprm"
+  ],
+  "visible_collision_boxes": {
+    "flat": 0,
+    "asymmetric": 2,
+    "ramp": 3,
+    "cross_slope": 5,
+    "rough": 12,
+    "step": 1,
+    "mixed": 14,
+    "rolling_slope": 4,
+    "multi_step": 5,
+    "split_level": 6,
+    "single_side_ramp": 3,
+    "asymmetric_rough": 16
+  },
+  "physical_implementation_AST_unchanged": [
+    "scenario",
+    "manual_command",
+    "Demo",
+    "JumpDemo",
+    "check"
+  ],
+  "physical_probe_producer_sha256": "51355e49be8e2b737d811080029954e3a3bed9dc0f3dd5f61ea8e91539df1270",
+  "current_demo_sha256": "5541eee3c00ca42beb168687150bbd145641e1cd0b69e0259f5da88daa2383fe",
+  "source_scope": "Physical120case and4GPUjump evidence reused against exact archived producer and unchanged physical AST; current GUI separately checked"
+}

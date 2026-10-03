@@ -133,22 +133,16 @@ class JumpDemo:
                 self.finished=True;break
     def close(self):self.env.close()
 
-def show_terrain(model):
-    """Display existing collision boxes; change rendering fields only."""
-    for i in range(model.ngeom):
-        if model.geom(i).name.startswith(('bump_','terrain_')) and model.geom_pos[i,2]>-1.:
-            model.geom_group[i]=0;model.geom_matid[i]=-1;model.geom_rgba[i]=[.95,.5,.12,1.]
-
 def run_window(height,speed,scene='flat'):
     import glfw
-    demo=Demo((height,),speed,scene=scene);m=demo.env.cpu;show_terrain(m);d=mujoco.MjData(m)
+    demo=Demo((height,),speed,scene=scene);m=demo.env.cpu;d=mujoco.MjData(m)
     if not glfw.init():raise RuntimeError('无法初始化图形窗口，请在桌面终端运行')
     window=glfw.create_window(1280,800,'Wheelleg115-380mm | GPU VMC +6-state LQR',None,None)
     if not window:glfw.terminate();demo.close();raise RuntimeError('无法创建图形窗口')
     glfw.make_context_current(window);glfw.swap_interval(1)
     ctx=mujoco.MjrContext(m,mujoco.mjtFontScale.mjFONTSCALE_150.value)
     render_scene=mujoco.MjvScene(m,2000);opt=mujoco.MjvOption();cam=mujoco.MjvCamera()
-    cam.distance=1.8 if scene=='flat' else 3.2;cam.azimuth=125.;cam.elevation=-25.
+    cam.distance=2.4;cam.azimuth=125.;cam.elevation=-25.
     pending=[];target=height;paused=False;direction=1.
     def key_cb(window,key,scancode,action,mods):
         if action!=glfw.PRESS:return
@@ -177,8 +171,7 @@ def run_window(height,speed,scene='flat'):
                     if action=='scene':scene=value
                     else:target=value
                     demo.close();demo=Demo((target,),direction*abs(speed),task=action=='task',scene=scene);paused=False
-                    m=demo.env.cpu;show_terrain(m);d=mujoco.MjData(m)
-                    if action=='scene':cam.distance=1.8 if scene=='flat' else 3.2
+                    m=demo.env.cpu;d=mujoco.MjData(m)
             pending.clear()
             focused=bool(glfw.get_window_attrib(window,glfw.FOCUSED))
             def held(key):return int(focused and glfw.get_key(window,key)==glfw.PRESS)
@@ -190,7 +183,6 @@ def run_window(height,speed,scene='flat'):
                 demo.step(abs(speed)*(held(glfw.KEY_W)-held(glfw.KEY_S)),.3*(held(glfw.KEY_A)-held(glfw.KEY_D)))
             q,v=demo.pose()
             d.qpos[:]=q;d.qvel[:]=v;mujoco.mj_forward(m,d);cam.lookat[:]=d.xpos[m.body('base').id] if 'base' in [m.body(i).name for i in range(m.nbody)] else q[:3]
-            if scene!='flat':cam.lookat[0]+=np.sign(demo.env.scenarios[0].speed)
             ids=demo.env.ids.numpy();actual=float(np.mean([sim.fk_joints(q[ids[2*s]],q[ids[2*s+1]])['leg_len'] for s in range(2)]))
             state=demo.env.state.numpy()[0];mode='TASK' if demo.task else 'MANUAL'
             if isinstance(demo,JumpDemo):mode='GPU JUMP '+demo.control.jp

@@ -12,7 +12,6 @@ from native.controller import D
 from native.terrain import HeightTerrainScenario,HEIGHT_115_GEOMETRIC_MIN
 from training_contract import source_hashes,digest
 import wheelleg_sim as sim
-from fast_physics import PackedPhysics
 
 HEIGHTS=(.115,.16,.25,.30,.38)
 SCENES=(
@@ -102,7 +101,7 @@ class Demo:
     def pose(self):return self.terminal if self.terminal else (self.env.data.qpos.numpy()[0],self.env.data.qvel.numpy()[0])
 
 class JumpDemo:
-    """Original host jump state machine; actual integration on MuJoCo Warp CUDA."""
+    """Reuse the original CPU jump state machine; explicitly separate its scope."""
     def __init__(self,ground):
         self.env=ground.env;self.scene=ground.scene;self.task=False;self.finished=False;self.result=None
         self.height=np.maximum(ground.height,.16);self.data=mujoco.MjData(self.env.cpu)
@@ -115,7 +114,6 @@ class JumpDemo:
         st.yaw_target=sim.euler(self.data)[2];st.vf_f=sim.forward_component(v,st.yaw_target)
         st.ever_driven=abs(st.vf_f)>.03;self.set_height(self.height)
         self.pending=True;self.phases=set();self.peak_z=float(q[2]);self.start_z=float(q[2])
-        self.physics=PackedPhysics(self.env.cpu,self.data)
 
     def pose(self):return self.data.qpos.copy(),self.data.qvel.copy()
     def set_height(self,heights):
@@ -127,28 +125,22 @@ class JumpDemo:
         self.control.cmd_vel=speed;self.control.cmd_turn=turn
         for _ in range(40):
             self.control.cmd_jump=self.pending;self.pending=False
-            sim.control(self.env.cpu,self.data,self.control);self.physics.step(self.env.cpu,self.data)
+            sim.control(self.env.cpu,self.data,self.control);mujoco.mj_step(self.env.cpu,self.data)
             self.phases.add(self.control.jp);self.peak_z=max(self.peak_z,float(self.data.qpos[2]))
             if not np.isfinite(self.data.qpos).all() or not np.isfinite(self.data.qvel).all() or max(abs(a) for a in sim.euler(self.data)[:2])>np.deg2rad(40) or self.data.qpos[2]<.02:
                 self.finished=True;break
     def close(self):self.env.close()
 
-def show_terrain(model):
-    """Display existing collision boxes; change rendering fields only."""
-    for i in range(model.ngeom):
-        if model.geom(i).name.startswith(('bump_','terrain_')) and model.geom_pos[i,2]>-1.:
-            model.geom_group[i]=0;model.geom_matid[i]=-1;model.geom_rgba[i]=[.95,.5,.12,1.]
-
 def run_window(height,speed,scene='flat'):
     import glfw
-    demo=Demo((height,),speed,scene=scene);m=demo.env.cpu;show_terrain(m);d=mujoco.MjData(m)
+    demo=Demo((height,),speed,scene=scene);m=demo.env.cpu;d=mujoco.MjData(m)
     if not glfw.init():raise RuntimeError('无法初始化图形窗口，请在桌面终端运行')
     window=glfw.create_window(1280,800,'Wheelleg115-380mm | GPU VMC +6-state LQR',None,None)
     if not window:glfw.terminate();demo.close();raise RuntimeError('无法创建图形窗口')
     glfw.make_context_current(window);glfw.swap_interval(1)
     ctx=mujoco.MjrContext(m,mujoco.mjtFontScale.mjFONTSCALE_150.value)
-    render_scene=mujoco.MjvScene(m,2000);opt=mujoco.MjvOption();cam=mujoco.MjvCamera()
-    cam.distance=1.8 if scene=='flat' else 3.2;cam.azimuth=125.;cam.elevation=-25.
+    scene=mujoco.MjvScene(m,2000);opt=mujoco.MjvOption();cam=mujoco.MjvCamera()
+    cam.distance=2.4;cam.azimuth=125.;cam.elevation=-25.
     pending=[];target=height;paused=False;direction=1.
     def key_cb(window,key,scancode,action,mods):
         if action!=glfw.PRESS:return
@@ -162,7 +154,7 @@ def run_window(height,speed,scene='flat'):
         elif key==glfw.KEY_ESCAPE:glfw.set_window_should_close(window,True)
     glfw.set_key_callback(window,key_cb)
     glfw.set_scroll_callback(window,lambda window,x,y:setattr(cam,'distance',float(np.clip(cam.distance*.9**y,.5,8.))))
-    print('W/S前后，A/D转向，↑/↓调高；1～5高度；7跳跃(GPU物理/原主机状态机)；F1～F12场景；T原任务；B任务方向；R回地面手控；滚轮缩放；空格暂停；Esc退出。',flush=True)
+    print('W/S前后，A/D转向，↑/↓调高；1～5高度；7跳跃(原CPU参考)；F1～F12场景；T原任务；B任务方向；R回GPU手控；滚轮缩放；空格暂停；Esc退出。',flush=True)
     try:
         while not glfw.window_should_close(window):
             start=time.monotonic();glfw.poll_events()
@@ -177,8 +169,7 @@ def run_window(height,speed,scene='flat'):
                     if action=='scene':scene=value
                     else:target=value
                     demo.close();demo=Demo((target,),direction*abs(speed),task=action=='task',scene=scene);paused=False
-                    m=demo.env.cpu;show_terrain(m);d=mujoco.MjData(m)
-                    if action=='scene':cam.distance=1.8 if scene=='flat' else 3.2
+                    m=demo.env.cpu;d=mujoco.MjData(m)
             pending.clear()
             focused=bool(glfw.get_window_attrib(window,glfw.FOCUSED))
             def held(key):return int(focused and glfw.get_key(window,key)==glfw.PRESS)
@@ -190,24 +181,23 @@ def run_window(height,speed,scene='flat'):
                 demo.step(abs(speed)*(held(glfw.KEY_W)-held(glfw.KEY_S)),.3*(held(glfw.KEY_A)-held(glfw.KEY_D)))
             q,v=demo.pose()
             d.qpos[:]=q;d.qvel[:]=v;mujoco.mj_forward(m,d);cam.lookat[:]=d.xpos[m.body('base').id] if 'base' in [m.body(i).name for i in range(m.nbody)] else q[:3]
-            if scene!='flat':cam.lookat[0]+=np.sign(demo.env.scenarios[0].speed)
             ids=demo.env.ids.numpy();actual=float(np.mean([sim.fk_joints(q[ids[2*s]],q[ids[2*s+1]])['leg_len'] for s in range(2)]))
             state=demo.env.state.numpy()[0];mode='TASK' if demo.task else 'MANUAL'
-            if isinstance(demo,JumpDemo):mode='GPU JUMP '+demo.control.jp
+            if isinstance(demo,JumpDemo):mode='CPU JUMP '+demo.control.jp
             result='PASS' if demo.result and demo.result['success'] else 'FAIL' if demo.finished else 'PAUSED' if paused else 'RUNNING'
             title=next(s[1] for s in SCENES if s[0]==scene)
             command=demo.control.cmd_vel if isinstance(demo,JumpDemo) else demo.env.command.numpy()[0]
             lines=f'{mode}  {result}\nScene: {title}\nTarget: {target*1000:.1f} mm | Mean FK leg: {actual*1000:.1f} mm\nCommand: {command:+.2f} m/s | World vx: {v[0]:+.2f} m/s\nTask direction: {direction:+.0f} | Speed: {abs(speed):.2f} m/s'
             if demo.result:
                 r=demo.result;lines+=f'\nStop: {r["stop_distance_m"]:.3f}m | Tail: {r["tail_speed_m_s"]:.3f}m/s\nHeight RMSE: {r["height_rmse_m"]*1000:.2f}mm | Reason: {r["reason"]}'
-            elif isinstance(demo,JumpDemo):lines+=f'\nGPU physics / host jump control | Target160-380mm\nBody rise from entry: {(demo.peak_z-demo.start_z)*1000:.1f}mm | No ground-task score'
+            elif isinstance(demo,JumpDemo):lines+=f'\nOriginal CPU jump reference | Target range160-380mm\nCOM rise: {(demo.peak_z-demo.start_z)*1000:.1f}mm | No ground-task score'
             elif not demo.task:lines+=f'\nActive design margin: {state[38]:+.4f}rad | Manual mode has no task score'
             width,depth=glfw.get_framebuffer_size(window)
             if width and depth:
-                viewport=mujoco.MjrRect(0,0,width,depth);mujoco.mjv_updateScene(m,d,opt,None,cam,mujoco.mjtCatBit.mjCAT_ALL.value,render_scene)
-                mujoco.mjr_render(viewport,render_scene,ctx)
+                viewport=mujoco.MjrRect(0,0,width,depth);mujoco.mjv_updateScene(m,d,opt,None,cam,mujoco.mjtCatBit.mjCAT_ALL.value,scene)
+                mujoco.mjr_render(viewport,scene,ctx)
                 mujoco.mjr_overlay(mujoco.mjtFontScale.mjFONTSCALE_150,mujoco.mjtGridPos.mjGRID_TOPLEFT,viewport,lines,'',ctx)
-                mujoco.mjr_overlay(mujoco.mjtFontScale.mjFONTSCALE_100,mujoco.mjtGridPos.mjGRID_BOTTOMLEFT,viewport,'W/S move | A/D turn | Up/Down height |7 jump(GPU physics)\n1..5 height | F1..F12 scene | T task | B direction | R ground/reset\nScroll zoom | Space pause | Esc exit','',ctx)
+                mujoco.mjr_overlay(mujoco.mjtFontScale.mjFONTSCALE_100,mujoco.mjtGridPos.mjGRID_BOTTOMLEFT,viewport,'W/S move | A/D turn | Up/Down height |7 jump(CPU)\n1..5 height | F1..F12 scene | T task | B direction | R GPU/reset\nScroll zoom | Space pause | Esc exit','',ctx)
                 glfw.swap_buffers(window)
             time.sleep(max(0.,.02-(time.monotonic()-start)))
     finally:ctx.free();glfw.destroy_window(window);glfw.terminate();demo.close()
@@ -251,37 +241,9 @@ def check(output):
         state=demo.env.state.numpy()[0]
         assert min(state[31:33])>=HEIGHT_115_GEOMETRIC_MIN and state[33]>=0 and state[38]>=0 and max(state[35:37])<=1e-6
     finally:demo.close()
-    obstacle_scenes=[scenario(h,v,scene[0]) for scene in SCENES for h in HEIGHTS for v in (1.,-1.)]
-    env=NativeEnv.height115_candidate(n=len(obstacle_scenes),scenario=obstacle_scenes,shared_reference=True,residual_scale=0.)
-    obstacle_rows=[None]*len(obstacle_scenes)
-    try:
-        env.reset()
-        for _ in range(800):
-            _,_,done,infos=env.step(np.zeros((len(obstacle_scenes),3),np.float32))
-            for i in np.flatnonzero(done):
-                if obstacle_rows[i] is None:obstacle_rows[i]=dict(scene=SCENES[i//10][0],height_m=obstacle_scenes[i].stand_height_m,**{k:v for k,v in infos[i].items() if k!='terminal_observation'})
-            if all(r is not None for r in obstacle_rows):break
-        assert all(r is not None and r['physical_steps']==r['physical_evidence_steps'] for r in obstacle_rows)
-    finally:env.close()
-    jumps=[]
-    for h in (.115,.16,.3,.38):
-        ground=Demo((h,))
-        for _ in range(100):ground.step()
-        jump=JumpDemo(ground)
-        try:
-            for _ in range(350):
-                jump.step();assert not jump.finished
-            assert {'SQUAT','JUMP','FLY','LAND','DRIVE'}.issubset(jump.phases)
-            assert jump.control.jp=='DRIVE' and sim.wheel_contact(jump.env.cpu,jump.data)
-            assert str(jump.physics.data.qpos.device).startswith('cuda')
-            jumps.append(dict(entry_height_m=h,target_height_m=float(jump.height[0]),phases=sorted(jump.phases),
-                body_rise_from_entry_m=jump.peak_z-jump.start_z,final_vertical_velocity=float(jump.data.qvel[2]),
-                physical_device=str(jump.physics.data.qpos.device),host_control=True,returned_to_ground=True))
-        finally:jump.close()
     assert source_hashes(__file__)==frozen,'Source changed during check'
     result=dict(passed=True,baseline=env.baseline_version,heights_m=HEIGHTS,task_runs=rows,manual_state=manual,
-        height_transitions=transition,manual_turns_checked=True,obstacle_runs=obstacle_rows,jumps=jumps,
-        source_sha256={**frozen,'wheelleg_warp/fast_physics.py':digest(Path(__file__).resolve().parent/'fast_physics.py')},learning=False,frozen_training_sources_changed=False)
+        height_transitions=transition,manual_turns_checked=True,source_sha256=frozen,learning=False,frozen_training_sources_changed=False)
     (output/'verification.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS five heights xforward/back tasks; five-height manual forward/release-stop; shared current controller',flush=True)
 

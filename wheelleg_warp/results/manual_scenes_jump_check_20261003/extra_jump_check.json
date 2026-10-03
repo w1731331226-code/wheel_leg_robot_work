@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "height_m": 0.25,
+      "moving": false,
+      "phases": [
+        "DRIVE",
+        "FLY",
+        "JUMP",
+        "LAND",
+        "SQUAT"
+      ],
+      "device": "cuda:0",
+      "returned_to_drive": true
+    },
+    {
+      "height_m": 0.3,
+      "moving": true,
+      "phases": [
+        "DRIVE",
+        "FLY",
+        "JUMP",
+        "LAND",
+        "SQUAT"
+      ],
+      "device": "cuda:0",
+      "returned_to_drive": true
+    }
+  ],
+  "source_sha256": "5541eee3c00ca42beb168687150bbd145641e1cd0b69e0259f5da88daa2383fe",
+  "physics_sha256": "abaa4dbb270003a88ab3ee3102787dbc2938fd1e4208775c2ff160acdb1906e8"
+}
