@@ -1,0 +1,532 @@
+{
+  "stage_policy_steps": 1000000,
+  "method": "M3",
+  "seed": 1611,
+  "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
+  "records": [
+    {
+      "policy_steps": 20000,
+      "summary": {
+        "total": 32,
+        "success_count": 28,
+        "complete": true,
+        "mean_yaw_score_deg": 0.956787171593217
+      },
+      "metrics_sha256": "fbfdaabfd92cf34e0fd372f4ef6257d7644818424b03c1b8eff346decbc49f05"
+    },
+    {
+      "policy_steps": 40000,
+      "summary": {
+        "total": 32,
+        "success_count": 19,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9925818142076993
+      },
+      "metrics_sha256": "99422a4ac3bc5e80f296f3bfc8036ef2834f807d66caa8210dc9f29ffa34f1f0"
+    },
+    {
+      "policy_steps": 60000,
+      "summary": {
+        "total": 32,
+        "success_count": 12,
+        "complete": true,
+        "mean_yaw_score_deg": 1.6181243955418854
+      },
+      "metrics_sha256": "223da3f994eb1a601d3e364410828850f74e0cd6ad80e9bef88c8033885017db"
+    },
+    {
+      "policy_steps": 80000,
+      "summary": {
+        "total": 32,
+        "success_count": 6,
+        "complete": true,
+        "mean_yaw_score_deg": 1.7889704843244467
+      },
+      "metrics_sha256": "dddfd155c1eaf51bf47390c0388d6dce8a6ec66cfef8ae240ba44c689550f1c0"
+    },
+    {
+      "policy_steps": 100000,
+      "summary": {
+        "total": 32,
+        "success_count": 3,
+        "complete": true,
+        "mean_yaw_score_deg": 2.0016391397716378
+      },
+      "metrics_sha256": "2de74dce18c023fcbcbe701bbb05f561a7a92b19b4a0b012e3eb24e310bb1adc"
+    },
+    {
+      "policy_steps": 120000,
+      "summary": {
+        "total": 32,
+        "success_count": 9,
+        "complete": true,
+        "mean_yaw_score_deg": 1.7513524706694663
+      },
+      "metrics_sha256": "4640e11227e43c754d28bfe82d235deb3c281a8b35cc5efcba60af6b64a6dfcb"
+    },
+    {
+      "policy_steps": 140000,
+      "summary": {
+        "total": 32,
+        "success_count": 22,
+        "complete": true,
+        "mean_yaw_score_deg": 1.0801360955218988
+      },
+      "metrics_sha256": "f1db5209c5427e28eb9fcb78d453eefff38dc899ad622e713a7db31f1436fa9a"
+    },
+    {
+      "policy_steps": 160000,
+      "summary": {
+        "total": 32,
+        "success_count": 8,
+        "complete": true,
+        "mean_yaw_score_deg": 2.393034816953171
+      },
+      "metrics_sha256": "d61f1a8d3372f529c0b2cc7de3fc29a2aef1e6c9b6e8d87396dab7ed9568b7f4"
+    },
+    {
+      "policy_steps": 180000,
+      "summary": {
+        "total": 32,
+        "success_count": 5,
+        "complete": true,
+        "mean_yaw_score_deg": 2.4488340647616553
+      },
+      "metrics_sha256": "124b64599b39b126fc468e681a4cda671ece641d87922e345fa93f9cfc5f6078"
+    },
+    {
+      "policy_steps": 200000,
+      "summary": {
+        "total": 32,
+        "success_count": 8,
+        "complete": true,
+        "mean_yaw_score_deg": 2.1764797979445047
+      },
+      "metrics_sha256": "0b074d01d4574161e3d99aa8f4ba19bf712e1aeddefabe0f1ce1865ce79c7747"
+    },
+    {
+      "policy_steps": 220000,
+      "summary": {
+        "total": 32,
+        "success_count": 14,
+        "complete": true,
+        "mean_yaw_score_deg": 1.8524781537062927
+      },
+      "metrics_sha256": "349d6e6b951dcf1652aacc507ed30e4ddeb7e69c37d18fa851db338812a214e1"
+    },
+    {
+      "policy_steps": 240000,
+      "summary": {
+        "total": 32,
+        "success_count": 11,
+        "complete": true,
+        "mean_yaw_score_deg": 2.326475116537819
+      },
+      "metrics_sha256": "7d9f996d949901a924d4b6e69a986aabacedee1caa76a6211af373f7d57ee254"
+    },
+    {
+      "policy_steps": 260000,
+      "summary": {
+        "total": 32,
+        "success_count": 8,
+        "complete": true,
+        "mean_yaw_score_deg": 2.493752320188534
+      },
+      "metrics_sha256": "c94d3c416a42208e1d21f4af66b3a1fde8717b22c5b5513a7ef3e100ae7373e6"
+    },
+    {
+      "policy_steps": 280000,
+      "summary": {
+        "total": 32,
+        "success_count": 4,
+        "complete": true,
+        "mean_yaw_score_deg": 2.9709101079035105
+      },
+      "metrics_sha256": "34e4165c7ddb0b0593c8edb8c91a1781f95e95ea568f9de9a6106af8cea0edca"
+    },
+    {
+      "policy_steps": 300000,
+      "summary": {
+        "total": 32,
+        "success_count": 3,
+        "complete": true,
+        "mean_yaw_score_deg": 3.5798397338196084
+      },
+      "metrics_sha256": "e04f9a8c8a60e4d45ffafb3abafc58943a3f8aefa1c5577140cf1f7e28e1081f"
+    },
+    {
+      "policy_steps": 320000,
+      "summary": {
+        "total": 32,
+        "success_count": 3,
+        "complete": true,
+        "mean_yaw_score_deg": 3.337556960402776
+      },
+      "metrics_sha256": "f3aa9dbc291ef386a4bfce935d387b6aada073a755d3ee241e29da8bf0d49b71"
+    },
+    {
+      "policy_steps": 340000,
+      "summary": {
+        "total": 32,
+        "success_count": 3,
+        "complete": true,
+        "mean_yaw_score_deg": 3.0000518914873724
+      },
+      "metrics_sha256": "0d6622916f66f709c33fd7d57dafdc0f4c5432b28d29ecfd39ae096a47b2eb3b"
+    },
+    {
+      "policy_steps": 360000,
+      "summary": {
+        "total": 32,
+        "success_count": 6,
+        "complete": true,
+        "mean_yaw_score_deg": 2.1109832273781444
+      },
+      "metrics_sha256": "2d8720f9be1e912f604f95ad746dcbcb4933106c27321de0e6dcb40f538c7021"
+    },
+    {
+      "policy_steps": 380000,
+      "summary": {
+        "total": 32,
+        "success_count": 7,
+        "complete": true,
+        "mean_yaw_score_deg": 2.085059179172226
+      },
+      "metrics_sha256": "5520526bba91d07235ce9da52d81c36909cde7395118c3a43baaf207b1c7d8f7"
+    },
+    {
+      "policy_steps": 400000,
+      "summary": {
+        "total": 32,
+        "success_count": 17,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9652253870576415
+      },
+      "metrics_sha256": "82e7f5ebb42c48a6d016e2ba71719b4181de467383df86b60da912bd9c4d7239"
+    },
+    {
+      "policy_steps": 420000,
+      "summary": {
+        "total": 32,
+        "success_count": 17,
+        "complete": true,
+        "mean_yaw_score_deg": 0.972674437349273
+      },
+      "metrics_sha256": "bb5430044773387676295d770efef212f456ffee98f7e55d114eb709e24f8bf6"
+    },
+    {
+      "policy_steps": 440000,
+      "summary": {
+        "total": 32,
+        "success_count": 17,
+        "complete": true,
+        "mean_yaw_score_deg": 1.1069483276727357
+      },
+      "metrics_sha256": "32682dd9c4fe08df74fe9391e45aa2992f64461bbb63ef9e4aeb3583a7f96ac3"
+    },
+    {
+      "policy_steps": 460000,
+      "summary": {
+        "total": 32,
+        "success_count": 11,
+        "complete": true,
+        "mean_yaw_score_deg": 1.4742727094391537
+      },
+      "metrics_sha256": "2e8ffa8d7a92993ed0823140f9bded13a9a25a5e8ca2a91c48d1931de6ebbc4c"
+    },
+    {
+      "policy_steps": 480000,
+      "summary": {
+        "total": 32,
+        "success_count": 13,
+        "complete": true,
+        "mean_yaw_score_deg": 1.379747598867401
+      },
+      "metrics_sha256": "de9d4df4b360f65a5d66de7296da3a2b2d1ac400395874e42ecae9d3284edc0e"
+    },
+    {
+      "policy_steps": 500000,
+      "summary": {
+        "total": 32,
+        "success_count": 13,
+        "complete": true,
+        "mean_yaw_score_deg": 1.6166122129420808
+      },
+      "metrics_sha256": "aae35ccbfb2b460ecc8eda87a628ad279c68e4cb12d3eacf0fd3a905d447c846"
+    },
+    {
+      "policy_steps": 520000,
+      "summary": {
+        "total": 32,
+        "success_count": 10,
+        "complete": true,
+        "mean_yaw_score_deg": 1.8563779122919826
+      },
+      "metrics_sha256": "ec0881e1fa5156274238b3a956c011f426b3230b964a0627c26e5d5930acec95"
+    },
+    {
+      "policy_steps": 540000,
+      "summary": {
+        "total": 32,
+        "success_count": 11,
+        "complete": true,
+        "mean_yaw_score_deg": 1.7583405012729467
+      },
+      "metrics_sha256": "4467534f73ff9538decd706fd0ac997ab91998cc17a8e305b623b7195a083286"
+    },
+    {
+      "policy_steps": 560000,
+      "summary": {
+        "total": 32,
+        "success_count": 4,
+        "complete": true,
+        "mean_yaw_score_deg": 2.186575039133774
+      },
+      "metrics_sha256": "3231b620ed398ca1affaf6cd7fa32199898422a6d37c4b6edd000d14a7ce6bc8"
+    },
+    {
+      "policy_steps": 580000,
+      "summary": {
+        "total": 32,
+        "success_count": 8,
+        "complete": true,
+        "mean_yaw_score_deg": 1.8185763269316073
+      },
+      "metrics_sha256": "4c202a04f165809749ce93cbb5bc026e08f32c49fd751c3ab0249092ea2476aa"
+    },
+    {
+      "policy_steps": 600000,
+      "summary": {
+        "total": 32,
+        "success_count": 7,
+        "complete": true,
+        "mean_yaw_score_deg": 1.7203488424772913
+      },
+      "metrics_sha256": "dea1f4573fc87d2371acbf8edd634c1555aa2dc8ccda5d3f46aee5532aade00f"
+    },
+    {
+      "policy_steps": 620000,
+      "summary": {
+        "total": 32,
+        "success_count": 8,
+        "complete": true,
+        "mean_yaw_score_deg": 1.4871164544606084
+      },
+      "metrics_sha256": "e19baa8cbacbc547e0a17d6654cdc37b498c2a69d17e9148839b15ebf1827346"
+    },
+    {
+      "policy_steps": 640000,
+      "summary": {
+        "total": 32,
+        "success_count": 11,
+        "complete": true,
+        "mean_yaw_score_deg": 1.4140748575816913
+      },
+      "metrics_sha256": "67177a8fc9f886d7080f82b10d3989426f99e6a3c43d1ffde7a699bcf250a8e0"
+    },
+    {
+      "policy_steps": 660000,
+      "summary": {
+        "total": 32,
+        "success_count": 10,
+        "complete": true,
+        "mean_yaw_score_deg": 1.7086767847292292
+      },
+      "metrics_sha256": "210e0f79f87ec9438b30424463e6a4fa517c1ef5cc9d56b29afaa35137b91db6"
+    },
+    {
+      "policy_steps": 680000,
+      "summary": {
+        "total": 32,
+        "success_count": 12,
+        "complete": true,
+        "mean_yaw_score_deg": 1.4317994557572793
+      },
+      "metrics_sha256": "e35a510a0db0d11a8b39eb448ed4619a7560b59527938090f4942f4e80674dfc"
+    },
+    {
+      "policy_steps": 700000,
+      "summary": {
+        "total": 32,
+        "success_count": 23,
+        "complete": true,
+        "mean_yaw_score_deg": 1.1669900296034212
+      },
+      "metrics_sha256": "66e061b9c3d18d403851c47a7c01020900aa5fb029161e18a2f7af5085d17045"
+    },
+    {
+      "policy_steps": 720000,
+      "summary": {
+        "total": 32,
+        "success_count": 19,
+        "complete": true,
+        "mean_yaw_score_deg": 1.162103954300708
+      },
+      "metrics_sha256": "0f96e574809981791935590cf95e82fe3c93d1959438e42d011c53f41bdc1ef3"
+    },
+    {
+      "policy_steps": 740000,
+      "summary": {
+        "total": 32,
+        "success_count": 24,
+        "complete": true,
+        "mean_yaw_score_deg": 1.1821065792198768
+      },
+      "metrics_sha256": "2a152d1a05412c4aba950a4b5f69e49e3eb0b8a0b2e8c4450fc1db0cc9e3bdc0"
+    },
+    {
+      "policy_steps": 760000,
+      "summary": {
+        "total": 32,
+        "success_count": 26,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9131519901598436
+      },
+      "metrics_sha256": "f24c947abd14ec8dde490f8407ffc14113b9df694903e1655117b7561b305927"
+    },
+    {
+      "policy_steps": 780000,
+      "summary": {
+        "total": 32,
+        "success_count": 27,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9384718940620058
+      },
+      "metrics_sha256": "2068655396b5de3fc01d4256f811d37480634a8e992ff5c957415384cd5a3959"
+    },
+    {
+      "policy_steps": 800000,
+      "summary": {
+        "total": 32,
+        "success_count": 27,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9045262689660137
+      },
+      "metrics_sha256": "00fa308e9658f5e92e2c677d6858d39d41e2c708fa89ebabab2c6a814493501f"
+    },
+    {
+      "policy_steps": 820000,
+      "summary": {
+        "total": 32,
+        "success_count": 28,
+        "complete": true,
+        "mean_yaw_score_deg": 0.8616943033406811
+      },
+      "metrics_sha256": "e3721c25b1e848c7470b12a48fec27745ed8ffa995929d9b577d42e2ff0e2d40"
+    },
+    {
+      "policy_steps": 840000,
+      "summary": {
+        "total": 32,
+        "success_count": 29,
+        "complete": true,
+        "mean_yaw_score_deg": 0.7894704425093462
+      },
+      "metrics_sha256": "4a7fa9fe40eadc4ed34e312863248108f930f0396c10e7034e9c5b9b8ef14141"
+    },
+    {
+      "policy_steps": 860000,
+      "summary": {
+        "total": 32,
+        "success_count": 26,
+        "complete": true,
+        "mean_yaw_score_deg": 0.8825203707537566
+      },
+      "metrics_sha256": "120a15c47f7773d2c742a0584d09c850483ffd05530ca4a6f2d5fcb7cc0c54b8"
+    },
+    {
+      "policy_steps": 880000,
+      "summary": {
+        "total": 32,
+        "success_count": 26,
+        "complete": true,
+        "mean_yaw_score_deg": 0.8585340788376221
+      },
+      "metrics_sha256": "b45f6dc6ec5395bd48afbd07e46d1bf26c8be1d8884048ca92d9d4f6a81b9b31"
+    },
+    {
+      "policy_steps": 900000,
+      "summary": {
+        "total": 32,
+        "success_count": 25,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9269317696617975
+      },
+      "metrics_sha256": "a584a773f46af9ce741b62ca805992859788a2f8123e753f515db6af877d5ce0"
+    },
+    {
+      "policy_steps": 920000,
+      "summary": {
+        "total": 32,
+        "success_count": 23,
+        "complete": true,
+        "mean_yaw_score_deg": 0.897607496426556
+      },
+      "metrics_sha256": "aa28d12ecf0318d9316c34c3c66a969c64ac110c0f1549c4c4900101ee1866a8"
+    },
+    {
+      "policy_steps": 940000,
+      "summary": {
+        "total": 32,
+        "success_count": 25,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9429953439275697
+      },
+      "metrics_sha256": "075ca89c26ce3d411b23751302ef5a3c78b97258a7b75ab3be3357b8697ba5c0"
+    },
+    {
+      "policy_steps": 960000,
+      "summary": {
+        "total": 32,
+        "success_count": 25,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9396842557629075
+      },
+      "metrics_sha256": "feec5284003747201c241547d8a667f6a34e31e71a65b20a8d1c1a589a80cbcc"
+    },
+    {
+      "policy_steps": 980000,
+      "summary": {
+        "total": 32,
+        "success_count": 21,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9497052356186196
+      },
+      "metrics_sha256": "08817599b33e68f59be037a03687b77b4151dc26bc958b7534720c3cb1c4edcc"
+    },
+    {
+      "policy_steps": 1000000,
+      "summary": {
+        "total": 32,
+        "success_count": 21,
+        "complete": true,
+        "mean_yaw_score_deg": 0.97071602906963
+      },
+      "metrics_sha256": "f88408adf157d3f73413b9251c4f5f45459e02c882447d76ec8e69e265b60e2e"
+    }
+  ],
+  "best": {
+    "total": 32,
+    "success_count": 29,
+    "complete": true,
+    "mean_yaw_score_deg": 0.7894704425093462
+  },
+  "best_policy_steps": 840000,
+  "last": {
+    "total": 32,
+    "success_count": 21,
+    "complete": true,
+    "mean_yaw_score_deg": 0.97071602906963
+  },
+  "selected_b1": {
+    "total": 32,
+    "success_count": 32,
+    "complete": true,
+    "mean_yaw_score_deg": 0.27242552779014617
+  },
+  "engineering_current_source": "initial_runtime_check.json",
+  "no_current_method_advantage": true,
+  "decision": "Continue unchanged registered2M limit and full paired comparison; this is a development milestone, not a new budget or gate opening",
+  "gate_or_final_simulated": false,
+  "verifier_sha256": "00717b698bc57aeb9db6ac4cef2b3860910f219457ae98ee1def37b1f847000a"
+}
