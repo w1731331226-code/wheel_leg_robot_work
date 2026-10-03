@@ -1,0 +1,163 @@
+{
+  "passed": true,
+  "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
+  "final_parameter_sha256": "a7c4f57b88a6648741a8d32c04210344b661d50edf7b980d5909a0ad6bb7e579",
+  "train_unique_seed_ids": 300,
+  "selection_ids": 32,
+  "gate_ids": 64,
+  "final_ids": 3000,
+  "namespace_overlap": false,
+  "banks": [
+    {
+      "seed": 1609,
+      "stage": 1,
+      "worlds": 100,
+      "terrains": {
+        "ramp": 12,
+        "mixed": 30,
+        "step": 9,
+        "legacy": 29,
+        "rough": 13,
+        "cross_slope": 7
+      },
+      "reserved_combinations": 0
+    },
+    {
+      "seed": 1609,
+      "stage": 2,
+      "worlds": 100,
+      "terrains": {
+        "cross_slope": 13,
+        "rolling_slope": 6,
+        "mixed": 20,
+        "legacy": 29,
+        "ramp": 6,
+        "step": 7,
+        "rough": 6,
+        "split_level": 6,
+        "multi_step": 7
+      },
+      "reserved_combinations": 0
+    },
+    {
+      "seed": 1609,
+      "stage": 3,
+      "worlds": 100,
+      "terrains": {
+        "cross_slope": 13,
+        "multi_step": 8,
+        "mixed": 16,
+        "legacy": 29,
+        "ramp": 6,
+        "step": 7,
+        "rolling_slope": 7,
+        "rough": 6,
+        "split_level": 8
+      },
+      "reserved_combinations": 0
+    },
+    {
+      "seed": 1610,
+      "stage": 1,
+      "worlds": 100,
+      "terrains": {
+        "mixed": 34,
+        "legacy": 28,
+        "cross_slope": 11,
+        "ramp": 12,
+        "rough": 6,
+        "step": 9
+      },
+      "reserved_combinations": 0
+    },
+    {
+      "seed": 1610,
+      "stage": 2,
+      "worlds": 100,
+      "terrains": {
+        "split_level": 4,
+        "legacy": 28,
+        "multi_step": 8,
+        "rough": 6,
+        "mixed": 24,
+        "ramp": 11,
+        "cross_slope": 10,
+        "step": 3,
+        "rolling_slope": 6
+      },
+      "reserved_combinations": 0
+    },
+    {
+      "seed": 1610,
+      "stage": 3,
+      "worlds": 100,
+      "terrains": {
+        "split_level": 4,
+        "legacy": 28,
+        "multi_step": 10,
+        "rough": 6,
+        "mixed": 19,
+        "ramp": 11,
+        "cross_slope": 10,
+        "step": 3,
+        "rolling_slope": 9
+      },
+      "reserved_combinations": 0
+    },
+    {
+      "seed": 1611,
+      "stage": 1,
+      "worlds": 100,
+      "terrains": {
+        "legacy": 36,
+        "rough": 8,
+        "ramp": 11,
+        "cross_slope": 13,
+        "mixed": 26,
+        "step": 6
+      },
+      "reserved_combinations": 0
+    },
+    {
+      "seed": 1611,
+      "stage": 2,
+      "worlds": 100,
+      "terrains": {
+        "legacy": 36,
+        "step": 6,
+        "ramp": 6,
+        "rough": 7,
+        "multi_step": 5,
+        "split_level": 7,
+        "mixed": 12,
+        "cross_slope": 14,
+        "rolling_slope": 7
+      },
+      "reserved_combinations": 0
+    },
+    {
+      "seed": 1611,
+      "stage": 3,
+      "worlds": 100,
+      "terrains": {
+        "legacy": 36,
+        "step": 6,
+        "ramp": 6,
+        "rough": 7,
+        "multi_step": 8,
+        "split_level": 8,
+        "mixed": 10,
+        "cross_slope": 14,
+        "rolling_slope": 5
+      },
+      "reserved_combinations": 0
+    }
+  ],
+  "reserved_combination_excluded_training": true,
+  "final_role": "Parameters read only, no simulation or scores",
+  "sampling_limit": "100fixedworlds/stage/seed, same seed IDs reused across curriculum stages; not IID per episode",
+  "shared_bank_by_method": "Training bank keyed only by seed/stage, all3methods use the identical entries",
+  "extra_task_evaluations": 0,
+  "gate_or_final_simulated": false,
+  "verifier_sha256": "983daa2af5b02e5571494929aee920c57bc61044a2b94865d256eaf14a80b811"
+}
