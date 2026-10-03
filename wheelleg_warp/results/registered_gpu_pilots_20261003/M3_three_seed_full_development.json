@@ -1,0 +1,60 @@
+{
+  "method": "M3",
+  "completed_training_seeds": [
+    1609,
+    1610,
+    1611
+  ],
+  "consumed_steps_each": 2000000,
+  "by_seed": {
+    "1609": {
+      "best_steps": 820000,
+      "summary": {
+        "total": 32,
+        "success_count": 29,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9575918692280827
+      },
+      "lost_B0_successes": 3,
+      "speed_passes": 32,
+      "arrival_passes": 32
+    },
+    "1610": {
+      "best_steps": 20000,
+      "summary": {
+        "total": 32,
+        "success_count": 31,
+        "complete": true,
+        "mean_yaw_score_deg": 0.609470245446116
+      },
+      "lost_B0_successes": 1,
+      "speed_passes": 32,
+      "arrival_passes": 32
+    },
+    "1611": {
+      "best_steps": 840000,
+      "summary": {
+        "total": 32,
+        "success_count": 29,
+        "complete": true,
+        "mean_yaw_score_deg": 0.7894704425093462
+      },
+      "lost_B0_successes": 3,
+      "speed_passes": 32,
+      "arrival_passes": 32
+    }
+  },
+  "unique_development_cases": 32,
+  "policy_case_pairs": 96,
+  "policy_case_successes": 89,
+  "mean_seed_Jpsi_deg": 0.785510852394515,
+  "lost_B0_policy_case_pairs": 7,
+  "scope": "Three trained policies on the same fixed32 development cases;96 policy-case pairs are not96 independent scenarios, no confidence interval or one-use research gate conclusion",
+  "remaining_matched_reference_runs": [
+    "B2-V/1611",
+    "B2/1611"
+  ],
+  "extra_task_evaluations": 0,
+  "gate_or_final_simulated": false,
+  "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef"
+}
