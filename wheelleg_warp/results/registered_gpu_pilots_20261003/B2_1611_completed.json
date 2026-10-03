@@ -1,0 +1,33 @@
+{
+  "method": "B2",
+  "seed": 1611,
+  "consumed_policy_steps": 2000000,
+  "evaluation_count": 100,
+  "best_steps": 40000,
+  "best_summary": {
+    "total": 32,
+    "success_count": 31,
+    "complete": true,
+    "mean_yaw_score_deg": 0.48425937194718444
+  },
+  "final_summary": {
+    "total": 32,
+    "success_count": 17,
+    "complete": true,
+    "mean_yaw_score_deg": 0.9407488848022332
+  },
+  "finite_policy_adam_rms": true,
+  "training_epochs": 4000,
+  "Adam_updates": 80000,
+  "segmented_resume": false,
+  "unit_end_snapshot": {
+    "MainPID": "0",
+    "ExecMainStatus": "0",
+    "LoadState": "not-found",
+    "ActiveState": "inactive"
+  },
+  "lost_B0_successes": 1,
+  "speed_passes": 32,
+  "arrival_passes": 32,
+  "gate_or_final_simulated": false
+}

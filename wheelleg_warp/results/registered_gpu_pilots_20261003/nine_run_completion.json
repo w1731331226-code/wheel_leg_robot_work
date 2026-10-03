@@ -1,0 +1,186 @@
+{
+  "passed": true,
+  "registered_runs": 9,
+  "completed_runs": 9,
+  "consumed_policy_steps_total": 18000000,
+  "maximum_selection_evaluations_each": 100,
+  "records": {
+    "M3/1609": {
+      "method": "M3",
+      "seed": 1609,
+      "consumed_policy_steps": 2000000,
+      "evaluation_count": 100,
+      "best_steps": 820000,
+      "best_summary": {
+        "total": 32,
+        "success_count": 29,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9575918692280827
+      },
+      "final_summary": {
+        "total": 32,
+        "success_count": 22,
+        "complete": true,
+        "mean_yaw_score_deg": 1.0365181737959928
+      }
+    },
+    "B2-V/1609": {
+      "method": "B2-V",
+      "seed": 1609,
+      "consumed_policy_steps": 2000000,
+      "evaluation_count": 100,
+      "best_steps": 1220000,
+      "best_summary": {
+        "total": 32,
+        "success_count": 28,
+        "complete": true,
+        "mean_yaw_score_deg": 0.7633825599063806
+      },
+      "final_summary": {
+        "total": 32,
+        "success_count": 15,
+        "complete": true,
+        "mean_yaw_score_deg": 1.2091541766780236
+      }
+    },
+    "B2/1609": {
+      "method": "B2",
+      "seed": 1609,
+      "consumed_policy_steps": 2000000,
+      "evaluation_count": 100,
+      "best_steps": 20000,
+      "best_summary": {
+        "total": 32,
+        "success_count": 26,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9125001785170168
+      },
+      "final_summary": {
+        "total": 32,
+        "success_count": 12,
+        "complete": true,
+        "mean_yaw_score_deg": 1.093667839591347
+      }
+    },
+    "M3/1610": {
+      "method": "M3",
+      "seed": 1610,
+      "consumed_policy_steps": 2000000,
+      "evaluation_count": 100,
+      "best_steps": 20000,
+      "best_summary": {
+        "total": 32,
+        "success_count": 31,
+        "complete": true,
+        "mean_yaw_score_deg": 0.609470245446116
+      },
+      "final_summary": {
+        "total": 32,
+        "success_count": 17,
+        "complete": true,
+        "mean_yaw_score_deg": 1.0393510995227133
+      }
+    },
+    "B2-V/1610": {
+      "method": "B2-V",
+      "seed": 1610,
+      "consumed_policy_steps": 2000000,
+      "evaluation_count": 100,
+      "best_steps": 20000,
+      "best_summary": {
+        "total": 32,
+        "success_count": 30,
+        "complete": true,
+        "mean_yaw_score_deg": 0.605178533492952
+      },
+      "final_summary": {
+        "total": 32,
+        "success_count": 12,
+        "complete": true,
+        "mean_yaw_score_deg": 1.252878377508521
+      }
+    },
+    "B2/1610": {
+      "method": "B2",
+      "seed": 1610,
+      "consumed_policy_steps": 2000000,
+      "evaluation_count": 100,
+      "best_steps": 20000,
+      "best_summary": {
+        "total": 32,
+        "success_count": 30,
+        "complete": true,
+        "mean_yaw_score_deg": 0.5435935824621592
+      },
+      "final_summary": {
+        "total": 32,
+        "success_count": 18,
+        "complete": true,
+        "mean_yaw_score_deg": 0.8735096955230933
+      }
+    },
+    "M3/1611": {
+      "method": "M3",
+      "seed": 1611,
+      "consumed_policy_steps": 2000000,
+      "evaluation_count": 100,
+      "best_steps": 840000,
+      "best_summary": {
+        "total": 32,
+        "success_count": 29,
+        "complete": true,
+        "mean_yaw_score_deg": 0.7894704425093462
+      },
+      "final_summary": {
+        "total": 32,
+        "success_count": 25,
+        "complete": true,
+        "mean_yaw_score_deg": 1.1090908319562975
+      }
+    },
+    "B2-V/1611": {
+      "method": "B2-V",
+      "seed": 1611,
+      "consumed_policy_steps": 2000000,
+      "evaluation_count": 100,
+      "best_steps": 20000,
+      "best_summary": {
+        "total": 32,
+        "success_count": 31,
+        "complete": true,
+        "mean_yaw_score_deg": 0.663465896681962
+      },
+      "final_summary": {
+        "total": 32,
+        "success_count": 19,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9481878944066521
+      }
+    },
+    "B2/1611": {
+      "method": "B2",
+      "seed": 1611,
+      "consumed_policy_steps": 2000000,
+      "evaluation_count": 100,
+      "best_steps": 40000,
+      "best_summary": {
+        "total": 32,
+        "success_count": 31,
+        "complete": true,
+        "mean_yaw_score_deg": 0.48425937194718444
+      },
+      "final_summary": {
+        "total": 32,
+        "success_count": 17,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9407488848022332
+      }
+    }
+  },
+  "scope": "Fixed32 development only; original selected checkpoints, independent gate still unopened; segmented B2/1609 and V/1611 disclosed",
+  "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
+  "source_and_registration_hashes_valid": true,
+  "all_checkpoint_metrics_and_normalizers_hashes_valid": true,
+  "all_terminal_weights_optimizers_normalizers_finite": true,
+  "gate_or_final_simulated": false
+}
