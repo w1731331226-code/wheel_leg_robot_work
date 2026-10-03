@@ -1,0 +1,25 @@
+{
+  "method": "B2",
+  "seed": 1611,
+  "actual_main_pid": 43087,
+  "new_registered_run": true,
+  "CUDA_enforced_by_frozen_entry": true,
+  "unit_command": "ExecStart={ path=/home/wmt/wheel_leg_robot_work/.venv/bin/python ; argv[]=/home/wmt/wheel_leg_robot_work/.venv/bin/python -u -B /home/wmt/wheel_leg_robot_work/wheelleg_warp/train_height_comparison.py train --output /home/wmt/wheel_leg_robot_work/wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3 --method B2 --seed 1611 ; ignore_errors=no ; start_time=[Sun 2026-10-04 01:00:49 CST] ; stop_time=[n/a] ; pid=43087 ; code=(null) ; status=0/0 }",
+  "first_scored_steps": 20000,
+  "summary": {
+    "total": 32,
+    "success_count": 31,
+    "complete": true,
+    "mean_yaw_score_deg": 0.5423102587910179
+  },
+  "finite_policy_adam_rms": true,
+  "residual_mode": "torque6",
+  "action_dimensions": 6,
+  "training_epochs": 40,
+  "Adam_updates": 800,
+  "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
+  "checkpoint_sha256": "efad39ccdc222f34502e25c826a8fa11610187d1275c523d5b48d5325d172adb",
+  "normalization_sha256": "04c7e0e07b61ee4fa666b3029b311521a67e0f36d0576eb0b52df57ef4348e79",
+  "gate_or_final_simulated": false,
+  "not_convergence_or_method_advantage": true
+}

@@ -1,0 +1,83 @@
+{
+  "methods": {
+    "M3": {
+      "by_seed": {
+        "1609": {
+          "best_steps": 820000,
+          "summary": {
+            "total": 32,
+            "success_count": 29,
+            "complete": true,
+            "mean_yaw_score_deg": 0.9575918692280827
+          }
+        },
+        "1610": {
+          "best_steps": 20000,
+          "summary": {
+            "total": 32,
+            "success_count": 31,
+            "complete": true,
+            "mean_yaw_score_deg": 0.609470245446116
+          }
+        },
+        "1611": {
+          "best_steps": 840000,
+          "summary": {
+            "total": 32,
+            "success_count": 29,
+            "complete": true,
+            "mean_yaw_score_deg": 0.7894704425093462
+          }
+        }
+      },
+      "policy_case_successes": 89,
+      "mean_seed_Jpsi_deg": 0.785510852394515
+    },
+    "B2-V": {
+      "by_seed": {
+        "1609": {
+          "best_steps": 1220000,
+          "summary": {
+            "total": 32,
+            "success_count": 28,
+            "complete": true,
+            "mean_yaw_score_deg": 0.7633825599063806
+          }
+        },
+        "1610": {
+          "best_steps": 20000,
+          "summary": {
+            "total": 32,
+            "success_count": 30,
+            "complete": true,
+            "mean_yaw_score_deg": 0.605178533492952
+          }
+        },
+        "1611": {
+          "best_steps": 20000,
+          "summary": {
+            "total": 32,
+            "success_count": 31,
+            "complete": true,
+            "mean_yaw_score_deg": 0.663465896681962
+          }
+        }
+      },
+      "policy_case_successes": 89,
+      "mean_seed_Jpsi_deg": 0.6773423300270982
+    }
+  },
+  "consumed_steps_each": 2000000,
+  "unique_development_cases": 32,
+  "policy_case_pairs_each_method": 96,
+  "paired_M3_lower_Jpsi_than_V": {
+    "1609": false,
+    "1610": false,
+    "1611": false
+  },
+  "scope": "Three policies per method on same fixed32 development cases; no independent gate or96independent scenes; V/1611 trajectory segmented",
+  "remaining_reference": "B2/1611",
+  "extra_task_evaluations": 0,
+  "gate_or_final_simulated": false,
+  "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef"
+}
