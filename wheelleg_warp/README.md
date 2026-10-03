@@ -1,6 +1,31 @@
 # WheelLeg 原生GPU并行基线
 
-当前height-115候选统一入口为`NativeEnv.height115_candidate(...)`，固定7kg当前J设计位于`native/design.py`，投影、径向保护和physical_v1逐步验收统一装配。它保留原32维观测及默认diff3动作；旧`NativeEnv(...)`默认行为不替换。`check_height115_candidate.py`验证设计隔离、采样与重置；`probe_current_vmc_design.py`用同一入口评估。当前六正常物理6/6、任务4/6，高速停车尚未通过，**候选标记不构成整体PPO训练准入**。历史0.30m正式训练记录如下。
+## 给老师展示：115～380mm手动控制
+
+在项目根目录的桌面终端运行：
+
+```bash
+/home/wmt/wheel_leg_robot_work/.venv/bin/python /home/wmt/wheel_leg_robot_work/wheelleg_warp/manual_demo.py --height 0.115
+```
+
+演示直接复用当前v8五节点固定7kg VMC/六状态LQR、径向支持、实际扭矩包络及共享停车参考；GPU物理积分，CPU只同步状态绘图。没有复制控制增益或挂载未训练PPO权重。窗口显示的高度是目标腿长与两腿平均FK腿长，不是机身离地高度。
+
+| 按键 | 操作 |
+| --- | --- |
+| W/S | 按住前进/后退，松开停车，默认1m/s |
+| A/D | 按住左/右转向，参考角速度0.3rad/s |
+| ↑/↓ | 以20mm/s调节目标腿长，115～380mm |
+| 1/2/3/4/5 | 切换115/160/250/300/380mm预设并重置姿态 |
+| T | 从当前目标高度重新初始化，执行原行驶→到达→停车保持任务 |
+| B | 切换下一次T任务的前进/后退方向 |
+| R | 回到当前目标高度的手动初态 |
+| 空格 / Esc | 暂停继续 / 退出 |
+
+展示建议：依次按1～5和T，观察PASS、停车距离、停车后速度及高度RMSE；B后再按T展示反向任务。手动运动不评分，任务模式内目标高度固定，判据沿用原环境。五高度正/反共10任务全门通过，手控前进停车、300→115→380→300mm渐变与双向转向检查通过，证据[演示检查](results/manual_demo_v2_20261003/verification.json)。重置预设用于展示各高度初态，不把重置跳变称作连续调高。
+
+## 当前训练前状态
+
+当前height-115统一入口为`NativeEnv.height115_candidate(shared_reference=True)`，v8-design-floor-support、38维观测，固定7kg当前J设计位于`native/design.py`。第30轮CUDA PPO工程准入已通过，活动协议和readiness见[训练说明](NATIVE_TRAINING.md)。原28全部成功，当前公共148例仍有一例航向失败；工程准入不证明学习优势或高鲁棒性，尚未启动新的长训练。下面是历史0.30m训练记录。
 
 唯一1024个MuJoCo Warp并行环境基线已经完成正式分轮训练；旧CPU训练实例和CPU/Warp对照实例已退役，公共控制、物理和评估代码保留。
 
