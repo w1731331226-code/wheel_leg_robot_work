@@ -1,0 +1,21 @@
+{
+  "round": 30,
+  "engineering_only": true,
+  "baseline": "height115-current-vmc-v8-design-floor-support-candidate",
+  "protocol": "wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3",
+  "reuse": "Current-v8 original28, public148, initial888, actual-stage delay/reporting and real train CPU exception tests; exact related hashes must match",
+  "native_panels": [
+    "speed_boundary_v2",
+    "nearcut_v2"
+  ],
+  "panel_inputs_sha256": {
+    "wheelleg_warp/results/twentyfourth_round_operating_regions_20261002/speed_boundary_v2/registered_cases.json": "f0108437b4299f2841b0c1ce0a47c7156589b6afe880dca6ebe9cdc0e9ce748e",
+    "wheelleg_warp/results/twentyfourth_round_operating_regions_20261002/nearcut_v2/registered_cases.json": "14e8998d93ffdbb7bb49c6d1b8a79adea27043fd17606fb3a1c192ca99742a60"
+  },
+  "additional_learning": "All three methods: CUDA twelve-thousand-step engineering probes only; no weights promoted",
+  "classical_selection": "Same previously registered32 cases and original8 candidates; no new candidate or seed selection",
+  "gate_or_final_simulation": false,
+  "long_training": false,
+  "remaining": "Finite engineering readiness and objective five-round review; no claim of converged learning, method advantage or invariant safety",
+  "user_update": "Formal PPO policy/value/optimizer on CUDA, MuJoCo Warp physics on CUDA. Previous CPU-policy protocol superseded before any long training."
+}

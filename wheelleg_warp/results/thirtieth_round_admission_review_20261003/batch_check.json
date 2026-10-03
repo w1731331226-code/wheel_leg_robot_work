@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "environments": 100,
+  "policy_steps": 5000,
+  "rollout_steps_per_world": 50,
+  "batch_size": 250,
+  "training_epochs": 10,
+  "optimizer_minibatch_updates": 200,
+  "ppo_device": "cuda",
+  "physics_device": "cuda:0",
+  "weights_optimizer_restored_exactly": true,
+  "formal_training": false,
+  "probe_weights_promoted": false,
+  "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
+  "verifier_sha256": "961ad8c5c0a806ae45be56b3f7f88d79c718198c26723872eb102f33b7a923f0"
+}

@@ -231,7 +231,7 @@ class Episodes(BaseCallback):
         return True
 
 def equal(a,b):
-    if isinstance(a,torch.Tensor):assert torch.equal(a.cpu(),b.cpu())
+    if isinstance(a,torch.Tensor):assert torch.equal(a,b)
     elif isinstance(a,np.ndarray):np.testing.assert_array_equal(a,b)
     elif isinstance(a,dict):
         assert a.keys()==b.keys()

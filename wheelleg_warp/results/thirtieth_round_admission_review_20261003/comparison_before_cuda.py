@@ -1,4 +1,4 @@
-"""Frozen height115 comparison on CUDA: initialize, smoke, train and one-use gate."""
+"""Frozen v6 height115 comparison: initialize, select, smoke, train and one-use gate."""
 from pathlib import Path
 from dataclasses import asdict,fields,replace
 import argparse,json,os,sys
@@ -22,7 +22,7 @@ from terrain_eval import summarize_terrain,validate_terrain_rows
 from training_contract import TASK_CONTRACT_VERSION,source_hashes,digest,checkpoint_hashes,verify_checkpoint
 from dashboard.live_env import atomic_json
 
-VERSION='height115-yaw-v3-v8-gpu'
+VERSION='height115-yaw-v2-v8'
 METHODS={'M3':'diff3','B2-V':'virtual6','B2':'torque6'}
 INIT=ROOT/'wheelleg_warp/results/twentyninth_round_capped_support_20261003/initial_action_config.json'
 LEGACY=ROOT/'wheelleg_ppo/tools/results/fixes_2026-09-17/final/baseline.json'
@@ -48,7 +48,7 @@ def freeze(out):
         physics_dt_s=.0005,actor_dt_s=.02,nominal_design_mass_kg=7.,
         curriculum_milestones=[20000,100000],curriculum_switch='requested at policy milestones; per-world model/target changes only after actual episode termination',
         training_bank_rule='100 fixed sampled worlds per stage and training seed; target fixed within episode; not IID per-episode parameter resampling',
-        ppo={**old['ppo'],'n_steps':50,'batch_size':250},normalization=old['normalization'],device='cuda',
+        ppo={**old['ppo'],'n_steps':50,'batch_size':250},normalization=old['normalization'],device='cpu',
         initial_action_config=str(INIT.relative_to(ROOT)),initial_action_config_sha256=digest(INIT),
         residual_scale=1.,initial_log_std={m:init['methods'][mode]['initial_log_std'] for m,mode in METHODS.items()},
         b1_candidates=old['b1_candidates'],b1_formula=old['b1_formula'],
@@ -109,7 +109,6 @@ def protocol(out):
     for name,value in p['source_sha256'].items():
         if digest(ROOT/name)!=value:raise ValueError('Frozen source/input changed: '+name)
     if digest(out/'sealed_final_cases.json')!=p['sealed_final_sha256']:raise ValueError('Sealed final parameters changed')
-    if p['device']!='cuda' or not torch.cuda.is_available():raise ValueError('Formal PPO requires available CUDA')
     return p
 
 
@@ -231,7 +230,7 @@ class Episodes(BaseCallback):
         return True
 
 def equal(a,b):
-    if isinstance(a,torch.Tensor):assert torch.equal(a.cpu(),b.cpu())
+    if isinstance(a,torch.Tensor):assert torch.equal(a,b)
     elif isinstance(a,np.ndarray):np.testing.assert_array_equal(a,b)
     elif isinstance(a,dict):
         assert a.keys()==b.keys()
@@ -246,7 +245,7 @@ def smoke(out,method):
     p=protocol(out);directory=out/'engineering'/method;directory.mkdir(parents=True);seed=1609;mode=METHODS[method]
     # Ten worlds retain the formal50-step/batch250/ten-epoch settings; no probe selection or promotion.
     raw=CurriculumEnv(p,mode,seed,10,milestones=[4000,8000]);env=VecNormalize(VecCheckNan(raw,raise_exception=True),**p['normalization'])
-    agent=new_agent(p,method,seed,env);initial_std=agent.policy.log_std.detach().cpu().numpy().copy();before={k:v.clone() for k,v in agent.policy.state_dict().items()};cb=Episodes();restored=None
+    agent=new_agent(p,method,seed,env);initial_std=agent.policy.log_std.detach().numpy().copy();before={k:v.clone() for k,v in agent.policy.state_dict().items()};cb=Episodes();restored=None
     try:
         write(directory/'configuration.json',dict(protocol_sha256=digest(out/'protocol.json'),mode=mode,seed=seed,n=10,
             curriculum_milestones=[4000,8000],policy_steps=12000,ppo=p['ppo'],initial_log_std=initial_std.tolist(),weights_promoted=False))
@@ -255,15 +254,11 @@ def smoke(out,method):
         assert any(not torch.equal(before[k],v) for k,v in agent.policy.state_dict().items()) and agent.policy.optimizer.state_dict()['state']
         prefix=directory/'probe';agent.save(prefix);env.save(str(prefix)+'.pkl')
         new_raw=CurriculumEnv(p,mode,seed,10,start=6000,milestones=[4000,8000]);restored=VecNormalize.load(str(prefix)+'.pkl',VecCheckNan(new_raw,raise_exception=True))
-        loaded=PPO.load(str(prefix)+'.zip',env=restored,device=p['device'])
+        loaded=PPO.load(str(prefix)+'.zip',env=restored,device='cpu')
         equal(agent.policy.state_dict(),loaded.policy.state_dict());equal(agent.policy.optimizer.state_dict(),loaded.policy.optimizer.state_dict())
         equal(env.obs_rms.mean,restored.obs_rms.mean);equal(env.obs_rms.var,restored.obs_rms.var);equal(env.obs_rms.count,restored.obs_rms.count)
         cb2=Episodes();loaded.learn(total_timesteps=6000,reset_num_timesteps=False,callback=cb2)
         assert loaded.num_timesteps==12000 and loaded._n_updates==240 and np.any(new_raw.stages==3)
-        assert agent.device.type==loaded.device.type=='cuda'
-        assert all(v.device.type=='cuda' for v in loaded.policy.parameters())
-        optimizer_devices={v.device.type for state in loaded.policy.optimizer.state.values() for k,v in state.items() if isinstance(v,torch.Tensor) and k!='step'}
-        assert optimizer_devices=={'cuda'}
         resumed=directory/'resumed_probe';loaded.save(resumed);restored.save(str(resumed)+'.pkl')
         from probe_height_115_margin import cases
         from native.terrain import sample_height_terrain_115
@@ -272,8 +267,6 @@ def smoke(out,method):
         write(directory/'verification.json',dict(passed=True,policy_steps=12000,updates=240,weights_changed=True,
             weights_optimizer_normalization_restored_exactly=True,initialization_only_on_fresh_policy=True,
             physical_environment_state_restored=False,episodes=cb.rows+cb2.rows,evaluation=evaluation,
-            ppo_device=str(loaded.device),policy_parameter_devices=sorted({v.device.type for v in loaded.policy.parameters()}),
-            optimizer_moment_devices=sorted(optimizer_devices),physics_device=str(new_raw.venv.data.qpos.device),
             curriculum_transitions=raw.transition_log+new_raw.transition_log,stages_after_resume=new_raw.stages.tolist(),
             before_restore_checkpoint=checkpoint_hashes(prefix),final_checkpoint=checkpoint_hashes(resumed),source_sha256=p['source_sha256'],formal_training=False,checkpoint_promoted=False))
         print('PASS REAL ENTRY SMOKE',method,'12000steps240epochs; exact Adam/RMS restore; stage3 after actual ends; eval',sum(r['success'] for r in evaluation),'/4',flush=True)
@@ -315,7 +308,6 @@ def train(out,method,seed,resume=False):
         agent=PPO.load(last['path']+'.zip',env=env,device=p['device'])
         if agent.num_timesteps!=start:raise ValueError('Checkpoint consumed budget mismatch')
     else:env=VecNormalize(VecCheckNan(raw,raise_exception=True),**p['normalization']);agent=new_agent(p,method,seed,env)
-    if agent.device.type!='cuda' or any(v.device.type!='cuda' for v in agent.policy.parameters()):raise ValueError('PPO policy/value must remain on CUDA')
     progress=directory/'progress.json';atomic_json(progress,dict(executed_policy_steps=start));callback=Episodes(progress)
     def save(prefix,resumable=True):
         agent.save(prefix);env.save(str(prefix)+'.pkl')
@@ -401,7 +393,7 @@ def gate(out):
     for method,mode in METHODS.items():
         results[method]={}
         for seed,record in locked['checkpoints'][method].items():
-            agent=PPO.load(record['path']+'.zip',device=p['device']);results[method][seed]=evaluate(p['gate'],mode,agent,record['path']+'.pkl')
+            agent=PPO.load(record['path']+'.zip',device='cpu');results[method][seed]=evaluate(p['gate'],mode,agent,record['path']+'.pkl')
             write(out/f'gate_{method}_{seed}.json',results[method][seed])
             if method=='M3':regression[seed]=evaluate(p['regression'],mode,agent,record['path']+'.pkl');write(out/f'gate_legacy_{seed}.json',regression[seed])
     write(out/'gate_result.json',assess(p,results,regression))

@@ -231,7 +231,7 @@ class Episodes(BaseCallback):
         return True
 
 def equal(a,b):
-    if isinstance(a,torch.Tensor):assert torch.equal(a.cpu(),b.cpu())
+    if isinstance(a,torch.Tensor):assert torch.equal(a,b)
     elif isinstance(a,np.ndarray):np.testing.assert_array_equal(a,b)
     elif isinstance(a,dict):
         assert a.keys()==b.keys()
@@ -246,7 +246,7 @@ def smoke(out,method):
     p=protocol(out);directory=out/'engineering'/method;directory.mkdir(parents=True);seed=1609;mode=METHODS[method]
     # Ten worlds retain the formal50-step/batch250/ten-epoch settings; no probe selection or promotion.
     raw=CurriculumEnv(p,mode,seed,10,milestones=[4000,8000]);env=VecNormalize(VecCheckNan(raw,raise_exception=True),**p['normalization'])
-    agent=new_agent(p,method,seed,env);initial_std=agent.policy.log_std.detach().cpu().numpy().copy();before={k:v.clone() for k,v in agent.policy.state_dict().items()};cb=Episodes();restored=None
+    agent=new_agent(p,method,seed,env);initial_std=agent.policy.log_std.detach().numpy().copy();before={k:v.clone() for k,v in agent.policy.state_dict().items()};cb=Episodes();restored=None
     try:
         write(directory/'configuration.json',dict(protocol_sha256=digest(out/'protocol.json'),mode=mode,seed=seed,n=10,
             curriculum_milestones=[4000,8000],policy_steps=12000,ppo=p['ppo'],initial_log_std=initial_std.tolist(),weights_promoted=False))
