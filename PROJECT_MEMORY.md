@@ -5698,3 +5698,52 @@
 - `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_620000.json`
 - `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_620000.pkl`
 - `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_620000.zip`
+
+### 自动同步快照 2026-10-04T01:18:48+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_640000.json`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_640000.pkl`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_640000.zip`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_660000.json`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_660000.pkl`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_660000.zip`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_680000.json`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_680000.pkl`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_680000.zip`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_700000.json`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_700000.pkl`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_700000.zip`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_720000.json`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_720000.pkl`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_720000.zip`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_740000.json`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_740000.pkl`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_740000.zip`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_760000.json`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_760000.pkl`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_760000.zip`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_780000.json`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_780000.pkl`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_780000.zip`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_800000.json`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_800000.pkl`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_800000.zip`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_820000.json`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_820000.pkl`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_820000.zip`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_840000.json`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_840000.pkl`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_840000.zip`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_860000.json`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_860000.pkl`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_860000.zip`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_880000.json`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_880000.pkl`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_880000.zip`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_900000.json`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_900000.pkl`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_900000.zip`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_920000.pkl`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_920000.zip`
