@@ -34,5 +34,5 @@ report=dict(created_utc=datetime.now(timezone.utc).isoformat(),protocol_sha256=q
  research_gate_ready=all(r['completed_registered_budget'] for r in rows),gate_opened=(q.P/'gate_opened.json').exists())
 path=HERE/'registered_results.json';tmp=path.with_suffix('.tmp');tmp.write_text(json.dumps(report,indent=2)+'\n');tmp.replace(path)
 with (HERE/'registered_results.csv').open('w',newline='') as f:
-    writer=csv.DictWriter(f,fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
+    writer=csv.DictWriter(f,fieldnames=list(rows[0]),lineterminator='\n');writer.writeheader();writer.writerows(rows)
 print('REGISTERED table:',report['completed_runs'],'/9 complete;',[(r['method'],r['seed'],r['status'],r['consumed_policy_steps']) for r in rows if r['status']!='not_started'])

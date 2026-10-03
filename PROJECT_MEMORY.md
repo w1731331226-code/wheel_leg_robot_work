@@ -2421,3 +2421,5 @@
 - `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2-V/1609/step_1860000.json`
 - `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2-V/1609/step_1860000.pkl`
 - `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2-V/1609/step_1860000.zip`
+
+- 第49轮收尾格式修正：CSV默认CRLF触发Git空白检查，汇总输出改LF并规范现有表，数据值不变；原核查通过，控制/训练与预算未变。
