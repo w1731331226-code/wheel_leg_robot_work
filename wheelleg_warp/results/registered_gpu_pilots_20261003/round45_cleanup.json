@@ -1,0 +1,56 @@
+{
+  "round": 45,
+  "items": [
+    {
+      "removed": "/tmp/wheelleg_stage2m.log",
+      "retained": "wheelleg_warp/results/registered_gpu_pilots_20261003/stage2m_review.log",
+      "bytes": 271,
+      "sha256": "f51992a0194df65b79b45b3fa08941465d95c0b3c523b7146bcb4647c62bc402"
+    },
+    {
+      "removed": "/tmp/wheelleg_nonreg2m.log",
+      "retained": "wheelleg_warp/results/registered_gpu_pilots_20261003/nonregression2m.log",
+      "bytes": 108,
+      "sha256": "bbb42e939acce7f00bcbb0795eebc0f83829fd165af03d268bb9d11f4d4b482a"
+    },
+    {
+      "removed": "/tmp/wheelleg_b2v_stage200k.log",
+      "retained": "wheelleg_warp/results/registered_gpu_pilots_20261003/B2V_stage200k.log",
+      "bytes": 269,
+      "sha256": "158ad565953a1d4b22720713c90aac6d0b81f7d9de4b5139d90d7d2374b5e542"
+    },
+    {
+      "removed": "/tmp/wheelleg_b2v_nonreg200k.log",
+      "retained": "wheelleg_warp/results/registered_gpu_pilots_20261003/B2V_nonreg200k.log",
+      "bytes": 107,
+      "sha256": "a20c8325c8cc94aee184b025e438997b936d728b2e34a36ce19bd157d5df194a"
+    },
+    {
+      "removed": "/tmp/wheelleg_paired200k.log",
+      "retained": "wheelleg_warp/results/registered_gpu_pilots_20261003/paired200k.log",
+      "bytes": 239,
+      "sha256": "d3bb03ec3190e2788f6e67fc590fbc7e02681a055e535d61794d1cb58bd2ceed"
+    },
+    {
+      "removed": "/tmp/wheelleg_b2v_halfmillion.log",
+      "retained": "wheelleg_warp/results/registered_gpu_pilots_20261003/B2V_halfmillion_audit.log",
+      "bytes": 880,
+      "sha256": "b37345cc08d5ef6ea496d1cd471ef0741322467ac05aa723f95953eed48354ac"
+    },
+    {
+      "removed": "/tmp/wheelleg_paired500k.log",
+      "retained": "wheelleg_warp/results/registered_gpu_pilots_20261003/paired500k.log",
+      "bytes": 240,
+      "sha256": "9c11e06b3791da1b3084da91c57c629e590172dfbf4d8781aed54724762bde1d"
+    },
+    {
+      "removed": "/tmp/wheelleg_reward_scale.log",
+      "retained": "wheelleg_warp/results/registered_gpu_pilots_20261003/reward_scale_audit.log",
+      "bytes": 150,
+      "sha256": "53b5e6eaec70b0d91c9bcabbdb097800c80225b3a3a968210aec5a9b94013b06"
+    }
+  ],
+  "removed_bytes": 2264,
+  "unique_scientific_evidence_removed": false,
+  "scope": "Only completed/tmp logs identical to retained evidence; all weights/RMS/failed episodes retained"
+}
