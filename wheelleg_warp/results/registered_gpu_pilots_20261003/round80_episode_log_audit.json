@@ -1,0 +1,75 @@
+{
+  "round": 80,
+  "passed": true,
+  "records": [
+    {
+      "method": "B2-V",
+      "seed": 1611,
+      "policy_steps": 20000,
+      "recorded_recent_training_episodes": 0,
+      "window_capacity": 100,
+      "mean_episode_return": null,
+      "episode_return_range": null,
+      "mean_episode_policy_length": null,
+      "episode_records_have_scene_or_success_fields": false,
+      "development_summary": {
+        "total": 32,
+        "success_count": 31,
+        "complete": true,
+        "mean_yaw_score_deg": 0.663465896681962
+      },
+      "checkpoint_sha256": "39d2f4de2d32bc21cc231a40f89dc17ff8bcf344bbac2aa5ca8fbf6d1c7ac1d2",
+      "normalization_sha256": "3e53942dae947058a4277891b42a01f1cdd87b830a39d7bacc4ad4f166dc71cb"
+    },
+    {
+      "method": "B2-V",
+      "seed": 1611,
+      "policy_steps": 200000,
+      "recorded_recent_training_episodes": 100,
+      "window_capacity": 100,
+      "mean_episode_return": 3.6109155670148976,
+      "episode_return_range": [
+        -8.86227709660474,
+        17.923366210851825
+      ],
+      "mean_episode_policy_length": 370.91,
+      "episode_records_have_scene_or_success_fields": false,
+      "development_summary": {
+        "total": 32,
+        "success_count": 12,
+        "complete": true,
+        "mean_yaw_score_deg": 1.4565505241867645
+      },
+      "checkpoint_sha256": "9283ce06d8a736dc63f7b35d50ca1b27d63994157d4cfabb9cc8df0b87b7706f",
+      "normalization_sha256": "8397434206e9a1641b6e54ae08c85d0b8a3ae11f1ae54e9af6b7b02ef8c3c9d7"
+    },
+    {
+      "method": "B2-V",
+      "seed": 1611,
+      "policy_steps": 500000,
+      "recorded_recent_training_episodes": 100,
+      "window_capacity": 100,
+      "mean_episode_return": 10.87253697233554,
+      "episode_return_range": [
+        -5.434242916553472,
+        18.750568059992872
+      ],
+      "mean_episode_policy_length": 372.39,
+      "episode_records_have_scene_or_success_fields": false,
+      "development_summary": {
+        "total": 32,
+        "success_count": 12,
+        "complete": true,
+        "mean_yaw_score_deg": 1.9291134396649956
+      },
+      "checkpoint_sha256": "09c93ee46b5037f1b230a5f8e42f98c0ab3396374b1729e27cc1c4827dfac21c",
+      "normalization_sha256": "94c7951e483f20685d2391f318a4e6a0f8978dc8826dea0f1ceeb5dde45bbf00"
+    }
+  ],
+  "inference": "Recent asynchronous training episode windows, not IID/full training success rates. Empty20k logs are not evidence of learning complete tasks. Changing training return and development performance do not identify overfitting or reward causality.",
+  "log_source": "NativeEnv info episode r=state20 accumulator,l=ceil(physical_steps/40); SB3 BaseAlgorithm updates ep_info_buffer from info episode",
+  "extra_task_evaluations": 0,
+  "gate_or_final_simulated": false,
+  "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
+  "verifier_sha256": "c1cd6475cd597c0bcf6a8872866b6c5d7b551fcdc0c84166ec8890e4de20c118"
+}

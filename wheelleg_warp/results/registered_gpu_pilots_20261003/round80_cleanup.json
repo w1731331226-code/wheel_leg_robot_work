@@ -1,0 +1,81 @@
+{
+  "round": 80,
+  "scope": "Task-owned closed /tmp logs only; byte-identical archived copies, no open descriptors, retained hashes unchanged",
+  "removed_files": 12,
+  "removed_bytes": 3668,
+  "files": [
+    {
+      "removed": "/tmp/wheelleg_m3_1611_stage1m.log",
+      "retained": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/registered_gpu_pilots_20261003/M3_1611_stage1m.log",
+      "bytes": 271,
+      "sha256": "431bf7199f5a6ed153e23000b496e501e29e4abe04d887f1ac43b8499bdcd502"
+    },
+    {
+      "removed": "/tmp/wheelleg_m3_1611_nonreg1m.log",
+      "retained": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/registered_gpu_pilots_20261003/M3_1611_nonreg1m.log",
+      "bytes": 108,
+      "sha256": "c061f01b078fa708af615f290a1b8452f44a82dec6d36ed7973de95ec58ff863"
+    },
+    {
+      "removed": "/tmp/wheelleg_m3_1611_stage2m.log",
+      "retained": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/registered_gpu_pilots_20261003/M3_1611_stage2m.log",
+      "bytes": 271,
+      "sha256": "f27694b7deeff283ae87c9a5a0c8b7b98d26c168da5f186641508787f19fca17"
+    },
+    {
+      "removed": "/tmp/wheelleg_m3_1611_nonreg2m.log",
+      "retained": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/registered_gpu_pilots_20261003/M3_1611_nonreg2m.log",
+      "bytes": 108,
+      "sha256": "f16353b55c03c6c1798e4935a59022aea378ac8697c5f74865a07f72aa386498"
+    },
+    {
+      "removed": "/tmp/wheelleg_registered_table_round77.log",
+      "retained": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/registered_gpu_pilots_20261003/registered_results_round77.log",
+      "bytes": 325,
+      "sha256": "bf04f1a0a16899beab8c658194445594cba2994911c59aa7b2674a88f51d50ce"
+    },
+    {
+      "removed": "/tmp/wheelleg_b2v_1611_stage200k.log",
+      "retained": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/registered_gpu_pilots_20261003/B2V_1611_stage200k.log",
+      "bytes": 268,
+      "sha256": "084ee5900860292df8c4e2b71cbb16dafd5ca38256357e472e5a02a05ae01cb7"
+    },
+    {
+      "removed": "/tmp/wheelleg_b2v_1611_nonreg200k.log",
+      "retained": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/registered_gpu_pilots_20261003/B2V_1611_nonreg200k.log",
+      "bytes": 106,
+      "sha256": "8ef3d966d936757f00242a2a1aa12d4ebdfb09d3032bee04e147d93ee1a4cb61"
+    },
+    {
+      "removed": "/tmp/wheelleg_pair_1611_200k.log",
+      "retained": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/registered_gpu_pilots_20261003/paired_1611_200k.log",
+      "bytes": 237,
+      "sha256": "bbf026ea340766310be6cd5db1b18bd8a0603cadcd75938dcc2aba49f7b7ebb0"
+    },
+    {
+      "removed": "/tmp/wheelleg_b2v_1611_halfmillion.log",
+      "retained": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/registered_gpu_pilots_20261003/B2V_1611_halfmillion.log",
+      "bytes": 935,
+      "sha256": "e695be57e7622276d02408d2b12755599c076bba139a7b5b8f2cc1f1538db22d"
+    },
+    {
+      "removed": "/tmp/wheelleg_b2v_1611_stage500k.log",
+      "retained": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/registered_gpu_pilots_20261003/B2V_1611_stage500k.log",
+      "bytes": 268,
+      "sha256": "2fbd3f76762fbe6bcdc880ea89373b24ad59224523c5c0c55118416445c129f4"
+    },
+    {
+      "removed": "/tmp/wheelleg_pair_1611_500k.log",
+      "retained": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/registered_gpu_pilots_20261003/paired_1611_500k.log",
+      "bytes": 237,
+      "sha256": "418e0af90ab8d0da6ae2feda9a27ecc833f040488657b9394ab473a7f408478a"
+    },
+    {
+      "removed": "/tmp/wheelleg_episode_logs80.log",
+      "retained": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/registered_gpu_pilots_20261003/episode_logs80.log",
+      "bytes": 534,
+      "sha256": "2d8c320f3e79ba63c1d07358de8ab8b2c55f074ff7cd85b7c9888f549f582cf4"
+    }
+  ],
+  "scientific_results_models_statistics_and_unique_failures_preserved": true
+}

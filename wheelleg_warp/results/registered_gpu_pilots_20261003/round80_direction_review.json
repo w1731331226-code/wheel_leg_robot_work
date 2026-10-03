@@ -1,0 +1,148 @@
+{
+  "round": 80,
+  "created_utc": "2026-10-03T11:43:00.694356+00:00",
+  "completed_registered_runs": 7,
+  "registered_runs": 9,
+  "current_V_1611_steps_snapshot": 940000,
+  "current_best_steps": 20000,
+  "current_best_summary": {
+    "total": 32,
+    "success_count": 31,
+    "complete": true,
+    "mean_yaw_score_deg": 0.663465896681962
+  },
+  "M3_full_development": {
+    "method": "M3",
+    "completed_training_seeds": [
+      1609,
+      1610,
+      1611
+    ],
+    "consumed_steps_each": 2000000,
+    "by_seed": {
+      "1609": {
+        "best_steps": 820000,
+        "summary": {
+          "total": 32,
+          "success_count": 29,
+          "complete": true,
+          "mean_yaw_score_deg": 0.9575918692280827
+        },
+        "lost_B0_successes": 3,
+        "speed_passes": 32,
+        "arrival_passes": 32
+      },
+      "1610": {
+        "best_steps": 20000,
+        "summary": {
+          "total": 32,
+          "success_count": 31,
+          "complete": true,
+          "mean_yaw_score_deg": 0.609470245446116
+        },
+        "lost_B0_successes": 1,
+        "speed_passes": 32,
+        "arrival_passes": 32
+      },
+      "1611": {
+        "best_steps": 840000,
+        "summary": {
+          "total": 32,
+          "success_count": 29,
+          "complete": true,
+          "mean_yaw_score_deg": 0.7894704425093462
+        },
+        "lost_B0_successes": 3,
+        "speed_passes": 32,
+        "arrival_passes": 32
+      }
+    },
+    "unique_development_cases": 32,
+    "policy_case_pairs": 96,
+    "policy_case_successes": 89,
+    "mean_seed_Jpsi_deg": 0.785510852394515,
+    "lost_B0_policy_case_pairs": 7,
+    "scope": "Three trained policies on the same fixed32 development cases;96 policy-case pairs are not96 independent scenarios, no confidence interval or one-use research gate conclusion",
+    "remaining_matched_reference_runs": [
+      "B2-V/1611",
+      "B2/1611"
+    ],
+    "extra_task_evaluations": 0,
+    "gate_or_final_simulated": false,
+    "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef"
+  },
+  "equal_budget_1611_500k": {
+    "M3": {
+      "best_steps": 20000,
+      "best": {
+        "total": 32,
+        "success_count": 28,
+        "complete": true,
+        "mean_yaw_score_deg": 0.956787171593217
+      },
+      "last": {
+        "total": 32,
+        "success_count": 13,
+        "complete": true,
+        "mean_yaw_score_deg": 1.6166122129420808
+      }
+    },
+    "B2-V": {
+      "best_steps": 20000,
+      "best": {
+        "total": 32,
+        "success_count": 31,
+        "complete": true,
+        "mean_yaw_score_deg": 0.663465896681962
+      },
+      "last": {
+        "total": 32,
+        "success_count": 12,
+        "complete": true,
+        "mean_yaw_score_deg": 1.9291134396649956
+      }
+    }
+  },
+  "V_third_halfmillion": {
+    "total": 32,
+    "success_count": 12,
+    "complete": true,
+    "mean_yaw_score_deg": 1.9291134396649956
+  },
+  "V_failures": {
+    "design1p4": 3,
+    "terrain": 18,
+    "obstacle_contact": 4,
+    "attitude": 10
+  },
+  "episode_log_audit": "round80_episode_log_audit.json",
+  "plan_assessment": "Conditionally reasonable bounded falsifiable comparison; three completeM3 policies are not all9 matched runs or an independent research-gate result.",
+  "direction_assessment": "No superiority to strong classical control or robust novel method established. Preserve original main hypothesis; V early performance against M3 does not authorize renaming the contribution.",
+  "continuation": "Finish remaining two registered reference runs and original one-use research gate. Only original gate pass permits conditional formal/ablation/final work; gate failure ends current advantage branch with reproducible negative results. No extra budgets or runtime tuning.",
+  "new_evidence": "V/1611 at20k has40epochs800updates but0 episode records. Recent100return mean rises3.611 to10.873 at200k to500k while development success stays12 and Jpsi worsens1.457 to1.929. Windows have onlyr/l and are asynchronous: not full training success, overfitting/reward-causality proof or convergence.",
+  "limitations": [
+    "V/1611 and B2/1611 full budgets not yet complete",
+    "Fixed32 development cases reused across3M3 policies;89/96 policy-case pairs are not96 independent scenes",
+    "Training windows lack scene/success labels and are not IID",
+    "Fixed100world banks, partial observability, hidden Nom memory",
+    "Rank/covariance/local reachable-set differences",
+    "B2/1609 segmented exposure100fewer Adam updates",
+    "EPA horizon trigger geometry not fixed/reproduced",
+    "Design violations prevent global design-safety guarantees",
+    "Static888mean clipping is not rollout clipping or cause",
+    "Final regular geometry/asymmetric pressures limit robustness",
+    "Novelty/publication suitability unproven"
+  ],
+  "cleanup_files": 12,
+  "cleanup_bytes": 3668,
+  "extra_task_evaluations": 0,
+  "gate_or_final_simulated": false,
+  "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
+  "evidence": [
+    "M3_three_seed_full_development.json",
+    "paired_M3_B2V_1611_500000.json",
+    "B2-V_1611_halfmillion_audit.json",
+    "round80_episode_log_audit.json",
+    "round80_cleanup.json"
+  ]
+}
