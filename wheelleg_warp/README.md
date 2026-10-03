@@ -5,7 +5,7 @@
 在项目根目录的桌面终端运行：
 
 ```bash
-/home/wmt/wheel_leg_robot_work/.venv/bin/python /home/wmt/wheel_leg_robot_work/wheelleg_warp/manual_demo.py --height 0.115
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 /home/wmt/wheel_leg_robot_work/.venv/bin/python /home/wmt/wheel_leg_robot_work/wheelleg_warp/manual_demo.py --height 0.115
 ```
 
 地面演示直接复用当前v8五节点固定7kg VMC/六状态LQR、径向支持、实际扭矩包络及共享停车参考。地面和跳跃物理都在MuJoCo Warp GPU积分；跳跃复用原主机状态机与PackedPhysics逐步同步，窗口标明GPU physics/host jump control，没有声称跳跃控制已完全GPU化或比CPU更快。没有复制控制增益或挂载未训练PPO权重。窗口显示的高度是目标腿长与两腿平均FK腿长，不是机身离地高度。
