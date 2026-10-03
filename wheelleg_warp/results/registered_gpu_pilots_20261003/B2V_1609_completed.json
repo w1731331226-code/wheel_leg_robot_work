@@ -1,0 +1,30 @@
+{
+  "round": 49,
+  "method": "B2-V",
+  "seed": 1609,
+  "full_budget": 2000000,
+  "evaluations": 100,
+  "best_steps": 1220000,
+  "best_summary": {
+    "total": 32,
+    "success_count": 28,
+    "complete": true,
+    "mean_yaw_score_deg": 0.7633825599063806
+  },
+  "final_summary": {
+    "total": 32,
+    "success_count": 15,
+    "complete": true,
+    "mean_yaw_score_deg": 1.2091541766780236
+  },
+  "lost_B0_successes": 4,
+  "speed_passes": 32,
+  "arrival_passes": 32,
+  "training_epochs": 4000,
+  "Adam_updates": 80000,
+  "finite_policy_optimizer_rms": true,
+  "paired_scope": "Complete same-seed2M development comparison; remaining2seeds and independent gate not complete",
+  "paired_M3_yaw_better": false,
+  "queue_started_next": "B2/1609",
+  "gate_or_final_simulated": false
+}
