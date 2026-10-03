@@ -1,0 +1,3 @@
+AUDIT 20000 {'total': 32, 'success_count': 31, 'complete': True, 'mean_yaw_score_deg': 0.609470245446116} failures {'attitude': 1} std [0.48098671436309814, 0.46493321657180786, 0.23587051033973694] clip 0.0
+AUDIT 200000 {'total': 32, 'success_count': 19, 'complete': True, 'mean_yaw_score_deg': 0.9118602965981241} failures {'terrain': 13, 'obstacle_contact': 1} std [0.42663270235061646, 0.46109873056411743, 0.22222107648849487] clip 0.0
+AUDIT 500000 {'total': 32, 'success_count': 15, 'complete': True, 'mean_yaw_score_deg': 1.26474079761371} failures {'design1p4': 2, 'attitude': 5, 'terrain': 14, 'obstacle_contact': 3} std [0.3500654697418213, 0.3737233579158783, 0.16293856501579285] clip 0.0
