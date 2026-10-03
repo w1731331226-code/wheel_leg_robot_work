@@ -1,15 +1,14 @@
 """Read-only failure/normalization/action audit on fixed development evidence."""
 from pathlib import Path
 from collections import Counter,defaultdict
-import argparse,json,pickle,sys
+import json,pickle,sys
 ROOT=Path(__file__).resolve().parents[3]
 sys.path[:0]=[str(ROOT/'wheelleg_warp'),str(ROOT/'wheelleg_ppo/tools')]
 import numpy as np
 import torch
 from stable_baselines3 import PPO
 from training_contract import digest,verify_checkpoint
-HERE=Path(__file__).resolve().parent;P=ROOT/'wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3'
-parser=argparse.ArgumentParser();parser.add_argument('--method',default='M3');parser.add_argument('--seed',type=int,default=1609);args=parser.parse_args();RUN=P/'runs'/args.method/str(args.seed);destination=HERE/f'{args.method}_{args.seed}_halfmillion_audit.json';assert not destination.exists(),'Frozen report exists'
+HERE=Path(__file__).resolve().parent;P=ROOT/'wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3';RUN=P/'runs/M3/1609'
 
 def failures(r):
     s=r['scenario'];out=[]
@@ -51,9 +50,9 @@ for steps in (20000,200000,500000):
         fixed_zero_request_bank_action_clip_fraction=float(np.mean(abs(mu)>1)),normalizer_observation_count=float(normalizer.obs_rms.count),
         diagnostic_scope='Frozen888zero-Actor states, current checkpoint normalization; action audit only, not task replay or causal proof'))
 classical=json.loads((P/'classical_selection.json').read_text())
-result=dict(passed=True,protocol_sha256=digest(P/'protocol.json'),bank_sha256=digest(bank),method=args.method,seed=args.seed,reports=reports,
+result=dict(passed=True,protocol_sha256=digest(P/'protocol.json'),bank_sha256=digest(bank),method='M3',seed=1609,reports=reports,
  selected_b1=classical['selected']['summary'],configuration_changed=False,extra_task_evaluations=0,gate_or_final_simulated=False,
  decision='Continue registered2M and paired reference runs; deterioration is real development evidence, not tensor failure. Investigate reward/partial observability only after frozen comparison, no mid-run tuning.',
  verifier_sha256=digest(__file__))
-destination.write_text(json.dumps(result,indent=2)+'\n')
+(HERE/'M3_1609_halfmillion_audit.json').write_text(json.dumps(result,indent=2)+'\n')
 for r in reports:print('AUDIT',r['policy_steps'],r['summary'],'failures',r['failure_counts_nonexclusive'],'std',r['learned_std'],'clip',r['fixed_zero_request_bank_action_clip_fraction'],flush=True)
