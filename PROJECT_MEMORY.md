@@ -2865,3 +2865,24 @@
 - `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1609/progress.json`
 - `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1609/selection.json`
 - `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1609/step_1780000.json`
+
+### 自动同步快照 2026-10-03T16:49:21+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_warp/results/registered_gpu_pilots_20261003/queue_status.json`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1609/step_1800000.json`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1609/step_1800000.pkl`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1609/step_1800000.zip`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1609/step_1820000.json`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1609/step_1820000.pkl`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1609/step_1820000.zip`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1609/step_1840000.json`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1609/step_1840000.pkl`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1609/step_1840000.zip`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1609/step_1860000.json`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1609/step_1860000.pkl`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1609/step_1860000.zip`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1609/step_1880000.json`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1609/step_1880000.pkl`
+- `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1609/step_1880000.zip`
