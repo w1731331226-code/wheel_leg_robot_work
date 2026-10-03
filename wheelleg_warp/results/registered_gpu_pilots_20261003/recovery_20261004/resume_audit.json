@@ -1,0 +1,83 @@
+{
+  "method": "B2-V",
+  "seed": 1611,
+  "passed": true,
+  "interruption": "SIGINT during1040k development evaluation, then host reboot; transient units gone; not evidence of normal completion or EPA overflow",
+  "consumed_policy_steps": 1040000,
+  "remaining_registered_steps": 960000,
+  "complete_selection_evaluations": 51,
+  "pending_evaluation_steps": 1040000,
+  "discarded_training_steps": 0,
+  "training_epochs": 2080,
+  "Adam_updates": 41600,
+  "finite_policy_adam_rms": true,
+  "saved_checkpoint": {
+    "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
+    "path": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2-V/1611/interrupted_1040000",
+    "consumed_policy_steps": 1040000,
+    "resumable": true,
+    "physical_trajectory_restart_on_resume": true,
+    "checkpoint_sha256": "b3c8982d8bc76242bdc22bdb4cbf4e624b5f6a6cc5b2c186154d59fce4ab1244",
+    "normalization_sha256": "3d6a575fb1b10cf75d2affc5b7e12cbf46b400f7bcb5de8263451432e82930d9"
+  },
+  "preserved_pending_checkpoint_files": [
+    {
+      "original": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2-V/1611/step_1040000.zip",
+      "retained": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/registered_gpu_pilots_20261003/recovery_20261004/step_1040000.zip",
+      "sha256": "29d1054db1f2ca77a1c6886a144557b9cffecc327d4dd95fc002bf4e2a55e546"
+    },
+    {
+      "original": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2-V/1611/step_1040000.pkl",
+      "retained": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/registered_gpu_pilots_20261003/recovery_20261004/step_1040000.pkl",
+      "sha256": "3d6a575fb1b10cf75d2affc5b7e12cbf46b400f7bcb5de8263451432e82930d9"
+    }
+  ],
+  "completed_runs_revalidated": [
+    {
+      "method": "M3",
+      "seed": 1609
+    },
+    {
+      "method": "B2-V",
+      "seed": 1609
+    },
+    {
+      "method": "B2",
+      "seed": 1609
+    },
+    {
+      "method": "M3",
+      "seed": 1610
+    },
+    {
+      "method": "B2-V",
+      "seed": 1610
+    },
+    {
+      "method": "B2",
+      "seed": 1610
+    },
+    {
+      "method": "M3",
+      "seed": 1611
+    }
+  ],
+  "decision": "Existing --resume under original source/budget; restore weights/Adam/RMS, restart physical episodes; pending incomplete evaluation is completed under pre-existing resume contract, no from-scratch restart",
+  "physical_trajectory_and_random_sampling_not_exact_continuation": true,
+  "optimizer_budget_expected_at2M": 80000,
+  "gate_or_final_simulated": false,
+  "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
+  "checkpoint_snapshot": {
+    "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
+    "path": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2-V/1611/interrupted_1040000",
+    "consumed_policy_steps": 1040000,
+    "resumable": true,
+    "physical_trajectory_restart_on_resume": true,
+    "checkpoint_sha256": "b3c8982d8bc76242bdc22bdb4cbf4e624b5f6a6cc5b2c186154d59fce4ab1244",
+    "normalization_sha256": "3d6a575fb1b10cf75d2affc5b7e12cbf46b400f7bcb5de8263451432e82930d9"
+  },
+  "latest_scored_steps": 1020000,
+  "latest_trained_steps": 1040000,
+  "partial_rollout_discarded_charged_steps": 0,
+  "optimizer_delta_due_to_interruption": 0
+}

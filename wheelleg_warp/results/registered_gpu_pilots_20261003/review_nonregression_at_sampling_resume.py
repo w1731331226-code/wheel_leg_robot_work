@@ -35,9 +35,7 @@ if args.interruption_audit:
     resumed=PPO.load(saved['path']+'.zip',device='cpu')
     assert resumed.num_timesteps==start and resumed._n_updates==interruption['training_epochs']
     assert {int(state['step'].item()) for state in resumed.policy.optimizer.state.values()}=={interruption['Adam_updates']}
-    latest_trained=interruption.get('latest_trained_steps',interruption['latest_scored_steps'])
-    assert interruption['latest_scored_steps']<=latest_trained<=start
-    assert start-latest_trained==interruption['partial_rollout_discarded_charged_steps']
+    assert start-interruption['latest_scored_steps']==interruption['partial_rollout_discarded_charged_steps']
     expected_epochs=interruption['training_epochs'];expected_adam=interruption['Adam_updates']
     # Match the frozen learn_exact scheduler: finish each evaluation interval
     # with a shorter rollout; discarded pre-interruption samples remain charged.

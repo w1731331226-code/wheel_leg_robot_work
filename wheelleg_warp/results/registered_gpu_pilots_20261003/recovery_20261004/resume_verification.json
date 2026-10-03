@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "pending_1040k_evaluation_completed": {
+    "total": 32,
+    "success_count": 24,
+    "complete": true,
+    "mean_yaw_score_deg": 1.0205400264783906
+  },
+  "first_after_resume_verified_steps": 1060000,
+  "training_epochs": 2120,
+  "Adam_updates": 42400,
+  "finite_policy_adam_rms": true,
+  "progress_snapshot": {
+    "executed_policy_steps": 1220000
+  },
+  "worker_snapshot": {
+    "MainPID": "7074",
+    "ExecMainStatus": "0",
+    "LoadState": "loaded",
+    "ActiveState": "active"
+  },
+  "queue_snapshot": {
+    "MainPID": "7076",
+    "ExecMainStatus": "0",
+    "LoadState": "loaded",
+    "ActiveState": "active"
+  },
+  "same_frozen_source_and_budget": true,
+  "discarded_training_steps": 0,
+  "physical_episode_restart_disclosed": true,
+  "incomplete_development_evaluation_restart_disclosed": true,
+  "gate_or_final_simulated": false
+}
