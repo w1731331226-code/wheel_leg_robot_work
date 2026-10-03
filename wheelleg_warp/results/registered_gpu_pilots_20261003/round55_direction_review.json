@@ -1,0 +1,94 @@
+{
+  "round": 55,
+  "created_utc": "2026-10-03T08:44:36.028106+00:00",
+  "completed_full_runs": 2,
+  "registered_runs": 9,
+  "actual_B2_steps_snapshot": 1760000,
+  "live_unit_snapshot": {
+    "wheelleg-height115-gpu-b2-1609.service": "MainPID=186824\nExecMainStatus=0\nActiveState=active",
+    "wheelleg-height115-gpu-registered-queue.service": "MainPID=120170\nExecMainStatus=0\nActiveState=active"
+  },
+  "equal_budget": 1600000,
+  "comparison": {
+    "M3": {
+      "best_steps": 820000,
+      "best": {
+        "total": 32,
+        "success_count": 29,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9575918692280827
+      },
+      "last": {
+        "total": 32,
+        "success_count": 25,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9062133059102897
+      }
+    },
+    "B2-V": {
+      "best_steps": 1220000,
+      "best": {
+        "total": 32,
+        "success_count": 28,
+        "complete": true,
+        "mean_yaw_score_deg": 0.7633825599063806
+      },
+      "last": {
+        "total": 32,
+        "success_count": 23,
+        "complete": true,
+        "mean_yaw_score_deg": 0.8628593953236737
+      }
+    },
+    "B2": {
+      "best_steps": 20000,
+      "best": {
+        "total": 32,
+        "success_count": 26,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9125001785170168
+      },
+      "last": {
+        "total": 32,
+        "success_count": 15,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9706920269441212
+      }
+    }
+  },
+  "strong_classical": {
+    "total": 32,
+    "success_count": 32,
+    "complete": true,
+    "mean_yaw_score_deg": 0.27242552779014617
+  },
+  "B2_lost_B0_successes": 6,
+  "B2_speed_passes": 32,
+  "B2_arrival_passes": 32,
+  "B2_finite_policy_adam_rms": true,
+  "decision": "Complete the registered three-method three-seed comparison and original one-use gate; no runtime reward/scene/network changes or extra budgets. Conditional formal expansion requires original gate; failed gate stops this advantage branch and retains negative results.",
+  "rationale": "Current negative development evidence does not establish the whole three-seed gate outcome. Continuing is justified to test the registered hypothesis, not to assume positive contribution. Strong classical reference and joint effect/nondegradation rules remain unchanged.",
+  "limitations": [
+    "Fixed100 worlds per stage/seed, not IID per-episode resampling",
+    "Single delayed physical packet and hidden Nom memory: partial observability",
+    "Aggregate RMS calibration leaves local covariance/rank/reachable-set differences",
+    "Reward-scale diagnostic is not a causal failure test",
+    "Small unequal height subgroups cannot identify height causality",
+    "Frozen final nine terrains use regular geometry; extra parameter pressures do not establish all extreme-terrain robustness",
+    "Only first seed currently available; novelty and practical safety remain unproven"
+  ],
+  "frozen_protocol_source_final_hash_check": true,
+  "gate_or_final_simulated": false,
+  "extra_task_evaluations": 0,
+  "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
+  "evidence": [
+    "triple_registered_1609_1600000.json",
+    "B2_1609_stage_1600000.json",
+    "B2_1609_nonregression_1600000.json",
+    "height_group_audit_1609_1m.json",
+    "registered_split_audit.json",
+    "round55_cleanup.json"
+  ],
+  "cleanup_files": 10,
+  "cleanup_bytes": 3378
+}

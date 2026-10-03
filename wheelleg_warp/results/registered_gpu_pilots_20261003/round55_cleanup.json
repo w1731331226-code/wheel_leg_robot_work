@@ -1,0 +1,68 @@
+{
+  "round": 55,
+  "scope": "Task-owned closed /tmp logs only; byte-equal archived copies; no open process descriptors; original results/checkpoints/failures preserved",
+  "removed_files": 10,
+  "removed_bytes": 3378,
+  "files": [
+    {
+      "removed": "/tmp/wheelleg_b2_halfmillion.log",
+      "retained": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/registered_gpu_pilots_20261003/B2_halfmillion.log",
+      "bytes": 922,
+      "sha256": "ba0b9150c08fa82dfcf401728966c950a0352477934b9c45d87c1a713fe44929"
+    },
+    {
+      "removed": "/tmp/wheelleg_triple500k.log",
+      "retained": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/registered_gpu_pilots_20261003/triple500k.log",
+      "bytes": 351,
+      "sha256": "e1bbe4be8536b951ecd19762bcfede620b35b8a14530e1c4c475c1f95b7cfa4f"
+    },
+    {
+      "removed": "/tmp/wheelleg_b2_stage1m.log",
+      "retained": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/registered_gpu_pilots_20261003/B2_stage1m.log",
+      "bytes": 270,
+      "sha256": "4d9bd95d544ee9b8e69fcb381186ca8beddc9ec4e0d34f2a4cef54ff6a60a8a1"
+    },
+    {
+      "removed": "/tmp/wheelleg_b2_nonreg1m.log",
+      "retained": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/registered_gpu_pilots_20261003/B2_nonreg1m.log",
+      "bytes": 107,
+      "sha256": "b0d56227aa8734e144b73c5b9c4f2aff3747ef506d18c5d96094a2bce16367fb"
+    },
+    {
+      "removed": "/tmp/wheelleg_triple1m.log",
+      "retained": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/registered_gpu_pilots_20261003/triple1m.log",
+      "bytes": 353,
+      "sha256": "637766be27d1ba184ecd6cc11ada0ca5be50c940afd9deeda20f38c33801d68f"
+    },
+    {
+      "removed": "/tmp/wheelleg_split_audit.log",
+      "retained": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/registered_gpu_pilots_20261003/registered_split_audit.log",
+      "bytes": 159,
+      "sha256": "850ccbbf203fc3b44a9281a8f4c049a587d6b9e9f26df6da0d90de3818ed6bca"
+    },
+    {
+      "removed": "/tmp/wheelleg_height_groups.log",
+      "retained": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/registered_gpu_pilots_20261003/height_group_audit_1609_1m.log",
+      "bytes": 485,
+      "sha256": "efe1e7d9fd648aac560e0115029fe90ec9349fb433a989c2110b1cd50c9df6b1"
+    },
+    {
+      "removed": "/tmp/wheelleg_triple1600k.log",
+      "retained": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/registered_gpu_pilots_20261003/triple1600k.log",
+      "bytes": 354,
+      "sha256": "65ee9b5426e8f8ab0bd6340676afa79d62564aaf0f8e2236496afdddf7911992"
+    },
+    {
+      "removed": "/tmp/wheelleg_b2_stage1600k.log",
+      "retained": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/registered_gpu_pilots_20261003/B2_stage1600k.log",
+      "bytes": 270,
+      "sha256": "191d20569796544db84672fc725afdfcabd9bffa1fc2b9e860b5331cc4ee3f1f"
+    },
+    {
+      "removed": "/tmp/wheelleg_b2_nonreg1600k.log",
+      "retained": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/registered_gpu_pilots_20261003/B2_nonreg1600k.log",
+      "bytes": 107,
+      "sha256": "a4a4fdd7a73f6ce5bbcee3277b7062b9c216ca5cb28276751efcf72a5049152b"
+    }
+  ]
+}
