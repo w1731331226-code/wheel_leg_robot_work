@@ -1,0 +1,145 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "height": 0.115,
+      "moving": false,
+      "flight_s": 0.58,
+      "phases": {
+        "DRIVE": 0.02,
+        "SQUAT": 0.34,
+        "JUMP": 0.54,
+        "FLY": 0.58,
+        "LAND": 1.12
+      },
+      "entry_wall_s": 0.006775624002330005,
+      "return_wall_s": 0.013086190003377851,
+      "actual_restored_m": 0.11500007727983699,
+      "reference_restored_m": 0.115,
+      "physical_min_m": 0.11498598576202387,
+      "design_margin": 0.3501546621322631,
+      "torque_excess": 0.0
+    },
+    {
+      "height": 0.16,
+      "moving": false,
+      "flight_s": 0.5,
+      "phases": {
+        "DRIVE": 0.02,
+        "SQUAT": 0.26,
+        "JUMP": 0.46,
+        "FLY": 0.5,
+        "LAND": 1.04
+      },
+      "entry_wall_s": 0.015176011002040468,
+      "return_wall_s": 0.011857801000587642,
+      "actual_restored_m": 0.16000012296503027,
+      "reference_restored_m": 0.16,
+      "physical_min_m": 0.1599825890138991,
+      "design_margin": 0.7050143122673034,
+      "torque_excess": 0.0
+    },
+    {
+      "height": 0.25,
+      "moving": false,
+      "flight_s": 0.62,
+      "phases": {
+        "DRIVE": 0.02,
+        "SQUAT": 0.26,
+        "JUMP": 0.58,
+        "FLY": 0.62,
+        "LAND": 1.16
+      },
+      "entry_wall_s": 0.015339334997406695,
+      "return_wall_s": 0.01246081100543961,
+      "actual_restored_m": 0.2500000089768145,
+      "reference_restored_m": 0.25,
+      "physical_min_m": 0.24998665676524395,
+      "design_margin": 1.1631120085716247,
+      "torque_excess": 0.0
+    },
+    {
+      "height": 0.3,
+      "moving": false,
+      "flight_s": 0.96,
+      "phases": {
+        "DRIVE": 0.02,
+        "SQUAT": 0.62,
+        "JUMP": 0.9400000000000001,
+        "FLY": 0.96,
+        "LAND": 1.52
+      },
+      "entry_wall_s": 0.01693577600235585,
+      "return_wall_s": 0.012173069997515995,
+      "actual_restored_m": 0.30000001363568896,
+      "reference_restored_m": 0.3,
+      "physical_min_m": 0.28178885435928824,
+      "design_margin": 1.3100969657301902,
+      "torque_excess": 0.0
+    },
+    {
+      "height": 0.38,
+      "moving": false,
+      "flight_s": 1.36,
+      "phases": {
+        "DRIVE": 0.02,
+        "SQUAT": 1.02,
+        "JUMP": 1.34,
+        "FLY": 1.36,
+        "LAND": 1.92
+      },
+      "entry_wall_s": 0.016215335002925713,
+      "return_wall_s": 0.012753469003655482,
+      "actual_restored_m": 0.38000003519590697,
+      "reference_restored_m": 0.38,
+      "physical_min_m": 0.35874718878698825,
+      "design_margin": 0.9222806632518767,
+      "torque_excess": 0.0
+    },
+    {
+      "height": 0.3,
+      "moving": true,
+      "flight_s": 0.74,
+      "phases": {
+        "DRIVE": 0.02,
+        "SQUAT": 0.4,
+        "JUMP": 0.7000000000000001,
+        "FLY": 0.74,
+        "LAND": 1.28
+      },
+      "entry_wall_s": 0.01608039699931396,
+      "return_wall_s": 0.012613674000022002,
+      "actual_restored_m": 0.2999993386785984,
+      "reference_restored_m": 0.3,
+      "physical_min_m": 0.28164453899726916,
+      "design_margin": 1.3062368497252463,
+      "torque_excess": 0.0
+    }
+  ],
+  "resources_reused": true,
+  "handoff_q_v_exact": true,
+  "source_sha256": {
+    "wheelleg_warp/training_contract.py": "bb73ab6209b67747e044b2fd4e5eac34f13fcb1c0d46e9cdb108cc2ccfb808e2",
+    "wheelleg_warp/terrain_eval.py": "ed0beafa14e882985ca5c0efe23dad6ff63bd5ae653e54ed0fbbdb7ac881d451",
+    "wheelleg_warp/benchmark_parallel.py": "d17545490ac724b14983e9e6be7131af62cedc28bdeed43af8d6fd5ba5f82a02",
+    "wheelleg_warp/native/terrain.py": "1e462500ae917ba78ce5e4652f7a856bf62658f8573296e9a7d4630517cf1a94",
+    "wheelleg_warp/native/terrain_env.py": "058d155eacd3ed7417523c7fcd5965ebc58215596eda347a0f3e2e8c23720c1c",
+    "wheelleg_warp/native/models.py": "59420b688a25e63fb8e0e644f0702025836bea0ed90377e452bcbd919c7216eb",
+    "wheelleg_warp/native/environment.py": "a4fb0a7a5beb08bf23e8e3855f681e8008b79fe5e730d11bc4b5c91674fe8a2b",
+    "wheelleg_warp/native/controller.py": "04d106ae8579118eb306ba2b28037425f81a1f554d4b51fa1eae1ef795fede73",
+    "wheelleg_warp/native/live.py": "42d1f1a174ffbe6e0906363785743b8411c5d95a7503c96ef3bf503ace0632c3",
+    "wheelleg_warp/native/design.py": "fcdd61b8a03f7513561a83b67b78c1451a2deede3a6cbc90746096393909598e",
+    "wheelleg_warp/native/shared_reference.py": "eb6cc3230d2c853ab4dc63e100143630ddc9b7e33aa8a54d5d3355905818e3f2",
+    "wheelleg_warp/native/shared_reference.npz": "5a2f60e5fef024491858aade7adfe5b2d29f6d8602529c1dfe8c092c79d30c40",
+    "wheelleg_warp/dashboard/live_env.py": "7bbeb958250e24aec26333049279f0b78f2e43f775be28b089892146444aded1",
+    "wheelleg_ppo/tools/ppo_env.py": "8b282c709f4ed0e7da500fb0e78a1a380b08a5467d4155b9cbe56147bff14296",
+    "wheelleg_ppo/tools/pretrain_yaw.py": "ecd5e63a30321a72d7f051198fa00c1bfea4d1008e1ce8d9432e1629c030b24c",
+    "wheelleg_ppo/tools/wheelleg_sim.py": "c2dfaae4dc562119fd7916684849ec22fcac3d75dbcfec6a2a0f9452d8f6ee0f",
+    "wheelleg_ppo/tools/hardware_profile.py": "844688aae7e408bb2ca11d00b192ffaa9e4ad5de06cc8a815d3cf3ddfbe02eba",
+    "wheelleg_ppo/tools/rm_controller.py": "d831408426647aac0c758c82f0972570ad1373798a5e6705d45572384285b35d",
+    "wheelleg_ppo/tools/model_lqr.py": "d63db108ece884340cff2589cf50729ca1dfd2ffd44adb8260b8155570ffbf82",
+    "wheelleg_ppo/tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+    "wheelleg_ppo/xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f",
+    "wheelleg_warp/manual_demo.py": "d4de082f4119c8abfe65d41fb909412951e279a5420c10cfd2c19e674fe1a25f"
+  }
+}

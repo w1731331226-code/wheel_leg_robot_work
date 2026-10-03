@@ -1,9 +1,6 @@
 """当前115～380mm VMC/LQR GPU控制演示：键盘手控与原行驶停车任务。"""
 from pathlib import Path
-import argparse,json,sys,time,os
-from types import FunctionType
-if __name__=='__main__':
-    for name in ('OPENBLAS_NUM_THREADS','OMP_NUM_THREADS','MKL_NUM_THREADS'):os.environ[name]='1'
+import argparse,json,sys,time
 import numpy as np
 import mujoco
 import warp as wp
@@ -19,10 +16,6 @@ from fast_physics import PackedPhysics
 
 HEIGHTS=(.115,.16,.25,.30,.38)
 TURN_RATE=.6
-# Demo-only trajectory speed; reuse the complete original controller and gates.
-# A separate globals dictionary avoids modifying the frozen CPU/PPO module.
-jump_control=FunctionType(sim.control.__code__,dict(sim.control.__globals__,PREP_LEG_RATE=.20),
-                          'demo_jump_control',sim.control.__defaults__,sim.control.__closure__)
 SCENES=(
     ('flat','Flat',{}),
     ('asymmetric','Asymmetric bumps',dict(height_l=.015,height_r=.008,offset=.06)),
@@ -74,30 +67,23 @@ class Demo:
         if not np.isfinite(speed) or not .5<=abs(speed)<=1.:raise ValueError('speed must be0.5～1m/s')
         self.scene=scene
         self.env=NativeEnv.height115_candidate(n=len(heights),scenario=[scenario(h,speed,scene) for h in heights],shared_reference=True,residual_scale=0.)
-        self.env.reset();self.task=task;self.finished=False;self.result=None;self.terminal=None;self.jump_status='';self.restore_height=None
+        self.env.reset();self.task=task;self.finished=False;self.result=None;self.terminal=None;self.jump_status=''
         self.inputs=wp.zeros((len(heights),5),dtype=D)
         self.height=np.asarray(heights,dtype=float)
-        e=self.env
         if not task:
-            p=e.param.numpy();p[:,2:4]=1.e9;e.param.assign(p)
-        with wp.ScopedCapture() as capture:
-            wp.launch(begin,e.num_envs,[e.reward])
-            for slot in range(40):
-                wp.launch(command_step,e.num_envs,[e.state,e.param,e.command,e.active,e.data.qpos,e.data.qvel,e.data.qacc_warmstart,e.stopped_q,e.stopped_v,e.stopped_w,e.contact_flags])
-                wp.launch(manual_command,e.num_envs,[self.inputs,e.k['state'],e.state,e.param,e.command,e.data.qpos,e.k['yaw']])
-                if slot%10==0:wp.launch(update_reference,e.num_envs,e.shared_reference_args)
-                wp.launch(e.control_kernel,e.num_envs,[e.data.qpos,e.data.qvel,e.data.sensordata,e.targets,e.command,e.active,e.k['state'],e.ids,e.k['heights'],e.k['gains'],e.k['feed'],e.k['angles'],e.k['reference'],e.k['yaw'],e.data.ctrl,e.diag,int(e.project_clipped_base),int(e.grouped_residual)]+e.control_extra,block_dim=32)
-                mjw.step(e.model,e.data)
-                wp.launch(reduce_contacts,e.data.naconmax,[e.data.nacon,e.data.contact.worldid,e.data.contact.geom,e.ids,e.contact_flags])
-                wp.launch(collect_physical,e.num_envs,e.physical_args)
-                wp.launch(after,e.num_envs,[e.data.qpos,e.data.qvel,e.data.sensordata,e.data.qacc_warmstart,e.data.time,e.contact_flags,e.ids,e.param,e.command,e.state,e.k['state'],e.diag,e.residual,e.active,e.done,e.reward,e.obs,e.history,e.stopped_q,e.stopped_v,e.stopped_w,e.wheel_offsets],block_dim=32)
-        self.graph=capture.graph
-        if len(heights)==1:
-            # Warm both backends before showing the window; key presses reuse them.
-            self.jump_data=mujoco.MjData(self.env.cpu)
-            self.jump_data.qpos[:]=self.env.data.qpos.numpy()[0];mujoco.mj_forward(self.env.cpu,self.jump_data)
-            sim.make_state(self.env.cpu,hardware=True,six_state=True)
-            self.jump_physics=PackedPhysics(self.env.cpu,self.jump_data)
+            e=self.env;p=e.param.numpy();p[:,2:4]=1.e9;e.param.assign(p)
+            with wp.ScopedCapture() as capture:
+                wp.launch(begin,e.num_envs,[e.reward])
+                for slot in range(40):
+                    wp.launch(command_step,e.num_envs,[e.state,e.param,e.command,e.active,e.data.qpos,e.data.qvel,e.data.qacc_warmstart,e.stopped_q,e.stopped_v,e.stopped_w,e.contact_flags])
+                    wp.launch(manual_command,e.num_envs,[self.inputs,e.k['state'],e.state,e.param,e.command,e.data.qpos,e.k['yaw']])
+                    if slot%10==0:wp.launch(update_reference,e.num_envs,e.shared_reference_args)
+                    wp.launch(e.control_kernel,e.num_envs,[e.data.qpos,e.data.qvel,e.data.sensordata,e.targets,e.command,e.active,e.k['state'],e.ids,e.k['heights'],e.k['gains'],e.k['feed'],e.k['angles'],e.k['reference'],e.k['yaw'],e.data.ctrl,e.diag,int(e.project_clipped_base),int(e.grouped_residual)]+e.control_extra,block_dim=32)
+                    mjw.step(e.model,e.data)
+                    wp.launch(reduce_contacts,e.data.naconmax,[e.data.nacon,e.data.contact.worldid,e.data.contact.geom,e.ids,e.contact_flags])
+                    wp.launch(collect_physical,e.num_envs,e.physical_args)
+                    wp.launch(after,e.num_envs,[e.data.qpos,e.data.qvel,e.data.sensordata,e.data.qacc_warmstart,e.data.time,e.contact_flags,e.ids,e.param,e.command,e.state,e.k['state'],e.diag,e.residual,e.active,e.done,e.reward,e.obs,e.history,e.stopped_q,e.stopped_v,e.stopped_w,e.wheel_offsets],block_dim=32)
+            self.graph=capture.graph
 
     def set_height(self,heights):
         values=np.broadcast_to(heights,self.height.shape).astype(float)
@@ -109,12 +95,6 @@ class Demo:
 
     def step(self,speed=0.,turn=0.):
         if self.finished:return
-        if self.restore_height is not None:
-            h=float(self.height[0]);goal=self.restore_height
-            self.set_height(h+np.clip(goal-h,-.08*.02,.08*.02))
-            if abs(float(self.height[0])-goal)<1e-10:
-                self.restore_height=None
-                if self.jump_status=='COMPLETED / RESTORING HEIGHT':self.jump_status='COMPLETED'
         if self.task:
             _,_,done,infos=self.env.step(np.zeros((self.env.num_envs,3),np.float32))
             if done[0]:
@@ -134,10 +114,7 @@ class Demo:
         """Return to the full ground range without resetting position or velocity."""
         from state_estimation import leg_kinematics
         q,v=jump.pose();height=float(jump.height[0])
-        ground=jump.ground;e=ground.env
-        ground.task=False;ground.finished=False;ground.result=None;ground.terminal=None
-        ground.set_height(height);e.reset();ground.inputs.zero_()
-        params=e.param.numpy();params[:,2:4]=1.e9;e.param.assign(params)
+        ground=cls((height,),jump.env.scenarios[0].speed,scene=jump.scene);e=ground.env
         e.data.qpos.assign(q[None,:].astype(np.float32));e.data.qvel.assign(v[None,:].astype(np.float32))
         e.data.qacc_warmstart.assign(jump.physics.data.qacc_warmstart.numpy())
         age=max(2.,float(jump.data.time));mjw.forward(e.model,e.data)
@@ -153,17 +130,13 @@ class Demo:
         # A new manual segment starts its evidence counter at zero. Only the
         # controller is warm; never invent evidence for preceding jump steps.
         values=ground.inputs.numpy();values[0,2]=np.clip(memory[0,7],-1.,1.);values[0,3]=int(jump.control.ever_driven);ground.inputs.assign(values)
-        ground.restore_height=jump.return_height
-        ground.jump_status='COMPLETED / RESTORING HEIGHT' if jump.jump_status=='EXECUTING' else jump.jump_status
-        return ground
+        ground.jump_status='COMPLETED' if jump.jump_status=='EXECUTING' else jump.jump_status;jump.close();return ground
 
 class JumpDemo:
     """Original host jump state machine; actual integration on MuJoCo Warp CUDA."""
     def __init__(self,ground):
-        self.ground=ground;self.return_height=float(ground.restore_height if ground.restore_height is not None else ground.height[0])
         self.env=ground.env;self.scene=ground.scene;self.task=False;self.finished=False;self.result=None
-        self.height=np.maximum(ground.height,.16);self.data=ground.jump_data
-        mujoco.mj_resetData(self.env.cpu,self.data)
+        self.height=np.maximum(ground.height,.16);self.data=mujoco.MjData(self.env.cpu)
         q,v=ground.pose();self.data.qpos[:]=q;self.data.qvel[:]=v;mujoco.mj_forward(self.env.cpu,self.data)
         self.control=sim.make_state(self.env.cpu,hardware=True,six_state=True)
         ids=self.env.ids.numpy();length=float(np.mean([sim.fk_joints(q[ids[2*s]],q[ids[2*s+1]])['leg_len'] for s in range(2)]))
@@ -173,10 +146,7 @@ class JumpDemo:
         st.yaw_target=sim.euler(self.data)[2];st.vf_f=sim.forward_component(v,st.yaw_target)
         st.ever_driven=abs(st.vf_f)>.03;self.set_height(self.height)
         self.pending=False;self.jump_status='';self.phases=set();self.peak_z=float(q[2]);self.start_z=float(q[2])
-        self.physics=ground.jump_physics
-        self.physics.data.qpos.assign(q[None,:].astype(np.float32));self.physics.data.qvel.assign(v[None,:].astype(np.float32))
-        self.physics.data.qacc_warmstart.assign(self.env.data.qacc_warmstart.numpy())
-        self.physics.data.time.zero_();self.physics.data.ctrl.zero_();mjw.forward(self.physics.model,self.physics.data)
+        self.physics=PackedPhysics(self.env.cpu,self.data)
         self.request_jump()
 
     def pose(self):return self.data.qpos.copy(),self.data.qvel.copy()
@@ -195,7 +165,7 @@ class JumpDemo:
                 if self.control.jp=='DRIVE':
                     self.control.jp_pending=False;self.control.jp_preparing=False;self.control.jp_committed=False
             self.control.cmd_jump=self.pending and self.control.jp=='DRIVE' and not self.control.jp_pending
-            jump_control(self.env.cpu,self.data,self.control);self.physics.step(self.env.cpu,self.data)
+            sim.control(self.env.cpu,self.data,self.control);self.physics.step(self.env.cpu,self.data)
             if self.pending:
                 if phase_before=='DRIVE' and self.control.jp in ('SQUAT','JUMP'):
                     self.pending=False;self.jump_status='EXECUTING'
@@ -256,14 +226,13 @@ def run_window(height,speed,scene='flat'):
             focused=bool(glfw.get_window_attrib(window,glfw.FOCUSED))
             def held(key):return int(focused and glfw.get_key(window,key)==glfw.PRESS)
             if not paused and not demo.finished:
-                if not demo.task and not isinstance(demo,JumpDemo) and held(glfw.KEY_UP)!=held(glfw.KEY_DOWN):
-                    demo.restore_height=None
-                    target=float(np.clip(float(demo.height[0])+(held(glfw.KEY_UP)-held(glfw.KEY_DOWN))*.02*.02,.115,.38))
+                if not demo.task:
+                    low=.16 if isinstance(demo,JumpDemo) else .115
+                    target=float(np.clip(target+(held(glfw.KEY_UP)-held(glfw.KEY_DOWN))*.02*.02,low,.38))
                     demo.set_height(target)
                 demo.step(abs(speed)*(held(glfw.KEY_W)-held(glfw.KEY_S)),TURN_RATE*(held(glfw.KEY_A)-held(glfw.KEY_D)))
                 if isinstance(demo,JumpDemo) and not demo.finished and not demo.pending and not demo.control.jp_pending and demo.control.jp=='DRIVE' and ('LAND' in demo.phases or demo.jump_status.startswith('EXPIRED')):
                     demo=Demo.after_jump(demo);target=float(demo.height[0]);m=demo.env.cpu;show_terrain(m);d=mujoco.MjData(m)
-                target=float(demo.height[0])
             q,v=demo.pose()
             d.qpos[:]=q;d.qvel[:]=v;mujoco.mj_forward(m,d);cam.lookat[:]=d.xpos[m.body('base').id] if 'base' in [m.body(i).name for i in range(m.nbody)] else q[:3]
             if scene!='flat':cam.lookat[0]+=np.sign(demo.env.scenarios[0].speed)
@@ -278,7 +247,7 @@ def run_window(height,speed,scene='flat'):
             if demo.jump_status:lines+='\nJump request: '+demo.jump_status
             if demo.result:
                 r=demo.result;lines+=f'\nStop: {r["stop_distance_m"]:.3f}m | Tail: {r["tail_speed_m_s"]:.3f}m/s\nHeight RMSE: {r["height_rmse_m"]*1000:.2f}mm | Reason: {r["reason"]}'
-            elif isinstance(demo,JumpDemo):lines+=f'\nGPU physics / host jump control | Return: {demo.return_height*1000:.1f}mm\nBody rise from entry: {(demo.peak_z-demo.start_z)*1000:.1f}mm | No ground-task score'
+            elif isinstance(demo,JumpDemo):lines+=f'\nGPU physics / host jump control | Target160-380mm\nBody rise from entry: {(demo.peak_z-demo.start_z)*1000:.1f}mm | No ground-task score'
             elif not demo.task:lines+=f'\nActive design margin: {state[38]:+.4f}rad | Manual mode has no task score'
             width,depth=glfw.get_framebuffer_size(window)
             if width and depth:
