@@ -1,0 +1,43 @@
+{
+  "method": "B2",
+  "seed": 1609,
+  "completed_registered_budget": true,
+  "consumed_policy_steps": 2000000,
+  "evaluation_count": 100,
+  "best_steps": 20000,
+  "best_summary": {
+    "total": 32,
+    "success_count": 26,
+    "complete": true,
+    "mean_yaw_score_deg": 0.9125001785170168
+  },
+  "last_summary": {
+    "total": 32,
+    "success_count": 12,
+    "complete": true,
+    "mean_yaw_score_deg": 1.093667839591347
+  },
+  "lost_B0_successes": 6,
+  "speed_passes": 32,
+  "arrival_passes": 32,
+  "finite_policy_adam_rms": true,
+  "training_epochs": 4000,
+  "Adam_updates": 79900,
+  "segmented_resume": true,
+  "charged_discarded_steps": 2700,
+  "optimizer_shortfall_minibatches": 100,
+  "unit_end_snapshot": {
+    "MainPID": "0",
+    "ExecMainStatus": "0",
+    "LoadState": "not-found",
+    "ActiveState": "inactive"
+  },
+  "next_unit_snapshot": {
+    "MainPID": "245665",
+    "ExecMainStatus": "0",
+    "LoadState": "loaded",
+    "ActiveState": "active"
+  },
+  "gate_or_final_simulated": false,
+  "protocol_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef"
+}
