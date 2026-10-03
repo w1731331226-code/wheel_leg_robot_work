@@ -1,10 +1,10 @@
 {
   "service": "wheelleg-height115-gpu-b2-1609.service",
   "active_state": "active",
-  "executed_policy_steps": 880000,
+  "executed_policy_steps": 1060000,
   "next_stage": "B2/1609 original2M then M3/1610",
   "next_deep_review_round": 40,
-  "round": 51,
+  "round": 52,
   "goal": "Continue according to paper plan; every5rounds assess scope/direction/value and delete proven redundant files",
   "stage200k_review": "M3_1609_stage_200000.json",
   "gate_or_final_simulated": false,
@@ -23,5 +23,5 @@
   "reward_alignment_audit": "reward_scale_audit.json",
   "stability_review": "paired_stability_1609_1300000.json",
   "comparison_contract": "comparison_contract_audit.json",
-  "triple_development_review": "triple_registered_1609_500000.json"
+  "triple_development_review": "triple_registered_1609_1000000.json"
 }
