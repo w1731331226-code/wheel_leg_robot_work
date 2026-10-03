@@ -20,11 +20,10 @@ import wheelleg_sim as sim
 from score_yaw_gate import at_least
 from terrain_eval import summarize_terrain,validate_terrain_rows
 from training_contract import TASK_CONTRACT_VERSION,source_hashes,digest,checkpoint_hashes,verify_checkpoint
-from dashboard.live_env import atomic_json
 
-VERSION='height115-yaw-v2-v8'
+VERSION='height115-yaw-v1-v6'
 METHODS={'M3':'diff3','B2-V':'virtual6','B2':'torque6'}
-INIT=ROOT/'wheelleg_warp/results/twentyninth_round_capped_support_20261003/initial_action_config.json'
+INIT=ROOT/'wheelleg_warp/results/twentyseventh_round_initial_actions_20261003/initial_action_config.json'
 LEGACY=ROOT/'wheelleg_ppo/tools/results/fixes_2026-09-17/final/baseline.json'
 B1_CONFIG=ROOT/'wheelleg_ppo/tools/results/yaw_precision_v1_2026-09-20/training_config.json'
 
@@ -135,8 +134,7 @@ class CurriculumEnv(VecEnvWrapper):
                 for name in ('gains','feed','angles'):np.testing.assert_array_equal(raw.k[name].numpy(),temp.k[name].numpy())
                 self.cache[s]=dict(model={name:getattr(temp.model,name).numpy() for name in names},meaninertia=temp.model.stat.meaninertia.numpy(),
                     q0=temp.q0.numpy(),param=temp.param.numpy(),obs0=temp.obs0.numpy(),reference=temp.k['reference'].numpy(),
-                    geom_xpos=temp.data.geom_xpos.numpy(),geom_xmat=temp.data.geom_xmat.numpy(),
-                    info={name:list(getattr(temp,name)) for name in ('required_contact_masks','required_terrain_contact_masks','required_terrain_end','relative_attitude','task_goals')})
+                    geom_xpos=temp.data.geom_xpos.numpy(),geom_xmat=temp.data.geom_xmat.numpy())
             finally:
                 if temp is not raw:temp.close()
     def reset(self):return self.venv.reset()
@@ -153,9 +151,7 @@ class CurriculumEnv(VecEnvWrapper):
             for buffer,value in [(raw.model.stat.meaninertia,c['meaninertia']),(raw.q0,c['q0']),(raw.param,c['param']),(raw.obs0,c['obs0']),
                 (raw.k['reference'],c['reference']),(raw.data.geom_xpos,c['geom_xpos']),(raw.data.geom_xmat,c['geom_xmat'])]:
                 current=buffer.numpy();current[selected]=value[selected];buffer.assign(current)
-            for w in selected:
-                raw.scenarios[w]=HeightTerrainScenario(**self.banks[desired][w]['scenario']);raw.stand_heights[w]=raw.scenarios[w].stand_height_m
-                for name,values in c['info'].items():getattr(raw,name)[w]=values[w]
+            for w in selected:raw.scenarios[w]=HeightTerrainScenario(**self.banks[desired][w]['scenario']);raw.stand_heights[w]=raw.scenarios[w].stand_height_m
             mask=np.zeros(self.num_envs,np.int32);mask[selected]=1;raw.mask.assign(mask);wp.launch(reset_rows,self.num_envs,raw.reset_args);mjw.forward(raw.model,raw.data)
             obs[selected]=raw.obs.numpy()[selected];self.stages[selected]=desired;self.transition_rows+=len(selected)
             self.transition_log.append(dict(policy_steps=self.policy_steps,stage=desired,worlds=selected.tolist(),actual_episode_end=True))
@@ -222,9 +218,8 @@ def classical(out):
 
 
 class Episodes(BaseCallback):
-    def __init__(self,progress=None):super().__init__();self.rows=[];self.progress=progress
+    def __init__(self):super().__init__();self.rows=[]
     def _on_step(self):
-        if self.progress is not None:atomic_json(self.progress,dict(executed_policy_steps=self.num_timesteps))
         for info in self.locals['infos']:
             if 'episode' in info:self.rows.append({k:v for k,v in info.items() if k!='terminal_observation'})
         return True
@@ -275,65 +270,24 @@ def smoke(out,method):
         if restored is not None:restored.close()
 
 
-def learn_exact(agent,target,callback=None):
-    """Only a resumed partial rollout needs a shorter final buffer to hit the cap."""
-    if target<agent.num_timesteps or (target-agent.num_timesteps)%agent.n_envs:raise ValueError('Unreachable exact policy budget')
-    while agent.num_timesteps<target:
-        steps=min(50,(target-agent.num_timesteps)//agent.n_envs)
-        if agent.n_steps!=steps:
-            agent.n_steps=steps
-            agent.rollout_buffer=agent.rollout_buffer_class(steps,agent.observation_space,agent.action_space,device=agent.device,
-                gamma=agent.gamma,gae_lambda=agent.gae_lambda,n_envs=agent.n_envs,**agent.rollout_buffer_kwargs)
-        chunk=min(target-agent.num_timesteps,steps*agent.n_envs)
-        agent.learn(total_timesteps=chunk,reset_num_timesteps=False,callback=callback)
-    assert agent.num_timesteps==target
-
-
-def train(out,method,seed,resume=False):
+def train(out,method,seed):
     p=protocol(out);admission=read(out/'readiness.json')
     if not admission['passed'] or admission['protocol_sha256']!=digest(out/'protocol.json'):raise ValueError('Current protocol not admitted')
     if seed not in p['formal_seeds']:raise ValueError('Unknown training seed')
-    directory=out/'runs'/method/str(seed);mode=METHODS[method];records=[];start=0;last=None
-    if resume:
-        last=read(directory/'last_checkpoint.json')
-        if last['protocol_sha256']!=digest(out/'protocol.json') or not last['resumable']:raise ValueError('Checkpoint not resumable under current protocol')
-        verify_checkpoint(last['path'],last)
-        start=last['consumed_policy_steps']
-        if read(directory/'progress.json')['executed_policy_steps']!=start:raise ValueError('Unsaved executed steps; do not replay them inside frozen budget')
-        records=[read(path) for path in sorted(directory.glob('step_*.json'),key=lambda x:int(x.stem.split('_')[-1]))]
-    else:directory.mkdir(parents=True)
-    raw=CurriculumEnv(p,mode,seed,p['environments'],start=start)
-    if resume:
-        env=VecNormalize.load(last['path']+'.pkl',VecCheckNan(raw,raise_exception=True));env.training=True;env.norm_reward=False
-        agent=PPO.load(last['path']+'.zip',env=env,device=p['device'])
-        if agent.num_timesteps!=start:raise ValueError('Checkpoint consumed budget mismatch')
-    else:env=VecNormalize(VecCheckNan(raw,raise_exception=True),**p['normalization']);agent=new_agent(p,method,seed,env)
-    progress=directory/'progress.json';atomic_json(progress,dict(executed_policy_steps=start));callback=Episodes(progress)
-    def save(prefix,resumable=True):
-        agent.save(prefix);env.save(str(prefix)+'.pkl')
-        atomic_json(directory/'last_checkpoint.json',dict(protocol_sha256=digest(out/'protocol.json'),path=str(prefix),
-            consumed_policy_steps=agent.num_timesteps,resumable=resumable,physical_trajectory_restart_on_resume=True,**checkpoint_hashes(prefix)))
+    directory=out/'runs'/method/str(seed);directory.mkdir(parents=True);mode=METHODS[method]
+    raw=CurriculumEnv(p,mode,seed,p['environments']);env=VecNormalize(VecCheckNan(raw,raise_exception=True),**p['normalization']);agent=new_agent(p,method,seed,env);records=[]
     try:
         for steps in range(p['evaluation_interval'],p['policy_steps_per_seed']+1,p['evaluation_interval']):
-            if steps<start or any(r['policy_steps']==steps for r in records):continue
-            protocol(out);learn_exact(agent,steps,callback)
+            protocol(out);agent.learn(total_timesteps=steps-agent.num_timesteps,reset_num_timesteps=False)
             assert agent.num_timesteps==steps
-            prefix=directory/f'step_{steps}';save(prefix)
+            prefix=directory/f'step_{steps}';agent.save(prefix);env.save(str(prefix)+'.pkl')
             runs=evaluate(p['selection'],mode,agent,str(prefix)+'.pkl');record=dict(policy_steps=steps,path=str(prefix),summary=summary(runs),runs=runs,**checkpoint_hashes(prefix))
             write(directory/(prefix.name+'.json'),record);records.append(record)
             eligible=[r for r in records if r['summary']['complete']]
             write(directory/'selection.json',dict(protocol_sha256=digest(out/'protocol.json'),consumed_policy_steps=steps,
                 best=min(eligible,key=lambda r:selection_key(r['summary'],r['policy_steps'])) if eligible else None,
-                evaluation_count=len(records),physical_trajectory_restart_on_resume=resume))
+                evaluation_count=len(records),physical_trajectory_restart_on_resume=False))
             print('TRAIN',method,seed,steps,record['summary'],flush=True)
-    except BaseException:
-        # Charge every attempted physical sampling step, including an environment
-        # error before PPO receives its transition; never replay a partial buffer.
-        consumed=max(agent.num_timesteps,raw.policy_steps)
-        agent.num_timesteps=consumed;atomic_json(progress,dict(executed_policy_steps=consumed))
-        finite=all(torch.isfinite(v).all() for v in agent.policy.state_dict().values()) and np.isfinite(env.obs_rms.mean).all() and np.isfinite(env.obs_rms.var).all()
-        save(directory/f'interrupted_{consumed}',resumable=bool(finite and consumed<=p['policy_steps_per_seed']))
-        raise
     finally:env.close()
 
 
@@ -402,11 +356,11 @@ def gate(out):
 if __name__=='__main__':
     torch.set_num_threads(1)
     parser=argparse.ArgumentParser();parser.add_argument('command',choices=('freeze','classical','smoke','train','lock-gate','gate'))
-    parser.add_argument('--output',type=Path,required=True);parser.add_argument('--method',choices=METHODS);parser.add_argument('--seed',type=int,default=1609);parser.add_argument('--resume',action='store_true')
+    parser.add_argument('--output',type=Path,required=True);parser.add_argument('--method',choices=METHODS);parser.add_argument('--seed',type=int,default=1609)
     a=parser.parse_args();out=a.output.resolve()
     if a.command=='freeze':freeze(out)
     elif a.command=='classical':classical(out)
     elif a.command=='smoke':smoke(out,a.method)
-    elif a.command=='train':train(out,a.method,a.seed,a.resume)
+    elif a.command=='train':train(out,a.method,a.seed)
     elif a.command=='lock-gate':lock_gate(out)
     else:gate(out)

@@ -1,0 +1,71 @@
+{
+  "role": "conditional same-state initial exploration audit; not PPO training or rollout-distribution equivalence",
+  "baseline": "height115-current-vmc-v8-design-floor-support-candidate",
+  "fit_cases": "twentyfourth_round_operating_regions_20261002/broad_v2/registered_cases.json",
+  "validation_cases": "twentyfourth_round_operating_regions_20261002/random_v2/registered_cases.json",
+  "snapshots": [
+    "reset",
+    "1.5s",
+    "2.5s",
+    "arrival",
+    "arrival+0.5s",
+    "arrival+1.5s"
+  ],
+  "zero_actor_collection": true,
+  "exclude_failed_cases": false,
+  "filter_dt_s": 0.0005,
+  "hold_substeps": 40,
+  "gaussian_draws": 256,
+  "antithetic": true,
+  "draw_seed": 270027,
+  "policy_seed": 1609,
+  "verification_policy_seeds": [
+    1609,
+    1610,
+    1611
+  ],
+  "net_arch": [
+    64,
+    64
+  ],
+  "initial_observation_normalization": "SB3 initial mean0,var1; epsilon1e-8 and clip10; own requests zero",
+  "pilot_std": 0.25,
+  "default_std": 1.0,
+  "target": "componentwise geometric mean of the three pilot actual residual motor RMS vectors on fit states",
+  "calibration": "same bounded scipy least_squares rule per method; six equally weighted log RMS errors; 0.001 prior regularizer around pilot log_std",
+  "std_bounds": [
+    0.02,
+    2.0
+  ],
+  "max_nfev": 32,
+  "ftol": 1e-05,
+  "xtol": 0.001,
+  "gtol": 1e-05,
+  "actuator_normalization": [
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    4.5,
+    4.5
+  ],
+  "full_covariance_matching_claimed": false,
+  "full_rollout_distribution_matching_claimed": false,
+  "final_holdout_opened": false,
+  "learning": false,
+  "policy_weights_promoted": false,
+  "measurements": [
+    "before mapping/action clipping",
+    "mapped request",
+    "actual incremental motor output after lambda and float32 command",
+    "total motor force",
+    "lambda histogram",
+    "command-envelope saturation",
+    "covariance",
+    "height groups",
+    "5ms vs20ms"
+  ],
+  "decision": "Freeze the best same-budget mechanical RMS fit; report remaining per-motor/state/covariance/authority differences without a fabricated universal matching gate.",
+  "calibration_sample": "end of first 20ms hold (substep40); separately report substeps1/10/40",
+  "reason": "Reject fixed115 floor due new120mm design failures; preserve low-height support and cap it at existing original nominal design minimum16cm."
+}

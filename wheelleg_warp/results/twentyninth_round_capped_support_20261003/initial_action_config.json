@@ -1,0 +1,80 @@
+{
+  "baseline": "height115-current-vmc-v8-design-floor-support-candidate",
+  "methods": {
+    "diff3": {
+      "action_dim": 3,
+      "initial_log_std": [
+        -0.717260216223226,
+        -0.7255990232578822,
+        -1.3843111402032007
+      ],
+      "residual_scale": 1.0
+    },
+    "virtual6": {
+      "action_dim": 6,
+      "initial_log_std": [
+        -1.052946473468921,
+        -0.9762622048633645,
+        -0.6149927506408,
+        -0.8098826399164358,
+        -1.391803307364389,
+        -1.382859518687563
+      ],
+      "residual_scale": 1.0
+    },
+    "torque6": {
+      "action_dim": 6,
+      "initial_log_std": [
+        -2.0755785755091165,
+        -2.065112348698733,
+        -2.001611589688082,
+        -2.072564144228853,
+        -1.391804065466155,
+        -1.3828596272636944
+      ],
+      "residual_scale": 1.0
+    }
+  },
+  "net_arch": [
+    64,
+    64
+  ],
+  "state_bank_sha256": "61ef3e783c1a9a13e5a476fcd889c13980955fcb7d65d6e8bf828f4ed847b6d0",
+  "preregistration_sha256": "3fc7e470548d26653e602c0fa498431ed0f213dc0ce792cf4084bc79eec6a86e",
+  "target_rms_normalized": [
+    0.0030116426108307295,
+    0.0029734483830646478,
+    0.002966342711706807,
+    0.003053047846216215,
+    0.015197368246847394,
+    0.014604272941510756
+  ],
+  "source_sha256": {
+    "wheelleg_warp/training_contract.py": "bb73ab6209b67747e044b2fd4e5eac34f13fcb1c0d46e9cdb108cc2ccfb808e2",
+    "wheelleg_warp/terrain_eval.py": "ed0beafa14e882985ca5c0efe23dad6ff63bd5ae653e54ed0fbbdb7ac881d451",
+    "wheelleg_warp/benchmark_parallel.py": "d17545490ac724b14983e9e6be7131af62cedc28bdeed43af8d6fd5ba5f82a02",
+    "wheelleg_warp/native/terrain.py": "1e462500ae917ba78ce5e4652f7a856bf62658f8573296e9a7d4630517cf1a94",
+    "wheelleg_warp/native/terrain_env.py": "058d155eacd3ed7417523c7fcd5965ebc58215596eda347a0f3e2e8c23720c1c",
+    "wheelleg_warp/native/models.py": "59420b688a25e63fb8e0e644f0702025836bea0ed90377e452bcbd919c7216eb",
+    "wheelleg_warp/native/environment.py": "a4fb0a7a5beb08bf23e8e3855f681e8008b79fe5e730d11bc4b5c91674fe8a2b",
+    "wheelleg_warp/native/controller.py": "04d106ae8579118eb306ba2b28037425f81a1f554d4b51fa1eae1ef795fede73",
+    "wheelleg_warp/native/live.py": "42d1f1a174ffbe6e0906363785743b8411c5d95a7503c96ef3bf503ace0632c3",
+    "wheelleg_warp/native/design.py": "fcdd61b8a03f7513561a83b67b78c1451a2deede3a6cbc90746096393909598e",
+    "wheelleg_warp/native/shared_reference.py": "eb6cc3230d2c853ab4dc63e100143630ddc9b7e33aa8a54d5d3355905818e3f2",
+    "wheelleg_warp/native/shared_reference.npz": "5a2f60e5fef024491858aade7adfe5b2d29f6d8602529c1dfe8c092c79d30c40",
+    "wheelleg_warp/dashboard/live_env.py": "7bbeb958250e24aec26333049279f0b78f2e43f775be28b089892146444aded1",
+    "wheelleg_ppo/tools/ppo_env.py": "8b282c709f4ed0e7da500fb0e78a1a380b08a5467d4155b9cbe56147bff14296",
+    "wheelleg_ppo/tools/pretrain_yaw.py": "ecd5e63a30321a72d7f051198fa00c1bfea4d1008e1ce8d9432e1629c030b24c",
+    "wheelleg_ppo/tools/wheelleg_sim.py": "c2dfaae4dc562119fd7916684849ec22fcac3d75dbcfec6a2a0f9452d8f6ee0f",
+    "wheelleg_ppo/tools/hardware_profile.py": "844688aae7e408bb2ca11d00b192ffaa9e4ad5de06cc8a815d3cf3ddfbe02eba",
+    "wheelleg_ppo/tools/rm_controller.py": "d831408426647aac0c758c82f0972570ad1373798a5e6705d45572384285b35d",
+    "wheelleg_ppo/tools/model_lqr.py": "d63db108ece884340cff2589cf50729ca1dfd2ffd44adb8260b8155570ffbf82",
+    "wheelleg_ppo/tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+    "wheelleg_ppo/xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f",
+    "wheelleg_warp/audit_initial_actions.py": "ea747800ff89952cd3d27dbecd9f7eff50d9e5ac66bea12d6a46bf55ee81368b"
+  },
+  "weights_promoted": false,
+  "learning": false,
+  "authority_limits_unchanged": true,
+  "full_distribution_equivalence_claimed": false
+}

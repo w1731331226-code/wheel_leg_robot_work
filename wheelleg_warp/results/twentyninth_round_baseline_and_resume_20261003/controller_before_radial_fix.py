@@ -279,11 +279,8 @@ def control_step(w:int,qpos:wp.array2d[float],qvel:wp.array2d[float],sensor:wp.a
         # Public mass upper bound plus reflected nominal hip-rotor energy.
         ml=reference[w,9]+D(HIP_INERTIA)*(il[0,0]*il[0,0]+il[0,1]*il[0,1])
         mr=reference[w,9]+D(HIP_INERTIA)*(ir[0,0]*ir[0,0]+ir[0,1]*ir[0,1])
-        # Preserve validated low-height support. Above the original nominal
-        # design's lower node, do not turn every tracking target into a barrier.
-        radial_reference=wp.min(reference[w,2],D(sim.L_SQUAT_MIN))
-        requested=wp.max(D(0),wp.max(ml*(-D(2)*k*rate_l-k*k*(left[3]-radial_reference)),
-                                   mr*(-D(2)*k*rate_r-k*k*(right[3]-radial_reference))))
+        requested=wp.max(D(0),wp.max(ml*(-D(2)*k*rate_l-k*k*(left[3]-reference[w,2])),
+                                   mr*(-D(2)*k*rate_r-k*k*(right[3]-reference[w,2]))))
         room=wp.min(outward_force_headroom(V2(jl[0,0],jl[1,0]),tl,V2(bounds[0],bounds[1])),
                     outward_force_headroom(V2(jr[0,0],jr[1,0]),tr,V2(bounds[2],bounds[3])))
         applied=wp.min(requested,room)

@@ -411,9 +411,7 @@ class NativeEnv(VecEnv):
         self.active=wp.ones(n,dtype=wp.int32);self.done=wp.zeros(n,dtype=wp.int32)
         self.state=wp.zeros((n,39 if design_joint_gate else 38 if self.height_safety=='physical_v1' else 31),dtype=D);self.diag=wp.zeros((n,38 if radial_guard else 31 if feasible_reference else 21 if height_conditioned else 15),dtype=D)
         self.residual=wp.zeros((n,6),dtype=D);self.reward=wp.zeros(n,dtype=D);self.contact_flags=wp.zeros((n,2),dtype=wp.int32)
-        # Frozen Scenario allows20ms. Curriculum resets may increase delay;
-        # captured buffer pointers must already hold the complete allowed history.
-        self.obs=wp.zeros((n,self.observation_dim));self.history=wp.zeros((n,41,32))
+        self.obs=wp.zeros((n,self.observation_dim));self.history=wp.zeros((n,max(round(s.delay_ms*2) for s in self.scenarios)+1,32))
         self.targets=wp.zeros((n,self.action_dim));self.stopped_q=wp.zeros((n,self.cpu.nq));self.stopped_v=wp.zeros((n,self.cpu.nv));self.stopped_w=wp.zeros((n,self.cpu.nv))
         q0=np.tile(self.cpu.key_qpos[self.cpu.keyframe('stand').id],(n,1))
         references=np.tile([0.,0.,sim.L_STAND],(n,1))
@@ -503,7 +501,7 @@ class NativeEnv(VecEnv):
         env.baseline_version='height115-current-vmc-v5-full-design'+('-legacy32' if observation_contract=='legacy32' else '')+'-candidate'
         env.design_reports=reports
         if nominal_correction:env.baseline_version='height115-current-vmc-v5-full-design-nominal-boundary-candidate'
-        if shared_reference:env.baseline_version='height115-current-vmc-v8-design-floor-support-candidate'
+        if shared_reference:env.baseline_version='height115-current-vmc-v6-public-region-reference-candidate'
         return env
 
     def reset(self):

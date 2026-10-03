@@ -1,0 +1,51 @@
+{
+  "scope": "Superseded unexecuted v7 parameter manifests only; rejected v7 physics evidence retained",
+  "items": [
+    {
+      "path": "wheelleg_warp/results/twentyninth_round_baseline_and_resume_20261003/protocol_v7/protocol.json",
+      "bytes": 1410367,
+      "sha256": "f7978f5fd3a9289163ee581e1cbb0fbd4e7a9668cb357e660000c1a7925f580f"
+    },
+    {
+      "path": "wheelleg_warp/results/twentyninth_round_baseline_and_resume_20261003/protocol_v7/protocol.sha256",
+      "bytes": 65,
+      "sha256": "38991430ddd42cc21e107ff4ba37f3860f4f209a8413e9389f8f8ee26f665308"
+    },
+    {
+      "path": "wheelleg_warp/results/twentyninth_round_baseline_and_resume_20261003/protocol_v7/sealed_final_cases.json",
+      "bytes": 2412755,
+      "sha256": "a7c4f57b88a6648741a8d32c04210344b661d50edf7b980d5909a0ad6bb7e579"
+    }
+  ],
+  "removed_bytes": 3823187,
+  "superseded_source_sha256": {
+    "wheelleg_warp/training_contract.py": "bb73ab6209b67747e044b2fd4e5eac34f13fcb1c0d46e9cdb108cc2ccfb808e2",
+    "wheelleg_warp/terrain_eval.py": "ed0beafa14e882985ca5c0efe23dad6ff63bd5ae653e54ed0fbbdb7ac881d451",
+    "wheelleg_warp/benchmark_parallel.py": "d17545490ac724b14983e9e6be7131af62cedc28bdeed43af8d6fd5ba5f82a02",
+    "wheelleg_warp/native/terrain.py": "1e462500ae917ba78ce5e4652f7a856bf62658f8573296e9a7d4630517cf1a94",
+    "wheelleg_warp/native/terrain_env.py": "058d155eacd3ed7417523c7fcd5965ebc58215596eda347a0f3e2e8c23720c1c",
+    "wheelleg_warp/native/models.py": "59420b688a25e63fb8e0e644f0702025836bea0ed90377e452bcbd919c7216eb",
+    "wheelleg_warp/native/environment.py": "71604e2512255e171c104659913702b1780295eb12b43f3085f9a6517a923816",
+    "wheelleg_warp/native/controller.py": "9bc143abf4d048d0d8cd9893333411121a118ec5c18572a5e799035b706d7b52",
+    "wheelleg_warp/native/live.py": "42d1f1a174ffbe6e0906363785743b8411c5d95a7503c96ef3bf503ace0632c3",
+    "wheelleg_warp/native/design.py": "fcdd61b8a03f7513561a83b67b78c1451a2deede3a6cbc90746096393909598e",
+    "wheelleg_warp/native/shared_reference.py": "eb6cc3230d2c853ab4dc63e100143630ddc9b7e33aa8a54d5d3355905818e3f2",
+    "wheelleg_warp/native/shared_reference.npz": "5a2f60e5fef024491858aade7adfe5b2d29f6d8602529c1dfe8c092c79d30c40",
+    "wheelleg_warp/dashboard/live_env.py": "7bbeb958250e24aec26333049279f0b78f2e43f775be28b089892146444aded1",
+    "wheelleg_ppo/tools/ppo_env.py": "8b282c709f4ed0e7da500fb0e78a1a380b08a5467d4155b9cbe56147bff14296",
+    "wheelleg_ppo/tools/pretrain_yaw.py": "ecd5e63a30321a72d7f051198fa00c1bfea4d1008e1ce8d9432e1629c030b24c",
+    "wheelleg_ppo/tools/wheelleg_sim.py": "c2dfaae4dc562119fd7916684849ec22fcac3d75dbcfec6a2a0f9452d8f6ee0f",
+    "wheelleg_ppo/tools/hardware_profile.py": "844688aae7e408bb2ca11d00b192ffaa9e4ad5de06cc8a815d3cf3ddfbe02eba",
+    "wheelleg_ppo/tools/rm_controller.py": "d831408426647aac0c758c82f0972570ad1373798a5e6705d45572384285b35d",
+    "wheelleg_ppo/tools/model_lqr.py": "d63db108ece884340cff2589cf50729ca1dfd2ffd44adb8260b8155570ffbf82",
+    "wheelleg_ppo/tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+    "wheelleg_ppo/xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f",
+    "wheelleg_warp/train_height_comparison.py": "b72adaaa9e75e2f3f312785fb887394bd766f60b36a0b925f715480f37c1de6c",
+    "wheelleg_warp/results/twentyninth_round_initial_actions_20261003/initial_action_config.json": "962e0a0aeefa85e411ea269f64250a84df50c785a0db7e16a53613aa61641731",
+    "wheelleg_ppo/tools/results/fixes_2026-09-17/final/baseline.json": "bb5ed0f2ba65ee93d2a411d0236a9b04340c0966d68da2858d5e1ce65a7e3ff8",
+    "wheelleg_ppo/tools/results/yaw_precision_v1_2026-09-20/training_config.json": "cecb00d392fb2bf930c918b07c8ce855dc634a079bf0e241b0f89e49e7c423f9",
+    "wheelleg_ppo/tools/score_yaw_gate.py": "68ad1a3e6919e9310c0cb80910705a3e5b532275aac49d3ebbde247485589a87"
+  },
+  "simulation_executed": false,
+  "unique_failure_evidence_removed": false
+}
