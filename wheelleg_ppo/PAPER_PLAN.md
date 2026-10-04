@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第121轮低高度0.5ms设计边界测量（2026-10-05，goal active）：
+
+已事前登记全部发展h<.16案例（19regular+8controlled），原B0/B1与固定三个L2末模型，共135回合、0学习。pre记录原控制前active q/qdot，post记录physics/contact/physical证据之后、native.after之前的q/qdot、accepted Nom/Actor/total及actual actuator torque、lambda、target-contact mask、设计域瞬时/累计余量及filtered/target请求。记录kernel只写独立buffer，原控制、物理操作顺序、全部成功门/原源不改；FreshGPU回放不称原轨迹位级相同。
+
+review_design_boundary.py核全部2,023,387采样时标/q-v连续/命令分解/工作域余量、原task/physics/design/yaw与全部载荷/源/固定模型；weights/counter及RMS无更新。B0/B1成功21/27、设计27/27，L2三seed成功19/20/19、设计20/22/24，物理全27/27。首次越界15个全部已向外运动，Nom方向内侧、Actor附加方向外侧；其中2个早于首次目标障碍mask，最早1.8215与1.8105s。Mask原语义不包含普通地面支持，不能据此排除接触/外力。FK Jacobian同pre-state重建Actor增量1e−9内匹配，未平滑目标映射在15个跨界时也均外侧，无“目标内侧实际外侧”例，不凭请求坐标变号认定滤波是根因。
+
+下一受控干预：在实际滤波输出层验证近工作域边界时Actor不抵消Nom恢复作用的一个候选，与原执行和零腿增量对照；原1.4rad工作域、原物理输入权限/成功门保持，全部低高度案例和三模型纳入，不扫阈值。须明确力矩方向不等于耦合加速度，Actor非正所选关节功率条件也不保证闭链整体状态域不变；当前记录不是单独Actor因果或动态安全证明。先证明实际输出/投影数学条件并做有限固定策略实验，再决定是否新学习，不直接扩5seed或另跑长PPO。压缩完整采样/失败保留，unit退出0，下一深审清理125。
+
 第120轮集中方向/方法深审与清理（2026-10-05，goal active，下一125）：
 
 **方向决定：** 原路线/动作pilot的预注册信息与正式扩训门失败保持，不扩5seed/预算/极端场景。条件性继续共同Nom/Actor设计工作域与执行可行性机制，暂不堆网络、换PPO或增加特权Critic。旧初稿可写不等于新核心投稿目标完成；方法贡献/优势与新独立泛化仍待。

@@ -1,0 +1,1615 @@
+{
+  "verified": true,
+  "episodes": 135,
+  "physics_samples": 2023387,
+  "summary": {
+    "B0": {
+      "success": 21,
+      "physical": 27,
+      "design": 27,
+      "crossings": 0,
+      "crossings_before_first_target_contact": 0,
+      "earliest_crossing_s": null,
+      "actor_outward_sign_count": 0,
+      "nominal_inward_sign_count": 0,
+      "inward_target_outward_execution_count": 0,
+      "already_moving_outward_count": 0
+    },
+    "B1": {
+      "success": 21,
+      "physical": 27,
+      "design": 27,
+      "crossings": 0,
+      "crossings_before_first_target_contact": 0,
+      "earliest_crossing_s": null,
+      "actor_outward_sign_count": 0,
+      "nominal_inward_sign_count": 0,
+      "inward_target_outward_execution_count": 0,
+      "already_moving_outward_count": 0
+    },
+    "1609": {
+      "success": 19,
+      "physical": 27,
+      "design": 20,
+      "crossings": 7,
+      "crossings_before_first_target_contact": 1,
+      "earliest_crossing_s": 1.8215000000000001,
+      "actor_outward_sign_count": 7,
+      "nominal_inward_sign_count": 7,
+      "inward_target_outward_execution_count": 0,
+      "already_moving_outward_count": 7
+    },
+    "1610": {
+      "success": 20,
+      "physical": 27,
+      "design": 22,
+      "crossings": 5,
+      "crossings_before_first_target_contact": 0,
+      "earliest_crossing_s": 5.7745,
+      "actor_outward_sign_count": 5,
+      "nominal_inward_sign_count": 5,
+      "inward_target_outward_execution_count": 0,
+      "already_moving_outward_count": 5
+    },
+    "1611": {
+      "success": 19,
+      "physical": 27,
+      "design": 24,
+      "crossings": 3,
+      "crossings_before_first_target_contact": 1,
+      "earliest_crossing_s": 1.8105,
+      "actor_outward_sign_count": 3,
+      "nominal_inward_sign_count": 3,
+      "inward_target_outward_execution_count": 0,
+      "already_moving_outward_count": 3
+    }
+  },
+  "first_crossing_cases": {
+    "B0": [
+      {
+        "case": 4700000,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.005359911918640048
+      },
+      {
+        "case": 4700007,
+        "height_m": 0.13376202459153438,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.019731664657592685
+      },
+      {
+        "case": 4700010,
+        "height_m": 0.15311301738664926,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.33526339530944815
+      },
+      {
+        "case": 4700016,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.013150835037231356
+      },
+      {
+        "case": 4700030,
+        "height_m": 0.13307955990810022,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.018233442306518466
+      },
+      {
+        "case": 4700032,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.00968160629272452
+      },
+      {
+        "case": 4700037,
+        "height_m": 0.14809919794814597,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.06062629222869864
+      },
+      {
+        "case": 4700039,
+        "height_m": 0.13426609553358984,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.025488519668579013
+      },
+      {
+        "case": 4700040,
+        "height_m": 0.14610365039585282,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.04908230304718009
+      },
+      {
+        "case": 4700048,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.004999184608459384
+      },
+      {
+        "case": 4700056,
+        "height_m": 0.14816066095114766,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.13868715763092032
+      },
+      {
+        "case": 4700057,
+        "height_m": 0.15111078811332765,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.27313973903655997
+      },
+      {
+        "case": 4700058,
+        "height_m": 0.11534279643045055,
+        "success": false,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.013664388656616122
+      },
+      {
+        "case": 4700064,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.008378887176513583
+      },
+      {
+        "case": 4700076,
+        "height_m": 0.1375467221140397,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.12967422008514395
+      },
+      {
+        "case": 4700079,
+        "height_m": 0.12437432878809235,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.04705967903137198
+      },
+      {
+        "case": 4700080,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.004178905487060458
+      },
+      {
+        "case": 4700085,
+        "height_m": 0.15726231426323511,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.10179235935211173
+      },
+      {
+        "case": 4700091,
+        "height_m": 0.13483063759130015,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.028627538681030185
+      },
+      {
+        "case": 4600000,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.004717254638671786
+      },
+      {
+        "case": 4600001,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.00466599464416495
+      },
+      {
+        "case": 4600002,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.004715824127197177
+      },
+      {
+        "case": 4600003,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.004661583900451571
+      },
+      {
+        "case": 4600004,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.01855590343475333
+      },
+      {
+        "case": 4600005,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.018493914604186923
+      },
+      {
+        "case": 4600006,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.01855578422546378
+      },
+      {
+        "case": 4600007,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.01849367618560782
+      }
+    ],
+    "B1": [
+      {
+        "case": 4700000,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.005329990386962802
+      },
+      {
+        "case": 4700007,
+        "height_m": 0.13376202459153438,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.019737982749938876
+      },
+      {
+        "case": 4700010,
+        "height_m": 0.15311301738664926,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.33621814250946036
+      },
+      {
+        "case": 4700016,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.014511728286743075
+      },
+      {
+        "case": 4700030,
+        "height_m": 0.13307955990810022,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.019586467742919833
+      },
+      {
+        "case": 4700032,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.009962463378906161
+      },
+      {
+        "case": 4700037,
+        "height_m": 0.14809919794814597,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.060777926445007235
+      },
+      {
+        "case": 4700039,
+        "height_m": 0.13426609553358984,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.02544393539428702
+      },
+      {
+        "case": 4700040,
+        "height_m": 0.14610365039585282,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.049364471435546786
+      },
+      {
+        "case": 4700048,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.004942440986633212
+      },
+      {
+        "case": 4700056,
+        "height_m": 0.14816066095114766,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.1384074926376342
+      },
+      {
+        "case": 4700057,
+        "height_m": 0.15111078811332765,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.2721868991851806
+      },
+      {
+        "case": 4700058,
+        "height_m": 0.11534279643045055,
+        "success": false,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.013649845123290927
+      },
+      {
+        "case": 4700064,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.008436226844787509
+      },
+      {
+        "case": 4700076,
+        "height_m": 0.1375467221140397,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.12931551933288565
+      },
+      {
+        "case": 4700079,
+        "height_m": 0.12437432878809235,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.04719653129577628
+      },
+      {
+        "case": 4700080,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.004021787643432528
+      },
+      {
+        "case": 4700085,
+        "height_m": 0.15726231426323511,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.10182800292968741
+      },
+      {
+        "case": 4700091,
+        "height_m": 0.13483063759130015,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.02747502326965323
+      },
+      {
+        "case": 4600000,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.004721665382385165
+      },
+      {
+        "case": 4600001,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.004653596878051669
+      },
+      {
+        "case": 4600002,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.004720711708068759
+      },
+      {
+        "case": 4600003,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.004653954505920321
+      },
+      {
+        "case": 4600004,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.018559837341308505
+      },
+      {
+        "case": 4600005,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.018483901023864657
+      },
+      {
+        "case": 4600006,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.01856079101562491
+      },
+      {
+        "case": 4600007,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.018483662605285556
+      }
+    ],
+    "1609": [
+      {
+        "case": 4700000,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.0015994548797606534
+      },
+      {
+        "case": 4700007,
+        "height_m": 0.13376202459153438,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.012791657447814853
+      },
+      {
+        "case": 4700010,
+        "height_m": 0.15311301738664926,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.31972029209136954
+      },
+      {
+        "case": 4700016,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.010123157501220614
+      },
+      {
+        "case": 4700030,
+        "height_m": 0.13307955990810022,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.012338304519653231
+      },
+      {
+        "case": 4700032,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.009539270401000888
+      },
+      {
+        "case": 4700037,
+        "height_m": 0.14809919794814597,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.055618786811828524
+      },
+      {
+        "case": 4700039,
+        "height_m": 0.13426609553358984,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.024589800834655673
+      },
+      {
+        "case": 4700040,
+        "height_m": 0.14610365039585282,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.04957535266876212
+      },
+      {
+        "case": 4700048,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": false,
+        "minimum_margin_rad": -0.003834104537963956,
+        "first_crossing": {
+          "time_s": 1.8215000000000001,
+          "joint": 1,
+          "pre_q_rad": -1.3999871015548706,
+          "post_q_rad": -1.4000061750411987,
+          "pre_velocity_rad_s": -0.038333386182785034,
+          "post_velocity_rad_s": -0.03824811056256294,
+          "nominal_command_Nm": 0.5662505030632019,
+          "actor_command_Nm": -0.05063334250874989,
+          "total_command_Nm": 0.5156171321868896,
+          "actual_torque_Nm": 0.5156171321868896,
+          "lambda_value": 1.0,
+          "contact_mask": 0,
+          "filtered_request": [
+            0.11098981022834778,
+            0.37716436840593837,
+            0.0
+          ],
+          "target_request": [
+            -0.20013365149497986,
+            -0.04159768670797348,
+            0.0
+          ],
+          "nominal_direction_relative_to_joint": -0.5662505030632019,
+          "actor_direction_relative_to_joint": 0.05063334250874989,
+          "velocity_toward_boundary_before_step": 0.038333386182785034,
+          "first_recorded_target_contact_s": 3.609,
+          "unsmoothed_target_joint_direction": 0.0115753236626943,
+          "target_inward_but_executed_actor_outward": false
+        }
+      },
+      {
+        "case": 4700056,
+        "height_m": 0.14816066095114766,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.130163812637329
+      },
+      {
+        "case": 4700057,
+        "height_m": 0.15111078811332765,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.26312270164489737
+      },
+      {
+        "case": 4700058,
+        "height_m": 0.11534279643045055,
+        "success": false,
+        "physical": true,
+        "design": false,
+        "minimum_margin_rad": -0.008569335937500089,
+        "first_crossing": {
+          "time_s": 6.2395000000000005,
+          "joint": 2,
+          "pre_q_rad": 1.3999470472335815,
+          "post_q_rad": 1.4000024795532227,
+          "pre_velocity_rad_s": 0.11075161397457123,
+          "post_velocity_rad_s": 0.11094457656145096,
+          "nominal_command_Nm": -0.5880945920944214,
+          "actor_command_Nm": 0.12719470959392656,
+          "total_command_Nm": -0.46089988946914673,
+          "actual_torque_Nm": -0.46089988946914673,
+          "lambda_value": 1.0,
+          "contact_mask": 0,
+          "filtered_request": [
+            0.5564875602722168,
+            0.46786385774612427,
+            0.0
+          ],
+          "target_request": [
+            0.5564875602722168,
+            0.46786385774612427,
+            0.0
+          ],
+          "nominal_direction_relative_to_joint": -0.5880945920944214,
+          "actor_direction_relative_to_joint": 0.12719470959392656,
+          "velocity_toward_boundary_before_step": 0.11075161397457123,
+          "first_recorded_target_contact_s": 4.3965000000000005,
+          "unsmoothed_target_joint_direction": 0.1271947095939266,
+          "target_inward_but_executed_actor_outward": false
+        }
+      },
+      {
+        "case": 4700064,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": false,
+        "minimum_margin_rad": -0.0008924961090088779,
+        "first_crossing": {
+          "time_s": 4.8315,
+          "joint": 3,
+          "pre_q_rad": -1.3999890089035034,
+          "post_q_rad": -1.4000272750854492,
+          "pre_velocity_rad_s": -0.07844934612512589,
+          "post_velocity_rad_s": -0.07641666382551193,
+          "nominal_command_Nm": 0.6843111198572082,
+          "actor_command_Nm": -0.04822969256673019,
+          "total_command_Nm": 0.6360813975334167,
+          "actual_torque_Nm": 0.6360813975334167,
+          "lambda_value": 1.0,
+          "contact_mask": 0,
+          "filtered_request": [
+            -0.045998163521289825,
+            -0.32016000151634216,
+            0.0
+          ],
+          "target_request": [
+            -0.045998163521289825,
+            -0.32016000151634216,
+            0.0
+          ],
+          "nominal_direction_relative_to_joint": -0.6843111198572082,
+          "actor_direction_relative_to_joint": 0.04822969256673019,
+          "velocity_toward_boundary_before_step": 0.07844934612512589,
+          "first_recorded_target_contact_s": 2.92,
+          "unsmoothed_target_joint_direction": 0.04822969256673023,
+          "target_inward_but_executed_actor_outward": false
+        }
+      },
+      {
+        "case": 4700076,
+        "height_m": 0.1375467221140397,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.11626651287078849
+      },
+      {
+        "case": 4700079,
+        "height_m": 0.12437432878809235,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.043896460533142
+      },
+      {
+        "case": 4700080,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": false,
+        "minimum_margin_rad": -0.0011633396148682529,
+        "first_crossing": {
+          "time_s": 6.33,
+          "joint": 1,
+          "pre_q_rad": -1.399994134902954,
+          "post_q_rad": -1.4000035524368286,
+          "pre_velocity_rad_s": -0.01879977062344551,
+          "post_velocity_rad_s": -0.01879538968205452,
+          "nominal_command_Nm": 0.6061375737190247,
+          "actor_command_Nm": -0.04496019435535468,
+          "total_command_Nm": 0.5611773729324341,
+          "actual_torque_Nm": 0.5611773729324341,
+          "lambda_value": 1.0,
+          "contact_mask": 0,
+          "filtered_request": [
+            0.24455402791500092,
+            0.416795015335083,
+            0.0
+          ],
+          "target_request": [
+            0.24455402791500092,
+            0.416795015335083,
+            0.0
+          ],
+          "nominal_direction_relative_to_joint": -0.6061375737190247,
+          "actor_direction_relative_to_joint": 0.04496019435535468,
+          "velocity_toward_boundary_before_step": 0.01879977062344551,
+          "first_recorded_target_contact_s": 3.708,
+          "unsmoothed_target_joint_direction": 0.044960194355354734,
+          "target_inward_but_executed_actor_outward": false
+        }
+      },
+      {
+        "case": 4700085,
+        "height_m": 0.15726231426323511,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.09808161258697501
+      },
+      {
+        "case": 4700091,
+        "height_m": 0.13483063759130015,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.026150608062744052
+      },
+      {
+        "case": 4600000,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 1.6117095947176807e-05
+      },
+      {
+        "case": 4600001,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": false,
+        "minimum_margin_rad": -0.0007090330123902255,
+        "first_crossing": {
+          "time_s": 6.037,
+          "joint": 1,
+          "pre_q_rad": -1.3999954462051392,
+          "post_q_rad": -1.4000071287155151,
+          "pre_velocity_rad_s": -0.023496994748711586,
+          "post_velocity_rad_s": -0.023446036502718925,
+          "nominal_command_Nm": 0.5742165446281433,
+          "actor_command_Nm": -0.051718846276845754,
+          "total_command_Nm": 0.5224977135658264,
+          "actual_torque_Nm": 0.5224977135658264,
+          "lambda_value": 1.0,
+          "contact_mask": 0,
+          "filtered_request": [
+            0.4070582091808319,
+            0.5511021614074707,
+            0.0
+          ],
+          "target_request": [
+            0.4070582091808319,
+            0.5511021614074707,
+            0.0
+          ],
+          "nominal_direction_relative_to_joint": -0.5742165446281433,
+          "actor_direction_relative_to_joint": 0.051718846276845754,
+          "velocity_toward_boundary_before_step": 0.023496994748711586,
+          "first_recorded_target_contact_s": 3.8425000000000002,
+          "unsmoothed_target_joint_direction": 0.05171884627684575,
+          "target_inward_but_executed_actor_outward": false
+        }
+      },
+      {
+        "case": 4600002,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.0007373332977294034
+      },
+      {
+        "case": 4600003,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.003956937789916903
+      },
+      {
+        "case": 4600004,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.016854310035705478
+      },
+      {
+        "case": 4600005,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": false,
+        "minimum_margin_rad": -0.012180066108703702,
+        "first_crossing": {
+          "time_s": 5.84,
+          "joint": 2,
+          "pre_q_rad": 1.3999782800674438,
+          "post_q_rad": 1.4000452756881714,
+          "pre_velocity_rad_s": 0.1346883624792099,
+          "post_velocity_rad_s": 0.13406063616275787,
+          "nominal_command_Nm": -0.6028189659118652,
+          "actor_command_Nm": 0.13701991524333848,
+          "total_command_Nm": -0.4657990634441376,
+          "actual_torque_Nm": -0.4657990634441376,
+          "lambda_value": 1.0,
+          "contact_mask": 0,
+          "filtered_request": [
+            0.6169818639755249,
+            0.49998271465301514,
+            0.0
+          ],
+          "target_request": [
+            0.6169818639755249,
+            0.49998271465301514,
+            0.0
+          ],
+          "nominal_direction_relative_to_joint": -0.6028189659118652,
+          "actor_direction_relative_to_joint": 0.13701991524333848,
+          "velocity_toward_boundary_before_step": 0.1346883624792099,
+          "first_recorded_target_contact_s": 4.055,
+          "unsmoothed_target_joint_direction": 0.1370199152433385,
+          "target_inward_but_executed_actor_outward": false
+        }
+      },
+      {
+        "case": 4600006,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.010782265663146884
+      },
+      {
+        "case": 4600007,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": false,
+        "minimum_margin_rad": -0.011341309547424405,
+        "first_crossing": {
+          "time_s": 5.8285,
+          "joint": 0,
+          "pre_q_rad": 1.399940848350525,
+          "post_q_rad": 1.400007963180542,
+          "pre_velocity_rad_s": 0.13459546864032745,
+          "post_velocity_rad_s": 0.13412055373191833,
+          "nominal_command_Nm": -0.6050640344619751,
+          "actor_command_Nm": 0.1435991000138538,
+          "total_command_Nm": -0.46146494150161743,
+          "actual_torque_Nm": -0.46146494150161743,
+          "lambda_value": 1.0,
+          "contact_mask": 0,
+          "filtered_request": [
+            -0.8202951550483704,
+            -0.4270627629756929,
+            0.0
+          ],
+          "target_request": [
+            -0.8202951550483704,
+            -0.5409891605377197,
+            0.0
+          ],
+          "nominal_direction_relative_to_joint": -0.6050640344619751,
+          "actor_direction_relative_to_joint": 0.1435991000138538,
+          "velocity_toward_boundary_before_step": 0.13459546864032745,
+          "first_recorded_target_contact_s": 4.056,
+          "unsmoothed_target_joint_direction": 0.16194519887777556,
+          "target_inward_but_executed_actor_outward": false
+        }
+      }
+    ],
+    "1610": [
+      {
+        "case": 4700000,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.0027406454086302823
+      },
+      {
+        "case": 4700007,
+        "height_m": 0.13376202459153438,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.017714881896972567
+      },
+      {
+        "case": 4700010,
+        "height_m": 0.15311301738664926,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.3023239612579345
+      },
+      {
+        "case": 4700016,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.0054184436798094815
+      },
+      {
+        "case": 4700030,
+        "height_m": 0.13307955990810022,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.018569016456603915
+      },
+      {
+        "case": 4700032,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.004261875152587802
+      },
+      {
+        "case": 4700037,
+        "height_m": 0.14809919794814597,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.05878582000732413
+      },
+      {
+        "case": 4700039,
+        "height_m": 0.13426609553358984,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.022964024543762118
+      },
+      {
+        "case": 4700040,
+        "height_m": 0.14610365039585282,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.04618015289306632
+      },
+      {
+        "case": 4700048,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.0026141643524169034
+      },
+      {
+        "case": 4700056,
+        "height_m": 0.14816066095114766,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.12957968711853018
+      },
+      {
+        "case": 4700057,
+        "height_m": 0.15111078811332765,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.2537477254867553
+      },
+      {
+        "case": 4700058,
+        "height_m": 0.11534279643045055,
+        "success": false,
+        "physical": true,
+        "design": false,
+        "minimum_margin_rad": -0.012943363189697354,
+        "first_crossing": {
+          "time_s": 6.176,
+          "joint": 0,
+          "pre_q_rad": 1.3999247550964355,
+          "post_q_rad": 1.4000442028045654,
+          "pre_velocity_rad_s": 0.24065044522285461,
+          "post_velocity_rad_s": 0.23899222910404205,
+          "nominal_command_Nm": -0.6441092491149902,
+          "actor_command_Nm": 0.11536281841772426,
+          "total_command_Nm": -0.5287464261054993,
+          "actual_torque_Nm": -0.5287464261054993,
+          "lambda_value": 1.0,
+          "contact_mask": 0,
+          "filtered_request": [
+            -0.07246896624565125,
+            -0.6706189513206482,
+            0.0
+          ],
+          "target_request": [
+            -0.07246896624565125,
+            -0.6706189513206482,
+            0.0
+          ],
+          "nominal_direction_relative_to_joint": -0.6441092491149902,
+          "actor_direction_relative_to_joint": 0.11536281841772426,
+          "velocity_toward_boundary_before_step": 0.24065044522285461,
+          "first_recorded_target_contact_s": 4.396,
+          "unsmoothed_target_joint_direction": 0.11536281841772404,
+          "target_inward_but_executed_actor_outward": false
+        }
+      },
+      {
+        "case": 4700064,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.004355573654174716
+      },
+      {
+        "case": 4700076,
+        "height_m": 0.1375467221140397,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.11989452838897696
+      },
+      {
+        "case": 4700079,
+        "height_m": 0.12437432878809235,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.04314353466033927
+      },
+      {
+        "case": 4700080,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.0012111902236937588
+      },
+      {
+        "case": 4700085,
+        "height_m": 0.15726231426323511,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.0921440362930297
+      },
+      {
+        "case": 4700091,
+        "height_m": 0.13483063759130015,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.015147948265075595
+      },
+      {
+        "case": 4600000,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.0015013456344603604
+      },
+      {
+        "case": 4600001,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.0005014181137084073
+      },
+      {
+        "case": 4600002,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": false,
+        "minimum_margin_rad": -3.8480758667081005e-05,
+        "first_crossing": {
+          "time_s": 6.0440000000000005,
+          "joint": 3,
+          "pre_q_rad": -1.3999969959259033,
+          "post_q_rad": -1.4000033140182495,
+          "pre_velocity_rad_s": -0.012965420261025429,
+          "post_velocity_rad_s": -0.012580126523971558,
+          "nominal_command_Nm": 0.5453188419342041,
+          "actor_command_Nm": -0.024188396378585126,
+          "total_command_Nm": 0.5211304426193237,
+          "actual_torque_Nm": 0.5211304426193237,
+          "lambda_value": 1.0,
+          "contact_mask": 0,
+          "filtered_request": [
+            0.09966930001974106,
+            -0.0937597006559372,
+            0.0
+          ],
+          "target_request": [
+            0.09966930001974106,
+            -0.0937597006559372,
+            0.0
+          ],
+          "nominal_direction_relative_to_joint": -0.5453188419342041,
+          "actor_direction_relative_to_joint": 0.024188396378585126,
+          "velocity_toward_boundary_before_step": 0.012965420261025429,
+          "first_recorded_target_contact_s": 3.857,
+          "unsmoothed_target_joint_direction": 0.024188396378585122,
+          "target_inward_but_executed_actor_outward": false
+        }
+      },
+      {
+        "case": 4600003,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": false,
+        "minimum_margin_rad": -0.006311511993408292,
+        "first_crossing": {
+          "time_s": 5.8675,
+          "joint": 3,
+          "pre_q_rad": -1.399990439414978,
+          "post_q_rad": -1.4000428915023804,
+          "pre_velocity_rad_s": -0.10563188046216965,
+          "post_velocity_rad_s": -0.10501512885093689,
+          "nominal_command_Nm": 0.5829493403434753,
+          "actor_command_Nm": -0.05009480075287637,
+          "total_command_Nm": 0.5328545570373535,
+          "actual_torque_Nm": 0.5328545570373535,
+          "lambda_value": 1.0,
+          "contact_mask": 0,
+          "filtered_request": [
+            0.19067910313606262,
+            -0.203030526638031,
+            0.0
+          ],
+          "target_request": [
+            0.19067910313606262,
+            -0.203030526638031,
+            0.0
+          ],
+          "nominal_direction_relative_to_joint": -0.5829493403434753,
+          "actor_direction_relative_to_joint": 0.05009480075287637,
+          "velocity_toward_boundary_before_step": 0.10563188046216965,
+          "first_recorded_target_contact_s": 3.843,
+          "unsmoothed_target_joint_direction": 0.05009480075287637,
+          "target_inward_but_executed_actor_outward": false
+        }
+      },
+      {
+        "case": 4600004,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.008946561813354403
+      },
+      {
+        "case": 4600005,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": false,
+        "minimum_margin_rad": -0.014646148681640714,
+        "first_crossing": {
+          "time_s": 5.7745,
+          "joint": 0,
+          "pre_q_rad": 1.399928331375122,
+          "post_q_rad": 1.4001035690307617,
+          "pre_velocity_rad_s": 0.35333874821662903,
+          "post_velocity_rad_s": 0.3505883514881134,
+          "nominal_command_Nm": -0.6905855536460876,
+          "actor_command_Nm": 0.15416891659701257,
+          "total_command_Nm": -0.5364166498184204,
+          "actual_torque_Nm": -0.5364166498184204,
+          "lambda_value": 1.0,
+          "contact_mask": 0,
+          "filtered_request": [
+            -0.19005346298217773,
+            -0.8479073643684387,
+            0.0
+          ],
+          "target_request": [
+            -0.19005346298217773,
+            -0.8479073643684387,
+            0.0
+          ],
+          "nominal_direction_relative_to_joint": -0.6905855536460876,
+          "actor_direction_relative_to_joint": 0.15416891659701257,
+          "velocity_toward_boundary_before_step": 0.35333874821662903,
+          "first_recorded_target_contact_s": 4.055,
+          "unsmoothed_target_joint_direction": 0.1541689165970129,
+          "target_inward_but_executed_actor_outward": false
+        }
+      },
+      {
+        "case": 4600006,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.016353034973144442
+      },
+      {
+        "case": 4600007,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": false,
+        "minimum_margin_rad": -0.0012908935546875888,
+        "first_crossing": {
+          "time_s": 6.0005,
+          "joint": 2,
+          "pre_q_rad": 1.3999990224838257,
+          "post_q_rad": 1.400009036064148,
+          "pre_velocity_rad_s": 0.020218785852193832,
+          "post_velocity_rad_s": 0.02014576643705368,
+          "nominal_command_Nm": -0.5405987501144409,
+          "actor_command_Nm": 0.09103252631352719,
+          "total_command_Nm": -0.44956621527671814,
+          "actual_torque_Nm": -0.44956621527671814,
+          "lambda_value": 1.0,
+          "contact_mask": 0,
+          "filtered_request": [
+            0.6730603575706482,
+            0.1830464005470276,
+            0.0
+          ],
+          "target_request": [
+            0.6730603575706482,
+            0.1830464005470276,
+            0.0
+          ],
+          "nominal_direction_relative_to_joint": -0.5405987501144409,
+          "actor_direction_relative_to_joint": 0.09103252631352719,
+          "velocity_toward_boundary_before_step": 0.020218785852193832,
+          "first_recorded_target_contact_s": 4.056,
+          "unsmoothed_target_joint_direction": 0.09103252631352723,
+          "target_inward_but_executed_actor_outward": false
+        }
+      }
+    ],
+    "1611": [
+      {
+        "case": 4700000,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.0018315553665160245
+      },
+      {
+        "case": 4700007,
+        "height_m": 0.13376202459153438,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.0182539463043212
+      },
+      {
+        "case": 4700010,
+        "height_m": 0.15311301738664926,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.32941951751708975
+      },
+      {
+        "case": 4700016,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.006161832809448153
+      },
+      {
+        "case": 4700030,
+        "height_m": 0.13307955990810022,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.01916780471801749
+      },
+      {
+        "case": 4700032,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": false,
+        "minimum_margin_rad": -0.001108264923095792,
+        "first_crossing": {
+          "time_s": 5.8165000000000004,
+          "joint": 0,
+          "pre_q_rad": 1.3999587297439575,
+          "post_q_rad": 1.4000059366226196,
+          "pre_velocity_rad_s": 0.09688736498355865,
+          "post_velocity_rad_s": 0.0944802463054657,
+          "nominal_command_Nm": -0.6219960869252908,
+          "actor_command_Nm": 0.05029552117713485,
+          "total_command_Nm": -0.5717005729675293,
+          "actual_torque_Nm": -0.5717005729675293,
+          "lambda_value": 1.0,
+          "contact_mask": 0,
+          "filtered_request": [
+            -0.40925055742263794,
+            -0.07261177152395248,
+            0.0
+          ],
+          "target_request": [
+            -0.40925055742263794,
+            -0.07261177152395248,
+            0.0
+          ],
+          "nominal_direction_relative_to_joint": -0.6219960869252908,
+          "actor_direction_relative_to_joint": 0.05029552117713485,
+          "velocity_toward_boundary_before_step": 0.09688736498355865,
+          "first_recorded_target_contact_s": 3.9035,
+          "unsmoothed_target_joint_direction": 0.05029552117713485,
+          "target_inward_but_executed_actor_outward": false
+        }
+      },
+      {
+        "case": 4700037,
+        "height_m": 0.14809919794814597,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.05454518795013419
+      },
+      {
+        "case": 4700039,
+        "height_m": 0.13426609553358984,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.023128056526183993
+      },
+      {
+        "case": 4700040,
+        "height_m": 0.14610365039585282,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.049582624435424716
+      },
+      {
+        "case": 4700048,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": false,
+        "minimum_margin_rad": -0.00497303009033212,
+        "first_crossing": {
+          "time_s": 1.8105,
+          "joint": 1,
+          "pre_q_rad": -1.3999706506729126,
+          "post_q_rad": -1.400001049041748,
+          "pre_velocity_rad_s": -0.06114209070801735,
+          "post_velocity_rad_s": -0.060857463628053665,
+          "nominal_command_Nm": 0.5786876678466797,
+          "actor_command_Nm": -0.05076649246177528,
+          "total_command_Nm": 0.527921199798584,
+          "actual_torque_Nm": 0.527921199798584,
+          "lambda_value": 1.0,
+          "contact_mask": 0,
+          "filtered_request": [
+            -0.31174343824386597,
+            0.13867798447608948,
+            0.0
+          ],
+          "target_request": [
+            -0.31174343824386597,
+            0.13867798447608948,
+            0.0
+          ],
+          "nominal_direction_relative_to_joint": -0.5786876678466797,
+          "actor_direction_relative_to_joint": 0.05076649246177528,
+          "velocity_toward_boundary_before_step": 0.06114209070801735,
+          "first_recorded_target_contact_s": 3.6085000000000003,
+          "unsmoothed_target_joint_direction": 0.05076649246177528,
+          "target_inward_but_executed_actor_outward": false
+        }
+      },
+      {
+        "case": 4700056,
+        "height_m": 0.14816066095114766,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.13745644092559806
+      },
+      {
+        "case": 4700057,
+        "height_m": 0.15111078811332765,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.2380788564682006
+      },
+      {
+        "case": 4700058,
+        "height_m": 0.11534279643045055,
+        "success": false,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.013339543342590243
+      },
+      {
+        "case": 4700064,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.0024281978607176846
+      },
+      {
+        "case": 4700076,
+        "height_m": 0.1375467221140397,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.12549426555633536
+      },
+      {
+        "case": 4700079,
+        "height_m": 0.12437432878809235,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.04769136905670157
+      },
+      {
+        "case": 4700080,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.004764819145202548
+      },
+      {
+        "case": 4700085,
+        "height_m": 0.15726231426323511,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.09993746280670157
+      },
+      {
+        "case": 4700091,
+        "height_m": 0.13483063759130015,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.020826959609985263
+      },
+      {
+        "case": 4600000,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.007561945915222079
+      },
+      {
+        "case": 4600001,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.0021633148193358487
+      },
+      {
+        "case": 4600002,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.000490689277648837
+      },
+      {
+        "case": 4600003,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.0013427972793578213
+      },
+      {
+        "case": 4600004,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.013794803619384677
+      },
+      {
+        "case": 4600005,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.014381551742553622
+      },
+      {
+        "case": 4600006,
+        "height_m": 0.115,
+        "success": true,
+        "physical": true,
+        "design": true,
+        "minimum_margin_rad": 0.006446862220764071
+      },
+      {
+        "case": 4600007,
+        "height_m": 0.115,
+        "success": false,
+        "physical": true,
+        "design": false,
+        "minimum_margin_rad": -0.0016473293304444248,
+        "first_crossing": {
+          "time_s": 5.8580000000000005,
+          "joint": 0,
+          "pre_q_rad": 1.3999972343444824,
+          "post_q_rad": 1.400029182434082,
+          "pre_velocity_rad_s": 0.06481779366731644,
+          "post_velocity_rad_s": 0.06398908793926239,
+          "nominal_command_Nm": -0.5715059638023376,
+          "actor_command_Nm": 0.09519356164402293,
+          "total_command_Nm": -0.47631239891052246,
+          "actual_torque_Nm": -0.47631239891052246,
+          "lambda_value": 1.0,
+          "contact_mask": 0,
+          "filtered_request": [
+            -0.4127389192581177,
+            -0.3561426103115082,
+            0.0
+          ],
+          "target_request": [
+            -0.4127389192581177,
+            -0.3561426103115082,
+            0.0
+          ],
+          "nominal_direction_relative_to_joint": -0.5715059638023376,
+          "actor_direction_relative_to_joint": 0.09519356164402293,
+          "velocity_toward_boundary_before_step": 0.06481779366731644,
+          "first_recorded_target_contact_s": 4.0545,
+          "unsmoothed_target_joint_direction": 0.09519356164402304,
+          "target_inward_but_executed_actor_outward": false
+        }
+      }
+    ]
+  },
+  "registration_sha256": "2f6564ec042ee5b4c6b9ab463e0ef3ae6403ab98ff0295e49571b88d3c768783",
+  "completion_sha256": "cbb14bf6b7590eac78b2a7992369bcf5557b8e3e7813803729744dc73bcbab43",
+  "reviewer_sha256": "d511c920dd1ce4da9dcbbea3384e729c1e2d994be22a3163f0a1b0d2163ba6db",
+  "kinematic_helper_sha256": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+  "training_updates": 0,
+  "scope": "Every recorded0.5ms sample/time/q-v continuity/control decomposition and design margin, original task rows and fixed model/source/hash verified. Contact masks track target bump/terrain, excluding ordinary floor support. Torque-direction counts are descriptive, not coupled-acceleration/contact causality; no safe-filter effectiveness claim."
+}
