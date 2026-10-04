@@ -1,0 +1,70 @@
+{
+  "verified": true,
+  "metrics": {
+    "original": {
+      "summary": {
+        "total": 96,
+        "success_count": 65,
+        "complete": true,
+        "mean_yaw_score_deg": 1.0444764681356722
+      },
+      "mean_max_abs_y_m": 0.05899152335283967,
+      "mean_abs_y_at_center_m": 0.03765166127413977,
+      "mean_direction_adjusted_center_y_m": 0.037080354440452844,
+      "positive_direction_adjusted_cases": 95,
+      "mean_pre_center_yaw_deg": 1.0566623229621497,
+      "positive_pre_center_yaw_cases": 94,
+      "terrain_requested_cases": 81,
+      "groups": {
+        "contact_passed": {
+          "n": 55,
+          "mean_max_abs_y_m": 0.04396466479044069,
+          "mean_abs_y_at_center_m": 0.027552144999869844
+        },
+        "contact_missing": {
+          "n": 26,
+          "mean_max_abs_y_m": 0.07959193120209071,
+          "mean_abs_y_at_center_m": 0.055178494909061834
+        }
+      }
+    },
+    "potential": {
+      "summary": {
+        "total": 96,
+        "success_count": 6,
+        "complete": true,
+        "mean_yaw_score_deg": 2.0738400142497557
+      },
+      "mean_max_abs_y_m": 0.11636072672748317,
+      "mean_abs_y_at_center_m": 0.07292859250446782,
+      "mean_direction_adjusted_center_y_m": 0.07292859250446782,
+      "positive_direction_adjusted_cases": 96,
+      "mean_pre_center_yaw_deg": 2.2190510607981446,
+      "positive_pre_center_yaw_cases": 96,
+      "terrain_requested_cases": 81,
+      "groups": {
+        "contact_passed": {
+          "n": 7,
+          "mean_max_abs_y_m": 0.11123847429241453,
+          "mean_abs_y_at_center_m": 0.062251330220273564
+        },
+        "contact_missing": {
+          "n": 74,
+          "mean_max_abs_y_m": 0.11539643202480432,
+          "mean_abs_y_at_center_m": 0.07354736665414797
+        }
+      }
+    }
+  },
+  "lost_body_case_count": 59,
+  "scope": "All96 cases, largest-decline seed selected after data. Root-body proxy at signedx>=scenario.center, not exact wheel entry/contact clearance or universal corridor bound; contact timing sampled20ms. Critic predictions not MC targets, deterministic replay not stochastic-policy calibration.",
+  "conclusion": "The degraded controller accumulates larger lateral position error across this fixed-policy pair. Contact-passed and missing groups still overlap; body proxy is not a geometric contact proof or causal learning-mechanism test.",
+  "original_pilot_disposition_unchanged": true,
+  "input_sha256": {
+    "original.json": "ce1961d9c1670e3175b0486f1fa6edcb827f24951c457f85e209ec09af07498f",
+    "original_trace.npz": "b93f95d7ddd1c355250a781d46d698410cb74707f50c3e4697edc5b3ea251d5f",
+    "potential.json": "128cb715cbbfdb4df51379008edbce7d18e20f466bf5d795cdcccb7eda10fbd8",
+    "potential_trace.npz": "ffb5fdbdd9bf7af8dfc866bc6f6470bcfb481248d2941c48c8b718ed9e5ce266"
+  },
+  "source_sha256": "e3d9665aac772c63fd8e279741f1c2bdb858f550d10457d73b53cc42fca5dd4c"
+}
