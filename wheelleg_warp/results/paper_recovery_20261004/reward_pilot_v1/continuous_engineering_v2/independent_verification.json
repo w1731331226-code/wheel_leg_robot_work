@@ -1,0 +1,15 @@
+{
+  "verified": true,
+  "continuous_steps": 12000,
+  "checkpoints_post_update": 6,
+  "normal_episode_resets": 28,
+  "forced_resets": 0,
+  "bootstrap_values_before_update_recorded": true,
+  "partial_phi_boundaries_checked": true,
+  "source_sha256": {
+    "wheelleg_warp/reward_pilot_train.py": "58f01ad9a86d2640bb24f63555e610002aaf0b0881bae7c24718a8d0ec69fa7a",
+    "wheelleg_warp/reward_potential.py": "939f8acf89ffe9304c9c0644737b9d1e19cc959f0f26ff69e70677e7b408f99b",
+    "wheelleg_warp/smoke_reward_training.py": "00c331c0b7d3e4b0acd8b9f5c92e98175fda329bb5b51c01af7de58337ae21a6"
+  },
+  "scope": "Engineering only; normal episode resets required. Firstv1 schema/source retained, v2 clarifies forced resets and bootstrap provenance; no performance comparison."
+}
