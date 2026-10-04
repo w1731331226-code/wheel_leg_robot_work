@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第138轮分支去留与同信息候选（2026-10-05，goal active，140深审清理）：
+
+**明确关闭接触预测控制器/因果诊断分支。** 7236限额已用完，CPU改善依赖actual contact point/fullframe-gap及真实参数，超出现有可得信息；GPU、continuum、状态不变性与边界资格仍未通过。保留证据，不再为此增加字段/normal选法或预算，也不以负结果收尾替代新论文的贡献/学习/泛化目标。
+
+**新的最小定义仅到代数原型：** 用public neutral standing qref(h)的设计room归一当前主动joint room：rho=clip(min_j[(1.4−abs(q_j))/(1.4−abs(qref_j))],0,1)，reference room非正拒绝；腿执行command=Nom+rho*(accepted−Nom)，轮command保留。站姿reference来自现有Native约定（.3时0，否则sim.ik），编码时序与Nom相同，不读contact/passive/base/true mass-mu或future map，Actor39及原filter memory保持。可证明same-state命令端点凸界，不证明耦合next-q、Nom可恢复、poststep转速力矩或不变集；不得称新算法/安全屏障。适用条件及可能抑制有益残差须真实回合测试。
+
+**验收与后续：** reference_residual_budget.py可运行最小检查通过，266height与603static输入的单调/端点/wheel/zero identity/convex检查过；发展meanrho.9013、旧critical fixture.0050不是轨迹安全或有用行动证明。加权端点旧式有4.44e−16 zero identity失败，旧源/说明保留，改差分形式后逐值身份通过，容差未改。0新physics/GPU/学习，尚未集成控制。
+
+139先freeze可选GPU operator/strong buffer ownership、每步Nom/zero/wheel/原lambda与rho记录资格，再按proposal全部184既有development cases做固定控制资格：B1control184+3L2×3conditions×184=1840episode。须原physical/design全部过、任务不差于original、强B1/zero分报；各seed五高度桶腿增量RMS保留≥.10同state未调节增量的预注册非退化proxy、115/380另报，未定义不算通过。候选失败不扫reference room或阈值、不过边界不扩PPO；即使通过还需强经典新增收益与等初始actor/critic同信息的新三seed预试验，五seed与新独立ID/组合/OOD/消融任务保持。当前无新rollout/actor/RMS更新。
+
 第137轮接触四臂因果诊断（2026-10-05，全量重算通过，goal active）：
 
 freeze position/frame-gap transfer后执行全部603×四臂，producer2412+review2412CPU步；与136identity合7236预算用完，另1260forward、0GPU回放/学习。固定geom-order右手frame变换，无符号择分/参数/阈值扫描，原积分流程保持；每臂pos/frame/gap在constraint与implicit后逐值保留，override不改q/v/ctrl，未改臂全字段与标准step一致。两unit正常退出0。

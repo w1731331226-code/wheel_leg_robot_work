@@ -1,0 +1,4 @@
+{
+  "error": "Weighted endpoint sum changed identical commands by4.4408921e-16 in float64; exact zero-residual identity assertion failed.",
+  "reason": "Use nominal+rho*(accepted-nominal) so identical endpoints preserve exact command. No tolerance expansion, physics, score or model change."
+}

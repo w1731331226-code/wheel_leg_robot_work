@@ -1,0 +1,33 @@
+{
+  "round": 138,
+  "contact_controller_branch": "closed",
+  "previous_causal_cpu_step_budget_exhausted": true,
+  "new_candidate": "pure_algebra_reference_room_budget",
+  "algebra_verified": true,
+  "source_sha256": "c0ae521dce96b052ce76d54c9a29de123050b6d9ed0bc12907b88235b1d50c78",
+  "algebra_result_sha256": "8491310a030ad54320e35fab28048a32b5bda4355afdef48aae990ea90677bf1",
+  "proposal_sha256": "5f32270cf4d88624abc607f25069e4b57da0f89d5cd567bc105ce57f51eb62d5",
+  "summary": {
+    "new_saved_states": {
+      "states": 576,
+      "min_rho": 0.10884730727484943,
+      "mean_rho": 0.901304625268448,
+      "max_rho": 1.0,
+      "zero": 0,
+      "unchanged": 20
+    },
+    "old_static_fixtures": {
+      "states": 27,
+      "min_rho": 4.07408164486685e-07,
+      "mean_rho": 0.005001735883706608,
+      "max_rho": 0.027508267184580847,
+      "zero": 0,
+      "unchanged": 0
+    }
+  },
+  "new_physics_steps": 0,
+  "new_gpu_steps": 0,
+  "training_updates": 0,
+  "controller_admitted": false,
+  "next": "139 optionalGPU implementation/owner/zero-wheel-identity checks and registered1840-case-development fixed-policy pilot;140 direction review/cleanup before learning admission."
+}

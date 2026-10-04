@@ -1,0 +1,50 @@
+{
+  "round": 138,
+  "goal_status": "active",
+  "contact_controller_branch": "closed",
+  "diagnostic_branch": "closed_budget_exhausted",
+  "reason": "CPU contact-position intervention reduced model error but required actual full-contact fields at actualparameters. Those inputs exceed declared available joint/IMU/command contract; GPU residual, continuum and state-invariance gates remain unmet. No further contact-field/model/threshold expansion or new budget.",
+  "evidence": {
+    "intervention_review_sha256": "4340dffd9acd6ba7d4a0341977db83ed6d97a5ba5e866bdb90c673c984430ac7",
+    "closure_sha256": "ac8f1c6c67653696f39942122dcbf0054434eb88088a97108c5c404f1472421f",
+    "new576_summary": {
+      "unchanged_local_plane": {
+        "states": 576,
+        "max_active_q_error_rad": 6.369421813023912e-05,
+        "mean_active_q_error_rad": 2.843842136581697e-07,
+        "max_full_q_error_rad": 0.0007165624163398832,
+        "max_full_v_error": 1.4331248326807824,
+        "within_original_reconstruction_tolerance": 263
+      },
+      "replace_contact_positions_only": {
+        "states": 576,
+        "max_active_q_error_rad": 1.1363037399902964e-08,
+        "mean_active_q_error_rad": 1.5003652756726035e-10,
+        "max_full_q_error_rad": 1.4188097103434716e-08,
+        "max_full_v_error": 2.8376194205828598e-05,
+        "within_original_reconstruction_tolerance": 518
+      },
+      "replace_contact_frames_and_gaps_only": {
+        "states": 576,
+        "max_active_q_error_rad": 6.369421813023912e-05,
+        "mean_active_q_error_rad": 2.842965881778843e-07,
+        "max_full_q_error_rad": 0.0007165624163398832,
+        "max_full_v_error": 1.4331248326807735,
+        "within_original_reconstruction_tolerance": 263
+      },
+      "replace_both": {
+        "states": 576,
+        "max_active_q_error_rad": 3.453649144447013e-09,
+        "mean_active_q_error_rad": 2.7846012835704506e-11,
+        "max_full_q_error_rad": 3.453649144447013e-09,
+        "max_full_v_error": 6.907298496727776e-06,
+        "within_original_reconstruction_tolerance": 519
+      }
+    }
+  },
+  "retained": "All data, corrected and invalid sources, old failures and models retained as bounded diagnosis; old27 onlystatic fixtures. No control-core change or GPU training.",
+  "next": "Same-information reference-normalized remaining-room candidate, algebra first;139 optional GPU operator checks then frozen1840-development pilot,140 review/cleanup. No method superiority/safety claim from algebra or pose reference alone.",
+  "candidate_proposal_sha256": "5f32270cf4d88624abc607f25069e4b57da0f89d5cd567bc105ce57f51eb62d5",
+  "candidate_algebra_sha256": "8491310a030ad54320e35fab28048a32b5bda4355afdef48aae990ea90677bf1",
+  "next_review_round": 140
+}
