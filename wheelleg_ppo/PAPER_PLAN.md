@@ -1,5 +1,7 @@
 # 双轮腿机器人PPO论文方案
 
+第118轮收尾：同unit正常退出0/MainPID0/inactive，12/12全200k/400epoch/8000Adam、总2.4M，queue complete且冻结源hash一致；以下1.8M为较早进度快照。下一轮独立核全部工件/发展结果及原继续门，未据训练完成晋升五seed。
+
 第118轮四臂三seed新学习已启动（2026-10-05，goal active）：
 
 已注册route-action-pilot-v1.1：M3-zero/M3-route同39输入架构的零/路线信息对照，V6-route同信息六维虚拟残差，L2-route真正两输出腿F/H从零学习（原diff3接口补wheel0，非旧三输出策略mask）。固定seed1609/1610/1611、每臂100环境连续200k，总2.4M；原PPO、原100世界/stage/seed、原名义7kg/物理设计/任务门保持，本机制预试验不同时扩地形/改奖励。末200k唯一选模点，所有12run均纳入，不因首seed分数改预算或队列。
