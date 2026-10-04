@@ -1,0 +1,145 @@
+{
+  "round": 100,
+  "period": [
+    96,
+    100
+  ],
+  "paper_ready": false,
+  "goal_status": "active",
+  "verified_public_method_case_episodes": 356,
+  "offline_rescored_method_case_episodes": 128,
+  "engineering_learning_policy_steps": 24000,
+  "new_registered_pilot_steps_executed": 0,
+  "evidence_sha256": {
+    "wheel_deadline/verification.json": "75deb711c015ff64059e1919ff8322dd161d25c35708b442974450edbcc0e8b2",
+    "reward_timing_audit/result.json": "6ed232ca47ca601dc1daa1817937c212d3934d1b43f75f177e9617e9ab670ae4",
+    "reward_timing_audit/review.json": "f6153083e60bfe6e5c4d903802cc691ad1eb4bbbe111db52fb9e0713d85ba8b4",
+    "online_reward_potential_final/verification.json": "d7800f276709db2022f8a3ad919ff61c5f33487f39c03558e6eddfdf3e9b4430",
+    "reward_training_smoke/independent_verification.json": "94d3c9fb670375c6212db4c4107d02e40c2cd0862d141abf18e639832d382af0",
+    "reward_pilot_v1/feasibility.json": "e8cdbef44eb0a9a0034626a1bd042ed453fd05827eea58f11bd3c7a3aee4774c"
+  },
+  "objective_findings": [
+    "期限坐标修正未过事前12/12门，分支已关闭，不继续增益搜索。",
+    "势函数完整回合折扣恒等与实际GPU接口通过；只覆盖所定义物理/设计/姿态违规，未编码全部停车/尾速/地形任务失败。",
+    "8/49方法案例失败带该提前标志，仅4唯一案例；不能解释全部失败或把回放当随机学习因果。",
+    "若V同步减Phi则TD不变，学习差异还可能来自近似Critic目标/可表示性/优化，不能称纯信用分配效果。",
+    "99轮短训一seed/10世界并重启物理，只有工程结论；丢弃部分回合的Phi/价值边界不得纳入完整目标恒等。",
+    "新公开96的B0/B1均94成功、物理设计全过，保留yaw失败与同计数不同失败案例；对经典最多2.0833百分点成功提升，5百分点新门仅对rawPPO。"
+  ],
+  "readiness_audit": [
+    {
+      "requirement": "明确可证伪贡献与近邻区别",
+      "status": "候选问题已限定，创新尚未证实",
+      "evidence": "HPRS覆盖机器人约束/PPO/PBRS和部分观测情形；新方向只能先作受限系统实证审计，不能宣称新算法"
+    },
+    {
+      "requirement": "模型/观测/执行/约束契约",
+      "status": "原链路及新奖励接口局部通过",
+      "evidence": "原38/2kHz执行、Phi端点/精度/跨窗口过；没有全局状态安全或完整Markov证明"
+    },
+    {
+      "requirement": "同信息强经典与至少3学习seed",
+      "status": "经典新面板通过，三seed学习尚未执行",
+      "evidence": "B1固定旧强参数；仅24k一seed工程短训，新六run预试验还未启动"
+    },
+    {
+      "requirement": "新独立门/压力/旧能力保持",
+      "status": "未完成",
+      "evidence": "新96为公开开发，不能冒充独立检验；旧64门已用、最终3000封存"
+    },
+    {
+      "requirement": "受控学习机制证据",
+      "status": "代数和接口通过，学习效应未证",
+      "evidence": "尚无seed配对性能结果；潜在Critic混淆/恢复边界需报告"
+    },
+    {
+      "requirement": "完整论文方法图表统计失败复现",
+      "status": "工程/诊断材料逐步齐全，完整稿件未就绪",
+      "evidence": "缺主要学习结果和独立统计，不以当前负摘要替代"
+    }
+  ],
+  "decision": {
+    "approve": "仅条件有限预试验：M3 raw/known-PBRS两臂×三seed×200k，共1.2M，保持原GPU/100世界/38信息/损失/物理与任务门",
+    "preregistered_primary": "最终200k新公开96完整成功率的seed配对差；不选中间best，不把对raw门混作对B1门",
+    "continuation_gate": {
+      "mean_success_improvement_at_least": 0.05,
+      "positive_seed_pairs_at_least": 2,
+      "no_increase_in_mean_physical_or_design_failure": true,
+      "mean_yaw_score_no_worse_than_raw_plus_deg": 0.05,
+      "all_runs_finite_and_budget_matched": true
+    },
+    "lifecycle": "连续run无计划物理恢复；任何真实中断保留工件/消耗、不能静默reset当等价恢复，需另注册恢复与预算/边界后才做成对推断",
+    "next": "先实现并冻结连续trainer的post-update计数/检查点、未完回合Phi和bootstrap日志，再启动预试验；尚不批准2M全研究或极端场景扩展",
+    "independent_test": "预试验后才另冻结新独立门/压力/非退化；旧门和最终不用来调参",
+    "contributions": "若有开发改善仍需独立效果与HPRS相关对照/区别才写主贡献；失败按原门保留，不扫幅度或预算追阳性，继续重新评判论文路径"
+  },
+  "classical_feasibility": {
+    "B0": {
+      "summary": {
+        "total": 96,
+        "success_count": 94,
+        "complete": true,
+        "mean_yaw_score_deg": 0.4704374323543246
+      },
+      "physical_passed": 96,
+      "design_passed": 96
+    },
+    "B1": {
+      "summary": {
+        "total": 96,
+        "success_count": 94,
+        "complete": true,
+        "mean_yaw_score_deg": 0.3570821901192159
+      },
+      "physical_passed": 96,
+      "design_passed": 96
+    }
+  },
+  "classical_failures": {
+    "B0": [
+      {
+        "seed": 4300000,
+        "terrain": "cross_slope",
+        "yaw_peak_deg": 5.367741168478742,
+        "success": false
+      },
+      {
+        "seed": 4300048,
+        "terrain": "mixed",
+        "yaw_peak_deg": 5.828508031051002,
+        "success": false
+      }
+    ],
+    "B1": [
+      {
+        "seed": 4300048,
+        "terrain": "mixed",
+        "yaw_peak_deg": 5.7107771564569925,
+        "success": false
+      },
+      {
+        "seed": 4300066,
+        "terrain": "mixed",
+        "yaw_peak_deg": 5.933126987485616,
+        "success": false
+      }
+    ]
+  },
+  "literature": {
+    "primary": "https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2024.1444188/full",
+    "read_scope": "实现及实验部分定向核对，非全领域查新或完整复现",
+    "overlap": "安全目标舒适势函数、PPO和不完全状态驾驶已有",
+    "unavailable": [
+      "https://openreview.net/pdf?id=2MGEQNrmdN",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11848067/"
+    ]
+  },
+  "cleanup": {
+    "files": 8,
+    "bytes": 99031,
+    "all_retained_hashes_verified": true,
+    "all_unique_failures_models_and_trajectories_retained": true
+  },
+  "syntax_attempt": "新注册入口多一处右括号导致解析失败，0物理/0学习；失败源码和日志保存后修复，方案在任何经典结果前落盘，未改验收指标。",
+  "next_review_round": 105
+}

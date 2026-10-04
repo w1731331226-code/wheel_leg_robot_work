@@ -1,0 +1,55 @@
+{
+  "round": 100,
+  "files": [
+    {
+      "path": "/tmp/wheelleg_wheel_deadline.log",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/wheel_deadline/run.log",
+      "sha256": "6ea86c0d2e1de6ddd9db3cf37948e67a831f9b043ca5fa26eb876a14e679dad3",
+      "bytes": 8561
+    },
+    {
+      "path": "/tmp/wheelleg_reward_timing_audit.log",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/reward_timing_audit/run.log",
+      "sha256": "e0c6488c557390136012fba61d293b81bae5c743c74d7c8d28a8567fe3cee82b",
+      "bytes": 644
+    },
+    {
+      "path": "/tmp/wheelleg_online_reward_potential.log",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/online_reward_potential/run.log",
+      "sha256": "130f37ed63f15de6da078d29851ce7c7d799bb17aaf64d110c5476a3d2d36db3",
+      "bytes": 9770
+    },
+    {
+      "path": "/tmp/wheelleg_online_reward_potential_checked.log",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/online_reward_potential_checked/run.log",
+      "sha256": "d43ef01b567c67b3a661f0eafd443f9cc4ee5ab1ff63add80a3cf55db2e6ff8f",
+      "bytes": 12033
+    },
+    {
+      "path": "/tmp/wheelleg_online_reward_potential_final.log",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/online_reward_potential_final/run.log",
+      "sha256": "c795274990fb5fd47f4ac184d9cc50ff3f00199f16723ea0c24669cff73012be",
+      "bytes": 15402
+    },
+    {
+      "path": "/tmp/wheelleg_reward_training_smoke.log",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/reward_training_smoke/run.log",
+      "sha256": "af1c35001de3d33506e0a755df5e543281db345d9cc223313210b435df3d7fce",
+      "bytes": 26355
+    },
+    {
+      "path": "/tmp/wheelleg_reward_training_smoke_verification.log",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/reward_training_smoke/independent_verification.log",
+      "sha256": "8ec2add092597aabc64ef022e1c4eba6aff505f29ef859d6e76edbc9b663285b",
+      "bytes": 16225
+    },
+    {
+      "path": "/tmp/wheelleg_reward_pilot_registration.log",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/run.log",
+      "sha256": "c21c65fbf5f739dba320ccbce6975544e04dd5884f8906fae57ea4dc136e7d28",
+      "bytes": 10041
+    }
+  ],
+  "bytes_removed": 99031,
+  "scope": "Only closed byte-identical temporary logs; all unique failures/models/raw trajectories retained. Active versus historical source copies kept separate to preserve immutability."
+}
