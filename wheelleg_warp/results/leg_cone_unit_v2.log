@@ -1,0 +1,9 @@
+Warp 1.17.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 5060 Laptop GPU" (8 GiB, sm_120, mempool enabled)
+   Kernel cache:
+     /home/wmt/.cache/warp/1.17.0
+Module leg_residual_cone dd82045 load on device 'cuda:0' took 10.09 ms  (cached)
+PASS15 recorded fixtures vs independent QP, box/cone/nominal identity

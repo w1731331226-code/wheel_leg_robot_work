@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第122轮方向保护投影受控检验／停止该候选（2026-10-05，goal active）：
+
+候选在原滤波与物理投影后、physics前作用于两腿有效F/H，guard为abs(q)+max(0,sign(q)*qdot)*.02≥1.4且sign(q)*Nom<0。半空间sign(q)*M_j*u≤0、原动态力矩Box和坐标±1，最小四腿电机命令增量距离，2D face/vertex枚举；零可行，Nom/轮不变，未触发与零残差身份保持。所选向外运动关节增量功率非正，不推出耦合加速度/工作域不变。15实测状态与SciPy QP对照和Box/最优代价/身份通过，最终unit_v2源码hash冻结。类型API及独立FK dtype差的失败原源/log保留，修复只匹配实际API/精度，原1e−9不放宽。
+
+先登记再GPU243回合：三固定L2×原/候选/滤波后零腿增量×全部27低高度案例，0学习；原成功19/20/19→cone20/21/20→zero21/21/21，设计20/22/24→26/25/26→zero全27，物理全过。独立核3,642,120物理样本、原success/yaw/时间、q-v连续、命令/FK/坐标/Box/cone条件；投影908/880/292物理步，max方向误差<4e−17Nm，未增加物理Torque越界，但仍4工作域失败。continue_gate=False，不进入新训练，不扫horizon/缓冲或放宽1.4rad门。
+
+剩余4例不是简单宣称保护有效：一个guard已触发、该关节Actor增量≈0仍越界；三个pre速度朝内，线性外推guard未触发而post越界。max超界约.21–5.10微rad仍按原门失败，不以数值噪声豁免。第123轮先读现有迹核半隐式积分/前后速度变化、触发/恢复时序及数值分辨率，再决定带可检验动力学/离散条件的状态可行性机制；不靠力矩符号继续宣称安全或用更长PPO追阳性。原数据/失败/模型/旧门保留，125深审清理。
+
 第121轮低高度0.5ms设计边界测量（2026-10-05，goal active）：
 
 已事前登记全部发展h<.16案例（19regular+8controlled），原B0/B1与固定三个L2末模型，共135回合、0学习。pre记录原控制前active q/qdot，post记录physics/contact/physical证据之后、native.after之前的q/qdot、accepted Nom/Actor/total及actual actuator torque、lambda、target-contact mask、设计域瞬时/累计余量及filtered/target请求。记录kernel只写独立buffer，原控制、物理操作顺序、全部成功门/原源不改；FreshGPU回放不称原轨迹位级相同。

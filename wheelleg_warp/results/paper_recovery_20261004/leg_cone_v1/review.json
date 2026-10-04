@@ -1,0 +1,169 @@
+{
+  "verified": true,
+  "episodes": 243,
+  "physics_samples": 3642120,
+  "stats": {
+    "1609_original": {
+      "summary": {
+        "total": 27,
+        "success_count": 19,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9473088798047482
+      },
+      "physical": 27,
+      "design": 20
+    },
+    "1609_cone": {
+      "summary": {
+        "total": 27,
+        "success_count": 20,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9464845919063946
+      },
+      "physical": 27,
+      "design": 26
+    },
+    "1609_zero_after_filter": {
+      "summary": {
+        "total": 27,
+        "success_count": 21,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9266566382947153
+      },
+      "physical": 27,
+      "design": 27
+    },
+    "1610_original": {
+      "summary": {
+        "total": 27,
+        "success_count": 20,
+        "complete": true,
+        "mean_yaw_score_deg": 0.951871724774687
+      },
+      "physical": 27,
+      "design": 22
+    },
+    "1610_cone": {
+      "summary": {
+        "total": 27,
+        "success_count": 21,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9551756274434209
+      },
+      "physical": 27,
+      "design": 25
+    },
+    "1610_zero_after_filter": {
+      "summary": {
+        "total": 27,
+        "success_count": 21,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9273944673034835
+      },
+      "physical": 27,
+      "design": 27
+    },
+    "1611_original": {
+      "summary": {
+        "total": 27,
+        "success_count": 19,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9280971396323842
+      },
+      "physical": 27,
+      "design": 24
+    },
+    "1611_cone": {
+      "summary": {
+        "total": 27,
+        "success_count": 20,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9291599913117401
+      },
+      "physical": 27,
+      "design": 26
+    },
+    "1611_zero_after_filter": {
+      "summary": {
+        "total": 27,
+        "success_count": 21,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9327227783854874
+      },
+      "physical": 27,
+      "design": 27
+    }
+  },
+  "algebra": {
+    "1609_original": {
+      "projected_samples": 0,
+      "guarded_samples": 0,
+      "max_selected_direction_violation_Nm": 0.0,
+      "max_command_bound_excess_Nm": 0.0
+    },
+    "1609_cone": {
+      "projected_samples": 908,
+      "guarded_samples": 908,
+      "max_selected_direction_violation_Nm": 3.786471626092235e-17,
+      "max_command_bound_excess_Nm": 0.0
+    },
+    "1609_zero_after_filter": {
+      "projected_samples": 404740,
+      "guarded_samples": 0,
+      "max_selected_direction_violation_Nm": 0.0,
+      "max_command_bound_excess_Nm": 0.0
+    },
+    "1610_original": {
+      "projected_samples": 0,
+      "guarded_samples": 0,
+      "max_selected_direction_violation_Nm": 0.0,
+      "max_command_bound_excess_Nm": 0.0
+    },
+    "1610_cone": {
+      "projected_samples": 880,
+      "guarded_samples": 880,
+      "max_selected_direction_violation_Nm": 3.8733225287008676e-17,
+      "max_command_bound_excess_Nm": 0.0
+    },
+    "1610_zero_after_filter": {
+      "projected_samples": 404709,
+      "guarded_samples": 0,
+      "max_selected_direction_violation_Nm": 0.0,
+      "max_command_bound_excess_Nm": 0.0
+    },
+    "1611_original": {
+      "projected_samples": 0,
+      "guarded_samples": 0,
+      "max_selected_direction_violation_Nm": 0.0,
+      "max_command_bound_excess_Nm": 0.0
+    },
+    "1611_cone": {
+      "projected_samples": 292,
+      "guarded_samples": 292,
+      "max_selected_direction_violation_Nm": 1.1448322449439549e-17,
+      "max_command_bound_excess_Nm": 0.0
+    },
+    "1611_zero_after_filter": {
+      "projected_samples": 404686,
+      "guarded_samples": 0,
+      "max_selected_direction_violation_Nm": 0.0,
+      "max_command_bound_excess_Nm": 0.0
+    }
+  },
+  "preservation": {
+    "1609": false,
+    "1610": false,
+    "1611": false
+  },
+  "design_clean": false,
+  "cone_minus_zero_success_counts": [
+    -1,
+    0,
+    -1
+  ],
+  "continue_gate": false,
+  "registration_sha256": "9cda18f241d700f0e26feaef20a6a5e571e675bc2e89f947ae75acb1be5993fb",
+  "completion_sha256": "00de5815ffa0ecbb4a764231777b39dfe55dc80ddfdfa80b97aca7629ebc5d3c",
+  "reviewer_sha256": "7d6a2061a8f4e4e9b4d9e3b11b10577b824fd15a636301a47b73ae99acfaa410",
+  "scope": "All original task rows, trajectory q/v/time/decomposition and cone-coordinate-torque bounds verified. Unit QP optimality supports solver; finite direction conditions are not joint acceleration/state-domain invariance or learned method superiority."
+}

@@ -1,0 +1,8 @@
+{
+  "continue_gate": false,
+  "training_admitted": false,
+  "decision": "Stop this fixed20ms direction-cone candidate; no horizon/buffer/tolerance sweep or new long training.",
+  "evidence": "Design66/81 original ->77/81 cone vs81/81 zero. Task58/81 original ->61/81 cone vs63/81 zero. Every physical case passes; algebraic direction/torque/coordinate conditions pass but4 state-domain violations remain.",
+  "next": "Analyze existing boundary-crossing guard timing, discrete q integration and pre/post velocity/nominal-residual dynamics before deriving a state-viability mechanism; do not equate a sign condition with state invariance.",
+  "review_sha256": "12cc29f82f657b0c439c4dd9b2149002705b9b68c79015ac14856fc7eacff6ff"
+}
