@@ -6203,3 +6203,30 @@
 - `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_80000.pkl`
 - `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_80000.zip`
 - `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/verification.json`
+
+### 自动同步快照 2026-10-04T13:24:59+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/potential/1609/initialization.json`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/potential/1609/step_100000.json`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/potential/1609/step_100000.pkl`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/potential/1609/step_100000.zip`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/potential/1609/step_120000.json`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/potential/1609/step_120000.pkl`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/potential/1609/step_120000.zip`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/potential/1609/step_140000.json`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/potential/1609/step_140000.pkl`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/potential/1609/step_140000.zip`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/potential/1609/step_20000.json`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/potential/1609/step_20000.pkl`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/potential/1609/step_20000.zip`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/potential/1609/step_40000.json`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/potential/1609/step_40000.pkl`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/potential/1609/step_40000.zip`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/potential/1609/step_60000.json`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/potential/1609/step_60000.pkl`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/potential/1609/step_60000.zip`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/potential/1609/step_80000.json`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/potential/1609/step_80000.pkl`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/potential/1609/step_80000.zip`
