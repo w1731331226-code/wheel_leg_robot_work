@@ -1,0 +1,26 @@
+{
+  "role": "Exploratory offline analysis after public diagnostics; no prospective learning claim",
+  "input_sha256": {
+    "preregistration.json": "52e5a595e326ccdc206cf85432f59926940f98a2bfcf7557e4540b7dd965063e",
+    "summary.json": "f6912837faab4baa2b06e52cab66268b3e8fd7fdee4dacf24d4abe6888a50b5a",
+    "B1.json": "9368e2db7e5c453e12f1765a088b3341421a1a118b111b0b6f58e8eeea1dee69",
+    "B1_trace.npz": "70736754020ac953b722daa2ef79d769f88862b0e58fce59d7a599a2f6901ce2",
+    "M3.json": "1f471075f2184f443da883d06af608616dd54521406a668449b95c6d9754e2c3",
+    "M3_trace.npz": "20c12598a7b67791c4b51fc9707e057697834f11e6f5f82ac56002b616a5b3a0",
+    "B2-V.json": "5ead36c3b7208b5d3967679b669a0a746ce0d1ec33fe14697c44a07ebbefaa4e",
+    "B2-V_trace.npz": "ea333e3fe84f353b5b8bb46ba80d40a21544df5b0d44d95fa0a444ac92828c70",
+    "B2.json": "d7d09c3c15c0aac094f9e535c47210a15f099e2770fcf6998e6b48b1f0419c19",
+    "B2_trace.npz": "913cf1f096f02f2d8714afbcabf4d798983cea6bd46352afca7120a4553f9567"
+  },
+  "gamma": 0.99,
+  "gae_lambda": 0.95,
+  "rollout_steps": 50,
+  "beta": 10.0,
+  "beta_rule": "Use original terminal penalty amplitude; no scan",
+  "formula": "Phi(initial)=Phi(terminal)=0; intermediate Phi=-10 if historical irreversible breach; r_shaped=r+gamma*Phi_next-Phi_current",
+  "naive_comparator": "Move -10 terminal penalty to first sampled breach without discount compensation",
+  "all_128_trajectories_used": true,
+  "training_updates": 0,
+  "physics_replays": 0,
+  "source_sha256": "0fd823251b80b2f1ba8353e538db5d3de168e33a01e64fda841dd177b3bc296e"
+}

@@ -1,0 +1,26 @@
+{
+  "verified": true,
+  "flagged_failure_types": {
+    "design": 7,
+    "attitude": 1,
+    "physical": 0
+  },
+  "design_failure_height_range_m": [
+    0.115,
+    0.11918927609800414
+  ],
+  "evidence": "128 fixed-action public deterministic replays, not actual stochastic PPO rollouts; 8/49 failures covered by this sampled irreversible-constraint flag",
+  "discounted_telescope": "Sum gamma^t*(gamma*Phi_next-Phi_current)=-Phi_initial+gamma^T*Phi_terminal=0 with both endpoints zero, independent of recorded trajectory dynamics. Does not establish stability or optimizer convergence.",
+  "value_condition": "V_shaped=V_original-Phi on augmented state gives identical TD residuals. Original38-input approximate critic may not represent hidden historical Phi; numerical identity is not learned-critic accuracy or performance evidence.",
+  "monitoring": "Potential shaping does not preserve undiscounted episode return. Continue reporting original task success and original episode rewards; do not use shaped reward growth as proof of task improvement.",
+  "next_online_contract": "Read existing evaluation history only inside reward bookkeeping; same38 Actor/critic observations, original constraints/control/physics, gamma0.99, beta10, Phi reset/terminal0. No future obstacle or private parameter sent to policy. Verify telescope on each completed episode and reset boundaries before training.",
+  "original_reward_program_sha256": "a4fb0a7a5beb08bf23e8e3855f681e8008b79fe5e730d11bc4b5c91674fe8a2b",
+  "result_sha256": "6ed232ca47ca601dc1daa1817937c212d3934d1b43f75f177e9617e9ab670ae4",
+  "sampling_units": {
+    "unique_public_cases": 32,
+    "method_case_replays": 128,
+    "flagged_method_case_replays": 8,
+    "flagged_unique_cases": 4,
+    "independent_random_trials_claimed": false
+  }
+}
