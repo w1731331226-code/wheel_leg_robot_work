@@ -1,0 +1,128 @@
+{
+  "round": 95,
+  "period": [
+    90,
+    94
+  ],
+  "paper_ready": false,
+  "goal_status": "active",
+  "new_training_updates": 0,
+  "completed_public_diagnostic_episodes": 242,
+  "aborted_one_step_probe_worlds": 12,
+  "initialization_failure_without_physical_step": 1,
+  "evidence_sha256": {
+    "public_path_reward_diagnostic/analysis.json": "8b28a4cde82bc6d994a48b1d88fb1b9aa155cf7cb070a64b4b6e2aaaaa6e5e33",
+    "lateral_aliasing_controlled/verification.json": "6c30c6f104b93d47aded188ec531c401eaa0e5bad441f9337c518f413ede969e",
+    "lateral_feedback_intervention/verification.json": "ee5c2ee3e99bea856837bf04dfa6e688693cbec5d9a916bac1272787c7642ed5",
+    "wheel_entry_2khz_checked/analysis.json": "76c7d01fba4efe4d4801d15f2c746178a88fa312df97161dadbeeaf2d5647e33",
+    "deadline_reference/verification.json": "a940f3766ae6bd1d32a08c92fc69dd8da670a15908c2b6019834b871e2b505bb"
+  },
+  "findings": [
+    {
+      "claim": "瞬时原38包可混淆任务相关侧移状态",
+      "status": "构造证据支持",
+      "limit": "±120mm初始化不在旧居中训练分布；非历史不可恢复/完整Markov/全部旧失败原因证明"
+    },
+    {
+      "claim": "固定侧向反馈纠偏过晚导致该构造组漏轮",
+      "status": "2kHz几何与接触记录支持具体反馈失败",
+      "limit": "正确反馈整个经过区间仍分离20.906至24.357mm；不证明原权限域不可达"
+    },
+    {
+      "claim": "公开几何期限参考改善任务",
+      "status": "仅反向子集支持",
+      "limit": "4/12至8/12，正向仍2/6；Jψ更差；理想x/y及障碍前边信息多于旧Actor"
+    },
+    {
+      "claim": "终奖延迟导致PPO失败",
+      "status": "未验证",
+      "limit": "仅历史违规至终奖约1.4至2.4s，未做反馈时序干预"
+    },
+    {
+      "claim": "低维差模具有学习优势或全场景高鲁棒性",
+      "status": "当前证据不支持",
+      "limit": "旧独立门失败；新诊断不是新学习或多高度独立测试"
+    }
+  ],
+  "readiness_audit": [
+    {
+      "requirement": "可检验且相对文献明确的贡献",
+      "status": "未达到",
+      "evidence": "构造机制可检验，但加位置/记忆/路径参考是已有思路，实证审计价值尚需独立证据"
+    },
+    {
+      "requirement": "模型、观测、输出与约束契约",
+      "status": "原冻结协议局部已核，新信息契约未冻结",
+      "evidence": "真实轮链与2kHz证据已核；理想里程计、轮/车体期限和未来障碍信息必须分清；无全局安全证明"
+    },
+    {
+      "requirement": "同信息强经典和RL、至少3学习种子",
+      "status": "新方向未达到",
+      "evidence": "旧9项2M有3seed但原门失败；新参考只有无学习公开干预，不能拼成新方法三seed"
+    },
+    {
+      "requirement": "新独立测试、压力与旧能力保持",
+      "status": "未达到",
+      "evidence": "新诊断反复使用开发条件；原门已用，最终3000未开，不能作新选模数据"
+    },
+    {
+      "requirement": "受控机制证据",
+      "status": "部分达到",
+      "evidence": "初始混淆/符号对照/几何分离已有；原训练分布因果、方向期限和奖励反馈仍开放"
+    },
+    {
+      "requirement": "推导、完整图表统计、失败和复现可起草",
+      "status": "部分达到",
+      "evidence": "旧负结果和公开轮轨迹可写材料已留；新主贡献/独立统计未齐，未准备完整稿件"
+    }
+  ],
+  "direction_adjustment": {
+    "retain": "固定VMC/六状态LQR、标准PPO和真实2kHz执行约束；以信息/任务/执行一致性的可复现实证审计为候选主张，仍需贡献证据",
+    "reject": "不将补位置、记忆、期限参考包装成新算法；不把人工移位诊断当旧训练失败因果；不依据局部成功启动盲目长训或重开旧门",
+    "next_bounded_test": "仅一次事前注册的车体/轮坐标期限修正检验：采用原模型名义轮心+75mm几何而不扫增益，原B1/正确/反向对照同理想里程计与公开几何；保留全部原任务门，支持须覆盖正反向全部固定条件",
+    "subsequent": "机制成立后先定义不读未来地形的路线误差/可得历史信息契约，按相同观测时序给强经典和全部RL，分开检验信息补全与反馈时序；先公开开发全高度/压力/旧能力检查，再冻结新独立命名空间及至少3seed协议",
+    "failure_rule": "若单次坐标修正不能关闭固定组，不扫增益；据实际轮接触证据核闭环时序/权限再调整假设。创新和新独立证据未达时目标持续，不能称论文就绪"
+  },
+  "literature": {
+    "scope": "一轮定向检索加官方摘要跟进；只据实际取得内容，非穷尽查新",
+    "sources": [
+      {
+        "url": "https://proceedings.mlr.press/v80/jin18c.html",
+        "read": "官方摘要",
+        "boundary": "历史/循环策略应对部分观测已有；非轮腿算法保证"
+      },
+      {
+        "url": "https://arxiv.org/abs/1804.10500",
+        "read": "作者摘要",
+        "boundary": "高度图轮腿导航和随机化已有；未读全文/复现"
+      },
+      {
+        "url": "https://arxiv.org/html/2405.01792v2",
+        "read": "404获取失败",
+        "boundary": "不填正文细节，不重复同入口抓取"
+      }
+    ]
+  },
+  "cleanup": {
+    "manifest": "round95_cleanup.json",
+    "files": 6,
+    "bytes": 61375,
+    "retained_hashes_verified": true,
+    "unique_failures_preserved": true
+  },
+  "next_review_round": 100,
+  "source_contract_checks": {
+    "original_stand_key_initial_xy_m": [
+      0.0,
+      0.0
+    ],
+    "reset": "NativeEnv.q0 comes from stand key, height setup changes z/joints but not x/y, reset_rows restores q0",
+    "instantaneous_vs_history": "World lateral velocity can be formed from yaw and body-frame v_x/v_y; known initial y=0 permits approximate odometry from history. Current counterexample does not prove history cannot recover y under delay/noise.",
+    "training_termination": "Active v3 raw_env factory inherits NativeEnv default terminate_on_attitude_failure=False; CurriculumEnv caches/updates same param. Do not confuse the optional training-only flag with this frozen active configuration.",
+    "source_sha256": {
+      "wheelleg_warp/native/environment.py": "a4fb0a7a5beb08bf23e8e3855f681e8008b79fe5e730d11bc4b5c91674fe8a2b",
+      "wheelleg_warp/train_height_comparison.py": "e4569d6079d0b8e1362fd0e3b263b5ee0b26d67f11246c8c9cbc2f710a88ccfc",
+      "wheelleg_warp/native/terrain.py": "1e462500ae917ba78ce5e4652f7a856bf62658f8573296e9a7d4630517cf1a94"
+    }
+  }
+}

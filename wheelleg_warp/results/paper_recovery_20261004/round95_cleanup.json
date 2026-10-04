@@ -1,0 +1,49 @@
+{
+  "round": 95,
+  "scope": "Only confirmed duplicates in current five-round public diagnostics; all unique failures/weights/old gates retained",
+  "files": [
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/wheel_entry_2khz/preregistration.json",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/wheel_entry_2khz_checked/preregistration.json",
+      "sha256": "d113bb1ce48b7333f96ce1d0fe9e30c4caa1f3b1094085bc58ecf3e8df9199d0",
+      "bytes": 18190,
+      "action": "Replace duplicate payload with relative symlink; preserve old path and digest"
+    },
+    {
+      "path": "/tmp/wheelleg_deadline_reference.log",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/deadline_reference/run.log",
+      "sha256": "0bb230bd6570479d0a57905e1502504a328efb186786d21359af055bc5b405c9",
+      "bytes": 8562,
+      "action": "Delete closed temporary byte-identical log"
+    },
+    {
+      "path": "/tmp/wheelleg_lateral_aliasing_controlled.log",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/lateral_aliasing_controlled/run.log",
+      "sha256": "0020bddeb1078b5f751a356e270a4b6390acf17b10c321c9ceef2bf717817775",
+      "bytes": 8868,
+      "action": "Delete closed temporary byte-identical log"
+    },
+    {
+      "path": "/tmp/wheelleg_lateral_feedback_intervention.log",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/lateral_feedback_intervention/run.log",
+      "sha256": "4edf145395540dfb7d78c52bc15541e4058e335721f2dadea21e1f80b465f906",
+      "bytes": 8563,
+      "action": "Delete closed temporary byte-identical log"
+    },
+    {
+      "path": "/tmp/wheelleg_wheel_entry_2khz.log",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/wheel_entry_2khz/run.log",
+      "sha256": "39e904efd9c63dfabf2c2d11521c052102e73099175a647650fa5bedc130ed43",
+      "bytes": 8462,
+      "action": "Delete closed temporary byte-identical log"
+    },
+    {
+      "path": "/tmp/wheelleg_wheel_entry_2khz_checked.log",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/wheel_entry_2khz_checked/run.log",
+      "sha256": "96c034c53b6deb022a2f8bdaedd4eab33ec5cc7ce25033ef0e67611c37e871a6",
+      "bytes": 8730,
+      "action": "Delete closed temporary byte-identical log"
+    }
+  ],
+  "payload_bytes_removed": 61375
+}
