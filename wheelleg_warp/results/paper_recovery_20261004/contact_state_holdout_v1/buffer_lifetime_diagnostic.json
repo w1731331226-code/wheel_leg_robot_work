@@ -1,0 +1,25 @@
+{
+  "buffers_after_factory": [
+    {
+      "shape": "(48, 101)",
+      "dtype": "<class 'warp._src.types.float64'>",
+      "alive": false
+    },
+    {
+      "shape": "(48, 3)",
+      "dtype": "<class 'warp._src.types.int32'>",
+      "alive": true
+    },
+    {
+      "shape": "48",
+      "dtype": "<class 'warp._src.types.int32'>",
+      "alive": false
+    },
+    {
+      "shape": "(48, 3, 103)",
+      "dtype": "<class 'warp._src.types.float64'>",
+      "alive": true
+    }
+  ],
+  "stop": "No rollout in lifetime diagnostic"
+}

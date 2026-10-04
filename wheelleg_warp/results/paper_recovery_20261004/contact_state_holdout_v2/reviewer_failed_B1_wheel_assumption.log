@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/review_contact_holdout.py", line 64, in <module>
+    p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);run(p.parse_args().output)
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/review_contact_holdout.py", line 42, in run
+    assert np.all(s[66:68]==0)  # L2 and registered B1 have no wheel residual.
+AssertionError

@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第131轮独立状态采集及记录器修正（2026-10-05，goal active，下一135深审清理）：
+
+只读采集原B1+三固定L2在48已登记场景的三类事件；v1虽完成192回合，却因CUDA graph不持Python数组所有权，pre/ever释放而失真，全部snapshot拒绝预测使用。weakref证明、原源码/数据/合同/日志与rejection保留。env持有全部4buffer后预登记v2同条件追加192纠错回合，未使用预测得分或调参；累计384GPU回合、0学习，v1不拼入有效成绩。
+
+v2已完成192回合/576状态/0缺失，每控制器三事件各48。可运行自检核事件与真实factory/reset生命周期；独立review核原身份、success/physical/design、源/模型/载荷SHA、一次性事件时间窗/首接触old0-current>0、控制分解与主动关节float32离散积分逐值一致。B1 success/design47/48与48/48；L2三seed success及design45/45/47（各48），physical全部48。仍有设计失败，不是控制准入或新方法优势。审核器曾错把B1轮残差当零，保留失败源/log，按原B1 yaw契约修正审核、无采集重跑。
+
+下一132仅冻结不变公共16角点/原ULP reserve实现并对全部新state核预测覆盖，区分scheduled和首次接触创建、actualGPU和offline actualgeometry；原1.4门不改、不依留出得分加buffer或选模型。理想fullstate/contact信息仍强于Actor39，未来控制比较需同给；零漏包也不能称连续域保证/递归安全。可信工作域与误差假设后才共同Nom修复/Actor余量、有限同权限回归和新三seed优势门，formal五seed/OOD待准入。只有仿真已确认；论文核心贡献、强经典优势和独立泛化仍未闭合。
+
 第130轮集中方向/方法深审与独立state注册（2026-10-05，goal active，下一135）：
 
 **方向值得继续的条件：** current ideal normal/gap在27点复现actualgeometry作用，public参数corner有限覆盖支持独立验证；不再扩大失败的点Nom/20ms cone/PPO分支，也不把216interior无漏包当连续域证明。测量假设强于旧Actor39、oracle全景泄漏、CPU-GPU/接触切换与递归viability都是未闭合项；新核心论文的方法贡献/强经典优势/独立鲁棒泛化仍未成立，旧初稿ready不替代。

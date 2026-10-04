@@ -1,0 +1,9 @@
+{
+  "status": "rejected",
+  "completed_episodes": 192,
+  "training_updates": 0,
+  "usable_prediction_states": 0,
+  "reason": "CUDA graph does not own Python arrays: pre and ever were garbage-collected after factory; graph pointers may alias reused allocations. All snapshots invalid for prediction, not only missing contact events.",
+  "evidence": "buffer_lifetime_diagnostic.json",
+  "no_scores_computed": true
+}
