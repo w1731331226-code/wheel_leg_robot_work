@@ -1,0 +1,130 @@
+{
+  "verified": true,
+  "episodes": 320,
+  "jobs": 10,
+  "unique_development_cases": 32,
+  "paired": [
+    {
+      "seed": 1609,
+      "sector_minus_all": 11,
+      "sector_minus_legs": -7,
+      "nondegradation": true
+    },
+    {
+      "seed": 1610,
+      "sector_minus_all": 13,
+      "sector_minus_legs": -5,
+      "nondegradation": true
+    },
+    {
+      "seed": 1611,
+      "sector_minus_all": 24,
+      "sector_minus_legs": -8,
+      "nondegradation": true
+    }
+  ],
+  "filter_training_candidate_gate": false,
+  "request_sample_counts": {
+    "1609_all": [
+      11689,
+      9290,
+      11689
+    ],
+    "1609_sector": [
+      11690,
+      7757,
+      11690
+    ],
+    "1609_legs_only": [
+      11699,
+      6163,
+      11699
+    ],
+    "1610_all": [
+      11690,
+      8324,
+      11688
+    ],
+    "1610_sector": [
+      11693,
+      8369,
+      11693
+    ],
+    "1610_legs_only": [
+      11699,
+      5994,
+      11699
+    ],
+    "1611_all": [
+      11683,
+      10649,
+      11683
+    ],
+    "1611_sector": [
+      11689,
+      8685,
+      11689
+    ],
+    "1611_legs_only": [
+      11698,
+      6344,
+      11698
+    ]
+  },
+  "failure_patterns": {
+    "B1": {
+      "terrain_missing": 0,
+      "yaw_failed": 1,
+      "noncompleted": 0
+    },
+    "1609_all": {
+      "terrain_missing": 16,
+      "yaw_failed": 3,
+      "noncompleted": 0
+    },
+    "1609_sector": {
+      "terrain_missing": 6,
+      "yaw_failed": 1,
+      "noncompleted": 0
+    },
+    "1609_legs_only": {
+      "terrain_missing": 0,
+      "yaw_failed": 1,
+      "noncompleted": 0
+    },
+    "1610_all": {
+      "terrain_missing": 18,
+      "yaw_failed": 0,
+      "noncompleted": 0
+    },
+    "1610_sector": {
+      "terrain_missing": 5,
+      "yaw_failed": 0,
+      "noncompleted": 0
+    },
+    "1610_legs_only": {
+      "terrain_missing": 0,
+      "yaw_failed": 0,
+      "noncompleted": 0
+    },
+    "1611_all": {
+      "terrain_missing": 29,
+      "yaw_failed": 2,
+      "noncompleted": 0
+    },
+    "1611_sector": {
+      "terrain_missing": 7,
+      "yaw_failed": 0,
+      "noncompleted": 0
+    },
+    "1611_legs_only": {
+      "terrain_missing": 0,
+      "yaw_failed": 0,
+      "noncompleted": 0
+    }
+  },
+  "result_sha256": "b917f25e14ecf1ce932c66c733b98a42a280b1880edd5113865ac75ba685f85f",
+  "registration_sha256": "30091fead9331c82331544d76e030b8a4e254c4de5db3baa423d61bf7fe95e03",
+  "scope": "Source/model/case/ledger, physical counts, exact success and paired gate verified offline. Finite development probe, not a novel-method or general-safety proof.",
+  "reviewer_sha256": "74351cfe5ad4d0477782b0060ea4448f4905e6a9ec436605ed17de38cfd59daf"
+}
