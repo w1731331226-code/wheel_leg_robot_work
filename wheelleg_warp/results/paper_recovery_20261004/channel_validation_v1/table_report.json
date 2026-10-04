@@ -1,17 +1,78 @@
 {
   "verified_snapshot": true,
-  "complete": false,
-  "case_records": 3068,
-  "jobs": 53,
-  "regular_primary_complete": false,
-  "regular_primary": null,
-  "seed_clusters": [],
-  "table_rows": 161,
+  "complete": true,
+  "case_records": 4472,
+  "jobs": 78,
+  "regular_primary_complete": true,
+  "regular_primary": {
+    "mean_success_difference_pp": 62.5,
+    "model_effects": [
+      {
+        "model": "original_1609",
+        "success_difference": 57,
+        "fraction_difference": 0.59375,
+        "design_failure_difference": 4,
+        "physical_failure_difference": 0
+      },
+      {
+        "model": "potential_1609",
+        "success_difference": 52,
+        "fraction_difference": 0.5416666666666666,
+        "design_failure_difference": -2,
+        "physical_failure_difference": 0
+      },
+      {
+        "model": "original_1610",
+        "success_difference": 37,
+        "fraction_difference": 0.3854166666666667,
+        "design_failure_difference": 1,
+        "physical_failure_difference": 0
+      },
+      {
+        "model": "potential_1610",
+        "success_difference": 88,
+        "fraction_difference": 0.9166666666666666,
+        "design_failure_difference": 1,
+        "physical_failure_difference": 0
+      },
+      {
+        "model": "original_1611",
+        "success_difference": 86,
+        "fraction_difference": 0.8958333333333334,
+        "design_failure_difference": -1,
+        "physical_failure_difference": 0
+      },
+      {
+        "model": "potential_1611",
+        "success_difference": 40,
+        "fraction_difference": 0.4166666666666667,
+        "design_failure_difference": 2,
+        "physical_failure_difference": 0
+      }
+    ],
+    "mean_design_failure_difference": 0.8333333333333334,
+    "mean_physical_failure_difference": 0.0
+  },
+  "seed_clusters": [
+    {
+      "seed": 1609,
+      "paired_reward_model_mean_difference_pp": 56.77083333333333
+    },
+    {
+      "seed": 1610,
+      "paired_reward_model_mean_difference_pp": 65.10416666666666
+    },
+    {
+      "seed": 1611,
+      "paired_reward_model_mean_difference_pp": 65.625
+    }
+  ],
+  "table_rows": 234,
   "scope": "Fixed96-case finite panel and six fixed controllers,3seed clusters. No training-seed significance/p-values or aggregate pressure continuous-domain claim; blank metrics remain blank.",
   "table_counting": "Pressure aggregate and factor rows describe same48 cases and must not be summed. Table rows are not evaluation jobs or extra episodes.",
   "all_categories_completed_required_for_final_conclusion": true,
-  "snapshot_sha256": "f2ef982d1059573cd70f86d64291597f5d70b4741c9e8c2b3229eff96b7c23b2",
-  "review_sha256": "a4624a128aa9526e444c435720e2067209c163dfe061d238bb18b98e7c2f5ac2",
-  "table_sha256": "0bf5b39302cb7362f992bea95f1fab4c84fce825e75feabd418a54ed90c34dff",
-  "source_sha256": "9e15f714ba4ea3e9d03f934cea03d4c3255d108f124f1e0a4d501953297fff7c"
+  "snapshot_sha256": "29e48a2fd79234a4f37c667bb59483e00b9afdc4bc2cd6429b26db358bd912f8",
+  "review_sha256": "0b4c1c42d47ed4f0bd0b15fac946bce2532e394d6dd13b1146eb9baefa229617",
+  "table_sha256": "33067894f0bcc72b71227645ded5a43b68d498400c3a8e5f318d937ee6d20012",
+  "source_sha256": "564a908e931c09d19cc1f111e10bf81532b5d8693c1497df480372480c28d1a8"
 }

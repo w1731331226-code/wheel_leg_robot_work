@@ -27,7 +27,7 @@ def run():
                     yaw_score_deg=p['summary']['mean_yaw_score_deg'],early_terminated=None))
     fields=['controller','category','cases','success','physical','design','full_trajectory_yaw_metric','yaw_score_deg','early_terminated']
     with (S/'verified_tables.csv').open('w',newline='') as f:
-        w=csv.DictWriter(f,fieldnames=fields);w.writeheader();w.writerows(rows)
+        w=csv.DictWriter(f,fieldnames=fields,lineterminator='\n');w.writeheader();w.writerows(rows)
     effects=review['available_primary_model_effects'];overall=None;byseed=[]
     if len(effects)==6:
         overall=dict(mean_success_difference_pp=100*float(np.mean([v['fraction_difference'] for v in effects])),

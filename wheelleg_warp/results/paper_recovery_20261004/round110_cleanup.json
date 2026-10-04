@@ -1,0 +1,34 @@
+{
+  "round": 110,
+  "kind": "Confirmed semantic duplicates, not byte-identical files",
+  "files": [
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/continuous_engineering/progress.json",
+      "sha256": "56dc4e7403b489005fdff9611cf7e96f37aaa1b03b06bc596e30ca00fa35d4fe",
+      "bytes": 71,
+      "removed_value": {
+        "status": "complete",
+        "sampled_steps": 12000,
+        "trained_steps": 12000
+      },
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/continuous_engineering/verification.json",
+      "retained_sha256": "174da5ff6c7cfc8d157a2122a01b154a376b0e1630cb517b17c8a9e5d0ba3161",
+      "proof": "Closed engineering only; complete and sampled/trained12k also proven by verified final report/checkpoints. No producer or reader requires this progress marker; full marker retained here."
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/continuous_engineering_v2/progress.json",
+      "sha256": "56dc4e7403b489005fdff9611cf7e96f37aaa1b03b06bc596e30ca00fa35d4fe",
+      "bytes": 71,
+      "removed_value": {
+        "status": "complete",
+        "sampled_steps": 12000,
+        "trained_steps": 12000
+      },
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/continuous_engineering_v2/verification.json",
+      "retained_sha256": "b9e484d4b91695c3d3a14de1545b9dd1fc98f8f5bbaac022d715e15113ed1edf",
+      "proof": "Closed engineering only; complete and sampled/trained12k also proven by verified final report/checkpoints. No producer or reader requires this progress marker; full marker retained here."
+    }
+  ],
+  "bytes_removed": 142,
+  "preserved": "All unique source/model/episode/failure/independent validation data and live progress kept"
+}

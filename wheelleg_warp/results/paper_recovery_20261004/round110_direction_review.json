@@ -1,0 +1,122 @@
+{
+  "round": 110,
+  "period": [
+    106,
+    110
+  ],
+  "paper_ready": false,
+  "goal_status": "active",
+  "next_review_round": 115,
+  "full_confirmation": {
+    "episodes": 4472,
+    "jobs": 78,
+    "producer_exit": "systemd inactive/dead,ExitStatus0",
+    "source_contract_sha256": "08871fafe8dd33ba78a7dad506a01b5ad714e85bdd81f48b8b21ed4c0596dd9b",
+    "independent_review_sha256": "0b4c1c42d47ed4f0bd0b15fac946bce2532e394d6dd13b1146eb9baefa229617",
+    "tables_sha256": "33067894f0bcc72b71227645ded5a43b68d498400c3a8e5f318d937ee6d20012",
+    "early_terminated_records": 22,
+    "policy_training_steps": 0
+  },
+  "primary": {
+    "mean_success_difference_pp": 62.5,
+    "all_six_positive": true,
+    "seed_cluster_differences_pp": [
+      56.77083333333333,
+      65.10416666666666,
+      65.625
+    ],
+    "extra_design_failures": 5,
+    "physical_failure_difference": 0,
+    "interpretation": "Conditional finite-set closed-loop mask effect, not independent training significance, full-state safety or new learned algorithm superiority"
+  },
+  "panels": {
+    "regular": {
+      "all": {
+        "records": 576,
+        "success": 180,
+        "physical": 576,
+        "design": 565
+      },
+      "legs_only": {
+        "records": 576,
+        "success": 540,
+        "physical": 576,
+        "design": 560
+      }
+    },
+    "pressure": {
+      "all": {
+        "records": 288,
+        "success": 81,
+        "physical": 288,
+        "design": 277
+      },
+      "legs_only": {
+        "records": 288,
+        "success": 210,
+        "physical": 288,
+        "design": 274
+      }
+    },
+    "legacy_regression": {
+      "all": {
+        "records": 168,
+        "success": 97,
+        "physical": 168,
+        "design": 168
+      },
+      "legs_only": {
+        "records": 168,
+        "success": 167,
+        "physical": 168,
+        "design": 168
+      }
+    }
+  },
+  "readiness_audit": [
+    {
+      "requirement": "明确主张与文献贡献边界",
+      "status": "可检验受限实证主张成立，完整论文贡献论证待完善",
+      "evidence": "六固定模型wheel-mask效果独立面板复现；不称新PPO/PBRS，需完整related-work与为何系统审计新增价值的论述"
+    },
+    {
+      "requirement": "模型/信息/输出与约束",
+      "status": "已在限定范围核过",
+      "evidence": "38输入/2kHz真实几何与输出界/源冻结/原success重建/未完Phi和bootstrap；无全局安全或完整Markov声明"
+    },
+    {
+      "requirement": "强经典同信息三学习seed",
+      "status": "限定试验完成",
+      "evidence": "六matched200k、3seed、强B0/B1全部报告；mask减少请求空间不当同权限训练改进"
+    },
+    {
+      "requirement": "新独立、压力、旧能力",
+      "status": "全部4472已完成并审计",
+      "evidence": "fresh96/pressure48/old28单列，early和设计退化保留，旧regression非独立，未动旧64/3000"
+    },
+    {
+      "requirement": "受控机制",
+      "status": "通道闭环作用有独立证据，学习生成原因未知",
+      "evidence": "六wheel-disabled均成功改善但设计多5；body漂移为代理关联，不称Critic校准/训练因果"
+    },
+    {
+      "requirement": "完整论文材料",
+      "status": "结果/图表/协议已齐，稿件引言讨论结论与引用审阅未完成",
+      "evidence": "paper.tex方法/开发表/独立表/统计复现已填；内置编译因缺sandbox未确认，原始数据和图独立可审阅"
+    }
+  ],
+  "direction": {
+    "stop": "不再训练追PPO/PBRS优势，不追加mask幅度或删不利case",
+    "write": "以限定系统的输出可行性与完整接触任务差异、wheel请求通道效应和设计权衡为审计主张，保留强经典优于学习的结果",
+    "next": "完成论文背景/近邻差异/讨论结论、数值与引用交叉核验、复现材料清单；全面审计后再判断达到可写论文目标，不以单一负摘要替代",
+    "bounds": "有限六模型/3seeds、同固定场景，不推广所有算法/机器人或宣称实机安全，压力8点非连续域覆盖"
+  },
+  "cleanup": {
+    "files": 2,
+    "bytes": 142,
+    "semantic_duplicate": true,
+    "full_removed_values_preserved": true,
+    "retained_hashes_verified": true
+  },
+  "extra_failure": "CSV默认CRLF被git diff--check判尾空白，改生成器lineterminator为LF后全表hash重新生成与diff检查通过；无物理重跑或科学门变化"
+}
