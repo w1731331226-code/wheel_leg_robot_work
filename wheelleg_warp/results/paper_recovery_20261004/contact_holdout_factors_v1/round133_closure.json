@@ -1,0 +1,36 @@
+{
+  "round": 133,
+  "verified": true,
+  "states": 576,
+  "producer_cpu_steps": 1152,
+  "review_cpu_steps": 1152,
+  "total_cpu_steps": 2304,
+  "new_gpu_steps": 0,
+  "training_updates": 0,
+  "summary": {
+    "states": 576,
+    "contact_point_raw_corner_misses": 0,
+    "contact_point_reserved_corner_misses": 0,
+    "max_contact_point_excess_rad": 0.0,
+    "max_support_representation_delta_rad": 6.369421813023912e-05,
+    "max_warm_delta_rad": 1.734723475976807e-18,
+    "max_gpu_warm_cpu_residual_rad": 6.923335278397058e-05
+  },
+  "review_sha256": "ae778a65566a67ec1df8551056ac0e7f0e8561312945b3cddf4eea88ab33f59f",
+  "units": [
+    {
+      "name": "wheelleg-contact-holdout-factors-v1",
+      "active_state": "inactive",
+      "main_pid": 0,
+      "exit_status": 0
+    },
+    {
+      "name": "wheelleg-contact-holdout-factors-review-v1",
+      "active_state": "inactive",
+      "main_pid": 0,
+      "exit_status": 0
+    }
+  ],
+  "disposition": "Prior failed corner coverage remains rejected. Actual-parameter contact responses are inside raw corners at these576 states, warm contribution negligible here; support representation and GPU/CPU residual remain unresolved. No continuous-domain or controller safety certificate.",
+  "next": "134 finite contact-manifold/solver-representation audit;135 direction/method/input-cost review and confirmed redundant-file cleanup."
+}

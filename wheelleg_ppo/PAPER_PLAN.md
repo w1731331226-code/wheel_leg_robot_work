@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第133轮误差分解（2026-10-05，独立核验通过，goal active）：
+
+冻结后对全部576状态做两新offline分支：当前接触模型+真实参数+warm0，实际几何/真实参数+保存warm；复用132审核过的实际几何warm0与GPU。原16角点/ULP与1.4门不改，真实参数与保存warm不提供给控制器。独立重建两分支、源/载荷/身份与有符号分解通过；producer1152+review1152=2304CPU步，0新GPU/学习，两unit正常退出0。
+
+576真实参数contact点均在原raw corner内，有限点不能证明连续域；warm差峰1.73472e−18rad，不解释本批失败。支撑表述差峰6.36942e−5rad，GPU与实际CPU savedwarm残差峰6.92334e−5rad；1.5s支撑差0/残差≤6.66643e−8，3.5s与首次报告接触差异更大。有符号恒等GPU-contact=(CPU0-contact)+(CPUwarm-CPU0)+(GPU-CPUwarm)逐点成立，不把不同状态max相加作鲁棒界、也不当唯一物理因果比例。支撑差包括接触构成/几何，backend残差不只浮点噪声。原132的14/9漏包和拒绝部署/训练保持，全14miss因子只读登记，不重新选分。
+
+下一134限于接触位置/法向间隙/参数与求解器表述审计，先区分可修实现与缺失信息，不放宽预留或扩失败PPO。135必须集中评判本预测方向的继续价值、信息/实现成本、是否需替代方法及边界样本补验，并按约清理确认冗余。核心方法优势、递归安全和独立泛化尚未成立。
+
 第132轮全量新状态预测（2026-10-05，独立重算通过，goal active）：
 
 先冻结旧current-contact/16公共角点/原ULP reserve的全部实现源，再对v2全部576状态执行9216CPU corner预测与576actualgeometry offline对照；actual参数只给对照，不挑corner，0新GPU/0学习。Producer全量GPU14漏包、CPU9漏包；1.5s192均覆盖，3.5sGPU6/CPU5，首次solver报告接触GPU8/CPU4，各192。最大excess1.01679e−4rad与5.95410e−5rad。48真实场景参数全在原声明域，固定预测包络gate=False，不扩大reserve/选模型/晋升或扩PPO。0 false-safe因这批actual sampled-state最小设计余量仍.03805rad，不能作边界安全或完整回合成功证据。
