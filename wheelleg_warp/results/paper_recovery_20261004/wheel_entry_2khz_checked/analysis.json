@@ -1,0 +1,37 @@
+{
+  "verified": true,
+  "episodes": 36,
+  "physics_samples": 533497,
+  "groups": {
+    "0": {
+      "missed_wheels": 8,
+      "min_gap_over_entire_longitudinal_overlap_m": 0.07801146781378049,
+      "max_gap_over_entire_longitudinal_overlap_m": 0.07824364018992569,
+      "success_count": 4
+    },
+    "1": {
+      "missed_wheels": 8,
+      "min_gap_over_entire_longitudinal_overlap_m": 0.02090586300657188,
+      "max_gap_over_entire_longitudinal_overlap_m": 0.024357040016031145,
+      "success_count": 4
+    },
+    "-1": {
+      "missed_wheels": 8,
+      "min_gap_over_entire_longitudinal_overlap_m": 0.12034625212691091,
+      "max_gap_over_entire_longitudinal_overlap_m": 0.1270297840201104,
+      "success_count": 4
+    }
+  },
+  "controlled_result": "Correct feedback reduces wheel-path separation, but every offset case still geometrically misses one wheel at all scored 0.5ms steps through longitudinal AABB overlap.",
+  "limits": "Same development conditions replayed; not new independent test, not bitwise reproducibility, not continuous-time proof, not an optimal-control impossibility result. Native contact bits do not certify positive normal force.",
+  "next": "Derive bounded heading/path correction with an explicit contact deadline from public geometry, before any new RL training; retain original evaluation thresholds and compare same-information classical controls.",
+  "analysis_sha256": "8a1dc600468879c85d30bf503e14201a39e91e29a3decd7c3f0525468eaf908d",
+  "artifact_sha256": {
+    "preregistration.json": "d113bb1ce48b7333f96ce1d0fe9e30c4caa1f3b1094085bc58ecf3e8df9199d0",
+    "telemetry_registration.json": "14325d479bd8030d0c51dfa4cecb24f1c64b1d78b5f785756a504de20277170a",
+    "result.json": "162c2e15480f41f274160d8995bdcbe9f64496528e003ef4b6b6a7f512a975d7",
+    "trace.npz": "2aae12f194f21230b75f7487d53d15e9167d7df93ea5ec55cf34d13c5cd84774",
+    "wheel_trace.npz": "67708dec2ff63e0242332da1beb0afef6a2eb99cd44a5db50a9e956f55716ad4",
+    "wheel_verification.json": "9db961ca1af9aad9385b7ca5e07597a70a33f915db76c1fd9a9a83912c40b6ff"
+  }
+}
