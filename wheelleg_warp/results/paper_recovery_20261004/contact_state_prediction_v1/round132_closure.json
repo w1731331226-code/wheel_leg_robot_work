@@ -1,0 +1,19 @@
+{
+  "round": 132,
+  "verified": true,
+  "review_sha256": "3ed0d3a79ef0f6b5bfc9bc76c8a495e05089614d758aebf755258878774a9f81",
+  "review_unit": {
+    "name": "wheelleg-contact-state-prediction-review-v1",
+    "active_state": "inactive",
+    "main_pid": 0,
+    "exit_status": 0
+  },
+  "produced_cpu_steps": 9792,
+  "reconstructed_cpu_steps": 9792,
+  "total_cpu_steps": 19584,
+  "new_gpu_steps": 0,
+  "training_updates": 0,
+  "development_gate": false,
+  "disposition": "Reject unchanged current-contact/corner envelope for full new-state coverage; no deployment or PPO promotion. Preserve every miss and summary-only failure. Next bounded factor diagnosis; direction/cost/information adequacy review and confirmed redundancy cleanup due135.",
+  "review_next_round": 135
+}

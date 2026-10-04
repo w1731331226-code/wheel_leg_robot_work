@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第132轮全量新状态预测（2026-10-05，独立重算通过，goal active）：
+
+先冻结旧current-contact/16公共角点/原ULP reserve的全部实现源，再对v2全部576状态执行9216CPU corner预测与576actualgeometry offline对照；actual参数只给对照，不挑corner，0新GPU/0学习。Producer全量GPU14漏包、CPU9漏包；1.5s192均覆盖，3.5sGPU6/CPU5，首次solver报告接触GPU8/CPU4，各192。最大excess1.01679e−4rad与5.95410e−5rad。48真实场景参数全在原声明域，固定预测包络gate=False，不扩大reserve/选模型/晋升或扩PPO。0 false-safe因这批actual sampled-state最小设计余量仍.03805rad，不能作边界安全或完整回合成功证据。
+
+接触时序需修正论文表述：MuJoCo Warp先在pre-q做forward/collision再积分，native在step后读取的contact buffer并非从post-q重新碰撞。因此event2仅为首次报告目标接触步，pre-q理想描述可能已包含此接触，不能当预测未观测future新接触的证据。原样本和评分保留，installed backend源码与SHA在contact_event_timing_audit。
+
+原producer在全部hashed batch完成后因NumPy int64无法写summary JSON而退出1，预登记finalizer只转换计数格式，不重复物理/更改source/分数。独立review已完整重建9792步及全部域、描述、身份与汇总，通过576状态且确认原14/9漏包；unit正常退出0/inactive/MainPID0，closure总成本producer9792+review9792=19584CPU步、0新GPU/0学习。5条仅GPU漏包，CPU-GPU active-q差峰6.92334e−5rad，不把所有误差单因果归于跨后端。第132轮关闭，整体目标仍active。下一133有限误差分解：支撑近似/角点是否包住真实参数model/跨后端分别核，真实参数仍offline，失败当前包络保持。135方向深审必须判断新增信息与模型复杂度是否值得继续、是否需替代方法和补充边界实验，再清理确认冗余。
+
 第131轮独立状态采集及记录器修正（2026-10-05，goal active，下一135深审清理）：
 
 只读采集原B1+三固定L2在48已登记场景的三类事件；v1虽完成192回合，却因CUDA graph不持Python数组所有权，pre/ever释放而失真，全部snapshot拒绝预测使用。weakref证明、原源码/数据/合同/日志与rejection保留。env持有全部4buffer后预登记v2同条件追加192纠错回合，未使用预测得分或调参；累计384GPU回合、0学习，v1不拼入有效成绩。
