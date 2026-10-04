@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第126轮固定设计可得模型未准入（2026-10-05，goal active）：
+
+先登记再CPU54步：固定mass7/friction.8/drive0/solver100/dt.0005、warm0，构模接口只接受当前q17/v16/已知ctrl及两预定支撑hypothesis，不传实际case参数/未来障碍geometry。当前完整状态是假设理想encoder/被动角及base pose/velocity estimator，强于旧Actor39，若实际使用须同样供给所有比较方法，不当旧proprio已经具备。Nom FK当前wheel-bottom下建立common lower horizontal plane或two current horizontal pads，只是支撑假设不是真实terrain/contact观测。
+
+27状态每hypothesis q误差max1.23155e−5/1.23081e−5rad，各3false-safe；事前预算一个float32位置ULP=1.19209e−7rad、false-safe0均失败。review_nominal_response.py独立重建54预测/固定参数/warm0/实际输入与SHA/原门过，disposition拒绝部署和新PPO，原1.4门不改。不可用前一actual-geometry Oracle LP可达性冒充本模型有效，更不可把这27经验max转为鲁棒上界。
+
+下一有限诊断需分别考察支撑/软接触表述、unknown dynamics参数、warmstart因素，确定额外可测支撑状态是否必要；actual geometry/contact只作明确offline Oracle对照，不能给Actor/Supervisor偷加truth，也不扫ground offset/mass选通过者。没有模型与独立误差准入前不做新的工作域控制层或长学习。目标继续，130深审清理，原数据/失败/CPU/旧门/封存均保持。
+
 第125轮集中方向/方法深审及可达性诊断（2026-10-05，goal active，下一130）：
 
 **方向决定：** 不扩停止的2.4M/20ms方向cone分支，不调guard或豁免微小越界；条件性继续共同Nom修复与Actor状态可行余量的响应模型。力矩方向只给有限功率条件，不能作加速度或状态域保证；actual-CPU oracle只作诊断，不能泄漏到控制器/Actor或当鲁棒误差证书。新方法优势、可部署信息模型与独立泛化仍未齐，不能用旧初稿ready结束goal。

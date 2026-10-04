@@ -1,0 +1,29 @@
+{
+  "version": "nominal-support-response-v1",
+  "hypotheses": [
+    "lower_flat_plane",
+    "two_current_supports"
+  ],
+  "snapshots": 27,
+  "cpu_steps": 54,
+  "training_updates": 0,
+  "inputs": "Ideal current full17 generalized positions and16 velocities, command6; includes passive hinges and ideal base pose/velocity estimate beyond old actor39. Any future control comparison must grant the same declared state-estimator contract to every method.",
+  "excluded_inputs": "No scene/mass/friction/drive/terrain parameters, no obstacle preview, no actual qacc_warmstart; nominal model warmstart0.",
+  "fixed_design": {
+    "mass_kg": 7.0,
+    "friction": 0.8,
+    "drive_difference": 0.0,
+    "solver_iterations": 100,
+    "timestep_s": 0.0005
+  },
+  "supports": "Either common horizontal floor at minimum FK wheel-bottom z, or two horizontal pads at each FK wheel-bottom z; these are support assumptions, not measurements of actual terrain/contact.",
+  "maximum_q_error_budget_rad": 1.1920928955078125e-07,
+  "false_safe_allowed": 0,
+  "admission": "Each hypothesis separately: all27 errors<=one float32 position ULP at1.4, zero falsely predicted safe cases; only then consider independent held-out error testing. No parameter search or best-hypothesis promotion.",
+  "data_review_sha256": "2b0f1aded499bbe4b4d7758e5bb93b2c8d5b386b1a952dbab788907a594dab32",
+  "source_sha256": {
+    "wheelleg_warp/check_nominal_response.py": "e57c2762349663cfc4bef77eb2580f667d895a5dfe6338bbe9684160f89f2978",
+    "wheelleg_warp/native/models.py": "59420b688a25e63fb8e0e644f0702025836bea0ed90377e452bcbd919c7216eb"
+  },
+  "old_gate_or_final_used": false
+}
