@@ -1,5 +1,20 @@
 # 双轮腿机器人PPO论文方案
 
+第127轮预测偏差全因素诊断（2026-10-05，goal active）：
+
+事前27状态×2³组合注册216CPU步：actual geometry或state-derived lower-flat、actual grouped mass/mu/drive或fixed7/.8/0、actual warm或0；全部组合和状态纳入，actual只是offline诊断真值，不给Actor/控制器，也不作为部署优势。review_prediction_factors.py重建全部输出/因子/原门baseline及先前oracle，hash通过，0学习/0新GPU。
+
+| 几何 | 动力参数 | 最大q误差（微rad） | 假安全 |
+|---|---|---:|---:|
+| FK-flat | fixed | 12.315 | 3 |
+| FK-flat | actual | 12.259 | 3 |
+| actual | fixed | .889 | 0 |
+| actual | actual | .08156 | 0 |
+
+每种warm0/actual输出逐值相同，只限本solver100/27状态。主要误差与支撑几何表述关联，unknown动力参数为其次；actual geometry包含完整场景，不能据此认定currentcontact一定足够，params因素合并亦不单说mass是根因。无“挑最佳”预测器推广，旧false-safe和原1.4/ULP门保留。
+
+下一128登记current-contact-only表述的有限模型诊断，保留fixed design、不用未来map；理想当前contact descriptor若使用是新增信息假设，必须声明并同给所有未来比较方法，不能包装旧Actor39已知。先区分softgap/normal观测需求及unknown参数影响，独立保留误差后才能构造Nom修复和Actor余量，未准入之前不新长PPO。目标继续，130深审清理。
+
 第126轮固定设计可得模型未准入（2026-10-05，goal active）：
 
 先登记再CPU54步：固定mass7/friction.8/drive0/solver100/dt.0005、warm0，构模接口只接受当前q17/v16/已知ctrl及两预定支撑hypothesis，不传实际case参数/未来障碍geometry。当前完整状态是假设理想encoder/被动角及base pose/velocity estimator，强于旧Actor39，若实际使用须同样供给所有比较方法，不当旧proprio已经具备。Nom FK当前wheel-bottom下建立common lower horizontal plane或two current horizontal pads，只是支撑假设不是真实terrain/contact观测。

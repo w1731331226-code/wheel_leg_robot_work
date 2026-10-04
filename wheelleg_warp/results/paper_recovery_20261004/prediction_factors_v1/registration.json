@@ -1,0 +1,22 @@
+{
+  "version": "prediction-factorial-v1",
+  "factors": [
+    "actual_geometry",
+    "actual_parameters_mass_mu_drive",
+    "actual_warmstart"
+  ],
+  "factor_levels": [
+    false,
+    true
+  ],
+  "states": 27,
+  "cpu_steps": 216,
+  "selection": "All27 prior captured states, no model/state/error filtering.",
+  "baseline": "State-derived lower flat plane, fixed7kg/friction.8/drive0, zero warmstart. This repeats an already failed hypothesis solely as the0/0/0 factor control.",
+  "privileges": "Every actual factor is offline diagnostic truth, never actor/controller input or a deployable predictor; no factor winner is promoted.",
+  "source_sha256": "5053c6d165acf8441a08a8aedc8a2fc7d788958f67fda2ce23aef27ac5d99536",
+  "response_review_sha256": "2b0f1aded499bbe4b4d7758e5bb93b2c8d5b386b1a952dbab788907a594dab32",
+  "nominal_review_sha256": "30c654898e4f5d922deedcb0c1c9e15166dfaf1b27edea44349a736a290a43b6",
+  "training_updates": 0,
+  "old_gate_or_final_used": false
+}
