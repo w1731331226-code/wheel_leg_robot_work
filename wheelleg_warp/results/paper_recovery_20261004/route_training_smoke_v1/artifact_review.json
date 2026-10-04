@@ -1,0 +1,36 @@
+{
+  "verified": true,
+  "interface_verification_sha256": "5b2a5740439658675ef078f25957ab3cfb2a9f48fdf00c149017d95cfa4cef8d",
+  "training_verification_sha256": "e4742b22b34138781be530668fed1475122854e71665586775f733561f284cbe",
+  "same_initial_weight_sha256": "00a8efe5a2e74bb0b2a6df76ed19e40cf064bc27edf43f97ebca7177f5f63239",
+  "loaded_checkpoints": {
+    "zero": {
+      "policy_steps": 1000,
+      "ppo_epochs": 20,
+      "adam": {
+        "moment_devices": [
+          "cuda"
+        ],
+        "adam_steps": [
+          40
+        ]
+      },
+      "checkpoint_sha256": "b3cc85f99044f4e5576764fa5456a0cb2d0460368b94493b9f9c8d603f0cdcfc"
+    },
+    "route": {
+      "policy_steps": 1000,
+      "ppo_epochs": 20,
+      "adam": {
+        "moment_devices": [
+          "cuda"
+        ],
+        "adam_steps": [
+          40
+        ]
+      },
+      "checkpoint_sha256": "60e8a49a927612e7de858091bb5405586d935ffa65c58409cb47b0cd0a1bb416"
+    }
+  },
+  "source_sha256": "5858e8d625b077da59999f29311c3a20572afcbe42f6ccf5b5c59ae4ec5a2658",
+  "scope": "Independent source/hash/ledger and saved CUDA weights/Adam/counters/RMS verification; runtime exact-restoration and physical identity assertions reviewed in frozen producer. No new physics, method-performance gate or trajectory resume."
+}
