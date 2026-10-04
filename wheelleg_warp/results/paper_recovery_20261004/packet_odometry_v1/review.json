@@ -1,0 +1,39 @@
+{
+  "verified": true,
+  "episodes": 128,
+  "unique_development_cases": 32,
+  "metrics": {
+    "B1": {
+      "max_nonterminal_error_m": 0.001159990155169906,
+      "mean_case_max_error_m": 0.0003226648907396477,
+      "samples": 11731,
+      "success": 31
+    },
+    "1609": {
+      "max_nonterminal_error_m": 0.001493634856101246,
+      "mean_case_max_error_m": 0.0005723920504207605,
+      "samples": 11721,
+      "success": 12
+    },
+    "1610": {
+      "max_nonterminal_error_m": 0.001621814415818823,
+      "mean_case_max_error_m": 0.000575432079186665,
+      "samples": 11722,
+      "success": 14
+    },
+    "1611": {
+      "max_nonterminal_error_m": 0.0011288414780202816,
+      "mean_case_max_error_m": 0.0005471859458103467,
+      "samples": 11715,
+      "success": 0
+    }
+  },
+  "accuracy_budget_passed": true,
+  "source_sha256": {
+    "wheelleg_warp/review_packet_odometry.py": "cb8bd5967063af1580733d30bb6eea9fb8470b199112e82a4fbcfd5324dd9502",
+    "wheelleg_warp/review_yaw_sector.py": "74351cfe5ad4d0477782b0060ea4448f4905e6a9ec436605ed17de38cfd59daf"
+  },
+  "result_sha256": "0fef62336b6cc22fb7bdcdfd9fa3852beb16a8a4bb2ab3e898315c2b1866b8e1",
+  "registration_sha256": "36c0a7019091b311f24b37c4d6449a018785352222d04982949c62e7ef36898a",
+  "scope": "Reconstructed packet frame rotation/integration, timestamps, known origin, source/models/hash/identity, original task success and yaw score. No control intervention, new learning or sim-to-real assertion."
+}

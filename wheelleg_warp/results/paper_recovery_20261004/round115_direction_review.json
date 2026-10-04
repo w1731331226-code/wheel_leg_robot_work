@@ -1,0 +1,143 @@
+{
+  "round": 115,
+  "period": [
+    111,
+    115
+  ],
+  "goal_status": "active",
+  "next_review_round": 120,
+  "reviewed_goal": "Proceed with pure-simulation core-journal supplement plan, not merely deliver the old audit draft; periodic direction/method/experiment review and confirmed-redundancy cleanup.",
+  "evidence": {
+    "sector_review_sha256": "810f7515b8738cf887a4b87e327921d8e42292399bf5fe6b85b6dbf06f0fda88",
+    "odometry_review_sha256": "fba7892c57b6263847ab2a60250c07eee21802c3b71ef08675f340789017076c",
+    "sector_pairs": [
+      {
+        "seed": 1609,
+        "sector_minus_all": 11,
+        "sector_minus_legs": -7,
+        "nondegradation": true
+      },
+      {
+        "seed": 1610,
+        "sector_minus_all": 13,
+        "sector_minus_legs": -5,
+        "nondegradation": true
+      },
+      {
+        "seed": 1611,
+        "sector_minus_all": 24,
+        "sector_minus_legs": -8,
+        "nondegradation": true
+      }
+    ],
+    "odometry_metrics": {
+      "B1": {
+        "max_nonterminal_error_m": 0.001159990155169906,
+        "mean_case_max_error_m": 0.0003226648907396477,
+        "samples": 11731,
+        "success": 31
+      },
+      "1609": {
+        "max_nonterminal_error_m": 0.001493634856101246,
+        "mean_case_max_error_m": 0.0005723920504207605,
+        "samples": 11721,
+        "success": 12
+      },
+      "1610": {
+        "max_nonterminal_error_m": 0.001621814415818823,
+        "mean_case_max_error_m": 0.000575432079186665,
+        "samples": 11722,
+        "success": 14
+      },
+      "1611": {
+        "max_nonterminal_error_m": 0.0011288414780202816,
+        "mean_case_max_error_m": 0.0005471859458103467,
+        "samples": 11715,
+        "success": 0
+      }
+    },
+    "completed_learning": "Old three-seed reward pilot failed; formal comparison failed; no new learning in rounds114/115.",
+    "classical_ceiling": {
+      "development32_success": 31,
+      "maximum_success_gain_pp": 3.125,
+      "regular96_success": 93
+    },
+    "nominal_static_scale": {
+      "nominal_yaw_kp": 0.4,
+      "wheel_actor_bound_Nm": 0.3,
+      "yaw_limit_rad": 0.08726646259971647,
+      "actor_to_nominal_P_at_5deg": 8.594366926962348,
+      "scope": "Local command authority ratio only; excludes gyro feedback, saturation, contact and motion dynamics; not proof of cause or instability."
+    }
+  },
+  "direction": [
+    {
+      "branch": "Simple delayed-PD-sign wheel filter",
+      "decision": "stop this specific training candidate",
+      "reason": "Three improvements versus all, all worse than legs-only; registered training-candidate gate false. Do not sweep thresholds or claim safety."
+    },
+    {
+      "branch": "Fresh two-leg-only learning",
+      "decision": "necessary ablation when learning resumes, not primary novelty",
+      "reason": "Posthoc fixed-policy masks change closed-loop states and permissions. They do not establish from-scratch learning or physical-prior attribution."
+    },
+    {
+      "branch": "Causal route-state and contact/actuator-aware coordination",
+      "decision": "continue conditionally",
+      "reason": "Known-origin existing-packet integration has finite observed max error<=1.622mm; task contact/path failures coexist with small yaw. Mechanism novelty and controller benefit remain open."
+    },
+    {
+      "branch": "Reward shaping/network/long-budget search",
+      "decision": "do not resume failed branch or grow complexity now",
+      "reason": "Prior paired reward gate false; current information and task/authority contracts should be resolved before new optimizer/network variables."
+    },
+    {
+      "branch": "Harder scenes",
+      "decision": "expand registered coverage after controller contract and reachable-task checks",
+      "reason": "Current weak RL already fails regular scenes; v4 geometry includes width/transition changes. Add asymmetric/sequence tasks without weakening classic or original gates."
+    }
+  ],
+  "method_review": {
+    "valid": "Original complete success, paired seed bookkeeping, source/weights/normalization locks, development-vs-independent distinction retained.",
+    "limitations": [
+      "Sector sign is delayed packet PD, not current filtered Nom feedback or 2kHz noninterference; fixed masks are not new learned algorithms.",
+      "Odometry assumes known-zero initial route and original ideal simulated body velocities. Unknown initial offsets remain aliased; no hidden delay compensation or sim-to-real conclusion.",
+      "Original near-perfect B1 success leaves at most3.125pp improvement on development32. Do not use a5/10pp success gate there or select only weak-classic cases.",
+      "Novel control contribution, fair new three/five-seed learning, new independent geometry/combination/OOD and sensitivity evidence are not yet complete."
+    ],
+    "precision_failure": {
+      "initial_reviewer_snapshot_sha256": "b476443ce7ac14f7dd613ca760bfd749efec1e34ad31e47b9c1f27b32cdf2a78",
+      "log_sha256": "3b2589bf94dc198345be9ab7c7464beef717f5f4131d9d0e38698e4bcf6c7482",
+      "issue": "Initial offline float64 sin/add reconstruction differed from B1 float32 packet arithmetic by about1e-10m.",
+      "resolution": "Reconstruct the actual float32/float64 input arithmetic; original1e-12 replay tolerance and5mm engineering budget unchanged; no physics rerun."
+    }
+  },
+  "next_experiments": [
+    {
+      "priority": 1,
+      "work": "Version known-origin route-state observation wrapper, append one causal estimated-y feature; zero-feature matched architecture ablation. Prove reset, terminal and curriculum behavior and physical/control identity when not used.",
+      "entry": "128-episode packet audit complete",
+      "exit": "All inputs declared, no absolute state/contact/terrain truth leakage; same route signal for all learning and classic methods."
+    },
+    {
+      "priority": 2,
+      "work": "Derive and validate one nominal causal path feedback/coordination law from public task and fixed design, with unchanged physical limits and original success; development all-height plus left/right and sequence coverage, same information strong classic.",
+      "entry": "Route observation contract verified",
+      "exit": "Mechanism and feasible controller behavior demonstrated; model/actuator/constraint derivations and nearest-work distinction explicit, no gain sweep masquerading as method."
+    },
+    {
+      "priority": 3,
+      "work": "Register finite paired three-seed learning with standard virtual residual and actual-mechanism/equal-dimension controls, matched state/authority/budget; two-leg fresh learning distinguishes mask from training.",
+      "entry": "Candidate mechanism and strong-baseline pilot gate attainable",
+      "exit": "Predeclared complete-success/accuracy benefit across seeds plus no hidden physical/design/legacy degradation; otherwise stop the specific branch."
+    },
+    {
+      "priority": 4,
+      "work": "After pilot gate only: five-seed core training, necessary ablations, independent held-out combinations/OOD/parameter pressure, CPU/GPU and contact-step sensitivity, revise paper.",
+      "entry": "New learning pilot passes",
+      "exit": "Actual supplement-plan artifacts, bounded claims and method differentiation complete; publication not guaranteed."
+    }
+  ],
+  "cleanup_sha256": "2487400f267ec0f9a2019a92a6e6e9d44c42ef7c71fb699a9d9a41322bfa2a00",
+  "paper_target_status": "Old material readiness stands; new core-journal competitive contribution is unproven and not achieved."
+}
