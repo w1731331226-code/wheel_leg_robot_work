@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第137轮接触四臂因果诊断（2026-10-05，全量重算通过，goal active）：
+
+freeze position/frame-gap transfer后执行全部603×四臂，producer2412+review2412CPU步；与136identity合7236预算用完，另1260forward、0GPU回放/学习。固定geom-order右手frame变换，无符号择分/参数/阈值扫描，原积分流程保持；每臂pos/frame/gap在constraint与implicit后逐值保留，override不改q/v/ctrl，未改臂全字段与标准step一致。两unit正常退出0。
+
+新576最大active-q相对actualgeometry CPU oracle误差：原6.36942e−5rad、只位置1.13630e−8、只frame-gap仍6.36942e−5、两者3.45365e−9；原1e−12容差分别满足263/518/263/519，两者仍57未满足。旧27static fixture四臂全q/v同，不重新认证其GPU采集事件。位置受控替换对本批主要CPU表述差异有显著作用；不能断言全部误差唯一来源。不同fixture组与实际参数特权条件分开报告，不冒充新独立泛化。
+
+改写的是actual current-contact oracle字段，未改变Actor/真实控制/原ULP/1.4门，也不是新可部署预测器。原14GPU/9CPU漏包、GPU数值/信息可得性/连续域与真边界安全仍未通过；138必须依据此一次限额诊断作去留决定，不能因CPU误差变小继续加privileged fields或扩大预算。下一140按约深审清理，论文贡献和学习/泛化整体验收尚未完成。
+
 第136轮因果试验pipeline身份门（2026-10-05，通过，goal active）：
 
 contact_manifold_causal.py冻结源后，全部603状态×两模型×两种独立执行流程共2412CPU步。fresh标准mj_step与显式fwdPosition→make/projectConstraint→fwdVelocity/Actuation/Acceleration/Constraint→implicit结果全q17/v16、qacc/warm、ctrl/actuator_force/constraint_force逐值相同，time/contact/constraint计数同，所有max0；原integrator3及1e−12不改。compatibility_review复核全部1206配对/源/载荷，无额外physics重算；unit正常退出0，0GPU回放/学习。这只资格化未修改pipeline，不是四臂干预或控制安全准入。

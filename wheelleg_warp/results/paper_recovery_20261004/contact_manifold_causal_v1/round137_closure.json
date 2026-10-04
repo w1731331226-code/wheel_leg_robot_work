@@ -1,0 +1,99 @@
+{
+  "round": 137,
+  "verified": true,
+  "states": 603,
+  "producer_cpu_steps": 2412,
+  "review_cpu_steps": 2412,
+  "cumulative_registered_cpu_steps": 7236,
+  "registered_cpu_budget_exhausted": true,
+  "new_gpu_steps": 0,
+  "training_updates": 0,
+  "additional_forward_calls": 1260,
+  "summary": {
+    "new_saved_states": {
+      "unchanged_local_plane": {
+        "states": 576,
+        "max_active_q_error_rad": 6.369421813023912e-05,
+        "mean_active_q_error_rad": 2.843842136581697e-07,
+        "max_full_q_error_rad": 0.0007165624163398832,
+        "max_full_v_error": 1.4331248326807824,
+        "within_original_reconstruction_tolerance": 263
+      },
+      "replace_contact_positions_only": {
+        "states": 576,
+        "max_active_q_error_rad": 1.1363037399902964e-08,
+        "mean_active_q_error_rad": 1.5003652756726035e-10,
+        "max_full_q_error_rad": 1.4188097103434716e-08,
+        "max_full_v_error": 2.8376194205828598e-05,
+        "within_original_reconstruction_tolerance": 518
+      },
+      "replace_contact_frames_and_gaps_only": {
+        "states": 576,
+        "max_active_q_error_rad": 6.369421813023912e-05,
+        "mean_active_q_error_rad": 2.842965881778843e-07,
+        "max_full_q_error_rad": 0.0007165624163398832,
+        "max_full_v_error": 1.4331248326807735,
+        "within_original_reconstruction_tolerance": 263
+      },
+      "replace_both": {
+        "states": 576,
+        "max_active_q_error_rad": 3.453649144447013e-09,
+        "mean_active_q_error_rad": 2.7846012835704506e-11,
+        "max_full_q_error_rad": 3.453649144447013e-09,
+        "max_full_v_error": 6.907298496727776e-06,
+        "within_original_reconstruction_tolerance": 519
+      }
+    },
+    "old_critical_fixtures": {
+      "unchanged_local_plane": {
+        "states": 27,
+        "max_active_q_error_rad": 0.0,
+        "mean_active_q_error_rad": 0.0,
+        "max_full_q_error_rad": 0.0,
+        "max_full_v_error": 0.0,
+        "within_original_reconstruction_tolerance": 27
+      },
+      "replace_contact_positions_only": {
+        "states": 27,
+        "max_active_q_error_rad": 0.0,
+        "mean_active_q_error_rad": 0.0,
+        "max_full_q_error_rad": 0.0,
+        "max_full_v_error": 0.0,
+        "within_original_reconstruction_tolerance": 27
+      },
+      "replace_contact_frames_and_gaps_only": {
+        "states": 27,
+        "max_active_q_error_rad": 0.0,
+        "mean_active_q_error_rad": 0.0,
+        "max_full_q_error_rad": 0.0,
+        "max_full_v_error": 0.0,
+        "within_original_reconstruction_tolerance": 27
+      },
+      "replace_both": {
+        "states": 27,
+        "max_active_q_error_rad": 0.0,
+        "mean_active_q_error_rad": 0.0,
+        "max_full_q_error_rad": 0.0,
+        "max_full_v_error": 0.0,
+        "within_original_reconstruction_tolerance": 27
+      }
+    }
+  },
+  "review_sha256": "4340dffd9acd6ba7d4a0341977db83ed6d97a5ba5e866bdb90c673c984430ac7",
+  "intervention_contract_sha256": "00128d02c9ee9a341eecefd1cf9fbb8407a283a328421ea54b3287eb618b0d10",
+  "units": [
+    {
+      "name": "wheelleg-contact-manifold-intervention-v1",
+      "active_state": "inactive",
+      "main_pid": 0,
+      "exit_status": 0
+    },
+    {
+      "name": "wheelleg-contact-manifold-intervention-review-v1",
+      "active_state": "inactive",
+      "main_pid": 0,
+      "exit_status": 0
+    }
+  ],
+  "disposition": "Position transfer substantially reduces finite CPU representation error; full position/frame/gap transfer still not exact for all states. Actual contact fields/parameters remain offline privilege. No GPU/domain/safety/PPO qualification.138 must decide; no further unregistered diagnostic extensions."
+}
