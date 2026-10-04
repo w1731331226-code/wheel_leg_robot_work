@@ -1,0 +1,102 @@
+{
+  "round": 90,
+  "new_goal": "Continue until credible paper-ready material; every5rounds objective review/direction adjustment and duplicate cleanup",
+  "previous_registered_branch": "Failed one-use gate and closed; all old results/baselines preserved",
+  "paper_ready": false,
+  "readiness_requirements": [
+    "A falsifiable claim with literature overlap/contribution boundary resolved",
+    "Correct observable-state/control/actuator/design contract, no unverified global safety claims",
+    "Strong classic and RL references, matched budgets and at least3training seeds",
+    "New independently registered evaluation/pressure/nonregression data, no old-gate selection",
+    "Causal or controlled mechanism evidence for any diagnosis; no association-as-cause",
+    "Methods derivation, complete figures/tables/failures/statistics and reproducible source/data sufficient to draft"
+  ],
+  "initial_direction": "Mechanism-first recovery: test lateral-state/task-observation aliasing and terminal-feedback alignment; preserve VMC/fixed LQR and standard PPO. Do not assume differential superiority or add a new network without evidence",
+  "evidence": {
+    "passed": true,
+    "methods": {
+      "B1": {
+        "summary": {
+          "total": 32,
+          "success_count": 32,
+          "complete": true,
+          "mean_yaw_score_deg": 0.27473146487733296
+        },
+        "mean_maximum_cross_track_m": 0.015661710292988573,
+        "maximum_cross_track_m": 0.05479279160499573,
+        "terrain_missing_cases": 0,
+        "mean_cross_track_missing_m": null,
+        "mean_cross_track_evidence_passed_m": 0.015661710292988573,
+        "mean_episode_return": 16.7211011516407,
+        "irreversible_constraint_breach_cases": 0,
+        "mean_terminal_feedback_delay_s": null
+      },
+      "M3": {
+        "summary": {
+          "total": 32,
+          "success_count": 17,
+          "complete": true,
+          "mean_yaw_score_deg": 1.061564508792662
+        },
+        "mean_maximum_cross_track_m": 0.054707697592675686,
+        "maximum_cross_track_m": 0.11918541043996811,
+        "terrain_missing_cases": 12,
+        "mean_cross_track_missing_m": 0.07520070268462102,
+        "mean_cross_track_evidence_passed_m": 0.04241189453750849,
+        "mean_episode_return": 6.786824926030503,
+        "irreversible_constraint_breach_cases": 4,
+        "mean_terminal_feedback_delay_s": 2.3602499999999997
+      },
+      "B2-V": {
+        "summary": {
+          "total": 32,
+          "success_count": 12,
+          "complete": true,
+          "mean_yaw_score_deg": 1.2532096764897886
+        },
+        "mean_maximum_cross_track_m": 0.0664740594511386,
+        "maximum_cross_track_m": 0.11400339007377625,
+        "terrain_missing_cases": 19,
+        "mean_cross_track_missing_m": 0.07988677683629487,
+        "mean_cross_track_evidence_passed_m": 0.04687085711898712,
+        "mean_episode_return": 3.600707523587761,
+        "irreversible_constraint_breach_cases": 1,
+        "mean_terminal_feedback_delay_s": 1.4329999999999998
+      },
+      "B2": {
+        "summary": {
+          "total": 32,
+          "success_count": 18,
+          "complete": true,
+          "mean_yaw_score_deg": 0.8729061358833146
+        },
+        "mean_maximum_cross_track_m": 0.04998639585392084,
+        "maximum_cross_track_m": 0.11771783977746964,
+        "terrain_missing_cases": 11,
+        "mean_cross_track_missing_m": 0.08172200552441856,
+        "mean_cross_track_evidence_passed_m": 0.033362981264612505,
+        "mean_episode_return": 7.6682097510208,
+        "irreversible_constraint_breach_cases": 3,
+        "mean_terminal_feedback_delay_s": 1.7336666666666665
+      }
+    },
+    "information_contract": "Physical observation includes yaw and lateral velocity but no absolute lateral position; own6requests are current, packet32delayed",
+    "hypotheses": [
+      "H1: lateral-state/trajectory objective mismatch contributes to road-contact failures; test state aliasing and matched public interventions before training",
+      "H2: delayed terminal feedback for historical constraint violations contributes to credit assignment; compare same-prefix feedback interventions, not infer causality from GAE algebra"
+    ],
+    "inference": "Association in heterogeneous public cases; body cross-track proxy is not exact wheel/slab overlap and50Hz breach timing is bracketed. No overfitting/reward root cause or paper novelty established.",
+    "additional_public_diagnostic_episodes": 128,
+    "training_updates": 0,
+    "old_gate_or_final_replayed": false,
+    "verifier_sha256": "87b47769b5a651c93e2c614d19a2414d88d177a9e7fdc63f9380b97c0014cdad"
+  },
+  "decision": "Next perform public state-aliasing and matched interventions; only a supported mechanism and attainable strong-reference joint target justify a new registered training protocol",
+  "literature_boundary": "Existing action-space and constrained-residual work covers dimensionality/mapping/initialization/bounds; simplePPO+VMC or adding lateral state is not by itself novelty",
+  "cleanup_files": 5,
+  "cleanup_bytes": 1094,
+  "training_updates": 0,
+  "old_gate_or_final_replayed": false,
+  "next_deep_review_round": 95,
+  "created_utc": "2026-10-04T03:11:51.501397+00:00"
+}
