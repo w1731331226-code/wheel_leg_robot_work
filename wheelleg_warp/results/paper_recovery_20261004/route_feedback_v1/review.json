@@ -1,0 +1,176 @@
+{
+  "verified": true,
+  "episodes": 216,
+  "jobs": 6,
+  "unique_development_cases": 72,
+  "fixed_law_continue_gate": false,
+  "preservation": {
+    "regular": false,
+    "controlled": true
+  },
+  "lost_B1_successes": {
+    "regular": [
+      {
+        "seed": 4500029,
+        "base_peak_deg": [
+          1.2506400315699988,
+          0.5623668168575708,
+          4.998063468283573
+        ],
+        "correct_peak_deg": [
+          1.2504263400289128,
+          0.564739533171157,
+          5.351859588552714
+        ],
+        "correct_reason": "completed"
+      }
+    ],
+    "controlled": []
+  },
+  "controlled_height_groups": {
+    "B1": {
+      "0.115": {
+        "success": 4,
+        "total": 8
+      },
+      "0.16": {
+        "success": 4,
+        "total": 8
+      },
+      "0.24": {
+        "success": 8,
+        "total": 8
+      },
+      "0.3": {
+        "success": 8,
+        "total": 8
+      },
+      "0.38": {
+        "success": 4,
+        "total": 8
+      }
+    },
+    "correct": {
+      "0.115": {
+        "success": 4,
+        "total": 8
+      },
+      "0.16": {
+        "success": 4,
+        "total": 8
+      },
+      "0.24": {
+        "success": 8,
+        "total": 8
+      },
+      "0.3": {
+        "success": 8,
+        "total": 8
+      },
+      "0.38": {
+        "success": 4,
+        "total": 8
+      }
+    },
+    "reverse": {
+      "0.115": {
+        "success": 4,
+        "total": 8
+      },
+      "0.16": {
+        "success": 4,
+        "total": 8
+      },
+      "0.24": {
+        "success": 8,
+        "total": 8
+      },
+      "0.3": {
+        "success": 8,
+        "total": 8
+      },
+      "0.38": {
+        "success": 4,
+        "total": 8
+      }
+    }
+  },
+  "results": {
+    "regular_B1": {
+      "summary": {
+        "total": 32,
+        "success_count": 32,
+        "complete": true,
+        "mean_yaw_score_deg": 0.24241048605424992
+      },
+      "physical": 32,
+      "design": 32,
+      "mean_case_max_abs_y_m": 0.01546160452926415,
+      "max_reference_rad": 0.0
+    },
+    "regular_correct": {
+      "summary": {
+        "total": 32,
+        "success_count": 31,
+        "complete": true,
+        "mean_yaw_score_deg": 0.21593827763293194
+      },
+      "physical": 32,
+      "design": 32,
+      "mean_case_max_abs_y_m": 0.00972791406820761,
+      "max_reference_rad": 0.03122451276546295
+    },
+    "regular_reverse": {
+      "summary": {
+        "total": 32,
+        "success_count": 32,
+        "complete": true,
+        "mean_yaw_score_deg": 0.30936014769364933
+      },
+      "physical": 32,
+      "design": 32,
+      "mean_case_max_abs_y_m": 0.021544329822063446,
+      "max_reference_rad": 0.02209563503428721
+    },
+    "controlled_B1": {
+      "summary": {
+        "total": 40,
+        "success_count": 28,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9654747051792455
+      },
+      "physical": 40,
+      "design": 40,
+      "mean_case_max_abs_y_m": 0.041629580070730296,
+      "max_reference_rad": 0.0
+    },
+    "controlled_correct": {
+      "summary": {
+        "total": 40,
+        "success_count": 28,
+        "complete": true,
+        "mean_yaw_score_deg": 0.9234363572339344
+      },
+      "physical": 40,
+      "design": 40,
+      "mean_case_max_abs_y_m": 0.03989876820705831,
+      "max_reference_rad": 0.03837834449002175
+    },
+    "controlled_reverse": {
+      "summary": {
+        "total": 40,
+        "success_count": 28,
+        "complete": true,
+        "mean_yaw_score_deg": 1.0135282265051178
+      },
+      "physical": 40,
+      "design": 40,
+      "mean_case_max_abs_y_m": 0.04340042665135115,
+      "max_reference_rad": 0.04127444662465095
+    }
+  },
+  "result_sha256": "cdd1ccaef7a8d821b7406e60cc15f266aa6e13fdeb48bcf6ddaf576366f701d7",
+  "registration_sha256": "a86a097961e5a450fd64dea7566257fb0a0ccfb6be0f1ec0c70ceb151112ddb6",
+  "reviewer_sha256": "010664632a912bd3215ef41875b7567e21b11b5d47865fe6c8f564bcffd98e46",
+  "scope": "Full command equation replay, finite trace/y metrics, case identity, actual physical/design metrics, original success/yaw summary and preregistered gate; not a safety proof or learning advantage."
+}
