@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第129轮公共参数域有限包络检查（2026-10-05，goal active）：
+
+先登记mass7–7.5、左右mu .6–1、drive差±.03（原声明训练域），16角点+seed129001生成8固定内部点，在27旧事件状态/current理想接触描述下做648预测、216actualgeometry oracle对照，warm0、0训练/0新GPU。角点全算，预测不读取true param选择角点；内部标签仅offline验证。数值reserve为原1.4位置的一float32 ULP，属于跨算术比较，不是控制门放宽或接触模型鲁棒证书。
+
+独立review_contact_uncertainty.py重算全部864状态命令/域/参数生成与输出/SHA：216内部预测均raw corner覆盖，216actualgeometry oracle均ULP-reserved corner覆盖，27原GPU全覆盖，contact与actualgeometry同内部param difference0，max包络宽2.55202e−6rad。零漏包只限固定8内部点和同27state，不证明连续域极值在corners、更不证明递归状态安全或独立场景泛化。Disposition不准部署/新PPO。
+
+下一130集中深审应明确contact-informed区间建模是否值得继续，独立state/接触模式与实际测量契约如何验证，能否在所需输入可得/不使用future map/unknown true parameters前提推共同NomActor工作域层；经验corner极值不偷变数学上界。原全部控制/方法门与失败保持，不扩已失败训练；确认冗余清理按约执行。
+
 第128轮当前接触表述条件测试（2026-10-05，goal active）：
 
 先登记27CPU步（既有27保存状态），以actual collision仅offline模拟当前触觉：轮侧别/接触法向/有符号间隙，不保留障碍标签/未来geometry。预测器构造接口仅该列表+声明的ideal current q17/v16/ctrl；Nom7kg/.8/drive0/warm0，ellipse支撑函数按当前normal/gap建局部plane，explicit pair仅相应轮，原floor/bump禁碰，避免高轮无限plane影响低轮。descriptor是新增理想测量假设，不等于旧Actor39能取得；如果未来用于控制，必须同样供给全部方法，不称硬件触觉认证。

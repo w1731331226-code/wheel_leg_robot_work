@@ -1,0 +1,188 @@
+{
+  "version": "contact-parameter-envelope-v1",
+  "states": 27,
+  "corners": [
+    [
+      7.0,
+      0.6,
+      0.6,
+      -0.03
+    ],
+    [
+      7.0,
+      0.6,
+      0.6,
+      0.03
+    ],
+    [
+      7.0,
+      0.6,
+      1.0,
+      -0.03
+    ],
+    [
+      7.0,
+      0.6,
+      1.0,
+      0.03
+    ],
+    [
+      7.0,
+      1.0,
+      0.6,
+      -0.03
+    ],
+    [
+      7.0,
+      1.0,
+      0.6,
+      0.03
+    ],
+    [
+      7.0,
+      1.0,
+      1.0,
+      -0.03
+    ],
+    [
+      7.0,
+      1.0,
+      1.0,
+      0.03
+    ],
+    [
+      7.5,
+      0.6,
+      0.6,
+      -0.03
+    ],
+    [
+      7.5,
+      0.6,
+      0.6,
+      0.03
+    ],
+    [
+      7.5,
+      0.6,
+      1.0,
+      -0.03
+    ],
+    [
+      7.5,
+      0.6,
+      1.0,
+      0.03
+    ],
+    [
+      7.5,
+      1.0,
+      0.6,
+      -0.03
+    ],
+    [
+      7.5,
+      1.0,
+      0.6,
+      0.03
+    ],
+    [
+      7.5,
+      1.0,
+      1.0,
+      -0.03
+    ],
+    [
+      7.5,
+      1.0,
+      1.0,
+      0.03
+    ]
+  ],
+  "interiors": [
+    [
+      7.298999375274805,
+      0.7210285834288446,
+      0.8355374205941105,
+      -0.02641430961320519
+    ],
+    [
+      7.247698875449902,
+      0.8724947376534002,
+      0.7525582341849719,
+      0.018058548477578887
+    ],
+    [
+      7.378908573838987,
+      0.9579555101432728,
+      0.7617590432351953,
+      0.024940500595565865
+    ],
+    [
+      7.112401778943943,
+      0.6979442788515721,
+      0.7836635589442852,
+      0.017803150786043408
+    ],
+    [
+      7.358986843404093,
+      0.8030917673569931,
+      0.9567554772505289,
+      -0.01696590423998396
+    ],
+    [
+      7.433096949862949,
+      0.6408883440014401,
+      0.8932800719951652,
+      0.005217693606541354
+    ],
+    [
+      7.114569428192354,
+      0.7550932013539975,
+      0.8588507049153968,
+      0.004196781378642246
+    ],
+    [
+      7.379737901725933,
+      0.6274466214525933,
+      0.7908636574253824,
+      0.012445064933789503
+    ]
+  ],
+  "interior_seed": 129001,
+  "parameter_order": [
+    "mass",
+    "mu_left",
+    "mu_right",
+    "drive_difference"
+  ],
+  "bounds": [
+    [
+      7.0,
+      7.5
+    ],
+    [
+      0.6,
+      1.0
+    ],
+    [
+      0.6,
+      1.0
+    ],
+    [
+      -0.03,
+      0.03
+    ]
+  ],
+  "numerical_reserve_rad": 1.1920928955078125e-07,
+  "cpu_model_steps": 648,
+  "cpu_oracle_validation_steps": 216,
+  "training_updates": 0,
+  "inputs": "Same declared ideal fullstate/current normal-gap/known command. Prediction consumes all public corners, never the actual parameter value; interior parameter labels supplied only to offline verification models.",
+  "corner_rule": "Take component-wise min/max of16 CPU corner next-q values; reserve one positionULP for separate GPU arithmetic comparison. No enlargement based on test scores.",
+  "validation": "8 fixed interior parameter vectors before any score, same27 states, compare current-contact model to actual geometry oracle at same interior parameters, plus observedGPU next state. Every miss retained.",
+  "limits": "Existing states are not independent state holdout. Corner coverage of these interior points is empirical, not a continuum/recursive robustness certificate.",
+  "contact_review_sha256": "319478eb4d8ccdb059a4f367aebae928178c0190587af3f2ecf4f55f3d3605a7",
+  "source_sha256": "b085d29bad33ad0e9bbcb8adc4981df04b7674d3bca794d7964061c34ce48632",
+  "old_gate_or_final_used": false
+}
