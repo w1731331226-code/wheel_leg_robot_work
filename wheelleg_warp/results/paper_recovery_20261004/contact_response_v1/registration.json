@@ -1,0 +1,26 @@
+{
+  "version": "current-contact-response-v1",
+  "states": 27,
+  "cpu_steps": 27,
+  "training_updates": 0,
+  "measurement": "Ideal current wheel/world-support contact side, outward normal and signed gap only. Emulated using actual scene collision geometry offline; no future shape/terrain map passed to predictor.",
+  "inputs": "Same ideal current full q17/v16/command as prior contract, plus currentcontact descriptor. This is an additional tactile/state-estimation assumption, absent from old actor39; any future control comparison must give it equally to every method.",
+  "fixed_design": {
+    "mass_kg": 7.0,
+    "friction": 0.8,
+    "drive_difference": 0.0,
+    "warmstart": 0.0,
+    "solver_iterations": 100,
+    "timestep_s": 0.0005
+  },
+  "construction": "Infinite plane for each current normal/gap, collision explicitly paired only with its wheel; other floor/bump collision disabled. No descriptor means no wheel-support assumption.",
+  "maximum_q_error_budget_rad": 1.1920928955078125e-07,
+  "false_safe_allowed": 0,
+  "scope": "Existing diagnostic states, no independent generalization or deployment admission without further held-out evidence.",
+  "source_sha256": {
+    "wheelleg_warp/check_contact_response.py": "355857b8845c557c6b09542226728195825ebc68126e114b671345b744ed24a1",
+    "wheelleg_warp/native/models.py": "59420b688a25e63fb8e0e644f0702025836bea0ed90377e452bcbd919c7216eb"
+  },
+  "response_review_sha256": "2b0f1aded499bbe4b4d7758e5bb93b2c8d5b386b1a952dbab788907a594dab32",
+  "old_gate_or_final_used": false
+}

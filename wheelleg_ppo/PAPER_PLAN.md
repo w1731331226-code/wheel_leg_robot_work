@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第128轮当前接触表述条件测试（2026-10-05，goal active）：
+
+先登记27CPU步（既有27保存状态），以actual collision仅offline模拟当前触觉：轮侧别/接触法向/有符号间隙，不保留障碍标签/未来geometry。预测器构造接口仅该列表+声明的ideal current q17/v16/ctrl；Nom7kg/.8/drive0/warm0，ellipse支撑函数按当前normal/gap建局部plane，explicit pair仅相应轮，原floor/bump禁碰，避免高轮无限plane影响低轮。descriptor是新增理想测量假设，不等于旧Actor39能取得；如果未来用于控制，必须同样供给全部方法，不称硬件触觉认证。
+
+独立review_contact_response.py重建descriptor、nom物理参数、pairs/碰撞隔离、原27预测和SHA；与actual-geometry/fixedparameters一步结果逐值相同，difference0。这27当前状态中不必完整未来map即可复现几何作用，但不能推广至未观测接触切换/曲率。误差max8.8887e−7rad、false-safe0；原ULP=1.19209e−7预算仍失败，development_gate=False。无学习/新GPU，只有27CPU影子步，原1.4门不豁免，disposition拒绝部署或扩训。
+
+下一129有限分析公共未知mass/mu/drive域的contact-informed响应区间，预注册corner以及独立interior参数测试，不传真实参数为预测输入，也不把corner/经验误差直接当连续域鲁棒上界；独立状态留出/CPU-GPU和接触切换仍须验证后再进入共同NomActor可行层。新goal继续，130深审清理，原模型/数据/失败/CPU/封存均保持。
+
 第127轮预测偏差全因素诊断（2026-10-05，goal active）：
 
 事前27状态×2³组合注册216CPU步：actual geometry或state-derived lower-flat、actual grouped mass/mu/drive或fixed7/.8/0、actual warm或0；全部组合和状态纳入，actual只是offline诊断真值，不给Actor/控制器，也不作为部署优势。review_prediction_factors.py重建全部输出/因子/原门baseline及先前oracle，hash通过，0学习/0新GPU。
