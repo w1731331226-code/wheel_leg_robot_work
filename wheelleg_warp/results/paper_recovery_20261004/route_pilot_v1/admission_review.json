@@ -1,0 +1,37 @@
+{
+  "verified": true,
+  "engineering_training_steps": 4000,
+  "classical_episodes": 408,
+  "loaded": {
+    "M3-zero": {
+      "policy_steps": 1000,
+      "epochs": 20,
+      "adam": 40,
+      "dimensions": 3
+    },
+    "M3-route": {
+      "policy_steps": 1000,
+      "epochs": 20,
+      "adam": 40,
+      "dimensions": 3
+    },
+    "V6-route": {
+      "policy_steps": 1000,
+      "epochs": 20,
+      "adam": 40,
+      "dimensions": 6
+    },
+    "L2-route": {
+      "policy_steps": 1000,
+      "epochs": 20,
+      "adam": 40,
+      "dimensions": 2
+    }
+  },
+  "controlled_success_headroom_pp": 30.0,
+  "proposal_sha256": "7c2faf18a3b720548a7be909d656a0037779c957b05bd07b9bff12fc91903334",
+  "engineering_sha256": "bc5e19a7403206f22f397007fb062f5af16d4056c3edd7deca8045be196ffa08",
+  "classical_sha256": "29bb7928d80ecce1205339c5ea04afd3bedc623cd4c973998c67eda9f4eae1c9",
+  "reviewer_sha256": "dcd662d55106b5f246b68c385a2dc90072be0813a078f68be3e09a15896e5b5a",
+  "scope": "Source, actual dimension/checkpoints/CUDA Adam/normalization, initial pairing, static effort accounting and classical task/headroom audited. No claim that learned methods will pass."
+}

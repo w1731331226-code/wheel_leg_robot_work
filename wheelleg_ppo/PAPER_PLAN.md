@@ -1,5 +1,17 @@
 # 双轮腿机器人PPO论文方案
 
+第118轮四臂三seed新学习已启动（2026-10-05，goal active）：
+
+已注册route-action-pilot-v1.1：M3-zero/M3-route同39输入架构的零/路线信息对照，V6-route同信息六维虚拟残差，L2-route真正两输出腿F/H从零学习（原diff3接口补wheel0，非旧三输出策略mask）。固定seed1609/1610/1611、每臂100环境连续200k，总2.4M；原PPO、原100世界/stage/seed、原名义7kg/物理设计/任务门保持，本机制预试验不同时扩地形/改奖励。末200k唯一选模点，所有12run均纳入，不因首seed分数改预算或队列。
+
+发展评价为新4700000..95 regular96、已公开controlled40，各末模型一次；三固定经典B0/B1/B1-route各两面板，共408经典+1632学习=2040评价，仍属发展而非独立测试。信息门为M3-route−M3-zero常规均值≥5pp、至少2正seed、controlled及平均物理/设计非退化；该门通过不自动扩训。正式扩展候选M3-route/L2-route需各seed保留三经典每个成功/物理/设计案例、两面板轨迹完整、controlled成功均值较最强经典≥5pp且regular Jψ≤B1+.05°；V6/zero对照独立报告。动作维数、rank/covariance及执行投影差异不能单独归因于物理先验；L2继承原两腿sigma，不制造完整分布等价。
+
+工程4×1000CUDA steps、各20epochs/40Adam及500/1000post-update checkpoint过，物理/RNG/路线状态保存不变，L2原wheel请求/Actor轮残差每步严格0；独立重新加载8工件核source/维数/Adam/归一化/计数和初始配对。888×256旧v8正确状态库静态执行尺度另核，M3-zero/route相同，L2轮RMS0且lambda均值1、M3 .918/V6 .938，明确参考状态诊断不是实际训练分布/全协方差相同。初版误指27轮状态库，hash保护在任何model/学习前拒绝（0消费）；源码/proposal/错误日志保留，显式v1.1仅修正到29轮与source记录，不改科学条件或预算。
+
+新经典结果regular成功B0/B1/B1-route=93/91/92，Jψ .454047/.351284/.310922°；controlled各28/40，Jψ1.183880/.966481/.922205°，全408完整且物理/设计通过。controlled增量数值空间30pp，5pp门不是上限矛盾，但不证明候选能达到；regular不设胜经典5pp门。工程/初始尺度/经典/独立admission的SHA已冻结trainer_contract。
+
+正式GPU队列已由wheelleg-route-pilot-training-v1-1.service启动，独占.git/project-write.lock；本轮快照9/12完整、确认1.8M，M3-route/1611 pending、其partial消费见live progress。所有完整run为200k/400epoch/8000Adam、连续无强制物理或路线重置。首1609四臂regular29/2/54/90、controlled14/2/23/26，physical均96/40而设计有退化；不能以单seed判整体或更换主门。继续同unit到全12及独立原门核验，不静默重启、不挑模型；5seed/独立组合OOD/敏感性仍需新门，120轮方向深审清理不变。
+
 第117轮固定路径参考实测与学习问题收敛（2026-10-05，goal active）：
 
 由名义小角度y_dot≈v*psi、忽略惯性的kd*psi_dot+kp*psi≈kp*psi_ref取tau=(2+B1kd)/(.4+B1kp)=2.875s、lookahead=abs(command)*tau；psi_ref=clip(-arm*sign(command)*atan2(累计y,lookahead),±3°)，命令≤.05时0。B1原未裁剪PD加(.4+B1kp)*psi_ref后统一原±.3Nm请求限幅，经原过滤/投影执行。全部用同39包，真y仅发令后评价；名义近似不含接触/惯性/饱和，不当稳定/安全证明。参考3°不保证实测yaw≤5°。一次固定公式，不扫增益；原B1等价、双向/镜像/界自检过。
