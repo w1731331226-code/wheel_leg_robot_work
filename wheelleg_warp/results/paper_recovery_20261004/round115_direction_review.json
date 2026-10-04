@@ -107,9 +107,12 @@
     ],
     "precision_failure": {
       "initial_reviewer_snapshot_sha256": "b476443ce7ac14f7dd613ca760bfd749efec1e34ad31e47b9c1f27b32cdf2a78",
-      "log_sha256": "3b2589bf94dc198345be9ab7c7464beef717f5f4131d9d0e38698e4bcf6c7482",
       "issue": "Initial offline float64 sin/add reconstruction differed from B1 float32 packet arithmetic by about1e-10m.",
-      "resolution": "Reconstruct the actual float32/float64 input arithmetic; original1e-12 replay tolerance and5mm engineering budget unchanged; no physics rerun."
+      "resolution": "Reconstruct the actual float32/float64 input arithmetic; original1e-12 replay tolerance and5mm engineering budget unchanged; no physics rerun.",
+      "log_path": "wheelleg_warp/results/paper_recovery_20261004/packet_odometry_v1/review_initial_precision.log.gz",
+      "log_sha256_uncompressed": "3b2589bf94dc198345be9ab7c7464beef717f5f4131d9d0e38698e4bcf6c7482",
+      "log_archive_sha256": "5e554f209e330297b65074fb6c070da3944c53343ba5abcc04c06afab8f460b7",
+      "archive_reason": "Preserve byte-exact original stderr including trailing whitespace in lossless gzip; no diagnostic text removed."
     }
   },
   "next_experiments": [
