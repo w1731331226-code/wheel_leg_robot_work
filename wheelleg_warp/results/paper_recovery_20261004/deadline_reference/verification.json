@@ -1,0 +1,78 @@
+{
+  "verified": true,
+  "episodes": 36,
+  "groups": {
+    "0": {
+      "total": 12,
+      "success_count": 4,
+      "complete": true,
+      "mean_yaw_score_deg": 0.11511220808989664,
+      "by_direction": {
+        "1": {
+          "total": 6,
+          "successes": 2
+        },
+        "-1": {
+          "total": 6,
+          "successes": 2
+        }
+      },
+      "maximum_actual_yaw_peak_deg": 1.1510797537135236
+    },
+    "1": {
+      "total": 12,
+      "success_count": 8,
+      "complete": true,
+      "mean_yaw_score_deg": 1.5393001244390085,
+      "by_direction": {
+        "1": {
+          "total": 6,
+          "successes": 2
+        },
+        "-1": {
+          "total": 6,
+          "successes": 6
+        }
+      },
+      "maximum_actual_yaw_peak_deg": 4.425271521274291
+    },
+    "-1": {
+      "total": 12,
+      "success_count": 4,
+      "complete": true,
+      "mean_yaw_score_deg": 1.4176919962376608,
+      "by_direction": {
+        "1": {
+          "total": 6,
+          "successes": 2
+        },
+        "-1": {
+          "total": 6,
+          "successes": 2
+        }
+      },
+      "maximum_actual_yaw_peak_deg": 3.5667708348117393
+    }
+  },
+  "prior_geometry_probe": [
+    {
+      "direction": 1,
+      "initial_wheel_minus_body_x_m": 0.07500009819536751
+    },
+    {
+      "direction": -1,
+      "initial_wheel_minus_body_x_m": 0.07500009819536751
+    }
+  ],
+  "prior_trace_sha256": "67708dec2ff63e0242332da1beb0afef6a2eb99cd44a5db50a9e956f55716ad4",
+  "decision": "Partial constructed task restoration only: correct reference reverse6/6, forward2/6. Original B1 and wrong sign each4/12. No general controller promotion or yaw-score superiority.",
+  "next": "Audit body-to-wheel longitudinal offset and nominal yaw feedback deadband before changing the deadline; do not sweep gains or weaken original success gates.",
+  "limits": "Six geometry/direction/offset conditions per arm repeated twice, not12 independent random cases; ideal odometry and public geometry; no new RL training or independent evaluation.",
+  "verifier_sha256": "a46342653b4c2d31f15a4f74ff922d2c3fc8548b185a18b5de5d65f628edc936",
+  "artifact_sha256": {
+    "preregistration.json": "51a133e4ca06e6afd8c9a9c3e75c3be8dfb818b81168031e71574ff2267c0fc2",
+    "result.json": "a16a1f5d311aee820481f28e016d11cc9841f0e5c709c60a78a000ccb1bf0075",
+    "trace.npz": "453e9e20f513fa5598f65d8f3ddabb871b430937437bfe70718a518db3a47038",
+    "reference_trace.npz": "7ee7f483448d51a01f7025a51e2f5a874a3202299b95fadcc940894317a72229"
+  }
+}
