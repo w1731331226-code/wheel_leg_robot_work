@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/review_route_pilot.py", line 135, in <module>
+    parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True);run(parser.parse_args().output)
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/review_route_pilot.py", line 85, in run
+    table.append(dict(seed=seed,arm=arm,panel=p,total=d['summary']['total'],success=d['summary']['success_count'],yaw_score_deg=d['summary']['mean_yaw_score_deg'],physical=d['physical'],design=d['design'],**f))
+TypeError: dict() got multiple values for keyword argument 'design'

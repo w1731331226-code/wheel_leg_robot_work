@@ -1,0 +1,684 @@
+{
+  "verified": true,
+  "training_steps": 2400000,
+  "training_episodes": 5772,
+  "checkpoints_loaded": 120,
+  "evaluation_episodes": 2040,
+  "paired_information_effect": [
+    {
+      "seed": 1609,
+      "regular_success_change": -27
+    },
+    {
+      "seed": 1610,
+      "regular_success_change": 14
+    },
+    {
+      "seed": 1611,
+      "regular_success_change": -37
+    }
+  ],
+  "mean_regular_success_gain": -0.1736111111111111,
+  "information_gate": false,
+  "formal_expansion": {
+    "M3-route": {
+      "preserved_all_classical_passes": false,
+      "preservation_details": {
+        "1609/regular/B0": false,
+        "1609/regular/B1": false,
+        "1609/regular/B1-route": false,
+        "1609/controlled/B0": false,
+        "1609/controlled/B1": false,
+        "1609/controlled/B1-route": false,
+        "1610/regular/B0": false,
+        "1610/regular/B1": false,
+        "1610/regular/B1-route": false,
+        "1610/controlled/B0": false,
+        "1610/controlled/B1": false,
+        "1610/controlled/B1-route": false,
+        "1611/regular/B0": false,
+        "1611/regular/B1": false,
+        "1611/regular/B1-route": false,
+        "1611/controlled/B0": false,
+        "1611/controlled/B1": false,
+        "1611/controlled/B1-route": false
+      },
+      "complete": true,
+      "regular_yaw_nondegradation": false,
+      "controlled_success_gain": -0.45833333333333337,
+      "gate": false
+    },
+    "L2-route": {
+      "preserved_all_classical_passes": false,
+      "preservation_details": {
+        "1609/regular/B0": false,
+        "1609/regular/B1": false,
+        "1609/regular/B1-route": false,
+        "1609/controlled/B0": false,
+        "1609/controlled/B1": false,
+        "1609/controlled/B1-route": false,
+        "1610/regular/B0": false,
+        "1610/regular/B1": false,
+        "1610/regular/B1-route": false,
+        "1610/controlled/B0": false,
+        "1610/controlled/B1": false,
+        "1610/controlled/B1-route": false,
+        "1611/regular/B0": false,
+        "1611/regular/B1": false,
+        "1611/regular/B1-route": false,
+        "1611/controlled/B0": false,
+        "1611/controlled/B1": false,
+        "1611/controlled/B1-route": false
+      },
+      "complete": true,
+      "regular_yaw_nondegradation": false,
+      "controlled_success_gain": -0.025,
+      "gate": false
+    }
+  },
+  "aggregate": {
+    "M3-zero": {
+      "regular": {
+        "success": 88,
+        "total": 288,
+        "physical": 288,
+        "design": 281
+      },
+      "controlled": {
+        "success": 41,
+        "total": 120,
+        "physical": 120,
+        "design": 110
+      }
+    },
+    "M3-route": {
+      "regular": {
+        "success": 38,
+        "total": 288,
+        "physical": 288,
+        "design": 278
+      },
+      "controlled": {
+        "success": 29,
+        "total": 120,
+        "physical": 120,
+        "design": 108
+      }
+    },
+    "V6-route": {
+      "regular": {
+        "success": 191,
+        "total": 288,
+        "physical": 288,
+        "design": 284
+      },
+      "controlled": {
+        "success": 76,
+        "total": 120,
+        "physical": 120,
+        "design": 118
+      }
+    },
+    "L2-route": {
+      "regular": {
+        "success": 275,
+        "total": 288,
+        "physical": 288,
+        "design": 281
+      },
+      "controlled": {
+        "success": 81,
+        "total": 120,
+        "physical": 120,
+        "design": 112
+      }
+    }
+  },
+  "failure_patterns": {
+    "B0/regular": {
+      "contact": 0,
+      "yaw": 3,
+      "design_failed": 0,
+      "noncompleted": 0
+    },
+    "B0/controlled": {
+      "contact": 0,
+      "yaw": 10,
+      "design_failed": 0,
+      "noncompleted": 0
+    },
+    "B1/regular": {
+      "contact": 0,
+      "yaw": 5,
+      "design_failed": 0,
+      "noncompleted": 0
+    },
+    "B1/controlled": {
+      "contact": 0,
+      "yaw": 10,
+      "design_failed": 0,
+      "noncompleted": 0
+    },
+    "B1-route/regular": {
+      "contact": 0,
+      "yaw": 4,
+      "design_failed": 0,
+      "noncompleted": 0
+    },
+    "B1-route/controlled": {
+      "contact": 0,
+      "yaw": 10,
+      "design_failed": 0,
+      "noncompleted": 0
+    },
+    "M3-zero/1609/regular": {
+      "contact": 65,
+      "yaw": 6,
+      "design_failed": 3,
+      "noncompleted": 0
+    },
+    "M3-zero/1609/controlled": {
+      "contact": 20,
+      "yaw": 8,
+      "design_failed": 4,
+      "noncompleted": 0
+    },
+    "M3-route/1609/regular": {
+      "contact": 92,
+      "yaw": 4,
+      "design_failed": 3,
+      "noncompleted": 0
+    },
+    "M3-route/1609/controlled": {
+      "contact": 38,
+      "yaw": 0,
+      "design_failed": 4,
+      "noncompleted": 0
+    },
+    "V6-route/1609/regular": {
+      "contact": 36,
+      "yaw": 4,
+      "design_failed": 2,
+      "noncompleted": 0
+    },
+    "V6-route/1609/controlled": {
+      "contact": 6,
+      "yaw": 9,
+      "design_failed": 2,
+      "noncompleted": 0
+    },
+    "L2-route/1609/regular": {
+      "contact": 0,
+      "yaw": 4,
+      "design_failed": 4,
+      "noncompleted": 0
+    },
+    "L2-route/1609/controlled": {
+      "contact": 0,
+      "yaw": 13,
+      "design_failed": 3,
+      "noncompleted": 0
+    },
+    "M3-zero/1610/regular": {
+      "contact": 76,
+      "yaw": 24,
+      "design_failed": 0,
+      "noncompleted": 0
+    },
+    "M3-zero/1610/controlled": {
+      "contact": 22,
+      "yaw": 13,
+      "design_failed": 2,
+      "noncompleted": 0
+    },
+    "M3-route/1610/regular": {
+      "contact": 62,
+      "yaw": 3,
+      "design_failed": 4,
+      "noncompleted": 0
+    },
+    "M3-route/1610/controlled": {
+      "contact": 8,
+      "yaw": 7,
+      "design_failed": 4,
+      "noncompleted": 0
+    },
+    "V6-route/1610/regular": {
+      "contact": 17,
+      "yaw": 4,
+      "design_failed": 1,
+      "noncompleted": 0
+    },
+    "V6-route/1610/controlled": {
+      "contact": 2,
+      "yaw": 10,
+      "design_failed": 0,
+      "noncompleted": 0
+    },
+    "L2-route/1610/regular": {
+      "contact": 0,
+      "yaw": 3,
+      "design_failed": 1,
+      "noncompleted": 0
+    },
+    "L2-route/1610/controlled": {
+      "contact": 0,
+      "yaw": 10,
+      "design_failed": 4,
+      "noncompleted": 0
+    },
+    "M3-zero/1611/regular": {
+      "contact": 48,
+      "yaw": 17,
+      "design_failed": 4,
+      "noncompleted": 0
+    },
+    "M3-zero/1611/controlled": {
+      "contact": 20,
+      "yaw": 9,
+      "design_failed": 4,
+      "noncompleted": 0
+    },
+    "M3-route/1611/regular": {
+      "contact": 90,
+      "yaw": 12,
+      "design_failed": 3,
+      "noncompleted": 0
+    },
+    "M3-route/1611/controlled": {
+      "contact": 36,
+      "yaw": 5,
+      "design_failed": 4,
+      "noncompleted": 0
+    },
+    "V6-route/1611/regular": {
+      "contact": 29,
+      "yaw": 4,
+      "design_failed": 1,
+      "noncompleted": 0
+    },
+    "V6-route/1611/controlled": {
+      "contact": 0,
+      "yaw": 13,
+      "design_failed": 0,
+      "noncompleted": 0
+    },
+    "L2-route/1611/regular": {
+      "contact": 0,
+      "yaw": 2,
+      "design_failed": 2,
+      "noncompleted": 0
+    },
+    "L2-route/1611/controlled": {
+      "contact": 0,
+      "yaw": 11,
+      "design_failed": 1,
+      "noncompleted": 0
+    }
+  },
+  "case_swaps": {
+    "1609/regular": {
+      "lost_success": [
+        4700001,
+        4700004,
+        4700008,
+        4700009,
+        4700012,
+        4700017,
+        4700019,
+        4700022,
+        4700025,
+        4700027,
+        4700028,
+        4700029,
+        4700033,
+        4700038,
+        4700042,
+        4700044,
+        4700051,
+        4700053,
+        4700055,
+        4700060,
+        4700063,
+        4700065,
+        4700070,
+        4700071,
+        4700073,
+        4700077,
+        4700078
+      ],
+      "gained_success": [],
+      "new_design_failures": []
+    },
+    "1609/controlled": {
+      "lost_success": [
+        4600020,
+        4600021,
+        4600022,
+        4600023,
+        4600024,
+        4600025,
+        4600026,
+        4600028,
+        4600030,
+        4600032,
+        4600034,
+        4600036,
+        4600038
+      ],
+      "gained_success": [
+        4600029
+      ],
+      "new_design_failures": []
+    },
+    "1610/regular": {
+      "lost_success": [
+        4700014,
+        4700018,
+        4700026,
+        4700029,
+        4700039,
+        4700064,
+        4700069,
+        4700074,
+        4700082,
+        4700088,
+        4700089,
+        4700090,
+        4700094
+      ],
+      "gained_success": [
+        4700003,
+        4700010,
+        4700015,
+        4700022,
+        4700027,
+        4700028,
+        4700032,
+        4700033,
+        4700035,
+        4700036,
+        4700037,
+        4700038,
+        4700042,
+        4700049,
+        4700051,
+        4700056,
+        4700058,
+        4700060,
+        4700061,
+        4700063,
+        4700065,
+        4700072,
+        4700078,
+        4700081,
+        4700085,
+        4700091,
+        4700093
+      ],
+      "new_design_failures": [
+        4700000,
+        4700030,
+        4700064,
+        4700080
+      ]
+    },
+    "1610/controlled": {
+      "lost_success": [
+        4600000,
+        4600002,
+        4600024
+      ],
+      "gained_success": [
+        4600004,
+        4600006,
+        4600011,
+        4600012,
+        4600014,
+        4600019,
+        4600020,
+        4600021,
+        4600022,
+        4600023,
+        4600027,
+        4600032,
+        4600034,
+        4600035,
+        4600036,
+        4600038
+      ],
+      "new_design_failures": [
+        4600000,
+        4600002
+      ]
+    },
+    "1611/regular": {
+      "lost_success": [
+        4700002,
+        4700003,
+        4700004,
+        4700005,
+        4700006,
+        4700013,
+        4700014,
+        4700015,
+        4700018,
+        4700019,
+        4700020,
+        4700021,
+        4700022,
+        4700023,
+        4700024,
+        4700026,
+        4700031,
+        4700041,
+        4700043,
+        4700046,
+        4700050,
+        4700052,
+        4700054,
+        4700059,
+        4700060,
+        4700062,
+        4700067,
+        4700068,
+        4700069,
+        4700071,
+        4700072,
+        4700075,
+        4700082,
+        4700083,
+        4700084,
+        4700090,
+        4700092,
+        4700094,
+        4700095
+      ],
+      "gained_success": [
+        4700017,
+        4700025
+      ],
+      "new_design_failures": []
+    },
+    "1611/controlled": {
+      "lost_success": [
+        4600009,
+        4600011,
+        4600013,
+        4600015,
+        4600016,
+        4600017,
+        4600018,
+        4600019,
+        4600020,
+        4600022,
+        4600023,
+        4600024,
+        4600026,
+        4600027,
+        4600035
+      ],
+      "gained_success": [
+        4600032,
+        4600034
+      ],
+      "new_design_failures": []
+    }
+  },
+  "artifact_sha256": {
+    "classical/B0_regular.json": "b4a9c3dbbdfc6f94bbee7845295edb39c84554fbea4f94045f7ad094b708c5fc",
+    "classical/B0_controlled.json": "e1c3a72721989464b5613f8d0419d1dfd93f9d5367d1e373be51ed0148ac3304",
+    "classical/B1_regular.json": "66995813ec4892db77fec1cd8b5390914467cc1af99d5176ba986e359f9b19d3",
+    "classical/B1_controlled.json": "ad934be3a268ae3465c1e433c072ba4c1dc3643295a64b076110a187b9d7d16d",
+    "classical/B1-route_regular.json": "b3bc076b0e04fb329e5258f367f95caeea220066ccda9cb44e7a9a517cbd9f21",
+    "classical/B1-route_controlled.json": "99a0138faab1bd88d7f95361906d701a643c43ebe0959247bae2d0da3944d621",
+    "runs/M3-zero/1609/step_20000.json": "b14a804d4913040857407eb0f836ba7c6309f7324eb205942941ea98123e08f2",
+    "runs/M3-zero/1609/step_40000.json": "f97c00107d5df767093e379f418d641ac7b4889e87d61fc94f3bce76e7824efc",
+    "runs/M3-zero/1609/step_60000.json": "246ba5d048c2cf322c8801280272a5f3084cf91e87e11bc991f4a182c34600be",
+    "runs/M3-zero/1609/step_80000.json": "c3bcd76d0d853b355a3ad4b3b152968bc3a57f6ae25ab17a4c71282f97e22dc2",
+    "runs/M3-zero/1609/step_100000.json": "ead52825b615ad4fa8b98110f0e3efb2b6093a52204c703370d0c33469fa7e55",
+    "runs/M3-zero/1609/step_120000.json": "f764422b7bc1c8fe7b5b1924aab18d732d77595f42f2b64153141cb397f1d8b8",
+    "runs/M3-zero/1609/step_140000.json": "0efee4e493621ca7cd1721485a79d4bf89df524778ce31c7d452a51353004fa9",
+    "runs/M3-zero/1609/step_160000.json": "01b3b920379379dbe4eef19df71ec64e3f04d589bf088311cb6d8ec750d2f09d",
+    "runs/M3-zero/1609/step_180000.json": "1df9f8d97a4788f6b5406a2ca198c83bd4e2d2c0da820f216c44ed596ad3a3b3",
+    "runs/M3-zero/1609/step_200000.json": "54fc1af59b57aa9815dfa9399921e07730e4a0b9483ee3095c26b1264f00ca7a",
+    "runs/M3-zero/1609/regular_final.json": "2a58828c4ff5f46777bf0668a9b6b0ad7be6ab679185a88a92c23fc1254d15b4",
+    "runs/M3-zero/1609/controlled_final.json": "92b8571617e48921d6c3fb9d9ac8de2beb01a03cfebdadd971c148d2a144452f",
+    "runs/M3-route/1609/step_20000.json": "98a4fa32d0ca27b6a2c2d15d66e03b31809e7166c92130158696ea6c553197a9",
+    "runs/M3-route/1609/step_40000.json": "e457a7dadd742d320e5d42ebc340ef91093b0f23a954fdfcbb472370c29e8d4c",
+    "runs/M3-route/1609/step_60000.json": "37cc3ea6ff9c0e2c84d2001bfa692192a871b2e2f81c28265aba0773a9678049",
+    "runs/M3-route/1609/step_80000.json": "d15de2039ae8e9eac4c0db038075f200e750fc18effbbfd4ed1df085a2f85848",
+    "runs/M3-route/1609/step_100000.json": "3f93d6a8c2004b82672132179ac06779b889fda9da8496066fae61b511e78479",
+    "runs/M3-route/1609/step_120000.json": "2a40b0126736e089ebe2c0ec6b2c6ee69d9c7ece8fce3ef509ee060802f2d494",
+    "runs/M3-route/1609/step_140000.json": "61e9837f9dd693fd0326f448bfd3f59415aa634501d1d854fb93856f2bebbfaa",
+    "runs/M3-route/1609/step_160000.json": "e4b17b3a9f30e4acb5e0668a042fac659cbbc59b18398491a6839d255c5dc73e",
+    "runs/M3-route/1609/step_180000.json": "a93e7e1ebe8622c0c1b9297d35e8043fed50235da7f7fa8e086a0507f62f2f23",
+    "runs/M3-route/1609/step_200000.json": "0937e30730c9a278fb0ec3e4c2178f5875f3a792307f19b753d0f276e2a8c1a3",
+    "runs/M3-route/1609/regular_final.json": "0bd8017dad790653c0d65fe113870271992f14a1df45428891df764eeab97d3c",
+    "runs/M3-route/1609/controlled_final.json": "52fda1de9024bec45b748b5d1395033aed744fc66f7989c2073935e9d3db285a",
+    "runs/V6-route/1609/step_20000.json": "0327c28be0cfda8158542f2d704aa3f956b41b08a007408a4a8e2dfab012d8aa",
+    "runs/V6-route/1609/step_40000.json": "b09bce4f0d2923e3a076b57694b43dab156cd89846d129954567d9e632e80ba4",
+    "runs/V6-route/1609/step_60000.json": "4959355bb1fc005ebefbc791405ae234b432d82fde7b7d65f18f3d0a38b6ba88",
+    "runs/V6-route/1609/step_80000.json": "2f7a28cb88d6fc71da3cadb3bb8c1d2a547a2db8bc2f2fd8a7160c06dcf9112a",
+    "runs/V6-route/1609/step_100000.json": "ab129fede7dec533316eafc95d522272029601372e7378d18435c1cbaa4eef11",
+    "runs/V6-route/1609/step_120000.json": "82aea0e87f1196122deaffba690e033745c2a9e0a0e4262e925ebfee534683ef",
+    "runs/V6-route/1609/step_140000.json": "69ea30d1f86a12c14c5b0154e194d270fe16b5a990bfcd127f7b7b0cd446ab10",
+    "runs/V6-route/1609/step_160000.json": "8b8489716d18015539b7e6fe1f42a1ddb35402392e2987b6b1b9aac7c75a7d6a",
+    "runs/V6-route/1609/step_180000.json": "0ac8292b8dc7d486ef04c389ee80cfda3703d8c43e9eb05fa9964d58c6d61982",
+    "runs/V6-route/1609/step_200000.json": "0b5ea7462a1bbbafe4acb7eeeb56bca40873b0613e172b056246658654762c38",
+    "runs/V6-route/1609/regular_final.json": "4077023813f4cc3b5d19f1b2cd704ee6083156e626a0ebbde182671096138571",
+    "runs/V6-route/1609/controlled_final.json": "cd5b2213b12c7b0abeb11e628e87eaa7f09e63e462d45c54ce67427b21521f10",
+    "runs/L2-route/1609/step_20000.json": "97ccd63c3792ba1b1cfabf6571594c7ae77edd722a0aeddb5e4be6d9402d9365",
+    "runs/L2-route/1609/step_40000.json": "e3fd7bde753dfd1c12efbec43f143715b72ba4bc18965ce505e6786c1d2f9acb",
+    "runs/L2-route/1609/step_60000.json": "f8e2620892745b0875d3c157f4abff10e2d983b97f10dd44c5f0c9bd294a11f3",
+    "runs/L2-route/1609/step_80000.json": "ba2c67ff194713851a32b9cf7ed41bc072dd55270ca5b806d045851786b988d7",
+    "runs/L2-route/1609/step_100000.json": "0a842921edcbfcb82ffbec285fd1ea31a06efdfeaf6c1a58aea9c586af22453c",
+    "runs/L2-route/1609/step_120000.json": "81a24432e0f4a1634533ad911a65771c113e73bfc3cde32617707da43492eb62",
+    "runs/L2-route/1609/step_140000.json": "f8c61467ff744fd4e0d59f36572f47d3a9d3593cbcdfd4e17be46318b40a23c7",
+    "runs/L2-route/1609/step_160000.json": "decf5be953aa815cf0669920934172c0db8017c065a52e70081287bfa4ce9abb",
+    "runs/L2-route/1609/step_180000.json": "4709278875accb38459c3166bc185e53b3d40d6bdcba5dd33a1c1e654e874ef2",
+    "runs/L2-route/1609/step_200000.json": "0d5a351206ba3569cb682bb4f2c2f340b78b89aaec809541edc1211efcf8f2d1",
+    "runs/L2-route/1609/regular_final.json": "c566f0966709a7a59bec0dd37b3fa0f23981ed204f5b9f8331edb2713061b119",
+    "runs/L2-route/1609/controlled_final.json": "d5c198f83196be2e75ee6c3b08b8229cedf175ece17b3341155880c7ccfaa991",
+    "runs/M3-zero/1610/step_20000.json": "43934508ba4448b2d7c06151a74321db89778e16857238a67b8480eadf69ea2b",
+    "runs/M3-zero/1610/step_40000.json": "95159e94af0d179f7b8109d05c5e1ce32e713829688c9e7a60c38e4d36714e63",
+    "runs/M3-zero/1610/step_60000.json": "a3f813a5cdf23a364a8532b2979dd7a5a7da7afd7344a705ef689bd5ff602ab4",
+    "runs/M3-zero/1610/step_80000.json": "416ed48f887dd8b4aafb256f7a92c0ed76c462bb11b92e65d5210d1b3a01f2d7",
+    "runs/M3-zero/1610/step_100000.json": "f623e550348fecce09d903ee4c8bd2a7e6f4c5dccac0eaf668206c754956e4be",
+    "runs/M3-zero/1610/step_120000.json": "5c67f562f361d8cc294133733cc278f328f382d4f17d378ba3b4aaa608d6e6a3",
+    "runs/M3-zero/1610/step_140000.json": "fecdcfeb020ff09b4bda4687478f8d8900a92ea536e8e76f8e0eb6c1aea24d0a",
+    "runs/M3-zero/1610/step_160000.json": "5e6af894ba77575ec25443c1ee38c03573f015758a754921821e0e316bb97111",
+    "runs/M3-zero/1610/step_180000.json": "a53fa194f7b90704e076739a7d9ca64cb5e6a0c282b0a83a3cbb787fba1676b9",
+    "runs/M3-zero/1610/step_200000.json": "670d209e330e49037bfa48832ea20e544af620030990580c82a725963c696ab6",
+    "runs/M3-zero/1610/regular_final.json": "cafa203129dd69fb58d0446fb603ad95e7c3645ed427a7ab8a1a06894959e0b3",
+    "runs/M3-zero/1610/controlled_final.json": "979510f7ba50c6cfb9b4921f37e1d3f872b2935590f1c6ae5fe7e70d6ce59ad2",
+    "runs/M3-route/1610/step_20000.json": "decfd7eefe6c8c0c3fe04802f94e5145ce196ad52d634781e0df8642636ab5de",
+    "runs/M3-route/1610/step_40000.json": "9c0f02a496ecfa03788ee53762f24e49fb91b389fb98a918ae2a64d74552d0b0",
+    "runs/M3-route/1610/step_60000.json": "a989a8a015e0fdae28a65dec9cfda5cebe730392bbb9ea72541f522e8cd86e73",
+    "runs/M3-route/1610/step_80000.json": "a27061cb980303af242459f293dc2e4ee4c3f1a83de83838a6c05d76246418b8",
+    "runs/M3-route/1610/step_100000.json": "b8e5eb04c7bbffc0f3481b4f38844e1c1743eba1b66d40baab27b5cad3764fcb",
+    "runs/M3-route/1610/step_120000.json": "f725c43420a20f200ffb3bf2caa41867d43cd8acc65d0e8063bd7465b1488b39",
+    "runs/M3-route/1610/step_140000.json": "fad0c4101623dbdcb7ffca3d104b74d8553638727ce82ddc72a868b20328dcab",
+    "runs/M3-route/1610/step_160000.json": "8378c58eeac8ca92e93758e9811e6edb609b5d5ef24311819a37484832a0c378",
+    "runs/M3-route/1610/step_180000.json": "b4f0d4e84c67b80ff1f6ba180cb81bf677ece3dadd65adcb950297ba0bb08cb7",
+    "runs/M3-route/1610/step_200000.json": "734b289598de90d4dbb57b546470075df54421d97b0a5fa87d25ef2271843356",
+    "runs/M3-route/1610/regular_final.json": "c925c1c2e68e73e8454316c04946eefc386344397d40d3295257240797e9301c",
+    "runs/M3-route/1610/controlled_final.json": "f5ac4db1858cf23d8927dd7962939ed8f2c35590c6d172ed00249d77db698a7e",
+    "runs/V6-route/1610/step_20000.json": "af6952b3379e7d592008bb340b53d936f700a5b86478089354cb652238024780",
+    "runs/V6-route/1610/step_40000.json": "7c79ab8419cd176607a3a2f270b46bd7cc6d5719c6e48dee8a0ffcb14b825a71",
+    "runs/V6-route/1610/step_60000.json": "cbe748929b4143d01b8751b98e29f03a60e5d2c12bd193481f8807202baf6f7b",
+    "runs/V6-route/1610/step_80000.json": "b70470a9eae1621e67f08e8c30be2883bf6bfd4b06dd34b42f35e7f09a9809ee",
+    "runs/V6-route/1610/step_100000.json": "14b7c566c51189497aee183312c84fae7b1aaa97cfda89619547568703856e82",
+    "runs/V6-route/1610/step_120000.json": "385f47154325d16bfb359b6fa8dfb651233bd6264cf9f82be9c74c95e434454e",
+    "runs/V6-route/1610/step_140000.json": "5fc7f262aee0750e225f672a59d01df4bc6ec409bee74673818f25528917d809",
+    "runs/V6-route/1610/step_160000.json": "09b5b62514b5f07e60b5df672414bd06687ffbd1e8bbf996384cc0bdf43a2f3b",
+    "runs/V6-route/1610/step_180000.json": "c9e29ac1a3a14b4dc1e8412642e8ecb12f1fbcac3f7a8cbea7a3640777409577",
+    "runs/V6-route/1610/step_200000.json": "c8146c4ce9727aa65a83dc45f9b88409e0bc31b3bedb1ef1b0c2a65edc778dec",
+    "runs/V6-route/1610/regular_final.json": "0462612a58d518f372f1163c6213de854ca25395cd66ad59d998d2ff4c685c96",
+    "runs/V6-route/1610/controlled_final.json": "2447ddcea6375dbaad6bb8b9c48497a991eae2aed7633fa0d693825b8795b9d5",
+    "runs/L2-route/1610/step_20000.json": "7b1dd1b3f8727f97ee693a1da4abfc6a49d52c6eccfe6157528230a022da9d06",
+    "runs/L2-route/1610/step_40000.json": "8f60b59d3d3a5b76aeb831ea8e51ef196f6b6569328ae140f6ce9b4ccd1eb6e4",
+    "runs/L2-route/1610/step_60000.json": "b5b8e47108a2d43fc5b2c52fe210c08d4e1463c0eb52afbba01aad44214eb24d",
+    "runs/L2-route/1610/step_80000.json": "8f3f17f7ad9eb60c441ebfcc3166e4d0d37bb15ec5240cc6585c0acf659f1e53",
+    "runs/L2-route/1610/step_100000.json": "facb4f77caf043a373c3fd3c992dbd3168a1aac8fe73747d6ce34fa517bca8b7",
+    "runs/L2-route/1610/step_120000.json": "f9bb74d22523a48ee91362af2e312bc9a1090c7044c6cc334e1fd9a714a081ba",
+    "runs/L2-route/1610/step_140000.json": "4891a573c2948ff4c60d8471c6764aa44119958d28ca0f60bbd553156cfac6f6",
+    "runs/L2-route/1610/step_160000.json": "226c0b2e28c72b29c98c4ee71c29f87f8f4617c294936596c6dedfe59569b6ee",
+    "runs/L2-route/1610/step_180000.json": "f190decf6167a971b08e840dd779c4c1c99eecc6c5af927fac55f719b067238e",
+    "runs/L2-route/1610/step_200000.json": "13bf90440249af484bb39355afe092faddcac66ad8e2fb035fc2e4cdb29f7651",
+    "runs/L2-route/1610/regular_final.json": "596424014a1bd52bbb95ee7dbba8db68c6d038e8cb550826b16c149e56ba3d41",
+    "runs/L2-route/1610/controlled_final.json": "dc291097149af2e7a20341dc128cceff277df84656d51dd59fd7ff5ea5ea832c",
+    "runs/M3-zero/1611/step_20000.json": "6b8c3f5ff9a043799b713446fec3ea050d599fa00e493c29354189ea80a46310",
+    "runs/M3-zero/1611/step_40000.json": "f9651ab632a35eb1d28d548cc47b24121bba545b10f5812dc90616b66b41d7c7",
+    "runs/M3-zero/1611/step_60000.json": "6f2254bd3bcec9a74548363a7dd120107e3d1a3660da26f8b46cfb5c64488fb9",
+    "runs/M3-zero/1611/step_80000.json": "1374c9cc72de39b73baaa1fec7f7104b92d93215d89c5d01c02295a13c6b7f55",
+    "runs/M3-zero/1611/step_100000.json": "982b0e5fa2275f4245ec1067dd2eda2b7dfdd19e0dd14e4b031a2594dcb996d4",
+    "runs/M3-zero/1611/step_120000.json": "ac3e801f5e337abdd557b028ae1b58618e91aae87ac20880e06ba1cc18392ddb",
+    "runs/M3-zero/1611/step_140000.json": "c2df7a2abdd65d91e8a1062c5aaed008e2d1ed6cbba2433f6385d0ebdeeffd7a",
+    "runs/M3-zero/1611/step_160000.json": "bbce148b1852457c502ab9a0513fc4a5580df42b80adb04a6eb35f927ce9eadf",
+    "runs/M3-zero/1611/step_180000.json": "229ad357e2f8017d6cceae0a1d7f18ff02fc596aba17524bcd86f1f2f40d22a2",
+    "runs/M3-zero/1611/step_200000.json": "62f09cc1c42cadafea34a5afb44c4e83e022959e97660bae845b2eba782efd12",
+    "runs/M3-zero/1611/regular_final.json": "3210604c0cdcac2556fef937ccef069c812c372e7f11fb1d4ee288d51ad2e05d",
+    "runs/M3-zero/1611/controlled_final.json": "a3a2d453b2f6c6a1e88b170549334cddd8391fdac1953d05449756920bf435ff",
+    "runs/M3-route/1611/step_20000.json": "173da9d44d29bcd1cdc96738c22707e075d741ffdaaacef0339c9a485bc7176d",
+    "runs/M3-route/1611/step_40000.json": "5442d4604cad4e80a2947d662e93627da5d7304b41b2e953b49e7d014df8d05e",
+    "runs/M3-route/1611/step_60000.json": "7c5a4a4baf5ba31b4bf31dde30343c88ea30ffdd75c1b0fcf0a4909f6ed4faaa",
+    "runs/M3-route/1611/step_80000.json": "780992e7083d3661e2f467777aebb6df56bbef8658c44d877898310aa771e81d",
+    "runs/M3-route/1611/step_100000.json": "d9c4b130df52b146c47b62252d73575a9af50bd04930d4b8543d7d1ab0dde2f4",
+    "runs/M3-route/1611/step_120000.json": "2d8a169d9748d3bdeb021a2696f140e27e3dc6c6208ab6ab4c18ddd3531ec3c3",
+    "runs/M3-route/1611/step_140000.json": "4a9fcb4c7627c6e3198a36758668fcd22eae87b4374e1c8f66d2484f634c9a46",
+    "runs/M3-route/1611/step_160000.json": "2da0e8a374eda73e394256e8e1a20d4554e46240b610ea720358459ea02d942e",
+    "runs/M3-route/1611/step_180000.json": "cd6739380ba8905b123999f7db6acf13a74028bf458589cf847691b117fcfef8",
+    "runs/M3-route/1611/step_200000.json": "b1d1f55d843b5f5750a594b68be1d31868af549d8f8dc4a8d2b555d458a971cd",
+    "runs/M3-route/1611/regular_final.json": "8aa08f45060a1515c3be8295c2b8463fc62c9be99cdcf6bee24cffd7b51cba88",
+    "runs/M3-route/1611/controlled_final.json": "7f08a9ab7a4ec8eddd5eb081992073df957bc8b73d57548b359025361032abb7",
+    "runs/V6-route/1611/step_20000.json": "033b1fc22c69ada2e534e0a7f9ea61e94584e137713eff22464d5ea5cf0389f5",
+    "runs/V6-route/1611/step_40000.json": "05b747b56b01f15f7fbff242b73f45d78a0fda4b8a83d990c932b40216974e71",
+    "runs/V6-route/1611/step_60000.json": "8d2fe3bc3781d79562daecdb7caa6311d5dd6ae2a71a9bddb0ad3f489820eadf",
+    "runs/V6-route/1611/step_80000.json": "dff118164eebd38c4c45ca67305bc3471ecde76654a9df9d9c70a46eaaab6f74",
+    "runs/V6-route/1611/step_100000.json": "81ca732d0fe58d91bef1ed337e5fb62170a70b7418925cb75bdc6b28ee66159e",
+    "runs/V6-route/1611/step_120000.json": "7df3600a59e2aa1792aff792afb61adac1ac0a19613baa71ccb31bd61364621a",
+    "runs/V6-route/1611/step_140000.json": "4f9ed035f9df53cb543d19bac351a3dace27c3b1e5afd6982e2a8d7f0007eb8d",
+    "runs/V6-route/1611/step_160000.json": "eb90dbb2844928efc2428e470f83fa25504369d8c3f0471a911beddae9dd8cb5",
+    "runs/V6-route/1611/step_180000.json": "c9eaf3295b1c40ec56755748c9b4f92d3bc404fc27901b8d1fa502d1047ad2c2",
+    "runs/V6-route/1611/step_200000.json": "4e0b5fa4aacac3ab6fb0786f89ae14d1113c51ebc16887344e3c75d3ae6bec4c",
+    "runs/V6-route/1611/regular_final.json": "aa3131c7192ed92f54c4ddb99cb9f2086514393418d0c2d80b1de145bdbe0723",
+    "runs/V6-route/1611/controlled_final.json": "b5359f9e958239f3c7b259111c5f5ce616e8145c6013125f889ea77265d739b3",
+    "runs/L2-route/1611/step_20000.json": "056d9215b2f1543c67679d935159b4708f88b05e4bec2bf3fa28d97133d3cdb4",
+    "runs/L2-route/1611/step_40000.json": "008e505bdaeec5d000c713dfaf4fdf325998343f1a831481637ae473720ac2c5",
+    "runs/L2-route/1611/step_60000.json": "6351c192d72a448a4319109be62b577e55b478c1c51c62c8c4785390b800b9f3",
+    "runs/L2-route/1611/step_80000.json": "0bb8273a0277b256cab0302f4859a20db840d2859a920398b12e022bf34d27c4",
+    "runs/L2-route/1611/step_100000.json": "3ff23024e6778a65931080cd6aa1722f9429842c366ba41a7c7a29195d22a3ec",
+    "runs/L2-route/1611/step_120000.json": "d9ad2f43f6aa2457166ba1f4869504913250494a2ee43c23e3b4603273e020c9",
+    "runs/L2-route/1611/step_140000.json": "f5f16d4057e3551db69588f36d85756267161e1e035a77c6148931644161f321",
+    "runs/L2-route/1611/step_160000.json": "0933d5ba0232acb652ad090c82c7e3428f13c05fd148639f035341e9e562f237",
+    "runs/L2-route/1611/step_180000.json": "33352310152acf37b1544d1bdce26d440a6031757a7a42ee6deb4540c39f671b",
+    "runs/L2-route/1611/step_200000.json": "15e11999d36c1d08f624654b1ba0c7544da6d01271b50654a6912782d5e95e99",
+    "runs/L2-route/1611/regular_final.json": "748317c0919d7a40671677bc7743ef5275ec90f7aa89ff32513dfd9013517531",
+    "runs/L2-route/1611/controlled_final.json": "b27e89aacb2a61886862d3c37e79bb32a0403353bd1709f02b4739c19dba8894"
+  },
+  "proposal_sha256": "7c2faf18a3b720548a7be909d656a0037779c957b05bd07b9bff12fc91903334",
+  "trainer_contract_sha256": "0bc045581f2c77f896941ff329f1164e562499b4b804c104c0ebfbc87955a292",
+  "reviewer_sha256": "71b82452715156a0f18f2dedfe2962e9fcc3ce8d20f30a1cb61e86f270ea4dc8",
+  "scope": "Independent source/counters/120 saved CUDA actors-values-Adam/RMS, initial pairing, curriculum and every development task row/gate. Training episode final-height success not reconstructed: final FK is not logged there.3 training seed clusters; repeated136 cases are not408 independent environments. No new physics/training or old final use."
+}

@@ -1,5 +1,22 @@
 # 双轮腿机器人PPO论文方案
 
+第119轮全预试验独立验收与停止扩训（2026-10-05，goal active）：
+
+review_route_pilot.py独立核12run/2.4M、120重载CUDA模型/Adam/39RMS/真实步与epoch、初始权重和世界配对、5772训练回合身份/物理计数及实际课程切换、2040发展评价逐例原success/物理设计/yaw重建、source/载荷SHA及bootstrap/时钟/保存状态。训练episode未存末FK，未冒称其全部success可独立重建；发展评价末FK完整。原始新源/协议、错误登记更正及失败保留。审核表字段重名导致第一次写表TypeError，原源/log归档，改design_failed只修输出键后完整readonly重载通过，不改判据或重跑物理。
+
+| 方法 | regular成功/288 | controlled成功/120 | regular设计通过/288 | controlled设计通过/120 |
+|---|---:|---:|---:|---:|
+| M3-zero | 88 | 41 | 281 | 110 |
+| M3-route | 38 | 29 | 278 | 108 |
+| V6-route | 191 | 76 | 284 | 118 |
+| L2-route | 275 | 81 | 281 | 112 |
+
+各物理288/120全过，所有发展轨迹自然completed。信息配对regular−27/+14/−37，均值−17.3611pp/仅1正，controlled−10pp，设计多3/2失败；information_gate=False。正式候选M3-route/L2-route保留经典/controlled增益/航向等原门均未通过，formal_expansion=False；不启动5seed、不加预算追阳性。L2最接近经典但regular95.486%仍低于B0 96.875%，controlled67.5%低于三经典70%，不能只挑B1较弱成功率作优势。
+
+接触/yaw/design失败谓词有交叠，不能直接当机制因果；regular接触证据缺189/244/82/0、yaw47/19/12/9、design7/10/4/7，controlled接触62/82/8/0、yaw30/12/32/34、design10/12/2/8。三个训练seed簇和同136案例重复需分清，不把408方法案例当独立环境。底层评价记录Native38/diff3，外层真正39及L2动作2已直接从加载模型/封装源确认，不作旧模型mask或全面Markov论断。
+
+study_review.json、development_summary.csv及disposition.json给出核验数值、case swaps与明确停止该pilot扩训；不把工程成功或完整训练当核心方法就绪。第120轮必须深审研究价值/初始化与输入契约、隐藏控制和不可恢复任务历史、动态设计约束及接触/航向证据，再决定一个有根据的补充机制实验，同时清理确认冗余；不跳到另一次盲长PPO。新goal active，核心投稿方法优势和独立泛化仍未关闭。
+
 第118轮收尾：同unit正常退出0/MainPID0/inactive，12/12全200k/400epoch/8000Adam、总2.4M，queue complete且冻结源hash一致；以下1.8M为较早进度快照。下一轮独立核全部工件/发展结果及原继续门，未据训练完成晋升五seed。
 
 第118轮四臂三seed新学习已启动（2026-10-05，goal active）：

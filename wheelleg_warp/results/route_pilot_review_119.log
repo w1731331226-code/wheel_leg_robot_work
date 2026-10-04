@@ -1,0 +1,13 @@
+VERIFIED M3-zero/1609 checkpoints 10
+VERIFIED M3-route/1609 checkpoints 20
+VERIFIED V6-route/1609 checkpoints 30
+VERIFIED L2-route/1609 checkpoints 40
+VERIFIED M3-zero/1610 checkpoints 50
+VERIFIED M3-route/1610 checkpoints 60
+VERIFIED V6-route/1610 checkpoints 70
+VERIFIED L2-route/1610 checkpoints 80
+VERIFIED M3-zero/1611 checkpoints 90
+VERIFIED M3-route/1611 checkpoints 100
+VERIFIED V6-route/1611 checkpoints 110
+VERIFIED L2-route/1611 checkpoints 120
+{"verified": true, "information_gain_pp": -17.36111111111111, "information_gate": false, "formal": {"M3-route": false, "L2-route": false}, "aggregate": {"M3-zero": {"regular": {"success": 88, "total": 288, "physical": 288, "design": 281}, "controlled": {"success": 41, "total": 120, "physical": 120, "design": 110}}, "M3-route": {"regular": {"success": 38, "total": 288, "physical": 288, "design": 278}, "controlled": {"success": 29, "total": 120, "physical": 120, "design": 108}}, "V6-route": {"regular": {"success": 191, "total": 288, "physical": 288, "design": 284}, "controlled": {"success": 76, "total": 120, "physical": 120, "design": 118}}, "L2-route": {"regular": {"success": 275, "total": 288, "physical": 288, "design": 281}, "controlled": {"success": 81, "total": 120, "physical": 120, "design": 112}}}}
