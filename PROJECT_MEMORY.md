@@ -6314,3 +6314,10 @@
 - `wheelleg_warp/results/paper_recovery_20261004/channel_validation_v1/results/potential_1609_zero_legacy_regression.json`
 - `wheelleg_warp/results/paper_recovery_20261004/channel_validation_v1/results/potential_1609_zero_pressure.json`
 - `wheelleg_warp/results/paper_recovery_20261004/channel_validation_v1/results/potential_1609_zero_regular.json`
+
+### 自动同步快照 2026-10-04T14:24:37+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_warp/results/paper_recovery_20261004/channel_validation_v1/results/original_1610_wheel_only_legacy_regression.json`
+- `wheelleg_warp/results/paper_recovery_20261004/channel_validation_v1/results/original_1610_wheel_only_pressure.json`
