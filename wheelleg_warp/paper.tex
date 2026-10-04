@@ -2,24 +2,66 @@
 \usepackage[margin=24mm]{geometry}
 \usepackage{amsmath,amssymb,booktabs,hyperref}
 \hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue}
-\title{受约束轮腿残差PPO的任务一致性与通道效应审计\\方法与实验协议草稿}
+\title{受约束轮腿残差PPO的任务一致性与通道效应审计}
 \author{作者待补}
 \date{2026年10月4日}
 \begin{document}
 \maketitle
-\noindent\textbf{草稿状态：}本文尚未完成独立评价、贡献边界与统计讨论，不是可投稿定稿。
-已完成的开发数据与方法契约如实列出；尚在运行的独立结果不作推断。
+\noindent\textbf{稿件状态：}方法、开发预试验与独立固定模型确认已完成。
+本文为可供正式写作和导师审阅的实证审计初稿，作者信息、目标期刊格式与语言润色待补；
+不以材料就绪保证录用。内置编译环境不可用，当前源码未确认生成PDF。
+
+\begin{abstract}
+输出限幅、回报目标等价与完整任务成功是不同层面的要求。
+本文在固定VMC与六状态LQR轮腿系统中审计三维残差PPO，
+低层与物理以2 kHz运行，策略50 Hz，保留实际被动链几何和执行器证据。
+原奖励与已知势函数奖励各使用三个配对种子、同初始条件和200k连续策略步，
+总计1.2M；公开开发结果中塑形成功均值差为$-8.33$个百分点，原继续门未通过。
+随后固定全部六个末模型，在事前登记的新常规96、压力48与旧28回归上
+完成4472回合的轮/腿通道闭环干预与强经典对照。
+新常规中禁用轮残差的六模型成功平均增加62.5个百分点，
+但设计失败增加5例；压力与旧能力结果分别报告，提前终止失败不删除。
+本研究提供限定系统的任务--执行契约、完整负结果及独立通道效应证据，
+不提出新PPO或PBRS算法，不将通道禁用视为同权限训练改进，
+也不将输出包络通过解释为全局状态安全。
+\end{abstract}
+\noindent\textbf{关键词：}轮腿机器人；残差强化学习；约束执行；任务一致性；闭环通道干预
 
 \section{研究问题与主张边界}
 经典控制器上叠加学习残差、比较动作表示以及势函数奖励塑形均已有研究。
 本文不将PPO、虚拟力矩或势函数的组合视为新算法。
-待检验问题是：在固定轮腿系统、执行器包络与累积任务判据下，
+本文检验的问题是：在固定轮腿系统、执行器包络与累积任务判据下，
 输出可行性、折扣目标一致性与有限预算的完整任务表现是否相符，
 以及学习残差的轮、腿通道在闭环中分别产生何种影响。
 已知方法对照包括残差学习、动作空间设计和层次势函数塑形工作\cite{residual,action,hprs}。
 
 本文只讨论仿真地面任务。跳跃、单侧坡演示、ROS2与实机安全不属于本次结果范围。
 局部线性设计与扭矩限幅不构成全局稳定性或状态安全不变集证明。
+
+本文的实证贡献限定为三项。
+其一，统一报告低层输出、设计域、真实几何、接触任务和评价终态，
+使``输出可行''与``完成任务''的差异在同一数据中可核查。
+其二，用同初始化、同预算及同信息的三种子学习比较检验奖励收益主张，
+保留失败出口与种子异质性，而不以单个有利种子或次指标替换主门。
+其三，对固定末控制器登记并执行独立通道干预，
+报告常规改善、设计权衡、压力与旧能力边界及可复现源合同。
+这些是该系统上的实证证据和审计材料，不是关于所有机器人或所有残差学习的定理。
+
+\section{相关工作与实验区别}
+残差控制已用经典反馈与学习补偿叠加处理接触问题\cite{residual}。
+Hybrid LMC将LQR与集成SAC用于轮式人形模型\cite{hybrid}，
+因此本文不以``LQR加PPO''作为贡献，也不横向比较不同平台的成功率。
+动作表示研究已显示初始化及策略步间行为会影响学习\cite{action}；
+本文的通道mask不是动作空间的重新训练比较，不能据其优势归因于维数或物理先验。
+
+受约束残差控制已有指定系统假设下的稳定性分析\cite{crrl}。
+本文的欠驱动接触切换、构型映射和基控制记忆并未验证满足那些定理前提，
+因而只报告实际输出及状态轨迹证据。
+HPRS已将安全、目标和舒适需求组织为势函数奖励并采用PPO\cite{hprs}。
+本文使用已知势函数作为同折扣目标的受控干预，不重新声称塑形或约束奖励首创。
+实验区别在于固定高频残差执行链、延迟物理包与当前请求的混合时序、
+累积任务判据，以及固定模型通道作用与强经典控制的共同审计。
+这里没有复现所有前述作者模型；单一系统实证不构成排他性创新穷尽证明。
 
 \section{模型、控制与执行契约}
 仿真使用MuJoCo Warp。固定名义设计质量为7 kg，训练被控对象参数可变；
@@ -31,15 +73,17 @@
 
 M3策略产生三维差模请求
 \begin{equation}
- a=(a_F,a_H,a_W)\in[-1,1]^3,\quad
- \Delta F_L=-\Delta F_R=c_F a_F,\quad
- \Delta H_L=-\Delta H_R=c_H a_H,\quad
- \Delta \tau_{WL}=-\Delta \tau_{WR}=c_W a_W .
+ \bar a=(\bar a_F,\bar a_H,\bar a_W)\in[-1,1]^3,\quad
+ \Delta F_L=-\Delta F_R=c_F \bar a_F,\quad
+ \Delta H_L=-\Delta H_R=c_H \bar a_H,\quad
+ \Delta \tau_{WL}=-\Delta \tau_{WR}=c_W \bar a_W .
 \end{equation}
-尺度沿用冻结的初始化与执行配置，其中轮差矩尺度为0.3 N\,m。
+其中$\bar a$表示执行链的滤波请求而非未经过滤的策略样本。
+尺度沿用冻结配置：$c_F=0.1\times7\times9.81/2=3.4335$ N，
+$c_H=1$ N\,m，$c_W=0.3$ N\,m。
 构型相关映射记为$B(q)$。先形成完整名义输出，再处理残差和总输出约束：
 \begin{equation}
- \tau=\tau_{\rm nom}+\lambda B(q)a,\qquad 0\leq\lambda\leq1,
+ \tau=\tau_{\rm nom}+\lambda B(q)\bar a,\qquad 0\leq\lambda\leq1,
  \qquad \tau_i^{\min}(\dot q_i)\leq\tau_i\leq\tau_i^{\max}(\dot q_i).
 \end{equation}
 名义请求可行化和最终执行器限幅属于实际输出链，不能省略后再讨论残差权限。
@@ -93,6 +137,27 @@ Actor和Critic共享38维接口：32维物理包包含姿态、角速度、速�
 每run实际400个训练epoch、8000次Adam更新；参数、Adam和物理在CUDA运行。
 初始权重、世界配置及所有检查点计数核验。
 公开开发96案例只使用固定200k末模型，中间检查点不用于选模。
+
+\begin{table}[ht]
+\centering
+\caption{两奖励组保持一致的学习与观测配置。}
+\begin{tabular}{lr}\toprule
+配置 & 数值\\\midrule
+Actor/Critic隐藏层 & $64,64$\\
+学习率 & $3\times10^{-4}$\\
+折扣/GAE & $0.99/0.95$\\
+PPO clip/价值clip & $0.2$/关闭\\
+熵系数/价值系数 & $0/0.5$\\
+最大梯度范数 & $0.5$\\
+观测归一化/奖励归一化 & 开启/关闭\\
+观测clip/epsilon & $10/10^{-8}$\\
+M3初始log-std & $(-0.717260,-0.725599,-1.384311)$\\\bottomrule
+\end{tabular}
+\end{table}
+初始log-std来自冻结的物理响应校准，只有新策略创建时设置；
+保存恢复不重新初始化。
+CUDA用于Actor、Critic、Adam矩及MuJoCo Warp物理，
+Python收集与归一化含CPU工作，不将物理设备或吞吐等同端到端加速。
 
 \begin{table}[ht]
 \centering
@@ -194,25 +259,90 @@ Phi 1611 & 50 & 90 & 21 & 35 & 18 & 28\\
 只读复核保存实际读取的清单字节快照，防止生产者仍在运行时发生清单错配。
 模型与归一化工件保留，CPU重读只用于核保存状态；实际学习与物理运行设备单独验证。
 
-\section{讨论的待关闭项}
-本文目前只能支持所登记固定系统的开发负结果和有限通道干预效应。
+\section{讨论与适用范围}
+\subsection{输出约束与任务成功的差异}
+常规比较中两种主要通道条件的物理证据均通过，
+完整成功却分别为180/576和540/576，说明输出包络和真实关节/链长约束
+不能代替接触、姿态、停车与目标高度共同定义的任务。
+探索性最大退化模型存在更大的车体横向位移和移动阶段航向偏置，
+与缺接触证据相符；该关联不证明未观测路线状态就是训练失败的唯一原因。
+
+\subsection{势函数等价不保证有限PPO改善}
+完整回合折扣恒等及端点处理经离线和在线核验，
+但塑形学习预试验没有满足原继续门。
+这不否定已知势函数理论，而是表明固定信息、近似Critic与有限预算的
+学习性能不能从回报恒等直接推导。
+若同步平移理想状态价值，TD残差可以不变；真实近似价值网络的目标、
+可表示性和优化均可能影响结果。
+这里没有价值MonteCarlo校准或追加学习因果干预，故不将失败归于其中唯一机制。
+
+\subsection{通道干预的正效果与设计权衡}
+独立常规六模型均显示移除轮请求的任务正效果，
+压力及旧回归也显示有限案例改善。
 轮通道mask减少可达请求子空间，同时改变后续状态及自身请求历史；
 它没有重新训练策略，不能视为同权限算法改进。
+设计失败在常规和压力分别增加5和3例，
+因此不能把任务恢复称为全部安全指标改进。
+强经典B1的常规成功仍高于禁轮腿模型均值，
+这使本研究成为控制--任务审计而非提出优于经典控制的新策略。
+
+\subsection{限制与外推}
 确定性均值回放中的Critic预测不是随机训练策略的MonteCarlo价值目标。
 横向车体代理亦不能替代实际轮胎、障碍几何交集和承重证明。
-独立确认结束后仍须核对跨模型一致性、压力边界、设计权衡、
-与已有工作的区别和能够复现的结论，再决定完整稿件的主贡献与适用范围。
+三种子只提供有限训练重复，压力每因素8点并非连续域覆盖。
+旧28回归不是新独立测试；仅仿真、固定名义设计与所登记常规/压力域构成外推边界。
+独立案例保持完整，但模型来自已有开发流程，
+结论只针对固定模型集合，不替代新的随机学习重复或实机验证。
+没有将物理吞吐表述成PPO端到端训练加速，也没有用新确认改写旧失败研究门。
+
+\section{结论}
+在所登记系统中，回报目标恒等与输出包络合规均不能保证完整接触任务的学习改善。
+三种子同预算奖励预试验按原门失败；固定六个末模型的独立通道确认
+显示移除轮请求可恢复大量任务，但伴随设计域权衡，仍没有常规胜强经典的证据。
+本文据此提供可复现的限定系统审计及失败边界，
+建议在报告学习控制效果时共同核对信息时序、实际执行、累积任务和完整失败记录。
+后续若研究路线状态、价值历史或其他控制结构，应重新登记目标、信息和独立评价，
+不能据本数据宣称新算法收益或全局安全。
+
+\appendix
+\section{复现材料入口}
+所有入口相对项目根目录，原记录保持不可变。
+学习提案和源合同位于
+\texttt{wheelleg\_warp/results/paper\_recovery\_20261004/reward\_pilot\_v1/}，
+其中\texttt{proposal.json}、\texttt{trainer\_contract.json}和
+\texttt{pair\_review.json}对应设计、源冻结与三种子结果。
+独立确认材料位于同级\texttt{channel\_validation\_v1/}，包含
+\texttt{protocol.json}、\texttt{source\_contract.json}、\texttt{completion.json}、
+\texttt{reviewed\_jobs\_snapshot.json}、\texttt{independent\_review.json}及
+\texttt{verified\_tables.csv}。
+\texttt{plot\_results.py}再生三面板图；学习与轨迹诊断各自保留图脚本及输入SHA。
+\texttt{review\_reward\_pilot.py}、\texttt{review\_channel\_validation.py}和
+\texttt{report\_channel\_validation.py}为不重训的工件复核入口。
+
+复核原工件不等于新的物理重复。
+物理重复须在新输出命名空间登记，保持场景值、版本、初始化、
+时间与硬件条件，并重新冻结源码；不得删除原文件来绕过已存在目录保护。
+记录含本机路径时应在新协议明确迁移，不静默改写旧协议哈希。
+GPU算术不保证跨运行位级轨迹一致，本文也未复现实机。
+原CPU基准、旧研究失败门和封存最终参数保留，未被本确认替换。
 
 \begin{thebibliography}{9}
 \bibitem{residual} Johannink T, et al. Residual Reinforcement Learning for Robot Control. 2018.
 \url{https://arxiv.org/abs/1812.03201}.
-\bibitem{action} Esser, et al. Action Space Design in Reinforcement Learning for Robot Motor Skills.
-PMLR, 2025. \url{https://proceedings.mlr.press/v270/esser25a.html}.
+\bibitem{action} E\ss{}er J, Margolis G B, Urbann O, Kerner S, Agrawal P.
+Action Space Design in Reinforcement Learning for Robot Motor Skills.
+PMLR 270:4021--4032, 2025. \url{https://proceedings.mlr.press/v270/esser25a.html}.
 \bibitem{ng} Ng A Y, Harada D, Russell S J. Policy Invariance Under Reward Transformations:
 Theory and Application to Reward Shaping. ICML, 1999.
 \url{https://ai.stanford.edu/~ang/papers/shaping-icml99.pdf}.
 \bibitem{hprs} Berducci L, Aguilar E A, Ničković D, Grosu R.
 HPRS: Hierarchical Potential-Based Reward Shaping from Task Specifications.
 Frontiers in Robotics and AI, 2025. doi:10.3389/frobt.2024.1444188.
+\bibitem{hybrid} Baek D, Purushottam A, Ramos J.
+Hybrid LMC: Hybrid Learning and Model-based Control for Wheeled Humanoid Robot via Ensemble Deep Reinforcement Learning.
+arXiv:2204.03159, 2022. \url{https://arxiv.org/abs/2204.03159}.
+\bibitem{crrl} Staessens T, Lefebvre T, Crevecoeur G.
+Adaptive control of a mechatronic system using constrained residual reinforcement learning.
+arXiv:2110.02566, 2021. \url{https://arxiv.org/abs/2110.02566}.
 \end{thebibliography}
 \end{document}

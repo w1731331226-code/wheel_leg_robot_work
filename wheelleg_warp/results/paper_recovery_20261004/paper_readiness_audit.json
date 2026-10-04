@@ -1,0 +1,99 @@
+{
+  "objective": "继续直到可以写论文，每五轮深评方向调整与确认冗余清理",
+  "ready_to_begin_formal_paper_writing": true,
+  "publication_or_acceptance_guaranteed": false,
+  "manuscript_complete_initial_draft": true,
+  "scope": "Limited simulation empirical audit, not PPO superiority/control innovation/global safety/sim2real result",
+  "criteria": [
+    {
+      "requirement": "可检验主张及相对文献贡献边界",
+      "achieved": true,
+      "evidence": "明确限定系统执行/任务/通道审计；六固定模型独立主效果一致，已核RRL、动作表示、HybridLMC、CRRL、PBRS/HPRS；非新算法/排他性穷尽证明/普遍理论"
+    },
+    {
+      "requirement": "正确模型、信息、输出与约束契约",
+      "achieved": true,
+      "evidence": "原2kHz/50Hz/38混合时序/真实链与扭矩/完整success源合同通过，草稿区分设计/物理/任务，无未经核全局状态安全或Markov宣称"
+    },
+    {
+      "requirement": "强经典及同信息同预算至少3学习种子",
+      "achieved": true,
+      "evidence": "六matched200k三seed/初始hash/400epochs8000Adam完整，强B0/B1和失败都报告；mask干预不是同权限学习方法优势"
+    },
+    {
+      "requirement": "新独立、压力和旧能力证据",
+      "achieved": true,
+      "evidence": "4472/78事前模型场景源冻结，fresh96/pressure48/old28分列，22early保留，未触旧64/3000，旧28非新独立"
+    },
+    {
+      "requirement": "受控机制证据",
+      "achieved": true,
+      "evidence": "六固定模型wheel关闭的闭环作用独立复现，设计权衡完整；body漂移仅关联，不称训练失败唯一原因或MC值校准"
+    },
+    {
+      "requirement": "足以正式写作的方法、图表、统计、失败和复现材料",
+      "achieved": true,
+      "evidence": "完整中文初稿/方法推导/参数表/开发与独立表/六模型三seed簇/四可复现图/原模型源码hash和周期审计，未以负摘要代替；作者期刊语言后续编辑"
+    }
+  ],
+  "periodic_reviews": [
+    {
+      "round": 90,
+      "review_sha256": "f1d7130da9cfdd804c44a6e6389d5aec07a0547e9c315692d3d3f8a284dce886",
+      "cleanup_sha256": "441b93f11de8032909daffd170395347164372a81a004c31a22900c8fde713f3",
+      "items": 5
+    },
+    {
+      "round": 95,
+      "review_sha256": "6e10fa12a0acdd4256c7e2737b391da6450c594f200868701e5ba5ac8432024d",
+      "cleanup_sha256": "83e926f3a2a15607a8aab43839df6d9be17e72d6f4c8637f616006a86a061f35",
+      "items": 6
+    },
+    {
+      "round": 100,
+      "review_sha256": "5e665810538d6c46fd869ac55e7b4d3adf8898b768d4c74b92f2cad5cca89119",
+      "cleanup_sha256": "4858a046e928673f35a1ace9beadcf3b9746f97b33d995a7c8a6c23dacfdde14",
+      "items": 8
+    },
+    {
+      "round": 105,
+      "review_sha256": "d94d72ae51ab2f4fbb3bc1f17170dc1718af58b431102b39b68bca75270d86d4",
+      "cleanup_sha256": "e870d4e268622dae93b9aa2439638940858932deb16f0e63498a3e2f184dd6a5",
+      "items": 5
+    },
+    {
+      "round": 110,
+      "review_sha256": "c213537915b0900f8ed008052ae217da84a9ef24183481555f3cc2dc24eb37ed",
+      "cleanup_sha256": "28939a179b591c0c9276c903ecef0ba6f478ec2c77163d08e203db4c50726c90",
+      "items": 2
+    }
+  ],
+  "manuscript_sha256": "a3462183a11f4c3130bb46a749b55728a7043886b948a981cb35e079e9f2f2fc",
+  "core_evidence_sha256": {
+    "pilot": "9a88a975ef53307b36cc6ae5f98237581a76aaf56c5ed15db961038015316959",
+    "independent": "0b4c1c42d47ed4f0bd0b15fac946bce2532e394d6dd13b1146eb9baefa229617",
+    "tables": "33067894f0bcc72b71227645ded5a43b68d498400c3a8e5f318d937ee6d20012",
+    "source_contract": "08871fafe8dd33ba78a7dad506a01b5ad714e85bdd81f48b8b21ed4c0596dd9b"
+  },
+  "figures": [
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/three_seed_pilot.png",
+      "sha256": "3a4c0b40f5110291311a2453dbf46295b21fb5ee7632097e81c76f6cec289181"
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/failure_structure.png",
+      "sha256": "f6b72f8d7670bc20041aa14907a682ff324bce2d1c7f8bb900178466b1e49303"
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/contact_trajectory_1610/lateral_position.png",
+      "sha256": "9487d8017be02d5452ad081a01bd5d842c03918e46076f94ab0e062ffbce1f7b"
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/channel_validation_v1/independent_channels.png",
+      "sha256": "4c41e6794095a835d545950fd2ce5a50b8725305622fc38563177514caf2fb7d"
+    }
+  ],
+  "typesetting_limit": "Built-in compile attempt failed because Codex sandbox executable missing, source environment/braces/citations checked but PDF compilation and rendered layout unverified. Compiler repair is external to materials-readiness objective.",
+  "excluded": "Submission, acceptance, real hardware trials, algorithmic firstness, new long training or guaranteed safety are not achieved or asserted",
+  "source_sha256": "18c937c0802c1128f548b68840b158c965a8c4565048d259ddfd8048379b63e5"
+}
