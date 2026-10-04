@@ -1,0 +1,33 @@
+{
+  "verified": true,
+  "complete_method_case_replays": 128,
+  "unique_public_cases": 32,
+  "nonzero_potential_method_case_replays": 8,
+  "same_transition_comparison": "Captured original obs/reward/done and qpos/qvel/ctrl/state before potential processing; checked exact equality after processing. This is not two independently simulated trajectories.",
+  "precision": "Native wrapper preserves originalfloat64; VecNormalize converts policy rewards tofloat32 even norm_reward=False; float32 objective errors are bounded by measured rounding, no widened scientific threshold.",
+  "runtime_checks": "All50 possible rollout alignments with nonzero cut potentials, success/failure terminal zero, stale-potential reset fixture and first no-carry step; original episode.r and full original task summary preserved.",
+  "failure_archive": [
+    {
+      "directory": "../online_reward_potential",
+      "reason": "Initial wrapper incorrectly cast nativefloat64 reward tofloat32; strict reset fixture comparison failed after B1 collection; no accepted full evidence bundle"
+    },
+    {
+      "directory": "../online_reward_potential_checked",
+      "reason": "Nativedtype fixed but checker ignored VecNormalizefloat32 conversion; B1 completed32 and reset fixture passed, strict firstM3 step comparison failed; partial B1 data/source/log retained"
+    }
+  ],
+  "next": "New engineering-only paired raw/shaped PPO smoke with matched initial weights/config/worlds, actual CUDA updates, finite critic/Adam and exact weight/optimizer/RMS save/load. No long study or publication claim until protocol and contribution checks pass.",
+  "limit": "FreshGPU replay not bitwise old replication; M3 yaw score differs across replays, cannot attribute such cross-run differences to a reward-only fixed-policy wrapper. No learning effect, policy invariance theorem or global safety proven by this engineering check.",
+  "artifact_sha256": {
+    "B1.json": "be9ec3f550e64d8001b4989645c2507014623baed92ec9c5754408e3d7c862b1",
+    "B1_trace.npz": "3a5fd1a8dbf4166977cac76b103c38b2049981adec502b0e0ae3fc00f13b3e3c",
+    "M3.json": "bcf3a2a15adc8b71bd0e017393e668364a8cb5f7247d9b47a8a81dfdda1c1948",
+    "M3_trace.npz": "082f5ee904727bec77ad658afb6ce56b88e12579c339786570ae85817e144d80",
+    "B2-V.json": "f55fc737a3d92f0df9bea810cb1c7f062865f99b749d52389d35884ed8267855",
+    "B2-V_trace.npz": "6b59e5ecc8d706c6fd8dde75a0b834e8569e49be08627c157cd3d95848b0fde0",
+    "B2.json": "fbb11ac320da8b2a2ac3be1525592f656dfe4c4e6b20bc4d0f82488d461ee7b1",
+    "B2_trace.npz": "6c143918fa5afd5efed3b0a72e7d34eed797112534d3c48ce0deaf60c7525a1c"
+  },
+  "registration_sha256": "bcf6519ca77f930b269ef2bdb5029c898f8019aef0c20bc86b69b1eb71b244bf",
+  "result_sha256": "5169bd417f277fe59b371c0f782209a3f21d749bace2b38cb5a41ecac9103628"
+}
