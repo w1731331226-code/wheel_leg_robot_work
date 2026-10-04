@@ -1,0 +1,745 @@
+{
+  "verified": true,
+  "states": 27,
+  "new_cpu_validation_steps": 27,
+  "training_updates": 0,
+  "new_gpu_rollouts": 0,
+  "predicted_cpu_safe": 27,
+  "validated_cpu_safe": 27,
+  "records": [
+    {
+      "label": "1609",
+      "case": 4700064,
+      "event": 0,
+      "time_s": 4.798,
+      "original_gpu_margin_rad": 0.004696989059448153,
+      "original_cpu_margin_rad": 0.004697006840025386,
+      "candidate_coordinates": [
+        -1.0,
+        1.0
+      ],
+      "command": [
+        -1.3895341016477654,
+        0.35050364577016363,
+        -0.7485793295456531,
+        0.9890170364114791,
+        -0.10926067829132124,
+        -0.1199048757553105
+      ],
+      "predicted_margin_rad": 0.004700765652038141,
+      "validated_cpu_margin_rad": 0.004700765652174255,
+      "local_fit_residual_rad": 4.548028620707826e-13,
+      "extrapolation_validation_error_rad": 4.567457523307894e-13,
+      "maximum_change_from_center": 1.209861143049923,
+      "local_probe_radius": 0.01,
+      "note": "LP may extrapolate beyond the0.01 measurement radius; this row reports newCPU oracle validation, not a prospective bound or deployed decision."
+    },
+    {
+      "label": "1609",
+      "case": 4700048,
+      "event": 0,
+      "time_s": 1.8015,
+      "original_gpu_margin_rad": 0.0007936000823973721,
+      "original_cpu_margin_rad": 0.0007935431441932206,
+      "candidate_coordinates": [
+        1.0,
+        -1.0
+      ],
+      "command": [
+        -0.855565633605501,
+        0.8053382134644949,
+        -1.1540128568158639,
+        0.22699381496699667,
+        -0.22186411917209625,
+        -0.22186411917209625
+      ],
+      "predicted_margin_rad": 0.0007970667821195487,
+      "validated_cpu_margin_rad": 0.000797066782155964,
+      "local_fit_residual_rad": 3.7847502904839375e-13,
+      "extrapolation_validation_error_rad": 3.735900477863652e-13,
+      "maximum_change_from_center": 1.0229263934945603,
+      "local_probe_radius": 0.01,
+      "note": "LP may extrapolate beyond the0.01 measurement radius; this row reports newCPU oracle validation, not a prospective bound or deployed decision."
+    },
+    {
+      "label": "1609",
+      "case": 4700048,
+      "event": 1,
+      "time_s": 1.8915,
+      "original_gpu_margin_rad": 8.964538574129932e-06,
+      "original_cpu_margin_rad": 8.94325752565095e-06,
+      "candidate_coordinates": [
+        1.0,
+        -1.0
+      ],
+      "command": [
+        -0.8747744368589299,
+        0.7860193301454129,
+        -1.151207583284953,
+        0.24233934113956412,
+        -0.22899077832698822,
+        -0.22899077832698822
+      ],
+      "predicted_margin_rad": 1.256395374005237e-05,
+      "validated_cpu_margin_rad": 1.2563953760924562e-05,
+      "local_fit_residual_rad": 3.454458941782919e-13,
+      "extrapolation_validation_error_rad": 3.5005331966431186e-13,
+      "maximum_change_from_center": 1.1430269250217724,
+      "local_probe_radius": 0.01,
+      "note": "LP may extrapolate beyond the0.01 measurement radius; this row reports newCPU oracle validation, not a prospective bound or deployed decision."
+    },
+    {
+      "label": "1609",
+      "case": 4700048,
+      "event": 2,
+      "time_s": 1.9325,
+      "original_gpu_margin_rad": -2.145767212802241e-07,
+      "original_cpu_margin_rad": -2.43763119689433e-07,
+      "candidate_coordinates": [
+        1.0,
+        -1.0
+      ],
+      "command": [
+        -0.8585461591013714,
+        0.7814602638175746,
+        -1.1753422146858297,
+        0.24304158677719567,
+        -0.22905217111110687,
+        -0.22905217111110687
+      ],
+      "predicted_margin_rad": 3.3868366902112257e-06,
+      "validated_cpu_margin_rad": 3.3868367210754258e-06,
+      "local_fit_residual_rad": 3.3029134992855447e-13,
+      "extrapolation_validation_error_rad": 3.255173908200959e-13,
+      "maximum_change_from_center": 1.1583933751983695,
+      "local_probe_radius": 0.01,
+      "note": "LP may extrapolate beyond the0.01 measurement radius; this row reports newCPU oracle validation, not a prospective bound or deployed decision."
+    },
+    {
+      "label": "1609",
+      "case": 4600000,
+      "event": 0,
+      "time_s": 6.019,
+      "original_gpu_margin_rad": 0.0002881526947020596,
+      "original_cpu_margin_rad": 0.00028808689920389874,
+      "candidate_coordinates": [
+        1.0,
+        -1.0
+      ],
+      "command": [
+        -0.6517036988394237,
+        0.8147831726456539,
+        -1.3640383523486972,
+        0.22553889490775347,
+        -0.14370396733283997,
+        -0.14462795853614807
+      ],
+      "predicted_margin_rad": 0.0002918155438265124,
+      "validated_cpu_margin_rad": 0.00029181554388535424,
+      "local_fit_residual_rad": 5.302425178315242e-13,
+      "extrapolation_validation_error_rad": 5.24469356832924e-13,
+      "maximum_change_from_center": 1.2621597080142055,
+      "local_probe_radius": 0.01,
+      "note": "LP may extrapolate beyond the0.01 measurement radius; this row reports newCPU oracle validation, not a prospective bound or deployed decision."
+    },
+    {
+      "label": "1609",
+      "case": 4600001,
+      "event": 0,
+      "time_s": 6.0155,
+      "original_gpu_margin_rad": 0.0005101203918456143,
+      "original_cpu_margin_rad": 0.000510175227659948,
+      "candidate_coordinates": [
+        1.0,
+        -1.0
+      ],
+      "command": [
+        -0.5609100983842052,
+        0.8291429248588988,
+        -1.4552225978391284,
+        0.21812835476195647,
+        -0.14031365513801575,
+        -0.14129632711410522
+      ],
+      "predicted_margin_rad": 0.0005140090535460384,
+      "validated_cpu_margin_rad": 0.000514009053593556,
+      "local_fit_residual_rad": 3.6515235400358896e-13,
+      "extrapolation_validation_error_rad": 3.709255125272648e-13,
+      "maximum_change_from_center": 1.4026640929679477,
+      "local_probe_radius": 0.01,
+      "note": "LP may extrapolate beyond the0.01 measurement radius; this row reports newCPU oracle validation, not a prospective bound or deployed decision."
+    },
+    {
+      "label": "1609",
+      "case": 4600007,
+      "event": 0,
+      "time_s": 5.804,
+      "original_gpu_margin_rad": 0.003790879249572665,
+      "original_cpu_margin_rad": 0.0037908077769970294,
+      "candidate_coordinates": [
+        1.0,
+        1.0
+      ],
+      "command": [
+        -0.8792702296342563,
+        0.7634894274033781,
+        -0.1043835042776845,
+        1.1674291585234426,
+        0.11922456324100494,
+        0.11851120740175247
+      ],
+      "predicted_margin_rad": 0.0037942049360568664,
+      "validated_cpu_margin_rad": 0.0037942049360339958,
+      "local_fit_residual_rad": 2.5440760581492194e-13,
+      "extrapolation_validation_error_rad": 2.503552920529728e-13,
+      "maximum_change_from_center": 1.0443426084466307,
+      "local_probe_radius": 0.01,
+      "note": "LP may extrapolate beyond the0.01 measurement radius; this row reports newCPU oracle validation, not a prospective bound or deployed decision."
+    },
+    {
+      "label": "1609",
+      "case": 4600007,
+      "event": 1,
+      "time_s": 5.9655000000000005,
+      "original_gpu_margin_rad": 1.0037422180086963e-05,
+      "original_cpu_margin_rad": 1.0007540034440154e-05,
+      "candidate_coordinates": [
+        1.0,
+        1.0
+      ],
+      "command": [
+        -0.7867597867890319,
+        0.7419810062296084,
+        -0.13835336847371094,
+        1.2121197593057524,
+        0.13522273302078247,
+        0.1350962519645691
+      ],
+      "predicted_margin_rad": 1.348901525077828e-05,
+      "validated_cpu_margin_rad": 1.3489015213696831e-05,
+      "local_fit_residual_rad": 3.446687382661951e-13,
+      "extrapolation_validation_error_rad": 3.44058115331336e-13,
+      "maximum_change_from_center": 1.098459834123896,
+      "local_probe_radius": 0.01,
+      "note": "LP may extrapolate beyond the0.01 measurement radius; this row reports newCPU oracle validation, not a prospective bound or deployed decision."
+    },
+    {
+      "label": "1609",
+      "case": 4600005,
+      "event": 0,
+      "time_s": 5.8165000000000004,
+      "original_gpu_margin_rad": 0.0034259796142577237,
+      "original_cpu_margin_rad": 0.0034260265941912227,
+      "candidate_coordinates": [
+        -1.0,
+        -1.0
+      ],
+      "command": [
+        -0.12295182754459438,
+        1.2218075942517332,
+        -0.8653496895429963,
+        0.6849672843583594,
+        0.11591627448797226,
+        0.12203161418437958
+      ],
+      "predicted_margin_rad": 0.0034295242327126996,
+      "validated_cpu_margin_rad": 0.003429524232725356,
+      "local_fit_residual_rad": 1.9279022839159456e-13,
+      "extrapolation_validation_error_rad": 1.957323192414151e-13,
+      "maximum_change_from_center": 1.0963998833438553,
+      "local_probe_radius": 0.01,
+      "note": "LP may extrapolate beyond the0.01 measurement radius; this row reports newCPU oracle validation, not a prospective bound or deployed decision."
+    },
+    {
+      "label": "1609",
+      "case": 4600005,
+      "event": 1,
+      "time_s": 5.979,
+      "original_gpu_margin_rad": 9.560585021883838e-06,
+      "original_cpu_margin_rad": 9.530015672387648e-06,
+      "candidate_coordinates": [
+        -1.0,
+        -1.0
+      ],
+      "command": [
+        -0.11778756358229514,
+        1.2837784055841088,
+        -0.7943125291346016,
+        0.6607504356886763,
+        0.13430257141590118,
+        0.13494828343391418
+      ],
+      "predicted_margin_rad": 1.3072245036882535e-05,
+      "validated_cpu_margin_rad": 1.307224507085536e-05,
+      "local_fit_residual_rad": 2.888245205643011e-13,
+      "extrapolation_validation_error_rad": 2.857714065385153e-13,
+      "maximum_change_from_center": 1.155060253272068,
+      "local_probe_radius": 0.01,
+      "note": "LP may extrapolate beyond the0.01 measurement radius; this row reports newCPU oracle validation, not a prospective bound or deployed decision."
+    },
+    {
+      "label": "1609",
+      "case": 4700080,
+      "event": 0,
+      "time_s": 6.3015,
+      "original_gpu_margin_rad": 0.00046470165252676665,
+      "original_cpu_margin_rad": 0.0004647189585036404,
+      "candidate_coordinates": [
+        1.0,
+        -1.0
+      ],
+      "command": [
+        -0.7005417617945231,
+        0.8642958666225529,
+        -1.4515522809100552,
+        0.2637906010262416,
+        -0.1415172517299652,
+        -0.1415172517299652
+      ],
+      "predicted_margin_rad": 0.00046849249921665503,
+      "validated_cpu_margin_rad": 0.0004684924992808259,
+      "local_fit_residual_rad": 6.294964555712687e-13,
+      "extrapolation_validation_error_rad": 6.307177002895514e-13,
+      "maximum_change_from_center": 1.2936449273922936,
+      "local_probe_radius": 0.01,
+      "note": "LP may extrapolate beyond the0.01 measurement radius; this row reports newCPU oracle validation, not a prospective bound or deployed decision."
+    },
+    {
+      "label": "1609",
+      "case": 4700058,
+      "event": 0,
+      "time_s": 6.215,
+      "original_gpu_margin_rad": 0.002890014648437411,
+      "original_cpu_margin_rad": 0.002890019444717229,
+      "candidate_coordinates": [
+        -1.0,
+        -1.0
+      ],
+      "command": [
+        -0.16960703789116477,
+        1.2456263361719613,
+        -0.8497887220568576,
+        0.7811071642112293,
+        0.12613192200660706,
+        0.12888364493846893
+      ],
+      "predicted_margin_rad": 0.00289349922683102,
+      "validated_cpu_margin_rad": 0.002893499226851892,
+      "local_fit_residual_rad": 5.361266982407635e-13,
+      "extrapolation_validation_error_rad": 5.366818101038007e-13,
+      "maximum_change_from_center": 1.045076716154901,
+      "local_probe_radius": 0.01,
+      "note": "LP may extrapolate beyond the0.01 measurement radius; this row reports newCPU oracle validation, not a prospective bound or deployed decision."
+    },
+    {
+      "label": "1609",
+      "case": 4700058,
+      "event": 1,
+      "time_s": 6.361,
+      "original_gpu_margin_rad": 1.0037422180086963e-05,
+      "original_cpu_margin_rad": 1.001767859198921e-05,
+      "candidate_coordinates": [
+        -1.0,
+        -1.0
+      ],
+      "command": [
+        -0.1664500595848089,
+        1.27571306940368,
+        -0.7973891581989778,
+        0.7675880133520225,
+        0.139170840382576,
+        0.1442122906446457
+      ],
+      "predicted_margin_rad": 1.3528738702417442e-05,
+      "validated_cpu_margin_rad": 1.352873873461391e-05,
+      "local_fit_residual_rad": 2.747246875229043e-13,
+      "extrapolation_validation_error_rad": 2.778888230636767e-13,
+      "maximum_change_from_center": 1.0934453563729873,
+      "local_probe_radius": 0.01,
+      "note": "LP may extrapolate beyond the0.01 measurement radius; this row reports newCPU oracle validation, not a prospective bound or deployed decision."
+    },
+    {
+      "label": "1610",
+      "case": 4600002,
+      "event": 0,
+      "time_s": 6.023,
+      "original_gpu_margin_rad": 0.0002951860427855557,
+      "original_cpu_margin_rad": 0.0002951980146612687,
+      "candidate_coordinates": [
+        -1.0,
+        1.0
+      ],
+      "command": [
+        -1.210345848460105,
+        0.24019629787673402,
+        -0.7994333128275244,
+        0.7872000272800942,
+        -0.14411062002182007,
+        -0.14406229555606842
+      ],
+      "predicted_margin_rad": 0.000298743424271386,
+      "validated_cpu_margin_rad": 0.00029874342431246426,
+      "local_fit_residual_rad": 6.026845687324778e-13,
+      "extrapolation_validation_error_rad": 5.985212325754219e-13,
+      "maximum_change_from_center": 1.0258933546684132,
+      "local_probe_radius": 0.01,
+      "note": "LP may extrapolate beyond the0.01 measurement radius; this row reports newCPU oracle validation, not a prospective bound or deployed decision."
+    },
+    {
+      "label": "1610",
+      "case": 4600003,
+      "event": 0,
+      "time_s": 5.8455,
+      "original_gpu_margin_rad": 0.002644920349121005,
+      "original_cpu_margin_rad": 0.0026449420164713633,
+      "candidate_coordinates": [
+        -1.0,
+        1.0
+      ],
+      "command": [
+        -1.2260407413939791,
+        0.2317619459087749,
+        -0.7596552422137318,
+        0.8438317093748442,
+        -0.12355212867259979,
+        -0.12495182454586029
+      ],
+      "predicted_margin_rad": 0.0026485233281772214,
+      "validated_cpu_margin_rad": 0.0026485233281487996,
+      "local_fit_residual_rad": 3.649303081843628e-13,
+      "extrapolation_validation_error_rad": 3.6282088444750116e-13,
+      "maximum_change_from_center": 1.063942814163414,
+      "local_probe_radius": 0.01,
+      "note": "LP may extrapolate beyond the0.01 measurement radius; this row reports newCPU oracle validation, not a prospective bound or deployed decision."
+    },
+    {
+      "label": "1610",
+      "case": 4600003,
+      "event": 1,
+      "time_s": 5.9415000000000004,
+      "original_gpu_margin_rad": 9.441375732333057e-06,
+      "original_cpu_margin_rad": 9.415634860010513e-06,
+      "candidate_coordinates": [
+        -1.0,
+        1.0
+      ],
+      "command": [
+        -1.2159838592679133,
+        0.2462177970246472,
+        -0.7791811459178615,
+        0.7878858418096255,
+        -0.13752758502960205,
+        -0.1292983889579773
+      ],
+      "predicted_margin_rad": 1.363236774820642e-05,
+      "validated_cpu_margin_rad": 1.3632367682481217e-05,
+      "local_fit_residual_rad": 6.060707489178798e-13,
+      "extrapolation_validation_error_rad": 6.054046153280979e-13,
+      "maximum_change_from_center": 1.1958963572978973,
+      "local_probe_radius": 0.01,
+      "note": "LP may extrapolate beyond the0.01 measurement radius; this row reports newCPU oracle validation, not a prospective bound or deployed decision."
+    },
+    {
+      "label": "1610",
+      "case": 4600003,
+      "event": 2,
+      "time_s": 6.0280000000000005,
+      "original_gpu_margin_rad": -9.536743172944284e-08,
+      "original_cpu_margin_rad": -8.103740301024231e-08,
+      "candidate_coordinates": [
+        -1.0,
+        1.0
+      ],
+      "command": [
+        -1.2247403084997877,
+        0.24407832240097616,
+        -0.784523590136426,
+        0.784080596628826,
+        -0.14220251142978668,
+        -0.1415102630853653
+      ],
+      "predicted_margin_rad": 4.082767220969785e-06,
+      "validated_cpu_margin_rad": 4.082767250723762e-06,
+      "local_fit_residual_rad": 5.468958618575602e-13,
+      "extrapolation_validation_error_rad": 5.426770144367765e-13,
+      "maximum_change_from_center": 1.1982464790344238,
+      "local_probe_radius": 0.01,
+      "note": "LP may extrapolate beyond the0.01 measurement radius; this row reports newCPU oracle validation, not a prospective bound or deployed decision."
+    },
+    {
+      "label": "1610",
+      "case": 4600005,
+      "event": 0,
+      "time_s": 5.751,
+      "original_gpu_margin_rad": 0.009420061111450106,
+      "original_cpu_margin_rad": 0.0094201212080538,
+      "candidate_coordinates": [
+        1.0,
+        1.0
+      ],
+      "command": [
+        -0.9686328917694037,
+        0.4513807411135604,
+        -0.10058845534854555,
+        1.418206409458443,
+        0.11508464068174362,
+        0.11010464280843735
+      ],
+      "predicted_margin_rad": 0.009423885172874735,
+      "validated_cpu_margin_rad": 0.00942388517290027,
+      "local_fit_residual_rad": 2.8760327497582433e-13,
+      "extrapolation_validation_error_rad": 2.878808302853031e-13,
+      "maximum_change_from_center": 1.4174666031489942,
+      "local_probe_radius": 0.01,
+      "note": "LP may extrapolate beyond the0.01 measurement radius; this row reports newCPU oracle validation, not a prospective bound or deployed decision."
+    },
+    {
+      "label": "1610",
+      "case": 4600005,
+      "event": 1,
+      "time_s": 5.937,
+      "original_gpu_margin_rad": 1.063346862784087e-05,
+      "original_cpu_margin_rad": 1.0588917778830975e-05,
+      "candidate_coordinates": [
+        1.0,
+        1.0
+      ],
+      "command": [
+        -0.7987460738728404,
+        0.508521757945231,
+        -0.11365313216820766,
+        1.4243338509837824,
+        0.13225054740905762,
+        0.13097472488880157
+      ],
+      "predicted_margin_rad": 1.433907057202255e-05,
+      "validated_cpu_margin_rad": 1.4339070555591249e-05,
+      "local_fit_residual_rad": 2.204347821084251e-13,
+      "extrapolation_validation_error_rad": 2.2104540420286867e-13,
+      "maximum_change_from_center": 1.4187840090310284,
+      "local_probe_radius": 0.01,
+      "note": "LP may extrapolate beyond the0.01 measurement radius; this row reports newCPU oracle validation, not a prospective bound or deployed decision."
+    },
+    {
+      "label": "1610",
+      "case": 4600007,
+      "event": 0,
+      "time_s": 5.9775,
+      "original_gpu_margin_rad": 0.0005125045776366299,
+      "original_cpu_margin_rad": 0.0005125636410971968,
+      "candidate_coordinates": [
+        -1.0,
+        -1.0
+      ],
+      "command": [
+        -0.12386772079914671,
+        1.1178649447341424,
+        -0.7941771052729512,
+        0.8326128532573114,
+        0.13518700003623962,
+        0.13619621098041534
+      ],
+      "predicted_margin_rad": 0.0005159126582672258,
+      "validated_cpu_margin_rad": 0.0005159126582987561,
+      "local_fit_residual_rad": 2.8810287486375834e-13,
+      "extrapolation_validation_error_rad": 2.9121149935917856e-13,
+      "maximum_change_from_center": 1.1472853549575972,
+      "local_probe_radius": 0.01,
+      "note": "LP may extrapolate beyond the0.01 measurement radius; this row reports newCPU oracle validation, not a prospective bound or deployed decision."
+    },
+    {
+      "label": "1610",
+      "case": 4700058,
+      "event": 0,
+      "time_s": 6.1530000000000005,
+      "original_gpu_margin_rad": 0.00618579387664786,
+      "original_cpu_margin_rad": 0.006185816491838025,
+      "candidate_coordinates": [
+        1.0,
+        1.0
+      ],
+      "command": [
+        -0.918446643923338,
+        0.5656928602717215,
+        -0.14068287690613202,
+        1.4160919766022255,
+        0.12182897329330444,
+        0.11861185729503632
+      ],
+      "predicted_margin_rad": 0.006189549889985768,
+      "validated_cpu_margin_rad": 0.006189549889960677,
+      "local_fit_residual_rad": 2.970401693616492e-13,
+      "extrapolation_validation_error_rad": 2.970956813896919e-13,
+      "maximum_change_from_center": 1.3436513868151347,
+      "local_probe_radius": 0.01,
+      "note": "LP may extrapolate beyond the0.01 measurement radius; this row reports newCPU oracle validation, not a prospective bound or deployed decision."
+    },
+    {
+      "label": "1610",
+      "case": 4700058,
+      "event": 1,
+      "time_s": 6.3205,
+      "original_gpu_margin_rad": 1.0156631469637745e-05,
+      "original_cpu_margin_rad": 1.01535348442372e-05,
+      "candidate_coordinates": [
+        1.0,
+        1.0
+      ],
+      "command": [
+        -0.7994860615775173,
+        0.6415671036398252,
+        -0.1726080459896323,
+        1.398266952296302,
+        0.13576269149780273,
+        0.13971807062625885
+      ],
+      "predicted_margin_rad": 1.3841715935436483e-05,
+      "validated_cpu_margin_rad": 1.384171596519046e-05,
+      "local_fit_residual_rad": 4.4764192443545307e-13,
+      "extrapolation_validation_error_rad": 4.46753745109163e-13,
+      "maximum_change_from_center": 1.3097861816079872,
+      "local_probe_radius": 0.01,
+      "note": "LP may extrapolate beyond the0.01 measurement radius; this row reports newCPU oracle validation, not a prospective bound or deployed decision."
+    },
+    {
+      "label": "1611",
+      "case": 4700048,
+      "event": 0,
+      "time_s": 1.7885,
+      "original_gpu_margin_rad": 0.0014450788497923917,
+      "original_cpu_margin_rad": 0.001445025767324415,
+      "candidate_coordinates": [
+        1.0,
+        -1.0
+      ],
+      "command": [
+        -0.8278104446241056,
+        0.8343020978159921,
+        -1.207121646173827,
+        0.2259583982766485,
+        -0.21876059472560883,
+        -0.21876059472560883
+      ],
+      "predicted_margin_rad": 0.0014485529620837934,
+      "validated_cpu_margin_rad": 0.0014485529620358317,
+      "local_fit_residual_rad": 4.521938386412016e-13,
+      "extrapolation_validation_error_rad": 4.558575739110893e-13,
+      "maximum_change_from_center": 1.011190627262105,
+      "local_probe_radius": 0.01,
+      "note": "LP may extrapolate beyond the0.01 measurement radius; this row reports newCPU oracle validation, not a prospective bound or deployed decision."
+    },
+    {
+      "label": "1611",
+      "case": 4700048,
+      "event": 1,
+      "time_s": 1.899,
+      "original_gpu_margin_rad": 9.67979431143462e-06,
+      "original_cpu_margin_rad": 9.647586312278023e-06,
+      "candidate_coordinates": [
+        1.0,
+        -1.0
+      ],
+      "command": [
+        -0.8357320873617768,
+        0.7984683591867704,
+        -1.1852901135069167,
+        0.24345657057445463,
+        -0.23009242117404938,
+        -0.23009242117404938
+      ],
+      "predicted_margin_rad": 1.317480882057076e-05,
+      "validated_cpu_margin_rad": 1.3174808802141058e-05,
+      "local_fit_residual_rad": 1.1202150307879918e-13,
+      "extrapolation_validation_error_rad": 1.1679546219056647e-13,
+      "maximum_change_from_center": 1.0040168138632901,
+      "local_probe_radius": 0.01,
+      "note": "LP may extrapolate beyond the0.01 measurement radius; this row reports newCPU oracle validation, not a prospective bound or deployed decision."
+    },
+    {
+      "label": "1611",
+      "case": 4700048,
+      "event": 2,
+      "time_s": 1.9645000000000001,
+      "original_gpu_margin_rad": -2.145767212802241e-07,
+      "original_cpu_margin_rad": -2.125671882957647e-07,
+      "candidate_coordinates": [
+        1.0,
+        -1.0
+      ],
+      "command": [
+        -0.7993295136865564,
+        0.7923813648442493,
+        -1.2379971149824647,
+        0.24418421646227328,
+        -0.23634225130081177,
+        -0.23634225130081177
+      ],
+      "predicted_margin_rad": 4.052366114004613e-06,
+      "validated_cpu_margin_rad": 4.0523661626323815e-06,
+      "local_fit_residual_rad": 5.033196079292646e-13,
+      "extrapolation_validation_error_rad": 5.031530747601209e-13,
+      "maximum_change_from_center": 1.258681058883667,
+      "local_probe_radius": 0.01,
+      "note": "LP may extrapolate beyond the0.01 measurement radius; this row reports newCPU oracle validation, not a prospective bound or deployed decision."
+    },
+    {
+      "label": "1611",
+      "case": 4600007,
+      "event": 0,
+      "time_s": 5.8315,
+      "original_gpu_margin_rad": 0.002230787277221591,
+      "original_cpu_margin_rad": 0.0022308242281630086,
+      "candidate_coordinates": [
+        1.0,
+        1.0
+      ],
+      "command": [
+        -0.8396389747387165,
+        0.7173776288914115,
+        -0.1319264240402685,
+        1.1981259773525899,
+        0.12106062471866608,
+        0.12120586633682251
+      ],
+      "predicted_margin_rad": 0.0022343053612328134,
+      "validated_cpu_margin_rad": 0.0022343053612428054,
+      "local_fit_residual_rad": 1.0846878987645471e-13,
+      "extrapolation_validation_error_rad": 1.0835776720341528e-13,
+      "maximum_change_from_center": 1.0842075999296574,
+      "local_probe_radius": 0.01,
+      "note": "LP may extrapolate beyond the0.01 measurement radius; this row reports newCPU oracle validation, not a prospective bound or deployed decision."
+    },
+    {
+      "label": "1611",
+      "case": 4700032,
+      "event": 0,
+      "time_s": 5.7805,
+      "original_gpu_margin_rad": 0.006679916381835849,
+      "original_cpu_margin_rad": 0.00667990394507445,
+      "candidate_coordinates": [
+        1.0,
+        1.0
+      ],
+      "command": [
+        -0.9614760400229133,
+        0.8937123029276481,
+        -0.3286322720035604,
+        1.165397734231504,
+        0.13363254070281982,
+        0.13363254070281982
+      ],
+      "predicted_margin_rad": 0.006683333124323232,
+      "validated_cpu_margin_rad": 0.006683333124511526,
+      "local_fit_residual_rad": 6.201705818666324e-13,
+      "extrapolation_validation_error_rad": 6.181721801112872e-13,
+      "maximum_change_from_center": 1.0798881719049662,
+      "local_probe_radius": 0.01,
+      "note": "LP may extrapolate beyond the0.01 measurement radius; this row reports newCPU oracle validation, not a prospective bound or deployed decision."
+    }
+  ],
+  "joint_response_review_sha256": "2b0f1aded499bbe4b4d7758e5bb93b2c8d5b386b1a952dbab788907a594dab32",
+  "reviewer_sha256": "713a695683fcdae124ae5b681f1ae48cf76a836e9fee90822a4f59ddbec5b273",
+  "method": "Local input-response least squares from four bounded perturbations; LP maximizes minimum next-joint margin under original2D coordinates and actuator boxes; exact original1.4rad threshold, angular rows scaled1e6 only for arithmetic.",
+  "limits": "Actual simulated model and geometry used offline. One-step existence in27 captured states does not prove recursive feasibility, unknown-contact robustness, CPU-GPU transfer or task-controller benefits. Empirical errors not certified disturbance bounds.",
+  "next": "Evaluate practical fixed-design/causal-state predictor and independent held-out error before any deployment or new learning; retain all stopped candidates and original gates."
+}

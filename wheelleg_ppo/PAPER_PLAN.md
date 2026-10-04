@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第125轮集中方向/方法深审及可达性诊断（2026-10-05，goal active，下一130）：
+
+**方向决定：** 不扩停止的2.4M/20ms方向cone分支，不调guard或豁免微小越界；条件性继续共同Nom修复与Actor状态可行余量的响应模型。力矩方向只给有限功率条件，不能作加速度或状态域保证；actual-CPU oracle只作诊断，不能泄漏到控制器/Actor或当鲁棒误差证书。新方法优势、可部署信息模型与独立泛化仍未齐，不能用旧初稿ready结束goal。
+
+**本轮新证据：** audit_joint_reachability.py在已存27状态，按原2D坐标±1和动态TorqueBox，以±.01差模小扰动的局部响应拟合LP最大化一步最小关节余量；角度行只缩放1e6以避免优化器容差吞没原1.4门，不更改门或制造额外控制权限。27预测及27额外CPU shadow验证全内侧，min margin3.38684e−6rad，pred与CPU误差max6.30718e−13rad；全部候选超.01局部半径，max坐标变化1.41878，逐个CPU重验原物理模型，不将局部斜率直接泛化。0新GPU/0训练，实际geometry/参数仅offline。样本中权限可支持一步内侧，但未证明递归可行/未知接触鲁棒或实际任务改善。
+
+**下一项补充：** 先注册可部署信息契约（固定设计7kg、可得encoder/IMU/commands/控制器memory、support/contact假设），比较其一步响应与oracle状态并用新的保留误差案例检验；信息不足须明确需可测信号，不偷偷加真实terrain/mass/friction。可信模型及不确定性假设之后才做共同Nom纠正与Actor余量层，解释不可行状态/空集合，保留原执行权限和任务门；再全高度/非退化/机制消融与新三seed学习，通过实际强经典门才五seed/OOD/接触和CPU-GPU敏感性。不要把拟合样本最大误差当前瞻上界，或用一个LP存在点包装已完成鲁棒方法。
+
+**冗余清理：** 三closed progress marker149B删除；内容/原SHA与completion/review证据SHA在round125_cleanup.json保留。三unit inactive/MainPID0、无fuser占用，现auditor不读progress，dashboard只读无关旧目录；模型/轨迹/原注册失败/所有独有科学失败/封存集不删。完整五轮证据/值得继续的条件和额外实验先后见round125_direction_review.json，下一130深审清理。
+
 第124轮同状态联合响应与跨后端偏差测量（2026-10-05，goal active）：
 
 事前登记三固定L2末模型/停止的cone控制/全部27低高度发展案例，81真实GPU回放、0学习；只读capture pre完整q17/v16/warm16/执行NomActor命令与post q17/v16，first运动学预测/near1e−5/first实际跨界事件最多243，实际27。无actuator activation/mocap/applied forces，时间为步计数派生，本静态直接力矩模型可用，不声称通用状态或同轨迹恢复。

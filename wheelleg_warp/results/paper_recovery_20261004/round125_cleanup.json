@@ -1,0 +1,52 @@
+{
+  "round": 125,
+  "files": [
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/joint_response_v1/progress.json",
+      "bytes": 49,
+      "sha256": "2dbc8f5ab21d7e90c4f619001a0f4fafc4c035d54d61308969e9fa3ed067ed24",
+      "retained_content": {
+        "status": "complete",
+        "completed_episodes": 81
+      },
+      "proof": "wheelleg_warp/results/paper_recovery_20261004/joint_response_v1/completion.json",
+      "proof_sha256": "5ad98fe46d884738fd7cf45c2aa93f662bfa94c6d9b84e9d14ac5e528d0e2d1c",
+      "review": "wheelleg_warp/results/paper_recovery_20261004/joint_response_v1/review.json",
+      "review_sha256": "2b0f1aded499bbe4b4d7758e5bb93b2c8d5b386b1a952dbab788907a594dab32",
+      "open_handles": false,
+      "reason": "Closed progress duplicates completed ledger and independently checked completion counters"
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/leg_cone_v1/progress.json",
+      "bytes": 50,
+      "sha256": "21e457a2ce41431d9f75dbdb755cfa441443624c341fbc309967b003fc2a1ed5",
+      "retained_content": {
+        "status": "complete",
+        "completed_episodes": 243
+      },
+      "proof": "wheelleg_warp/results/paper_recovery_20261004/leg_cone_v1/completion.json",
+      "proof_sha256": "00de5815ffa0ecbb4a764231777b39dfe55dc80ddfdfa80b97aca7629ebc5d3c",
+      "review": "wheelleg_warp/results/paper_recovery_20261004/leg_cone_v1/review.json",
+      "review_sha256": "12cc29f82f657b0c439c4dd9b2149002705b9b68c79015ac14856fc7eacff6ff",
+      "open_handles": false,
+      "reason": "Closed progress duplicates completed ledger and independently checked completion counters"
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/design_boundary_v1/progress.json",
+      "bytes": 50,
+      "sha256": "83c1d5eb54749f78669bcb49908cf8a351465193cbc85be42f93be59b7382f53",
+      "retained_content": {
+        "status": "complete",
+        "completed_episodes": 135
+      },
+      "proof": "wheelleg_warp/results/paper_recovery_20261004/design_boundary_v1/completion.json",
+      "proof_sha256": "cbb14bf6b7590eac78b2a7992369bcf5557b8e3e7813803729744dc73bcbab43",
+      "review": "wheelleg_warp/results/paper_recovery_20261004/design_boundary_v1/review.json",
+      "review_sha256": "ab16e0f03280d26d2ffc5ceb754c232af8d56b5e5f1cc9029e8a7e958e204ef1",
+      "open_handles": false,
+      "reason": "Closed progress duplicates completed ledger and independently checked completion counters"
+    }
+  ],
+  "bytes_removed": 149,
+  "retained": "All source/model/checkpoints/normalization/physics snapshots/trajectories/case failures/runtime failures and sealed original tests preserved. Existing auditors read completion/ledger, not these closed progress markers; dashboard fallback targets only20260921 unrelated directories."
+}

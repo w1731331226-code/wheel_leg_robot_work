@@ -1,0 +1,82 @@
+{
+  "round": 125,
+  "period": [
+    121,
+    125
+  ],
+  "goal_status": "active",
+  "next_review_round": 130,
+  "objective": "Proceed with the complete pure-simulation core-journal method/learning/generalization plan, not merely record finite failures; periodic review and confirmed redundant-file deletion.",
+  "evidence": {
+    "design_boundary_review_sha256": "ab16e0f03280d26d2ffc5ceb754c232af8d56b5e5f1cc9029e8a7e958e204ef1",
+    "cone_review_sha256": "12cc29f82f657b0c439c4dd9b2149002705b9b68c79015ac14856fc7eacff6ff",
+    "discrete_audit_sha256": "7f992098055d04b9cc45a2e00c97d873393597b61e53ef9ffcff269b5d76ed69",
+    "response_review_sha256": "2b0f1aded499bbe4b4d7758e5bb93b2c8d5b386b1a952dbab788907a594dab32",
+    "reachability_audit_sha256": "9652e56af4fa5e4eff55299c66c8601bd123ff6583e3d5765214f13016516e1b",
+    "actual_rollouts": "135 boundary +243 cone +81 response, no learning since failed2.4M pilot",
+    "guarded_direction_condition": "All checked outputs satisfy;4 strict state failures still exist.",
+    "local_oracle_reachability": {
+      "states": 27,
+      "predicted_safe": 27,
+      "cpu_validated_safe": 27,
+      "min_margin_rad": 3.3868367210754258e-06,
+      "maximum_extrapolation_validation_error_rad": 6.307177002895514e-13,
+      "all_candidates_beyond_local_measurement_radius": true
+    }
+  },
+  "direction": [
+    {
+      "branch": "Fixed20ms torque-direction cone",
+      "decision": "stop learning/promotion of this fixed rule",
+      "reason": "Algebra valid but4 state violations and task success lower thanzero; cannot sweep horizon or loosen1.4rad to pass."
+    },
+    {
+      "branch": "Coupled response-based common Nom repair and Actor admissibility",
+      "decision": "continue conditionally",
+      "reason": "One-step oracle CPU validation shows original2D authority can preserve the state in27 sampled cases; Nom-only can be insufficient at the same state, so response rather than torque sign is needed."
+    },
+    {
+      "branch": "Treat oracle/CPU discrepancy as deployed robust prediction",
+      "decision": "reject",
+      "reason": "Actual geometry/parameters and fullstate used offline; empirical CPU-GPU maxima are not certified prospective bounds or permissible actor observations."
+    },
+    {
+      "branch": "New long PPO/complexity/scene inflation",
+      "decision": "do not start",
+      "reason": "Method/state-constraint and prediction contract not validated; current learning/strong-reference gates remain false."
+    }
+  ],
+  "method_review": {
+    "progress": [
+      "All fixed models/cases/gates/source and unique failures retained; no cherry-picked reruns.",
+      "Read-only substep traces separate requested/filter/executed increments; direction not confused with coupled acceleration.",
+      "Discrete integration matches observed arithmetic;4 failures already exist without final rounding.",
+      "Same-state CPU branches and independent replays identify local coupled effects;27 candidate inputs validated within original bounds."
+    ],
+    "limits": [
+      "Oracle reachability is single-step existence, not recursive viability or real-world/controller performance.",
+      "LP response model extrapolates beyond0.01 for all27; each candidate CPU check is retained and not generalized to untested states.",
+      "Actual q17/v16/warm16 and true simulation scene are diagnosis-only; practical model must declare causal sensor/controller inputs and fixed design assumptions.",
+      "CPU prediction errors~8.16e-8rad matter near the strict margin; no empirical maximum relabelled as robust error bound.",
+      "No new method superiority, formal five-seed or independent geometry-OOD/contact sensitivity material yet; old draft readiness does not finish this goal."
+    ]
+  },
+  "next_experiments": [
+    {
+      "priority": 1,
+      "work": "Register a practical predictor contract: fixed7kg model, available encoders/IMU/commands/controller memory, explicit support/contact assumptions. Compare its one-step response with oracle held states, using no true terrain/mass/friction as predictor inputs.",
+      "exit": "Show response and error assumptions on independent held-out cases. If information insufficient, explicitly identify needed measurable signal rather than silently grant truth."
+    },
+    {
+      "priority": 2,
+      "work": "Only once predictor validity is established, construct common Nom corrective feasibility first and Actor projection into remaining admissible set with explicit uncertainty/numerical margins.",
+      "exit": "Same total actuator authority and task gates for every method; explain possible empty sets and inertial states, no unconditional safety proof from finite validation."
+    },
+    {
+      "priority": 3,
+      "work": "Controlled finite full-height/nondegradation trials and necessary mechanism/initial-function ablations before new three-seed learning; formal five-seed and independent combinations/OOD only after an actual advantage gate.",
+      "exit": "Cross-seed complete-task/physical/design benefit against strongest same-information classical controls, then complete remaining paper/model/independent-evidence plan."
+    }
+  ],
+  "cleanup_sha256": "1ad581ddfab6277b13e1553201c7a09b5180274ba94dd6a3af10ace64717cd4a"
+}
