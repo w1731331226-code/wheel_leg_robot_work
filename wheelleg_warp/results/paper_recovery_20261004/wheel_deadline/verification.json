@@ -1,0 +1,71 @@
+{
+  "verified": true,
+  "accepted": false,
+  "episodes": 36,
+  "groups": {
+    "0": {
+      "total": 12,
+      "success_count": 4,
+      "complete": true,
+      "mean_yaw_score_deg": 0.11502302014891247,
+      "by_direction": {
+        "1": {
+          "total": 6,
+          "successes": 2
+        },
+        "-1": {
+          "total": 6,
+          "successes": 2
+        }
+      },
+      "peak_actual_yaw_deg": 1.1525982450462686
+    },
+    "1": {
+      "total": 12,
+      "success_count": 8,
+      "complete": true,
+      "mean_yaw_score_deg": 1.542671291091155,
+      "by_direction": {
+        "1": {
+          "total": 6,
+          "successes": 2
+        },
+        "-1": {
+          "total": 6,
+          "successes": 6
+        }
+      },
+      "peak_actual_yaw_deg": 4.386683894102934
+    },
+    "-1": {
+      "total": 12,
+      "success_count": 4,
+      "complete": true,
+      "mean_yaw_score_deg": 1.4097203686631634,
+      "by_direction": {
+        "1": {
+          "total": 6,
+          "successes": 2
+        },
+        "-1": {
+          "total": 6,
+          "successes": 2
+        }
+      },
+      "peak_actual_yaw_deg": 3.5798159947278103
+    }
+  },
+  "maximum_float32_coordinate_rounding_error_rad": 4.240560264046067e-10,
+  "precision_audit": "Runtime addition x+.075 is float32 before direction promotes it to float64. Exact commands reconstructed; ideal-coordinate discrepancy bounded by registered distance floor, no tolerance widening or physics rerun.",
+  "preregistered_acceptance": "All12 correct-reference conditions under original complete task gates, both directions",
+  "decision": "Do not promote the nominal coordinate correction. Close this bounded deadline-reference branch; no gain or reference-bound search.",
+  "next": "Audit unchanged dense/terminal reward after irreversible breaches on saved public traces, then register a matched reward-timing mechanism intervention if warranted; not another deadline parameter sweep.",
+  "limits": "Six constructed direction/offset conditions per arm repeated twice; ideal odometry and known step geometry, not independent tests or old-training-distribution causal proof.",
+  "artifact_sha256": {
+    "preregistration.json": "4fe37ba8fd87cb12dca7b6fa78d936cecb3e1c022181faa0f4ee04cb8e5248b7",
+    "result.json": "3a3c231b1c393722d9786680c705a61f73a80712e69d4b2cf8b6e24a28c9b5bd",
+    "trace.npz": "a520f6fcf88d96e8fc307d5c07b06f203259ae4496cb6cab33d7a581b45c6a76",
+    "reference_trace.npz": "4589061719ccdc80f323b6a8ef0c5b94a0ef69bca3318ffad9a7126570157f55"
+  },
+  "verifier_sha256": "c13d39370b6e0fa1f76148aa1cfc52e97f253c9443282f38202834a27184031b"
+}
