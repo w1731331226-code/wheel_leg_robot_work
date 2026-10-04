@@ -6161,3 +6161,44 @@
 - `wheelleg_warp/results/registered_gpu_pilots_20261003/queue_status.json`
 - `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/selection.json`
 - `wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/runs/B2/1611/step_2000000.json`
+
+### 自动同步快照 2026-10-04T13:22:04+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/original_1609_run.log`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/development_final.json`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/episodes.json`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/initialization.json`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/progress.json`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_100000.json`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_100000.pkl`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_100000.zip`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_120000.json`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_120000.pkl`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_120000.zip`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_140000.json`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_140000.pkl`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_140000.zip`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_160000.json`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_160000.pkl`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_160000.zip`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_180000.json`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_180000.pkl`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_180000.zip`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_20000.json`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_20000.pkl`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_20000.zip`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_200000.json`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_200000.pkl`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_200000.zip`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_40000.json`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_40000.pkl`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_40000.zip`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_60000.json`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_60000.pkl`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_60000.zip`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_80000.json`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_80000.pkl`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/step_80000.zip`
+- `wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/runs/original/1609/verification.json`
