@@ -1,0 +1,10 @@
+/home/wmt/wheel_leg_robot_work/.venv/lib/python3.10/site-packages/stable_baselines3/ppo/ppo.py:155: UserWarning: You have specified a mini-batch size of 250, but because the `RolloutBuffer` is of size `n_steps * n_envs = 50`, after every 0 untruncated mini-batches, there will be a truncated mini-batch of size 50
+We recommend using a `batch_size` that is a factor of `n_steps * n_envs`.
+Info: (n_steps=50 and n_envs=1)
+  warnings.warn(
+Traceback (most recent call last):
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/audit_route_pilot_mechanisms.py", line 82, in <module>
+    if __name__=='__main__':run()
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/audit_route_pilot_mechanisms.py", line 48, in run
+    logged=json.loads((OUT/'runs'/arm/str(seed)/'initialization.json').read_text());assert initial==logged['weight_sha256']
+AssertionError

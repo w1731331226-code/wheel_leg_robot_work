@@ -1,0 +1,184 @@
+{
+  "round": 120,
+  "period": [
+    116,
+    120
+  ],
+  "goal_status": "active",
+  "next_review_round": 125,
+  "objective": "Complete pure-simulation core-journal supplement plan, periodic direction/method/extra-experiment review and redundant-file cleanup; old draft readiness is not new-goal completion.",
+  "evidence": {
+    "study_review_sha256": "9bc9f1334c771f5e8700c61677fc25dc5734693d632112aea5dec0fc3c831dfc",
+    "mechanism_audit_sha256": "af869e8738e865bc9f48e87adc11d68b4569dab76f1f074e9be9172bbcd2088d",
+    "full_learning_steps": 2400000,
+    "loaded_checkpoints": 120,
+    "evaluation_episodes": 2040,
+    "information_gate": false,
+    "formal_expansion_gates": {
+      "M3-route": false,
+      "L2-route": false
+    },
+    "design_failure_count": 60,
+    "endpoint115_failures": 57,
+    "all_design_failures_below_leg_m": 0.16,
+    "all_evaluation_physical_passed": true,
+    "initial_function_sensitivity": {
+      "1609": {
+        "initial_weight_sha256": "00a8efe5a2e74bb0b2a6df76ed19e40cf064bc27edf43f97ebca7177f5f63239",
+        "normalized_route_feature_range": [
+          -3,
+          3
+        ],
+        "original": {
+          "-3.0": {
+            "max_action_change": 0.009252405725419521,
+            "coordinate_rms_change": [
+              0.001383315771818161,
+              0.006037808954715729,
+              0.003965784329921007
+            ],
+            "max_wheel_request_change_Nm": 0.0021341191604733467,
+            "max_value_change": 0.5983399152755737
+          },
+          "3.0": {
+            "max_action_change": 0.00809921883046627,
+            "coordinate_rms_change": [
+              0.0017287250375375152,
+              0.005692396778613329,
+              0.003149565542116761
+            ],
+            "max_wheel_request_change_Nm": 0.001746574998833239,
+            "max_value_change": 0.2684605121612549
+          }
+        },
+        "zero_column_restores_exact_actor_and_critic_initial_function": true
+      },
+      "1610": {
+        "initial_weight_sha256": "f678233c7a65dd17a697ea45d043376afc7c5f518a49aa452914894258c7d2f6",
+        "normalized_route_feature_range": [
+          -3,
+          3
+        ],
+        "original": {
+          "-3.0": {
+            "max_action_change": 0.008580002933740616,
+            "coordinate_rms_change": [
+              0.00259910780005157,
+              0.0052789365872740746,
+              0.0017665470950305462
+            ],
+            "max_wheel_request_change_Nm": 0.0011218293802812696,
+            "max_value_change": 0.42643600702285767
+          },
+          "3.0": {
+            "max_action_change": 0.007559264078736305,
+            "coordinate_rms_change": [
+              0.0032179902773350477,
+              0.004483655095100403,
+              0.0020952573977410793
+            ],
+            "max_wheel_request_change_Nm": 0.0010752445086836815,
+            "max_value_change": 0.3405906558036804
+          }
+        },
+        "zero_column_restores_exact_actor_and_critic_initial_function": true
+      },
+      "1611": {
+        "initial_weight_sha256": "b21382d2e698edac01d41ec687f6d84cec9ca984ec20f3ca783d821c5388a8e3",
+        "normalized_route_feature_range": [
+          -3,
+          3
+        ],
+        "original": {
+          "-3.0": {
+            "max_action_change": 0.011278572492301464,
+            "coordinate_rms_change": [
+              0.007173118181526661,
+              0.0049169049598276615,
+              0.002367225009948015
+            ],
+            "max_wheel_request_change_Nm": 0.0015458278357982635,
+            "max_value_change": 0.8082277178764343
+          },
+          "3.0": {
+            "max_action_change": 0.011604455299675465,
+            "coordinate_rms_change": [
+              0.007831474766135216,
+              0.004649323411285877,
+              0.0013371463865041733
+            ],
+            "max_wheel_request_change_Nm": 0.0010054759914055467,
+            "max_value_change": 0.6863144040107727
+          }
+        },
+        "zero_column_restores_exact_actor_and_critic_initial_function": true
+      }
+    }
+  },
+  "direction": [
+    {
+      "branch": "Extend current pilot to five seeds/longer budgets or harder scenes",
+      "decision": "stop",
+      "reason": "Registered information and strong-reference gates failed; basic low-height working-domain violations already unresolved."
+    },
+    {
+      "branch": "Model/working-domain residual admissibility",
+      "decision": "continue with one bounded causal measurement first",
+      "reason": "57/60 design violations at115mm, all60 below160mm; torque projection controller.py325..357 enforces actuator boxes while working joint margins are evaluated later. It does not establish dynamic state-domain invariance."
+    },
+    {
+      "branch": "Route information alone",
+      "decision": "do not label universally harmful/useful; secondary branch",
+      "reason": "Fixed classical lateral response improved but task gate failed; added normalized input changes initial actor/value functions. Same parameter hash did not ensure same initial function under all feature inputs."
+    },
+    {
+      "branch": "Change PPO/stack networks/privileged value input",
+      "decision": "defer until a specific diagnosed state/value problem",
+      "reason": "No MC calibration or evidence isolating hidden-controller/history/value error yet; new variables would weaken interpretation."
+    }
+  ],
+  "method_review": {
+    "valid": [
+      "All same registered banks/PPO/budgets/original physical-design-task gates, complete seeds/checkpoints and failures retained.",
+      "Independent audit verifies120 saved CUDA policies/Adam/RMS and2040 task rows.",
+      "Information and action-subspace effects reported separately; no isolated physical-prior or full covariance matching claim."
+    ],
+    "limits": [
+      "Development regular96 fresh but controlled40 reused; three training seed clusters, not independent408 environments.",
+      "Joint working domain1.4rad is separate from actual physical joint/torque proxies; no global safety or CAD/real-robot proof.",
+      "Static normalized-feature perturbation on888 reference states is not training occupancy or a causal explanation of the negative learning gate.",
+      "Initial-function equality after zeroing actor/critic extra columns proves a control construction only; it is no learning or method-novelty result.",
+      "New method benefit, separate independent generalization and suitable-journal competitive contribution remain unproven."
+    ]
+  },
+  "next_experiments": [
+    {
+      "priority": 1,
+      "work": "Pre-register bounded fixed L2 controllers/low-height development subset plus unchanged strong classical controls; record every0.5ms active joint position/velocity, accepted Nom and Actor torques, lambda and design margin at first crossing.",
+      "required": "All three L2 final seeds, cases selected by height before replay rather than worst score, original task and constraints unchanged; fixed weights/RMS and no parameter truth in controller.",
+      "exit": "Verify whether crossing is already driven by nominal state, residual direction, contact impulse or output timing; overlapping terminal flags alone cannot establish this.",
+      "learning_steps": 0
+    },
+    {
+      "priority": 2,
+      "work": "Only after timing evidence, derive one common residual/nominal admissibility mechanism for the declared design domain and validate its coupled-state assumptions/counterfactual controls before new learning.",
+      "required": "No arbitrary tightening/weakening of gates or actuator power; simple per-joint torque sign is not automatically equivalent to acceleration in a closed-chain system."
+    },
+    {
+      "priority": 3,
+      "work": "If route-information learning is resumed, make first-layer added columns zero in both actor and critic, verify exact initial-function equality over held packet/feature ranges, then register finite same-budget seed pairing.",
+      "required": "Separate initialization treatment from controller/working-domain changes; do not start both changes together or recycle old final/gate."
+    },
+    {
+      "priority": 4,
+      "work": "After a genuine method pilot gate, fulfill five-seed/necessary ablation/independent combinations-OOD/CPU-GPU/contact-step sensitivity and paper revision plan.",
+      "required": "Do not redefine readiness around current negative study or engineering success."
+    }
+  ],
+  "failure_preservation": {
+    "initialization_reconstruction_failure": "First audit used a different CPU thread count for QR initialization and failed exact initial SHA. Match producer torch.set_num_threads(1); old source/log retained, no physics or training rerun.",
+    "first_source_sha256": "4a612115cdb3ad327ef280caa1beda843b29741a7e16d53b180ddfeeb62fd378",
+    "first_log_sha256": "6a8fca78979068b905f6264bfaa7ca28eb3ffdff0f5d50d23a9ae3004aa07217"
+  },
+  "cleanup_sha256": "781074b025b0733551df7b965254f56020ee8e829526cfa9a1e2e00c2a82e3da"
+}

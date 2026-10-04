@@ -1,0 +1,883 @@
+{
+  "verified": true,
+  "study_review_sha256": "9bc9f1334c771f5e8700c61677fc25dc5734693d632112aea5dec0fc3c831dfc",
+  "state_bank_sha256": "61ef3e783c1a9a13e5a476fcd889c13980955fcb7d65d6e8bf828f4ed847b6d0",
+  "source_sha256": "1940dfca4fe2f9d608d48ee4e1f720aed38b91d854cedb036c732c859db9986f",
+  "failure_height_groups": {
+    "regular/endpoint115": {
+      "total": 72,
+      "task_failed": 54,
+      "design_failed": 25,
+      "physical_failed": 0,
+      "yaw_failed": 16,
+      "terrain_evidence_failed": 36
+    },
+    "regular/high": {
+      "total": 288,
+      "task_failed": 120,
+      "design_failed": 0,
+      "physical_failed": 0,
+      "yaw_failed": 27,
+      "terrain_evidence_failed": 104
+    },
+    "regular/mid": {
+      "total": 636,
+      "task_failed": 295,
+      "design_failed": 0,
+      "physical_failed": 0,
+      "yaw_failed": 16,
+      "terrain_evidence_failed": 262
+    },
+    "regular/low": {
+      "total": 156,
+      "task_failed": 91,
+      "design_failed": 3,
+      "physical_failed": 0,
+      "yaw_failed": 28,
+      "terrain_evidence_failed": 63
+    },
+    "controlled/endpoint115": {
+      "total": 96,
+      "task_failed": 68,
+      "design_failed": 32,
+      "physical_failed": 0,
+      "yaw_failed": 31,
+      "terrain_evidence_failed": 0
+    },
+    "controlled/mid": {
+      "total": 288,
+      "task_failed": 124,
+      "design_failed": 0,
+      "physical_failed": 0,
+      "yaw_failed": 46,
+      "terrain_evidence_failed": 0
+    },
+    "controlled/high": {
+      "total": 96,
+      "task_failed": 61,
+      "design_failed": 0,
+      "physical_failed": 0,
+      "yaw_failed": 31,
+      "terrain_evidence_failed": 0
+    }
+  },
+  "design_failure_cases": [
+    {
+      "seed": 1609,
+      "arm": "M3-zero",
+      "panel": "regular",
+      "case": 4700000,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.0023978710174561435,
+      "physical_joint_margin_rad": 0.09760212898254395,
+      "min_actual_leg_m": 0.11496181049639775,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1609,
+      "arm": "M3-zero",
+      "panel": "regular",
+      "case": 4700048,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.012630438804626554,
+      "physical_joint_margin_rad": 0.08736956119537354,
+      "min_actual_leg_m": 0.11477912493202835,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1609,
+      "arm": "M3-zero",
+      "panel": "regular",
+      "case": 4700080,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.0034960269927979404,
+      "physical_joint_margin_rad": 0.09650397300720215,
+      "min_actual_leg_m": 0.11496251433931463,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1609,
+      "arm": "M3-zero",
+      "panel": "controlled",
+      "case": 4600000,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.00269947052001962,
+      "physical_joint_margin_rad": 0.09730052947998047,
+      "min_actual_leg_m": 0.11497282325253161,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1609,
+      "arm": "M3-zero",
+      "panel": "controlled",
+      "case": 4600001,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.002697324752807706,
+      "physical_joint_margin_rad": 0.09730267524719238,
+      "min_actual_leg_m": 0.11497285082557236,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1609,
+      "arm": "M3-zero",
+      "panel": "controlled",
+      "case": 4600002,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.0026975631713868076,
+      "physical_joint_margin_rad": 0.09730243682861328,
+      "min_actual_leg_m": 0.11497276960890887,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1609,
+      "arm": "M3-zero",
+      "panel": "controlled",
+      "case": 4600003,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.002699947357177823,
+      "physical_joint_margin_rad": 0.09730005264282227,
+      "min_actual_leg_m": 0.11497279868441058,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1609,
+      "arm": "M3-route",
+      "panel": "regular",
+      "case": 4700000,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.006360507011413663,
+      "physical_joint_margin_rad": 0.09363949298858643,
+      "min_actual_leg_m": 0.11496487782748428,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1609,
+      "arm": "M3-route",
+      "panel": "regular",
+      "case": 4700048,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.006942605972290128,
+      "physical_joint_margin_rad": 0.09305739402770996,
+      "min_actual_leg_m": 0.11485687360421983,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1609,
+      "arm": "M3-route",
+      "panel": "regular",
+      "case": 4700080,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.0057700634002686435,
+      "physical_joint_margin_rad": 0.09422993659973145,
+      "min_actual_leg_m": 0.11496677857610423,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1609,
+      "arm": "M3-route",
+      "panel": "controlled",
+      "case": 4600000,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.005314922332763761,
+      "physical_joint_margin_rad": 0.09468507766723633,
+      "min_actual_leg_m": 0.11497315584557062,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1609,
+      "arm": "M3-route",
+      "panel": "controlled",
+      "case": 4600001,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.005311107635498136,
+      "physical_joint_margin_rad": 0.09468889236450195,
+      "min_actual_leg_m": 0.11497310892336002,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1609,
+      "arm": "M3-route",
+      "panel": "controlled",
+      "case": 4600002,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.005312895774841397,
+      "physical_joint_margin_rad": 0.09468710422515869,
+      "min_actual_leg_m": 0.11497313642361241,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1609,
+      "arm": "M3-route",
+      "panel": "controlled",
+      "case": 4600003,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.005313134193420499,
+      "physical_joint_margin_rad": 0.09468686580657959,
+      "min_actual_leg_m": 0.11497311780270694,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1609,
+      "arm": "V6-route",
+      "panel": "regular",
+      "case": 4700048,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.00460979938507089,
+      "physical_joint_margin_rad": 0.0953902006149292,
+      "min_actual_leg_m": 0.11475673187256384,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1609,
+      "arm": "V6-route",
+      "panel": "regular",
+      "case": 4700080,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 2.7871131897061474e-05,
+      "physical_joint_margin_rad": 0.09997212886810303,
+      "min_actual_leg_m": 0.11496391645072974,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1609,
+      "arm": "V6-route",
+      "panel": "controlled",
+      "case": 4600000,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.003656959533691495,
+      "physical_joint_margin_rad": 0.0963430404663086,
+      "min_actual_leg_m": 0.11490061646121315,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1609,
+      "arm": "V6-route",
+      "panel": "controlled",
+      "case": 4600001,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.015952324867248624,
+      "physical_joint_margin_rad": 0.08404767513275146,
+      "min_actual_leg_m": 0.11489917369156535,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1609,
+      "arm": "L2-route",
+      "panel": "regular",
+      "case": 4700048,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.0038337469100953037,
+      "physical_joint_margin_rad": 0.09616625308990479,
+      "min_actual_leg_m": 0.11480101698335202,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1609,
+      "arm": "L2-route",
+      "panel": "regular",
+      "case": 4700058,
+      "height_m": 0.11534279643045055,
+      "working_joint_overshoot_rad": 0.008550024032592862,
+      "physical_joint_margin_rad": 0.09144997596740723,
+      "min_actual_leg_m": 0.11514440372284836,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1609,
+      "arm": "L2-route",
+      "panel": "regular",
+      "case": 4700064,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.0009369611740113193,
+      "physical_joint_margin_rad": 0.09906303882598877,
+      "min_actual_leg_m": 0.11480723610038239,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1609,
+      "arm": "L2-route",
+      "panel": "regular",
+      "case": 4700080,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.001040673255920499,
+      "physical_joint_margin_rad": 0.09895932674407959,
+      "min_actual_leg_m": 0.11496212718561646,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1609,
+      "arm": "L2-route",
+      "panel": "controlled",
+      "case": 4600001,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.0007117748260498935,
+      "physical_joint_margin_rad": 0.0992882251739502,
+      "min_actual_leg_m": 0.11491047391682156,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1609,
+      "arm": "L2-route",
+      "panel": "controlled",
+      "case": 4600005,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.012191629409790128,
+      "physical_joint_margin_rad": 0.08780837059020996,
+      "min_actual_leg_m": 0.11481978454557866,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1609,
+      "arm": "L2-route",
+      "panel": "controlled",
+      "case": 4600007,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.01145026683807382,
+      "physical_joint_margin_rad": 0.08854973316192627,
+      "min_actual_leg_m": 0.11484408325793731,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1610,
+      "arm": "M3-zero",
+      "panel": "controlled",
+      "case": 4600001,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.003189897537231534,
+      "physical_joint_margin_rad": 0.09681010246276855,
+      "min_actual_leg_m": 0.11487780367902432,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1610,
+      "arm": "M3-zero",
+      "panel": "controlled",
+      "case": 4600003,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.0005290269851685458,
+      "physical_joint_margin_rad": 0.09947097301483154,
+      "min_actual_leg_m": 0.1149406624827299,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1610,
+      "arm": "M3-route",
+      "panel": "regular",
+      "case": 4700000,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.00807974338531503,
+      "physical_joint_margin_rad": 0.09192025661468506,
+      "min_actual_leg_m": 0.1149633451854656,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1610,
+      "arm": "M3-route",
+      "panel": "regular",
+      "case": 4700030,
+      "height_m": 0.13307955990810022,
+      "working_joint_overshoot_rad": 0.0023967981338501865,
+      "physical_joint_margin_rad": 0.0976032018661499,
+      "min_actual_leg_m": 0.1328771987450634,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1610,
+      "arm": "M3-route",
+      "panel": "regular",
+      "case": 4700064,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.007149195671081632,
+      "physical_joint_margin_rad": 0.09285080432891846,
+      "min_actual_leg_m": 0.11488437951478143,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1610,
+      "arm": "M3-route",
+      "panel": "regular",
+      "case": 4700080,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.00397512912750253,
+      "physical_joint_margin_rad": 0.09602487087249756,
+      "min_actual_leg_m": 0.11496548917842564,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1610,
+      "arm": "M3-route",
+      "panel": "controlled",
+      "case": 4600000,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.0004149436950684482,
+      "physical_joint_margin_rad": 0.09958505630493164,
+      "min_actual_leg_m": 0.11497152097550573,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1610,
+      "arm": "M3-route",
+      "panel": "controlled",
+      "case": 4600001,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.00041661262512215913,
+      "physical_joint_margin_rad": 0.09958338737487793,
+      "min_actual_leg_m": 0.11497147553118192,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1610,
+      "arm": "M3-route",
+      "panel": "controlled",
+      "case": 4600002,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.0004236459732056552,
+      "physical_joint_margin_rad": 0.09957635402679443,
+      "min_actual_leg_m": 0.11497159995637254,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1610,
+      "arm": "M3-route",
+      "panel": "controlled",
+      "case": 4600003,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.0004118442535401279,
+      "physical_joint_margin_rad": 0.09958815574645996,
+      "min_actual_leg_m": 0.11497154034015049,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1610,
+      "arm": "V6-route",
+      "panel": "regular",
+      "case": 4700032,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.000830864906311124,
+      "physical_joint_margin_rad": 0.09916913509368896,
+      "min_actual_leg_m": 0.11484981596858854,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1610,
+      "arm": "L2-route",
+      "panel": "regular",
+      "case": 4700058,
+      "height_m": 0.11534279643045055,
+      "working_joint_overshoot_rad": 0.012957310676574796,
+      "physical_joint_margin_rad": 0.08704268932342529,
+      "min_actual_leg_m": 0.11521541345976063,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1610,
+      "arm": "L2-route",
+      "panel": "controlled",
+      "case": 4600002,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 3.6454200744717724e-05,
+      "physical_joint_margin_rad": 0.09996354579925537,
+      "min_actual_leg_m": 0.11487400424272312,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1610,
+      "arm": "L2-route",
+      "panel": "controlled",
+      "case": 4600003,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.006303286552429288,
+      "physical_joint_margin_rad": 0.0936967134475708,
+      "min_actual_leg_m": 0.11487428918641936,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1610,
+      "arm": "L2-route",
+      "panel": "controlled",
+      "case": 4600005,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.01464567184448251,
+      "physical_joint_margin_rad": 0.08535432815551758,
+      "min_actual_leg_m": 0.11486426788633966,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1610,
+      "arm": "L2-route",
+      "panel": "controlled",
+      "case": 4600007,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.0012900590896607333,
+      "physical_joint_margin_rad": 0.09870994091033936,
+      "min_actual_leg_m": 0.11481436235137922,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1611,
+      "arm": "M3-zero",
+      "panel": "regular",
+      "case": 4700000,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.012248730659484952,
+      "physical_joint_margin_rad": 0.08775126934051514,
+      "min_actual_leg_m": 0.11496378334571351,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1611,
+      "arm": "M3-zero",
+      "panel": "regular",
+      "case": 4700048,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.007833814620971769,
+      "physical_joint_margin_rad": 0.09216618537902832,
+      "min_actual_leg_m": 0.1148279700306214,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1611,
+      "arm": "M3-zero",
+      "panel": "regular",
+      "case": 4700064,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.014541006088256925,
+      "physical_joint_margin_rad": 0.08545899391174316,
+      "min_actual_leg_m": 0.11480317333220635,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1611,
+      "arm": "M3-zero",
+      "panel": "regular",
+      "case": 4700080,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.01403067111969003,
+      "physical_joint_margin_rad": 0.08596932888031006,
+      "min_actual_leg_m": 0.11496318433405296,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1611,
+      "arm": "M3-zero",
+      "panel": "controlled",
+      "case": 4600000,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.01341269016265878,
+      "physical_joint_margin_rad": 0.08658730983734131,
+      "min_actual_leg_m": 0.11497191694490623,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1611,
+      "arm": "M3-zero",
+      "panel": "controlled",
+      "case": 4600001,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.01341102123260507,
+      "physical_joint_margin_rad": 0.08658897876739502,
+      "min_actual_leg_m": 0.11497189832197513,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1611,
+      "arm": "M3-zero",
+      "panel": "controlled",
+      "case": 4600002,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.01341269016265878,
+      "physical_joint_margin_rad": 0.08658730983734131,
+      "min_actual_leg_m": 0.1149718685327714,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1611,
+      "arm": "M3-zero",
+      "panel": "controlled",
+      "case": 4600003,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.013412332534790128,
+      "physical_joint_margin_rad": 0.08658766746520996,
+      "min_actual_leg_m": 0.1149718640438191,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1611,
+      "arm": "M3-route",
+      "panel": "regular",
+      "case": 4700048,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.0005019664764405185,
+      "physical_joint_margin_rad": 0.09949803352355957,
+      "min_actual_leg_m": 0.11483955960474612,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1611,
+      "arm": "M3-route",
+      "panel": "regular",
+      "case": 4700064,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.0025101661682129794,
+      "physical_joint_margin_rad": 0.09748983383178711,
+      "min_actual_leg_m": 0.11486219323469235,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1611,
+      "arm": "M3-route",
+      "panel": "regular",
+      "case": 4700080,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.0021863937377930576,
+      "physical_joint_margin_rad": 0.09781360626220703,
+      "min_actual_leg_m": 0.1149617286937646,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1611,
+      "arm": "M3-route",
+      "panel": "controlled",
+      "case": 4600000,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.0022083282470704013,
+      "physical_joint_margin_rad": 0.09779167175292969,
+      "min_actual_leg_m": 0.11497075291582008,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1611,
+      "arm": "M3-route",
+      "panel": "controlled",
+      "case": 4600001,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.002207970619201749,
+      "physical_joint_margin_rad": 0.09779202938079834,
+      "min_actual_leg_m": 0.11497074906907989,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1611,
+      "arm": "M3-route",
+      "panel": "controlled",
+      "case": 4600002,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.002204155921936124,
+      "physical_joint_margin_rad": 0.09779584407806396,
+      "min_actual_leg_m": 0.114970763873093,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1611,
+      "arm": "M3-route",
+      "panel": "controlled",
+      "case": 4600003,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.0022055864334107333,
+      "physical_joint_margin_rad": 0.09779441356658936,
+      "min_actual_leg_m": 0.114970670141519,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1611,
+      "arm": "V6-route",
+      "panel": "regular",
+      "case": 4700032,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.001477694511413663,
+      "physical_joint_margin_rad": 0.09852230548858643,
+      "min_actual_leg_m": 0.11485590761507779,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1611,
+      "arm": "L2-route",
+      "panel": "regular",
+      "case": 4700032,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.001422142982482999,
+      "physical_joint_margin_rad": 0.09857785701751709,
+      "min_actual_leg_m": 0.11486986649608708,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1611,
+      "arm": "L2-route",
+      "panel": "regular",
+      "case": 4700048,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.00497303009033212,
+      "physical_joint_margin_rad": 0.09502696990966797,
+      "min_actual_leg_m": 0.11479234650011869,
+      "success": false,
+      "physical_passed": true
+    },
+    {
+      "seed": 1611,
+      "arm": "L2-route",
+      "panel": "controlled",
+      "case": 4600007,
+      "height_m": 0.115,
+      "working_joint_overshoot_rad": 0.0016436338424683505,
+      "physical_joint_margin_rad": 0.09835636615753174,
+      "min_actual_leg_m": 0.11490803440252904,
+      "success": false,
+      "physical_passed": true
+    }
+  ],
+  "initial_function_sensitivity": {
+    "1609": {
+      "initial_weight_sha256": "00a8efe5a2e74bb0b2a6df76ed19e40cf064bc27edf43f97ebca7177f5f63239",
+      "normalized_route_feature_range": [
+        -3,
+        3
+      ],
+      "original": {
+        "-3.0": {
+          "max_action_change": 0.009252405725419521,
+          "coordinate_rms_change": [
+            0.001383315771818161,
+            0.006037808954715729,
+            0.003965784329921007
+          ],
+          "max_wheel_request_change_Nm": 0.0021341191604733467,
+          "max_value_change": 0.5983399152755737
+        },
+        "3.0": {
+          "max_action_change": 0.00809921883046627,
+          "coordinate_rms_change": [
+            0.0017287250375375152,
+            0.005692396778613329,
+            0.003149565542116761
+          ],
+          "max_wheel_request_change_Nm": 0.001746574998833239,
+          "max_value_change": 0.2684605121612549
+        }
+      },
+      "zero_column_restores_exact_actor_and_critic_initial_function": true
+    },
+    "1610": {
+      "initial_weight_sha256": "f678233c7a65dd17a697ea45d043376afc7c5f518a49aa452914894258c7d2f6",
+      "normalized_route_feature_range": [
+        -3,
+        3
+      ],
+      "original": {
+        "-3.0": {
+          "max_action_change": 0.008580002933740616,
+          "coordinate_rms_change": [
+            0.00259910780005157,
+            0.0052789365872740746,
+            0.0017665470950305462
+          ],
+          "max_wheel_request_change_Nm": 0.0011218293802812696,
+          "max_value_change": 0.42643600702285767
+        },
+        "3.0": {
+          "max_action_change": 0.007559264078736305,
+          "coordinate_rms_change": [
+            0.0032179902773350477,
+            0.004483655095100403,
+            0.0020952573977410793
+          ],
+          "max_wheel_request_change_Nm": 0.0010752445086836815,
+          "max_value_change": 0.3405906558036804
+        }
+      },
+      "zero_column_restores_exact_actor_and_critic_initial_function": true
+    },
+    "1611": {
+      "initial_weight_sha256": "b21382d2e698edac01d41ec687f6d84cec9ca984ec20f3ca783d821c5388a8e3",
+      "normalized_route_feature_range": [
+        -3,
+        3
+      ],
+      "original": {
+        "-3.0": {
+          "max_action_change": 0.011278572492301464,
+          "coordinate_rms_change": [
+            0.007173118181526661,
+            0.0049169049598276615,
+            0.002367225009948015
+          ],
+          "max_wheel_request_change_Nm": 0.0015458278357982635,
+          "max_value_change": 0.8082277178764343
+        },
+        "3.0": {
+          "max_action_change": 0.011604455299675465,
+          "coordinate_rms_change": [
+            0.007831474766135216,
+            0.004649323411285877,
+            0.0013371463865041733
+          ],
+          "max_wheel_request_change_Nm": 0.0010054759914055467,
+          "max_value_change": 0.6863144040107727
+        }
+      },
+      "zero_column_restores_exact_actor_and_critic_initial_function": true
+    }
+  },
+  "training_updates": 0,
+  "physics_episodes": 0,
+  "old_gate_or_final_used": false,
+  "interpretation": "Torque-feasible outputs did not preserve the1.4rad design domain in these finite evaluations. Extra feature exposure changes fresh-policy and value functions despite equal parameters; zeroing its first-layer columns removes this initial-function change algebraically.",
+  "limits": "Overlapping predicates are not root causes. Static reference inputs use initial RMS identity and hypothetical normalized route values; not actual training occupancy or a proof that initialization caused the negative pilot. Zero-column experiment is not learning evidence or novelty. Dynamic state-safety still requires model/contact analysis."
+}

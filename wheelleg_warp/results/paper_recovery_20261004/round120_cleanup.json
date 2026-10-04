@@ -1,0 +1,63 @@
+{
+  "round": 120,
+  "files": [
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/route_pilot_v1/engineering/L2-route/1609/progress.json",
+      "bytes": 69,
+      "sha256": "44fed76c8ff582bb395d2c8bcce74896530c6f99823e7882fef413bc8b574d64",
+      "retained_content": {
+        "status": "complete",
+        "sampled_steps": 1000,
+        "trained_steps": 1000
+      },
+      "proof": "wheelleg_warp/results/paper_recovery_20261004/route_pilot_v1/engineering/L2-route/1609/verification.json",
+      "proof_sha256": "8b0d8a977c2b486caa2b161f29aaee59a8ce65481b6b9272660bdec63140cc99",
+      "reason": "Closed identical progress marker; complete counters and checkpoints independently verified elsewhere",
+      "open_handles": false
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/route_pilot_v1/engineering/M3-route/1609/progress.json",
+      "bytes": 69,
+      "sha256": "44fed76c8ff582bb395d2c8bcce74896530c6f99823e7882fef413bc8b574d64",
+      "retained_content": {
+        "status": "complete",
+        "sampled_steps": 1000,
+        "trained_steps": 1000
+      },
+      "proof": "wheelleg_warp/results/paper_recovery_20261004/route_pilot_v1/engineering/M3-route/1609/verification.json",
+      "proof_sha256": "975ea76e76fc7fad362b24004bfa9c56465e0837b2c83465bdaaf03480dd646c",
+      "reason": "Closed identical progress marker; complete counters and checkpoints independently verified elsewhere",
+      "open_handles": false
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/route_pilot_v1/engineering/M3-zero/1609/progress.json",
+      "bytes": 69,
+      "sha256": "44fed76c8ff582bb395d2c8bcce74896530c6f99823e7882fef413bc8b574d64",
+      "retained_content": {
+        "status": "complete",
+        "sampled_steps": 1000,
+        "trained_steps": 1000
+      },
+      "proof": "wheelleg_warp/results/paper_recovery_20261004/route_pilot_v1/engineering/M3-zero/1609/verification.json",
+      "proof_sha256": "db6951c9159b129142f23c409db3db8a454cc5a7de6714bcdda43ac469703a66",
+      "reason": "Closed identical progress marker; complete counters and checkpoints independently verified elsewhere",
+      "open_handles": false
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/route_pilot_v1/engineering/V6-route/1609/progress.json",
+      "bytes": 69,
+      "sha256": "44fed76c8ff582bb395d2c8bcce74896530c6f99823e7882fef413bc8b574d64",
+      "retained_content": {
+        "status": "complete",
+        "sampled_steps": 1000,
+        "trained_steps": 1000
+      },
+      "proof": "wheelleg_warp/results/paper_recovery_20261004/route_pilot_v1/engineering/V6-route/1609/verification.json",
+      "proof_sha256": "0f09b3345e63d822f128054ba49c6f1ce2c6371c73090326a1bdd437f1d14bd9",
+      "reason": "Closed identical progress marker; complete counters and checkpoints independently verified elsewhere",
+      "open_handles": false
+    }
+  ],
+  "bytes_removed": 276,
+  "retained": "All checkpoints/normalization/source/models/raw episodes/case failures including erroneous registrations/auditors preserved. Old gates/final sealed. Dashboard fallback reads only unrelated20260921 directories; current admission/study auditors do not read these closed markers."
+}
