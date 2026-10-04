@@ -6323,3 +6323,19 @@
 
 - `wheelleg_warp/results/paper_recovery_20261004/channel_validation_v1/results/original_1610_wheel_only_legacy_regression.json`
 - `wheelleg_warp/results/paper_recovery_20261004/channel_validation_v1/results/original_1610_wheel_only_pressure.json`
+
+### 自动同步快照 2026-10-04T14:27:29+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_warp/results/paper_recovery_20261004/channel_validation_v1/results/original_1610_zero_legacy_regression.json`
+- `wheelleg_warp/results/paper_recovery_20261004/channel_validation_v1/results/original_1610_zero_pressure.json`
+- `wheelleg_warp/results/paper_recovery_20261004/channel_validation_v1/results/original_1610_zero_regular.json`
+- `wheelleg_warp/results/paper_recovery_20261004/channel_validation_v1/results/potential_1610_all_legacy_regression.json`
+- `wheelleg_warp/results/paper_recovery_20261004/channel_validation_v1/results/potential_1610_all_pressure.json`
+- `wheelleg_warp/results/paper_recovery_20261004/channel_validation_v1/results/potential_1610_all_regular.json`
+- `wheelleg_warp/results/paper_recovery_20261004/channel_validation_v1/results/potential_1610_legs_only_legacy_regression.json`
+- `wheelleg_warp/results/paper_recovery_20261004/channel_validation_v1/results/potential_1610_legs_only_pressure.json`
+- `wheelleg_warp/results/paper_recovery_20261004/channel_validation_v1/results/potential_1610_legs_only_regular.json`
+- `wheelleg_warp/results/paper_recovery_20261004/channel_validation_v1/results/potential_1610_wheel_only_pressure.json`
+- `wheelleg_warp/results/paper_recovery_20261004/channel_validation_v1/results/potential_1610_wheel_only_regular.json`
