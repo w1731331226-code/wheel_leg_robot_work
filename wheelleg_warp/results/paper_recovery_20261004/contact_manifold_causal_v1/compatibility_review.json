@@ -1,0 +1,31 @@
+{
+  "verified": true,
+  "states": 603,
+  "model_state_pairs": 1206,
+  "source_contract_sha256": "f97a5ac382db5ba03d77be6e1a80ad50a673f4a97150d31480ab9b064afc8723",
+  "compatibility_sha256": "3affe17b59a204d72ddc43855f26233c5e87ad7e8e1b3d2472d89c15dd60592d",
+  "full_identity_fields": [
+    "qpos",
+    "qvel",
+    "qacc",
+    "qacc_warmstart",
+    "ctrl",
+    "actuator_force",
+    "qfrc_constraint"
+  ],
+  "maxima": {
+    "qpos": 0.0,
+    "qvel": 0.0,
+    "qacc": 0.0,
+    "qacc_warmstart": 0.0,
+    "ctrl": 0.0,
+    "actuator_force": 0.0,
+    "qfrc_constraint": 0.0
+  },
+  "cohort_model_state_pairs": {
+    "new_saved_states": 1152,
+    "old_critical_fixtures": 54
+  },
+  "additional_physics_steps": 0,
+  "scope": "Pairwise fresh mj_step versus frozen reconstructed integration pipeline; saved full fields checked independently without rerunning. Exact identity, not contact-intervention or safety qualification."
+}

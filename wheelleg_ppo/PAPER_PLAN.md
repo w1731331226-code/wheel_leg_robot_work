@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第136轮因果试验pipeline身份门（2026-10-05，通过，goal active）：
+
+contact_manifold_causal.py冻结源后，全部603状态×两模型×两种独立执行流程共2412CPU步。fresh标准mj_step与显式fwdPosition→make/projectConstraint→fwdVelocity/Actuation/Acceleration/Constraint→implicit结果全q17/v16、qacc/warm、ctrl/actuator_force/constraint_force逐值相同，time/contact/constraint计数同，所有max0；原integrator3及1e−12不改。compatibility_review复核全部1206配对/源/载荷，无额外physics重算；unit正常退出0，0GPU回放/学习。这只资格化未修改pipeline，不是四臂干预或控制安全准入。
+
+旧27fixture的capture源也有pre/stats owner未显式持有风险。保存的27全hinge积分关系一致不足以消除此风险；本轮只用这些值作static CPU临界夹具，不把原GPU-event provenance重新认证。新576采用已验证owner的v2。旧资料保留，不盲重跑或重用旧capture，也不把两组拼成新独立测试。
+
+下一137冻结contact-transfer source/固定geom-order右手frame转换，执行全部603×四臂和完整review，剩余4824CPU积分步；逐臂断言改写point/frame/gap在constraint/integration后保留，不能被再次collision覆盖。未实际改contact字段或产生四臂score，不能提前判position是唯一原因。138按计划去留决定、140深审清理；原预测失败与整体论文方法/学习/泛化目标保持。
+
 第135轮深审与冗余清理（2026-10-05，goal active，下一140）：
 
 **方向判断：整体论文计划值得继续，当前预测控制候选停止直接推进。** 131–134得到独立状态覆盖失败与接触表述差异，价值在于排除错误假设；没有新方法优势。48唯一场景中B1成功47/48、design48，L2三seed成功及design45/45/47。576状态的14GPU/9CPU漏包、额外理想fullstate/contact需求和未经控制时序验收的CPU影子程序，不支持部署。0 false-safe来自远边界样本，不等于安全证明；已读留出现在只能作development诊断。继续扩大地形/网络/训练预算，或给旧包络调reserve，均不适当。
