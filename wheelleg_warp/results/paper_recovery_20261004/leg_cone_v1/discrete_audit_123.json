@@ -1,0 +1,164 @@
+{
+  "verified": true,
+  "joint_updates": 14568480,
+  "hinge_update": "q_next=round_float32(q+dt*v_next), semi-implicit/implicit velocity update; active hinge coordinates only, not free-joint quaternion integration.",
+  "trace_summary": {
+    "1609_original": {
+      "max_hinge_integration_error_rad": 5.965875504720941e-08,
+      "max_error_in_position_ulps": 0.5017005279660225,
+      "fused_float32_prediction_mismatches": 77,
+      "split_float32_prediction_mismatches": 0
+    },
+    "1609_cone": {
+      "max_hinge_integration_error_rad": 5.965951799247193e-08,
+      "max_error_in_position_ulps": 0.501804118975997,
+      "fused_float32_prediction_mismatches": 89,
+      "split_float32_prediction_mismatches": 0
+    },
+    "1609_zero_after_filter": {
+      "max_hinge_integration_error_rad": 5.965521610029612e-08,
+      "max_error_in_position_ulps": 0.5019508861005306,
+      "fused_float32_prediction_mismatches": 91,
+      "split_float32_prediction_mismatches": 0
+    },
+    "1610_original": {
+      "max_hinge_integration_error_rad": 5.965317217970778e-08,
+      "max_error_in_position_ulps": 0.5009954310953617,
+      "fused_float32_prediction_mismatches": 78,
+      "split_float32_prediction_mismatches": 0
+    },
+    "1610_cone": {
+      "max_hinge_integration_error_rad": 5.965816618491715e-08,
+      "max_error_in_position_ulps": 0.5017605163156986,
+      "fused_float32_prediction_mismatches": 107,
+      "split_float32_prediction_mismatches": 0
+    },
+    "1610_zero_after_filter": {
+      "max_hinge_integration_error_rad": 5.96536193775421e-08,
+      "max_error_in_position_ulps": 0.5016773007810116,
+      "fused_float32_prediction_mismatches": 84,
+      "split_float32_prediction_mismatches": 0
+    },
+    "1611_original": {
+      "max_hinge_integration_error_rad": 5.96601026359167e-08,
+      "max_error_in_position_ulps": 0.5019313655793667,
+      "fused_float32_prediction_mismatches": 83,
+      "split_float32_prediction_mismatches": 0
+    },
+    "1611_cone": {
+      "max_hinge_integration_error_rad": 5.965555582854165e-08,
+      "max_error_in_position_ulps": 0.5018569845706224,
+      "fused_float32_prediction_mismatches": 90,
+      "split_float32_prediction_mismatches": 0
+    },
+    "1611_zero_after_filter": {
+      "max_hinge_integration_error_rad": 5.96598590529851e-08,
+      "max_error_in_position_ulps": 0.5031260680407286,
+      "fused_float32_prediction_mismatches": 115,
+      "split_float32_prediction_mismatches": 0
+    }
+  },
+  "remaining_crossings": [
+    {
+      "label": "1609_cone",
+      "case": 4700048,
+      "joint": 1,
+      "time_s": 1.933,
+      "pre_margin_rad": 5.006790160244634e-07,
+      "pre_outward_velocity_rad_s": 0.0012417297111824155,
+      "post_outward_velocity_rad_s": 0.0014848582213744521,
+      "retrospective_effective_outward_acceleration_rad_s2": 0.48625699728810523,
+      "velocity_displacement_rad": 6.20864885080706e-07,
+      "velocity_change_displacement_rad": 1.215642608700106e-07,
+      "rounding_displacement_rad": -2.7173408634340035e-08,
+      "first_overshoot_rad": 2.145767212802241e-07,
+      "maximum_episode_overshoot_rad": 5.102157592862255e-06,
+      "original_guard_active": true,
+      "first_guard_start_s": 1.802,
+      "last_guard_start_before_crossing_s": 1.9265,
+      "prior20ms_observed_outward_acceleration_max": 1.256600224565145,
+      "actor_direction_Nm": -6.76890759518412e-18,
+      "nominal_direction_Nm": -0.5291202068328857,
+      "note": "Acceleration here is reconstructed after the step, not an available prediction or validated robust bound."
+    },
+    {
+      "label": "1610_cone",
+      "case": 4700058,
+      "joint": 0,
+      "time_s": 6.3555,
+      "pre_margin_rad": 2.622604369229009e-07,
+      "pre_outward_velocity_rad_s": -0.0005727561074309051,
+      "post_outward_velocity_rad_s": 0.0009246336412616074,
+      "retrospective_effective_outward_acceleration_rad_s2": 2.9947793551406385,
+      "velocity_displacement_rad": -2.863780673176802e-07,
+      "velocity_change_displacement_rad": 7.486949099073546e-07,
+      "rounding_displacement_rad": 1.452031561655076e-08,
+      "first_overshoot_rad": 2.145767212802241e-07,
+      "maximum_episode_overshoot_rad": 3.3378601083100534e-07,
+      "original_guard_active": false,
+      "first_guard_start_s": 6.1535,
+      "last_guard_start_before_crossing_s": 6.355,
+      "prior20ms_observed_outward_acceleration_max": 3.2314151387641465,
+      "actor_direction_Nm": 0.12286088760103966,
+      "nominal_direction_Nm": -0.5419827103614807,
+      "note": "Acceleration here is reconstructed after the step, not an available prediction or validated robust bound."
+    },
+    {
+      "label": "1610_cone",
+      "case": 4600003,
+      "joint": 3,
+      "time_s": 6.0035,
+      "pre_margin_rad": 1.4305114737211966e-07,
+      "pre_outward_velocity_rad_s": -0.00014458408986683935,
+      "post_outward_velocity_rad_s": 0.0004112645983695984,
+      "retrospective_effective_outward_acceleration_rad_s2": 1.111697323670086,
+      "velocity_displacement_rad": -7.229204836710756e-08,
+      "velocity_change_displacement_rad": 2.7792435731891687e-07,
+      "rounding_displacement_rad": 3.2786270143247975e-08,
+      "first_overshoot_rad": 9.536743172944284e-08,
+      "maximum_episode_overshoot_rad": 2.145767212802241e-07,
+      "original_guard_active": false,
+      "first_guard_start_s": 5.8455,
+      "last_guard_start_before_crossing_s": 6.003,
+      "prior20ms_observed_outward_acceleration_max": 1.4099010353396155,
+      "actor_direction_Nm": 0.04548723118835801,
+      "nominal_direction_Nm": -0.5325362086296082,
+      "note": "Acceleration here is reconstructed after the step, not an available prediction or validated robust bound."
+    },
+    {
+      "label": "1611_cone",
+      "case": 4700048,
+      "joint": 1,
+      "time_s": 1.965,
+      "pre_margin_rad": 1.4305114737211966e-07,
+      "pre_outward_velocity_rad_s": -0.00013899018813390285,
+      "post_outward_velocity_rad_s": 0.0007096519693732262,
+      "retrospective_effective_outward_acceleration_rad_s2": 1.6972842343975827,
+      "velocity_displacement_rad": -6.949509736779127e-08,
+      "velocity_change_displacement_rad": 4.243210989077343e-07,
+      "rounding_displacement_rad": 2.8018671827112485e-09,
+      "first_overshoot_rad": 2.145767212802241e-07,
+      "maximum_episode_overshoot_rad": 2.145767212802241e-07,
+      "original_guard_active": false,
+      "first_guard_start_s": 1.7890000000000001,
+      "last_guard_start_before_crossing_s": 1.9645000000000001,
+      "prior20ms_observed_outward_acceleration_max": 1.9841138713505981,
+      "actor_direction_Nm": 0.05411660414393042,
+      "nominal_direction_Nm": -0.5401511788368225,
+      "note": "Acceleration here is reconstructed after the step, not an available prediction or validated robust bound."
+    }
+  ],
+  "trace_review_sha256": "12cc29f82f657b0c439c4dd9b2149002705b9b68c79015ac14856fc7eacff6ff",
+  "installed_forward_source_sha256": "7b7ffa3d914b6adf65f228261e207998d5bed1e59d4fb17f5bc6ac796aacf490",
+  "reviewer_sha256": "bd9940acfead8bc1da11a68ba7bc83bcbe111ad3b9349610f7487449a594b46a",
+  "discrete_condition": {
+    "formula": "For both s=+-1: s*(q+dt*v)+dt^2*A_s+roundoff_bound <=1.4, with A_s >= s*a_effective",
+    "assumptions": "A_s bounds the signed next-step effective acceleration for the actual coupled/contact/actuation state and candidate control; a torque sign constraint does not supply it.",
+    "warning": "Retrospective finite differences or this development-sample maximum cannot be relabelled as a guaranteed prospective disturbance/acceleration bound."
+  },
+  "conclusion": "All observed active-hinge position differences fit the stated arithmetic error envelope. Four strict design failures remain; at three first crossings, pre velocity is inward yet next velocity is outward. Ignoring acceleration at a20ms kinematic guard and ignoring rounding are separate from physically preserving the state domain.",
+  "next": "Obtain a bounded common Nom/Actor response/viability model with uncertainty and execution timing evidence before any new filter or learning; keep the original state gate and stopped candidate.",
+  "training_updates": 0,
+  "physics_episodes": 0,
+  "old_gate_or_final_used": false
+}
