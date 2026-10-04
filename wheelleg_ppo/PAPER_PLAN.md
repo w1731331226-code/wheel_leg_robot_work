@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第124轮同状态联合响应与跨后端偏差测量（2026-10-05，goal active）：
+
+事前登记三固定L2末模型/停止的cone控制/全部27低高度发展案例，81真实GPU回放、0学习；只读capture pre完整q17/v16/warm16/执行NomActor命令与post q17/v16，first运动学预测/near1e−5/first实际跨界事件最多243，实际27。无actuator activation/mocap/applied forces，时间为步计数派生，本静态直接力矩模型可用，不声称通用状态或同轨迹恢复。
+
+同snapshot状态按实际模拟场景CPU MuJoCo做actual、Nom-only、±0.01 Fdiff/Hdiff六分支，共162 shadow步；保持差模、原坐标和speed/torque Box。Shadow知晓geometry/参数仅离线诊断，Actor和控制器没有获得它们，不能当部署名义预测器或公平的oracle控制成绩。review_joint_response.py独立重建状态/命令/所有分支及原81任务/物理计数、source/model/hash通过；审核初import缺tools路径的源/log保留，修复未改实验或重训。
+
+CPU-GPU q误差max8.156e−8/7.678e−8/5.308e−8rad，v误差max1.465e−4/1.458e−4/4.049e−5rad/s；小扰动q中点残差约6.30e−13rad，命令中点偏差5.70e−8Nm包含float32基准命令差，因此不把局部对称性直接升级全域线性/状态安全证明。三新捕获跨界中actual-CPU均越1.4，Nom-only两例内侧、一例仍外侧，说明只抑制Actor可能不足；freshGPU有一原1610边界例未再越，原四失败不删、不挑回放分数。
+
+结论限于同状态有限输入效应和实际跨后端偏差，未获得可信在线加速度上界或方法优势。下一125深审应决定共同Nom/Actor响应模型是否值得推进、如何只用可得状态与固定设计而不偷用未来terrain/参数，并安排独立误差/动态工作域验证；经验最大值不当鲁棒证书，不扩旧PPO/扫guard参数。原数据/失败/CPU/封存保持。
+
 第123轮离散可行性缺口确认（2026-10-05，goal active）：
 
 只读现243回合数据，audit_boundary_discrete.py核全部14,568,480主动hinge更新：q_next=float32(q+float32(dt*v_next))逐值完全一致，9组split mismatch0；若改成融合/实数计算则有微小误差，max≈5.97e−8rad，全部落在乘法/位置加法舍入预算。已安装MuJoCo Warp源码_next_position/_advance确认先速度后位置的顺序并留SHA；不将hinge公式套自由关节四元数。未重跑物理/训练或改原约束。
