@@ -1,0 +1,140 @@
+\documentclass[UTF8,a4paper,11pt]{ctexart}
+\usepackage[margin=24mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue}
+\title{受约束轮腿残差PPO的任务一致性与通道效应审计\\方法与实验协议草稿}
+\author{作者待补}
+\date{2026年10月4日}
+\begin{document}
+\maketitle
+\noindent\textbf{草稿状态：}本文尚未完成独立评价、贡献边界与统计讨论，不是可投稿定稿。
+已完成的开发数据与方法契约如实列出；尚在运行的独立结果不作推断。
+
+\section{研究问题与主张边界}
+经典控制器上叠加学习残差、比较动作表示以及势函数奖励塑形均已有研究。
+本文不将PPO、虚拟力矩或势函数的组合视为新算法。
+待检验问题是：在固定轮腿系统、执行器包络与累积任务判据下，
+输出可行性、折扣目标一致性与有限预算的完整任务表现是否相符，
+以及学习残差的轮、腿通道在闭环中分别产生何种影响。
+已知方法对照包括残差学习、动作空间设计和层次势函数塑形工作\cite{residual,action,hprs}。
+
+本文只讨论仿真地面任务。跳跃、单侧坡演示、ROS2与实机安全不属于本次结果范围。
+局部线性设计与扭矩限幅不构成全局稳定性或状态安全不变集证明。
+
+\section{模型、控制与执行契约}
+仿真使用MuJoCo Warp。固定名义设计质量为7 kg，训练被控对象参数可变；
+名义模型与实际随机对象不得混同。
+低层使用VMC与六状态LQR，物理和低层更新周期为0.5 ms，策略周期为20 ms。
+每个策略动作保持40个物理子步，但构型映射、执行器余量和限幅逐子步更新。
+腿长目标在每回合内固定，覆盖0.115--0.380 m；训练采用每阶段每种子的100个固定场景，
+不是每次回合独立重采样参数。
+
+M3策略产生三维差模请求
+\begin{equation}
+ a=(a_F,a_H,a_W)\in[-1,1]^3,\quad
+ \Delta F_L=-\Delta F_R=c_F a_F,\quad
+ \Delta H_L=-\Delta H_R=c_H a_H,\quad
+ \Delta \tau_{WL}=-\Delta \tau_{WR}=c_W a_W .
+\end{equation}
+尺度沿用冻结的初始化与执行配置，其中轮差矩尺度为0.3 N\,m。
+构型相关映射记为$B(q)$。先形成完整名义输出，再处理残差和总输出约束：
+\begin{equation}
+ \tau=\tau_{\rm nom}+\lambda B(q)a,\qquad 0\leq\lambda\leq1,
+ \qquad \tau_i^{\min}(\dot q_i)\leq\tau_i\leq\tau_i^{\max}(\dot q_i).
+\end{equation}
+名义请求可行化和最终执行器限幅属于实际输出链，不能省略后再讨论残差权限。
+由于左右构型、接触和饱和可能不同，虚拟差模并不保证实际运动严格解耦。
+
+真实被动链几何、八个关节余量、实际驱动力矩和名义命令逐物理步记录。
+主动关节设计域为1.4 rad，物理限位为1.5 rad，二者是不同判据。
+最小链长0.114704466 m是仿真几何代理边界，不是经过实机认证的安全值。
+
+\section{可得观测与完整任务}
+Actor和Critic共享38维接口：32维物理包包含姿态、角速度、速度、命令误差、
+高度目标、关节、轮速、腿长及实际残差；另6维为当前自身滤波请求。
+物理包可延迟0--10 ms，自身请求保持当前时序。
+绝对横向位置、完整名义控制器内部记忆与累积约束历史未全部包含。
+因此本文不宣称该接口为完整Markov状态，也不将瞬时缺失位置等同于历史无法估计位置。
+
+成功须同时满足完整到达、保持与停车、所需障碍接触和退出、
+姿态、速度、目标高度、设计域及物理证据约束。
+使用地形相对姿态时相对峰值为5度，世界roll/pitch另有10度上限；yaw峰值仍为5度。
+速度RMSE不超过目标速度绝对值的20\%，停距不超过0.6 m，
+到达1.5 s后的尾速不超过0.03 m/s，到达后保持2 s。
+高度RMSE和终态平均FK腿长误差均不超过0.02 m。
+接触位保留原模拟器几何接触语义，不代表正法向载荷认证。
+统计失败可重叠，不能把其求和解释为互斥原因。
+
+\section{奖励变换与价值估计边界}
+原密集奖励包含速度跟踪、姿态、实际残差幅值及变化率项，逐0.5 ms积分。
+完整终态按原成功判据获得$+10$或$-10$。
+本研究已完成的奖励预试验使用已知势函数形式\cite{ng,hprs}：
+\begin{equation}
+ r'_t=r_t+\gamma\Phi_{t+1}-\Phi_t,\qquad \gamma=0.99.
+\end{equation}
+中间势函数为所定义物理、设计或姿态历史违规时$-10$，否则为0；初态和所有终态设为0。
+它没有覆盖全部接触、停车、尾速或高度任务失败。
+有限完整回合满足
+\begin{equation}
+ \sum_{t=0}^{T-1}\gamma^t(r'_t-r_t)
+ =-\Phi_0+\gamma^T\Phi_T=0.
+\end{equation}
+非终态截断不能丢弃右端边界项。检查点保存不重启物理、势函数或RNG；
+实际用于上一rollout的bootstrap预测、done和更新前epoch单独记录。
+若状态价值同步变换为$V'=V-\Phi$，TD残差亦可保持一致，
+但38维近似Critic未必能表达历史势函数。
+目标恒等不证明PPO收敛、实际优势或纯信用分配因果。
+未折扣的塑形回报不必相同，报告继续使用原任务和原episode回报。
+
+\section{完成的有限学习预试验}
+两组分别使用原奖励和势函数奖励，三个配对种子1609、1610、1611。
+每组每种子连续训练200k策略步，共1.2M；100世界、50步rollout、batch 250、
+10个epoch、2层64单元MLP及标准PPO损失保持一致。
+每run实际400个训练epoch、8000次Adam更新；参数、Adam和物理在CUDA运行。
+初始权重、世界配置及所有检查点计数核验。
+公开开发96案例只使用固定200k末模型，中间检查点不用于选模。
+
+\begin{table}[ht]
+\centering
+\caption{同一公开开发96案例上的固定末模型结果；不是独立终评。}
+\begin{tabular}{lrrrr}\toprule
+种子 & 原奖励成功 & 势函数成功 & 原设计失败 & 势函数设计失败\\\midrule
+1609 &44&38&3&6\\
+1610 &65&6&0&1\\
+1611 &7&48&2&1\\\bottomrule
+\end{tabular}
+\end{table}
+势函数成功均值差为$-8.33$个百分点，仅一个种子改善，设计失败多3例。
+原预注册继续门未通过，停止该收益分支，不追加2M训练或扫描幅度。
+同一案例被不同训练代理重复评价，116/288和92/288不是288个独立随机场景。
+三种子的异质性全部保留，不宣称普遍有害或统计显著性。
+
+\section{独立固定模型通道确认协议}
+公开探索中，固定势函数seed1610模型在全部残差、仅腿、仅轮、零残差条件下成功数为
+6、93、8、93/96。该闭环mask干预改变可达请求子空间及后续状态和动作历史，
+仅能解释该固定策略系统的通道效果，不是同权限训练方法比较。
+
+新的确认固定全部六个200k末模型、四个0/1mask及强经典B0/B1。
+新常规96、六因素压力48和旧公开28回归分别报告，预算4472回合、训练0步。
+主估计为同模型同参数案例的$\operatorname{success}(\text{legs})-
+\operatorname{success}(\text{all})$，六模型和三个种子聚类全部报告，不选case或模型。
+旧28回归不是独立数据；原64研究门及封存3000不用于该确认或调参。
+
+\textbf{结果待完成：}独立评价仍在运行，全部通道效应、压力边界、旧能力变化和
+相对已有工作的可发表贡献尚未判定。
+经典压力中已有超时失败；物理包络通过不能替代完整任务成功。
+未完成到达轨迹的航向分数不补零，也不从统计中删除。
+
+\begin{thebibliography}{9}
+\bibitem{residual} Johannink T, et al. Residual Reinforcement Learning for Robot Control. 2018.
+\url{https://arxiv.org/abs/1812.03201}.
+\bibitem{action} Esser, et al. Action Space Design in Reinforcement Learning for Robot Motor Skills.
+PMLR, 2025. \url{https://proceedings.mlr.press/v270/esser25a.html}.
+\bibitem{ng} Ng A Y, Harada D, Russell S J. Policy Invariance Under Reward Transformations:
+Theory and Application to Reward Shaping. ICML, 1999.
+\url{https://ai.stanford.edu/~ang/papers/shaping-icml99.pdf}.
+\bibitem{hprs} Berducci L, Aguilar E A, Ničković D, Grosu R.
+HPRS: Hierarchical Potential-Based Reward Shaping from Task Specifications.
+Frontiers in Robotics and AI, 2025. doi:10.3389/frobt.2024.1444188.
+\end{thebibliography}
+\end{document}
