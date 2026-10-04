@@ -1,0 +1,37 @@
+{
+  "round": 105,
+  "files": [
+    {
+      "path": "/tmp/wheelleg_continuous_reward_engineering.log",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/continuous_engineering/run.log",
+      "sha256": "78477274add256d41e73e3ae3efb16de0fd80d9cc4c8a8baf490758ce7803df4",
+      "bytes": 12284
+    },
+    {
+      "path": "/tmp/wheelleg_continuous_reward_engineering_v2.log",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/continuous_engineering_v2/run.log",
+      "sha256": "cf57a7f18ffadba72648c9ea98294a9d3c94fc6f8fdff2c370d6309fdfa9759a",
+      "bytes": 12284
+    },
+    {
+      "path": "/tmp/wheelleg_reward_failure_structure.log",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/failure_structure.log",
+      "sha256": "409f6558a745b66a5a768b5ba2eacb8cf4764372e99da78f293c6bb0ed616a56",
+      "bytes": 1733
+    },
+    {
+      "path": "/tmp/wheelleg_contact_trajectory_1610.log",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/contact_trajectory_1610/run.log",
+      "sha256": "5a1b257d8ece399a5793e8aada46fe3d64d568e2a9ac59b79f225f7c08d179d9",
+      "bytes": 10840
+    },
+    {
+      "path": "/tmp/wheelleg_channel_intervention_1610.log",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/reward_pilot_v1/channel_intervention_1610/run.log",
+      "sha256": "00010d9377f2d19c54d8a8e6a597e873d641ef52c1e2dca9e3a9e92a1a735767",
+      "bytes": 14277
+    }
+  ],
+  "bytes_removed": 51418,
+  "scope": "Closed byte-identical temporary logs only; preserve all source versions, models, independent protocols and unique failures"
+}

@@ -1,0 +1,121 @@
+{
+  "round": 105,
+  "period": [
+    101,
+    105
+  ],
+  "paper_ready": false,
+  "goal_status": "active",
+  "next_review_round": 110,
+  "complete_pilot_learning_steps": 1200000,
+  "continuous_engineering_steps": 24000,
+  "public_method_case_evaluations_and_diagnostics": 1152,
+  "findings": [
+    "六run/三pair完整，已达到新学习三seed工程/公平性要求，但预注册奖励继续门失败，收益分支停止，不能扩2M或扫幅度。",
+    "失败主体为接触证据，速度/停车/尾速/高度门没有解释该退化；Phi谓词只针对物理/设计/姿态，不能覆盖所有任务失败。",
+    "最大退化seed固定回放body中心偏移3.765对7.293cm、移动态meanYaw1.057对2.219°，是路径关联，不是轮胎接触/学习因果或Critic校准证明。",
+    "固定Phi1610通道mask使success全部6、腿93、轮8、零93；只在此固定策略和公开场景证明移除wheel请求有正闭环效果。请求子空间减小、反馈动作历史/物理轨迹改变，物理扭矩界不变；不能称同权限算法优势或PBRS一般有害。"
+  ],
+  "channel_results": {
+    "all": {
+      "summary": {
+        "total": 96,
+        "success_count": 6,
+        "complete": true,
+        "mean_yaw_score_deg": 2.0737656983191997
+      },
+      "physical": 96,
+      "design": 95,
+      "terrain_missing": 74,
+      "yaw_failed": 3
+    },
+    "legs_only": {
+      "summary": {
+        "total": 96,
+        "success_count": 93,
+        "complete": true,
+        "mean_yaw_score_deg": 0.47914755693242556
+      },
+      "physical": 96,
+      "design": 95,
+      "terrain_missing": 0,
+      "yaw_failed": 3
+    },
+    "wheel_only": {
+      "summary": {
+        "total": 96,
+        "success_count": 8,
+        "complete": true,
+        "mean_yaw_score_deg": 2.1007988869989735
+      },
+      "physical": 96,
+      "design": 96,
+      "terrain_missing": 73,
+      "yaw_failed": 2
+    },
+    "zero": {
+      "summary": {
+        "total": 96,
+        "success_count": 93,
+        "complete": true,
+        "mean_yaw_score_deg": 0.4747962722796856
+      },
+      "physical": 96,
+      "design": 96,
+      "terrain_missing": 0,
+      "yaw_failed": 3
+    }
+  },
+  "channel_source_and_results_sha256": {
+    "registration": "8987ed9adcffb20849fcd7a64f3c7a99d2b2185d5d9d4647e71221a57f8cebd7",
+    "result": "44ed6a84c97c471ee01d5c85c4ac78a1ce600a6ab0647bb42a0be05a7be2bd77"
+  },
+  "readiness_audit": [
+    {
+      "requirement": "可证伪且相对文献明确的贡献",
+      "status": "候选主张收敛，论文贡献未证",
+      "evidence": "PBRS/PPO和任务约束已有HPRS等；可保留的是受限轮腿执行/可观测任务/通道效应实证，需独立验证区别"
+    },
+    {
+      "requirement": "模型/信息/约束契约",
+      "status": "原基线执行及接口核过，缺全域证据",
+      "evidence": "真实2kHz链/38观测/torque与几何计数、未完Phi/真实bootstrap/计数过，无全局安全或完整Markov证明"
+    },
+    {
+      "requirement": "强经典和同信息至少3学习seed",
+      "status": "当前限定试验已达到",
+      "evidence": "六200k matched3pairs与384公开通道首回合；固定强经典96成功94，零源未削弱；不能以masked控制器冒充同权限训练"
+    },
+    {
+      "requirement": "新独立/压力/旧能力评价",
+      "status": "已注册，尚未执行",
+      "evidence": "channel_validation_v1新regular96/pressure48/旧28，全部六固定模型与四masks/B0/B1，4472eps0训练；旧门/最终仍不调参"
+    },
+    {
+      "requirement": "控制机制证据",
+      "status": "单模型mask闭环效应支持，学习机制仍未证",
+      "evidence": "Critic值只有预测、非MC校准；独立多模型及路径/可得历史状态尚需核"
+    },
+    {
+      "requirement": "推导图表统计失败复现完整稿件",
+      "status": "材料增长，主张和独立统计仍欠",
+      "evidence": "全negative/异质性、原始模型/源码、图保留；未宣布论文可以完整起草投稿"
+    }
+  ],
+  "direction_adjustment": {
+    "stop": "奖励收益分支不扩长训、改amplitude或删失败；保留原门和新pilot负结论",
+    "next": "新问题：独立固定模型的wheel通道对接触任务闭环效应。全六末模型、四0/1masks，原评价门和强经典不变；regular/pressure/old regression单列，不选case/model",
+    "protocol_sha256": "a3859da9942a0e4957329120dac053864f8d93dd0638bbe304befefa6453ab92",
+    "evaluation_budget": 4472,
+    "learning_budget": 0,
+    "subsequent": "完成来源冻结与独立验证，再判断是否有足够受限系统审计贡献；路线/历史状态改动须先检验来源时序，不能仅凭相关性增加网络或重跑长训",
+    "boundaries": "新确认不等于重开旧64门/3000；不把mask任务更好当新学习方法、全PBRS有害或跨机器人理论。负结果摘要不足以关闭论文目标"
+  },
+  "cleanup": {
+    "files": 5,
+    "bytes": 51418,
+    "retained_hashes_verified": true,
+    "unique_failures_sources_models_and_raw_data_preserved": true
+  },
+  "verified_now": "384 cases identities/physical counts/source hashes, new144case disjoint namespaces and4472budget, cleanup retained hashes"
+}
