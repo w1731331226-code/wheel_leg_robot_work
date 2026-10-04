@@ -47,6 +47,7 @@
 - 第105轮清理：五份关闭/tmp日志在fuser无人使用且与归档逐字节相同后删除51418字节，`round105_cleanup.json`保留hash全部复核过；所有原始数据/模型、历史源码版本及独有失败保留。下一次第110轮深评清理。
 - 第106轮独立评价器：新增`evaluate_channel_validation.py`复用原完整任务evaluate/summary与固定0/1mask，不改损失/网络/模型/物理/门；原基线及三个评价/辅助源hash在任何新分数前冻结`source_contract.json`，hash08871fafe8dd33ba78a7dad506a01b5ad714e85bdd81f48b8b21ed4c0596dd9b。全部六200k固定模型/四mask及强B0/B1，regular96/pressure48/旧28，26控制器×三类=78jobs，总4472/0训练，压力六因素分别计。每job核源、模型/RMS、计数/输入CaseID，之后核模型权重与optimizer计数不变；固定所有输出、无中途选模或隐式既存目录恢复。运行失败记录已确认回合及pending job（其消费未知，不当0），不静默重试。
 - 第106轮进程/初步证据：用户unit `wheelleg-channel-confirmation-v1.service`已确认active/running、PID187039，Restart=no/KillSignal=SIGINT；已落盘B0 regular96/压力48/旧28共172回合，completed_jobs逐文件SHA/实际physical计数核过，当前pending B1 regular96。源冻结与进程存活确认，初步结果不冒充全体因果结论；输出`channel_validation_v1/results/`与run.log/progress.json。下一轮读同unit和真实终态/进度，不因超时重启；待78jobs齐全独立核常规/压力/非退化与通道效应，再限论文主张。收益失败门/旧64/3000保护不变。
+- 第106轮后续落盘补核：B1也已完成，经典六jobs/344回合来源SHA与physical逐步计数核过。新regular B0/B1成功92/93、物理设计均96；压力35/36成功、物理48/48、设计46/48，pressure summary.complete=False、Jψ=None，保留早终止/不完整航向轨迹，不能称全部压力全过或忽略这些失败；旧28 B0/B1成功28/27、物理设计均28，也不能声称B1旧能力无退化。后续全部固定模型评价仍待完成，这些独立基线结果不用于改源/门或选case。
 
 ## 历史持续推进与五轮评判（2026-10-02起，旧方案）
 
