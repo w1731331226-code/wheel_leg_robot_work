@@ -1,0 +1,59 @@
+{
+  "verified": true,
+  "total_engineering_steps": 24000,
+  "initial_weights_matched": true,
+  "checks": [
+    {
+      "arm": "original",
+      "steps": 6000,
+      "observation_RMS_exact": true,
+      "reward_RMS_exact": true,
+      "obs_count": 6010.0001,
+      "reward_count": 6000.0001,
+      "adam_steps": 240
+    },
+    {
+      "arm": "original",
+      "steps": 12000,
+      "observation_RMS_exact": true,
+      "reward_RMS_exact": true,
+      "obs_count": 12020.000100000001,
+      "reward_count": 12000.000100000001,
+      "adam_steps": 480
+    },
+    {
+      "arm": "potential",
+      "steps": 6000,
+      "observation_RMS_exact": true,
+      "reward_RMS_exact": true,
+      "obs_count": 6010.0001,
+      "reward_count": 6000.0001,
+      "adam_steps": 240
+    },
+    {
+      "arm": "potential",
+      "steps": 12000,
+      "observation_RMS_exact": true,
+      "reward_RMS_exact": true,
+      "obs_count": 12020.000100000001,
+      "reward_count": 12000.000100000001,
+      "adam_steps": 480
+    }
+  ],
+  "source_training_scope": "Actual actor/value/Adam/physics CUDA evidence from primary run; these artifact reloads use CPU for saved model inspection and no physics steps/training.",
+  "restoration_scope": "Runtime before/after save/load compared weights/Adam/observationRMS; independent encoded-file reload checks both observation and rewardRMS. Physical episodes, Phi and RNG trajectory restart; full trajectory continuation not claimed.",
+  "study_status": "Engineering only: one seed,10worlds, two segmented12k arms; no performance comparison, no new independent evaluation, no checkpoint promotion.",
+  "next": "Round100 objective review and duplicate cleanup, then freeze a bounded new same-information study only if contribution/protocol checks pass.",
+  "artifact_sha256": {
+    "original/step_6000.zip": "cd6aea194d6e4e04ef6061a5eb58c292dbdaf36278f526941f7f1400b51f0e7f",
+    "original/step_6000.pkl": "a075c4580b378be99a63d63a326f50dd8561081732125eb964c7da47bcd83f64",
+    "original/step_12000.zip": "b7bf4fcdd9e693ae44d7cb1e92e22554e657eb693a28feb761e7683c2a74b039",
+    "original/step_12000.pkl": "436f2cadcb18cf6060ef6dc66fad9ed3b29e05f55b3cb0b4c192c9d0c41444cd",
+    "potential/step_6000.zip": "3c6282b111cb711d9fc0077bf1a301674f4eb786cbefb2f8747562e34e65bdc4",
+    "potential/step_6000.pkl": "bfbede052e6065583fe138db4b0bebd07d0d4518edb9f8d2ac4085e81037ea28",
+    "potential/step_12000.zip": "5496864ad42afb27dee15e08ea66747ff30ac11aa4dc0c5ba10b0a3d8dc7a047",
+    "potential/step_12000.pkl": "ba5e412f959fb787f9496e4fd326a94ce7185f70b9ff43895930d5003a9e2fee"
+  },
+  "verifier_sha256": "ed0c4fc4331855c3c4c032b510a70c929aa472ba7a46fcc39d05e35153be9e6d",
+  "partial_episode_restart_limitation": "Discount invariance checked on completed episodes. The engineering6000-step restart discards unfinished physical episodes and Phi; no pure reward-equivalence claim across that cut. Any formal study restart must audit nonterminal gamma^L*Phi_cut/value-bootstrap terms and matched segment treatment, or preserve actual ongoing physical/potential state."
+}
