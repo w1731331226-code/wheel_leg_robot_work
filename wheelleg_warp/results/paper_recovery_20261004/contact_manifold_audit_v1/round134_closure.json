@@ -1,0 +1,52 @@
+{
+  "round": 134,
+  "verified": true,
+  "states": 576,
+  "contacts": 1345,
+  "producer_cpu_forwards": 1152,
+  "review_cpu_forwards": 1152,
+  "total_cpu_forwards": 2304,
+  "additional_kinematics_calls": 1,
+  "new_physics_steps": 0,
+  "new_gpu_steps": 0,
+  "training_updates": 0,
+  "summary": {
+    "states": 576,
+    "actual_wheel_contacts": 1345,
+    "matched_contacts": 1345,
+    "unmatched_contacts": 0,
+    "nonwheel_actual_contacts": 0,
+    "max_position_distance_m": 0.09986775802292379,
+    "max_tangential_position_distance_m": 0.0025882540922801734,
+    "max_normal_distance": 2.333657249201843e-06,
+    "max_gap_difference_m": 2.759408385617334e-06,
+    "dim_changes": 0,
+    "active_changes": 0,
+    "parameter_mismatches": {
+      "friction": 0,
+      "solref": 0,
+      "solreffriction": 0,
+      "solimp": 0
+    },
+    "max_active_qacc_delta_rad_s2": 254.777348122112
+  },
+  "review_sha256": "ddcd6d12e169d86d2feaca6b8dfe613cd2acc5b37a2b57af90c72730ff1e1e98",
+  "semantics_audit_sha256": "596dab2d3350498546a251c4d10caeb315726d6f3421699c320b2cb00483b14f",
+  "units": [
+    {
+      "name": "wheelleg-contact-manifold-audit-v1",
+      "active_state": "inactive",
+      "main_pid": 0,
+      "exit_status": 0
+    },
+    {
+      "name": "wheelleg-contact-manifold-review-v1",
+      "active_state": "inactive",
+      "main_pid": 0,
+      "exit_status": 0
+    }
+  ],
+  "disposition": "Normal/gap local-plane representation does not reproduce full contact position and response at these states. No material/dimension/constraint-presence mismatch. No sign-bug, unique-cause or sensor-admission claim. Prior envelope remains rejected.",
+  "next_round": 135,
+  "next": "Deep direction/value/method/input-cost review; assess alternative or bounded causal contact investigation, boundary evidence gaps; delete only confirmed redundancy."
+}

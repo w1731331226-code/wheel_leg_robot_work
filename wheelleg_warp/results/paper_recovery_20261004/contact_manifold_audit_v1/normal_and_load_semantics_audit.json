@@ -1,0 +1,173 @@
+{
+  "verified": true,
+  "contacts": 1345,
+  "actual_zero_force_but_plane_loaded_count": 1,
+  "changed_records": [
+    {
+      "label": "B1",
+      "case": 5700014,
+      "index": 29,
+      "event": 2,
+      "descriptor_index": 1
+    }
+  ],
+  "max_position_witness": {
+    "label": "B1",
+    "case": 5700014,
+    "index": 29,
+    "event": 2,
+    "descriptor_index": 1,
+    "actual_contact": {
+      "index": 1,
+      "geom_names": [
+        "wheel_collide_L",
+        "terrain_00"
+      ],
+      "side": "L",
+      "support": "terrain_00",
+      "descriptor_index": null,
+      "normal_toward_wheel": [
+        -0.36242648868711164,
+        0.0004065219676506491,
+        -0.9320122719352042
+      ],
+      "pos": [
+        -1.3062426729620893,
+        -0.14096552600912937,
+        0.004154920508746792
+      ],
+      "signed_gap_m": -4.9204561100954435e-05,
+      "frame": [
+        0.36242648868711164,
+        -0.0004065219676506491,
+        0.9320122719352042,
+        0.0001473343414840456,
+        0.9999999173699414,
+        0.00037888349396881626,
+        -0.9320123489474391,
+        2.710505431213761e-20,
+        0.36242651863443603
+      ],
+      "dim": 3,
+      "exclude": 0,
+      "efc_address": 10,
+      "includemargin": 0.0,
+      "friction": [
+        0.7850759126375062,
+        0.7850759126375062,
+        0.02,
+        0.001,
+        0.001
+      ],
+      "solref": [
+        0.0115,
+        1.5
+      ],
+      "solreffriction": [
+        0.0,
+        0.0
+      ],
+      "solimp": [
+        0.9,
+        0.95,
+        0.001,
+        0.5,
+        2.0
+      ],
+      "local_contact_force6": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "plane_contact": {
+      "index": 1,
+      "geom_names": [
+        "current_support_1",
+        "wheel_collide_L"
+      ],
+      "side": "L",
+      "support": "current_support_1",
+      "descriptor_index": 1,
+      "normal_toward_wheel": [
+        -0.3624264886871115,
+        0.000406521967650649,
+        -0.9320122719352042
+      ],
+      "pos": [
+        -1.2676496577951628,
+        -0.1411065771137947,
+        0.09626424890406467
+      ],
+      "signed_gap_m": -4.9204561101245936e-05,
+      "frame": [
+        -0.3624264886871115,
+        0.000406521967650649,
+        -0.9320122719352042,
+        0.0001473343414840455,
+        0.9999999173699414,
+        0.0003788834939688162,
+        0.9320123489474391,
+        2.710505431213761e-20,
+        -0.3624265186344359
+      ],
+      "dim": 3,
+      "exclude": 0,
+      "efc_address": 10,
+      "includemargin": 0.0,
+      "friction": [
+        0.7850759126375062,
+        0.7850759126375062,
+        0.02,
+        0.001,
+        0.001
+      ],
+      "solref": [
+        0.0115,
+        1.5
+      ],
+      "solreffriction": [
+        0.0,
+        0.0
+      ],
+      "solimp": [
+        0.9,
+        0.95,
+        0.001,
+        0.5,
+        2.0
+      ],
+      "local_contact_force6": [
+        188.58634398314376,
+        0.0,
+        148.05459611353726,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "wheel_center_m": [
+      -1.2857618579648267,
+      -0.14104833820273882,
+      0.049686522813737505
+    ],
+    "normal_projection_toward_center_actual_m": -0.04985883563900869,
+    "normal_projection_toward_center_plane_m": 0.04997537710030755,
+    "position_distance_m": 0.09986775802292379
+  },
+  "normal_convention_source": "https://mujoco.readthedocs.io/en/3.6.0/XMLreference.html#sensor-contact",
+  "source_scope": "Official documented contact normal first-to-second geom convention cross-check. This older documented convention is not a substitute for installed3.12 runtime; actual recorded fields are authoritative.",
+  "interpretation": "Oriented contact normal is not guaranteed to point toward wheel centroid. The largest discrepancy maps a lower contact point to an upper point while normal/gap are equal. Do not label this as a proven sign bug or unique causal root without intervention. efc_address>=0 denotes generated constraint, not nonzero support load.",
+  "runtime": {
+    "mujoco": "3.12.0",
+    "mujoco-warp": "3.12.0",
+    "warp-lang": "1.17.0"
+  },
+  "extra_mj_kinematics_calls": 1,
+  "extra_forward_calls": 0,
+  "new_physics_steps": 0,
+  "review_sha256": "ddcd6d12e169d86d2feaca6b8dfe613cd2acc5b37a2b57af90c72730ff1e1e98"
+}

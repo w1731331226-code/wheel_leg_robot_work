@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第134轮接触表述审计（2026-10-05，独立核验通过，goal active）：
+
+事前冻结后对全部576状态、actualgeometry/旧current-plane、相同真实参数做mj_forward；q/v逐值不动。Producer与review各1152forward，另1kinematics见证，0积分/新GPU/学习；1345wheel contact全对应、无缺失/多匹配或nonwheel。约束维数、存在状态及friction/solref/solreffriction/solimp无差异。1.5s全部接触与主动qacc相同，3.5s法向/间隙/位置已有差异；首次报告接触的法向/间隙几乎相同，却位置最大99.8678mm、切向最大2.58825mm，主动qacc差峰254.777rad/s²。这是接触数据位置差，不是机器人位移，不能从描述性比较证明单一因果。
+
+最大位置见证B1/5700014/event2：原normal按geom顺序定向，不能假定总指向轮心。actual/plane contact位于轮下/上两侧，normal/gap同；实际force0、plane有载荷，仅1/1345此类转变。官方法向定义文档与installed3.12字段交叉记录在normal_and_load_semantics_audit，未将3.6文档当3.12源码证明、未判定符号bug或GJK唯一根因。constraint存在不等于承重，理想collision descriptor不自动等于可测触觉。
+
+原132预测包络gate失败保持，不部署/扩PPO或见holdout调reserve。下一135集中深审131–134的科学价值、方法/信息/计算成本与独立边界证据，决定停分支、替代方法或必要有限因果试验，不能机械追求更多字段/更复杂模型；同时删除确认冗余，所有唯一失败/模型/状态保留。
+
 第133轮误差分解（2026-10-05，独立核验通过，goal active）：
 
 冻结后对全部576状态做两新offline分支：当前接触模型+真实参数+warm0，实际几何/真实参数+保存warm；复用132审核过的实际几何warm0与GPU。原16角点/ULP与1.4门不改，真实参数与保存warm不提供给控制器。独立重建两分支、源/载荷/身份与有符号分解通过；producer1152+review1152=2304CPU步，0新GPU/学习，两unit正常退出0。
