@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "exact_initial_packet_and_other_state_inputs_verified": true,
+  "equal_same_shape_policy_predictions": true,
+  "center_success": 2,
+  "center_cases": 2,
+  "offset_terrain_failures": 4,
+  "offset_cases": 4,
+  "all_physical_design_passed": true,
+  "aborted_pre_road_checks_preserved": [
+    "lateral_aliasing",
+    "lateral_aliasing_measured",
+    "lateral_aliasing_initial_exact"
+  ],
+  "completed_public_diagnostic_episodes": 6,
+  "aborted_one_policy_step_probe_worlds": 12,
+  "post_integration_exact_equality_not_claimed": true,
+  "no_tolerance_relaxation_used_for_initial_alias_proof": true,
+  "scope": "Constructed task-relevant initial alias counterexample; no assertion of global unobservability or sole cause for old training failures",
+  "next_test": "Matched public lateral-state/corrective-control intervention before registering learning changes",
+  "training_updates": 0,
+  "old_gate_or_final_replayed": false
+}
