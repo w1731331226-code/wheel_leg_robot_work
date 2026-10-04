@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第130轮集中方向/方法深审与独立state注册（2026-10-05，goal active，下一135）：
+
+**方向值得继续的条件：** current ideal normal/gap在27点复现actualgeometry作用，public参数corner有限覆盖支持独立验证；不再扩大失败的点Nom/20ms cone/PPO分支，也不把216interior无漏包当连续域证明。测量假设强于旧Actor39、oracle全景泄漏、CPU-GPU/接触切换与递归viability都是未闭合项；新核心论文的方法贡献/强经典优势/独立鲁棒泛化仍未成立，旧初稿ready不替代。
+
+**新实验已事前注册：** contact_state_holdout_v1固定新5700000..47的48场景，九地形均覆盖、目标高度轮循0.115/.16/.24/.30/.38；原B1和三固定L2末模型，max192GPU回放/max576snapshot/0学习，事件为pre-time≥1.5、3.5s和first post目标接触创建保存pre-state。后者刻意检查当前接触描述无法预知新接触的问题，不按failure分数选case。旧namespace无重叠，仅为同固定控制器条件下独立state/case采样，不把四控制器重复48当192独立环境。当前未采集新score，collector/source须先准入冻结。
+
+**下一131开始：** 实现并冻结只读事件记录器和不变角点/ULP模型，保留所有任务失败/状态；分scheduled与contact-creation预测覆盖，并以actualGPU和offline actualgeometry分别核每个漏包，不改原1.4门、ULP或模型选法。若失败停止对应假设，不能见holdout后增buffer；无漏包也只是有限覆盖，需声明实际信息/连续参数证明界限。若支持明确工作子域与误差假设，才推共同Nom修复和Actor余量，有限同权限控制/非退化与初始化机制消融后新三seed学习，过门才正式五seed/OOD及solver/contact敏感性。
+
+**冗余删除：** 3个编译code与当前source完全等价且无占用的再生cache20563B，source/数据/checkpoints/所有unique失败不删；round130_cleanup.json保留hash并核已删，import可能重生成不当永久空间节省。五轮证据/停止及继续条件在round130_direction_review.json，下一135按约深审清理。
+
 第129轮公共参数域有限包络检查（2026-10-05，goal active）：
 
 先登记mass7–7.5、左右mu .6–1、drive差±.03（原声明训练域），16角点+seed129001生成8固定内部点，在27旧事件状态/current理想接触描述下做648预测、216actualgeometry oracle对照，warm0、0训练/0新GPU。角点全算，预测不读取true param选择角点；内部标签仅offline验证。数值reserve为原1.4位置的一float32 ULP，属于跨算术比较，不是控制门放宽或接触模型鲁棒证书。

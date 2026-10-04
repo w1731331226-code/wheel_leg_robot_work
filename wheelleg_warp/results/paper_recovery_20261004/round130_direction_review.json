@@ -1,0 +1,164 @@
+{
+  "round": 130,
+  "period": [
+    126,
+    130
+  ],
+  "goal_status": "active",
+  "next_review_round": 135,
+  "objective": "Proceed toward the entire pure-simulation core-journal method/learning/generalization plan; periodic direction/method/extra-experiment review and confirmed-redundancy cleanup.",
+  "evidence": {
+    "nominal_response_v1": {
+      "review_sha256": "30c654898e4f5d922deedcb0c1c9e15166dfaf1b27edea44349a736a290a43b6",
+      "results": {
+        "summary": {
+          "lower_flat_plane": {
+            "states": 27,
+            "max_q_error_rad": 1.2315472838309027e-05,
+            "false_safe": 3,
+            "admitted": false
+          },
+          "two_current_supports": {
+            "states": 27,
+            "max_q_error_rad": 1.2308071191680092e-05,
+            "false_safe": 3,
+            "admitted": false
+          }
+        }
+      }
+    },
+    "prediction_factors_v1": {
+      "review_sha256": "72f0f94b00380fcee5991bb6988da3d213cffca7b5f92ebaddc9d8ac8aaaced7",
+      "results": {
+        "summary": {
+          "0/0/0": {
+            "states": 27,
+            "max_error_rad": 1.2315472838309027e-05,
+            "mean_max_error_rad": 1.1524099231992376e-05,
+            "false_safe": 3
+          },
+          "0/0/1": {
+            "states": 27,
+            "max_error_rad": 1.2315472838309027e-05,
+            "mean_max_error_rad": 1.1524099231992376e-05,
+            "false_safe": 3
+          },
+          "0/1/0": {
+            "states": 27,
+            "max_error_rad": 1.2259233193701036e-05,
+            "mean_max_error_rad": 1.1498221116872458e-05,
+            "false_safe": 3
+          },
+          "0/1/1": {
+            "states": 27,
+            "max_error_rad": 1.2259233193701036e-05,
+            "mean_max_error_rad": 1.1498221116872458e-05,
+            "false_safe": 3
+          },
+          "1/0/0": {
+            "states": 27,
+            "max_error_rad": 8.888703468823422e-07,
+            "mean_max_error_rad": 3.2599000076304627e-07,
+            "false_safe": 0
+          },
+          "1/0/1": {
+            "states": 27,
+            "max_error_rad": 8.888703468823422e-07,
+            "mean_max_error_rad": 3.2599000076304627e-07,
+            "false_safe": 0
+          },
+          "1/1/0": {
+            "states": 27,
+            "max_error_rad": 8.156384700974684e-08,
+            "mean_max_error_rad": 5.1109765275969965e-08,
+            "false_safe": 0
+          },
+          "1/1/1": {
+            "states": 27,
+            "max_error_rad": 8.156384700974684e-08,
+            "mean_max_error_rad": 5.1109765275969965e-08,
+            "false_safe": 0
+          }
+        }
+      }
+    },
+    "contact_response_v1": {
+      "review_sha256": "319478eb4d8ccdb059a4f367aebae928178c0190587af3f2ecf4f55f3d3605a7",
+      "results": {
+        "max_q_error_rad": 8.888703468823422e-07,
+        "false_safe": 0,
+        "development_gate": false,
+        "max_difference_from_true_geometry_fixed_parameter_predictions_rad": 0.0
+      }
+    },
+    "contact_uncertainty_v1": {
+      "review_sha256": "53eda0cf185635f03e1f471d4983b85cc0a578b3dda8c1cd9604b4032b773e49",
+      "results": {
+        "summary": {
+          "interior_checks": 216,
+          "model_corner_misses": 0,
+          "oracle_reserved_corner_misses": 0,
+          "observed_gpu_corner_misses": 0,
+          "max_contact_oracle_difference_rad": 0.0,
+          "max_corner_width_rad": 2.5520153439373416e-06
+        }
+      }
+    }
+  },
+  "holdout_registration_sha256": "cddf27e483d0a5df25f224a7e497a16ea60143735f0d769ac7c8318e95211b92",
+  "direction": [
+    {
+      "branch": "State-only FK horizontal-support point model",
+      "decision": "stop deployment/promotion",
+      "reason": "Both original ULPrecision/zero false-safe development gates failed; do not pick another floor offset or tune params to pass."
+    },
+    {
+      "branch": "Current-contact-informed public-domain response interval",
+      "decision": "continue conditionally with independent state/mode test",
+      "reason": "Currentnormal/gap exactly reproduces true-geometry fixedparams in27 states; all216 fixed interiors and27 GPU observed states covered by public corner envelope. New state/contact switch evidence still absent."
+    },
+    {
+      "branch": "Full-scene oracle or true params as controller inputs",
+      "decision": "reject silent use",
+      "reason": "Actual factor diagnosis isolates geometry but its truth is not a deployable measurement. Current descriptor is an explicitly extra ideal tactile assumption."
+    },
+    {
+      "branch": "New PPO/5seeds/claims of safety or novelty",
+      "decision": "defer",
+      "reason": "No successful task improvement/recursive-viability or independent error qualification yet. Actor remains39; ideal currentcontact/fullstate contract must be common to every compared supervisor."
+    }
+  ],
+  "method_review": {
+    "valid": [
+      "Full prescribed factors/states/corners/interiors retained, no gain/parameter winner selection.",
+      "Original1.4rad and physical/task gates unmodified; empirical arithmetic reserve separated from uncertainty proof.",
+      "Independent reconstruction of every finite nominal/contact/corner response and source/state hashes."
+    ],
+    "limits": [
+      "All preceding model checks share27 development event states; do not count them as independent state trials.",
+      "Ideal fullq17/v16/passive/base estimator and current signedcontact gap/normal are stronger than original actor39; real sensor observability/accuracy not certified.",
+      "Warmstart equality only for these100-iteration CPU solver states; factor interactions and contact changes may differ.",
+      "Corner extrema do not mathematically bound every interior parameter combination or future support mode.",
+      "No method/strong-reference superiority, five-seed formal model or independent robust-generalization claim yet. Old material-ready goal cannot substitute for this one."
+    ]
+  },
+  "next_experiments": [
+    {
+      "priority": 1,
+      "work": "Freeze collector and interval implementation, then execute registered48 fresh scenarios x B1/three fixedL2 controllers, max192rollouts. Capture pre-state at1.5/3.5s and first post targetcontact creation, not failure-score-selected states.",
+      "exit": "Original physics/control/rules and fixed weights/RMS unaffected; all states/early failures retained. Separate scheduled/support-creation inclusion and report every miss."
+    },
+    {
+      "priority": 2,
+      "work": "Apply unchanged public16 corners/oneULP arithmetic reserve to all held states; validate currentcontact model against actualGPU and offline actualgeometry at matching parameters.",
+      "exit": "Independent state prediction evidence conditional on same fixed controllers; even no misses still does not prove the continuous uncertainty domain. Never widen buffers after seeing held-out scores."
+    },
+    {
+      "priority": 3,
+      "work": "If held-state/mode evidence supports a defined operating subset, derive common Nom repair then Actor admissible set and explicit model-error assumptions; bounded controller/nondegradation/initial-function tests before new3seed learning.",
+      "exit": "Actual same-information strongest-classical advantage gate and working/physical/task nondegradation precede5seed/OOD/solver-sensitivity expansion."
+    }
+  ],
+  "paper_target_status": "Material from old audit can be written; competitive new core-journal control contribution and required independent evidence remain unproven.",
+  "cleanup_sha256": "368045553d77dcaf21c8f254e569c310f89eb4dc838362afebeabaeb0e7b32de"
+}
