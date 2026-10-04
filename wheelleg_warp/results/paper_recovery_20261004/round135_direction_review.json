@@ -1,0 +1,216 @@
+{
+  "round": 135,
+  "period": [
+    131,
+    135
+  ],
+  "goal_status": "active",
+  "previous_goal_turn": "progress",
+  "next_review_round": 140,
+  "evidence": {
+    "contact_state_holdout_v2": {
+      "review_sha256": "43ce09af1ba5c1612f9591f45dad7139c0cd61cc748c4874e566022cd047d586",
+      "completion_sha256": "2828eaeb5396968e310a012dc9113c9bbcf30d6136c36aac551d888b0816e2d6",
+      "source_contract_sha256": "5cb8eacd07d66b60306fc51bde9a0a728d401e2fcc08ba15575e7054b2d1f030"
+    },
+    "contact_state_prediction_v1": {
+      "review_sha256": "3ed0d3a79ef0f6b5bfc9bc76c8a495e05089614d758aebf755258878774a9f81",
+      "completion_sha256": "fe5ca021e7bf364cc4cfc5e6eed5f031adda93c926f52db4b26b69e283495730",
+      "source_contract_sha256": "6b6e2392cffe0248f12e4df322b1baaa29a4fc15fc2d68e48d666b2adbe0185e"
+    },
+    "contact_holdout_factors_v1": {
+      "review_sha256": "ae778a65566a67ec1df8551056ac0e7f0e8561312945b3cddf4eea88ab33f59f",
+      "completion_sha256": "d7af025fe0545cea1c5a5b001b8acfbccc83c289d2a8b638e3087383a1423dc9",
+      "source_contract_sha256": "33bfbbc606c4f0a7c4a829d9493d6fe86893bc6b1a97abe2174ce76221ef911c"
+    },
+    "contact_manifold_audit_v1": {
+      "review_sha256": "ddcd6d12e169d86d2feaca6b8dfe613cd2acc5b37a2b57af90c72730ff1e1e98",
+      "completion_sha256": "a9029a34f836111a605b39d77941d5cf39f476e4874607cae7a47884b2d083ff",
+      "source_contract_sha256": "fc72ffc3b039e0c50ebd2162c57b50fbe6c0a1a473dd46a67fc3a9e67f27d9aa"
+    }
+  },
+  "status": {
+    "collection_valid_episodes": 192,
+    "collection_invalid_episodes_preserved": 192,
+    "unique_scenarios": 48,
+    "saved_states": 576,
+    "fixed_controller_results": {
+      "B1": {
+        "snapshots": 144,
+        "events": [
+          48,
+          48,
+          48
+        ],
+        "missing": 0,
+        "success": 47,
+        "physical": 48,
+        "design": 48
+      },
+      "1609": {
+        "snapshots": 144,
+        "events": [
+          48,
+          48,
+          48
+        ],
+        "missing": 0,
+        "success": 45,
+        "physical": 48,
+        "design": 45
+      },
+      "1610": {
+        "snapshots": 144,
+        "events": [
+          48,
+          48,
+          48
+        ],
+        "missing": 0,
+        "success": 45,
+        "physical": 48,
+        "design": 45
+      },
+      "1611": {
+        "snapshots": 144,
+        "events": [
+          48,
+          48,
+          48
+        ],
+        "missing": 0,
+        "success": 47,
+        "physical": 48,
+        "design": 47
+      }
+    },
+    "prediction": {
+      "states": 576,
+      "gpu_misses": 14,
+      "oracle_misses": 9,
+      "gpu_false_safe": 0,
+      "oracle_false_safe": 0,
+      "max_gpu_excess_rad": 0.00010167942867311819,
+      "max_oracle_excess_rad": 5.9540968664062444e-05,
+      "max_corner_width_rad": 2.1825792233087782e-05
+    },
+    "response_factors": {
+      "states": 576,
+      "contact_point_raw_corner_misses": 0,
+      "contact_point_reserved_corner_misses": 0,
+      "max_contact_point_excess_rad": 0.0,
+      "max_support_representation_delta_rad": 6.369421813023912e-05,
+      "max_warm_delta_rad": 1.734723475976807e-18,
+      "max_gpu_warm_cpu_residual_rad": 6.923335278397058e-05
+    },
+    "contact_manifold": {
+      "states": 576,
+      "actual_wheel_contacts": 1345,
+      "matched_contacts": 1345,
+      "unmatched_contacts": 0,
+      "nonwheel_actual_contacts": 0,
+      "max_position_distance_m": 0.09986775802292379,
+      "max_tangential_position_distance_m": 0.0025882540922801734,
+      "max_normal_distance": 2.333657249201843e-06,
+      "max_gap_difference_m": 2.759408385617334e-06,
+      "dim_changes": 0,
+      "active_changes": 0,
+      "parameter_mismatches": {
+        "friction": 0,
+        "solref": 0,
+        "solreffriction": 0,
+        "solimp": 0
+      },
+      "max_active_qacc_delta_rad_s2": 254.777348122112
+    }
+  },
+  "cost": {
+    "gpu_diagnostic_episodes": 384,
+    "valid_episodes": 192,
+    "invalid_episodes": 192,
+    "cpu_integrated_diagnostic_and_review_steps": 21888,
+    "cpu_forward_audit_calls": 2304,
+    "additional_kinematics_calls": 1,
+    "new_training_steps": 0,
+    "online_latency_measured": false
+  },
+  "direction": [
+    {
+      "branch": "Original normal-gap plane/public16-corner safety controller",
+      "decision": "stop deployment and direct control-layer development",
+      "reason": "Independent saved-state coverage failed14 GPU/9 CPU; representation differs even at known parameters. No empirical reserve tuning or automatic extra sensor/model expansion."
+    },
+    {
+      "branch": "Finite contact-manifold implementation/information diagnosis",
+      "decision": "one bounded causal study only",
+      "reason": "Concrete same-normal/gap different-position witness supports discriminating implementation versus inadequate information; descriptive comparison not causal. Include all576 and all27 critical fixtures; no cheap safe-only subset."
+    },
+    {
+      "branch": "Longer PPO/five seeds/extreme terrain/model ensembles",
+      "decision": "defer",
+      "reason": "No new method advantage or common design-domain qualification; strongest B1 has47/48 success and48 design versusL2 45/45/47, so diagnostic sophistication is not a task improvement."
+    },
+    {
+      "branch": "Whole pure-simulation paper plan",
+      "decision": "continue with explicit return-to-method milestone",
+      "reason": "Physics/constraint diagnosis is useful but four rounds did not create a competitive control contribution. At138 terminate or qualify this diagnostic branch and resume concrete same-information method/controls; do not replace required learning/generalization with audit reports."
+    }
+  ],
+  "methodology": {
+    "valid": [
+      "Source/state hashes and all-state/no-winner reporting maintained. Invalid collector data excluded entirely, formatting-only repair did not change scores.",
+      "Parameterized model response versus support representation versus warm/backend residual separated; original gates and old failures preserved."
+    ],
+    "corrections": [
+      "Event2 is first solver-reported pre-q contact, not previously invisible post-q collision; test loading/contact persistence separately in any future protocol.",
+      "False-safe0 at margin>=.038rad is not boundary safety. Contact constraint existence is not support load.",
+      "Ordered contact normal does not imply it points toward wheel centroid. Plane reconstruction assumes a support side; this fails in a concrete witness, without proof of a sign bug.",
+      "Independent numeric replay used the same model implementation; reproducibility audit is not external-model validation or a proof of unique cause.",
+      "A single actual parameter vector perstate inside16 corners does not bound a continuum. Reused holdout is now development data."
+    ]
+  },
+  "contribution_readiness": {
+    "novel_mechanism": false,
+    "strong_classical_advantage": false,
+    "recursive_safety": false,
+    "new_independent_generalization": false,
+    "formal_five_seed_method": false,
+    "old_material_ready_does_not_complete_new_goal": true
+  },
+  "necessary_supplements": [
+    {
+      "priority": 1,
+      "work": "Registered one causal contact-position/frame-gap experiment and untouched-pipeline identity gate at136–137",
+      "budget": 7236,
+      "exit": "Decision138, no open-ended field/buffer adjustments."
+    },
+    {
+      "priority": 2,
+      "work": "After admissibility design: all-height coupled constraints, zero/B1/old mechanism and matched actor+critic initialization controls, record intervention rate and task nondegradation",
+      "exit": "Engineering validity is separate from new3seed learning superiority."
+    },
+    {
+      "priority": 3,
+      "work": "Only after real3seed advantage: five-seed core comparison, at most2 mechanism-identifying ablations, fresh ID/combination/geometry+parameter+delay OOD and easy-task retention",
+      "exit": "New namespaces, seed/case hierarchy, actual end-to-end wallclock, no recycled holdout/final tuning."
+    }
+  ],
+  "literature": [
+    {
+      "url": "https://proceedings.mlr.press/v270/esser25a.html",
+      "checked": "Official abstract; action representation, initialization and between-timestep effects already studied."
+    },
+    {
+      "url": "https://biblio.ugent.be/publication/01KVA83TWHK288BDR6SKJF16C6",
+      "doi": "10.1016/j.engappai.2026.115343",
+      "checked": "Official abstract and metadata only; state-dependent residual bounds/dual loop prior art, PDF remainsUGent only; not fulltext equivalence proof."
+    },
+    {
+      "url": "https://arxiv.org/abs/2110.02566",
+      "checked": "Author abstract rechecked; existing constrained-residual setting, no transplant of its safety theorem to coupled wheelleg contact."
+    }
+  ],
+  "next_experiment_registration_sha256": "0e01793e07ef00a6a6f6882f0eac0b3d66129fcf2c4586879080747a2cae3eb0",
+  "cleanup_sha256": "dbbb391e2c8264897266d0cde3b5d41c7224ec91f0029d43d880d6f232c97490",
+  "paper_target": "Aim for a competitive pure-simulation control paper; no guarantee of core-journal acceptance and no substitution of negative/engineering-only material for the new contribution goal."
+}

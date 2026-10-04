@@ -1,0 +1,76 @@
+{
+  "version": "contact-manifold-causal-plan-v1",
+  "status": "registered_not_executed",
+  "scheduled_rounds": [
+    136,
+    137
+  ],
+  "followup_decision_round": 138,
+  "objective": "Distinguish contact-representation implementation failure from missing current-manifold information, before investing further in a controller predictor. One bounded diagnostic, not a new controller.",
+  "state_cohorts": [
+    {
+      "name": "new_saved_states",
+      "states": 576,
+      "source": "contact_state_holdout_v2/collection_review.json",
+      "sha256": "43ce09af1ba5c1612f9591f45dad7139c0cd61cc748c4874e566022cd047d586",
+      "role": "All previous independent-state cohort; now reused development diagnosis, never fresh test again."
+    },
+    {
+      "name": "old_critical_fixtures",
+      "states": 27,
+      "source": "joint_response_v1/review.json",
+      "sha256": "2b0f1aded499bbe4b4d7758e5bb93b2c8d5b386b1a952dbab788907a594dab32",
+      "role": "All old boundary/guard/crossing fixtures, explicitly development; do not pool with fresh independent cases."
+    }
+  ],
+  "total_states": 603,
+  "branches": [
+    "unchanged_local_plane",
+    "replace_contact_positions_only",
+    "replace_contact_frames_and_gaps_only",
+    "replace_both"
+  ],
+  "inputs": "Same saved pre-q/v, known ctrl, actual parameters and warm0 across all diagnostic arms. Actual contact positions/frames/gaps supplied only as offline intervention, not granted to predictor/actor. Original pair/material/topology unchanged.",
+  "compatibility": "Before any intervention, reconstruct untouched one-step CPU integration pipeline for actual geometry and local-plane model at all603 states; match saved standard-mj_step outputs at original1e-12 reconstruction tolerance. Confirm no recollision overwrites modifications. Preserve integrator3; do not substitute step2/Euler silently. Use fresh standard-mj_step versus reconstructed pipeline on both models at all603 states and compare full q17/v16 (and relevant numeric state); cached active-q-only records are insufficient for full pipeline identity.",
+  "compatibility_step_budget": 2412,
+  "intervention_producer_step_budget": 2412,
+  "intervention_review_step_budget": 2412,
+  "total_cpu_step_budget": 7236,
+  "new_gpu_rollouts": 0,
+  "training_updates": 0,
+  "scores": "Per-state signed next-q differences and contact attributes, by cohort/event/controller; compare position-only/frame-gap-only/both with original and actual-geometry oracle. State/task/1.4 gates remain unchanged. Contact-transplant arms may be nonphysical counterfactuals; no safety inference.",
+  "stopping_rules": [
+    "If untouched compatibility fails, preserve failure and stop intervention; fix only demonstrated API mismatch before execution, no tolerance expansion.",
+    "Report every state/arm, including no-improvement; no contact-force thresholds, normal flips, params or buffers swept.",
+    "Even exact CPU manifold agreement does not admit controller: CPU/GPU discrepancy, measurability, parameter-continuum and critical-state coverage remain separate.",
+    "After this one experiment decide at138: a reproducible implementation correction may proceed to new independent qualification; if required full manifold information is unavailable, close contact-model controller branch instead of adding more privileged fields."
+  ],
+  "alternative_if_closed": "Return to a same-information minimal Nom/residual admissibility design using explicitly available joint state and controller history; define and test its coupled-state limitations before implementation/learning. State-dependent amplitude alone is not novel and per-joint sign alone is not acceleration safety.",
+  "future_required": "Preserve strong B1/zero-residual/old mechanism comparisons, all heights, nondegradation and true-boundary cases, equal initial actor/critic functions in new information experiments; new3seed method advantage before5seed/OOD/necessary ablations. No use of old64/final3000.",
+  "source_evidence": {
+    "contact_state_holdout_v2": {
+      "review_sha256": "43ce09af1ba5c1612f9591f45dad7139c0cd61cc748c4874e566022cd047d586",
+      "completion_sha256": "2828eaeb5396968e310a012dc9113c9bbcf30d6136c36aac551d888b0816e2d6",
+      "source_contract_sha256": "5cb8eacd07d66b60306fc51bde9a0a728d401e2fcc08ba15575e7054b2d1f030"
+    },
+    "contact_state_prediction_v1": {
+      "review_sha256": "3ed0d3a79ef0f6b5bfc9bc76c8a495e05089614d758aebf755258878774a9f81",
+      "completion_sha256": "fe5ca021e7bf364cc4cfc5e6eed5f031adda93c926f52db4b26b69e283495730",
+      "source_contract_sha256": "6b6e2392cffe0248f12e4df322b1baaa29a4fc15fc2d68e48d666b2adbe0185e"
+    },
+    "contact_holdout_factors_v1": {
+      "review_sha256": "ae778a65566a67ec1df8551056ac0e7f0e8561312945b3cddf4eea88ab33f59f",
+      "completion_sha256": "d7af025fe0545cea1c5a5b001b8acfbccc83c289d2a8b638e3087383a1423dc9",
+      "source_contract_sha256": "33bfbbc606c4f0a7c4a829d9493d6fe86893bc6b1a97abe2174ce76221ef911c"
+    },
+    "contact_manifold_audit_v1": {
+      "review_sha256": "ddcd6d12e169d86d2feaca6b8dfe613cd2acc5b37a2b57af90c72730ff1e1e98",
+      "completion_sha256": "a9029a34f836111a605b39d77941d5cf39f476e4874607cae7a47884b2d083ff",
+      "source_contract_sha256": "fc72ffc3b039e0c50ebd2162c57b50fbe6c0a1a473dd46a67fc3a9e67f27d9aa"
+    }
+  },
+  "old_gate_or_final_used": false,
+  "frame_conversion": "Canonicalize actual contact frame to wheel-directed, right-handed convention, then map to target pair geom order; preserve tangential axis semantics under pyramidal friction. Conversion is fixed before execution, never choose normal flips by score. Record raw and transformed frames.",
+  "source_admission": "This is a prospective experiment plan, not runtime/source admission. Freeze implementation/API pipeline source before compatibility or intervention; registration alone authorizes no deployment. No post-result tolerance or cohort changes.",
+  "budget_planning_note": "Before any execution, identity budget counts fresh standard and manual steps on both models (603x2x2=2412), not only cached four active joint outputs. Four intervention arms and review each2412; total7236. No consumed work or changed score."
+}

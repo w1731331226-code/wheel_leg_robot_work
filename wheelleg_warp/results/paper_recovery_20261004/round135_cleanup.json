@@ -1,0 +1,34 @@
+{
+  "round": 135,
+  "deleted": [
+    {
+      "path": "wheelleg_warp/__pycache__/audit_contact_manifold.cpython-310.pyc",
+      "bytes": 11505,
+      "cache_sha256": "b844ddf93ff91ad844b77cfe24659800801695a9f6c30aa7326e9e0d3da95eab",
+      "source": "wheelleg_warp/audit_contact_manifold.py",
+      "source_sha256": "d9006313fb829eb3437b69190d7516cc8cb8e36e87205ac11f6178f944c36ebc",
+      "exact_code_matches_source": true,
+      "open_handles": false
+    },
+    {
+      "path": "wheelleg_warp/__pycache__/probe_holdout_factors.cpython-310.pyc",
+      "bytes": 10646,
+      "cache_sha256": "bf11d4c8fc3a6cf7adcdf49b29958521d221f2f05323be71264db216e8901343",
+      "source": "wheelleg_warp/probe_holdout_factors.py",
+      "source_sha256": "9195379212fcff2e8a354f6e74c362a57034dc59a9a0c63769a5f4b8b3dbb5bd",
+      "exact_code_matches_source": true,
+      "open_handles": false
+    },
+    {
+      "path": "wheelleg_warp/__pycache__/predict_contact_holdout.cpython-310.pyc",
+      "bytes": 7814,
+      "cache_sha256": "58f69bb6347029e980bd44033886b03833b5e611d61d5d5e18eca615378b2162",
+      "source": "wheelleg_warp/predict_contact_holdout.py",
+      "source_sha256": "9031997899ab454c578f13387560358964a6a3b04856f1b418eea4d8a0e62c7d",
+      "exact_code_matches_source": true,
+      "open_handles": false
+    }
+  ],
+  "bytes_removed": 29965,
+  "retained": "All original source, models, normalizers, raw trajectories, scientific failures, invalid collection and summary failure evidence retained. Cache can regenerate; no lasting disk-saving claim."
+}

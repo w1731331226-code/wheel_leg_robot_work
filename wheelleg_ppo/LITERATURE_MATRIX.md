@@ -1,5 +1,7 @@
 # PPO论文查新矩阵
 
+第135轮近邻复核（2026-10-05）：官方[PMLR动作表示摘要](https://proceedings.mlr.press/v270/esser25a.html)仍明确包含轮腿、初始化与策略步间行为；[UGent adaptive-bounds摘要](https://biblio.ugent.be/publication/01KVA83TWHK288BDR6SKJF16C6)列状态相关残差边界与双环，2026出版元数据DOI [10.1016/j.engappai.2026.115343](https://doi.org/10.1016/j.engappai.2026.115343)。仅摘要/元数据复核，fulltext仍UGent only；没有重试受限全文或断言完整方法等价。本机新的受控余量/动作表示若实施，仍须说明coupled wheelleg作用与同信息强经典/学习证据，不能用一般自适应边界当新增创新。当前normal-gap plane/corner候选独立覆盖失败停止部署，有限因果诊断不算控制贡献。
+
 最近方向复核：2026-09-27。详见 [三篇全文核对](LITERATURE_FULLTEXT_REVIEW.md)；已关闭其中两篇，第三篇仍缺全文。用于训练前确定对照与研究边界，不是“创新已确认”的证明。正文细节仅填写本次实际可访问的内容；“未核实”不等于不存在。没有用其他平台的成功率与本机横向排名。
 
 2026-10-04第95轮补核机制方向：本次一轮定向检索及官方摘要跟进，非穷尽查新。已核[Regret Minimization for Partially Observable Deep Reinforcement Learning](https://proceedings.mlr.press/v80/jin18c.html)（ICML 2018）官方摘要，明确提到观测历史和循环网络应对部分可观测；本文不是轮腿复现，不能直接移植其算法保证。已核[Deep Reinforcement Learning to Acquire Navigation Skills for Wheel-Legged Robots in Complex Environments](https://arxiv.org/abs/1804.10500)（2018作者稿）摘要，使用高度图、目标导航、行为学习及域随机化；没有核全文/预算或复现。因此“轮腿复杂环境导航”“加位置/记忆”均不足以单独证明本机新方法贡献。2024轮腿导航文献搜索命中，但指定HTML版本404，未取得正文，本轮不据此填写方法细节，也不重复抓取。

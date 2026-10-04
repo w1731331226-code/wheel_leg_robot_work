@@ -1,5 +1,17 @@
 # 双轮腿机器人PPO论文方案
 
+第135轮深审与冗余清理（2026-10-05，goal active，下一140）：
+
+**方向判断：整体论文计划值得继续，当前预测控制候选停止直接推进。** 131–134得到独立状态覆盖失败与接触表述差异，价值在于排除错误假设；没有新方法优势。48唯一场景中B1成功47/48、design48，L2三seed成功及design45/45/47。576状态的14GPU/9CPU漏包、额外理想fullstate/contact需求和未经控制时序验收的CPU影子程序，不支持部署。0 false-safe来自远边界样本，不等于安全证明；已读留出现在只能作development诊断。继续扩大地形/网络/训练预算，或给旧包络调reserve，均不适当。
+
+**方法判断与限额补验：** 停止normal-gap→无限plane→16corners当安全层，不追逐更多字段。仅保留一次位置信息/接触frame-gap的2×2因果诊断：全部新576+旧27critical fixture共603，两组分开；两模型未改pipeline与fresh standard mj_step全q17/v16身份先过，再四臂共2412步及全量review2412步，identity2412，总预算7236CPU步、0GPU回放/学习。固定geom顺序与右手frame转换，保留integrator3；不按成绩翻normal、调force阈值或更换样本。136–137执行、138强制作去留决定。API身份失败即停止；即使oracle接触数据可复现CPU，仍不证明这些字段可测、GPU误差或连续参数鲁棒性。此为离线非物理counterfactual诊断，不是新控制器或实验准入。
+
+**返回论文主线的条件：** 若只是可复现实现错误，修正后需新独立资格验证；若依赖不可得完整manifold，则关闭该控制分支，回到可得关节状态/控制历史下的最小共同Nom修复和残差权限设计，先推导coupled-state限制与同权限实测。不自动实现候选，不把状态相关幅度调节称首次提出：PMLR动作表示论文已研究初始化/步间行为（https://proceedings.mlr.press/v270/esser25a.html），UGent2026官方摘要已有状态相关残差界/双环（https://biblio.ugent.be/publication/01KVA83TWHK288BDR6SKJF16C6，DOI10.1016/j.engappai.2026.115343，全文仍UGent only）。须找到本机可检验的新增作用与相对强经典收益。
+
+**必要补充仍保留原范围：** 全高度与真实临界状态/非退化、强B1和零残差/旧机制、共同信息/权限及actor+critic等初始函数；新三seed实际优势后才五seed主对照、至多两项识别贡献的消融、全新同域/组合/温和几何+质量摩擦驱动延迟OOD和易场景保持、实际端到端墙钟。还需要方法推导、失败统计与复现材料；本轮不以负结果摘要或工程报告结束新投稿目标。
+
+**清理与成本：** 原四轮384GPU诊断回合（192无效保留）、21888CPU积分步含重算、2304forward+1kinematics、0新学习；不声称在线速度或PPO加速。删除3个source完全等价且无占用的ignored pyc共29965B，可重生；source/模型/归一化/原始数据/全部独有失败保留。证据及去留在round135_direction_review，预算计划在contact_manifold_causal_v1/registration；新实验未执行，136先source准入。
+
 第134轮接触表述审计（2026-10-05，独立核验通过，goal active）：
 
 事前冻结后对全部576状态、actualgeometry/旧current-plane、相同真实参数做mj_forward；q/v逐值不动。Producer与review各1152forward，另1kinematics见证，0积分/新GPU/学习；1345wheel contact全对应、无缺失/多匹配或nonwheel。约束维数、存在状态及friction/solref/solreffriction/solimp无差异。1.5s全部接触与主动qacc相同，3.5s法向/间隙/位置已有差异；首次报告接触的法向/间隙几乎相同，却位置最大99.8678mm、切向最大2.58825mm，主动qacc差峰254.777rad/s²。这是接触数据位置差，不是机器人位移，不能从描述性比较证明单一因果。
