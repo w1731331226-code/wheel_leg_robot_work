@@ -1,0 +1,47 @@
+{
+  "round": 143,
+  "main_unit": "wheelleg-reference-learning-main-v1",
+  "unit_active_verified": true,
+  "initial_main_pid": 255100,
+  "completed_first_run": {
+    "arm": "L2-plain",
+    "seed": 1761,
+    "trained_policy_steps": 200000,
+    "ppo_epochs": 400,
+    "adam_updates": 8000,
+    "verification_sha256": "3d6d9b051306efb318c8a6e590151100d1a7d0f9941f61046286b7ca6fcbd457"
+  },
+  "first_checkpoint_review_sha256": "2b4c405b2ebf79732958ed60fc75b6f3fc8303f77591a1c6d0a08aafdfd886f6",
+  "final_panels": {
+    "regular": {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/runs/L2-plain/1761/regular_final.json",
+      "sha256": "7e35145e5fc26639013e76d79865d12c2821d3c73e8f22b7fd8f28c90b9f5da2",
+      "episodes": 96,
+      "summary": {
+        "total": 96,
+        "success_count": 91,
+        "complete": true,
+        "mean_yaw_score_deg": 0.46234788169719804
+      },
+      "physical": 96,
+      "design": 93
+    },
+    "controlled": {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/runs/L2-plain/1761/controlled_final.json",
+      "sha256": "b7d1b92ad7f038f83ad5e92e9ae8cfe1fd96d796c70df62e7c33d6c77596a706",
+      "episodes": 40,
+      "summary": {
+        "total": 40,
+        "success_count": 26,
+        "complete": true,
+        "mean_yaw_score_deg": 1.2110195747827905
+      },
+      "physical": 40,
+      "design": 37
+    }
+  },
+  "whole2400000_complete": false,
+  "current_pending": "L2-room/1761; re-read main_progress and systemd nextturn",
+  "new_learning_trajectory_restarted": false,
+  "next_review_round": 145
+}

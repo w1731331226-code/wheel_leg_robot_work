@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第143轮有限CUDA主队列启动（2026-10-05，running，goal active）：
+
+冻结源与准入复核、确认未已有run/进程后启动唯一wheelleg-reference-learning-main-v1；seed固定1761/62/63、四arm各continuous200k，总2.4M，不warmstartengineering、无frame/physical restart。unit当前active，初始PID255100；下轮须同handle/main_progress核live/terminal，不能因观察超时另开queue。
+
+首L2plain/1761已完成200k/400PPOepochs/8000Adam和末regular96/controlled40；先前80k checkpoint保存文件只读核权重改变、CUDAAdam/RMS有限、源/载荷/保存不改轨迹，检查加载到CPU不改变训练device。队列现进入L2room/1761。progress_evidence是时点，不是全2.4M完成；不能用首seed分数改增益/预算/primary候选或宣称方法优势。
+
+144继续固定队列/源/evidence核验，全部12run+registeredzero408+原门完毕才判断学习收益；145按约深审清理，活跃model/progress/log绝不删。完整论文目标仍active，旧gate/final不读。
+
 第142轮主研究准入（2026-10-05，冻结通过，main尚未启动，goal active）：
 
 100world/4arm/3newseed共12初始化（0学习/physical rollout）核过，各seed L2三arm初始actor+critic/network/world/RMS SHA同、feature函数保持、optimizer空与CUDA/owner一致。与141四arm短训分开，V6维度/初始化effort差异披露。新mainfile复用已验make_env/continuous ledger，不改旧冻结源。

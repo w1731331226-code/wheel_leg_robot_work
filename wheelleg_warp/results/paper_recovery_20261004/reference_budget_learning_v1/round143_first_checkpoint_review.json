@@ -1,0 +1,18 @@
+{
+  "verified": true,
+  "arm": "L2-plain",
+  "seed": 1761,
+  "trained_checkpoint": 80000,
+  "ppo_epochs": 160,
+  "adam_updates": 3200,
+  "checkpoint_sha256": "7bcd43a7e06bedd866e2d422ca745005fbe1a441d8917d103fe9b70a072bd852",
+  "initial_weight_sha256": "606929c4a4ed96d468acf01ad561369ba10cb2f79f19e9c93de5454922a8c0a3",
+  "weights_changed": true,
+  "original_adam_moment_devices": [
+    "cuda"
+  ],
+  "inspection_device": "cpu_only_saved_file",
+  "main_unit": "wheelleg-reference-learning-main-v1",
+  "trajectory_restarted": false,
+  "scope": "First-running-job checkpoint integrity only, not performance/learning superiority or total2.4M completion."
+}
