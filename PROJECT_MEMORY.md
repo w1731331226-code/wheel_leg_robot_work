@@ -6,6 +6,9 @@
 
 - 用户最新明确目标：按照第113轮纯仿真论文补充计划执行，每五轮深度审查任务方向是否值得继续、方法是否得当及是否需新补充实验，同时删除确认冗余文件。此为新的active目标，第111轮旧材料目标达成不能替代新训练/方法/泛化计划；投稿以北大核心认可范围为目标但不承诺录用。保留原门失败、CPU基准、全部模型和科学失败，不用最终3000选场景调参。
 - 可写就绪出口：可检验研究主张及相对文献贡献明确，控制/可得信息/模型/约束契约正确，强经典和RL同信息同预算/至少3训练seed/新独立测试与压力和非退化证据齐全，机制结论有受控检验，方法推导、结果图表、统计/失败和复现清单足以起草；不保证发表，不以仅负结果摘要或工程短更新替代。第111轮已达到旧材料就绪出口；新目标按第113轮计划补充，需实际机制、核心对照/消融和独立泛化证据，不能用旧ready结束新goal。
+- 第147轮同handle继续确认active/PID255100，初读已closed metadata9run=1.8M、第三seedL2room运行；准备报告时已10closed=2M、L2constant进行（最新progress会前移，下一重读）；不重启/改门/预算。完整12run未结束且registeredzero408尚无结果，本轮没有执行zero或最终score，也不把partial三seed不足结论作强优势。
+- 第147轮预备score_reference_learning.py只读最终门工具：强制main complete2.4M/all12闭合proof+zero408全量齐备，重核case/success/physics/design/Jpsi与source；分别regular/controlled检查三seedroom对plain/constant的成功非退化/≥2方向/mean收益，最强B0/B1/B1route和zero的原逐seed方向/mean15%且.05deg、成功保持、velocity/arrival和legacy姿态非退化。记录所有paired loss/swap和违约，不据成功subset计算指标。最低self-check有效方向/阈值不足/单seed反向/missing-score拒绝过；未触trainer source/活跃GPU对象。
+- 第147轮新最终auditor源码及未执行标记在round147_final_audit_preparation冻结，final score需all12 proof/zero；145已知strong扩展失败不撤销，后面只原机制/原因判清。完整有限pipeline闭合后停当前收益，不新增救阳性预算或final数据选择。150深审清理保持、goal active和全论文/独立泛化要求未缩小。
 - 第146轮同unit active/MainPID255100继续，两个seed四arms metadata现8closed=1.6M、进入L2plain/1763；review启动时snapshot7closed=1.4M，与最新metadata分开记录，仍非whole2.4M完成。没有重启/切learn/调budget/primary；150深审清理保持，下一先重读同handle/main_progress。
 - 第146轮增量proof审核：review_reference_learning.py加独立output选项，旧closed_runs_review.json保持SHA不动以免破坏144/145证据链；146snapshot70checkpoints/7闭合run。前两run已过且verification/episodes/allcheckpoint/panels SHA再确认后复用不可变旧proof，不重加载旧模型；新五run50checkpoint CPU只读核源/字段/AdamRMS/counters/原CUDAmoments、course/末原判据/shape/hash通过，活跃GPU模型不触。输出closed_runs_review_146与原proofMerkle引用，未进科学trainer源码。
 - 第146轮未完成门范围：registeredzero408与三seed结果尚缺，机制/stronggate最终审阅不得提前输出；145已判当前配置strong扩展不合格，后续均值不得挽回该逐seed失败。完成full固定matrix后只按原mechanism/失败来源解释，不追加救阳性试验或读取old64/final3000，goal active且完整新方法/独立泛化/稿件仍未完成。

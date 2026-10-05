@@ -1,5 +1,11 @@
 # 双轮腿机器人PPO论文方案
 
+第147轮最终门审核准备（2026-10-05，main active，goal active）：
+
+同进程255100继续，初读9run metadata=1.8M、L2room/1763；报告时10closed=2M、L2constant进行；未所有12run或zero408，绝不启动最终score/zero并宣称学习结论。no retry/重启/budget/primary变化，150仍定期深审清理。
+
+新只读score_reference_learning.py锁定原门，需12closedreview+main2.4M完+zero408才能运行，逐案例重建原physics/design/success/Jpsi；state-room对plain/constant两panel三seed的成功/≥2direction/mean收益，与bestB0/B1/B1route/zero的成功保持、逐seed方向、mean15%且.05deg、原velocity/arrival/legacy姿态非退化检查。所有loss/swap显式记录，no成功条件均值或新primary。纯helper阈值/单seed反向/missing-score检查过，score未执行/no额外physics或learning。完成study只判机制/失效，原145强扩展失败和完整新论文缺项保持。
+
 第146轮增量闭合工件审核（2026-10-05，main active，goal active）：
 
 同unit255100继续，当前前两seed四arms8closedmetadata=1.6M、第三seedL2plain开始；审核snapshot为7closed/1.4M/70checkpoints，与读期间自然进度分开。未改预算/学习轨迹，仍需完整12run与registeredzero408；当前strong扩展已由145原逐seed门排除，不能以平均结果救回。

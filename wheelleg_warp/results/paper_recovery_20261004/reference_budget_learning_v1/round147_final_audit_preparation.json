@@ -1,0 +1,114 @@
+{
+  "round": 147,
+  "verified": true,
+  "unit": "wheelleg-reference-learning-main-v1",
+  "main_pid": 255100,
+  "progress_snapshot": {
+    "status": "running",
+    "completed_runs": [
+      {
+        "arm": "L2-plain",
+        "seed": 1761
+      },
+      {
+        "arm": "L2-room",
+        "seed": 1761
+      },
+      {
+        "arm": "L2-constant",
+        "seed": 1761
+      },
+      {
+        "arm": "V6-plain",
+        "seed": 1761
+      },
+      {
+        "arm": "L2-plain",
+        "seed": 1762
+      },
+      {
+        "arm": "L2-room",
+        "seed": 1762
+      },
+      {
+        "arm": "L2-constant",
+        "seed": 1762
+      },
+      {
+        "arm": "V6-plain",
+        "seed": 1762
+      },
+      {
+        "arm": "L2-plain",
+        "seed": 1763
+      },
+      {
+        "arm": "L2-room",
+        "seed": 1763
+      }
+    ],
+    "pending_arm": "L2-constant",
+    "pending_seed": 1763
+  },
+  "closed_metadata": [
+    {
+      "arm": "L2-plain",
+      "seed": 1761,
+      "sha256": "3d6d9b051306efb318c8a6e590151100d1a7d0f9941f61046286b7ca6fcbd457"
+    },
+    {
+      "arm": "L2-room",
+      "seed": 1761,
+      "sha256": "84429175637d20c186d13cfd833c71154480b7f54711d3d98e7e0b4bc69b560d"
+    },
+    {
+      "arm": "L2-constant",
+      "seed": 1761,
+      "sha256": "23775b401a51029e4e4bc568872c535bdfb23106988677d59659036c6e50cf4a"
+    },
+    {
+      "arm": "V6-plain",
+      "seed": 1761,
+      "sha256": "a24892e9e318c0b1840572eaa044632daf32a7424d1439419deb0e9b52689ab0"
+    },
+    {
+      "arm": "L2-plain",
+      "seed": 1762,
+      "sha256": "99020c9f0f515e555e3afe7c87622d03e50a61d8dc3daa1226f00c85f180f62e"
+    },
+    {
+      "arm": "L2-room",
+      "seed": 1762,
+      "sha256": "5af0765b8b9b741c217b42ef8add6865651ff67b2f4b79472412dec014ca90a6"
+    },
+    {
+      "arm": "L2-constant",
+      "seed": 1762,
+      "sha256": "60f36002da15a9054f06987dc21c74d2599a3d97ec4e50e424c36039694eeea5"
+    },
+    {
+      "arm": "V6-plain",
+      "seed": 1762,
+      "sha256": "02d9360d57c20193b4d9b3c9d235ad62bd067d29b7acf076c6c857700502b212"
+    },
+    {
+      "arm": "L2-plain",
+      "seed": 1763,
+      "sha256": "368bf315c6ceb66fee07272ee9128768b444b2db3f438e47db4870ff0e611744"
+    },
+    {
+      "arm": "L2-room",
+      "seed": 1763,
+      "sha256": "200a44a8bb56acdd4d870b79b79aaad71700fcb6e9f80dc28b6af8ccac935624"
+    }
+  ],
+  "closed_policy_steps": 2000000,
+  "complete_main_ready": false,
+  "zero_controls_present": false,
+  "final_score_executed": false,
+  "score_source_sha256": "81b93a487923b480871406405b6661c1246c2b2b3a70f88df1dcfb9c4c66325e",
+  "self_checks": "all-seed direction,15percent+0.05degree,missing score rejection passed",
+  "new_learning_or_physics_for_audit": 0,
+  "predeclared_gate_unchanged": true,
+  "next_review_round": 150
+}
