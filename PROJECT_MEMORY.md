@@ -6618,3 +6618,16 @@
 - `wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/runs/V6-plain/1761/step_80000.json`
 - `wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/runs/V6-plain/1761/step_80000.pkl`
 - `wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/runs/V6-plain/1761/step_80000.zip`
+
+### 自动同步快照 2026-10-05T09:03:15+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/main_progress.json`
+- `wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/runs/L2-plain/1762/initialization.json`
+- `wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/runs/L2-plain/1762/step_20000.json`
+- `wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/runs/L2-plain/1762/step_20000.pkl`
+- `wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/runs/L2-plain/1762/step_20000.zip`
+- `wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/runs/V6-plain/1761/controlled_final.json`
+- `wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/runs/V6-plain/1761/progress.json`
+- `wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/runs/V6-plain/1761/verification.json`
