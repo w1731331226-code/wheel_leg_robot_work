@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第149轮既有结果缺口诊断（2026-10-05，no新learning/physics，goal active）：
+
+复用原flags重建2448eval全部success/身份/source，候选44失败全部有attitude、41有yaw，余physical/design/contact/velocity/height/stop/尾速/completion失败0；overlapping flags不是唯一因果标签。failure分布40legacy/3mixed/1cross_slope，115、160、380及中间height均见，不只下端。配对成功得失与各组件明列failure_component_audit，原metrics/gates保持不变。
+
+候选leg authority retainedRMS各panel .9169..9278、appliedmean.9113..9271，大量命令改变、invalid0，不能以“全关闭Actor”解释表现。静态source表明L2无learnedwheel requests，B1route有fixedwheel/path feedback，需分开Nom强度/动作权限与学习价值；V6已有wheel authority仍差，不能仅说加维就解决。Terminal观察和value预测不是Critic校准/credit或历史的因果证据，本轮不新增这类变量。
+
+150深审与确认清理：以此已有证据决定commonstrongNom与受控wheel分配是否需一次同信息隔离，未注册/实施新训练或修改原候选。Closedprimary性能分支保持停止，不改设计/yaw门或blind加场景网络/budget。整体新论文主贡献与独立泛化仍缺，goal active，oldgate/final封存。
+
 第148轮有限研究全量闭合（2026-10-05，原两门均未过，goal active）：
 
 main12run正常exit0，共2.4M、每run400PPOepoch/8000Adam，120checkpoint及所有trainingepisode/课程/末评价与源/hash审阅通过；registeredzero408随后独立GPU回放、model/RMS不更新，unit exit0。12models×136=1632、classic408、zero408，共2448development eval，136唯一case。全量原判据核过，不改partial gate或丢失failedrow。

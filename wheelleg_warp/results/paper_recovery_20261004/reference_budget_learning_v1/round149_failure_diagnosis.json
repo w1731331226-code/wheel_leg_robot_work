@@ -1,0 +1,29 @@
+{
+  "round": 149,
+  "verified": true,
+  "failure_audit_sha256": "3d49e886b3198f489f550dd5af8f8a284a6a644f3e4765fa3c082a4dc3916183",
+  "candidate_failures": 44,
+  "overlapping_flags": {
+    "attitude": 44,
+    "yaw": 41
+  },
+  "failure_terrain_counts": {
+    "cross_slope": 1,
+    "mixed": 3,
+    "legacy": 40
+  },
+  "same_state_retained_leg_RMS_range": [
+    0.9169189180002518,
+    0.9277881966855667
+  ],
+  "new_physics_steps": 0,
+  "training_updates": 0,
+  "supported": "Design constraint cleanup is distinct from remaining attitude/yaw failures; candidate has nonzeroleg authority. Contact/velocity/height terminal failures absent inthese44 trajectories.",
+  "hypotheses_not_proven": [
+    "L2 cannot issue learnedwheel corrections whileclassicalB1route supplies fixedwheel feedback, so Nom/authority pairing needs separation; thisdoes not establish unfairness or a causal fix.",
+    "V6 haswheel authority andperforms worse, so more actiondimensions alone is not supported remedy.",
+    "Critic/history/reward/exploration failure is not established byterminalflags orbootstrapvalue predictions; need controlled evidence before anynewlearning changes."
+  ],
+  "next": "150 deep review: decide whether a single sameinformation/commonNom/wheelallocation controlled test has scientific value. Do not loosenyaw/design gates, adddifficulty/networks or restartclosedtraining automatically.",
+  "goal_status": "active"
+}
