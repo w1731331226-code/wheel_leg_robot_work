@@ -6768,3 +6768,9 @@
 - `wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/runs/L2-constant/1762/step_200000.json`
 - `wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/runs/L2-constant/1762/step_200000.pkl`
 - `wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/runs/L2-constant/1762/step_200000.zip`
+
+### 自动同步快照 2026-10-05T09:10:04+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/runs/L2-constant/1762/regular_final.json`
