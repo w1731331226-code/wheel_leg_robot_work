@@ -1,5 +1,11 @@
 # 双轮腿机器人PPO论文方案
 
+第151轮固定航向分配接口（2026-10-05，source准入通过，diagnostic未run，goal active）：
+
+LegSteering缓存raw RouteState39于VecNormalize之前；learnerinput正常saved归一，F/H on/off从episode起始，wheelassist仅existingactions(rawpacket,B1route)。四condition scriptedzero/传腿/原请求等价、异步terminal/reset/归一输入隔离过，136world真实GPU构图/reset强统计owner过；0physical回放/学习，未改原Nom/legacy source。128synthetic readonlysteering GPUstats/NumPy与所有inputs保持校对过。
+
+source_contract冻结proposal+allparent/current代码hash和接口/ownerproof，allSHA/budget核过，仍无runs。Steering记录raw/filtered/diagaccepted/executed增量和lambda并与legroom分报；global-lambda coupling保留，不叫insideNom独立替换或同接受wheel量，不做跨CUDA轨迹bitwise声明。152执行唯一1632fixedpolicy预算再原fullrules审阅/去留，models/RMS不更新、无newPPO。155按约深审清理，原失败和完整论文缺项不变。
+
 第150轮方向深审/必要补验与清理（2026-10-05，goal active，下一155）：
 
 **当前学习收益分支closed，工程作用不替代主贡献。** 全12run/2.4M、2448dev评价的机制与强优势门均失败，room改善design且不zeroActor，但yaw/态失败与fixed.9/强class/zero不能形成新增性能。保留可选工程层、全部模型与negative，不扩五seed/改primary/延budget，也不以工程negative材料结束新论文目标。
