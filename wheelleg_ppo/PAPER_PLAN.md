@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第141轮有限工程准入（2026-10-05，48k已通过，main未启动，goal active）：
+
+新可选训练包装复用CurriculumEnv与route/两维接口和postupdate保存，state-room/单一constant.9/none与原Nom轮命令/filter/lambda语义保持；episode统计明确持有、终态读取后reset，stage只真实episode结束换。常数GPU128输入NumPy/凸界身份过，L2各臂actor+critic+world初始化SHA相同且新增y列0，128packet±3feature初始Actor/Value函数逐值同；旧sources不修改。
+
+四arm各12k/n10/seed1761，共48k，独立工程milestones4000/8000用于exercise而非主学习20k/100k变更，连续learn每臂240epoch/480Adam，模型/Value/Adam/physics实际CUDA且有限。每臂26完成回合、10世界最终stage3；24checkpoint重新加载的policy/Adam/RMS/counters完整核验，保存不改physics/route/RNG。104已完成回合物理/design过不证明全局安全；全部统计sample/reset/convex/zero/lambda一致，room与fixed真实改变命令，plainobserver不改变。unit退出0，engineering_review归档。
+
+此为工程更新，不算主试验、无score选择、无旧模型warmstart或权重promote。主2.4M尚未开始/trainer尚未准入；142先n100/其他seed初始与source、freshB0/B1/B1-route及数值headroom，再科学源freeze与主study。一切新训练违规/终态/非退化按原规则，prototype无coupled-state安全定理。下一145定期深审清理，全论文优势/独立泛化与正式条件保持。
+
 第140轮方向深审与有限学习计划（2026-10-05，goal active，下一145）：
 
 **值得继续的内容是一次新学习检验，不是扩大已证实优势。** 余量层已经去掉旧固定策略的测得design失败、保留原成功和多数腿authority；但yaw仍差B1且相对zero成功−2/0/+1，学习必要性未成立。接触模型控制路线/限额诊断保持关闭，不因GPU工程过门扩五seed或复杂模型。控制资格不证明随机探索全局安全，所有训练违规需记录。

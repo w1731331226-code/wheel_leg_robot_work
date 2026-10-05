@@ -1,0 +1,22 @@
+{
+  "round": 141,
+  "verified": true,
+  "engineering_steps": 48000,
+  "arms": 4,
+  "completed_training_episodes": 104,
+  "ppo_epochs_per_arm": 240,
+  "adam_updates_per_arm": 480,
+  "checkpoint_loads_verified": 24,
+  "all_final_worlds_stage3": true,
+  "engineering_review_sha256": "dde1cca4cb03ab0880822dd08f88474ec4f15c3a7d0df8fa1323eb1e189c5013",
+  "source_contract_sha256": "d7a3d68d28c1d6de1a26277af5fb7ea327874b3db41de7674855a3d61eac070c",
+  "unit": {
+    "name": "wheelleg-reference-budget-engineering-v1",
+    "active_state": "inactive",
+    "main_pid": 0,
+    "exit_status": 0
+  },
+  "main_2400000_training_started": false,
+  "main_trainer_admitted": false,
+  "next": "142 full100-world/newseed initial-function/source admission and fresh classical baseline/headroom; no reuse engineering weights.145 periodic deep review/confirmed redundancy cleanup."
+}
