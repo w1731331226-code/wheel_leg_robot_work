@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第150轮方向深审/必要补验与清理（2026-10-05，goal active，下一155）：
+
+**当前学习收益分支closed，工程作用不替代主贡献。** 全12run/2.4M、2448dev评价的机制与强优势门均失败，room改善design且不zeroActor，但yaw/态失败与fixed.9/强class/zero不能形成新增性能。保留可选工程层、全部模型与negative，不扩五seed/改primary/延budget，也不以工程negative材料结束新论文目标。
+
+**只登记一次固定策略因子诊断，无新PPO。** 三冻结room末模型，learnedleg on/off与B1-route fixedwheel assist on/off，全部96regular+40controlled共1632GPU回合，0learning；同136旧发展case，不是新独立测试。151先freeze raw39缓存/归一顺序/zero action接口、bufferowner/reset与source/physical限制，152结果去留。zeroLeg从始终F/H输入0，不沿旧postfilter残留（两条件不混评分），purezero_noassist与B0 actioninterface、purezero_assist与B1-route等价必验。enabledleg使用原room算子，oldlearners未在assist下训练的contextshift须披露。
+
+Fixedwheel复用原公开actions helper、normalized±1/原.3Nm/滤波slew与globalphysicslambda，不给truepose/map/mu。它是fixedsteering allocation，**不能称inside-Nom独立加强或共同请求等于共同接受量**：leg/wheel经global-lambda耦合，requested/accepted/lambda要分报；收益若steering alone解释、leg无一致增量就停该假设，positive仍非oldmodelpromotion或自动retraining，必须newindependent资格与新pairedprotocol。41yaw/44attitude、V6更差只支撑此隔离，不定唯一causal或credit/critic问题。
+
+HybridLMC作者摘要（https://arxiv.org/abs/2204.03159）与PMLR动作表示摘要（https://proceedings.mlr.press/v270/esser25a.html）复核，hybrid/action/init类已有研究，普通fixedfeedback/room标量不单独作newmethod。五seed/独立ID组合geometry/paramsdelayOOD/复现稿件仍需真正qualified贡献。删除3closedsource等价无占用ignoredcache33718B，可再生，source/所有raw、训练与risk/unique失败保留。Fullgoalactive，source/run尚未准入，155再深审清理。
+
 第149轮既有结果缺口诊断（2026-10-05，no新learning/physics，goal active）：
 
 复用原flags重建2448eval全部success/身份/source，候选44失败全部有attitude、41有yaw，余physical/design/contact/velocity/height/stop/尾速/completion失败0；overlapping flags不是唯一因果标签。failure分布40legacy/3mixed/1cross_slope，115、160、380及中间height均见，不只下端。配对成功得失与各组件明列failure_component_audit，原metrics/gates保持不变。

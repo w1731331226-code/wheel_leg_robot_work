@@ -1,0 +1,74 @@
+{
+  "round": 150,
+  "period": [
+    146,
+    150
+  ],
+  "goal_status": "active",
+  "next_review_round": 155,
+  "previous_goal_turn": "progress",
+  "evidence": {
+    "closed_runs_review_final.json": "15c38af15cdbc21eff5dc4286bab6f2cd9e0c705056d37c587a5eab3aa08afc6",
+    "round148_study_closure.json": "c591cfd560395f7ae20586420d71e4a7b32f90f59f16238665e1dc426ce70ed4",
+    "study_gate_review.json": "a5cdb8766fd2a62c4e1e631b5520932970dae0a620fcc9dfb79904ab1e47de2d",
+    "failure_component_audit.json": "3d49e886b3198f489f550dd5af8f8a284a6a644f3e4765fa3c082a4dc3916183",
+    "round149_failure_diagnosis.json": "bdb316bf23c982ad318de8b0bd0b5a70536d18cea1a72cd50260c55a596c56e3"
+  },
+  "completed": {
+    "main_policy_steps": 2400000,
+    "main_runs": 12,
+    "checkpoint_records": 120,
+    "development_evaluations": 2448,
+    "unique_development_cases": 136,
+    "units_terminal": true
+  },
+  "decision": [
+    {
+      "branch": "Currentreference-room learnedperformance/superiority",
+      "state": "closed, no five-seed/budget expansion",
+      "reason": "Mechanism andstrong-reference gates failed inbothpanels. Keepdesign cleanup empirical result butdo not changeprimary orcallitlearning necessity."
+    },
+    {
+      "branch": "Design-room operatinglayer",
+      "state": "retainoptionalverified engineering component only",
+      "reason": "Room removes measuredtraining/eval designviolations andretainslegauthority; nofuturestate/invariance/OOD guarantee or standalone novelty."
+    },
+    {
+      "branch": "Headingcontrol context andleg learningutility",
+      "state": "one bounded no-learningfixedpolicy factor test justified",
+      "reason": "Remaining44room failures allattitude/41yaw, nootherterminaldefect; L2no learnedwheel versusfixedB1route wheel/path term. V6worseprevents inferringauthority alone. Purezero/controlequivalence andglobal lambda coupling must be explicit."
+    },
+    {
+      "branch": "Networks/critic/reward/harderterrain/newPPO sweeps",
+      "state": "defer",
+      "reason": "No specificcausal evidence; changingseveralvariables torescuelearned advantage isnot justified."
+    }
+  ],
+  "scientific_gaps": [
+    "No sameinformationstrongclassical/zero outperforming learnedmethod; independentgeneralization andformalconditionalexperiments notadmitted.",
+    "Three trainingseeds arealgorithm repeats; 2448episodes share136cases, controlledcasegeometries repeated.",
+    "Physical/active workingjoint limits aredistinct; design pass/projection notdynamic certificate.",
+    "Zero orstrongsteering control success canexplainan improvement withoutlearning; futurehybridgain must separatefixedcontroller benefit."
+  ],
+  "method_review": "Fullpredeclaredmatrix/final-onlyselection,source/device/episode/checkpoint lifecycle andfailurepreservation sound. Negativeperformancebenefit isreal; do not renameengineering qualification orretainedactionenergy asmethodadvantage.",
+  "next_plan_sha256": "784f8ad1fc083f7c13a70d24fa2a47c53f526a8bd25cfc94b7c3a0e84ae3a710",
+  "new_study_budget": {
+    "gpu_fixed_policy_episodes": 1632,
+    "training_steps": 0,
+    "source_admitted": false
+  },
+  "literature": [
+    {
+      "url": "https://arxiv.org/abs/2204.03159",
+      "scope": "Authorabstractrechecked; classicalLQR+learning priorart. No newhybridcontrolcategoryclaim."
+    },
+    {
+      "url": "https://proceedings.mlr.press/v270/esser25a.html",
+      "scope": "Officialabstractrechecked; actionauthority/init/betweentimestep mechanisms priorart. No dimension orcoordinationinnovation inferredfromthisdiagnostic."
+    }
+  ],
+  "entire_goal_complete": false,
+  "goal_scope": "Keepnewpure-simulationcontrol contribution/strong-classicalmechanism/independentID-combination-OOD/conditionalfive-seedandpaperreproducibility objective. Do notcompleteonnegativeorengineeringmaterial.",
+  "cleanup_sha256": "7600dbf0436a078f2e2b36ff2395c231c174106665ef6132eb97cbe0b81673f4",
+  "stop_rule": "Onlynextfrozenfactor diagnostic, no newlearning untilscientificincrement andnewpairedprotocol. 155review/cleanup."
+}
