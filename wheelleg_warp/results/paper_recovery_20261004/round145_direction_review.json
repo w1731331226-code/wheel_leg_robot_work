@@ -1,0 +1,217 @@
+{
+  "round": 145,
+  "period": [
+    141,
+    145
+  ],
+  "goal_status": "active",
+  "next_review_round": 150,
+  "previous_goal_turn": "progress",
+  "unit": {
+    "name": "wheelleg-reference-learning-main-v1",
+    "active_state_verified": "active",
+    "main_pid": 255100
+  },
+  "evidence_sha256": {
+    "engineering_review.json": "dde1cca4cb03ab0880822dd08f88474ec4f15c3a7d0df8fa1323eb1e189c5013",
+    "admission_review.json": "e0da29730006078f2160c655f3333cf60570fd2f3e8db7b90bb6bfa11973f700",
+    "trainer_contract.json": "8ecb988f475a38de0175ecd0f79ca79c8cf5c5f3ae36a4906b1f5609c81b0094",
+    "closed_runs_review.json": "6d89d9e547abd242dd2a45eab06f55d22fbb012d1d8a3701eb785fbfeaf3c856"
+  },
+  "progress_snapshot": {
+    "status": "running",
+    "completed_runs": [
+      {
+        "arm": "L2-plain",
+        "seed": 1761
+      },
+      {
+        "arm": "L2-room",
+        "seed": 1761
+      },
+      {
+        "arm": "L2-constant",
+        "seed": 1761
+      },
+      {
+        "arm": "V6-plain",
+        "seed": 1761
+      },
+      {
+        "arm": "L2-plain",
+        "seed": 1762
+      }
+    ],
+    "pending_arm": "L2-room",
+    "pending_seed": 1762
+  },
+  "closed_metadata": [
+    {
+      "arm": "L2-plain",
+      "seed": 1761,
+      "verification_sha256": "3d6d9b051306efb318c8a6e590151100d1a7d0f9941f61046286b7ca6fcbd457"
+    },
+    {
+      "arm": "L2-room",
+      "seed": 1761,
+      "verification_sha256": "84429175637d20c186d13cfd833c71154480b7f54711d3d98e7e0b4bc69b560d"
+    },
+    {
+      "arm": "L2-constant",
+      "seed": 1761,
+      "verification_sha256": "23775b401a51029e4e4bc568872c535bdfb23106988677d59659036c6e50cf4a"
+    },
+    {
+      "arm": "V6-plain",
+      "seed": 1761,
+      "verification_sha256": "a24892e9e318c0b1840572eaa044632daf32a7424d1439419deb0e9b52689ab0"
+    },
+    {
+      "arm": "L2-plain",
+      "seed": 1762,
+      "verification_sha256": "99020c9f0f515e555e3afe7c87622d03e50a61d8dc3daa1226f00c85f180f62e"
+    }
+  ],
+  "confirmed_closed_steps": 1000000,
+  "entire_study_complete": false,
+  "engineering": "48k fourarm CUDA engineering and full100worldx3seed init checks passed; sources, initialL2 actor+critic/world/RMS and onlyfinal200k fixed comparison preserved.",
+  "seed1761_final_counts": {
+    "L2-plain": {
+      "regular": {
+        "success": 91,
+        "physical": 96,
+        "design": 93,
+        "Jpsi": 0.46234788169719804
+      },
+      "controlled": {
+        "success": 26,
+        "physical": 40,
+        "design": 37,
+        "Jpsi": 1.2110195747827905
+      }
+    },
+    "L2-room": {
+      "regular": {
+        "success": 94,
+        "physical": 96,
+        "design": 96,
+        "Jpsi": 0.44342533129711414
+      },
+      "controlled": {
+        "success": 27,
+        "physical": 40,
+        "design": 40,
+        "Jpsi": 1.194541890579479
+      }
+    },
+    "L2-constant": {
+      "regular": {
+        "success": 93,
+        "physical": 96,
+        "design": 96,
+        "Jpsi": 0.43801450931836694
+      },
+      "controlled": {
+        "success": 26,
+        "physical": 40,
+        "design": 37,
+        "Jpsi": 1.2058401162048142
+      }
+    },
+    "V6-plain": {
+      "regular": {
+        "success": 50,
+        "physical": 96,
+        "design": 93,
+        "Jpsi": 1.130110482650911
+      },
+      "controlled": {
+        "success": 28,
+        "physical": 40,
+        "design": 40,
+        "Jpsi": 1.4296790934546912
+      }
+    }
+  },
+  "formal_expansion_gate_can_still_pass": false,
+  "irreversible_required_gate_failures": [
+    {
+      "seed": 1761,
+      "panel": "regular",
+      "requirement": "success count at least strongest nonlearned reference",
+      "candidate": 94,
+      "reference": 95
+    },
+    {
+      "seed": 1761,
+      "panel": "regular",
+      "requirement": "lowerJpsi ineachseed vsbest nonlearned",
+      "candidate": 0.44342533129711414,
+      "reference": 0.2710393231036634
+    },
+    {
+      "seed": 1761,
+      "panel": "controlled",
+      "requirement": "success count at least strongest nonlearned reference",
+      "candidate": 27,
+      "reference": 28
+    },
+    {
+      "seed": 1761,
+      "panel": "controlled",
+      "requirement": "lowerJpsi ineachseed vsbest nonlearned",
+      "candidate": 1.194541890579479,
+      "reference": 0.9220851653643738
+    }
+  ],
+  "decision": [
+    {
+      "branch": "Five-seed/strong-superiority expansion of currentL2-room configuration",
+      "status": "ruled out under predeclaredgate",
+      "reason": "A completed fixed-final seed fails requiredperseed success andyaw direction; laterseed averages cannot erase this. No change of baseline, primary, candidate or budget."
+    },
+    {
+      "branch": "Already registered bounded12run mechanism matrix",
+      "status": "finish fixedmatrix for mechanism/seed variance evidence only",
+      "reason": "Mechanism clean-design/state-versusconstant effect across3seeds is unresolved; allruns/evaluations were registered, no extra learningbudget. Completion is not a new claim of strong-method admissibility."
+    },
+    {
+      "branch": "Further sensor/model/harderterrain/newlearning additions",
+      "status": "defer until completedmatrix decision",
+      "reason": "Do not add experiments to rescue the failedstronggate. Closedcontact predictor remains closed."
+    }
+  ],
+  "method_review": {
+    "valid": [
+      "Nativecurrent4joint/publicreference allocation with sameNom and39input, no contact/parameteroracle.",
+      "Matched withinL2 initialactor/critic/std/banks; fixed.9 andV6 references expose trivial amplitude andauthority alternatives.",
+      "CUDAactualupdates and closedcheckpoint source/hash/epoch/Adam/RMS audit without restarting livejob."
+    ],
+    "limits": [
+      "Only seed1761 complete acrossallarms; no three-seed mechanism conclusion yet.",
+      "L2-room gives cleanerworkingjoint design andsuccess versusplain, but constant.9 regularJpsi is slightlylower; no consistentstate-aware superiority established.",
+      "Stochastic training and futuredistribution safety unproved; command convexity is not a state-invariant set.",
+      "All currentevaluations aredevelopment; controlled geometry repetitions are not new independent randomcases."
+    ]
+  },
+  "supplements": [
+    {
+      "priority": 1,
+      "work": "Finish already registeredruns and408nominalzero controls; audit fullcheckpoint/finalcases/trainingviolations and fixed mechanism/advantage gates",
+      "new_budget": 0
+    },
+    {
+      "priority": 2,
+      "work": "After closure identify whether missingwheel authority/commonNom strength, optimizer/credit timing or task objective actually explains underperformance, using existingevidence first",
+      "status": "notauthorized extraexperiment or newmetric; register only a specific supported hypothesis after review"
+    },
+    {
+      "priority": 3,
+      "work": "Five-seed/formal/OOD/manuscript contribution requires a genuinely qualifiednew method, not thisfailedstrong gate",
+      "status": "blocked scientifically for this configuration, whole researchgoal remains active"
+    }
+  ],
+  "goal_completion": "Unproven: new same-information strong-classical advantage and independentgeneralization missing. Do not substitute engineeringornegative-mechanism report for fulluserpapergoal.",
+  "cleanup_sha256": "867eafb8887d9307526c84a1bd60e83f3902ae01b862fa57dd8bce60d3d231d5",
+  "study_policy": "No stopping/restarting trajectory from observationpolls, no hyperparamorwinnerselection. Continuing exactpreplanned finite study estimatesmechanism, not promising corejournal contribution."
+}

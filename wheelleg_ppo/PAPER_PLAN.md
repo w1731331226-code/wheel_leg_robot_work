@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第145轮方向深审与确认清理（2026-10-05，main仍running，goal active，下一150）：
+
+**强优势扩展已排除，不能等待后seed“平均救回”。** 已完成primaryL2room/1761 regular94/96/control27/40，低于best非学习95/28；Jpsi.443425/1.194542高于best classical.271039/.922085。原门要求逐seed成功保持且yaw方向，已经有不可逆失败；当前配置不扩五seed/预算/OOD、不改候选或primary。它依然physical/design全96+40通过、较plain成功91/26改善，说明工程合法作用；constant.9 regularJpsi.438015略低于room，state-aware机制收益未能单seed证明。
+
+**继续的是已登记有限机制矩阵，不是追求strong门阳性。** 同unit active255100，review时5run metadata闭合1M、seed1762在进行（变化应下轮重读）。固定12run/2.4M/seed与末模型规则保持，仅为机制与种子波动估计完成既定比较；无新增实验budget、无超时重训或半程stop/restart。全12及registeredzero408/full工件和原门必须如实报告，不能把已失败配置重新称qualified。不存在新的三seed结论或independent泛化结论，完整论文目标仍未完成。
+
+**方法与新增实验必要性：** 初始化/标准PPO/公开39信息/同Nom及state/constant同维对照保留；instant command凸收缩不当joint-state安全。先完成原定查验，完成后才从已有数据分离wheel authority/commonNom strength/credit/任务目标等可检验解释，不默认再加数据、网络、接触真值或换主指标。新贡献/五seed/OOD要新的真实qualified方法，本轮不授权救当前配置的新预算。
+
+删除3个已闭合contact诊断source-equivalent无占用cache21792B，source/所有原始/模型/科学失败与main活跃文件保留；cache可重生。详见round145_direction_review/cleanup，下一150按约深审清理，oldgate/final封存保持。
+
 第144轮闭合运行只读审阅（2026-10-05，main running，goal active）：
 
 同一unit active/PID255100；seed1761三L2 run已闭合metadata600k，现进入V6plain。只读审阅起始snapshot为前plain/room两run400k，进度自然前移与审核范围分开，未重新发起queue/切learn/改参数门或选checkpoint。最新pending及checkpoint下界存progress_evidence，下轮仍要live handle确认。
