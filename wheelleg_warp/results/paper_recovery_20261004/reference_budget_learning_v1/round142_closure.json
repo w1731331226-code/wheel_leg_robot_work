@@ -1,0 +1,37 @@
+{
+  "round": 142,
+  "verified": true,
+  "full_init_worlds": 1200,
+  "initialization_policy_steps": 0,
+  "classical_episodes": 408,
+  "main_training_admitted": true,
+  "main_training_started": false,
+  "main_budget": 2400000,
+  "initialization_unit": {
+    "name": "wheelleg-reference-learning-admission-v1",
+    "active_state": "inactive",
+    "main_pid": 0,
+    "exit_status": 0
+  },
+  "classical_unit": {
+    "name": "wheelleg-reference-learning-classical-v1",
+    "active_state": "inactive",
+    "main_pid": 0,
+    "exit_status": 0
+  },
+  "thresholds": {
+    "regular": {
+      "best_classical_Jpsi_deg": 0.2710393231036634,
+      "required_candidate_mean_at_most_deg": 0.22103932310366342,
+      "nominal_zero_may_tighten_reference_after_registered_comparison": true
+    },
+    "controlled": {
+      "best_classical_Jpsi_deg": 0.9220851653643738,
+      "required_candidate_mean_at_most_deg": 0.7837723905597177,
+      "nominal_zero_may_tighten_reference_after_registered_comparison": true
+    }
+  },
+  "admission_review_sha256": "e0da29730006078f2160c655f3333cf60570fd2f3e8db7b90bb6bfa11973f700",
+  "trainer_contract_sha256": "8ecb988f475a38de0175ecd0f79ca79c8cf5c5f3ae36a4906b1f5609c81b0094",
+  "next": "143 start fixed12run paired CUDA mainqueue from scratch; preserve progress/source/errors, evaluate only final200k, then registeredzero controls and originalgates.145 periodicreview/cleanup."
+}

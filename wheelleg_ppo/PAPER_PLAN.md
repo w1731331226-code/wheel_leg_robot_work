@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第142轮主研究准入（2026-10-05，冻结通过，main尚未启动，goal active）：
+
+100world/4arm/3newseed共12初始化（0学习/physical rollout）核过，各seed L2三arm初始actor+critic/network/world/RMS SHA同、feature函数保持、optimizer空与CUDA/owner一致。与141四arm短训分开，V6维度/初始化effort差异披露。新mainfile复用已验make_env/continuous ledger，不改旧冻结源。
+
+408fresh经典发展回放全部complete/physical/design通过：B0 regular95/96,Jpsi.399168/control28/40,1.181368；B1 regular94,.302660/control28,.963310；B1-route regular94,.271039/control28,.922085。strongsame-information route入最强对照，原15%且.05deg要求意味着candidate mean≤.221039 regular与≤.783772 controlled（registerednominalzero若更强仍比较）；数值门可达非RL可达证明。只读原判据/hash/Jpsi核过，两admission unit退出0。
+
+trainer_contract绑定完整工程/init/classic与scientific source，sourcefreeze后才准入；reference_learning_zero.py作为注册408zero evaluator同时冻结，全部main完成后才能执行。主pipeline每run continuous200k、400PPOepoch/8000Adam，固定final输出，Actor/RMS评估冻结，engineeringweights不复用。mainqueue当前未启动/runs不存在，下一143按固定12run开始2.4M CUDA finite学习。原机制/最强B0B1routezero及非退化门保持，145深审/cleanup，未取得newmethod/独立泛化或global安全结论。
+
 第141轮有限工程准入（2026-10-05，48k已通过，main未启动，goal active）：
 
 新可选训练包装复用CurriculumEnv与route/两维接口和postupdate保存，state-room/单一constant.9/none与原Nom轮命令/filter/lambda语义保持；episode统计明确持有、终态读取后reset，stage只真实episode结束换。常数GPU128输入NumPy/凸界身份过，L2各臂actor+critic+world初始化SHA相同且新增y列0，128packet±3feature初始Actor/Value函数逐值同；旧sources不修改。
