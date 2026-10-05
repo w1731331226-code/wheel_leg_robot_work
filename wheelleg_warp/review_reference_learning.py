@@ -7,12 +7,24 @@ from reference_budget_train import OUT
 from dashboard.live_env import atomic_json
 
 
-def run():
+def run(output=None):
     p=json.loads((OUT/'proposal.json').read_text());contract=json.loads((OUT/'trainer_contract.json').read_text());progress=json.loads((OUT/'main_progress.json').read_text())
     assert all(sha(ROOT/n)==v for n,v in contract['source_sha256'].items()) and contract['proposal_sha256']==sha(OUT/'proposal.json')
     completed=list(progress['completed_runs']);records=[];checkpoint_count=0
+    prior_path=OUT/'closed_runs_review.json';cache={};prior_sha=None
+    if output is not None and prior_path.exists():
+        old=json.loads(prior_path.read_text());assert old['verified'] and old['trainer_contract_sha256']==sha(OUT/'trainer_contract.json')
+        cache={(r['arm'],r['seed']):r for r in old['records']};prior_sha=sha(prior_path)
     for job in completed:
-        arm=job['arm'];seed=job['seed'];d=OUT/'runs'/arm/str(seed);v=json.loads((d/'verification.json').read_text());init=json.loads((d/'initialization.json').read_text())
+        arm=job['arm'];seed=job['seed'];d=OUT/'runs'/arm/str(seed)
+        cached=cache.get((arm,seed))
+        if cached:
+            assert cached['verification_sha256']==sha(d/'verification.json') and cached['episodes_sha256']==sha(d/'episodes.json')
+            for ck in cached['checkpoints']:
+                prefix=d/f'step_{ck["step"]}';assert sha(prefix.with_suffix('.zip'))==ck['checkpoint_sha256'] and sha(prefix.with_suffix('.pkl'))==ck['normalization_sha256']
+            for panel,val in cached['panels'].items():assert val['sha256']==sha(d/(panel+'_final.json'))
+            records.append(cached);checkpoint_count+=len(cached['checkpoints']);print('REUSED IMMUTABLE REVIEW',arm,seed,flush=True);continue
+        v=json.loads((d/'verification.json').read_text());init=json.loads((d/'initialization.json').read_text())
         assert v['verified'] and v['policy_steps']==200000 and v['ppo_epochs']==400 and v['adam_updates']==8000 and not init['engineering_weights_reused']
         assert v['checkpoints']==list(range(20000,200001,20000)) and v['main_source_contract_sha256']==sha(OUT/'trainer_contract.json')
         checkpoints=[]
@@ -44,10 +56,13 @@ def run():
             panels[panel]=dict(sha256=sha(path),summary=e['summary'],physical=e['physical'],design=e['design'])
         records.append(dict(arm=arm,seed=seed,verified=True,policy_steps=200000,completed_training_episodes=v['completed_training_episodes'],verification_sha256=sha(d/'verification.json'),episodes_sha256=sha(d/'episodes.json'),checkpoints=checkpoints,panels=panels))
         print('VERIFIED CLOSED',arm,seed,flush=True)
-    atomic_json(OUT/'closed_runs_review.json',dict(verified=True,completed_runs_snapshot=completed,records=records,trained_closed_policy_steps=len(records)*200000,checkpoint_loads_verified=checkpoint_count,
-        snapshot_progress_status=progress['status'],trainer_contract_sha256=sha(OUT/'trainer_contract.json'),reviewer_sha256=sha(__file__),
+    atomic_json(output or OUT/'closed_runs_review.json',dict(verified=True,completed_runs_snapshot=completed,records=records,trained_closed_policy_steps=len(records)*200000,checkpoint_loads_verified=checkpoint_count,
+        cached_previous_review_sha256=prior_sha,snapshot_progress_status=progress['status'],trainer_contract_sha256=sha(OUT/'trainer_contract.json'),reviewer_sha256=sha(__file__),
         scope='Only closed runs inspected onCPU savedfiles. Active job untouched; incomplete arms/seeds cannot establish mechanism/advantage. No reruns/hyperparameter or primary changes.'))
     print('PASS closed-run snapshot',len(records),'checkpoints',checkpoint_count,flush=True)
 
 
-if __name__=='__main__':run()
+if __name__=='__main__':
+    import argparse
+    from pathlib import Path
+    p=argparse.ArgumentParser();p.add_argument('--output',type=Path);run(p.parse_args().output)

@@ -1,0 +1,55 @@
+{
+  "round": 146,
+  "unit": "wheelleg-reference-learning-main-v1",
+  "active_state": "active",
+  "main_pid": 255100,
+  "verified_closed_runs": 7,
+  "verified_closed_steps": 1400000,
+  "verified_checkpoint_loads_or_reused_immutable_checks": 70,
+  "current_completed_metadata_runs": 8,
+  "progress_snapshot": {
+    "status": "running",
+    "completed_runs": [
+      {
+        "arm": "L2-plain",
+        "seed": 1761
+      },
+      {
+        "arm": "L2-room",
+        "seed": 1761
+      },
+      {
+        "arm": "L2-constant",
+        "seed": 1761
+      },
+      {
+        "arm": "V6-plain",
+        "seed": 1761
+      },
+      {
+        "arm": "L2-plain",
+        "seed": 1762
+      },
+      {
+        "arm": "L2-room",
+        "seed": 1762
+      },
+      {
+        "arm": "L2-constant",
+        "seed": 1762
+      },
+      {
+        "arm": "V6-plain",
+        "seed": 1762
+      }
+    ],
+    "pending_arm": "L2-plain",
+    "pending_seed": 1763
+  },
+  "review_sha256": "e5ca1656ae0ed748ec26683998202c6547f9ef8932e1b5ea0c96177ee2dc6bd2",
+  "original_previous_review_preserved_sha256": "6d89d9e547abd242dd2a45eab06f55d22fbb012d1d8a3701eb785fbfeaf3c856",
+  "whole_study_complete": false,
+  "next_review_round": 150,
+  "no_trajectory_restart": true,
+  "scope": "Incremental completed-only evidence; cache reused only after source/episode/verification/checkpoint/panel SHA consistency, not a new performance or stronggate conclusion."
+}

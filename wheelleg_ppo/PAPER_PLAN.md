@@ -1,5 +1,11 @@
 # 双轮腿机器人PPO论文方案
 
+第146轮增量闭合工件审核（2026-10-05，main active，goal active）：
+
+同unit255100继续，当前前两seed四arms8closedmetadata=1.6M、第三seedL2plain开始；审核snapshot为7closed/1.4M/70checkpoints，与读期间自然进度分开。未改预算/学习轨迹，仍需完整12run与registeredzero408；当前strong扩展已由145原逐seed门排除，不能以平均结果救回。
+
+审阅工具新增独立output，旧144proof保持原SHA，已过前两run仅在verification/episode/checkpoints/末panel完整hash不变后复用；新五run50checkpoint及原末指标/身份/实际训练计数/ActorOptimizerRMS与源只读核过，不影响GPU学习。146独立snapshot与旧proofhash引用归档，缓存proof不当外部physics证明。全3seed未齐不产生机制结论；150按约深审清理，oldgate/final仍封存。
+
 第145轮方向深审与确认清理（2026-10-05，main仍running，goal active，下一150）：
 
 **强优势扩展已排除，不能等待后seed“平均救回”。** 已完成primaryL2room/1761 regular94/96/control27/40，低于best非学习95/28；Jpsi.443425/1.194542高于best classical.271039/.922085。原门要求逐seed成功保持且yaw方向，已经有不可逆失败；当前配置不扩五seed/预算/OOD、不改候选或primary。它依然physical/design全96+40通过、较plain成功91/26改善，说明工程合法作用；constant.9 regularJpsi.438015略低于room，state-aware机制收益未能单seed证明。
