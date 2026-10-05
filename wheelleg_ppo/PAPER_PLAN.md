@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第139轮余量调节GPU控制资格（2026-10-05，通过，goal active，下一140深审清理）：
+
+可选postfilter/postphysical-project GPU层与603×三模式静态identity/NumPy/凸命令/非法输入检查通过；184world factory/reset明确持有statistics/terminal mask buffers。Nom/wheel/originallambda/filtermemory保持，actual accepted-leg诊断随命令正确变化，原Actor39包的维度/时序不增。source运行前冻结，原控制器未改。全184既有development cases×B1184+三固定L2×三条件1656=1840GPU回合完成，权重/counters/RMS无更新，unit正常退出0。
+
+资格门全True：物理各184；original设计174/176/180→候选各184，成功161/165/167→166/168/169且未丢原成功；B1成功166/design184，零腿残差各168。每seed/五高度桶同state leg增量RMS保留均≥.792681，高于预定.10，115/380端点另列。并非全关Actor，但是候选−zero−2/0/+1无一致正收益，Jpsi候选.660606/.642999/.629269仍差于B1 .478097；不能声称学习必要或方法优于经典。
+
+review按原success/physics/design/计数/身份、源/模型/结果SHA及GPU累计性质核过，额外只读Jpsi重算及lambda均值/端点复核过，lambda均值逐值同Native。没有raw全轨迹外部重建、状态安全证明或新独立泛化。当前只控制资格，不自动PPO/五seed/重新开启旧门。140集中判断下一learning值得性、Nom公平条件、等actor+critic初始函数和必要机制对照，再在价值明确后注册有限新三seed；按约清理确认冗余，目标全范围保持。
+
 第138轮分支去留与同信息候选（2026-10-05，goal active，140深审清理）：
 
 **明确关闭接触预测控制器/因果诊断分支。** 7236限额已用完，CPU改善依赖actual contact point/fullframe-gap及真实参数，超出现有可得信息；GPU、continuum、状态不变性与边界资格仍未通过。保留证据，不再为此增加字段/normal选法或预算，也不以负结果收尾替代新论文的贡献/学习/泛化目标。

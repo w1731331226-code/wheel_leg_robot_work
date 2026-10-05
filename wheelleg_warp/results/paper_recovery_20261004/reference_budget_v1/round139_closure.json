@@ -1,0 +1,319 @@
+{
+  "round": 139,
+  "verified": true,
+  "completed_episodes": 1840,
+  "unique_development_cases": 184,
+  "physics_samples": 27410926,
+  "training_updates": 0,
+  "gpu_policy_inference": true,
+  "qualification_gate": true,
+  "method_advantage_proven": false,
+  "counts": {
+    "B1": {
+      "success": 166,
+      "physical": 184,
+      "design": 184
+    },
+    "1609_original": {
+      "success": 161,
+      "physical": 184,
+      "design": 174
+    },
+    "1609_reference_budget": {
+      "success": 166,
+      "physical": 184,
+      "design": 184
+    },
+    "1609_zero_leg_after_filter": {
+      "success": 168,
+      "physical": 184,
+      "design": 184
+    },
+    "1610_original": {
+      "success": 165,
+      "physical": 184,
+      "design": 176
+    },
+    "1610_reference_budget": {
+      "success": 168,
+      "physical": 184,
+      "design": 184
+    },
+    "1610_zero_leg_after_filter": {
+      "success": 168,
+      "physical": 184,
+      "design": 184
+    },
+    "1611_original": {
+      "success": 167,
+      "physical": 184,
+      "design": 180
+    },
+    "1611_reference_budget": {
+      "success": 169,
+      "physical": 184,
+      "design": 184
+    },
+    "1611_zero_leg_after_filter": {
+      "success": 168,
+      "physical": 184,
+      "design": 184
+    }
+  },
+  "gates": {
+    "1609": {
+      "physical_clean": true,
+      "design_clean": true,
+      "task_nonregression": true,
+      "valid_operator": true,
+      "nondegenerate": true
+    },
+    "1610": {
+      "physical_clean": true,
+      "design_clean": true,
+      "task_nonregression": true,
+      "valid_operator": true,
+      "nondegenerate": true
+    },
+    "1611": {
+      "physical_clean": true,
+      "design_clean": true,
+      "task_nonregression": true,
+      "valid_operator": true,
+      "nondegenerate": true
+    }
+  },
+  "authority": {
+    "1609": {
+      "0": {
+        "episodes": 37,
+        "same_state_command_rms_ratio": 0.7926806271749753
+      },
+      "1": {
+        "episodes": 42,
+        "same_state_command_rms_ratio": 0.9143826965239481
+      },
+      "2": {
+        "episodes": 34,
+        "same_state_command_rms_ratio": 0.9443163216451459
+      },
+      "3": {
+        "episodes": 48,
+        "same_state_command_rms_ratio": 0.9467305569779443
+      },
+      "4": {
+        "episodes": 23,
+        "same_state_command_rms_ratio": 0.9317257641099568
+      }
+    },
+    "1610": {
+      "0": {
+        "episodes": 37,
+        "same_state_command_rms_ratio": 0.8232656696788521
+      },
+      "1": {
+        "episodes": 42,
+        "same_state_command_rms_ratio": 0.9345626866926295
+      },
+      "2": {
+        "episodes": 34,
+        "same_state_command_rms_ratio": 0.9522063436882187
+      },
+      "3": {
+        "episodes": 48,
+        "same_state_command_rms_ratio": 0.9547159712215719
+      },
+      "4": {
+        "episodes": 23,
+        "same_state_command_rms_ratio": 0.9157015675955479
+      }
+    },
+    "1611": {
+      "0": {
+        "episodes": 37,
+        "same_state_command_rms_ratio": 0.8484375033028986
+      },
+      "1": {
+        "episodes": 42,
+        "same_state_command_rms_ratio": 0.9205117575097889
+      },
+      "2": {
+        "episodes": 34,
+        "same_state_command_rms_ratio": 0.9307303707411331
+      },
+      "3": {
+        "episodes": 48,
+        "same_state_command_rms_ratio": 0.9306039107480417
+      },
+      "4": {
+        "episodes": 23,
+        "same_state_command_rms_ratio": 0.9318310456876706
+      }
+    }
+  },
+  "paired": {
+    "1609": {
+      "candidate_minus_original": 5,
+      "candidate_minus_zero": -2,
+      "candidate_minus_B1": 0,
+      "lost_original_success_cases": []
+    },
+    "1610": {
+      "candidate_minus_original": 3,
+      "candidate_minus_zero": 0,
+      "candidate_minus_B1": 2,
+      "lost_original_success_cases": []
+    },
+    "1611": {
+      "candidate_minus_original": 2,
+      "candidate_minus_zero": 1,
+      "candidate_minus_B1": 3,
+      "lost_original_success_cases": []
+    }
+  },
+  "yaw_scores": {
+    "B1": 0.4780970444798746,
+    "1609_original": 0.6549729592332558,
+    "1609_reference_budget": 0.6606058608280451,
+    "1609_zero_leg_after_filter": 0.615893219910202,
+    "1610_original": 0.6451802965486987,
+    "1610_reference_budget": 0.6429988837509241,
+    "1610_zero_leg_after_filter": 0.6156352022293384,
+    "1611_original": 0.6287055051706898,
+    "1611_reference_budget": 0.6292693569854809,
+    "1611_zero_leg_after_filter": 0.6160600441339419
+  },
+  "exact_endpoint_results": {
+    "B1": {
+      "0.115": {
+        "episodes": 24,
+        "success": 18,
+        "design": 24
+      },
+      "0.38": {
+        "episodes": 23,
+        "success": 18,
+        "design": 23
+      }
+    },
+    "1609_original": {
+      "0.115": {
+        "episodes": 24,
+        "success": 14,
+        "design": 15
+      },
+      "0.38": {
+        "episodes": 23,
+        "success": 19,
+        "design": 23
+      }
+    },
+    "1609_reference_budget": {
+      "0.115": {
+        "episodes": 24,
+        "success": 18,
+        "design": 24
+      },
+      "0.38": {
+        "episodes": 23,
+        "success": 19,
+        "design": 23
+      }
+    },
+    "1609_zero_leg_after_filter": {
+      "0.115": {
+        "episodes": 24,
+        "success": 18,
+        "design": 24
+      },
+      "0.38": {
+        "episodes": 23,
+        "success": 18,
+        "design": 23
+      }
+    },
+    "1610_original": {
+      "0.115": {
+        "episodes": 24,
+        "success": 15,
+        "design": 17
+      },
+      "0.38": {
+        "episodes": 23,
+        "success": 18,
+        "design": 23
+      }
+    },
+    "1610_reference_budget": {
+      "0.115": {
+        "episodes": 24,
+        "success": 18,
+        "design": 24
+      },
+      "0.38": {
+        "episodes": 23,
+        "success": 18,
+        "design": 23
+      }
+    },
+    "1610_zero_leg_after_filter": {
+      "0.115": {
+        "episodes": 24,
+        "success": 18,
+        "design": 24
+      },
+      "0.38": {
+        "episodes": 23,
+        "success": 18,
+        "design": 23
+      }
+    },
+    "1611_original": {
+      "0.115": {
+        "episodes": 24,
+        "success": 16,
+        "design": 20
+      },
+      "0.38": {
+        "episodes": 23,
+        "success": 19,
+        "design": 23
+      }
+    },
+    "1611_reference_budget": {
+      "0.115": {
+        "episodes": 24,
+        "success": 18,
+        "design": 24
+      },
+      "0.38": {
+        "episodes": 23,
+        "success": 19,
+        "design": 23
+      }
+    },
+    "1611_zero_leg_after_filter": {
+      "0.115": {
+        "episodes": 24,
+        "success": 18,
+        "design": 24
+      },
+      "0.38": {
+        "episodes": 23,
+        "success": 18,
+        "design": 23
+      }
+    }
+  },
+  "same_original_lambda_mean_error": 0.0,
+  "review_sha256": "c4a9d711fd4bc6c7d13005063583945ffa6ea35376bba625461ccbb2293d05e8",
+  "runtime_contract_sha256": "ded516bdda8f3377eb1c471a845088291fd2ee152f44b71f240a569025816fb3",
+  "unit": {
+    "name": "wheelleg-reference-budget-pilot-v1",
+    "active_state": "inactive",
+    "main_pid": 0,
+    "exit_status": 0
+  },
+  "scope": "Fixed200k L2 policies, no Actor/critic/optimizer/VecNormalize update. Case bank now development, no independent test or invariant safety proof; source/unit/cumulative per-step constraints audited, no raw whole-trajectory external reconstruction.",
+  "next": "140 deep direction/method/learning-design review and confirmed redundancy cleanup. Decide a same-information/equal-initial-function finite learning protocol only if research value justified; no automatic5seed/oldgate/final tests."
+}
