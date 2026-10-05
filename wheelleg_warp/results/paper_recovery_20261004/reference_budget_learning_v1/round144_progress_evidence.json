@@ -1,0 +1,46 @@
+{
+  "round": 144,
+  "unit": "wheelleg-reference-learning-main-v1",
+  "active_state": "active",
+  "main_pid": 255100,
+  "closed_runs_review_sha256": "6d89d9e547abd242dd2a45eab06f55d22fbb012d1d8a3701eb785fbfeaf3c856",
+  "reviewed_closed_runs": [
+    {
+      "arm": "L2-plain",
+      "seed": 1761
+    },
+    {
+      "arm": "L2-room",
+      "seed": 1761
+    }
+  ],
+  "audited_closed_policy_steps": 400000,
+  "current_completed_metadata": [
+    {
+      "arm": "L2-plain",
+      "seed": 1761,
+      "verification_sha256": "3d6d9b051306efb318c8a6e590151100d1a7d0f9941f61046286b7ca6fcbd457"
+    },
+    {
+      "arm": "L2-room",
+      "seed": 1761,
+      "verification_sha256": "84429175637d20c186d13cfd833c71154480b7f54711d3d98e7e0b4bc69b560d"
+    },
+    {
+      "arm": "L2-constant",
+      "seed": 1761,
+      "verification_sha256": "23775b401a51029e4e4bc568872c535bdfb23106988677d59659036c6e50cf4a"
+    }
+  ],
+  "pending_job": {
+    "arm": "V6-plain",
+    "seed": 1761,
+    "confirmed_trained_checkpoint": 120000,
+    "checkpoint_metadata_sha256": "c200f7cb370736ea8d5f24fd70ce2d9449cb074d6cbdff31205a473a50d65ee4"
+  },
+  "confirmed_checkpoint_lower_bound_total_steps": 720000,
+  "whole2400000_complete": false,
+  "trajectory_restarted": false,
+  "scope": "Completed metadata and independently reviewed closed-run snapshot separated; progression between reads is normal, no restart. Partial scores not a three-seed mechanism/advantage verdict.",
+  "next_review_round": 145
+}

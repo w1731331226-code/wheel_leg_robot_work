@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第144轮闭合运行只读审阅（2026-10-05，main running，goal active）：
+
+同一unit active/PID255100；seed1761三L2 run已闭合metadata600k，现进入V6plain。只读审阅起始snapshot为前plain/room两run400k，进度自然前移与审核范围分开，未重新发起queue/切learn/改参数门或选checkpoint。最新pending及checkpoint下界存progress_evidence，下轮仍要live handle确认。
+
+review_reference_learning.py已对前两run20checkpoint做hash/CPU保存文件加载、参数/Adam/RMS/counters及原CUDAmoments/保存不改trajectory校对；两run episode/真实终态curriculum、末96/40原身份/physics/design/success/Jpsi及未完成规则审阅过。它不修改活跃模型/不进main源码；新completed metadata不是自动已审核，完整3seed及zero尚待，不以partial分数判方法。
+
+读取期间pending从constant变V6令旧静态预期assert失败，只发生在读侧、无训练修改；同handle重验active且继续，无错误复训。下一145如期深审方向/方法/补验及confirmed清理，活跃run/log/progress不删；所有预登记门与完整论文目标不缩小，goal active。
+
 第143轮有限CUDA主队列启动（2026-10-05，running，goal active）：
 
 冻结源与准入复核、确认未已有run/进程后启动唯一wheelleg-reference-learning-main-v1；seed固定1761/62/63、四arm各continuous200k，总2.4M，不warmstartengineering、无frame/physical restart。unit当前active，初始PID255100；下轮须同handle/main_progress核live/terminal，不能因观察超时另开queue。
