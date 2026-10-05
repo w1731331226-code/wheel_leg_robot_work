@@ -1,0 +1,62 @@
+{
+  "round": 148,
+  "verified": true,
+  "main_policy_steps": 2400000,
+  "main_runs": 12,
+  "ppo_epochs_per_run": 400,
+  "adam_updates_per_run": 8000,
+  "checkpoint_loads_verified": 120,
+  "main_final_evaluation_episodes": 1632,
+  "classical_episodes": 408,
+  "zero_episodes": 408,
+  "total_development_evaluation_episodes": 2448,
+  "unique_development_cases": 136,
+  "training_episode_failures": {
+    "L2-plain": {
+      "completed_episodes": 1433,
+      "physical_failures": 0,
+      "design_failures": 54
+    },
+    "L2-room": {
+      "completed_episodes": 1433,
+      "physical_failures": 0,
+      "design_failures": 0
+    },
+    "L2-constant": {
+      "completed_episodes": 1433,
+      "physical_failures": 0,
+      "design_failures": 52
+    },
+    "V6-plain": {
+      "completed_episodes": 1435,
+      "physical_failures": 0,
+      "design_failures": 45
+    }
+  },
+  "mechanism_gate_by_panel": {
+    "regular": false,
+    "controlled": false
+  },
+  "advantage_gate_by_panel": {
+    "regular": false,
+    "controlled": false
+  },
+  "formal_expansion_gate": false,
+  "gate_review_sha256": "a5cdb8766fd2a62c4e1e631b5520932970dae0a620fcc9dfb79904ab1e47de2d",
+  "units": [
+    {
+      "name": "wheelleg-reference-learning-main-v1",
+      "active_state": "inactive",
+      "main_pid": 0,
+      "exit_status": 0
+    },
+    {
+      "name": "wheelleg-reference-learning-zero-v1",
+      "active_state": "inactive",
+      "main_pid": 0,
+      "exit_status": 0
+    }
+  ],
+  "disposition": "Stop current configuration learning-superiority branch; no five-seed extension, budget or metric replacement. Empirical design improvement remains a finite engineering result, not mechanism/strong-classical contribution or global safety.",
+  "next": "149 use existing records for failure/method gap diagnosis;150 direction review and confirmed redundancy cleanup.Entire newpapergoal remains active."
+}

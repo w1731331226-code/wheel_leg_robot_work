@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第148轮有限研究全量闭合（2026-10-05，原两门均未过，goal active）：
+
+main12run正常exit0，共2.4M、每run400PPOepoch/8000Adam，120checkpoint及所有trainingepisode/课程/末评价与源/hash审阅通过；registeredzero408随后独立GPU回放、model/RMS不更新，unit exit0。12models×136=1632、classic408、zero408，共2448development eval，136唯一case。全量原判据核过，不改partial gate或丢失failedrow。
+
+**当前配置停学习优势/扩展分支。** room三seedphysical/design全96+40，通过原工程的作用保持；regular成功94/95/94、controlled27/26/28，plain91/92/92和26/25/26且18设计失败→room0，constant仍10设计失败。但regular Jpsi常数.9三seed均略好于room，controlledstate-aware收益不一致；机制门regular/control均False，与strongestB0/B1/B1route/zero的逐seed成功/方向/mean15%+.05deg及原velocity/arrival/legacy姿态非退化优势门均False。不能因design改善扩五seed/延budget或换primary。
+
+完整输出、training违规与原fixedfinal规则留存，state room不是状态不变性证明，nonlearning reference仍强，不能声称learning必要或新算法优势。149先从现有记录拆解失败/动作authority/Nom条件/credit等方法缺口，150按约深审清理，再明确有证据的新hypothesis；不默认追加新矩阵/field或打开sealedfinal。整体论文方法+独立泛化目标仍active，negative工程报告不替代用户全目标。
+
 第147轮最终门审核准备（2026-10-05，main active，goal active）：
 
 同进程255100继续，初读9run metadata=1.8M、L2room/1763；报告时10closed=2M、L2constant进行；未所有12run或zero408，绝不启动最终score/zero并宣称学习结论。no retry/重启/budget/primary变化，150仍定期深审清理。
