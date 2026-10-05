@@ -1,5 +1,17 @@
 # 双轮腿机器人PPO论文方案
 
+第140轮方向深审与有限学习计划（2026-10-05，goal active，下一145）：
+
+**值得继续的内容是一次新学习检验，不是扩大已证实优势。** 余量层已经去掉旧固定策略的测得design失败、保留原成功和多数腿authority；但yaw仍差B1且相对zero成功−2/0/+1，学习必要性未成立。接触模型控制路线/限额诊断保持关闭，不因GPU工程过门扩五seed或复杂模型。控制资格不证明随机探索全局安全，所有训练违规需记录。
+
+**事前新矩阵：** L2plain、L2room、L2constant.9、V6plain各3个新seed1761/1762/1763，各200k，总2.4M策略步，全部CUDA学习；固定.9幅度是单一已声明development-informed对照，不扫或事后match分数。primary仅L2room；V6是全动作authority上下文对照而非差模因果证明。L2三arm同seed初始actor/critic/std/RMS/场景完全同，新增y首层列在Actor和Critic均置0、核初始函数，继承旧std/PPO参数而不按成绩重新校准。所有39信息/名义控制/原奖励/任务与physical/design1.4条件共同，维数/执行covariance不同之处披露。
+
+**实际准入在141：** separate工程4arm×12k=48k、n10，检查optional state/constant/none GPU层、encoder/obs/episode reset/curriculum/owner、初始函数、实际CUDA actor/value/Adam和checkpoint等；工程无科学score、不warmstartmain。完整source/engineer资格冻结后才每arm连续200k；中断保消费与失败，不悄然接轨重跑。当前仅proposal，0新学习或physics。
+
+**评价与停止：** 每seed/阶段100新固定trainbank6200000 namespace，课程20k/100k只episode-end换；final200k唯一科学比较。regular96新6300000发展采样，controlled40新ID仍重复结构化旧几何，不当新独立随机case。12模型×136、B0/B1/B1-route×136、3room末模型zero-leg×136共2448发展eval；不得仅比较弱B1或旧未调节模型。机制门要求全三room物理/designclean、对paired plain/constant任务非退化、对两对照至少2/3seed Jyaw收益且mean正；强门要求完整任务/原velocity-arrival-attitude等非退化，成功保持最强reference/zero，meanJyaw比best非学习分别regular/controlled至少15%且.05deg、逐seed方向。只机制或控制资格通过不得扩训，失败不选checkpoint/候选/primary指标或加budget。
+
+**全论文出口未缩小：** 成功新pilot后才五seed主对照、至多两项识别主贡献消融、新ID/未见组合/温和几何及参数延迟OOD、易能力保留、实际端到端墙钟与完整methods/statistics/failedcases。state-dependent bounds/action/init已有先例，标量归一化不是独立创新证据。删除3个等价无占用cache16508B，source/模型/所有raw与unique失败保留，cache可再生。review/清理与未执行学习proposal已登记。
+
 第139轮余量调节GPU控制资格（2026-10-05，通过，goal active，下一140深审清理）：
 
 可选postfilter/postphysical-project GPU层与603×三模式静态identity/NumPy/凸命令/非法输入检查通过；184world factory/reset明确持有statistics/terminal mask buffers。Nom/wheel/originallambda/filtermemory保持，actual accepted-leg诊断随命令正确变化，原Actor39包的维度/时序不增。source运行前冻结，原控制器未改。全184既有development cases×B1184+三固定L2×三条件1656=1840GPU回合完成，权重/counters/RMS无更新，unit正常退出0。
