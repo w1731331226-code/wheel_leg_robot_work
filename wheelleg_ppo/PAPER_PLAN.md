@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第192轮唯一328启停保护采集完成（2026-10-07，目标继续）：
+
+runner_source/API/准入/656reuse绑定与四stream中断保存资格过后，只执行一次已注册328首回合，未中断/追加/0learning。新firstphysics4851287、contact9654560；328full2821156032B+gyro101008893B+role107606167B+phase15026948B共1312trace、单份max11500602B。worker逐job核schema/finite/dense/完整contact/qvjoin/gyro递推/role/phase实际cmd与anchor，独立末端全部1312SHA/phase规则与count/场景原序核；source58及forward/support/API/reuse末端再核。round192_data_review/completion绑定全部逐job及真实终态。
+
+计数：regular B0 96/96、B1-route95/96（6300019失败），physical/design两组各96；controlled两组32/40、physical/design各40；legacy两组28/28、physical/design各28。案例6300085两组恢复成功，min设计margin+.0038177013/+.0039085388rad，6300092成功保留。上述计数不能代替193原完整task/各轴新违规、逐case无lost、五个fixedfloor收益保持、CPU历史速度与rollpitch校对或切换瞬变，不能先默认替baseline或称方法成立。
+
+worker MainPID0/SubStateexited/Resultsuccess/exit0，02:56:20→03:07:20CST wholeunit659.946375s，含构图/传输/记录/压缩/checks，不当PPO端到端或纯physics吞吐。记录首回合counts不包含vector autoreset超额工作；984为三arm×两law/164旧发展回归ID，不是984独立test/训练seed。数据按3个已核cohort提交同步，全部源/data/失败/CPU-GPU/model/RMS/final不替或删。
+
+193必须完成原paired全门/CPU历史校对/收益保持/switch力瞬变，按冻结失败即关闭，不参数救分；194定义可辩护方法区别与学习必要，195方向深审清理。完整方法/资格三→正式五训练seed/强对照消融/新独立ID组合与OOD/统计PPO成本/新稿目标仍未齐。
+
 第192轮唯一328队列冻结及启动（2026-10-07，采集进行中）：
 
 新增run_phase_support_qualification，复用既有full/gyro/role校对与部分保存，增6列phase日志的当前指令/实际anchor全步对齐校对。合成namedcase的四stream8个prefix/last文件保存通过，runner_partial_unit绑定最终runner_contract；源58、installed forward/support、准入/656reuse30结果及328按原indices/same solver≤20组冻结过。唯一unit wheelleg-phase-support-qualification-v1以project-write.lock排他执行，02:56:20CST启动，实见PID75683/start，首批20regular场景；0learning、无模型/RMS/默认源/验收门更换。
