@@ -1,5 +1,7 @@
 # 第三篇论文合法全文获取续查
 
+第215轮支撑/轮速方向近邻（2026-10-07，1定向搜索+1作者入口）：[UCSB Bellegarda/Byl作者PDF](https://web.ece.ucsb.edu/~katiebyl/papers/cdc19_SkateTrajOptWithSlip.pdf)核摘要/建模，passive轮摩擦与允许slip/skid优化，简化不含pitch/roll；不是本机active双轮自平衡数值对照。[2025 contact-aware whole-body作者条目](https://arxiv.org/abs/2509.14010)仅摘要范围，不全面复现。现有滚动/支撑MPC及滑移建模限制本机新颖性：基本anti-spin/轮速阈值或分配不是创新，需在可得观测、闭链变高度和速度-yaw/电机包络上证明区别。没有重复访问此前418/403阻塞入口。
+
 第209轮动态关节/残差停车近邻（2026-10-07，1轮定向搜索+1轮入口核对）：[Sony Tachyon3机构页](https://www.sony.com/en/SonyInfo/technology/publications/real-time-perceptive-motion-control-using-control-barrier-functions-with-analytical-smoothing-for-six-wheeled-telescopic-legged-robot-tachyon-3/)可读摘要，机构标IROS2024，CBF处理关节、碰撞及支撑约束；[Choi等2020作者摘要](https://arxiv.org/abs/2004.07584)可读，RL学习CBF/CLF约束中的模型不确定性。仅核这些摘要，不声称全面复现或相同机器人。新增[轮腿Residual Policy Optimization With Trust Region Constraints出版社线索](https://ieeexplore.ieee.org/abstract/document/11202537)直接418；[重型轮腿Safe reinforcement learning framework for high-obstacle climbing出版社线索](https://www.sciencedirect.com/science/article/pii/S0967066126002145)直接403。检索摘要提示残差trustregion、约束成本/多头Critic等类别，未取全文/不据片段套其公式或数值、不绕过。普通CBF、安全RL和停车退出本身不能作为本机独創；下一步须在可得信息、闭链动态设计边界、接触-停车耦合与电机包络上给出区别及强对照。
 
 第199轮定向访问（2026-10-07）：一轮“residual reinforcement learning/equilibrium/zero at origin”查询后跟进两个机构入口。TU Darmstadt Jascha Hellwig 2023作者PDF可读，83页，仅核封面/摘要/章节结构；不表示已精读全部方法。UC eScholarship条目9s07n7vn搜索片段给出controller difference Eq5.31，直接页面要求JS/robot验证，正文未取得；已记录限制，不换浏览器/重复抓取或据其确认完整理论。来源见LITERATURE_MATRIX最新条目，本轮不访问旧IEEE阻塞全文。

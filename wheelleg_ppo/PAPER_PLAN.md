@@ -1,5 +1,17 @@
 # 双轮腿机器人PPO论文方案
 
+第215轮五轮方向深审、强经典与约束核对、冗余清理完成（2026-10-07）：
+
+211–214的source/noop/modelRMS/78真实终态/18严格配对/21排除/12运动失败证据链复核，保持原收益门与formal5关闭；停车退出只保留有限工程/机理作用。review_motion_authority_direction复核两个strongclassic B0/B1-route在共同6个controlled场景的12条原dense轨迹，physics/design全过、4成功/8失败；8失败first yaw越界时均fastwheel samplednormal0，高轮速/卸载不是单独RL引入。
+
+独立hardware_profile.torque_limit CPU曲线检查12strongclass完整轨迹的每一步轮速/commandbounds、12learnedfirst-yaw事件，加公共actuator_gain_upper修正，与Native D曲线1e−12核过，支持当前记录速度-力矩包络实现一致（不等实际热/供电/电机安全）。4个成功strongclassic轨迹也超过490rpm额定转速，最高约62.6–66.0rad/s；失败最高约72.4rad/s。故above-rated可标记derating，但不能单阈值当support/slip/失败识别器；不据成败后调RPM阈值，数据包括成功负对照，wheel normal仍只离线truth。
+
+近邻核对一轮定向搜索和一轮作者入口：[Bellegarda/Byl UCSB作者稿](https://web.ece.ucsb.edu/~katiebyl/papers/cdc19_SkateTrajOptWithSlip.pdf)核摘要/建模小节，显式friction与允许wheel slip/skid的轨迹优化；系统为passive wheels且简化无pitch/roll，与本机active双轮自平衡不同。[2025 contact-aware whole-body作者条目](https://arxiv.org/abs/2509.14010)仅元数据/摘要范围，不全面复现。已有滚动约束MPC/CBF/分配和滑移建模，普通anti-spin/速度限制/分组projection不当新算法。本机若继续，必须在闭链/变高度/速度—yaw与电机包络的联合可行性、可得39输入和强解析对照上给出区别与预测。
+
+**决定与新增必要工作。** 支撑/轮速/动态包络协调方向值得继续资格核查；现阶段不继续point-zero、停车duration或wheel scale/gain链，不盲训练。216先用已有raw39可得量做时序一致的wheel-speed/body-motion discrepancy及motor-headroom proxy资格，包含成功负对照和明确delay；proxy不直接叫真实slip，v=Romega需rolling/支撑/腿运动假设。217推导速度—yaw参考/残差协调可证伪机制及同信息强解析对照、对先例区别，不能truthnormal进Actor。218有据才源/契约资格、219准入后才有限控制资格实验、220深审清理。当前没有新物理budget或PPO：任何新实验都先明确单变量、预算、原fullflags和强基线保留，不降低基线或用最终封存集调参。完整可辩护贡献/关键消融/新formal5/新独立ID组合与geometry参数-delayOOD能力保持/层级统计PPO实测/推导复现新稿六出口仍未齐。
+
+**本轮清理。** 删除两份ignored/untracked/no fuser、包含co_name的递归codeobject结构与现source相同的bytecode（review_nominal_mean_study/audit_nominal_mean_failures）19114B，round215_cleanup保存source/cacheSHA和删除前验收；可再生非永久空间收益。科学源、原始数据、模型RMS、独特失败、CPU-GPU与封存集保留。中文提交同步与guardactive/HEAD核对完成后结束本轮。
+
 第214轮剩余运动失败与首次前缀差异全量定位（2026-10-07）：
 
 audit_remaining_motion对预先qualified18中的全部12失败、全部21unqualified前缀读取SHA和原post姿态/peak重算，无新rollout/训练。12失败来自6301001/3/5/7四个controlled发展case×三模型，均h.115/单侧20mm，first yaw>5deg在3.9025–4.149s，全部早于停车5.484–5.504s；12physical/design全过。因此停车退出无法撤回已经发生的完整任务yaw峰值失败，不延长退出或加停车训练救分。
