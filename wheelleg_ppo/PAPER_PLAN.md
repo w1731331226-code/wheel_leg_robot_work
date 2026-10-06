@@ -1,5 +1,17 @@
 # 双轮腿机器人PPO论文方案
 
+第193轮启停保护完整门、历史校对与瞬变审查完成（2026-10-07，目标继续）：
+
+review_phase_support_qualification复用ordered/wrap/load_rows/full_flags/compare，恢复三arm×两law、96regular/40controlled/28legacy原顺序，所有984比较的原完整成功/physical/design/summary重建及源/API/结果SHA核。无新增评价或训练、原标签和门不改。phase对original四个发展pairedgate均True；legacy各28成功/无lost或新component旗标、physical/design全过。regular B0 95→96、B1-route94→95，新增同一6300092；controlled各28→32，新增6301009/11/13/15四例；无原成功丢失或新增task/roll/pitch旗标。Jpsi regular降.01266852/.01515798deg、controlled降.11888947/.09299420deg，mean yawpeak均改善，仅旧development范围。
+
+五个fixedfloor增益两law全部保留；controlled对floor无lost/newflag且32/40，case6300085两law恢复fulltask/design，margin+.0038177013/+.0039085388rad。相较floor，controlled Jpsi反而增加.00343544/.00543145deg、平均yawpeak增加.00768776/.01820736deg，floor比较的全面改善标记False如实保留；冻结收益保持门要求无损失/新违规而非全面更优，不据结果换门。当前GPU original/phase ×两law四组CPU历史速度≤old×1.05+.005、roll/pitch≤old+.1全部通过。
+
+实际328条phase/full/role轨迹重建656个zero指令状态切换，其中600个有效anchor变化；每步phase实际command/anchor与role/fulltrace对齐，统计记录不混contact真值。最大瞬变是B0/regular6300095，到达后pre5.243s，cmd−.84569→0、anchor.115→.11739092，virtual requested/applied jump618.16857N、command/actual torque单步差32.36828Nm，当前hip最大33.94652Nm、wheel4.285714Nm、post设计margin+.36423733rad。启动to_nonzero最大command差仅.140764Nm，GPU数学零边界实际微非零仍按冻结exact规则。
+
+全回合原实际/命令力矩门均过，但32Nm单步变化不能称平滑/舒适。观测差同时含指令阶跃、anchor、反馈和接触响应，没有原dense反事实/同state完整controller memory，不能唯一归因切换；virtualguard力也不是contact力。冻结协议未给jerk/舒适阈值，不事后添加或忽略问题。round193_pair_review/switch_transients保存逐case原门、所有切换事件及每回合统计/SHA。
+
+总体工程资格True：仅保留phase_support为更强传统发展对照，不默认部署、更换原CPU/GPU基线或认为独立泛化/动态安全/新学习方法成立。194须基于剩余九个独立失败case（regular6300019及controlled .115/.38各四例，重复两law不当独立seed）明确可辩护方法区别与学习必要对照；不继续anchor阈值/floor/gain/平滑启发式链或盲PPO。195如期方向深审清理。正式三→五训练seed/消融、新独立test与压力能力保持/层级统计/PPO真实成本/完整新稿仍未齐，整体目标继续。
+
 第192轮唯一328启停保护采集完成（2026-10-07，目标继续）：
 
 runner_source/API/准入/656reuse绑定与四stream中断保存资格过后，只执行一次已注册328首回合，未中断/追加/0learning。新firstphysics4851287、contact9654560；328full2821156032B+gyro101008893B+role107606167B+phase15026948B共1312trace、单份max11500602B。worker逐job核schema/finite/dense/完整contact/qvjoin/gyro递推/role/phase实际cmd与anchor，独立末端全部1312SHA/phase规则与count/场景原序核；source58及forward/support/API/reuse末端再核。round192_data_review/completion绑定全部逐job及真实终态。

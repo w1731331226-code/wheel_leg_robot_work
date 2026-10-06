@@ -1,0 +1,20 @@
+TRANSIENTS CHECKED regular B0 96
+TRANSIENTS CHECKED controlled B0 40
+TRANSIENTS CHECKED legacy B0 28
+TRANSIENTS CHECKED regular B1-route 96
+TRANSIENTS CHECKED controlled B1-route 40
+TRANSIENTS CHECKED legacy B1-route 28
+regular/B0/vs_original success 95 96 lost [] new_flags [] J_reduction 0.01266851779744993 peak_reduction 0.03999599668782161 gate True
+regular/B0/vs_floor_only success 95 96 lost [] new_flags [] J_reduction 0.0005689478318706698 peak_reduction 0.004993566354057899 gate True
+controlled/B0/vs_original success 28 32 lost [] new_flags [] J_reduction 0.1188894728152472 peak_reduction 0.32609938996445553 gate True
+controlled/B0/vs_floor_only success 32 32 lost [] new_flags [] J_reduction -0.003435442544648115 peak_reduction -0.007687764601332248 gate False
+legacy/B0/vs_original success 28 28 lost [] new_flags [] J_reduction 0.0036438726019050183 peak_reduction 0.018858711191252153 gate True
+legacy/B0/vs_floor_only success 28 28 lost [] new_flags [] J_reduction -0.0005387202845879013 peak_reduction 0.0044233052391446925 gate True
+regular/B1-route/vs_original success 94 95 lost [] new_flags [] J_reduction 0.015157983906005867 peak_reduction 0.04412958375983911 gate True
+regular/B1-route/vs_floor_only success 94 95 lost [] new_flags [] J_reduction -0.0014177939737809453 peak_reduction -0.007267811779633315 gate False
+controlled/B1-route/vs_original success 28 32 lost [] new_flags [] J_reduction 0.09299420291786276 peak_reduction 0.3334774634300781 gate True
+controlled/B1-route/vs_floor_only success 32 32 lost [] new_flags [] J_reduction -0.005431448534448657 peak_reduction -0.018207364678659577 gate False
+legacy/B1-route/vs_original success 28 28 lost [] new_flags [] J_reduction 0.0005903125925412755 peak_reduction 7.827317687869595e-05 gate True
+legacy/B1-route/vs_floor_only success 28 28 lost [] new_flags [] J_reduction 5.269441178457068e-05 peak_reduction 0.0003456163757269426 gate True
+CPU {'original/B0': True, 'phase_support/B0': True, 'original/B1-route': True, 'phase_support/B1-route': True} RETENTION {'regular/B0': {'required_case_ids': [6300092], 'passed': True}, 'controlled/B0': {'required_case_ids': [6301009, 6301011, 6301013, 6301015], 'passed': True}, 'controlled_no_loss/B0': {'passed': True}, 'repair85/B0': {'passed': True, 'min_design_margin_rad': 0.003817701339721591}, 'regular/B1-route': {'required_case_ids': [6300092], 'passed': True}, 'controlled/B1-route': {'required_case_ids': [6301009, 6301011, 6301013, 6301015], 'passed': True}, 'controlled_no_loss/B1-route': {'passed': True}, 'repair85/B1-route': {'passed': True, 'min_design_margin_rad': 0.003908538818359286}}
+TRANSIENTS {'events': 656, 'effective_anchor_events': 600, 'max_abs_applied_guard_jump_N': 618.1685718833564, 'max_abs_command_jump_Nm': 32.36827731132507, 'max_abs_actual_torque_jump_Nm': 32.36827731132507, 'all_episode_torque_bounds_pass': True, 'interpretation': 'Observed one-substep differences mix switch, changed speed command, feedback and contact dynamics. Virtual guard-force jump is not a contact-force jump. No new after-the-fact jump threshold, comfort claim, unique causal attribution or global dynamic safety certificate.'} OVERALL True
