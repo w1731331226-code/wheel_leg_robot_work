@@ -1,0 +1,220 @@
+{
+  "round": 152,
+  "verified": true,
+  "completed_gpu_episodes": 1632,
+  "unique_development_cases": 136,
+  "training_updates": 0,
+  "source_contract_sha256": "0de82deb871f97d9722c4ea69a2707ee4e0dee4524ebf6d17d853da2730cd431",
+  "review_sha256": "8e16f582dbbc36e5650b7a2175a1ab0ac6f45308d02f2cfa91e276ae0aa3dc94",
+  "unit": {
+    "name": "wheelleg-fixed-steering-leg-v1",
+    "active_state": "inactive",
+    "main_pid": 0,
+    "exit_status": 0
+  },
+  "consistent_leg_increment_by_panel": {
+    "regular": false,
+    "controlled": false
+  },
+  "paired": {
+    "regular": [
+      {
+        "seed": 1761,
+        "fixed_steering_alone": {
+          "success_gain": -1,
+          "Jpsi_reduction": 0.12593992395365677,
+          "lost_success_cases": [
+            6300019
+          ],
+          "gained_success_cases": []
+        },
+        "leg_without_assist": {
+          "success_gain": -1,
+          "Jpsi_reduction": -0.04846115929214928,
+          "lost_success_cases": [
+            6300002
+          ],
+          "gained_success_cases": []
+        },
+        "leg_with_assist": {
+          "success_gain": 1,
+          "Jpsi_reduction": -0.0015102161244913148,
+          "lost_success_cases": [],
+          "gained_success_cases": [
+            6300019
+          ]
+        },
+        "assist_to_learned": {
+          "success_gain": 1,
+          "Jpsi_reduction": 0.17289086712131474,
+          "lost_success_cases": [],
+          "gained_success_cases": [
+            6300002
+          ]
+        }
+      },
+      {
+        "seed": 1762,
+        "fixed_steering_alone": {
+          "success_gain": -1,
+          "Jpsi_reduction": 0.1283733133093241,
+          "lost_success_cases": [
+            6300019
+          ],
+          "gained_success_cases": []
+        },
+        "leg_without_assist": {
+          "success_gain": 0,
+          "Jpsi_reduction": -0.03274070455372469,
+          "lost_success_cases": [],
+          "gained_success_cases": []
+        },
+        "leg_with_assist": {
+          "success_gain": 1,
+          "Jpsi_reduction": -0.0024046172247004227,
+          "lost_success_cases": [],
+          "gained_success_cases": [
+            6300019
+          ]
+        },
+        "assist_to_learned": {
+          "success_gain": 0,
+          "Jpsi_reduction": 0.15870940063834837,
+          "lost_success_cases": [],
+          "gained_success_cases": []
+        }
+      },
+      {
+        "seed": 1763,
+        "fixed_steering_alone": {
+          "success_gain": -1,
+          "Jpsi_reduction": 0.12952034395064993,
+          "lost_success_cases": [
+            6300019
+          ],
+          "gained_success_cases": []
+        },
+        "leg_without_assist": {
+          "success_gain": -1,
+          "Jpsi_reduction": -0.03802516836902603,
+          "lost_success_cases": [
+            6300019
+          ],
+          "gained_success_cases": []
+        },
+        "leg_with_assist": {
+          "success_gain": 0,
+          "Jpsi_reduction": 0.004727806571333204,
+          "lost_success_cases": [],
+          "gained_success_cases": []
+        },
+        "assist_to_learned": {
+          "success_gain": 0,
+          "Jpsi_reduction": 0.17227331889100916,
+          "lost_success_cases": [],
+          "gained_success_cases": []
+        }
+      }
+    ],
+    "controlled": [
+      {
+        "seed": 1761,
+        "fixed_steering_alone": {
+          "success_gain": 0,
+          "Jpsi_reduction": 0.2646417205277962,
+          "lost_success_cases": [],
+          "gained_success_cases": []
+        },
+        "leg_without_assist": {
+          "success_gain": -1,
+          "Jpsi_reduction": -0.005827368392643084,
+          "lost_success_cases": [
+            6301029
+          ],
+          "gained_success_cases": []
+        },
+        "leg_with_assist": {
+          "success_gain": 0,
+          "Jpsi_reduction": -0.0029470042219091885,
+          "lost_success_cases": [],
+          "gained_success_cases": []
+        },
+        "assist_to_learned": {
+          "success_gain": 1,
+          "Jpsi_reduction": 0.2675220846985301,
+          "lost_success_cases": [],
+          "gained_success_cases": [
+            6301029
+          ]
+        }
+      },
+      {
+        "seed": 1762,
+        "fixed_steering_alone": {
+          "success_gain": 0,
+          "Jpsi_reduction": 0.26286910166934263,
+          "lost_success_cases": [],
+          "gained_success_cases": []
+        },
+        "leg_without_assist": {
+          "success_gain": -2,
+          "Jpsi_reduction": -0.011783788082442959,
+          "lost_success_cases": [
+            6301023,
+            6301031
+          ],
+          "gained_success_cases": []
+        },
+        "leg_with_assist": {
+          "success_gain": -2,
+          "Jpsi_reduction": -0.01195989357441285,
+          "lost_success_cases": [
+            6301029,
+            6301031
+          ],
+          "gained_success_cases": []
+        },
+        "assist_to_learned": {
+          "success_gain": 0,
+          "Jpsi_reduction": 0.26269299617737274,
+          "lost_success_cases": [
+            6301029
+          ],
+          "gained_success_cases": [
+            6301023
+          ]
+        }
+      },
+      {
+        "seed": 1763,
+        "fixed_steering_alone": {
+          "success_gain": 0,
+          "Jpsi_reduction": 0.26430855964411415,
+          "lost_success_cases": [],
+          "gained_success_cases": []
+        },
+        "leg_without_assist": {
+          "success_gain": 0,
+          "Jpsi_reduction": -0.017768934303261208,
+          "lost_success_cases": [],
+          "gained_success_cases": []
+        },
+        "leg_with_assist": {
+          "success_gain": 0,
+          "Jpsi_reduction": 0.00214471516468151,
+          "lost_success_cases": [],
+          "gained_success_cases": []
+        },
+        "assist_to_learned": {
+          "success_gain": 0,
+          "Jpsi_reduction": 0.28422220911205687,
+          "lost_success_cases": [],
+          "gained_success_cases": []
+        }
+      }
+    ]
+  },
+  "decision": "Close thisfrozenpolicy fixedsteering-plusoldleg combination as a directlearning/promotion route: fixedsteering-alone explains mostyaw improvement, oldleg increments inconsistent andseed1762 loses2controlled successes. No newPPO,budget,gain/metric changes or oldmodelpromotion.",
+  "limitations": "Controllercontext intervention onpolicies trainedwithoutassist; cannot refute allpossiblematchedrelearning. Global-lambda coupling andGPU replay variation retained, allcases development. Does not restore prior stronggate or completepapercontribution.",
+  "next": "153 existingevidence synthesis/eligibility audit, then155 direction review/confirmed redundancy cleanup; no automaticnew simulation or learning."
+}

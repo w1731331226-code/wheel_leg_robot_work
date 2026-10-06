@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第152轮固定航向/腿策略因子诊断（2026-10-06，全1632闭合，goal active）：
+
+3冻结room末模型×4condition×136development cases完整GPU回放，权重/RMS不更新；unit正常exit0，原任务/physics/design/identity/counters/Jpsi、source/payload SHA与steer/leg累计统计校对通过，24panels physical/design全pass。请求协议zero/B0/B1route单位等价保持，不声称跨CUDAtrajectorybitwise。
+
+纯fixedsteer的yaw收益regular约.126..130°、controlled约.263..265°，controlled成功仍28，regular由95降94；不是RL收益。旧learnedleg+fixedassist regular success+1/+1/0但yaw两个seed变差，controlled success0/−2/0且yaw两个seed变差（1762丢2成功case），consistentleg增量两panel均False。按原限额152去留关闭该旧组合直接learning/promotion假设，不加PPO/参数/预算，也不恢复旧stronggate。
+
+filtered/raw与diagaccepted/filtered明显非1，原global-lambdacoupling存在，不等请求即等接受量/insideNom替换；executed/diag近1也不是state安全证明。Policysource曾无assist，contextshift限制negative解释，不能定所有relearning无效；但现证据不授权新训练。153仅已有证据资格归纳，155深审/confirmedcache清理，所有旧baseline/数据/risk和全论文贡献/新独立泛化目标保留。
+
 第151轮固定航向分配接口（2026-10-05，source准入通过，diagnostic未run，goal active）：
 
 LegSteering缓存raw RouteState39于VecNormalize之前；learnerinput正常saved归一，F/H on/off从episode起始，wheelassist仅existingactions(rawpacket,B1route)。四condition scriptedzero/传腿/原请求等价、异步terminal/reset/归一输入隔离过，136world真实GPU构图/reset强统计owner过；0physical回放/学习，未改原Nom/legacy source。128synthetic readonlysteering GPUstats/NumPy与所有inputs保持校对过。
