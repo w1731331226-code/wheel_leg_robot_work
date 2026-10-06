@@ -6883,3 +6883,39 @@
 - `wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/runs/V6-plain/1763/step_200000.json`
 - `wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/runs/V6-plain/1763/step_200000.pkl`
 - `wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/runs/V6-plain/1763/step_200000.zip`
+
+### 自动同步快照 2026-10-06T13:30:57+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_warp/results/fixed_steering_leg_v1.log`
+- `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/completed_jobs.json`
+- `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/completion.json`
+- `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/progress.json`
+- `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/review.json`
+- `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/review.log`
+- `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/runs/1761_learned_room_leg_fixed_assist_controlled.json`
+- `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/runs/1761_learned_room_leg_fixed_assist_regular.json`
+- `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/runs/1761_learned_room_leg_no_assist_controlled.json`
+- `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/runs/1761_learned_room_leg_no_assist_regular.json`
+- `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/runs/1761_zero_leg_fixed_assist_controlled.json`
+- `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/runs/1761_zero_leg_fixed_assist_regular.json`
+- `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/runs/1761_zero_leg_no_assist_controlled.json`
+- `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/runs/1761_zero_leg_no_assist_regular.json`
+- `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/runs/1762_learned_room_leg_fixed_assist_controlled.json`
+- `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/runs/1762_learned_room_leg_fixed_assist_regular.json`
+- `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/runs/1762_learned_room_leg_no_assist_controlled.json`
+- `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/runs/1762_learned_room_leg_no_assist_regular.json`
+- `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/runs/1762_zero_leg_fixed_assist_controlled.json`
+- `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/runs/1762_zero_leg_fixed_assist_regular.json`
+- `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/runs/1762_zero_leg_no_assist_controlled.json`
+- `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/runs/1762_zero_leg_no_assist_regular.json`
+- `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/runs/1763_learned_room_leg_fixed_assist_controlled.json`
+- `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/runs/1763_learned_room_leg_fixed_assist_regular.json`
+- `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/runs/1763_learned_room_leg_no_assist_controlled.json`
+- `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/runs/1763_learned_room_leg_no_assist_regular.json`
+- `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/runs/1763_zero_leg_fixed_assist_controlled.json`
+- `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/runs/1763_zero_leg_fixed_assist_regular.json`
+- `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/runs/1763_zero_leg_no_assist_controlled.json`
+- `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/runs/1763_zero_leg_no_assist_regular.json`
+- `wheelleg_warp/review_fixed_steering_leg.py`
