@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第206轮首个完整新学习run对象审查（2026-10-07，原主队列继续）：
+
+观察原MainPID151791/start，plain/1991已完整200k/400epoch/8000Adam及209末评价，按frozen evaljobs与globalindices检查旧fulltask/physical/design/summary、每checkpoint model-RMS SHA/saving invariants、所有881 full/gyro/role/phase/auxforce轨迹SHA、原scene/数量完整通过；first-evalphysics3014746/contact5997582，compressed881trace1989276277B。对单model已有完整交付，不等于全1.2M/1254或三seed方法结论。
+
+原门计数如实保留：regular36/96（physical96/design93）、controlled22/40（physical40/design36）、legacy16/28（physical/design28）、aux33/45（physical45/design39）。主要primary/设计失败既不隐藏也不按首seed中止/改queue、挑checkpoint或以某一phase成功取代全部门。anchored1991按same source/RNG/world/hyperbudget继续、观察快照采样175k/确认170k（时点）；若实际状态继续评估，以main_progress为准。
+
+round206_completed_run_audit绑定首run/209结果/源与liveworker快照，0新training/eval预算、未追加仿真/重跑/更改runtime。大raw~1.99GB完整cohort保持本地immutable，主队列未终态期间不并发git打包争用正在计量的训练CPU/disk；source/review已提交同步，完整data将在实际terminal按已核cohort归档，不能报告该raw全远端同步。activeguard等worker projectlock，工作区运行outputs未追踪属于受保护进行中，不自动snapshot半实验。
+
+下一207观察同原livehandle与新完成对象/消耗，真正terminal后全source/allmodelsRMS/全部1254physical-contact-delivery和训练/评价wall独立核。208只全完成后按预登记强参考/候选vsplain/旧28/aux所有seed逐casegate，209据此判断方向/独立扩展、不救分；210如期深审清理。整个可辩护method/新3→formal5/强对照关键消融/新独立ID组合geometry参数-delayOOD易任务/层级统计与GPU PPO真实end-to-end/推导失败复现新稿6出口仍未齐，goal继续active。
+
 第205轮运行中方向深审与冗余清理（2026-10-07，下一210，目标继续）：
 
 201–204 environment/policy/真实24kengineering/末点评价/source及main冻结证据SHA核。原same capacity/function/39RMS、correct Gaussian梯度/likelihood及source-noop classicreuse方法合理，r是kinematic assumption非dynamic safety；已有先验类别不据formula独创。按已注册sixrun continuous fixedfinal200k/allseed和1254新evaluation继续同一队列。1个模型或partial结果不足以判gain/可发表，不开始新profile/gain/reward/architecture/parallel训练，也不formal5。当前没有修改runtime source/预算/阈值/参考/队列或重新开始physics。
