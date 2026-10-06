@@ -1,5 +1,21 @@
 # 双轮腿机器人PPO论文方案
 
+第208轮六组匹配训练、全量交付和原门审查完成（2026-10-07）：
+
+原worker正常结束，MainPID=0/SubState=exited/Result=success/exit0，04:53:11至05:46:11 CST，总墙钟3180s包含初始化、六次训练、保存和1254次密集评价，不是纯训练耗时或CPU/GPU倍率。六个fresh模型各200k/400epochs/8000Adam，合计120万策略步；60组checkpoint的模型/RMS/meta哈希及六个末模型CUDA优化器、eta、39维RMS/count200100.0001回读通过，同seed初始权重/world一致、无工程warmstart。
+
+completed_collection_audit独立核对全部1254条评价原序、result/geometry与5286份四/五流轨迹哈希，11,917,436,957B，首回合物理步18,099,887/接触36,014,242；原worker已验证schema/连续物理状态/phase及force delivery，复核不新增rollout。六组learn+checkpoint实测耗时各自保存在records，不把3180s或物理吞吐替代端到端PPO训练计时。旧round206/207证据保留。
+
+| 训练seed | 普通残差常规/困难成功 | 锚定残差常规/困难成功 | 锚定旧28成功 | 锚定常规/困难设计通过 |
+|---|---|---|---|---|
+| 1991 | 36/96、22/40 | 90/96、29/40 | 27/28 | 91/96、37/40 |
+| 1992 | 45/96、19/40 | 93/96、25/40 | 28/28 | 94/96、35/40 |
+| 1993 | 86/96、26/40 | 88/96、28/40 | 27/28 | 89/96、36/40 |
+
+所有1254评价物理判据通过，但不等于设计约束全部通过或全局动态安全。review_nominal_mean_study复用原完整flags/paired/J门，partial拒绝、None诊断不丢case的预检保留；完整study_pair_review执行后formal_expansion_gate_passed=False。锚定vs普通残差两panel J的预登记方向/15%+.05门通过，但成功/新flag保持门失败；对强经典B1常规J=.255881、困难J=.829091，锚定三seed分别(.413743,.655810,.482681)/(.920538,1.101018,.844228)，全部未达到优势门。困难成功均值27.333/40低于34/40；旧28及CPU校对仅1992通过。辅助pulse/zero和force delivery单列，不救主门、不作独立泛化。
+
+按原协议关闭此候选的收益扩展，不改预算、门限、参考、架构或seed救分，不启动formal5。全部成功/失败、模型/RMS和原始证据保留，终态后按<2GB队列分批归档。209依据完整失败做方法/任务缺口与贡献复核，210如期方向深审和确认冗余清理；新可辩护贡献、匹配强对照/消融、资格后新formal5、新独立ID/组合/几何及参数延迟OOD与易任务保持、层级统计/真实PPO成本、推导复现新稿六类出口仍未齐，整体目标继续。
+
 第207轮首对新匹配模型完整对象复核（2026-10-07，原队列继续）：
 
 同原worker151791/start/nointerruption。1991/plain和anchored均200k/400epochs/8000Adam及209fixedfinaleval完成，十checkpoint/arm模型RMShash和保存state/reference/route/RNG不变记录核；209场景原globalindices/task/physical/design/summary、881trace/arm hash及source/manifest核。首pair初weightSHA/worldSHA严格同，engineering不warmstart，无新运行/丢弃/改门或预算。
