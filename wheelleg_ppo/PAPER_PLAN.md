@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第203轮独立24k GPU工程资格完成（2026-10-07，目标继续）：
+
+nominal_mean_training复用RouteLedger/Continuous及201 pairedcache/lightphase/202Gaussian，单独两fresh arm×1991×12k/10world一次continuous learn，无midrun强制reset/物理恢复/重启/科学selection或main warmstart。原64源与installedSB3/proposal/units/runner工程contract冻结；worker PID145859现MainPID0/SubStateexited/Resultsuccess/exit0，04:41:44→04:42:53CST wholeunit68.895223s。工程仅核pipeline，不评方法收益，主1.2M未执行。
+
+两arm各12000policy steps、240PPOepochs/480Adam，policy/value/Adam moments/physics均cuda，weights确已改变。Initialweight和worldSHA两臂逐值相同，26真实episode完成/arm，10world最终stage3，stage2/3转换只在真实episodeend；记录18个batch transition events/arm（worldtransitions另核，不能等同event数）。每2k在更新后保存，总12checkpoint pairs/36json-zip-pkl：继承world/Phi/RNG及route不变，加rawcurrent/terminalreference/单39RMS/smallphasebuffer/stages/lastobs不变记录，全hash独立核。
+
+末weights/Adam/eta及obs39 mean-var-count/retRMS从保存对象重载exact，RMS count12010.0001符合12000actualsamples+10reset+epsilon，不用78或reference更新RMS。训练后独立Gaussian forward/evaluate/value paths一致，anchored在samepoint输入仍meanexact0；无额外optimizer/PPO更新来做后检。Plain/anchored continuouslearn+checkpoint wall分别30.0128333/29.3053439s，包含训练/checkpoint，不是purephysics或CPU-GPU加速结论；wholeunit另包含构图及reloading/verification。
+
+round203_engineering_review/engineering_verification绑定全部source、实际unit终态和逐checkpoint/episodes/lifecycle。Engineeringmodels单独目录完整归档，不进main initialization，不报告这里success率为论文性能。当前只工程pass、main_admittedFalse，204必须基于此资格冻结新sixrun1.2M/1254finaleval及data/reference-source所有权、确认强classicreuse准入后才start；205如期深审清理。原controller/physics/CPU-GPU/models/RMS/labels/final/失败保留，完整新method/strongcomparison/new3→formal5/独立泛化/层级统计/PPO真实wall/new稿出口继续未齐。
+
 第202轮锚定高斯policy静态/概率/梯度资格完成（2026-10-07，目标继续）：
 
 nominal_mean_policy仅扩展SB3 MlpExtractor：同shared39 Actor做current/ref两forward，latent=h_current−eta·h_ref；Critic仅current39。原SB3 DiagGaussian采样/forward/getdistribution/evaluateactions/predict/value/entropy路径不复制，biasfree Linear W将latent差映射为声明mean（Wcurrent−etaWref为代数等价，fp独立形式close核），移除最后bias并重建optimizer所有权、初始化W0。Plain/anchored同13895参数、same seed/state_dict/value/logstd/初始mean及相同随机样本与logprob逐值，rawGaussian仍在原envclip链前，不旧postmask减动作。
