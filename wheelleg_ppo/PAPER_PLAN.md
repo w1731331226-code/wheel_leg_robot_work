@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第185轮方向深审与冗余清理（2026-10-07，下一190，目标继续）：
+
+**继续价值与方法。** 181–184 source/noop/noise/160实际completion和全部480trace hash再次核过。floor_only既有4pairedgate均通过且gain4独立.16case，值得一轮更广资格；combined投影新增upperyaw、固定alpha1新roll退化保持closed，不再scan/case择优救分。逐case/分轴/全部taskgate方法正确，fixedfloor/普通projection仍非新算法或完整动态安全。强Nom工程基础不能代替核心论文贡献/学习证据，现20development和single人工noise不是independenttest。
+
+**仅准入344更广资格范围。** floor_broad_qualification_v1/proposal：candidate remaining96regular+20controlled ×2laws=232；当前original/candidatelegacy28×2laws×2arms=112，总344newfirstepisodes/0learning，另原development272+已有candidateclean40仅source/config/evaluator/no-op一致后复用，合656比较/164旧发展回归IDs。所有case/scenario/9terrain/delay0..10ms保持，原CPU28仅历史校对不冒充当前GPU原Nom；original28全部成功、原velocity1.05+.005与roll/pitch+.1历史门以及原全task/5deg各轴/height/phys/design不可弱化。复用不合格即停，不暗增original回放。
+
+现collector std0亦限legacy/delay0，regular96兼容0，原source资格不能直接扩。186clean-only adapter需保持原sensor staging/delay41history、namedlegacyIDs、实际constructor时限和zero-table容量/overflow、小solver同质batch≤20、完整full/gyro/role/terminal/partial、originalbranch输入输出同一/默认model不改。gyroalpha.025、所有gains/constraints不变，不引新noise或pairgov、Fn/COM/geometry只eval。小batch可能float/接触顺序差异须披露，不称bitwise。source/API/panel/runner/已耗quota冻结后187才跑唯一344；188legacy/currentNom与原fullgatepaired去留；189仅据结果决定剩余可辩护方法/学习必要性；190深审清理。当前scope注册、source未准入/未执行，无默认部署/PPO/参数scan。
+
+**清理与完整目标。** 删除run_reference_role_probe/review_nom_yaw_filter两份ignored unused等价pyc共16717B，source/cacheSHA/compile/fuser核留round185_cleanup，再生缓存不永久节约。全部源/160新full+gyro+role/历史120与40/205/model/RMS/noise/unique失败/CPU-GPU/final3000/oldgate64保留且封存不用于发展。round185_direction_review绑定新范围/周期/cleanup。仍须新方法区别与贡献、同信息强classic/RL、资格3→正式5seed/关键消融、新独立ID/组合/geometry/参数-delay OOD/易任务、统计与真实PPO耗时/完整新稿，不能以此普通工程资格结束新goal。
+
 第184轮更强Nom资格覆盖与接口缺项核对（2026-10-07，目标继续）：
 
 audit_floor_qualification_scope核136原发展bank、已测20/40controlled的逐ID/scenario同一、两law固定配置与原4classic结果全部fulltask重建/hash。floor_only clean40只覆盖20个2cm案例，还缺96regular（9terrain、delay至10ms）与20个1cmcontrolled。原CPU28baseline历史全通过、GPU注册28的name/scenario/stand.3与CPU原字段逐一一致；CPU旧控制器不能冒充当前GPU的配对original Nom。
