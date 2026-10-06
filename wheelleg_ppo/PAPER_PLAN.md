@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第153轮目标与回报一致性（2026-10-06，既有数据审计，goal active）：
+
+原dense奖励是速度exp、三轴角度平方及acceptedresidual幅度/平滑成本，末±10按完整success；storedepisode.r不是Jpsi或PPOdiscounted objective。1632main末评价/408zero的case配对重建可见higherreturn却worseyaw（same-success另列），是不同控制状态/时长/成本的描述性排名，不是唯一奖励因果、critic失准或新优化器理由。所有输入/源/hash及policy长度公式核过，0新增physics/learning。
+
+原gamma.99每.02s的e-fold1.99s，finalduration约6.08..9.62s，初态terminal权重median.02427（.00803..04758）；不能把这个当GAE/bootstrapping真实训练优势或“后果完全无法传递”。未MC/value校准或奖励对照，不直接改gamma/奖励主指标。当前gate失败/旧fixedhybrid无一致收益保持；工程设计作用不等于主贡献，独立泛化未准入。
+
+154仅既有权限/共同controllercontext与主张必要性收束，155深审清理后决定具体可证伪假设，不自动新PPO或budget。objective_alignment与research_eligibility完整列限制与输入，wholepapergoal仍active、oldgate/final保护。
+
 第152轮固定航向/腿策略因子诊断（2026-10-06，全1632闭合，goal active）：
 
 3冻结room末模型×4condition×136development cases完整GPU回放，权重/RMS不更新；unit正常exit0，原任务/physics/design/identity/counters/Jpsi、source/payload SHA与steer/leg累计统计校对通过，24panels physical/design全pass。请求协议zero/B0/B1route单位等价保持，不声称跨CUDAtrajectorybitwise。
