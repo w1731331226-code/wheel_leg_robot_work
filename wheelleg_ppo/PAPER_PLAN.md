@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第161轮真实路径记录器准入（2026-10-06，goal active，205队列尚未run）：
+
+task_mode_recorder.py保留当前Native的diag与全部原方法调用，通过重新capture加入只读pre/post/contact节点；原CUDA图句柄会更换，原核心调用序列和参数必须逐项保持。两个Native模式diff3/virtual6、各41world已构图/reset核245原核心调用及参数pointer/scalar完全一致，其中40mjw.step/4shared-reference updates；没有使用旧RecordedEnv，没有删除shared-reference或缩小diag。两种模式capture与只读核未改protected model/control/state/reference/target数组，trace/mask/count/window由env显式持有。
+
+112列记录区分pre/post轮中心及solver接触层，实际passive-chain wheel_center与CPU forward位置对照过；50Hz全程与geometryx窗口±.20m2kHz采样，远侧移和零转矩不阻断窗口采样。first-terminal冻结、再次terminal不覆盖、explicit reset清stats/mask已用synthetic状态验证，无实际integration/评价。contacts按world扫描保留candidate count、normal load、垂直normal分量及最大normal/vertical目标接触点/normal/material/dim/dist/slip，legacy bump与额外terrain都列入。normal support分量不是包含friction的总反力；pre solver contact/force与post移动轮pose时间层分开。
+
+初force unit使用int32 array而接口需vec2i，未通过准入且没有run；失败日志及修复前源保留。修正synthetic fixture类型后CPU mj_forward/mj_contactForce与GPU提取对照通过，补test_task_mode_recorder.py覆盖elliptic/pyramidal×condim3/4/6×两种geom order共12组合，当前模型cone0/geom condim3被覆盖；输入不改与采样规则通过。source_contract冻结runtime/原parent源和installed contact API，admission_review另绑定supplemental source/result，physicalrollouts/evaluations/learning均0；构图/CPUforward计算不作零计算成本声称。
+
+162只在再次核source/proposal/admission/unit/模型/RMS/接口hash后执行已登记205首回合唯一队列。Generic evaluator沿原RouteState39与savedNormalization，日志真值不进入policy；运行时再核model/更新计数与RMS不变、geometry/trace/原完整task与counts及所有replay变化。163必须解释真实方式并作下一必要干预去留，165深审清理。工程准入不当205数据已产生、loaded越障、独立泛化、方法优势或核心录用证明；完整六类证据目标仍未达成。
+
 第160轮方向深审、数据解释补验与清理（2026-10-06，下一165，goal active）：
 
 **方向是否值得继续。** 156–159完成2448首回合GPU评价（同136发展case重复，记录36496976首回合子步，非全部autoreset仿真工作量）、0新学习，两个unit正常终态且payload/source/unit/model/RMS契约和原门核过。当前hip-coupling恢复及component-wheel小幅收益分支明确closed，不追加gain/weight/budget或五seed。学习方向仍有8低高度V6原判据见证，但整体强优势失败、5案例无已观察成功；这些支持进一步验证实际控制方式，不支持casewise oracle、已完成创新或直接长PPO。

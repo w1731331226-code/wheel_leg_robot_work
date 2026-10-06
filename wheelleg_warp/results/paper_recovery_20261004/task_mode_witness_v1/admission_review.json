@@ -1,0 +1,35 @@
+{
+  "round": 161,
+  "verified": true,
+  "source_contract_sha256": "71fb37bd9c9440dc23451ce9afe5ea19bfbdc877a68e3dabdaffd5bd9e27ea02",
+  "unit_sha256": "b248d7725c6f943492969f7c5031fce08ffc9ce2db844369abe992d6c6a11648",
+  "supplemental_unit_sha256": "40e7413eee57d46471993e8fb4d53d06ba21505ad864e2656c1fb66d1a580dc5",
+  "supplemental_source_sha256": "ab5b1d6594bebef55153ed4d1f69eb8a612883c16cb27e1c0ba3a2b5a3e188db",
+  "original_pipeline_calls": 245,
+  "physics_calls_per_actor_step": 40,
+  "shared_reference_updates_per_actor_step": 4,
+  "constructor_worlds_per_mode": 41,
+  "contact_force_cases": 12,
+  "force_case_definition": "2 cones x3 contact dimensions x2 geometry orders; CPU forward/contact force, no integration.",
+  "actual_native_cone": 0,
+  "actual_geom_condims": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+  ],
+  "source_admitted_for_next_queue": true,
+  "executed_evaluations": 0,
+  "training_updates": 0,
+  "failure_preservation": {
+    "log": "admission_failed_force_dtype.log",
+    "source": "source_before_force_dtype_fix.py",
+    "source_sha256": "6230dfa74a732904866d895af16b2deb32a74a4ed832e9139c19b46432ddcf97",
+    "reason": "Synthetic geometry pair array used scalar int32 instead of vec2i; fixed fixture dtype, not controller."
+  },
+  "limits": "Same original pipeline captured anew with readonly nodes; graph handle changes and no cross-trajectory bitwise claim. Normal and vertical-normal loads are not full friction-inclusive support force. No physical/task-mode inference from unit tests.",
+  "next": "162 verify source/admission/tests/model/proposal hashes and execute the registered205-case queue once; no new PPO;163 physical interpretation/decision,165 review/cleanup.",
+  "goal_status": "active"
+}
