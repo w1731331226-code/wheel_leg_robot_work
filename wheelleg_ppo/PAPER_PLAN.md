@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第213轮78终态、全量交付及严格配对审查完成（2026-10-07）：
+
+原worker MainPID0/exited/success/exit0，完整6jobs/78firstepisodes、0training，无interruption/重跑。runner/evaluator/source/modelRMS bindings、原序fullflags/physical/design/summary及390份五流SHA、parking-相位及filter-state对齐重核过；原active关节post-state重算设计margin与row逐值相同。首episode physics1,141,656，390轨迹762,170,237B，整个评价队列189.153677s含model/init/记录/压缩/验收，不是PPO训练或纯physics倍率。
+
+新matched original成功4/5/0（各13），退出9/9/8；新original设计违规25、退出0，两个条件physical各39/39，原成功没有丢失/新增完整flags。新original1991对旧study有2项变化：6300085旧design失败本次通过、6301003新增roll_axis；1992/1993原labels保持。全部差异保留，不拿旧26代替本次25，也不改原study标签。J原1.065879/1.342927/1.145833、退出1.093394/1.286885/1.210911，非allseed改善，有限停车恢复不当原主方法优势。
+
+**严格因果资格的边界。** 39配对仅18的完整trace/pre/post、gyro/role/phase及parking-request-memory在退出前全部exact；这18对为共同6个controlled case×3模型，因果合格子集移除12项design违规、成功由1/18到6/18、physical两侧18/18，无成功丢失。其余21对全部regular，虽本次退出条件无design违规，只可报告描述性结果，不当严格因果样本、不调容差/丢弃。代表6300000/1991：首可见接触描述及post角速度差异在step5874（角速度相差约4.66e-10），请求首次差异step5921，退出step9406；说明差异已在门控前出现，但不是唯一底层原因证明。全部21first-difference和幅度保留；solver warmstart未记录，不扩大成全hidden-state一致或安全定理。
+
+**去留。** 保留固定停车退出作为有限工程/机理证据，关闭将本次78直接解释成39严格因果对或新学习优势的主张。old候选benefit/formal5不复活，0追加budget/训练/精度或退出duration扫参。214从18合格样本中剩余运动阶段失败及21前缀差异的首次证据确定下一项有区分性研究，不把简单退出门作创新或以更复杂地形遮盖原任务问题；215按约深审清理。可辩护方法、强对照/消融、新formal5、freshID/组合/geometry/参数-delayOOD能力保持、层级统计/PPO成本/推导复现新稿六出口仍未齐。完整78数据及失败本轮归档，guard收尾恢复并核HEAD，不默认替换CPU/GPU基线或封存集。
+
 第212轮实际队列启动快照：旧archive正常终态并完成七批与记忆推送；新worker unit lock-holder260144/child260145已活跃，首original1991的13次校验完成，下一withdrawal已在运行，round212_dispatch记录当时reserved/completed。整体78未完成、0training、不据片段作方法判定。新outputs不半提交，guard恢复后等待worker锁；213沿同句柄查terminal与全paired证据。
 
 第212轮固定78科学评价队列冻结（2026-10-07）：
