@@ -1,0 +1,38 @@
+{
+  "round": 162,
+  "verified": true,
+  "evaluations": 205,
+  "unique_development_cases": 41,
+  "controllers": 5,
+  "training_updates": 0,
+  "recorded_first_episode_physical_steps": 3043633,
+  "sampled_trace_rows": 615184,
+  "compressed_trace_bytes": 152676790,
+  "completion_sha256": "72a7387fdbee4d1b6609559a0bb4e7bdcf9cabc14e0385686fb413c77b393044",
+  "recovery_contract_sha256": "4b144199de722c5303ecf91ab21f3acdcbfbabc50a0079e96a6718a1e9889b4e",
+  "source_contract_sha256": "71fb37bd9c9440dc23451ce9afe5ea19bfbdc877a68e3dabdaffd5bd9e27ea02",
+  "original_failed_unit": {
+    "name": "wheelleg-task-mode-witness-v1.service",
+    "initial_PID": 35277,
+    "exit_status": 1,
+    "completed_B0_evaluations": 41
+  },
+  "remaining_unit": {
+    "name": "wheelleg-task-mode-witness-remaining-v1.service",
+    "initial_PID": 36194,
+    "terminal_state": "inactive",
+    "terminal_PID": 0,
+    "exit_status": 0,
+    "completed_remaining_evaluations": 164
+  },
+  "execution_segments": [
+    41,
+    164
+  ],
+  "budget_unchanged": true,
+  "B0_replayed": false,
+  "archived_to_replay_success_changes": [],
+  "limits": "First-terminal205 are repeated41 development cases. Counts exclude vector autoreset total work. Bookkeeping comparison failure retained and explicit job-boundary recovery, not an uninterrupted single process. No physical mode or learning advantage inferred yet.",
+  "next": "163 offline geometry/contact/route/airborne interpretation and required-direction decision;165 deep review/cleanup. All prior failed gates and full-paper gaps retained.",
+  "goal_status": "active"
+}

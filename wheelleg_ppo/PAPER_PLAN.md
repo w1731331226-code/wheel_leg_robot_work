@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第162轮实际方式数据闭合（2026-10-06，goal active）：
+
+task_mode_witness.py先冻结runner_contract并核recorder/source/unit/supplemental/API与3models/RMS，初unit PID35277完成B0全部41回合并落盘后，在in-memory row与JSON row直接比较处失败（Native yaw_config tuple变JSON list）。原load_rows全任务重建在该assert前已经通过；故障/interruption/原run.log保持。独立调用原checker审完整B0原task、41traces/geometry/hash/时刻/计数确认全完整、消耗预算已知41；不是物理/recording接口失败，也没有把未保存状态当可精确恢复。
+
+公开recovery_contract登记执行分段41+164；task_mode_witness_remaining只运行B1-route及全部3V6，JSON规范化后复用原检查，未改原runner/recorder/控制、模型、RMS、case/阈值/任务。原failed unit保留exit1，newremaining unit初PID36194正常exit0/inactive/MainPID0。单进程不间断计划未实现，明确记录分段偏离，不重跑B0、不增205预算、无silent retry或新PPO。
+
+全部5jobs205首回合、41独有发展case，共记录3043633首回合physics steps（非autoreset全部仿真工作量）、615184采样rows，205压缩trace约153MB；geometry/runtime/result/trace字段和SHA保留。任务/physical/design按原load_rows核，trace列112、所有valid/finite、时刻和增长step/count、真实geometry窗口50Hz/2kHz取样条件再核过。3model权重/更新计数在eval前后同、savedRMS mean/var/count保持。旧存档→重放success变化0；这不等于全trajectory bitwise身份或完整外部物理重建。
+
+round162_data_review绑定completion/原runner/recovery/recorder与真实两个unit终态，原tuple/list比较失败及确认恢复数据保留。163基于已落盘205原判据数据解释loaded/边缘路径/腾空或证据不足及Nom/reference/authority关联，必须决定是否需具体下一假设；不从同success标签先宣称真实climb/学习优势。原failed gates/final/CPU-GPU基准保护，完整新贡献/5seed/消融/新独立泛化/成本/新稿goal仍active，165深审清理。
+
 第161轮真实路径记录器准入（2026-10-06，goal active，205队列尚未run）：
 
 task_mode_recorder.py保留当前Native的diag与全部原方法调用，通过重新capture加入只读pre/post/contact节点；原CUDA图句柄会更换，原核心调用序列和参数必须逐项保持。两个Native模式diff3/virtual6、各41world已构图/reset核245原核心调用及参数pointer/scalar完全一致，其中40mjw.step/4shared-reference updates；没有使用旧RecordedEnv，没有删除shared-reference或缩小diag。两种模式capture与只读核未改protected model/control/state/reference/target数组，trace/mask/count/window由env显式持有。
