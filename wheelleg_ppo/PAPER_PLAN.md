@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第176轮隔离滤波/噪声源码资格完成（2026-10-06，目标继续）：
+
+nom_yaw_filter_probe.py包裹冻结控制/测量调用：alpha1仅在原Nom更新前令state8等于已有最新gyro，然后仍调用原controlkernel；alpha.025/无noise不写任何原控制/传感状态。四条件各20world构造/capture核245原corecalls、40steps/4sharedref、原inputs/order及前后两次capture插入位置相同，未修改冻结controller/environment/完整录制器。
+
+每case PCG64 seed17500000+case、float32噪声表及NumPy版本/hash冻结；排序无关/重复一致、容量越界显式拒绝。初始sample0同时初始化已有gyro和obs/history，随后只对原physics forward产生的新yawgyro样本加噪一次，供后续Nom和原after的delay0/39packet；不提前forward或用更新qvel替代，其他通道不改。Nom使用前一物理步最新可得样本的原分期保留。8列记录valid/step/Nom measurementindex/input/filtered/freshclean/noise/freshnoisy，逐步核输入承接、滤波递推/float32加噪和记录计数。
+
+原始clean输入与原kernel control/state/diag输出exact-noop；两alpha真实原control计算符合预期、公开packet与噪声测量一致、无重复加噪/其他通道变化、inactive/overflow/owners/reset检查过。补充合成terminal/automaticreset令新sample0同时供Nom/packet、重复done不再存、显式reset清chunks过。仅构造/捕获/原控制计算与合成测量/after，无mj_step实际积分或评价回合；原force/geometry资格继承且原sourcehash不变。本批20case delay0，不能泛化为任意传感延迟噪声认证。
+
+noise_table.npz/source/unit/supplemental/installed forward/support/proposal绑定在admission_review，original_clean40具备source/no-op复用资格，不称同次/bitwise trajectory证明。当前0新eval/learning，177须freeze唯一120runner/消费和中断保存后执行；178原完整门及配对clean/noisy检验，180深审清理。新方法、正式5seed和独立泛化/完整新稿仍缺，源码准入不当性能或论文证据已通过。
+
 第175轮方向深审与冗余清理（2026-10-06，下一180，目标继续）：
 
 **继续价值与方法。** 171–174完整源码/CPU力矩资格、40实际全步数据、力矩事件分解与权限/时序核对有价值，相关source/契约/分析和全部40raw哈希再次核过。已从缺记录推进到可检验控制时序，不再做通用同数据诊断。旧分配/冻结V6晋升、坐标改名创新、接触触发可预防此前冲量的表述保持关闭；后续恢复或预测策略并未被证明全部无效。当前39packet与2kHz Nom权限不同必须披露，不利用故意慢classic制造PPO优势。40=20发展case×2law，不当独立40case/训练seed；工程检查、观察相关及普通滤波改进不替代论文贡献。

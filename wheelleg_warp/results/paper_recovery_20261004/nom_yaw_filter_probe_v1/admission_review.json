@@ -1,0 +1,26 @@
+{
+  "verified": true,
+  "round": 176,
+  "source_admitted_for_120_queue": true,
+  "original_clean40_reuse_source_qualified": true,
+  "proposal_sha256": "2a44ee199cb31ffb7251bfed559a703ff5a9b80b10d3ceaa73ffddb167e11071",
+  "source_contract_sha256": "b75c34502f704650edcebac2a19967cfb5e573cc4f7e5d630d553e4c14e5024d",
+  "unit_sha256": "12919f28227fe72f251e81c83fbccf6c8dba2248e82131a3e52508cf26fe419f",
+  "supplemental_sha256": "dc58ab921d6d654299b328112c471011b27f475492ecf698cc95a43a6c8ec314",
+  "noise_file_sha256": "ae6d5c939a8baa90875c5430a9a43bf5acaa49522febd9397b19362ef110642f",
+  "installed_forward_sha256": "7b7ffa3d914b6adf65f228261e207998d5bed1e59d4fb17f5bc6ac796aacf490",
+  "installed_support_sha256": "1a08ef15f149d1cf3c9ec5df6c688669fe86aa237ee2512a7463caf1b74e3d54",
+  "noise_table_shape": [
+    20,
+    18041
+  ],
+  "numpy_version": "2.2.6",
+  "core": "Frozen245corecalls/40steps/4sharedref per capture, inputs/order unchanged. Same before-control/after-step insertion slots on original/rebuilt capture, no frozen source edits.",
+  "measurement": "Initial sample0 initializes gyro sensor and packet/history; subsequent fresh existing sensor evaluations receive one measurement-indexed noise addition. Nom reads preceding latest sample, while original after stores current fresh sample into existing delayed packet; sensor evaluation never advanced. alpha1 primes only controller gyrostate8 to its already available sample.",
+  "qualification": "Four20-world constructor/capture/original-control/synthetic sensor cases, original-clean input/control output exact no-op, alpha output/noise-carry/packet checks. Supplemental synthetic terminal/auto-reset/sample0/repeatdone/reset checks. CPU force/pose contract inherited unchanged; no live integration data claimed.",
+  "limits": "Registered20cases delay0 only. Tests do not certify arbitrary delayed noisy sensing,120 trajectory completeness, causal performance or safety. Reuse is source/no-op qualification, not concurrent or bitwise trajectory comparison. Gaussian std0.02rad/s is synthetic sensitivity, not hardware calibrated.",
+  "partial": "Owned full-recorder and gyro-chunk/frozen buffers exposed for177 interruption preservation; current120 runner not yet frozen.",
+  "new_evaluations": 0,
+  "training_updates": 0,
+  "next": "177 freeze unique120runner/noise/consumption and execute.178 original complete-gate paired analysis.180 deep review/cleanup. Full method contribution/formal5seeds/fresh independent generalization/new manuscript remain open."
+}
