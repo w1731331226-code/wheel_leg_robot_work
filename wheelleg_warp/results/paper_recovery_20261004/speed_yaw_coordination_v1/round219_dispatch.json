@@ -1,0 +1,20 @@
+{
+  "verified": true,
+  "unit": "wheelleg-coordination-qualification-v1.service",
+  "lock_holder_pid": 283051,
+  "worker_pid": 283052,
+  "unit_snapshot": "MainPID=283051\nResult=success\nExecMainStatus=0\nSubState=running\n",
+  "progress_snapshot": {
+    "status": "evaluating",
+    "condition": "B0",
+    "panel": "regular",
+    "batch": 0,
+    "reserved_evaluations": 20,
+    "completed_evaluations": 0,
+    "first_episodes_saved": 0,
+    "first_physics_steps": 200000
+  },
+  "runner_contract_sha256": "4cde46286f9bba47422478ad8a036773396e4c767f8a97c9c5c0c0c06c815a2a",
+  "training_updates": 0,
+  "full492_complete": false
+}

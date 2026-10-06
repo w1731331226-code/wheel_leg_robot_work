@@ -1,5 +1,7 @@
 # 双轮腿机器人PPO论文方案
 
+第219轮actualdispatch：lock-holder283051/child283052已活跃，首B0/regular batch0 reserved20/completed0启动快照由round219_dispatch/progress保存；全492仍未完成，0learning，无局部方法判定。后续观察同handle，220如期深审清理；guard恢复active等worker锁，新raw不半commit。
+
 第219轮完整492解析资格队列冻结（2026-10-07）：
 
 run_coordination_qualification复用原route_pilot_env评价/RouteState和B0零反馈参数，原3D全零请求通过zero6映射为virtual6零请求（39输入不加信息），只构建阶段接coordination_probe。三个条件固定B0→Bomega→Cgamma，每条件全regular96/controlled40/legacy28，同solver≤20worlds分组、恢复globalindices，总492第一回合、0learning；独立目录/source/parents/proxy/hardware与CPU及强phase参考SHA绑定，fixedrunner任何input变化拒绝。
