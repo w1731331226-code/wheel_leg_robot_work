@@ -1,5 +1,21 @@
 # 双轮腿机器人PPO论文方案
 
+第160轮方向深审、数据解释补验与清理（2026-10-06，下一165，goal active）：
+
+**方向是否值得继续。** 156–159完成2448首回合GPU评价（同136发展case重复，记录36496976首回合子步，非全部autoreset仿真工作量）、0新学习，两个unit正常终态且payload/source/unit/model/RMS契约和原门核过。当前hip-coupling恢复及component-wheel小幅收益分支明确closed，不追加gain/weight/budget或五seed。学习方向仍有8低高度V6原判据见证，但整体强优势失败、5案例无已观察成功；这些支持进一步验证实际控制方式，不支持casewise oracle、已完成创新或直接长PPO。
+
+**方法是否得当。** 事前有限预算/原门/失败保留/显式buffer持有/接受量和时间层分清的方法保持。原判据的reduce_contacts只按几何候选设置legacy/terrain位，没有normal force正值/顶面载荷或完整轮路径条件；legacy compiled bump盒size=[.25,.035,height/2]，宽70mm。已有success只能按原判据解释，尚不能由单个触碰位断言完整加载越障，也不能未经数据断言绕边/跳过。Nom边界roll-reference room已实读：.115≈.296mm、.38=0，不给动态失败直接定因。旧trace_failure_chain.RecordedEnv会把diag重建为21维并重新捕获图，不含当前shared-reference更新；不能直接用于当前38维/49源基线。仅复用其纯接触力函数/速度函数并核当前接口，不复用旧ownerless采集器。
+
+**补什么实验及为何。** 只登记task_mode_witness_v1：完整controlled40（含easy中高度、两侧双向/10与20mm）+唯一未解决regular mixed6300092=41已见case，全部3个V6末200k frozen models及B0/B1-route两个固定经典，共205首回合、0training，目前source未准入/0执行。选择按整个controlled组及唯一未解决mixed公开规则，不选赢家seed/丢失败；41×5不是205独立case、5控制器不是5训练seed。
+
+记录实际passive-chain轮中心、真实geometry/candidate contact/positive solver normal force及其时间层、路径/飞行/间隙证据，另记固定height/desired-clipped roll reference、raw和accepted Nom wheel common/diff、filtered/accepted/actual request。完整episode50Hz，目标geometry纵向范围±.20m内2kHz，按geometry/x/time取样，不按force/y/success裁剪绕边轨迹。当前true position/force/terrain只作eval，绝不进Actor/Critic/controller。保留原Native图/diag/shared-reference/动作/奖励/观测，不改原contact success；source/geometry/force接口/只读输入/owners/terminal/RMS资格后唯一队列，所有old-to-replay状态变化都保留，不称跨GPU bitwise。
+
+163必须就实际方式和数据充分性作去留：原成功可能是加载经过/边缘路径/腾空或混合、也可能证据不足，均不自动判作弊或修改旧success。只有几何/路径/载荷证据支持相应主张；若需更严格的traversal任务，另行明确protocol并保留旧结果。再按所得事实选择一个共同reference可行性或受控authority假设，不自动Nom/commonheight修复或newPPO；不足/接口不合格就停止本诊断，无样本/阈值/预算扫描。161最小source准入、162执行、163决定、164有依据的具体后续、165深审清理。
+
+**清理。** 删除3份git忽略/fuser无人使用且完整code-object与instruction byte和源码编译一致的pyc，共26513B。初轮marshal序列化字节检查失败、删除前改用完整代码等价验收，不因此认定源/缓存损坏。round160_cleanup保全部source/cache SHA，缓存可再生不称永久节省。src/models/RMS/raw trajectories/独有失败/provenance/封存与CPU-GPU基准全部保留。
+
+round160_direction_review绑定156/158closures与reviews、159物理参考/任务审计、原学习门和新proposal/cleanup；全核心纯仿真目标仍active：具体新贡献、稳定强经典学习优势、正式5seed/关键消融、新独立ID/组合/参数-延迟OOD/易任务、端到端成本与完整新稿仍缺，不以负材料或新的诊断数量替代完成。
+
 第159轮共享任务可改善空间与参考约束核对（2026-10-06，goal active）：
 
 audit_shared_task_opportunity.py复用原flags与load_rows，对主study/zero/classic和逐轮研究全部60panels4080评价按同136case/scenario重建success及失败flag，不采新评价/学习；所有source/input SHA核过。四类分类unit通过，Nom实际5world构图/reset取参考数组，环境记录计数/time保持0；不把构图内部CPU名义设计求解计入或声称总计算为0。

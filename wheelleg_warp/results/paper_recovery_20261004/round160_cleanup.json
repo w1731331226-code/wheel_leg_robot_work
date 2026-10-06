@@ -1,0 +1,38 @@
+{
+  "round": 160,
+  "deleted": [
+    {
+      "path": "wheelleg_warp/__pycache__/gpu_wheel_component.cpython-310.pyc",
+      "bytes": 12812,
+      "cache_sha256": "aa757458573687ffa1bc5839033af27a875f29fa5b153f7804ef8a44bad89b5d",
+      "source": "wheelleg_warp/gpu_wheel_component.py",
+      "source_sha256": "dd26ac84113c9512d11033ce20940bb746a17b8866bcfe5e423b5a76faeaebf8",
+      "compiled_code_equal": true,
+      "code_bytes_equal": true,
+      "open_handles": false
+    },
+    {
+      "path": "wheelleg_warp/__pycache__/wheel_component_projection.cpython-310.pyc",
+      "bytes": 3506,
+      "cache_sha256": "b2a62eb9acac98d1118da906187f2ba76b0ffdaeb10cc2e46fd05af8928b2fce",
+      "source": "wheelleg_warp/wheel_component_projection.py",
+      "source_sha256": "e1252377cf6e1bf1dce4fe6d0f33f0ec02c0dafe8d24420963dd3cec2d889dae",
+      "compiled_code_equal": true,
+      "code_bytes_equal": true,
+      "open_handles": false
+    },
+    {
+      "path": "wheelleg_warp/__pycache__/score_reference_learning.cpython-310.pyc",
+      "bytes": 10195,
+      "cache_sha256": "4755486b300a3223a0ecd130be8f9a008ffe8ce0c69b78540b42df2853ba1164",
+      "source": "wheelleg_warp/score_reference_learning.py",
+      "source_sha256": "81b93a487923b480871406405b6661c1246c2b2b3a70f88df1dcfb9c4c66325e",
+      "compiled_code_equal": true,
+      "code_bytes_equal": true,
+      "open_handles": false
+    }
+  ],
+  "bytes_removed": 26513,
+  "verification": "Initial marshal-byte comparison failed before deletion; final compiled code-object and instruction-byte equality passed. Serialization bytes are not used as semantic evidence.",
+  "retained": "All source/model/RMS/raw trajectories, unique failures, provenance and sealed tests retained. Bytecode is regenerable, not permanent storage saving."
+}

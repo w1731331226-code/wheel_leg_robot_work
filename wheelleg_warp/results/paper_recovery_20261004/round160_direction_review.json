@@ -1,0 +1,63 @@
+{
+  "round": 160,
+  "period": [
+    156,
+    160
+  ],
+  "previous_goal_turn": "progress",
+  "goal_status": "active",
+  "next_review_round": 165,
+  "evidence": {
+    "wheelleg_warp/results/paper_recovery_20261004/round159_shared_task_opportunity.json": "6cc9b5a2076265be8fd4a3afb3c45d2e735a9394f50fda0ab67ebc4c96f199cc",
+    "wheelleg_warp/results/paper_recovery_20261004/wheel_headroom_attribution_v1/round156_closure.json": "c10744c22ab4fc38c77d0fe7c5bb435362fe72967901c314ba03bd709eaa98bf",
+    "wheelleg_warp/results/paper_recovery_20261004/wheel_headroom_attribution_v1/review.json": "99f24376f16cf99763b3bb8afdff120e9d0ac730b6592382ea4e7403b6479293",
+    "wheelleg_warp/results/paper_recovery_20261004/wheel_component_projection_v1/round158_closure.json": "0030b5a937d0af9cb01cd4ffbc7f63977e73442b0b4028863caf99e4e1ee42f4",
+    "wheelleg_warp/results/paper_recovery_20261004/wheel_component_projection_v1/review.json": "94d96d88bbe3ccdfba4c08a777b7a152a77b6fe4c2894ec22937c3f0f8dc1c3c",
+    "wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/study_gate_review.json": "a5cdb8766fd2a62c4e1e631b5520932970dae0a620fcc9dfb79904ab1e47de2d"
+  },
+  "completed_in_period": {
+    "captured_GPU_evaluations": 2448,
+    "unique_reused_development_cases": 136,
+    "recorded_first_episode_physical_substeps": 36496976,
+    "new_learning_updates": 0,
+    "units_terminal": true
+  },
+  "direction_review": [
+    {
+      "branch": "Hip coupling recovery and within-wheel component clipping",
+      "state": "closed",
+      "reason": "Hip loss identically zero in registered diagnostic; component screen failed strong-reference nondegradation and frozen-leg utility. Small yaw gains do not justify another gain/weight/budget sweep."
+    },
+    {
+      "branch": "Learning utility on current asymmetric-contact tasks",
+      "state": "unresolved with specific witnesses",
+      "reason": "8 low-height original-predicate victories only from inspected V6, despite poor whole-policy results; no casewise oracle or authority-only attribution.5 cases have no inspected success, not unreachable proof."
+    },
+    {
+      "branch": "Task interpretation and shared-Nom endpoint reference",
+      "state": "one bounded physical witness diagnostic justified",
+      "reason": "Collision-candidate bits ignore positive load and complete path.70mm legacy lane permits different routes; Nom symmetric reference room at.115≈.296mm/.38=0 is verified but not failure causality. Need actual paths/contact modes before Nom repair or new learning."
+    },
+    {
+      "branch": "Harder scenes/new networks/reward/long PPO",
+      "state": "not admitted",
+      "reason": "Current old-method superiority and fresh-independent qualification missing. Preserve original full5seed/generalization/manuscript goal, do not accumulate same-case count as proof."
+    }
+  ],
+  "method_review": "Finite registered interventions, original failed gates, source/model/normalizer contracts and strong owners were respected. Source/field/aggregate verifiers are not independent full raw physics reconstruction. Task contact bits and interpretation need physical evidence; existing pure contact-force helper may be reused but old RecordedEnv drops current graph/diag/shared-reference behavior.",
+  "next_experiment_sha256": "100bb876533813bb370676bd4a77eab31cbace3bf63daf0a3e432d6423609805",
+  "next_experiment_budget": {
+    "captured_first_episode_evaluations": 205,
+    "training_steps": 0,
+    "source_admitted": false,
+    "executed": 0
+  },
+  "cleanup_sha256": "1bc53e45665e2bda0f5b38af0f97018c5bd49d459b508da0223334caf6691abd",
+  "scientific_gaps": [
+    "New specific method contribution and strong-classical learning advantage unproved",
+    "Fresh independent ID/composition/parameter-delay OOD and easy-task retention not admitted",
+    "Conditional formal5 independent training seeds, mechanism ablations, end-to-end wall time and full new manuscript/reproducibility still required"
+  ],
+  "stop_rule": "One205-case queue after source admission. On insufficient evidence/interface failure, preserve and stop, no sample/gain/threshold/budget sweep.163 must decide task-claim qualification and whether a specific shared-reference/authority hypothesis merits registration. No automatic PPO, metric change or Nom repair.",
+  "entire_goal_complete": false
+}
