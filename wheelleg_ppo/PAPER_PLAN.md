@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第207轮首对新匹配模型完整对象复核（2026-10-07，原队列继续）：
+
+同原worker151791/start/nointerruption。1991/plain和anchored均200k/400epochs/8000Adam及209fixedfinaleval完成，十checkpoint/arm模型RMShash和保存state/reference/route/RNG不变记录核；209场景原globalindices/task/physical/design/summary、881trace/arm hash及source/manifest核。首pair初weightSHA/worldSHA严格同，engineering不warmstart，无新运行/丢弃/改门或预算。
+
+累计独立审查400k训练、418评价、1762trajectoryfiles：plain compressed1989276277B、firstphysics3014746/contact5997582；anchored2006190862B、3017422/contact6004321。Counts仅第一seed：plain regular36/96-design93、ctrl22/40-design36、legacy16/28-design28、aux33/45-design39；anchored regular90/96-design91、ctrl29/40-design37、legacy27/28-design28、aux40/45-design43，physical每panel全部过。成功增加与regular设计更多失败同时保留；尚不可据一seed选赢家/优势或formal5，也不把当前candidate的未全门数据称已通过经典/旧28标准。
+
+completed_collection_audit作为后续持续更新完成对象入口，记录完整pair/run文件及source/reference hash、所有原results、当时liveprogress；不覆盖旧round206单run证据。当前next1992/plain也已200k训练，开始固定末评价（snapshot trainedtotal600k、fullycompleted2run），后续实时以main_progress为准。保持sixrun1.2M和1254全末评价，工程24k单列，no新training/evaluation预算/learner/scans。
+
+完整raw暂留immutable本地，不在alive训练计时期间并发git大打包；source/审查小文档同步、activeguard等待project-write.lock，运行outputs不称clean或全量远端。208继续同livehandle观察；只有actualterminal且全部6run/1254/source-modelRMS-raw/delivery/PPOwall齐才原primary/mean/mechanism/legacy/aux/allseed闭合，当前阶段不做gate的成功判定。209依原gate决定candidate去留/新independent资格，不rescale/reference/预算救分；210按约深审清理。整个可辩护新method/strongmatchedcontrol+keyablation/new3→formal5/freshID组合geometry参数-delayOOD易任务/层级统计和GPU PPO真实end-to-end/推导失败复现新稿6出口仍未齐，goal active。
+
 第206轮首个完整新学习run对象审查（2026-10-07，原主队列继续）：
 
 观察原MainPID151791/start，plain/1991已完整200k/400epoch/8000Adam及209末评价，按frozen evaljobs与globalindices检查旧fulltask/physical/design/summary、每checkpoint model-RMS SHA/saving invariants、所有881 full/gyro/role/phase/auxforce轨迹SHA、原scene/数量完整通过；first-evalphysics3014746/contact5997582，compressed881trace1989276277B。对单model已有完整交付，不等于全1.2M/1254或三seed方法结论。
