@@ -1,5 +1,17 @@
 # 双轮腿机器人PPO论文方案
 
+第189轮设计穿越证据与保护契约核对完成（2026-10-07，目标继续）：
+
+audit_floor_design_crossing只读两law的6300085完整pre/post与role轨迹，核源契约/结果/NPZ SHA、CPU编译的关节索引和物理范围、密集step及跨步q/v连续、重建逐步design_margin与最终最差指标一致；区间首尾布尔自检通过。模型仅CPU编译读索引/范围，无forward/积分/新增回合/训练。原比较仅有保存summary，不能虚构原控制器dense轨迹或配对发生时刻。
+
+候选两law最差关节均betaR（qpos15）：B0 -1.4035043716430664rad，设计margin -0.003504371643066495rad（超约0.200786deg），违规step9855–10138，即post4.9275–5.069s共284sample/0.142s；B1-route -1.4033582210540771rad、margin -0.0033582210540772373rad（约0.192412deg），step9859–10136、post4.9295–5.068s共278sample/0.139s。设计±1.4严格门不松，物理±1.5仍通过；超出约2.8–2.9万float32 ULP，不能作为单纯舍入噪声丢弃，但也不声称已排除全部求解器/离散误差。
+
+最后目标地形法向加载在solver pre-layer记录post标签4.301/4.3005s，arrival4.5205/4.5200s；设计违规始于arrival后停车阶段，违规期间目标normal最大0，最差时speed_command0而vx约0.402m/s。候选role guard_lower全程.115、requested/applied全程0；最差时两腿实际长度约.12643m，径向长度合格，瞬时髋命令约1.286Nm。原summary min设计margin+.0039995/+.0042125、guard appliedmax146.905/146.698N；只作为原门成功对比，不将历史最大保护力唯一归因该时刻或视为dense反事实。
+
+源码契约：project_leg_angle约束目标腿长下静态姿态，并非实际q/qdot的不变性保证；radial_guard基于腿长/腿速及外推惯量、力矩余量，没有直接动态主动关节±1.4边界。于是静态参考可行、径向工作下限和力矩限幅不足以证明整个动态轨迹设计合规。fixedfloor广域晋升仍拒绝，baseline与模型/RMS/原标签/所有门不改；不能以工程反例自动证明新算法或学习必要。
+
+round189_design_crossing保存逐关节违规计数、首个/最差/恢复事件、完整输入SHA与限制；design_crossing.log记录实际完成。190须按约深审本周期：是否有可检验的动态设计合规/性能协调缺口及必要有限补验，或应换有区别性预测的方法方向；不先继续floor/gain扫描/盲PPO，确认冗余后清理。方法贡献、3→5训练seed/强对照消融、新独立泛化/统计成本/新稿完整目标仍未完成。
+
 第188轮全门配对与CPU历史校对完成（2026-10-07，目标继续）：
 
 review_floor_broad_qualification恢复小batch及复用记录的注册场景顺序，重复/缺失索引自检通过，核31个输入SHA与源、completion、round187_data_review绑定。仅分析既有656比较/164旧发展回归IDs，新增物理回合与训练更新均0，不改原成功标签或任何门限。
