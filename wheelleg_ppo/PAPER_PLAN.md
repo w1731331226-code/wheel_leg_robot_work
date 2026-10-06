@@ -1,5 +1,11 @@
 # 双轮腿机器人PPO论文方案
 
+第197轮同暴露225回合唯一队列启动（2026-10-07，采集进行中）：
+
+run_equal_exposure_recovery冻结15个按45原ID/indices拆的≤20同solver job、五固定控制器及225总预算（200pulse+25zero），src60/API四文件/profile/proposal/unit和三zip/RMS再核。复用full/gyro/role/phase检查，增force实际提交/期望delivery检查；五stream10份prefix/last合成保存通过，runner_partial_unit绑定最终manifest。新flat辅助task没有旧paired trajectory，schema/phys检查复用但不把self check的“无旧label差”冒充nondeg。三modeldeterministic CUDA推理前后weight/timesteps/updates及evaluator RMS固定，0learning/reuse。
+
+唯一unit wheelleg-equal-exposure-recovery-v1持project-write.lock，03:54:01CST开始，实见PID115426/start，当前首B0采集进行中；尚须225完整/所有失败及不完整delivery保留、五stream/统计/源/真实terminal核，不能先判恢复优势。198全部paired/delivery/zero-context原门，199具体机制matchedlearning，200深审清理，完整论文目标继续未齐。
+
 第196轮同暴露注入源码及六维接口资格完成（2026-10-07，目标继续）：
 
 equal_exposure_probe复用phase_support和原full/gyro/role/phase采集，不改默认controller/env/model。仅在rolefinish（本次control后）与mjw.step前set_wrench，对root bodyCOM worldZ purecouple，时钟为现substep integer5000–5199（pre2.5–2.5995s）；清其余所有body wrench，使用冻结rawfull及一次float32量化，12列force日志记录原desired/实际submitted六分量。pulse/index/clock不进Actor/Critic/Nom观测；物理反应后的原IMU/编码器仍可因果观测。
