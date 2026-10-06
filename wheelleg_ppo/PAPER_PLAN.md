@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第202轮锚定高斯policy静态/概率/梯度资格完成（2026-10-07，目标继续）：
+
+nominal_mean_policy仅扩展SB3 MlpExtractor：同shared39 Actor做current/ref两forward，latent=h_current−eta·h_ref；Critic仅current39。原SB3 DiagGaussian采样/forward/getdistribution/evaluateactions/predict/value/entropy路径不复制，biasfree Linear W将latent差映射为声明mean（Wcurrent−etaWref为代数等价，fp独立形式close核），移除最后bias并重建optimizer所有权、初始化W0。Plain/anchored同13895参数、same seed/state_dict/value/logstd/初始mean及相同随机样本与logprob逐值，rawGaussian仍在原envclip链前，不旧postmask减动作。
+
+测试使用128组随机78inputs与包含±1.4 rawactions的独立Gaussian logdensity/entropy公式，max logprob差7.62939e−6/3.81470e−6在float32容差内，旧logprob重算ratio1 exact；forward采样/evaluate与value paths一致。使用非零synthetic输出weights而非训练，samepoint mean exact0、Critic对ref变化exact不变，anchor ref输入梯度非0而plain为0，sharedweights reference梯度不detach。一个权重的自动梯度−.64435112与central finite difference−.64468384吻合；optimizer参数集合等live全部、无孤立deletedbias。没有optimizer.step/PPO.learn或真实task step。
+
+独立policy save/load两eta weights/logprob/结构逐值，PPO容器也可保存重载eta=1/78space/mean/0timesteps/0updates/空Adam。NoStepEnv显式禁止step，验证非环境rollout，syntheticweights不是新trainedpolicy不入结果选择。policyunit绑定installed SB3 policies/distributions/torch_layers，本机继承版本而非凭文档猜行为；sampleGaussian探索不zero/命令slew不立即zero、point参考非dynamic安全等限制不变。
+
+policy_source_contract将201 environment源与新policy/test共64源、proposal/两unit及SB3绑定，environment与staticpolicy阶段过，允许203冻结已登记separate24k工程；当前工程runner尚未freeze，main1.2M仍未准入。203必须实际CUDA gradients/Adam/RMS、每2kweight-optimizer-normalization reload、continuous episode/stage/reference/终态复核，工程不warmstart main或当方法优势。204仅工程全过才六mainrun/1254evaluation队列冻结；205深审清理。当前0optimizer update/learning/task评价，无控制/physics/baseline/RMS/oldmodels/labels/final更换，完整论文6出口仍未齐。
+
 第201轮环境/归一化/轻量phase source阶段完成（2026-10-07，目标继续）：
 
 nominal_reference_env分为raw参考缓存与normalized pair：RouteState真实raw39先计算R和raw terminal R，VecNormalize仅实际39更新一套RMS，外层同stats/clip拼current39+reference39。参考查询不更新RMS；done用旧terminal rawref与newcurrent rawref分别形成78，不把新stage当旧terminal。Scripted异步height切换、RMS mean/var/count与actual-only RunningMeanStd逐值相同、shared12context、reward/action不改、clipping无法恢复height但cache仍正确、normalization39保存到新wrapper重载逐值过；standalone模块import/bootstrap回归也过。
