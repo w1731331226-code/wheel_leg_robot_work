@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第212轮固定78科学评价队列冻结（2026-10-07）：
+
+run_parking_withdrawal复用原nominal_mean_evaluation的deterministic预测、39RMS/paired78、模型与RMS不变验收、完整full/gyro/role/phase记录和原任务旗标，仅在构建阶段临时接入已准入parking probe，finally恢复factory。固定1991→1992→1993，每seed original→parking_request_withdrawal，同13case/solver100、末200k模型/RMS，六jobs×13=78首回合，0learning。独立parking_withdrawal_v1/runner_contract绑定source/admission/210/211/原runtime/model/RMS及明确比较规则，source静态packet准入不误称bitwise trajectory校对。
+
+runner独立流读取自检通过：两个条件各合成3row、负运动指令、slew结果使用独立给定的.01/.02/.03或.01验证，parking/phase step-command及complete47:53实际filter字段对齐，人为跨流破坏必须拒绝；检查六job/78矩阵，0科学评价消耗。真实执行每batch保存第一回合完整与新增parking流、hash和modelRMS只读证明；新原始回放对旧主study的fullflags差异单列、不丢弃重跑，因果评价仅使用本轮新original/withdrawal配对，并在213逐case检查退出触发前精确prefix。若prefix不一致则限制该case因果主张，不事后调容差；所有差异仍保留、无新增budget。runner保reserve/completed/partial所有流及model state hash，无implicit resume。
+
+78物理评价仅此一次，用于停车交接机制，不当新训练seed/新独立泛化或关闭候选的救分；formal5和全method-benefit保持未准入。完成源与parser资格后将启动wheelleg-parking-withdrawal-v1.service独占project-write.lock队列，实际活跃句柄和progress/completion为执行证据，本文冻结本身不证明78已经完成。213完整配对机理审查、214据结果形成可区分运动/动态可行域方向，215深审清理与完整论文六出口保持。
+
+前七批旧1.2M/1254原始文件已push，旧归档父243099在最后push后协调停住；本轮提交后让归档包装器先完成记忆收尾与远程核对、释放锁，再启动78 worker，避免两worker及guard并行写。新科学运行输出进行中不半提交、不称clean或全新数据同步。
+
 第211轮停车残差退出源与静态接口资格完成（2026-10-07）：
 
 parking_withdrawal_probe在原phase记录/当前command生成之后、原controller filter之前复制六维请求到独立effective buffer；仅seen非零公开指令且当前exactcmd0时复制为0。原targets、controller/phase/gyro/物理/奖励/39输入源码不改，原16:22滤波状态保留，不硬清电机输出。实际原filter是0.5ms一次、delta限幅±0.01的slew limiter；新30列日志记录currentcmd/latch/原请求/effective/滤波前后/控制错误，检查有效请求和原filter更新。原条件经过同一个复制与记录路径，无请求门控，避免两条件采集差异。
