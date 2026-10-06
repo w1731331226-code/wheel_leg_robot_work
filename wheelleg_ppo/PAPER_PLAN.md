@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第221轮完整B0交付与原参考保持复核（2026-10-07）：
+
+原worker同283051/283052实见活跃，无interruption，不重启/改变frozen source。B0全164 firstepisodes已完成：reg96/96、ctrl32/40、legacy28/28，phy/design各完整panel全过，oldB0 fullflag变化0；CPU历史28速度1.05+.005/rollpitch+.1及完整任务全部过。20/20/20/20/16、20/20、20/7/1原globalindices、source/ref/geometry/result及820份five-stream SHA复核，1,527,116,914B，step/contact计数与原worker verifier绑定，round221_B0_delivery记录证据/源contracts/旧CPUsha/实时队列。
+
+Bomega/Cgamma整体qualification未齐，当前progress从Bomega regbatch1 checked184推进至batch2 reserved224/completed204（各时点以liveprogress为准）。完整B0准入只证明当前参考重放保持，不是candidate主门/机制/novelty/学习优势。大raw在worker活跃期间不并行git打包争夺eval计时，local完整保留，审查source小文件先sync，guardactive等workerlock，worktree进行中不clean/全data远端。
+
+222观察原句柄实际terminal再核完整492+全部原gates/模型信息/预算/五流与CPUpaired；未terminal只verifiedwait，不timeout重启/选winner。223固定候选及Bomega-vsCgamma必要性，224资格后才有区别性学习必要与新matchedfreshprotocol，否则关闭固定候选不gain/γtime常数救分；225深审清理如期。0newphysics/learning，全论文六出口仍未齐。
+
 第220轮五轮方向深审、原队列消费与冗余清理（2026-10-07）：
 
 216–219的raw39/proxy时序与负对照、217固定解析公式/条件化rank和假设、218影子motion/integral/tilt一致及同Nom权限/CPU-CUDA静态/包保持/合成reset-terminal、219完整492/source/indices/gates绑定重核。容量非netheadroom/真实support，gamma是heuristic而非稳定性或新颖性证明；实际public状态不替换，影子请求会被同1Nm/L1池clip，不能把日志vref当已实现速度。完整资格值得继续，当前不另开实验/学习、不可按局部results选winner或改pole/gain/threshold。
