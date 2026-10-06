@@ -1,0 +1,8 @@
+{
+  "error": "CPU expression expected exact zero at step2000; frozen GPU command_step FMA yields ~2e-17 nonzero",
+  "recovery": "Only mathematical CPU expectation uses arithmetic tolerance. Candidate trigger remains exact command==0; actual controller-command/log/branch equality stays exact.",
+  "candidate_source_unchanged": true,
+  "source_sha256": "0cd7226a44054701f4c4a728f5a526d35e4f8cc4d29954beac0ed18d7a10e033",
+  "new_physics_evaluations": 0,
+  "training_updates": 0
+}

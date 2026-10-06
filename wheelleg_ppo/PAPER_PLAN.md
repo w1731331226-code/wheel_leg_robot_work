@@ -1,5 +1,17 @@
 # 双轮腿机器人PPO论文方案
 
+第191轮启停保护源码及复用资格完成（2026-10-07，目标继续）：
+
+phase_support_probe复用已冻结reference_role_control的optional ref15及clean broad/full/gyro/role采集；不再复制控制函数，不改原controller/environment/model。新增select_anchor只在phase arm按实际当前command==0取min原trackingmean/.160、否则.115，并同步实际role anchor与6列phase日志（valid/step/currentcommand/zero/trackingmean/floor）。零指令含启动和到达后，正负及±1e-12非零均严格运动分支，无phaseflag/contacttruth/future/case输入。角色mode0的原checker仍检查mean/虚拟force不变量，phase checker另外核动态anchor；ref10–14 padding0不误开arrival/parking。
+
+真实graph捕获逐子步command_step→prepare/select→control事件及指令/实际ref指针核，两次40调用序列相同、原245core/40physics/4sharedref保持。164登记case的两arm共328静态world/20同solver≤20组，2624原/phase与原controller或fixedfloor分支输出state/diag/ctrl逐值一致；phase±5/0deg合成roll、0/±1/±1e-12指令，prepare原输入不变，髋/轮命令边界通过。当前command_step的启动/爬升/到达后边界、328合成after延迟packet与41history/allterrain/namedID、inactive/reset/global恢复通过。构造/线性化与静态查询不当新增评价回合或实测动态性能。
+
+首次边界自检把GPU step2000的命令与CPU数学零要求逐值一致而失败；原GPU FMA在数学1秒边界留下最大2.0816681711721685e-17非零，164case该时刻全部走非零分支。保留initial_boundary_assertion.log/pre-fix测试/恢复说明；仅CPU算术对照容差修正，实际command日志与分支仍exact、candidate源及触发规则未改，不用epsilon救分。全资格重跑通过，source_contract绑定58源与unit；这是自检期失败，0新增任务评价/训练。
+
+两份named/numeric合成3步startup→negative motion→stop fixture核四stream首次terminal冻结、重复done不重复、reset清ownedbuffer/chunk；phase partial prefix与lastbuffer保留helper通过。完整数据采集与真实switch瞬变仍未执行。656复用结果共30文件SHA/场景原顺序/原task、physical/design/summary重建过；复用只source/noop/evaluator资格，不宣称bitwise轨迹或新独立测试。已核installed forward/support API继承原clean资格、noise0容量65537超过实际constructor deadline；admission_review允许唯一328 scope，source/runner预算与门不变。
+
+192仍须冻结唯一328runner及full/gyro/role/phase中断消耗保存，再执行；193原全门/5unique收益保持/CPU历史校对与切换瞬变去留，194有区别性的主方法/学习必要对照，195深审清理。本轮0新增任务评价/learning，未启动328队列或PPO，原CPU/GPU/model/RMS/final/失败完整保留；source qualified不是工程收益/新算法/动态安全或整篇论文目标完成。
+
 第190轮方向深审与确认冗余清理（2026-10-07，下一195，目标继续）：
 
 **方向与方法。** 186–189源契约/准入/344completion/配对/穿越报告及输入绑定核过，全部1032新full/gyro/role轨迹SHA再核，共3161012934B；worker MainPID0/SubStateexited/Resultsuccess/exit0。344new+312reuse为656比较/164已用发展回归ID，0学习，不能称独立泛化或训练种子。固定floor全域晋升关闭，alpha1/combinedpair保持关闭；常规均值改善不能掩盖lost6300085的design违规。逐case/分轴/源no-op/完整失败与严格物理设计门的方法保留，继续盲PPO或扩极端地形不值得。
