@@ -1,5 +1,21 @@
 # 双轮腿机器人PPO论文方案
 
+第199轮条件名义参考残差均值候选与匹配学习草案（2026-10-07，目标继续）：
+
+不续旧fixed-transfer/profile/gain救分。nominal_packet_reference只从原raw39的公开command[9]/height-.3[11]与固定几何构造upright symmetric IK参考、vx/wheelspeed目标，清physical/route误差；两查询保留相同的accepted residual[26:32]与currentownrequest[32:38]十二维上下文。这样零物理误差不要求请求记忆已经0，避免单凭owncontext维持恒定均值。finite/height domain/input只读/idempotent及randomcontext保持自检过；只kinematic reference，不是powered/contact平衡或动态安全集。
+
+旧三网络在五高度×三command(0/.4/.8)共45合成参考包静态推理（无新增world轨迹），原model/RMS SHA/weights/steps/updates不变。maxabsolute rawGaussian mean .320341/.311424/.453711，maxabsolutewheel differentialmean .231061/.216582/.328782；两次同reference、相同归一化与同网络mean相减逐值0。这支持检验名义偏置，但不证明真实onpolicy包位于该流形、offset唯一导致实际yaw，不能把这个静态代数说成全局稳定/零tracking误差。
+
+候选mu_eta(o)=gθ(N(o))−eta·gθ(N(R(o)))，eta0 plain/eta1 anchored，Normal(mu,diag exp(2logstd))及原环境clip/slew/currentJ/物理设计输出链保持。仅deterministicmean零，训练Gaussian探索不零、filtered动作记忆也不瞬时零；条件下请求记忆约100子步衰减不当机器人闭环证明。r查询publicavailable delayedcommand/height和samecontext，不读currenttruth/pulse/contactlabels。
+
+nominal_mean_matched_learning_v1/method_draft提出真正从头匹配学习（未准入）：两arm相同g39共享MLP/6输出、同criticcurrent39、两forward计算、actor最后bias均移除、输出weights0确保初始mean/distribution完全一致；同std/seed/world/RMS/PPO/奖励预算，g_ref参与sampling/logprob/evaluate_actions/entropy/KL与梯度，不能在旧PPO输出后减动作冒充匹配学习。prospective78仅current39+确定性derived39存储，reference不加Critic特权；一套39RMS仅实际obs更新，同时同RMS/clip处理current/ref，不独立78RMS或ref更新，否则破坏zero性质。rawterminal参考和sameStats终态处理需源码验收。
+
+给200审查的draft为两arm×新seed1991/92/93×200k=1.2M policy steps、每100world、原nine-terrain/height/bank/奖励/超参/lifecycle复制两arm共享phaseNom；不训练auxpulse、无旧policy warmstart/replay。当前没有学习预算注册/新policy/trainer或工程source准入。保持当前强classic成功union128/136、原fullaxis/physical/design/controlled≥5pp/Jpsi15%+.05及旧28门，regular经典100%不设再增5pp不可达门；三seed资格后才formal5/独立泛化/消融。具体evaluation/source预算仍200决定。
+
+查新按一轮定向query+两个机构followup：TU Darmstadt Jascha Hellwig 2023作者《Residual Reinforcement Learning with Stable Priors》PDF摘要/章节结构核，已有manifold stablepriors与RRL；UC机构搜索片段有phi(x)-phi(0)controller Eq5.31，直接page JS/robot验证阻塞，仅excerpt非全文，不绕过/穷尽或引用证明。本机不能把均值差分/zero点/PPO/derived信息单独称创新；Normalization-aware movingpublic reference/conditionalmemory与Gaussian一致性只是可检验工程-方法候选，真正贡献仍待同任务matchedlearning和独立证据。文献矩阵/获取记录更新，不重复旧IEEEblocked。
+
+round199_nominal_mean_audit与log绑定静态prototype/model/source，0neweval/training；200深审清理必须决定是否值得这个候选及必要推导/训练准入，不能据旧偏置或同点相减立即长PPO。原source/CPU-GPU/modelsRMS/labels/封存及失败保留，完整6论文出口目标继续未齐。
+
 第198轮同暴露完整门及评分审查完成（2026-10-07，目标继续）：
 
 review_equal_exposure_recovery复用ordered/wrap/load_rows/full_flags/compare/yaw_gate，重建225源结果/原场景顺序、原完整task/physical/design/summary；force/schema/SHA核，对8profiles×5height×5ctrl的200pulse记录逐条重建期望200submitted samples，profile内25个序列float32 SHA完全一致，25zero整个回合提交全0。source/modelRMS、delivery、同applied波形、全部zero5/5与三model物理设计全部过；不是同realizedtrajectory或terrain等价证明。索引/旗标与wavehash改变自检通过，本轮0neweval/training。

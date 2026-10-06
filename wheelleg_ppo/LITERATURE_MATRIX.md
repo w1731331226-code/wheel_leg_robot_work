@@ -1,5 +1,7 @@
 # PPO论文查新矩阵
 
+第199轮名义参考流形候选近邻（2026-10-07）：[Jascha Hellwig《Residual Reinforcement Learning with Stable Priors》TU Darmstadt作者PDF](https://www.ias.informatik.tu-darmstadt.de/uploads/Team/JoaoCarvalho/thesis_jascha_ResidualReinforcementLearningwithStablePriors.pdf)，2023硕士论文，摘要与目录核到manifold stable vector fields作为名义先验、残差及variable impedance/insertion；不是本机wheelleg算法或已复现数值。另[UC机构条目《Certifiable Robot Control under Uncertainty》](https://escholarship.org/uc/item/9s07n7vn)搜索正文片段出现控制器phi(x)-phi(0)形式Eq5.31；直接入口JS/robot验证，未获完整正文，不绕过或据片段套用稳定性证明。零点保持/稳定先验已有研究，普通神经差分、PPO或额外确定性参考不单独声称新颖。本机仅提出共享39RMS、physical/route参考及相同12残差上下文条件的零均值约束，实际贡献仍须匹配新学习、原门及独立验证；当前不准入新长PPO。
+
 第174轮近邻与贡献边界复核（2026-10-06）：[PMLR官方动作空间摘要](https://proceedings.mlr.press/v270/esser25a.html)仍明确轮腿、初始化与策略步间行为；[T-RO作者出版页](https://marco-tognon-robotics.com/content/non-smooth-trajectory-optimization-wheeled-balancing-robots-contact-switches-and-impacts)本轮只提供接触切换/冲击轨迹优化的标题元数据，不当完整方法同构证据，不重试受限IEEE全文。共同/差动轮力矩是已有virtual6权限内的可逆坐标，普通制动、最新可得gyro替代低通或删动作维度均不单独称新算法。当前候选没有可辩护方法区别，不准入长PPO；下一深审先判断强Nom已有20ms滤波是否值得一次受控核对，再决定剩余学习必要性，而非用慢classic制造优势。此非穷尽查新/排他性结论。
 
 第135轮近邻复核（2026-10-05）：官方[PMLR动作表示摘要](https://proceedings.mlr.press/v270/esser25a.html)仍明确包含轮腿、初始化与策略步间行为；[UGent adaptive-bounds摘要](https://biblio.ugent.be/publication/01KVA83TWHK288BDR6SKJF16C6)列状态相关残差边界与双环，2026出版元数据DOI [10.1016/j.engappai.2026.115343](https://doi.org/10.1016/j.engappai.2026.115343)。仅摘要/元数据复核，fulltext仍UGent only；没有重试受限全文或断言完整方法等价。本机新的受控余量/动作表示若实施，仍须说明coupled wheelleg作用与同信息强经典/学习证据，不能用一般自适应边界当新增创新。当前normal-gap plane/corner候选独立覆盖失败停止部署，有限因果诊断不算控制贡献。

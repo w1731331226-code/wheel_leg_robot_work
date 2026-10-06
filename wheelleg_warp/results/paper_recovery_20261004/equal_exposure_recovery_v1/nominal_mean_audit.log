@@ -1,0 +1,6 @@
+/home/wmt/wheel_leg_robot_work/.venv/lib/python3.10/site-packages/stable_baselines3/common/on_policy_algorithm.py:150: UserWarning: You are trying to run PPO on the GPU, but it is primarily intended to run on the CPU when not using a CNN policy (you are using ActorCriticPolicy which should be a MlpPolicy). See https://github.com/DLR-RM/stable-baselines3/issues/1245 for more info. You can pass `device='cpu'` or `export CUDA_VISIBLE_DEVICES=` to force using the CPU.Note: The model will train, but the GPU utilization will be poor and the training might take longer than on CPU.
+  warnings.warn(
+PASS15 public-reference fixtures,45 frozen means/RMS/weights unchanged;0 task evaluations
+V6-1761 maxabsmean 0.32034093141555786 maxabswheeldiff 0.2310606986284256
+V6-1762 maxabsmean 0.31142356991767883 maxabswheeldiff 0.21658161282539368
+V6-1763 maxabsmean 0.4537111520767212 maxabswheeldiff 0.32878169417381287

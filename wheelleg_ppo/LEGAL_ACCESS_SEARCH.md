@@ -1,5 +1,7 @@
 # 第三篇论文合法全文获取续查
 
+第199轮定向访问（2026-10-07）：一轮“residual reinforcement learning/equilibrium/zero at origin”查询后跟进两个机构入口。TU Darmstadt Jascha Hellwig 2023作者PDF可读，83页，仅核封面/摘要/章节结构；不表示已精读全部方法。UC eScholarship条目9s07n7vn搜索片段给出controller difference Eq5.31，直接页面要求JS/robot验证，正文未取得；已记录限制，不换浏览器/重复抓取或据其确认完整理论。来源见LITERATURE_MATRIX最新条目，本轮不访问旧IEEE阻塞全文。
+
 2026-09-17。结论：仍未取得全文；新增已核实作者联系渠道和公开代码线索。下列途径不是全文已经可得的保证，查新状态保持2/3。
 
 ## 目标文献
