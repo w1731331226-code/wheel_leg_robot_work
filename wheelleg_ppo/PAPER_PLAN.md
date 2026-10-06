@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第166轮整轮碰撞几何与证据完整性（2026-10-06，goal active）：
+
+audit_wheel_geometry_evidence.py在原frozen source/proposal对应41case模型上只CPU编译，不mj_step/新rollout/训练。82个wheel_collide_L/R均为ellipsoid（不是sphere/cylinder），halfaxes=[.05,.0275,.05]m，全宽55mm；geom local pos0/quat identity、body链静态quat identity且铰链轴localY、root free body核过。场景质量/drive等不改该geometry。源/contract/hash与compiled参数保留，support函数6项basic/boundary/invalid检查通过。
+
+ellipsoid方向support rho(n)=norm(diag(radii)*R.T*n)。x/z等半轴使localY所有链/轮spin角不改外形，post body Euler可据此推导采样post orientation的支撑投影；不能把post orientation挪到pre-solver force时刻。在中性方向，legacy半道35mm+车轮半宽27.5mm=62.5mm，wheel centre偏55–60mm仍可能有侧缘overlap，与先前positive target接触并不矛盾；projection overlap只是可能性，不是实际接触或完整通过证明。1e−7几何误差/float32/离散时间范围须明确，未给continuous certificate。
+
+现有112列证据checklist：post整轮投影可带rounding假设推导；solver-time exact轮orientation未完整记录（只有pre centre，无pre完整bodyquat/jointstate）；positive target normal/vertical witness有但非friction-inclusive totalforce/非top完整cert；perface/pergeom support duty不足（最大witness省较小并发contact，vertical witness没有单独dist）；mixed event/ground-airborne完整规则未冻结。原task/physical/design/success labels原样保留，当前complete_loaded资格仍unknown。
+
+167写并列操作定义及缺项处理，不先再跑205/更换callback/model、改变旧score或用support断言成功，也不开始PPO/Nomrepair；原primarycontact研究和strictsecondary资格并存、用户taskchoice仍pending。全部具体方法/5seed/消融/独立泛化/cost/新稿goal active，170深审清理。
+
 第165轮方向深审与清理（2026-10-06，下一170，goal active）：
 
 **继续价值。** 161–164的只读接口资格、205实际轨迹与解释、独立necessarygeometry暴露了原contact判据与完整轮道通过主张的差别，推进数据解释与公平协议有价值。旧coupling/component分配微收益及frozenV6晋升保持closed，不追加相同回放、gain/weight/reward/network或PPO预算。13低高度V6成功证据不当新centre/loaded可达性、channel必要或整体优势；oldsuccess仍按原task有效。新完整主张/learning superiority/独立泛化仍未完成，不能缩成负材料或工程就绪结束全goal。
