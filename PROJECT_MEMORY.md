@@ -2,10 +2,12 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：按北大核心纯仿真补充计划执行（2026-10-05，目标active）
+## 当前状态：按北大核心纯仿真补充计划执行（2026-10-06，目标active）
 
 - 用户最新明确目标：按照第113轮纯仿真论文补充计划执行，每五轮深度审查任务方向是否值得继续、方法是否得当及是否需新补充实验，同时删除确认冗余文件。此为新的active目标，第111轮旧材料目标达成不能替代新训练/方法/泛化计划；投稿以北大核心认可范围为目标但不承诺录用。保留原门失败、CPU基准、全部模型和科学失败，不用最终3000选场景调参。
 - 可写就绪出口：可检验研究主张及相对文献贡献明确，控制/可得信息/模型/约束契约正确，强经典和RL同信息同预算/至少3训练seed/新独立测试与压力和非退化证据齐全，机制结论有受控检验，方法推导、结果图表、统计/失败和复现清单足以起草；不保证发表，不以仅负结果摘要或工程短更新替代。第111轮已达到旧材料就绪出口；新目标按第113轮计划补充，需实际机制、核心对照/消融和独立泛化证据，不能用旧ready结束新goal。
+- 第154轮控制上下文/主张收束完成：核主study45源与fixed诊断46源/proposal冻结SHA一致，直接追踪RouteState→LegOnly/LegSteering→VecNormalize→40×control/physics执行；0新physics/learning，仅更新计划/记忆。Actor前32物理量可延迟、6自身请求状态为current、y记忆因果且零起点；Nom及room每0.5ms读当前理想仿真状态，不能把sameActorinfo扩成所有决策层同delay/已验证实机观测。V6与L2仅物理包/路线来源相同，其6requestcontext/动作权限/探索不同。
+- 第154轮决定边界：当前L2分配对照初始函数/world/RMS匹配，训练后不再是固定policy单乘数干预；B1固定wheel辅助与L2权限不同，152冻结旧policy contextshift不等matchedrelearning，globalλ仍耦合接受量。旧room性能/stronggate与旧fixed组合均保持关闭，有限design清理非动态safe/学习必要/创新；153排名审计不定rewardrootcause。155须选择有区别性预测的具体剩余机制或停止无依据增益分支，明确同上下文/时序/权限/固定对照和有限原门后才准入，按约深审清理（下次160）；全贡献/独立泛化/五seed/论文goal仍active，未以文档完成替代。
 - 第153轮既有目标/回报一致性审计完成：audit_reference_objective.py仅读完整主1632eval+408zero对照，case配对/回合policy长度ceil(physics_steps/40)/reward源/报告SHA核过，无新physics/learning。奖励source明确速度exp项、roll/pitch/yaw平方和actualresidual/smooth成本与terminal±10，episode.r是未折扣全部回报，不等于Jpsi/成功率或PPOdiscounted目标；配对中return更高却Jyaw更差的记录及same-success状态分别列，不当独立case/唯一causal比例。
 - 第153轮折扣尺度：原gamma.99/.02s对应e-fold1.98998s，mainfinal轨迹304..481policy transitions（约6.08..9.62s），terminalγ^(L−1)权重min.008033/median.024267/max.047584；仅初态terminal贡献，不能声称bootstrap后果消失、critic失准或据此直接改gamma/reward。没有MCcalibration/真实training advantage重算/奖励干预，当前source/learning gate失败和固定研究closure不改。
 - 第153轮研究资格归纳：工程物理/设计清理有限证据保留，learned强classic增益仍失败、新独立泛化未准入、主贡献未成立，wholegoal active。round153_research_eligibility绑定objective审计/重复层级和缺项。154仅既有controller context/action权限与研究主张必要性归纳，155按约深审清理后才选有证据的新hypothesis，不默认重训/放宽门/换主指标或打开oldfinal。所有旧风险/模型/raw/unique失败继续保留。
