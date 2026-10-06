@@ -1,5 +1,17 @@
 # 双轮腿机器人PPO论文方案
 
+第155轮方向深审与冗余清理（2026-10-06，下一160，goal active）：
+
+**继续价值与方法取舍。** 151–154完成接口/所有权准入、1632固定策略GPU因子回合、奖励目标与控制时序核对；三seed重复同136发展案例，0新学习。原room机制/强经典优势门及旧腿策略固定辅助增量门失败，继续这些配置的五seed、预算扩展或更难场景不值得。完整任务与设计/物理分开、保留失败和强经典比较的方法保留；不能将工程清理改称新控制贡献。全目标的具体机制、稳定强基线优势、独立泛化与完整新论文仍未完成。
+
+**关键新判断。** fixed诊断中零腿残差的accepted/filtered steering RMS已为regular约.840–.847、controlled约.767–.770；即使没有腿请求，轮自身余量也会压缩辅助。learned-leg对应比例有时反而更高，不能凭global lambda存在就断言腿抑制航向是根因。旧grouped_projection_probe_v2_20260927的ABBA分组方案亦未过其能力门，继续保持拒绝/默认关闭；普通组间box分配本身不构成创新。153初态终奖折扣和154训练context差异也没有给改奖励/重训提供因果结论。
+
+**只补一次可停止的诊断。** wheel_headroom_attribution_v1/proposal.json登记3冻结模型×zero-leg/learned-leg with fixed assist×96+40发展案例，共816GPU回合、0学习，目前source未准入/0执行。每0.5ms只读accepted Nom、filtered steering、当前wheel speed/actuator gains和原lambda，用原command_bounds求同状态wheel-only lambda；将未接受请求严格分成wheel-only loss与额外hip-coupling loss。绝对损失可加，RMS/平方能量不可直接相加；counterfactual使用diagnostic扭矩语义，不能冒称最终float32轮命令或新轨迹。原控制器/滤波/room/物理任务与model/RMS不动，所有记录buffer须强持有、首次terminal冻结、NumPy合成值与输入不改校对，不能复用旧缺所有权collector。
+
+该项只筛查是否值得登记一次分配干预：learned-leg在regular与controlled各至少2/3seed同时达到可回收left steering RMS≥.01Nm、额外耦合占绝对拒绝请求≥20%，全部身份/记录/原门核验通过；.01Nm=原.3Nm请求上限的1/30，两值是事前authority筛查而非任务门。失败即关闭本当前耦合恢复假设，不调阈值/预算，不恢复旧grouped选项。通过也只允许登记一个同上下文原完整任务/物理/设计非退化的有限干预，不自动新PPO或方法晋升。156先工程准入，过后执行唯一队列；终态下一轮必须去留，不延长只读审计链。
+
+**清理与证据。** 删除2份source marshal完全相同、git忽略且fuser无人使用的可再生pyc，共14668B；清单/hash在round155_cleanup.json。全部源码/模型/归一器/raw state/轨迹/独有失败/封存集保留，不称永久空间节省。round155_direction_review.json绑定原主门、24fixed结果、153审计、旧分组失败及新proposal哈希；三研究unit核inactive/MainPID0/exit0，0本轮新增physics/learning。下次深审与清理160。
+
 第154轮控制上下文与研究主张收束（2026-10-06，既有源码/契约审计，goal active）：
 
 **控制信号的“同信息”须分层说明。** 所有臂保留共同VMC/LQR名义控制与物理限幅，但Actor每20 ms接收39维包：前32维物理量按场景延迟，32–37维为当前已滤波的自身请求状态，38维为已知零起点、由延迟yaw/body velocity积分得到的路线记忆。机体速度是仿真理想观测，不是已经验证的轮式里程计。名义控制每0.5 ms读取当前仿真q/v和传感器；room层在同一频率直接读取当前q和固定设计参考。因此“相同Actor信息”不能扩写成“各决策层使用完全相同的观测与延迟”，也不能据此声称可测实现或实机验证完成。源码依据：training_contract.py:15、native/environment.py:194、route_state.py:14、native/controller.py:140、gpu_reference_budget.py:9（均位于wheelleg_warp）。

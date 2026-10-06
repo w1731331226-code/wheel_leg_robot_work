@@ -1,0 +1,66 @@
+{
+  "round": 155,
+  "period": [
+    151,
+    155
+  ],
+  "previous_goal_turn": "progress",
+  "goal_status": "active",
+  "next_review_round": 160,
+  "evidence": {
+    "wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/source_contract.json": "0de82deb871f97d9722c4ea69a2707ee4e0dee4524ebf6d17d853da2730cd431",
+    "wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/proposal.json": "784f8ad1fc083f7c13a70d24fa2a47c53f526a8bd25cfc94b7c3a0e84ae3a710",
+    "wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/completion.json": "15620eb7a8fc03f2a7ec3a8d5575bcda312d81cc1fa704fd37796685e0429536",
+    "wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/review.json": "8e16f582dbbc36e5650b7a2175a1ab0ac6f45308d02f2cfa91e276ae0aa3dc94",
+    "wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/round152_factor_decision.json": "eac5645f2b7c973d533064e6dcb2836f9eb89316b91dbda9bdf5eb39042d6208",
+    "wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/study_gate_review.json": "a5cdb8766fd2a62c4e1e631b5520932970dae0a620fcc9dfb79904ab1e47de2d",
+    "wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/objective_alignment_audit.json": "eb3c1f56a796e72441f64e124057e9a6bb5a3aa5ec9e21c29a8ede6e6fcf760a",
+    "wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/round153_research_eligibility.json": "35c17b1ec80e4f93dbe15b1930b1ba632c6b929c447a2142420d9e37b761aec5",
+    "wheelleg_warp/results/grouped_projection_probe_v2_20260927/REPORT.md": "05b66d280a5a8197cebf07e0074a11ffe152b43c04dab1c4a3ab4eb3198d934a"
+  },
+  "method_review": "Source/control-context qualification, full fixed-policy 2x2 matrix and original task gates were completed without policy updates. Reward-ranking audit is descriptive only. Shared actor packet does not mean equal lower-layer timing or equal action authority. Existing 136 development cases are reused; no independent generalization.",
+  "completed_in_period": {
+    "fixed_policy_gpu_episodes": 1632,
+    "unique_development_cases": 136,
+    "learning_updates": 0,
+    "units_terminal": true
+  },
+  "decision": [
+    {
+      "branch": "Current room learned-superiority and old fixed-steering/leg combination",
+      "state": "closed",
+      "reason": "Original learning gates and consistent frozen-leg increments failed; no PPO expansion or relabeling."
+    },
+    {
+      "branch": "Wheel rejection caused by hip coupling",
+      "state": "one finite read-only attribution justified",
+      "reason": "Global lambda couples commands, but zero-leg also rejects steering; aggregate ratios cannot establish which constraints bind. Same-state box decomposition can reject this explanation before changing authority."
+    },
+    {
+      "branch": "Harder terrains, new networks, reward/gamma changes and context-matched relearning",
+      "state": "not admitted by this review",
+      "reason": "No controlled evidence yet establishes these as the specific next solution. Lack of a matched-context training test is a limitation, not a positive result."
+    },
+    {
+      "branch": "Old grouped projection",
+      "state": "remains rejected and default off",
+      "reason": "Prior ABBA control study failed its capability gate; new diagnosis does not revive it or establish novelty."
+    }
+  ],
+  "supplementary_experiment_proposal_sha256": "a7fdf79067624782dd487adea2c4cbc22f3ff51459cc777dfcc3ba87e8b7a250",
+  "new_study_budget": {
+    "gpu_episodes": 816,
+    "training_steps": 0,
+    "source_admitted": false,
+    "executed_episodes": 0
+  },
+  "cleanup_sha256": "e3bd1647deffded8eac8c6569e9f507dbbab451cf95cef4700dbab85ac3f5e99",
+  "scientific_gaps": [
+    "Specific new contribution and same-information strong-reference learning advantage still unproved",
+    "Fresh independent ID, composition, parameter/delay OOD, easy-task preservation and conditional five-seed study not admitted",
+    "Method derivation, mechanism evidence, statistics and full new manuscript/reproducibility still required"
+  ],
+  "entire_goal_complete": false,
+  "stop_rule": "One attribution only. Failing its predeclared authority gate closes current coupling-recovery hypothesis; do not expand thresholds/models/budget or restart old studies.",
+  "registration_validation": "PASS 816/136 case budget, six model/RMS hashes, evidence/cleanup/source hashes, 128 synthetic signed wheel-box/decomposition/absolute-loss/cross-energy identities; no GPU rollout."
+}

@@ -1,0 +1,100 @@
+{
+  "version": "wheel-headroom-attribution-v1",
+  "status": "registered, source not admitted, not run",
+  "role": "Read-only same-state decomposition of filtered steering rejection; no command intervention or learning",
+  "parent_proposal": "wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/proposal.json",
+  "parent_proposal_sha256": "784f8ad1fc083f7c13a70d24fa2a47c53f526a8bd25cfc94b7c3a0e84ae3a710",
+  "models": [
+    {
+      "seed": 1761,
+      "prefix": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/runs/L2-room/1761/step_200000",
+      "checkpoint": {
+        "checkpoint_sha256": "d82949e9e5492be0ad16c7102792fa2fd681869c914059ec3943e358e5426f6f",
+        "normalization_sha256": "ea0d67c27c0b7b0a38093c5aadbb0b4a76495e6923dbdd1eb3e7394b1da3ab2f"
+      }
+    },
+    {
+      "seed": 1762,
+      "prefix": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/runs/L2-room/1762/step_200000",
+      "checkpoint": {
+        "checkpoint_sha256": "3dd1b90d534cd670162c03c93a777fd2932a6251e2d1461a1ad695d2d358a5b2",
+        "normalization_sha256": "4f1308f2d204493ce41a2f4266dbe4e64cde712b5bec1f80d935753a288c70b3"
+      }
+    },
+    {
+      "seed": 1763,
+      "prefix": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/runs/L2-room/1763/step_200000",
+      "checkpoint": {
+        "checkpoint_sha256": "cd0d959d8d67f7bf863245fd34ef84a7bd6265b81fe4ecfcd193ae851dd78bd1",
+        "normalization_sha256": "42ccc1ddb9a6ca44b428a3a5f7ca2fc391442f9d5de43eb3f981bb677687f297"
+      }
+    }
+  ],
+  "panels": {
+    "regular": 96,
+    "controlled": 40
+  },
+  "conditions": [
+    "zero_leg_fixed_assist",
+    "learned_room_leg_fixed_assist"
+  ],
+  "case_role": "Same 136 development cases reused in each seed/condition; 816 episodes are not independent cases",
+  "budget_gpu_episodes": 816,
+  "new_training_steps": 0,
+  "original_source_contract": "wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/source_contract.json",
+  "original_source_contract_sha256": "0de82deb871f97d9722c4ea69a2707ee4e0dee4524ebf6d17d853da2730cd431",
+  "original_review_sha256": "8e16f582dbbc36e5650b7a2175a1ab0ac6f45308d02f2cfa91e276ae0aa3dc94",
+  "hypothesis": "Leg constraints bind the global scaling factor beyond the two-wheel command box in the learned-leg/fixed-assist context; existing aggregate acceptance ratios cannot distinguish this from wheel-only headroom",
+  "counterfactual": {
+    "known_fields": [
+      "accepted Nom diagnostic[4:6]",
+      "filtered steering = memory[18] * 0.3 Nm",
+      "current two-wheel speeds",
+      "original actuator gains",
+      "original global lambda and accepted wheel diagnostics"
+    ],
+    "timing": "Read-only immediately after original controller, before physics; post-room wheels unchanged",
+    "lambda_wheel": "clip(min(1, (bound_j-base_j)/r_j if r_j>0; (-bound_j-base_j)/r_j if r_j<0),0,1), j=4,5; r=(steering,-steering)",
+    "decomposition": "r-lambda*r = (r-lambda_wheel*r) + (lambda_wheel-lambda)*r; record all terms in diagnostic torque units",
+    "loss_statistics": "Use absolute-loss sums for additive shares. Squared-loss energies require the cross term; do not add RMS values or pretend their energies are additive.",
+    "interpretation": "lambda_wheel is a same-state wheel-only box counterfactual, not a safe dynamic controller or a new rollout; does not predict trajectory/reward/learning benefit",
+    "aggregation": "Per seed/panel/condition, RMS over all valid active physical substeps through first terminal, including zero requests; absolute-loss share uses left steering losses over the same substeps. Also retain per-case values. Zero rejection denominator is undefined and cannot pass the gate."
+  },
+  "validation": {
+    "source_freeze_required": true,
+    "current_parent_source_hashes_required": true,
+    "original_model_RMS_immutable": true,
+    "arrays_explicitly_owned_until_collection_finishes": true,
+    "first_terminal_masks_and_counts": true,
+    "synthetic_numpy_and_read_only_input_checks": true,
+    "lambda_order_tolerance": 1e-12,
+    "accepted_identity_tolerance_Nm": 1e-09,
+    "decomposition_identity_tolerance_Nm": 1e-09,
+    "zero_leg_extra_coupling_tolerance_Nm": 1e-09,
+    "original_complete_task_physical_design_and_failures_retained": true,
+    "no_sensor_or_command_mutation": true
+  },
+  "decision_gate": {
+    "scope": "Only whether a future bounded allocation intervention has enough available authority to be worth registration; never learner promotion",
+    "learned_leg_required_panels": [
+      "regular",
+      "controlled"
+    ],
+    "required_seeds_per_panel": 2,
+    "recoverable_left_steering_RMS_Nm_min": 0.01,
+    "leg_coupling_share_of_absolute_rejected_steering_min": 0.2,
+    "threshold_rationale": "Recoverable RMS of 0.01 Nm is 1/30 of the fixed 0.3 Nm request cap; coupling must also explain at least one fifth of rejection. Predeclared diagnostic screening thresholds, not task success or safety gates.",
+    "otherwise": "Close this current coupling-recovery hypothesis; no grouped projection revival, gain/budget sweep or new PPO",
+    "if_pass": "Only register one matched-context physical/task allocation intervention, with original limits and nondegradation. Do not enable old grouped_residual, train, or claim novel safety."
+  },
+  "old_grouped_projection_report": "wheelleg_warp/results/grouped_projection_probe_v2_20260927/REPORT.md",
+  "old_grouped_projection_report_sha256": "05b66d280a5a8197cebf07e0074a11ffe152b43c04dab1c4a3ab4eb3198d934a",
+  "limits": [
+    "Zero-leg accepted/filter RMS is already about 0.767-0.847: wheel-only suppression is present.",
+    "Frozen policy was trained without fixed assist. This study does not fix or test training context mismatch.",
+    "Current q/v are ideal lower-layer simulation inputs. Counterfactual logged after action never enters actor/critic.",
+    "No coupled next-state, invariant working-domain, independent OOD or control novelty proof.",
+    "Old strong-reference and room mechanism gates remain failed; no final sealed cases used."
+  ],
+  "next": "156 admit minimal read-only implementation and synthetic/owner/reset checks, then one registered queue if admitted; next turn reviews full result and closes or registers a specific bounded intervention. No automatic new training."
+}
