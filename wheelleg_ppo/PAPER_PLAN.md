@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第178轮固定滤波变体配对去留完成（2026-10-06，目标继续）：
+
+review_nom_yaw_filter对4组同noise/同law配对、160比较记录/20发展case重建原全部success及flags，并显式列出原5deg roll/pitch轴，避免原已yaw失败的case掩盖新增roll失败。3个added-flag断言通过；8结果/source/177completion/datareview哈希过。四组原→latest成功分别cleanB0 8→8、cleanB1 8→8、noisyB0 8→8、noisyB1 7→8，无原成功丢失、各physical/design全通过。
+
+但四组平均yaw peak降低.9128/.8675/.8551/.8952deg的同时，新增roll>5deg配对记录2/4/2/4=12条，只涉及0.115m的4独立case6301001/3/5/7。例cleanB0/6301001：yaw6.9315→5.7159deg，roll4.9161→5.3156deg，两轴仍不满足task。Jpsi仅降低.0538/.0484/.0391/.0604deg（约1.97–3.79%），不能把peak改善替代原指标/正式学习优势。noisyB1恢复6301031的成功是当前固定noise实现，不抵消低位roll退化或称普遍鲁棒。
+
+**固定alpha1全任务改进分支关闭。** 依175原“其他门不退化”要求，四组资格均False；不采用为新基线、不扩alpha/gain/训练预算或晋升旧policy。保留代码/完整120noise与gyro/原40/唯一结果为有价值的耦合诊断。滤波选择确实改变结果，但不能归因为纯延迟、不能说所有滤波或后续协调无效。物理/design通过不等于多轴任务通过，失败case新增另一轴违规也不能忽略。
+
+plot_filter_tradeoff的PNG/SVG覆盖每panel全部20case，0.115全部case红色强调、原5deg双轴界限/成对箭头显示；source/review/outputs绑定manifest，已视觉核过，不按胜例选点。0新physics/eval/learning，原score/model/RMS/CPU-GPU/final封存不改。179按实际coupled roll-yaw变化核控制链/腿参考权限，不能直接把边界clipping当全部根因或扫增益救alpha1；有据候选仍须方法区别与公平准入。180深审清理，完整贡献/资格3→正式5seed/消融/新独立泛化/统计/PPO真实成本/新稿继续未齐。
+
 第177轮陀螺滤波120新回合执行完成（2026-10-06，目标继续）：
 
 run_nom_yaw_filter_probe复用完整记录的checker/partial保存，冻结source/noise/installed API/runner及原40参考hash后，唯一6job×20首回合=120新评价完成，另40 original_clean源码资格复用，总160比较记录、20发展case。新首physics1785937，全contact3525318，120 fullNPZ1021385933B+120gyroNPZ37427010B，最大单份8974406B；全源/噪声/结果/240trace hash、原success重建、dense/count/finite/前后qv连续/gyro承接、float32noise与alpha递推/首终态核过。无interruption/隐式重跑/追加case/学习更新。
