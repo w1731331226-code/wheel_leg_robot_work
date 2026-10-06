@@ -1,5 +1,17 @@
 # 双轮腿机器人PPO论文方案
 
+第217轮速度—yaw协调机制与强解析对照提案（2026-10-07）：
+
+speed_yaw_coordination给出仅代数资格的固定方案：e_i=Rω_i−vx，c=min nominalcapacity fraction，h=max|e_i|/(Rω_rated)，γ*=c/(c+h²)（0/0按1），γ通过原Nom gyro pole推导τ=−.0005/log(.975)约19.75ms平滑，运动参考v_eff=γ·公开command。独立轮速阻尼请求dτ_i=−Jw/τ·sign(ω_i)·max(|ω_i|−ω_rated,0)，Jw按公开rotor/tire/hub惯量相加。没有用12发展样本拟合阈值、增益或Pole；它是可证伪解析候选，不是闭环证明或新颖性认可。
+
+条件化纵向受力模型A=[[aL,aR],[-b aL,b aR]]，b=track/2；双侧a>0可独立指定共同力/偏航矩，一侧a=0退化为rank1。代数自检通过，但真实机器人有侧向摩擦、腿/惯性/冲击和未知接触，不能把toy rank当全系统不可控或动态安全定理；capacity/discrepancy不等真实aL/aR。本机论点应检验高轮速/包络衰减时固定共同速度需求是否与yaw保持冲突，而非先宣称单轮不可能。
+
+固定强解析比较：B0原phase VMC+6stateLQR；Bomega=B0+above-rated wheel damping；Cgamma=Bomega+连续velocity reference协调。Bomega是普通阻尼对照，Cgamma也尚不是PPO贡献。三条件同raw39/public constants/20ms因果包，不读normal/arrival/隐藏mass；原task/publiccommand、Actor/RMS、phase/parking/yaw mode/reward/所有success gates保持原定义。只协调motion速度误差和相关tilt target，不能直接替换整个command指针误触parking，也不能只改LQR一个误差而遗漏tilt reference。全部合成Nom请求必须仍走原1Nm逐motor/L1 slew预算及最终velocity-torque envelope，不额外授权；这些源实现义务尚未资格，不能以pure函数测试称已可部署。
+
+propose的rolling/nooverspeed noop、正反向符号、γ∈[0,1]凸更新、双contact rank2/单contact rank1例子通过。若Bomega恢复能力则governor未证明必要；只有Cgamma进一步恢复且保持原任务/CPUlegacy才支持协调机制。若strongCgamma已足够，未来学习仍须同Nom/info/capacity/budget的新匹配训练及必要消融/独立泛化证实不确定性下增益，不能把analytical governor或原失败point-zero模型当新学习成果。
+
+218先实现三条件源/接口与所有Nom预算、原位noop、tilt/velocity坐标一致、reset/terminal/packet timing和CPU-Warp局部资格。219仅在准入后注册固定regular96+controlled40+legacy28 ×3=最多492首回合，整panel全纳入、不只选4fail；当前预算只是proposal未frozen/consumed。220深审清理，0newphysics/learning，oldbenefit/formal5仍closed；完整方法贡献/强比较消融/newformal5/freshID组合geometry参数-delayOOD能力保持/层级统计PPO成本/推导复现新稿六出口仍未齐，目标保持。
+
 第216轮raw39运动差异/名义容量代理与时序资格完成（2026-10-07）：
 
 wheel_motion_proxy只读取未归一化raw39的body vx[6]、wheel omega[20:22]及公开radius/rated/no-load/peak参数，输出Romega−vx、名义speed-capacity fraction/Nm；其他36字段任意变动不影响，rolling一致、no-load、reset/history/越界future拒绝自检通过。未读取contact/normal/arrival/隐藏mass或当前32:38未延迟上下文。source只有CPU/NumPy，standalone入口可运行。
