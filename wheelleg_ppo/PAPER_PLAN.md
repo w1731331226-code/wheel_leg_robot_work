@@ -1,5 +1,17 @@
 # 双轮腿机器人PPO论文方案
 
+第196轮同暴露注入源码及六维接口资格完成（2026-10-07，目标继续）：
+
+equal_exposure_probe复用phase_support和原full/gyro/role/phase采集，不改默认controller/env/model。仅在rolefinish（本次control后）与mjw.step前set_wrench，对root bodyCOM worldZ purecouple，时钟为现substep integer5000–5199（pre2.5–2.5995s）；清其余所有body wrench，使用冻结rawfull及一次float32量化，12列force日志记录原desired/实际submitted六分量。pulse/index/clock不进Actor/Critic/Nom观测；物理反应后的原IMU/编码器仍可因果观测。
+
+安装support/forward/types/io源码表明force→torque排列和bodyCOM雅可比映射，12个CPU mj_applyFT vsGPU xfrc_accumulate fixture（identity/Y90/Z90、±worldZ、混合force-torque及zero）通过。两次capture各40after-control/before-step插入槽及state/active/wrench指针一致，继承原245calls/40steps/4sharedref。45注册case在diff3/virtual6共90staticworld/6组，18180clock samples核全部200波形及两边界、profilezero/inactive、原数组不变及zero controlstate/diag/command逐值一致。Ownedref16/填充10–14zero及原38→RouteState39、旧三39×6模型接口不从diff3推定，已实际测过。
+
+另三model×五高度15静态推理world及2单worldstream fixtures：原zip/pkl SHA、weights/200000timesteps/400updates/RMS before-after不变；改变force metadata但不积分时原obs/history与deterministic prediction不变。五stream合成终态首次冻结、repeateddone不重复、prefix/last保存、masked清力及reset通过；合成3步earlypulse delivery0/200 completeFalse仍保留，不追加补跑。此为静态/forward/capture/构造与推理，不是225任务轨迹/zero真实表现/学习优势或sensor泛化。
+
+**发现并修复reset根因。** 初验只检查reset后的xfrc清零，没有覆盖Native.fullreset先调用forward。定向static复现root残留+2Nm：原overlay在父reset后才清xfrc，虽然最终xfrc零，qfrc_smooth仍相差2。reset_order_reproduction保存数值/source，pre_reset_order_fix保留初验source/unit/contract/log。改为父reset前清力，仅修改独立adapter；加所有登记staticworld reset-forward广义力与zero baseline exact检查，整套重新验收通过。自动done父reset不调用forward，外层在日志保存后立即maskedclear，无新物理步前残留。0任务评价/训练，未消耗225budget。
+
+source_contract冻结60source/新unit/profile/proposal，admission_review绑定installed API四文件、源/模型/RMS/replication修复证据，准入225scope。下一197须先冻结唯一runner与五stream中断consumption/model-RMS不变检查再执行；198source/delivery/zero-context/完整paired门，199具体机制/匹配新learning，200深审清理。当前runner未freeze/run、未训练，原成功标签/CPU-GPU/model/RMS/final/失败保留，完整方法/3→5新训练seed/独立泛化/统计PPO耗时与新稿目标仍未齐。
+
 第195轮方向深审与确认冗余清理（2026-10-07，下一200，目标继续）：
 
 **方向。** 191–194 source/准入/328completion/全门与瞬变/学习需要报告及输入SHA绑定核，旧三V6模型与RMS SHA仍一致。phase传统发展资格保留、原baseline不替换；大618N virtualforce/32.37Nm命令瞬变仍披露，不将输出box合规称平滑或动态safe。当前128/136与七条低位成功的路径限制支持一次同applied-exposure恢复补验；继续anchor/alpha/gain/平滑启发式或盲PPO不值得。方法创新尚未明确，全目标不能收成工程资格或负摘要。
