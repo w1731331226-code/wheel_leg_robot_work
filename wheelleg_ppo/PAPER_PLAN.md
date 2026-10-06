@@ -1,5 +1,17 @@
 # 双轮腿机器人PPO论文方案
 
+第188轮全门配对与CPU历史校对完成（2026-10-07，目标继续）：
+
+review_floor_broad_qualification恢复小batch及复用记录的注册场景顺序，重复/缺失索引自检通过，核31个输入SHA与源、completion、round187_data_review绑定。仅分析既有656比较/164旧发展回归IDs，新增物理回合与训练更新均0，不改原成功标签或任何门限。
+
+regular：B0成功95→95/96，B1-route94→94/96；两law均新增成功6300092，同时丢失原成功6300085，后者新增design违规。physical各96/96、design各95/96，Jpsi分别下降0.012100/0.016576度，不能用平均改善或相同总成功数隐藏替换失败。controlled：两law均28→32/40，无lost或新task/分轴违规，physical/design各40/40，新增成功仍仅6301009/11/13/15四个独立0.16m发展案例，Jpsi下降0.122325/0.098426度。
+
+当前GPU original/floor_only × B0/B1-route四组legacy均28/28成功、物理/设计全过，并且CPU历史速度≤old×1.05+0.005、roll/pitch≤old+0.1度全部通过。legacy同GPU配对无lost/新违规；B1-route未改善平均yaw峰值的独立统计标记仍False，不将CPU校对通过表述为所有改善门通过。
+
+整体工程资格False，拒绝fixedfloor广域晋升，保留原基线；不按case切换、扫floor/gain或松设计门救分，也不直接新PPO。round188_broad_pair_review保存全部逐case配对、历史校对及SHA，pair_review.log保留实际运行结果。187最后cohort b4941b5已与远端一致，全344唯一数据已归档同步。
+
+189下一步仅检查6300085实际关节设计边界穿越的大小/时刻与保护角色契约，区分控制性能、设计合规和数值容差；不把一次失败自动归因模型错误或学习必要。190如期深审/确认冗余清理。完整方法贡献、同信息强经典/RL对照、资格3→正式5个独立训练seed及关键消融、新独立ID/组合/几何与参数延迟OOD和易任务保持、seed/case层级统计及真实PPO端到端耗时、推导失败复现与新稿六类证据仍未齐；既有发展重复回放不补作独立泛化。
+
 第187轮更广344回合固定资格采集完成（2026-10-07，目标继续）：
 
 run_floor_broad_qualification冻结source/API/小batch manifest/noop/reuse原312绑定后唯一344首回合完成，原顺序indices全覆盖、656比较/164旧发展回归IDs，0training。新增physics5052443/contact10056479，344full2944452672B+gyro105179467B+role111380795B=1032trace，单份max11646681B；全SHA/schema/finite/dense/contactcounts/qvjoin/gyro/noise0/role actualtarget及原header/外部ID映射/分组顺序核过。没有模型/默认控制源/RMS/final更换。
