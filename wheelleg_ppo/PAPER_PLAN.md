@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第167轮并列操作定义与三态证据规则（2026-10-06，goal active）：
+
+passage_evidence_contract.py/parallel_passage_evidence_contract将original完整contact task保留为原权威分数，并定义strictsecondary ground_rollover/airborne_passage，不替换primary或用silence选题。纯三态aggregator8项positive/missing/false/invalid fixture过：已测False则该独立定义失败；无False但缺证据None则insufficient；全部True仅supported_at_recorded_resolution，不是continuous safety定理。未经测量的数值true不接受，不以None算pass。
+
+两候选共同必要项：original完整task/physical/design、指定路径、按事件顺序经过、同时间层完整车轮geometry/clearance及充分sampling。ground例要求完整每目标contact记录、每个已记录central样本positive upward top normal support且无airborne central interval；这是零允许记录卸载的保守continuous-observed诊断，并非已采纳general terrain任务，自然bounce可能fail。若容许support duty/gap，必须另预登记，无policy score救分。air例则documenttakeoff/wholeobstacleclearance/landing/完整airinterval pose，不能当ground support。1e−6N只沿用已有噪声区分，不新增或调load fraction/duration/performance阈值，时空tolerance以后连evaluator冻结。
+
+当前112含maxwitness且缺pre完整orientation，mixed event映射未实现，不能使全部ground/air必要项True。此轮不往205已有结果写newsuccess，原failed methods/data/OldCPU-GPUbaseline/final不变，0newrollout/learning。任务偏好仍pending，当前originalcontact研究和strictsecondary定义并行；不称这已构成新训练协议或MethodAdvantage。
+
+168用边界fixture及现205按三态apply只出资格/缺项（旧分数另列），169据资格挑一个可检验候选并freeze fair信息/预算，不开始不合格定义dependentPPO或Nomrepair；170深审清理。整套具体新method贡献/strongclassical学习优势/3→5seed/独立泛化/统计/cost/完整新稿继续active且缺项。
+
 第166轮整轮碰撞几何与证据完整性（2026-10-06，goal active）：
 
 audit_wheel_geometry_evidence.py在原frozen source/proposal对应41case模型上只CPU编译，不mj_step/新rollout/训练。82个wheel_collide_L/R均为ellipsoid（不是sphere/cylinder），halfaxes=[.05,.0275,.05]m，全宽55mm；geom local pos0/quat identity、body链静态quat identity且铰链轴localY、root free body核过。场景质量/drive等不改该geometry。源/contract/hash与compiled参数保留，support函数6项basic/boundary/invalid检查通过。
