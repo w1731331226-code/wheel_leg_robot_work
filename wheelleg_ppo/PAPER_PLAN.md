@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第216轮raw39运动差异/名义容量代理与时序资格完成（2026-10-07）：
+
+wheel_motion_proxy只读取未归一化raw39的body vx[6]、wheel omega[20:22]及公开radius/rated/no-load/peak参数，输出Romega−vx、名义speed-capacity fraction/Nm；其他36字段任意变动不影响，rolling一致、no-load、reset/history/越界future拒绝自检通过。未读取contact/normal/arrival/隐藏mass或当前32:38未延迟上下文。source只有CPU/NumPy，standalone入口可运行。
+
+qualify_wheel_motion_proxy用215两strongclassic、共同6case共12旧dense记录，CPU模型仅取wheel1/wheel2地址；post-wheel-speed逐值对齐、bodyframe vx从post q/v独立重算至1e−12，float32化重建仅proxy必需三字段、不是完整Actor39。按actor20ms决策端点和Native历史索引endpoint-delay对齐，初始/负索引落reset包0；actual12全delay0。5/10/20ms仅同旧轨迹离线移位敏感性，非新延迟plant或rollout；不得宣称已通过实际delay鲁棒性。首版误用wheel body名作joint名KeyError发生在地址读取、0steps，保留proxy_joint_name_failure.log，依据模型真实wheel1/2更正后全部过，不改物理源。
+
+4成功负对照也存在discrepancy：moving最大约2.527–2.664m/s、nominal最小容量约1.809–2.337Nm；8失败约3.124–3.125m/s/0.378–0.384Nm。只是已见12轨迹的特征范围，不用它们拟合/声称分类阈值或独立泛化。proxy是轮-机体运动差异，不是真实slip/support，转动、腿运动和contact方向可影响；capacity不含Nom已用力矩或实际gain/温度等，不能称net residual headroom/真实bound。真实Actor还有RMS clipping，不能从clipped78无损恢复raw39；若未来控制使用须在原始包层声明接口，同信息对照。离线normal为pre-integration、post packet晚.5ms，仅评价标签，不混成精确同步政策输入。
+
+217将据此推导区别明确的速度—yaw协调候选及同信息stronganalytic对照，明确rolling/contact/internal dynamics和约束不变性假设、原速度RMS/进度/姿态/height及CPU-GPU保持，不能简单slip阈值/增gain或基本MPC/CBF包装成创新。218只在有据方法与可达主门下源/契约、219准入后才有限资格实验、220深审清理。当前0newphysicsbudget/0learning、未修改controller/观测/奖励/旧门；oldbenefit/formal5仍closed，完整六论文出口未齐。
+
 第215轮五轮方向深审、强经典与约束核对、冗余清理完成（2026-10-07）：
 
 211–214的source/noop/modelRMS/78真实终态/18严格配对/21排除/12运动失败证据链复核，保持原收益门与formal5关闭；停车退出只保留有限工程/机理作用。review_motion_authority_direction复核两个strongclassic B0/B1-route在共同6个controlled场景的12条原dense轨迹，physics/design全过、4成功/8失败；8失败first yaw越界时均fastwheel samplednormal0，高轮速/卸载不是单独RL引入。

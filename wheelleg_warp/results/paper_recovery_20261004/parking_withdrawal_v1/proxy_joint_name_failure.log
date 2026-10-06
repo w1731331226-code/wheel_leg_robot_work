@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/qualify_wheel_motion_proxy.py", line 51, in <module>
+    if __name__=='__main__':run()
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/qualify_wheel_motion_proxy.py", line 20, in run
+    ids=[cpu.nq+int(cpu.joint(n).dofadr[0]) for n in ('wheelL','wheelR')]
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/qualify_wheel_motion_proxy.py", line 20, in <listcomp>
+    ids=[cpu.nq+int(cpu.joint(n).dofadr[0]) for n in ('wheelL','wheelR')]
+KeyError: "Invalid name 'wheelL'. Valid names: ['alphaL', 'alphaR', 'betaL', 'betaR', 'passA_L', 'passA_R', 'passC_L', 'passC_R', 'wheel1', 'wheel2']"
