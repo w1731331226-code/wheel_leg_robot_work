@@ -1,5 +1,17 @@
 # 双轮腿机器人PPO论文方案
 
+第211轮停车残差退出源与静态接口资格完成（2026-10-07）：
+
+parking_withdrawal_probe在原phase记录/当前command生成之后、原controller filter之前复制六维请求到独立effective buffer；仅seen非零公开指令且当前exactcmd0时复制为0。原targets、controller/phase/gyro/物理/奖励/39输入源码不改，原16:22滤波状态保留，不硬清电机输出。实际原filter是0.5ms一次、delta限幅±0.01的slew limiter；新30列日志记录currentcmd/latch/原请求/effective/滤波前后/控制错误，检查有效请求和原filter更新。原条件经过同一个复制与记录路径，无请求门控，避免两条件采集差异。
+
+26静态world×4query=104次不积分control核：原始/启动/±0.8运动条件对独立原controller state/diag/ctrl逐值exactnoop，停车退出则仅有效请求0且保留非零滤波记忆按原slew衰减；gate不写原请求或其他controller输入，command来自原command_step同指针，原/重建两次capture实际controller签名一致。raw38→route39→paired78沿用，三1991/92/93 CUDA末模型predict参数/计数与obs-ret RMS不变，所有模型/RMS文件SHA保持；q/v实际物理时间未推进。
+
+新增private latch在explicit reset前清除；Native autoreset后、下一control调用前仅清done rows。inactive world不改latch；合成startup→moving→parking三步、first-terminal冻结/重复terminal不复写、explicit reset、partial buffers/prefix保存通过。合成标签不是新任务成绩，未执行env.step_async/真实轨迹，科学78预算消耗0、训练0。round211_parking_source_unit和独立parking_withdrawal_v1/source_admission绑定source/parent210/原trainer/模型及日志，准入只到source/static接口，不当bitwise重放或因果结果。
+
+212需要单独freeze固定78 runner/source/job/protocol，复用原nominal_mean_evaluation并接新probe；当前基础evaluator保模型/RMS不变和原full/gyro/role/phase验收，新parking流须全校验，原始回放可比性及original/退出切换前一致性单列，所有差异与失败保留，不静默重跑。新物理输出在独立parking_withdrawal_v1，不覆盖原six matched study；closed candidate benefit/formal5状态不变，三seed/新泛化/统计/可辩护方法/推导新稿完整目标仍未齐。215深审清理不变。
+
+归档第6/7批已push且HEAD核对，写本轮前协调父243099/包装器/guard，提交后继续同父队列锁保护，剩余1批未全远程，源与结果小文件先同步。
+
 第210轮五轮方向深审与冗余清理（2026-10-07）：
 
 完成206–209周期审查，review_nominal_mean_direction重核冻结runtime/reference契约、全六run/同seed初始化、60组checkpoint/result输入SHA、208完整交付与209全新增违规的source/轨迹证据。原科学门仅5/32通过，candidate-benefit继续关闭。当前对普通残差的J改善是有效有限证据，但不足以对强经典主张整体优势；不增预算/换seed/参考或actor架构救分，不启动formal5。
