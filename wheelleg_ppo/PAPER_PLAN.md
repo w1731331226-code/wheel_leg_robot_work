@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第205轮运行中方向深审与冗余清理（2026-10-07，下一210，目标继续）：
+
+201–204 environment/policy/真实24kengineering/末点评价/source及main冻结证据SHA核。原same capacity/function/39RMS、correct Gaussian梯度/likelihood及source-noop classicreuse方法合理，r是kinematic assumption非dynamic safety；已有先验类别不据formula独创。按已注册sixrun continuous fixedfinal200k/allseed和1254新evaluation继续同一队列。1个模型或partial结果不足以判gain/可发表，不开始新profile/gain/reward/architecture/parallel训练，也不formal5。当前没有修改runtime source/预算/阈值/参考/队列或重新开始physics。
+
+实见worker原PID151791/MainPID非0/SubStatestart，第一plain1991已200k/400epochs/8000Adam、十post-updatecheckpoint hash及reference/RMS/state/RNG保存不变独立核；continuouslearn+checkpoint91.767698s范围为实际PPO训练/保存，不包括评估/不当purephysics或CPU-GPUratio。snapshot firstmodel已核116/209末评价，当前controlled reserved136/completed116（时间点），六run完全完成数仍0。trainer/source/quota及已落盘resultSHA通过，无interruption；不因观察超时重启，不挑当前结果改变预定method。
+
+每5轮清理完成：仅删除test_nominal_reference_env的ignored unused、编译codeobject与src相同pyc9120B，source/cacheSHA/gitignore/未跟踪/fuser无句柄核后删，非runtimeimportmodule。首次拟选第二test_nominal_mean_policy缓存不存在，检查在任何删除前停；不制造文件完成指标，最终删一份已核缓存，round205_cleanup保存说明。活跃worker的policy/evaluator/normalizer/runtime缓存、模型/所有checkpoint/raw和科学source/CPU-GPU/RMS/唯一失败/oldgate-final保留，可再生缓存不永久节约。
+
+round205_direction_review绑定本周期/实际liveworker/原progress/trainedrun与cleanup。206–207继续同handle实时消费及新completedobjects；真正terminal后核完整1.2M/1254/source/model/RMS/physics/contact/force/delivery/actualPPOwall和raw档。208只完整后originalprimary/mechanism/legacy/aux/zero-context/allseed逐casegate，否则verifiedwait；209只能按原gate+贡献决定formalexpansion/freshindependent方案，negative关branch不救分；210如期深审清理。主进行中数据未commit，source/review记录提交同步后guard恢复active但等待worker排他锁，worktree含持续写出的untracked实验输出，不声称clean/全数据已同步。完整可辩护method/strongmatchedcontrol+keyablation/新3→formal5/新ID组合geometry参数-delayOOD与易任务/层级统计和PPO实际end-to-end/推导失败复现新稿6出口未齐，goal继续active。
+
 第204轮主试验与末点评价准入冻结并启动（2026-10-07，队列进行中）：
 
 新增nominal_mean_evaluation将同39保存归一化/RawRCache/78pair接到原densephase/auxforce记录，训练后模型deterministic推理，weights/timesteps/updates及obs39/retRMS前后不变，全部firstterminal/state/contact/gyro/role/phase及auxforce保留。静态评价unit覆盖209case×diff3/virtual6共418world、627zero-command ctrl/diag exact，旧schema/scenario/physical/design/summary418strongclassic记录SHA重建过，saved78模型/39RMS接口及currenthalf一致；原phase/aux source-noop资格支持条件reuse非bitwise/新test。0source-admission scientific回合/学习，不把旧参考隐藏重播。
