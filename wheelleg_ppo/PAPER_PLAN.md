@@ -1,5 +1,17 @@
 # 双轮腿机器人PPO论文方案
 
+第163轮实际路径接触解释与主张资格（2026-10-06，goal active）：
+
+analyze_task_mode_witness.py核205trace/result/geometry SHA与原load_rows，4点synthetic centre/边缘/部分路径分类unit过；无新eval或learning。Descriptor仅描述真实wheel centre相对compiled box投影，post-pose与pre-solver loaded witness分开，不把中心离开投影直接当整个轮胎绕过。multiple-geometry mixed case不强套legacy单box类别；normal/vertical-normal分量不等friction-inclusive总反力。
+
+原低高度V6-only8案例，在3seed共13成功轨迹中：9条目标侧轮centre在整个已采样box纵向区间都位于70mm宽投影之外，4条仅部分在内，0条全在内；所有13有正目标vertical-normal接触，5条在障碍中央半段也有positive max-vertical target witness，另8条没有。故不能一概称纯零载荷擦碰，也不能称完整沿指定轮道加载越障或凭centre断言整个轮胎绕过/作弊。经典B0/B1route示例case6301001轮中心较多落在box投影且有持续约35N目标normal支撑，而V6中心走侧缘并主要在入口有脉冲；这是路径与接触方式区别，不证明哪个channel或Nom高度room唯一根因。
+
+plot_task_mode_witness.py已生成该.115/20mm case全部5controllers真实路径+目标vertical-normal图PNG/SVG，已视检布局；caption明确单例说明、pre/post时间层和旧success不改。physical_mode_analysis覆盖全部205（同41dev cases），中段证据及每case统计完整保留，figure_manifest/rawtrace/source/closure SHA绑定。采样频率混合的Nom/reference统计只作sampled描述，不当统一时间权重/causal。
+
+**必须作出的取舍。** 8低高度见证保留为原非对称接触判据下的实际成功，但撤回把它们当作全部真实居中完整traversal可达性/低维authority不足必要证据的资格；更不晋升V6整体方法（旧优势门仍failed）。不依据这些winner构造oracle、直接Nom/commonheight修复/扫动作channel或新PPO。若论文要主张真实沿轮道越障，必须先单独定义路径/geometry/loaded-or-airborne passage资格，并给经典与RL同任务；若允许侧缘接触，则明确论文只主张对应contact task并另找稳定整体收益，不能改标题挽救已失败门。
+
+已通过async问题询问用户的预期障碍任务：严格指定轮道或允许侧缘不对称接触；尚未收到回答。164可先拟独立严格passage qualification（不更改旧原判据或启动依赖的新训练），预期选择未确定须标注假设。该项比继续微小wheel allocation、更大network/budget或极端terrain优先。165按约深审清理，整套主方法/正式5seed/新独立泛化/成本/完整新稿goal继续未完成。
+
 第162轮实际方式数据闭合（2026-10-06，goal active）：
 
 task_mode_witness.py先冻结runner_contract并核recorder/source/unit/supplemental/API与3models/RMS，初unit PID35277完成B0全部41回合并落盘后，在in-memory row与JSON row直接比较处失败（Native yaw_config tuple变JSON list）。原load_rows全任务重建在该assert前已经通过；故障/interruption/原run.log保持。独立调用原checker审完整B0原task、41traces/geometry/hash/时刻/计数确认全完整、消耗预算已知41；不是物理/recording接口失败，也没有把未保存状态当可精确恢复。
