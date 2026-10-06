@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第184轮更强Nom资格覆盖与接口缺项核对（2026-10-07，目标继续）：
+
+audit_floor_qualification_scope核136原发展bank、已测20/40controlled的逐ID/scenario同一、两law固定配置与原4classic结果全部fulltask重建/hash。floor_only clean40只覆盖20个2cm案例，还缺96regular（9terrain、delay至10ms）与20个1cmcontrolled。原CPU28baseline历史全通过、GPU注册28的name/scenario/stand.3与CPU原字段逐一一致；CPU旧控制器不能冒充当前GPU的配对original Nom。
+
+现有noise_table虽std0也assert legacy/delay0，因此regular96中兼容数0，原role源码准入不覆盖这批地形/延迟。后续需clean-only通用适配、原delayedpacket/history完全保持、constructor实际taskdeadline/noisezero-table容量验证及small homogenous solverbatch，不裁terrain/归零delay或默认复用受限入口。shape/观测/任务/物理设计/API和originalno-op仍要验收；此为采集接口缺口，不宣称控制器失败。
+
+185待深审范围建议：floor_only剩余发展(96+20)×2laws=232新评价，当前original与candidate的legacy28×2laws×2arms=112新评价，总344待评。candidate20controlled×2已测40及原发展136×2=272original记录只在source/config/evaluator/no-op一致后复用；legacyCPU28保效果校对，当前GPU28original/candidate须配对新测。沿用原28全success、velocity≤old*1.05+.005、roll/pitch≤old+.1及原全部任务/多轴/height/phys/design不退化门，不依据好看结果松门或把原64/final3000用于发展。
+
+当前只完成coverage/scope ledger，未登记/执行344预算、无newphysics/learning。脚本首次字典括号语法错误已修正，初始诊断日志保留，无任何场景消耗。更强常规floor角色修正不是新算法；已知.115/.38仍有失败，broad qualification未知，不自动重训旧policy/改模型或默认换基线。164为既有发展+回归IDs，不能充当新独立泛化；完整可辩护贡献/同信息强对照/资格3→正式5seed/消融、新ID/组合/OOD/易任务、统计与PPO真实耗时/完整新稿仍缺。185方向深审清理如期，先决定有限资格范围是否值得准入。
+
 第183轮参考角色全门配对去留完成（2026-10-07，目标继续）：
 
 review_reference_role复用原full_flags/5deg分轴和load_rows，对240比较/20developmentcase的三种比较、12个pairedpanel核完整task/phys/design/各轴/height/speed/stop等flags和8new+4reused结果源绑定；没有原label重写/新rollout。floor_only对original的四组成功8→12/8→12/8→12/7→11，无lost、无new轴/其他taskflags，phys/design全通过，工程gate4/4True。新增通过统一为6301009/11/13/15的4独立0.16m case，16group gain records不是16独立case；Jpsi降低.22258/.15869/.21905/.16388deg。更强传统Nom候选可保留供后续资格，但未自动替基线、未证明新算法/学习优势。
