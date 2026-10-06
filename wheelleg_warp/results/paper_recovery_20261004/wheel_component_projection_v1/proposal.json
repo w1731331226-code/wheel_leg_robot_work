@@ -1,0 +1,131 @@
+{
+  "version": "wheel-component-projection-v1",
+  "status": "registered; GPU implementation not admitted or run",
+  "hypothesis": "Within-wheel command projection can accept more differential steering than the common-preserving scalar projection; the resulting common-mode change may either help or harm the complete task. Test both outcomes.",
+  "role": "Bounded fixed-policy control-allocation intervention, not new PPO or established novel control theory",
+  "parent_proposal": "wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/proposal.json",
+  "parent_proposal_sha256": "784f8ad1fc083f7c13a70d24fa2a47c53f526a8bd25cfc94b7c3a0e84ae3a710",
+  "parent_source_contract": "wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/source_contract.json",
+  "parent_source_contract_sha256": "0de82deb871f97d9722c4ea69a2707ee4e0dee4524ebf6d17d853da2730cd431",
+  "wheel_only_diagnosis": "wheelleg_warp/results/paper_recovery_20261004/wheel_headroom_attribution_v1/review.json",
+  "wheel_only_diagnosis_sha256": "99f24376f16cf99763b3bb8afdff120e9d0ac730b6592382ea4e7403b6479293",
+  "models": [
+    {
+      "seed": 1761,
+      "prefix": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/runs/L2-room/1761/step_200000",
+      "checkpoint": {
+        "checkpoint_sha256": "d82949e9e5492be0ad16c7102792fa2fd681869c914059ec3943e358e5426f6f",
+        "normalization_sha256": "ea0d67c27c0b7b0a38093c5aadbb0b4a76495e6923dbdd1eb3e7394b1da3ab2f"
+      }
+    },
+    {
+      "seed": 1762,
+      "prefix": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/runs/L2-room/1762/step_200000",
+      "checkpoint": {
+        "checkpoint_sha256": "3dd1b90d534cd670162c03c93a777fd2932a6251e2d1461a1ad695d2d358a5b2",
+        "normalization_sha256": "4f1308f2d204493ce41a2f4266dbe4e64cde712b5bec1f80d935753a288c70b3"
+      }
+    },
+    {
+      "seed": 1763,
+      "prefix": "/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/runs/L2-room/1763/step_200000",
+      "checkpoint": {
+        "checkpoint_sha256": "cd0d959d8d67f7bf863245fd34ef84a7bd6265b81fe4ecfcd193ae851dd78bd1",
+        "normalization_sha256": "42ccc1ddb9a6ca44b428a3a5f7ca2fc391442f9d5de43eb3f981bb677687f297"
+      }
+    }
+  ],
+  "panels": {
+    "regular": 96,
+    "controlled": 40
+  },
+  "conditions": [
+    "zero_leg_fixed_assist",
+    "learned_room_leg_fixed_assist"
+  ],
+  "allocators": [
+    "uniform_original",
+    "component_wheels"
+  ],
+  "budget_first_episode_evaluations": 1632,
+  "new_training_steps": 0,
+  "case_role": "136 existing development cases reused; no independent-test claim. Zero-leg seed labels are numerical/controller repeats, not independently trained zero policies.",
+  "definition": {
+    "nominal": "b=(diagnostic[4],diagnostic[5]), already feasible in original command_bounds",
+    "filtered_request": "r=(.3*memory[18],-.3*memory[18]) Nm, original public raw39 fixed assist and original slew/filter",
+    "uniform_original": "Original accepted commands and diagnostics unchanged; actual original global lambda used, not recomputed or replaced.",
+    "component_wheels": "u_i=clip(b_i+r_i,-B_i,+B_i), float32 command; accepted diagnostic wheel increment u_i-b_i in original float64 diagnostic semantics.",
+    "timing": "After original controller and leg room layer, before physics. Original hip commands, Nom calculation, targets/filter memory, Actor/Critic input dimension and physical limits unchanged.",
+    "common_and_difference": "m=(uL+uR)/2,d=(uL-uR)/2. With fractions alphaL/alphaR, Delta_m=(alphaL-alphaR)*steering/2 and Delta_d=(alphaL+alphaR)*steering/2; abs(Delta_m)<=.15 Nm for original request cap.",
+    "important_tradeoff": "More signed differential command in the same-state box does not prove more yaw acceleration or retained velocity/balance. If common command must stay fixed, scalar wheel lambda is maximal only along the original request segment alpha in[0,1].",
+    "error_handling": "Do not bypass original invalid flags or nonfinite/invalid map protections; component kernel must refuse invalid inputs rather than output unsafe commands.",
+    "diagnostic_semantics": "Update only wheel ctrl and accepted wheel diag[10:12]. Leave original lambda diag[12] as original global projection statistic; label it accordingly, not the new wheel acceptance factor. Original reward/physical/observation consumers must receive the new accepted wheel increments."
+  },
+  "source_admission": {
+    "algebra_source_sha256": "e1252377cf6e1bf1dce4fe6d0f33f0ec02c0dafe8d24420963dd3cec2d889dae",
+    "algebra_check_sha256": "006e51efad56e22c07889d08b74b3ec71e82b1a5b53c9b2b3c94c9b6867f8e24",
+    "GPU_admitted": false,
+    "required": [
+      "GPU/NumPy unit for original uniform and component commands, dynamic bounds/gain scaling, signed common/differential and pointwise envelope",
+      "Zero and nonbinding float32 identity, invalid input/error flag handling",
+      "Hip ctrl/Nom/filter/request/reference/input arrays unchanged",
+      "Explicit owners, first-terminal/reset, original raw39 assist cache and normalization semantics",
+      "Readonly before/after wheel statistics and original task/physical/design accounting",
+      "Freeze source/model/RMS/proposal and use one uninterrupted bounded queue; no silent retry"
+    ]
+  },
+  "statistics": [
+    "original nominal wheel commands",
+    "filtered requests",
+    "original globally accepted increments",
+    "selected diagnostic increments",
+    "actual float32 increments relative to float32 Nom",
+    "common/differential increment energy and signed difference",
+    "original global lambda, component acceptance ratios, original/selected box excess and identity errors",
+    "per-case completion/success/physical/design/yaw/velocity/arrival/legacy attitude and all losses"
+  ],
+  "primary_gate": {
+    "scope": "Qualify whether this within-wheel allocation has development-task value, not the old learner-superiority gate",
+    "reference": "Concurrent uniform zero-leg baseline plus preserved original B0/B1/B1-route successful cases from main development references",
+    "per_panel": "Every numerical seed repeat is complete and physical/design clean, preserves all successful reference cases and original velocity/arrival/legacy roll-pitch nondegradation thresholds; paired Jpsi lower in at least2/3 repeats and panel mean reduction positive.",
+    "nondegradation_source": "wheelleg_warp/results/thirtieth_round_admission_review_20261003/protocol_gpu_v3/protocol.json",
+    "learned_increment": "Separately report frozen learned-leg component versus zero-leg component for all3 seeds and bothpanels, including every lost/gained case. No learned utility claimed without all-seed success preservation and positive per-seed yaw reduction.",
+    "original_formal_learning_gate": "Unchanged failed. Original 15% and0.05deg strong-reference yaw thresholds and all original criteria still govern future formal learned-method superiority.",
+    "negative": "Close this component-allocation task-benefit route; no gain/weight/common-mode penalty sweep, budget extension or repeated fixed-policy rescue.",
+    "positive": "Only a candidate nonlearning reference and possible coordination mechanism requiring independent qualification and matched future protocol; no old baseline replacement, learner promotion or automatic retraining.",
+    "nondegradation_source_sha256": "89e859ee0e6e73631be45b69f0a93a61bba3240a095671ff0f9a68a5aaf606ef",
+    "nondegradation": {
+      "velocity_multiplier": 1.05,
+      "velocity_add_m_s": 0.005,
+      "arrival_multiplier": 1.05,
+      "arrival_add_s": 0.05,
+      "legacy_roll_pitch_add_deg": 0.1,
+      "preserve_all_B0_successes": true,
+      "success_count_at_least_best_reference": true,
+      "original28_all_success": true
+    },
+    "classical_reference_files": {
+      "wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/classical/B0_regular.json": "0dad8cf127bd90380c2e20dbd3b6f1b8e89d09e1caa65627a189ab338e0b54ad",
+      "wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/classical/B0_controlled.json": "bbae0260fca359df8f935de0c29f67bad60f54f09d661b3cb5fc36d17b252efa",
+      "wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/classical/B1_regular.json": "e1e6efa0d8e2f68008eef5e7225272bf4257a191d4f60f318d3c63e201284b65",
+      "wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/classical/B1_controlled.json": "543d8556ffb84abcfebc021764ee626070f6834937f4ff45976d3572843f3b69",
+      "wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/classical/B1-route_regular.json": "6e5f0af363878ad7663a6c81d0810e8e5a3c02392488ba5f0dccfee0553187f2",
+      "wheelleg_warp/results/paper_recovery_20261004/reference_budget_learning_v1/classical/B1-route_controlled.json": "bb4cf28c079b7cfe06ee7afcfebbd59fe3818188f8f971c49404d8f925470ca8"
+    },
+    "unevaluated_original_requirements": "Original28 regression and formal learned-superiority qualification remain required by the full original protocol but are not evaluated or claimed passed by this136-case development screen. No production/formal promotion without separately registered qualification."
+  },
+  "limits": [
+    "Current wheel-only diagnosis does not revive the rejected between-leg/wheel grouped mode; grouped_residual remains off.",
+    "Current policies were trained without fixed assist or component projection. This is a frozen-policy context intervention.",
+    "Command box feasibility is not future actual torque, working-domain invariance, contact or hardware safety.",
+    "Component clipping is an elementary projection, not standalone algorithm novelty. General saturation redistribution has established control-allocation prior art.",
+    "Do not change original task/reward formulas, request cap, thresholds, old CPU/GPU baseline or sealed final tests."
+  ],
+  "literature": {
+    "primary": "https://www.diva-portal.org/smash/get/diva2:316757/FULLTEXT01.pdf",
+    "scope": "Harkegard technical report2594, dated2004: abstract/introduction on constrained control allocation and saturation redistribution read. Not a fulltext wheel-robot comparison or proof of this robot method novelty.",
+    "publisher_wheel_paper": "https://www.sciencedirect.com/science/article/pii/S2405896320327683",
+    "publisher_access": "Search metadata/abstract only; direct page returned403, no fulltext claim."
+  },
+  "next": "158 implement the smallest optional GPU selector, validate and freeze source before the single1632 evaluation queue;159 original-rule decision,160 direction review/confirmed cleanup. No new PPO admitted."
+}

@@ -1,0 +1,34 @@
+{
+  "verified": true,
+  "synthetic_rows": 1024,
+  "max_abs_common_change_Nm": 0.1499999999999999,
+  "projection_normal_cone": true,
+  "signed_differential_nondegradation": true,
+  "nonbinding_and_zero_identity": true,
+  "input_arrays_unchanged": true,
+  "invalid_inputs_rejected": true,
+  "witness": {
+    "nominal": [
+      4.5,
+      4.5
+    ],
+    "request": [
+      0.3,
+      -0.3
+    ],
+    "uniform": [
+      4.5,
+      4.5
+    ],
+    "projected": [
+      4.5,
+      4.2
+    ],
+    "common_change_Nm": -0.15,
+    "differential_increment_Nm": 0.15
+  },
+  "physics_steps": 0,
+  "training_updates": 0,
+  "limits": "Command-box algebra, not actuator dynamics, yaw acceleration, closed-loop task or learning evidence",
+  "source_sha256": "e1252377cf6e1bf1dce4fe6d0f33f0ec02c0dafe8d24420963dd3cec2d889dae"
+}

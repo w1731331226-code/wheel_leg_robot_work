@@ -80,3 +80,5 @@ Residual Policy Optimization With Trust Region Constraints: A Learning Framework
 ### 同日用户要求补齐目标全文后的续查
 
 再次定向核对DOI/作者稿线索，结果仍为元数据、Request Full-text或引用本文的其他论文，未获得目标正文。已向用户请求合法PDF本机路径或访问链接。新增SCI/SCIE期刊检索用于完善非学习与RL对照边界，不替代目标IEEE全文，不把题名相近的PDF算作目标稿。未发送邮件或外部求助。
+
+第157轮（2026-10-06）一次定向检索轮式饱和/约束分配，随后直接核三个来源。ScienceDirect轮式论文S2405896320327683与综述S0005109813000368均403，无新合法全文入口，不重复重试。作者机构DiVA [报告2594 PDF](https://www.diva-portal.org/smash/get/diva2:316757/FULLTEXT01.pdf)可读，封面日期2004-02-16；仅核摘要/绪论，不声称完整精读或輪腿直接同平台对比。文献不要求联系作者/订单，本轮未发送任何消息。

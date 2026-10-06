@@ -1,5 +1,19 @@
 # 双轮腿机器人PPO论文方案
 
+第157轮轮内分配代数与有限任务干预登记（2026-10-06，goal active）：
+
+**可检验边界。** 第156轮所有记录中global lambda=wheel-only lambda且额外hip loss为0，旧腿轮分组恢复方向保持关闭。令轮accepted Nom为b、原filtered steering为s∈[-.3,.3]Nm，r=(s,-s)，原轮command box为|u_i|≤B_i。共同/差模坐标m=(uL+uR)/2、d=(uL-uR)/2，轮box即|m+d|≤BL、|m-d|≤BR。若要求m=m0且沿原请求线段u=b+alpha*r、alpha∈[0,1]，wheel-only scalar lambda已最大；这不是任意动作/闭环全局最优结论。
+
+**区别于旧分组的候选。** 普通逐轮box投影u_i=clip(b_i+r_i,-B_i,B_i)，可视为min||u-(b+r)||²的闭式解。令各轮request fraction为alphaL、alphaR，则Delta_m=(alphaL-alphaR)*s/2、Delta_d=(alphaL+alphaR)*s/2，abs(Delta_m)≤.15Nm；在同状态signed differential command不小于scalar版本。Nom=(4.5,4.5)、r=(.3,-.3)、B=(4.5,4.5)时，scalar只能(4.5,4.5)，逐轮得到(4.5,4.2)，Delta_m=-.15、Delta_d=.15Nm。更多差动请求以改变共同分量为代价，不能称保持推进/平衡、不改变轮Nom执行或保证yaw加速度更好；这正是下一实际任务干预要检验的权衡。
+
+wheel_component_projection.py仅NumPy代数原型，不接入运行控制器；1024synthetic vectors核box、normal-cone最优性、signed differential、common bound、零/非绑定float32身份、输入不改与无效输入拒绝全部过。algebra_check保存源码SHA和见证，0新physics/learning。基础box投影不称创新：Harkegard《Dynamic control allocation using constrained quadratic programming》技术报告2594（封面2004）摘要/绪论已讨论约束与饱和下控制重新分配，作者机构PDF可读：https://www.diva-portal.org/smash/get/diva2:316757/FULLTEXT01.pdf 。轮式饱和分配论文出版页本次403，仅有搜索元数据，不称取得全文；检索/近邻记录已更新。
+
+**一次有限任务验证。** wheel_component_projection_v1/proposal登记3冻结models×2leg on/off with fixed assist×2allocators original/component×136同发展cases=1632首回合评价/0learning，GPUsource尚未准入/0执行。并发原版本作为因果比较，不用旧重放小幅翻转当收益；zero-leg的3标签是numerical repeats，非3新训练。只改变wheel输出投影及相应accepted diagnostics供原reward/obs/physics消费，hips/Nom计算/原filter/raw39 fixed辅助/请求cap/limits保持，保留invalid保护。original lambda仍只能叫原投影统计，不能解释为逐轮的新接受比例；必须分开原始/新diag与实际float32、共同/差模与任务统计。
+
+预定development reference门：各panel/重复都complete、physical/design干净，保留concurrent uniform zero-leg及原B0/B1/B1-route成功case和原velocity/arrival/legacy roll-pitch阈值，yaw至少2/3重复lower且平均positive。单列learned-leg相对pure component固定参考的逐case/seed增量与全部代价；不把固定投影收益归RL。该门只判断非学习参考是否值得独立资格验证，原learned strong-superiority的15%且.05deg门不变，原28回归与封存/正式资格尚未评价、不声称通过。失败关该任务收益方向，不调gain/权重/共同分量罚项或预算追阳性；阳性也不替换原baseline/旧模型晋升/自动PPO。
+
+158最小GPU实现与owner/reset/输入/接受语义准入后唯一队列，159完整原门去留，160深审清理；全方法贡献、正式5seed、消融、新独立泛化/压力/成本与新稿要求继续，当前没有合格新PPO优势。
+
 第156轮只读轮余量诊断闭合（2026-10-06，goal active）：
 
 wheel_headroom_attribution.py复用已冻结fixed_steering_leg.collect，新增只读record kernel、显式env buffer持有、first-terminal冻结/显式reset；原控制器、策略/RMS、滤波、room与任务未改。128synthetic GPU与独立NumPy、所有输入逐值不改、异步terminal/reset、136world实际构图/reset通过；source_contract冻结47源与proposal/unit/owner SHA后才一次启动flock排他的wheelleg-wheel-headroom-v1.service（初PID11974）。完整12jobs/816回合、首回合记录12165747有效子步（并行环境提前结束后可能自动重置，本计数不作仿真总工作量）、0学习正常exit0/inactive/MainPID0，无中断/重试。
