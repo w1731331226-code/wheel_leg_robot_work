@@ -1,5 +1,17 @@
 # 双轮腿机器人PPO论文方案
 
+第165轮方向深审与清理（2026-10-06，下一170，goal active）：
+
+**继续价值。** 161–164的只读接口资格、205实际轨迹与解释、独立necessarygeometry暴露了原contact判据与完整轮道通过主张的差别，推进数据解释与公平协议有价值。旧coupling/component分配微收益及frozenV6晋升保持closed，不追加相同回放、gain/weight/reward/network或PPO预算。13低高度V6成功证据不当新centre/loaded可达性、channel必要或整体优势；oldsuccess仍按原task有效。新完整主张/learning superiority/独立泛化仍未完成，不能缩成负材料或工程就绪结束全goal。
+
+**方法评价。** 245原调用和pointer/scalar保持、owners/force API/firstterminal检查和冻结source/RMS/完整失败保留有效；41+164因tuple-JSONpostwrite比较故障恢复已明确、total205不增加、B0未重跑，原failed unit和rawerror保留。现有validator不等外部完整physics重建；112列max force/vertical witness可能省略小的并发接触，geometrycentre不是完整轮胎，pre/post时间层不能混用。legacynecessarygeometry实测B0/B1route原28各28满足、V6原28/28/20中13/4/7满足，不作为final loaded task成功率。
+
+**下一必要工作，而非新训练。** 166从不变模型提取actual wheel collision shape/size/tilt信息，并将已有112字段对应到完整通过证据checklist，不新rollout/改controller。167并列保留originalcontact与candidateground/airborne passage操作定义，假设和未定量明确，不能按policy分数选support阈值。168边界fixture/现205做完整资格逻辑校对，原成绩另列且mixed/缺证据显式unknown。169只能在资格成立后选一个具体有预测的共同reference/authority/taskdesign假设，给classic/RL同信息同task、source/预算事前冻结；没有资格则不新learn。170深审清理。没有本轮新physics/training预算，用户严格lane或edge可接受选择仍pending，不把未回答当primary任务更改或开始依赖训练。
+
+**清理。** 2份ignored/fuser无人使用、完整compiledcodeobject及instruction bytes与源码一致的pyc删除28004B，round165_cleanup保存源/cacheSHA，缓存可再生。所有源码、models/RMS、205rawtraces/geometry、unique失败与recovery/基准/final保留；不会将当前学术失败资料当冗余删除。
+
+round165_direction_review绑定161–164 source/admission/实际completion/recovery/分析与draft证据（含所有trace hashes复核）。整套具体方法贡献、stable强classic学习优势、条件3→正式5seed/关键消融、新独立ID/组合/geometry/参数-delay OOD与易任务、真实端到端cost/新稿/复现仍缺，goal active。
+
 第164轮独立路径资格草案（2026-10-06，goal active；用户任务选择pending）：
 
 按论文可能主张“指定轮道通过”的假设，新增path_qualification_draft.py与lane_centred_passage_contract_draft.json，未改原contact success/任何原failed gate或控制器。scope仅legacy单箱体/指定wheel centre；实际geometry局部坐标与方向、entry-before/exit-after、inside pre/post lateral界、interior连续physics采样共同作为必要几何条件，geometry epsilon1e−7m是浮点标度不是性能调参。5项synthetic检查覆盖正向/反向、边缘、缺密度、loaded资格保持None；数据/模型未新增rollout或更新。

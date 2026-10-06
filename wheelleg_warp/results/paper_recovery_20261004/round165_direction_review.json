@@ -1,0 +1,73 @@
+{
+  "round": 165,
+  "period": [
+    161,
+    165
+  ],
+  "previous_goal_turn": "progress",
+  "goal_status": "active",
+  "next_review_round": 170,
+  "evidence": {
+    "wheelleg_warp/results/paper_recovery_20261004/task_mode_witness_v1/source_contract.json": "71fb37bd9c9440dc23451ce9afe5ea19bfbdc877a68e3dabdaffd5bd9e27ea02",
+    "wheelleg_warp/results/paper_recovery_20261004/task_mode_witness_v1/admission_review.json": "9009d5f8832c05c0c97e6253de9c3cc96ca6196053d8178e8c836ace2875e2fe",
+    "wheelleg_warp/results/paper_recovery_20261004/task_mode_witness_v1/completion.json": "72a7387fdbee4d1b6609559a0bb4e7bdcf9cabc14e0385686fb413c77b393044",
+    "wheelleg_warp/results/paper_recovery_20261004/task_mode_witness_v1/recovery_contract.json": "4b144199de722c5303ecf91ab21f3acdcbfbabc50a0079e96a6718a1e9889b4e",
+    "wheelleg_warp/results/paper_recovery_20261004/task_mode_witness_v1/round162_data_review.json": "aae1ca8c977b31d175a49a7b3fd7f54d09ec491cafe47306fd60f39e87da37f5",
+    "wheelleg_warp/results/paper_recovery_20261004/task_mode_witness_v1/physical_mode_analysis.json": "5abc748ac503177581221cf24737c381c30a89beb2ea02840e93cb37b75c9558",
+    "wheelleg_warp/results/paper_recovery_20261004/task_mode_witness_v1/round163_interpretation.json": "ce96557fc4c24e43204659cc0e475d6434716687d67e19325cf617adcdbb0b33",
+    "wheelleg_warp/results/paper_recovery_20261004/task_mode_witness_v1/path_qualification_draft_audit.json": "9cf274fdd97592019467d95b62fb37f4dff18427f76e5a27c01d8a67444541e7",
+    "wheelleg_warp/results/paper_recovery_20261004/task_mode_witness_v1/lane_centred_passage_contract_draft.json": "ce064168432a0943ef36778ef7bf0dbadd8de6866ff1e441778f4f2a16a4c2cb"
+  },
+  "completed": {
+    "first_episode_evaluations": 205,
+    "unique_development_cases": 41,
+    "trace_rows": 615184,
+    "execution_segments": [
+      41,
+      164
+    ],
+    "B0_replayed": false,
+    "training_updates": 0
+  },
+  "decision": [
+    {
+      "branch": "Old allocation branches/frozen V6 promotion",
+      "state": "closed/not admitted",
+      "reason": "Prior gates failed;8 original-predicate wins are not centred-crossing or channel-only evidence."
+    },
+    {
+      "branch": "Original contact and stricter passage qualification",
+      "state": "parallel evidence tracks retained",
+      "reason": "No retrospective relabeling; pending optional preference is not accepted primary-task change."
+    },
+    {
+      "branch": "Physical evidence and full qualification",
+      "state": "continue bounded existing-data/geometry work, no new rollout budget",
+      "reason": "Tyre shape/clearance, timing and maximum-witness limitations must be explicit before loaded criteria; legacy draft is incomplete."
+    },
+    {
+      "branch": "Long PPO/network/reward/extreme scenes",
+      "state": "not admitted",
+      "reason": "Specific method and strong-reference benefit/full operational task/independent qualification missing."
+    }
+  ],
+  "method_review": "Source/order/argument/force checks and ownership sound; recovery41+164 explicit and within205. Snapshot/aggregate verification is not external full physics validation. Maximum-contact witnesses omit smaller simultaneous contacts; centre-lane geometry not whole-tyre or full loaded passage.",
+  "next_work": {
+    "166": "Audit actual wheel collision geometry and map112 recorded columns to full-evidence checklist, no rollout or controller edits.",
+    "167": "Parallel original-contact and candidate ground/airborne passage definitions with explicit assumptions; no policy-score threshold rescue.",
+    "168": "Boundary/fixture and existing205 qualification check, original scores separate and mixed/missing evidence explicit.",
+    "169": "Only one concrete supported reference/authority/task-design hypothesis, with source/info/budget frozen before newlearning.",
+    "170": "Deep review/confirmed cleanup."
+  },
+  "new_physics_or_training_budget": 0,
+  "user_task_choice": "Optional strict lane versus edge-contact choice pending; no primary-task replacement or dependent training by silence.",
+  "cleanup_sha256": "bb25aa2d5fb0b7333440648c288bcb7feb8e5d30cf70b56976e20f705d9e8e26",
+  "remaining_full_goal": [
+    "Specific new method contribution",
+    "Same-information strong-classical superiority",
+    "Conditional3seed then formal5 trained seeds and ablations",
+    "Fresh ID/compositions/geometry/parameter-delay OOD and easy preservation",
+    "Real end-to-end timing/full new manuscript/reproducibility"
+  ],
+  "entire_goal_complete": false
+}
