@@ -7073,3 +7073,7 @@
 - `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/runs/1763_zero_leg_no_assist_controlled.json`
 - `wheelleg_warp/results/paper_recovery_20261004/fixed_steering_leg_diagnostic_v1/runs/1763_zero_leg_no_assist_regular.json`
 - `wheelleg_warp/review_fixed_steering_leg.py`
+
+### 第208轮终态数据分批归档 1/7
+
+归档已核验六组匹配实验的第1批，824个文件/1794388082B；全部原始成功与失败均保留。本次仅数据归档，无新学习或评价，科学收益门失败结论和后续贡献/独立泛化缺口不变。
