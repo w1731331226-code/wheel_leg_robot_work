@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第173轮完整接触航向力矩解释与候选收束（2026-10-06，目标继续）：
+
+analyze_complete_contact按solverpre同时间COM/frame/local6wrench计算每条wheel-static接触的tau_z=((p-COM)×signed(force@frame)+signed(torque@frame))_z，再逐physicsstep累加；normal-only只用Fn×normal，remainder包括切向力及全部contacttorque。5项符号/旋转/无事件断言通过，40原任务记录/trace及所有源码hash核过，full=normal+remainder数值恒等核过，0新回放/学习。原24失败为12独立case配对重复，其中20条（10case）yaw>5度，全部在firstpositive targetcontact后82–107.5ms发生，8条无referenceclipping。
+
+20条从firstcontact到firstyaw5的signed normal/remainder impulse方向均相反；.115/.16的16条记录abs signed normal impulse约.318–.352Nms，remainder约.173–.214Nms。这是记录力矩的分解与事件先后，不能将remainder当全部外生摩擦扰动，更不能推论去掉它会改善。它包含当前控制器牵引/恢复作用，不能靠normal-only或整段signed cancellation推因果/yaw加速度。该终点依赖失败的window为探索诊断，后续干预指标必须事前独立固定。
+
+plot_complete_contact导出PNG/SVG并视觉核过：确定选0.16m最小注册seed6301009（169已用于无截断反例），B0/B1-route的法向入口负脉冲、反向牵引部分及随后yaw跨−5度相似；仅作说明，不当独立优势。16条原成功中8条central存在零upward targetnormal样本，不能把保守零卸载规则升级为primary，也不能由零targetnormal推腾空。完整centre/wholetyre/topload/airborne主张仍需相应条件，原success不改。
+
+**唯一待准入候选。** 转向入口冲击阶段的common/differential wheel协调：在同Nom、同轮差模允许范围、原总执行器限制及公开延迟39packet下，增加共同轮权限是否能降低early normal yaw impulse/peak，同时保持原速度/到达/停车/高度/roll/physical/design及全部强classic成功。真值contact/COM/geometry不进policy/controller，不作侧缘路径等同完整passage。需同信息非学习共同制动参考和matched训练/动作权限/初始化对照；冻结V6删channel不能识别matched learning因果。共同/差模表示与简单制动是常规工程，不宣称新算法；174先核近邻区别与权限/可行性，有据且有可辩护贡献才登记学习，否则关闭此候选换问题，不扩预算救分。当前该候选新增physics/training预算均0，175深审清理保持；完整贡献/正式5seed/消融/新独立泛化/统计成本/新稿仍待完成。
+
 第172轮完整40回合测量完成（2026-10-06，目标继续）：
 
 complete_contact_witness.py在源码/installed API/runner/旧参考结果/预算hash核对后执行唯一40首回合队列，B0与B1-route各20原受控开发场景。分别297653/297661首回合物理步、587304/586733全接触记录，总595314步与1174037条接触；40份完整NPZ压缩331907245字节，最大单份8518895字节。每步完整pre/post状态、全contact/count/COM和原112header落盘，校验全部SHA/schema/finite/dense/nooverflow/逐step接触计数/首终态/相邻pre-post状态完全连接。两classic各8/20原任务成功、20/20physical及design通过，与原标签变化0；不称轨迹bitwise等同。

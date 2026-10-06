@@ -1,0 +1,55 @@
+{
+  "verified": true,
+  "round": 173,
+  "analysis_sha256": "29f040380d98d147682496bfa7ecbe65a2dd30a599533cba9b0496e11aee27d2",
+  "figure_manifest_sha256": "9377d391448ea0421a03fc2ad3aecc990eff8327bb97af2d981dc81b77086839",
+  "figure_visually_checked": true,
+  "counts": {
+    "records": 40,
+    "unique_development_cases": 20,
+    "original_failures": 24,
+    "unique_failed_cases": 12,
+    "yaw_failures": 20,
+    "unique_yaw_failed_cases": 10,
+    "yaw5_after_target_contact": 20,
+    "yaw_failure_without_reference_clip": 8,
+    "opposed_signed_normal_remainder_impulses": 20,
+    "original_success_with_some_zero_upward_target_normal_central_samples": 8
+  },
+  "observation": {
+    "contact_to_yaw5_s_min": 0.08200000000000074,
+    "contact_to_yaw5_s_max": 0.10749999999999993,
+    "low_height_records": 16,
+    "low_abs_signed_normal_impulse_Nms": [
+      0.31815983503910994,
+      0.3523958583247975
+    ],
+    "low_abs_signed_remainder_impulse_Nms": [
+      0.17348876181982917,
+      0.2135006948136067
+    ]
+  },
+  "decisions": {
+    "friction_cancellation_shortcut": "Not admitted: net remainder opposes normal impulse before yaw5 in20/20 records. It includes commanded traction, not an identified exogenous disturbance to cancel.",
+    "reference_only_cause": "Still rejected by8 no-clamp yaw failures; endpoint local effects remain open.",
+    "strict_zero_unloading_as_primary": "Not adopted:8/16 original successes have some central zero upward-target-normal samples. This is not proof of flight; original scores unchanged.",
+    "next_candidate": "Impact-phase common/differential wheel coordination, with existing bounds and published delayed39 packet only. Candidate mechanism, not novel or qualified algorithm yet."
+  },
+  "candidate": {
+    "hypothesis": "Adding controlled common wheel authority alongside unchanged differential wheel authority may reduce early impact yaw response while retaining original speed/arrival/height/roll/physics/design gates.",
+    "predictions": [
+      "With same Nom and actuator limits, additional common wheel action lowers initial normal-moment impulse and yaw peak without using lateral obstacle avoidance as full-passage evidence.",
+      "Benefits must survive all original task gates and strong-classical comparison; reducing yaw while harming roll/high-height/speed/arrival/stop/height rejects candidate.",
+      "Authority question requires matched policy/training/information treatment and same-information nonlearning common braking reference; frozen V6 channel masking cannot identify matched-learning effect."
+    ],
+    "information": "Same published39 packet, same delay/cadence and original ideal fast Nom in all arms; new contact forces/COM/true trajectory/geometry only evaluation, never policy/controller privilege.",
+    "distinctiveness": "Common/differential actions and basic braking are standard engineering; no novelty claim.174 must check closest work, feasibility/authority and distinguish a defensible method before registering any learning budget.",
+    "new_rollout_budget": 0,
+    "new_learning_budget": 0,
+    "falsification": "No common-authority benefit, lost strong-classical successes, any physical/design deterioration, or no defensible methodological distinction closes this candidate. No added budget/gain tuning to rescue it."
+  },
+  "limitations": "Observational decomposition, not counterfactual effect or angular-momentum balance. Outcome-defined contact-to-yaw5 window is exploratory, not a preregistered treatment metric. Remainder includes feedback traction/torsional/rolling effects; impulse does not directly prove yaw acceleration. Figure is a declared illustrative0.16m case, not aggregate benefit.",
+  "remaining": "174 candidate prior-art/fairness/authority admission or rejection;175 deep review/cleanup. Specific contribution, qualified3/formal5 training seeds, fresh independent generalization/ablations/statistics/PPO end-to-end/new paper remain incomplete.",
+  "new_evaluations": 0,
+  "training_updates": 0
+}
