@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第174轮入口候选权限/时序与近邻核对（2026-10-06，目标继续）：
+
+audit_impact_authority复用40完整记录和173力矩函数，核实际yaw config=.4/2/.24/.3、每physics请求slew=.01、50Hz策略与2kHz物理步，next-boundary/渐增边界断言通过。乐观假设接触一出现就能在下一策略边界完美识别（实际39packet并无Fn真值），.115/.16的16条记录中，固定接触后100ms abs normal yaw impulse有39.27–80.56%在首可用contact-triggered action之前发生，中位74.47%；所有场景等待4–20ms。共同轮残差每轮最多.3Nm、从0到满值要100个substeps（首命令到第100命令49.5ms），原lambda/共同差动竞争可进一步压缩。命令积分不等于实际接触力/减速/航向改善，不能据此宣称所有policy无效；但接触触发动作不能预防此前已发生的冲量。固定100ms为探索诊断，不换原primary或用它事后救分。
+
+共同/差动坐标满足tauL=c+d,tauR=c-d，允许域|c|+|d|<=.3Nm；441点变换逆/diamond恒等过。该能力已在virtual6内，重新命名/删腿减少维度不构成独立新算法。官方PMLR动作空间摘要复核轮腿、初始化和步间执行已被系统研究；作者T-RO页面本轮只读元数据确认已有impact/contact-switch主题，不用该页宣称方法完全同构，也不重试用户已要求停止追索的IEEE全文。近邻核对非穷尽排他性证明。
+
+**去留。** 关闭“共同/差动坐标变化就是新贡献”与“接触触发策略能预防首个尚未观察冲击”的表述；后续共同动作可能改善恢复的假设未被反证，但没有具体方法区别和受控效果，不准入新PPO/五seed。175深审建议先评估一次共同Nom时序干预：原Nom在2kHz可得最新可得gyro，却对yaw gyro用alpha=.025（e-fold19.75ms）；仅与alpha=1最新可得gyro比较，增益/VMC/LQR/任务/模型/所有物理设计与输出门/信息保持，同一强经典参考。其带宽及噪声抑制同时改变，不是纯delay-only因果，也不是新算法；须查高位roll、速度/到达/停车/高度及噪声敏感性，成功不自动替换原基线或晋升旧模型。
+
+本轮仅形成175待评候选，0新physics/learning预算，无控制源码改变/新回放；禁止以慢classic构造PPO优势。175方向深审和冗余清理如期，具体新方法、资格3→正式5训练seed/消融/新独立泛化/统计/真实PPO耗时/新稿仍待完成。
+
 第173轮完整接触航向力矩解释与候选收束（2026-10-06，目标继续）：
 
 analyze_complete_contact按solverpre同时间COM/frame/local6wrench计算每条wheel-static接触的tau_z=((p-COM)×signed(force@frame)+signed(torque@frame))_z，再逐physicsstep累加；normal-only只用Fn×normal，remainder包括切向力及全部contacttorque。5项符号/旋转/无事件断言通过，40原任务记录/trace及所有源码hash核过，full=normal+remainder数值恒等核过，0新回放/学习。原24失败为12独立case配对重复，其中20条（10case）yaw>5度，全部在firstpositive targetcontact后82–107.5ms发生，8条无referenceclipping。

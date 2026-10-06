@@ -1,5 +1,7 @@
 # PPO论文查新矩阵
 
+第174轮近邻与贡献边界复核（2026-10-06）：[PMLR官方动作空间摘要](https://proceedings.mlr.press/v270/esser25a.html)仍明确轮腿、初始化与策略步间行为；[T-RO作者出版页](https://marco-tognon-robotics.com/content/non-smooth-trajectory-optimization-wheeled-balancing-robots-contact-switches-and-impacts)本轮只提供接触切换/冲击轨迹优化的标题元数据，不当完整方法同构证据，不重试受限IEEE全文。共同/差动轮力矩是已有virtual6权限内的可逆坐标，普通制动、最新可得gyro替代低通或删动作维度均不单独称新算法。当前候选没有可辩护方法区别，不准入长PPO；下一深审先判断强Nom已有20ms滤波是否值得一次受控核对，再决定剩余学习必要性，而非用慢classic制造优势。此非穷尽查新/排他性结论。
+
 第135轮近邻复核（2026-10-05）：官方[PMLR动作表示摘要](https://proceedings.mlr.press/v270/esser25a.html)仍明确包含轮腿、初始化与策略步间行为；[UGent adaptive-bounds摘要](https://biblio.ugent.be/publication/01KVA83TWHK288BDR6SKJF16C6)列状态相关残差边界与双环，2026出版元数据DOI [10.1016/j.engappai.2026.115343](https://doi.org/10.1016/j.engappai.2026.115343)。仅摘要/元数据复核，fulltext仍UGent only；没有重试受限全文或断言完整方法等价。本机新的受控余量/动作表示若实施，仍须说明coupled wheelleg作用与同信息强经典/学习证据，不能用一般自适应边界当新增创新。当前normal-gap plane/corner候选独立覆盖失败停止部署，有限因果诊断不算控制贡献。
 
 最近方向复核：2026-09-27。详见 [三篇全文核对](LITERATURE_FULLTEXT_REVIEW.md)；已关闭其中两篇，第三篇仍缺全文。用于训练前确定对照与研究边界，不是“创新已确认”的证明。正文细节仅填写本次实际可访问的内容；“未核实”不等于不存在。没有用其他平台的成功率与本机横向排名。

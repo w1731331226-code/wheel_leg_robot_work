@@ -1,0 +1,40 @@
+{
+  "verified": true,
+  "round": 174,
+  "authority_sha256": "6fcf60739a65dc1bf1e9d2b3a4c9b3a25d9541c0ead9fd208bd62b6773bad133",
+  "source_sha256": "e0d62dfe76994c8792feaac0cd1d6c4e7cbcc23e571968d87909eea13d43a623",
+  "coordinate_fixture_grid_points": 441,
+  "coordinate_identity": "tauL=c+d,tauR=c-d; c=(tauL+tauR)/2,d=(tauL-tauR)/2; max(abs(tauL),abs(tauR))=abs(c)+abs(d), admissible diamond abs(c)+abs(d)<=0.3Nm before original projection.",
+  "related_work": [
+    {
+      "title": "Action Space Design in Reinforcement Learning for Robot Motor Skills",
+      "url": "https://proceedings.mlr.press/v270/esser25a.html",
+      "access": "official abstract plus existing local fulltext review",
+      "supported": "Wheeled-legged action spaces, initialization and between-timestep execution already investigated; no claim it uses our exact common/differential mapping."
+    },
+    {
+      "title": "Non-Smooth Trajectory Optimization for Wheeled Balancing Robots with Contact Switches and Impacts",
+      "url": "https://marco-tognon-robotics.com/content/non-smooth-trajectory-optimization-wheeled-balancing-robots-contact-switches-and-impacts",
+      "access": "author publication metadata only in this round",
+      "supported": "Prior impact/contact-switch trajectory-optimization topic; this page does not establish algorithmic equivalence. No restricted IEEE fulltext retry."
+    }
+  ],
+  "decisions": {
+    "common_differential_coordinate_change_as_new_algorithm": "Rejected as independent novelty; ordinary invertible coordinates already inside virtual6 authority.",
+    "contact_triggered_prevention_of_first_pulse": "Cannot prevent portion before next available policy action; low-height fixed100ms absolute-normal impulse median74.47%,range39.27–80.56% already occurred. This does not prove post-impact actions useless.",
+    "common_coordination_long_training": "Not admitted: no defensible concrete new method or controlled causal benefit yet.",
+    "fast_Nom_observation_timing": "Recommended for175 review: original2kHz Nom itself lowpass-filters ideal yaw gyro withalpha0.025 (19.75ms efold). Check a single current-gyro reference intervention before funding slower-policy common-authority learning."
+  },
+  "prospective_probe": {
+    "status": "recommendation for175 review only, no execution budget registered",
+    "hypothesis": "A portion of early yaw overshoot may reflect Nom gyro filtering; using the already available current gyro in Nom can improve feedback timing without giving new terrain/contact information.",
+    "intervention": "Only compare originalalpha0.025 and unfilteredalpha1 on the existing Nom yaw derivative channel; keep gains/models/VMC/LQR/commands/task/physical/design/output limits and observations unchanged. Isolated source; no frozen source edits or gain sweep.",
+    "prediction": "Fewer early yaw failures/peak overshoot with original complete task nondegradation. Check high-height roll, speed/arrival/stop/height/physical/design and sensor-noise sensitivity; alpha1 is standard classical improvement, not new algorithm.",
+    "cautions": "Bandwidth/noise attenuation also change, so a successful intervention is not a pure delay-only attribution. Unknown noisy-IMU robustness must be disclosed; no automatic baseline replacement or old-model promotion.",
+    "why_before_PPO": "Strong classical control must address this available timing choice first. Then reconsider remaining learnable need and method contribution; do not make baseline artificially slow to favor PPO.",
+    "sensor_timing": "Reuse latest sensordata gyro value already supplied to Nom; do not forward sensors early or substitute newer qvel-derived gyro. Original step sensor/integration staging remains unchanged."
+  },
+  "new_physics_evaluations": 0,
+  "new_training_updates": 0,
+  "next": "175 deep direction review and confirmed cleanup; choose or reject this bounded Nom-timing probe. Full new contribution/3qualified-to5formal seeds/ablations/fresh independent generalization/statistics/PPO wall time/manuscript remain incomplete."
+}
