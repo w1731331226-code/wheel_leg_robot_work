@@ -1,5 +1,17 @@
 # 双轮腿机器人PPO论文方案
 
+第180轮方向深审与冗余清理（2026-10-06，下一185，目标继续）：
+
+**去留与继续价值。** 176–179 source/原control-noop/noise/120实际回合和全240新trace哈希再次核过。alpha1降低yaw却新增12配对roll违规，fixedalpha1整体改进保持closed；mean-only投影抬高同字段guardanchor、静态触及40Nm，仍不准部署。真实lowheight guard max与reference关系只支持有限控制角色假设，不指认全部失败/物理模型错误。正确方向是先核强Nom契约，而非盲加PPO/极端场景或普通坐标改名创新；整体方法/训练/泛化目标不能缩为工程负材料。
+
+**仅准入分步角色对照范围。** reference_role_probe_v1/proposal登记3arms×2noise×2laws×20原发展case=240比较记录：original alpha.025的80记录只在source/no-op/noise一致后复用172clean40与177originalnoisy40；新增floor_only80与consistent_pair80共160首回合，训练0。floor_only保原trackingmean/room/下限，只将径向保护参考独立固定为已验证工作下限.115m，k200/质量与转子模型/headroom不变。consistent_pair在相同fixedfloor上，将原hcmd±clippedrolloffset分别投影到[.115,.38]m，再用新mean/原room逻辑及operatinglower.115作为双腿tracking；其他参考angle/gains/gyroalpha.025保持。known危险mean-only+trackingguard不跑，所以不称完整factorial或纯投影单因素效应。
+
+此改变明确放开中低位“每腿不低于平均命令”的保护意图，**不放松原physical/design/torque/task门**；fixed.115高于原geometric.114704m并保最低工作支撑，但动态保护/actual height/joint invariance仍未证明。trackingmean shift<=17.5mm不等于actual RMS/end保证。所有原5deg分轴、每case强classic成功、contact/exit/speed/arrival/stop/tail/height/phys/design仍必须核，不能用yaw改善掩盖新增roll或用限幅当安全。普通fixedfloor/boxprojection不当新算法或正式学习贡献。
+
+181隔离optional源码（冻结原controller/env/model不改）、originalbranch精确no-op、扩展ref shape不得启用arrival/parking、tracking/保护/basecmd及实际input日志、packet/noise/reset/owner/静态资格；182freeze source/runner/原PCG64噪声表与已耗预算后唯一160队列，复用不合格即停、不暗增original回放；183逐law/noise原完整门/角色交互去留；184据结果选择剩余机制/方法/学习必要性；185深审清理。Fn/COM/geometry只eval，schema/cadence/所有gains/physics/model/limits/原data/RMS/final不改，不扫floor/alpha/gain、不默认部署或新PPO。目前仅scope注册、source未准入/未执行。
+
+**清理。** 删除run_nom_yaw_filter_probe/test_nom_yaw_filter_probe两份ignored unused源码等价pyc，共13993B，source/cacheSHA和fuser/codeobject核对留round180_cleanup；再生缓存非永久节约。全部源码/120full+gyro/原40/205/model/RMS/noisetable/唯一失败/CPU-GPU/final保留。round180_direction_review绑定周期和newproposal，完整可辩护方法、资格3→正式5seed/消融、新独立ID/组合/geometry/参数-delay OOD/易任务、统计/真实PPO耗时/完整新稿仍未齐。
+
 第179轮腿参考与径向保护角色核对（2026-10-06，目标继续）：
 
 audit_leg_reference_pair沿原控制链验证：最终fleft/fright用各自实际腿长与左右目标，不是共同高度误差在LQR中完全抵消。固定平均参考的symmetric room在.115仅.2955mm/.38为0；普通pair box projection可以经改变mean再走原room逻辑得到相同左右目标，289网格+边界/invalid检查过，mean变化<=|desiredoffset|/2<=17.5mm。它是常规投影，不是新算法，reference界限不保证actual高度RMS/终态或动态安全。

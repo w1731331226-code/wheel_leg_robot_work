@@ -1,0 +1,54 @@
+{
+  "verified": true,
+  "round": 180,
+  "period": [
+    176,
+    180
+  ],
+  "previous_goal_turn": "progress",
+  "goal_status": "active",
+  "next_review_round": 185,
+  "evidence": {
+    "wheelleg_warp/results/paper_recovery_20261004/nom_yaw_filter_probe_v1/source_contract.json": "b75c34502f704650edcebac2a19967cfb5e573cc4f7e5d630d553e4c14e5024d",
+    "wheelleg_warp/results/paper_recovery_20261004/nom_yaw_filter_probe_v1/admission_review.json": "ba853d2938277961cd3334b949da6868eb35c5a7f770d9cb86596975a1e559bc",
+    "wheelleg_warp/results/paper_recovery_20261004/nom_yaw_filter_probe_v1/completion.json": "9c0954290a1532f3cc0916a78031fd0cdbc0a73b0d2b5e73542acda80e79e706",
+    "wheelleg_warp/results/paper_recovery_20261004/nom_yaw_filter_probe_v1/round177_data_review.json": "b7228a5dbd210cbda48f67836cb696193f188a98c2d402b605da8207e2e361dc",
+    "wheelleg_warp/results/paper_recovery_20261004/nom_yaw_filter_probe_v1/round178_pair_review.json": "ed47749f71a2442b5ecb87796c61e8a024cacfc8e03d823577418a02d4b767e4",
+    "wheelleg_warp/results/paper_recovery_20261004/nom_yaw_filter_probe_v1/round179_leg_reference_audit.json": "4ca919b701cdf1a7cf3b0eebb941b0a7c686a39a944926ab4a96fca19ea8ee45",
+    "wheelleg_warp/results/paper_recovery_20261004/nom_yaw_filter_probe_v1/round179_reference_role_review.json": "6267c4424a6bc29f6693e843fde2cc2c1635f4b77f523a98253d0a3a0854e707",
+    "wheelleg_warp/results/paper_recovery_20261004/round180_cleanup.json": "a7ea4e27041a2bb33c238a9b8be5faa2813a57e4287bace182365bec6638dc34"
+  },
+  "findings": [
+    "120new+40reused gyro factorial complete,0learning. All physical/design pass, but alpha1 adds12roll-limit comparison violations on4lowheight cases; fixedalpha1 fulltask promotion closed.",
+    "179 static source confirms tracking mean also raises protective anchor; naive mean-only pair projection requests6547.565N virtual guard/applies848.151N and hits40Nm hip command. Final torque clipping is not dynamic safety proof.",
+    "Actual guard maxima94–123N inlowheight records,zero atmiddle/high cases are descriptive; cannot attribute all failures tothis controller role or claim physical modelwrong."
+  ],
+  "continue_value": "Pursue full paper goal, but improve/validate strong Nom contract before more PPO. One declared role-consistency contrast is justified by actual control chain and static output, not by winner search or new coordinate novelty.",
+  "decisions": {
+    "alpha1_fixed_improvement": "closed, no retuning/promotion",
+    "mean_projection_with_tracking_guard": "not admitted",
+    "protection_tracking_role_contrast": "source-qualified scope:160new classical firstepisodes plus80conditional reused originals,0learning; not yet run",
+    "ordinary_projection_fixed_floor_novelty": "not established algorithm contribution; do not finish fullpaper goal onthis engineering study",
+    "longPPO_extreme_scene_expansion": "not admitted before defensible method/strong reference/new independent qualification"
+  },
+  "method_review": "Pairedcases/source-noop,explicit axis gates,noise sample ownership/timing,immutable data and finite budgets are appropriate. Refmean bound is not actualheight/safety,virtual guard force not actualcontact force,development repeats notindependentcase/seed population. Preserve complete failures and source-role distinction.",
+  "new_physics_budget_after_source_admission": 160,
+  "new_training_budget": 0,
+  "proposal_sha256": "6a13d8d7601d7ff6be2fdc7614b6474131ffcbb2577647c6e448fceacef8c978",
+  "cleanup_sha256": "a7ea4e27041a2bb33c238a9b8be5faa2813a57e4287bace182365bec6638dc34",
+  "next_work": {
+    "181": "Minimal isolated optional implementation; no-op/reference role/timing/noise/reset and static output qualification.",
+    "182": "Freeze source/runner/noise/consumption; sole160new queue if admitted,80conditionalreused.",
+    "183": "Original full gates perlaw/noise,axis/height failures and role interaction; close nonqualified fixed variants.",
+    "184": "From actual result choose remaining mechanism/method/learning need; no automatic sweep or PPO.",
+    "185": "Deep direction review and confirmed redundant-file cleanup."
+  },
+  "remaining_full_goal": [
+    "Defensible new method contribution",
+    "Same-information strong classical/RL and key ablations",
+    "Qualified3 then formal5 independent training seeds",
+    "Fresh independent ID/composition/geometry/parameter-delay OOD/easyretention",
+    "Seed/case statistics,realPPO end-to-end walltime,complete new manuscript/derivation/failures/reproduction"
+  ],
+  "entire_goal_complete": false
+}

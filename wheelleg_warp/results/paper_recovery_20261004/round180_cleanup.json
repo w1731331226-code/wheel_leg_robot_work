@@ -1,0 +1,25 @@
+{
+  "round": 180,
+  "deleted": [
+    {
+      "path": "wheelleg_warp/__pycache__/run_nom_yaw_filter_probe.cpython-310.pyc",
+      "bytes": 8542,
+      "cache_sha256": "0304bc2897da4f4d42f03b66e437e3f6b6b8083fe0c5d6f8e87b3773f4349ab9",
+      "source": "wheelleg_warp/run_nom_yaw_filter_probe.py",
+      "source_sha256": "c1eebb300fe8c41eefb1898cfcf8beecf41c95ae45507db58679c184b8927775",
+      "compiled_code_equal": true,
+      "open_handles": false
+    },
+    {
+      "path": "wheelleg_warp/__pycache__/test_nom_yaw_filter_probe.cpython-310.pyc",
+      "bytes": 5451,
+      "cache_sha256": "3ef89f51ebe8ab7e1dc73fd0411de8deeecaab4e8f69876865284b3674144e7b",
+      "source": "wheelleg_warp/test_nom_yaw_filter_probe.py",
+      "source_sha256": "88f55ab4042877f871bd0b7263b9285b420c7880d8d469b80d9ec312435e1ef8",
+      "compiled_code_equal": true,
+      "open_handles": false
+    }
+  ],
+  "bytes_removed": 13993,
+  "retained": "All sources, models/RMS,full andgyro trajectories,noise table,unique errors,CPU/GPU baselines andsealed tests retained. Only ignored regenerable equivalent bytecode removed."
+}
