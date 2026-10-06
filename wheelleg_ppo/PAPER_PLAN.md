@@ -1,5 +1,17 @@
 # 双轮腿机器人PPO论文方案
 
+第175轮方向深审与冗余清理（2026-10-06，下一180，目标继续）：
+
+**继续价值与方法。** 171–174完整源码/CPU力矩资格、40实际全步数据、力矩事件分解与权限/时序核对有价值，相关source/契约/分析和全部40raw哈希再次核过。已从缺记录推进到可检验控制时序，不再做通用同数据诊断。旧分配/冻结V6晋升、坐标改名创新、接触触发可预防此前冲量的表述保持关闭；后续恢复或预测策略并未被证明全部无效。当前39packet与2kHz Nom权限不同必须披露，不利用故意慢classic制造PPO优势。40=20发展case×2law，不当独立40case/训练seed；工程检查、观察相关及普通滤波改进不替代论文贡献。
+
+**唯一有限实验准入范围。** nom_yaw_filter_probe_v1/proposal登记alpha=.025/1×yawgyro噪声std0/.02rad/s×20case×B0/B1-route的160条比较记录，其中original_clean40仅在原模型/控制/信息精确同一及no-op资格成立后复用172数据，新增预算120，训练0。同五高度/左右20mm障碍/双向.7m/s；不按成功挑样本、不扫alpha或gain。单轴人工Gaussian/2kHz/PCG64/case seed17500000+case，alpha和两law使用同一measurement-time-index序列；std为预设敏感性试验，未经硬件标定、不当全面噪声鲁棒证明。必须同一现有gyro测量同时供Nom和延迟39packet，一次加噪不累加、不提前sensor forward、不换用新qvel推导gyro，其余通道和schema时序保持；clean/noisy输入及filtered gyro逐步记录。
+
+干预只改Nom yaw gyro处理，所有gains/VMC/LQR/模型/任务/奖励/commands/原physical/design/执行器限制保持。噪声条件有意改变gyro数值但alpha比较信息一致，Fn/COM/geometry继续仅eval。假设部分早期yaw overshoot与原19.75ms低通有关；alpha1也改变带宽/噪声抑制，成功不能归因纯delay或宣称新算法。主验收仍是完整task与逐case强classic不退化，另列roll/pitch/yaw/height/speed/arrival/stop/tail/contact/exit/physical/design；只yaw好看但原success丢失或其他门恶化不晋升。复用不合格即停，不暗增原始回放；失败/中断保存并计已耗预算，不自动重跑/调alpha/PPO/换基线/旧模型晋升。
+
+176隔离最小gyro/noise/observer源码资格及0干预identity、共享测量时标/packet、owners/reset/force/原图契约；177冻结runner/噪声表/API与预算后唯一120队列；178按原完整门检验固定变体及配对clean/noisy效果；179仅据结果决定剩余控制/信息/方法和学习必要性，不盲续失败候选；180深审清理。目前仅范围注册、source未准入/未执行，不称120结果已完成或新独立泛化。
+
+**清理与全目标。** 删除analyze_complete_contact与complete_contact_witness两份Git忽略且未使用的源码等价pyc，共20237B，cache/sourceSHA保留round175_cleanup；再生缓存不称永久节约。全部源码/完整40与205轨迹/model/RMS/unique失败/CPU-GPUbaseline/final封存保留。round175_direction_review绑定本周期与newproposal。具体可辩护新方法、稳定同信息强classic学习优势、资格3→正式5独立训练seed/消融、新独立ID/组合/几何/参数-delay OOD/易任务、统计/真实PPO端到端及完整新稿仍未齐，不能以本实验或负工程材料结束整体目标。
+
 第174轮入口候选权限/时序与近邻核对（2026-10-06，目标继续）：
 
 audit_impact_authority复用40完整记录和173力矩函数，核实际yaw config=.4/2/.24/.3、每physics请求slew=.01、50Hz策略与2kHz物理步，next-boundary/渐增边界断言通过。乐观假设接触一出现就能在下一策略边界完美识别（实际39packet并无Fn真值），.115/.16的16条记录中，固定接触后100ms abs normal yaw impulse有39.27–80.56%在首可用contact-triggered action之前发生，中位74.47%；所有场景等待4–20ms。共同轮残差每轮最多.3Nm、从0到满值要100个substeps（首命令到第100命令49.5ms），原lambda/共同差动竞争可进一步压缩。命令积分不等于实际接触力/减速/航向改善，不能据此宣称所有policy无效；但接触触发动作不能预防此前已发生的冲量。固定100ms为探索诊断，不换原primary或用它事后救分。

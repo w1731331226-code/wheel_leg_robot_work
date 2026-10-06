@@ -1,0 +1,603 @@
+{
+  "version": "nom-yaw-filter-probe-v1",
+  "status": "registered; source admission required; not executed",
+  "cases": [
+    {
+      "seed": 6301001,
+      "scenario": {
+        "speed": 0.7,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 4600001,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.115
+      }
+    },
+    {
+      "seed": 6301003,
+      "scenario": {
+        "speed": 0.7,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 4600003,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.115
+      }
+    },
+    {
+      "seed": 6301005,
+      "scenario": {
+        "speed": -0.7,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 4600005,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.115
+      }
+    },
+    {
+      "seed": 6301007,
+      "scenario": {
+        "speed": -0.7,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 4600007,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.115
+      }
+    },
+    {
+      "seed": 6301009,
+      "scenario": {
+        "speed": 0.7,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 4600009,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.16
+      }
+    },
+    {
+      "seed": 6301011,
+      "scenario": {
+        "speed": 0.7,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 4600011,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.16
+      }
+    },
+    {
+      "seed": 6301013,
+      "scenario": {
+        "speed": -0.7,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 4600013,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.16
+      }
+    },
+    {
+      "seed": 6301015,
+      "scenario": {
+        "speed": -0.7,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 4600015,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.16
+      }
+    },
+    {
+      "seed": 6301017,
+      "scenario": {
+        "speed": 0.7,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 4600017,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.24
+      }
+    },
+    {
+      "seed": 6301019,
+      "scenario": {
+        "speed": 0.7,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 4600019,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.24
+      }
+    },
+    {
+      "seed": 6301021,
+      "scenario": {
+        "speed": -0.7,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 4600021,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.24
+      }
+    },
+    {
+      "seed": 6301023,
+      "scenario": {
+        "speed": -0.7,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 4600023,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.24
+      }
+    },
+    {
+      "seed": 6301025,
+      "scenario": {
+        "speed": 0.7,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 4600025,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.3
+      }
+    },
+    {
+      "seed": 6301027,
+      "scenario": {
+        "speed": 0.7,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 4600027,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.3
+      }
+    },
+    {
+      "seed": 6301029,
+      "scenario": {
+        "speed": -0.7,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 4600029,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.3
+      }
+    },
+    {
+      "seed": 6301031,
+      "scenario": {
+        "speed": -0.7,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 4600031,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.3
+      }
+    },
+    {
+      "seed": 6301033,
+      "scenario": {
+        "speed": 0.7,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 4600033,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.38
+      }
+    },
+    {
+      "seed": 6301035,
+      "scenario": {
+        "speed": 0.7,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 4600035,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.38
+      }
+    },
+    {
+      "seed": 6301037,
+      "scenario": {
+        "speed": -0.7,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 4600037,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.38
+      }
+    },
+    {
+      "seed": 6301039,
+      "scenario": {
+        "speed": -0.7,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 4600039,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.38
+      }
+    }
+  ],
+  "classical": {
+    "B0": {
+      "candidate": {
+        "name": "B0",
+        "kp": 0.0,
+        "kd": 0.0,
+        "roll_gain": 0.0
+      },
+      "arm": 0
+    },
+    "B1-route": {
+      "candidate": {
+        "name": "B1_3",
+        "kp": 0.4,
+        "kd": 0.3,
+        "roll_gain": 0
+      },
+      "arm": 1
+    }
+  },
+  "parent_source_contract": "wheelleg_warp/results/paper_recovery_20261004/complete_contact_witness_v2/source_contract.json",
+  "parent_source_contract_sha256": "3d21834bb8d986f4d1d98d752fd40802214707569e3172452b9b8c5524660f6e",
+  "hypothesis": "Original yaw gyro lowpass may contribute to early overshoot; compare original0.025 vs unfiltered1 using the same latest available gyro sample. Improvement would strengthen classical control, not establish a new algorithm or pure delay effect.",
+  "factors": {
+    "alpha": [
+      0.025,
+      1.0
+    ],
+    "gyro_noise_std_rad_s": [
+      0.0,
+      0.02
+    ]
+  },
+  "conditions": [
+    {
+      "label": "original_clean",
+      "alpha": 0.025,
+      "noise_std_rad_s": 0.0,
+      "reuse": true
+    },
+    {
+      "label": "latest_clean",
+      "alpha": 1.0,
+      "noise_std_rad_s": 0.0,
+      "reuse": false
+    },
+    {
+      "label": "original_noisy",
+      "alpha": 0.025,
+      "noise_std_rad_s": 0.02,
+      "reuse": false
+    },
+    {
+      "label": "latest_noisy",
+      "alpha": 1.0,
+      "noise_std_rad_s": 0.02,
+      "reuse": false
+    }
+  ],
+  "complete_factorial_records": 160,
+  "reused_original_clean_records": 40,
+  "new_episode_budget": 120,
+  "learning_budget": 0,
+  "reuse_references": {
+    "B0": {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/complete_contact_witness_v2/runs/B0/result.json",
+      "sha256": "6c60f823ca1ab1d5af9f0799ee4756be9ea15c231a847c92d22c607da0ac9658",
+      "geometry_sha256": "0be5a06ef693ee689f28245f2f4aeae5438a9328d2cd9925cb3953fc5e9dd004"
+    },
+    "B1-route": {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/complete_contact_witness_v2/runs/B1-route/result.json",
+      "sha256": "d48e82d73ef3aea9c8a12556960c1521725c50cfddf8dff627b408dc7e198c40",
+      "geometry_sha256": "0be5a06ef693ee689f28245f2f4aeae5438a9328d2cd9925cb3953fc5e9dd004"
+    }
+  },
+  "reuse_gate": "Reuse original clean40 only after source-level exact original-control/observer/model/input-contract identity and no-op checks. If identity fails, stop; no unregistered baseline rerun or budget expansion. Existing source differs only by isolated declared interventions, never edit frozen controller.",
+  "noise_contract": {
+    "axis": "body_gyro yaw component only",
+    "distribution": "zero-mean iid Gaussian at original measurement cadence0.0005s; std0.02rad/s, synthetic sensitivity case, not hardware-calibrated",
+    "generator": "NumPy PCG64, per-case seed17500000+case seed; frozen table/source/runtime hashes before any physics",
+    "paired": "Same per-case measurement-time-indexed noise sequence across alpha and both classical laws; prefix shared, plant trajectories may differ",
+    "timing": "Perturb each existing yaw-gyro measurement once; same resulting measurement available to original Nom and delayed39 packet. Do not advance sensor evaluation or use newer qvel-derived gyro. Other sensor channels/schema remain original.",
+    "recording": "Save actual clean/noisy input and filtered Nom yaw gyro with timing and first-episode counters; preserve full state/contact recorder and all errors."
+  },
+  "unchanged": "All gains,VMC/LQR,models/task/reward/command/cadence/design/physical/actuator limits and source baselines. Force/COM/geometry remain evaluation-only; old205/full40/models/RMS/final sealed tests unchanged. Noise intentionally changes yaw measurement values equally across alpha, not observation schema or timing.",
+  "qualification": [
+    "Original-clean intervention is no-op and original core call/input order retained;alpha1 yields latest same gyro without touching other controller state directly",
+    "Clean/noisy gyro and existing packet share measurement timestamp; no double-add, seed/table reproducibility/reset/noise capacity/owners/terminal tests",
+    "Same original output limits and evaluator; source/runner/noise table/API hashes frozen before sole120 queue"
+  ],
+  "endpoints": {
+    "primary": "Original complete task success and per-case strong-classical nondegradation, separately by law and noise condition. Physical/design all pass; include height/roll/pitch/yaw/speed/arrival/stop/tail/contact/exit failures.",
+    "mechanism": "Early yaw peak and first5deg crossing; full yaw moment time series available. Do not redefine original metrics by outcome/window choice.",
+    "qualification": "More yaw-threshold passes or lower yaw peaks does not suffice if original successful cases are lost or other gates deteriorate. Failure/uncertainty remains reported, no method novelty or safety theorem inferred."
+  },
+  "stopping": "One120-new-episode queue only after source admission, all20cases x2laws x3newconditions. Preserve consumed/incomplete episodes; no hidden repeats, alpha/noise/gain scans, PPO, formal5seed promotion or automatic baseline replacement.",
+  "next": "176 isolated source/noise/observer qualification;177 execute registered queue if admitted;178 compare/reject timing mechanism using original complete gates;179 choose remaining method/learning need from evidence;180 review/cleanup. If alpha1 fails, close this fixed variant, do not adjust alpha to rescue."
+}
