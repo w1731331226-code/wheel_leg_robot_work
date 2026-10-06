@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第181轮隔离参考角色源码资格完成（2026-10-07，目标继续）：
+
+reference_role_control保存原control_step/wrapper的可核对实验副本，仅增加optional reference15径向anchor覆盖；原controller/env/model源码不改。reference_role_probe包裹已有full/gyro/noise采集，将实际控制输入换为自有16列ref，并核原/重捕获80个实际controller input signature两段40完全一致，原245corecalls/40steps/4sharedref保留。padding10–14全0保证不意外启用arrival/parking；原112header height_reference明确仍是basecmd，新11列role日志记录actual mean/lower/左右目标/保护floor/虚拟requested-applied，不混淆实际接触力。
+
+三arm×两noise各20world构造/capture，3合成roll姿态静态原control查询：original branch input/state/diag/control exactnoop，支持原80source资格复用；实验函数与原函数差异逐源码核只有可选anchor，未引入新gains/gyroalpha。consistentpair目标界限/mean shift≤17.5mm及保护floor≤目标minimum、最终motorbounds、inactive/reset/owner通过。原冻结噪声/39packet时间层保持，alpha.025；新增nested full/gyro/role合成首终态/重复done不记录/reset清chunks通过。静态.115/+5deg，consistentpair mean.128089969/floor.115，guard0且maxhip4.5924Nm，避免179meanonly的848N虚拟component/40Nm；不是实际动力性能或安全证明。
+
+source/unit/supplemental/proposal/noise/installed forward/support绑定admission_review。本轮无physics积分/评价/学习，original80复用属source/noop而非同次轨迹校对；floor_only仍保原低位tiny target-floor差，consistentpair用operational lower.115，普通角色分离/投影不当新算法。182须freeze唯一160runner与合并partial保存后才执行；183原完整多轴/height/task/phys/design门，184有据剩余方法/学习需要，185深审清理。完整可辩护贡献/3资格→5正式seed/独立泛化/统计PPO耗时/新稿仍未齐。
+
 第180轮方向深审与冗余清理（2026-10-06，下一185，目标继续）：
 
 **去留与继续价值。** 176–179 source/原control-noop/noise/120实际回合和全240新trace哈希再次核过。alpha1降低yaw却新增12配对roll违规，fixedalpha1整体改进保持closed；mean-only投影抬高同字段guardanchor、静态触及40Nm，仍不准部署。真实lowheight guard max与reference关系只支持有限控制角色假设，不指认全部失败/物理模型错误。正确方向是先核强Nom契约，而非盲加PPO/极端场景或普通坐标改名创新；整体方法/训练/泛化目标不能缩为工程负材料。
