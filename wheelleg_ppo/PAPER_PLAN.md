@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第186轮clean多地形/延迟采集源码资格完成（2026-10-07，目标继续）：
+
+floor_broad_adapter复用冻结role/noise/full采集，不改原控制/物理源；仅clean zero-table provider和允许flat emptytargets的几何元数据扩展。144待评case（96regular/20controlled/28legacy）在original/floor_only两arm共288静态world/18同solver≤20batch构图和control计算，原9terrain/delay0..10ms/41history保持，原branch inputs/state/diag/control exactnoop。65537step全零表在constructor核实际deadline，最大24520steps，capacity严格充足、不裁时间或偷偷处理noise；非zero std显式拒绝。
+
+原28名字seed导致旧helper即使clean亦生成numeric noise_seed元数据而首次TypeError，记录errorlog/pre-fix adapter源，0物理积分/评价。修正为固定numeric recording tag，仅filenames/metadata，externalname/scenario/地形seed不变、geometry显式original+recording IDmapping。重跑全部资格通过，额外flat emptygeometry/nonempty与原helper完全相同、源全局恢复及落盘ID核过；NamedID映射不构成新增随机种子。已有full/gyro/role终态/partial契约继承，仍须187实际采集核。
+
+原after/history通路用合成不同旧/新gyro验证全部288world公开packet延迟正确、原history不归零延迟；reset/modeltime/ownref清理和所有角色边界通过。这里没有mj_step积分，staticafter不当真实回合或性能。source/proposal/unit/supplement/installedforward/support绑定admission_review，312旧记录仅source/evaluator一致下资格复用非bitwise，clean适配不当noisy-delay通用认证。
+
+187须freeze唯一344runner/分组恢复原顺序/已耗与合并partial后才采集；188原全task/各轴/height/physical/design及legacyCPU校对/当前Nompair，189据结果方法学习需要，190深审清理。default controller/env/model/RMS/CPU-GPU/prior/final保持，0neweval/learning；新方法贡献/正式5seed/新独立泛化/PPO实测成本/完整新稿仍未齐。
+
 第185轮方向深审与冗余清理（2026-10-07，下一190，目标继续）：
 
 **继续价值与方法。** 181–184 source/noop/noise/160实际completion和全部480trace hash再次核过。floor_only既有4pairedgate均通过且gain4独立.16case，值得一轮更广资格；combined投影新增upperyaw、固定alpha1新roll退化保持closed，不再scan/case择优救分。逐case/分轴/全部taskgate方法正确，fixedfloor/普通projection仍非新算法或完整动态安全。强Nom工程基础不能代替核心论文贡献/学习证据，现20development和single人工noise不是independenttest。
