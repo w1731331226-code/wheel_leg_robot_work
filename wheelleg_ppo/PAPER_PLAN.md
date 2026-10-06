@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第164轮独立路径资格草案（2026-10-06，goal active；用户任务选择pending）：
+
+按论文可能主张“指定轮道通过”的假设，新增path_qualification_draft.py与lane_centred_passage_contract_draft.json，未改原contact success/任何原failed gate或控制器。scope仅legacy单箱体/指定wheel centre；实际geometry局部坐标与方向、entry-before/exit-after、inside pre/post lateral界、interior连续physics采样共同作为必要几何条件，geometry epsilon1e−7m是浮点标度不是性能调参。5项synthetic检查覆盖正向/反向、边缘、缺密度、loaded资格保持None；数据/模型未新增rollout或更新。
+
+复核现有205trace/result/geometry全部hash并另报必要条件：B0/B1-route原success各28且28均geometry prerequisite过；V6-1761原28其中13过、1762原28其中4过、1763原20其中7过。不要把这些写成新完整任务成功率或新策略比较；不含顶面loaded/整轮外形/continuoustime保证，mixed per-event映射未实现，complete_loaded_rollover_qualified始终None。当前草案不是“更严格指标已正式通过”或真实rollover完整定义。
+
+完整新资格仍需明确centred ground rollover/edge contact/airborne scope、轮外形/倾角/间隙与匹配solver time顶面载荷证据、support coverage/最长卸载间隙及混合event progression；不根据哪个policy能过选择load/duration阈值。以后对classical/RL使用同声明任务，分别保存旧原判据，fresh发展与独立场景、3seed资格后5seed/ablation/OOD/成本/新稿仍是全部目标。
+
+已询问用户任务选择但无回答；当前仅起草与必要几何校对，不把推荐项视为已提交答案，不开始依赖定义的新训练/默认Nom修复/切换任务。165按约深审清理时明确继续价值、完整证据及范围决策，原baseline/final保护、goal active。
+
 第163轮实际路径接触解释与主张资格（2026-10-06，goal active）：
 
 analyze_task_mode_witness.py核205trace/result/geometry SHA与原load_rows，4点synthetic centre/边缘/部分路径分类unit过；无新eval或learning。Descriptor仅描述真实wheel centre相对compiled box投影，post-pose与pre-solver loaded witness分开，不把中心离开投影直接当整个轮胎绕过。multiple-geometry mixed case不强套legacy单box类别；normal/vertical-normal分量不等friction-inclusive总反力。
