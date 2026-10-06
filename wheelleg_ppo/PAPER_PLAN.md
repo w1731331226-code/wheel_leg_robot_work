@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第219轮完整492解析资格队列冻结（2026-10-07）：
+
+run_coordination_qualification复用原route_pilot_env评价/RouteState和B0零反馈参数，原3D全零请求通过zero6映射为virtual6零请求（39输入不加信息），只构建阶段接coordination_probe。三个条件固定B0→Bomega→Cgamma，每条件全regular96/controlled40/legacy28，同solver≤20worlds分组、恢复globalindices，总492第一回合、0learning；独立目录/source/parents/proxy/hardware与CPU及强phase参考SHA绑定，fixedrunner任何input变化拒绝。
+
+执行入口自检：随机39输入零反馈适配shape6/全0过，三个条件各panel无遗漏/重复index，总492过；协调-相位step/publiccmd crossstream读取和错误5mscadence拒绝过，0物理消耗。固定原fullflag/每轴/物理/design/配对成功保持、旧CPUlegacy28速度1.05+.005/rollpitch+.1，困难>=34/40与原J15%+.05及Cgamma-vs-Bomega机制单列。原B0回放对旧flags差异保留不重跑/覆盖，实际配对新B0用于本轮比较，不弱化旧强参考；completion非全部门通过，更非训练/独立泛化/novelty。
+
+worker wheelleg-coordination-qualification-v1.service仅在独占project-write.lock下运行；首回合full/gyro/role/phase/coordination流逐hash/时刻/filter/budget验收，reserved/completed/全prefix/lastbuffer异常保留、无implicitresume。source/doc提交同步后启动，实际PID/progress/completion才证明消耗。运行中outputs不半commit/clean；220仍按约深审和冗余清理，未完整492不按局部选择winner或修gain/γ时间常数/阈值，整方法/学习消融/freshformal5/新ID-OOD能力保持/层级stats-PPOcost/推导复现新稿六出口未齐。
+
 第218轮协调名义请求接口、CPU/CUDA与生命周期资格完成（2026-10-07）：
 
 coordinated_nominal_query是隔离原role controller的四处精确替换：仅影子查询的motion_cmd、velocity integral/tilt generator/six-state velocity error一致协调；原publiccmd控制parking/yaw/hold/启动模式不变。query读取真实现有Nom输入，但controlstate/ctrl/diag全部privatecopy，实际controller仍原publicstate/source。Cgamma并不直接把shadowstate或新速度目标写入实际LQR：仅影子未限幅Nom差+轮速阻尼+原sharedNom合成一个请求。clipping/slew后未必实现requestedvref，log中的motionreference是请求，不能写成已跟踪目标。
