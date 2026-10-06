@@ -1,0 +1,123 @@
+{
+  "verified": true,
+  "round": 182,
+  "new_evaluations": 160,
+  "reused_original_records": 80,
+  "comparison_records": 240,
+  "unique_development_cases": 20,
+  "records": [
+    {
+      "arm": "floor_only",
+      "noise": "clean",
+      "classical": "B0",
+      "success": 12,
+      "physical": 20,
+      "design": 20,
+      "physics_steps": 297608,
+      "contacts": 587276
+    },
+    {
+      "arm": "floor_only",
+      "noise": "clean",
+      "classical": "B1-route",
+      "success": 12,
+      "physical": 20,
+      "design": 20,
+      "physics_steps": 297613,
+      "contacts": 586736
+    },
+    {
+      "arm": "floor_only",
+      "noise": "noisy",
+      "classical": "B0",
+      "success": 12,
+      "physical": 20,
+      "design": 20,
+      "physics_steps": 297613,
+      "contacts": 587281
+    },
+    {
+      "arm": "floor_only",
+      "noise": "noisy",
+      "classical": "B1-route",
+      "success": 11,
+      "physical": 20,
+      "design": 20,
+      "physics_steps": 297610,
+      "contacts": 586732
+    },
+    {
+      "arm": "consistent_pair",
+      "noise": "clean",
+      "classical": "B0",
+      "success": 12,
+      "physical": 20,
+      "design": 20,
+      "physics_steps": 297524,
+      "contacts": 588361
+    },
+    {
+      "arm": "consistent_pair",
+      "noise": "clean",
+      "classical": "B1-route",
+      "success": 12,
+      "physical": 20,
+      "design": 20,
+      "physics_steps": 297526,
+      "contacts": 588092
+    },
+    {
+      "arm": "consistent_pair",
+      "noise": "noisy",
+      "classical": "B0",
+      "success": 12,
+      "physical": 20,
+      "design": 20,
+      "physics_steps": 297525,
+      "contacts": 588403
+    },
+    {
+      "arm": "consistent_pair",
+      "noise": "noisy",
+      "classical": "B1-route",
+      "success": 12,
+      "physical": 20,
+      "design": 20,
+      "physics_steps": 297530,
+      "contacts": 588103
+    }
+  ],
+  "new_first_physics_steps": 2380549,
+  "new_contact_records": 4700984,
+  "trace_files": 480,
+  "compressed_bytes": {
+    "complete_trace": 1346684703,
+    "gyro_trace": 59017402,
+    "role_trace": 52644665
+  },
+  "source_noise_schema_hash_dense_counts_finite_qv_join_gyro_recursion_role_mean_bounds_and_header_alignment_checked": true,
+  "input_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/reference_role_probe_v1/completion.json": "94391a4e59cca55233712b02b7f163cdc6c644ba02ecd74289318157cd79069b",
+    "wheelleg_warp/results/paper_recovery_20261004/reference_role_probe_v1/runner_contract.json": "bc31526daa1d92d02ba1f2dc3ee654cc31b236d39ee140525aeb60c747f3e6f1",
+    "wheelleg_warp/results/paper_recovery_20261004/reference_role_probe_v1/runner_partial_unit.json": "d2ecbb470beba5c4e29bb33a27b76cd8d8587b2044ca3a7e69de4784098efa4c",
+    "wheelleg_warp/results/paper_recovery_20261004/reference_role_probe_v1/worker_terminal_state.log": "9630a1d69b8ccf6fe0b8693dc0ec19c4be2d5e93f27b8e1dafeccb683b04aac7",
+    "wheelleg_warp/results/paper_recovery_20261004/reference_role_probe_v1/worker_journal.log": "22c539b27be1c24ab317e211dbd6eff0877329cb10463f05e24ca5ae6eeb048c",
+    "wheelleg_warp/results/paper_recovery_20261004/reference_role_probe_v1/run.log": "81505d9b99abccd3f74804ad9ee950d6af7124c1f73a6038c0bfacbae998bae8"
+  },
+  "worker": {
+    "unit": "wheelleg-reference-role-probe-v1.service",
+    "observed_running_PID": 8845,
+    "MainPID": 0,
+    "SubState": "exited",
+    "Result": "success",
+    "exit_code": 0,
+    "start": "2026-10-07T00:43:52+0800",
+    "end": "2026-10-07T00:48:25+0800",
+    "unit_wall_seconds": 273,
+    "wall_scope": "Whole construction/capture/physical collection/transfer/compression/check unit with possible lock wait, not PPO or purephysics throughput."
+  },
+  "scope": "20same development cases,2fixedlaws,3rolearms,2noise settings with one per-case fixed synthetic realization;240records not independent240cases ortrainingseeds. Counts cover firstepisodes only, not autoreset surplus.",
+  "interpretation": "Floor_only success12/12/12/11 vsoriginal8/8/8/7;consistent_pair12/12/12/12. All newphysical/design pass. Counts alone do not prove no lost cases/axis regressions/causal component or method novelty;183 checks paired fullgate including region identity/numerical differences before attribution.",
+  "new_learning_updates": 0,
+  "next": "183 original fullgate/role-pair mechanism review,184 defensible remaining method/learning need,185 deepreview/cleanup. No extra replay/parameters/PPO/baseline promotion;fullpaper newmethod5seeds/fresh independent generalization/manuscript unmet."
+}

@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第182轮参考角色160新回合采集完成（2026-10-07，目标继续）：
+
+run_reference_role_probe复用full/gyro checker及partial保存，freeze原source/隔离副本/noise/API/runner和原80参考绑定后唯一8job×20首回合完成，new160+reused80=240比较/20发展case、0training。新增physics2380549、全contact4700984；160full1346684703B+160gyro59017402B+160role52644665B共480trace，单份max8925810B。全hash/schema/finite/dense/contactcounts/qvexactjoin/gyro输入递推/noise及role mean/target/保护界限/原header desiredoffset与left-right对齐核过；实际新controller input单列日志，原headerbaseheightref不误当governedmean。
+
+结果计数按cleanB0/cleanB1/noisyB0/noisyB1：original8/8/8/7，floor_only12/12/12/11，consistent_pair12/12/12/12；全部新job physical/design20/20。只是当前注册发展样本计数，不据此证明每case无lost、多轴不退化、普遍噪声鲁棒/纯参考因果或新算法；183必须配对原fullgate并查不受投影区域的数值同一/差异后再归因，不把1个额外noise成功自动当方法优势。
+
+combined full/gyro/role prefix/latestbuffer/frozen-case合成保存通过，实际无interruption/追加回合。worker实见PID8845，现MainPID0/SubStateexited/Resultsuccess/exit0，00:43:52→00:48:25整采集273秒（含锁可能/构图/记录压缩/check，非PPO或purephysics）。round182_data_review绑定数据/源/单位日志。默认controller/env/model/CPU-GPU/model/RMS/原数据/final封存未替换；新增常规角色工程对照不当已达论文贡献。
+
+183多轴/height/任务原gate与paired role去留，184有据剩余方法/学习需要，185按约深审清理。仍未有完整可辩护新方法及稳定学习优势、资格3→正式5seed/消融/新独立ID/组合/geometry/参数-delay OOD/易任务、统计/真实PPO端到端与新稿，不以本轮正计数结束整体目标。
+
 第181轮隔离参考角色源码资格完成（2026-10-07，目标继续）：
 
 reference_role_control保存原control_step/wrapper的可核对实验副本，仅增加optional reference15径向anchor覆盖；原controller/env/model源码不改。reference_role_probe包裹已有full/gyro/noise采集，将实际控制输入换为自有16列ref，并核原/重捕获80个实际controller input signature两段40完全一致，原245corecalls/40steps/4sharedref保留。padding10–14全0保证不意外启用arrival/parking；原112header height_reference明确仍是basecmd，新11列role日志记录actual mean/lower/左右目标/保护floor/虚拟requested-applied，不混淆实际接触力。
