@@ -1,5 +1,11 @@
 # 双轮腿机器人PPO论文方案
 
+第168轮既有数据三态证据应用（2026-10-06，目标继续）：
+
+复用第167轮规则，apply_passage_evidence.py 对第164轮205条记录逐条检查，绑定源代码、路径草案与并列证据契约的SHA256。5项可运行断言通过，原任务132/205成功标签保持不变，0新增物理回放、0训练更新。ground_rollover 与 airborne_passage 各有125条已观察必要条件不满足、80条证据不足、0条完整证据通过。两项均为独立保守诊断，不是原控制器的新成绩；缺少完整几何、完整接触或起落证据必须保持未知。
+
+这205条仅覆盖41个开发场景（2个固定经典控制器与3个已训练seed），不是205个独立场景，也不能替代新独立泛化测试。当前记录不足以支持完整轮道通过、持续顶面支撑或跳跃越障的论文主张。下一169只选择有证据且可证伪的具体候选，先冻结公平信息、任务和预算；不自动启动PPO、不事后改阈值救分。170按约深审与冗余清理。主方法贡献、强经典对照优势、3→5独立训练seed、消融、新独立泛化、统计及真实端到端耗时、完整新稿仍未完成。
+
 第167轮并列操作定义与三态证据规则（2026-10-06，goal active）：
 
 passage_evidence_contract.py/parallel_passage_evidence_contract将original完整contact task保留为原权威分数，并定义strictsecondary ground_rollover/airborne_passage，不替换primary或用silence选题。纯三态aggregator8项positive/missing/false/invalid fixture过：已测False则该独立定义失败；无False但缺证据None则insufficient；全部True仅supported_at_recorded_resolution，不是continuous safety定理。未经测量的数值true不接受，不以None算pass。
