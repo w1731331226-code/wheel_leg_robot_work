@@ -1,5 +1,19 @@
 # 双轮腿机器人PPO论文方案
 
+第200轮方向深审与冗余清理/新匹配资格范围登记（2026-10-07，下一205，目标继续）：
+
+**继续价值和限制。** 196–199源/API/225completion/197数据/198完整门与199静态均值/模型RMS/sourceSHA核过。旧frozen-transfer优势保持closed，不能按profile/gain/旧model再救分。相同submitted扰动下有高位局部恢复、zero-task却约1.3degJψ、名义参考45static均值非零，支持一次真正from-scratch匹配mean约束试验，而非立即宣称新算法。已有stableprior/zero-point controller类工作，r只是publickinematic而非动态平衡/安全集，强行mean0也可能损害不确定性补偿，必须原任务对照实测，不重复UC/IEEEblocked检索。
+
+**注册source-first有限范围。** nominal_mean_matched_learning_v1/proposal：plain eta0/anchored eta1、new training seeds1991/1992/1993、每run200k/100world、总1.2M CUDA policy samples。旧900训练world rows仅将1761/62/63bank映射至1991/92/93以保持场景匹配，模型/探索/RNG从头新seed，不将旧scene当独立test。两arm共享qualifiedphaseNom、原9terrain/height115–380/同stage和实际episode-reset生命周期/PPO/奖励/σ六channel。禁止在训练环安装full diagnostics/force injector；须轻量phase adapter source-noop/actorzero与full已qualified源校对，保证100world及原delay/history和stage缓存。
+
+reference从raw39 availablecommand/height/固定IK取physical-route零参考，same12 accepted/ownrequestcontext，不触碰physics。78只是current39+derived39存储，sharedg39/criticcurrent39；一套39RMS只实际obs更新，同stats/clip两query，rawterminal reference及done/curriculum/reload一致。相同网络参数/两forward/std，最后actorbias两arm均去掉，输出weights0使初始mean/distribution全point相同。AnchoredGaussian需forward/getdistribution/evaluateactions/oldlogprob/predict/entropy/KL及gradient/reload一贯，严禁旧PPO postprocess减动作。Deterministicmean零不消除exploration/filteredhistory；不宣称Lyapunov安全或所有nominaltracking完美。
+
+**验收、预算及停止。** 201 pairedcache/RMS78/终态-reset/stage和lightphase静态源资格；202 policy初始化/likelihood/梯度/ratio/reload源资格。只有均过才能203冻结24k单独engineering（两arm各12k/10world，50nstep/250batch/10epoch，24PPOupdates/240epoch/480Adam每arm；真实stage切换/每2k检查点、权重AdamRMS exactreload及continuity/RNG）。Engineering不进main warmstart/科学评判，不工程合格就认收益。204只有全pass后冻结sixrun1.2M main与新1254末点评价队列并start；205按约深审清理，若运行只观察不reset重跑。
+
+六新末模型各regular96+controlled40+legacy28+aux45，共1254newfinalevaluations；当前phase328与classicaux90=418reference rows仅source/config/evaluator/noop一致后reuse。固定200k唯一末点/全部6run，不bestcheckpoint或首seed选队列。Candidate三seed须原fulltask/各轴/physical/design、保留currentstrongclass成功union128/136及原28CPU速度1.05+.005/rollpitch+.1；controlled三mean≥34/40（phase32+5pp），regular经典96/96不设再升5pp。原Jψ allseed方向且三mean15%+.05对fixedphaseB1两面板保持；机制anchored-vs同seedplain也须方向/15%+.05及无plain成功丢失/新flag。aux/pulse diagnostics单列不救主门/不当独立。失败close此候选收益分支，不extendbudget/λ/reference/seed/profile/architecture；通过后仍需贡献复核及formal5/必要消融/新独立泛化。
+
+**清理与目标。** 删除equal_exposure_probe/test_equal_exposure_probe两份ignored unused且编译codeobject等价的pyc共21791B，source/cacheSHA/gitignore/未跟踪/fuser无句柄先共同核再删，round200_cleanup保存；所有src/1125raw/旧1312/模型RMS/unique失败/CPU-GPU/final-oldgate保留，缓存再生不永久节约。round200_direction_review绑定本周期/新proposal/cleanup。当前仅注册、no newlearnedpolicy/trainer/main source admission或新task评价/learning，完整method/强对照/新三→五训练seed/independentID组合geometry参数-delayOOD与易任务/层级统计GPU PPO真实耗时/推导复现新稿出口仍未齐。
+
 第199轮条件名义参考残差均值候选与匹配学习草案（2026-10-07，目标继续）：
 
 不续旧fixed-transfer/profile/gain救分。nominal_packet_reference只从原raw39的公开command[9]/height-.3[11]与固定几何构造upright symmetric IK参考、vx/wheelspeed目标，清physical/route误差；两查询保留相同的accepted residual[26:32]与currentownrequest[32:38]十二维上下文。这样零物理误差不要求请求记忆已经0，避免单凭owncontext维持恒定均值。finite/height domain/input只读/idempotent及randomcontext保持自检过；只kinematic reference，不是powered/contact平衡或动态安全集。
