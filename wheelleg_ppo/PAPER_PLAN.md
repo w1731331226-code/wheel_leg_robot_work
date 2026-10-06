@@ -1,5 +1,17 @@
 # 双轮腿机器人PPO论文方案
 
+第209轮完整失败机制与贡献方向核查（2026-10-07）：
+
+audit_nominal_mean_failures复用原门/intervals、全部三seed和两个主panel，选择对B0新增design旗标的全部26条轨迹（13个发展case），没有按好坏挑代表图。每条candidate及对应强经典完整/role/phase文件SHA、场景、模型主动关节地址、连续pre/post和原design_margin逐值复核；只编译CPU模型取得地址，无forward/step、新回放或学习。首版保存因NumPy int64不能JSON序列化失败，统一first index为Python int并加入可运行序列化自检后通过；原物理数据没有改动。
+
+26/26首次越界均在到达目标后的速度指令归零阶段，距arrival约0.2495–0.5285s，此前均已有原目标normal-load记录；26/26越界前关节向外运动、滤波残差非零且原投影lambda=1，15/26径向保护输出为0、其余11条即使有保护仍越界。高度全在0.115–0.126918m；最大关节超界约0.012417rad，最小约0.00003514rad。对应B0轨迹设计全部通过。记录支持“停车期间动态设计约束/残差交接存在缺口”，不直接证明哪个通道是原因、停车退出一定修好、全局不可达或学习必要；point-zero、静态目标投影、径向保护及电机包络均不构成主动关节1.4rad动态不变性证明。
+
+近邻边界补核：[Sony Tachyon3作者机构摘要](https://www.sony.com/en/SonyInfo/technology/publications/real-time-perceptive-motion-control-using-control-barrier-functions-with-analytical-smoothing-for-six-wheeled-telescopic-legged-robot-tachyon-3/)已有轮腿CBF关节/碰撞/支撑约束；[Choi等作者摘要](https://arxiv.org/abs/2004.07584)已有RL学习CBF/CLF模型不确定性。新检索得到轮腿trust-region残差与重型轮腿safeRL的出版社摘要线索，直接入口418/403，未获全文、不重复突破。普通CBF/QP、安全RL或残差退出不能直接作为论文创新；轮腿闭链、可得状态、接触/停车耦合、包络可行性和相对这些工作区别仍须推导和验证。
+
+下一步由210深审决定是否值得登记一个有限、冻结模型的停车残差退出因果对照：全部三个anchored末模型、上述13个共同case，原始/退出各39次（最多78次首回合评价），CPU/GPU/强经典基准保留；只在原phase current-command==0时停止新残差请求，既有滤波/延迟/控制/角色保护及Actor信息保持。模型/RMS只读、切换前等价与消息/时序接口先准入，固定完整任务/design/physical及逐关节动态证据，不按结果换阈值；这是已见case上的机制诊断，不是独立泛化、补训练或救回已关闭candidate的收益门。若退出仍失败，先检查越界前的动态可行域而不扫退出时长/增益；若恢复，也仅确认交接贡献，不能自动证明新算法或RL优势。当前仅提出可证伪对照，未冻结runner/消耗预算，formal5仍不准入；六类完整论文出口继续未齐。
+
+归档第4/7批已推送并核HEAD，协调停住归档父进程及包装器后完成本轮写入，不与其共享PROJECT_MEMORY并行写；本轮提交同步后恢复同父队列/后台排他锁及guard。剩余三批数据仍是本地已核验原始证据，未声称全量远程完成。210如期深审和冗余清理。
+
 第208轮六组匹配训练、全量交付和原门审查完成（2026-10-07）：
 
 原worker正常结束，MainPID=0/SubState=exited/Result=success/exit0，04:53:11至05:46:11 CST，总墙钟3180s包含初始化、六次训练、保存和1254次密集评价，不是纯训练耗时或CPU/GPU倍率。六个fresh模型各200k/400epochs/8000Adam，合计120万策略步；60组checkpoint的模型/RMS/meta哈希及六个末模型CUDA优化器、eta、39维RMS/count200100.0001回读通过，同seed初始权重/world一致、无工程warmstart。
