@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第183轮参考角色全门配对去留完成（2026-10-07，目标继续）：
+
+review_reference_role复用原full_flags/5deg分轴和load_rows，对240比较/20developmentcase的三种比较、12个pairedpanel核完整task/phys/design/各轴/height/speed/stop等flags和8new+4reused结果源绑定；没有原label重写/新rollout。floor_only对original的四组成功8→12/8→12/8→12/7→11，无lost、无new轴/其他taskflags，phys/design全通过，工程gate4/4True。新增通过统一为6301009/11/13/15的4独立0.16m case，16group gain records不是16独立case；Jpsi降低.22258/.15869/.21905/.16388deg。更强传统Nom候选可保留供后续资格，但未自动替基线、未证明新算法/学习优势。
+
+consistent_pair对original与floor_only的8panel资格均False：vsoriginal新yaw>5为2/2/2/1=7comparisonrecords，2unique upper.38m case6301033/35，无原successlost也不能忽略另一轴新违规。其clean/noisy前三组与floor_only同成功数、Jpsi反而更高；noisyB1额外恢复6301033（upper.38真实投影区域）不抵消另一例新增yaw或当普遍robust/部署依据。固定combined投影分支close，不挑noise/场景救分、扫floor/gain或oracle switch。
+
+额外48个middle .16/.24/.30 rolelog核trackingmean identity，观察maxdiff0.0m，不将数值差当方法收益。角色机制代表cleanB0/6301009：yaw6.7583→4.2323deg，guard虚拟appliedmax119.853→0N，actual minleg.159796→.150183m，meanheight RMS.002655→.000277m，roll1.1972→1.2319deg仍在原5deg内；说明允许单腿变化而mean跟踪更准，并非必须每腿不低于平均命令。其他15pairedgain记录同列，非全域因果/动态安全定理，virtualguard不当接触力。
+
+round183_pair_review/role_closure绑定结果/identity/机制，无新physics/eval/learning。184需明确更强floor_only在原回归/regular及独立资格的剩余需要、可学习空间和可辩护贡献；保护语义工程改善不替正式PPO研究。185深审清理如期，完整method/同信息强对照/资格3→正式5seed/消融/新独立泛化/统计/PPO端到端与新稿仍未齐。
+
 第182轮参考角色160新回合采集完成（2026-10-07，目标继续）：
 
 run_reference_role_probe复用full/gyro checker及partial保存，freeze原source/隔离副本/noise/API/runner和原80参考绑定后唯一8job×20首回合完成，new160+reused80=240比较/20发展case、0training。新增physics2380549、全contact4700984；160full1346684703B+160gyro59017402B+160role52644665B共480trace，单份max8925810B。全hash/schema/finite/dense/contactcounts/qvexactjoin/gyro输入递推/noise及role mean/target/保护界限/原header desiredoffset与left-right对齐核过；实际新controller input单列日志，原headerbaseheightref不误当governedmean。

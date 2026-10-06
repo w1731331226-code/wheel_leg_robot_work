@@ -1,0 +1,13 @@
+floor_only/original/clean/B0 success 8 12 Jreduction 0.22258238732666702 lost [] gained [6301009, 6301011, 6301013, 6301015] added [] qualified True
+consistent_pair/original/clean/B0 success 8 12 Jreduction 0.15400246056082278 lost [] gained [6301009, 6301011, 6301013, 6301015] added [{'case': 6301033, 'flags': ['yaw']}, {'case': 6301035, 'flags': ['yaw']}] qualified False
+consistent_pair/floor_only/clean/B0 success 12 12 Jreduction -0.06857992676584423 lost [] gained [] added [{'case': 6301033, 'flags': ['yaw']}, {'case': 6301035, 'flags': ['yaw']}] qualified False
+floor_only/original/clean/B1-route success 8 12 Jreduction 0.15868703228869863 lost [] gained [6301009, 6301011, 6301013, 6301015] added [] qualified True
+consistent_pair/original/clean/B1-route success 8 12 Jreduction 0.11300687348529226 lost [] gained [6301009, 6301011, 6301013, 6301015] added [{'case': 6301033, 'flags': ['yaw']}, {'case': 6301035, 'flags': ['yaw']}] qualified False
+consistent_pair/floor_only/clean/B1-route success 12 12 Jreduction -0.04568015880340637 lost [] gained [] added [{'case': 6301033, 'flags': ['yaw']}, {'case': 6301035, 'flags': ['yaw']}] qualified False
+floor_only/original/noisy/B0 success 8 12 Jreduction 0.219051139245245 lost [] gained [6301009, 6301011, 6301013, 6301015] added [] qualified True
+consistent_pair/original/noisy/B0 success 8 12 Jreduction 0.155104660922323 lost [] gained [6301009, 6301011, 6301013, 6301015] added [{'case': 6301033, 'flags': ['yaw']}, {'case': 6301035, 'flags': ['yaw']}] qualified False
+consistent_pair/floor_only/noisy/B0 success 12 12 Jreduction -0.063946478322922 lost [] gained [] added [{'case': 6301033, 'flags': ['yaw']}, {'case': 6301035, 'flags': ['yaw']}] qualified False
+floor_only/original/noisy/B1-route success 7 11 Jreduction 0.16387895664618557 lost [] gained [6301009, 6301011, 6301013, 6301015] added [] qualified True
+consistent_pair/original/noisy/B1-route success 7 12 Jreduction 0.13562249627733025 lost [] gained [6301009, 6301011, 6301013, 6301015, 6301033] added [{'case': 6301035, 'flags': ['yaw']}] qualified False
+consistent_pair/floor_only/noisy/B1-route success 11 12 Jreduction -0.02825646036885532 lost [] gained [6301033] added [{'case': 6301035, 'flags': ['yaw']}] qualified False
+IDENTITY48 streams, max mean rounding 0.0
