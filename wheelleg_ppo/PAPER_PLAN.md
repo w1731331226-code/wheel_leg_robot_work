@@ -1,5 +1,11 @@
 # 双轮腿机器人PPO论文方案
 
+第192轮唯一328队列冻结及启动（2026-10-07，采集进行中）：
+
+新增run_phase_support_qualification，复用既有full/gyro/role校对与部分保存，增6列phase日志的当前指令/实际anchor全步对齐校对。合成namedcase的四stream8个prefix/last文件保存通过，runner_partial_unit绑定最终runner_contract；源58、installed forward/support、准入/656reuse30结果及328按原indices/same solver≤20组冻结过。唯一unit wheelleg-phase-support-qualification-v1以project-write.lock排他执行，02:56:20CST启动，实见PID75683/start，首批20regular场景；0learning、无模型/RMS/默认源/验收门更换。
+
+当前尚在运行，待完成后核全部full/gyro/role/phase SHA/schema/finite/dense/接触计数/qvjoin/actualcommand/anchor/角色边界和终态。只算首回合有效physics，自动重置额外工作另述，unit wall非PPO或purephysics速度。193仍须全部paired原门、5unique收益保持/CPU历史校对与switch瞬变去留；195深审清理、完整方法/正式seed/独立泛化目标继续未齐。
+
 第191轮启停保护源码及复用资格完成（2026-10-07，目标继续）：
 
 phase_support_probe复用已冻结reference_role_control的optional ref15及clean broad/full/gyro/role采集；不再复制控制函数，不改原controller/environment/model。新增select_anchor只在phase arm按实际当前command==0取min原trackingmean/.160、否则.115，并同步实际role anchor与6列phase日志（valid/step/currentcommand/zero/trackingmean/floor）。零指令含启动和到达后，正负及±1e-12非零均严格运动分支，无phaseflag/contacttruth/future/case输入。角色mode0的原checker仍检查mean/虚拟force不变量，phase checker另外核动态anchor；ref10–14 padding0不误开arrival/parking。
