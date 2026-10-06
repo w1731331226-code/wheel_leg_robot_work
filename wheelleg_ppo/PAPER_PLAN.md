@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第171轮完整状态/接触录制器源码资格（2026-10-06，目标继续）：
+
+complete_contact_recorder.py复用冻结v1的pre/post/header/contact helpers，使用无范围裁剪窗口，新增仅写自有数组的完整pre/post qpos/qvel、六路command/actual force、全局接触表和每world计数/COM。接触表包含geom/world/dist/dim/position/完整frame/5friction/6local force与torque，保留零力接触和无接触状态，每physics步记录；capacity/overflow、计数、有限/步序/首终态检查不允许截断当完整。旧源码与205结果不修改；真值不进入policy、critic或controller。
+
+diff3/virtual6各20world构造/capture/reset资格通过：245原core calls、40mjw.step、4shared-reference更新，原数组输入指针/标量、调用顺序、受保护状态不变，所有记录buffer由env持有。每world轮心CPU mj_forward一致；pre/post全状态复制、远离场景仍保留每步、合成首终态冻结/再次done不重复/显式reset通过。两cone×condim3/4/6×physical/synthetic的12配置、各两geom顺序，全部6力/力矩与CPU mj_contactForce一致，切向和扭转/滚动分量及world方向有非零夹具；零载荷接触保留、inactive不记录、漏contact/overflow/stepgap拒绝。额外检查3contact在2world分配、容量超限与overflowbit、inactive、20world静态COM/CPU一致；不将纯forward/合成检查当物理回放。
+
+当前installed implicitfast流程先forward再integrate，接触/frame/force/subtree COM属于solver pre层，q/v分别存积分前后，local force/torque按local@frame转world，作用geom1/对geom0反号。installed forward/support与全部源码/契约hash留admission_review。首次通过版本在first_admission保留；随后仅新增未完成chunks/frozen可读入口，供执行中断保存已耗回合，重新完整资格通过，额外测试kernel AST不变。
+
+本轮0实际评价回合、0学习更新。source admitted不能证明40回合数据已完整或新方法有效；172须先freeze唯一runner、预算及partial/failure保存，然后才执行40首回合并核对逐步完整性、原gate差异。主方法、3→5训练seed/独立泛化与完整新稿仍缺，175深审清理保持。
+
 第170轮方向深审与冗余清理（2026-10-06，下一175，目标继续）：
 
 **方向去留。** 166–169复核真实车轮椭球几何、原contact与严格通过的差别、缺证据三态及参考截断反例有价值，但同205数据的通用离线诊断在此收束。旧轮分配、冻结V6整体晋升及“截断解释全部经典失败”分支保持关闭；不追加旧学习预算或用更极端场景掩盖无合格贡献。边界参考截断的局部作用尚未测，不能由反例宣称完全无效。

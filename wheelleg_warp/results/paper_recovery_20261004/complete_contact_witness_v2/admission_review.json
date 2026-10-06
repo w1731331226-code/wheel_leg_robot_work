@@ -1,0 +1,60 @@
+{
+  "verified": true,
+  "round": 171,
+  "source_admitted_for_next_queue": true,
+  "source_contract_sha256": "3d21834bb8d986f4d1d98d752fd40802214707569e3172452b9b8c5524660f6e",
+  "proposal_sha256": "5c9e59587eca30f73741c96fe40e3df30c73f92287d0f1c9c3b8cedef690d31e",
+  "unit_sha256": "af2de0dba8a0d3b7621dc527cde0cf5f0660b856f5281f3d4b2d66f96b0b91e2",
+  "supplemental_sha256": "522571c7d3832dabf73d2e1363b414686cca7daf77180e5c0af4605098538a9d",
+  "prior_tested_source_sha256": "6851ec2ac77edb3428a683079f2e4bf51b1b037d2d78607ef1ea6784b82cfcfb",
+  "current_source_sha256": "81ed3df9c2bf2f0a53955949a4ffa5afb240503d364749b7137fdacb96ed7cc6",
+  "supplemental_kernel_AST_unchanged": true,
+  "installed_forward_sha256": "7b7ffa3d914b6adf65f228261e207998d5bed1e59d4fb17f5bc6ac796aacf490",
+  "installed_support_sha256": "1a08ef15f149d1cf3c9ec5df6c688669fe86aa237ee2512a7463caf1b74e3d54",
+  "owners": [
+    {
+      "mode": "diff3",
+      "worlds": 20,
+      "verified": true,
+      "original_calls": 245,
+      "physics_calls": 40,
+      "shared_reference_calls": 4,
+      "input_pointer_and_scalar_identity": true,
+      "protected_arrays_unchanged": true,
+      "buffer_owner": true,
+      "no_window_censoring": true,
+      "contact_capacity": 1280,
+      "state_sizes": [
+        17,
+        16,
+        6
+      ]
+    },
+    {
+      "mode": "virtual6",
+      "worlds": 20,
+      "verified": true,
+      "original_calls": 245,
+      "physics_calls": 40,
+      "shared_reference_calls": 4,
+      "input_pointer_and_scalar_identity": true,
+      "protected_arrays_unchanged": true,
+      "buffer_owner": true,
+      "no_window_censoring": true,
+      "contact_capacity": 1280,
+      "state_sizes": [
+        17,
+        16,
+        6
+      ]
+    }
+  ],
+  "full_wrench_fixture_configurations": 12,
+  "geometry_orders_per_configuration": 2,
+  "first_episode_evaluations_run": 0,
+  "training_updates": 0,
+  "timing": "Current implicitfast step performs forward before implicit integration; no forward position recomputation afterward. Saved pre q/v bracket this solver layer, saved post q/v after integration. Raw contact/frame/force/COM pre; actuator force computed for that step. Contact local force/torque transform by local @ frame, on geom1/opposite geom0.",
+  "scope": "Source/capture/CPU forward and synthetic solver-buffer qualification, not live trajectory completeness, whole passage proof or new method benefit.20 world constructors per mode are not evaluation episodes.",
+  "partial_access": "Initial passing source/contract/unit/log retained under first_admission; latest version additionally exposes owned accumulated chunks and frozen set for explicit interruption accounting. All measured kernels AST-equivalent; current full admission rerun passed.",
+  "remaining": "172 must freeze unique40 runner and persist consumed/partial episodes; check live counts/finite/dense/terminal/source/gate changes. No PPO, threshold tuning or automatic extra evaluations.175 direction review/cleanup."
+}
