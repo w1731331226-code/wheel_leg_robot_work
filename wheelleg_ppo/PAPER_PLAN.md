@@ -1,5 +1,7 @@
 # 双轮腿机器人PPO论文方案
 
+第212轮实际队列启动快照：旧archive正常终态并完成七批与记忆推送；新worker unit lock-holder260144/child260145已活跃，首original1991的13次校验完成，下一withdrawal已在运行，round212_dispatch记录当时reserved/completed。整体78未完成、0training、不据片段作方法判定。新outputs不半提交，guard恢复后等待worker锁；213沿同句柄查terminal与全paired证据。
+
 第212轮固定78科学评价队列冻结（2026-10-07）：
 
 run_parking_withdrawal复用原nominal_mean_evaluation的deterministic预测、39RMS/paired78、模型与RMS不变验收、完整full/gyro/role/phase记录和原任务旗标，仅在构建阶段临时接入已准入parking probe，finally恢复factory。固定1991→1992→1993，每seed original→parking_request_withdrawal，同13case/solver100、末200k模型/RMS，六jobs×13=78首回合，0learning。独立parking_withdrawal_v1/runner_contract绑定source/admission/210/211/原runtime/model/RMS及明确比较规则，source静态packet准入不误称bitwise trajectory校对。
