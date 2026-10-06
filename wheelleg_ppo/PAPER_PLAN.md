@@ -1,5 +1,19 @@
 # 双轮腿机器人PPO论文方案
 
+第198轮同暴露完整门及评分审查完成（2026-10-07，目标继续）：
+
+review_equal_exposure_recovery复用ordered/wrap/load_rows/full_flags/compare/yaw_gate，重建225源结果/原场景顺序、原完整task/physical/design/summary；force/schema/SHA核，对8profiles×5height×5ctrl的200pulse记录逐条重建期望200submitted samples，profile内25个序列float32 SHA完全一致，25zero整个回合提交全0。source/modelRMS、delivery、同applied波形、全部zero5/5与三model物理设计全部过；不是同realizedtrajectory或terrain等价证明。索引/旗标与wavehash改变自检通过，本轮0neweval/training。
+
+**总体冻结迁移恢复优势门False，关闭该主张。** pulse成功B0/B1=36/34，三V6=38/36/37不能掩盖逐case损失：1762对B0丢89500032(.30/profile4，yaw4.257→6.004deg)及89500035(.30/profile7，3.985→5.790)，对B1也丢35（4.797→5.790）；1763对B0丢89500033(.30/profile5，4.177→5.056)。新增flag皆attitude/yaw，三unique案例/四reference比较records，不把重复参考算新样本。1761无lost/newflags，但不能挑这一model代表三seed。
+
+原固定phase B1-route pulse meanJpsi=.4797819966deg；三model=1.4026182974/1.4464700644/1.3831156363，均比参考差；三mean1.4107346660，而预定≤min(.85ref,ref−.05)=.4078146971，所以方向与15%+.05门均失败。两model保留classical成功并集也失败；总体全部门False，不放宽门/换参考/按model或case筛阳性/改profile或budget救分，不晋升长PPO/defaultbase。
+
+**保留阳性事实及解释界。** 1761比B0恢复89500042/43(.38 profile5/6)，1762同两例；1763恢复89500041/44(.38 profile4/7)但丢middle33。同施加wrench不能由路线减少输入，这是原协议下case-wise恢复见证，并非整体方法优势/新算法或matchedlearning。所有三policy只是旧context迁移，不在phase/flatpulse下训练。zero任务虽5/5，zero meanJpsi1.2634397/1.3760856/1.2465665deg，classic约.00011975/.00002763deg，说明当前context存在原任务允许但实际很大的unperturbed tracking误差，不能把zero pass等同零偏差。
+
+observed pulse-zero mean yawRMS差classic.59602/.51970deg、旧models.15072/.07604/.14780deg，均如实另列，不改成主指标。RMS标量相减非线性、reference旧scorezero与pulse按相同height权重但闭环state不同，不能把较小增量当同等总性能或独立自然contact因果，不能事后用增量翻转原门。round198_pair_review/pair_review.log保存六个reference比较全部row、zero/pulse对照、同submitted hash及失败/score/SHA。
+
+199须沿“相同刺激下有局部恢复但旧policy零刺激偏差/中位丢成功/总体J差”定义有区别性预测的具体方法和匹配learning对照，不再frozen-transfer/profile/gain启发式链或直接重训旧配置。200深审清理，完整新方法/强对照及新三→五训练seed/独立泛化/层级统计PPO端到端与新稿仍未齐。全部原source/model/RMS/CPU-GPU/labels/final和失败保留，本轮仅分析已存结果。
+
 第197轮同暴露225唯一采集完成（2026-10-07，目标继续）：
 
 15job/五ctrl×45operationalcase=225new（200pulse+25zero），source60/API四文件/225manifest/原三modelRMS冻结后只执行一次。firstphysics2961109、contact5885370；225full1701662594B+gyro61701429B+role64619171B+phase9203430B+force18164739B=1125trace，单份max8075300B。worker逐job五stream/schema/finite/dense/contact/qvjoin/gyrorecursion/role/phase/实际submittedforce与delivery核，独立末端全SHA/force exact rule/count/原case序及源/API/modelRMS再核。全five stream partial10prefix/last buffer资格在执行前过，无实际中断/补跑/幸存删样本。

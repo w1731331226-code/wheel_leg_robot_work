@@ -1,0 +1,8 @@
+GATES {'source_and_model_RMS_valid': True, 'delivery_complete': True, 'identical_submitted_waveforms': True, 'all_zero_contexts_pass': True, 'all_candidate_physical_design_pass': True, 'all_models_preserve_classical_union_and_flags': False, 'all_models_direction_and_15percent_0p05deg_gate': False} OVERALL False
+SCORE {'reference': 'B1-route, fixed before outcomes', 'reference_mean_yaw_score_deg': 0.4797819965619441, 'candidate_mean_yaw_scores_deg': [1.4026182973844254, 1.4464700644202064, 1.3831156362768644], 'three_model_mean_deg': 1.4107346660271654, 'required_max_mean_deg': 0.40781469707765244, 'passed': False}
+V6-1761/vs_B0 lost [] gained [89500042, 89500043] newflags [] Jreduction -0.8523224524781516
+V6-1761/vs_B1-route lost [] gained [89500032, 89500033, 89500042, 89500043] newflags [] Jreduction -0.9228363008224814
+V6-1762/vs_B0 lost [89500032, 89500035] gained [89500042, 89500043] newflags [{'case': 89500032, 'flags': ['attitude', 'yaw']}, {'case': 89500035, 'flags': ['attitude', 'yaw']}] Jreduction -0.8961742195139326
+V6-1762/vs_B1-route lost [89500035] gained [89500033, 89500042, 89500043] newflags [{'case': 89500035, 'flags': ['attitude', 'yaw']}] Jreduction -0.9666880678582623
+V6-1763/vs_B0 lost [89500033] gained [89500041, 89500044] newflags [{'case': 89500033, 'flags': ['attitude', 'yaw']}] Jreduction -0.8328197913705906
+V6-1763/vs_B1-route lost [] gained [89500032, 89500041, 89500044] newflags [] Jreduction -0.9033336397149203
