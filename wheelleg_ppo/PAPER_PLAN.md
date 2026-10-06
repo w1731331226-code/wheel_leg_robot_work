@@ -1,5 +1,17 @@
 # 双轮腿机器人PPO论文方案
 
+第201轮环境/归一化/轻量phase source阶段完成（2026-10-07，目标继续）：
+
+nominal_reference_env分为raw参考缓存与normalized pair：RouteState真实raw39先计算R和raw terminal R，VecNormalize仅实际39更新一套RMS，外层同stats/clip拼current39+reference39。参考查询不更新RMS；done用旧terminal rawref与newcurrent rawref分别形成78，不把新stage当旧terminal。Scripted异步height切换、RMS mean/var/count与actual-only RunningMeanStd逐值相同、shared12context、reward/action不改、clipping无法恢复height但cache仍正确、normalization39保存到新wrapper重载逐值过；standalone模块import/bootstrap回归也过。
+
+light_phase_reference直接包原raw_env构造控制图，复用原prepare/select/expt controller，currentcommand后control前换owned16ref，默认函数/global恢复；只小role/phase buffers，每100world556800B，主training无fullcontacts/forceinjector/logger。全部三seed×三stage旧900world构造原100batch，signedcmd−.8/0/+.8及syntheticroll−5/0/+5、非零virtual6请求，8100 static state/diag/ctrl与独立原zero-command或CPU准备fixedfloor source输出exact；prepare原q/v/sensor/gain/base参考数组不改，reset时钟/小buffers清与global defaults恢复过。数据构造包含原模型线性化，0task rollout/learning不是零计算。
+
+首次适配launch spy命名k，Warp内部用kernel=关键字而TypeError，在首构造forward/控制capture之前失败；initial_launch_keyword_error.log/light_phase_before_keyword_fix保存，修正函数签名kernel并重跑900world资格过，原controller/env/model不改。没有隐藏任务消费或训练重启。
+
+另一10world CurriculumEnv synthetic episodeend只让world3切2/3stage，termR保存旧height而currentR更新新height、ownedref下一control读取更新的raw.k.reference；transition actual_episode_end=True，78 terminal且sameRMS过。只是合成终态源边界，不当真实rollout或actualcontinuousstage性能；203engineering仍需真实episode/model换和gradient/checkpoint。
+
+environment_source_contract绑定原phase parent+新rawcache/light/test/reference/route与VecNormalize source，阶段environment_admitted=True/policy_admitted=False。202必须sampling/logprob/evaluate_actions/KL/gradient/initialfunction/reload策略source，201环境通过不准入24k或1.2M主训练；203两source全过才engineering，204资格全过后冻结main，205深审清理。当前0task评价/learning，无新trainedpolicy/mainqueue，原source/models/RMS/CPU-GPU/labels/final/失败保留，完整6出口仍未齐。
+
 第200轮方向深审与冗余清理/新匹配资格范围登记（2026-10-07，下一205，目标继续）：
 
 **继续价值和限制。** 196–199源/API/225completion/197数据/198完整门与199静态均值/模型RMS/sourceSHA核过。旧frozen-transfer优势保持closed，不能按profile/gain/旧model再救分。相同submitted扰动下有高位局部恢复、zero-task却约1.3degJψ、名义参考45static均值非零，支持一次真正from-scratch匹配mean约束试验，而非立即宣称新算法。已有stableprior/zero-point controller类工作，r只是publickinematic而非动态平衡/安全集，强行mean0也可能损害不确定性补偿，必须原任务对照实测，不重复UC/IEEEblocked检索。
