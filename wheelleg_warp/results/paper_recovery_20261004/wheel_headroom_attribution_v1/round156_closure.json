@@ -1,0 +1,32 @@
+{
+  "round": 156,
+  "verified": true,
+  "gpu_episodes": 816,
+  "training_updates": 0,
+  "source_contract_sha256": "7481c7c9bfa82b7e7e153f1e2b3dab0d8f7182500a35b04f2d616d8b7bc66e22",
+  "review_sha256": "99f24376f16cf99763b3bb8afdff120e9d0ac730b6592382ea4e7403b6479293",
+  "unit": {
+    "name": "wheelleg-wheel-headroom-v1.service",
+    "initial_MainPID": 11974,
+    "terminal_ActiveState": "inactive",
+    "terminal_MainPID": 0,
+    "ExecMainStatus": 0
+  },
+  "all_panels_physical_design_clean": true,
+  "all_extra_hip_loss_zero": true,
+  "prior_fixed_replay_success_changes": [
+    {
+      "seed": 1762,
+      "condition": "learned_room_leg_fixed_assist",
+      "panel": "controlled",
+      "case": 6301029,
+      "old_success": false,
+      "new_success": true
+    }
+  ],
+  "decision": "Close this current coupling-recovery hypothesis; no grouped projection revival, gain/budget sweep or new PPO",
+  "goal_status": "active",
+  "next": "157 derive whether wheel own-box propulsion/steering allocation admits a distinct bounded hypothesis under original task/physical/design gates; no hip-grouping revival or PPO expansion. Evidence sufficiency checklist remains incomplete.",
+  "recorded_first_episode_physical_substeps": 12165747,
+  "work_count_limit": "First-terminal statistics only; vector environments may autoreset earlier-finishing worlds while others finish. This count is not total simulator work."
+}
