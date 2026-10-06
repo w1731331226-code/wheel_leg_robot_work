@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第220轮五轮方向深审、原队列消费与冗余清理（2026-10-07）：
+
+216–219的raw39/proxy时序与负对照、217固定解析公式/条件化rank和假设、218影子motion/integral/tilt一致及同Nom权限/CPU-CUDA静态/包保持/合成reset-terminal、219完整492/source/indices/gates绑定重核。容量非netheadroom/真实support，gamma是heuristic而非稳定性或新颖性证明；实际public状态不替换，影子请求会被同1Nm/L1池clip，不能把日志vref当已实现速度。完整资格值得继续，当前不另开实验/学习、不可按局部results选winner或改pole/gain/threshold。
+
+同原283051 flock/child283052实见活跃，无interruption。round220_direction_review快照B0 regular batch4 reserved96/completed80；完成的四批20共80result/source SHA和原schema verifier证据复核，fulltask/physical/design均80/80，oldB0flags变化0。首回合已保存数量不是batch验收数，contract freeze、reserved、completed和all492出口分开。仍未Bomega/Cgamma所有三panel或全门，不科学判定改善/正式PPO；process timeout不当terminal，不重启原句柄。
+
+本轮删除1ignored/untracked/no fuser unused audit_remaining_motion.pyc7748B，recursivecodeobject含co_name/source/cacheSHA一致，round220_cleanup验收后删；所有当前worker/runtime缓存、source/modelRMS/raw/唯一失败/CPU-GPU/final保留，bytecode可再生不永久节约。run原输出不半归档/clean；本轮小审查/记忆先同步，guard恢复active等worker排他锁，不改变frozen源。
+
+221沿原handle核新的完整对象/消费；222实际terminal才full492 raw/source/control-budget/gates/旧CPU与新paired核；223决定Bomega是否足够、Cgamma是否有额外机制以及相对strongB0/B1收益，不合格关闭固定候选不参数救分；224有资格才可辩护学习必要/新同信息matchedfreshprotocol，否则转有区别性机制；225深审清理。完整方法贡献/强对照消融/newformal5/freshID组合geometry参数delayOOD能力保持/层级统计PPO端到端/推导复现新稿六出口保持，goal active。
+
 第219轮actualdispatch：lock-holder283051/child283052已活跃，首B0/regular batch0 reserved20/completed0启动快照由round219_dispatch/progress保存；全492仍未完成，0learning，无局部方法判定。后续观察同handle，220如期深审清理；guard恢复active等worker锁，新raw不半commit。
 
 第219轮完整492解析资格队列冻结（2026-10-07）：
