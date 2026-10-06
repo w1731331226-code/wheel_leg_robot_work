@@ -1,0 +1,9 @@
+{
+  "reason": "Clear previous job handle before constructing next job; constructor failure must not mislabel prior-job buffers as new partial data.",
+  "evaluations_consumed": 0,
+  "source_before_sha256": "2489faf9ff2c5e344f3de252db2b71fc96f83ae905df7d99faad2b0b93f69cc9",
+  "source_after_sha256": "008482389167144b377e54257e7bf0922f5e131cf9ecd04eb1f1768d06c22c98",
+  "reverse_replace_from": "        for label,classical in p['classical'].items():\n            verify()\n            raw = None\n",
+  "reverse_replace_to": "        for label,classical in p['classical'].items():\n            verify()\n",
+  "initial_contract_sha256": "7c95407e32b5b94daa3444f74ea7adbeb3515fd073571a7f6a24827d3b34a010"
+}

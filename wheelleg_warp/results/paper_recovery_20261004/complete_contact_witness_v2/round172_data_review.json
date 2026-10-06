@@ -1,0 +1,52 @@
+{
+  "verified": true,
+  "round": 172,
+  "records": [
+    {
+      "label": "B0",
+      "success": 8,
+      "physical": 20,
+      "design": 20,
+      "first_physics_steps": 297653,
+      "all_contact_records": 587304,
+      "compressed_trace_bytes": 164506156
+    },
+    {
+      "label": "B1-route",
+      "success": 8,
+      "physical": 20,
+      "design": 20,
+      "first_physics_steps": 297661,
+      "all_contact_records": 586733,
+      "compressed_trace_bytes": 167401089
+    }
+  ],
+  "completed_evaluations": 40,
+  "unique_development_cases": 20,
+  "first_episode_physics_steps": 595314,
+  "raw_contact_records": 1174037,
+  "compressed_trace_bytes": 331907245,
+  "all40_trace_sha_schema_dense_counts_finite_terminal_state_join_checks": true,
+  "original_label_changes": 0,
+  "new_learning_updates": 0,
+  "input_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/complete_contact_witness_v2/completion.json": "a345a44cee44c1b1bbaf0d956b7bd05d6ab1cb1ec25687a462570d71a60cc6d4",
+    "wheelleg_warp/results/paper_recovery_20261004/complete_contact_witness_v2/runner_contract.json": "12e225d6714eb61c3d10e5836f0e69985fd828cff5d7dbd2d8dd9b91dd89dc91",
+    "wheelleg_warp/results/paper_recovery_20261004/complete_contact_witness_v2/runner_preexecution_amendment.json": "2b82292d6fa5afa66b59422986e1ad0db1b13bd94f1566d1cbff7589e47a8804",
+    "wheelleg_warp/results/paper_recovery_20261004/complete_contact_witness_v2/runner_partial_unit.json": "4c2cf3ee864ae2569dbe6288bfa7eba20778a16ebfc5448ede394c51c5b84a83",
+    "wheelleg_warp/results/paper_recovery_20261004/complete_contact_witness_v2/worker_journal.log": "4cd6d9ca4e606232d70e5a4c7a5c61ac1e912195187ca730415fe6f9d3cb55fe",
+    "wheelleg_warp/results/paper_recovery_20261004/complete_contact_witness_v2/run.log": "7f1825ccabca2edae834c0d56e8c88478c53d571f0414cc1559c3ba1270a0339"
+  },
+  "worker": {
+    "unit": "wheelleg-complete-contact-witness-v2.service",
+    "observed_live_PID": 56863,
+    "terminal": "completion/progress complete, no interruption; handle unloaded/GC,MainPID0",
+    "exit_status": "not retained after transient unit GC",
+    "journal_start": "2026-10-06T19:41:46+0800",
+    "journal_consumed_end": "2026-10-06T19:42:50+0800",
+    "approx_unit_wall_seconds": 64,
+    "wall_scope": "Whole measurement unit includes lock wait/construction/physics/transfers/compression/checks, not PPO training or isolated physics throughput."
+  },
+  "limits": "40 episodes are paired development replays, not new independent cases/trained seeds. Full data availability is not full passage/safety/method proof. First-episode steps exclude extra vector autoreset work.",
+  "next": "173 interpret complete solver-time path/contact/wrench evidence and decide concrete mechanism/task candidate. No extra replay/PPO/threshold scans;175 review/cleanup. Full paper contribution5seeds/ablations/freshgeneralization/cost/manuscript remain unmet."
+}

@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第172轮完整40回合测量完成（2026-10-06，目标继续）：
+
+complete_contact_witness.py在源码/installed API/runner/旧参考结果/预算hash核对后执行唯一40首回合队列，B0与B1-route各20原受控开发场景。分别297653/297661首回合物理步、587304/586733全接触记录，总595314步与1174037条接触；40份完整NPZ压缩331907245字节，最大单份8518895字节。每步完整pre/post状态、全contact/count/COM和原112header落盘，校验全部SHA/schema/finite/dense/nooverflow/逐step接触计数/首终态/相邻pre-post状态完全连接。两classic各8/20原任务成功、20/20physical及design通过，与原标签变化0；不称轨迹bitwise等同。
+
+执行前显式修正跨job构造失败时的旧raw句柄误标风险，0预算消耗，initial runner contract/日志和可反向重建源hash的amendment保留；canonical JSON避免原tuple/list账务故障。合成中断保存检查通过，prefix与最新buffer分别保留、completed world不误标、已耗物理步保留；实际队列无interruption/追加回合/学习更新。unit实见PID56863运行后已GC/无live handle，completion与progress均complete；journal记录19:41:46→19:42:50约64秒整采集单元耗时（含锁等待/构图/传输压缩与校验，不是PPO或纯物理吞吐）。GC后exit status不保留，不将缺省状态当直接退出码证据。
+
+这40条是20原开发case×2固定law，不是40独立场景或训练seed。完整数据可用不等于完整通过/安全/新方法优势已证明；原模型/CPU-GPU基线、205旧证据、失败、原判据及最终封存保持。173用本数据解释真实路径/完整solver接触wrench和机制/任务可证伪候选，作去留而不再增加同类回放；174只对有据候选核预测、公平权限/信息和近邻区别；175深审清理。全部新贡献、3资格→5正式训练seed/消融/新独立泛化/统计/PPO真实成本/完整稿件仍待完成。
+
 第171轮完整状态/接触录制器源码资格（2026-10-06，目标继续）：
 
 complete_contact_recorder.py复用冻结v1的pre/post/header/contact helpers，使用无范围裁剪窗口，新增仅写自有数组的完整pre/post qpos/qvel、六路command/actual force、全局接触表和每world计数/COM。接触表包含geom/world/dist/dim/position/完整frame/5friction/6local force与torque，保留零力接触和无接触状态，每physics步记录；capacity/overflow、计数、有限/步序/首终态检查不允许截断当完整。旧源码与205结果不修改；真值不进入policy、critic或controller。
