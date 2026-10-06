@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第214轮剩余运动失败与首次前缀差异全量定位（2026-10-07）：
+
+audit_remaining_motion对预先qualified18中的全部12失败、全部21unqualified前缀读取SHA和原post姿态/peak重算，无新rollout/训练。12失败来自6301001/3/5/7四个controlled发展case×三模型，均h.115/单侧20mm，first yaw>5deg在3.9025–4.149s，全部早于停车5.484–5.504s；12physical/design全过。因此停车退出无法撤回已经发生的完整任务yaw峰值失败，不延长退出或加停车训练救分。
+
+first yaw事件：6条lambda=1、4条exact0、2条为4.364596089e−8/1.586966897e−8，保留原精度，不能将两个非零数写作0。快轮70.8347–72.4066rad/s，12/12其记录normal为0；其他轮有载荷。近零projection的6事件中一轮command接近速度相关的约.36–.38Nm限幅，hip command很小，不能默认归因hip torque saturation；事件轮速、normal/slip、真实command/bound、filter/residual与q时刻已全记录。normal0是采样卸载证据，不等于几何腾空/全时段无接触；无载荷时记录slip0也不证明无打滑。lambda1不证明控制权充足，力矩剩余、支撑/摩擦与速度—偏航目标可同时受限。
+
+21regular前缀不合格配对均post-state首先出现差异，随后才有requested residual差异，首post差异时请求相同；所有first-step/原精度差值和gate时刻保留，不把它们变成strictpaired、不调整prefix阈值、不据此唯一归因CUDA/某个solver。底层warmstart未存，当前只排出请求在这些first-post样本已不同的解释，不排除其他来源。
+
+**下一方向供215深审。** 优先“单轮卸载/高轮速/速度-力矩包络下的速度—偏航耦合及可用控制权”，不是再改point-zero或扩大停车实验、盲PPO、更复杂地形。先从已存数据/可得proprioception与公开Nom参数形成可证伪的支撑/轮速感知动态参考或约束分配假设，明确同信息强解析对照和现有contact-aware MPC/CBF/动态分配区别；不能把truth normal输入Actor或将普通wheelbox/分组投影/增residual scale重新当创新。此前关闭的wheel-only/component收益分支不自动重开。需独立控制权或参数敏感性干预时，215先评价值、定义唯一变量/预算/源资格；本轮未登记新物理预算/训练。停车机理保留为必要工程控制，active-motion优势仍未证，formal5/新ID组合OOD/统计与推导新稿完整六出口未齐，215如期深审清理。
+
 第213轮78终态、全量交付及严格配对审查完成（2026-10-07）：
 
 原worker MainPID0/exited/success/exit0，完整6jobs/78firstepisodes、0training，无interruption/重跑。runner/evaluator/source/modelRMS bindings、原序fullflags/physical/design/summary及390份五流SHA、parking-相位及filter-state对齐重核过；原active关节post-state重算设计margin与row逐值相同。首episode physics1,141,656，390轨迹762,170,237B，整个评价队列189.153677s含model/init/记录/压缩/验收，不是PPO训练或纯physics倍率。
