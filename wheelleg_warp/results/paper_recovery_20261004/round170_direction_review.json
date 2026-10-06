@@ -1,0 +1,50 @@
+{
+  "round": 170,
+  "period": [
+    166,
+    170
+  ],
+  "previous_goal_turn": "progress",
+  "goal_status": "active",
+  "next_review_round": 175,
+  "evidence": {
+    "wheelleg_warp/results/paper_recovery_20261004/task_mode_witness_v1/wheel_geometry_evidence_audit.json": "fd592e221fef3c1d4f0c207047911dcbeca583d0f49182be953ecf9fdaf66229",
+    "wheelleg_warp/results/paper_recovery_20261004/task_mode_witness_v1/parallel_passage_evidence_contract.json": "76b1617e0c106c44e708946655a226557c3cc095ba456d7686f3597c0d153f12",
+    "wheelleg_warp/results/paper_recovery_20261004/task_mode_witness_v1/passage_evidence_application.json": "eb10657342c1782392dbcd0a5ac7a66ba5326b470c7324b6a7e01fe34453b720",
+    "wheelleg_warp/results/paper_recovery_20261004/task_mode_witness_v1/reference_clamp_hypothesis_audit.json": "9b5e95fdb74e2ef00734e7264c9b6b46d8d5ab08805eb863dd99c147a71be201",
+    "wheelleg_warp/results/paper_recovery_20261004/round170_cleanup.json": "46e66dcc639c2fb3ce79a52d745d522613d15faa17c929d1b56065b7477ee8ca"
+  },
+  "findings": [
+    "Ellipsoid geometry and missing solver-time pose/full contacts confirmed. Original scores do not certify loaded/airborne passage.",
+    "205 applications:125failed/80insufficient each secondary definition,132original successes unchanged;41development cases.",
+    "Four unique0.16m classical failures occur without reference clipping; universal cause rejected, local endpoint effect untested."
+  ],
+  "continue_value": "Full paper goal remains worth pursuing; generic offline re-analysis of205 closes. One complete measurement is justified only by concrete missing variables, not expected positive scores.",
+  "method_review": "Immutable baselines, missing-evidence handling, paired cases and bounded budgets are sound. Zero-unloading remains conservative secondary diagnosis, not adopted general terrain task. Engineering checks and repeated data do not establish novelty.",
+  "decisions": {
+    "old_allocation_and_V6_promotion": "closed",
+    "universal_reference_clamp_cause": "rejected; no common-height repair",
+    "complete_measurement": "40classical episodes registered; source qualification required; not run",
+    "primary_task": "original asymmetric contact; strict passage separate; optional preference pending",
+    "long_PPO_extreme_scenes": "not admitted before qualified method/task"
+  },
+  "next_work": {
+    "171": "Minimal isolated complete recorder; qualify full force/pose/timing and graph preservation.",
+    "172": "Freeze source/runner; execute sole40 classical episodes only if qualified.",
+    "173": "Interpret complete contact/path data; select or reject specific mechanism/task candidate.",
+    "174": "For supported candidate only, freeze predictions/fair information/authority and check prior-art difference. Otherwise change candidate, not extend failed learning.",
+    "175": "Direction deep review and confirmed cleanup."
+  },
+  "new_training_budget": 0,
+  "new_physics_budget_after_source_admission": 40,
+  "proposal_sha256": "5c9e59587eca30f73741c96fe40e3df30c73f92287d0f1c9c3b8cedef690d31e",
+  "cleanup_sha256": "46e66dcc639c2fb3ce79a52d745d522613d15faa17c929d1b56065b7477ee8ca",
+  "remaining_full_goal": [
+    "Defensible new method and same-information strong classical/RL comparisons",
+    "Qualified3 then formal5 independent training seeds and key ablations",
+    "Fresh ID/composition/geometry/parameter-delay OOD and easy retention",
+    "Seed/case hierarchy statistics and measured PPO end-to-end time",
+    "Complete new manuscript/derivation/failures/reproduction"
+  ],
+  "entire_goal_complete": false
+}
