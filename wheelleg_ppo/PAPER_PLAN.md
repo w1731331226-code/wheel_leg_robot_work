@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第204轮主试验与末点评价准入冻结并启动（2026-10-07，队列进行中）：
+
+新增nominal_mean_evaluation将同39保存归一化/RawRCache/78pair接到原densephase/auxforce记录，训练后模型deterministic推理，weights/timesteps/updates及obs39/retRMS前后不变，全部firstterminal/state/contact/gyro/role/phase及auxforce保留。静态评价unit覆盖209case×diff3/virtual6共418world、627zero-command ctrl/diag exact，旧schema/scenario/physical/design/summary418strongclassic记录SHA重建过，saved78模型/39RMS接口及currenthalf一致；原phase/aux source-noop资格支持条件reuse非bitwise/新test。0source-admission scientific回合/学习，不把旧参考隐藏重播。
+
+nominal_mean_main独立freeze sixrun source/engineeringreview/evaluator/refs/proposal/quotas：newseed1991/92/93×plain/anchored×200k、100world CUDA，总1.2M policy samples；固定200k末点全部六model各96regular+40controlled+28legacy+45aux=209，1254new evaluations，各panel同solver≤20 group及原globalindices复原，current418classical仅source合格reuse。中间每20k更新后checkpoint不做science选择，main全freshinitializer，不12k工程warmstart；同seedinit weight/worldSHA配对，continuousworld/route/RMS/reference/RNG不因保存或evaluation重启。
+
+worker wheelleg-nominal-mean-main-v1持project-write.lock，04:53:11CST实见PID151791/start。当前第一plain/1991训练中，实见70k sampled/65k confirmed trained（快照，不算已完成六run），main_progress另记已全训练且评完run数；无中断/新增预算。终态、完整1.2M/1254仍待，不提前判learning/contribution或formal5；原bodypulse只auxevaluation不训练。独立trainingwall含learn/checkpoint，与eval/wholeunit/purephysics分开留证。
+
+source/trainer/evaluator/contracts/init-dispatch归档同步，主实验持续写出的weights/logs/raw outputs未提前提交，guard可恢复active但等待worker排他锁，不能把进行中worktree说成clean。205按约深审和确认冗余清理、观察原handle/consumption，不能因结果/观察timeout重启；若runtimefail保存权重/RMS/partial/已耗eval并stop，不能静默resume或discard。完整primary与mechanism门/旧28/aux separate统计、3→formal5/新独立test/层级统计/PPOwall/推导复现新稿全目标继续未齐。
+
 第203轮独立24k GPU工程资格完成（2026-10-07，目标继续）：
 
 nominal_mean_training复用RouteLedger/Continuous及201 pairedcache/lightphase/202Gaussian，单独两fresh arm×1991×12k/10world一次continuous learn，无midrun强制reset/物理恢复/重启/科学selection或main warmstart。原64源与installedSB3/proposal/units/runner工程contract冻结；worker PID145859现MainPID0/SubStateexited/Resultsuccess/exit0，04:41:44→04:42:53CST wholeunit68.895223s。工程仅核pipeline，不评方法收益，主1.2M未执行。
