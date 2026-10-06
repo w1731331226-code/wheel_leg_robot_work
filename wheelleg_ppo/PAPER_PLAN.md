@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第179轮腿参考与径向保护角色核对（2026-10-06，目标继续）：
+
+audit_leg_reference_pair沿原控制链验证：最终fleft/fright用各自实际腿长与左右目标，不是共同高度误差在LQR中完全抵消。固定平均参考的symmetric room在.115仅.2955mm/.38为0；普通pair box projection可以经改变mean再走原room逻辑得到相同左右目标，289网格+边界/invalid检查过，mean变化<=|desiredoffset|/2<=17.5mm。它是常规投影，不是新算法，reference界限不保证actual高度RMS/终态或动态安全。
+
+5高度×3合成roll姿态×2参考方式=30静态输出（另15原control预备缓存计算），不mj_step积分。原kernel输出验证reference实际可达并符合最终电机限幅，但发现关键角色耦合：径向保护anchor=min(reference_mean,.160m)，与trackingmean同一字段。例.115/roll5deg，pair mean=.127942m，shorttarget=.114704m低于guardanchor；保护requested虚拟force6547.565N、limited applied848.151N，hip命令达40Nm。普通mean投影因此不准部署，力矩限幅通过不当整体安全；这不是实际接触力/真实运动结果。原.16短腿目标.133820<guardanchor.16，说明保护意图与差动跟踪可能相互对抗，不能从源码关系宣称物理模型错误或全部失败由此导致。
+
+绑定178全部8结果，另列160记录的真实episode guard max/limited/positive counts作背景；positive可包含极小值，不当显著载荷/duty或因果效应，真实max也不隔离保护选择影响。alpha1仍按178关闭，不救参数。180深审候选仅为先分开trackingmean/left-right targets与有物理依据的保护下界，再审是否有限dynamic对照；fixed .115 operating support floor是待核的常规候选而非已安全的新方法。必须保原physical/design/actuator/低位已验证支持，不能直接换Mean或全局L_SQUAT_MIN、削弱门/添加真值。
+
+本轮0newphysics/eval/learning，无原controller/environment/model变更，只有隔离静态审计；原base/raw/model/RMS/final保持。180按约深审与冗余清理；具体可辩护方法、资格3→正式5seed/消融/新独立泛化/统计/PPO真实成本/完整新稿仍未齐。
+
 第178轮固定滤波变体配对去留完成（2026-10-06，目标继续）：
 
 review_nom_yaw_filter对4组同noise/同law配对、160比较记录/20发展case重建原全部success及flags，并显式列出原5deg roll/pitch轴，避免原已yaw失败的case掩盖新增roll失败。3个added-flag断言通过；8结果/source/177completion/datareview哈希过。四组原→latest成功分别cleanB0 8→8、cleanB1 8→8、noisyB0 8→8、noisyB1 7→8，无原成功丢失、各physical/design全通过。
