@@ -1,5 +1,17 @@
 # 双轮腿机器人PPO论文方案
 
+第159轮共享任务可改善空间与参考约束核对（2026-10-06，goal active）：
+
+audit_shared_task_opportunity.py复用原flags与load_rows，对主study/zero/classic和逐轮研究全部60panels4080评价按同136case/scenario重建success及失败flag，不采新评价/学习；所有source/input SHA核过。四类分类unit通过，Nom实际5world构图/reset取参考数组，环境记录计数/time保持0；不把构图内部CPU名义设计求解计入或声称总计算为0。
+
+**可改善任务仍存在。** classical原B0/B1/B1-route成功并集123/136；其余有8个原判据成功见证全来自V6-main，case6301001/3/5/7（.115m）和6301009/11/13/15（.16m），皆20mm单侧legacy，左右/双向都有。6D策略虽整体差，却在这些原门案例实际完成过；因此不能把全部剩余问题判为纯不可达或原任务已无学习空间，也不能因此证明更多维度/某一channel是唯一解。case-wise见证集合不等于一个可执行切换oracle，8例不是新独立测试或方法优势；V6仍在易案例丢成功，当前性能门继续失败。
+
+**仍无已观察成功的5例。** 6300092为约.150732m mixed；6301033/35/37/39为.38m单侧20mm controlled。所有被检查的主学习/经典/当前分配干预均未通过这些原完整任务门（不是所有可能控制器/预算或不可达证明）。.38四例主要legacy roll超5deg，其中两例yaw也超5deg；不能从重叠flag推唯一因果。既有V6低高度成功也只证明原成功判据，当前contact bit/退出判据不是完整逐步路径、加载支撑或越障方式证明，不先断言实际绕边/跳过/真实爬越。
+
+**实际Nom参考。** 5height源码/运行数组ref[2:7]核表：lower_reference=.1147044660616607m、upper=.38m，symmetric room=max(0,min(h-lower,upper-h))，所有roll-room clamp启用。h=.115时room=.00029553393833930963m（约.296mm），.16=.0452955m、.24=.1252955m、.30=.08m、.38=0。原roll desired offset=.3*roll+.12*filtered gyro_x并先限±.035m，再受该room截断；Nom left/right target围绕固定mean reference作差动，边界参考确实受限。这是内部setpoint事实，不是实际两腿长度恒等、动态可行域、失败根因或修复后的性能证明；实际joint/contact/force与迟滞仍有影响。
+
+**160方向审查的具体依据。** 停止当前轮clip和腿轮耦合收益分支继续回放/增budget。优先判断一次有限的真实wheel路径/接触/支撑与参考饱和检验是否必要，以区分原门成功方式、sharedNom边界reference限制和动作权限作用；再决定是否注册共同参考可行性或受控authority试验。当前不改原success/物理/设计门、不默认更难terrain、newnetwork/reward/PPO或直接推commonheight修复。全投稿目标的主贡献、合格三seed→正式五seed、新独立泛化/压力/成本与新稿仍保留，160按约深审清理。
+
 第158轮逐轮GPU干预闭合（2026-10-06，goal active）：
 
 gpu_wheel_component.py仅可选实验selector：原controller→leg-room→wheel selector→physics，mode0不改command/diag，mode1只更新wheel ctrl/accepted diag；原hips/Nom计算/filter memory/input与invalid保护保持。新wheel accepted值由原reward/smooth penalty/历史obs和物理检查消费；old global lambda字段保持原统计，parent steering的scalar identity deviation在component下预期非零，不能误当新比例/错误。追踪数组显式env持有，已终态world仍应用所选控制但停止首回合记录，explicit reset重置stats/mask。
