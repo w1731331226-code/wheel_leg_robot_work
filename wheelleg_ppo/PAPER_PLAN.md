@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第177轮陀螺滤波120新回合执行完成（2026-10-06，目标继续）：
+
+run_nom_yaw_filter_probe复用完整记录的checker/partial保存，冻结source/noise/installed API/runner及原40参考hash后，唯一6job×20首回合=120新评价完成，另40 original_clean源码资格复用，总160比较记录、20发展case。新首physics1785937，全contact3525318，120 fullNPZ1021385933B+120gyroNPZ37427010B，最大单份8974406B；全源/噪声/结果/240trace hash、原success重建、dense/count/finite/前后qv连续/gyro承接、float32noise与alpha递推/首终态核过。无interruption/隐式重跑/追加case/学习更新。
+
+结果计数：latest_clean B0/B1-route均8/20；original_noisy B0=8/20、B1-route=7/20；latest_noisy两者8/20。六job physical/design各20/20。无噪声任务成功数未增加，噪声B1差1只属当前固定人工noise样本，不能就此称普遍鲁棒/新方法优势、不能弱化强classic或自动换基线。所有vs_original_clean标签变化保留，不当同条件复现漂移；178按同noise同law配对原完整门和机制细查。
+
+worker实见PID66170，保留RemainAfterExit便于核终态：MainPID0/SubStateexited/Resultsuccess/退出0，20:28:35→20:31:52整采集单元197秒（含锁等待可能/构图/传输压缩和checks，非PPO或purephysics）。合成全记录+gyro prefix/latestbuf/error保存通过，实际无中断。原源/model/RMS/CPU-GPU/旧40与205/final封存保持，0训练。
+
+160是20原发展case×2固定law×4conditions（40复用+120新），不是独立160case/训练seed或新独立泛化。178完整gate与配对去留，179仅据实际结果决定剩余方法/学习必要性，180深审清理保持；可辩护新贡献、强经典学习优势、资格3→正式5seed/消融、新独立泛化/统计/真实PPO端到端与完整新稿仍未齐。
+
 第176轮隔离滤波/噪声源码资格完成（2026-10-06，目标继续）：
 
 nom_yaw_filter_probe.py包裹冻结控制/测量调用：alpha1仅在原Nom更新前令state8等于已有最新gyro，然后仍调用原controlkernel；alpha.025/无noise不写任何原控制/传感状态。四条件各20world构造/capture核245原corecalls、40steps/4sharedref、原inputs/order及前后两次capture插入位置相同，未修改冻结controller/environment/完整录制器。

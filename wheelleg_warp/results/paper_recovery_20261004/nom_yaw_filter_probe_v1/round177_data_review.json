@@ -1,0 +1,137 @@
+{
+  "verified": true,
+  "round": 177,
+  "new_evaluations": 120,
+  "reused_original_clean": 40,
+  "comparison_records": 160,
+  "unique_development_cases": 20,
+  "records": [
+    {
+      "condition": "latest_clean",
+      "classical": "B0",
+      "success": 8,
+      "physical": 20,
+      "design": 20,
+      "steps": 297662,
+      "contacts": 587945
+    },
+    {
+      "condition": "latest_clean",
+      "classical": "B1-route",
+      "success": 8,
+      "physical": 20,
+      "design": 20,
+      "steps": 297656,
+      "contacts": 587656
+    },
+    {
+      "condition": "original_noisy",
+      "classical": "B0",
+      "success": 8,
+      "physical": 20,
+      "design": 20,
+      "steps": 297652,
+      "contacts": 587350
+    },
+    {
+      "condition": "original_noisy",
+      "classical": "B1-route",
+      "success": 7,
+      "physical": 20,
+      "design": 20,
+      "steps": 297661,
+      "contacts": 586678
+    },
+    {
+      "condition": "latest_noisy",
+      "classical": "B0",
+      "success": 8,
+      "physical": 20,
+      "design": 20,
+      "steps": 297646,
+      "contacts": 588021
+    },
+    {
+      "condition": "latest_noisy",
+      "classical": "B1-route",
+      "success": 8,
+      "physical": 20,
+      "design": 20,
+      "steps": 297660,
+      "contacts": 587668
+    }
+  ],
+  "new_first_physics_steps": 1785937,
+  "new_contact_records": 3525318,
+  "full_trace_files": 120,
+  "gyro_trace_files": 120,
+  "full_trace_bytes": 1021385933,
+  "gyro_trace_bytes": 37427010,
+  "source_noise_schema_hash_dense_counts_finite_state_join_filter_recursion_checks": true,
+  "vs_original_clean_label_changes": [
+    {
+      "condition": "latest_clean",
+      "classical": "B0",
+      "vs_original_clean": []
+    },
+    {
+      "condition": "latest_clean",
+      "classical": "B1-route",
+      "vs_original_clean": []
+    },
+    {
+      "condition": "original_noisy",
+      "classical": "B0",
+      "vs_original_clean": []
+    },
+    {
+      "condition": "original_noisy",
+      "classical": "B1-route",
+      "vs_original_clean": [
+        {
+          "case": 6301031,
+          "changed": {
+            "success": {
+              "archived": true,
+              "current": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "condition": "latest_noisy",
+      "classical": "B0",
+      "vs_original_clean": []
+    },
+    {
+      "condition": "latest_noisy",
+      "classical": "B1-route",
+      "vs_original_clean": []
+    }
+  ],
+  "input_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/nom_yaw_filter_probe_v1/completion.json": "9c0954290a1532f3cc0916a78031fd0cdbc0a73b0d2b5e73542acda80e79e706",
+    "wheelleg_warp/results/paper_recovery_20261004/nom_yaw_filter_probe_v1/runner_contract.json": "303f99ff39becba115b04ee46764e51294e2119b517cdaa58ed436b81ef83873",
+    "wheelleg_warp/results/paper_recovery_20261004/nom_yaw_filter_probe_v1/runner_partial_unit.json": "d38bfa09e45eb0ef8fa24ce3ba4c8ac46761495ae47745a8599c1fb86041cc40",
+    "wheelleg_warp/results/paper_recovery_20261004/nom_yaw_filter_probe_v1/worker_journal.log": "798b86e3359232a3122d2d5d1163c5136f059fab9566279c22eb46258ccb54ce",
+    "wheelleg_warp/results/paper_recovery_20261004/nom_yaw_filter_probe_v1/worker_terminal_state.log": "cc01ba680529e97208523b5a248d4e7b8d71d590b5548ecdbb7bf02c1f272340",
+    "wheelleg_warp/results/paper_recovery_20261004/nom_yaw_filter_probe_v1/run.log": "0b1d7224ac05d6e9cd502e3573f40fdad00e90e23000312a09ae2cea852abcf3"
+  },
+  "worker": {
+    "unit": "wheelleg-nom-yaw-filter-probe-v1.service",
+    "observed_running_PID": 66170,
+    "MainPID": 0,
+    "SubState": "exited",
+    "Result": "success",
+    "exit_code": 0,
+    "start": "2026-10-06T20:28:35+0800",
+    "end": "2026-10-06T20:31:52+0800",
+    "unit_wall_seconds": 197,
+    "wall_scope": "Whole capture/measurement/check/compression unit, including possible lock wait; not PPO training wall time or isolated physics throughput."
+  },
+  "scope": "Existing20 development cases repeated across fixed laws/factorial conditions and one per-case synthetic noise realization.160 comparison rows are not160 independent scenes or trained seeds. First-episode counts exclude vector autoreset work.",
+  "interpretation": "Clean latest-gyro does not increase task success counts. Noisy B1-route original7 versus latest8 in this realization; causal component/paired metrics/all gates assessed178, no baseline promotion or noise-generalization claim.",
+  "new_learning_updates": 0,
+  "next": "178 paired original full-gate and mechanism analysis;179 remaining method/learning-need decision;180 deep review/cleanup. Full contribution, qualified3/formal5seeds, ablations/fresh independent generalization/statistics/PPO walltime/new manuscript incomplete."
+}
