@@ -1,5 +1,17 @@
 # 双轮腿机器人PPO论文方案
 
+第194轮剩余可改善空间与学习必要证据收束（2026-10-07，目标继续）：
+
+audit_remaining_learning_need复用原load_rows/full_flags，核phase272发展记录、历史12run三训练seed的1632末评价与关闭consistent_pair的80记录；全部case/scenario/原task/physical/design/summary/sourceSHA绑定通过。当前phase B0覆盖128/136（regular96+controlled32），B1-route127/136；两对照并集仍128，不需要不可执行的casewise oracle才能达到此数。193“九个失败case”是任一条件的失败并集；regular6300019已有B0成功，真正两组当前共同未解是controlled .115的6301001/3/5/7及.38的6301033/35/37/39共八例。regular B0成功率已100%，不能给新PPO设置再提高regular成功率5pp的不可达门；controlled仍有20pp数值空间，但不证明可达或学习必要。
+
+历史primary main在四个.115案例有V6成功，九个L2条件均未解决它们。七条被保存的低位V6成功轨迹source、result/geometry/NPZ及次级合同绑定核：五条centre整个纵向span在轮道外、两条partial（inside .23573/.09128），全部prescribed_path=False，次级ground/air定义failed并含其它unknown。原主任务success保持有效，不将失败次级定义回写旧成绩或偷偷更改原任务。该历史材料不能证明同障碍暴露下的恢复、完整centre/loaded轮胎通过或新phase下matched学习优势。历史模型没在phase Nom下训练，也不能把源上低位anchor相同扩成全训练上下文一致。
+
+上界6301033在已关闭consistent_pair/noisy/B1-route有一条原主门成功，因此不能说所有经典或所有条件不可达；其全域门已关闭，不按case选择此变体。所检查条件的分类为：128当前经典成功、4历史main学习见证、1关闭上下文见证、3所检条件无成功。后者不当全局不可能，当前旧参考room/gyro/floor/分配/奖励失败分支不重开。新主方法尚未可辩护，不凭“加观察器/历史/维度/PPO”宣布创新。
+
+**给195的具体补验建议，未准入。** 研究问题是“同样且不能靠改变路径减弱的外加扰动下，因果本体感知的协调虚拟wrench校正是否改善yaw恢复且保留roll/速度/高度/设计？”建议一次path-independent固定body-wrench profile诊断，对phase B0/B1-route及全部三冻结V6模型，前景上限8参考profile×5高度×5控制器=200无学习回合。这里只是scope建议，不是已登记预算/控制源/runner；195须先决定是否值得，固定profile构造和scale/时间/正确frame-point、same39与模型RMS、初态/生命周期/完整门，再195后源码准入，不能先跑。参考contact波形是刺激标度，施加bodywrench不等自然contact dynamics或纯外生normal因果；不按诊断结果重缩放救分。
+
+同任务/同信息/同PPO预算、三训练seed的新候选与generic6D及贡献专用匹配消融、analytic/非学习强对照，再资格五seed/独立test仍是必要最终证据。冻结旧模型的200候选迁移诊断阳性仅支持继续设计机制，阴性仅关闭该迁移主张；均不自动推出学习必要/新算法/长PPO，更不能以此旧模型诊断完成论文。195深审清理如期，本轮0新评价/训练，原source、模型/RMS、CPU-GPU、成功标签及final封存保持。
+
 第193轮启停保护完整门、历史校对与瞬变审查完成（2026-10-07，目标继续）：
 
 review_phase_support_qualification复用ordered/wrap/load_rows/full_flags/compare，恢复三arm×两law、96regular/40controlled/28legacy原顺序，所有984比较的原完整成功/physical/design/summary重建及源/API/结果SHA核。无新增评价或训练、原标签和门不改。phase对original四个发展pairedgate均True；legacy各28成功/无lost或新component旗标、physical/design全过。regular B0 95→96、B1-route94→95，新增同一6300092；controlled各28→32，新增6301009/11/13/15四例；无原成功丢失或新增task/roll/pitch旗标。Jpsi regular降.01266852/.01515798deg、controlled降.11888947/.09299420deg，mean yawpeak均改善，仅旧development范围。
