@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第197轮同暴露225唯一采集完成（2026-10-07，目标继续）：
+
+15job/五ctrl×45operationalcase=225new（200pulse+25zero），source60/API四文件/225manifest/原三modelRMS冻结后只执行一次。firstphysics2961109、contact5885370；225full1701662594B+gyro61701429B+role64619171B+phase9203430B+force18164739B=1125trace，单份max8075300B。worker逐job五stream/schema/finite/dense/contact/qvjoin/gyrorecursion/role/phase/实际submittedforce与delivery核，独立末端全SHA/force exact rule/count/原case序及源/API/modelRMS再核。全five stream partial10prefix/last buffer资格在执行前过，无实际中断/补跑/幸存删样本。
+
+全部五控制器zero五height均5/5；pulse40例B0=36、B1-route34，V6-1761/1762/1763=38/36/37。每控制器physical/design各45/45，所有pulse200samples与zero0samples完整送达。旧模型weights/200000timesteps/400updates及evaluator savedRMS不变，0learning。计数好看不代替198原fulltask/分轴/逐case reference成功保持/Jpsi三模型方向门、zero-context及送达一致性，不因总体增加而忽略case损失或宣布新方法。
+
+worker PID115426现MainPID0/SubStateexited/Resultsuccess/exit0，03:54:01→04:00:48CST wholeunit406.508672s，包含构图/传输/旧model推理/记录压缩/check，非PPO端到端或purephysics。首回合counts不包含autoreset额外工作；45case在五controller重复，不算225independentcase/新trainingseeds。round197_data_review绑定完整结果/源/实际终态，原始约1.86GB按classical90和V6 135两cohort提交同步。
+
+198全部paired/context/delivery/score固定门，199有据具体方法与matchedlearning，不按结果修改pulse/gain/budget；200深审清理如期。辅助flatbodywrench不是terrain等价或独立泛化，profile含参考traction，旧policy未在phase/pulse下训练；完整方法贡献/新3→5seed/强对照消融/新独立test/统计PPO成本/新稿仍未齐，原source/CPU-GPU/模型RMS/labels/final/失败不替。
+
 第197轮同暴露225回合唯一队列启动（2026-10-07，采集进行中）：
 
 run_equal_exposure_recovery冻结15个按45原ID/indices拆的≤20同solver job、五固定控制器及225总预算（200pulse+25zero），src60/API四文件/profile/proposal/unit和三zip/RMS再核。复用full/gyro/role/phase检查，增force实际提交/期望delivery检查；五stream10份prefix/last合成保存通过，runner_partial_unit绑定最终manifest。新flat辅助task没有旧paired trajectory，schema/phys检查复用但不把self check的“无旧label差”冒充nondeg。三modeldeterministic CUDA推理前后weight/timesteps/updates及evaluator RMS固定，0learning/reuse。
