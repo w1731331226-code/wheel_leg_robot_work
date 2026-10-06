@@ -1,5 +1,17 @@
 # 双轮腿机器人PPO论文方案
 
+第158轮逐轮GPU干预闭合（2026-10-06，goal active）：
+
+gpu_wheel_component.py仅可选实验selector：原controller→leg-room→wheel selector→physics，mode0不改command/diag，mode1只更新wheel ctrl/accepted diag；原hips/Nom计算/filter memory/input与invalid保护保持。新wheel accepted值由原reward/smooth penalty/历史obs和物理检查消费；old global lambda字段保持原统计，parent steering的scalar identity deviation在component下预期非零，不能误当新比例/错误。追踪数组显式env持有，已终态world仍应用所选控制但停止首回合记录，explicit reset重置stats/mask。
+
+128×2 syntheticGPU与NumPycommand/diag/energy一致、原模式逐值身份、zero/nonbinding float32身份、invalid拒绝可选投影保留原保护输出、其余输入不改、异步terminal/reset通过；136world实际construct/reset/graphorder/owner检查0积分过。source_contract冻结49源/proposal/unit/owner SHA后仅一次flock排他wheelleg-wheel-component-v1.service（初PID17524），24jobs1632首回合评价、记录24331229物理子步（非vector自动重置后的全部仿真工作量）、0learning/model/RMS更新，unit正常exit0/inactive/MainPID0，无中断/重试。
+
+review_wheel_component.py复用既有load_rows核全任务、physics/design、case/scenario/summary与所有SHA，独立检查新记录的接受语义、浮点box、共同/差模正交能量、旧接受量/原lambda/执行量与parent字段对应；24panel physical/design各96/40全过、记录qualified全过。pure component比concurrent pure uniform成功数各seed/panel均不变，Jpsi regular分别降.001365/.002137/.001774°，controlled降.004755/.009651/.005249°；共同增量RMS约.002996..008926Nm。相对concurrent uniform无注册非退化失败，不能把强B0比较差异唯一归因于投影。
+
+development参考门两panel均False：regular在多参考/重复中有lost-success3及legacy姿态flag6，controlled legacy姿态flag16（比较记录有重叠，不当独立失败case数）。完整失败case/reference/flags在review中。Frozen learned-leg在component之上regular成功+1/+1/0却yaw全部worse；controlled成功0/-1/0、yaw两正一负，consistent leg increment两panel均False。当前任务收益方向按原rule closed，不调gain/weight/common罚项或预算追阳性，不autoPPO/替换baseline/旧模型晋升；这不是新学习或独立泛化证据，原15%且.05deg与原28/正式门不动。
+
+round158_closure保存真实终态/source/review绑定，六类论文数据支撑出口仍缺方法贡献/稳定学习优势/新独立泛化。159依据已闭合结果收束实际可改善任务和学习必要性缺口，给160深审形成有限可证伪去留依据；不继续同一逐轮分配收益分支。160按约深审清理。
+
 第157轮轮内分配代数与有限任务干预登记（2026-10-06，goal active）：
 
 **可检验边界。** 第156轮所有记录中global lambda=wheel-only lambda且额外hip loss为0，旧腿轮分组恢复方向保持关闭。令轮accepted Nom为b、原filtered steering为s∈[-.3,.3]Nm，r=(s,-s)，原轮command box为|u_i|≤B_i。共同/差模坐标m=(uL+uR)/2、d=(uL-uR)/2，轮box即|m+d|≤BL、|m-d|≤BR。若要求m=m0且沿原请求线段u=b+alpha*r、alpha∈[0,1]，wheel-only scalar lambda已最大；这不是任意动作/闭环全局最优结论。

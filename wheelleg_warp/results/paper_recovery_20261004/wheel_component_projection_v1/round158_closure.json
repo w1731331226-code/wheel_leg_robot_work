@@ -1,0 +1,25 @@
+{
+  "round": 158,
+  "verified": true,
+  "captured_first_episode_evaluations": 1632,
+  "unique_development_cases": 136,
+  "recorded_first_episode_physical_substeps": 24331229,
+  "training_updates": 0,
+  "source_contract_sha256": "f47ccaa5491aa87e279005e620c66f9379dabcba162e6edbde6ba27285c305b5",
+  "review_sha256": "94d96d88bbe3ccdfba4c08a777b7a152a77b6fe4c2894ec22937c3f0f8dc1c3c",
+  "unit": {
+    "name": "wheelleg-wheel-component-v1.service",
+    "initial_MainPID": 17524,
+    "terminal_ActiveState": "inactive",
+    "terminal_MainPID": 0,
+    "ExecMainStatus": 0
+  },
+  "all24_panels_recording_physical_design_clean": true,
+  "allocation_reference_qualified": false,
+  "frozen_leg_consistent_increment": false,
+  "concurrent_uniform_nondegradation_failures": 0,
+  "decision": "Close this component-allocation task-benefit route; no gain/weight/common-mode penalty sweep, budget extension or repeated fixed-policy rescue.",
+  "limits": "Relative to concurrent uniform zero-leg, no task-success or registered nondegradation losses; strong B0/B1-route comparison failures are not attributed solely to projection. All labels/cases reused and first-terminal counts are not total simulation work. Original28 regression/formal learned superiority remain unevaluated and original gates unchanged.",
+  "goal_status": "active",
+  "next": "159 synthesize actual remaining task/control and learning-necessity gaps into a bounded falsifiable next decision for160 deep review/cleanup; no gain/weight/budget sweep or new PPO on this closed component branch."
+}
