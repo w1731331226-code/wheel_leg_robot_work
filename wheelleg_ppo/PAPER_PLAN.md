@@ -1,5 +1,19 @@
 # 双轮腿机器人PPO论文方案
 
+第210轮五轮方向深审与冗余清理（2026-10-07）：
+
+完成206–209周期审查，review_nominal_mean_direction重核冻结runtime/reference契约、全六run/同seed初始化、60组checkpoint/result输入SHA、208完整交付与209全新增违规的source/轨迹证据。原科学门仅5/32通过，candidate-benefit继续关闭。当前对普通残差的J改善是有效有限证据，但不足以对强经典主张整体优势；不增预算/换seed/参考或actor架构救分，不启动formal5。
+
+**继续价值与边界。** 26条新增design违规全部发生在arrival后停车，值得做一次单变量、冻结模型的因果诊断；不值得继续点零约束的训练和参数链。离线仅移除design旗标、保持其他实测指标固定时，常规成功只能从90/93/88到95/95/94（/96），困难从29/25/28到30/27/30（/40），均值29低于34。它是反事实旗标账目，不是实际修复成绩或动态干预上限；退出干预可能影响其他轴，必须实测。设计旗标本身不改变原yaw-RMS/duration定义的J。停车诊断成功也不等于接触运动阶段学习必要、独立泛化、安全定理或方法创新。
+
+**修正对照混杂并登记唯一78预算。** 第209轮提议的“currentcmd==0退出”会同时改变启动时站立。新条件仅用公开当前速度指令历史：每world记录seen_nonzero_current_command，之后仅在currentcmd恰为0时阻止新的六维残差请求；reset清除latch。不得用arrival/goal/contact标签决定切换，不把latch加进Actor/Critic；原filter/延迟/控制/phase-anchor保留。正负运动、全零启动和重新运动fixture通过，26条实际违规轨迹的phase log均确认启动不会被门控且首次违规处已激活停车门。
+
+登记13个共同已见发展case、全部1991/1992/1993 anchored末模型/RMS，original与parking_request_withdrawal两条件各39，共最多78首回合评价；本轮0消耗/0训练。211先做源与startup/moving noop、reset/terminal、currentcmd-owner/滤波顺序、模型/RMS只读及原回放可比性资格；212仅准入后冻结runner并执行唯一队列；213逐case完整task/design/physical/动态证据因果评估，全部失败保留；214据证据确定具有区别性预测的运动/动态可行域方法，215深审清理。退出无效关闭该固定干预，不扫退出时长/增益；有效仅支持交接机理，不复活旧收益门或扩formal5。近邻核对不重复被418/403阻塞入口，普通CBF/QP/安全RL/退出门仍不单独作创新。
+
+**清理及完整目标。** 已删除audit_floor_design_crossing、review_nominal_mean_study两份ignored/untracked/无fuser持有、编译codeobject结构与源码一致的缓存，共18480B，round210_cleanup保存前SHA/源码SHA/验收；可再生缓存，不称永久节省。全部科学源码、唯一失败、模型/RMS/原始轨迹、CPU/GPU和封存集保留。可辩护贡献、强对照/关键消融、资格后新formal5、新独立ID/组合/geometry/参数-delay OOD与能力保持、seed/case统计及PPO实测成本、推导复现新稿六类出口仍未齐，不用有限停车工程结果替代完整论文目标。
+
+归档第5/7批已推送；协调原父进程及包装器停止后写本轮，提交后恢复同队列排他锁和guard，余2批后台继续。未称全raw远端齐全或worktree clean，后续查unit/journal与HEAD。
+
 第209轮完整失败机制与贡献方向核查（2026-10-07）：
 
 audit_nominal_mean_failures复用原门/intervals、全部三seed和两个主panel，选择对B0新增design旗标的全部26条轨迹（13个发展case），没有按好坏挑代表图。每条candidate及对应强经典完整/role/phase文件SHA、场景、模型主动关节地址、连续pre/post和原design_margin逐值复核；只编译CPU模型取得地址，无forward/step、新回放或学习。首版保存因NumPy int64不能JSON序列化失败，统一first index为Python int并加入可运行序列化自检后通过；原物理数据没有改动。
