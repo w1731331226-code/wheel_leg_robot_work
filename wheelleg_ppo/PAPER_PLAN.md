@@ -1,5 +1,19 @@
 # 双轮腿机器人PPO论文方案
 
+第190轮方向深审与确认冗余清理（2026-10-07，下一195，目标继续）：
+
+**方向与方法。** 186–189源契约/准入/344completion/配对/穿越报告及输入绑定核过，全部1032新full/gyro/role轨迹SHA再核，共3161012934B；worker MainPID0/SubStateexited/Resultsuccess/exit0。344new+312reuse为656比较/164已用发展回归ID，0学习，不能称独立泛化或训练种子。固定floor全域晋升关闭，alpha1/combinedpair保持关闭；常规均值改善不能掩盖lost6300085的design违规。逐case/分轴/源no-op/完整失败与严格物理设计门的方法保留，继续盲PPO或扩极端地形不值得。
+
+**剩余可检验机会。** 四个0.16m运动案例仍有收益，但停车时cmd0、固定floor保护力0，betaR在actual腿长合格时越设计门，支持一次“运动与零指令阶段保护角色”的有限对照，并不证明唯一因果。复用已有文献矩阵的受约束WBC/CBF-QP/变高度LQR-MPC近邻边界；普通phase切换或直接加关节barrier不是已成立创新，不为该工程假设新增大框架或伪造动态安全证明。完整贡献/强RL对照/新训练与泛化稿件目标保留。
+
+**仅登记一次phase_support_qualification_v1。** 当前own command[w]严格等于0（包括启动与到达后）时，anchor恢复原min(tracking_mean,.160)；非零时.115。只用command_step之后、control之前已可得指令，不读评判phaseflag/未来terrain/contacttruth/caseID。原tracking/滤波.025/k200/publicmass/rotor/headroom/全部模型与约束均不改，switch可能造成力瞬变须记录，不加阈值/平滑/滞回/参数扫描。191必须隔离源码、command时层及owner、两符号/启停/reset、original/noop及两branch等价、动态floor/fullgyro角色日志/partial资格，未准入不执行。
+
+候选96regular+40controlled+28legacy×2laws=328新首回合/0training，原328与fixedfloor328共656记录仅在source/config/evaluator/noop一致后复用，合984比较/164旧ID非独立test。原4发展pairedgate/fulltask/各轴/physical/design不可弱化；保留fixedfloor五个独立增益（regular6300092、controlled6301009/11/13/15），controlled各至少32/40且对floor无lost/newflag，6300085两law完整任务及design须恢复。候选328物理设计全过、legacy28及CPU历史velocity1.05+.005/rollpitch+.1不退化，旧yaw统计不变成新legacy门。
+
+任一门失败即关闭本候选，不继续anchor启发式链、floor/gain/threshold/平滑救分或增预算；成功也只资格更强常规发展参考，不能自动部署/长PPO/宣称新方法或动态安全。192只在准入后冻结唯一328队列/partial消耗再执行，193逐case原门与收益保持/CPU校对/switch瞬变去留，194须定义有区别性预测的剩余方法和学习必要对照，195如期深审清理。新独立ID/组合/geometry/参数延迟OOD与易任务、3→5独立训练seed及关键消融、层级统计和真实PPO耗时/推导失败复现新稿仍未齐。
+
+**清理。** 删除floor_broad_adapter/test_floor_broad_adapter两份ignored unused且与当前源编译codeobject相等的pyc，共10402B；删除前两者都核SHA/源SHA/未跟踪/ignored/fuser无打开句柄，记录round190_cleanup。保留全部科学源/1032轨迹/initial失败/模型RMS/CPU-GPU/final3000和oldgate64，缓存可再生不称永久节约。round190_evidence_check/direction_review绑定本周期及新scope，当前仅登记328，源码/runner未准入、无新physics/learning。
+
 第189轮设计穿越证据与保护契约核对完成（2026-10-07，目标继续）：
 
 audit_floor_design_crossing只读两law的6300085完整pre/post与role轨迹，核源契约/结果/NPZ SHA、CPU编译的关节索引和物理范围、密集step及跨步q/v连续、重建逐步design_margin与最终最差指标一致；区间首尾布尔自检通过。模型仅CPU编译读索引/范围，无forward/积分/新增回合/训练。原比较仅有保存summary，不能虚构原控制器dense轨迹或配对发生时刻。
