@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第187轮更广344回合固定资格采集完成（2026-10-07，目标继续）：
+
+run_floor_broad_qualification冻结source/API/小batch manifest/noop/reuse原312绑定后唯一344首回合完成，原顺序indices全覆盖、656比较/164旧发展回归IDs，0training。新增physics5052443/contact10056479，344full2944452672B+gyro105179467B+role111380795B=1032trace，单份max11646681B；全SHA/schema/finite/dense/contactcounts/qvjoin/gyro/noise0/role actualtarget及原header/外部ID映射/分组顺序核过。没有模型/默认控制源/RMS/final更换。
+
+结果：candidate regular B0 95/96success、B1route94/96，physical各96/96而design各95/96，均6300085违规；remainingcontrolled两law20/20全部phys/design；当前GPU original/candidate legacy28四组均28/28/phys/design通过。尚须188原成功lost/新axis/taskflag及CPU原velocity/rollpitch门，不能靠成功总数/28成功忽略设计失败或称资格通过。
+
+初次runner verifier误读不存在gyro_alpha key导致freeze/run检查失败（failedunit/source/initialcontract/log保留），在world构造前0消耗；改为检查qualified owner alpha.025、refreeze后正式PID31348运行。现MainPID0/SubStateexited/Resultsuccess/exit0、01:12:18→01:23:47采集单元689s（含锁/构图/记录/check非PPO/purephysics），无实际queue中断/追加回合。preexecution_recovery/round187_data_review绑定初始化失败与正式执行，budget不变。
+
+原小发展20收益不是全域安全/新方法，regular设计失败不允许默认换base/PPO晋升。数据按已验收cohort分批提交同步，全部唯一轨迹保留；188完整paired/CPU校对、189有据方法学习需要、190深审清理。正式可辩护方法/资格3→5独立训练seed/消融/新独立ID组合OOD/统计/PPO端到端/完整新稿仍未齐。
+
 第186轮clean多地形/延迟采集源码资格完成（2026-10-07，目标继续）：
 
 floor_broad_adapter复用冻结role/noise/full采集，不改原控制/物理源；仅clean zero-table provider和允许flat emptytargets的几何元数据扩展。144待评case（96regular/20controlled/28legacy）在original/floor_only两arm共288静态world/18同solver≤20batch构图和control计算，原9terrain/delay0..10ms/41history保持，原branch inputs/state/diag/control exactnoop。65537step全零表在constructor核实际deadline，最大24520steps，capacity严格充足、不裁时间或偷偷处理noise；非zero std显式拒绝。

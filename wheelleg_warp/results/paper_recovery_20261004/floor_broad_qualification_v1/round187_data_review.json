@@ -1,0 +1,104 @@
+{
+  "verified": true,
+  "round": 187,
+  "groups": {
+    "regular/floor_only/B0": {
+      "total": 96,
+      "success": 95,
+      "physical": 96,
+      "design": 95,
+      "design_failed": [
+        6300085
+      ]
+    },
+    "regular/floor_only/B1-route": {
+      "total": 96,
+      "success": 94,
+      "physical": 96,
+      "design": 95,
+      "design_failed": [
+        6300085
+      ]
+    },
+    "controlled_remaining/floor_only/B0": {
+      "total": 20,
+      "success": 20,
+      "physical": 20,
+      "design": 20,
+      "design_failed": []
+    },
+    "controlled_remaining/floor_only/B1-route": {
+      "total": 20,
+      "success": 20,
+      "physical": 20,
+      "design": 20,
+      "design_failed": []
+    },
+    "legacy/original/B0": {
+      "total": 28,
+      "success": 28,
+      "physical": 28,
+      "design": 28,
+      "design_failed": []
+    },
+    "legacy/original/B1-route": {
+      "total": 28,
+      "success": 28,
+      "physical": 28,
+      "design": 28,
+      "design_failed": []
+    },
+    "legacy/floor_only/B0": {
+      "total": 28,
+      "success": 28,
+      "physical": 28,
+      "design": 28,
+      "design_failed": []
+    },
+    "legacy/floor_only/B1-route": {
+      "total": 28,
+      "success": 28,
+      "physical": 28,
+      "design": 28,
+      "design_failed": []
+    }
+  },
+  "new_evaluations": 344,
+  "reused_records": 312,
+  "comparison_records": 656,
+  "registered_case_IDs": 164,
+  "new_first_physics_steps": 5052443,
+  "new_contact_records": 10056479,
+  "trace_files": 1032,
+  "compressed_bytes": {
+    "complete_trace": 2944452672,
+    "gyro_trace": 105179467,
+    "role_trace": 111380795
+  },
+  "source_hash_noisezero_schema_finite_dense_contactcounts_qvjoin_gyrorecursion_role_targets_IDmapping_panelindices_checked": true,
+  "input_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/floor_broad_qualification_v1/completion.json": "f66ea019d0ba4f7fd47d46f1bcc662e8395cbf8c2129fd25d0bd71c3ebc73d81",
+    "wheelleg_warp/results/paper_recovery_20261004/floor_broad_qualification_v1/runner_contract.json": "44c18bbeea0bc8cb1bfafa4ff8b4d998e1a6450b498d75c2b285f81dd7135164",
+    "wheelleg_warp/results/paper_recovery_20261004/floor_broad_qualification_v1/preexecution_recovery.json": "538aa4c5f850fcc4def8540c1e243882309f0ded0559da25b73a41720b5b0fa1",
+    "wheelleg_warp/results/paper_recovery_20261004/floor_broad_qualification_v1/worker_terminal_state.log": "8bb7b0f7f6dd460e0b4570a39c4f1dc0e0540e5a1c6d01a5a72b4cce1f4d5c88",
+    "wheelleg_warp/results/paper_recovery_20261004/floor_broad_qualification_v1/worker_journal.log": "29534400826e6e53fe05e10d4a5fcbd6687de19b9b22a897ec7195f26807bfbe",
+    "wheelleg_warp/results/paper_recovery_20261004/floor_broad_qualification_v1/run.log": "ef98303bdc8e6f8d1997049e2fd15a1cb4a55d294dd9f6dd7e9a0c244200147f"
+  },
+  "worker": {
+    "unit": "wheelleg-floor-broad-qualification-run-v1.service",
+    "observed_running_PID": 31348,
+    "MainPID": 0,
+    "SubState": "exited",
+    "Result": "success",
+    "exit_code": 0,
+    "start": "2026-10-07T01:12:18+0800",
+    "end": "2026-10-07T01:23:47+0800",
+    "unit_wall_seconds": 689,
+    "wall_scope": "Whole collection/source construction/transfers/compression/checks with possible lock wait, not PPO or purephysics."
+  },
+  "bookkeeping_recovery": "Initial nonexistent gyro_alpha protocol-key verifier error stopped before constructing any world; initialfailedunit/source/logs/contract kept, corrected qualification-owner check andrefreeze.0initial evaluations consumed,budget344 unchanged,formal queue completedwithout interruption.",
+  "outcome": "Regular candidate B0 success95/96,B1route94/96,physical96/96 each,design95/96 each(case6300085).Remainingcontrolled20/20both.ContemporaneousGPU legacy28 original/candidate bothlaws each28/28 withphysical/design28.188 must checklostsuccess/newflags andCPU velocity/rollpitch calibration before promotion.",
+  "limits": "164registered development/regression IDs repeated byfixedlaws/arms;656comparisonrows notindependent656cases/trainingseeds orfreshtest. Firstepisode counts omitautoresets; smallbatch floatingdifferences disclosed. Engineering fixedfloor not a newalgorithm.",
+  "new_learning_updates": 0,
+  "next": "188 reconstructallpanelorder/fullgates/currentGPU pairs/CPU historicalcalibration;189 remaining method/learningneed decision;190 deepreview/cleanup. Defaultbaseline unchanged,formalmethod5seeds/freshindependenttest/manuscript incomplete."
+}
