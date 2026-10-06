@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第218轮协调名义请求接口、CPU/CUDA与生命周期资格完成（2026-10-07）：
+
+coordinated_nominal_query是隔离原role controller的四处精确替换：仅影子查询的motion_cmd、velocity integral/tilt generator/six-state velocity error一致协调；原publiccmd控制parking/yaw/hold/启动模式不变。query读取真实现有Nom输入，但controlstate/ctrl/diag全部privatecopy，实际controller仍原publicstate/source。Cgamma并不直接把shadowstate或新速度目标写入实际LQR：仅影子未限幅Nom差+轮速阻尼+原sharedNom合成一个请求。clipping/slew后未必实现requestedvref，log中的motionreference是请求，不能写成已跟踪目标。
+
+coordination_nominal_budget CPU与Warp统一一个逐motor±1Nm/L1≤.1Nm每5ms池，禁止阻尼/gov各自占权。coordination_probe在原slot0/10/20/30时更新合成，原finalspeed-torque边界仍由原kernel执行，B0直接原Nom请求；gamma/damping仅每20ms由上一返回的raw38三字段+unusedrouteplaceholder更新，hold40substep，publiccommand/原phase与Actor维数不动。影子invalid/nonfinite查询delta置0并记录queryerror，不能使用残留diag生成补偿。原controller/physics/观测/奖励及闭合旧source不修改。
+
+15静态world（五h×三条件）150CPU/CUDAcontrolqueries过：gamma1同设备state/diag/ctrl exactnoop，publicmoving且motionref0不触parking；CPU/CUDA局部查询atol/rtol2e−10过，不推广wholetrajectory backend校对。budget随机/adversarial两提案共享总池、±1Nm/L1bounds/CPU-CUDA过；readonlypacket/原控制输入不改，privateγ20ms hold、explicitresetγ1；三condition合成12steps验证5mscadence/shared旧Nom更新/firstterminal冻结、重复不复写、autoreset清done私有状态、explicitreset和partial保存过，实际物理时间0。round218_interface_unit及独立speed_yaw_coordination_v1/source_admission/source_test绑定parent217/原runtime/新sources。
+
+219须独立freeze492jobs/source/evaluator/full492 panel/cases与原paired-gates和CPUlegacy规则；仅source资格不等492运行或B0真实回放一致。三条件全96regular+40ctrl+28legacy不得只选4fails，固定原Nom权限/信息；旧CPU/GPU/模型RMS/失败/final保留。220方向深审清理，0newphysics/learning，本轮不准PPO/formal5或controller默认替换，完整六论文出口未齐。
+
 第217轮速度—yaw协调机制与强解析对照提案（2026-10-07）：
 
 speed_yaw_coordination给出仅代数资格的固定方案：e_i=Rω_i−vx，c=min nominalcapacity fraction，h=max|e_i|/(Rω_rated)，γ*=c/(c+h²)（0/0按1），γ通过原Nom gyro pole推导τ=−.0005/log(.975)约19.75ms平滑，运动参考v_eff=γ·公开command。独立轮速阻尼请求dτ_i=−Jw/τ·sign(ω_i)·max(|ω_i|−ω_rated,0)，Jw按公开rotor/tire/hub惯量相加。没有用12发展样本拟合阈值、增益或Pole；它是可证伪解析候选，不是闭环证明或新颖性认可。
