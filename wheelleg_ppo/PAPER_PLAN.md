@@ -1,5 +1,21 @@
 # 双轮腿机器人PPO论文方案
 
+第195轮方向深审与确认冗余清理（2026-10-07，下一200，目标继续）：
+
+**方向。** 191–194 source/准入/328completion/全门与瞬变/学习需要报告及输入SHA绑定核，旧三V6模型与RMS SHA仍一致。phase传统发展资格保留、原baseline不替换；大618N virtualforce/32.37Nm命令瞬变仍披露，不将输出box合规称平滑或动态safe。当前128/136与七条低位成功的路径限制支持一次同applied-exposure恢复补验；继续anchor/alpha/gain/平滑启发式或盲PPO不值得。方法创新尚未明确，全目标不能收成工程资格或负摘要。
+
+**补验设计修正与冻结。** 194的200回合只是未登记建议，缺zero控制会混淆新环境适应和扰动效应。现正式登记equal_exposure_recovery_v1：5高度(.115/.16/.24/.30/.38)×(8固定pulse+1zero)×5控制器(phase B0/B1-route+三原V6末模型)=225newfirstepisodes，其中200pulse+25zero、45operationalcases、0learning/reuse。全部canonical flatmass7/speed+.8/mu.8/drive0/delay0/noise0，box低于地面，原距离/停车/高度/姿态及物理设计门保留；只辅助机制assay，不改旧terrain主任务或声称独立泛化。
+
+freeze_equal_exposure_profiles仅分析八个既定B0 phase controlled参考ID(.115/.38各四)完整contact/meta。复用moments及正负/旋转fixture，按firstpositive targetnormal后200solverpre采样(100ms)冻结外部wheel-static完整worldZ yaw moment，normal+remainder恒等及所有源trace/geometry SHA绑定过。活跃波形必须full，normal_only省掉已知反向牵引不采用；profiles.npz保存完整/法向/余量全部分解，rawscale1不按模型分数选或重缩，参考峰值约19.96–29.98Nm是body moment不是motor torque，含参考闭环牵引，非纯自然外生或等价terrain输入。
+
+同一wave在所有控制器和高度于pre2.5–2.5995s以worldZ purebody couple施加（正确API/order/frame/COM point须196验证），单次float32量化、逐physics实际提交日志必须相同，control之后physics之前设，不向Actor/Critic/Nom提供波形/标签/时钟未来等truth。39packet及savedRMS保持，sharedNom原idealcurrent信息边界披露；virtual6源资格不能直接从191diff3推定，需实测。25zero需完全no-op，reset/inactive/terminal清所有force，不留autoreset泄漏。
+
+**门与停止。** source/施加一致性、225全部记录/每pulse200期望delivery、所有控制器zero五高度原全门干净才能支持不混淆的阳性；earlyterminal保failure/ineligible，不survivor删除/隐式补跑。三model保持经典pulse成功并集/no新component/物理设计门，40pulse全纳入，每model meanJpsi低于固定phase B1route且三modelmean≤min(.85ref,ref−.05deg)，沿用原学习方向屏幕作为事前diag门不事后择优。失败关本次frozen迁移恢复主张，不能否定所有学习；成功仅支持具体机制设计，不是matched新训练/新算法/动态安全或自动PPO。不得按outcome修改wave/gain/时长/timing、增加budget/seed或observer脚手架。
+
+196新注入力API/zero-mask/native diff3与virtual6/39norm及模型不可变/5高度/fullgyro-role-phase-force logger/partial/source准入；197合格后冻结唯一225队列与消耗再执行；198全部旧model/source/delivery/zero上下文/全门配对；199选或拒有区别性预测的具体方法与匹配新learning，不再fixedpolicy启发式链；200深审清理。profiles与protocol已冻结，无新控制源/runner准入或真实任务评价。本轮0neweval/training，不将readonly profile重构称零计算。
+
+**清理与全目标。** 删除phase_support_probe/test_phase_support_probe两份ignored unused、编译codeobject等价pyc共18100B，删除前SHA/源SHA/gitignore/未跟踪/fuser无句柄共同核过；round195_cleanup留证，不称永久节省，科学源/全部raw/模型RMS/唯一失败/CPU-GPU/final-oldgate保留。round195_direction_review绑定本周期、profiles/protocol/cleanup，完整可辩护方法/strong classic-RL及匹配消融/新3→5训练seed/新独立ID组合geometry参数-delayOOD与易任务/层级统计PPO真实成本/新稿仍未齐。
+
 第194轮剩余可改善空间与学习必要证据收束（2026-10-07，目标继续）：
 
 audit_remaining_learning_need复用原load_rows/full_flags，核phase272发展记录、历史12run三训练seed的1632末评价与关闭consistent_pair的80记录；全部case/scenario/原task/physical/design/summary/sourceSHA绑定通过。当前phase B0覆盖128/136（regular96+controlled32），B1-route127/136；两对照并集仍128，不需要不可执行的casewise oracle才能达到此数。193“九个失败case”是任一条件的失败并集；regular6300019已有B0成功，真正两组当前共同未解是controlled .115的6301001/3/5/7及.38的6301033/35/37/39共八例。regular B0成功率已100%，不能给新PPO设置再提高regular成功率5pp的不可达门；controlled仍有20pp数值空间，但不证明可达或学习必要。
