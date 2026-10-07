@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第238轮同期B1-route完整164独立交付核过：regular95/96、controlled32/40、legacy28/28，physical/design164全过，旧B1-route所有fullflags0变化，CPU28 fulltask/velocity1.05+.005/rollpitch+.1全部校对过。J .257332289214/.826259067067/.409592379294；case/scenario/order/results SHA、六类984文件1,550,843,222B及Actor968/ceilN40/classicalraw-normalizedexact核，原parkingPD保持。round238_B1_delivery保存证据；不称全GPUbitwise或learner优势/独立泛化。
+- 第238轮原worker353065flock/353066Python live/running，无interruption/restart，末snapshot23301/H0 controlledbatch1 reserved464/completed444；H0/23301训练complete仍同237对象，H1训练文件尚未出现，不捏造seedpair匹配/模型进展。本轮0physics/learning，仅读新的完整强参考对象。六run/1312整门和seedcase统计及终态分批归档未做，runtime对象未全remote/clean。
+- 第238轮239沿同handle核实际新completecondition/同seedpair对象或verifiedwait；不能据partialcontrolled/一seed成绩晋升或增加预算。所有旧强参考和原literal门保留，完整六论文出口/goal active，240如期深审清理。
+
 - 第237轮首新scientific model H0/23301完整对象独立验收：20k…200k十个训练后ZIP/481RMS/JSON共30对象SHA对各保存manifest exact；CPU readonly load以不抢workerGPU，模型seed23301/shape481→6/计数与epochs/全部weight和非空Adam有限、step计数800…8000、RMS count=steps+100.0001、H0被mask54坐标RMS mean exact0，各snapshot world/route/history/parking/RMS/RNG不改标记核。末200k/400epochs/8000Adam，权重不同fresh初始且未engineeringwarmstart；原checkpoint记录CUDAmoments，CPUload不冒称当前tensorCUDA。round237_first_model_delivery保存所有证据。
 - 第237轮training_verification learn+checkpoint实测91.613339s，仅该新H0run，不与physics吞吐/CPU加速混说；全部1312评价和六seedpaired收益门未审，不据模型完成或partialregular分数晋升。原353065/353066 live/running无interruption/restart，末snapshot23301/H0 regularbatch4 reserved424/completed408，两同期参考328保持；本轮0新learning/physics，仅读取已完成对象。
 - 第237轮238继续同worker核新完整condition/另一同seed模型匹配（若实际已完成），不可按观察timeoutrestart或调std/history/budget/gates；终态六run/1312全门/Actor/CPU/seed统计和分批归档待做。运行中的raw/checkpoints尚未全remote/clean，source小交付单独提交。六论文出口/goal active，240深审清理。

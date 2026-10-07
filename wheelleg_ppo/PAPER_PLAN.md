@@ -1,5 +1,11 @@
 # 双轮腿机器人PPO论文方案
 
+第238轮同期强经典B1-route全164独立交付（2026-10-07）：
+
+保留原parkingPD的同期B1-route全164核完：regular95/96、controlled32/40、legacy28/28，physical/design全164通过；与旧B1-routefullflags无变化，CPU28 fulltask/速度1.05+.005/rollpitch+.1校对过，J分别.257332289214/.826259067067/.409592379294。原order/case/scenario/results以及六文件类984SHA共1,550,843,222B，Actor968/ceilN40/classicalraw-normalizedexact通过，round238_B1_delivery留完整证据。不是全GPU轨迹bitwise、H1/H0优势或fresh泛化，旧强参考门不弱化。
+
+同353065/353066 live/running无interruption或replay，末snapshot23301/H0 controlledbatch1 reserved464/completed444；H1/23301尚无training_verification，不能说同seedpair已完成。本轮0新增训练/physics，runtime/raw对象未全remote/clean，等待全六run/1312后原门、seedcase统计和终态分批归档。239仅同handle实际新对象或verifiedwait，不局部赢家/预算救分，六论文出口继续未齐，240深审清理。
+
 第237轮首新200k模型与十份训练后对象独立验收（2026-10-07）：
 
 H0/23301已经实际完成200k/400epochs/8000Adam。独立readonly CPU加载全部20k…200k十个ZIP及481RMS，30对象SHA对保存manifest一致；seed/shape481→6/step/epochs、权重和非空Adam有限及optimizer.step800…8000、RMS.count=steps+100.0001、H0唯一mask54坐标mean exact0过。保存时world/route/history/parking/RMS/RNG未改的每checkpoint标记核，末权重不同fresh初始化且没有engineeringwarmstart。CUDAmoments由原训练snapshot记录，CPUload只用于对象校对、不声称CPUloadedtensor仍GPU，避免与worker抢GPU。round237_first_model_delivery绑定全部对象/initialization/contract。
