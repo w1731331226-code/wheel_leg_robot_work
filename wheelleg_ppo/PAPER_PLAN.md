@@ -1,5 +1,17 @@
 # 双轮腿机器人PPO论文方案
 
+第230轮方向深审、对照混杂修正与冗余清理（2026-10-07）：
+
+**是否值得继续。** 226–229形成有界局部响应阴性解释、总command明确缺口及真实480步collector初资格；保留这些证据，但它们没有给出新算法贡献或学习必要性。旧固定阻尼/governor与648步screen继续关闭。公开惯量proxy是同一input-output历史的确定函数，全部12真实worldinterval按原float64/float32顺序可逐值重建；不能把额外两个特征称新增信息、force observer或创新。首独立重建使用float32 packet差分/运算重排有一元素9.094947e-13差，按原顺序校对后array_equal，无原runtime/容差/数据改变。
+
+**必须隔离的混杂。** 初次20ms返回elapsed [.02,.015,.01,0]可推出delay [0,5,10,20]ms。Clock/masks属于新增publicsensor timestamp/age假设，不是旧39提供的信息；不能偷偷读private delay作为policy特征，也不能把clock帮助归总command历史。现真实terminal/curriculum与historypolicy/RMS/reload仍未资格，collector短时no-op不代替它们。
+
+**调整后有限问题。** 不准入原P0/P1/P2三臂1.8M；撤回P2作为primary contribution候选。后续只检验“同sensor历史/clock条件下，总执行command历史是否有独立学习作用”：H0/H1同10endpoint、9interval、clock/masks、architecture/parameter count、phaseNom/virtual6/filter/bounds/reward/原task gates；H0的alignedmeanctrl6槽置0，H1保留，rotorproxy槽两者均0。H0是刻意信息消融，H1只是genericPPO，不能将这种比较称同信息新算法优于ordinaryPPO。它直接检验总执行输入缺口，而非同时更换时间、memory和deterministic特征。
+
+Separate工程24k拟两臂各12k（当前notadmitted），科学拟3freshseed×2arm×200k=1.2M（notadmitted/0执行），都不是正式五seed或main方法通过。231补最小10endpointwrapper、实际terminal/curriculum与RMS/CUDA静态生命周期资格；232仅通过实际源准入才登记有限工程。科学信息对照需价值审查及独立冻结source/seed/order/选模/全部原门，不按结果换history长度/预算/seed救分；不能无限只读审计或假定200k优化充分。若信息差无效果关闭该假设；若阳性，也只能证明此条件的信息作用，仍需具体可辩护方法、同信息强经典/genericRL、资格后新formal5、freshID/OOD保持、层级统计/PPO实耗与推导复现新稿六类完整证据，不把goal缩成工程/信息论文材料。
+
+**清理。** 删除1份已终态解析runner的ignored/untracked、无fuser使用且与源码归一codeobject等价缓存，共10505B；前SHA/源码SHA见round230_cleanup。全部源码、模型/RMS、原始/失败、CPU-GPU基线及封存集保留。round230_direction_review绑定新判断及所有相关证据；本轮0新增physics/learning，下一五轮深审/清理235，完整目标继续。
+
 第229轮最终指令历史采集初始资格（2026-10-07）：
 
 execution_input_collector在原控制器final float32 ctrl与mjw.step之间只读累计每0.5ms ctrl积分，82slot prefix及整数stamp覆盖40step Actor interval/最大40step sensor delay，strong-owned buffers及finally恢复构建spy。host在Native terminal reset前按送达sensor端点读历史prefix差，reset/done按world清privateclock，terminal旧数组独立保留；preserve保存prefix/total/stamp/previous/lastinterval，不改变Native或phase控制源码。

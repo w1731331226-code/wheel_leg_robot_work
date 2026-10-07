@@ -1,0 +1,84 @@
+{
+  "verified": true,
+  "round": 230,
+  "previous_turn": "progress",
+  "reviewed_rounds": [
+    226,
+    227,
+    228,
+    229
+  ],
+  "input_sha256": {
+    "proposal.json": "d41495802ab4cf05c39d6e7337146820578b0ed34bf4eee6183637b3ed821c19",
+    "round228_input_contract_unit.json": "6ed8bf35e02598c9e663c71ed0208d7b5e36a05621de11ac2a55b0f4d1f53ce7",
+    "collector_registration.json": "271073abbee2657f638232ba061895c7588cba8c8558e0912f8b4e9159b5e99d",
+    "round229_collector_unit.json": "41bb1eff9d4ca3e24d561687411b5d6d785c3a58282bf4f216754ebe1a0557f0",
+    "real_trace.npz": "b87f6402899985a81edab5ca874b544aa0e1e0afd0743cf85903edeba70e1d24"
+  },
+  "findings": {
+    "rotor_proxy_is_deterministic_same_information": true,
+    "real_intervals_reconstructed": 12,
+    "maximum_proxy_reconstruction_error": 0,
+    "first_elapsed_implied_latency_ms": [
+      0.0,
+      5.000000000000001,
+      10.0,
+      20.0
+    ],
+    "elapsed_is_additional_sensor_timestamp_assumption": true,
+    "actual_terminal_curriculum_wrapper_RMS_reload_qualified": false
+  },
+  "reconstruction_note": "First independent algebra check subtracted float32 packets and reordered divisions;1element differed9.094947e-13 in normalizedoutput. With original float64 cast/order,all12intervals array_equal;no runtime/tolerance/rawchanges.",
+  "direction": "Do not admit the proposed three-arm1.8M run. P2 changes deterministic representation/conditioning,not observation information;drop it as a main contribution candidate. Continue only a controlled executed-command information contrast with timestamp shared,after actual lifecycle qualification. This is a learning-necessity experiment,not yet a distinguishable newalgorithm.",
+  "next_protocol": {
+    "arms": [
+      "H0 sensorhistory+sameelapsed/masks;totalcommandchannelszero",
+      "H1 identicalsensorhistory/elapsed/masks+alignedfinalctrlmean6"
+    ],
+    "history_endpoints": 10,
+    "intervals": 9,
+    "rotor_proxy_policy_slots": "zero in botharms;helper retained only diagnostic",
+    "same_network_parameters": true,
+    "same_phase_Nom_action_bounds_reward_tasks": true,
+    "zero_initial_and_checkpoint_selection_rules": "freeze before any actual study",
+    "information_causal_scope": "Onlytotalcommandhistory differs;both receive sameadditionalpublicsensorclockage. H0 is an information ablation,not a same-informationperformance comparator. H1 is genericPPO;evenpositive contrastdoesnotprove newalgorithm superiority or novelty.",
+    "engineering_samples_proposed": 24000,
+    "engineering_arms_each": 12000,
+    "engineering_admitted": false,
+    "scientific_samples_proposed": 1200000,
+    "scientific_runs": "3freshindependentseedsx2armsx200k;notadmitted",
+    "full_original_gates_preserved": true,
+    "stop": "231finish historywrapper/actualterminal/curriculum and RMSCUDAlifecycle qualification;232onlyifsourcequalified register/run finiteengineering;scientific contrast onlyafter value/contribution audit and frozenprotocol. No largerbudget/historylength/seed rescue. Positiveinputeffect still requires concrete newmethod,strongsame-information classical/genericRL comparisons and freshformal5/OOD/statistics/manuscript."
+  },
+  "cleanup": {
+    "verified": true,
+    "files": [
+      {
+        "cache": "wheelleg_warp/__pycache__/run_coordination_qualification.cpython-310.pyc",
+        "source": "wheelleg_warp/run_coordination_qualification.py",
+        "bytes": 10505,
+        "cache_sha256": "febc8d2794724700457eabc79a8dd359020bee743f4605f7d700941991e0106f",
+        "source_sha256": "16ffbce3633065f8e17b60169f410319035c0d913c59de854bdaa64fa53bb5fc",
+        "code_equivalent": true,
+        "ignored_untracked": true,
+        "no_open_holders": true
+      }
+    ],
+    "total_bytes": 10505,
+    "limits": "Unused equivalent closed qualification-runner cache only;allsource/models/RMS/raw/faileddata/baselines/sealedsets retained. Cache regenerable."
+  },
+  "new_physical_steps": 0,
+  "new_training_steps": 0,
+  "main_training_admitted": false,
+  "formal5_admitted": false,
+  "entire_goal_complete": false,
+  "six_exit_status": {
+    "distinct_contribution": "missing",
+    "strong_matched_learning_ablations": "newinputnecessityhypothesisonly",
+    "fresh_formal5": "notadmitted",
+    "new_ID_OOD_retention": "notexecutedforaqualifiedmethod",
+    "seed_case_statistics_PPO_end_to_end_cost": "finalmethodmissing",
+    "derivation_reproduction_new_manuscript": "incomplete"
+  },
+  "next_deepreview_cleanup": 235
+}
