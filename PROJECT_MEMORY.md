@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第265轮五轮深审：261源/调用预算、262力平衡十解、263cold全约束、264有限参考准入复核，模型plantpoint通过不等actualNom闭环。现唯一值得继续是30staticNom命令兼容查询，检command-requiredctrl差及state11作用；旧hub平均抵消可能性仅条件algebra假设，不能提前认定控制bug或解释旧PPO全部失败。
+- 第265轮不加solve/FD/trajectory/PPO/gain/ref/state11优化或另误差门，保原30×reset/相同F32upload+steadyfilters+zeroActor且只integral11变，266source/querybatch，267独立review后finite兼容去留；不无限模型audit。公开controller memory为新契约，来源/observer/phase/bounds均要保，论文六出口/goal active。
+- 第265轮删除inactivefailed nominal_packet_reference.pyc，1983B，ignored/untracked/无fuser/源码归一codeobject等价，前SHA/源码SHA保round265_cleanup，不动scientificsource/models/RMS/raw/failures/baselines。本轮0newqueries/integration/FD/optimization/PPO，270下一深审清理。
+
 - 第264轮有限准入：终止10moving solvebatch，只接受coldverified nominalflat q/v/ctrl力平衡参考/几何数组；拒绝持续relativeflow、actualNom闭环、gainbank/CLF/PPO/robustcontact/安全或新算法证书，旧gravity参考和fixedH1/cone/pointzero失败不复活。ActualNom滤波state3:8、integral11/boot/yaw/parking/positionmemory、height插值/currentJ/guards/torque/sharedref需单独覆盖；controller输出可能不等plantrequiredctrl。
 - 第264轮仅登记nominal_command_compatibility_v1：十moving点×state11[-.3,0,.3]共30静态原phaseNomquery，zeroActor/publiccmd±.7/boot2/steadyfilters、reset每query，仅state11变化，全部actualNomcommands/diag/inputmemory/phase和qvF32量化差保存。对physics-balancedrequiredctrl报告所有gap，不求别的integral/gain/ref/新阈值救分。265deepreview，266source/unit+querybatch，267independentreview与finiteNom模型兼容去留；0integration/FD/optimizer/PPO准入。
 - 第264轮本轮0queries/newphysics/learning，fullscience16批归档和所有negative门不变；尚无newqualifiedmethod/strongsameinfo贡献/newformal5/freshOOD/完整稿六出口，goal active，265如期深审清理。

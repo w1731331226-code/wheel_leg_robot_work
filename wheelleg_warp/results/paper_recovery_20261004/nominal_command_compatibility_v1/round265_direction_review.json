@@ -1,0 +1,48 @@
+{
+  "verified": true,
+  "round": 265,
+  "reviewed_rounds": [
+    261,
+    262,
+    263,
+    264
+  ],
+  "decision": "Proceedonlyregistered30staticoriginalNomqueries,then stop compatibilityscreen.No newmodelsolve/FD/trajectory/PPO before actualNom-input/memory/output meaning established.",
+  "value": "Forcebalancedplantreference verifiedbutactualNom has owntrackingfeedback/filter/memory/guard. Compareactualcommands torequiredcontrol andvaryonlypublicstate11.",
+  "source_hypothesis": "Existing hl=vl1+hub-mean(vl1,vr1),hr=vr1+hub-mean(vl1,vr1) can canceloldcommonhub undermirrorstates. state11 enters oldthcmd path;directLQR6error isdifferent. This is a conditionalalgebra hypothesis,not measuredNom bug or causepastPPOfailure.",
+  "safeguards": [
+    "Do not altergains/feed/reference/integral toforcepass.",
+    "Sameq/v/F32upload/filterinitialization/reset everyquery;onlystate11varies.",
+    "Quantization/rawvsaccepted/bounds/source/dataclock recorded.",
+    "Force-balancedreference/stability/controllercompatibility/newmethod distinguished.",
+    "267finitecompatibilitydecision before correctiveengineering/pairedregression ornewPPO,not infiniteaudit."
+  ],
+  "parent_cold_review_sha256": "13a03e444927038fc046d5ab689274b9c151ae8627edb00b1631a5133711d183",
+  "proposal_sha256": "929c1281a9338eee62ca296da723a7cf1ce5a5f75ab05b51b614a9060c1d3a8e",
+  "cleanup": {
+    "verified": true,
+    "files": [
+      {
+        "cache": "wheelleg_warp/__pycache__/nominal_packet_reference.cpython-310.pyc",
+        "source": "wheelleg_warp/nominal_packet_reference.py",
+        "bytes": 1983,
+        "cache_sha256": "55fa5495c000174dd6f4a7916dcc61342618ffb77452d36c1a1c0fb123820078",
+        "source_sha256": "4ac04867e186df7118d21956141b07ef5c757440fd4420cd0f1b2e3b4aefdf45",
+        "ignored_untracked": true,
+        "no_open_holders": true,
+        "code_equivalent": true
+      }
+    ],
+    "total_bytes": 1983,
+    "limits": "Inactivefailedanchor-cacheonly;allsource/models/RMS/raw/failures/baselines remain."
+  },
+  "new_queries": 0,
+  "new_training_samples": 0,
+  "new_integration_steps": 0,
+  "new_transitionFD_calls": 0,
+  "controller_admitted": false,
+  "formal5_admitted": false,
+  "entire_goal_complete": false,
+  "next_deepreview_cleanup": 270,
+  "remaining": "Concretecontribution+strongsameinformationmethod/ablation/newformal5/freshID-OOD/seedstats-actualPPOcost/manuscript remain;model/reference checks do not completepaper."
+}

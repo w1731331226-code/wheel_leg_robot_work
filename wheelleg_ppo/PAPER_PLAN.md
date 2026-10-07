@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第265轮实际Nom命令兼容方向深审与清理（2026-10-07）：
+
+261–264源、预算、十解forcebalance/coldgeometry及有限准入复核。Plant参考通过不代表actualNom能够维持相同q/v；下一步只完成30static命令查询，比较requiredctrl并单独改变state11。旧hub到LQR mean转换存在镜像状态下抵消旧共模量的条件algebra可能，必须actualquery才知积分是否影响最终命令，当前不认定bug或旧PPO唯一原因。
+
+维持同q/v/F32upload/steadyfilters/reset/zeroActor，唯一state11[-.3,0,.3]，记录phase/input/output/diag/bounds与quantization。不求其它integral/gain/ref、改gap门或追加FD/trajectory/PPO；266source及querybatch、267独立review后finite兼容去留，不能无限modelaudit，controller-memory为显式新公共契约而非偷称旧Actor同信息。完整论文六出口仍未齐。
+
+删除inactivefailed nominal_packet_reference等价ignored/untracked/无fuser pyc1983B，round265_cleanup保SHA，全部科学模型/失败/基线保留。本轮0newqueries或physics/learning，270下一深审清理。
+
 第264轮移动力平衡有限准入与实际Nom兼容契约（2026-10-07）：
 
 终止当前十解求解，只接受coldverified nominalflat q/v/ctrl力平衡和几何数组，不准持续relativeflow、actualNomclosedloop、gain/CLF/PPO或robustcontact/全状态安全。实际Nom滤波states3:8、integral11/boot/yaw/parking/positionmemory、height插值/currentJ/guards/sharedref/bounds缺失，plantctrl不一定等Nom稳态输出，不能从plant平衡迁移closedloop证书。旧gravity参考/固定H1收益及其它失败分支维持关闭。
