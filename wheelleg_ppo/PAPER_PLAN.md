@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第237轮首新200k模型与十份训练后对象独立验收（2026-10-07）：
+
+H0/23301已经实际完成200k/400epochs/8000Adam。独立readonly CPU加载全部20k…200k十个ZIP及481RMS，30对象SHA对保存manifest一致；seed/shape481→6/step/epochs、权重和非空Adam有限及optimizer.step800…8000、RMS.count=steps+100.0001、H0唯一mask54坐标mean exact0过。保存时world/route/history/parking/RMS/RNG未改的每checkpoint标记核，末权重不同fresh初始化且没有engineeringwarmstart。CUDAmoments由原训练snapshot记录，CPUload只用于对象校对、不声称CPUloadedtensor仍GPU，避免与worker抢GPU。round237_first_model_delivery绑定全部对象/initialization/contract。
+
+该run continuouslearn+checkpoint墙钟91.613339s，未含全部study/评价归档，也不作CPU加速比。模型/对象交付正确不等success/J收益、机制或新贡献，完整六run/1312仍待fullreview。原353065flock/353066Python live/running，末snapshot23301/H0 regularbatch4 reserved424/completed408，两同期参考完成328，无interruption/replay；本轮0新训练或物理，raw/checkpoints尚待终态分批归档，不称全remote/clean。
+
+238沿同handle核新的完整condition/同seed对方模型（仅当实际完成），不得按partialscore改std/history/budget/门或timeoutrestart；全终态才强ref/CPU/Actor/raw/seed统计和论文去留。六完整论文出口继续未齐，240深审清理如期。
+
 第236轮完整同期B0校对与完整审查器预检（2026-10-07）：
 
 同期B0全164数据独立核完：96regular全成功、controlled32/40、legacy28全成功，physical/design164全部过，旧B0fullflags无变化，CPU28原fulltask/速度1.05+.005/rollpitch+.1校对过。J分别.385500881708/1.059895761376/.501153900450。完整order/case/scenario/result/六文件类984SHA共1,534,868,982B，Actor968/ceilN40/classicalraw-normalizedexact/submitted6全0；round236_B0_delivery保存证据，不用此证明H1/H0收益或独立泛化。

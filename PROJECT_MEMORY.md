@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第237轮首新scientific model H0/23301完整对象独立验收：20k…200k十个训练后ZIP/481RMS/JSON共30对象SHA对各保存manifest exact；CPU readonly load以不抢workerGPU，模型seed23301/shape481→6/计数与epochs/全部weight和非空Adam有限、step计数800…8000、RMS count=steps+100.0001、H0被mask54坐标RMS mean exact0，各snapshot world/route/history/parking/RMS/RNG不改标记核。末200k/400epochs/8000Adam，权重不同fresh初始且未engineeringwarmstart；原checkpoint记录CUDAmoments，CPUload不冒称当前tensorCUDA。round237_first_model_delivery保存所有证据。
+- 第237轮training_verification learn+checkpoint实测91.613339s，仅该新H0run，不与physics吞吐/CPU加速混说；全部1312评价和六seedpaired收益门未审，不据模型完成或partialregular分数晋升。原353065/353066 live/running无interruption/restart，末snapshot23301/H0 regularbatch4 reserved424/completed408，两同期参考328保持；本轮0新learning/physics，仅读取已完成对象。
+- 第237轮238继续同worker核新完整condition/另一同seed模型匹配（若实际已完成），不可按观察timeoutrestart或调std/history/budget/gates；终态六run/1312全门/Actor/CPU/seed统计和分批归档待做。运行中的raw/checkpoints尚未全remote/clean，source小交付单独提交。六论文出口/goal active，240深审清理。
+
 - 第236轮同期B0完整164独立交付核过：regular96/96、controlled32/40、legacy28/28，全部physical/design164，旧B0fullflags0变化、CPU28 fulltask/velocity1.05+.005/rollpitch+.1过；J .385500881708/1.059895761376/.501153900450。完整order/cases/scenario/result/SHA及六文件类984份1,534,868,982B、Actor968/ceilN40/classicalraw-normalizedexact/submitted6全0，round236_B0_delivery绑定数据。非模型收益或新泛化，raw尚待终态归档。
 - 第236轮新review_execution_input_study准备完整六run/1312审查：复用ordered/load_rows/fullflags/paired/yaw_gate/CPU，保原literal所有panel强old+newref与H1-H0各seed/3mean门、不丢None/partial seed。预检partial RuntimeError拒绝及None False/threshold过，round236_reviewer_preflight；尚未执行full review。B0核是在补gate bool/indices assert预检前运行，原源码字节重建SHA匹配并保存snapshot，不重新回放或改raw/门。
 - 第236轮同353065/353066 live/running无interruption/restart，末snapshot两同期参考已完成328，23301/H0处在regularbatch0 reserved348/completed328，源合同保持。新learner训练/全部模型/RMS对象仍待逐项审查；本轮0新增physics/learning，不据partialperformance晋升。运行中data未全remote/worktree非clean；237沿同handle审查新complete模型/数据，完整终态才fullgates/stats与分批归档，240深审清理。六论文出口/goal active不变。
