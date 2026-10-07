@@ -1,0 +1,128 @@
+{
+  "verified": true,
+  "round": 243,
+  "seed": 23302,
+  "arm": "H0",
+  "checkpoints": [
+    {
+      "steps": 20000,
+      "epochs": 40,
+      "Adam": 800,
+      "RMS_count": 20100.0001,
+      "mask54mean_exact0": true,
+      "finite_parameters_Adam": true
+    },
+    {
+      "steps": 40000,
+      "epochs": 80,
+      "Adam": 1600,
+      "RMS_count": 40100.000100000005,
+      "mask54mean_exact0": true,
+      "finite_parameters_Adam": true
+    },
+    {
+      "steps": 60000,
+      "epochs": 120,
+      "Adam": 2400,
+      "RMS_count": 60100.000100000005,
+      "mask54mean_exact0": true,
+      "finite_parameters_Adam": true
+    },
+    {
+      "steps": 80000,
+      "epochs": 160,
+      "Adam": 3200,
+      "RMS_count": 80100.0001,
+      "mask54mean_exact0": true,
+      "finite_parameters_Adam": true
+    },
+    {
+      "steps": 100000,
+      "epochs": 200,
+      "Adam": 4000,
+      "RMS_count": 100100.0001,
+      "mask54mean_exact0": true,
+      "finite_parameters_Adam": true
+    },
+    {
+      "steps": 120000,
+      "epochs": 240,
+      "Adam": 4800,
+      "RMS_count": 120100.0001,
+      "mask54mean_exact0": true,
+      "finite_parameters_Adam": true
+    },
+    {
+      "steps": 140000,
+      "epochs": 280,
+      "Adam": 5600,
+      "RMS_count": 140100.0001,
+      "mask54mean_exact0": true,
+      "finite_parameters_Adam": true
+    },
+    {
+      "steps": 160000,
+      "epochs": 320,
+      "Adam": 6400,
+      "RMS_count": 160100.0001,
+      "mask54mean_exact0": true,
+      "finite_parameters_Adam": true
+    },
+    {
+      "steps": 180000,
+      "epochs": 360,
+      "Adam": 7200,
+      "RMS_count": 180100.0001,
+      "mask54mean_exact0": true,
+      "finite_parameters_Adam": true
+    },
+    {
+      "steps": 200000,
+      "epochs": 400,
+      "Adam": 8000,
+      "RMS_count": 200100.0001,
+      "mask54mean_exact0": true,
+      "finite_parameters_Adam": true
+    }
+  ],
+  "input_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_20000.json": "786a609a1ad47685c893c7cf231ef3ea0efe177b6470c7f8b400d0ae65cdde2b",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_20000.zip": "6553fcb3edc18bcf9e2d724a09334daa07c0eb620867951684e9d64d0e17788e",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_20000.pkl": "f5de652fdc333efd4be4d8ba0106a96f2e4ece9a7a288cf81a7b9e233caf0c5a",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_40000.json": "20b896cb1430e7ca09265e850077971edcf898e188064cadef350323f3eb0d84",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_40000.zip": "4e707e4d5b54bde0d8ca268114e9d16ecff404b0668328cbc54d76279f1cbb3b",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_40000.pkl": "16a88efed5bc0e30c119453e27d3fd13b175d03ad37e6453aace7cdab5ae7744",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_60000.json": "f30b5124791fe983b5ed4db52d427aafd2f4fd5d9b3256f09777fac274a817ab",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_60000.zip": "c8b8242259dcc6dc972813f2c34f2f9969ac3d96566c8e517edb69befa575c5d",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_60000.pkl": "351d4f6d7ab13abb7857c2d787c53c60129493d774163b2f1826758b90408fc8",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_80000.json": "a322ac3bf033c7fcf7bc3463d72e1b187b7b9e20f656a609f0f25fcb430eee36",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_80000.zip": "438e0b18d36cf4997b3e1af2f7505066a8f24a8c75c62a451b9810e782a945c4",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_80000.pkl": "d04c8ae6749e83bc177ee6e5d74a7b6579411139c540171b34e49bc214db00ac",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_100000.json": "a52dd41b1ae70332e0911e39b9e21fe5311133b5680b0cf377efb95cbbc49e7e",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_100000.zip": "eb6c1ce4375b1ab7153871e91e0772baeb62483d84ce71387c3ef510f3028f54",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_100000.pkl": "ed4a3cb4d3f6e7f9e74747f9944865b51c765ea5fac8a90a0f082fe990c44882",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_120000.json": "7ea73a71a3e282f295733ed6a97bb3488228ad31d72981813fb92683a3e995da",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_120000.zip": "f495d464e4d1cac886f497636e568c90ba015f3746295cf02b5b2f0b27026dad",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_120000.pkl": "d03cb8df9230364c702a51c7bc4436c115e685aea6f3921734a2a3e663c44e11",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_140000.json": "28f6b73b4ecf7e146e0d9d045dbfaf1f07a092869c8ddb11e16d8dbf6dc4242d",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_140000.zip": "f72289eb7dea91afd8cf42eb38bfcc531a291b9a253c2e28edebfb1aa71f8d74",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_140000.pkl": "26dfcbf539cc2ae5005601541b47f6441fa126e03078ab34515abd554b90ccce",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_160000.json": "5a65dadc8d179d0283050fee53bb4202bd6a24919090b57a150edaec4b080239",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_160000.zip": "27da2a10496a3cb7e47f5a8af19c41a1110fc570d39ddf1d19977753c74b1fc7",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_160000.pkl": "66123ca4694674057f04af7cdff45d7c1dce3c485b025568c4f4fa981685fd3d",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_180000.json": "c9aa95c0739f389496b138e3dfdf0b8f3a369cf4f1fa7a64237e65d737f950ba",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_180000.zip": "319e69797b102ed36abd83a473cf3fc2cea6451c8d43d28d2cf90d1fa09494e3",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_180000.pkl": "01f178f519183d128fa4f399542ad7b260e1a9909f04fbe5c49d3b6bf062dea1",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_200000.json": "bae060d278802b7d0bf1455bc25617ae670dd26ddc176a524082a1adc73c826e",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_200000.zip": "3e275444b2856a594177fc7178724486e849b520a6dde19a2623193dacc1b5fc",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23302/step_200000.pkl": "edd49e6974d293c305430437685005744b2f9cf9a8fc955ca3cd3296a862385c"
+  },
+  "initialization_sha256": "345807775b2bd53ab95cd904597799f848cde6f01be073f52463236f38607fb9",
+  "independent_from_first_seed_initial_weights_and_world": true,
+  "learn_checkpoint_wall_s": 95.60121363699727,
+  "contract_sha256": "558eb730a80c68a98fc1ef7b0969ae9112dd2ce5ce8b9cb4f631786b73ffdc68",
+  "new_training_or_evaluations": 0,
+  "limits": "CPUread-onlyobject audit ofonecompletedtraining run;originalmetadataCUDAmoments. Notfull164 evaluation/secondpair or study performance.",
+  "formal5_admitted": false,
+  "entire_goal_complete": false
+}

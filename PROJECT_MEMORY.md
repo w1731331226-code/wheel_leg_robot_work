@@ -4,6 +4,9 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第243轮23302/H0第二seed十个20k…200k检查点/30对象CPU只读核过：model seed/shape481→6/采样trained/epoch40…400/非空Adam800…8000/有限weight/RMS.count=steps+100.0001/H0mask54 mean exact0及保存manifest SHA一致，源合同保持。新初始化weights/world均不同23301，未engineeringwarmstart，末权重实际更新；原记录CUDAmoments、save world/route/history/parking/RMS/RNG不改标记核。learn+checkpoint95.601214s，round243_second_seed_model绑定全部证据，不作performance或seedpair结论。
+- 第243轮同353065/353066 running无error/restart，末snapshot23302/H0 regularbatch1 reserved696/completed676，第一seedpair656已完成、第二model评价中，第三seed尚未完成。0本轮newlearning/physics，runtime raw/models未全remote/clean；244只核实际新完整objects或同handle verifiedwait，三pair/1312后完整原门/CPU/raw/stats/终态分批归档仍待。六论文出口/goal active，245深审清理。
+
 - 第242轮首pairedseed23301完整交付：H1六类984文件1,786,011,232B及cases/order/scenario/results/Actor968与原门字段全核；H0复用239已核交付/resultSHA，不新回放。H0→H1成功regular64→87/96、controlled29→29/40、legacy27→27/28；J .833248→.719104/1.340475→1.128796/.805790→.743314，H1physical/design164全过。部分改善不等完整收益：lost regular6300075、controlled6301001/6301009/6301017，新component保持regular/controlled False，legacy True；所有lost/gained/fullflags保留在round242_first_pair_delivery。
 - 第242轮同livehandle verifiedwait30s后首pair全结束，全队列656评价，23302/H0开始实际training；353065/353066 running，无interruption/restart。本轮0新physics/learning（只观察和独立核），H1数据/全部models尚未终态全remote/clean。不能将首pair87成功替代strongNom96/B1 95、ctrl29替代原34门，也不能只挑改善场景或跳formal5。
 - 第242轮243沿同worker核实际新对象/verifiedwait，完成其余两seed及1312再全门/CPU/raw/层级统计、终态分批归档和有限去留。六论文出口/goal active，245如期深审清理。
