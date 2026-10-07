@@ -1,0 +1,84 @@
+{
+  "verified": true,
+  "round": 235,
+  "previous_turn": "progress",
+  "reviewed_rounds": [
+    231,
+    232,
+    233,
+    234
+  ],
+  "decision": "Continueonlysamefrozen1.2M/1312queue.No newexperiment,parameters,deadline,restartor partialwinner. Causalquestion is whether commandhistory adds utility conditionalon identicalsensorhistory/timestamps,notnovelalgorithm.",
+  "methodology": {
+    "shared_age_and_only54_commandmask": true,
+    "three_fresh_training_seeds": true,
+    "engineering_warmstart": false,
+    "final_only_selection": true,
+    "strong_old_and_contemporary_references": true,
+    "all_original_literal_gates_retained": true,
+    "existing164cases_not_independent_generalization": true
+  },
+  "principal_limits": [
+    "Publictimestamp/age additionalidealmeasurement,notblindoriginal39.",
+    "Same-numberworld/weight initialization andseedpairs arenot wholeGPUtrajectoryidentity.",
+    "H1 is genericPPO,H0 informationablation;positive contrastnotnewalgorithm or safetyproof.",
+    "New formal5/independentID-composition-geometry-parameter-delayOOD/retention/seed-caseuncertainty/end-to-endcost/manuscript remain after justified contribution andqualification."
+  ],
+  "additional_experiments_now": "None. Completepredeclaredqueue;onlyafter full gates make finite method/learning-necessity decision. Do not addextreme terrains/teacherinputs or gain/budget sweeps to rescue.",
+  "unit_state": "MainPID=353065\nResult=success\nExecMainStatus=0\nSubState=running\n",
+  "live_process_evidence": "    PID    PPID STAT     ELAPSED COMMAND\n 353065     892 Ss         06:53 /usr/bin/flock --exclusive /home/wmt/wheel_leg_robot_work/.git/project-write.lock /home/wmt/wheel_leg_robot_work/.venv/bin/python /home/wmt/wheel_leg_robot_work/wheelleg_warp/execution_input_study.py run\n 353066  353065 Rl         06:53 /home/wmt/wheel_leg_robot_work/.venv/bin/python /home/wmt/wheel_leg_robot_work/wheelleg_warp/execution_input_study.py run\n",
+  "progress_snapshot": {
+    "status": "evaluating",
+    "current": {
+      "arm": "B1-route",
+      "seed": null
+    },
+    "panel": "regular",
+    "batch": 1,
+    "reserved_evaluations": 204,
+    "completed_evaluations": 184,
+    "completed": [
+      {
+        "arm": "B0",
+        "seed": null
+      }
+    ]
+  },
+  "completed_subset_sha256": "fdb4594fb4fa975e742daa765eb32663a659532b2193c4ccecfa6ab1cbeb558f",
+  "subset": {
+    "cases": 40,
+    "success": 40,
+    "physical": 40,
+    "design": 40,
+    "oldflag_changes": 0,
+    "streams": 240,
+    "bytes": 386839771,
+    "wholepanel_conclusion": false
+  },
+  "cleanup": {
+    "verified": true,
+    "files": [
+      {
+        "cache": "wheelleg_warp/__pycache__/test_nom_yaw_filter_probe.cpython-310.pyc",
+        "source": "wheelleg_warp/test_nom_yaw_filter_probe.py",
+        "bytes": 5451,
+        "cache_sha256": "3ef89f51ebe8ab7e1dc73fd0411de8deeecaab4e8f69876865284b3674144e7b",
+        "source_sha256": "88f55ab4042877f871bd0b7263b9285b420c7880d8d469b80d9ec312435e1ef8",
+        "code_equivalent": true,
+        "ignored_untracked": true,
+        "no_open_holders": true,
+        "not_in_running_worker_sources": true
+      }
+    ],
+    "total_bytes": 5451,
+    "limits": "Unused source-unit derivedcache only;activeworker/runtimebuffers andallsource/models/RMS/raw/failures/baselines/sealedsets retained. Regenerablecache."
+  },
+  "proposal_sha256": "9c4c1146c00cffe364b3afb7294c2dc806f159717439c57bab9a42d143a7bc0b",
+  "contract_sha256": "558eb730a80c68a98fc1ef7b0969ae9112dd2ce5ce8b9cb4f631786b73ffdc68",
+  "scientific_budget_changed": false,
+  "new_training_or_evaluations": 0,
+  "formal5_admitted": false,
+  "entire_goal_complete": false,
+  "next_deepreview_cleanup": 240,
+  "next": "236sameworker evidence/newcompletedobjects;preparefullreviewwithout alteringruntime. Requireterminalcompleteall6runs/1312 before benefits,then all gates/CPU/raw integrity/seed stats andchunked archive. No rerun if observation expires."
+}

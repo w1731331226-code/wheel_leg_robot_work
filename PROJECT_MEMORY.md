@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第235轮五轮深审完成：231真实terminal/curriculum/481RMS静态load、23224k连续CUDA/nonemptyAdam/commonparking、233newseed/protocol/clock公平及233–234dense/legacy50/Actorlog/classicmapping/partial资格复核，worker全部冻结source当前SHA保持。只继续同1.2M/1312queue，不加实验或改params/budget/history/门；工程与同信息信息消融、clock新增假设、GPU非bitwise/旧164发展非独立泛化边界维持。H1为genericPPO，阳性只支持command信息作用，不自动创新/安全/新formal5；六论文出口仍未齐，goal active。
+- 第235轮首完整40B0regular独立交付核：原case/scenario/order/results SHA、complete/gyro/role/phase/parking/Actor六文件类共240，386839771B；Actor968字段/ceilphysicalN40/raw与classicalobs exact/submitted6全0。任务40/40、physical/design各40/40、与旧B0fullflags0变化；不冒称164全量独立核或learner/wholepanel结论。round235_completed_B0_subset保存全部记录/绑定。
+- 第235轮同worker353065flock/child353066均live，running/无interruption；深审末snapshot累计completed184/reserved204，B0全164已worker交付、B1regularbatch1进行中；本轮0新增physics/learning，source/data记录不是重新回放。运行中raw/models未remote全归档，不强称clean；继续同handle，完整六run/1312终态前不选择winner，终态全门/CPU/raw/stats及分批归档待做。
+- 第235轮确认删除1份test_nom_yaw_filter_probe.pyc共5451B，ignored/untracked/无fuser持有、源码归一codeobject等价，且不在当前worker source闭包；round235_cleanup保存前SHA/源码SHA。未触碰live运行缓存/源码/models/RMS/raw/唯一失败/CPU-GPU/封存集。236沿同worker核新已完成对象并准备fullreview，不再restart或改变协议；240下次深审清理。
+
 - 第234轮dispatch已实际开始：wheelleg-execution-input-study-v1.service MainPID353065 flock/childPython353066均live，SubState running，持.git/project-write.lock；首同期B0/regular/batch0 reserved20/completed0时点，未有科学收益门结论，不restart。原源码/准入已97fb58fc提交同步后启动；运行中的study_reference/progress及后续raw/models尚未归档，不声称全部remote或worktree clean。恢复git-sync active时由worker排他锁阻止未完成数据自动snapshot，终态再按适当<2GB批次归档。235同handle深审清理按约。
 
 - 第234轮evaluation source动态准入过：同原登记3firstepisode（H1工程model仅unit/B0 legacy solver50/B1原parkingPD）14934/13034/14922physics，另80step deliberateprefix，共42970engineeringphysics/0learning/0科学预算。6个±.8/0及轮速0/70rad/s静态diff3→V6 wheel-only ctrl/diag array_equal，包含包络clip，0integration；完整旧六流/968Actor字段/firstepisodeceilN40、legacyID/phase/physical/Actor预测及RMS/model不变过，prefix2Actor80step全部日志/history/command保存过，admission绑定SHA。

@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第235轮运行中方向深审、已完成数据核对与冗余清理（2026-10-07）：
+
+231–234的真实生命周期、481RMS和CUDA/Adam、单独24k工程、公平publictimestamp/唯一54坐标信息mask、新seed/末模型规则、dense双capture/legacy50/classical转换/Actor/prefix源资格复核；当前worker冻结source全部SHA不变。值得继续的是这唯一可证伪的command信息干预，尚不值得另开更复杂地形、teacher/observer/gain/预算链。H0是信息消融、H1是genericPPO，timestamp为新增公开测量假设；同初始化/seedpairs不是全GPU轨迹身份，旧164是发展/regression而非fresh泛化。信息阳性不能直接当新算法/安全/论文六出口完成。
+
+独立复核首已完成40B0regular：结果/sourcecase/order、240份complete/gyro/role/phase/parking/Actor文件类SHA共386839771B；Actor968字段/ceilN40、raw/classicalobs exact和submitted6全0。task40/40/physical40/design40，与旧B0全部fullflags无变化。仅该完整子集，不冒称所有164raw独立核或learner/wholepanel证据；完整记录见round235_completed_B0_subset。
+
+同wheelleg-execution-input-study-v1.service 353065flock/353066Python live/running，无interruption或replay；末审snapshot累计completed184/reserved204，B0全164已经worker交付，B1regularbatch1进行中。维持原1.2M/1312/source/order/gates，不加实验/partialwinner。本轮0physics/learning；各world模型和raw仍在落盘，终态之前不称全remote/clean。236沿同handle核新completed对象、准备fullreview，必须完整六run/1312终态再门/CPU/全部raw/seed统计及分批归档，不观察timeout而restart。
+
+删除test_nom_yaw_filter_probe一个ignored/untracked、无fuser持有、与源码归一codeobject等价且不在runningworker source闭包的pyc，5451B；round235_cleanup保前SHA/源码SHA，未动live runtimecache和任何科学源码/models/RMS/raw/失败/CPU-GPU/封存集。完整六论文出口继续未齐，240下一深审清理。
+
 第234轮dispatch状态：源/contract/unit已97fb58fc同步后启动wheelleg-execution-input-study-v1.service，MainPID353065为flock、child353066 Python live，持project-write.lock，首B0 regular batch0 reserved20/completed0时点。后续raw/progress/model正在落盘，尚不remote全归档/clean，不据partialscore晋升；235同handle深审清理，终态完整门审查与分批归档再结论。
 
 第234轮密集动态准入与独立执行器冻结（2026-10-07）：
