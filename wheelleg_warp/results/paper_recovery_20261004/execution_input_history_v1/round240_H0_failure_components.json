@@ -1,0 +1,39 @@
+{
+  "verified": true,
+  "cases": {
+    "regular": 96,
+    "controlled": 40,
+    "legacy": 28
+  },
+  "failure_components": {
+    "regular": {
+      "terrain_contact": 29,
+      "legacy_contact": 1,
+      "attitude": 2,
+      "yaw": 1,
+      "roll_axis": 1
+    },
+    "controlled": {
+      "attitude": 11,
+      "yaw": 9,
+      "roll_axis": 4
+    },
+    "legacy": {
+      "attitude": 1,
+      "yaw": 1
+    }
+  },
+  "input_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23301/evaluation/regular/batch_0/result.json": "d041a080c64c58f705532dd630edd4fb6b51b08bf1ec0dbfc20d9bfceaeeed84",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23301/evaluation/regular/batch_1/result.json": "2f0c0200dc96e3b786a990ee7ebf8626df82d9c884538d8720b92b23a22b74a4",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23301/evaluation/regular/batch_2/result.json": "6c492061b685aaa2e564e2f375b0b677e80be246b7f46299ad8353855fc8f76e",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23301/evaluation/regular/batch_3/result.json": "ea8ea04c339cc031a1e1a2e5a34009b1afc1e024c1f9cf7204389ef05f9703b0",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23301/evaluation/regular/batch_4/result.json": "3108611b138174917c3488cad956ac4e852fdfc214978175f46327eb7f178ccd",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23301/evaluation/controlled/batch_0/result.json": "60bd6e28bddcd95593e6f71c3861db7e46e5645b85d5953c5e126a71378005a5",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23301/evaluation/controlled/batch_1/result.json": "f26a1eecbcd6408e8f3d3df89c2c129bb5b500e1a7592a5d6b2cb00ebbe3693d",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23301/evaluation/legacy/batch_0/result.json": "8b3c00992e246c94360ab9eafe47b799123b768c396175ef4de81da89856ca8e",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23301/evaluation/legacy/batch_1/result.json": "79a2738f0136df5b0a88dc77705121e2e28c503e7a39e76cbc93592ab3e1206f",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23301/evaluation/legacy/batch_2/result.json": "67afec8c3b21d6b66d615a0fd31493f8ff63a6dd2754eef372fa00e12847496d"
+  },
+  "limits": "ExistingoneH0seeddescriptive failurebreakdown;countsnotexclusiveandnotcausal attribution toinputmask. No newevaluation."
+}

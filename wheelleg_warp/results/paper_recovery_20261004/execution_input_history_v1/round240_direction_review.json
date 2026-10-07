@@ -1,0 +1,72 @@
+{
+  "verified": true,
+  "round": 240,
+  "previous_turn": "progress",
+  "reviewed_rounds": [
+    236,
+    237,
+    238,
+    239
+  ],
+  "decision": "Continueexactfrozenqueue;no supplementalexperiment/reward/params/contact-gatechange or partialwinner.",
+  "failure_interpretation": "OneH0regular failures mainlycontact-task labels;controlled mainlyattitude/yaw. Flagsare nonexclusive. Phys/designallpass is nottaskcompletion. Notcausalinputmask/rewarddiagnosis or proof yawauthority impossible.",
+  "method_limits": [
+    "H0informationablation/H1genericPPO,not sameinformationnewalgorithm.",
+    "Threefreshseedpairs/final200k/strongold+newclassical/fullphysicaldesign/contactgates unchanged.",
+    "Publicsensorclock/age isadditionaldeclaredmeasurement.",
+    "No independentgeneralization/newformal5/uniquecontribution yet."
+  ],
+  "failure_component_sha256": "ca26af22aeda011f03cc90be09bc41c850fb7d4d7c6a67c582754b4dbae92136",
+  "cleanup": {
+    "verified": true,
+    "files": [
+      {
+        "cache": "wheelleg_warp/__pycache__/check_nominal_response.cpython-310.pyc",
+        "source": "wheelleg_warp/check_nominal_response.py",
+        "bytes": 5917,
+        "cache_sha256": "bfc38a1564ee75fe797cb496ea271a5c69dc9eccdb450692159af84b66781ce5",
+        "source_sha256": "e57c2762349663cfc4bef77eb2580f667d895a5dfe6338bbe9684160f89f2978",
+        "ignored_untracked": true,
+        "no_open_holders": true,
+        "code_equivalent": true,
+        "not_in_worker_sources": true
+      }
+    ],
+    "total_bytes": 5917,
+    "limits": "Inactiveequivalentderivedcacheonly;liveworker/runtimecache/allscientificsource/models/RMS/raw/failures/baselines/sealedsets retained."
+  },
+  "worker": "MainPID=353065\nResult=success\nSubState=running\n",
+  "progress": {
+    "status": "evaluating",
+    "current": {
+      "seed": 23301,
+      "arm": "H1"
+    },
+    "panel": "regular",
+    "batch": 4,
+    "reserved_evaluations": 588,
+    "completed_evaluations": 572,
+    "completed": [
+      {
+        "arm": "B0",
+        "seed": null
+      },
+      {
+        "arm": "B1-route",
+        "seed": null
+      },
+      {
+        "seed": 23301,
+        "arm": "H0"
+      }
+    ]
+  },
+  "H1_training_sha256": "927b2aaa1faa11b37b0213e01a94a2bfdb4a79d44572f6a27fee9c2776d7dac9",
+  "H1_training_policy_samples": 200000,
+  "H1_learn_checkpoint_wall_s": 92.12426914399839,
+  "new_training_or_evaluations": 0,
+  "formal5_admitted": false,
+  "entire_goal_complete": false,
+  "next_deepreview_cleanup": 245,
+  "next": "241 inspectactualcompletedH1/pair objects ifavailable;otherwise verifiedwaitsame353065/353066. Full6runs/1312 thenoriginalgates/CPU/raw/seedstats/finiteclosure andchunkedarchive. No terrain expansionor rescue before fullresult."
+}

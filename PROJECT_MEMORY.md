@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第240轮五轮深审完成：236–239两同期strongref/首H0十checkpoint/全164/初始化配对与冻结原门复核；runningworker所有source SHA不变，仅继续原1.2M/1312，不新地形/teacher/reward/gain/budget/接触门改动，不partialwinner。H0是信息消融/H1genericPPO、clock新增测量、旧164非新独立泛化、三seed全结果和论文六出口仍未齐，goal active。
+- 第240轮首H0失败非互斥分解：regular terrain_contact29/legacy_contact1/attitude2/yaw1/roll_axis1；controlled attitude11/yaw9/roll_axis4；legacy attitude1/yaw1。不能只看yaw J隐藏接触任务，phys/design全过不等完成任务；不能把单H0描述因果归于inputmask/reward或全system不可控。round240_H0_failure_components绑定原已核结果，无新回放。
+- 第240轮同353065/353066 live/running无interruption/restart，H1/23301 training_verification actual200k/400epochs/8000Adam/92.124269s完成，未全H1评价或pair收益；末snapshotregularbatch4 reserved588/completed572。241仅实际新完整H1对象/配对或同handle verifiedwait，完整六run/1312后原门/CPU/全部raw/seed统计与终态分批归档，data/models未全remote/clean。
+- 第240轮删除1份check_nominal_response.pyc，5917B，ignored/untracked/无fuser持有/源码归一codeobject等价且不在worker source闭包；round240_cleanup保存前SHA/源码SHA。未改live缓存/源码/models/RMS/raw/失败/CPU-GPU或sealed集。本轮0新physics/learning，245下一深审清理。
+
 - 第239轮首H0/23301全164评价独立核：成功regular64/96、controlled29/40、legacy27/28，physical/design164全过；J .833248406102/1.340475439891/.805789552850，任务弱于strongrefs，全部失败保留。六类984文件1,760,891,851B，case/scenario/order/result/SHA、Actor968/ceilN40和raw/normalized54坐标exact0过，round239_H0_delivery绑定；不是方法优势/三seed完整门。
 - 第239轮同liveworker verifiedwait30s后H0最后legacy完成，全队列492评价，H1/23301开始实际training；两臂该seed初始化weights/world SHA exact、非engineeringwarmstart，只初始匹配非完整GPU轨迹身份。本轮0新physics/learning/restart，原353065/353066 running，runtime数据未全remote/clean。
 - 第239轮240如期深审清理，不因单H0seed阴性改参数/门或提前对H1作结论；三pairedseed/全1312后原strongref/CPU/全部raw/层级stats及分批归档待做。完整论文六出口/goal active不变。

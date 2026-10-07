@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第240轮方向深审、接触任务失败分解与冗余清理（2026-10-07）：
+
+236–239两强参考/首H0对象与全164/同seed初始化及完整原门复核，当前worker源码全部SHA不变。继续这一冻结信息干预，不追加极端地形、teacher/reward/gain/history/budget或改变接触门，不把一seed/partial结论当新方法。H0信息消融、H1genericPPO、公开clock新增测量及旧164发展集边界保留；完整贡献、三seed资格后新formal5、新独立ID-OOD保持、层级stats与真实PPO成本、新稿六出口仍未齐。
+
+首H0失败旗标非互斥：regular terrain_contact29/legacy_contact1/attitude2/yaw1/roll_axis1，controlled attitude11/yaw9/roll_axis4，legacy attitude1/yaw1。常规主要接触任务未满足，不能只报告yaw降低来掩盖未完成接触，也不能把physical/design全过当任务完成。没有对应全H1/三seed干预，不能因果认定inputmask/reward唯一问题或全system控制权消失。round240_H0_failure_components保存原结果SHA，本轮0新回放。
+
+同353065/353066 live/running无error/restart，H1/23301已经实际完成200k/400epochs/8000Adam，learn+checkpoint92.124269s，只训练阶段交付未全H1评价/配对门。末snapshotregularbatch4 reserved588/completed572。241仅读实际新完整H1或同handle verifiedwait；全六run/1312后原门/CPU/所有raw/seedstats/终态分批归档，数据模型未全remote/clean。
+
+删除1份check_nominal_response可再生pyc5917B，ignored/untracked/无fuser持有、与源码归一codeobject等价且非worker source；round240_cleanup留前SHA/源码SHA，未动live缓存或任何scientificsource/models/RMS/raw/失败/baseline/sealed集。本轮0新physics/learning，245下一深审清理，整体目标继续。
+
 第239轮首H0全164交付与同seed初始化匹配（2026-10-07）：
 
 H0/23301全164独立核完：成功64/96、29/40、27/28，physical/design各164通过；J .833248406102/1.340475439891/.805789552850，任务弱于同期强参考，全部失败保留。六类984文件SHA共1,760,891,851B、case/scenario/order/flags、Actor968/ceilN40和raw/normalized54commandmask exact0过，round239_H0_delivery保存证据；只有一个消融seed，不代表H1收益、三seed资格或独立泛化。
