@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/summarize_motion_balanced_dynamic.py", line 88, in <module>
+    run()
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/summarize_motion_balanced_dynamic.py", line 56, in run
+    np.testing.assert_array_equal(old[field][0], new[field][0])
+  File "/home/wmt/wheel_leg_robot_work/.venv/lib/python3.10/site-packages/numpy/_utils/__init__.py", line 86, in wrapper
+    return fun(*args, **kwargs)
+  File "/home/wmt/wheel_leg_robot_work/.venv/lib/python3.10/site-packages/numpy/testing/_private/utils.py", line 1057, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+  File "/home/wmt/wheel_leg_robot_work/.venv/lib/python3.10/site-packages/numpy/testing/_private/utils.py", line 921, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 144 / 170 (84.7%)
+Max absolute difference among violations: 4.884787e-06
+Max relative difference among violations: 751105.94
+ ACTUAL: array([[-3.499760e-04,  1.257806e-23,  1.646706e-01,  1.000000e+00,
+         8.252218e-22, -4.717771e-07, -4.950444e-22,  1.048192e+00,
+        -1.240390e+00, -7.017644e-03, -1.049558e+00,  1.240814e+00,...
+ DESIRED: array([[-3.500000e-04,  3.281541e-23,  1.646707e-01,  1.000000e+00,
+        -5.620431e-22,  2.710475e-10,  6.129976e-23,  1.048192e+00,
+        -1.240391e+00, -7.022189e-03, -1.049558e+00,  1.240814e+00,...

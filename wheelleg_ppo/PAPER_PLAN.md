@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第271轮有限动态batch完成及记录更正（2026-10-08）：
+
+motion_balanced_dynamic_v1完成40条1s轨迹/80000primary和800同输入CPU回放，总80800，真实CPU MuJoCo与GPU MuJoCoWarp，同原控制函数/phase/稳态memory/固定公有7kg±.7/zeroActor。四全轨迹、20回放数组与来源完整保存，回放20/20过。delivery正确physical/design40/40过，minactualleg>=.1149859503m；GPU old/candidate峰值vxerror .00188571215/.00000816583633m/s，CPU .00188500339/.00000643751286m/s。只Nominal平衡初态、一秒fixedcommand；旧误差已很小，不能据此推真实任务收益、新算法或启动/制动/不对称稳定。
+
+原completion.records不能用于论文：runner监测列号错（30当腿长、31当loop）；正确31/32腿长、34loop。CPU Warp numpy共享view又使部分pre字段被post覆盖，并污染CPUtorque monitor的pre_v输入。真实post轨迹保存完整，summarize_motion_balanced_dynamic从初态/10freshforward初sensor和previouspost恢复CPUpreq/v/sensor/memory，保存recovered_CPU_*_prefix；实际力矩/命令速度限额重新逐步核，40/40仍过。首memory用同共享GPU初始化并替换实际CPU初gyro，随后previousmemory_after。保留原raw/源/错summary与全部失败log，无trajectory或controller重跑。272必须独立核该恢复与记录语义，当前交付通过不是独立review。
+
+初F32model与F64CPU固定绝对容差失败在0积分，修为CPU转换GPU精度exact一致；两次冷构各10既有FD共20如实记。0新实验FD/优化/PPO，恢复10freshforward另列，非总计算0。交付检查prefix错和summarizer导入错日志保留。不得跳production/正式五seed，真实164/continuous commandbridge和freshOOD未准；方法贡献、sameinfo基线/消融、统计成本/完整稿仍待。272有限复核去留，275五轮深审清理。
+
 第270轮方向深审、静态收尾与动态资格契约（2026-10-08）：
 
 review_motion_balanced_nominal.py独立核70savedqueries、来源SHA、AST两处允许分支、全部配对输入和bank、原速度相关motorbounds及零速完整输出，PASS且0新query/FD/积分/PPO。静态前馈/姿态不一致确有改善，原baseline未弱化，值得继续一次有限动态试验；停止静态点扩展，拒绝把力矩差降低当动态稳定、新算法或旧学习失败唯一解释。

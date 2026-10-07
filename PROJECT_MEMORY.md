@@ -4,6 +4,12 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第271轮（2026-10-08）唯一登记动态batch终态exit0：原十moving×old/candidate×CPU/GPU40轨迹各2000步，primary80000；另20GPU前40步原ctrlfreshCPU回放800，总80800，不扩budget/重跑trajectory/调gain/feed/PPO。GPU actualMuJoCoWarp与CPU actualMuJoCo及CPU Warp同控制kernel；同F32初态/steadyfilter/boot2/I0/zeroActor/实际phase，固定±.7/7kg，四原始NPZ和20回放NPZ留全部pre/post、contactforces、torque、memory/reference/diag/geometrymonitor/sourceSHA。
+- 第271轮校对20/20过；更正后的delivery.json物理/design40/40过，实际最小腿长全>=.1149859503m。GPU old/candidate峰值vxerror .00188571215/.00000816583633m/s，CPU .00188500339/.00000643751286m/s，有限Nominal初态下明显改善，但旧臂误差本来很小，不能换算论文任务收益/稳健或独特方法；均不准production/formalPPO/freshOOD，完整六出口未齐。
+- 第271轮必须使用delivery.records和recovered_CPU_*_prefix.npz，原completion.records非权威：runner错把state30常量当腿长、31当loop，正确31/32腿长、34loop。CPU Warp numpy共享view使原pre_q/pre_v/pre_sensor/memory_before被post覆盖，且torque monitor用错CPU pre_v；真实CPUpost轨迹完整。summarizer从登记初态/十次freshCPU forward初sensor和前一步post恢复prefix，memory首值按共享GPU初始化和实际CPUgyro恢复、后续previousmemory_after；逐步原速度curve重算真实/命令力矩bound后40/40仍过。原runner/source/错汇总/log全保，不覆盖旧raw，不重跑控制/积分；272须独立核恢复链和实际源语义后再作资格结论。
+- 第271轮初model F32/CPU F64固定2e-7断言在0积分失败（差2.14e-7）；改为CPU转换相同GPUdtype后exact，原failure/log保。两进程各10baselineconstructorFD共20，0新实验FD/优化/训练。交付核发现prefix错→恢复、summarizer导入路径错→修正，失败log保，无额外trajectory/query；恢复额外10freshforward单列，不冒充0计算。
+- 第271轮下一步272独立raw/prefix/constraints/replay源复核与finite去留。是否补commandbridge/真实164须依据此闭环边界及论文必要性，不无限重复小误差平衡点。275深审/清理如期，goal active。
+
 - 第270轮五轮方向深审完成：独立saved70重算原/候选源AST仅两分支、两臂qv/sensor/commands/nominalbank/memory/ref前缀/phase一致、所有原速度相关motor限幅、raw/finalgap和cmd0ctrl/diag/memory/role exact；0新query/FD/积分/训练。静态screen到此关闭，不再追加静态点/积分端值。修复有明确建模原因且不弱化baseline，值得一次有限动态验证，但feed/reference工程一致性不单独构成算法创新或解释全部旧PPO失败。
 - 第270轮新motion_balanced_dynamic_v1契约：原十Nominalmoving参考×old/candidate×CPU/GPU40条，各2000step/1s，共80000primary；另20GPU轨迹首40step原ctrl在freshCPU回放共800，total80800（review的80000指primary，额外800为必须同输入物理校对，明确分列而非藏成本）。同F32初始qv/warm0/steadyfilters/boot2/I0/固定±.7/zeroActor、公有7kg与原phase/bounds、同frozenbank；所有状态/内存/命令/接触/力矩/几何/失败曲线保存。回放20ms使用既有qpos5e-5/qvel.02及contactpair门，不能移用为1s闭环门；无新实验FD/优化/PPO/自动retry或production替换。
 - 第270轮拒绝fulltask/PPO捷径：当前只 exactheight/speed，实际启动制动/连续命令桥/不对称及跳跃保持尚未验证；动态与物理校对过后才决定必要bridge/164全任务，不能以平衡点替代真实任务。六论文出口（独特贡献、强sameinfo/消融、新formal5、freshID/OOD、层级统计/真实训练成本、完整稿）仍未齐，历史科学negativegate不改，goal active。
