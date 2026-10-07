@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第254轮实际scientific终态：原study MainPID0/dead/Resultsuccess/ExecMainStatus0，无error/replay；六fresh模型1.2M采样+1312评价全部结束，queue3499.027912s含模型构建/训练/检查点/评价/序列化，不作CPU加速比。完整reviewer原strongold+new/CPU/fullflags/每seedctrl>=34/literal各panelJ15%AND.05/三seed机制全审，资格False；7872六类记录13,768,735,789B SHA核，六模型各10checkpoint/481RMS独立交付此前均过。
+- 第254轮H1成功regular87/85/70（/96）、controlled29/29/26（/40）、legacy27/27/26（/28）；thirdH0为93/29/28，thirdH1反而退化。H0→H1每seedJ regular[-.114144,-.120786,+.432434]、controlled[-.211680,-.161501,+.293096]、legacy[-.062475,-.099937,+.340401]，三panel机制mean门False，CPUlegacy三H1全部False。Success三seed均差regular+.013889/controlled-.016667/legacy-.011905，crossed描述95区间全部含0，不作泛化或新算法优势。
+- 第254轮维持关闭fixedH1收益/formal5/baseline替换，不改门/seed/std/history/budget救分；完整报告、所有失败/交换及统计保存study_review/full_review/terminal_audit。终态归档447177按<=1.5GB批次正在push，非全部remote/clean；首几批已经归档，保存科学审查说明期间暂停批次推进防index交叉，当前push继续，随后恢复。归档与方法资格分开，goal及六论文出口仍active，255深审清理后须有限新贡献/方法或关闭决定，不无限只读negativeaudit。
+
 - 第253轮最后23303/H1十checkpoint/30对象独立CPUload核过：seed/shape481→6/计数/epochs40…400/nonemptyAdam800…8000/finiteweights/481RMS.count=steps+100.0001/command统计实际非零及保存manifest SHA一致，CUDAmoments原snapshot与保存状态不改标记核，同seedH0/H1初始化weights/world exact无warmstart。200k/400epochs/8000Adam/learn+checkpoint97.252812s，六模型训练对象均已分别核完，round253_last_H1_model留证据，非完整1312收益。
 - 第253轮准备终态原始数据归档：复用223一过性flock归档方式，wheelleg-execution-input-archive-v1.service PID447177 live、wchan locks_lock_inode_wait，排队等待当前study锁；必须study_completion1.2M/1312才stage，payload每批<=1.5GB/每file<95MiB，保留全部成功失败/models/RMS/raw，不碰他人stage、不forcepush。现0runningdata staged；script/hash及queue记录保存。git-sync遇worker锁返回空前状态，archive已真实阻塞排队，避免终态后大数据单批快照。归档不是科学资格。
 - 第253轮study353065/353066 running无error/restart，末snapshot最后H1controlledbatch0 reserved1264/completed1244；source/contract仍同，0本轮新learning/physics。数据模型尚未全remote/clean；254同handleactualterminal/最后pair或verifiedwait，完整原门/CPU/全部raw/层级stats及归档完成仍待，论文六出口/goal active，255深审清理。

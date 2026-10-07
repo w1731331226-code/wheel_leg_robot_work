@@ -1,5 +1,19 @@
 # 双轮腿机器人PPO论文方案
 
+第254轮完整科学终态、原门与种子统计结论（2026-10-07）：
+
+原study正常MainPID0/dead/success/exit0，六fresh模型1.2M与1312评价全部结束，无error/replay；queue3499.027912s包含构建/训练/检查点/评价/序列化，仅该study成本，不表述CPU加速。完整原门review过，原strongold+new/逐case完整flags/physical-design/CPU/每seedctrl>=34/literal各panelJ15%AND.05/三seed机制全部保留，资格False。7872六文件类SHA共13,768,735,789B，六模型60checkpoint/481RMS先前已逐对象核。
+
+| H1 seed | regular/96 | controlled/40 | legacy/28 |
+|---|---|---|---|
+| 23301 | 87 | 29 | 27 |
+| 23302 | 85 | 29 | 27 |
+| 23303 | 70 | 26 | 26 |
+
+第三H0为93/29/28，第三H1退化，首两seed局部改善不稳健。H1−H0每seedJ分别regular[-.114144,-.120786,+.432434]、controlled[-.211680,-.161501,+.293096]、legacy[-.062475,-.099937,+.340401]，三个机制mean门False，CPUlegacy三H1全False。Success均差+.013889/-.016667/-.011905，其crossed描述95区间全含0，仅当前发展case与三个seed，不当总体泛化证书。
+
+维持fixedH1收益/正式5seed/基线替换关闭，不改参数/门/seed/预算救分。study_review保留全部新旧强参考、lost/gained/fullflags、物理、CPU、种子统计和成本；full_review及round254_terminal_audit绑定终态。447177终态归档按<=1.5GB正在分批push，尚不全remote/clean；保存审查说明时短暂停批次推进，当前上传继续，随后恢复，防止交叉stage。255深审清理及有限贡献/方法或关闭决定待做，完整论文六出口未齐，不用已完成阴性study替代完整目标。
+
 第253轮最后模型对象与终态归档队列准备（2026-10-07）：
 
 23303/H1十检查点30对象CPUload及保存SHA、seed/shape481→6/计数/finiteweight/nonemptyAdam800…8000/481RMS/count/input实际非零过；原snapshot CUDAmoments/保存world-route-history-parking-RMS-RNG不改标记核，同seed初始化匹配无warmstart。末200k/400epochs/8000Adam/learn+checkpoint97.252812s，六模型训练对象均已单独核，round253_last_H1_model绑定。不是完整评价收益或恢复已closed扩展。
