@@ -1,0 +1,62 @@
+{
+  "version": "execution-input-history-v1",
+  "round": 228,
+  "status": "finite_candidate_not_main_admitted",
+  "decision": "Close oracle one-step response/control-authority and fixed heuristic expansion. Qualify a causal input-output interface and execution-conditioned rotor discrepancy against a same-information generic history PPO;not a sensorless force observer,stability theorem or proven publication contribution.",
+  "hypothesis": "Knowing time-integrated final Nom+residual commands and delayed measured wheel motion may help distinguish commanded spin from motion-induced response. Test whether public-inertia discrepancy adds effect beyond generic history when information,network size,Nom,authority and budget are matched. History/observer/PPO alone is not novel.",
+  "interface": {
+    "raw_packet": "Existing raw39 unchanged,including its declared delayed32/current6/route clocks;do not treat all39 as synchronous",
+    "command_source": "Finalfloat32 data.ctrl immediately before each physics step,after Nom/correction/residual/envelope,BEFORE actuator gain. Public command log,not actual actuator_force or true randomized drive gain.",
+    "sensor_time": "Use delivered wheel-speed sample clock;sum finalctrl*.0005 over exactly that past interval. Delayed packet gets historical command impulse at the same timestamp,never latest current torque. Startup repeated sample dt0 requires zero impulse and unchanged wheel speed. Do not disclose hidden latency as an actor feature.",
+    "causal_reset": "Episode-owned impulse/history,last sensor sample and clock reset per world;first terminal retains its own partial interval before new-reset packet;no future samples,mixed episodes or shared mutable buffers.",
+    "history": "Ten50Hz packet endpoints with9aligned past command intervals;initial/partial history filled from its own reset and valid/dt masks. Identical delivered base/input history available to generic and structured candidates.",
+    "proxy": "z_i=mean(finalctrl_i)-Jspin*(omega_i_now-omega_i_prev)/sensor_dt. Scale meanctrl by40/4.5Nm and z by4.5Nm. Jspin comes from public nominal wheel inertia. Omitted base/carrier acceleration,coupling,unknown actuator gain mean z is discrepancy,not contact torque/normal/support/net authority.",
+    "truth_excluded": [
+      "contact force/frame",
+      "terrain geometry/arrival/goal",
+      "true mass/friction/gains",
+      "oracle sensitivity",
+      "future state or hidden delay"
+    ]
+  },
+  "candidate_arms": {
+    "P0": "Instant-packet ablation;samearchitecture/commandhistory storage but past features masked. Not a same-information main comparator.",
+    "P1": "Generic input-output history PPO;retain full packet+command history,zero only deterministic rotor-proxy slots;all public design constants equally available.",
+    "P2": "Same history PPO,architecture and padding asP1;enable deterministic rotor-proxy slots. No altered stochastic logprob,mean subtraction or larger action authority."
+  },
+  "common_plant": "Original strong phase Nom/virtual6 projection/filter/bounds/reward/tasks maintained. If parking request withdrawal is used,train/evaluate every candidate in that same predeclared public seen-nonzero/currentcmd0 gate;do not hardreset the original slew state. B0/B1 zero residual remain recorded strong references.",
+  "qualification": {
+    "main_status": "not_admitted",
+    "requirements_before_main": [
+      "collector timing/delay/zero-control/noop/reset/terminal/partial ownership checked",
+      "sameworld/source/CUDA initialization and optimizer/RMS/reload checks",
+      "separate engineering qualification and concrete reviewer-ready contribution relative to verified prior art"
+    ],
+    "proposed_training": "3fresh independentseeds xP0/P1/P2,200000samples/run=1800000samples;CUDAlearn. Main seeds/config/order/source/last-checkpoint selection to be frozen only after admission;no oldpolicywarmstart or bestseed selection.",
+    "engineering": "Proposed separate24000samples=8000/arm,10worlds;not admitted or executed here.",
+    "primary": "Full original regular96/controlled40/legacy28,all physical/design flags/strongreference successes/CPUcalibration retained;controlled>=34/40;unchanged J15%+.05 allpanel gates vsstrongB0/B1. P2 must additionally improve consistently vsP1 or structured-feature claim closes;do not replace gainwith easier gate.",
+    "stop": "If generic history is enough andP2 lacks additional reproducible effect,do not claim rotor structure contribution. If all fail,close this candidate without amplitude/historylength/budget/seed rescue. Qualified three-seed results do not replace fresh formal5/ID-OOD/ablation/statistics and full manuscript."
+  },
+  "prior_art": [
+    {
+      "url": "https://arxiv.org/abs/2609.13779",
+      "read": "author abstract only;2026-09-12",
+      "finding": "Momentum observation/contact-constrained wrench projection/temporal residual learning integrated in wheeled-legged force-awareRL;distinct loco-manipulation task,no numerical reproduction."
+    },
+    {
+      "url": "https://www.iris.unina.it/handle/11588/854571",
+      "read": "institutional abstract only",
+      "finding": "2021 quadruped momentum disturbance estimator andwhole-body control with simulationcomparison;ordinary DOB is established."
+    },
+    {
+      "url": "https://www.mdpi.com/2075-1702/14/5/568",
+      "read": "publisher search snippet only,direct429",
+      "finding": "History-aware quadrupedalwheelleg RL;no fulltextobtained oralgorithmclaim basedon it."
+    }
+  ],
+  "source_unit_sha256": "6ed8bf35e02598c9e663c71ed0208d7b5e36a05621de11ac2a55b0f4d1f53ce7",
+  "new_training_or_evaluations": 0,
+  "formal5_admitted": false,
+  "entire_goal_complete": false,
+  "next": "229 implement/reuse bounded collector/interface qualification only;230 deepreview/cleanup based on actual timing evidence and contribution boundaries before any main training. No further CPU screen. Full paper evidence requirements remain."
+}

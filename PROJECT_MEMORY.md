@@ -4,6 +4,12 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第228轮方法/学习必要性决策：结束oracle局部响应/固定heuristic权限解释链，不扩screen；转为有限execution_input_history_v1接口及条件化响应特征候选。发现native observation26:32=diag6:12/scale，而controller diag6:12=projection*actorresidual，不是Nom+residual总ctrl。24原状态acceptedwheel和filtered6均0，但finalwheel ctrl最大2.07319665Nm，证明显式总input缺失，不证明完整39观测不可辨识或旧学习失败唯一因果。
+- 第228轮execution_input_features纯NumPy原型及unit过：输入两raw39+最终ctrl在同delivered wheel sensor interval的积分6/elapsed；输出normalized平均command6及z2=meanctrlwheel−Jspin*Δω/Δt。公开J=.00076510625kgm²，与nominalmodel wheelY惯量/armature0逐值一致。非trueactuatorforce/随机gain/normal/contact observer，遗漏carrier/base/coupling需明确。zeroelapsed/zeroimpulse/reset/sign/unusedfield/input不改/invalid拒绝过，0physics/learning；unit/proposal/log/hash保存。实际GPUcollector timing/history/reset/terminal未实现或资格，不能将纯函数单位检查当pipeline过。
+- 第228轮一次定向查新+primary入口：arxiv2609.13779作者摘要（2026-09-12）已结合momentumobserver/contact-constrained projection/temporal residual/force-aware wheellegRL并有实机；UniNA2021 quadrupedmomentumobserver摘要可读。仅核摘要，不全面复现；MDPI14/5/568搜索片段history-aware wheelleg，direct429，不重试。普通history/DOB+PPO不能声称新颖，新候选尚非可辩护论文贡献。
+- 第228轮proposal拟P0instant ablation/P1generic inputoutput history/P2同信息同architecture的rotor discrepancy features，10endpoint与9interval/dt masks，所有可用公共信息等量、同phaseNom/virtual6/filter/bounds/reward/fullgates；parking退出若用则所有候选同训练/评价契约，不重置slew。3freshseed×3arm×200k=1.8M仅提议，separate24k仅提议，均notadmitted/0executed；main须先实际collector/engineering/贡献近邻边界核过，P2对P1无独立增量即关结构主张。旧收益门和资格后新formal5/独立ID-OOD保持/统计成本/新稿不缩。
+- 第228轮229只做新collector/interface准入，230按约方向深审/冗余清理，明确实际时间/同信息与贡献证据再决定新训练，不因“有proxy/history”自动长PPO。全论文六出口仍未齐，goal active。
+
 - 第227轮独立review正常终态：review_yaw_response_screen不调用primary的prepare/commands/advance，复用原geometry，独立重核24原pre/trace/SHA、firsttarget normal选择和±40offset、result/scenario/成功labels、actuator顺序，按公开rated/no-load/peak重新构包络及13commands，以fresh CPU MjData/warm0各一步。312臂全q/v/rpy/active-qmargin/contact frame/point/distance/localforce atol1e-12复核，actualdelta/cpu-GPU全q/v/midpoint逐值恒等，yawincrement1e-15局部重验过；session16218 exit0，原source/primary不可变。
 - 第227轮screen已closed_after_registered_budget：primary336+review312=648CPU步，24state/8case/4成功负对照4失败，0newGPU/0training，review_started/review/log与reviewer保存。Primary原independent_review_pending只表示当时状态，终态以绑定primarySHA的review为准，不覆写旧文件/登记/结果。
 - 第227轮实际解释：成功12state最大单臂yaw效应范围3.078966e-8–3.666364e-8rad；失败12state2.564060e-8–3.849321e-8，范围重叠，不支持“失败即局部偏航权限消失”。同首次load处轮响应左右不等且镜像互换，非全系统失控/闭环可达结论。CPU-GPU单项yaw差最大4.820726e-8rad，有2/24状态大于本次max扰动效应（全部成功控制），只限制CPU局部效应与GPU因果解释，不能归唯一后端根因/证明GPU小扰动无效；24均保留未剔除。

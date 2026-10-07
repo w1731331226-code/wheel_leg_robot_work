@@ -1,0 +1,21 @@
+{
+  "verified": true,
+  "round": 228,
+  "raw_packet_channels_26_31": "accepted residual only:environment.history=diag6:12/scale;controller.diag6:12=projection*residual",
+  "total_command_not_in_these_channels": true,
+  "accepted_wheel_residual_max_Nm": 0,
+  "selected_total_wheel_ctrl_max_Nm": 2.0731966495513916,
+  "selected_states": 24,
+  "spin_inertia_kg_m2": 0.0007651062500000001,
+  "public_model_spin_inertia_and_zero_armature_exact": true,
+  "source_sha256": {
+    "wheelleg_warp/execution_input_features.py": "cd2c67c328d8a89c17639f87b7f238208de6ead582fb6a5b46c96c21dea1d82c",
+    "wheelleg_warp/native/environment.py": "a4fb0a7a5beb08bf23e8e3855f681e8008b79fe5e730d11bc4b5c91674fe8a2b",
+    "wheelleg_warp/native/controller.py": "04d106ae8579118eb306ba2b28037425f81a1f554d4b51fa1eae1ef795fede73",
+    "wheelleg_ppo/tools/hardware_profile.py": "844688aae7e408bb2ca11d00b192ffaa9e4ad5de06cc8a815d3cf3ddfbe02eba"
+  },
+  "parent_review_sha256": "68a72470641afdc167a151c5187c31720af5f9eab63dbe1b63961bd4b92322c9",
+  "physical_steps": 0,
+  "training_updates": 0,
+  "limits": "Missing explicit totalinput feature is proven;this does not prove complete-observation non-identifiability or its causal role in past learning failures. Feature unit cannot certify a collector timestamp/reset/delay implementation."
+}

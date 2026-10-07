@@ -1,5 +1,19 @@
 # 双轮腿机器人PPO论文方案
 
+第228轮下一方法去留与执行输入契约候选（2026-10-07）：
+
+**实际决策。** 结束oracle局部响应及固定阻尼/速度协调权限解释链，不扩大已648步screen。当前39维Actor的26:32来自diag6:12/scale，controller中diag6:12只记录投影后残差，不是最终Nom+residual motor ctrl。24原状态的acceptedwheel/filtered6均为0而finalwheel ctrl最大2.07319665Nm，是显式总输入缺失见证；不能由此证明完整观测不可辨识或过去PPO失败唯一原因。故不能拿这些残差字段直接做momentum/input-output辨识。
+
+**有限候选与可证伪预测。** execution_input_history_v1/proposal声明新公共输入为每0.5ms最终float32 ctrl（加Nom/correction/residual及包络之后、actuator gain之前），按已经送达的wheel sensor两端时刻积分，给所有比较方法相同的10endpoint/9interval input-output历史。真实actuator force、未知gain/延迟、force/frame/terrain/arrival/oracle sensitivity不进入策略。packet现delayed32与current6/route不是同一时钟，原39不偷偷整体当同步数据；sensor重复dt0、终态partial、autoreset所有权需显式资格。
+
+新候选只检验z_i=mean(finalctrl_i)−Jspin*Δω_i/sensor_dt这一公开惯量运动差异是否比generic同信息history PPO更有用。J=.00076510625kgm²，与公开轮轴惯量和armature0一致；z缺carrier/base耦合及未知gain，不称truecontact force/support或鲁棒边界。execution_input_features只纯NumPy代数，zerointerval/reset/sign/invalid/input不改/unusedfields单元检查过，0physics/学习；尚无collector集成证据或新策略收益。
+
+P0为instant-packet机制消融；P1为generic同input-output history PPO；P2与P1同architecture/parameter count/公共信息，启用deterministic rotor-proxy slots（P1对应槽零padding）。不改Nom/virtual6权限/filter/envelope/reward/tasks。停车request退出若用，所有新候选训练及评价相同，强classic零残差不变；严禁新policy logprob后减mean或硬重置slew。拟3新seed×3arm×200k=1.8M资格及独立24k工程预算均not_admitted，本轮0执行。准入前需实际collector timing/ownership/noop、optimizer/RMS/checkpoint及明确贡献边界。原全部强B0/B1/CPU/physical/design/成功保持、controlled>=34、原allpanel J15%+.05门保留；P2还须相对P1有一致增量，否则关闭结构主张，不改幅度/历史长度/预算/seed救分。通过也不能跳过新formal5/独立泛化/关键消融/统计PPOcost/完整新稿。
+
+**近邻边界。** 新核[2026 force-aware wheelleg作者摘要](https://arxiv.org/abs/2609.13779)，已有momentum观测、接触约束分解与时序残差学习及实机loco-manipulation；[2021 UniNA机构摘要](https://www.iris.unina.it/handle/11588/854571)已有quadrupedmomentum扰动估计和wholebody控制。当前不是全文复现或同行数值对照。普通历史、DOB+PPO/特征工程不是新的理论；本机只有execution输入缺口和可检验实证候选，完整可辩护贡献仍未成立。[MDPI history-aware wheelleg](https://www.mdpi.com/2075-1702/14/5/568)仅搜索片段，入口429未取全文。
+
+229只实施最小collector/interface准入，230按约深审清理后依据实际证据和贡献边界决定是否值得任何新训练。不得继续旧CPU screen或无限只读诊断替代新学习/独立泛化；完整论文六出口继续未齐。
+
 第227轮偏航响应独立重验与有界诊断关闭（2026-10-07）：
 
 review_yaw_response_screen使用独立命令构造、公开rated/no-load/peak包络代数和fresh CPU MjData单步，未调用主runner的prepare/commands/advance。全部24原state/trace/输入SHA、firsttarget normal索引及±40offset、原scenario/labels、actuator顺序重核。312臂q17/v16/rpy/active-qmargin与完整contact frame/point/distance/localforce atol1e-12通过；实际ctrl/delta、CPU-GPU全q/v差、midpoint逐值恒等，yawincrement局部重验atol1e-15通过。正常exit0，所有原源码/primary SHA保持。
