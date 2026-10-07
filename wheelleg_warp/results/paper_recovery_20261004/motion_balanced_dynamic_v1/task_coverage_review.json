@@ -1,0 +1,60 @@
+{
+  "round": 272,
+  "source": "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_contract.json",
+  "source_sha256": "558eb730a80c68a98fc1ef7b0969ae9112dd2ce5ce8b9cb4f631786b73ffdc68",
+  "panels": {
+    "regular": {
+      "cases": 96,
+      "height_range": [
+        0.115,
+        0.38
+      ],
+      "speed_range": [
+        -0.9937408513044733,
+        0.9938935375121842
+      ],
+      "distinct_heights": 81,
+      "distinct_speeds": 96,
+      "height_exact_nodes": 18,
+      "speed_exact_nodes": 0,
+      "both_endpoint_nodes": 0
+    },
+    "controlled": {
+      "cases": 40,
+      "height_range": [
+        0.115,
+        0.38
+      ],
+      "speed_range": [
+        -0.7,
+        0.7
+      ],
+      "distinct_heights": 5,
+      "distinct_speeds": 2,
+      "height_exact_nodes": 32,
+      "speed_exact_nodes": 40,
+      "both_endpoint_nodes": 32
+    },
+    "legacy": {
+      "cases": 28,
+      "height_range": [
+        0.3,
+        0.3
+      ],
+      "speed_range": [
+        -1.0,
+        1.0
+      ],
+      "distinct_heights": 1,
+      "distinct_speeds": 16,
+      "height_exact_nodes": 28,
+      "speed_exact_nodes": 0,
+      "both_endpoint_nodes": 0
+    }
+  },
+  "full_task_direct_deployment_admitted": false,
+  "reason": "All164 task trajectories start from rest and ramp through intermediate command speeds; exact-node prototype cannot be inserted into these tasks. Nominal endpoint success does not imply command/height coverage.",
+  "decision": "Close exact-node branch as finite engineering evidence. Next assess one continuous public nominal reference-map design against these frozen ranges and baseline-preservation cost, before any new solve/evaluation/PPO. Do not extrapolate ten references or repeat equilibrium trajectories.",
+  "new_queries": 0,
+  "new_training_samples": 0
+}

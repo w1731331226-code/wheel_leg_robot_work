@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第272轮（2026-10-08）动态独立复核PASS：CPU Warp小数组实测共享view、原CPUpre字段确实等postcastF32/memoryafter；恢复初qv/10freshCPU sensor与后续previouspost/previousmemoryafter逐值核，prepare/select源AST不写memory，原GPUpre/post/warm/memory连续链核。依据模型body/site offsets与实际passive q独立NumPy旋转重算双链实际长度/loop、八joint和1.4active余量，再按原motor速度curve重算actual/commandcaps，delivery40/40一致。20saved replay SHA/error/原门核过；没有重新物理回放，不说独立重新积分。0controllerquery/积分/FD/PPO，10freshinitialforward及CPUviewunit额外成本单列。
+- 第272轮关闭exact-node动态qualification，仅接受publicnominal五高度±.7/稳态初态/固定命令1s工程证据，不再加平衡初态轨迹、不能baseline替换/新收益或formalPPO。首CPUmemory恢复来自明示共享GPUinitializer及实际CPUgyro，非独立捕获历史CPU初memory，原raw/错summary/source保留。review.json记录边界和source SHA。
+- 第272轮task_coverage_review按既有study_contract的164发展任务逐panel核height/speed节点与范围（不是新最终OOD）：当前exactnode不能直接覆盖任务，所有原任务从静止启动且有中间command。273只评估一个连续publicnominalreference map方案与原节点/范围/基线保持代价，不直接插入、外推十点或再开启solver/evaluation/PPO。需先确定该工程成本是否能支撑后续ground-asymmetry残差研究，而非用更小Nominal误差替代论文任务优势；完整六出口仍未齐/goal active，275深审清理。
+
 - 第271轮（2026-10-08）唯一登记动态batch终态exit0：原十moving×old/candidate×CPU/GPU40轨迹各2000步，primary80000；另20GPU前40步原ctrlfreshCPU回放800，总80800，不扩budget/重跑trajectory/调gain/feed/PPO。GPU actualMuJoCoWarp与CPU actualMuJoCo及CPU Warp同控制kernel；同F32初态/steadyfilter/boot2/I0/zeroActor/实际phase，固定±.7/7kg，四原始NPZ和20回放NPZ留全部pre/post、contactforces、torque、memory/reference/diag/geometrymonitor/sourceSHA。
 - 第271轮校对20/20过；更正后的delivery.json物理/design40/40过，实际最小腿长全>=.1149859503m。GPU old/candidate峰值vxerror .00188571215/.00000816583633m/s，CPU .00188500339/.00000643751286m/s，有限Nominal初态下明显改善，但旧臂误差本来很小，不能换算论文任务收益/稳健或独特方法；均不准production/formalPPO/freshOOD，完整六出口未齐。
 - 第271轮必须使用delivery.records和recovered_CPU_*_prefix.npz，原completion.records非权威：runner错把state30常量当腿长、31当loop，正确31/32腿长、34loop。CPU Warp numpy共享view使原pre_q/pre_v/pre_sensor/memory_before被post覆盖，且torque monitor用错CPU pre_v；真实CPUpost轨迹完整。summarizer从登记初态/十次freshCPU forward初sensor和前一步post恢复prefix，memory首值按共享GPU初始化和实际CPUgyro恢复、后续previousmemory_after；逐步原速度curve重算真实/命令力矩bound后40/40仍过。原runner/source/错汇总/log全保，不覆盖旧raw，不重跑控制/积分；272须独立核恢复链和实际源语义后再作资格结论。

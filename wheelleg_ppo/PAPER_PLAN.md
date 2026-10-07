@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第272轮独立恢复/动态复核与任务覆盖去留（2026-10-08）：
+
+review_motion_balanced_dynamic.py实测CPU Warp view行为、核原view覆盖和恢复初qv/10freshCPU sensor/连续post与memory前缀，源AST确认phase不修改memory；GPU原pre/post/warm/memory连续链成立。使用原模型body/site offsets和被动joint重算实际双链几何、closureloop、八joint/1.4active余量，并独立原motor速度curve重算所有actual/command力矩限额，40/40原physical/design通过且delivery一致。20保存回放SHA/error和既有门通过，仅savedreview、不重积分，不扩大稳健论断。0新controllerquery/physics/FD/PPO；10freshforward和CPU小数组view检查成本明确，首CPUmemory按明示共享GPUinitializer恢复而非另有历史初memory捕获。
+
+关闭exact-node动态资格，仅固定公有7kg五height±.7、平衡初态、1s工程证据。原控制器本来vxerror约.00189m/s，这项改善不等同原困难任务成功率或新颖算法，禁止再重复平衡点来累积数据量。原raw/错summary/source与恢复结果都保留。
+
+task_coverage_review.json从既有164发展任务的study_contract逐panel核实际height/speed；所有实际任务从静止启动、经过中间command，因此十点exactprototype不能直接用于完整任务。273评估一个连续publicnominalreference map设计和覆盖/成本/保持约束，未准新solve、点外推、eval或PPO；只有必要且可验收才给新的有限预算。生产替换、真实164、新方法贡献/强sameinfo及消融/newformal5/freshOOD/统计成本/完整稿仍待。275按约方向深审和清理，goal保持active。
+
 第271轮有限动态batch完成及记录更正（2026-10-08）：
 
 motion_balanced_dynamic_v1完成40条1s轨迹/80000primary和800同输入CPU回放，总80800，真实CPU MuJoCo与GPU MuJoCoWarp，同原控制函数/phase/稳态memory/固定公有7kg±.7/zeroActor。四全轨迹、20回放数组与来源完整保存，回放20/20过。delivery正确physical/design40/40过，minactualleg>=.1149859503m；GPU old/candidate峰值vxerror .00188571215/.00000816583633m/s，CPU .00188500339/.00000643751286m/s。只Nominal平衡初态、一秒fixedcommand；旧误差已很小，不能据此推真实任务收益、新算法或启动/制动/不对称稳定。
