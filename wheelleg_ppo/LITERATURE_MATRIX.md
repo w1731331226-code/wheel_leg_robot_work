@@ -1,5 +1,7 @@
 # PPO论文查新矩阵
 
+第255轮模型覆盖/gain方向近邻（2026-10-07）：[PMLR2023 Lyapunov Design for Robust and Efficient Robotic Reinforcement Learning官方摘要](https://proceedings.mlr.press/v205/westenbroek23a.html)核CLF costshaping、stabilizing策略及cartpole/A1实机；未复现全文/数值。[2024 affineLPV RL-LQR出版社条目](https://www.tandfonline.com/doi/abs/10.1080/00207721.2024.2321370)仅出版社搜索摘要涉及commonLyapunov，直接403未取全文，不重试。增益调度/CLF+PPO已有，本机有限下一步仅fullcommon/differential模型覆盖准入，不声称新算法/全非线性安全。
+
 第228轮执行输入/history/DOB近邻（2026-10-07，1定向搜索+1primary跟进）：[Force-Aware Reinforcement Learning with Hybrid Sensorless Force Estimation for Wheeled-Legged Loco-Manipulation](https://arxiv.org/abs/2609.13779)，作者摘要标2026-09-12，momentum observer+contact-constrained wrench projection+temporal residual learning给wheelleg force-awareRL输入，有实机loco-manipulation。只核摘要，不复现公式/数值。[2021 UniNA momentum disturbance observer机构摘要](https://www.iris.unina.it/handle/11588/854571)描述quadruped扰动估计/wholebody控制与仿真对照，普通DOB已有。[MDPI14/5/568 history-aware wheelleg](https://www.mdpi.com/2075-1702/14/5/568)只搜索片段，direct429未取正文，不重试。execution-input-history候选仅以本机总command缺口和同信息generichistory控制为可证伪实证问题，普通history/DOB+PPO不称首创/已证论文贡献；不得将ctrl-before-gain惯量差异误称真实contact force。
 
 第215轮支撑/轮速方向近邻（2026-10-07，1定向搜索+1作者入口）：[UCSB Bellegarda/Byl作者PDF](https://web.ece.ucsb.edu/~katiebyl/papers/cdc19_SkateTrajOptWithSlip.pdf)核摘要/建模，passive轮摩擦与允许slip/skid优化，简化不含pitch/roll；不是本机active双轮自平衡数值对照。[2025 contact-aware whole-body作者条目](https://arxiv.org/abs/2509.14010)仅摘要范围，不全面复现。现有滚动/支撑MPC及滑移建模限制本机新颖性：基本anti-spin/轮速阈值或分配不是创新，需在可得观测、闭链变高度和速度-yaw/电机包络上证明区别。没有重复访问此前418/403阻塞入口。

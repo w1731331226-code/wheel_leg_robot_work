@@ -1,0 +1,51 @@
+{
+  "version": "full-mode-model-admission-v1",
+  "round": 255,
+  "status": "registered_not_executed",
+  "purpose": "Before any new gain/CLF/PPO claim,qualify a nominalplantrepresentation that actuallycontains lateral/roll/yaw and leg/wheeldifference modes;existing6state/15state sagittalcertificate cannotcover paperprimaryasymmetry.",
+  "heights": [
+    0.115,
+    0.16,
+    0.25,
+    0.3,
+    0.38
+  ],
+  "derivative_eps": [
+    1e-06,
+    5e-07
+  ],
+  "maximum_full_transition_derivative_calls": 10,
+  "model": "Publicfixednominalhardware7kg,flatbilateralstaticcontact,equilibrium eachheight;retainfull32qv-derivedA/B first. No truefutureterrain/parameter ordataset used for controller.",
+  "representation": "Common15existingbasis plus independent lateral/roll/yaw and left-rightleg/wheelvelocity coordinates. Treat30states onlyafter proving omitted2wheelphase directions are nominalgauge atthese nodes;otherwise keepfull32. No assumed decoupling.",
+  "outputs": [
+    "full32A/B perheightandeps",
+    "coordinatebasis/rank/leftinverse andinputmaps",
+    "wheelphase influence on nongauge coordinates",
+    "common-differential offdiagonal coupling",
+    "roll/yaw input response andcontrollability diagnostics",
+    "derivative sensitivity andmodelscope limitations"
+  ],
+  "admission": "10calls only. Verify actual nq/nv/nu/plantoptions/nominalgeometry/reference identity,finitearrays andexact coordinatecoverage/rank. All offdiagonal/gauge/derivative errors reported;do not redefine tolerance/modeldimension to force a pass. No spectralradius of sagittalblock substitutes for full system.",
+  "limits": "Offline librarytransitionFD performs CPUphysics internally,not0computationalwork. Flatnode plant excludes changingcontact,Nomgyroscope/internalmemory,reference derivatives,guards/projection/saturation unless explicitlymodelled. No fullrobot nonlinear safety/learnedgainadmission from this alone.",
+  "stopping": "256 implement/reuse ml.equilibrium/transitionFD andone fixedbatch;257 independentarray/modelscope review;258 terminate modeladmission and decide finite controller-family/measurement contract or reject. NonewPPO/stabilityclaim until coordinate/modelscope anddistinctionfromprior art clear. Not revive failedpointzero/cones/contactplane/gain orbudgetrescues.",
+  "prior_art": [
+    {
+      "url": "https://proceedings.mlr.press/v205/westenbroek23a.html",
+      "read": "official abstract",
+      "scope": "CLF costshaping/stabilizingRL prior art;not wheelleggainalgorithm reproduced"
+    },
+    {
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/00207721.2024.2321370",
+      "read": "publishersearchabstract only;direct403",
+      "scope": "RL-LQR foraffineLPV/commonLyapunov is existing topic;no fulltextobtained"
+    }
+  ],
+  "source_sha256": {
+    "wheelleg_ppo/tools/model_lqr.py": "d63db108ece884340cff2589cf50729ca1dfd2ffd44adb8260b8155570ffbf82",
+    "wheelleg_warp/native/design.py": "fcdd61b8a03f7513561a83b67b78c1451a2deede3a6cbc90746096393909598e",
+    "wheelleg_ppo/tools/hardware_profile.py": "844688aae7e408bb2ca11d00b192ffaa9e4ad5de06cc8a815d3cf3ddfbe02eba"
+  },
+  "scope_unit_sha256": "14178fca44bc6280612efb93c7f63a8692c4a222ba5891f6660f9830c3326abd",
+  "new_gpu_rollouts": 0,
+  "new_training_samples": 0
+}

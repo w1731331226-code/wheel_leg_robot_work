@@ -1,0 +1,16 @@
+{
+  "verified": true,
+  "nominal_nq": 17,
+  "nominal_nv": 16,
+  "sagittal_state_dimension": 15,
+  "rank": 15,
+  "y_roll_yaw_position_velocity_rows_exact0": true,
+  "left_right_differential_leg_and_wheel_velocity_exact0": true,
+  "source_sha256": {
+    "wheelleg_ppo/tools/model_lqr.py": "d63db108ece884340cff2589cf50729ca1dfd2ffd44adb8260b8155570ffbf82",
+    "wheelleg_warp/native/design.py": "fcdd61b8a03f7513561a83b67b78c1451a2deede3a6cbc90746096393909598e"
+  },
+  "new_gpu_rollouts": 0,
+  "new_training_updates": 0,
+  "limits": "Staticbasiscoverage,not proof actual30stateplantdecouples orallunilateralcontacts uncontrollable. CurrentLQRsagittal claim unchanged;separate roll/yaw loops alreadyexist."
+}

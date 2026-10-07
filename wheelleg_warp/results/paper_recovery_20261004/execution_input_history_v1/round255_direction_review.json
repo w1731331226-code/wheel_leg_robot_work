@@ -1,0 +1,37 @@
+{
+  "verified": true,
+  "round": 255,
+  "reviewed_rounds": [
+    251,
+    252,
+    253,
+    254
+  ],
+  "decision": "FixedH1benefitclosed;noextraPPO/gain/std/history/reward/scene rescue. Proceed onlyboundedfull-mode modeladmission,not a newalgorithm/linear-certificate transfer.",
+  "full_result_sha256": "3c5e3344f92f74af14920317eba66e5ef937fbb26f84f472a43c224f95b5a437",
+  "model_scope_sha256": "14178fca44bc6280612efb93c7f63a8692c4a222ba5891f6660f9830c3326abd",
+  "next_proposal": "wheelleg_warp/results/paper_recovery_20261004/full_mode_model_admission_v1/proposal.json",
+  "next_proposal_sha256": "b2b527df9bde53f1033c6d72d925c4462145462bcbd681d2b49addf7a8663fff",
+  "cleanup": {
+    "verified": true,
+    "files": [
+      {
+        "cache": "wheelleg_warp/__pycache__/leg_residual_cone.cpython-310.pyc",
+        "source": "wheelleg_warp/leg_residual_cone.py",
+        "bytes": 4320,
+        "cache_sha256": "e63f12bff9ef1a7a262f17cea1bd64008fab2dd666dd9d3842d1069551dfbd91",
+        "source_sha256": "c8d363ec7a74cc46e965696509dcc058a6f72241f756e8e4fe9c05264ae237ba",
+        "code_equivalent": true,
+        "ignored_untracked": true,
+        "no_open_holders": true
+      }
+    ],
+    "total_bytes": 4320,
+    "limits": "Inactiveclosedcone derivedcacheonly;allsource/models/RMS/raw/failures/baselines retained."
+  },
+  "archive_pending": true,
+  "new_training_or_evaluations": 0,
+  "formal5_admitted": false,
+  "entire_goal_complete": false,
+  "next_deepreview_cleanup": 260
+}

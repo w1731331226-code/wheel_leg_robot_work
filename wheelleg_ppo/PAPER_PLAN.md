@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第255轮负结果后的有限模型方向、近邻与清理（2026-10-07）：
+
+完整对照未过原门，fixedH1收益/正式五seed/基线替换维持关闭，不再用std/history/budget/teacher/reward/极端场景救分。下一步先检查模型是否覆盖论文主轴，而不是无限negativeaudit。静态实际basis32×15/rank15的y/roll/yaw位置速度六行、左右腿差/轮速差方向均exact0；该LQR分析仅纵向同向子空间，另有roll/yaw实际控制loops，不能把这个局部证书直接转成不对称接触的全系统稳定证书。
+
+full_mode_model_admission_v1登记现五Nom节点×两eps1e-6/5e-7最多10transitionFD调用，保full32A/B原数组，建立common/differential坐标/rank/leftinverse/input maps；wheelphase方向实证无影响才考虑30state，否则保32，不先假设decouple。报告off-diagonal coupling、roll/yaw输入响应/controllability诊断、FD敏感性/模型范围，不为pass改dimension/tolerance。256复用现equilibrium/FD执行唯一batch、257独立review、258有限模型/控制器契约去留；不准新PPO。本轮staticbasis0integration，后续FD内部CPUphysics要如实计，不用flat-node plant推contact/gyro/memory/guard/projection/saturation或非线性安全。
+
+[PMLR2023官方摘要](https://proceedings.mlr.press/v205/westenbroek23a.html)已有CLF shaping与stabilizingRL，[2024 affineLPV RL-LQR出版社条目](https://www.tandfonline.com/doi/abs/10.1080/00207721.2024.2321370)搜索摘要涉及commonLyapunov，direct403未取全文。普通调度/CLF+PPO不是新颖性，限定modeladmission不是已成立方法贡献，原pointzero/cone/contactplane失败保留不复活。
+
+删除inactiveclosed leg_residual_cone一份等价ignored/untracked/无fuser缓存4320B，round255_cleanup保SHA，全部科学数据/模型/失败/基线保留。归档447177分批push未全remote/clean，方向说明提交时暂停batch推进、当前upload继续，随后恢复。完整贡献/强matched方法与消融/新formal5/独立ID-OOD保持/层级stats实耗/新稿六出口仍未齐，260下一深审清理。
+
 第254轮完整科学终态、原门与种子统计结论（2026-10-07）：
 
 原study正常MainPID0/dead/success/exit0，六fresh模型1.2M与1312评价全部结束，无error/replay；queue3499.027912s包含构建/训练/检查点/评价/序列化，仅该study成本，不表述CPU加速。完整原门review过，原strongold+new/逐case完整flags/physical-design/CPU/每seedctrl>=34/literal各panelJ15%AND.05/三seed机制全部保留，资格False。7872六文件类SHA共13,768,735,789B，六模型60checkpoint/481RMS先前已逐对象核。

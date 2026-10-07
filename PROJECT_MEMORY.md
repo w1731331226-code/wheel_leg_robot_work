@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第255轮五轮深审：完整1.2M/1312和三seed负门复核，fixedH1/formal5/baseline替换关闭，不新PPO/observer/gain/reward/更难场景救分。不能让读报告成为下一方法；改为有限模型覆盖准入。实际静态核existing sagittal basis32×15 rank15，y/roll/yaw位置速度六行exact0，左右腿差及轮速差方向exact0，原模型仅纵向同向子空间；独立roll/yaw loops仍存在，此不说机器人没有控制这些轴。
+- 第255轮新full_mode_model_admission_v1仅登记：现Nom5高度×eps1e-6/5e-7共最多10full transitionFD计算，先保full32A/B、再验common/differential坐标及wheelphase gauge（成立才降30）、coupling/roll-yaw响应/模型假设和derivative误差。256执行固定离线batch、257独立review、258强制有限去留，0GPUrollout/newPPO准入。本轮只compile模型/basis，0integration；未来FD内部有CPUphysics不冒称零计算，不把flatplant/candidate六状态LQR当接触切换/guard/gyro/非线性稳定证明。
+- 第255轮近邻一轮定向搜索+primary跟进：PMLR2023 Lyapunov Design官方摘要CLF shaping已有，2024 affineLPV RL-LQR/commonLyapunov出版社搜索摘要已有，direct403无全文，不重试。普通gain-scheduling/CLF+PPO不能当新算法贡献，原失败pointzero/cone/contactplane不复活。scope unit/proposal/review记录绑定SHA。
+- 第255轮删除inactiveclosed leg_residual_cone.pyc共4320B，ignored/untracked/无fuser/源码归一codeobject等价，前SHA/源码SHA保round255_cleanup，不动science/models/RMS/raw/失败/基线。归档447177仍逐批同步，保存方向说明时暂停父进程batch推进而当前upload继续，随后恢复；尚未全部remote/clean。六论文出口/goal active，260下一深审清理。
+
 - 第254轮实际scientific终态：原study MainPID0/dead/Resultsuccess/ExecMainStatus0，无error/replay；六fresh模型1.2M采样+1312评价全部结束，queue3499.027912s含模型构建/训练/检查点/评价/序列化，不作CPU加速比。完整reviewer原strongold+new/CPU/fullflags/每seedctrl>=34/literal各panelJ15%AND.05/三seed机制全审，资格False；7872六类记录13,768,735,789B SHA核，六模型各10checkpoint/481RMS独立交付此前均过。
 - 第254轮H1成功regular87/85/70（/96）、controlled29/29/26（/40）、legacy27/27/26（/28）；thirdH0为93/29/28，thirdH1反而退化。H0→H1每seedJ regular[-.114144,-.120786,+.432434]、controlled[-.211680,-.161501,+.293096]、legacy[-.062475,-.099937,+.340401]，三panel机制mean门False，CPUlegacy三H1全部False。Success三seed均差regular+.013889/controlled-.016667/legacy-.011905，crossed描述95区间全部含0，不作泛化或新算法优势。
 - 第254轮维持关闭fixedH1收益/formal5/baseline替换，不改门/seed/std/history/budget救分；完整报告、所有失败/交换及统计保存study_review/full_review/terminal_audit。终态归档447177按<=1.5GB批次正在push，非全部remote/clean；首几批已经归档，保存科学审查说明期间暂停批次推进防index交叉，当前push继续，随后恢复。归档与方法资格分开，goal及六论文出口仍active，255深审清理后须有限新贡献/方法或关闭决定，不无限只读negativeaudit。
