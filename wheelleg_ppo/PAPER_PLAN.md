@@ -1,5 +1,19 @@
 # 双轮腿机器人PPO论文方案
 
+第223轮完整492实际终态、原门审查及固定候选关闭（2026-10-07）：
+
+原worker283051/283052正常MainPID0/exited/success/exit0，492/30jobs/0training，无interruption或replay。review_coordination_qualification重新核source/模型信息契约、原order/fullflag/summary/physdesign、geometry及2460five-stream SHA/coord-budget与phase时刻，4,599,832,924B；新B0旧flag保持/CPU28资格已221独立过，Bomega164/source/820five-stream另存round223_Bomega_delivery，完整资格见qualification_review。新raw仍本地immutable，終态后各condition约1.53GB分批同步，科学数据及失败全保。
+
+| 条件 | regular成功/96 | controlled成功/40 | legacy成功/28 | J regular/controlled/legacy |
+|---|---|---|---|---|
+| B0 | 96 | 32 | 28 | .386537/1.059906/.500123 |
+| Bomega | 96 | 32 | 28 | .400197/1.121576/.541177 |
+| Cgamma | 96 | 32 | 28 | .386645/1.066748/.503764 |
+
+三个条件全部physical/design通过，但Bomega/Cgamma原资格门均False：没有新增任务成功，困难32<34，J没有优于新B0，更未满足旧strongref/allpanel15%+.05和机制等全部门。不能以物理通过/保持旧成功或比Bomega较好冒称governor整体优势。逐case/lost/gained/newflags/CPUlegacy/所有门结果都保留，非训练seed或独立泛化。
+
+按原协议关闭固定Bomega/Cgamma收益扩展，不改tau/γ权重/RPM阈值/gain/校对容差或增budget救分，不默认换基线、不formal5/新PPO。数据完整及负结论是研究进展，不等论文六出口完成。224先核真实请求是否在当前1Nm/L1权限下有效传到执行器/为何未改变目标完成，以区别受权限限制与假设不成立；只能离线现有full492证据，不因此恢复固定候选。225如期深审/确认冗余清理，随后须选择有区别性预测/必要性证据的方法和完整matchedfreshlearning/独立ID-OOD/统计PPO成本/推导复现新稿，不能无限heuristic或重复发展回放替代。
+
 第222轮完整资格审查器预检与同队列观察（2026-10-07，尚未全492）：
 
 review_coordination_qualification仅full492 completion且原30job/0training/source合同和unit正常terminal时运行，partial RuntimeError拒绝无winner。复用load_rows/ordered/wrap/paired/fullflags及固定J helper，准备全三条件×三panel、newB0与oldstrongB0/B1对照、CPU28速度1.05+.005/rollpitch+.1、困难>=34与literal allpanel J15%+.05、Cgamma-vs-Bomega机制独立门。None candidate或reference J明确False，不比较None而丢病例；原成功/newcomponent/physicaldesign保持全部保留，不事后弱化gate。全部2460五流SHA/预算时刻审查只在完整492后执行，不能以source预检冒充data全核或方法通过。
