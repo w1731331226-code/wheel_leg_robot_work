@@ -51,7 +51,7 @@ def interval(prefix, stamps, previous, counts, delay):
     return impulse.copy(), (end-previous)*.0005, end.copy()
 
 
-def instrument(factory, cases, mode):
+def instrument(factory, cases, mode, expected_captures=1):
     n = len(cases)
     if n == 0: raise ValueError('Nonempty native worlds required')
     total = wp.zeros((n, 6), dtype=D)
@@ -74,7 +74,7 @@ def instrument(factory, cases, mode):
     wp.launch, mjw.step = spy, physical
     try: raw = factory(cases, mode)
     finally: wp.launch, mjw.step = launch, step
-    assert len(calls) == 40 and all(c == (signature(raw.state), signature(raw.active), signature(raw.data.ctrl)) for c in calls)
+    assert len(calls) == 40*expected_captures and all(c == (signature(raw.state), signature(raw.active), signature(raw.data.ctrl)) for c in calls)
     raw._execution_buffers = (total, prefix, stamp)  # Strong ownership for captured graph.
     raw._execution_topology = dict(control_steps=40, final_ctrl_before_physics=True,
         original_step_function_restored=True, prefix_ring=RING, reads_only_physical_control=True)

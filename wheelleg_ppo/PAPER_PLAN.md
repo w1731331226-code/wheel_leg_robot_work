@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第233轮三seed信息对照协议与密集评价接口冻结（2026-10-07，runner未准）：
+
+study_proposal登记23301/23302/23303三个新trainingseed，各H0→H1、100world/三stage，按原训练分布生成23300000等新scenario IDs共900配置；6fresh模型×200k=1.2M。PPO/std/零mean初始化、481维网络、同seedbank及Nom/virtual6/bounds/filter/reward、公共同sensorclock/停车退出相同，仅54个meancommand坐标是否可见不同。H0是信息消融、H1是genericPPO，不宣称同信息新算法优越。24k/静态模型不warmstart，末200k全三seed一次评价，无bestseed/中间选模/预算history/std救分。
+
+登记1312评价=同期新B0/B1各164+六模型各164，保留原96regular/40controlled/28legacy、10个solver同质<=20batch。此发展136已多次诊断，不当fresh独立泛化，不使用sealedoldgate64/final3000或auxiliary救门。同期B1保持原parkingPD语义，wheel-only diff3→virtual6[0,0,0,0,a,-a]需源准入；旧strongB0/B1及CPU完整refSHA已核，不能以新参考较弱替换旧门。每seed全部phys/design、旧与同期逐case成功/每component保持、CPU28速度1.05+.005/rollpitch+.1、controlled>=34/40、literal所有panelJ15%AND.05门保持；H1-H0各seedJlower及3mean15%AND.05/不退化另列。未全6run/1312拒绝结论，信息阳性不自动formal5或baseline replacement。
+
+collector只增加expected_captures=1和40*expected校验，AST除该参数/等价assert外与232已绑定原blob完全一致，record/clear/interval/host生命周期无变；旧工程checksum保持历史，新兼容证明独立落盘。Dense evaluator传2，复用phase/parking五流及完整物理记录、冻结首episoderaw481/normalized481/submitted6的968字段Actor记录，模型/RMS只读，所有partial保存。未改原控制/物理/基线。
+
+1world密集构建和staticCUDA检查已过：80control双capture及指针一致，481RMS及weight/updates/timesteps不变、预测有限、physicsclock0；工程模型仅作为sourceunit，不取分数或warmstart。初protocol import缺tools/ppo_env报错发生0integration/learning，修路径并保留log。完整dynamic episode、Actortrace、legacy映射、B1转换和partial保存仍待234接口资格，当前scientific0消耗、runner未准。234通过后独立冻结runner才dispatch；235深审清理，完整论文六出口仍待完成。
+
 第232轮两臂24k CUDA连续学习工程完成（2026-10-07）：
 
 engineering_contract事前冻结H0→H1各12k采样/10world/1991工程seed、课程[4000,8000]、PPO50nstep/250batch/10epochs、同初始logstd/481维2×64网络与零mean初始化。同源Nom/virtual6/filter/bounds/task/reward/clock；H0仅54个command坐标置0，H1保留。复用停车withdrawal的prepare/finish/clear kernels构建小缓存adapter，校验40个control调用只换targetpointer，每window验证publicseen/currentcmd0门及原±.01slew；不加latch Actor字段。source42项目文件/XML绑定，不使用231静态/历史科学权重。初freeze Torch虚拟_ops.py路径失败发生0integration/learning，保留log，改只识别真实项目源码后准入；不改控制或预算。
