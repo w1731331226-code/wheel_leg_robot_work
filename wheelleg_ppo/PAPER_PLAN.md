@@ -1,5 +1,11 @@
 # 双轮腿机器人PPO论文方案
 
+第262轮登记的真实相对平衡求解批次完成（2026-10-07）：
+
+十state唯一batch正常结束，实际4334residualcalls（<=12000），每state max_nfev100内；无retry、改model/friction/loss/bounds/门，0integration/FD/GPU/PPO。原force1e-6、复用dataforward full16qacc1e-4、actuallegfloor/eightjoint/active1.4/motorhardwarebounds及双轮floor支持10/10通过。force max约9.8023e-11、forward qacc报0，原solution/initial/bounds/fullqv/ctrl/qacc/force数组、solverstatus/nfev/callcounter及SHA全部保存。
+
+得到轮rate约±14.04438…14.04441rad/s、wheelctrl约±.070703…070848Nm，区别旧v/R和gravitywheel≈0，非手工加常数或改旧400结果求pass；原失败reference保留。263独立freshcolddata验证forward/inverse/truegeometry及force项，不能仅信复用data的零qacc；264有限controller/modelscope准入或拒绝，不追加积分/FD/PPO。完整论文六出口仍未齐，265深审清理。
+
 第261轮真实移动工作点求解源预检完成（2026-10-07）：
 
 solve_moving_equilibrium复用现8共同广义力inverse/forward与geometry/FK及hardwarelimits，10mirror变量含z/pitch/四legjoint/三个commonctrl/commonwheelrate，vx规定、wheelrate不固定v/R。用原joint range与active1.4、motorpeak/noload边界，不动model/friction/solver；batch通过同时要求原force1e-6、full16qacc1e-4、actualleg物理floor/双轮floor支持/关节/command和actualtorque，而非projectedloss单独过。

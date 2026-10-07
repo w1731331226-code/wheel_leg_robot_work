@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第262轮唯一moving equilibrium batch10state正常完成，实际4334residualcalls<=12000、各max_nfev100内、无implicitretry/改model/friction/loss/bounds/门；0integration/transitionFD/GPU/PPO。原force<=1e-6、复用data.forward full16qacc<=1e-4、actuallegfloor/eightjoint/active1.4/ctrl与actualtorquebound/双轮floor支持10/10过，force residualmax约9.8023e-11，forward qacc报0。solution/ref/bounds/qv/ctrl/qacc/完整force数组与SHA、solverstatus/nfev/callcounter/failure规则保存，不当closedloop稳定。
+- 第262轮新solution轮rate约±14.04438…14.04441rad/s、wheelctrl约±.070703…070848Nm，不固定v/R或gravitywheel≈0；反映允许完整力平衡和softcontact/passive terms，非手工补常数救旧400score。旧gravityreference失败结果不改。263必须独立冷启动freshdata复核forward/inverse/geometry和力项，而非信复用data的零qacc；264finiteadmit/reject，无新trajectory/FD/PPO。
+- 第262轮完整论文六出口/goal active，265深审清理，所有科学模型原始及negativegate保持归档，建模passed不替代贡献/泛化。
+
 - 第261轮moving equilibrium solver/source接口完成，复用ml.sagittal共同8力投影与原inverse/forward、geometry/FK/hardwarebounds，mirror双腿变量10（basez/pitch/四joint/三个ctrl/commonomega），forwardv规定、omega非固定v/R。原joint range+active1.4、peakctrl/noloadomega bounds及原force1e-6/fullforwardqacc1e-4与actualleg/support验证规则，counter<=12000、perstate max_nfev100、失败全留，无积分/FD/PPO准入。
 - 第261轮sourceunit过：五原staticref速度0逆力残差<=原1e-6、forwardqacc<=原1e-4；±.7初值边界/速度映射/finite10残差、limit0预算与NaN拒绝、model17q16v6ctrl/solver100/integrator3/.0005/7kg、原ref/source SHA过。补batch truegeometryminleg验证前后各15次只forward/inverse（共30unitcalls），初版本源码/准入/log保留；0optimizer/integration/transitionFD/学习。source_admission绑定最终源，未称moving已解决。
 - 第261轮262按登记唯一10state有限batch（max12000call）执行，263独立force/modelscope、264finite去留；不得新场景/误差门/改物理删除loss或失败retry，closed旧参考/收益门不复活。六论文出口/goal active，265深审清理。
