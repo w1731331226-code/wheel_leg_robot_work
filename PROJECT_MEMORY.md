@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第273轮（2026-10-08）continuous_nominal_reference_v1设计有限准入：当前164发展任务h .115… .38/v −1…1含启动连续cmd及controlled .24，而moving/gain knots实际均为.115/.16/.25/.3/.38，需插值且须新增±1边界，禁止直接外推旧±.7。复用269原NPZ frozen gain/feed/angle/height和十coldmoving，计算wheel/hub/support+theta增量，十node重建<=1e-12、19高度零速度线exact0，design_assessment保存delta与SHA。本轮0controllerquery/solve/FD/积分/PPO。
+- 第273轮只选一方案：GPU readonly bilinear delta(h_public_command,cmd)同时加到原按实测leglength插值feed/θEq，不改command/gain/Actor/filter/memory/guard/bounds；cmd0必须exact原路径，domain仅当前发展h/v范围，不认证训练分布/freshOOD。不是closed固定轮阻尼/governor或旧H1学习复活，也不称新颖方法；旧Nom误差本来很小，不能预设task收益。
+- 第273轮登记唯一20new nominal reference batch：五h×±1十anchor，加四hmid(.1375/.205/.275/.34)×±.35八validation及.24×±.7两validation，总最多24000residualcalls、each max_nfev100，复用原solver.problem/完整阻尼流体/public7kg/originalforce1e-6/fullqacc1e-4/geometry/限位/速度力矩/双wheel-floor门。仅10anchor参与map，另10validation绝不fit或追加knots救分；失败全留，任一原门失败停止，不自动扩预算/retry。
+- 第273轮274仅实现/执行这一20refbatch，275按约深审清理及独立freshcold校对后决定map与static50query准入（20cold×双臂40+static5zero×双臂10），目前static/dynamic/正式PPO/production皆未准。完整贡献/sameinfo对照消融/newformal5/freshOOD/统计真实成本/稿六出口未齐/goal active，不用插值表代替论文。
+
 - 第272轮（2026-10-08）动态独立复核PASS：CPU Warp小数组实测共享view、原CPUpre字段确实等postcastF32/memoryafter；恢复初qv/10freshCPU sensor与后续previouspost/previousmemoryafter逐值核，prepare/select源AST不写memory，原GPUpre/post/warm/memory连续链核。依据模型body/site offsets与实际passive q独立NumPy旋转重算双链实际长度/loop、八joint和1.4active余量，再按原motor速度curve重算actual/commandcaps，delivery40/40一致。20saved replay SHA/error/原门核过；没有重新物理回放，不说独立重新积分。0controllerquery/积分/FD/PPO，10freshinitialforward及CPUviewunit额外成本单列。
 - 第272轮关闭exact-node动态qualification，仅接受publicnominal五高度±.7/稳态初态/固定命令1s工程证据，不再加平衡初态轨迹、不能baseline替换/新收益或formalPPO。首CPUmemory恢复来自明示共享GPUinitializer及实际CPUgyro，非独立捕获历史CPU初memory，原raw/错summary/source保留。review.json记录边界和source SHA。
 - 第272轮task_coverage_review按既有study_contract的164发展任务逐panel核height/speed节点与范围（不是新最终OOD）：当前exactnode不能直接覆盖任务，所有原任务从静止启动且有中间command。273只评估一个连续publicnominalreference map方案与原节点/范围/基线保持代价，不直接插入、外推十点或再开启solver/evaluation/PPO。需先确定该工程成本是否能支撑后续ground-asymmetry残差研究，而非用更小Nominal误差替代论文任务优势；完整六出口仍未齐/goal active，275深审清理。

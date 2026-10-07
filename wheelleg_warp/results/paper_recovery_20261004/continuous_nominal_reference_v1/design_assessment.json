@@ -1,0 +1,175 @@
+{
+  "round": 273,
+  "verified": true,
+  "existing_delta_records": [
+    {
+      "height": 0.115,
+      "speed": -0.7,
+      "delta": [
+        -0.07070987863831672,
+        0.00039693255205467873,
+        0.0014264524557425773,
+        0.00044599935708263834
+      ],
+      "reference_sha256": "6bd8845a7ad9237618b7eacda700beec39cdba818a5a3c7e42513f0b0376cf87"
+    },
+    {
+      "height": 0.115,
+      "speed": 0.7,
+      "delta": [
+        0.07070992773891056,
+        -0.00039766134529790805,
+        -0.0014397878978904544,
+        -0.000445956256585231
+      ],
+      "reference_sha256": "46767ec438ef63deb30cf3e6ed24e4b26506299d33e28998a8dd2c4f5f99fc8f"
+    },
+    {
+      "height": 0.16,
+      "speed": -0.7,
+      "delta": [
+        -0.0707029752810663,
+        6.453438713308266e-05,
+        -0.00017895006487123055,
+        0.0003943602388296231
+      ],
+      "reference_sha256": "687305cbd9e1754bce62e7edfad33e50978c47add1207b05f0007518d067bef8"
+    },
+    {
+      "height": 0.16,
+      "speed": 0.7,
+      "delta": [
+        0.07070300990780069,
+        -6.4750901000067e-05,
+        0.0001784943115872295,
+        -0.0003943386737930445
+      ],
+      "reference_sha256": "d4aa3e8d483567620db94183e279c52eb4bd79df453e09c2288108f80710ede6"
+    },
+    {
+      "height": 0.25,
+      "speed": -0.7,
+      "delta": [
+        -0.07072912194724064,
+        -3.701786290499815e-05,
+        -0.0008619627964172594,
+        0.00035171230661035235
+      ],
+      "reference_sha256": "c1495411d91fe18044ed5a68b7f0e9296888046a3af3a2e53514e4e7434f0259"
+    },
+    {
+      "height": 0.25,
+      "speed": 0.7,
+      "delta": [
+        0.07072914759517601,
+        3.690863301694608e-05,
+        0.0008635627380861877,
+        -0.00035169982669369025
+      ],
+      "reference_sha256": "303c8309e694ca8bad37a91922303458553690bffc218609d793f813ca9b41c6"
+    },
+    {
+      "height": 0.3,
+      "speed": -0.7,
+      "delta": [
+        -0.07076301555431476,
+        -7.310874805256022e-05,
+        -0.001161451805021585,
+        0.00035184610212778096
+      ],
+      "reference_sha256": "aa489f329338fa566e1f76b6bfd6f04d9bdcd4fa3a8ebbccdedc3c32c48b19d2"
+    },
+    {
+      "height": 0.3,
+      "speed": 0.7,
+      "delta": [
+        0.07076303245644851,
+        7.300777421504945e-05,
+        0.001162864668824426,
+        -0.0003518350333545665
+      ],
+      "reference_sha256": "b5fee2188b3fdb7dc22a3bf0c7430771fc93fa54292229297d94107c79e2e0fb"
+    },
+    {
+      "height": 0.38,
+      "speed": -0.7,
+      "delta": [
+        -0.07084838973795062,
+        -0.0002573234746676483,
+        -0.002384998965244023,
+        0.00038476525767553577
+      ],
+      "reference_sha256": "4a7bcd938da96d9297c7fd89750e63a77a1a4487d09d922ab381807501e61317"
+    },
+    {
+      "height": 0.38,
+      "speed": 0.7,
+      "delta": [
+        0.07084839020163211,
+        0.00025709991091743474,
+        0.0023820825096443343,
+        -0.00038475763203981356
+      ],
+      "reference_sha256": "e92f725c6c7002aeecab2b818bddc2581a3b52cd8ca5acd6b48ced98f2737797"
+    }
+  ],
+  "source_admission_sha256": "0d180a2aae463953a2ab086b9aacf38dbd20f922e438ca1fdcf43e39509c4753",
+  "frozen_bank_path": "wheelleg_warp/results/paper_recovery_20261004/motion_balanced_nominal_v1/paired_integral_1_old.npz",
+  "frozen_bank_sha256": "e8897816e0715d12f295fec87fa9fbc2af5a08f182754dc1f2075f95cafdb04a",
+  "heights": [
+    0.115,
+    0.16,
+    0.25,
+    0.3,
+    0.38
+  ],
+  "static_feed": [
+    [
+      4.297226721500221e-27,
+      -0.0001071099681566712,
+      19.953453774300037
+    ],
+    [
+      8.810479077385764e-28,
+      -7.250143519211381e-06,
+      21.150046576969164
+    ],
+    [
+      3.831945100399396e-28,
+      2.7622701692741825e-05,
+      21.60350063116449
+    ],
+    [
+      -7.764782857481971e-29,
+      3.82086331093336e-05,
+      21.70132284652466
+    ],
+    [
+      1.9645472626617762e-26,
+      8.945561602621955e-05,
+      21.887222190850533
+    ]
+  ],
+  "static_angles": [
+    -8.616700628372165e-05,
+    -6.71892770356397e-05,
+    -4.101446333737435e-05,
+    -3.399749149912701e-05,
+    -3.275191701868074e-05
+  ],
+  "gains_shape": [
+    5,
+    2,
+    6
+  ],
+  "zero_speed_delta_exact0": true,
+  "algebra_checks": 19,
+  "nominal_velocity_error_before_max_m_s": 0.0018857121467590332,
+  "benefit_scope": "Nominal moving engineering consistency. Existing old error already small; task benefit and novel contribution unproven.",
+  "reuse": "Reuse public cold moving references/current-J and frozen bank; wheel_motion_proxy/failed governor does not provide a balanced moving reference and is not revived.",
+  "decision": "One finite continuous-reference feasibility phase is justified for task command coverage; no physics/PPO or deployment executed here.",
+  "new_queries": 0,
+  "integration_steps": 0,
+  "transitionFD_calls": 0,
+  "new_training_samples": 0
+}

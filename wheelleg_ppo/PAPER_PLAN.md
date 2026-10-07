@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第273轮连续公有名义参考方案评估与有限预算（2026-10-08）：
+
+唯一方案continuous_nominal_reference_v1：实际发展任务覆盖h .115… .38和v −1…1、启动中间命令以及controlled .24；原gain和moving knots为.115/.16/.25/.3/.38，原型±.7不能外推覆盖±1。复用269 frozenbank和十coldmoving，把每点feed/θEq减去原static插值得delta；十点重建<=1e-12、19高度v0线exact0过，保存design_assessment。只工程代数，本轮0solve/controllerquery/FD/physics/PPO。
+
+拟GPU readonly bilinear delta(public commandedheight,currentcmd)，同时加到原实测leglength插值feed/θEq，零速exact原路径；原gain/Actor/command/filter/memory/phase/guard/bounds全保。当前domain仅164发展任务，不认证完整训练分布或freshOOD，不偷用真实参数/contactoracle。旧Nom运动误差已经很小，不先验宣称任务收益或独特算法，不复活旧固定damping/governor或H1失败学习。
+
+登记20new reference唯一batch：五height×±1十boundaryanchor参与fit；四heightmid×±.35八点及controlled .24×±.7两点只validation不fit。总max24000residualcalls/each max_nfev100，原public7kg物理/阻尼流体/完整inverse-forward与force1e-6/fullqacc1e-4/actualgeometry/八joint及active1.4/motorcurve/双wheel-floor全部保。任一点原门失败保全部并停止，不新knots/调参数/扩solver/retry。
+
+274实现执行20ref，275五轮深审清理及独立freshcold校对，再决定table/source和固定50staticquery资格（20newcold双臂40+static5zero双臂10）。当前不准staticquery/dynamic/fulltask/正式PPO/production替换。工程连续表仍不是论文贡献，六出口仍未齐，goal active。
+
 第272轮独立恢复/动态复核与任务覆盖去留（2026-10-08）：
 
 review_motion_balanced_dynamic.py实测CPU Warp view行为、核原view覆盖和恢复初qv/10freshCPU sensor/连续post与memory前缀，源AST确认phase不修改memory；GPU原pre/post/warm/memory连续链成立。使用原模型body/site offsets和被动joint重算实际双链几何、closureloop、八joint/1.4active余量，并独立原motor速度curve重算所有actual/command力矩限额，40/40原physical/design通过且delivery一致。20保存回放SHA/error和既有门通过，仅savedreview、不重积分，不扩大稳健论断。0新controllerquery/physics/FD/PPO；10freshforward和CPU小数组view检查成本明确，首CPUmemory按明示共享GPUinitializer恢复而非另有历史初memory捕获。

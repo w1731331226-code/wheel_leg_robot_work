@@ -1,0 +1,237 @@
+{
+  "version": "continuous-nominal-reference-v1",
+  "round": 273,
+  "status": "design_registered_not_executed",
+  "parent_review_sha256": "457f5ce814de8685c5ef48b4ca973b48d97bc41bb4b1e330ae0e8c10b52626ee",
+  "assessment_sha256": "1518405e0783b7dff60c83840798d697c6c6c4b4bdefe1e2b174ef274cc77c9a",
+  "domain": {
+    "height_m": [
+      0.115,
+      0.38
+    ],
+    "command_m_s": [
+      -1.0,
+      1.0
+    ],
+    "scope": "All164 current development task endpoints and command ramps; not freshOOD or full training distribution certification."
+  },
+  "height_knots": [
+    0.115,
+    0.16,
+    0.25,
+    0.3,
+    0.38
+  ],
+  "speed_knots": [
+    -1.0,
+    -0.7,
+    0.0,
+    0.7,
+    1.0
+  ],
+  "existing_moving_references": [
+    {
+      "height": 0.115,
+      "speed": -0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_0_speed_0.npz",
+      "sha256": "6bd8845a7ad9237618b7eacda700beec39cdba818a5a3c7e42513f0b0376cf87"
+    },
+    {
+      "height": 0.115,
+      "speed": 0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_0_speed_1.npz",
+      "sha256": "46767ec438ef63deb30cf3e6ed24e4b26506299d33e28998a8dd2c4f5f99fc8f"
+    },
+    {
+      "height": 0.16,
+      "speed": -0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_1_speed_0.npz",
+      "sha256": "687305cbd9e1754bce62e7edfad33e50978c47add1207b05f0007518d067bef8"
+    },
+    {
+      "height": 0.16,
+      "speed": 0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_1_speed_1.npz",
+      "sha256": "d4aa3e8d483567620db94183e279c52eb4bd79df453e09c2288108f80710ede6"
+    },
+    {
+      "height": 0.25,
+      "speed": -0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_2_speed_0.npz",
+      "sha256": "c1495411d91fe18044ed5a68b7f0e9296888046a3af3a2e53514e4e7434f0259"
+    },
+    {
+      "height": 0.25,
+      "speed": 0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_2_speed_1.npz",
+      "sha256": "303c8309e694ca8bad37a91922303458553690bffc218609d793f813ca9b41c6"
+    },
+    {
+      "height": 0.3,
+      "speed": -0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_3_speed_0.npz",
+      "sha256": "aa489f329338fa566e1f76b6bfd6f04d9bdcd4fa3a8ebbccdedc3c32c48b19d2"
+    },
+    {
+      "height": 0.3,
+      "speed": 0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_3_speed_1.npz",
+      "sha256": "b5fee2188b3fdb7dc22a3bf0c7430771fc93fa54292229297d94107c79e2e0fb"
+    },
+    {
+      "height": 0.38,
+      "speed": -0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_4_speed_0.npz",
+      "sha256": "4a7bcd938da96d9297c7fd89750e63a77a1a4487d09d922ab381807501e61317"
+    },
+    {
+      "height": 0.38,
+      "speed": 0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_4_speed_1.npz",
+      "sha256": "e92f725c6c7002aeecab2b818bddc2581a3b52cd8ca5acd6b48ced98f2737797"
+    }
+  ],
+  "frozen_bank": {
+    "path": "wheelleg_warp/results/paper_recovery_20261004/motion_balanced_nominal_v1/paired_integral_1_old.npz",
+    "sha256": "e8897816e0715d12f295fec87fa9fbc2af5a08f182754dc1f2075f95cafdb04a"
+  },
+  "new_reference_points": [
+    {
+      "height": 0.115,
+      "speed": -1.0,
+      "role": "boundary_anchor"
+    },
+    {
+      "height": 0.115,
+      "speed": 1.0,
+      "role": "boundary_anchor"
+    },
+    {
+      "height": 0.16,
+      "speed": -1.0,
+      "role": "boundary_anchor"
+    },
+    {
+      "height": 0.16,
+      "speed": 1.0,
+      "role": "boundary_anchor"
+    },
+    {
+      "height": 0.25,
+      "speed": -1.0,
+      "role": "boundary_anchor"
+    },
+    {
+      "height": 0.25,
+      "speed": 1.0,
+      "role": "boundary_anchor"
+    },
+    {
+      "height": 0.3,
+      "speed": -1.0,
+      "role": "boundary_anchor"
+    },
+    {
+      "height": 0.3,
+      "speed": 1.0,
+      "role": "boundary_anchor"
+    },
+    {
+      "height": 0.38,
+      "speed": -1.0,
+      "role": "boundary_anchor"
+    },
+    {
+      "height": 0.38,
+      "speed": 1.0,
+      "role": "boundary_anchor"
+    },
+    {
+      "height": 0.1375,
+      "speed": -0.35,
+      "role": "interior_validation_not_fit"
+    },
+    {
+      "height": 0.1375,
+      "speed": 0.35,
+      "role": "interior_validation_not_fit"
+    },
+    {
+      "height": 0.205,
+      "speed": -0.35,
+      "role": "interior_validation_not_fit"
+    },
+    {
+      "height": 0.205,
+      "speed": 0.35,
+      "role": "interior_validation_not_fit"
+    },
+    {
+      "height": 0.275,
+      "speed": -0.35,
+      "role": "interior_validation_not_fit"
+    },
+    {
+      "height": 0.275,
+      "speed": 0.35,
+      "role": "interior_validation_not_fit"
+    },
+    {
+      "height": 0.34,
+      "speed": -0.35,
+      "role": "interior_validation_not_fit"
+    },
+    {
+      "height": 0.34,
+      "speed": 0.35,
+      "role": "interior_validation_not_fit"
+    },
+    {
+      "height": 0.24,
+      "speed": -0.7,
+      "role": "controlled_height_validation_not_fit"
+    },
+    {
+      "height": 0.24,
+      "speed": 0.7,
+      "role": "controlled_height_validation_not_fit"
+    }
+  ],
+  "solver_reference_model": "Public nominal7kg, original damping/fluid/friction/inverse and full16forward acceleration retained; no true task parameters or contact oracle.",
+  "solver_residual_calls_maximum": 24000,
+  "max_nfev_per_point": 100,
+  "new_reference_count": 20,
+  "solver_rule": "Reuse solve_moving_equilibrium.problem and original bounds. Init from nearest archived reference, prescribed speed and free wheelrate. Count every residual call; one batch, preserve all failures, no implicitretry.",
+  "cold_reference_gates": {
+    "force_residual_max": 1e-06,
+    "full_qacc_max": 0.0001,
+    "actual_leg_min": 0.1147044660616607,
+    "active_cap": 1.4,
+    "torque_excess_max": 1e-06,
+    "bilateral_wheel_floor_required": true
+  },
+  "map_rule": "Bilinear deltas in wheel/hub/support feed and theta-equilibrium, using public commanded height and current command. Static base remains original interpolation by measured leg length. Add deltas to both original feed and theta_eq in GPU control; cmd0 branch must be exactly original. No new gain, Actor, memory, filter, projection, guard or command changes.",
+  "fit_rule": "Fit only existing10±.7 and new10±1 anchors; zero column exact0. Ten interior/.24 cold references are validation only, never fit/add knots after results.",
+  "runtime_rule": "GPU resident readonly table and interpolation, no host round trip per physics step; finite domain checks, no extrapolation or outside-domain deployment. Public command availability is the same as original Nom; no hidden parameters.",
+  "next": "274 implement/run only20reference batch;275 mandatory deepreview/cleanup plus freshcold validation and map budget decision. No automatic training or fulltask run.",
+  "reserved_static_query_design": "After cold/reference/source admission only: new20cold points xold/map=40 plusstatic5cmd0x2=10, total50. Compare full raw/accepted/final requiredtorque gaps without fitting threshold or claiming stability. Not executable/admitted in current phase.",
+  "stop": "If any original reference/constraint gate fails, retainall and stop map qualification. No solver/gain/grid expansion. Exactnode branch closed; no repeat fixed equilibrium trajectories. Later task comparison must preserve baseline and judge full success/flags, not tiny nominal error.",
+  "integration_admitted": 0,
+  "static_queries_admitted": 0,
+  "optimization_only_registered_points": 20,
+  "new_experimental_transitionFD_admitted": 0,
+  "training_admitted": 0,
+  "baseline_replacement_admitted": false,
+  "novelty": "Engineering map alone is not novel RL. Qualified method/strongsameinfo ablations/newformal5/freshOOD/seed-case stats/PPO end-to-end cost/full manuscript remain required.",
+  "source_sha256": {
+    "wheelleg_warp/solve_moving_equilibrium.py": "b6bcabeb1f8ca630ef92e92c8b6b2dc5b45e808a7a8b4dceffd48f9d6aea76d5",
+    "wheelleg_warp/motion_balanced_nominal.py": "52587afaa569de84527dafbea7b536f83bad2e2d5626617caf886d593c20e2e9",
+    "wheelleg_warp/native/controller.py": "04d106ae8579118eb306ba2b28037425f81a1f554d4b51fa1eae1ef795fede73",
+    "wheelleg_warp/reference_role_control.py": "7c3297a14d257fcaa952e81b9380537fc76ba11b74a34f3724665455c22acdd7",
+    "wheelleg_ppo/tools/wheelleg_sim.py": "c2dfaae4dc562119fd7916684849ec22fcac3d75dbcfec6a2a0f9452d8f6ee0f",
+    "wheelleg_ppo/tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+    "wheelleg_ppo/tools/model_lqr.py": "d63db108ece884340cff2589cf50729ca1dfd2ffd44adb8260b8155570ffbf82",
+    "wheelleg_ppo/tools/hardware_profile.py": "844688aae7e408bb2ca11d00b192ffaa9e4ad5de06cc8a815d3cf3ddfbe02eba",
+    "wheelleg_ppo/xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f"
+  }
+}
