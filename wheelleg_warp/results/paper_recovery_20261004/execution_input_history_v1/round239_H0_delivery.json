@@ -1,0 +1,57 @@
+{
+  "verified": true,
+  "round": 239,
+  "condition": "H0",
+  "seed": 23301,
+  "counts": {
+    "regular": {
+      "total": 96,
+      "success": 64,
+      "physical": 96,
+      "design": 96,
+      "J": 0.8332484061022116
+    },
+    "controlled": {
+      "total": 40,
+      "success": 29,
+      "physical": 40,
+      "design": 40,
+      "J": 1.3404754398909988
+    },
+    "legacy": {
+      "total": 28,
+      "success": 27,
+      "physical": 28,
+      "design": 28,
+      "J": 0.8057895528500597
+    }
+  },
+  "raw": {
+    "files": 984,
+    "bytes": 1760891851
+  },
+  "input_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23301/evaluation/regular/batch_0/result.json": "d041a080c64c58f705532dd630edd4fb6b51b08bf1ec0dbfc20d9bfceaeeed84",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23301/evaluation/regular/batch_1/result.json": "2f0c0200dc96e3b786a990ee7ebf8626df82d9c884538d8720b92b23a22b74a4",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23301/evaluation/regular/batch_2/result.json": "6c492061b685aaa2e564e2f375b0b677e80be246b7f46299ad8353855fc8f76e",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23301/evaluation/regular/batch_3/result.json": "ea8ea04c339cc031a1e1a2e5a34009b1afc1e024c1f9cf7204389ef05f9703b0",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23301/evaluation/regular/batch_4/result.json": "3108611b138174917c3488cad956ac4e852fdfc214978175f46327eb7f178ccd",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23301/evaluation/controlled/batch_0/result.json": "60bd6e28bddcd95593e6f71c3861db7e46e5645b85d5953c5e126a71378005a5",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23301/evaluation/controlled/batch_1/result.json": "f26a1eecbcd6408e8f3d3df89c2c129bb5b500e1a7592a5d6b2cb00ebbe3693d",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23301/evaluation/legacy/batch_0/result.json": "8b3c00992e246c94360ab9eafe47b799123b768c396175ef4de81da89856ca8e",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23301/evaluation/legacy/batch_1/result.json": "79a2738f0136df5b0a88dc77705121e2e28c503e7a39e76cbc93592ab3e1206f",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23301/evaluation/legacy/batch_2/result.json": "67afec8c3b21d6b66d615a0fd31493f8ff63a6dd2754eef372fa00e12847496d"
+  },
+  "Actor_raw_and_normalized54masked_exact0": true,
+  "same_seed_H1_initial_weights_world_exact": true,
+  "initialization_sha256": {
+    "H0": "1c4822de99b135ac519303d2cd93fbd54151fc49085afa89f208e0895374a209",
+    "H1": "6c0d98452b3011b5ca8ef0bd6a66da788188e030038f1f7ac8e24967a584cdaf"
+  },
+  "source_sha256": "137e86da77a7c038a1e308f5a9de4920c8987d3adbc8216b5256e77950c3331b",
+  "contract_sha256": "558eb730a80c68a98fc1ef7b0969ae9112dd2ce5ce8b9cb4f631786b73ffdc68",
+  "new_training_or_evaluations": 0,
+  "limits": "CompleteoneH0seed164 delivery andpairinitialization only;H1/threepairedseeds stillincomplete,no winner/advantage conclusion. Allfailedtrajectories retained.",
+  "formal5_admitted": false,
+  "entire_goal_complete": false
+}

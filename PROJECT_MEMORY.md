@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第239轮首H0/23301全164评价独立核：成功regular64/96、controlled29/40、legacy27/28，physical/design164全过；J .833248406102/1.340475439891/.805789552850，任务弱于strongrefs，全部失败保留。六类984文件1,760,891,851B，case/scenario/order/result/SHA、Actor968/ceilN40和raw/normalized54坐标exact0过，round239_H0_delivery绑定；不是方法优势/三seed完整门。
+- 第239轮同liveworker verifiedwait30s后H0最后legacy完成，全队列492评价，H1/23301开始实际training；两臂该seed初始化weights/world SHA exact、非engineeringwarmstart，只初始匹配非完整GPU轨迹身份。本轮0新physics/learning/restart，原353065/353066 running，runtime数据未全remote/clean。
+- 第239轮240如期深审清理，不因单H0seed阴性改参数/门或提前对H1作结论；三pairedseed/全1312后原strongref/CPU/全部raw/层级stats及分批归档待做。完整论文六出口/goal active不变。
+
 - 第238轮同期B1-route完整164独立交付核过：regular95/96、controlled32/40、legacy28/28，physical/design164全过，旧B1-route所有fullflags0变化，CPU28 fulltask/velocity1.05+.005/rollpitch+.1全部校对过。J .257332289214/.826259067067/.409592379294；case/scenario/order/results SHA、六类984文件1,550,843,222B及Actor968/ceilN40/classicalraw-normalizedexact核，原parkingPD保持。round238_B1_delivery保存证据；不称全GPUbitwise或learner优势/独立泛化。
 - 第238轮原worker353065flock/353066Python live/running，无interruption/restart，末snapshot23301/H0 controlledbatch1 reserved464/completed444；H0/23301训练complete仍同237对象，H1训练文件尚未出现，不捏造seedpair匹配/模型进展。本轮0physics/learning，仅读新的完整强参考对象。六run/1312整门和seedcase统计及终态分批归档未做，runtime对象未全remote/clean。
 - 第238轮239沿同handle核实际新completecondition/同seedpair对象或verifiedwait；不能据partialcontrolled/一seed成绩晋升或增加预算。所有旧强参考和原literal门保留，完整六论文出口/goal active，240如期深审清理。

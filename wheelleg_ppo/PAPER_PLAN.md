@@ -1,5 +1,11 @@
 # 双轮腿机器人PPO论文方案
 
+第239轮首H0全164交付与同seed初始化匹配（2026-10-07）：
+
+H0/23301全164独立核完：成功64/96、29/40、27/28，physical/design各164通过；J .833248406102/1.340475439891/.805789552850，任务弱于同期强参考，全部失败保留。六类984文件SHA共1,760,891,851B、case/scenario/order/flags、Actor968/ceilN40和raw/normalized54commandmask exact0过，round239_H0_delivery保存证据；只有一个消融seed，不代表H1收益、三seed资格或独立泛化。
+
+同livehandle verifiedwait30s后H0末legacy完成，全队列492评价，H1/23301已开始实际training；两臂该seed初始化weight/world SHA exact，均非engineeringwarmstart，只初始匹配非全GPU轨迹身份。原353065/353066继续running，无error/restart或新budget。本轮0新physics/learning，data/models未全remote/clean，240按约深审清理，不以单H0阴性改门/params/选seed或提前判断H1。三pairedseed/全1312后完整原门/CPU/raw/层级stats及分批归档待做，六论文出口继续未齐。
+
 第238轮同期强经典B1-route全164独立交付（2026-10-07）：
 
 保留原parkingPD的同期B1-route全164核完：regular95/96、controlled32/40、legacy28/28，physical/design全164通过；与旧B1-routefullflags无变化，CPU28 fulltask/速度1.05+.005/rollpitch+.1校对过，J分别.257332289214/.826259067067/.409592379294。原order/case/scenario/results以及六文件类984SHA共1,550,843,222B，Actor968/ceilN40/classicalraw-normalizedexact通过，round238_B1_delivery留完整证据。不是全GPU轨迹bitwise、H1/H0优势或fresh泛化，旧强参考门不弱化。
