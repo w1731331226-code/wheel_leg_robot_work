@@ -4,6 +4,9 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第252轮两次45s verifiedwait同353065/353066后第三H0全交付，最后23303/H1实际training，队列1148评价完成；无error/restart/newbudget。本轮0新physics/learning。第三H0全164独立核：success93/96、29/40、28/28，physical/design164全过，J .562738052975/1.130826511255/.744176832356，六类984 SHA共1,774,965,391B、Actor968/ceilN40/raw及normalized54mask exact0过，round252_third_H0_delivery绑定251模型证据；所有失败/seed差异保留，不选第三seed赢家或恢复closedbenefit。
+- 第252轮最后H1/1312及完整原门/CPU/raw/seed-case统计/终态分批归档未完成，data/model尚未全remote/clean。253同handle实际最后H1对象或verifiedwait，完整论文六出口/goal active，255深审清理；不以已有1148交付缩小全部论文目标。
+
 - 第251轮23303/H0第三seed十检查点/30对象CPUload独立核：seed/shape481→6/20k…200k/trained计数、epoch40…400/nonemptyAdam800…8000及weight有限、481RMS.count=steps+100.0001、H0mask54 mean exact0和保存manifest SHA一致，原snapshot CUDAmoments/保存world-route-history-parking-RMS-RNG不改标记核；新初始化weight/world不同前两seed且不warmstart，末权重变化。200k/400epochs/8000Adam/learn+checkpoint96.963122s，round251_third_H0_model保存证据，仅对象资格，不恢复closedfixedbenefit。
 - 第251轮原353065/353066 running无error/replay，末snapshot第三H0regularbatch3 reserved1064/completed1044；最后pair/1312仍未完成，0本轮新physics/learning，runtime对象未全remote/clean。252沿同handle actual完整第三H0数据/最后H1对象或verifiedwait，全终态完整原门/CPU/raw/stats和分批归档再finite去留；六论文出口/goal active，255深审清理。
 

@@ -1,0 +1,52 @@
+{
+  "verified": true,
+  "round": 252,
+  "seed": 23303,
+  "arm": "H0",
+  "counts": {
+    "regular": {
+      "total": 96,
+      "success": 93,
+      "physical": 96,
+      "design": 96,
+      "J": 0.5627380529751876
+    },
+    "controlled": {
+      "total": 40,
+      "success": 29,
+      "physical": 40,
+      "design": 40,
+      "J": 1.1308265112546583
+    },
+    "legacy": {
+      "total": 28,
+      "success": 28,
+      "physical": 28,
+      "design": 28,
+      "J": 0.7441768323561903
+    }
+  },
+  "raw": {
+    "files": 984,
+    "bytes": 1774965391
+  },
+  "input_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23303/evaluation/regular/batch_0/result.json": "c4c09dfedda6e214ae5dffeb22d8e161d6c1e525e5890c508ed42e89a229b652",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23303/evaluation/regular/batch_1/result.json": "7ff76fef511052564ddc888c4830baed9e79c55573160500c4cf4c867bc1c000",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23303/evaluation/regular/batch_2/result.json": "8e2b89d248666535e0c4c22d935ca3a52257b0fa06dea9eb6e71405b4bcfdadf",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23303/evaluation/regular/batch_3/result.json": "6d803f3919be5bed2fc2119c8e648b23fc2ab1b80693c23b21f5c745211ad3e6",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23303/evaluation/regular/batch_4/result.json": "973ebf1f56ef3c4ce3051a4219383f1a83bc45cd33e809cd6f16506c4428aee2",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23303/evaluation/controlled/batch_0/result.json": "3a01b09f3f5485a15b1de0f07048cc5cc6ce5eb5b5b106c45192c491e9bd11b0",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23303/evaluation/controlled/batch_1/result.json": "afad62277a78496298b951a20efd8bcbe1842533b6717674461a1ea0abaae072",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23303/evaluation/legacy/batch_0/result.json": "1db3ce1c0119a70205fbf849cd5b048469886b99a540854d66c758d4dc6f0d4d",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23303/evaluation/legacy/batch_1/result.json": "15df583ee70e250ee2da77957352c543229ed0da97277a5c29efa9dbbdc056ca",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H0/23303/evaluation/legacy/batch_2/result.json": "8275e1fc07cb18dc1cafca4c542f7b6fedfd8573ab90af13572d9af2c76f234f"
+  },
+  "Actor968_and_raw_normalized_mask54_exact0": true,
+  "model_audit_sha256": "49af633b748d31af98bdb954c470d54e2965f5a6cf164f366610eb6755078bd9",
+  "contract_sha256": "558eb730a80c68a98fc1ef7b0969ae9112dd2ce5ce8b9cb4f631786b73ffdc68",
+  "new_training_or_evaluations": 0,
+  "limits": "EntirethirdH0ablation164 delivery only;lastH1/full1312 stillpending. Existingfailednecessarygates/fixedbenefitclosure retained.",
+  "formal5_admitted": false,
+  "entire_goal_complete": false
+}
