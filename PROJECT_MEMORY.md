@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第242轮首pairedseed23301完整交付：H1六类984文件1,786,011,232B及cases/order/scenario/results/Actor968与原门字段全核；H0复用239已核交付/resultSHA，不新回放。H0→H1成功regular64→87/96、controlled29→29/40、legacy27→27/28；J .833248→.719104/1.340475→1.128796/.805790→.743314，H1physical/design164全过。部分改善不等完整收益：lost regular6300075、controlled6301001/6301009/6301017，新component保持regular/controlled False，legacy True；所有lost/gained/fullflags保留在round242_first_pair_delivery。
+- 第242轮同livehandle verifiedwait30s后首pair全结束，全队列656评价，23302/H0开始实际training；353065/353066 running，无interruption/restart。本轮0新physics/learning（只观察和独立核），H1数据/全部models尚未终态全remote/clean。不能将首pair87成功替代strongNom96/B1 95、ctrl29替代原34门，也不能只挑改善场景或跳formal5。
+- 第242轮243沿同worker核实际新对象/verifiedwait，完成其余两seed及1312再全门/CPU/raw/层级统计、终态分批归档和有限去留。六论文出口/goal active，245如期深审清理。
+
 - 第241轮H1/23301十checkpoint/30对象独立CPU只读加载过：20k…200k的seed/shape481→6/step/epochs/非空Adam有限及step800…8000、CUDAmoments原snapshot、RMS.count=steps+100.0001、保存manifest SHA完全一致，保存world/route/history/parking/RMS/RNG不改标记核。H1指令54slot RMS mean各checkpoint非零（末maxabs.04789893），对照H0 exact0，证明确实启用不同input，不是单纯加空feature。末200k/400epochs/8000Adam，learn+checkpoint92.124269s；不是GPUloaded验证或收益结论。
 - 第241轮23301两臂初始化weights/world SHA一致，均无engineeringwarmstart；H1评价尚未完整。末snapshotlegacybatch0 reserved648/completed628，同353065/353066仍running/无interruption/restart，0本轮新physics/learning。round241_H1_model_delivery保存来源/30SHA和输入统计，runtime原始/模型仍未全remote/clean。
 - 第241轮242只核实际已完整首seedpair数据（若完成）或同handle verifiedwait，保留全部失败与predeclared三seed/1312/fullgates，不将单pair或input启用当算法贡献/安全。六论文出口/goal active不变，245深审清理。

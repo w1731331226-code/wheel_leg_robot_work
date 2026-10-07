@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第242轮首seed完整H0/H1配对交付（2026-10-07）：
+
+23301首pair全164各自结束，H1六类984 SHA共1,786,011,232B/case/scenario/order/results/Actor968及原旗标核过，H0复用239已核record/results SHA，不重新积分。成功H0→H1为regular64→87/96、controlled29→29/40、legacy27→27/28；J .833248→.719104、1.340475→1.128796、.805790→.743314，H1physical/design164过。
+
+必须保留不退化失败：H1 lost regular6300075、controlled6301001/6301009/6301017；原完整component保持regular/controlled False，legacy True。所有lost/gained/flags逐case在round242_first_pair_delivery。87不替代strongNom96/B1 95，29不替代原34门；局部提高和单pair不等信息收益资格/同信息新算法贡献或新formal5，不按赢家scene/seed统计。
+
+同livehandle verifiedwait30s后pair评价全结束，队列656评价，23302/H0 actualtraining，353065/353066 running无error/replay。本轮0新physics/learning，runtime数据未全部remote/clean。243继续原handle新对象或verifiedwait，余两seed/1312全结果才原门/CPU/raw/层级stats/终态分批归档和有限去留，六论文出口仍未齐，245深审清理。
+
 第241轮H1模型与实际输入差异独立验收（2026-10-07）：
 
 H1/23301十个20k…200k训练后ZIP/481RMS/JSON共30对象CPU只读加载与保存SHA核完；seed/shape481→6/step/epochs/有限weight及非空Adam/step800…8000、RMS.count=steps+100.0001及每次save world/route/history/parking/RMS/RNG不改标记通过。CUDAmoments由原snapshot证明，校对过程只用CPU。两臂同seed初始化weight/world exact、非工程warmstart，H1的command坐标RMS统计确实非零（末maxabs.04789893），H0为exact0；这验证信息差真的生效，不证明该信息改善任务。
