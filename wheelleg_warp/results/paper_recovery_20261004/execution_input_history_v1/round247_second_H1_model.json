@@ -1,0 +1,129 @@
+{
+  "verified": true,
+  "round": 247,
+  "seed": 23302,
+  "arm": "H1",
+  "checkpoints": [
+    {
+      "steps": 20000,
+      "epochs": 40,
+      "Adam": 800,
+      "RMS_count": 20100.0001,
+      "command_slot_RMS_maxabs": 0.04529414666680267,
+      "finite_weights_nonemptyAdam": true
+    },
+    {
+      "steps": 40000,
+      "epochs": 80,
+      "Adam": 1600,
+      "RMS_count": 40100.000100000005,
+      "command_slot_RMS_maxabs": 0.04513043540416469,
+      "finite_weights_nonemptyAdam": true
+    },
+    {
+      "steps": 60000,
+      "epochs": 120,
+      "Adam": 2400,
+      "RMS_count": 60100.000100000005,
+      "command_slot_RMS_maxabs": 0.04556396529679129,
+      "finite_weights_nonemptyAdam": true
+    },
+    {
+      "steps": 80000,
+      "epochs": 160,
+      "Adam": 3200,
+      "RMS_count": 80100.0001,
+      "command_slot_RMS_maxabs": 0.04579701003355285,
+      "finite_weights_nonemptyAdam": true
+    },
+    {
+      "steps": 100000,
+      "epochs": 200,
+      "Adam": 4000,
+      "RMS_count": 100100.0001,
+      "command_slot_RMS_maxabs": 0.04593759034818437,
+      "finite_weights_nonemptyAdam": true
+    },
+    {
+      "steps": 120000,
+      "epochs": 240,
+      "Adam": 4800,
+      "RMS_count": 120100.0001,
+      "command_slot_RMS_maxabs": 0.04623341895543529,
+      "finite_weights_nonemptyAdam": true
+    },
+    {
+      "steps": 140000,
+      "epochs": 280,
+      "Adam": 5600,
+      "RMS_count": 140100.0001,
+      "command_slot_RMS_maxabs": 0.04665749412233524,
+      "finite_weights_nonemptyAdam": true
+    },
+    {
+      "steps": 160000,
+      "epochs": 320,
+      "Adam": 6400,
+      "RMS_count": 160100.0001,
+      "command_slot_RMS_maxabs": 0.04704459532623372,
+      "finite_weights_nonemptyAdam": true
+    },
+    {
+      "steps": 180000,
+      "epochs": 360,
+      "Adam": 7200,
+      "RMS_count": 180100.0001,
+      "command_slot_RMS_maxabs": 0.04734924098930758,
+      "finite_weights_nonemptyAdam": true
+    },
+    {
+      "steps": 200000,
+      "epochs": 400,
+      "Adam": 8000,
+      "RMS_count": 200100.0001,
+      "command_slot_RMS_maxabs": 0.047590790881911656,
+      "finite_weights_nonemptyAdam": true
+    }
+  ],
+  "input_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_20000.json": "a0f58b3db1ea760efbc70f6259a129740aefbc2f52fd516e98ec29f6b6036531",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_20000.zip": "7ade1bfcfb9875f809d7f19d21a738814ff5abd935221e6ecb04c85250a519ca",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_20000.pkl": "e3cb888da77171c46bbdc72ef27b62c1741dc1f955a0998e5e5b7db6bd883450",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_40000.json": "ad63a94989d94ee866e9d2a8df50e307aab3dced813e6f1c1f64b8ed66a0ac71",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_40000.zip": "47ed8884c6af7399790d9b61bfe5fb80237c6040821a760fb82bf1599d5dfc44",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_40000.pkl": "a9f211704cd8e0c81e53241d7eab9a3d586162b8eac5f57549789b43ec34bd57",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_60000.json": "5779b2da80920fbf1f585232196e5ae16bbbef3270b994486ae18d7d85e4aadf",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_60000.zip": "96565f3e3123fcda7f8366520c3b139ac1dd08e8c163e0d2da334dd6cce9d880",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_60000.pkl": "8da3795dc8508830a63eb9d3f591f632ed8f40b659a8a1efd0dbf78bc3ea162c",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_80000.json": "df615e244d35f579a61e1ef2ffcb64035c32237e9243e00657e9c9d271c3e7af",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_80000.zip": "3e51b9a862c7429c763562a00257a77c4875ae4a032fb96a2973ef064423ea97",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_80000.pkl": "1e14d6f260e71617af5688ef8cc0abceee5c2d77b257da51747db27caf467596",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_100000.json": "e93ee2bc831b310a06605216776f7e48e59725062e69835b1dbbf7623ec9509a",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_100000.zip": "2be85d7d526cc7ecd7b58430eb078cc6fbf03d0856048ee4fc95004f732abf8b",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_100000.pkl": "79ad108623aec379d10f4a2cf260ec973f67fe0b62a3834f04b5c8861aaec415",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_120000.json": "8a58bb6f4b0b89a524c8870f3ec7d725821e313e04adaa7cbbebc00716ea487e",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_120000.zip": "82de7ab6e317822862991dfa46a9e82e0278a6c11c8b3b3488484337d81be89f",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_120000.pkl": "c326629846bae45aff00e09d2e0470d74c15f2e4da930d55d3c73a57ae2d057d",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_140000.json": "3721873a79d8314914eed833e55f086ac03194f3b5203fed421e6c691c03ccdb",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_140000.zip": "954a13a2a148d29fd1fc0986c98ccecebf033dbc260c2bf20832327e1d53edfa",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_140000.pkl": "f226108df08970b1860f443fc2c19626408b97c90e4b4504de1496b43048a4be",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_160000.json": "a1650b5869a0610c92d0f6d98f2fc4aacdfe8e0efc5d1c4697a43fe46f3ea689",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_160000.zip": "fc3348a5627498161facf87747a0b95c867311f02cb3112098dfbaf1b7490207",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_160000.pkl": "30282df295612ed58d9a76e3d3bedd360bba6ef115ac11efee2decf7b4b320fb",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_180000.json": "f080ce0f30937aab1772ea119f4c6d738dfa47e7a5fc8454b5cd9d061e4c5e36",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_180000.zip": "5551919aea3bc14f045d8a4aadc846525c26a0a0ae52b1e34ec6b9ab1ba58ec5",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_180000.pkl": "2c824089259935e8adbb49f753044e441d3059a23b6b1259a7233185d8beb62b",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_200000.json": "5592837c3c42f366ad383ea7ac54e16131852ffef322b12a01e4da01dfc01d9c",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_200000.zip": "b468fd7bfc44d6d8828a54f92923c6549d5c5068bff893ced42590fea318d181",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23302/step_200000.pkl": "e49110ae0d145b212ab142b01f995198e5373183b8ebed042214d9ea0e3105e3"
+  },
+  "same_seed_initial_weights_world_exact": true,
+  "engineering_warmstart": false,
+  "training_verification_sha256": "a428751d4b590e1b53dfaa74190bd5307638ef3151b1fa3b3df26810faa96710",
+  "contract_sha256": "558eb730a80c68a98fc1ef7b0969ae9112dd2ce5ce8b9cb4f631786b73ffdc68",
+  "learn_checkpoint_wall_s": 94.14508475999901,
+  "new_training_or_evaluations": 0,
+  "limits": "CPUread-onlyobject audit;originalcheckpoint metadataCUDAmoments. Complete training/inputenablement,not fullsecondpair performance or\u4e09seed qualification.",
+  "formal5_admitted": false,
+  "entire_goal_complete": false
+}

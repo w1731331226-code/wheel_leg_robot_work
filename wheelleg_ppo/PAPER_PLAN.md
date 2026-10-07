@@ -1,5 +1,11 @@
 # 双轮腿机器人PPO论文方案
 
+第247轮第二H1训练对象与实际input独立验收（2026-10-07）：
+
+23302/H1十检查点30对象CPUload及SHA核完：seed/shape481→6/20k…200k/epochs40…400、finite weights及nonemptyAdam800…8000、481RMS.count=steps+100.0001、command坐标统计实际非零、保存manifest exact；原snapshot CUDAmoments和保存world/route/history/parking/RMS/RNG不改标记核。同seedH0/H1初始化weight/world exact、无工程warmstart、末权重实际变化；200k/400epochs/8000Adam/learn+checkpoint94.145085s，round247_second_H1_model保存证据，只对象/信息差资格，非fullpair收益。
+
+同353065/353066 running无error/restart，末snapshot23302/H1 regularbatch2 reserved880/completed860。本轮0新physics/learning，raw/models未全remote/clean；248实际新completepair或同handleverifiedwait，原三pair/1312/强门/CPU/raw/层级stats/终态分批归档未齐。六论文出口继续，250深审清理。
+
 第246轮第二H0完整评价独立交付（2026-10-07）：
 
 23302/H0全164独立核：成功81/96、28/40、26/28，physical/design全部164过，J .764508479333/1.248262691348/.911441273915。六类984 SHA共1,785,104,239B、完整case/scenario/order/results及Actor968/ceilN40、raw/normalized54mask exact0通过，round246_second_H0_delivery绑定模型/合同。全部失败保留；与第一H0的64/29/27差异显示seed波动，不能挑最好seed替代全三pair或称H1收益。
