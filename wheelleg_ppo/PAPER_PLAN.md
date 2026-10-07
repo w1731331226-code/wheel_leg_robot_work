@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第259轮移动参考400步限定批次完成（2026-10-07）：
+
+原五staticref×±.7十state各40CPUstep，共400正常完成；7kg/17q16v6ctrl、solver100/integrator3/dt.0005、warm0和原gravityctrl不改，0新FD/GPU/PPO。pre/post/predictedq/tangentqerror/verror及solver-pre接触frame/forces/pointvelocity/gyro、postkinematics实际leg/闭链/joint/torque全量NPZ/JSON与SHA保存，不额外forward solve改变force时间层。
+
+10/10在20ms内原physical/design限制过，minactualleg.114979921m/maxloop1.759769e-5m；但wheelinitialacc16.828–18.209rad/s²，wheelvelocityerror.38803–.422586rad/s、bodyvxerror.000435–.002725m/s、pitchmax.00053–.000982rad，不能称该gravityctrl构造是真匀速relativeequilibrium。全q/vmax混单位指标保留并定位，不拟合新误差门或改gain/friction/control/reference救分。短时未越界不是actualNomclosedloop/接触稳定证书。
+
+260按约方向深审清理与该batch有限flow去留，不扩40step/样本/400预算或新PPO；完整论文六出口仍未齐，原科学失败16batch已同步，整体目标继续。
+
 第258轮静态模型范围关闭与有限移动参考契约（2026-10-07）：
 
 10FD静态modeladmission到此结束，只接受full32数组/坐标分析，不准actualNomclosedloop、gainbank/CLF或新PPO。ActualNom源码还有.05/.025滤波、积分state11、boot/启停/yaw/positionmemory、guard/projection/bounds，plant未覆盖；已有差模openplant谱和nearunitPBH只数值诊断，混单位/FD敏感/30投影与静态v0不证明全机器人不可控或接触稳定。普通gain/LyapunovRL边界保持，不扩大旧10FD。

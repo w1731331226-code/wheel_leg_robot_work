@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第259轮relative_reference固定十state/五height×±.7各40CPUstep共400正常完成，原参考SHA/7kg/17q16v6ctrl/solver100/integrator3/dt.0005/warm0、ctrl静态gravity不改，零新FD/GPU/PPO。完整pre/post/predictedq/tangentqerror/verror、preintegration接触frame/force/pointvelocity/gyro、postkinematics actualleg/闭链/joint/torque记录保存NPZ+JSON/SHA，completion/sourcecontract/runlog留证据。
+- 第259轮10/10短时原physical/design限制过，minactualleg.114979921m/maxloop1.759769e-5m；但匀速relativeflow不成立为exactreference，initialwheelacc约16.828–18.209rad/s²，20ms wheelerror.38803–.422586rad/s、bodyvxerror.000435–.002725m/s，bodypitch约.00053–.000982rad。总q/vmax混单位误差保留，未设新误差阈值/求新点/换摩擦或gain救分，不能把未越界当移动平衡、actualNom闭环或稳健证书。
+- 第259轮260按约深审清理，并作该400步candidate有限go/no-go及真实moving控制契约判断，不能扩大此batch或新PPO。原科学16batch失败已保存同步，六论文出口/goal active。
+
 - 第258轮终止10FD静态modeladmission，仅接受full32数组/坐标分析，拒绝据此准actualNom闭环/gainbank/CLF/PPO。ActualNom包含.05/.025滤波、积分state11、boot/启停/yaw/positionmemory、guard/projection/bounds，plant未覆盖；已有差模openplant谱/nearunit PBH仅数值诊断，混单位/FD敏感/30投影与静态v0条件不支持全控/稳定结论，不扩大旧FD。
 - 第258轮登记relative_reference_qualification_v1：原五staticref×±.7m/s十state，basevx=v、双wheelω=v/R、其它v0、原gravityctrl/warm0；各40CPUstep共最多400，与initialqv的mj_integratePos理想relativeflow比较完整q/v/接触/gyro/leg/joint/loop/torque误差。不默认真relativeequilibrium、不安装actualNommemory、不拟合新误差门/求新点救分；259onebatch、260深审清理和有限去留，新PPO/gain/FD仍未准。本轮0新integration/FD/学习。
 - 第258轮科学16batch已归档/失败保存，closedH1保持，新模型数组资格不等新贡献；六论文出口/goal active。259仅该限定批次，不能无限模型报告或扩场景预算替代方法，260按约深审清理。
