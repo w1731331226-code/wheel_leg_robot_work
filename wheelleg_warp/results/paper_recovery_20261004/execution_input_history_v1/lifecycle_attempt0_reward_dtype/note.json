@@ -1,0 +1,5 @@
+{
+  "reason": "VecNormalize returns unscaled reward asfloat32;test compared against underlyingfloat64. Failure atfirstrewardcomparison, no learning.",
+  "primary_scope": "engineeringfixtureonly",
+  "continuation": "Correct expecteddtype,retainarray_equal;secondattemptcap399840steps. Add explicit progress accounting to secondattempt."
+}

@@ -1,5 +1,17 @@
 # 双轮腿机器人PPO论文方案
 
+第231轮实际生命周期、历史与CUDA静态加载资格完成（2026-10-07）：
+
+ExecutionHistory固定481维：10raw39 frame、9个8维input slots（后2proxy始终0）、9sensor elapsed/.02、10valid mask。H0只将54个totalcommandmean坐标置0，H1保留；两encode同execution其余坐标逐值一致。旧terminal packet先append并生成独立terminal copy，再reset该world为Native/curriculum新packet，padding属于自己的reset，其他world历史保留。Scripted6.5ms partial、输入动作/原reward直通、terminal归属/不复写通过。
+
+Actual CUDA资格复用1991旧工程bank四world、zeroactions及milestones[4,4000]，正常exit0，修后1233Actorcalls/197072实际physics，12真实partialterminal（各world3次）、8真实逐world1→2/2→3转换，terminal最后39对Route terminal及其VecNormalize forward结果逐值一致；worldreset input/clock清0且valid仅last1，H0/H1其余坐标exact。不是fresh科学评价、旧新GPUbitwise或完整任务收益结果。
+
+首attempt奖励比较失败：即使norm_reward=False，SB3 VecNormalize也将float64奖励转换float32；按实际已安装normalize_reward源码修期望dtype，保持array_equal，不改History/控制逻辑。原source/registration/failure/log保存；修后新增显式计数。197072只为修后stream，不抹除首attempt已积分工作，首attempt未独立留完整动态计数，原上限400000与修后上限399840分别保留，不能拿工程作PPO成本加速证据。
+
+481RMS mean/var/count及normalize保存加载exact，static CUDA PPO MlpPolicy零mean输出、zip重载权重/空Adam/预测/num_timesteps0 exact，保存过程history不改。模型/RMS、collectorpartial及从己方serializedold_obs无损拆出的historypartial留存并绑定round231_delivery SHA；这是证据保存，不是fullsim trajectory resume。实际continuouslearn/nonemptyAdam/checkpoint更新仍待工程资格，不准入main。
+
+232仅按230两臂各12k的新独立CUDA工程源契约（同world/初始化，H0唯一commandmask，共同timestamp/停车规则）冻结后执行，24k不作科学成绩/不能warmstart未来1.2M；若接口失败，保留所有partial/失败，不先重复完整科学队列。新方法贡献、强同信息对照消融、新formal5、新ID-OOD保持、层级stats及真实PPO耗时、推导复现新稿六出口继续未齐，235按约深审清理。
+
 第230轮方向深审、对照混杂修正与冗余清理（2026-10-07）：
 
 **是否值得继续。** 226–229形成有界局部响应阴性解释、总command明确缺口及真实480步collector初资格；保留这些证据，但它们没有给出新算法贡献或学习必要性。旧固定阻尼/governor与648步screen继续关闭。公开惯量proxy是同一input-output历史的确定函数，全部12真实worldinterval按原float64/float32顺序可逐值重建；不能把额外两个特征称新增信息、force observer或创新。首独立重建使用float32 packet差分/运算重排有一元素9.094947e-13差，按原顺序校对后array_equal，无原runtime/容差/数据改变。

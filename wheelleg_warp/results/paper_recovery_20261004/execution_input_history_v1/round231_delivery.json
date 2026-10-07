@@ -1,0 +1,13 @@
+{
+  "verified": true,
+  "source_unit_sha256": "2480e30dd1566be3c7727c3d29e58a8b949699336d4945880651c26be6ffedc7",
+  "files_sha256": {
+    "unit_history_model.zip": "757776ab97e58f48bd9bc6e8f3cfc376d779f866b157aabd356a7bc11b1113d4",
+    "unit_history_rms.pkl": "17da9f8c0e89ba89ae9cbf7b7ba357f4756b7d2abf2eaac740b033a162fc33c0",
+    "history_partial.npz": "1c09d9724bd48545aaa79c865020b95c15209e84350d33be814a794b05a243f8",
+    "lifecycle_partial_buffers.npz": "92ec3c0ef7e8a2d4728ad854c5c70a60cb2b3465a8e27e9f431ef4a766d6702c",
+    "lifecycle_run.log": "36fe2295fac3b2285a804eb7d2c6aae21425f8602b337213b3f97ad1c14d3ae3"
+  },
+  "model_training_steps": 0,
+  "limits": "History is reconstructed exactly from own serialized VecNormalize.old_obs;RMS/model reload was tested during source qualification. Saved buffers are evidence,not a full simulator trajectory resume."
+}

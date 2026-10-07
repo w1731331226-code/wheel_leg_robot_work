@@ -1,0 +1,197 @@
+{
+  "verified": true,
+  "round": 231,
+  "result": {
+    "actor_calls": 1233,
+    "actual_physical_steps": 197072,
+    "per_world_terminal_count": [
+      3,
+      3,
+      3,
+      3
+    ],
+    "partial_real_terminal_count": 12,
+    "terminals": [
+      {
+        "world": 3,
+        "actor_call": 344,
+        "physical_steps": 13734,
+        "last_interval_steps": 14,
+        "curriculum_stage": 1,
+        "reason": "completed"
+      },
+      {
+        "world": 1,
+        "actor_call": 394,
+        "physical_steps": 15738,
+        "last_interval_steps": 18,
+        "curriculum_stage": 1,
+        "reason": "completed"
+      },
+      {
+        "world": 2,
+        "actor_call": 397,
+        "physical_steps": 15876,
+        "last_interval_steps": 36,
+        "curriculum_stage": 1,
+        "reason": "completed"
+      },
+      {
+        "world": 0,
+        "actor_call": 429,
+        "physical_steps": 17132,
+        "last_interval_steps": 12,
+        "curriculum_stage": 1,
+        "reason": "completed"
+      },
+      {
+        "world": 3,
+        "actor_call": 688,
+        "physical_steps": 13737,
+        "last_interval_steps": 17,
+        "curriculum_stage": 2,
+        "reason": "completed"
+      },
+      {
+        "world": 1,
+        "actor_call": 763,
+        "physical_steps": 14752,
+        "last_interval_steps": 32,
+        "curriculum_stage": 2,
+        "reason": "completed"
+      },
+      {
+        "world": 2,
+        "actor_call": 794,
+        "physical_steps": 15876,
+        "last_interval_steps": 36,
+        "curriculum_stage": 2,
+        "reason": "completed"
+      },
+      {
+        "world": 0,
+        "actor_call": 831,
+        "physical_steps": 16051,
+        "last_interval_steps": 11,
+        "curriculum_stage": 2,
+        "reason": "completed"
+      },
+      {
+        "world": 3,
+        "actor_call": 1032,
+        "physical_steps": 13737,
+        "last_interval_steps": 17,
+        "curriculum_stage": 2,
+        "reason": "completed"
+      },
+      {
+        "world": 1,
+        "actor_call": 1132,
+        "physical_steps": 14752,
+        "last_interval_steps": 32,
+        "curriculum_stage": 2,
+        "reason": "completed"
+      },
+      {
+        "world": 2,
+        "actor_call": 1191,
+        "physical_steps": 15876,
+        "last_interval_steps": 36,
+        "curriculum_stage": 2,
+        "reason": "completed"
+      },
+      {
+        "world": 0,
+        "actor_call": 1233,
+        "physical_steps": 16051,
+        "last_interval_steps": 11,
+        "curriculum_stage": 2,
+        "reason": "completed"
+      }
+    ],
+    "curriculum_transitions": [
+      {
+        "policy_steps": 1376,
+        "stage": 2,
+        "worlds": [
+          3
+        ],
+        "actual_episode_end": true
+      },
+      {
+        "policy_steps": 1576,
+        "stage": 2,
+        "worlds": [
+          1
+        ],
+        "actual_episode_end": true
+      },
+      {
+        "policy_steps": 1588,
+        "stage": 2,
+        "worlds": [
+          2
+        ],
+        "actual_episode_end": true
+      },
+      {
+        "policy_steps": 1716,
+        "stage": 2,
+        "worlds": [
+          0
+        ],
+        "actual_episode_end": true
+      },
+      {
+        "policy_steps": 4128,
+        "stage": 3,
+        "worlds": [
+          3
+        ],
+        "actual_episode_end": true
+      },
+      {
+        "policy_steps": 4528,
+        "stage": 3,
+        "worlds": [
+          1
+        ],
+        "actual_episode_end": true
+      },
+      {
+        "policy_steps": 4764,
+        "stage": 3,
+        "worlds": [
+          2
+        ],
+        "actual_episode_end": true
+      },
+      {
+        "policy_steps": 4932,
+        "stage": 3,
+        "worlds": [
+          0
+        ],
+        "actual_episode_end": true
+      }
+    ],
+    "history_dimensions": 481,
+    "normalization_dimensions": 481,
+    "model_device": "cuda",
+    "model_training_steps": 0,
+    "RMS_weights_optimizer_reload_exact": true,
+    "main_training_admitted": false
+  },
+  "source_sha256": {
+    "wheelleg_warp/test_execution_history_env.py": "c51e15ca4a7d5899d532af04a05970c29a3dd9907084d11d96e24013c8216245",
+    "wheelleg_warp/execution_history_env.py": "5c0f0135df45fa899b03f557dff98da3cabbf58b0afdf5bf6279f470fec4f01b",
+    "wheelleg_warp/execution_input_collector.py": "dbe2f2cfada2b1b629e28984729a448db99f2e3b60a2e74669f0d82a48649a46",
+    "wheelleg_warp/execution_input_features.py": "cd2c67c328d8a89c17639f87b7f238208de6ead582fb6a5b46c96c21dea1d82c",
+    "wheelleg_warp/route_state.py": "c0ead1a487b1baf2b644b7104537349a1ea92603121e765d507793833b03e28a",
+    "wheelleg_warp/light_phase_reference.py": "a2a2c5a52cb9a51591bea44c1c85cb0fd343fe3b5e2526e88ffea461d56e9768",
+    "wheelleg_warp/train_height_comparison.py": "e4569d6079d0b8e1362fd0e3b263b5ee0b26d67f11246c8c9cbc2f710a88ccfc",
+    "wheelleg_warp/native/environment.py": "a4fb0a7a5beb08bf23e8e3855f681e8008b79fe5e730d11bc4b5c91674fe8a2b"
+  },
+  "registration_sha256": "58ae9eff8571d2716553494aad8f99d10936b8cec37413c4d35251364d631fa0",
+  "limits": "OneH1sameexecutionengineeringstream with H0coordinate mask;no paired trainedpolicyrollouts or contributionproof. Public sensorclock age shared;before-gaincommandnot actualtorque. CUDAmodel/RMS/emptyoptimizer reload only,continuouslearning qualification pending."
+}

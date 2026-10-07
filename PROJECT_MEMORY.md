@@ -4,6 +4,12 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第231轮ExecutionHistory源资格：固定481维=10×39frames+9×8input slots+9sensor elapsed/.02+10valid masks；proxy slots两臂均0，H0仅54个totalcommandmean坐标置0，H1保留，encode反事实同execution其余坐标exact。与RouteState/collector相接，先以旧episode terminal packet更新历史/terminal observation独立copy，再用返回新episode/curriculum packet逐world清private历史，不混epoch；synthetic6.5ms partial/归属/action-reward直通/terminal不复写过。
+- 第231轮真实source stream正常exit0：原1991工程bank四world、zeroactions、milestones[4,4000]，修后1233Actorcalls/197072actual GPUphysics，四world各3terminal=12（均partial）且8真实1→2/2→3逐world转换。Raw terminal最后39与Route terminal exact，VecNormalize terminal forward normalization exact、resetvalid仅last1且input全0、collectorclock清0；H0/H1非command坐标exact。这些旧bank工程样本不是fresh科学测试或学习优势。
+- 第231轮首attempt在首reward比较失败，VecNormalize.norm_reward=False仍把reward转float32，原测试比float64。原registration/failure/log/source保存lifecycle_attempt0_reward_dtype；修期望dtype后仍array_equal，History直通未改、控制未改，另加显式physical计数。主结果197072仅修后stream，不把首attempt的已积分工作当免费；首attempt未独立存完整动态计数，原上限400000，修后上限399840及实际197072各自保留，不将该工程耗时当PPO加速。
+- 第231轮481RMS mean/var/count/normalize/save-load逐值过，static CUDA MlpPolicy零output初始化、zip load权重/空Adam/预测/num_timesteps0完全一致，保存过程中history不改。unit_history_model.zip/.pkl、collectorpartial及从己方RMS.old_obs无损拆出的history_partial强证据保存，round231_delivery绑定SHA；仅partial证据非full simulator resume。continuouslearn/optimizer非空更新/checkpoint续学尚未资格，main/24k未执行。
+- 第231轮232按230决定只冻结两臂各12k独立CUDA工程、同world/初始化、H0唯一commandmask与共同timestamp/停车规则，在实际源码契约准入后才run；工程不作methodgate/不得warmstart未来1.2M。新贡献/强matched主消融/资格后新formal5/独立ID-OOD保持/层级stats-PPO实耗/推导复现新稿六出口仍未齐，goal active，235深审清理。
+
 - 第230轮五轮深审完成：226/227有界CPU648及独立重验、228显式总input缺口/非contact proxy/近邻、229480真实physics和synthetic生命周期的身份/边界复核。现P2 proxy由P1同输入可确定计算；独立重建全部12worldinterval按原float64顺序float32逐值相同。首独立检查因float32 packet差分和运算重排有1element9.094947e-13差，改重建顺序后array_equal，未改运行/容差/raw。不给deterministic feature“新信息”或算法创新资格。
 - 第230轮sensorclock混杂证据：首elapsed [.02,.015,.01,0]在20ms actor初次返回时可推delay[0,5,10,20]ms，因此新增elapsed/mask需明确公开sensor timestamp/age假设，不能声称仍blind旧39信息。两后续学习条件应共享该新增clock，不把timestamp优势归总commandhistory；actualterminal/curriculum/10endpointwrapper/RMS/reload尚未资格。
 - 第230轮拒绝原三臂1.8M main准入，P2退出primary贡献候选；接口继续只支持H0/H1学习必要性干预提案：两者同10sensorendpoint/9interval/clock-masks/architecture/Nom/action/reward/tasks，H0将totalcommandmean6置0，H1保留，proxy slots两者均0。H0是信息消融、H1为genericPPO，不宣称sameinformation算法优越。拟3freshseed×2×200k=1.2M仅提议/0执行，24k工程改两臂各12k仍notadmitted。信息必要性即使阳性仍须新具体贡献+同信息强经典genericRL/正式新5seed/独立ID-OOD保持/层级stats与PPO实耗/完整新稿，六出口不缩，goal active。
