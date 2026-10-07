@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第226轮限定偏航响应主诊断完成（2026-10-07）：
+
+run_yaw_response_screen复用native.terrain.model、hardware_profile.torque_limit及sim.euler。全部24原状态/trace/hash、原source及CPU几何维度/actuator order/solver100/integrator3/timestep.0005、wheel包络对原trace1e-12、零clip和identity quaternion在integration前检查；source_contract记录实际导入源码/XML与版本。原登记24state×13arms=312，加独立fresh-MjData baseline重复24，共336CPU步正常exit0，progress complete，原648总预算未扩，0新GPU或训练。
+
+全部branch保存q17/v16/rpy/active-q余量、最终ctrl与真实扰动、frame/localcontact force及CPUbaseline对原GPU完整q/v偏差。contact求解力对应pre-integration配置，q/v/rpy为post，未在step后mj_forward重新计算。24baseline重复q/v/rpy/margin atol1e-12及contact exact通过，全部来源SHA/输出finite核过。completion/run.log留原始结果，独立review_pending明确True。
+
+仅描述主诊断：288扰动臂无zero actualdelta，六电机最大yaw增量绝对值为9.785054e-9/7.205465e-9/9.784971e-9/7.205368e-9/3.849321e-8/3.849307e-8rad，最大正负midpoint8.864437e-16rad。CPU-GPU全q/v最大绝对差1.496565e-6/0.001923108，向量混合单位，不能拿全q/v最大值与yaw效应算比值或当鲁棒误差界。此为实际几何、warm0特权局部plant响应，不证原GPU重建、可得在线模型、闭环恢复或新算法优势。
+
+227只用余下312CPU步独立重验登记状态、所有命令与输出，完整保留偏差并终止该screen；228据证据作方法/学习必要性有界去留，不补幅度/样本/时域救旧heuristic。完整贡献/强学习消融/资格后新formal5/新独立ID-OOD能力保持/层级统计及PPO实耗/推导复现新稿六出口未齐，230如期深审清理。
+
 第225轮五轮方向深审、下一项限定补验与冗余清理（2026-10-07）：
 
 **方向去留。** 221–224已证明完整B0交付、原门完整、492全部终态及328实际候选执行；两固定候选没有新增任务成功且J未改善。停止其阻尼/速度协调、gain/预算救分及直接正式训练。保留完整任务/design/physical分开、同信息强对照、请求与执行量、所有失败与分层评价的方法。现有高轮速/运动差异只是代理；原关节一步/contact预测曾失败，不直接升级为可信偏航预测器。当前应检验真实局部电机偏航响应，而非提出另一条支撑阈值或扩大复杂地形。

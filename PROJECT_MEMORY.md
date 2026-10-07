@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第226轮yaw_response_screen主诊断正常终态：原225的24state/8case（4成功负对照/4失败）及13arms不变，源准入先核全部原trace/pre/source/SHA、actuator顺序、CPU模型17q/16v/6ctrl/无activation-mocap-plugin、solver100/integrator3/timestep.0005、公共硬件包络（wheel与原trace1e-12）和零clip/identity quaternion静态fixture，0integration后source_contract落盘。复用sim.euler、native.terrain.model与hardware_profile，不改原runtime、控制、预算、场景或门。
+- 第226轮run_yaw_response_screen.py执行312单步臂+24独立fresh-MjData基线重复=336CPU步，session9303正常exit0，completion verified/24/336，progress complete，log与sourcecontract保存；每臂q/v/rpy/1.4余量、ctrl/actualdelta、contact frame/localforce、CPU-GPU全q/v差及yaw increments/midpoint保存。forces为求解器pre-integration配置，q/v/rpy为post，不额外mj_forward偷换时间。基线全q/v/rpy/margin重复atol1e-12及contacts exact过；源SHA和全部输出finite收尾过。
+- 第226轮仅主诊断描述：288扰动臂zero actualdelta=0；六motor最大|yaw increment|分别9.785054e-9/7.205465e-9/9.784971e-9/7.205368e-9/3.849321e-8/3.849307e-8rad，max midpoint8.864437e-16rad；全q和全v CPU-GPU最大差1.496565e-6/0.001923108（混单位向量，只保留误差，不当yaw单项比值或鲁棒界）。现actualgeometry/warm0是特权诊断，无GPU复原/closedloop/新颖性/收益结论。
+- 第226轮独立review312尚未执行，227全量重构原状态/命令/每输出并关闭本screen；648总上限保持。228必须作有限方法/可得信息/学习必要性去留，230深审清理。未准formal5/新PPO，完整论文六出口及goal仍active。
+
 - 第225轮五轮深审完成：221完整B0/222完整门预检/223实际492原门失败/224实际执行328全核交叉检查。两固定阻尼/速度协调候选仍关闭，不改gain/预算/门救分；高轮速代理不等支撑或偏航可控。旧joint/contact预测针对关节一步余量且曾漏包，不能直接移作可信yaw模型。贡献/强matchedlearning与消融/freshformal5/新ID-OOD保持/层级统计与端到端PPO成本/推导复现新稿六出口未齐，整体goal active。
 - 第225轮限定补验登记yaw_response_screen_v1：现B0全部6301000–6301007共8发展case，.115m、左右10/20mm、正反.7m/s，4成功负对照+4失败；各按首次target samplednormal总和>1e-6N及±40physical samples抽3state，24完整pre q17/v16/finalctrl6+原trace/hash。不按首次失败筛点。登记baseline及6motor±.01Nm独立扰动，CPU actualgeometry/warm0一步，包络clip/全部zero-delta记录；312主+24baseline重复+312独立review上限648CPU步，本轮0physics/learning。只测局部plant响应，非deployable虚拟动作/连续权限、GPU精确恢复、闭环可达、安全或创新证明。
 - 第225轮226仅该预算源准入/执行，227全量独立review并终止screen，228必须据实际yaw响应/可得信息/近邻区别作有界方法或关闭决定，不增加状态/幅度/时域来救旧heuristic；未准正式PPO或formal5。后续仍须三seed资格后新五seed/强经典普通PPO/最多两关键消融/新独立泛化保持和新稿，不能无限诊断替代。
