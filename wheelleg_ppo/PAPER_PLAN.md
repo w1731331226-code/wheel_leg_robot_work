@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第227轮偏航响应独立重验与有界诊断关闭（2026-10-07）：
+
+review_yaw_response_screen使用独立命令构造、公开rated/no-load/peak包络代数和fresh CPU MjData单步，未调用主runner的prepare/commands/advance。全部24原state/trace/输入SHA、firsttarget normal索引及±40offset、原scenario/labels、actuator顺序重核。312臂q17/v16/rpy/active-qmargin与完整contact frame/point/distance/localforce atol1e-12通过；实际ctrl/delta、CPU-GPU全q/v差、midpoint逐值恒等，yawincrement局部重验atol1e-15通过。正常exit0，所有原源码/primary SHA保持。
+
+screen终态closed_after_registered_budget，336主+312review=648CPU步，0新GPU或学习，不增加扰动幅度/时域/状态。review绑定原completion和registration SHA；主completion的independent_review_pending是当时快照，不覆写旧记录，以review为最新终态。
+
+局部效应只支持有限结论：成功12state最大单臂yaw效应范围3.078966e-8–3.666364e-8rad，失败12state2.564060e-8–3.849321e-8，重叠，不能由失败认定局部偏航权限消失。首次target load轮响应不对称且左右镜像互换；普通等幅差动假设不等实际局部响应，但此不证明闭环收益/全系统控制权或新算法。单项CPU-GPU yaw误差最大4.820726e-8rad，2/24超过该状态最大扰动效应且均为成功负对照；全部保留，不剔除/不松容差。此差异限制跨后端因果解释，不证明某个solver/precision唯一根因或GPU干预失效。
+
+228基于实际响应、公共信息及已有近邻明确有限新方法/学习必要性或关闭决定，禁止复活固定阻尼/速度协调收益链或直接传oracle敏感度给旧Actor；不以持续diagnostic回放替代三seed资格后五新正式seed/强对照消融/新独立泛化/统计PPO成本/推导复现新稿。230如期深审和确认冗余清理，完整论文目标继续。
+
 第226轮限定偏航响应主诊断完成（2026-10-07）：
 
 run_yaw_response_screen复用native.terrain.model、hardware_profile.torque_limit及sim.euler。全部24原状态/trace/hash、原source及CPU几何维度/actuator order/solver100/integrator3/timestep.0005、wheel包络对原trace1e-12、零clip和identity quaternion在integration前检查；source_contract记录实际导入源码/XML与版本。原登记24state×13arms=312，加独立fresh-MjData baseline重复24，共336CPU步正常exit0，progress complete，原648总预算未扩，0新GPU或训练。

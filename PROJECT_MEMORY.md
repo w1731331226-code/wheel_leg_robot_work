@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第227轮独立review正常终态：review_yaw_response_screen不调用primary的prepare/commands/advance，复用原geometry，独立重核24原pre/trace/SHA、firsttarget normal选择和±40offset、result/scenario/成功labels、actuator顺序，按公开rated/no-load/peak重新构包络及13commands，以fresh CPU MjData/warm0各一步。312臂全q/v/rpy/active-qmargin/contact frame/point/distance/localforce atol1e-12复核，actualdelta/cpu-GPU全q/v/midpoint逐值恒等，yawincrement1e-15局部重验过；session16218 exit0，原source/primary不可变。
+- 第227轮screen已closed_after_registered_budget：primary336+review312=648CPU步，24state/8case/4成功负对照4失败，0newGPU/0training，review_started/review/log与reviewer保存。Primary原independent_review_pending只表示当时状态，终态以绑定primarySHA的review为准，不覆写旧文件/登记/结果。
+- 第227轮实际解释：成功12state最大单臂yaw效应范围3.078966e-8–3.666364e-8rad；失败12state2.564060e-8–3.849321e-8，范围重叠，不支持“失败即局部偏航权限消失”。同首次load处轮响应左右不等且镜像互换，非全系统失控/闭环可达结论。CPU-GPU单项yaw差最大4.820726e-8rad，有2/24状态大于本次max扰动效应（全部成功控制），只限制CPU局部效应与GPU因果解释，不能归唯一后端根因/证明GPU小扰动无效；24均保留未剔除。
+- 第227轮228须依据重叠响应/接触非对称/信息可得性及近邻作有限方法和learning必要性决定，不能增加此screen幅度/时域/样本或复活固定阻尼governor，也不能直接用oracle敏感度输入旧Actor。230深审清理。完整贡献、强matchedlearning关键消融、新formal5、新独立ID/OOD保持、统计与PPO实耗、推导复现新稿六出口仍未齐，goal active。
+
 - 第226轮yaw_response_screen主诊断正常终态：原225的24state/8case（4成功负对照/4失败）及13arms不变，源准入先核全部原trace/pre/source/SHA、actuator顺序、CPU模型17q/16v/6ctrl/无activation-mocap-plugin、solver100/integrator3/timestep.0005、公共硬件包络（wheel与原trace1e-12）和零clip/identity quaternion静态fixture，0integration后source_contract落盘。复用sim.euler、native.terrain.model与hardware_profile，不改原runtime、控制、预算、场景或门。
 - 第226轮run_yaw_response_screen.py执行312单步臂+24独立fresh-MjData基线重复=336CPU步，session9303正常exit0，completion verified/24/336，progress complete，log与sourcecontract保存；每臂q/v/rpy/1.4余量、ctrl/actualdelta、contact frame/localforce、CPU-GPU全q/v差及yaw increments/midpoint保存。forces为求解器pre-integration配置，q/v/rpy为post，不额外mj_forward偷换时间。基线全q/v/rpy/margin重复atol1e-12及contacts exact过；源SHA和全部输出finite收尾过。
 - 第226轮仅主诊断描述：288扰动臂zero actualdelta=0；六motor最大|yaw increment|分别9.785054e-9/7.205465e-9/9.784971e-9/7.205368e-9/3.849321e-8/3.849307e-8rad，max midpoint8.864437e-16rad；全q和全v CPU-GPU最大差1.496565e-6/0.001923108（混单位向量，只保留误差，不当yaw单项比值或鲁棒界）。现actualgeometry/warm0是特权诊断，无GPU复原/closedloop/新颖性/收益结论。
