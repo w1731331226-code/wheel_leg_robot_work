@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第222轮完整资格审查器预检与同队列观察（2026-10-07，尚未全492）：
+
+review_coordination_qualification仅full492 completion且原30job/0training/source合同和unit正常terminal时运行，partial RuntimeError拒绝无winner。复用load_rows/ordered/wrap/paired/fullflags及固定J helper，准备全三条件×三panel、newB0与oldstrongB0/B1对照、CPU28速度1.05+.005/rollpitch+.1、困难>=34与literal allpanel J15%+.05、Cgamma-vs-Bomega机制独立门。None candidate或reference J明确False，不比较None而丢病例；原成功/newcomponent/physicaldesign保持全部保留，不事后弱化gate。全部2460五流SHA/预算时刻审查只在完整492后执行，不能以source预检冒充data全核或方法通过。
+
+原283051/283052活跃无interruption，Bomega所有164已结束，累计checked328；当前Cgamma regular batch0 reserved348/completed328 snapshot。仍同handle/原source/参数/预算，不重启或执行新train。当前预检只source/gate/helper/partial拒绝与None边界，0新物理或学习，round222_reviewer_preflight绑定新reviewer+frozenrunner且final结论未产生；runtime-source不改。
+
+223继续消费原进程真实terminal；若全492且source/五流/预算/全部原pairedgate齐，才固定候选去留与必要性；未全只verifiedwait。224有资格才新matchedlearningnecessity/区别清晰协议，否则关闭固定候选，不γpole/gain/threshold/budget救分。225深审清理如期，fullmethod/strongmatchedlearningablation/formal5/newID组合geometry参数delayOOD能力保持/seed-case统计PPOendtoend/推导复现新稿六出口仍未齐。新raw等terminal完整cohort后分批归档，小审查source先sync/guardactive等worker锁，worktree仍进行中非clean不全remote。
+
 第221轮完整B0交付与原参考保持复核（2026-10-07）：
 
 原worker同283051/283052实见活跃，无interruption，不重启/改变frozen source。B0全164 firstepisodes已完成：reg96/96、ctrl32/40、legacy28/28，phy/design各完整panel全过，oldB0 fullflag变化0；CPU历史28速度1.05+.005/rollpitch+.1及完整任务全部过。20/20/20/20/16、20/20、20/7/1原globalindices、source/ref/geometry/result及820份five-stream SHA复核，1,527,116,914B，step/contact计数与原worker verifier绑定，round221_B0_delivery记录证据/源contracts/旧CPUsha/实时队列。
