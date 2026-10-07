@@ -1,5 +1,7 @@
 # 双轮腿机器人PPO论文方案
 
+第234轮dispatch状态：源/contract/unit已97fb58fc同步后启动wheelleg-execution-input-study-v1.service，MainPID353065为flock、child353066 Python live，持project-write.lock，首B0 regular batch0 reserved20/completed0时点。后续raw/progress/model正在落盘，尚不remote全归档/clean，不据partialscore晋升；235同handle深审清理，终态完整门审查与分批归档再结论。
+
 第234轮密集动态准入与独立执行器冻结（2026-10-07）：
 
 事前3sourcefirstepisode H1工程model/B0 solver50legacy/B1原parkingPD分别14934/13034/14922physics，另2Actorcall deliberateprefix80，共42970工程physics、0learning/0科学预算。6个±.8/0request×轮速0/70rad/s静态diff3→V6 wheelpair转换ctrl/diag array_equal（含clip）、0integration；三完整旧六流/968Actortrace/ceilN40、legacy ID、phase/physical/RMS/model不变和80step partial logger/history/command所有权准入过。工程模型仅sourceunit，不取科学score或warmstart。

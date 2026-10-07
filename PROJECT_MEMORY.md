@@ -4,6 +4,8 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第234轮dispatch已实际开始：wheelleg-execution-input-study-v1.service MainPID353065 flock/childPython353066均live，SubState running，持.git/project-write.lock；首同期B0/regular/batch0 reserved20/completed0时点，未有科学收益门结论，不restart。原源码/准入已97fb58fc提交同步后启动；运行中的study_reference/progress及后续raw/models尚未归档，不声称全部remote或worktree clean。恢复git-sync active时由worker排他锁阻止未完成数据自动snapshot，终态再按适当<2GB批次归档。235同handle深审清理按约。
+
 - 第234轮evaluation source动态准入过：同原登记3firstepisode（H1工程model仅unit/B0 legacy solver50/B1原parkingPD）14934/13034/14922physics，另80step deliberateprefix，共42970engineeringphysics/0learning/0科学预算。6个±.8/0及轮速0/70rad/s静态diff3→V6 wheel-only ctrl/diag array_equal，包含包络clip，0integration；完整旧六流/968Actor字段/firstepisodeceilN40、legacyID/phase/physical/Actor预测及RMS/model不变过，prefix2Actor80step全部日志/history/command保存过，admission绑定SHA。
 - 第234轮首H1完整回合已保存后，整段batch374推理vs原逐步1world出现1910/2244差，max8.940697e-8；不是Actor日志/物理改动。保留初failure/log/source，显式continue仅offline按原1world CUDA形状逐行replay仍array_equal，复用既有H1不重跑，再执行其余两unit和prefix，原3+80预算未扩。不是调容差或挽救科学分数。
 - 第234轮新execution_input_study runner源/contract已冻结：6fresh23301/2/3×H0/H1各continuous200k、同期B0/B1及末164×8=1312。新100worldbank、原PPO/std/481RMS/commonparking，CB复用HistoryLedger20k训练后保存；模型/非空Adam/481RMS末重载和源/旧refSHA，reserved/completed/partial所有对象、无implicitrestart/正式5seed或工程warmstart。冻结时0科学消耗，源码/证据先提交后dispatch独占project-write.lock；235如期深审清理。
