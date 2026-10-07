@@ -1,0 +1,17 @@
+REFERENCE 0 0.115 -1.0 boundary_anchor True calls 610 force 3.519051716693866e-11
+REFERENCE 1 0.115 1.0 boundary_anchor True calls 1201 force 1.2505552149377763e-11
+REFERENCE 2 0.16 -1.0 boundary_anchor True calls 1603 force 1.563679741245494e-11
+REFERENCE 3 0.16 1.0 boundary_anchor True calls 1970 force 3.1746105744190345e-11
+REFERENCE 4 0.25 -1.0 boundary_anchor True calls 2317 force 3.573585871663454e-11
+REFERENCE 5 0.25 1.0 boundary_anchor True calls 2709 force 1.2945738925296268e-10
+REFERENCE 6 0.3 -1.0 boundary_anchor True calls 3089 force 6.985079181731635e-11
+REFERENCE 7 0.3 1.0 boundary_anchor True calls 3502 force 2.7420427040070194e-11
+REFERENCE 8 0.38 -1.0 boundary_anchor True calls 4048 force 4.386283003476876e-11
+REFERENCE 9 0.38 1.0 boundary_anchor True calls 4605 force 2.4151861066634694e-11
+REFERENCE 10 0.1375 -0.35 interior_validation_not_fit False calls 5686 force 1.0266586450950714
+Traceback (most recent call last):
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/solve_continuous_nominal_references.py", line 135, in <module>
+    run()
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/solve_continuous_nominal_references.py", line 117, in run
+    raise RuntimeError('Original reference gate failed; registered stopping rule')
+RuntimeError: Original reference gate failed; registered stopping rule

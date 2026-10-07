@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第274轮连续参考batch失败停止与完整证据（2026-10-08）：
+
+solve_continuous_nominal_references.py复用原problem/setup/force/bounds，预检十旧参考、20初值、NaN/budget guard共30calls通过。实际十新±1boundary全部原门通过，第11点(.1375m,−.35m/s)达到max_nfev100/status0，solver_successFalse，residualmax1.0266586451、cachedforwardqaccmax1.0743820075，height方程误差约.010266586451m；按登记“任一点原门失败即停止”终止exit1，后九验证点未执行，无retry/调初始化/solver/gain/门/扩积分。
+
+总5686residualcalls（unit30+optimizer5656）/24000，11实际optimizationstates，11NPZ完整记录initial/solution/bounds/residual/qvctrl/forces/qacc/warm/实际力矩、来源/顺序/SHA和失败、未执行点全部保存batch_terminal。没有20点completion，不拟合map/使用validation点救分；0staticquery/controllerquery/integration/transitionFD/PPO，未冷构Nomgainbank。十boundary的cached门通过尚需freshcold，不等连续参考资格。
+
+失败只说明登记初始化与100nfev局部求解不足，不能声称物理无解；连续map资格已停止，原预留50static不准。275五轮方向深审、独立cold saved11（含失败）与清理，再有限去留；保旧基线与全部失败，不隐式重跑或缩小domain宣布成功。论文六出口仍未齐/goal active。
+
 第273轮连续公有名义参考方案评估与有限预算（2026-10-08）：
 
 唯一方案continuous_nominal_reference_v1：实际发展任务覆盖h .115… .38和v −1…1、启动中间命令以及controlled .24；原gain和moving knots为.115/.16/.25/.3/.38，原型±.7不能外推覆盖±1。复用269 frozenbank和十coldmoving，把每点feed/θEq减去原static插值得delta；十点重建<=1e-12、19高度v0线exact0过，保存design_assessment。只工程代数，本轮0solve/controllerquery/FD/physics/PPO。

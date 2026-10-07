@@ -1,0 +1,92 @@
+{
+  "round": 274,
+  "verified": true,
+  "status": "registered_gate_failed_batch_terminal",
+  "failure_sha256": "4fee8af847526ecdc82e52c5565de4643edec4d5d88072aea19e0abd50763a7c",
+  "source_admission_sha256": "9d948fba7df240ac27d58faf1f9e8c7f832050ebfe9209d284f96059266627d6",
+  "attempted_states": 11,
+  "passed_boundary_anchors": 10,
+  "failed_validation_states": 1,
+  "unattempted_states": [
+    {
+      "height": 0.1375,
+      "speed": 0.35,
+      "role": "interior_validation_not_fit"
+    },
+    {
+      "height": 0.205,
+      "speed": -0.35,
+      "role": "interior_validation_not_fit"
+    },
+    {
+      "height": 0.205,
+      "speed": 0.35,
+      "role": "interior_validation_not_fit"
+    },
+    {
+      "height": 0.275,
+      "speed": -0.35,
+      "role": "interior_validation_not_fit"
+    },
+    {
+      "height": 0.275,
+      "speed": 0.35,
+      "role": "interior_validation_not_fit"
+    },
+    {
+      "height": 0.34,
+      "speed": -0.35,
+      "role": "interior_validation_not_fit"
+    },
+    {
+      "height": 0.34,
+      "speed": 0.35,
+      "role": "interior_validation_not_fit"
+    },
+    {
+      "height": 0.24,
+      "speed": -0.7,
+      "role": "controlled_height_validation_not_fit"
+    },
+    {
+      "height": 0.24,
+      "speed": 0.7,
+      "role": "controlled_height_validation_not_fit"
+    }
+  ],
+  "residual_calls": 5686,
+  "unit_residual_calls": 30,
+  "optimization_residual_calls": 5656,
+  "failed_point": {
+    "height": 0.1375,
+    "speed": -0.35,
+    "role": "interior_validation_not_fit",
+    "path": "reference_10.npz",
+    "sha256": "cf2b20dd86db3af4883b7dc74ef5da1afcaae40e78912970ad6fe72fa15ec440",
+    "initializer_path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_1_speed_0.npz",
+    "initializer_sha256": "687305cbd9e1754bce62e7edfad33e50978c47add1207b05f0007518d067bef8",
+    "solver_success": false,
+    "solver_status": 0,
+    "nfev": 100,
+    "actual_residual_calls": 1081,
+    "force_residual_max_abs": 1.0266586450950714,
+    "forward_qacc_max_abs": 1.0743820074858805,
+    "active_margin_rad": 0.6319094798043198,
+    "eight_margin_rad": 0.7319094798043199,
+    "command_excess_Nm": 0.0,
+    "actual_torque_excess_Nm": 0.0,
+    "minimum_actual_leg_m": 0.14775094770283795,
+    "maximum_loop_error_m": 1.729319926071257e-05,
+    "bilateral_only_floor_support": true,
+    "passed": false
+  },
+  "failed_height_equation_error_m": 0.010266586450950714,
+  "controller_or_map_admitted": false,
+  "static_queries_executed": 0,
+  "integration_steps": 0,
+  "transitionFD_calls": 0,
+  "new_training_samples": 0,
+  "implicit_retry": false,
+  "limits": "Cached solve/forward outcome only, freshcold independence pending275. Local max_nfev100 failure under registered initializer is not proof of physical infeasibility; no map fit or heldout point reuse.",
+  "next": "275 direction deepreview, independent cold checks of saved11 including failure and redundancy cleanup. Reserved50staticqueries remain unadmitted."
+}

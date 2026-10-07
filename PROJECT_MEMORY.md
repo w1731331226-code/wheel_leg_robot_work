@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第274轮（2026-10-08）连续参考唯一batch按失败门终止（exit1是登记gatefail，不是待重启进程）：原problem/setup/source复用、十旧ref残差forward核+20initial向量/原bounds/finite/NaN和budget拒绝预检30calls过，十新±1boundary全部原gate过；第11点h=.1375/v=−.35验证点到max_nfev100/status0/solver_successFalse，force残差max1.0266586451、cachedforward fullqaccmax1.0743820075，不通过原1e-6/1e-4；对应height-equation误差约.010266586451m。无参数/门调整、retry或继续余9点。
+- 第274轮实际总5686residualcalls<=24000，含unit30及optimization5656、11optimizationstates；11NPZ全q/v/ctrl/solution/initial/bounds/residual/完整forces/warm/实际actuator保存，SHA/顺序/计数/门和未执行9点核过，batch_terminal.json明确不等20completed。0controller/staticquery/物理积分/transitionFD/PPO，无baselinebank10FD构造，原source/model/oldresults不改。
+- 第274轮失败限定既定初始化与100nfev局部求解，不证明.1375物理不可行或模型无解；连续map资格按登记规则停止，未fit任何lookup/validation点，也未执行预留50staticquery，更不能从十boundary成功跳GPU/production/PPO。275如约方向深审、saved11独立freshcold复核（含失败）及冗余清理后有限去留，不隐式重跑/扩budget，完整六论文出口/goal仍active。
+
 - 第273轮（2026-10-08）continuous_nominal_reference_v1设计有限准入：当前164发展任务h .115… .38/v −1…1含启动连续cmd及controlled .24，而moving/gain knots实际均为.115/.16/.25/.3/.38，需插值且须新增±1边界，禁止直接外推旧±.7。复用269原NPZ frozen gain/feed/angle/height和十coldmoving，计算wheel/hub/support+theta增量，十node重建<=1e-12、19高度零速度线exact0，design_assessment保存delta与SHA。本轮0controllerquery/solve/FD/积分/PPO。
 - 第273轮只选一方案：GPU readonly bilinear delta(h_public_command,cmd)同时加到原按实测leglength插值feed/θEq，不改command/gain/Actor/filter/memory/guard/bounds；cmd0必须exact原路径，domain仅当前发展h/v范围，不认证训练分布/freshOOD。不是closed固定轮阻尼/governor或旧H1学习复活，也不称新颖方法；旧Nom误差本来很小，不能预设task收益。
 - 第273轮登记唯一20new nominal reference batch：五h×±1十anchor，加四hmid(.1375/.205/.275/.34)×±.35八validation及.24×±.7两validation，总最多24000residualcalls、each max_nfev100，复用原solver.problem/完整阻尼流体/public7kg/originalforce1e-6/fullqacc1e-4/geometry/限位/速度力矩/双wheel-floor门。仅10anchor参与map，另10validation绝不fit或追加knots救分；失败全留，任一原门失败停止，不自动扩预算/retry。
