@@ -7593,3 +7593,7 @@
 - `wheelleg_warp/results/paper_recovery_20261004/parking_withdrawal_v1/runs/1993/parking_request_withdrawal/batch_0/phase_contract.json`
 - `wheelleg_warp/results/paper_recovery_20261004/parking_withdrawal_v1/runs/1993/parking_request_withdrawal/batch_0/result.json`
 - `wheelleg_warp/results/paper_recovery_20261004/parking_withdrawal_v1/runs/1993/parking_request_withdrawal/batch_0/role_contract.json`
+
+### 第223轮终态数据归档 B0
+
+保存已核验condition B0的890文件/1528036671B，所有成功失败与五流均保留。仅归档，无新增评价或学习；两固定候选收益门失败、论文全目标仍未完成。
