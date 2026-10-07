@@ -4,6 +4,9 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第263轮10解独立freshcold复核过：不调用solver.problem/优化器，按joint/actuator地址构mirror q/v/ctrl与共同8力投影，原solution/bounds/SHA/order核，freshMData warm0/appliedforce0.forward full16qacc原1e-4门、inverse+height/pitch残差原1e-6、actuallegfloor/闭链/eightjoint/active1.4/motor速度曲线实际力矩/双轮floor全部10/10过。Coldaccmax0、force max9.802292e-11、cold-saved指标差全部保存，排除单凭复用data零qacc信号；source/review/log绑定，0新optimization/integration/FD/PPO。
+- 第263轮只接受Nominalforce-balanced参考的源/数值几何层，不当持续relativeflow、actualNomclosedloop或不确定contact/gain稳定证书，controller_admitted False。264按登记finiteadmit/reject与边界契约，不加旧solver预算/controls改动恢复closedH1；新贡献/strongsameinfo方法消融/newformal5/ID-OOD/统计成本新稿六出口仍未齐，goal active，265深审清理。
+
 - 第262轮唯一moving equilibrium batch10state正常完成，实际4334residualcalls<=12000、各max_nfev100内、无implicitretry/改model/friction/loss/bounds/门；0integration/transitionFD/GPU/PPO。原force<=1e-6、复用data.forward full16qacc<=1e-4、actuallegfloor/eightjoint/active1.4/ctrl与actualtorquebound/双轮floor支持10/10过，force residualmax约9.8023e-11，forward qacc报0。solution/ref/bounds/qv/ctrl/qacc/完整force数组与SHA、solverstatus/nfev/callcounter/failure规则保存，不当closedloop稳定。
 - 第262轮新solution轮rate约±14.04438…14.04441rad/s、wheelctrl约±.070703…070848Nm，不固定v/R或gravitywheel≈0；反映允许完整力平衡和softcontact/passive terms，非手工补常数救旧400score。旧gravityreference失败结果不改。263必须独立冷启动freshdata复核forward/inverse/geometry和力项，而非信复用data的零qacc；264finiteadmit/reject，无新trajectory/FD/PPO。
 - 第262轮完整论文六出口/goal active，265深审清理，所有科学模型原始及negativegate保持归档，建模passed不替代贡献/泛化。

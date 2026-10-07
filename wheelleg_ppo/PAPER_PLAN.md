@@ -1,5 +1,11 @@
 # 双轮腿机器人PPO论文方案
 
+第263轮十移动解独立冷启动力／几何复核（2026-10-07）：
+
+Reviewer不调用solver.problem/least_squares，按模型joint/actuator地址重构mirrorpose/velocity/control与8共同力投影，核solution/bounds/order/原SHA。每个freshMData warm0/appliedforce0下forward full16qacc与原1e-4、inverse+height/pitch残差原1e-6、双轮floor/actuallegfloor/eightjoint/active1.4/真实motor速度曲线力矩全部10/10过；coldaccmax0、force max9.802292e-11，cold-saved差原样留存。review/source/log保存，0额外求解/integration/FD/PPO，不仅信复用data零qacc。
+
+仅力平衡、几何与数值参考资格；未验证持续相对轨迹/实际Nomfilter-memory-guard/不确定contact，更非controller/gainbank/安全或方法收益。264须finite模型准入或拒绝，不扩原solver或恢复closed收益；六论文出口未齐，265深审清理。
+
 第262轮登记的真实相对平衡求解批次完成（2026-10-07）：
 
 十state唯一batch正常结束，实际4334residualcalls（<=12000），每state max_nfev100内；无retry、改model/friction/loss/bounds/门，0integration/FD/GPU/PPO。原force1e-6、复用dataforward full16qacc1e-4、actuallegfloor/eightjoint/active1.4/motorhardwarebounds及双轮floor支持10/10通过。force max约9.8023e-11、forward qacc报0，原solution/initial/bounds/fullqv/ctrl/qacc/force数组、solverstatus/nfev/callcounter及SHA全部保存。
