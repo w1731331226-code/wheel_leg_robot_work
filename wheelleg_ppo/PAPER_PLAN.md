@@ -1,5 +1,11 @@
 # 双轮腿机器人PPO论文方案
 
+第246轮第二H0完整评价独立交付（2026-10-07）：
+
+23302/H0全164独立核：成功81/96、28/40、26/28，physical/design全部164过，J .764508479333/1.248262691348/.911441273915。六类984 SHA共1,785,104,239B、完整case/scenario/order/results及Actor968/ceilN40、raw/normalized54mask exact0通过，round246_second_H0_delivery绑定模型/合同。全部失败保留；与第一H0的64/29/27差异显示seed波动，不能挑最好seed替代全三pair或称H1收益。
+
+同353065/353066 running无error/restart，末snapshot23302/H1 regularbatch0 reserved840/completed820，第二H1 actual评价开始，全pair未齐。本轮0新physics/learning，runtime数据未全remote/clean；247同handle实际新H1对象或verifiedwait，完整三pair/1312再原门/CPU/raw/层级stats和终态归档。六论文出口未齐，250深审清理。
+
 第245轮完整任务取舍方向深审及清理（2026-10-07）：
 
 241–244实际input启用/对象、首pairedseed全164、第二seed新对象和seed-case统计边界复核，worker源码SHA不变。首pairregular terrain_contact29→6的改善同时attitude2→3/yaw1→2、lost1/gained24；controlled汇总仍11attitude/9yaw/4roll，却lost3/gained3/newcomponent4。不能用接触改善或总成功相同掩盖姿态、航向与case交换。匹配初始化/真实信息mask/newseed/finalonly/全flags和层级描述统计的方法保留；物理设计通过不等全状态安全，首pair不证明稳健整体收益或新算法。

@@ -4,6 +4,9 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第246轮23302/H0全164独立核：成功regular81/96、controlled28/40、legacy26/28，physical/design164全过，J .764508479333/1.248262691348/.911441273915。case/scenario/order/results/SHA、六类984文件1,785,104,239B、Actor968/ceilN40/H0raw和normalized54mask exact0通过，round246_second_H0_delivery绑定243模型校对/合同。全部失败保留；相对23301 H0的64/29/27有seed波动，不选最好seed、不能当第二pair收益或控制安全证明。
+- 第246轮同353065/353066 running无error/replay，末snapshot23302/H1 regularbatch0 reserved840/completed820，第二H1已经actual转评价但全pair未齐。0本轮新physics/learning，raw/model未全remote/clean；247核实际第二H1新完整训练对象/数据或verifiedwait，完整三pair/1312原门/CPU/raw/stats/终态归档仍待，论文六出口/goal active，250深审清理。
+
 - 第245轮五轮深审完成：241实际input非空/对象校对、242首pair全164取舍、243第二seed对象、244seed-case统计边界复核，worker source SHA保持。首pairregular terrain_contact29→6，但attitude2→3/yaw1→2，lost1/gained24；controlled同11attitude/9yaw/4roll汇总却lost3/gained3/newcomponent4，不能只报告接触改善或汇总数。信息mask真实/匹配初始化/新seed/finalonly/全flags保留及seed-case描述统计方法合适，尚不支持monotonic任务优势/全状态安全或新算法。
 - 第245轮只继续原剩余pairedseed/1312，不加更难地形/teacher/reward/gain/std/history/budget救分或挑有利case。末snapshot已820评价、23302/H0完成、23302/H1 actualtraining，原353065/353066 running无error/restart。本轮0新physics/learning，未对第二pair或三seed全门作结论；runtime数据未全remote/clean，六论文出口/goal active。
 - 第245轮删除1份closedheuristic coordinated_nominal_query.pyc共12854B，ignored/untracked/无fuser持有/源码归一codeobject等价/不在runningworker闭包；round245_cleanup保存前SHA/源码SHA。未触碰live缓存/源码/models/RMS/raw/失败/baseline/sealed集。246核第二H0实际完整交付/新H1对象或同handleverifiedwait，250下一深审清理；终态完整门及分批归档再finite去留。
