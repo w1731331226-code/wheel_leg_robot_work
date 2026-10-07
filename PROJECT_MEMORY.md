@@ -4,6 +4,12 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第232轮24k CUDA工程完整终态：engineering_contract先冻结H0→H1，各12k/10world/1991工程seed/[4000,8000]课程/50nstep/250batch/10epochs/同初始std/481网络，42个实际项目源码+XML；不加载231静态模型或旧科学模型。初freeze把Torch虚拟relative _ops.py误认为源码而FileNotFoundError，0physics/learning，log保留；改仅真实项目文件（不遍历venv）后freeze过，控制/目标无改，主科学仍notadmitted。
+- 第232轮复用qualified prepare/finish/clear kernels的light_parking_request，只改target输入pointer，common seen-nonzero/publiccmd0阻止新残差、原slew不改；40控制调用/指针匹配构造验收，运行每window检查effective/原filter±.01数学，无新增Actor latch字段。collector包络后before-gain输入与History共用，门对两臂相同，valid gate samples479510/479515、withdraw106787/106793，实际均触发。
+- 第232轮同session50259正常exit0：两臂各12000采样/240epochs/480Adam（CUDA有限），共24000；每臂26完整episode、真实2/3课程切换、stage3出现，初weight/world SHA一致。2k…12k各6个训练后checkpoints=12，save时world/route/history/collector/parking/RMS/lastobs/RNG不改；末zip reload两臂weight/nonemptyAdam/预测、481obsRMS与retRMS mean/var/count exact，obsRMS.count12010.0001过，权重确实变化。round232_delivery绑定所有对象SHA，raw/history/episodes/失败保留，无评测/选模/晋升或mainwarmstart。
+- 第232轮learn+checkpoint墙钟H0 30.826388s/H1 30.247754s，全工程queue68.467641s（含构建/静态加载验收），不是与CPU加速比，不把physical控制样本或本工程当正式PPObenchmark。engineering只是接口/continuous update qualified，主1.2M科学信息对照及正式新5seed仍未准。
+- 第232轮233应依据明确input干预、公共clock条件和强参考准入冻结新的三seed×两臂信息必要性协议，完整原任务/物理/design/成功保留/CPU/J门及负结果规则不能变，不引用24k评分/模型或重跑封存集。信息对照即使阳性不直接证明新算法，六完整论文出口继续未齐；235按约深审清理，goal active。
+
 - 第231轮ExecutionHistory源资格：固定481维=10×39frames+9×8input slots+9sensor elapsed/.02+10valid masks；proxy slots两臂均0，H0仅54个totalcommandmean坐标置0，H1保留，encode反事实同execution其余坐标exact。与RouteState/collector相接，先以旧episode terminal packet更新历史/terminal observation独立copy，再用返回新episode/curriculum packet逐world清private历史，不混epoch；synthetic6.5ms partial/归属/action-reward直通/terminal不复写过。
 - 第231轮真实source stream正常exit0：原1991工程bank四world、zeroactions、milestones[4,4000]，修后1233Actorcalls/197072actual GPUphysics，四world各3terminal=12（均partial）且8真实1→2/2→3逐world转换。Raw terminal最后39与Route terminal exact，VecNormalize terminal forward normalization exact、resetvalid仅last1且input全0、collectorclock清0；H0/H1非command坐标exact。这些旧bank工程样本不是fresh科学测试或学习优势。
 - 第231轮首attempt在首reward比较失败，VecNormalize.norm_reward=False仍把reward转float32，原测试比float64。原registration/failure/log/source保存lifecycle_attempt0_reward_dtype；修期望dtype后仍array_equal，History直通未改、控制未改，另加显式physical计数。主结果197072仅修后stream，不把首attempt的已积分工作当免费；首attempt未独立存完整动态计数，原上限400000，修后上限399840及实际197072各自保留，不将该工程耗时当PPO加速。

@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第232轮两臂24k CUDA连续学习工程完成（2026-10-07）：
+
+engineering_contract事前冻结H0→H1各12k采样/10world/1991工程seed、课程[4000,8000]、PPO50nstep/250batch/10epochs、同初始logstd/481维2×64网络与零mean初始化。同源Nom/virtual6/filter/bounds/task/reward/clock；H0仅54个command坐标置0，H1保留。复用停车withdrawal的prepare/finish/clear kernels构建小缓存adapter，校验40个control调用只换targetpointer，每window验证publicseen/currentcmd0门及原±.01slew；不加latch Actor字段。source42项目文件/XML绑定，不使用231静态/历史科学权重。初freeze Torch虚拟_ops.py路径失败发生0integration/learning，保留log，改只识别真实项目源码后准入；不改控制或预算。
+
+原session50259正常exit0。两臂各12000采样、240epochs和480CUDAAdam更新，初weight/world SHA匹配；每臂26完整episode及2/3真实课程切换，stage3出现。共12个2k…12k训练后checkpoints；保存过程中world/route/history/command/parkingbuffers、481RMS/lastobs/RNG unchanged，全部hash绑定。末checkpoint两臂weights/nonemptyAdam/prediction、obsRMS及retRMS mean/var/count加载exact，obsRMS.count12010.0001，权重实际变化。有效控制samples479510/479515，parking withdrawal106787/106793，门实际触发。episodes、rawcommand/historypartial、ZIP/PKL/配置/失败留存，round232_delivery绑定完整对象。
+
+learn+checkpoint实际墙钟H0 30.826388s、H1 30.247754s，queue68.467641s包括构建/静态加载验收；只报告该工程成本，不作CPU加速/正式PPObenchmark。24k没有科学评价或模型选择，不能warmstart/晋升到科学信息对照。source/runtime工程就绪不等方法收益/贡献或完整正式训练就绪。
+
+233依据明确总input干预、公开sensorclock/age条件及强参考冻结新的三seed×两臂信息必要性协议；主1.2M目前仍notadmitted，必须独立fresh初始化/seed/source/budget/选模/fulltask及所有原失败门，不能用24k赢家或已封存集选场景。信息阳性仍不等sameinformation新算法优势，完整贡献、强对照消融、资格后新formal5、新ID-OOD保持、层级stats/PPO实耗、推导复现新稿六出口继续未齐，235深审清理如期。
+
 第231轮实际生命周期、历史与CUDA静态加载资格完成（2026-10-07）：
 
 ExecutionHistory固定481维：10raw39 frame、9个8维input slots（后2proxy始终0）、9sensor elapsed/.02、10valid mask。H0只将54个totalcommandmean坐标置0，H1保留；两encode同execution其余坐标逐值一致。旧terminal packet先append并生成独立terminal copy，再reset该world为Native/curriculum新packet，padding属于自己的reset，其他world历史保留。Scripted6.5ms partial、输入动作/原reward直通、terminal归属/不复写通过。

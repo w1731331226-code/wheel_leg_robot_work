@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/execution_history_engineering.py", line 140, in <module>
+    if __name__=='__main__': {'freeze':freeze,'run':run}[sys.argv[1]]()
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/execution_history_engineering.py", line 59, in freeze
+    sources = {str(Path(m.__file__).resolve().relative_to(ROOT)): sha(m.__file__)
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/execution_history_engineering.py", line 59, in <dictcomp>
+    sources = {str(Path(m.__file__).resolve().relative_to(ROOT)): sha(m.__file__)
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/review_yaw_sector.py", line 6, in <lambda>
+    sha = lambda p: hashlib.sha256(Path(p).read_bytes()).hexdigest()
+  File "/usr/lib/python3.10/pathlib.py", line 1126, in read_bytes
+    with self.open(mode='rb') as f:
+  File "/usr/lib/python3.10/pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+FileNotFoundError: [Errno 2] No such file or directory: '_ops.py'
