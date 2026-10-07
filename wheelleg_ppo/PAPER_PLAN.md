@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第250轮已失败必要门、原队列完整性与清理（2026-10-07）：
+
+两完整seed已确定不满足事前everyseed必要条件：H1困难各29<34/40，常规87/85不足strongNom96，且H1-H0成功/component保持出现失败。第三seed不能消除这两个既有失败，因此关闭该fixedH1收益的formal5/baseline replacement及gain/std/history/budget救分扩展。仍完成原已登记第三pair/全部1312以保全所有seed、失败及完整审查/统计，不提前停队列/dropseed，也不将尚未终态的整份studygate说成已验收完成。
+
+246–249模型对象、actualinput对齐与第二全pair/source合同复核；已有信息提升只支持有限条件性接触与跟踪取舍，不能当strongclassic dominance/newalgorithm/全状态安全。现在不加更难地形/teacher/reward实验，终态原门/CPU/raw/seed-case stats及分批归档后必须作有限贡献/方法或关闭决策，不能无限启发式和重复audit代替新具体贡献/qualifiedformal5/freshID-OOD/完整统计成本新稿六出口。
+
+同353065/353066 running无error/restart，末snapshot第三H0regularbatch1 reserved1024/completed1004，本轮0新physics/learning，runtime对象未全remote/clean。删除closedbranch speed_yaw_coordination一份等价ignored/untracked/无fuser/非worker缓存3238B，round250_cleanup留前SHA/源码SHA，不动scientific/runtime/model/RMS/raw/failure/baseline/sealed集。251同handle实际新第三对象或verifiedwait，255下一深审清理，整体目标继续。
+
 第249轮第二seed完整配对与失败保持（2026-10-07）：
 
 23302第二pair全164各自结束，H1六文件类984 SHA共1,786,282,436B、case/scenario/order/results/Actor核完，H0复用246结果SHA不再积分。成功H0→H1为81→85/96、28→29/40、26→27/28；J .764508→.643722、1.248263→1.086762、.911441→.811504，H1physical/design164全过。

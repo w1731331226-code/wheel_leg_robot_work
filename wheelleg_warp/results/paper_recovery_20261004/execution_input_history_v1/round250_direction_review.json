@@ -1,0 +1,135 @@
+{
+  "verified": true,
+  "round": 250,
+  "previous_turn": "progress",
+  "reviewed_rounds": [
+    246,
+    247,
+    248,
+    249
+  ],
+  "failed_necessary_conditions": [
+    {
+      "seed": 23301,
+      "H1_controlled": 29,
+      "required_controlled": 34,
+      "H1_regular": 87,
+      "required_strongNom_regular": 96,
+      "pair_preservation": {
+        "regular": false,
+        "controlled": false,
+        "legacy": true
+      },
+      "lost": {
+        "regular": [
+          6300075
+        ],
+        "controlled": [
+          6301001,
+          6301009,
+          6301017
+        ],
+        "legacy": []
+      }
+    },
+    {
+      "seed": 23302,
+      "H1_controlled": 29,
+      "required_controlled": 34,
+      "H1_regular": 85,
+      "required_strongNom_regular": 96,
+      "pair_preservation": {
+        "regular": false,
+        "controlled": false,
+        "legacy": false
+      },
+      "lost": {
+        "regular": [
+          6300002,
+          6300018,
+          6300049,
+          6300064,
+          6300078,
+          6300081,
+          6300082,
+          6300083,
+          6300090
+        ],
+        "controlled": [
+          6301023,
+          6301027
+        ],
+        "legacy": [
+          "validation_3"
+        ]
+      }
+    }
+  ],
+  "input_sha256": {
+    "round242_first_pair_delivery.json": "7d70ae5b61a825e4dc24517ad49facefb14e051b0a6e6a05acc30bca2a2ad44e",
+    "round249_second_pair_delivery.json": "91212583d2229f36b0e68a9f7bd361b170e6a75c156e06e528e3a06ea3d02583"
+  },
+  "decision": "Noformal5/baselinereplacement/budget-gain-history/std-rescueforthisfixedH1benefit. Two completedseeds alreadycontradict everyseedrequiredgates;thirdcannoterase thosefailures. Finishremainingpredeclaredseed/evaluationforcomplete reportingandfullintegrity/stats;do notstop/dropthird or claimcomplete1312yet.",
+  "worthwhile": "Completeboundedinformationcontrast. Evidence may supportconditionalcontact/tracking tradeoffs,notrobuststrongclassicdominance,newalgorithm orsafety. No additionalexperiments now.",
+  "next_method_obligation": "After terminal fullresult make finitecontribution/method orclosuredecision before newtraining. Need actualreproducible improvement under completecontact/attitude/height/velocity/parking/physical/design tasks,not onlymeanJ. Newformal5/freshID-OOD/stats/PPOcost/manuscript remainunachieved.",
+  "cleanup": {
+    "verified": true,
+    "files": [
+      {
+        "cache": "wheelleg_warp/__pycache__/speed_yaw_coordination.cpython-310.pyc",
+        "source": "wheelleg_warp/speed_yaw_coordination.py",
+        "bytes": 3238,
+        "cache_sha256": "76239bcef33f8907670afb8dc86f18782d8d977d0b265af107c49d4dc6b5622b",
+        "source_sha256": "985a412892f72c840d16215398a0a3bf1ef6fa4bf090dd4fdec85e49b5d0e028",
+        "ignored_untracked": true,
+        "no_open_holders": true,
+        "code_equivalent": true,
+        "not_in_worker_sources": true
+      }
+    ],
+    "total_bytes": 3238,
+    "limits": "Closedbranchunusedderivedcacheonly;allscience/runtime/models/RMS/raw/failures/baselines/sealedsets retained."
+  },
+  "worker": "MainPID=353065\nResult=success\nSubState=running\n",
+  "progress": {
+    "status": "evaluating",
+    "current": {
+      "seed": 23303,
+      "arm": "H0"
+    },
+    "panel": "regular",
+    "batch": 1,
+    "reserved_evaluations": 1024,
+    "completed_evaluations": 1004,
+    "completed": [
+      {
+        "arm": "B0",
+        "seed": null
+      },
+      {
+        "arm": "B1-route",
+        "seed": null
+      },
+      {
+        "seed": 23301,
+        "arm": "H0"
+      },
+      {
+        "seed": 23301,
+        "arm": "H1"
+      },
+      {
+        "seed": 23302,
+        "arm": "H0"
+      },
+      {
+        "seed": 23302,
+        "arm": "H1"
+      }
+    ]
+  },
+  "new_training_or_evaluations": 0,
+  "formal5_admitted": false,
+  "entire_goal_complete": false,
+  "next_deepreview_cleanup": 255
+}
