@@ -1,0 +1,128 @@
+{
+  "verified": true,
+  "round": 241,
+  "arm": "H1",
+  "seed": 23301,
+  "checkpoints": [
+    {
+      "steps": 20000,
+      "epochs": 40,
+      "Adam": 800,
+      "RMS_count": 20100.0001,
+      "maximum_command_slot_RMS_mean_abs": 0.046180411795247615,
+      "finite_model_optimizer": true
+    },
+    {
+      "steps": 40000,
+      "epochs": 80,
+      "Adam": 1600,
+      "RMS_count": 40100.000100000005,
+      "maximum_command_slot_RMS_mean_abs": 0.0462388006230604,
+      "finite_model_optimizer": true
+    },
+    {
+      "steps": 60000,
+      "epochs": 120,
+      "Adam": 2400,
+      "RMS_count": 60100.000100000005,
+      "maximum_command_slot_RMS_mean_abs": 0.046040872732639175,
+      "finite_model_optimizer": true
+    },
+    {
+      "steps": 80000,
+      "epochs": 160,
+      "Adam": 3200,
+      "RMS_count": 80100.0001,
+      "maximum_command_slot_RMS_mean_abs": 0.045919313016091236,
+      "finite_model_optimizer": true
+    },
+    {
+      "steps": 100000,
+      "epochs": 200,
+      "Adam": 4000,
+      "RMS_count": 100100.0001,
+      "maximum_command_slot_RMS_mean_abs": 0.04586385779495311,
+      "finite_model_optimizer": true
+    },
+    {
+      "steps": 120000,
+      "epochs": 240,
+      "Adam": 4800,
+      "RMS_count": 120100.0001,
+      "maximum_command_slot_RMS_mean_abs": 0.04598115682867761,
+      "finite_model_optimizer": true
+    },
+    {
+      "steps": 140000,
+      "epochs": 280,
+      "Adam": 5600,
+      "RMS_count": 140100.0001,
+      "maximum_command_slot_RMS_mean_abs": 0.04653469214004066,
+      "finite_model_optimizer": true
+    },
+    {
+      "steps": 160000,
+      "epochs": 320,
+      "Adam": 6400,
+      "RMS_count": 160100.0001,
+      "maximum_command_slot_RMS_mean_abs": 0.047079654075093985,
+      "finite_model_optimizer": true
+    },
+    {
+      "steps": 180000,
+      "epochs": 360,
+      "Adam": 7200,
+      "RMS_count": 180100.0001,
+      "maximum_command_slot_RMS_mean_abs": 0.047547842982998176,
+      "finite_model_optimizer": true
+    },
+    {
+      "steps": 200000,
+      "epochs": 400,
+      "Adam": 8000,
+      "RMS_count": 200100.0001,
+      "maximum_command_slot_RMS_mean_abs": 0.047898929989018874,
+      "finite_model_optimizer": true
+    }
+  ],
+  "input_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_20000.json": "4183fa3ad1dc9c21d52925ba1a283a2ac04ec038eedae88d2595af5e868bf882",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_20000.zip": "75c3a9cdbc59c90ec3e75bdf7c6b2d7f9c2fadadb54a1a504015a9aecc3564ba",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_20000.pkl": "6639a3c869aa46bd2cc12d5e3e3ce149e131a3beda7849919a9b355b0172dfe8",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_40000.json": "f417ed1866acec5db2fc96cd9f588092294da43bbe98d589193834c09028eda2",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_40000.zip": "d603c6d4eeb50c23bb9f483d46bc53c5feccb6a78dade88923c43a2fc66f57b9",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_40000.pkl": "d55399bc58dc67e1992ed13acc9986c49bb6129a777cfc81444c73ba44c40f31",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_60000.json": "a13793f91efddfec9fff1ae42e1886432b62e3c2175032b8056c99695e476285",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_60000.zip": "40773dd5819fe0846f7b49e5b422b9d0eb3131da158c7fd7d224d84a79610706",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_60000.pkl": "46754f81082bfeea48e754efd50e5a8cee315d15cf28a59e4a28824a78176cb4",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_80000.json": "6b05b5a036b6d42e26a1814ba5ebdd0ef9cec1b4b156ca4414f79afb4dac39a8",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_80000.zip": "a9d8b20274d3c7e2eb814930a83d53fe8fa1bd477d52b9ccd9c798c0ad8408b8",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_80000.pkl": "565b97f8ba5e3cb639cacfcd5529346040e3b19160c785c1d2419893d231a4ea",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_100000.json": "8a8d1f0faa430c901826972f337aeb1b2b27c2c9a22fb89dd037ea0f89091043",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_100000.zip": "b45f632aee9687576ddfe01cc69e783af4149ad59d2f92c928a460e06016c1e5",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_100000.pkl": "70876c6710a0fc028696269708dc11621bd7ac47be898f1b9d968b53fdc04fde",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_120000.json": "d290c76b02e264e1e2018171010ada04fa163228a3bca7f5616f53d8aaaffb69",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_120000.zip": "7346c606a08cec20fd870da25b35a3c818a142571983c9fa95dc5e8738f22619",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_120000.pkl": "797a104067e589630e939ce0a101a972aa41f16d2cf074da16e43dd3e43d154a",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_140000.json": "56ff8a09d5df551e9bbc7d5429aae761263afb0df14b6aed00e907fa350fb83f",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_140000.zip": "b5dcd88258bea2cd1c88d82b117675b7a7fd463a1e4278cc59fb319f222fa770",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_140000.pkl": "0b8bfaf04a981054fadadba2fb8130dec08dbf1e0766db2335c8d9ec505d12ed",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_160000.json": "6c03e558dd44ba00a21ae5b74ee611d55b0333849260792290b500acc47426b5",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_160000.zip": "3000d0c7d90a23cacd68d6fac18dc3c2afc9a493363aa9adb8293850157d426c",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_160000.pkl": "8c65b100efa956f3a8b399c86066abc7fe73e11e54af5b46cf0a8014d6463f74",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_180000.json": "f100bdd76ffd1cef467ebfa955ad4f3a12933077d8ff55d9e681571082ee4778",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_180000.zip": "4fc8679f2975c6ee8da8464dce2d96caa14cf0b82ef50961b84427a06799984f",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_180000.pkl": "f2002ac63218a17c5989b2032ee5edb9ad29d71e444932c063efa8b17580e524",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_200000.json": "cce51bf6655e58fd9ab3036292edd646763131ecfd5d275502787bc6d21328e8",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_200000.zip": "943e1eb2c69837e41d18a8e1874310a1cb25b06030faef4640538ee09f626cc6",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23301/step_200000.pkl": "b0e81be824a90c9f50d83bba7ea2525a98d1c3fd1ae2b12ea603655b563d3f79"
+  },
+  "same_seed_initial_weights_world_exact": true,
+  "training_verification_sha256": "927b2aaa1faa11b37b0213e01a94a2bfdb4a79d44572f6a27fee9c2776d7dac9",
+  "contract_sha256": "558eb730a80c68a98fc1ef7b0969ae9112dd2ce5ce8b9cb4f631786b73ffdc68",
+  "learn_checkpoint_wall_s": 92.12426914399839,
+  "new_training_or_evaluations": 0,
+  "limits": "CPUread-onlyreload;originalmetadataCUDAmoments. NonzeroH1inputstatistics andH0zero masking prove declaredinputdifference,not causalperformance orcompletepairedseedbenefit.",
+  "formal5_admitted": false,
+  "entire_goal_complete": false
+}

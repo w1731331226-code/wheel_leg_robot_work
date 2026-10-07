@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第241轮H1模型与实际输入差异独立验收（2026-10-07）：
+
+H1/23301十个20k…200k训练后ZIP/481RMS/JSON共30对象CPU只读加载与保存SHA核完；seed/shape481→6/step/epochs/有限weight及非空Adam/step800…8000、RMS.count=steps+100.0001及每次save world/route/history/parking/RMS/RNG不改标记通过。CUDAmoments由原snapshot证明，校对过程只用CPU。两臂同seed初始化weight/world exact、非工程warmstart，H1的command坐标RMS统计确实非零（末maxabs.04789893），H0为exact0；这验证信息差真的生效，不证明该信息改善任务。
+
+H1末200k/400epochs/8000Adam的learn+checkpoint92.124269s，评价尚未完整，末snapshotlegacybatch0 reserved648/completed628，同353065/353066 running无interruption/replay。本轮0新训练/physics，round241_H1_model_delivery保存30SHA及统计，data/models未全remote/clean。
+
+242沿同handle只核实际完整首seedpair或verifiedwait，不因input启用/单pair成绩晋升；全三seed/1312强old+newref/CPU/完整flags/raw/stats及归档仍待。六论文出口继续未齐，245深审清理。
+
 第240轮方向深审、接触任务失败分解与冗余清理（2026-10-07）：
 
 236–239两强参考/首H0对象与全164/同seed初始化及完整原门复核，当前worker源码全部SHA不变。继续这一冻结信息干预，不追加极端地形、teacher/reward/gain/history/budget或改变接触门，不把一seed/partial结论当新方法。H0信息消融、H1genericPPO、公开clock新增测量及旧164发展集边界保留；完整贡献、三seed资格后新formal5、新独立ID-OOD保持、层级stats与真实PPO成本、新稿六出口仍未齐。

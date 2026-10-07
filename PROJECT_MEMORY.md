@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第241轮H1/23301十checkpoint/30对象独立CPU只读加载过：20k…200k的seed/shape481→6/step/epochs/非空Adam有限及step800…8000、CUDAmoments原snapshot、RMS.count=steps+100.0001、保存manifest SHA完全一致，保存world/route/history/parking/RMS/RNG不改标记核。H1指令54slot RMS mean各checkpoint非零（末maxabs.04789893），对照H0 exact0，证明确实启用不同input，不是单纯加空feature。末200k/400epochs/8000Adam，learn+checkpoint92.124269s；不是GPUloaded验证或收益结论。
+- 第241轮23301两臂初始化weights/world SHA一致，均无engineeringwarmstart；H1评价尚未完整。末snapshotlegacybatch0 reserved648/completed628，同353065/353066仍running/无interruption/restart，0本轮新physics/learning。round241_H1_model_delivery保存来源/30SHA和输入统计，runtime原始/模型仍未全remote/clean。
+- 第241轮242只核实际已完整首seedpair数据（若完成）或同handle verifiedwait，保留全部失败与predeclared三seed/1312/fullgates，不将单pair或input启用当算法贡献/安全。六论文出口/goal active不变，245深审清理。
+
 - 第240轮五轮深审完成：236–239两同期strongref/首H0十checkpoint/全164/初始化配对与冻结原门复核；runningworker所有source SHA不变，仅继续原1.2M/1312，不新地形/teacher/reward/gain/budget/接触门改动，不partialwinner。H0是信息消融/H1genericPPO、clock新增测量、旧164非新独立泛化、三seed全结果和论文六出口仍未齐，goal active。
 - 第240轮首H0失败非互斥分解：regular terrain_contact29/legacy_contact1/attitude2/yaw1/roll_axis1；controlled attitude11/yaw9/roll_axis4；legacy attitude1/yaw1。不能只看yaw J隐藏接触任务，phys/design全过不等完成任务；不能把单H0描述因果归于inputmask/reward或全system不可控。round240_H0_failure_components绑定原已核结果，无新回放。
 - 第240轮同353065/353066 live/running无interruption/restart，H1/23301 training_verification actual200k/400epochs/8000Adam/92.124269s完成，未全H1评价或pair收益；末snapshotregularbatch4 reserved588/completed572。241仅实际新完整H1对象/配对或同handle verifiedwait，完整六run/1312后原门/CPU/全部raw/seed统计与终态分批归档，data/models未全remote/clean。
