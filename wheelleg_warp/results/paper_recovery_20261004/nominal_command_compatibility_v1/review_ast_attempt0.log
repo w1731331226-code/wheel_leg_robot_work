@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/review_nominal_compatibility.py", line 71, in <module>
+    if __name__=='__main__':run()
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/review_nominal_compatibility.py", line 45, in run
+    assert 'state[w, 11]' in ast.unparse(assignments['thcmd'])
+AssertionError

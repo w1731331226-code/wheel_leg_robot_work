@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第267轮Nom兼容独立复核、成本更正与有限工程方向（2026-10-07）：
+
+Saved30queryonlystate11差异及其before/after值、其它qv/sensor/cmd/ref/envstate/requiredctrl一致核过，rawNom15:21/finalctrl effect exact0，projectionerror0，gap/quantization重算一致。源码AST里LQRx不含thcmd、state11在legacy外环，hl/hr的oldmean平均被hub替代；256随机代数检通过。限定pre-angleprojection及mirrorstate30端点，不推所有动态/不对称/制动memory，也不叫旧PPO唯一原因。初AST覆盖到braking赋值的选择错（0query）保log，选normal首赋值修后过。
+
+修正266总计算口径：查询0GPUclockintegration，但冷构rm.nominal_design115内部5ml.design/linearize，加height115current_vmc_table5，log有10reduction，baselinebank10transitionFD不是零成本。当前review不构造bank/新query/FD。保旧结果，明确baseline构造和新实验开销分开。
+
+结束30screen，moving_balancedplant不等currentNom命令平衡。motion_balanced_nominal_v1只工程prototype，public7kg移动参考导出current-Jwheel/hub/supportfeed和theta-equilibriumoffset同步改，保原6stategain/Actor/phase/filter/guard/bounds，cmd0 offset0必须oldexactnoop；不得只加扭矩或积分项强pass。268algebra/sourcechecks，269固定70staticold/candidatequery（moving10refs×3state11×2=60、cmd0五static×2=10），270深审清理finite去留。尚0executed/无新trajectory/opt/FD实验/PPO或baseline替换，baseline构造10FD另记。任何baseline替换/新PPO前必须actualdynamic CPU/GPU配对与164完整门校对，staticpoint过不够；工程一致性不单独称新算法，完整论文六出口未齐。
+
 第266轮实际Nom30静态命令／记忆查询完成（2026-10-07）：
 
 按原10moving点×state11[-.3,0,.3]30individualqueries，每queryreset同qv F32、prevFKlength-angle/steadygyro-vxfilters/boot2/envstep4000/publiccmd±.7/zeroActor及Nomcorrection，原phase准备/actualexperimentalcontrol运行。原q/v/sensor/envstate/cmd/dataclock exact不改、clock0/capturedgraph未launch，0integration/FD/optimization/PPO。全部memory前后/phase/ref/diag/finalctrl/plantrequired及qv量化误差/SHA保存，原source复制接口核过。

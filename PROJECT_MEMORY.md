@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第267轮saved30query独立review过：onlystate11变、qv/sensor/cmd/envstate/ref/required一致、memory11before/after端值有效且不更新，rawNom15:21/finalctrl effect exact0、projectionerror0、量化及gap重算一致。源AST验证LQR x不读thcmd、state11进legacythcmd、hl=vl1+hub-average/hr同式使oldcommonmean被替代，256随机代数检查过；结论限定pre-angleprojection/30mirror端点，不推全部asymmetric/braking/continuummemory或旧PPO唯一因果。初ASTdict覆盖thcmd到braking错误选择，0query，log保留，改取normal首赋值后过。
+- 第267轮计算口径纠正：266 individualqueries0GPUintegration/0新实验FD，但rm_controller.nominal_design115冷起5ml.design/linearize+height115current_vmc_table5调用，原log10 reduction，baselinebank构造共10离线transitionFD；不能称总FDwork0。当前review无构造/新query/FD，旧scalar记录不重写，成本更正明确保存。
+- 第267轮结束30queryscreen，plantref与currentNomcommand静态不兼容；登记motion_balanced_nominal_v1有限工程prototype，只修publicmodel移动feed与theta-equilibrium一致offset，原6gain/Actor/filter/guard/bounds不改，cmd0必须exactnoop。268algebra/sourcechecks，269配对70static（moving10×3I×old/candidate60、static5cmd0×2=10），270深审清理去留；无trajectory/opt/新实验FD/PPO或baseline替换准入，原模型/失败/score保留。不是单积分修补或新颖算法，论文六出口/goal active。
+
 - 第266轮registered30staticNomqueries完成：原10moving点/3积分端值、每次reset相同qv F32upload，原phase准备与actualexperimentalcontrol、steadyFKderivedprevlength-angle/rates/gyro0/vxfilter、boot2/envstep4000/zeroActor与Nomcorrection，source拓扑与指针核；q/v/sensor/envstate/publiccmd/dataclock逐值不改、clock0无capturegraphlaunch，0integration/FD/optimization/PPO。全部input/output memory/phase/ref/diag/qv量化差/plantrequiredctrl与SHA NPZ保存。
 - 第266轮鏡像steady范围state11输入-.3/0/.3确实不同且after保持，rawNom15:21及finalctrl endpoint effect exact0；所有projectionerror0。当前Nomwheel约±.01397…01588Nm，plantreq约±.07070…07085Nm，maxcommandgap按node约.05497…05676Nm，hip差亦保存。这不是跨状态continuum无效、唯一旧PPO因果或未经验证要修的codebug；267独立raw/gate/controller路径复核后finite兼容去留，不改gain/integral/ref求pass。
 - 第266轮完整六论文出口/goal active不变，270深审清理；旧failed分支和全部negative科学数据保留，同步的是静态诊断而非新方法收益。
