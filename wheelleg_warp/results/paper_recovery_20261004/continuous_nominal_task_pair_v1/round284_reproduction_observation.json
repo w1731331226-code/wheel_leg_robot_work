@@ -1,0 +1,165 @@
+{
+  "round": 284,
+  "status": "partial_old_baseline_numeric_reproduction_mismatch",
+  "observed_completed_old_cases": 96,
+  "reports": [
+    {
+      "panel": "regular",
+      "batch": 0,
+      "completed_cases": 20,
+      "summary_exact": false,
+      "max_metric_abs_delta": {
+        "velocity_rmse": 1.4121788325202611e-05,
+        "height_rmse_m": 2.05673031995838e-06,
+        "stop_distance_m": 0.00017289010153095918,
+        "tail_speed_m_s": 0.0011623838297835686
+      },
+      "flag_differences": [],
+      "physical_step_differences": [
+        {
+          "seed": 6300010,
+          "old": 14812,
+          "new": 14816
+        },
+        {
+          "seed": 6300018,
+          "old": 16411,
+          "new": 16412
+        }
+      ],
+      "old_result_sha256": "e5ac794d292c878fa93006ce2edadb098974aa414f0393e8e695bfa6bd6b4986",
+      "new_result_sha256": "9dda420999ea1c974a8b9832029d99734b88fd5985e05824c1d3ecab5e9227c2"
+    },
+    {
+      "panel": "regular",
+      "batch": 1,
+      "completed_cases": 20,
+      "summary_exact": false,
+      "max_metric_abs_delta": {
+        "velocity_rmse": 6.04237807438901e-06,
+        "height_rmse_m": 7.700346021109793e-07,
+        "stop_distance_m": 3.803195254795111e-05,
+        "tail_speed_m_s": 0.0011988540716122349
+      },
+      "flag_differences": [],
+      "physical_step_differences": [
+        {
+          "seed": 6300026,
+          "old": 14146,
+          "new": 14147
+        },
+        {
+          "seed": 6300027,
+          "old": 14840,
+          "new": 14838
+        },
+        {
+          "seed": 6300031,
+          "old": 14771,
+          "new": 14772
+        },
+        {
+          "seed": 6300037,
+          "old": 17512,
+          "new": 17511
+        }
+      ],
+      "old_result_sha256": "11daa20067b6235965a5feb30279f0fb54d465b848da4503d9f80e7a00716f7d",
+      "new_result_sha256": "be269cf499d0e4add51526be7e71bd5f800a008603f9147109d2a1e1af4f4103"
+    },
+    {
+      "panel": "regular",
+      "batch": 2,
+      "completed_cases": 20,
+      "summary_exact": false,
+      "max_metric_abs_delta": {
+        "velocity_rmse": 4.87375023289216e-05,
+        "height_rmse_m": 1.1410945046244712e-06,
+        "stop_distance_m": 0.00027542048841999733,
+        "tail_speed_m_s": 0.0012953115553088746
+      },
+      "flag_differences": [],
+      "physical_step_differences": [
+        {
+          "seed": 6300048,
+          "old": 14314,
+          "new": 14315
+        }
+      ],
+      "old_result_sha256": "c656c66e7333282343ab13f19042748725c63ab66f9a110a167d89f4d5bace12",
+      "new_result_sha256": "2dcb4ab54f497bfc0da608f84eac289e2fa308cdf3ffee95ea07ae4b0d53be5d"
+    },
+    {
+      "panel": "regular",
+      "batch": 3,
+      "completed_cases": 20,
+      "summary_exact": false,
+      "max_metric_abs_delta": {
+        "velocity_rmse": 9.597858222178124e-05,
+        "height_rmse_m": 1.790595786650695e-06,
+        "stop_distance_m": 0.0001471217708213235,
+        "tail_speed_m_s": 0.0020390019954377933
+      },
+      "flag_differences": [],
+      "physical_step_differences": [
+        {
+          "seed": 6300060,
+          "old": 16878,
+          "new": 16879
+        },
+        {
+          "seed": 6300063,
+          "old": 13729,
+          "new": 13730
+        },
+        {
+          "seed": 6300075,
+          "old": 18111,
+          "new": 18114
+        }
+      ],
+      "old_result_sha256": "5f01ddc04948593d411f3c2559e82c3b4ebeb0ef2772128dc529a2ceaa227b5b",
+      "new_result_sha256": "e54e6c023d4763dbbf0d294832996c19ecc9142e272bd7ee72ccf8e7540c776a"
+    },
+    {
+      "panel": "regular",
+      "batch": 4,
+      "completed_cases": 16,
+      "summary_exact": false,
+      "max_metric_abs_delta": {
+        "velocity_rmse": 3.0815270734778355e-05,
+        "height_rmse_m": 2.9130788388110262e-06,
+        "stop_distance_m": 0.0004493266197347634,
+        "tail_speed_m_s": 0.0025264876407952103
+      },
+      "flag_differences": [],
+      "physical_step_differences": [
+        {
+          "seed": 6300082,
+          "old": 16361,
+          "new": 16360
+        },
+        {
+          "seed": 6300085,
+          "old": 13041,
+          "new": 13040
+        },
+        {
+          "seed": 6300087,
+          "old": 15657,
+          "new": 15656
+        },
+        {
+          "seed": 6300094,
+          "old": 16353,
+          "new": 16355
+        }
+      ],
+      "old_result_sha256": "956c3d64da2fe2a93e09c303a7e874077530c57798a6c8c00eb9045eb036d657",
+      "new_result_sha256": "4f61e3af352c26a25cbf412e8c95a5f5ae2edf74d2fbff9e4c96c141259f255b"
+    }
+  ],
+  "paired_causal_benefit_admitted": false,
+  "queue_not_restarted": true,
+  "limits": "Partial actual oldarm numeric/step differences recorded; source/protocol unchanged. Cause not yet established,not silently accepted with widened tolerance. Complete queue preserves registered task failures; later source/baseline review required."
+}

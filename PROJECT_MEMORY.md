@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-08，目标active）
 
+- 第284轮（2026-10-08）actual任务adapter与source preflight过：在原完整B0 evaluator/phase/parking/collector/history/route捕获链外层只换实际control为GPUprepare21+continuouskernel，实际currentcmd/finalctrl owner保持、80controllercalls=2×40/signatures两capture一致。Old/map同一预检case的reset qv/envstate/memory/gain/feed/reference/params exact，0preflight physicalsteps；mapper另记每物理步9列 publiccmd/h/delta/flag，强owner/reset/firstepisode与原complete帧匹配，出错保存原全流和mapbuffer/prefix。原modules/source不改。
+- 第284轮唯一328queue已实际启动：systemd wheelleg-continuous-task-pair-v1.service，PID32686/active/running，worker全程fcntl持有.git/project-write.lock排他锁；截至本条读取completed164/reserved184，old_B0全部164完成、map_B0 regularbatch0评估中，baselineconstructorFD累计65（预检15另文件记录，仍随构造增加）。Source/admission SHA当前一致；未停止/重启/改table/gain/Actor/门/队列，无PPO/newexperimentalFD/optimizer。Taskfail不停止，软件/source/recordingfailure会留partial停。
+- 第284轮旧baseline复现已发现数值/终止步差，round284_reproduction_observation保存当时96oldcases：安全/任务reason/terrain flags无差，部分numeric及14个终止步不同；不是事后放宽epsilon或宣称bitwise复现，因果收益仍blocked_for_claim而goal非blocked。全164及map结果未独立review，不提前用旧32/新成功counts宣布工程门通过。285必须深审/cleanup及同一worker实际进度/终态，不因观察超时重启。
+- 第284轮只及时提交source+稳定preflight/admission/worker/复现观察和本记忆计划，正在生成的raw/progress/log未全部提交/remote，不能称worktree全clean或完整结果同步。收尾守护恢复active，但worker排他锁阻止未完成data被自动拆成提交；完整raw/终态之后单独归档。六论文出口/goal active，production/formalPPO/freshOOD仍未准。
+
 - 第283轮（2026-10-08）saved50独立核过：source AST只三处声明改变、原/新qv F32与originaldouble/required/gap重算、所有pair sensor/cmd/envstate/Actor/nomcorrection/bank/memory/ref前缀/phase一致，五zero ctrl/diag/memory/role/phase exact。独立四权重bilinear核20prepared delta、public nominal motorcurve最终command边界过；真实低速cmd按snapshot/contract一致，合法constructor speed不同只容器配置、不改query。0新query/FD/积分/PPO，仅模型compile作原motor边界读，cost未叫0总计算。
 - 第283轮18改善/2worse来源和逐componentgap重新核，candidate两最大gap分别hip1/hip0（old第二点最大wheel4），不作唯一归因。关闭static筛查，不重新fit/增加anchors/query/改指标；表保留实验候选，未准production/正式PPO，旧科学negative gate不改。
 - 第283轮冻结continuous_nominal_task_pair_v1实际328发展任务：原96regular/40controlled/28legacy×old_B0/map_B0、原eval_jobs顺序/案例及164旧B0 archive SHA，复用actualphase/parking_request_withdrawal/collector/history/RouteState和zero6Actor，不用equilibrium初态。284source/capture/recording preflight过后一次queue；原arm须重现archive全部案例/门/指标，unexpected差异阻因果结论；所有失败/raw/buffers保存，无学习/重复重试/换seed。

@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第284轮完整任务capture准入和唯一328队列实际运行（2026-10-08）：
+
+continuous_nominal_task_adapter.py在原B0完整evaluator/phase/parking/commandcollector/route/history捕获链外只替换actual控制调用，GPUprepare私有21列和mappedkernel，currentcmd/finalctrl所有者一致；80calls=两40捕获signature一致，原前16rolebuffer继续用于记录。新增9列每物理步maptrace(publiccmd/h/delta/flag)，与原complete frame firstepisode/steps和实际command逐值核，zero delta0；partial map及原物理/历史/停车buffers保留。Old/map预检case reset qv/memory/params/bank/ref exact，未launch physicsgraph，0额外sourceepisodes，原pipeline modules不改。
+
+run_continuous_nominal_task_pair.py通过source/admission后已运行唯一328任务队列，systemd worker PID32686 active/running，源/协议每job核、0learning/retry/额外solver。当前实际completed164/reserved184，old全部结束、map regularbatch0中；FD累计65，预检15单列，随实际构造继续计，不把physics/eval时间说成PPO加速。Taskfailure作为数据继续余案例；软件/source/recordingfail保存partial并停止。
+
+已观察old复现差异：当时96regular中reason/physical/design/terrain flags一致，但numeric/终止步非exact，round284_reproduction_observation保14步数变化等全部delta，不能悄悄加容差/重跑来求match；原因待完整baseline source分析，因果收益暂不准。全164及map/328 raw尚未独立核，不能预宣工程gate达成；285按约方向深审清理及同worker实际live/terminal跟进。
+
+Worker全程fcntl排他.git/project-write.lock，收尾guard可active而不提交未完成data；本轮只source/稳定admission-preflight/worker/复现观察与记忆计划提交，raw/progress/runlog仍生成且未全remote，完成后全部科学原始另归档，不声称worktreeclean/完整同步。生产/正式PPO/freshOOD及六论文出口仍未准，goal active。
+
 第283轮static50独立去留与完整任务配对登记（2026-10-08）：
 
 review_continuous_nominal_queries.py独立核所有source/数据/真低速cmd/合法constructor差异、原frozenbank和pair输入、五zero全输出/diag/memory/role/phase exact，独立四权重table插值与原motorcurve最终command门通过。18改善/2worse保留逐component数组，candidate两worse主gap为hip1/hip0，旧第二点主gap为wheel4，不能静态唯一归因。0新controllerquery/积分/FD/PPO，公共模型compile用于边界检查。关闭static/参考扩点，不refit当前表，工程候选非生产/训练资格。
