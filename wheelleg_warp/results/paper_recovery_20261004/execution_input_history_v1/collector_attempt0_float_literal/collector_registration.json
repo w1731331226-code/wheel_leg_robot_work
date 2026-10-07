@@ -1,0 +1,116 @@
+{
+  "cases": [
+    {
+      "seed": 2290000,
+      "scenario": {
+        "speed": 0.7,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.0,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.115
+      }
+    },
+    {
+      "seed": 2290001,
+      "scenario": {
+        "speed": 0.7,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.0,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 5.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.16
+      }
+    },
+    {
+      "seed": 2290002,
+      "scenario": {
+        "speed": 0.7,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.0,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 10.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.3
+      }
+    },
+    {
+      "seed": 2290003,
+      "scenario": {
+        "speed": 0.7,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.0,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 20.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 0,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.38
+      }
+    }
+  ],
+  "maximum_physics_steps": 480,
+  "training_steps": 0,
+  "synthetic_gpu_no_integrator": true,
+  "source_sha256": {
+    "wheelleg_warp/test_execution_input_collector.py": "008d29173db8779bcbeadc866dd44945c4d121edf68df18c3cbba2f0d891b2f7",
+    "wheelleg_warp/execution_input_collector.py": "dbe2f2cfada2b1b629e28984729a448db99f2e3b60a2e74669f0d82a48649a46",
+    "wheelleg_warp/execution_input_features.py": "cd2c67c328d8a89c17639f87b7f238208de6ead582fb6a5b46c96c21dea1d82c",
+    "wheelleg_warp/light_phase_reference.py": "a2a2c5a52cb9a51591bea44c1c85cb0fd343fe3b5e2526e88ffea461d56e9768",
+    "wheelleg_warp/native/environment.py": "a4fb0a7a5beb08bf23e8e3855f681e8008b79fe5e730d11bc4b5c91674fe8a2b"
+  },
+  "proposal_sha256": "d41495802ab4cf05c39d6e7337146820578b0ed34bf4eee6183637b3ed821c19",
+  "scope": "Interface qualification only,not controlperformance. Synthetic13stepterminal+partialrowreset;real3stepclock/collector/noop only."
+}

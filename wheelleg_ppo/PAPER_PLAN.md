@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第229轮最终指令历史采集初始资格（2026-10-07）：
+
+execution_input_collector在原控制器final float32 ctrl与mjw.step之间只读累计每0.5ms ctrl积分，82slot prefix及整数stamp覆盖40step Actor interval/最大40step sensor delay，strong-owned buffers及finally恢复构建spy。host在Native terminal reset前按送达sensor端点读历史prefix差，reset/done按world清privateclock，terminal旧数组独立保留；preserve保存prefix/total/stamp/previous/lastinterval，不改变Native或phase控制源码。
+
+合成CUDA160ticks/4polls（无integrator）覆盖四delay、13step terminal/6.5mspartial、单worldreset、ringwrap及staleinterval拒绝。初次测试elapsed与.0065字面量因浮点表达不等而失败，原source/registration/failure/log保留；按整数sensorclock13*.0005修断言，未放宽物理门，首次0realphysics。修后实际CUDA四height.115/.16/.30/.38与delay0/5/10/20ms的zeroresidual/lightphase共480physics（3Actorcall/4world）过。独立逐step finalctrl副本重建积分atol1e-12，sensor wheel packet对history对应slot exact，首次elapsed .02/.015/.01/0及dt0接口过；同execution base38/reward/done及host前后物理/controller buffers exact，explicitreset/partialpreserve NPZ逐值一致，sourceSHA保持，0PPO训练。相关资格见execution_input_history_v1/round229_collector_unit。
+
+**限制与230决定点。** 此不是controller收益、跨GPU旧新轨迹身份或完整训练准入。真实terminal autoreset/curriculum尚未测试，10endpoint policywrapper/RMS/checkpoint未实现；synthetic terminal只检查kernel/clock语义。未来elapsed与dt masks需要明确新增可测sensor timestamp假设；目前用private delay在模拟sensor流内部对齐，dt首interval可能透露数据年龄，不能将此说成完全与旧39同信息，不能直接加true delay特征。P1/P2及强参考必须分享声明的新增输入条件。最终command仍在actuator gain前，不是真实torque/normal force。
+
+230按约深审/冗余清理，依据贡献区别、时间戳假设与真实生命周期需求决定是否继续有限工程，不准因部分collector过即启动提议24k/1.8M，二者均未执行。旧失败/screen保持关闭，完整方法/强对照消融/新formal5/独立泛化/统计PPO成本/新稿六出口仍待完成。
+
 第228轮下一方法去留与执行输入契约候选（2026-10-07）：
 
 **实际决策。** 结束oracle局部响应及固定阻尼/速度协调权限解释链，不扩大已648步screen。当前39维Actor的26:32来自diag6:12/scale，controller中diag6:12只记录投影后残差，不是最终Nom+residual motor ctrl。24原状态的acceptedwheel/filtered6均为0而finalwheel ctrl最大2.07319665Nm，是显式总输入缺失见证；不能由此证明完整观测不可辨识或过去PPO失败唯一原因。故不能拿这些残差字段直接做momentum/input-output辨识。
