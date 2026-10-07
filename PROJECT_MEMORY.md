@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第234轮evaluation source动态准入过：同原登记3firstepisode（H1工程model仅unit/B0 legacy solver50/B1原parkingPD）14934/13034/14922physics，另80step deliberateprefix，共42970engineeringphysics/0learning/0科学预算。6个±.8/0及轮速0/70rad/s静态diff3→V6 wheel-only ctrl/diag array_equal，包含包络clip，0integration；完整旧六流/968Actor字段/firstepisodeceilN40、legacyID/phase/physical/Actor预测及RMS/model不变过，prefix2Actor80step全部日志/history/command保存过，admission绑定SHA。
+- 第234轮首H1完整回合已保存后，整段batch374推理vs原逐步1world出现1910/2244差，max8.940697e-8；不是Actor日志/物理改动。保留初failure/log/source，显式continue仅offline按原1world CUDA形状逐行replay仍array_equal，复用既有H1不重跑，再执行其余两unit和prefix，原3+80预算未扩。不是调容差或挽救科学分数。
+- 第234轮新execution_input_study runner源/contract已冻结：6fresh23301/2/3×H0/H1各continuous200k、同期B0/B1及末164×8=1312。新100worldbank、原PPO/std/481RMS/commonparking，CB复用HistoryLedger20k训练后保存；模型/非空Adam/481RMS末重载和源/旧refSHA，reserved/completed/partial所有对象、无implicitrestart/正式5seed或工程warmstart。冻结时0科学消耗，源码/证据先提交后dispatch独占project-write.lock；235如期深审清理。
+- 第234轮完整论文目标仍active：主信息必要性对照未有成绩/完整门结论，不自动baseline replacement或新方法创新。完整贡献/强同信息对照消融/新formal5/新ID-OOD保持/层级stats与PPO实耗/推导复现新稿六出口未齐；预期后续在同workerhandle继续，不按局部结果择winner。
+
 - 第233轮study_proposal冻结（runner未准）：新trainingseed23301/23302/23303，各H0→H1，100world×3stage从23300000等新case IDs按原训练分布生成，共900world配置、6fresh模型×200k=1.2M。两臂同bank/PPO/std/零mean初始化/481history/publicsensorclock/commonparking/Nom/virtual6/filter/任务，唯一54个meancommand信息mask；不加载24k模型、不选bestcheckpoint/seed。旧136发展+28legacy仍非独立泛化，仅末200k一次评价。
 - 第233轮完整预算1312评价：新同期B0/B1各164加六model各164，10个solver同质<=20batch×8条件。旧strongB0/B1与CPUsha全部核并保留；新B1不削弱原parkingPD，提议wheel-only diff3到V6[0,0,0,0,a,-a]尚待动态/接口校对。literal每panelJ15%AND.05、全部phys/design/逐case成功及每component保持、CPU28速度1.05+.005/rollpitch+.1、每seedctrl>=34及H1-H0机制各seed/三seedmean门事前冻结，partial study不得选winner；information效果不等同信息新算法优势或formal5准入。
 - 第233轮collector仅增加expected_captures=1默认arg并把40校验改40*expected；record/clear/interval/hostlifecycle及其余AST全同232原commitblob（原sha对工程contract核）。默认单capture行为不变、dense传2；旧工程sha保持历史，round233_source_compatibility记录新sha及限定证明，不重新签旧证据。未改物理/控制/基线。新版evaluation复用密集phase/parking/physical记录，冻结首episodeActor raw481/normalized481/submitted6的968字段日志、RMS/model只读和partial保存接口。

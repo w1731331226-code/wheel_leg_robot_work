@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第234轮密集动态准入与独立执行器冻结（2026-10-07）：
+
+事前3sourcefirstepisode H1工程model/B0 solver50legacy/B1原parkingPD分别14934/13034/14922physics，另2Actorcall deliberateprefix80，共42970工程physics、0learning/0科学预算。6个±.8/0request×轮速0/70rad/s静态diff3→V6 wheelpair转换ctrl/diag array_equal（含clip）、0integration；三完整旧六流/968Actortrace/ceilN40、legacy ID、phase/physical/RMS/model不变和80step partial logger/history/command所有权准入过。工程模型仅sourceunit，不取科学score或warmstart。
+
+首H1保存完成后批374replay与原1world逐步CUDA推理有1910/2244微差max8.940697e-8，保留初failure/log/source。显式continue改按原1world调用逐行array_equal，只offline复用既有H1，不重新积分/松容差；再完成另外两sourceepisode与prefix，原预算不扩。evaluation_admission绑定全部unit对象与来源。
+
+新execution_input_study冻结sixfresh23301/23302/23303×H0/H1各continuous200k，新100worldstagebank、原PPO/std/481RMS共同Nom/parking/bounds/task，20k训练后checkpoints和final200k唯一选模；同期B0/B1及六末模型×164=1312，保留全部旧strong/CPU/完整门。真实source/rms/Adam/checkpoint/replay/partial等验收沿232–234资格复用，统计reserved/completed/训练consumed，任何error保存全部对象并停队列，无implicitrestart或formal5/旧模型warmstart。
+
+先提交完整源码/contract/unit，再dispatch wheelleg-execution-input-study-v1.service持独占project-write.lock；235如期方向深审和确认冗余清理，运行时只观察同handle，不因为partialscore选择或改协议。冻结0科学消耗，信息必要性阳性仍不等sameinformation新算法优势/论文六出口达成，完整目标继续。
+
 第233轮三seed信息对照协议与密集评价接口冻结（2026-10-07，runner未准）：
 
 study_proposal登记23301/23302/23303三个新trainingseed，各H0→H1、100world/三stage，按原训练分布生成23300000等新scenario IDs共900配置；6fresh模型×200k=1.2M。PPO/std/零mean初始化、481维网络、同seedbank及Nom/virtual6/bounds/filter/reward、公共同sensorclock/停车退出相同，仅54个meancommand坐标是否可见不同。H0是信息消融、H1是genericPPO，不宣称同信息新算法优越。24k/静态模型不warmstart，末200k全三seed一次评价，无bestseed/中间选模/预算history/std救分。
