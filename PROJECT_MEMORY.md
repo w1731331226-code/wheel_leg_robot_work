@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第256轮fixed五节点.115/.16/.25/.30/.38×eps1e-6/5e-7共10full32 transitionFD调用完整执行，独立scratch保护reference q/v/ctrl/warm/time逐值不改、模型17q/16v/6ctrl/无activation-mocap-plugin/7kg/solver100/integrator3/dt.0005，现equilibrium和FD复用；full32A/B、用于分析T30/U6正交基与phasegauge方向/refs全部NPZ保存SHA，completion/sourcecontract/runlog落盘。FD内部CPUphysics不当0work，无新GPUrollout/PPO或控制器准入。
+- 第256轮结果保留限制：T30rank30/U6rank6、覆盖common/differential自由度，但phase→nongauge max≈1.494e-9/1.656e-9/1.930e-9/1.569e-61/2.593e-9，并非全部strict0。eps A32maxdiff2.569e-6–5.877e-6、B32约1.063e-10–2.220e-10，flat common-diff交叉约9.206e-11–1.994e-10；不把小误差抹成0、默认删phase、替代trueNom滤波/guard/memory或接触非线性稳定证明，full32 retained，257仅独立arrays/坐标/modelscope review不追加FD。
+- 第256轮归档447177仍running，第14批已同步、第15批上传，尚未全remote/clean；方向说明提交时暂停父进程batch推进、当前push继续，随后恢复。旧fixedH1、cone、pointzero/gov分支不复活，258须有限去留。六论文出口/goal active，260深审清理。
+
 - 第255轮五轮深审：完整1.2M/1312和三seed负门复核，fixedH1/formal5/baseline替换关闭，不新PPO/observer/gain/reward/更难场景救分。不能让读报告成为下一方法；改为有限模型覆盖准入。实际静态核existing sagittal basis32×15 rank15，y/roll/yaw位置速度六行exact0，左右腿差及轮速差方向exact0，原模型仅纵向同向子空间；独立roll/yaw loops仍存在，此不说机器人没有控制这些轴。
 - 第255轮新full_mode_model_admission_v1仅登记：现Nom5高度×eps1e-6/5e-7共最多10full transitionFD计算，先保full32A/B、再验common/differential坐标及wheelphase gauge（成立才降30）、coupling/roll-yaw响应/模型假设和derivative误差。256执行固定离线batch、257独立review、258强制有限去留，0GPUrollout/newPPO准入。本轮只compile模型/basis，0integration；未来FD内部有CPUphysics不冒称零计算，不把flatplant/candidate六状态LQR当接触切换/guard/gyro/非线性稳定证明。
 - 第255轮近邻一轮定向搜索+primary跟进：PMLR2023 Lyapunov Design官方摘要CLF shaping已有，2024 affineLPV RL-LQR/commonLyapunov出版社搜索摘要已有，direct403无全文，不重试。普通gain-scheduling/CLF+PPO不能当新算法贡献，原失败pointzero/cone/contactplane不复活。scope unit/proposal/review记录绑定SHA。

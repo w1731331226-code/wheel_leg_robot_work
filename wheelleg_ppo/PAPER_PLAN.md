@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第256轮完整公共／差动模型导数收集完成（2026-10-07）：
+
+登记五height.115/.16/.25/.30/.38及两eps1e-6/5e-7共10fulltransitionFD调用已完整执行。复用现equilibrium，在独立scratch求full32A/B，reference q/v/ctrl/warm/time未改；固定7kg、17q/16v/6ctrl/无activation-mocap-plugin、solver100/integrator3/dt.0005。T30/U6正交及rank/坐标coverage基础检查过，所有full32、30分析投影、basis/input maps/gauge方向/reference和SHA/sourcecontract保留。FD内部使用CPUphysics，未新增GPU/PPO或改控制器，不作吞吐/零成本声明。
+
+Gauge phase对nongauge影响五node max约1.494e-9/1.656e-9/1.930e-9/1.569e-61/2.593e-9，非全部strict0；eps A32maxdiff2.569e-6–5.877e-6、B32约1.063e-10–2.220e-10，公共/差模offdiagonal约9.206e-11–1.994e-10。完整保存不默认抹零/删除phase或声称空间完全decouple，更不把静态flatplant替代actualNomgyro/memory/guard/projection/reference derivatives/单轮接触。full32保留，30只供对照，不准controller/PPO或稳定证书。
+
+257仅独立重构已有数组的坐标/指标和nominal模型范围，不追加10FD预算；258须有限建模/控制契约或拒绝决定，不无限模型audit。原13.77GB归档已第14批同步、第15批上传，仍未全remote/clean，提交说明时暂停batch推进但upload继续后恢复。六论文出口未齐，260方向深审清理。
+
 第255轮负结果后的有限模型方向、近邻与清理（2026-10-07）：
 
 完整对照未过原门，fixedH1收益/正式五seed/基线替换维持关闭，不再用std/history/budget/teacher/reward/极端场景救分。下一步先检查模型是否覆盖论文主轴，而不是无限negativeaudit。静态实际basis32×15/rank15的y/roll/yaw位置速度六行、左右腿差/轮速差方向均exact0；该LQR分析仅纵向同向子空间，另有roll/yaw实际控制loops，不能把这个局部证书直接转成不对称接触的全系统稳定证书。
