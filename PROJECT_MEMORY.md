@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-08，目标active）
 
+- 第276轮（2026-10-08）geometry_seed_diagnostic_v1唯一已知开发点(.1375,−.35)初值因果诊断完成：复用ml.equilibrium现有IK/实际body-site passive闭合角，basez平移target−oldFKheight，仅改initial indices0,2:6，初pitch/ctrl/omega与原residual/物理bounds/tol/xscale/max_nfev100全部保。19高度纯FK/闭链/八joint/active1.4几何检查过，0额外plantquery/FD。
+- 第276轮一次solver 10nfev/112实际residualcalls<=1200，cached原门passed，combined/8force residualmax6.68167743356e-11，heighterror−2.77556e-17m，forwardqacc0，minactualleg .137484469537m；相对旧nearestgeometry100nfev/1081calls/failed说明本已知点收敛对height一致初geometry敏感，不推所有case或新颖算法。完整old/newinitial/bounds/residual/qvctrl/forces/warm/outcome/SHA保存，旧failedoutcome SHA不变、原20仍failed/9未执行。
+- 第276轮0controllerquery/积分/transitionFD/PPO，无Nomgainbank构造，仅一个optimizer/19纯geometryunit；source/prefix/指定unchangedindices/19checks/counter/旧输出未覆盖验收过。当前只cachedsolver门，277必须独立freshcold和有限诊断去留；不能本点作freshholdout、fitmap、恢复原20completed/production/PPO。完整论文六出口/goal active，280深审清理。
+
 - 第275轮五轮深审/独立cold完成：按实际joint/actuator地址在fresh MjData重构saved11 q/v/ctrl，与原NPZ逐值核；完整forward/inverse8共同力、height/pitch、实际两链/closure/八joint及active1.4/速度力矩/双wheel-floor重算。10±1anchor cold过，failedvalidation cold仍失败且qaccmax1.0743820075、8force max.03634920922；原所谓force_residual_max1.0266586451实含100×height error及pitch，分开保存，height误差.010266586451m/pitch.008244577801rad。0solve/controller/积分/FD/PPO，11fresh forward/inverse单列，不能叫独立重新积分。
 - 第275轮连续map失败资格正式关闭：取消tablefit/预留50static/fulltask/production/PPO准入，不从10anchor成功缩domain宣布全覆盖。未执行9点仍留，cached与cold/全部failed保留；nearestseed在failedpoint的初FKheight=.16m而target=.1375m，100nfev/status0只说明局部solver未收敛，无physical infeasibility/global最优证明。核心论文六出口未齐，旧负科学门不复活，goal active，方向记录direction_review.json。
 - 第275轮只准一个新因果development诊断geometry_seed_diagnostic_v1：276复用现有ml.equilibrium的target IK/passive闭合几何构造，initialbasez按目标与旧FKheight差平移，仅改初值indices0和2:6，保初pitch/ctrl/omega、原problem/residual/bounds/模型/tol/xscale/max_nfev100；一个已知失败点(.1375,−.35)最多1200calls，纯19高度几何unit，无seed搜索/扩预算/retry或原batch重启。不称freshholdout/新颖算法；成功也只支持初值机制，不能原20completed/fit旧failedvalidation/PPO，277cold有限去留；280下一深审清理。

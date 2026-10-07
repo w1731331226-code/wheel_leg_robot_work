@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第276轮target几何初始化单点因果诊断完成（2026-10-08）：
+
+diagnose_geometry_seed.py复用既有ml.equilibrium的target IK/实际body-site passiveclosure，将basez平移target−oldinitialFKheight，只改initial0,2:6，保初pitch/control/commonomega、原force residual/bounds/模型/tolerance/xscale/max100。19高度纯FK、两链闭合、原joint与activecap代数检查过，不调用equilibrium(max500)/design/linearize或controller。
+
+已知development失败点(.1375,−.35)唯一attempt：10nfev/112actualresidualcalls（含初末检查）/1200内，cached原门通过，combined及8force残差6.68167743356e-11、heighterror约−2.78e-17m、qacc0、minactualleg .137484469537m。旧geometry同一点100nfev/1081calls失败，支持初geometry一致性影响本点收敛；不推未知case/新算法或所有失败根因。原失败20点批次及9未执行点不改变，不以本点作freshvalidation。保存完整初值对照/solution/forces/warm/NPZ与SHA。
+
+0controllerquery/integration/transitionFD/PPO、无Nombank构造，仅此一个optimizer和纯geometry检查。277独立freshcold及有限诊断结论后再决定是否需要新的事前验证协议；目前map、原50query、production和正式PPO皆未准。论文六出口仍缺，280按约深审清理，目标active。
+
 第275轮深审、独立冷校对、连续map关闭与因果诊断（2026-10-08）：
 
 review_continuous_nominal_references.py用freshdata按实际地址重构11savedpoints、完整inverse/forward/force/height/pitch和physical/design，10anchor过、首validation仍失败。Coldqaccmax1.0743820075，真实8共同力max.03634920922；旧字段“force_residual_max1.0266586451”其实含100×height error和pitch，独立记录分开height=.010266586451m、pitch=.008244577801rad。0solve/controller/积分/FD/PPO，11freshforward/inverse有成本且不等独立积分。明确关闭nearest-reference连续map，不fit表、不执行原50static/完整任务/训练；保9未执行点及所有失败，不能缩domain宣布成功。
