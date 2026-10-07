@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第244轮种子/案例配对统计审查准备（2026-10-07）：
+
+完整reviewer加入H1−H0逐seed×共同case差矩阵，报告每seed均差、range、正负seed数；描述区间以crossed seed/case bootstrap5000、固定rng24417和percentile95生成，评价case抽样索引在被抽训练seed间共享，保留两臂配对，不把同模型的164重复case当独立training samples。Success含全部失败，任何panel有未completed回合则J区间None，不做survivor-only统计。3seed弱分辨率/固定发展case区间不等总体泛化/安全保证或资格门；原全部门保持。
+
+Synthetic常量正/负/零、mixedseed方向、确定性及NaN/单seed拒绝、partialcomplete拒绝检查通过，round244_statistics_unit绑定源码，未计算完整1312真实统计，0新训练/physics。修改只额外reviewer，不动worker source/数据/参数；末snapshot23302/H0 controlledbatch1 reserved792/completed772，原353065/353066 running无error/replay，runtime数据未全remote/clean。
+
+245按约深审清理，等全部三pair/1312后原强门/CPU/raw/层级stats/终态归档与去留，不通过新增统计选winner或弱化门。完整六论文出口仍未齐，goal继续。
+
 第243轮第二seed训练对象独立核对（2026-10-07）：
 
 23302/H0十个20k…200k检查点共30对象CPU只读加载、保存manifest SHA核完，seed/shape481→6/step/epochs/有限weight及非空Adam800…8000、481RMS count=steps+100.0001、54mask mean exact0和保存不改world/route/history/parking/RMS/RNG标记通过。该seed初始化weight/world不同第一seed且未工程warmstart，末权重实际变化；原snapshot证明CUDA训练moments，末200k/400epochs/8000Adam/learn+checkpoint95.601214s，round243_second_seed_model保留证据。不是第二pairedseed任务收益或新独立泛化。

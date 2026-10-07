@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第244轮完整reviewer补统计口径：H1−H0逐seed/逐case配对矩阵，列perseedmean/range/正负seed数，再crossed seed-case bootstrap5000/固定rng24417/percentile95，同case重采样索引对各seed共享，不将164重复case当独立training runs。Success含全部失败；任何panel有未completed回合则J区间None，不survivor删样本。仅固定发展案例描述区间、3seed不确定性分辨率弱，不改原门/当新泛化或统计保证。
+- 第244轮synthetic常量±1/0区间、混合seed符号、确定性、NaN/单seed拒绝与partial完整结论拒绝过，round244_statistics_unit绑定源码；未计算全1312统计、0新增physics/learning。修改只未被worker闭包使用的reviewer，主source/params不变；末snapshot23302/H0 controlledbatch1 reserved792/completed772，原353065/353066 running无error/replay。
+- 第244轮245如期深审清理，余seed配对未齐，不用新增统计改变资格、选winner或救分；完整三pair/1312原强门/CPU/raw/stats与终态分批归档、完整论文六出口仍未完成，goal active，runtime文件未全remote/clean。
+
 - 第243轮23302/H0第二seed十个20k…200k检查点/30对象CPU只读核过：model seed/shape481→6/采样trained/epoch40…400/非空Adam800…8000/有限weight/RMS.count=steps+100.0001/H0mask54 mean exact0及保存manifest SHA一致，源合同保持。新初始化weights/world均不同23301，未engineeringwarmstart，末权重实际更新；原记录CUDAmoments、save world/route/history/parking/RMS/RNG不改标记核。learn+checkpoint95.601214s，round243_second_seed_model绑定全部证据，不作performance或seedpair结论。
 - 第243轮同353065/353066 running无error/restart，末snapshot23302/H0 regularbatch1 reserved696/completed676，第一seedpair656已完成、第二model评价中，第三seed尚未完成。0本轮newlearning/physics，runtime raw/models未全remote/clean；244只核实际新完整objects或同handle verifiedwait，三pair/1312后完整原门/CPU/raw/stats/终态分批归档仍待。六论文出口/goal active，245深审清理。
 

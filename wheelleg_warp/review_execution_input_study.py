@@ -17,6 +17,25 @@ def gate(value,reference):
     return value is not None and reference is not None and bool(yaw_gate([value],reference))
 
 
+def paired_statistics(delta):
+    """Descriptive crossed seed/case bootstrap;never substitutes for gates."""
+    x=np.asarray(delta,float)
+    if x.ndim!=2 or x.shape[0]<2 or x.shape[1]==0 or not np.isfinite(x).all():
+        raise ValueError('Finite paired seed-by-case matrix required')
+    seeds,cases=x.shape;per_seed=x.mean(axis=1);rng=np.random.default_rng(24417)
+    seed_index=rng.integers(seeds,size=(5000,seeds));case_index=rng.integers(cases,size=(5000,cases))
+    # Both arms already differ within each cell. One case draw is shared across
+    # seed draws because every trained policy saw the SAME evaluation cases.
+    bootstrap=x[seed_index[:,:,None],case_index[:,None,:]].mean(axis=(1,2))
+    return dict(training_seeds=seeds,paired_cases=cases,per_seed_effect=per_seed.tolist(),
+                mean_effect=float(x.mean()),seed_effect_range=[float(per_seed.min()),float(per_seed.max())],
+                positive_seed_count=int(np.sum(per_seed>0)),negative_seed_count=int(np.sum(per_seed<0)),
+                crossed_bootstrap_percentile95=np.quantile(bootstrap,[.025,.975]).tolist(),
+                resamples=5000,bootstrap_seed=24417,
+                limits='Descriptive fixed-development-case interval;only3trainingseeds has weak uncertainty resolution. '
+                       'Repeatedcases are not independenttraining runs;not a population/generalization/safety guarantee or gate.')
+
+
 def complete():
     f=OUT/'study_completion.json'
     if not f.exists():raise RuntimeError('Incomplete6runs/1312:benefit conclusions refused')
@@ -126,9 +145,23 @@ def full():
         values={arm:[data[(arm,s)][panel]['summary']['mean_yaw_score_deg'] for s in p['seeds']] for arm in ('H0','H1')}
         means[panel]=dict(values=values,passed=all(x is not None for arr in values.values() for x in arr) and gate(np.mean(values['H1']),np.mean(values['H0'])))
     passed=all(v for row in checks.values() for v in row.values()) and all(r['passed'] for r in means.values())
+    statistics={}
+    for panel in ('regular','controlled','legacy'):
+        delta=[];yaw_delta=[];yaw_complete=True
+        for seed in p['seeds']:
+            left=data[('H0',seed)][panel]['runs'];right=data[('H1',seed)][panel]['runs']
+            assert [r['seed'] for r in left]==[r['seed'] for r in right]
+            delta.append([float(b['success'])-float(a['success']) for a,b in zip(left,right)])
+            done=all(r['reason']=='completed' for r in left+right)
+            if not done:yaw_complete=False
+            def score(r):return r['rms_deg'][2]*np.sqrt(r['duration_s']/(3.5+1.5*r['task_goal_progress_m']/abs(r['scenario']['speed'])))
+            yaw_delta.append([float(score(b)-score(a)) for a,b in zip(left,right)] if done else [])
+        statistics[panel]=dict(success_H1_minus_H0=paired_statistics(delta),
+                              J_H1_minus_H0=paired_statistics(yaw_delta) if yaw_complete else None,
+                              J_missing_reason=None if yaw_complete else 'Incomplete physical episodes;no survivor-only J interval')
     counts={f'{a}/{s}/{panel}':dict(success=v['summary']['success_count'],physical=v['physical'],design=v['design'],J=v['summary']['mean_yaw_score_deg']) for (a,s),panels in data.items() for panel,v in panels.items()}
     write(OUT/'study_review.json',dict(verified=True,passed=passed,checks=checks,mechanism_means=means,counts=counts,
-        comparisons=comparisons,CPUlegacy=cpus,raw=raw,input_sha256=inputs,completion_sha256=sha(OUT/'study_completion.json'),
+        comparisons=comparisons,statistics=statistics,CPUlegacy=cpus,raw=raw,input_sha256=inputs,completion_sha256=sha(OUT/'study_completion.json'),
         source_sha256=sha(__file__),formal5_admitted=False,entire_goal_complete=False,
         limits='Full information-necessity study,genericPPO vs informationablation;not novelalgorithm/independentgeneralization or publicationguarantee. Full manuscript/stats/newformal5 still separate.'))
     print('FULL REVIEW',passed,counts,flush=True)
