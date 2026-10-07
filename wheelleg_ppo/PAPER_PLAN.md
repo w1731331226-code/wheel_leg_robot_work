@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第253轮最后模型对象与终态归档队列准备（2026-10-07）：
+
+23303/H1十检查点30对象CPUload及保存SHA、seed/shape481→6/计数/finiteweight/nonemptyAdam800…8000/481RMS/count/input实际非零过；原snapshot CUDAmoments/保存world-route-history-parking-RMS-RNG不改标记核，同seed初始化匹配无warmstart。末200k/400epochs/8000Adam/learn+checkpoint97.252812s，六模型训练对象均已单独核，round253_last_H1_model绑定。不是完整评价收益或恢复已closed扩展。
+
+参照223一过性归档script，新wheelleg-execution-input-archive-v1.service PID447177 live并阻塞在同project-write.lock；只在study完成1.2M/1312后stage，按<=1.5GB批次/单file<95MiB提交并普通push，不改数据或科学门、不stage运行文件/他人内容。source/hash/queue记录保存，归档仅保全原始失败与模型，不表示paper达成。当前无raw归档开始，不声称全remote/clean。
+
+原study353065/353066 running无error/replay，末snapshot最后H1controlledbatch0 reserved1264/completed1244，0本轮新physics/learning。254同handle actual终态/最后完整pair或verifiedwait；全原门/CPU/raw/层级stats与分批归档待做，六论文出口仍未齐，255深审清理。
+
 第252轮第三H0完整交付与最后训练启动（2026-10-07）：
 
 同livehandle两次45s verifiedwait后第三H0全164结束，最后23303/H1 actualtraining，队列1148评价完成，无error/restart/newbudget。第三H0独立核success93/96、29/40、28/28，physical/design164全过，J .562738052975/1.130826511255/.744176832356；六类984 SHA共1,774,965,391B、Actor968/ceilN40/raw和normalized54mask exact0、case/order/原flags核过。round252_third_H0_delivery绑定模型与来源，所有失败和seed差异保留，不因第三H0较好挑seed或恢复fixedbenefit。

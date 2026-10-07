@@ -1,0 +1,128 @@
+{
+  "verified": true,
+  "round": 253,
+  "seed": 23303,
+  "arm": "H1",
+  "checkpoints": [
+    {
+      "steps": 20000,
+      "epochs": 40,
+      "Adam": 800,
+      "RMS_count": 20100.0001,
+      "command_slot_RMS_maxabs": 0.045355509907766614,
+      "finite_parameters_nonemptyAdam": true
+    },
+    {
+      "steps": 40000,
+      "epochs": 80,
+      "Adam": 1600,
+      "RMS_count": 40100.000100000005,
+      "command_slot_RMS_maxabs": 0.045480949825473044,
+      "finite_parameters_nonemptyAdam": true
+    },
+    {
+      "steps": 60000,
+      "epochs": 120,
+      "Adam": 2400,
+      "RMS_count": 60100.000100000005,
+      "command_slot_RMS_maxabs": 0.0455066197958371,
+      "finite_parameters_nonemptyAdam": true
+    },
+    {
+      "steps": 80000,
+      "epochs": 160,
+      "Adam": 3200,
+      "RMS_count": 80100.0001,
+      "command_slot_RMS_maxabs": 0.04556665487116926,
+      "finite_parameters_nonemptyAdam": true
+    },
+    {
+      "steps": 100000,
+      "epochs": 200,
+      "Adam": 4000,
+      "RMS_count": 100100.0001,
+      "command_slot_RMS_maxabs": 0.04559624734637155,
+      "finite_parameters_nonemptyAdam": true
+    },
+    {
+      "steps": 120000,
+      "epochs": 240,
+      "Adam": 4800,
+      "RMS_count": 120100.0001,
+      "command_slot_RMS_maxabs": 0.045749232749034516,
+      "finite_parameters_nonemptyAdam": true
+    },
+    {
+      "steps": 140000,
+      "epochs": 280,
+      "Adam": 5600,
+      "RMS_count": 140100.0001,
+      "command_slot_RMS_maxabs": 0.04609398717901402,
+      "finite_parameters_nonemptyAdam": true
+    },
+    {
+      "steps": 160000,
+      "epochs": 320,
+      "Adam": 6400,
+      "RMS_count": 160100.0001,
+      "command_slot_RMS_maxabs": 0.04639519148544242,
+      "finite_parameters_nonemptyAdam": true
+    },
+    {
+      "steps": 180000,
+      "epochs": 360,
+      "Adam": 7200,
+      "RMS_count": 180100.0001,
+      "command_slot_RMS_maxabs": 0.04663001022493017,
+      "finite_parameters_nonemptyAdam": true
+    },
+    {
+      "steps": 200000,
+      "epochs": 400,
+      "Adam": 8000,
+      "RMS_count": 200100.0001,
+      "command_slot_RMS_maxabs": 0.04681235102310885,
+      "finite_parameters_nonemptyAdam": true
+    }
+  ],
+  "input_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_20000.json": "2634882476d4f4f4b8c2dce1e76574f0e15619871df3eb1a1ce723f68f0d87db",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_20000.zip": "090473b9a09cc82c8fc057874a93bebd457d2e1d5a2d8fc31e442dda0ae51136",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_20000.pkl": "1ba4f846e6be96e43aa79fb349fd3e709e69e54ad31af800da77070c46bbd0e4",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_40000.json": "a84f4128837c248801b69b495e9b5907e58d9dd89018c99bc7ce31a8db10bce4",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_40000.zip": "cccfbefa5132f8497bf2a1058fe6a320195814871e0aa2367886c1bce860d65b",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_40000.pkl": "6c2e30bdb0076d5c1625bd5b1b93cfb4c5db3d03f46a71736a0cc148973f8281",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_60000.json": "1c51036a3127eddbd3eb2eda6c0fcc83c97d91b7a68b76527cf232491d2781a7",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_60000.zip": "a976b9511324b91a5ceda413de299bd83e886fc42e018c3b627743317e7fb61d",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_60000.pkl": "702bc2fc6fbb1615bcf17ea81a551b2fa87f7e10c88c7307751f21169c21d401",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_80000.json": "d8525caca40975ea036bc5e8c779ce478a72d68f7148b20699411fab27932d03",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_80000.zip": "87559e42ec2fc1a0e3ae2737a0db9d65e4daebeb4783c3dd1fcf7e865e5e16de",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_80000.pkl": "3a7eb4c392b9ef19121036325e461650cc87f690290c3a8ccd82552831fec440",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_100000.json": "9ace55d900396a90d7ab6f5f8d7537032c41ad2d9336f2fcd254ae117b089038",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_100000.zip": "b3676fe4e475a67b45aa58c71721dc4f55fd0e4bd69f216a4fe5ffbe354a38d7",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_100000.pkl": "e79c8508225955624a86965b4609248315ab66a2b66609606fe04531c3c042b3",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_120000.json": "7f992b7e2c68adbcb4b6f021e06ca595fadf9406e1b93a8ea0dfc11c081f0b84",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_120000.zip": "894947a568b3162f3c956c2f3068a5077fa43e9950a6a6631da8c01d84cbaab4",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_120000.pkl": "0a0dded365d19d96af1d464719838ed4b8087ea8fd1feeb4dd9249a832632f20",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_140000.json": "9a78b08a3d319697cd726924b0ed0467accd3fc17f31b2e7f60162ea82f29b3d",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_140000.zip": "ade9023a5447ed966b26fa6c7c374803bae8fe87bcae648376ab441f1a353922",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_140000.pkl": "d95c95650ba69403e9b952b47306a24fc21b86a4ea9af3d18c66e74e46e255cd",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_160000.json": "5ce6e763c14c94833eed5d10646c3bba9bb523ad8cfb463886eaa7e474577489",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_160000.zip": "e23e1f9eee6b598940950a1defc29a758ff6380a5cfdeb9610a20317bc03f74e",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_160000.pkl": "108d6e48ac7649d8040636b9a319a4e6f988591a1527277b292fca06434ccb94",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_180000.json": "f47aec832ca7d30ba8ee84bb70414f83e7d9e50c66e70f4ad0566d4b4a12b1a1",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_180000.zip": "2fbbb21471ab9ca8db0c971ad2a96102a39f8d229320303357aef7cf600496d9",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_180000.pkl": "e7fcb003f2f53eca0cced2bf67134f3b822bda03d110ab4fa151818d84d6e76d",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_200000.json": "b47034c44aa1f695f65f98e4df5cad874a143a7f9a5278fe6e6abac33b9e0564",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_200000.zip": "588200d3fca00737457e94d2d738266dbc130f68c1d04e275acf11a0408485bc",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_runs/H1/23303/step_200000.pkl": "82c28834eec851de057edfdc3f7dd73455f42eb515ceeaef7c8243ba9bd4a356"
+  },
+  "same_seed_initial_weights_world_exact": true,
+  "contract_sha256": "558eb730a80c68a98fc1ef7b0969ae9112dd2ce5ce8b9cb4f631786b73ffdc68",
+  "training_verification_sha256": "f0c39628251d27edd14da0982073fc3a97e45e7fad6ee614adba9db5a1104e08",
+  "learn_checkpoint_wall_s": 97.25281224599894,
+  "new_training_or_evaluations": 0,
+  "limits": "CPUread-onlyreload/originalCUDAmetadata;all6trainingobjects now individually audited,not full1312 evaluation orbenefit. Fixedexpansion remainsclosed.",
+  "formal5_admitted": false,
+  "entire_goal_complete": false
+}

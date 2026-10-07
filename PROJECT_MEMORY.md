@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第253轮最后23303/H1十checkpoint/30对象独立CPUload核过：seed/shape481→6/计数/epochs40…400/nonemptyAdam800…8000/finiteweights/481RMS.count=steps+100.0001/command统计实际非零及保存manifest SHA一致，CUDAmoments原snapshot与保存状态不改标记核，同seedH0/H1初始化weights/world exact无warmstart。200k/400epochs/8000Adam/learn+checkpoint97.252812s，六模型训练对象均已分别核完，round253_last_H1_model留证据，非完整1312收益。
+- 第253轮准备终态原始数据归档：复用223一过性flock归档方式，wheelleg-execution-input-archive-v1.service PID447177 live、wchan locks_lock_inode_wait，排队等待当前study锁；必须study_completion1.2M/1312才stage，payload每批<=1.5GB/每file<95MiB，保留全部成功失败/models/RMS/raw，不碰他人stage、不forcepush。现0runningdata staged；script/hash及queue记录保存。git-sync遇worker锁返回空前状态，archive已真实阻塞排队，避免终态后大数据单批快照。归档不是科学资格。
+- 第253轮study353065/353066 running无error/restart，末snapshot最后H1controlledbatch0 reserved1264/completed1244；source/contract仍同，0本轮新learning/physics。数据模型尚未全remote/clean；254同handleactualterminal/最后pair或verifiedwait，完整原门/CPU/全部raw/层级stats及归档完成仍待，论文六出口/goal active，255深审清理。
+
 - 第252轮两次45s verifiedwait同353065/353066后第三H0全交付，最后23303/H1实际training，队列1148评价完成；无error/restart/newbudget。本轮0新physics/learning。第三H0全164独立核：success93/96、29/40、28/28，physical/design164全过，J .562738052975/1.130826511255/.744176832356，六类984 SHA共1,774,965,391B、Actor968/ceilN40/raw及normalized54mask exact0过，round252_third_H0_delivery绑定251模型证据；所有失败/seed差异保留，不选第三seed赢家或恢复closedbenefit。
 - 第252轮最后H1/1312及完整原门/CPU/raw/seed-case统计/终态分批归档未完成，data/model尚未全remote/clean。253同handle实际最后H1对象或verifiedwait，完整论文六出口/goal active，255深审清理；不以已有1148交付缩小全部论文目标。
 
