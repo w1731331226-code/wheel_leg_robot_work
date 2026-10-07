@@ -1,0 +1,114 @@
+{
+  "verified": true,
+  "round": 225,
+  "previous_turn": "progress",
+  "reviewed_rounds": [
+    221,
+    222,
+    223,
+    224
+  ],
+  "qualification_sha256": "75a073feab26a7e33d1828b32160ea8093325c0abfae46baeab356a8213e34fa",
+  "request_delivery_sha256": "cf60da016e070360d44465140996bea931c2a9db023f85baa5322f315af47ba8",
+  "cleanup": {
+    "verified": true,
+    "files": [
+      {
+        "cache": "wheelleg_warp/__pycache__/review_coordination_qualification.cpython-310.pyc",
+        "source": "wheelleg_warp/review_coordination_qualification.py",
+        "bytes": 6131,
+        "cache_sha256": "0590a6c4c1a93590012abd8f7ed843b619591748662032f4589d6b1a239749bf",
+        "source_sha256": "4c7194df3cb301e6d8e57136b8e3df143e940cf71a49b5310c1a43ff10f95982",
+        "ignored_untracked": true,
+        "no_open_holders": true,
+        "code_equivalent": true
+      }
+    ],
+    "total_bytes": 6131,
+    "limits": "Only an unused equivalent derived reviewer cache;scientific sources/models/RMS/raw/failures and runtime caches retained. Regenerable cache,not permanent savings."
+  },
+  "counts": {
+    "B0/regular": {
+      "success": 96,
+      "total": 96,
+      "physical": 96,
+      "design": 96,
+      "J": 0.3865374663661017
+    },
+    "B0/controlled": {
+      "success": 32,
+      "total": 40,
+      "physical": 40,
+      "design": 40,
+      "J": 1.0599060634039452
+    },
+    "B0/legacy": {
+      "success": 28,
+      "total": 28,
+      "physical": 28,
+      "design": 28,
+      "J": 0.5001233037119783
+    },
+    "Bomega/regular": {
+      "success": 96,
+      "total": 96,
+      "physical": 96,
+      "design": 96,
+      "J": 0.4001966273994317
+    },
+    "Bomega/controlled": {
+      "success": 32,
+      "total": 40,
+      "physical": 40,
+      "design": 40,
+      "J": 1.121576226399878
+    },
+    "Bomega/legacy": {
+      "success": 28,
+      "total": 28,
+      "physical": 28,
+      "design": 28,
+      "J": 0.5411769426918193
+    },
+    "Cgamma/regular": {
+      "success": 96,
+      "total": 96,
+      "physical": 96,
+      "design": 96,
+      "J": 0.38664498806494674
+    },
+    "Cgamma/controlled": {
+      "success": 32,
+      "total": 40,
+      "physical": 40,
+      "design": 40,
+      "J": 1.066747739439974
+    },
+    "Cgamma/legacy": {
+      "success": 28,
+      "total": 28,
+      "physical": 28,
+      "design": 28,
+      "J": 0.5037636572832248
+    }
+  },
+  "fixed_candidate_passed": {
+    "Bomega": false,
+    "Cgamma": false
+  },
+  "decision": "Close fixed damping/governor benefit and all gain/budget rescues;retain fullflags,matchedstrongbaselines and failed data. Register one bounded actual six-motor yaw-response diagnostic with success controls;not another heuristic or new learning admission.",
+  "six_exit_status": {
+    "contribution": "unproven",
+    "strong_matched_learning_and_ablation": "incomplete;mean-anchored three-seed benefit failed",
+    "fresh_formal_five_seeds": "not admitted",
+    "new_ID_composition_geometry_parameter_delay_OOD": "not executed for a qualified method",
+    "hierarchical_statistics_end_to_end_PPO_cost": "old limited costs available;new final method incomplete",
+    "derivation_reproduction_new_manuscript": "incomplete"
+  },
+  "future_experiments": "After a qualified distinguishable mechanism:three independent training seeds,then five fresh formal seeds with strongclassical/plainPPO+at most two causal ablations,new independent ID/OOD/retention,stratified seed-case uncertainty and actual PPO wallclock. No independent-test data used to choose mechanisms.",
+  "registration": "wheelleg_warp/results/paper_recovery_20261004/yaw_response_screen_v1/registration.json",
+  "registration_sha256": "be38bdf972a30767452a4f46ebfd4021ca29b107f6bac931ac70698804e80089",
+  "new_training_or_evaluations": 0,
+  "formal5_admitted": false,
+  "entire_goal_complete": false
+}

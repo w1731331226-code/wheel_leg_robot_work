@@ -1,5 +1,17 @@
 # 双轮腿机器人PPO论文方案
 
+第225轮五轮方向深审、下一项限定补验与冗余清理（2026-10-07）：
+
+**方向去留。** 221–224已证明完整B0交付、原门完整、492全部终态及328实际候选执行；两固定候选没有新增任务成功且J未改善。停止其阻尼/速度协调、gain/预算救分及直接正式训练。保留完整任务/design/physical分开、同信息强对照、请求与执行量、所有失败与分层评价的方法。现有高轮速/运动差异只是代理；原关节一步/contact预测曾失败，不直接升级为可信偏航预测器。当前应检验真实局部电机偏航响应，而非提出另一条支撑阈值或扩大复杂地形。
+
+**一次有界补验。** yaw_response_screen_v1/registration与states已绑定完整来源：B0所有controlled6301000–6301007，.115m、左右10/20mm及正反速度，共8已见case，4成功负对照/4失败。每case按首次target normal总和>1e-6N前20ms、当步、后20ms固定抽3state，24个完整pre q17/v16/finalctrl6及trace，不用首次failure选择。每state原command和六个motor±.01Nm共13臂，按公开硬件/实际gain bound截断，保留zero有效扰动。CPU actualgeometry、warm0、原timestep.0005，一步312次+baseline独立重复24+独立全量重验312，共最多648CPU步，0新GPU rollout/训练，本轮只登记与抽取数据，未执行。
+
+该项分别报告六电机对yaw、roll/pitch和active-q的单边响应、clip方向、midpoint非线性、接触力及CPUbaseline与原GPU的全部偏差。它是特权离线局部plant诊断；不是同预算持久Nom虚拟动作控制器，不声称记录未保存的warmstart/controller state已恢复，不用一步rank/有利yaw增量证明闭环恢复、全system可控或安全。源准入只核身份、命令和结果完整性，不人为设“创新通过”门；普通辨识亦不是独有贡献。
+
+226复用现有CPU模型/单步路径做最小源检查并执行这一预算，227独立复核且终止screen，228须依据结果明确一种有区别预测且信息可得的有界方法及学习必要性检验，或关闭该方向；不扫幅度/增加样本/时域以救原候选，不延长只读审计链。任何新在线预测器须另声明公共encoder/IMU/command历史及误差验证；该screen本身不准正式PPO。方法资格后仍按三独立seed→新五正式seed、强经典/普通残差PPO、最多两关键消融、新ID/组合/几何参数延迟OOD与能力保持、seed/case统计及真实PPO耗时、推导复现新稿六出口执行，当前全部未齐。
+
+**清理。** 删除1份无fuser持有、ignored/untracked、与源码归一codeobject等价的review_coordination_qualification.pyc共6131B，前SHA/源码SHA见round225_cleanup。仅可再生缓存，所有科学源码/模型/RMS/raw/独有失败/CPU-GPU和封存集保留；下一五轮深审及清理230。round225_direction_review保存去留与下一预算哈希，整体目标继续。
+
 第224轮实际请求到执行全量核查完成（2026-10-07）：
 
 复用现有492评价中的两候选全部328轨迹，逐输入SHA核对，按照原控制器“Nom限幅→float32量化→加合成correction→速度限幅→float32电机指令”的顺序重建，328/328逐值完全一致。Bomega有138/164轨迹、Cgamma有164/164轨迹实际轮力矩发生变化，峰值均1Nm，query error2更新均0；Cgamma运动阶段gamma最低.078044。干预确实执行，但执行非零不证明方向正确、权限充分或任务收益，原492结果和两个False资格结论保持。

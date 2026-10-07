@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第225轮五轮深审完成：221完整B0/222完整门预检/223实际492原门失败/224实际执行328全核交叉检查。两固定阻尼/速度协调候选仍关闭，不改gain/预算/门救分；高轮速代理不等支撑或偏航可控。旧joint/contact预测针对关节一步余量且曾漏包，不能直接移作可信yaw模型。贡献/强matchedlearning与消融/freshformal5/新ID-OOD保持/层级统计与端到端PPO成本/推导复现新稿六出口未齐，整体goal active。
+- 第225轮限定补验登记yaw_response_screen_v1：现B0全部6301000–6301007共8发展case，.115m、左右10/20mm、正反.7m/s，4成功负对照+4失败；各按首次target samplednormal总和>1e-6N及±40physical samples抽3state，24完整pre q17/v16/finalctrl6+原trace/hash。不按首次失败筛点。登记baseline及6motor±.01Nm独立扰动，CPU actualgeometry/warm0一步，包络clip/全部zero-delta记录；312主+24baseline重复+312独立review上限648CPU步，本轮0physics/learning。只测局部plant响应，非deployable虚拟动作/连续权限、GPU精确恢复、闭环可达、安全或创新证明。
+- 第225轮226仅该预算源准入/执行，227全量独立review并终止screen，228必须据实际yaw响应/可得信息/近邻区别作有界方法或关闭决定，不增加状态/幅度/时域来救旧heuristic；未准正式PPO或formal5。后续仍须三seed资格后新五seed/强经典普通PPO/最多两关键消融/新独立泛化保持和新稿，不能无限诊断替代。
+- 第225轮删除1份ignored/untracked/无fuser持有且与源码codeobject等价的review_coordination_qualification.pyc，6131B；round225_cleanup保存SHA和检查。全部源码、模型/RMS/raw/失败、CPU-GPU基线和封存集保留，缓存可再生，不称永久空间节省。下一深审清理230。
+
 - 第224轮请求→执行离线全核完成：Bomega/Cgamma各164、共328轨迹实际float32电机指令逐值重建一致；有非零实际轮力矩变化分别138/164和164/164，峰值均1Nm，query error2更新均0。Cgamma运动gamma最低.078044；合成目标与实际池L1最大差1.451783/5.860542Nm，混含box与slew限制，不能单独归因某约束。执行非零不证明正确yaw方向、足够权限或任务收益；两原收益门仍False，固定分支关闭，0新物理/训练。
 - 第224轮日志解释：继承complete trace列54:56保存原Nom correction，实际hook合成请求须查coordination trace列24:30。审查首版漏原controller在加correction前的float32量化，3761元素最大2.38418579e-7差；按原运算顺序修审查器后actual array_equal全过，未松容差/改控制或raw，初失败与成功log均保留。audit_coordination_delivery及round224_request_delivery绑定全输入SHA。
 - 第224轮归档终态确认：archive unit MainPID0/exited/success/exit0，三个condition完整492已分批中文提交并同步（B0 b5825e63、Bomega 9c9c8460、Cgamma a0d19a73），无待上传实验批。225按约方向深审/确认冗余清理，停止固定heuristic收益扩展；完整贡献、matched强学习/关键消融、资格后新formal5、新ID/组合/几何参数延迟OOD能力保持、层级统计与PPO实耗、推导复现新稿仍未齐，不保证录用、不标目标完成。
