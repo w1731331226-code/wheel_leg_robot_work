@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第285轮方向深审、稳定metadata与进程跟进、清理（2026-10-08）：
+
+同worker PID32686 active/running、实际CPU活动且队列推进，无重启或capture源修改。round285_direction_review在260完成项核：oldregular96/96、controlled32/40、legacy28/28以及全部physical/design；map regular96/96与全部physical/design96/96，partial无法宣布完整工程门。最新实际280completed/300reserved、mapcontrolledbatch1评估，FD95随构造累计，0新learning/optimizer/实验FD。
+
+所有old164 result/caseorder/archiveSHA核，159cases numeric/terminationstep非exact，success/reason/physical/design/terrain labels全部一致；原因尚未确立，不事后加epsilon或宣称完整复现，pairedcausalbenefit未准。正确方向是同一328终态和fullraw/原工程门/复现审核，保持源/table/gain/目标/案例/门，不新static/equilibrium solve或靠partial常规成功宣布优势。281–285证据有实际进展，工程一致性仍非独特论文方法，六出口缺失不被缩小。
+
+按约删非workerclosure的可再生offline solve_moving_equilibrium.pyc10489B，ignored/untracked/unheld/codeobject exact且SHA保，scientific source/raw/failures/models/baselines全留。稳定review/cleanup和记忆计划及时commit，liveworker排他.gitlock使guard active不拆未完成数据；当前raw仍未全commit/remote，不声称clean。286沿同worker真实terminal或verifiedwait，独立核完整old/map/复现/gates/raw，不重跑求match；290下一深审清理。正式PPO/production/freshOOD未准，goal active。
+
 第284轮完整任务capture准入和唯一328队列实际运行（2026-10-08）：
 
 continuous_nominal_task_adapter.py在原B0完整evaluator/phase/parking/commandcollector/route/history捕获链外只替换actual控制调用，GPUprepare私有21列和mappedkernel，currentcmd/finalctrl所有者一致；80calls=两40捕获signature一致，原前16rolebuffer继续用于记录。新增9列每物理步maptrace(publiccmd/h/delta/flag)，与原complete frame firstepisode/steps和实际command逐值核，zero delta0；partial map及原物理/历史/停车buffers保留。Old/map预检case reset qv/memory/params/bank/ref exact，未launch physicsgraph，0额外sourceepisodes，原pipeline modules不改。
