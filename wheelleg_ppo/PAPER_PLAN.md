@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第249轮第二seed完整配对与失败保持（2026-10-07）：
+
+23302第二pair全164各自结束，H1六文件类984 SHA共1,786,282,436B、case/scenario/order/results/Actor核完，H0复用246结果SHA不再积分。成功H0→H1为81→85/96、28→29/40、26→27/28；J .764508→.643722、1.248263→1.086762、.911441→.811504，H1physical/design164全过。
+
+三panel保持门均False：H1 lostregular9（6300002/6300018/6300049/6300064/6300078/6300081/6300082/6300083/6300090）、controlled6301023/6301027、legacy validation_3，所有交换与newflags留存round249_second_pair_delivery。均值/成功数量提高不代表每case不退化、强参考优势或新方法资格，不能挑有利seed/case或弱化原门。
+
+同livehandle verifiedwait30s后第二pair全完成、队列984评价，23303/H0开始actualtraining，原353065/353066 running无error/restart。本轮0新physics/learning，runtime未全remote/clean；250按约深审清理，第三pair/1312及完整原门/CPU/raw/层级stats/终态分批归档去留仍待。完整论文六出口继续未齐。
+
 第248轮真实Actor指令输入时间对齐核查（2026-10-07）：
 
 仅读首H1/23301已完成regularbatch0共20case/7385Actor decisions，按完整pre-finalctrl6累计积分及原delivered sensorclock独立重建最新历史interval。sensor elapsed/.02和末proxy2slot0逐值一致，无decision后的cmd参与；13种实际delay覆盖1–9.5ms。归一化平均command的CPUcumsum vsGPUdoubleprefix最大差9.313225746e-10，完整保存差异，不改变控制/raw/资格门，不称跨算术bitwise。round248_actor_input_alignment绑定所有来源；仅20case/latestinterval，不是全481/全164/全seedActor重建，更非模型收益。

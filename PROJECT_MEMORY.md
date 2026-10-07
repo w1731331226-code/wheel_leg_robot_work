@@ -4,6 +4,9 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第249轮第二pairedseed23302全164交付：H1六类984 SHA共1,786,282,436B及case/scenario/order/results/Actor核过，H0复用246结果SHA不重放。成功H0→H1 regular81→85/96、controlled28→29/40、legacy26→27/28；J .764508→.643722/1.248263→1.086762/.911441→.811504，H1physical/design164全过。保持门全部False：lostregular9（6300002/18/49/64/78/81/82/83/90）、controlled6301023/6301027、legacy validation_3，所有lost/gained/newflags保留，不能用均值改善隐藏case退化；round249_second_pair_delivery绑定全部证据。
+- 第249轮同livehandle verifiedwait30s后第二pair最后case完成，全队列984评价，23303/H0 actualtraining，353065/353066 running无error/restart。本轮0新physics/learning，data/models未全remote/clean。250如期深审清理，第三pair/1312全门/CPU/raw/层级stats与终态分批归档待完成，不改门/预算救分或丢失seed；完整论文六出口/goal active。
+
 - 第248轮实际Actor input时间独立核：仅读首H1/23301已完成regularbatch0共20case、7385decisions，用完整pre最后ctrl6重算cumulative指令积分，以scenario.delay(0.5ms grid)送达sample时钟取前一interval；对应sensor elapsed/.02和lastproxy2slot exact0逐值一致，使用的最晚ctrl在decision前。normalizedmean ctrl CPUcumsum vsGPUdoubleprefix maxdiff9.313225746e-10，原样保留误差，不放容差/改raw/门、不声称bitwise；scope仅20case/latestinterval，不代全三seed全部Actor。round248_actor_input_alignment绑定已核来源。
 - 第248轮原353065/353066 running，无error/restart；初snapshot23302/H1 controlledbatch0 reserved936/completed916，完整secondpair未齐。本轮0新physics/learning，重复读取完整旧数据为新独立时钟核查，未重跑。249沿同handle实际secondpaircomplete或verifiedwait；三pair/1312全门/CPU/raw/stats/终态分批归档仍待，六论文出口/goal active，250深审清理。
 
