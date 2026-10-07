@@ -1,0 +1,60 @@
+{
+  "version": "moving-equilibrium-contract-v1",
+  "round": 260,
+  "status": "registered_not_executed",
+  "objective": "Constructgenuine nominalmoving-relativeequilibrium from generalizedforce balance beforecontroller/gain claims;notrescueoldgravityreference orPPOscore.",
+  "heights": [
+    0.115,
+    0.16,
+    0.25,
+    0.3,
+    0.38
+  ],
+  "speeds_m_s": [
+    -0.7,
+    0.7
+  ],
+  "states": 10,
+  "unknowns": "Mirror-symmetricbaseheight/pitch/fourlegjointcoordinates/threecommonmotorcontrols/commonwheelrate;forwardworldspeedprescribed. WheelrateNOTfixedv/R;retain finiteMuJoCostabilization/slip andpassive/drag terms.",
+  "constraints": "Originalmodel/friction/mass/solver100/integrator3/.0005 unchanged. Bothwheel-floor support,closedchain,legtarget,.114704466physicalfloor,eightjointranges,active1.4rad,command/actual hardwarebounds;nofutureterrain/trueplantvarianceforcontroller. Publicnominalmodelonly.",
+  "residual": "Useexisting inverse-forceequilibrium approach with desiredzeroacceleration and prescribedmovingvelocity;projectcompletecommon8force residual plusheight/pitchconstraints. Mustverifyfull16qacc afterforward,notprojectedlossalone. Separatebadinverse/constraintpipeline from genuineinfeasibility.",
+  "numeric_stopping": "Originalml.equilibrium force residual1e-6 andforwardqacc1e-4 preserved. No new errorthresholdtuning,dimensiondrop orpassivityterm deletion. Perstate least_squares max_nfev100,explicittotalresidualcallcounter<=12000;finiteclippedinitialguess andfailurestate preserved,never implicitretry.",
+  "integration_admitted": 0,
+  "transitionFD_admitted": 0,
+  "training_admitted": 0,
+  "after": "261 implement source/algebra/reference/options checks only;262one bounded inverse/forward solvebatch;263independentforce/modelscope review;264 finiteadmit/reject before any dynamicallyvalidatedclosedloop ornewPPO. No start400trajectory orFD fromsolveroutput alone.",
+  "parent_closure_sha256": "7a291dff469180e19e12c55635673174e06dc6533f0ecb552f4ea70f0c5e82e7",
+  "static_reference_inputs": [
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/full_mode_model_admission_v1/node_0_eps_0.npz",
+      "sha256": "109f8d80b72ce99545eded3ddbebba5fa1d31bc7d268127b25c3a71f3a5c9c78",
+      "height_m": 0.115
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/full_mode_model_admission_v1/node_1_eps_0.npz",
+      "sha256": "74ea30b5088ee447223d65663d026dfe2e770850998a9333ba55e15c71bf37dd",
+      "height_m": 0.16
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/full_mode_model_admission_v1/node_2_eps_0.npz",
+      "sha256": "cad474c2c798053ec461c22d4f72e7f79a7d80a8485903c999dd6c740787eaba",
+      "height_m": 0.25
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/full_mode_model_admission_v1/node_3_eps_0.npz",
+      "sha256": "f172f6052593078325931b6bae0f44ab122ce2f92457c3fbe847121435e5ea1a",
+      "height_m": 0.3
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/full_mode_model_admission_v1/node_4_eps_0.npz",
+      "sha256": "1cd615aec931c50d2db3d73970f8997b3786d1a86cbf12549683654a9d40b352",
+      "height_m": 0.38
+    }
+  ],
+  "source_sha256": {
+    "wheelleg_warp/native/controller.py": "04d106ae8579118eb306ba2b28037425f81a1f554d4b51fa1eae1ef795fede73",
+    "wheelleg_ppo/tools/model_lqr.py": "d63db108ece884340cff2589cf50729ca1dfd2ffd44adb8260b8155570ffbf82",
+    "wheelleg_ppo/tools/hardware_profile.py": "844688aae7e408bb2ca11d00b192ffaa9e4ad5de06cc8a815d3cf3ddfbe02eba"
+  },
+  "limits": "Nominalflatrelativeequilibrium is necessarymodelling,notuncertaincontactmethodcontribution orstability. NewLQR/RL alsohaspriorart. Completepaperevidence stillneeded."
+}

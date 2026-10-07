@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第260轮非平衡参考关闭、力项诊断与清理（2026-10-07）：
+
+关闭原gravity-only/v/R移动参考准入，不追加400trajectory、10FD或PPO。十原state read-onlyforward复核轮damping.005、omega14时纯阻尼力±.07Nm、totalpassive约±.07005923Nm，而旧gravitywheelmotor≈0；模型fluiddensity1.225/viscosity1.8e-5非零。缺少运动广义力平衡是明确模型项，不等全部误差/旧学习失败唯一根因，不能简单加常数feedforward、删阻尼/换摩擦或改变reference旧结果来称pass。
+
+moving_equilibrium_contract_v1只登记真正平地Nominalrelativeequilibrium需求：forwardv±.7固定、mirrorpose/合法height/joint，wheelrate不固定v/R，逆/正动力学完整力平衡及原physical/design/torquebounds；必须full16qacc<=原1e-4而非projectedloss单项。261source/algebra/options预检，262唯一10state/每statemax_nfev100/总residualcalls<=12000的inverse-forwardbatch，263独立force/modelscope、264finitego-no-go。尚0newintegration/FD/PPO准入，原force1e-6/qacc1e-4不按结果换门，所有失败保留；非接触稳定或新算法贡献。
+
+本轮0新integration/FD/学习。删除inactiveclosed wheel_motion_proxy一份等价ignored/untracked/无fuser缓存2758B，前SHA/源码SHA保round260_cleanup，不动全部science/baseline/失败。完整论文六出口未齐，265下一深审清理，不能无限模型audit替代方法和收益。
+
 第259轮移动参考400步限定批次完成（2026-10-07）：
 
 原五staticref×±.7十state各40CPUstep，共400正常完成；7kg/17q16v6ctrl、solver100/integrator3/dt.0005、warm0和原gravityctrl不改，0新FD/GPU/PPO。pre/post/predictedq/tangentqerror/verror及solver-pre接触frame/forces/pointvelocity/gyro、postkinematics实际leg/闭链/joint/torque全量NPZ/JSON与SHA保存，不额外forward solve改变force时间层。

@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第260轮五轮深审关闭gravity-only v/R移动参考准入，不扩原400积分/10FD或PPO。十原state只做read-onlyforward force检查：轮damping.005、omega14时纯damping±.07Nm，totalpassive约±.07005923Nm，旧gravitywheelmotor≈0；模型density1.225/viscosity1.8e-5亦非零。明确缺运动力平衡项，但不是全部误差/旧PPO失败唯一因果，不自动加constantfeedforward替换baseline或把短时限过当移动平衡。
+- 第260轮register moving_equilibrium_contract_v1，仅要求真正Nominalrelativeequilibrium：规定forwardv±.7、左右mirror、wheelrate不固定v/R，完整inverse/forward共同力平衡+height/pitch与原physical/design/bounds。261source/algebra/option预检，262唯一最多12000residualcalls/max_nfev100每state求解batch，263independentforcescope review、264finiteadmit/reject；0新integration/FD/PPO准入，不删除阻尼/改摩擦或误差门求pass。原不合格参考和所有400step误差保留，本轮0新integration/FD/学习。
+- 第260轮删除inactiveclosed wheel_motion_proxy.pyc共2758B，ignored/untracked/无fuser持有/源码归一codeobject等价，前SHA/源码SHA保cleanup，不动source/models/RMS/raw/failures/baselines。完整论文贡献、强sameinfo新方法、freshformal5/ID-OOD/统计成本/新稿六出口仍未齐，goal active，265下一深审清理；不能以建模完成替代论文收益或无限negativeaudit。
+
 - 第259轮relative_reference固定十state/五height×±.7各40CPUstep共400正常完成，原参考SHA/7kg/17q16v6ctrl/solver100/integrator3/dt.0005/warm0、ctrl静态gravity不改，零新FD/GPU/PPO。完整pre/post/predictedq/tangentqerror/verror、preintegration接触frame/force/pointvelocity/gyro、postkinematics actualleg/闭链/joint/torque记录保存NPZ+JSON/SHA，completion/sourcecontract/runlog留证据。
 - 第259轮10/10短时原physical/design限制过，minactualleg.114979921m/maxloop1.759769e-5m；但匀速relativeflow不成立为exactreference，initialwheelacc约16.828–18.209rad/s²，20ms wheelerror.38803–.422586rad/s、bodyvxerror.000435–.002725m/s，bodypitch约.00053–.000982rad。总q/vmax混单位误差保留，未设新误差阈值/求新点/换摩擦或gain救分，不能把未越界当移动平衡、actualNom闭环或稳健证书。
 - 第259轮260按约深审清理，并作该400步candidate有限go/no-go及真实moving控制契约判断，不能扩大此batch或新PPO。原科学16batch失败已保存同步，六论文出口/goal active。
