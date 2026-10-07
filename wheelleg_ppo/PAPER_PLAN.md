@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第258轮静态模型范围关闭与有限移动参考契约（2026-10-07）：
+
+10FD静态modeladmission到此结束，只接受full32数组/坐标分析，不准actualNomclosedloop、gainbank/CLF或新PPO。ActualNom源码还有.05/.025滤波、积分state11、boot/启停/yaw/positionmemory、guard/projection/bounds，plant未覆盖；已有差模openplant谱和nearunitPBH只数值诊断，混单位/FD敏感/30投影与静态v0不证明全机器人不可控或接触稳定。普通gain/LyapunovRL边界保持，不扩大旧10FD。
+
+relative_reference_qualification_v1登记原五staticref×±.7m/s十state，worldbasevx=v、两wheelω=v/R、其它v0、原gravityctrl、warm0；20ms各40CPUstep共最多400，与initialqv的mj_integratePos理想relativeflow比完整q/v、接触/gyro及leg/joint/loop/torque误差。保原32参考，不默认构造是真rolling relativeequilibrium，不安装actualNom或求新点/摩擦/增益/门救分。259sourcechecks+唯一batch，260深审清理与有限flow go/no-go；未通过前不进新closedloopmodel/controller/PPO。源资格只保identity/finite完整日志/原physical-design限制，不把小误差当鲁棒证书。
+
+本轮0新FD/integration/learning，已有科学16批归档不等论文目标完成；六完整论文出口未齐，不能无限模型audit或预算扩展替代贡献，260深审清理如期。
+
 第257轮完整模型数组独立核对与科学数据全归档（2026-10-07）：
 
 按joint/actuator地址独立构T/U，未调用collector坐标或sagittal_basis；十saved full32与30投影/rank/coverage/SHA、phase/offdiagonal/roll-yawB/SVD及eps差指标重算一致。原reference作10次mj_forward检qacc<=1e-4、仅双轮-floor contact，0追加FD/GPU/PPO。仅数组/坐标/静态工作点资格，非独立重算transitionFD或实际Nom/单侧接触/非线性轨迹认证。Full32保留，strictphaseinfluencezero False，30只分析投影，不准controller稳定证书；review/log留完整限制。

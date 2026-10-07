@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第258轮终止10FD静态modeladmission，仅接受full32数组/坐标分析，拒绝据此准actualNom闭环/gainbank/CLF/PPO。ActualNom包含.05/.025滤波、积分state11、boot/启停/yaw/positionmemory、guard/projection/bounds，plant未覆盖；已有差模openplant谱/nearunit PBH仅数值诊断，混单位/FD敏感/30投影与静态v0条件不支持全控/稳定结论，不扩大旧FD。
+- 第258轮登记relative_reference_qualification_v1：原五staticref×±.7m/s十state，basevx=v、双wheelω=v/R、其它v0、原gravityctrl/warm0；各40CPUstep共最多400，与initialqv的mj_integratePos理想relativeflow比较完整q/v/接触/gyro/leg/joint/loop/torque误差。不默认真relativeequilibrium、不安装actualNommemory、不拟合新误差门/求新点救分；259onebatch、260深审清理和有限去留，新PPO/gain/FD仍未准。本轮0新integration/FD/学习。
+- 第258轮科学16batch已归档/失败保存，closedH1保持，新模型数组资格不等新贡献；六论文出口/goal active。259仅该限定批次，不能无限模型报告或扩场景预算替代方法，260按约深审清理。
+
 - 第257轮独立review过：不调用collector.coordinates/sagittal_basis，按实际joint/actuator地址直接构T/U，十saved full32A/B与A30/B30映射、rank/coverage/原SHA、phase influence/offdiagonal/roll-yaw B/SVD及两eps差指标重算一致。读取原reference做10次mj_forward静态qacc<=1e-4且仅双轮-floor contact；0额外transitionFD/GPU/PPO。full32继续保留、strictphaseinfluencezero False，30只分析投影，不准控制/稳定证书；review/log/source绑定，非独立重算FD或非线性trajectory认证。
 - 第257轮科学终态归档已完成：archive MainPID0/dead/Resultsuccess/ExecMainStatus0，16batch正常同步，原1312×6=7872raw全git tracked、所有study文件同HEAD远端一致（检查时85424bd4）。round257_archive_terminal绑定review/服务终态；没有隐藏失败、未改negativegate，新fullmodel源资格不恢复fixedH1/PPO扩展。
 - 第257轮258必须对模型范围/测量/actualNom控制契约作有限admit或reject，不延伸FD/预算/启发式闭链证书或只读report链。新贡献/强matched新方法与消融/newformal5/独立ID-OOD保持/统计成本/新稿六出口未齐，goal active，260深审清理。
