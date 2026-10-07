@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第279轮20参考独立freshcold验证完成（2026-10-08）：
+
+review_geometry_seed_validation.py不调用原solver.problem/geometry/constraints helper，实际joint/actuator地址独立重构完整qvctrl，freshdata warm/applied0；full16forward加速度、独立8共同力inverse/height/pitch、actual双链geometry/closure/八joint/active1.4/原速度力矩和仅双wheel-floor支持门20/20过。Cold最大8force1.11424647287e-10、qacc0、cold-cachedqacc差0、minleg .114986074200m；名义参考点资格通过，不是持续流/连续域/实际控制稳定证书。
+
+来源/SHA、冻结20tuple顺序、与旧点集合不交、计数/原max100/each1200/total7291和仅geometry初值改变核过；验证点no_fit，旧failedbatch/knownpoint保持各自标记。本轮20freshforward/inverse，0新optimizer/controllerquery/integration/transitionFD/PPO，不叫0计算，也不新开最终OOD。
+
+几何初值参考验证到此结束，不继续扩点/seedsearch/平衡初态轨迹。280深审与清理后决定连续delta表/有限GPU source与staticquery资格，只能用原已coldpassed±.7/±1anchor fit，20新validation不得fit/addknots。当前map/production/正式PPO仍未准，方法贡献/强sameinfo消融/newformal5/freshOOD/统计真实成本/完整稿六出口仍待，目标active。
+
 第278轮冻结20参考初始化验证实际完成（2026-10-08）：
 
 validate_geometry_seed.py沿冻结geometry/source/protocol，20新tuple20/20cached原physical/reference门通过，总7291residualcalls/24000，各<=1200且max100nfev，实际最大59；最大mixed及8force残差1.11424647287e-10、minactualleg .114986074200m。20初值只geometry0,2:6改变，pitch/controls/omega exact保，donor仍旧10±.7最近height/thenspeed，无seed选择/retry/扩预算。完整20NPZ、所有force/geometry/warm、初值/解/来源/SHA及逐点进度留存，验证点未fit。

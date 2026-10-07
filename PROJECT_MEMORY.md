@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-08，目标active）
 
+- 第279轮（2026-10-08）20点独立freshcold全过：不调用solver.problem/geometry/constraintshelper，按实际joint/actuator地址从solution重构qvctrl逐值核；fresh warm/applied0.forward full16qacc、独立8commonforce.inverse、height/pitch、实际两链/loop、八joint及active1.4/原motor速度curve/bilateral floor全部20/20过。最大cold8force1.11424647287e-10、coldfullqacc0、minactualleg .114986074200m，cold-cachedqacc差0，说明保存解通过该名义点原门，不等闭环稳定。
+- 第279轮完成source/proposal/admission/NPZ/顺序/各counter≤1200/max100与总7291/validation tuple与旧登记点不交集核；old/newinitial指定1/6:9exact、newFKheight一致，原failed20及knowncase不混入。本轮20freshforward/inverse有成本，0新optimization/controllerquery/物理积分/transitionFD/PPO；验证点no_fit且最终OOD未打开，保存cold_review.json/log与reviewer SHA。
+- 第279轮关闭geometryinitializer参考验证阶段，不再新solve、seedsearch或平衡初态trajectory。280按约方向深审/cleanup，基于完整证据决定只用原±.7/±1anchors的连续delta表及有限GPU source/staticquery准入，20validation绝不fit/addknots；目前continuousmap/production/正式PPO仍未准，论文六出口/goal active。
+
 - 第278轮（2026-10-08）geometry_seed_validation_v1固定20未见reference batch exit0，20/20cached原force/fullqacc/actualleg/八joint/active1.4/速度力矩/双wheel-floor门通过；实际7291residualcalls<=24000，各<=1200/max_nfev100，最大nfev59、combined/8force max1.11424647287e-10、minactualleg .114986074200m。求解阶段0.540019s只是这批source/compile/solve/serialize成本，不是GPU训练加速或PPO。
 - 第278轮复用冻结geometry函数与原problem/constraints；20初值只改indices0,2:6，pitch/ctrl/omega exact保，nearesth/thenspeed donor仅旧10±.7。20NPZ包括old/newinitial/initialresidual/solution/bounds/qvctrl/所有forces/qacc/warm/实际力矩，来源/顺序/tuple/unchangedindices/finite/SHA及各点和总counter核过；所有验证点no_fit，无旧failedbatch覆盖/knownpoint替换/seedsearch/retry/门变动。
 - 第278轮0controllerquery/物理积分/transitionFD/PPO、无Nomgainbank构造，source/proposal/admission SHA绑定；这只缓存data求解及forward，279必须freshcold。280按约深审清理后才决定table/source/query资格，不能20sample成功当整个连续域certificate、fresh最终OOD/任务稳定或新方法优势。完整六论文出口和goal仍active。
