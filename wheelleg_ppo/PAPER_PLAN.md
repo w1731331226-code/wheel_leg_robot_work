@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第282轮50实际静态配对完成及两变差点保留（2026-10-08）：
+
+query_continuous_nominal_map.py实际cuda50query（20nonfit×双臂40+五staticzero双臂10），bank逐值等269frozen，所有pair qv/sensor/cmd/envstate/memory/Actor/nomcorrection/ref前缀exact，GPUtable readonly、physicsgraph未launch/clock0。完整两NPZ保存originaldouble/F32/required/rawdiag/finalcommand/memory/role/phase/来源SHA，五zero全部ctrl/diag/memory/role/phase runtime exact。
+
+Validation fullmaxgap .0710839400367→.0186323337980Nm，wheelmax .0710839400367→.00379405841578Nm；20point中18 fullgap改善、2变差，全部point差留query_delivery，不删反例、不refit/调gain/换门。Projectionerror全部0。静态输出近似改善不等每点变好、任务收益或稳定资格。
+
+首启动在Scenario abs endpoint speed≥.5验证拒低速/nearzero点，0增益构造/FD/query，错误log保存。合法constructor速度同sign max.5、zero .7，仅构造静态容器；每query实际cmd严格写回冻结reference speed，snapshot/contract_constructor_cases明示，speed只改变静态障碍sign、物理配置保持Nominal。有效一bank冷construct原10FD、本轮总10，0新实验FD/integration/optimization/PPO。5.17217s为成功query阶段含构造/编译/序列化，非训练加速。
+
+283独立raw review和finite去留，禁止静态反复筛查/fit20validation/隐藏两worse。Actual start-stop/asymmetric164、production/正式PPO及六论文出口仍未齐，285深审清理，goal active。
+
 第281轮隔离GPU连续表/控制源验收（2026-10-08）：
 
 continuous_nominal_map.py用GPU readonly5×5×4table按公有targetheight/currentcmd准备私有21列reference，前16保原，后4是wheel/hub/support/θEq delta，flag为enabled/zero/invalid；generated continuous_nominal_control.py仅原θ/feed两处加法及invalidflag preboot ctrl0/diag2 return。去三处插入后原全文/AST exact恢复，validinput的原gain/filter/memory/phase/guard/bounds/Actor不动，原生产基线保留。

@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-08，目标active）
 
+- 第282轮（2026-10-08）continuous_nominal_map固定50static GPU实际完成：20nonfitcold×old/map40+static5zero×old/map10；原生成gain/feed/angles/heights逐值等269frozenbank、一bank双臂q/v/sensor/command/envstate/active/zeroActor+nomcorrection/memorybefore/phase前缀exact，GPUprepare readonlytable。qv F32/原double/requiredctrl/rawdiag/accepted-finalctrl/memory/role/phase/clock全两NPZ/SHA与50records保存，physicsgraph禁launch、clock0。
+- 第282轮输出并非全点改善：validation fullmaxgap old .0710839400367Nm→map .0186323337980Nm，wheel max .0710839400367→.00379405841578Nm；20点18 fullgap改善/2变差（全部差值及具体point留query_delivery），所有projectionerror0。五zero的ctrl/diag/memoryafter/role/phase runtime exact过。不能把改善均值或max压低当allpoint/任务成功率/全连续域稳定，未按结果refit/gain/改阈值。
+- 第282轮初启动Scenario factory只接受abs endpoint speed≥.5，低速/nearzero reference构造在0bank/0FD/0query前报错；保query_preconstructor_failure/log，修为同sign合法constructor speedmax.5（zero用.7），随后每臂明确overwrite command回冻结真实speed。模型只用speed sign布局、Nom输入实际cmd由snapshot核，场景不改变查询点/真实命令，constructor_cases亦存contract。有效进程冷construct原10transitionFD，总10，本轮0新实验FD/积分/optimizer/PPO。
+- 第282轮query_delivery核50来源/顺序/gaps/不变输入/零速exact过；283独立raw+finite去留，不继续static重扫、验证点仍no_fit且两worse保留。Production/fulltask/正式PPO与六论文出口仍未准/goal active，285方向深审清理。
+
 - 第281轮（2026-10-08）隔离GPU continuous_nominal_control源及GPUreadonlytable prepare实现/编译通过：两处原θEq/feed加delta，另flag<0时ctrl0/diag2 preboot return域拒绝；去三处插入后全文/AST exact恢复reference_role_control，所有原validinput gain/Actor/filter/memory/phase/guard/bounds语句保留。原production/CPU/GPUbaseline未改。
 - 第281轮73GPUprepare行核过（25nodes、20nonfitvalidation、19zeroline、8invalid、1inactive），first16prefix exact保持、zero/inactive后5列exact0、invalid flag−1和delta0；GPU vs独立CPUbilinear maxdiff1.38777878078e-17，table/axes/base/command逐值readonly。原候选控制module已cuda编译但没有controlkernel launch，0controllerquery/积分/transitionFD/optimization/PPO、无Nomgainbank构造；NPZ/log/source/proposal/tablemanifest/builderSHA保存GPU_source_admission。
 - 第281轮282唯一50static配对准入，cold20双臂40+原static5zero双臂10，zero output/diag/memory/role/phase runtimeexact待实际query，source域拒绝只source/prepare核而非invalidcontroller运行。一个bank，cold原10FD构造和失败启动成本分别计；283独立raw有限去留，285深审清理。Continuous task稳定/production/正式PPO与完整论文六出口仍未齐/goal active。

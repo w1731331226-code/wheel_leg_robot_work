@@ -1,0 +1,9 @@
+{
+  "error": "Scenario constructor rejects endpoint speed magnitude below0.5; query references include ramp/nearzero speed.",
+  "attempted_individual_queries": 0,
+  "baseline_constructor_transitionFD_calls": 0,
+  "integration_steps": 0,
+  "implicit_retry": false,
+  "log_sha256": "d7299f0b770e04c218f087aa1b200d9bf6e4534b6152f82deebd887d5e08c441",
+  "fix": "Use same-sign legalconstructor speedmax0.5 for nonzero and0.7 forzero, then overwrite command with original frozen true reference speed before each query; do not changepoints/bank/physical model."
+}

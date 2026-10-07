@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/query_continuous_nominal_map.py", line 147, in <module>
+    run()
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/query_continuous_nominal_map.py", line 48, in run
+    cases.append(dict(seed=2820000+i,scenario=HeightTerrainScenario(speed=r['speed'] or .7,
+  File "<string>", line 23, in __init__
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/native/terrain.py", line 46, in __post_init__
+    super().__post_init__()
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/native/terrain.py", line 33, in __post_init__
+    Scenario(**{name:getattr(self,name) for name in Scenario.__dataclass_fields__})
+  File "<string>", line 14, in __init__
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_ppo/tools/ppo_env.py", line 46, in __post_init__
+    raise ValueError('场景超出冻结的开发/压力测试范围')
+ValueError: 场景超出冻结的开发/压力测试范围
