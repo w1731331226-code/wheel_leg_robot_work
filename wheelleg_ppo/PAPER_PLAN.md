@@ -1,5 +1,11 @@
 # 双轮腿机器人PPO论文方案
 
+第248轮真实Actor指令输入时间对齐核查（2026-10-07）：
+
+仅读首H1/23301已完成regularbatch0共20case/7385Actor decisions，按完整pre-finalctrl6累计积分及原delivered sensorclock独立重建最新历史interval。sensor elapsed/.02和末proxy2slot0逐值一致，无decision后的cmd参与；13种实际delay覆盖1–9.5ms。归一化平均command的CPUcumsum vsGPUdoubleprefix最大差9.313225746e-10，完整保存差异，不改变控制/raw/资格门，不称跨算术bitwise。round248_actor_input_alignment绑定所有来源；仅20case/latestinterval，不是全481/全164/全seedActor重建，更非模型收益。
+
+同353065/353066 running无error/replay，初snapshot第二H1controlledbatch0 reserved936/completed916，secondpair完整数据未齐。本轮0新physics/learning，249实际新完整pair或同handleverifiedwait，原三pair/1312/强门/CPU/raw/层级stats和终态归档待做。六论文出口继续，250深审清理。
+
 第247轮第二H1训练对象与实际input独立验收（2026-10-07）：
 
 23302/H1十检查点30对象CPUload及SHA核完：seed/shape481→6/20k…200k/epochs40…400、finite weights及nonemptyAdam800…8000、481RMS.count=steps+100.0001、command坐标统计实际非零、保存manifest exact；原snapshot CUDAmoments和保存world/route/history/parking/RMS/RNG不改标记核。同seedH0/H1初始化weight/world exact、无工程warmstart、末权重实际变化；200k/400epochs/8000Adam/learn+checkpoint94.145085s，round247_second_H1_model保存证据，只对象/信息差资格，非fullpair收益。

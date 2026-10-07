@@ -4,6 +4,9 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第248轮实际Actor input时间独立核：仅读首H1/23301已完成regularbatch0共20case、7385decisions，用完整pre最后ctrl6重算cumulative指令积分，以scenario.delay(0.5ms grid)送达sample时钟取前一interval；对应sensor elapsed/.02和lastproxy2slot exact0逐值一致，使用的最晚ctrl在decision前。normalizedmean ctrl CPUcumsum vsGPUdoubleprefix maxdiff9.313225746e-10，原样保留误差，不放容差/改raw/门、不声称bitwise；scope仅20case/latestinterval，不代全三seed全部Actor。round248_actor_input_alignment绑定已核来源。
+- 第248轮原353065/353066 running，无error/restart；初snapshot23302/H1 controlledbatch0 reserved936/completed916，完整secondpair未齐。本轮0新physics/learning，重复读取完整旧数据为新独立时钟核查，未重跑。249沿同handle实际secondpaircomplete或verifiedwait；三pair/1312全门/CPU/raw/stats/终态分批归档仍待，六论文出口/goal active，250深审清理。
+
 - 第247轮23302/H1十checkpoint/30对象独立CPUload：seed/shape481→6/step20000…200000/epochs40…400/finite weights及nonemptyAdam800…8000、RMS.count=steps+100.0001、全部command坐标统计实际非零、保存manifest SHA一致，原snapshot CUDAmoments和save world/route/history/parking/RMS/RNG不改标记核。与H0同seed初始化weight/world exact、无engineeringwarmstart，末权重更新。200k/400epochs/8000Adam/learn+checkpoint94.145085s；round247_second_H1_model绑定证据，不当全pair/三seed收益。
 - 第247轮原353065/353066 running无error/replay，末snapshot23302/H1 regularbatch2 reserved880/completed860；本轮0新physics/learning，runtime raw/models未全remote/clean。248沿同handle核实际新完成secondpair或verifiedwait，原3pairs/1312/fullgates/CPU/raw/stats与终态分批归档仍待，六论文出口/goal active，250深审清理。
 
