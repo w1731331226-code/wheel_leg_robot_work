@@ -1,0 +1,152 @@
+{
+  "verified": true,
+  "round": 245,
+  "previous_turn": "progress",
+  "reviewed_rounds": [
+    241,
+    242,
+    243,
+    244
+  ],
+  "first_pair_component_tradeoffs": {
+    "regular": {
+      "H0_components": {
+        "terrain_contact": 29,
+        "legacy_contact": 1,
+        "attitude": 2,
+        "yaw": 1,
+        "roll_axis": 1
+      },
+      "H1_components": {
+        "terrain_contact": 6,
+        "attitude": 3,
+        "yaw": 2,
+        "roll_axis": 1
+      },
+      "lost": [
+        6300075
+      ],
+      "gained": [
+        6300001,
+        6300006,
+        6300009,
+        6300010,
+        6300011,
+        6300014,
+        6300020,
+        6300029,
+        6300035,
+        6300040,
+        6300042,
+        6300045,
+        6300051,
+        6300055,
+        6300057,
+        6300059,
+        6300060,
+        6300063,
+        6300079,
+        6300084,
+        6300086,
+        6300092,
+        6300093,
+        6300094
+      ],
+      "new_component_cases": 1
+    },
+    "controlled": {
+      "H0_components": {
+        "attitude": 11,
+        "yaw": 9,
+        "roll_axis": 4
+      },
+      "H1_components": {
+        "attitude": 11,
+        "yaw": 9,
+        "roll_axis": 4
+      },
+      "lost": [
+        6301001,
+        6301009,
+        6301017
+      ],
+      "gained": [
+        6301019,
+        6301021,
+        6301031
+      ],
+      "new_component_cases": 4
+    },
+    "legacy": {
+      "H0_components": {
+        "attitude": 1,
+        "yaw": 1
+      },
+      "H1_components": {
+        "attitude": 1,
+        "yaw": 1
+      },
+      "lost": [],
+      "gained": [],
+      "new_component_cases": 0
+    }
+  },
+  "first_pair_sha256": "7d70ae5b61a825e4dc24517ad49facefb14e051b0a6e6a05acc30bca2a2ad44e",
+  "statistics_source_unit_sha256": "279da115b542cc0f7c6390011e4492beddb59ce9a0997778f721fe96affca3c1",
+  "decision": "Continueonlyregisteredremainingseedpairs/1312. Firstpair showscontact improvements withattitude/yaw/case-swaps;no monotonic task/safety/newalgorithm dominance. Do not selectbeneficialcases/rewardchange/extremeterrain/teacher/budget rescue.",
+  "methods": "Inputmaskisreal,matchedinitializations/newseeds/wholeflagretention/finalonlyselection andcrossedseed-case descriptive statistics are appropriate. Finitecase physics/designpass is notstate-space safety;onepair notrobustmulti-seed superiority.",
+  "new_experiments_now": "None;afterfullresult eitherclosefixedbenefit or finitecontribution/strongsameinformationmethoddecision. Keepallnegativecases andnewformal5/freshID-OOD/retention/stats/PPOwall/manuscript requirements.",
+  "cleanup": {
+    "verified": true,
+    "files": [
+      {
+        "cache": "wheelleg_warp/__pycache__/coordinated_nominal_query.cpython-310.pyc",
+        "source": "wheelleg_warp/coordinated_nominal_query.py",
+        "bytes": 12854,
+        "cache_sha256": "a71059acc9c20b06319f16d718a531a2ff5799cdffeefd5a5386ba7ba9871b27",
+        "source_sha256": "812044fa216d9fb7247a0d12349befb6ea81121abdf4cc1c647bd1f79d2d5376",
+        "ignored_untracked": true,
+        "no_open_holders": true,
+        "code_equivalent": true,
+        "not_in_worker_sources": true
+      }
+    ],
+    "total_bytes": 12854,
+    "limits": "Closedheuristicderivedcacheonly;liveworker/runtime/allsource/models/RMS/raw/failures/baselines/sealedsets preserved."
+  },
+  "worker": "MainPID=353065\nResult=success\nSubState=running\n",
+  "progress": {
+    "status": "training",
+    "current": {
+      "seed": 23302,
+      "arm": "H1"
+    },
+    "completed": [
+      {
+        "arm": "B0",
+        "seed": null
+      },
+      {
+        "arm": "B1-route",
+        "seed": null
+      },
+      {
+        "seed": 23301,
+        "arm": "H0"
+      },
+      {
+        "seed": 23301,
+        "arm": "H1"
+      },
+      {
+        "seed": 23302,
+        "arm": "H0"
+      }
+    ],
+    "completed_evaluations": 820
+  },
+  "new_training_or_evaluations": 0,
+  "formal5_admitted": false,
+  "entire_goal_complete": false,
+  "next_deepreview_cleanup": 250
+}

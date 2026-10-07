@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第245轮完整任务取舍方向深审及清理（2026-10-07）：
+
+241–244实际input启用/对象、首pairedseed全164、第二seed新对象和seed-case统计边界复核，worker源码SHA不变。首pairregular terrain_contact29→6的改善同时attitude2→3/yaw1→2、lost1/gained24；controlled汇总仍11attitude/9yaw/4roll，却lost3/gained3/newcomponent4。不能用接触改善或总成功相同掩盖姿态、航向与case交换。匹配初始化/真实信息mask/newseed/finalonly/全flags和层级描述统计的方法保留；物理设计通过不等全状态安全，首pair不证明稳健整体收益或新算法。
+
+只完成冻结剩余pairedseed/1312，不新增极端地形、teacher/reward/gain/std/history/budget或挑有利case救分。完整结果后才关闭fixedbenefit或登记有限贡献/同信息strongmethod检验，仍保留新formal5/freshID-OOD保持/层级stats-PPO成本/推导复现稿六出口。末snapshot累计820评价、23302/H0结束、H1 actualtraining，原353065/353066 running无error/restart；本轮0新physics/learning，第二pair与三seed全门未齐，data未全remote/clean。
+
+删除closedheuristic coordinated_nominal_query一份pyc12854B，ignored/untracked/无fuser使用、源码归一codeobject等价且不在worker闭包；round245_cleanup保存前SHA/源码SHA，不动live缓存或任何scientificsource/models/RMS/raw/失败/baseline/sealed集。246同handle实际新complete对象/verifiedwait，250下次深审清理，整体目标继续。
+
 第244轮种子/案例配对统计审查准备（2026-10-07）：
 
 完整reviewer加入H1−H0逐seed×共同case差矩阵，报告每seed均差、range、正负seed数；描述区间以crossed seed/case bootstrap5000、固定rng24417和percentile95生成，评价case抽样索引在被抽训练seed间共享，保留两臂配对，不把同模型的164重复case当独立training samples。Success含全部失败，任何panel有未completed回合则J区间None，不做survivor-only统计。3seed弱分辨率/固定发展case区间不等总体泛化/安全保证或资格门；原全部门保持。

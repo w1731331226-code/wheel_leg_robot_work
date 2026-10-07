@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第245轮五轮深审完成：241实际input非空/对象校对、242首pair全164取舍、243第二seed对象、244seed-case统计边界复核，worker source SHA保持。首pairregular terrain_contact29→6，但attitude2→3/yaw1→2，lost1/gained24；controlled同11attitude/9yaw/4roll汇总却lost3/gained3/newcomponent4，不能只报告接触改善或汇总数。信息mask真实/匹配初始化/新seed/finalonly/全flags保留及seed-case描述统计方法合适，尚不支持monotonic任务优势/全状态安全或新算法。
+- 第245轮只继续原剩余pairedseed/1312，不加更难地形/teacher/reward/gain/std/history/budget救分或挑有利case。末snapshot已820评价、23302/H0完成、23302/H1 actualtraining，原353065/353066 running无error/restart。本轮0新physics/learning，未对第二pair或三seed全门作结论；runtime数据未全remote/clean，六论文出口/goal active。
+- 第245轮删除1份closedheuristic coordinated_nominal_query.pyc共12854B，ignored/untracked/无fuser持有/源码归一codeobject等价/不在runningworker闭包；round245_cleanup保存前SHA/源码SHA。未触碰live缓存/源码/models/RMS/raw/失败/baseline/sealed集。246核第二H0实际完整交付/新H1对象或同handleverifiedwait，250下一深审清理；终态完整门及分批归档再finite去留。
+
 - 第244轮完整reviewer补统计口径：H1−H0逐seed/逐case配对矩阵，列perseedmean/range/正负seed数，再crossed seed-case bootstrap5000/固定rng24417/percentile95，同case重采样索引对各seed共享，不将164重复case当独立training runs。Success含全部失败；任何panel有未completed回合则J区间None，不survivor删样本。仅固定发展案例描述区间、3seed不确定性分辨率弱，不改原门/当新泛化或统计保证。
 - 第244轮synthetic常量±1/0区间、混合seed符号、确定性、NaN/单seed拒绝与partial完整结论拒绝过，round244_statistics_unit绑定源码；未计算全1312统计、0新增physics/learning。修改只未被worker闭包使用的reviewer，主source/params不变；末snapshot23302/H0 controlledbatch1 reserved792/completed772，原353065/353066 running无error/replay。
 - 第244轮245如期深审清理，余seed配对未齐，不用新增统计改变资格、选winner或救分；完整三pair/1312原强门/CPU/raw/stats与终态分批归档、完整论文六出口仍未完成，goal active，runtime文件未全remote/clean。
