@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-08，目标active）
 
+- 第283轮（2026-10-08）saved50独立核过：source AST只三处声明改变、原/新qv F32与originaldouble/required/gap重算、所有pair sensor/cmd/envstate/Actor/nomcorrection/bank/memory/ref前缀/phase一致，五zero ctrl/diag/memory/role/phase exact。独立四权重bilinear核20prepared delta、public nominal motorcurve最终command边界过；真实低速cmd按snapshot/contract一致，合法constructor speed不同只容器配置、不改query。0新query/FD/积分/PPO，仅模型compile作原motor边界读，cost未叫0总计算。
+- 第283轮18改善/2worse来源和逐componentgap重新核，candidate两最大gap分别hip1/hip0（old第二点最大wheel4），不作唯一归因。关闭static筛查，不重新fit/增加anchors/query/改指标；表保留实验候选，未准production/正式PPO，旧科学negative gate不改。
+- 第283轮冻结continuous_nominal_task_pair_v1实际328发展任务：原96regular/40controlled/28legacy×old_B0/map_B0、原eval_jobs顺序/案例及164旧B0 archive SHA，复用actualphase/parking_request_withdrawal/collector/history/RouteState和zero6Actor，不用equilibrium初态。284source/capture/recording preflight过后一次queue；原arm须重现archive全部案例/门/指标，unexpected差异阻因果结论；所有失败/raw/buffers保存，无学习/重复重试/换seed。
+- 第283轮engineering继续门事前固定：map须保持old成功regular96/legacy28及所有physical/design、保oldcontrolled成功且controlled>=34/40（至少2新success对old32）；不过则关闭taskbenefit，不改table/gain/reward/范围救分。Taskfailure是数据不停止328、仅软件/source/recording失败停并保存partial。GPUtaskpair不是全任务CPU/GPU/跳跃manual准入，更不等novelmethod/formal5/freshOOD或论文完成；285如期深审清理/实际运行进度，完整六出口/goal active。
+
 - 第282轮（2026-10-08）continuous_nominal_map固定50static GPU实际完成：20nonfitcold×old/map40+static5zero×old/map10；原生成gain/feed/angles/heights逐值等269frozenbank、一bank双臂q/v/sensor/command/envstate/active/zeroActor+nomcorrection/memorybefore/phase前缀exact，GPUprepare readonlytable。qv F32/原double/requiredctrl/rawdiag/accepted-finalctrl/memory/role/phase/clock全两NPZ/SHA与50records保存，physicsgraph禁launch、clock0。
 - 第282轮输出并非全点改善：validation fullmaxgap old .0710839400367Nm→map .0186323337980Nm，wheel max .0710839400367→.00379405841578Nm；20点18 fullgap改善/2变差（全部差值及具体point留query_delivery），所有projectionerror0。五zero的ctrl/diag/memoryafter/role/phase runtime exact过。不能把改善均值或max压低当allpoint/任务成功率/全连续域稳定，未按结果refit/gain/改阈值。
 - 第282轮初启动Scenario factory只接受abs endpoint speed≥.5，低速/nearzero reference构造在0bank/0FD/0query前报错；保query_preconstructor_failure/log，修为同sign合法constructor speedmax.5（zero用.7），随后每臂明确overwrite command回冻结真实speed。模型只用speed sign布局、Nom输入实际cmd由snapshot核，场景不改变查询点/真实命令，constructor_cases亦存contract。有效进程冷construct原10transitionFD，总10，本轮0新实验FD/积分/optimizer/PPO。

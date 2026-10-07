@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第283轮static50独立去留与完整任务配对登记（2026-10-08）：
+
+review_continuous_nominal_queries.py独立核所有source/数据/真低速cmd/合法constructor差异、原frozenbank和pair输入、五zero全输出/diag/memory/role/phase exact，独立四权重table插值与原motorcurve最终command门通过。18改善/2worse保留逐component数组，candidate两worse主gap为hip1/hip0，旧第二点主gap为wheel4，不能静态唯一归因。0新controllerquery/积分/FD/PPO，公共模型compile用于边界检查。关闭static/参考扩点，不refit当前表，工程候选非生产/训练资格。
+
+continuous_nominal_task_pair_v1冻结原164development eval_jobs（96regular/40controlled/28legacy）×old_B0/map_B0共328实际start/ramp/terrain/arrival/stop，从原reset启动，不equilibrium初始化。复用execution_history_evaluation B0零6Actor、actualphase/parkingwithdrawal/collector/route/history/全物理原始日志，所有失败/buffers留，原164B0归档SHA核过；source/capture/40percapture/控制owner/currentcmd与记录接口必须284预检。通过后只一次328queue，无learning/retry/seedselection；软件/source/recording失败保存partial停止，taskfail按数据完成其余案例。
+
+事前engineering继续门：oldarm先重现原164 archive；map保96regular和28legacy旧成功、所有physical/design、无丢失oldcontrolled成功，controlled至少34/40且比原32新增至少2成功。否则关闭任务收益分支，禁止调table/gain/reward/案例/门救分。按实际caseflags/J/effort/start-stop比较，不拿max静态gap替代任务。构造FD/capture/评估/序列化真实成本全记。当前只GPUtaskpair准入设计，完整CPU/GPU任务校对及跳跃manual另需，正式PPO/新颖贡献/formal5/freshOOD/统计与完整稿六出口仍待。285按约深审清理并核live/terminal实际状态，goal active。
+
 第282轮50实际静态配对完成及两变差点保留（2026-10-08）：
 
 query_continuous_nominal_map.py实际cuda50query（20nonfit×双臂40+五staticzero双臂10），bank逐值等269frozen，所有pair qv/sensor/cmd/envstate/memory/Actor/nomcorrection/ref前缀exact，GPUtable readonly、physicsgraph未launch/clock0。完整两NPZ保存originaldouble/F32/required/rawdiag/finalcommand/memory/role/phase/来源SHA，五zero全部ctrl/diag/memory/role/phase runtime exact。
