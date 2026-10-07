@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-08，目标active）
 
+- 第277轮（2026-10-08）单点独立freshcold复核过：不用solver.problem/geometry构造最终q，而按solution/实际joint/actuator地址重构qvctrl逐值核，fresh warm/applied0，完整forward+独立8commonforce inverse和height/pitch原门过；physical helper复用此前独立275已核版本，源码SHA绑定。旧initial与原failedNPZ exact、指定1/6:9初值不变、新FKheight target一致；一次freshforward/inverse，0solve/controller/积分/FD/PPO。关闭已知点diagnostic，不推所有高度/新颖方法，旧20仍failed。
+- 第277轮geometry_seed_validation_v1新协议冻结：rng27741，四heightcell×四speedcell每cell1新点16，加.115/.38×±.35边界4，共20未求解tuple，与旧全部declared/solved/knownfailure点无交集。仅development模型参考验证，不是fresh最终ID/OOD、不fitlookup/addknots；源geometry/helper/equations SHA固定。沿原10±.7 donor deterministic nearesth/thenspeed，初值只改geometry indices0,2:6，保pitch/ctrl/omega/原model/bounds/tol/xscale/max100。
+- 第277轮278实现/一次20pointbatch，each<=1200/total<=24000residualcalls含初末检查；原force/accel/geometry/关节/motor/support门任何失败立即保全部并列未执行，不retry/增nfev/seedsearch/改scope。279freshcold，280深审清理后再决定continuousmap/source/query，当前0query/integration/FD/learning准入，不重启旧20；完整论文六出口仍缺/goal active。
+
 - 第276轮（2026-10-08）geometry_seed_diagnostic_v1唯一已知开发点(.1375,−.35)初值因果诊断完成：复用ml.equilibrium现有IK/实际body-site passive闭合角，basez平移target−oldFKheight，仅改initial indices0,2:6，初pitch/ctrl/omega与原residual/物理bounds/tol/xscale/max_nfev100全部保。19高度纯FK/闭链/八joint/active1.4几何检查过，0额外plantquery/FD。
 - 第276轮一次solver 10nfev/112实际residualcalls<=1200，cached原门passed，combined/8force residualmax6.68167743356e-11，heighterror−2.77556e-17m，forwardqacc0，minactualleg .137484469537m；相对旧nearestgeometry100nfev/1081calls/failed说明本已知点收敛对height一致初geometry敏感，不推所有case或新颖算法。完整old/newinitial/bounds/residual/qvctrl/forces/warm/outcome/SHA保存，旧failedoutcome SHA不变、原20仍failed/9未执行。
 - 第276轮0controllerquery/积分/transitionFD/PPO，无Nomgainbank构造，仅一个optimizer/19纯geometryunit；source/prefix/指定unchangedindices/19checks/counter/旧输出未覆盖验收过。当前只cachedsolver门，277必须独立freshcold和有限诊断去留；不能本点作freshholdout、fitmap、恢复原20completed/production/PPO。完整论文六出口/goal active，280深审清理。

@@ -1,0 +1,242 @@
+{
+  "version": "geometry-seed-validation-v1",
+  "round": 277,
+  "status": "frozen_not_executed",
+  "rng_seed": 27741,
+  "parent_cold_review_sha256": "e5ad4a5ba65e7065663629125d6aa00974be599027bd752b44b6c8dec75d6531",
+  "points": [
+    {
+      "height": 0.13535674,
+      "speed": -0.78517888,
+      "height_cell": 0,
+      "speed_cell": 0,
+      "role": "validation_not_fit"
+    },
+    {
+      "height": 0.14653414,
+      "speed": -0.1296265,
+      "height_cell": 0,
+      "speed_cell": 1,
+      "role": "validation_not_fit"
+    },
+    {
+      "height": 0.13932444,
+      "speed": 0.36165492,
+      "height_cell": 0,
+      "speed_cell": 2,
+      "role": "validation_not_fit"
+    },
+    {
+      "height": 0.14920881,
+      "speed": 0.83608878,
+      "height_cell": 0,
+      "speed_cell": 3,
+      "role": "validation_not_fit"
+    },
+    {
+      "height": 0.16219766,
+      "speed": -0.89185826,
+      "height_cell": 1,
+      "speed_cell": 0,
+      "role": "validation_not_fit"
+    },
+    {
+      "height": 0.20352121,
+      "speed": -0.6069845,
+      "height_cell": 1,
+      "speed_cell": 1,
+      "role": "validation_not_fit"
+    },
+    {
+      "height": 0.21128723,
+      "speed": 0.09292026,
+      "height_cell": 1,
+      "speed_cell": 2,
+      "role": "validation_not_fit"
+    },
+    {
+      "height": 0.22831973,
+      "speed": 0.73432944,
+      "height_cell": 1,
+      "speed_cell": 3,
+      "role": "validation_not_fit"
+    },
+    {
+      "height": 0.25250015,
+      "speed": -0.96164981,
+      "height_cell": 2,
+      "speed_cell": 0,
+      "role": "validation_not_fit"
+    },
+    {
+      "height": 0.26076365,
+      "speed": -0.00037215,
+      "height_cell": 2,
+      "speed_cell": 1,
+      "role": "validation_not_fit"
+    },
+    {
+      "height": 0.27945405,
+      "speed": 0.52895716,
+      "height_cell": 2,
+      "speed_cell": 2,
+      "role": "validation_not_fit"
+    },
+    {
+      "height": 0.27014326,
+      "speed": 0.79721851,
+      "height_cell": 2,
+      "speed_cell": 3,
+      "role": "validation_not_fit"
+    },
+    {
+      "height": 0.30869192,
+      "speed": -0.77405422,
+      "height_cell": 3,
+      "speed_cell": 0,
+      "role": "validation_not_fit"
+    },
+    {
+      "height": 0.31926888,
+      "speed": -0.11186667,
+      "height_cell": 3,
+      "speed_cell": 1,
+      "role": "validation_not_fit"
+    },
+    {
+      "height": 0.32011933,
+      "speed": 0.56199035,
+      "height_cell": 3,
+      "speed_cell": 2,
+      "role": "validation_not_fit"
+    },
+    {
+      "height": 0.32760733,
+      "speed": 0.70430093,
+      "height_cell": 3,
+      "speed_cell": 3,
+      "role": "validation_not_fit"
+    },
+    {
+      "height": 0.115,
+      "speed": -0.35,
+      "height_cell": null,
+      "speed_cell": null,
+      "role": "boundary_validation_not_fit"
+    },
+    {
+      "height": 0.115,
+      "speed": 0.35,
+      "height_cell": null,
+      "speed_cell": null,
+      "role": "boundary_validation_not_fit"
+    },
+    {
+      "height": 0.38,
+      "speed": -0.35,
+      "height_cell": null,
+      "speed_cell": null,
+      "role": "boundary_validation_not_fit"
+    },
+    {
+      "height": 0.38,
+      "speed": 0.35,
+      "height_cell": null,
+      "speed_cell": null,
+      "role": "boundary_validation_not_fit"
+    }
+  ],
+  "development_validation_only": true,
+  "fresh_final_ID_OOD": false,
+  "not_fitting_points": true,
+  "existing_point_set_sha256": "741987b30703002ef28514d3c8eb29fac59a3122d941dd364a3663df36554a4e",
+  "existing_moving_reference_inputs": [
+    {
+      "height": 0.115,
+      "speed": -0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_0_speed_0.npz",
+      "sha256": "6bd8845a7ad9237618b7eacda700beec39cdba818a5a3c7e42513f0b0376cf87"
+    },
+    {
+      "height": 0.115,
+      "speed": 0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_0_speed_1.npz",
+      "sha256": "46767ec438ef63deb30cf3e6ed24e4b26506299d33e28998a8dd2c4f5f99fc8f"
+    },
+    {
+      "height": 0.16,
+      "speed": -0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_1_speed_0.npz",
+      "sha256": "687305cbd9e1754bce62e7edfad33e50978c47add1207b05f0007518d067bef8"
+    },
+    {
+      "height": 0.16,
+      "speed": 0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_1_speed_1.npz",
+      "sha256": "d4aa3e8d483567620db94183e279c52eb4bd79df453e09c2288108f80710ede6"
+    },
+    {
+      "height": 0.25,
+      "speed": -0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_2_speed_0.npz",
+      "sha256": "c1495411d91fe18044ed5a68b7f0e9296888046a3af3a2e53514e4e7434f0259"
+    },
+    {
+      "height": 0.25,
+      "speed": 0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_2_speed_1.npz",
+      "sha256": "303c8309e694ca8bad37a91922303458553690bffc218609d793f813ca9b41c6"
+    },
+    {
+      "height": 0.3,
+      "speed": -0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_3_speed_0.npz",
+      "sha256": "aa489f329338fa566e1f76b6bfd6f04d9bdcd4fa3a8ebbccdedc3c32c48b19d2"
+    },
+    {
+      "height": 0.3,
+      "speed": 0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_3_speed_1.npz",
+      "sha256": "b5fee2188b3fdb7dc22a3bf0c7430771fc93fa54292229297d94107c79e2e0fb"
+    },
+    {
+      "height": 0.38,
+      "speed": -0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_4_speed_0.npz",
+      "sha256": "4a7bcd938da96d9297c7fd89750e63a77a1a4487d09d922ab381807501e61317"
+    },
+    {
+      "height": 0.38,
+      "speed": 0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_4_speed_1.npz",
+      "sha256": "e92f725c6c7002aeecab2b818bddc2581a3b52cd8ca5acd6b48ced98f2737797"
+    }
+  ],
+  "initializer": "Deterministic nearestheight/thenspeed old10moving donor; originalproblem initial vector then geometry(m,targeth) from frozen diagnose_geometry_seed, initialbasez+=targeth-oldFKheight. Onlyindices0,2:6change; pitch/control/omega unchanged. No seed search.",
+  "solver": "Same originalproblem/model/bounds/tolerances/x_scale jac/max_nfev100; each counter includes initial and final checks.",
+  "reference_count": 20,
+  "max_nfev_per_point": 100,
+  "per_point_residual_limit": 1200,
+  "total_residual_limit": 24000,
+  "acceptance": "Original combinedforce1e-6/fullforwardqacc1e-4/actualleg .1147044660616607/eightjoint/active1.4/torquecurve/bilateral floor andsolver_success, then independentfreshcold review. Preserveallfailedconditions.",
+  "stop": "Single20point batch; preserve every solved/failed/skipped point. First originalgate failure stops with explicit unattempted list. No retry/extraiterations/newseed/newcell or posthoc scope narrowing. Oldbatch staysfailed; known diagnostic excluded.",
+  "frozen_fit_anchors": "No fit executed here. Only old10±.7 and coldpassed10±1 may be later considered anchor data; new20 validation are never used tofit/addknots.",
+  "next": "278 source/admission andone registered batch;279 independent freshcold;280 mandatory direction deepreview/cleanup andonly then decide continuous table/source/query admission. No extra equilibrium trajectories.",
+  "controller_queries_admitted": 0,
+  "integration_admitted": 0,
+  "new_experimental_transitionFD_admitted": 0,
+  "training_admitted": 0,
+  "map_admitted": false,
+  "baseline_replacement_admitted": false,
+  "source_sha256": {
+    "wheelleg_warp/diagnose_geometry_seed.py": "1dcf13070004f32b778171f520f1ddf27e0f4a895e7421586fe09408f80921f5",
+    "wheelleg_warp/solve_moving_equilibrium.py": "b6bcabeb1f8ca630ef92e92c8b6b2dc5b45e808a7a8b4dceffd48f9d6aea76d5",
+    "wheelleg_warp/solve_continuous_nominal_references.py": "9ed2a11af79f5671a13d5ef3668fc77fcd034d74eb31c8b4c0db09017345ab45",
+    "wheelleg_ppo/tools/model_lqr.py": "d63db108ece884340cff2589cf50729ca1dfd2ffd44adb8260b8155570ffbf82",
+    "wheelleg_ppo/tools/wheelleg_sim.py": "c2dfaae4dc562119fd7916684849ec22fcac3d75dbcfec6a2a0f9452d8f6ee0f",
+    "wheelleg_ppo/tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+    "wheelleg_ppo/tools/hardware_profile.py": "844688aae7e408bb2ca11d00b192ffaa9e4ad5de06cc8a815d3cf3ddfbe02eba",
+    "wheelleg_ppo/xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f"
+  },
+  "paper_limits": "Engineering initializer validation alone is not qualified newRLmethod orcorepublication evidence. Contribution/strongsameinfo ablations/formal5/freshOOD/stats/end-to-endPPO cost/manuscript remain required."
+}

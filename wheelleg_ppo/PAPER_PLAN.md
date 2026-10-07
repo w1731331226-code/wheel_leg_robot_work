@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第277轮初值单点freshcold通过并冻结未见参考验证（2026-10-08）：
+
+review_geometry_seed.py按solution和实际地址独立重构最终qvctrl，freshdata warm/applied0.forward/full8force.inverse、height/pitch和原physical/design门通过；physical helper沿用275独立核过的实现，SHA保持。只geometry初值改变的对照核过，旧failed点/source不改。一次freshforward/inverse，0优化/controllerquery/积分/FD/PPO。已知development单点diagnostic到此关闭，不称新holdout或新方法。
+
+geometry_seed_validation_v1预先冻结rng27741的20未求解tuple：height四cell×speed四cell各一个16，另.115/.38×±.35边界4，与旧全部登记/求解/已知失败tuple不重合。仅公有7kg模型参考development验证，不是论文fresh最终ID/OOD；验证点绝不fit表或添加knots。Geometry函数与原problem/constraints/helper源SHA固定，旧10±.7作nearesth/thenspeed donor，只有初geometry indices0,2:6改变，pitch/controls/omega及原model/bounds/tol/xscale/max_nfev100保留。
+
+278实现并执行一次20point，各max1200residualcalls/total24000含初末检查；任一原门失败停止、完整保存及未执行列表，无retry/nfev扩大/seedsearch/事后缩scope。279独立freshcold，280深审清理后才决定continuousmap/table/source/query资格，不再固定平衡初态轨迹。原失败20不改为完成，当前map/controllerquery/integration/FD实验/正式PPO/production皆未准；论文六出口仍待，goal active。
+
 第276轮target几何初始化单点因果诊断完成（2026-10-08）：
 
 diagnose_geometry_seed.py复用既有ml.equilibrium的target IK/实际body-site passiveclosure，将basez平移target−oldinitialFKheight，只改initial0,2:6，保初pitch/control/commonomega、原force residual/bounds/模型/tolerance/xscale/max100。19高度纯FK、两链闭合、原joint与activecap代数检查过，不调用equilibrium(max500)/design/linearize或controller。
