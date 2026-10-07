@@ -1,0 +1,251 @@
+{
+  "version": "continuous-nominal-map-v1",
+  "round": 280,
+  "status": "table_source_only",
+  "height_knots": [
+    0.115,
+    0.16,
+    0.25,
+    0.3,
+    0.38
+  ],
+  "speed_knots": [
+    -1.0,
+    -0.7,
+    0.0,
+    0.7,
+    1.0
+  ],
+  "fit_anchors": [
+    {
+      "height": 0.115,
+      "speed": -0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_0_speed_0.npz",
+      "sha256": "6bd8845a7ad9237618b7eacda700beec39cdba818a5a3c7e42513f0b0376cf87",
+      "cold_review_path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/review.json",
+      "cold_review_sha256": "13a03e444927038fc046d5ab689274b9c151ae8627edb00b1631a5133711d183"
+    },
+    {
+      "height": 0.115,
+      "speed": 0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_0_speed_1.npz",
+      "sha256": "46767ec438ef63deb30cf3e6ed24e4b26506299d33e28998a8dd2c4f5f99fc8f",
+      "cold_review_path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/review.json",
+      "cold_review_sha256": "13a03e444927038fc046d5ab689274b9c151ae8627edb00b1631a5133711d183"
+    },
+    {
+      "height": 0.16,
+      "speed": -0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_1_speed_0.npz",
+      "sha256": "687305cbd9e1754bce62e7edfad33e50978c47add1207b05f0007518d067bef8",
+      "cold_review_path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/review.json",
+      "cold_review_sha256": "13a03e444927038fc046d5ab689274b9c151ae8627edb00b1631a5133711d183"
+    },
+    {
+      "height": 0.16,
+      "speed": 0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_1_speed_1.npz",
+      "sha256": "d4aa3e8d483567620db94183e279c52eb4bd79df453e09c2288108f80710ede6",
+      "cold_review_path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/review.json",
+      "cold_review_sha256": "13a03e444927038fc046d5ab689274b9c151ae8627edb00b1631a5133711d183"
+    },
+    {
+      "height": 0.25,
+      "speed": -0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_2_speed_0.npz",
+      "sha256": "c1495411d91fe18044ed5a68b7f0e9296888046a3af3a2e53514e4e7434f0259",
+      "cold_review_path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/review.json",
+      "cold_review_sha256": "13a03e444927038fc046d5ab689274b9c151ae8627edb00b1631a5133711d183"
+    },
+    {
+      "height": 0.25,
+      "speed": 0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_2_speed_1.npz",
+      "sha256": "303c8309e694ca8bad37a91922303458553690bffc218609d793f813ca9b41c6",
+      "cold_review_path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/review.json",
+      "cold_review_sha256": "13a03e444927038fc046d5ab689274b9c151ae8627edb00b1631a5133711d183"
+    },
+    {
+      "height": 0.3,
+      "speed": -0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_3_speed_0.npz",
+      "sha256": "aa489f329338fa566e1f76b6bfd6f04d9bdcd4fa3a8ebbccdedc3c32c48b19d2",
+      "cold_review_path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/review.json",
+      "cold_review_sha256": "13a03e444927038fc046d5ab689274b9c151ae8627edb00b1631a5133711d183"
+    },
+    {
+      "height": 0.3,
+      "speed": 0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_3_speed_1.npz",
+      "sha256": "b5fee2188b3fdb7dc22a3bf0c7430771fc93fa54292229297d94107c79e2e0fb",
+      "cold_review_path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/review.json",
+      "cold_review_sha256": "13a03e444927038fc046d5ab689274b9c151ae8627edb00b1631a5133711d183"
+    },
+    {
+      "height": 0.38,
+      "speed": -0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_4_speed_0.npz",
+      "sha256": "4a7bcd938da96d9297c7fd89750e63a77a1a4487d09d922ab381807501e61317",
+      "cold_review_path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/review.json",
+      "cold_review_sha256": "13a03e444927038fc046d5ab689274b9c151ae8627edb00b1631a5133711d183"
+    },
+    {
+      "height": 0.38,
+      "speed": 0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_4_speed_1.npz",
+      "sha256": "e92f725c6c7002aeecab2b818bddc2581a3b52cd8ca5acd6b48ced98f2737797",
+      "cold_review_path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/review.json",
+      "cold_review_sha256": "13a03e444927038fc046d5ab689274b9c151ae8627edb00b1631a5133711d183"
+    },
+    {
+      "height": 0.115,
+      "speed": -1.0,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_reference_v1/reference_00.npz",
+      "sha256": "8111b43b7b0e0ce0f46dd323d5da028e5240a8fe5366f40789f7477f4456b3aa",
+      "cold_review_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_reference_v1/cold_review.json",
+      "cold_review_sha256": "4e4c77b25192ade2aa25dd0e7e8738d2ef9205d0f9ebb062181833ddee2d2bb2"
+    },
+    {
+      "height": 0.115,
+      "speed": 1.0,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_reference_v1/reference_01.npz",
+      "sha256": "5abc6c6e0841118b84a958fdf3328c098ca4fef373815f91c4e6b1340dab7d77",
+      "cold_review_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_reference_v1/cold_review.json",
+      "cold_review_sha256": "4e4c77b25192ade2aa25dd0e7e8738d2ef9205d0f9ebb062181833ddee2d2bb2"
+    },
+    {
+      "height": 0.16,
+      "speed": -1.0,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_reference_v1/reference_02.npz",
+      "sha256": "de33368732b1fca91098b1a48ca25f99ce5fd1a1839582eaee2e10bf3fc3171f",
+      "cold_review_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_reference_v1/cold_review.json",
+      "cold_review_sha256": "4e4c77b25192ade2aa25dd0e7e8738d2ef9205d0f9ebb062181833ddee2d2bb2"
+    },
+    {
+      "height": 0.16,
+      "speed": 1.0,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_reference_v1/reference_03.npz",
+      "sha256": "5ed96736355651513011f9b15dc80902c94681acc62608c3d0f7b254fb97accc",
+      "cold_review_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_reference_v1/cold_review.json",
+      "cold_review_sha256": "4e4c77b25192ade2aa25dd0e7e8738d2ef9205d0f9ebb062181833ddee2d2bb2"
+    },
+    {
+      "height": 0.25,
+      "speed": -1.0,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_reference_v1/reference_04.npz",
+      "sha256": "c1cba93ac6cd332cdd0ebeb419b3ec8868a31e6c73cf6f30bd4d4fc4488c96dd",
+      "cold_review_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_reference_v1/cold_review.json",
+      "cold_review_sha256": "4e4c77b25192ade2aa25dd0e7e8738d2ef9205d0f9ebb062181833ddee2d2bb2"
+    },
+    {
+      "height": 0.25,
+      "speed": 1.0,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_reference_v1/reference_05.npz",
+      "sha256": "3a225148356e0c7294d340655a37d50eb408b79e65a32fc2c953f3874b91c14a",
+      "cold_review_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_reference_v1/cold_review.json",
+      "cold_review_sha256": "4e4c77b25192ade2aa25dd0e7e8738d2ef9205d0f9ebb062181833ddee2d2bb2"
+    },
+    {
+      "height": 0.3,
+      "speed": -1.0,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_reference_v1/reference_06.npz",
+      "sha256": "fe08f449777d7162a4cf51d81e456dc05f43a14b340dddb0424abfc7b0931743",
+      "cold_review_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_reference_v1/cold_review.json",
+      "cold_review_sha256": "4e4c77b25192ade2aa25dd0e7e8738d2ef9205d0f9ebb062181833ddee2d2bb2"
+    },
+    {
+      "height": 0.3,
+      "speed": 1.0,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_reference_v1/reference_07.npz",
+      "sha256": "a4ed8346bef7b07fc6b356b5ed7049b9df080f087214ef3d45c9228c03b637cf",
+      "cold_review_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_reference_v1/cold_review.json",
+      "cold_review_sha256": "4e4c77b25192ade2aa25dd0e7e8738d2ef9205d0f9ebb062181833ddee2d2bb2"
+    },
+    {
+      "height": 0.38,
+      "speed": -1.0,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_reference_v1/reference_08.npz",
+      "sha256": "f0a77b82bc4da52b249be34fe039f49a27f8b9de358de02e4bdf242dfc03a8cd",
+      "cold_review_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_reference_v1/cold_review.json",
+      "cold_review_sha256": "4e4c77b25192ade2aa25dd0e7e8738d2ef9205d0f9ebb062181833ddee2d2bb2"
+    },
+    {
+      "height": 0.38,
+      "speed": 1.0,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_reference_v1/reference_09.npz",
+      "sha256": "3d3effe1e318b556774c854de8cd0ae3d6059000d8a1d6efcded8cd61217e746",
+      "cold_review_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_reference_v1/cold_review.json",
+      "cold_review_sha256": "4e4c77b25192ade2aa25dd0e7e8738d2ef9205d0f9ebb062181833ddee2d2bb2"
+    }
+  ],
+  "frozen_bank": {
+    "path": "wheelleg_warp/results/paper_recovery_20261004/motion_balanced_nominal_v1/paired_integral_1_old.npz",
+    "sha256": "e8897816e0715d12f295fec87fa9fbc2af5a08f182754dc1f2075f95cafdb04a"
+  },
+  "validation_review": {
+    "path": "wheelleg_warp/results/paper_recovery_20261004/geometry_seed_validation_v1/cold_review.json",
+    "sha256": "cf4dd20f8abc7df824986d8bb9b0a059d7743989411bcac33397ae370a522379"
+  },
+  "static_zero_references": [
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/full_mode_model_admission_v1/node_0_eps_0.npz",
+      "sha256": "109f8d80b72ce99545eded3ddbebba5fa1d31bc7d268127b25c3a71f3a5c9c78",
+      "height_m": 0.115
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/full_mode_model_admission_v1/node_1_eps_0.npz",
+      "sha256": "74ea30b5088ee447223d65663d026dfe2e770850998a9333ba55e15c71bf37dd",
+      "height_m": 0.16
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/full_mode_model_admission_v1/node_2_eps_0.npz",
+      "sha256": "cad474c2c798053ec461c22d4f72e7f79a7d80a8485903c999dd6c740787eaba",
+      "height_m": 0.25
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/full_mode_model_admission_v1/node_3_eps_0.npz",
+      "sha256": "f172f6052593078325931b6bae0f44ab122ce2f92457c3fbe847121435e5ea1a",
+      "height_m": 0.3
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/full_mode_model_admission_v1/node_4_eps_0.npz",
+      "sha256": "1cd615aec931c50d2db3d73970f8997b3786d1a86cbf12549683654a9d40b352",
+      "height_m": 0.38
+    }
+  ],
+  "table": "5x5x4 float64 delta wheel/hub/support/theta; cmd0 column exact0, original gains/bank unchanged. Only20priorcoldanchors fit, never20newvalidation/knownfailedpoint.",
+  "controller": "GPU readonly bilinear delta frompublicrefheight andcurrentcommand; two additions theta andfeed in isolatedoriginalcopy. Preserve original validinput statements/gains/filter/memory/Actor/guard/bounds. Add explicit invalid-domain flag rejection (ctrl0/diag2) before boot. Zero command exact original path.",
+  "runtime_domain": {
+    "height": [
+      0.115,
+      0.38
+    ],
+    "command": [
+      -1.0,
+      1.0
+    ]
+  },
+  "static_query_budget": 50,
+  "static_groups": "Twentynewcoldvalidation points xold/map40 plusfiveoriginalstaticnodes cmd0 xold/map10. Preserve allsameinputs andfrozenbank; capturegraphneverlaunched, nointegration.",
+  "source_checks": "Declaredcopyreversal, all20anchor reconstruction, zero-line/continuity/domain/finite/shape checks; GPU interpolation againstindependent NumPy atnodes/interiors andzero before actual50. No source/state/gain tuning afterquery.",
+  "static_analysis": "Report allraw/accepted/finaltorque gaps vsphysicalrequired andF32uploaderrors/projection/clips. Zero ctrl/diag/memory/role/phase mustexact. Failures preserved; no fitted pass threshold orstable-task claim.",
+  "cold_validators_not_fit": true,
+  "integration_admitted": 0,
+  "optimization_admitted": 0,
+  "new_experimental_transitionFD_admitted": 0,
+  "training_admitted": 0,
+  "baseline_replacement_admitted": false,
+  "next": "281 isolatedGPUsource/interpolationchecks;282registered50static;283independentreview+finiteadmit/reject;285nextdirectiondeepreview/cleanup. No extra equilibriumsolves orpointtrajectories.",
+  "cost": "No Nomgainconstructor for tablebuild. If actualquery cold bank constructed, original10FD perprocess recordedseparately; one bank forpairedqueries, failed starts counted.",
+  "paper_limits": "Engineeringcontinuousreference candidate only; noqualifiednewmethod/formal5/freshOOD/strongsameinfo advantage orfullmanuscript.",
+  "source_sha256": {
+    "wheelleg_warp/reference_role_control.py": "7c3297a14d257fcaa952e81b9380537fc76ba11b74a34f3724665455c22acdd7",
+    "wheelleg_warp/native/controller.py": "04d106ae8579118eb306ba2b28037425f81a1f554d4b51fa1eae1ef795fede73",
+    "wheelleg_warp/motion_balanced_nominal.py": "52587afaa569de84527dafbea7b536f83bad2e2d5626617caf886d593c20e2e9",
+    "wheelleg_ppo/tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+    "wheelleg_ppo/tools/model_lqr.py": "d63db108ece884340cff2589cf50729ca1dfd2ffd44adb8260b8155570ffbf82",
+    "wheelleg_ppo/tools/wheelleg_sim.py": "c2dfaae4dc562119fd7916684849ec22fcac3d75dbcfec6a2a0f9452d8f6ee0f",
+    "wheelleg_ppo/tools/hardware_profile.py": "844688aae7e408bb2ca11d00b192ffaa9e4ad5de06cc8a815d3cf3ddfbe02eba",
+    "wheelleg_ppo/xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f"
+  }
+}

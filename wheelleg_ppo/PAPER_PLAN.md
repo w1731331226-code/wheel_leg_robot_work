@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第280轮深审、连续delta表构建与有限GPU检验准入（2026-10-08）：
+
+276–279证据支持targetgeometry初始化机制和登记20新参考的名义cold资格，280关闭继续扩reference/seed/平衡初态trajectory。值得一次actualGPUcontroller接口检验：Nom基线已经强，单纯Nom误差下降不能当论文主要任务收益或独特算法。旧failed20/H1学习门保留，充分论文六出口仍未齐。
+
+build_continuous_nominal_map.py生成5height×5speed×4delta，只20priorcold±.7/±1anchor fit，20新validation点不参与fit/addknots。相对原frozenbank做wheel/hub/support和θEq增量，current-J20anchor重建、19高度v0精确0、合成linear-bilinear及domain/finite/shape/轴检查通过，完整delta_table/manifest/proposal/SHA保存。0新solve/FD/controllerquery/physics/PPO，无Nombank构造，原gain/Actor/filter/guard/bounds不变。
+
+281仅isolatedGPUsource/interpolation核：两处delta加法与显式invalid-domain ctrl0/diag2 guard，validinput原source语句保持，zero命令必须exact原路，GPU readonly表避免每physicsstep host。282固定50static old/map：20coldnonfitpoints×2=40，五staticzero×2=10；全部raw/accepted/finalgaps/projection/F32/memory保存，283独立review有限去留。不得fitvalidation/调阈值/追加knots或直接生产/正式PPO；真正start/stop/asymmetric164及新方法资格另决，不重开reference求解。
+
+按五轮要求清理可再生diagnose_geometry_seed.pyc，ignored/untracked/unheld/codeobject exact且SHA/字节保round280_cleanup，全部scientific source/raw/failures/models/baseline保；285下一方向深审清理，goal active。
+
 第279轮20参考独立freshcold验证完成（2026-10-08）：
 
 review_geometry_seed_validation.py不调用原solver.problem/geometry/constraints helper，实际joint/actuator地址独立重构完整qvctrl，freshdata warm/applied0；full16forward加速度、独立8共同力inverse/height/pitch、actual双链geometry/closure/八joint/active1.4/原速度力矩和仅双wheel-floor支持门20/20过。Cold最大8force1.11424647287e-10、qacc0、cold-cachedqacc差0、minleg .114986074200m；名义参考点资格通过，不是持续流/连续域/实际控制稳定证书。

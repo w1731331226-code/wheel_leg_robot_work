@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-08，目标active）
 
+- 第280轮五轮深审完成：276已知点geometryonly对照、277cold/新点预冻、278actual20solve、279independentcold和280table evidence链完整；关闭reference/initializer扩点/seedsearch/固定平衡初态trajectory，值得一个有限actualGPUcontroller接口检验，不把Nom小误差减少替代主要论文任务优势/新方法。旧failed20/H1负科学记录均保持，不缩scope宣布整个目标完成。
+- 第280轮continuous_nominal_map_v1纯表构建过：固定5h×5speed×4delta(wheel/hub/support/θEq)，仅原10±.7和275coldpassed10±1共20anchor，20新validation未fit，payload/SHA及fit provenance保存；current-J重建20点、19height v0线exact0、合成线性bilinear节点/边界/内部、finite/domain/shape/轴检查通过。原frozenbank/gain/Actor/filter/memory/guard/bounds不动，本轮0solve/controllerquery/积分/transitionFD/PPO，无Nombank10FD构造。
+- 第280轮只登记281isolatedGPUdelta/source+interpolationchecks（两处feed/θ增量、另显式domain-invalid ctrl0/diag2 guard），282固定50static配对：20nonfitcoldpoint双臂40+static5zero双臂10；283独立raw/finite去留，不fitvalidation/追加knots/改error门救分，不直接fulltask/PPO/production。cmd0必须output/diag/memory/role/phase exact原路，GPUreadonlytable不走每步CPUhost。后续真正启动/制动/不对称164须另准，工程不是新颖算法，六出口仍缺/goal active。
+- 第280轮清理completed diagnose_geometry_seed.pyc7121B（SHA见round280_cleanup）：ignored/untracked/fuser未持有、marshalcode和sourcecompile exact，保科学源码/NPZ/失败/模型/基线；285下一深审清理。direction_review.json明确每五轮判断和全文论文未完成项。
+
 - 第279轮（2026-10-08）20点独立freshcold全过：不调用solver.problem/geometry/constraintshelper，按实际joint/actuator地址从solution重构qvctrl逐值核；fresh warm/applied0.forward full16qacc、独立8commonforce.inverse、height/pitch、实际两链/loop、八joint及active1.4/原motor速度curve/bilateral floor全部20/20过。最大cold8force1.11424647287e-10、coldfullqacc0、minactualleg .114986074200m，cold-cachedqacc差0，说明保存解通过该名义点原门，不等闭环稳定。
 - 第279轮完成source/proposal/admission/NPZ/顺序/各counter≤1200/max100与总7291/validation tuple与旧登记点不交集核；old/newinitial指定1/6:9exact、newFKheight一致，原failed20及knowncase不混入。本轮20freshforward/inverse有成本，0新optimization/controllerquery/物理积分/transitionFD/PPO；验证点no_fit且最终OOD未打开，保存cold_review.json/log与reviewer SHA。
 - 第279轮关闭geometryinitializer参考验证阶段，不再新solve、seedsearch或平衡初态trajectory。280按约方向深审/cleanup，基于完整证据决定只用原±.7/±1anchors的连续delta表及有限GPU source/staticquery准入，20validation绝不fit/addknots；目前continuousmap/production/正式PPO仍未准，论文六出口/goal active。
