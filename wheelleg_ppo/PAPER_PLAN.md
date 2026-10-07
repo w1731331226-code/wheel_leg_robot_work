@@ -1,5 +1,11 @@
 # 双轮腿机器人PPO论文方案
 
+第251轮第三H0训练对象独立交付（2026-10-07）：
+
+23303/H0十个20k…200k ZIP/481RMS/JSON共30对象CPUload与manifest SHA核完，seed/shape481→6/计数/epochs40…400/nonemptyAdam800…8000/finiteweights/RMS.count=steps+100.0001、54mask exact0及保存不改world/route/history/parking/RMS/RNG标记过。初始化weights/world不同前两seed、无warmstart，末200k/400epochs/8000Adam/learn+checkpoint96.963122s；round251_third_H0_model留证据。只对象/来源资格，不恢复250已关闭的fixed收益扩展。
+
+同353065/353066 running无error/restart，末snapshot第三H0regularbatch3 reserved1064/completed1044，最后pair仍在进行。本轮0新physics/learning，runtime未全remote/clean；252 actual新完整第三数据/最后H1或同handleverifiedwait，1312终态后原门/CPU/所有raw/seedstats及分批归档，完整六论文出口未齐，255深审清理。
+
 第250轮已失败必要门、原队列完整性与清理（2026-10-07）：
 
 两完整seed已确定不满足事前everyseed必要条件：H1困难各29<34/40，常规87/85不足strongNom96，且H1-H0成功/component保持出现失败。第三seed不能消除这两个既有失败，因此关闭该fixedH1收益的formal5/baseline replacement及gain/std/history/budget救分扩展。仍完成原已登记第三pair/全部1312以保全所有seed、失败及完整审查/统计，不提前停队列/dropseed，也不将尚未终态的整份studygate说成已验收完成。

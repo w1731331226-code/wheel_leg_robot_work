@@ -4,6 +4,9 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第251轮23303/H0第三seed十检查点/30对象CPUload独立核：seed/shape481→6/20k…200k/trained计数、epoch40…400/nonemptyAdam800…8000及weight有限、481RMS.count=steps+100.0001、H0mask54 mean exact0和保存manifest SHA一致，原snapshot CUDAmoments/保存world-route-history-parking-RMS-RNG不改标记核；新初始化weight/world不同前两seed且不warmstart，末权重变化。200k/400epochs/8000Adam/learn+checkpoint96.963122s，round251_third_H0_model保存证据，仅对象资格，不恢复closedfixedbenefit。
+- 第251轮原353065/353066 running无error/replay，末snapshot第三H0regularbatch3 reserved1064/completed1044；最后pair/1312仍未完成，0本轮新physics/learning，runtime对象未全remote/clean。252沿同handle actual完整第三H0数据/最后H1对象或verifiedwait，全终态完整原门/CPU/raw/stats和分批归档再finite去留；六论文出口/goal active，255深审清理。
+
 - 第250轮五轮深审给出明确去留：两已完整seed H1 controlled各29<每seed必过34，regular87/85低于strongNom96且H1-H0逐case/component保持失败。按事前everyseed门，这一fixedH1稳健收益不能合格，第三seed不能抹去既有失败；关闭formal5/baselinereplacement与gain/std/history/budget救分扩展。仍完成原已登记第三pair/1312以保全报告/完整integrity和stats，不drop seed/停止原queue，不提前冒称全1312终态结论。
 - 第250轮246–249全第二对象/Actor输入时钟/第二pair及source合同复核；信息作用可作条件性接触/跟踪取舍研究，非强经典优势、新算法或安全证书。现在不新增实验；终态全部原门/CPU/raw/seedstats与分批归档后须有限新方法贡献/关闭决策，不能继续无限heuristic或只读报告替代完整论文六出口，goal active。
 - 第250轮同353065/353066 running无error/restart，末snapshot23303/H0 regularbatch1 reserved1024/completed1004，第三pair进行中；本轮0新physics/learning，runtime模型/raw未全remote/clean。删除closedbranch speed_yaw_coordination.pyc共3238B，ignored/untracked/无fuser/源码归一codeobject等价/非worker闭包，round250_cleanup保存SHA，不动science/runtime/models/RMS/raw/失败/基线/sealed集。251核第三H0actual对象/数据或同handleverifiedwait，255下次深审清理。
