@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第236轮完整同期B0校对与完整审查器预检（2026-10-07）：
+
+同期B0全164数据独立核完：96regular全成功、controlled32/40、legacy28全成功，physical/design164全部过，旧B0fullflags无变化，CPU28原fulltask/速度1.05+.005/rollpitch+.1校对过。J分别.385500881708/1.059895761376/.501153900450。完整order/case/scenario/result/六文件类984SHA共1,534,868,982B，Actor968/ceilN40/classicalraw-normalizedexact/submitted6全0；round236_B0_delivery保存证据，不用此证明H1/H0收益或独立泛化。
+
+新增完整reviewer复用load_rows/ordered/fullflags/paired/yaw_gate及CPU门，等待所有六run/1312complete后才输出全门；partial RuntimeError、None score False及阈值示例预检已过，所有panel literal15%AND.05与old+new强参考、H1-H0各seed/3mean和完整component保持不缩。B0核完后补gate bool/indices断言的preflight，原执行字节snapshot SHA匹配保存，未重新积分或变结果；fullreview尚未执行，不把preflight等同科学资格。
+
+同worker353065flock/353066Python live/running，无interruption/restart；末snapshot同期两参考已完成328，23301/H0 regularbatch0 reserved348/completed328。只有source新已完成对象才能继续核，237同handle检查learner模型/481RMS/checkpoint等，完整终态1312再全门/seed统计/完整raw及分批归档。运行中对象未全remote/clean，本轮0新physics/learning，完整论文目标和240深审清理继续。
+
 第235轮运行中方向深审、已完成数据核对与冗余清理（2026-10-07）：
 
 231–234的真实生命周期、481RMS和CUDA/Adam、单独24k工程、公平publictimestamp/唯一54坐标信息mask、新seed/末模型规则、dense双capture/legacy50/classical转换/Actor/prefix源资格复核；当前worker冻结source全部SHA不变。值得继续的是这唯一可证伪的command信息干预，尚不值得另开更复杂地形、teacher/observer/gain/预算链。H0是信息消融、H1是genericPPO，timestamp为新增公开测量假设；同初始化/seedpairs不是全GPU轨迹身份，旧164是发展/regression而非fresh泛化。信息阳性不能直接当新算法/安全/论文六出口完成。

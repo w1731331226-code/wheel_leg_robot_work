@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第236轮同期B0完整164独立交付核过：regular96/96、controlled32/40、legacy28/28，全部physical/design164，旧B0fullflags0变化、CPU28 fulltask/velocity1.05+.005/rollpitch+.1过；J .385500881708/1.059895761376/.501153900450。完整order/cases/scenario/result/SHA及六文件类984份1,534,868,982B、Actor968/ceilN40/classicalraw-normalizedexact/submitted6全0，round236_B0_delivery绑定数据。非模型收益或新泛化，raw尚待终态归档。
+- 第236轮新review_execution_input_study准备完整六run/1312审查：复用ordered/load_rows/fullflags/paired/yaw_gate/CPU，保原literal所有panel强old+newref与H1-H0各seed/3mean门、不丢None/partial seed。预检partial RuntimeError拒绝及None False/threshold过，round236_reviewer_preflight；尚未执行full review。B0核是在补gate bool/indices assert预检前运行，原源码字节重建SHA匹配并保存snapshot，不重新回放或改raw/门。
+- 第236轮同353065/353066 live/running无interruption/restart，末snapshot两同期参考已完成328，23301/H0处在regularbatch0 reserved348/completed328，源合同保持。新learner训练/全部模型/RMS对象仍待逐项审查；本轮0新增physics/learning，不据partialperformance晋升。运行中data未全remote/worktree非clean；237沿同handle审查新complete模型/数据，完整终态才fullgates/stats与分批归档，240深审清理。六论文出口/goal active不变。
+
 - 第235轮五轮深审完成：231真实terminal/curriculum/481RMS静态load、23224k连续CUDA/nonemptyAdam/commonparking、233newseed/protocol/clock公平及233–234dense/legacy50/Actorlog/classicmapping/partial资格复核，worker全部冻结source当前SHA保持。只继续同1.2M/1312queue，不加实验或改params/budget/history/门；工程与同信息信息消融、clock新增假设、GPU非bitwise/旧164发展非独立泛化边界维持。H1为genericPPO，阳性只支持command信息作用，不自动创新/安全/新formal5；六论文出口仍未齐，goal active。
 - 第235轮首完整40B0regular独立交付核：原case/scenario/order/results SHA、complete/gyro/role/phase/parking/Actor六文件类共240，386839771B；Actor968字段/ceilphysicalN40/raw与classicalobs exact/submitted6全0。任务40/40、physical/design各40/40、与旧B0fullflags0变化；不冒称164全量独立核或learner/wholepanel结论。round235_completed_B0_subset保存全部记录/绑定。
 - 第235轮同worker353065flock/child353066均live，running/无interruption；深审末snapshot累计completed184/reserved204，B0全164已worker交付、B1regularbatch1进行中；本轮0新增physics/learning，source/data记录不是重新回放。运行中raw/models未remote全归档，不强称clean；继续同handle，完整六run/1312终态前不选择winner，终态全门/CPU/raw/stats及分批归档待做。
