@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第261轮moving equilibrium solver/source接口完成，复用ml.sagittal共同8力投影与原inverse/forward、geometry/FK/hardwarebounds，mirror双腿变量10（basez/pitch/四joint/三个ctrl/commonomega），forwardv规定、omega非固定v/R。原joint range+active1.4、peakctrl/noloadomega bounds及原force1e-6/fullforwardqacc1e-4与actualleg/support验证规则，counter<=12000、perstate max_nfev100、失败全留，无积分/FD/PPO准入。
+- 第261轮sourceunit过：五原staticref速度0逆力残差<=原1e-6、forwardqacc<=原1e-4；±.7初值边界/速度映射/finite10残差、limit0预算与NaN拒绝、model17q16v6ctrl/solver100/integrator3/.0005/7kg、原ref/source SHA过。补batch truegeometryminleg验证前后各15次只forward/inverse（共30unitcalls），初版本源码/准入/log保留；0optimizer/integration/transitionFD/学习。source_admission绑定最终源，未称moving已解决。
+- 第261轮262按登记唯一10state有限batch（max12000call）执行，263独立force/modelscope、264finite去留；不得新场景/误差门/改物理删除loss或失败retry，closed旧参考/收益门不复活。六论文出口/goal active，265深审清理。
+
 - 第260轮五轮深审关闭gravity-only v/R移动参考准入，不扩原400积分/10FD或PPO。十原state只做read-onlyforward force检查：轮damping.005、omega14时纯damping±.07Nm，totalpassive约±.07005923Nm，旧gravitywheelmotor≈0；模型density1.225/viscosity1.8e-5亦非零。明确缺运动力平衡项，但不是全部误差/旧PPO失败唯一因果，不自动加constantfeedforward替换baseline或把短时限过当移动平衡。
 - 第260轮register moving_equilibrium_contract_v1，仅要求真正Nominalrelativeequilibrium：规定forwardv±.7、左右mirror、wheelrate不固定v/R，完整inverse/forward共同力平衡+height/pitch与原physical/design/bounds。261source/algebra/option预检，262唯一最多12000residualcalls/max_nfev100每state求解batch，263independentforcescope review、264finiteadmit/reject；0新integration/FD/PPO准入，不删除阻尼/改摩擦或误差门求pass。原不合格参考和所有400step误差保留，本轮0新integration/FD/学习。
 - 第260轮删除inactiveclosed wheel_motion_proxy.pyc共2758B，ignored/untracked/无fuser持有/源码归一codeobject等价，前SHA/源码SHA保cleanup，不动source/models/RMS/raw/failures/baselines。完整论文贡献、强sameinfo新方法、freshformal5/ID-OOD/统计成本/新稿六出口仍未齐，goal active，265下一深审清理；不能以建模完成替代论文收益或无限negativeaudit。

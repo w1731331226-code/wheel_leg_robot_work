@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第261轮真实移动工作点求解源预检完成（2026-10-07）：
+
+solve_moving_equilibrium复用现8共同广义力inverse/forward与geometry/FK及hardwarelimits，10mirror变量含z/pitch/四legjoint/三个commonctrl/commonwheelrate，vx规定、wheelrate不固定v/R。用原joint range与active1.4、motorpeak/noload边界，不动model/friction/solver；batch通过同时要求原force1e-6、full16qacc1e-4、actualleg物理floor/双轮floor支持/关节/command和actualtorque，而非projectedloss单独过。
+
+Sourceunit五原staticref的速度0inverse残差和forwardqacc复现原门，±.7初值/边界/finite10残差、budget0/NaN拒绝、model/source/options过。补actualgeometrybatch限制前后各15unitforcecalls，共30只forward/inverse；初源码/准入/log保留，最终source_admission绑定。0optimization/integration/transitionFD/PPO，不能说moving参考已解决。
+
+262唯一batch10state、每max_nfev100、explicit总calls<=12000，所有失败/变量/force残差保存；263独立force/modelscope，264finiteadmit/reject，不无限优化/另seed/tolerance或loss删除救分。完整论文六出口未齐，265深审清理。
+
 第260轮非平衡参考关闭、力项诊断与清理（2026-10-07）：
 
 关闭原gravity-only/v/R移动参考准入，不追加400trajectory、10FD或PPO。十原state read-onlyforward复核轮damping.005、omega14时纯阻尼力±.07Nm、totalpassive约±.07005923Nm，而旧gravitywheelmotor≈0；模型fluiddensity1.225/viscosity1.8e-5非零。缺少运动广义力平衡是明确模型项，不等全部误差/旧学习失败唯一根因，不能简单加常数feedforward、删阻尼/换摩擦或改变reference旧结果来称pass。
