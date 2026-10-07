@@ -1,0 +1,63 @@
+{
+  "version": "geometry-seed-diagnostic-v1",
+  "round": 275,
+  "status": "registered_not_executed",
+  "parent_cold_review_sha256": "4e4c77b25192ade2aa25dd0e7e8738d2ef9205d0f9ebb062181833ddee2d2bb2",
+  "sealed_old_batch_remains_failed": true,
+  "scope": "One known-failure development initializer diagnostic; not fresh validation, map fit or algorithm novelty.",
+  "height": 0.1375,
+  "speed": -0.35,
+  "old_outcome": {
+    "path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_reference_v1/reference_10.npz",
+    "sha256": "cf2b20dd86db3af4883b7dc74ef5da1afcaae40e78912970ad6fe72fa15ec440",
+    "record": {
+      "height": 0.1375,
+      "speed": -0.35,
+      "role": "interior_validation_not_fit",
+      "path": "reference_10.npz",
+      "sha256": "cf2b20dd86db3af4883b7dc74ef5da1afcaae40e78912970ad6fe72fa15ec440",
+      "initializer_path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_1_speed_0.npz",
+      "initializer_sha256": "687305cbd9e1754bce62e7edfad33e50978c47add1207b05f0007518d067bef8",
+      "solver_success": false,
+      "solver_status": 0,
+      "nfev": 100,
+      "actual_residual_calls": 1081,
+      "force_residual_max_abs": 1.0266586450950714,
+      "forward_qacc_max_abs": 1.0743820074858805,
+      "active_margin_rad": 0.6319094798043198,
+      "eight_margin_rad": 0.7319094798043199,
+      "command_excess_Nm": 0.0,
+      "actual_torque_excess_Nm": 0.0,
+      "minimum_actual_leg_m": 0.14775094770283795,
+      "maximum_loop_error_m": 1.729319926071257e-05,
+      "bilateral_only_floor_support": true,
+      "passed": false
+    }
+  },
+  "initial_reference": {
+    "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_1_speed_0.npz",
+    "sha256": "687305cbd9e1754bce62e7edfad33e50978c47add1207b05f0007518d067bef8"
+  },
+  "change": "Only initial geometry: setactive alpha/beta fromsim.ik(targetheight), passive closure angles fromactualmodel body/site offsets as inmodel_lqr.equilibrium; translateinitialbasez bytargetheight minusoldinitialFKheight. Preserve initial pitch/control/commonomega unchanged. Keep identical originalproblem residual/bounds/model/least_squares tolerances/x_scale andmax_nfev100.",
+  "reuse": "Reuse existing model_lqr.equilibrium geometry construction, original problem/counter; do not call equilibrium optimizer(max500) or design/linearize. No full Nom bank.",
+  "unit": "Puregeometry FKheight/closed-chain/joint/active bounds checks across19frozen heights; verify onlyinitialindices0,2:6change. No controller queries or additional plant solve.",
+  "optimizer_points": 1,
+  "max_nfev": 100,
+  "total_residual_calls_maximum": 1200,
+  "acceptance": "Original combinedforce1e-6/fullforwardqacc1e-4/actualleg .1147044660616607/eightjoint/active1.4/torquecurve/bilateral floor andsolver_success, then independentfreshcold review. Preserveallfailedconditions.",
+  "stop": "One attempt; no seed search, maxiterationincrease, continuation or retry. If fails, close diagnostic. If succeeds, only supports initializer mechanics at this known point; cannot reinterpret old20ascompleted, usefailedpoint asfreshholdout, fitmap orlaunchPPO. Further new validation protocol must be separately frozen.",
+  "next": "276 source/geometry checks andone attempt;277 independentcold/status review andfinite decision.280 next mandatory five-round review/cleanup.",
+  "integration_admitted": 0,
+  "controller_queries_admitted": 0,
+  "new_experimental_transitionFD_admitted": 0,
+  "training_admitted": 0,
+  "map_admitted": false,
+  "source_sha256": {
+    "wheelleg_warp/solve_moving_equilibrium.py": "b6bcabeb1f8ca630ef92e92c8b6b2dc5b45e808a7a8b4dceffd48f9d6aea76d5",
+    "wheelleg_ppo/tools/model_lqr.py": "d63db108ece884340cff2589cf50729ca1dfd2ffd44adb8260b8155570ffbf82",
+    "wheelleg_ppo/tools/wheelleg_sim.py": "c2dfaae4dc562119fd7916684849ec22fcac3d75dbcfec6a2a0f9452d8f6ee0f",
+    "wheelleg_ppo/tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+    "wheelleg_ppo/tools/hardware_profile.py": "844688aae7e408bb2ca11d00b192ffaa9e4ad5de06cc8a815d3cf3ddfbe02eba",
+    "wheelleg_ppo/xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f"
+  }
+}

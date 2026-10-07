@@ -2,7 +2,12 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
+## 当前状态：按北大核心纯仿真补充计划执行（2026-10-08，目标active）
+
+- 第275轮五轮深审/独立cold完成：按实际joint/actuator地址在fresh MjData重构saved11 q/v/ctrl，与原NPZ逐值核；完整forward/inverse8共同力、height/pitch、实际两链/closure/八joint及active1.4/速度力矩/双wheel-floor重算。10±1anchor cold过，failedvalidation cold仍失败且qaccmax1.0743820075、8force max.03634920922；原所谓force_residual_max1.0266586451实含100×height error及pitch，分开保存，height误差.010266586451m/pitch.008244577801rad。0solve/controller/积分/FD/PPO，11fresh forward/inverse单列，不能叫独立重新积分。
+- 第275轮连续map失败资格正式关闭：取消tablefit/预留50static/fulltask/production/PPO准入，不从10anchor成功缩domain宣布全覆盖。未执行9点仍留，cached与cold/全部failed保留；nearestseed在failedpoint的初FKheight=.16m而target=.1375m，100nfev/status0只说明局部solver未收敛，无physical infeasibility/global最优证明。核心论文六出口未齐，旧负科学门不复活，goal active，方向记录direction_review.json。
+- 第275轮只准一个新因果development诊断geometry_seed_diagnostic_v1：276复用现有ml.equilibrium的target IK/passive闭合几何构造，initialbasez按目标与旧FKheight差平移，仅改初值indices0和2:6，保初pitch/ctrl/omega、原problem/residual/bounds/模型/tol/xscale/max_nfev100；一个已知失败点(.1375,−.35)最多1200calls，纯19高度几何unit，无seed搜索/扩预算/retry或原batch重启。不称freshholdout/新颖算法；成功也只支持初值机制，不能原20completed/fit旧failedvalidation/PPO，277cold有限去留；280下一深审清理。
+- 第275轮删ignored/untracked、fuser未持有且marshalcode与源码compile exact的solve_moving_equilibrium.pyc10489B，SHA/字节/源保存round275_cleanup，保科学source/NPZ/models/失败/CPU-GPUbaseline。持续目标为充分论文证据，不用该单点diagnostic替代贡献/正式5seed/OOD/统计真实训练成本或完整稿。
 
 - 第274轮（2026-10-08）连续参考唯一batch按失败门终止（exit1是登记gatefail，不是待重启进程）：原problem/setup/source复用、十旧ref残差forward核+20initial向量/原bounds/finite/NaN和budget拒绝预检30calls过，十新±1boundary全部原gate过；第11点h=.1375/v=−.35验证点到max_nfev100/status0/solver_successFalse，force残差max1.0266586451、cachedforward fullqaccmax1.0743820075，不通过原1e-6/1e-4；对应height-equation误差约.010266586451m。无参数/门调整、retry或继续余9点。
 - 第274轮实际总5686residualcalls<=24000，含unit30及optimization5656、11optimizationstates；11NPZ全q/v/ctrl/solution/initial/bounds/residual/完整forces/warm/实际actuator保存，SHA/顺序/计数/门和未执行9点核过，batch_terminal.json明确不等20completed。0controller/staticquery/物理积分/transitionFD/PPO，无baselinebank10FD构造，原source/model/oldresults不改。

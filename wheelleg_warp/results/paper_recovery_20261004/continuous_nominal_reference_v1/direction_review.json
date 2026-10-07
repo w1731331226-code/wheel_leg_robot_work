@@ -1,0 +1,37 @@
+{
+  "round": 275,
+  "verified": true,
+  "cold_review_sha256": "4e4c77b25192ade2aa25dd0e7e8738d2ef9205d0f9ebb062181833ddee2d2bb2",
+  "cleanup_sha256": "845c0ec9451b01bf26dd6ede8e8fde8f761afb122fa0f69e312456d681421821",
+  "five_round_findings": [
+    "271actual40trajectory/20replay plus recording faults repaired;272independent recovery/geometry source scope checked;273continuous domain gap is real but nominalerror old alreadysmall;274registeredfirst validation failure correctly stopped;275freshcold confirms10pass/1fail andinitialtargetheight mismatch."
+  ],
+  "closed_branch": "Nearest-reference continuous map qualification remainsfailed; no tablefit/reserved50queries/fulltask/PPO. Ten anchors are nominal data only,not continuous domain qualification.",
+  "method_assessment": "Original physical residual/bounds and preservation controls appropriate. Generic nearest-height seed doesnot satisfy new target geometry and100iteration local solve failed; failure doesnot implyphysical infeasibility. Correct next causal question is whether targetmatchedgeometry alone changes this known-point convergence.",
+  "next_admitted": {
+    "proposal": "wheelleg_warp/results/paper_recovery_20261004/geometry_seed_diagnostic_v1/proposal.json",
+    "sha256": "d2382324d16212877f7223d6ed744ac5671f83ed8703b5831e05de1e849b703f",
+    "one_development_point": true,
+    "solver_and_gates_unchanged": true
+  },
+  "not_admitted": [
+    "seed search/budgetincrease/oldbatchrestart",
+    "mapfit orholdingfailedpoint asnewholdout",
+    "newPPO/formal5/fulltask orfreshOOD",
+    "baseline replacement/newmethodclaim"
+  ],
+  "paper_requirements_status": {
+    "distinct_qualified_contribution": "missing",
+    "strong_same_information_and_ablations": "newmethod not qualified; priorlearning benefits failed",
+    "fresh_formal5": "not executed",
+    "fresh_ID_OOD_retention": "not executed for qualified newmethod",
+    "hierarchical_statistics_end_to_end_cost": "priornegative study archived; futurequalifiedmethod still needed",
+    "complete_new_manuscript": "not completed"
+  },
+  "fidelity": "Initializer diagnostic is limited engineering rootcause work, not substitute paper. One failure cannot justify infeasibility ormarkgoal blocked. Goal remainsactive.",
+  "new_optimizer_calls": 0,
+  "controller_queries": 0,
+  "integration_steps": 0,
+  "transitionFD_calls": 0,
+  "next_mandatory_review_cleanup": 280
+}

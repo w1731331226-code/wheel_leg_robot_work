@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第275轮深审、独立冷校对、连续map关闭与因果诊断（2026-10-08）：
+
+review_continuous_nominal_references.py用freshdata按实际地址重构11savedpoints、完整inverse/forward/force/height/pitch和physical/design，10anchor过、首validation仍失败。Coldqaccmax1.0743820075，真实8共同力max.03634920922；旧字段“force_residual_max1.0266586451”其实含100×height error和pitch，独立记录分开height=.010266586451m、pitch=.008244577801rad。0solve/controller/积分/FD/PPO，11freshforward/inverse有成本且不等独立积分。明确关闭nearest-reference连续map，不fit表、不执行原50static/完整任务/训练；保9未执行点及所有失败，不能缩domain宣布成功。
+
+初始化是具体可检机制：failedpoint initial FKheight .16m，不是target .1375m；当前100nfev/status0不能证明无解。原residual/物理门/严格停止方法合适，nearestheight seed跨新高度缺乏几何对齐，需一次初值因果诊断而非扩大原batch。登记geometry_seed_diagnostic_v1，仅一个已知development失败点，复用ml.equilibrium现有IK/实际body-site passiveclosure，平移basez，只改初geometry indices0,2:6，原pitch/ctrl/omega和residual/bounds/tol/xscale/max100都保；19height纯几何unit，max1200residualcalls。276source/单attempt，277cold去留；不搜索seed/retry/扩预算，原20仍failed且本点不能称freshvalidation，成功也不准map/PPO。
+
+五轮方向审查确认：nominal误差改善是工程，不等困难任务/新颖学习收益。充分论文贡献、新sameinfo强基线和消融、newformal5/freshID-OOD、层级统计和真实训练成本、新完整稿仍未齐，旧失败科学门不改。清理可再生solve_moving_equilibrium.pyc10489B，ignored/untracked/unheld/codeobject exact且SHA保留；全部原数据/source/baseline保。280下一五轮深审清理，目标active。
+
 第274轮连续参考batch失败停止与完整证据（2026-10-08）：
 
 solve_continuous_nominal_references.py复用原problem/setup/force/bounds，预检十旧参考、20初值、NaN/budget guard共30calls通过。实际十新±1boundary全部原门通过，第11点(.1375m,−.35m/s)达到max_nfev100/status0，solver_successFalse，residualmax1.0266586451、cachedforwardqaccmax1.0743820075，height方程误差约.010266586451m；按登记“任一点原门失败即停止”终止exit1，后九验证点未执行，无retry/调初始化/solver/gain/门/扩积分。
