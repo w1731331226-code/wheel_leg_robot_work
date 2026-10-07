@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第257轮完整模型数组独立核对与科学数据全归档（2026-10-07）：
+
+按joint/actuator地址独立构T/U，未调用collector坐标或sagittal_basis；十saved full32与30投影/rank/coverage/SHA、phase/offdiagonal/roll-yawB/SVD及eps差指标重算一致。原reference作10次mj_forward检qacc<=1e-4、仅双轮-floor contact，0追加FD/GPU/PPO。仅数组/坐标/静态工作点资格，非独立重算transitionFD或实际Nom/单侧接触/非线性轨迹认证。Full32保留，strictphaseinfluencezero False，30只分析投影，不准controller稳定证书；review/log留完整限制。
+
+原科学archive16batch全部正常结束，MainPID0/dead/success/exit0，1312×6共7872raw均已gittracked，检查时localremoteHEAD一致85424bd4，round257_archive_terminal绑定服务终态及科学negative review。全部失败与模型/RMS保存，不把归档/source通过当method收益或恢复fixedH1。
+
+258按登记必须有限model/measurement/actualNomcontroller契约去留，不追加10FD预算或无限audit，不转移局部证书。完整贡献/同信息强方法对照消融/newformal5/新ID-OOD能力保持/层级stats和PPO成本/推导复现稿六出口仍未齐，260深审清理，整体目标继续。
+
 第256轮完整公共／差动模型导数收集完成（2026-10-07）：
 
 登记五height.115/.16/.25/.30/.38及两eps1e-6/5e-7共10fulltransitionFD调用已完整执行。复用现equilibrium，在独立scratch求full32A/B，reference q/v/ctrl/warm/time未改；固定7kg、17q/16v/6ctrl/无activation-mocap-plugin、solver100/integrator3/dt.0005。T30/U6正交及rank/坐标coverage基础检查过，所有full32、30分析投影、basis/input maps/gauge方向/reference和SHA/sourcecontract保留。FD内部使用CPUphysics，未新增GPU/PPO或改控制器，不作吞吐/零成本声明。

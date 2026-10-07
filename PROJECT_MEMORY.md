@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第257轮独立review过：不调用collector.coordinates/sagittal_basis，按实际joint/actuator地址直接构T/U，十saved full32A/B与A30/B30映射、rank/coverage/原SHA、phase influence/offdiagonal/roll-yaw B/SVD及两eps差指标重算一致。读取原reference做10次mj_forward静态qacc<=1e-4且仅双轮-floor contact；0额外transitionFD/GPU/PPO。full32继续保留、strictphaseinfluencezero False，30只分析投影，不准控制/稳定证书；review/log/source绑定，非独立重算FD或非线性trajectory认证。
+- 第257轮科学终态归档已完成：archive MainPID0/dead/Resultsuccess/ExecMainStatus0，16batch正常同步，原1312×6=7872raw全git tracked、所有study文件同HEAD远端一致（检查时85424bd4）。round257_archive_terminal绑定review/服务终态；没有隐藏失败、未改negativegate，新fullmodel源资格不恢复fixedH1/PPO扩展。
+- 第257轮258必须对模型范围/测量/actualNom控制契约作有限admit或reject，不延伸FD/预算/启发式闭链证书或只读report链。新贡献/强matched新方法与消融/newformal5/独立ID-OOD保持/统计成本/新稿六出口未齐，goal active，260深审清理。
+
 - 第256轮fixed五节点.115/.16/.25/.30/.38×eps1e-6/5e-7共10full32 transitionFD调用完整执行，独立scratch保护reference q/v/ctrl/warm/time逐值不改、模型17q/16v/6ctrl/无activation-mocap-plugin/7kg/solver100/integrator3/dt.0005，现equilibrium和FD复用；full32A/B、用于分析T30/U6正交基与phasegauge方向/refs全部NPZ保存SHA，completion/sourcecontract/runlog落盘。FD内部CPUphysics不当0work，无新GPUrollout/PPO或控制器准入。
 - 第256轮结果保留限制：T30rank30/U6rank6、覆盖common/differential自由度，但phase→nongauge max≈1.494e-9/1.656e-9/1.930e-9/1.569e-61/2.593e-9，并非全部strict0。eps A32maxdiff2.569e-6–5.877e-6、B32约1.063e-10–2.220e-10，flat common-diff交叉约9.206e-11–1.994e-10；不把小误差抹成0、默认删phase、替代trueNom滤波/guard/memory或接触非线性稳定证明，full32 retained，257仅独立arrays/坐标/modelscope review不追加FD。
 - 第256轮归档447177仍running，第14批已同步、第15批上传，尚未全remote/clean；方向说明提交时暂停父进程batch推进、当前push继续，随后恢复。旧fixedH1、cone、pointzero/gov分支不复活，258须有限去留。六论文出口/goal active，260深审清理。
