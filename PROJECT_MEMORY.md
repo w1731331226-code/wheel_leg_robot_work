@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第270轮五轮方向深审完成：独立saved70重算原/候选源AST仅两分支、两臂qv/sensor/commands/nominalbank/memory/ref前缀/phase一致、所有原速度相关motor限幅、raw/finalgap和cmd0ctrl/diag/memory/role exact；0新query/FD/积分/训练。静态screen到此关闭，不再追加静态点/积分端值。修复有明确建模原因且不弱化baseline，值得一次有限动态验证，但feed/reference工程一致性不单独构成算法创新或解释全部旧PPO失败。
+- 第270轮新motion_balanced_dynamic_v1契约：原十Nominalmoving参考×old/candidate×CPU/GPU40条，各2000step/1s，共80000primary；另20GPU轨迹首40step原ctrl在freshCPU回放共800，total80800（review的80000指primary，额外800为必须同输入物理校对，明确分列而非藏成本）。同F32初始qv/warm0/steadyfilters/boot2/I0/固定±.7/zeroActor、公有7kg与原phase/bounds、同frozenbank；所有状态/内存/命令/接触/力矩/几何/失败曲线保存。回放20ms使用既有qpos5e-5/qvel.02及contactpair门，不能移用为1s闭环门；无新实验FD/优化/PPO/自动retry或production替换。
+- 第270轮拒绝fulltask/PPO捷径：当前只 exactheight/speed，实际启动制动/连续命令桥/不对称及跳跃保持尚未验证；动态与物理校对过后才决定必要bridge/164全任务，不能以平衡点替代真实任务。六论文出口（独特贡献、强sameinfo/消融、新formal5、freshID/OOD、层级统计/真实训练成本、完整稿）仍未齐，历史科学negativegate不改，goal active。
+- 第270轮清理query_nominal_compatibility.pyc7364B：ignored/untracked、fuser未持有、marshal原codeobject与源码compile exact等价，SHA/字节/来源保存round270_cleanup；仅再生成缓存，科学source/NPZ/失败/原CPU/GPU基线不删。271实现及执行唯一登记动态batch，终态后独立raw/校对去留；275下一深审清理。
+
 - 第269轮（2026-10-08）固定70active static GPU配对完成，cuda:0：十moving×3积分×old/candidate60、五static cmd0×2=10；一次15world frozenbank、其余批static inactive共20额外inactive线程，无额外activequery/physicsgraphlaunch/积分/优化/PPO。逐臂reset相同q/v/sensor/command/envstate/clock/gain/feed/angles/height/Actor零/memory/phase前缀；保存六NPZ、70逐点gap/diag/状态与SHA，完整批次耗时5.211725s只为查询含构造/编译，不是PPO加速。
 - 第269轮实际static结果：moving old最大各点gap .0549698… .0567589Nm，candidate .000000212079… .0000239726344Nm；wheel剩余gap .0000000615268… .0000011984122Nm、raw/final全部projectionerror0，非exact平衡证书；所有积分端点全留。五cmd0的ctrl/diag/memory/role/phase old/candidate exact。旧臂30组q/v/sensor/command/ref/memory/ctrl/diag与266逐值exact，未弱化基线。source/cost/raw复核query_delivery过。
 - 第269轮首次脚本误用不存在raw.device，0query前失败且日志/prequery_interface_failure保留；修为qpos.device后执行原70，未重复实验点。两次冷起各10既有baseline transitionFD共20（成功进程实测10），0新实验FD；成本失败不抹去。270必须五轮深审/冗余清理并对方向finite去留，尚未准dynamic/production/PPO；完整论文六出口和goal仍active。

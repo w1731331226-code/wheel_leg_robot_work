@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第270轮方向深审、静态收尾与动态资格契约（2026-10-08）：
+
+review_motion_balanced_nominal.py独立核70savedqueries、来源SHA、AST两处允许分支、全部配对输入和bank、原速度相关motorbounds及零速完整输出，PASS且0新query/FD/积分/PPO。静态前馈/姿态不一致确有改善，原baseline未弱化，值得继续一次有限动态试验；停止静态点扩展，拒绝把力矩差降低当动态稳定、新算法或旧学习失败唯一解释。
+
+登记motion_balanced_dynamic_v1：十参考×双臂×CPU/GPU40轨迹，各2000步/1s，80000primary；另对20GPU轨迹首40步原ctrl作freshCPU同输入回放800，预算total80800。CPU控制器也保相同原Warp逻辑、CPU模型sensor/plant；两后端初始qv同F32、warm0/steadyfilters/boot2/state11=0/原phase和zeroActor，固定公有Nominal高度及速度，单frozenbank。回放沿用既有20ms qpos5e-5/qvel.02/contactpair门，仅物理校对；1s闭环保原physical/design约束并完整报告运动/高度/姿态/轮速漂移，不拟合新收益门。保存所有pre/post/ctrl/diag/memory/ref/contact/geometry/实际力矩及失败，计时成本分列，单batch无自动retry/扩积分/FD实验/优化/PPO。
+
+271实现和执行这一batch，终态独立复核去留。若校对不过不能称后端一致，若原physical/design不过则关闭candidate deployment；不直接替换baseline。当前exactnodes不能用于原启动/制动/连续height/speed任务，bridge和164全任务需另外准入，跳跃保持仍要回归。该工程修正不是独特算法，正式五seed、新ID/OOD、强sameinfo/消融、层级统计、真实PPO成本及完整稿仍缺，历史失败门不动。
+
+本轮按五轮要求删除可再生query_nominal_compatibility.pyc7364B，ignored/untracked/无fuser/编译codeobject与源一致，round270_cleanup保SHA。原始数组/模型/失败/source/基线保留，275下一深审清理。
+
 第269轮70静态GPU配对实际完成（2026-10-08）：
 
 按原十moving×3积分×双臂60及五static cmd0双臂10，cuda:0一次15world frozenbank完成。所有原输入和bank两臂exact一致，仅candidate私有reference后五列有值；原30输出/状态与266也exact。五零速ctrl/diag/memory/role/phase exact。六NPZ和70逐点记录完整保存motion_balanced_nominal_v1，query_delivery复核来源及数组。无physicsgraphlaunch/积分/优化/PPO。

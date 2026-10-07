@@ -1,0 +1,107 @@
+{
+  "version": "motion-balanced-dynamic-v1",
+  "round": 270,
+  "status": "registered_not_executed",
+  "parent_review_sha256": "1d4d743ba3ef53c5f6db4527469b30aaabfaf53f8c351a8d7a9796e7b4bf91ea",
+  "moving_references": [
+    {
+      "height": 0.115,
+      "speed": -0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_0_speed_0.npz",
+      "sha256": "6bd8845a7ad9237618b7eacda700beec39cdba818a5a3c7e42513f0b0376cf87"
+    },
+    {
+      "height": 0.115,
+      "speed": 0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_0_speed_1.npz",
+      "sha256": "46767ec438ef63deb30cf3e6ed24e4b26506299d33e28998a8dd2c4f5f99fc8f"
+    },
+    {
+      "height": 0.16,
+      "speed": -0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_1_speed_0.npz",
+      "sha256": "687305cbd9e1754bce62e7edfad33e50978c47add1207b05f0007518d067bef8"
+    },
+    {
+      "height": 0.16,
+      "speed": 0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_1_speed_1.npz",
+      "sha256": "d4aa3e8d483567620db94183e279c52eb4bd79df453e09c2288108f80710ede6"
+    },
+    {
+      "height": 0.25,
+      "speed": -0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_2_speed_0.npz",
+      "sha256": "c1495411d91fe18044ed5a68b7f0e9296888046a3af3a2e53514e4e7434f0259"
+    },
+    {
+      "height": 0.25,
+      "speed": 0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_2_speed_1.npz",
+      "sha256": "303c8309e694ca8bad37a91922303458553690bffc218609d793f813ca9b41c6"
+    },
+    {
+      "height": 0.3,
+      "speed": -0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_3_speed_0.npz",
+      "sha256": "aa489f329338fa566e1f76b6bfd6f04d9bdcd4fa3a8ebbccdedc3c32c48b19d2"
+    },
+    {
+      "height": 0.3,
+      "speed": 0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_3_speed_1.npz",
+      "sha256": "b5fee2188b3fdb7dc22a3bf0c7430771fc93fa54292229297d94107c79e2e0fb"
+    },
+    {
+      "height": 0.38,
+      "speed": -0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_4_speed_0.npz",
+      "sha256": "4a7bcd938da96d9297c7fd89750e63a77a1a4487d09d922ab381807501e61317"
+    },
+    {
+      "height": 0.38,
+      "speed": 0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_4_speed_1.npz",
+      "sha256": "e92f725c6c7002aeecab2b818bddc2581a3b52cd8ca5acd6b48ced98f2737797"
+    }
+  ],
+  "arms": [
+    "old",
+    "candidate"
+  ],
+  "backends": [
+    "CPU MuJoCo",
+    "GPU MuJoCo Warp"
+  ],
+  "steps_per_trajectory": 2000,
+  "timestep_s": 0.0005,
+  "primary_trajectories": 40,
+  "primary_physical_steps_maximum": 80000,
+  "calibration_replay_steps": 800,
+  "total_physical_steps_maximum": 80800,
+  "calibration": "For each of20 GPU trajectories replay first40 saved ctrl values in fresh CPU MuJoCo initialized to identical F32 q/v/warmstart. Existing20ms calibration gates qpos5e-5/qvel.02 and all contact pairs equal apply to this common-input replay only, not 1s closed-loop trajectories.",
+  "initialization": "Exact registered cold q/v castF32 for both backends; zero warmstart/appliedforces; current sensors from fresh model forward; steady prior FK/gyro/vx filters, boot2, state11=0, publiccmd fixed±.7, zeroActor/correction, actual phase guard. Same frozen nominal gain bank and paired scalar parameters.",
+  "controller": "Use unchanged original/private candidate kernels, identical gain/feed/height/yaw/actuatorgain arrays. CPU controller executes on CPU Warp arrays with CPU MuJoCo sensors and plant; GPU controller uses GPU arrays and MuJoCo Warp. No hidden terrain or true-parameter controller input.",
+  "record": "All pre/post q/v/sensor/ctrl, raw and accepted diag, memory, role/phase/reference, time/warmstart/contact/forces/geometry/actual actuator torque per trajectory; retain failed states and explicit error/partial completion.",
+  "analysis": "Compare displacement relative to commanded flow, body velocity/wheel speed/height/attitude drift and physical/design constraints separately; report full curves and all points. No new fitted stability/error gate; static gap cannot define success. Apply original physical/design bounds and exact query gates, keep CPU/GPU divergence visible.",
+  "stop": "One finite batch. No gain/feed fit, perturbation search, retry, integration extension, new experimentalFD or PPO. Failed calibration forbids backend equivalence and further PPO admission. If any original physical/design failure, close candidate for deployment and retain failure.",
+  "baseline_constructor": "One frozen bank; original10offlineFD per actual cold constructor logged. Separate all failed starts and calibration from primary dynamics; never claim PPO speedup.",
+  "new_experimental_transitionFD_admitted": 0,
+  "optimization_admitted": 0,
+  "training_admitted": 0,
+  "baseline_replacement_admitted": false,
+  "full_task_admitted": false,
+  "next": "271 source/check and single registered batch; independent raw/calibration/direction review after terminal completion. 275 next mandatory five-round review/cleanup.",
+  "limitations": "Only nominal fixedcommand nodes, equilibrium initialization. No start/stop or continuous height/speed interpolation, asymmetry, disturbed stability, jumps, method novelty, formal5 or freshOOD admitted.",
+  "source_sha256": {
+    "wheelleg_warp/reference_role_control.py": "7c3297a14d257fcaa952e81b9380537fc76ba11b74a34f3724665455c22acdd7",
+    "wheelleg_warp/motion_balanced_control.py": "f746f87e1b89259f30dc33206287026bb46d7517948d49f0a40febbd3d3abcf0",
+    "wheelleg_warp/light_phase_reference.py": "a2a2c5a52cb9a51591bea44c1c85cb0fd343fe3b5e2526e88ffea461d56e9768",
+    "wheelleg_warp/native/controller.py": "04d106ae8579118eb306ba2b28037425f81a1f554d4b51fa1eae1ef795fede73",
+    "wheelleg_warp/native/environment.py": "a4fb0a7a5beb08bf23e8e3855f681e8008b79fe5e730d11bc4b5c91674fe8a2b",
+    "wheelleg_warp/native/terrain.py": "1e462500ae917ba78ce5e4652f7a856bf62658f8573296e9a7d4630517cf1a94",
+    "wheelleg_ppo/tools/wheelleg_sim.py": "c2dfaae4dc562119fd7916684849ec22fcac3d75dbcfec6a2a0f9452d8f6ee0f",
+    "wheelleg_ppo/tools/hardware_profile.py": "844688aae7e408bb2ca11d00b192ffaa9e4ad5de06cc8a815d3cf3ddfbe02eba",
+    "wheelleg_ppo/xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f"
+  }
+}
