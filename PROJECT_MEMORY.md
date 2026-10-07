@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-08，目标active）
 
+- 第281轮（2026-10-08）隔离GPU continuous_nominal_control源及GPUreadonlytable prepare实现/编译通过：两处原θEq/feed加delta，另flag<0时ctrl0/diag2 preboot return域拒绝；去三处插入后全文/AST exact恢复reference_role_control，所有原validinput gain/Actor/filter/memory/phase/guard/bounds语句保留。原production/CPU/GPUbaseline未改。
+- 第281轮73GPUprepare行核过（25nodes、20nonfitvalidation、19zeroline、8invalid、1inactive），first16prefix exact保持、zero/inactive后5列exact0、invalid flag−1和delta0；GPU vs独立CPUbilinear maxdiff1.38777878078e-17，table/axes/base/command逐值readonly。原候选控制module已cuda编译但没有controlkernel launch，0controllerquery/积分/transitionFD/optimization/PPO、无Nomgainbank构造；NPZ/log/source/proposal/tablemanifest/builderSHA保存GPU_source_admission。
+- 第281轮282唯一50static配对准入，cold20双臂40+原static5zero双臂10，zero output/diag/memory/role/phase runtimeexact待实际query，source域拒绝只source/prepare核而非invalidcontroller运行。一个bank，cold原10FD构造和失败启动成本分别计；283独立raw有限去留，285深审清理。Continuous task稳定/production/正式PPO与完整论文六出口仍未齐/goal active。
+
 - 第280轮五轮深审完成：276已知点geometryonly对照、277cold/新点预冻、278actual20solve、279independentcold和280table evidence链完整；关闭reference/initializer扩点/seedsearch/固定平衡初态trajectory，值得一个有限actualGPUcontroller接口检验，不把Nom小误差减少替代主要论文任务优势/新方法。旧failed20/H1负科学记录均保持，不缩scope宣布整个目标完成。
 - 第280轮continuous_nominal_map_v1纯表构建过：固定5h×5speed×4delta(wheel/hub/support/θEq)，仅原10±.7和275coldpassed10±1共20anchor，20新validation未fit，payload/SHA及fit provenance保存；current-J重建20点、19height v0线exact0、合成线性bilinear节点/边界/内部、finite/domain/shape/轴检查通过。原frozenbank/gain/Actor/filter/memory/guard/bounds不动，本轮0solve/controllerquery/积分/transitionFD/PPO，无Nombank10FD构造。
 - 第280轮只登记281isolatedGPUdelta/source+interpolationchecks（两处feed/θ增量、另显式domain-invalid ctrl0/diag2 guard），282固定50static配对：20nonfitcoldpoint双臂40+static5zero双臂10；283独立raw/finite去留，不fitvalidation/追加knots/改error门救分，不直接fulltask/PPO/production。cmd0必须output/diag/memory/role/phase exact原路，GPUreadonlytable不走每步CPUhost。后续真正启动/制动/不对称164须另准，工程不是新颖算法，六出口仍缺/goal active。

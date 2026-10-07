@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第281轮隔离GPU连续表/控制源验收（2026-10-08）：
+
+continuous_nominal_map.py用GPU readonly5×5×4table按公有targetheight/currentcmd准备私有21列reference，前16保原，后4是wheel/hub/support/θEq delta，flag为enabled/zero/invalid；generated continuous_nominal_control.py仅原θ/feed两处加法及invalidflag preboot ctrl0/diag2 return。去三处插入后原全文/AST exact恢复，validinput的原gain/filter/memory/phase/guard/bounds/Actor不动，原生产基线保留。
+
+check_continuous_nominal_gpu.py完成candidate cuda编译和73prepare行：25nodes、20不拟合validation、19zero、8越界/NaN/Inf、1inactive；first16exact、zero/inactive后5exact0、invalidflag−1+delta0，table/base/cmd/axes readonly，GPU vsCPUbilinear maxdiff1.38777878078e-17。完整准备数组、source/proposal/table/builderSHA与log保存GPU_source_admission。没有实际controlkernel launch/controllerquery/FD/optimization/integration/PPO，也未构造Nombank。
+
+282只登记50static：20coldvalidation×双臂40+五staticzero×双臂10，检原frozenbank、raw/accepted/finalrequiredtorquegap和F32/projection/memory/phase；zero真正runtimeexact仍待查，invalidcontroller当前仅source拒绝逻辑核，不称实际执行验证。Baseline冷构10既有FD另列、失败启动不隐藏，一bank配对。283独立raw有限去留，285深审清理。Actual start/stop/asymmetric164/fulltask/production/正式PPO/六论文出口仍未齐，goal active。
+
 第280轮深审、连续delta表构建与有限GPU检验准入（2026-10-08）：
 
 276–279证据支持targetgeometry初始化机制和登记20新参考的名义cold资格，280关闭继续扩reference/seed/平衡初态trajectory。值得一次actualGPUcontroller接口检验：Nom基线已经强，单纯Nom误差下降不能当论文主要任务收益或独特算法。旧failed20/H1学习门保留，充分论文六出口仍未齐。
