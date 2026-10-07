@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第266轮registered30staticNomqueries完成：原10moving点/3积分端值、每次reset相同qv F32upload，原phase准备与actualexperimentalcontrol、steadyFKderivedprevlength-angle/rates/gyro0/vxfilter、boot2/envstep4000/zeroActor与Nomcorrection，source拓扑与指针核；q/v/sensor/envstate/publiccmd/dataclock逐值不改、clock0无capturegraphlaunch，0integration/FD/optimization/PPO。全部input/output memory/phase/ref/diag/qv量化差/plantrequiredctrl与SHA NPZ保存。
+- 第266轮鏡像steady范围state11输入-.3/0/.3确实不同且after保持，rawNom15:21及finalctrl endpoint effect exact0；所有projectionerror0。当前Nomwheel约±.01397…01588Nm，plantreq约±.07070…07085Nm，maxcommandgap按node约.05497…05676Nm，hip差亦保存。这不是跨状态continuum无效、唯一旧PPO因果或未经验证要修的codebug；267独立raw/gate/controller路径复核后finite兼容去留，不改gain/integral/ref求pass。
+- 第266轮完整六论文出口/goal active不变，270深审清理；旧failed分支和全部negative科学数据保留，同步的是静态诊断而非新方法收益。
+
 - 第265轮五轮深审：261源/调用预算、262力平衡十解、263cold全约束、264有限参考准入复核，模型plantpoint通过不等actualNom闭环。现唯一值得继续是30staticNom命令兼容查询，检command-requiredctrl差及state11作用；旧hub平均抵消可能性仅条件algebra假设，不能提前认定控制bug或解释旧PPO全部失败。
 - 第265轮不加solve/FD/trajectory/PPO/gain/ref/state11优化或另误差门，保原30×reset/相同F32upload+steadyfilters+zeroActor且只integral11变，266source/querybatch，267独立review后finite兼容去留；不无限模型audit。公开controller memory为新契约，来源/observer/phase/bounds均要保，论文六出口/goal active。
 - 第265轮删除inactivefailed nominal_packet_reference.pyc，1983B，ignored/untracked/无fuser/源码归一codeobject等价，前SHA/源码SHA保round265_cleanup，不动scientificsource/models/RMS/raw/failures/baselines。本轮0newqueries/integration/FD/optimization/PPO，270下一深审清理。

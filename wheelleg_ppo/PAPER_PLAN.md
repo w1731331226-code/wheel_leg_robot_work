@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第266轮实际Nom30静态命令／记忆查询完成（2026-10-07）：
+
+按原10moving点×state11[-.3,0,.3]30individualqueries，每queryreset同qv F32、prevFKlength-angle/steadygyro-vxfilters/boot2/envstep4000/publiccmd±.7/zeroActor及Nomcorrection，原phase准备/actualexperimentalcontrol运行。原q/v/sensor/envstate/cmd/dataclock exact不改、clock0/capturedgraph未launch，0integration/FD/optimization/PPO。全部memory前后/phase/ref/diag/finalctrl/plantrequired及qv量化误差/SHA保存，原source复制接口核过。
+
+镜像steady范围state11输入实际改变且after保持，但rawNom15:21与finalctrl端值effect exact0，projectionerror均0。Nomwheel约±.01397…01588Nm而plantrequired±.07070…07085Nm，node最大commandgap约.05497…05676Nm（hip差也保存）。静态端点不能推全部state/continuum积分无效、旧PPO唯一原因或codebug，也不能补gain/ref/integral门强pass；267独立重构raw、接受和controller路径后finite兼容决策。
+
+完整论文六出口仍未齐、goal继续，270深审清理，原failed收益和科学negativegate不复活。
+
 第265轮实际Nom命令兼容方向深审与清理（2026-10-07）：
 
 261–264源、预算、十解forcebalance/coldgeometry及有限准入复核。Plant参考通过不代表actualNom能够维持相同q/v；下一步只完成30static命令查询，比较requiredctrl并单独改变state11。旧hub到LQR mean转换存在镜像状态下抵消旧共模量的条件algebra可能，必须actualquery才知积分是否影响最终命令，当前不认定bug或旧PPO唯一原因。
