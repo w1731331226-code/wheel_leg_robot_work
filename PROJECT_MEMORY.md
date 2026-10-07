@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第269轮（2026-10-08）固定70active static GPU配对完成，cuda:0：十moving×3积分×old/candidate60、五static cmd0×2=10；一次15world frozenbank、其余批static inactive共20额外inactive线程，无额外activequery/physicsgraphlaunch/积分/优化/PPO。逐臂reset相同q/v/sensor/command/envstate/clock/gain/feed/angles/height/Actor零/memory/phase前缀；保存六NPZ、70逐点gap/diag/状态与SHA，完整批次耗时5.211725s只为查询含构造/编译，不是PPO加速。
+- 第269轮实际static结果：moving old最大各点gap .0549698… .0567589Nm，candidate .000000212079… .0000239726344Nm；wheel剩余gap .0000000615268… .0000011984122Nm、raw/final全部projectionerror0，非exact平衡证书；所有积分端点全留。五cmd0的ctrl/diag/memory/role/phase old/candidate exact。旧臂30组q/v/sensor/command/ref/memory/ctrl/diag与266逐值exact，未弱化基线。source/cost/raw复核query_delivery过。
+- 第269轮首次脚本误用不存在raw.device，0query前失败且日志/prequery_interface_failure保留；修为qpos.device后执行原70，未重复实验点。两次冷起各10既有baseline transitionFD共20（成功进程实测10），0新实验FD；成本失败不抹去。270必须五轮深审/冗余清理并对方向finite去留，尚未准dynamic/production/PPO；完整论文六出口和goal仍active。
+
 - 第268轮（2026-10-08）隔离motion_balanced_control原型完成，仅在私有21列reference的enable=1且cmd非零时替换theta_eq和wheel/hub/support绝对前馈；相当于原插值参考到移动参考的offset，原六状态gain、Actor、phase、memory、filter、guard及bounds语句均保留。逆向去掉两处插入后源码/AST exact恢复原reference_role_control，原CPU/GPU基线未改。
 - 第268轮source/algebra验收过：十个coldverified moving q/ctrl按实际joint/actuator地址和解析current-J转换，三通道feed重建motor误差<=1e-12，左右镜像核；私有packet前16列exact保留，cmd0后5列exact0，非登记height/speed和NaN拒绝。只编译公共7kg模型，0controller query/积分/FD/优化/PPO；尚未运行GPUkernel，cmd0运行结果exact性待269配对检查。source_admission.json/source_check.log保存全部十点feed/theta/J、源SHA和边界。
 - 第268轮继续原269有限70static配对，不追加state/gain/solver预算；一份baselinebank冷构10既有FD单列计成本。270方向深审/清理和finite去留。尚无新qualifiedmethod、强sameinfo收益、freshformal5/freshOOD/完整稿，充分论文证据目标未完成，不能保证核心录用或以原型验收替代。

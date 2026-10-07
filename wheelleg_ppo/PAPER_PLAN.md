@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第269轮70静态GPU配对实际完成（2026-10-08）：
+
+按原十moving×3积分×双臂60及五static cmd0双臂10，cuda:0一次15world frozenbank完成。所有原输入和bank两臂exact一致，仅candidate私有reference后五列有值；原30输出/状态与266也exact。五零速ctrl/diag/memory/role/phase exact。六NPZ和70逐点记录完整保存motion_balanced_nominal_v1，query_delivery复核来源及数组。无physicsgraphlaunch/积分/优化/PPO。
+
+Moving old final最大gap范围 .0549697999… .0567588815Nm；candidate .0000002120793… .0000239726344Nm，wheel .0000000615268… .0000011984122Nm，所有projectionerror0。静态兼容显著改善但非exact零残差、持续平衡或任务收益，未改变误差门或宣布新方法优势。批次含成功构造/编译5.211725s，仅查询成本，不能作PPO加速。初raw.device接口错在0query时失败，日志/失败保留；修为数组device后原70完成，两次构造各10既有FD共20全记，0新实验FD。
+
+270按约深审/清理和有限去留，再决定必要动态CPU/GPU配对与完整任务验证；不得直接替换生产基线/开启正式PPO或以工程兼容代替创新。新方法、强sameinfo/消融、freshformal5/freshID-OOD、统计成本和完整稿仍未齐。
+
 第268轮隔离移动平衡原型与源/代数验收（2026-10-08）：
 
 新增motion_balanced_nominal.py复用coldverified十点和解析current-J，按模型实际joint/actuator地址转换wheel/hub/support与theta参考；生成motion_balanced_control.py仅两处条件插入，逆向后源码/AST exact恢复原reference_role_control。原gain/Actor/filter/phase/memory/guard/bounds与生产基线保留。严格只登记五height和±.7；cmd0私有21列packet后五列全0，前16列原值，未登记节点/NaN拒绝。

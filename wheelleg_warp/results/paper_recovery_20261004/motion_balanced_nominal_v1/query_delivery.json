@@ -1,0 +1,46 @@
+{
+  "verified": true,
+  "completion_sha256": "3713fc326f182165cbc9a61930a92a842a09ebe3e25b2f7f0bc7940930069afe",
+  "old30_outputs_and_inputs_exact_prior": [
+    true,
+    true,
+    true
+  ],
+  "moving_gap_ranges_Nm": {
+    "old": {
+      "maximum_command_gap_Nm": [
+        0.054969799914108566,
+        0.056758881498882086
+      ],
+      "wheel_gap_Nm": [
+        0.054969799914108566,
+        0.056758881498882086
+      ],
+      "raw_nominal_gap_Nm": [
+        0.05496980061851141,
+        0.05675888115186766
+      ]
+    },
+    "candidate": {
+      "maximum_command_gap_Nm": [
+        2.120793189952508e-07,
+        2.3972634387359193e-05
+      ],
+      "wheel_gap_Nm": [
+        6.152682456572744e-08,
+        1.1984121855573848e-06
+      ],
+      "raw_nominal_gap_Nm": [
+        2.39531752779798e-07,
+        2.3957024786636083e-05
+      ]
+    }
+  },
+  "zero_speed_exact": true,
+  "baseline_constructor_transitionFD_total_this_round": 20,
+  "failed_prequery_attempt_sha256": "00418b1ae9644d9f1aeced9b5b9b053e734d0aeca979d8290fcebacbd91c3565",
+  "failure_log_sha256": "fae846568bc2aa3c6cee432a32465e3a28d9a1672c234086c40d7989841e2868",
+  "new_queries_in_delivery_check": 0,
+  "controller_admitted": false,
+  "limits": "Recorded static inputs only. Residual candidate gap retained; no dynamic or novelty claim. Independent direction review round270 pending."
+}
