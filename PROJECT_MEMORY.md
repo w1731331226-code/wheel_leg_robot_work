@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-08，目标active）
 
+- 第278轮（2026-10-08）geometry_seed_validation_v1固定20未见reference batch exit0，20/20cached原force/fullqacc/actualleg/八joint/active1.4/速度力矩/双wheel-floor门通过；实际7291residualcalls<=24000，各<=1200/max_nfev100，最大nfev59、combined/8force max1.11424647287e-10、minactualleg .114986074200m。求解阶段0.540019s只是这批source/compile/solve/serialize成本，不是GPU训练加速或PPO。
+- 第278轮复用冻结geometry函数与原problem/constraints；20初值只改indices0,2:6，pitch/ctrl/omega exact保，nearesth/thenspeed donor仅旧10±.7。20NPZ包括old/newinitial/initialresidual/solution/bounds/qvctrl/所有forces/qacc/warm/实际力矩，来源/顺序/tuple/unchangedindices/finite/SHA及各点和总counter核过；所有验证点no_fit，无旧failedbatch覆盖/knownpoint替换/seedsearch/retry/门变动。
+- 第278轮0controllerquery/物理积分/transitionFD/PPO、无Nomgainbank构造，source/proposal/admission SHA绑定；这只缓存data求解及forward，279必须freshcold。280按约深审清理后才决定table/source/query资格，不能20sample成功当整个连续域certificate、fresh最终OOD/任务稳定或新方法优势。完整六论文出口和goal仍active。
+
 - 第277轮（2026-10-08）单点独立freshcold复核过：不用solver.problem/geometry构造最终q，而按solution/实际joint/actuator地址重构qvctrl逐值核，fresh warm/applied0，完整forward+独立8commonforce inverse和height/pitch原门过；physical helper复用此前独立275已核版本，源码SHA绑定。旧initial与原failedNPZ exact、指定1/6:9初值不变、新FKheight target一致；一次freshforward/inverse，0solve/controller/积分/FD/PPO。关闭已知点diagnostic，不推所有高度/新颖方法，旧20仍failed。
 - 第277轮geometry_seed_validation_v1新协议冻结：rng27741，四heightcell×四speedcell每cell1新点16，加.115/.38×±.35边界4，共20未求解tuple，与旧全部declared/solved/knownfailure点无交集。仅development模型参考验证，不是fresh最终ID/OOD、不fitlookup/addknots；源geometry/helper/equations SHA固定。沿原10±.7 donor deterministic nearesth/thenspeed，初值只改geometry indices0,2:6，保pitch/ctrl/omega/原model/bounds/tol/xscale/max100。
 - 第277轮278实现/一次20pointbatch，each<=1200/total<=24000residualcalls含初末检查；原force/accel/geometry/关节/motor/support门任何失败立即保全部并列未执行，不retry/增nfev/seedsearch/改scope。279freshcold，280深审清理后再决定continuousmap/source/query，当前0query/integration/FD/learning准入，不重启旧20；完整论文六出口仍缺/goal active。

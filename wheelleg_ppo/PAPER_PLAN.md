@@ -1,5 +1,11 @@
 # 双轮腿机器人PPO论文方案
 
+第278轮冻结20参考初始化验证实际完成（2026-10-08）：
+
+validate_geometry_seed.py沿冻结geometry/source/protocol，20新tuple20/20cached原physical/reference门通过，总7291residualcalls/24000，各<=1200且max100nfev，实际最大59；最大mixed及8force残差1.11424647287e-10、minactualleg .114986074200m。20初值只geometry0,2:6改变，pitch/controls/omega exact保，donor仍旧10±.7最近height/thenspeed，无seed选择/retry/扩预算。完整20NPZ、所有force/geometry/warm、初值/解/来源/SHA及逐点进度留存，验证点未fit。
+
+这20新点支持targetgeometry初值在登记样本上的可用性，未做旧初值的20同点新配对，因此不宣称全面性能优势；已知点276的因果对照仍独立标记development。0controllerquery/integration/transitionFD/PPO，无Nomgainbank，0.540019s仅这批solve相关成本，不能作训练加速。279freshcold独立复核，280深审清理后才决定continuousmap/table/source/query资格；样本通过不是全连续域稳定、fresh最终ID/OOD或论文方法贡献。旧失败20和原基线不改，论文六出口仍未齐，goal active。
+
 第277轮初值单点freshcold通过并冻结未见参考验证（2026-10-08）：
 
 review_geometry_seed.py按solution和实际地址独立重构最终qvctrl，freshdata warm/applied0.forward/full8force.inverse、height/pitch和原physical/design门通过；physical helper沿用275独立核过的实现，SHA保持。只geometry初值改变的对照核过，旧failed点/source不改。一次freshforward/inverse，0优化/controllerquery/积分/FD/PPO。已知development单点diagnostic到此关闭，不称新holdout或新方法。
