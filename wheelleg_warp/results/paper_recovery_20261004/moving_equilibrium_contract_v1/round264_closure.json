@@ -1,0 +1,31 @@
+{
+  "verified": true,
+  "round": 264,
+  "decision": "Terminateboundedsolvebatch. Admit10nominalflatmoving force-balancedreferences only;notnonlinearflow/actualNomclosure/gain/CLF/PPO. No extraoptimizations/FD/steps. Oldergravityreference remainsrejected.",
+  "accepted": [
+    "Fullq/v/ctrl referencestates/geometry/hardware constraints coldverified",
+    "Knownnominalbodyvx/control/wheelrate needed formodelling"
+  ],
+  "rejected": [
+    "Wholeclosedloopcertificate fromplant equilibrium",
+    "Gain/RLcovariance/phasepolicy admission",
+    "Robustsingle-contact/nonlinear invariantset or OOD guarantee"
+  ],
+  "missing": [
+    "ActualNom filter states3:8 andknownprevlength/angle needed",
+    "State11 speedintegral/boot/parking/yaw/positionmemory affect code paths",
+    "Heightgains/feed interpolation,current-J,guards,bounds/sharedreference mustmatch",
+    "Solvedplantctrl maydiffer fromactualNomcommand;mustmeasure before controller equilibrium claim"
+  ],
+  "actual_nom_scope": "Motioncmd\u00b1.7 heldpublicly;boot beyondstartup,noparking/arrival. No trueterrain/unknownmass/friction/actuatorgain used forpolicy. Input publiccontroller memory is an explicitnewcontract,notoldActorinformation.",
+  "review_sha256": "13a03e444927038fc046d5ab689274b9c151ae8627edb00b1631a5133711d183",
+  "completion_sha256": "89b7d0f6f189844f87951a4bd5bfcac52a20b8f2df9c6f817e7d5f26b7cacf09",
+  "controller_sha256": "04d106ae8579118eb306ba2b28037425f81a1f554d4b51fa1eae1ef795fede73",
+  "controller_admitted": false,
+  "new_integration_steps": 0,
+  "new_transitionFD_calls": 0,
+  "new_training_samples": 0,
+  "formal5_admitted": false,
+  "entire_goal_complete": false,
+  "next": "265deepreview/cleanup;then boundedstatic actualNom command compatibility beforeanynewclosedloop/stability/PPO."
+}

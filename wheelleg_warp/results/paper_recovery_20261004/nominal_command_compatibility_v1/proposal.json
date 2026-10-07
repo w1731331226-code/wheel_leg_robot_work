@@ -1,0 +1,100 @@
+{
+  "version": "nominal-command-compatibility-v1",
+  "round": 264,
+  "status": "registered_not_executed",
+  "states": 10,
+  "speed_integral_states": [
+    -0.3,
+    0.0,
+    0.3
+  ],
+  "static_controller_queries": 30,
+  "integration_steps": 0,
+  "transitionFD_calls": 0,
+  "optimization_calls": 0,
+  "training_samples": 0,
+  "purpose": "Check whetheractualcurrentphaseNom output atphysicallybalancedmovingreference equalsrequiredcontrol andwhetherstate11 affectscommands. Aplantreference alone is notcontroller equilibrium.",
+  "inputs": "Reuse10coldverifiedq/v/requiredctrl;zeroActor/sharedcorrection target,originalpublic\u00b1.7command,steadygyro/radial/angular/vxfilters,boot2s,positionholdinactive/arrivalunset/yawref0. Explicitlyhold allmemoryexceptstate11;reset perquery.",
+  "initialization": "Referenceq/v casttooriginalfloat32GPUstorage;recordquantization separately. Setpreviouslength/state1 andangle/state2 fromexactsameuploadedq/currentFK,filteredrates0,vxfilter actualuploadedbodyvx,gyro0. Captureallinput/output states andNomdiagnostic/context.",
+  "implementation": "Reuse lightphase reference preparation andactualexperimentalcontrol_physical_nominal,exactOriginalgain/force/height/bounds;sourcecheck copies. No handsubtractedmean/output orchangedgain/reference. Staticquery only after original prepare,originalslew targets0.",
+  "outputs": [
+    "actualNomfinalmotorcommand vsbalancedplantrequiredctrl",
+    "rawNom/acceptedNom/speedbounds",
+    "state11 input/output andstate-dependent thcmd-related fields",
+    "allinput/memory/source hashes",
+    "phase/heightreference/role logs",
+    "left-right/common/difference torques",
+    "float32upload difference"
+  ],
+  "acceptance": "Verify30querycount/inputreset/options/originalcontroller/signatures/finiteoutputs/no physicsclockadvance. Reportallcompatibilitygapsdirectly;do not solve otherstate11values/tolerances orreplaceNom to forcecompatibility. No flatNom stabilityadmission fromcommandmatching alone.",
+  "stop": "265deepreview valuescope first;266unit/querybatch;267independentreview andfiniteNom-model mismatch/controllercontract decision. Do notexpandoldforcebalance batch/longtraining/gain/historynoise rescue.",
+  "parent_closure_sha256": "72fa9ab76a8590f1af93105f69738bc4917928d1ec40b3f24940cb0a9288d024",
+  "references": [
+    {
+      "height": 0.115,
+      "speed": -0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_0_speed_0.npz",
+      "sha256": "6bd8845a7ad9237618b7eacda700beec39cdba818a5a3c7e42513f0b0376cf87"
+    },
+    {
+      "height": 0.115,
+      "speed": 0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_0_speed_1.npz",
+      "sha256": "46767ec438ef63deb30cf3e6ed24e4b26506299d33e28998a8dd2c4f5f99fc8f"
+    },
+    {
+      "height": 0.16,
+      "speed": -0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_1_speed_0.npz",
+      "sha256": "687305cbd9e1754bce62e7edfad33e50978c47add1207b05f0007518d067bef8"
+    },
+    {
+      "height": 0.16,
+      "speed": 0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_1_speed_1.npz",
+      "sha256": "d4aa3e8d483567620db94183e279c52eb4bd79df453e09c2288108f80710ede6"
+    },
+    {
+      "height": 0.25,
+      "speed": -0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_2_speed_0.npz",
+      "sha256": "c1495411d91fe18044ed5a68b7f0e9296888046a3af3a2e53514e4e7434f0259"
+    },
+    {
+      "height": 0.25,
+      "speed": 0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_2_speed_1.npz",
+      "sha256": "303c8309e694ca8bad37a91922303458553690bffc218609d793f813ca9b41c6"
+    },
+    {
+      "height": 0.3,
+      "speed": -0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_3_speed_0.npz",
+      "sha256": "aa489f329338fa566e1f76b6bfd6f04d9bdcd4fa3a8ebbccdedc3c32c48b19d2"
+    },
+    {
+      "height": 0.3,
+      "speed": 0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_3_speed_1.npz",
+      "sha256": "b5fee2188b3fdb7dc22a3bf0c7430771fc93fa54292229297d94107c79e2e0fb"
+    },
+    {
+      "height": 0.38,
+      "speed": -0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_4_speed_0.npz",
+      "sha256": "4a7bcd938da96d9297c7fd89750e63a77a1a4487d09d922ab381807501e61317"
+    },
+    {
+      "height": 0.38,
+      "speed": 0.7,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/moving_equilibrium_contract_v1/height_4_speed_1.npz",
+      "sha256": "e92f725c6c7002aeecab2b818bddc2581a3b52cd8ca5acd6b48ced98f2737797"
+    }
+  ],
+  "source_sha256": {
+    "wheelleg_warp/native/controller.py": "04d106ae8579118eb306ba2b28037425f81a1f554d4b51fa1eae1ef795fede73",
+    "wheelleg_warp/reference_role_control.py": "7c3297a14d257fcaa952e81b9380537fc76ba11b74a34f3724665455c22acdd7",
+    "wheelleg_warp/light_phase_reference.py": "a2a2c5a52cb9a51591bea44c1c85cb0fd343fe3b5e2526e88ffea461d56e9768"
+  },
+  "limits": "Nominalpubliccontrollercontract diagnostic,notrobustcontact/newalgorithm contribution. State11 endpointtests not entirecontinuummemory proof. Paperstrongsameinformation contrasts/freshformal5/OOD/stats/manuscript stillneeded."
+}

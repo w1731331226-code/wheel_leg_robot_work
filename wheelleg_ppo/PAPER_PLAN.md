@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第264轮移动力平衡有限准入与实际Nom兼容契约（2026-10-07）：
+
+终止当前十解求解，只接受coldverified nominalflat q/v/ctrl力平衡和几何数组，不准持续relativeflow、actualNomclosedloop、gain/CLF/PPO或robustcontact/全状态安全。实际Nom滤波states3:8、integral11/boot/yaw/parking/positionmemory、height插值/currentJ/guards/sharedref/bounds缺失，plantctrl不一定等Nom稳态输出，不能从plant平衡迁移closedloop证书。旧gravity参考/固定H1收益及其它失败分支维持关闭。
+
+nominal_command_compatibility_v1仅登记十点×state11[-.3,0,.3]30static原phaseNomquery；zeroActor/publiccmd±.7、boot2s、steadyfilters/previousFKlength-angle，reset每query且只state11变化。实际Nomfinalctrl/rawacceptedNom/bounds/全部memory/phase/ref与qvF32量化差对coldplantrequiredctrl完整报告，不求另integral值/gain/ref或新gap门来强pass。controller-memory为显式公共契约，不偷作旧Actor信息相同声明。
+
+265deepreview/清理，266sourcechecks+querybatch，267independentreview并finiteNom-model兼容去留，无新integration/FD/optimization/PPO。本轮新预算0消耗。全部scientific失败和16批原数据保留，新贡献/strongsameinfo新方法及消融/freshformal5/OOD/统计成本与完整稿六出口仍未齐，goal继续。
+
 第263轮十移动解独立冷启动力／几何复核（2026-10-07）：
 
 Reviewer不调用solver.problem/least_squares，按模型joint/actuator地址重构mirrorpose/velocity/control与8共同力投影，核solution/bounds/order/原SHA。每个freshMData warm0/appliedforce0下forward full16qacc与原1e-4、inverse+height/pitch残差原1e-6、双轮floor/actuallegfloor/eightjoint/active1.4/真实motor速度曲线力矩全部10/10过；coldaccmax0、force max9.802292e-11，cold-saved差原样留存。review/source/log保存，0额外求解/integration/FD/PPO，不仅信复用data零qacc。

@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第264轮有限准入：终止10moving solvebatch，只接受coldverified nominalflat q/v/ctrl力平衡参考/几何数组；拒绝持续relativeflow、actualNom闭环、gainbank/CLF/PPO/robustcontact/安全或新算法证书，旧gravity参考和fixedH1/cone/pointzero失败不复活。ActualNom滤波state3:8、integral11/boot/yaw/parking/positionmemory、height插值/currentJ/guards/torque/sharedref需单独覆盖；controller输出可能不等plantrequiredctrl。
+- 第264轮仅登记nominal_command_compatibility_v1：十moving点×state11[-.3,0,.3]共30静态原phaseNomquery，zeroActor/publiccmd±.7/boot2/steadyfilters、reset每query，仅state11变化，全部actualNomcommands/diag/inputmemory/phase和qvF32量化差保存。对physics-balancedrequiredctrl报告所有gap，不求别的integral/gain/ref/新阈值救分。265deepreview，266source/unit+querybatch，267independentreview与finiteNom模型兼容去留；0integration/FD/optimizer/PPO准入。
+- 第264轮本轮0queries/newphysics/learning，fullscience16批归档和所有negative门不变；尚无newqualifiedmethod/strongsameinfo贡献/newformal5/freshOOD/完整稿六出口，goal active，265如期深审清理。
+
 - 第263轮10解独立freshcold复核过：不调用solver.problem/优化器，按joint/actuator地址构mirror q/v/ctrl与共同8力投影，原solution/bounds/SHA/order核，freshMData warm0/appliedforce0.forward full16qacc原1e-4门、inverse+height/pitch残差原1e-6、actuallegfloor/闭链/eightjoint/active1.4/motor速度曲线实际力矩/双轮floor全部10/10过。Coldaccmax0、force max9.802292e-11、cold-saved指标差全部保存，排除单凭复用data零qacc信号；source/review/log绑定，0新optimization/integration/FD/PPO。
 - 第263轮只接受Nominalforce-balanced参考的源/数值几何层，不当持续relativeflow、actualNomclosedloop或不确定contact/gain稳定证书，controller_admitted False。264按登记finiteadmit/reject与边界契约，不加旧solver预算/controls改动恢复closedH1；新贡献/strongsameinfo方法消融/newformal5/ID-OOD/统计成本新稿六出口仍未齐，goal active，265深审清理。
 
