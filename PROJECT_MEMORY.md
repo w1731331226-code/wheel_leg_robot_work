@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-07，目标active）
 
+- 第268轮（2026-10-08）隔离motion_balanced_control原型完成，仅在私有21列reference的enable=1且cmd非零时替换theta_eq和wheel/hub/support绝对前馈；相当于原插值参考到移动参考的offset，原六状态gain、Actor、phase、memory、filter、guard及bounds语句均保留。逆向去掉两处插入后源码/AST exact恢复原reference_role_control，原CPU/GPU基线未改。
+- 第268轮source/algebra验收过：十个coldverified moving q/ctrl按实际joint/actuator地址和解析current-J转换，三通道feed重建motor误差<=1e-12，左右镜像核；私有packet前16列exact保留，cmd0后5列exact0，非登记height/speed和NaN拒绝。只编译公共7kg模型，0controller query/积分/FD/优化/PPO；尚未运行GPUkernel，cmd0运行结果exact性待269配对检查。source_admission.json/source_check.log保存全部十点feed/theta/J、源SHA和边界。
+- 第268轮继续原269有限70static配对，不追加state/gain/solver预算；一份baselinebank冷构10既有FD单列计成本。270方向深审/清理和finite去留。尚无新qualifiedmethod、强sameinfo收益、freshformal5/freshOOD/完整稿，充分论文证据目标未完成，不能保证核心录用或以原型验收替代。
+
 - 第267轮saved30query独立review过：onlystate11变、qv/sensor/cmd/envstate/ref/required一致、memory11before/after端值有效且不更新，rawNom15:21/finalctrl effect exact0、projectionerror0、量化及gap重算一致。源AST验证LQR x不读thcmd、state11进legacythcmd、hl=vl1+hub-average/hr同式使oldcommonmean被替代，256随机代数检查过；结论限定pre-angleprojection/30mirror端点，不推全部asymmetric/braking/continuummemory或旧PPO唯一因果。初ASTdict覆盖thcmd到braking错误选择，0query，log保留，改取normal首赋值后过。
 - 第267轮计算口径纠正：266 individualqueries0GPUintegration/0新实验FD，但rm_controller.nominal_design115冷起5ml.design/linearize+height115current_vmc_table5调用，原log10 reduction，baselinebank构造共10离线transitionFD；不能称总FDwork0。当前review无构造/新query/FD，旧scalar记录不重写，成本更正明确保存。
 - 第267轮结束30queryscreen，plantref与currentNomcommand静态不兼容；登记motion_balanced_nominal_v1有限工程prototype，只修publicmodel移动feed与theta-equilibrium一致offset，原6gain/Actor/filter/guard/bounds不改，cmd0必须exactnoop。268algebra/sourcechecks，269配对70static（moving10×3I×old/candidate60、static5cmd0×2=10），270深审清理去留；无trajectory/opt/新实验FD/PPO或baseline替换准入，原模型/失败/score保留。不是单积分修补或新颖算法，论文六出口/goal active。

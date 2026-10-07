@@ -1,5 +1,11 @@
 # 双轮腿机器人PPO论文方案
 
+第268轮隔离移动平衡原型与源/代数验收（2026-10-08）：
+
+新增motion_balanced_nominal.py复用coldverified十点和解析current-J，按模型实际joint/actuator地址转换wheel/hub/support与theta参考；生成motion_balanced_control.py仅两处条件插入，逆向后源码/AST exact恢复原reference_role_control。原gain/Actor/filter/phase/memory/guard/bounds与生产基线保留。严格只登记五height和±.7；cmd0私有21列packet后五列全0，前16列原值，未登记节点/NaN拒绝。
+
+十点镜像和motor重建误差<=1e-12过，全部feed/theta/J及SHA保存source_admission.json，source_check.log记录PASS。0controller queries/积分/FD/优化/PPO，仅公共7kg模型构造；未编译执行GPUkernel，零速运行exact性与实际输出尚待269原70static配对，baseline冷构10既有FD另列。270深审清理有限去留。工程原型不是新颖方法或闭环收益；论文贡献、强sameinfo对照/消融、freshformal5和freshID/OOD、统计/端到端成本、完整稿仍待。
+
 第267轮Nom兼容独立复核、成本更正与有限工程方向（2026-10-07）：
 
 Saved30queryonlystate11差异及其before/after值、其它qv/sensor/cmd/ref/envstate/requiredctrl一致核过，rawNom15:21/finalctrl effect exact0，projectionerror0，gap/quantization重算一致。源码AST里LQRx不含thcmd、state11在legacy外环，hl/hr的oldmean平均被hub替代；256随机代数检通过。限定pre-angleprojection及mirrorstate30端点，不推所有动态/不对称/制动memory，也不叫旧PPO唯一原因。初AST覆盖到braking赋值的选择错（0query）保log，选normal首赋值修后过。
