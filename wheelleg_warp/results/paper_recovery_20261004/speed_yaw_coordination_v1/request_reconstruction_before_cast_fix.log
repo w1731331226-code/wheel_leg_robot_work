@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/audit_coordination_delivery.py", line 63, in <module>
+    if __name__=='__main__':run()
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/audit_coordination_delivery.py", line 31, in run
+    np.testing.assert_array_equal(expected,t[:,37:39])
+  File "/home/wmt/wheel_leg_robot_work/.venv/lib/python3.10/site-packages/numpy/_utils/__init__.py", line 86, in wrapper
+    return fun(*args, **kwargs)
+  File "/home/wmt/wheel_leg_robot_work/.venv/lib/python3.10/site-packages/numpy/testing/_private/utils.py", line 1057, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+  File "/home/wmt/wheel_leg_robot_work/.venv/lib/python3.10/site-packages/numpy/testing/_private/utils.py", line 921, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 3761 / 26814 (14%)
+Max absolute difference among violations: 2.38418579e-07
+Max relative difference among violations: 6.19532221e-06
+ ACTUAL: array([[-0.002893, -0.002893],
+       [-0.005678, -0.005678],
+       [ 0.010153,  0.010153],...
+ DESIRED: array([[-0.002893, -0.002893],
+       [-0.005678, -0.005678],
+       [ 0.010153,  0.010153],...

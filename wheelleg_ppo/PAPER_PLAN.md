@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第224轮实际请求到执行全量核查完成（2026-10-07）：
+
+复用现有492评价中的两候选全部328轨迹，逐输入SHA核对，按照原控制器“Nom限幅→float32量化→加合成correction→速度限幅→float32电机指令”的顺序重建，328/328逐值完全一致。Bomega有138/164轨迹、Cgamma有164/164轨迹实际轮力矩发生变化，峰值均1Nm，query error2更新均0；Cgamma运动阶段gamma最低.078044。干预确实执行，但执行非零不证明方向正确、权限充分或任务收益，原492结果和两个False资格结论保持。
+
+合成目标与实际池L1最大差分别1.451783/5.860542Nm，包含box截断及时间slew，不能仅据此认定某一种约束导致失败。继承完整轨迹列54:56的nominal-correction字段保存原Nom池，候选真正合成请求在coordination日志列24:30；原raw不重写。审查首版遗漏加correction前的float32 cast，3761元素差异最大2.38418579e-7，按原运算顺序修审查器后array_equal通过，未放宽实际指令容差，首失败及成功log保存。证据见speed_yaw_coordination_v1/round224_request_delivery.json，0新物理/学习。
+
+492完整原始数据已按三个condition归档提交并同步，archive服务正常退出，无待上传批。225如期深审方向与冗余清理；不复活固定阻尼/协调收益分支，不以更多已见场景回放替代方法贡献、matched强学习消融、新formal5、新独立泛化、统计成本和新稿六类出口。下一方法必须先明确区别性预测及有限可证伪验收，再登记实验。
+
 第223轮完整492实际终态、原门审查及固定候选关闭（2026-10-07）：
 
 原worker283051/283052正常MainPID0/exited/success/exit0，492/30jobs/0training，无interruption或replay。review_coordination_qualification重新核source/模型信息契约、原order/fullflag/summary/physdesign、geometry及2460five-stream SHA/coord-budget与phase时刻，4,599,832,924B；新B0旧flag保持/CPU28资格已221独立过，Bomega164/source/820five-stream另存round223_Bomega_delivery，完整资格见qualification_review。新raw仍本地immutable，終态后各condition约1.53GB分批同步，科学数据及失败全保。
