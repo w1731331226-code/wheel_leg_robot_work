@@ -1,0 +1,47 @@
+{
+  "round": 299,
+  "verified": true,
+  "control_completion_sha256": "e896d15faf54b7cc5c6bd031afbf5f5e9fe99f736182267ea70b7a8639fe2038",
+  "source_started_sha256": "2438a9370d6648e0294ee51cfc90f796ee06b0ea70d54afb0f65dc4842e30002",
+  "hardware_profile_sha256": "844688aae7e408bb2ca11d00b192ffaa9e4ad5de06cc8a815d3cf3ddfbe02eba",
+  "final_command_caps_checked_queries": 100,
+  "joint_names": [
+    "alphaL",
+    "betaL",
+    "alphaR",
+    "betaR",
+    "wheel1",
+    "wheel2"
+  ],
+  "joint_velocity_addresses": [
+    6,
+    9,
+    11,
+    14,
+    8,
+    13
+  ],
+  "zero_projection_errors_all100": true,
+  "anchor_override_positive_cases": 25,
+  "anchor_override_values": [
+    0.115,
+    0.16
+  ],
+  "correction_to_round298": "reference[2] affects the default radial anchor only when positive reference[15] does not override it. All25 tested source fixtures have positive overrides, so no actual anchor-change confound is established in this batch or all historical cases.",
+  "prequery_failure": {
+    "path": "prequery_import_failure.log",
+    "sha256": "4345389eae03d8561b326e46ac0522d01e72900896dc052f4e3842d2b5b7fccb",
+    "controller_queries": 0,
+    "physics_steps": 0,
+    "reason": "Import order before native path setup; corrected before controller queries."
+  },
+  "static_zero_output_identity": true,
+  "full_trajectory_zero_identity": false,
+  "CPU_GPU_full_task_admitted": false,
+  "fair_comparator_implementation_admitted": false,
+  "controller_rollout_admitted": false,
+  "formal_PPO_admitted": false,
+  "integration_steps": 0,
+  "new_training_samples": 0,
+  "next": "300mandatory deepreview/cleanup and independent source/output-chain review; decide finite asymmetric/phase qualification and same-reference-authority comparators before anyrollout orPPO."
+}

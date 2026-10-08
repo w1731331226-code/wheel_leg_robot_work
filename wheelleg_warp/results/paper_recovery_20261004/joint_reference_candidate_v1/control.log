@@ -1,0 +1,15 @@
+Warp 1.17.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 5060 Laptop GPU" (8 GiB, sm_120, mempool enabled)
+   Kernel cache:
+     /home/wmt/.cache/warp/1.17.0
+Module joint_reference_prepare a31ee00 load on device 'cuda:0' took 481.60 ms  (compiled)
+PASS reference slew/inactive/copy and action boundary;0physics
+Module reference_role_control e7d6802 load on device 'cuda:0' took 1.99 ms  (cached)
+QUERY old 25 exact saved original output
+Module joint_reference_control b2fc5fd load on device 'cuda:0' took 2143.57 ms  (compiled)
+QUERY zero 50 exact saved original output
+QUERY reference 75 targets match independent mapping
+PASS299 100GPU static queries; no physics/FD/PPO

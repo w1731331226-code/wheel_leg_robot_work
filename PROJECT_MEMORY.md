@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第299轮isolated joint_reference_control仅在原floor clamp后加入跟踪target选择，删除该单block后全source/AST exact回原reference_role_control；原packet/phase/radialanchor不改。joint_reference_prepare独立两参数filter按原normalized每.5ms±.01 slew，40更新到±.4、inactive冻结、原16列copy与非法action拒绝过；未挂生产环境或policy/capture/reset，所有faircomparators仍未实现。
+- 第299轮100GPU静态query完成（25保存fixture×old/zero/reference/yaw），不构建env或physicsgraph、不solve/FD/积分/PPO，仅CPU编译模型取实际joint/sensor地址。Old25 exact复现保存ctrl/diag/memory；candidatezero25三输出exact，nonzero25targets与CPU映射对齐、yaw25沿原wheel/filter且原target不变。全部100finalcommand按namedjoint/hw曲线核bounds、diag14全0，readonlyargs不变；四NPZ完整输入/输出SHA与control_started/completion/delivery/log保。首model_lqr import顺序错误在0query/0physics前发生，修导入bootstrap后执行唯一100，旧log保。
+- 第299轮更正298径向混杂陈述：reference[2]只影响默认anchor，positive reference[15]会覆盖；本25fixture全部覆盖（.115/.16），不能称这些状态或全部旧研究实际发生anchor混杂。保原anchor是设计约束，不是新增收益机制证据。当前static单步zero不是全trajectory/phase/delay/reset或CPU-GPUtask资格，普通learnedreference仍未qualifiednovel。
+- 300五轮深审/清理并独立核输出链，决定是否值得有限不对称/phase资格与公平same-reference解析/full-space/leg-only/yaw-only对照；未准rollout/PPO或基线替换。完整论文六出口缺，goal active。数据helper11251本轮仍live首批，remote未全同步，视频不上传。
+
 - 第298轮joint_reference_mapping.py必要几何映射实现与34485格单元过：19height×5合法baseline d0×11mean×11difference×3yaw动作，检查m±d长度/mean±.02、原half-difference±.035/原wheel±.3、零坐标exact、两端覆盖及非法输入拒绝。修正297候选D为min(original .035 cap, geometryD)，依据原源码已有请求上限，不扩中间高度左右参考权限；这是实现前设计核对而非成绩调门。只CPU代数，0controller query/新积分/优化/PPO，derivation.json与unit.log保存。
 - 第298轮输出链找到具体混杂：reference_role_control的reference[w,2]既定trackingmean又决定radial_reference，直接改它会同时改变保护anchor。候选应保原16列packet/phase/radialanchor，只在原left/right target及floor clamp之后、force/angle projection之前替换跟踪目标；零m/d动作显式绕过replacement，wheel沿原residual/filter。coordinate zero过不等完整ctrl/filter/memory/diag零动作验收，尚未实现新controller或新reference slew，同权限对照也待源资格。
 - 第298轮一轮检索+primary方法跟进：重核既有Frontiers2026 2.2.3六位置偏差参考→PD；首次定向读arxiv2009.10019v1 HTML3.1–3.3学习离散contactprimitive与模型forceQP低层。genericreference RL/高低层组合已有，连续mean/difference几何候选仍未qualifiednovel；LITERATURE_MATRIX/LEGAL_ACCESS记录，未取视频/图/PDF或复现他人结果。299只评估isolated输出链与公平same-reference权限analytic/full-space/leg-only/yaw-only对照，未准新PPO；300深审清理如期，六出口仍缺。数据helper11251仍live首批，remote未全同步。

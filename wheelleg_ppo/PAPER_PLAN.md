@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第299轮隔离输出链与GPU静态核对（2026-10-09）：
+
+joint_reference_control在原floor clamp之后单block选择左右跟踪target，删除block可完整source/AST还原旧control。原packet16列/phase/radialanchor保，额外两filteredaction列由joint_reference_prepare按normalized每.5ms±.01更新；40次到±.4、inactive冻结、旧packet只读及非法action拒绝过。暂未改生产环境/capture/reset/Actor，也未实现公平同参考权限对照。
+
+check_joint_reference_control复用已有25queryfixture直接GPU调用，100queries=old/zero/reference/yaw各25；无env构建或physicsgraph、0FD/solve/积分/PPO，仅模型compile取地址。Old25与保存ctrl/diag/memory exact，candidatezero25也exact；nonzero参考targets与CPU映射一致，yaw沿原filter/wheel链且保持原trackingtargets。Namedjoint/hardware curve复核100finalcaps及diag14全0，readonlyargs保持，四NPZ及started/completion/delivery/sourceSHA/log保。首bootstrap import错误发生在0query前，修顺序并保存prequery log；没有追加查询。
+
+更正298关于保护anchor的范围：reference[2]只决定默认值，positive reference[15]会覆盖；本25源fixture全部有正覆盖(.115/.16)，因此不能称本批或所有旧pair已出现实际anchor改变。保原anchor仍是明确实现约束，不是已证作用机制。静态单步zero一致不等全trajectory/不对称/phase/delay/reset资格，更不等收益或新颖性。300按约深审清理、独立核源码/输出并决定有限源资格与强same-reference解析/full-space/leg-only/yaw-only对照是否必要；未准新rollout/正式PPO/基线替换，六论文出口仍缺。
+
 第298轮必要几何与输出链混杂核对（2026-10-09）：
 
 joint_reference_mapping.py实现候选参考坐标选择；D采用min(.035原请求上限,297的geometryD)，不扩中间高度半差权限。34485格代数单元（19h×5合法d0×11a_m×11a_d×3a_y）长度、mean±.02、原±.035/±.3、零坐标exact与endpoint覆盖及非法输入拒绝过。d∈[-D,D]使I非空，m∈I故m±d合法；这是参考坐标必要几何条件，不保证actual closedchain、动态姿态/支撑、motor或normal。0controllerquery/积分/优化/PPO，joint_reference_candidate_v1/derivation.json绑定源码与单位日志。
