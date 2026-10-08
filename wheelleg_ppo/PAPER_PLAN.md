@@ -2,7 +2,7 @@
 
 第287轮端点不对称失败的已存数据机制审查（2026-10-09）：
 
-audit_controlled_task_failures.py读同8failedcase双臂16firstattitude5degwitness，保持physical/design通过且全部在非零运动cmd阶段。Low .115m四例 yawfirst：请求rolloffset±.035m被fixedmeanroom夹到±.00029553394m，一侧normalexact0、wheelω约72rad/s、当前速度相关commandbound已用尽。High .38m selectedoffset0：forward两例双轮加载但rollfirst>5deg，backward两例unloaded/highspeed yawfirst。Map同类别失败不变，支持差模/载荷/可行参考瓶颈而非小Nominalfeed差是全部原因；0仿真/FD/optimizer/学习。
+audit_controlled_task_failures.py读同8failedcase双臂16firstattitude5degwitness，保持physical/design通过且全部在非零运动cmd阶段。Low .115m四例 yawfirst：请求rolloffset±.035m被fixedmeanroom夹到±.00029553394m，一侧normalexact0、wheelω约72rad/s、当前速度相关commandbound已用尽。High .38m selectedoffset0：forward两例rollfirst>5deg，old快照双轮加载、map快照一侧瞬时normal0但轮速未高速饱和；backward两例unloaded/highspeed yawfirst。Map失效轴类别不变而contact瞬时状态不一致，支持差模/载荷/可行参考瓶颈而非小Nominalfeed差是全部原因；0仿真/FD/optimizer/学习。原finding过度概括文本保留并更正，不改变rawwitness。
 
 可行性algebra独立核source room min(mean−Lmin,Lmax−mean)与actualoffset一致；fullrequested .035需要mean∈[Lmin+.035,Lmax−.035]，端点和command±.02heighttolerance无交。因此不能直接说放开mean能全满足，也不能把零normal快照当完整摩擦或可控性证书。Current physical模型约束过，reference固定均值与差模目标竞争是具体机制，需耦合处理roll与yaw及支撑，而不放宽性能门。
 

@@ -1,1 +1,906 @@
-{"verified": true, "round": 287, "auditor_sha256": "93751df057bd0aed142d6c9c582c068be716895662738a81225868de48e078af", "task_review_sha256": "2de093419a221cb21001fdb1837b4a8b21a3a575bb8ae476f7e8a6e768d88018", "witnesses": [{"arm": "old_B0", "seed": 6301001, "height": 0.115, "step": 7850, "pre_s": 3.9245, "post_s": 3.9250000000000003, "first_exceeded_axes": ["yaw"], "attitude_deg": [-4.273600880763397, 0.8237032407194406, -5.023087711214443], "during_moving_command": true, "public_command": 0.7, "requested_offset_m": -0.035, "selected_offset_m": -0.00029553393833930963, "available_symmetric_room_m": 0.00029553393833930963, "desired_mean_interval_for_full_requested_offset": [0.1497044660616607, 0.345], "allowed_height_tracking_interval": [0.095, 0.135], "full_requested_offset_feasible_with_height_tolerance": false, "pre_wheel_speed_rad_s": [72.37194061279297, 8.801718711853027], "pre_normal_N": [0.0, 41.907989501953125], "wheel_command_Nm": [0.3681598901748657, 0.27810120582580566], "speed_dependent_command_bounds_Nm": [0.36815989518027936, 4.285714285714286], "command_to_bound_ratio": [0.9999999864042398, 0.06489028135935465], "any_exact_zero_normal": true, "any_wheel_near_command_bound": true, "physical_design_passed": true, "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/old_B0/controlled/batch_0/case_6301001.npz", "complete_trace_sha256": "110cfe903a4f34c49e4ee26566cc3b7921c6f8983ea74e8b8a54742e596142ad"}, {"arm": "old_B0", "seed": 6301003, "height": 0.115, "step": 7849, "pre_s": 3.924, "post_s": 3.9245, "first_exceeded_axes": ["yaw"], "attitude_deg": [4.2590579004109275, 0.8213105864059334, 5.003397449806848], "during_moving_command": true, "public_command": 0.7, "requested_offset_m": 0.035, "selected_offset_m": 0.00029553393833930963, "available_symmetric_room_m": 0.00029553393833930963, "desired_mean_interval_for_full_requested_offset": [0.1497044660616607, 0.345], "allowed_height_tracking_interval": [0.095, 0.135], "full_requested_offset_feasible_with_height_tolerance": false, "pre_wheel_speed_rad_s": [8.771084785461426, 72.37130737304688], "pre_normal_N": [41.7171630859375, 0.0], "wheel_command_Nm": [0.27723023295402527, 0.3682776987552643], "speed_dependent_command_bounds_Nm": [4.285714285714286, 0.36827769376752373], "command_to_bound_ratio": [0.06468705435593923, 1.0000000135434228], "any_exact_zero_normal": true, "any_wheel_near_command_bound": true, "physical_design_passed": true, "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/old_B0/controlled/batch_0/case_6301003.npz", "complete_trace_sha256": "84563482dcf3670859970b4cf9e4970af9b9573b7e021039145ec4c678702659"}, {"arm": "old_B0", "seed": 6301005, "height": 0.115, "step": 8274, "pre_s": 4.1365, "post_s": 4.1370000000000005, "first_exceeded_axes": ["yaw"], "attitude_deg": [-3.788600577507102, -0.8256976383787833, 5.008198134766669], "during_moving_command": true, "public_command": -0.7, "requested_offset_m": -0.035, "selected_offset_m": -0.00029553393833930963, "available_symmetric_room_m": 0.00029553393833930963, "desired_mean_interval_for_full_requested_offset": [0.1497044660616607, 0.345], "allowed_height_tracking_interval": [0.095, 0.135], "full_requested_offset_feasible_with_height_tolerance": false, "pre_wheel_speed_rad_s": [-72.38154602050781, -9.287924766540527], "pre_normal_N": [0.0, 38.880088806152344], "wheel_command_Nm": [-0.3663730323314667, -0.2833654284477234], "speed_dependent_command_bounds_Nm": [0.3663730467303993, 4.285714285714286], "command_to_bound_ratio": [0.9999999606987121, 0.06611859997113546], "any_exact_zero_normal": true, "any_wheel_near_command_bound": true, "physical_design_passed": true, "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/old_B0/controlled/batch_0/case_6301005.npz", "complete_trace_sha256": "6f4c216bb964fea766c65e65fb77c2cecdd70161be9a582d804b7557c9f7df27"}, {"arm": "old_B0", "seed": 6301007, "height": 0.115, "step": 8274, "pre_s": 4.1365, "post_s": 4.1370000000000005, "first_exceeded_axes": ["yaw"], "attitude_deg": [3.7880052890128493, -0.8256843807503995, -5.0065285915557265], "during_moving_command": true, "public_command": -0.7, "requested_offset_m": 0.035, "selected_offset_m": 0.00029553393833930963, "available_symmetric_room_m": 0.00029553393833930963, "desired_mean_interval_for_full_requested_offset": [0.1497044660616607, 0.345], "allowed_height_tracking_interval": [0.095, 0.135], "full_requested_offset_feasible_with_height_tolerance": false, "pre_wheel_speed_rad_s": [-9.28723430633545, -72.38153839111328], "pre_normal_N": [38.927337646484375, 0.0], "wheel_command_Nm": [-0.28325608372688293, -0.3663744628429413], "speed_dependent_command_bounds_Nm": [4.285714285714286, 0.36637446599048684], "command_to_bound_ratio": [0.06609308620293936, 0.9999999914089386], "any_exact_zero_normal": true, "any_wheel_near_command_bound": true, "physical_design_passed": true, "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/old_B0/controlled/batch_0/case_6301007.npz", "complete_trace_sha256": "d6e783899ac1af13b92b627588058cc8ce068f2909738e8a74b9f32f0dac702c"}, {"arm": "old_B0", "seed": 6301033, "height": 0.38, "step": 8012, "pre_s": 4.0055000000000005, "post_s": 4.006, "first_exceeded_axes": ["roll"], "attitude_deg": [-5.008004897026644, 0.30025100092535645, -2.628000947960518], "during_moving_command": true, "public_command": 0.7, "requested_offset_m": -0.035, "selected_offset_m": 0.0, "available_symmetric_room_m": 0.0, "desired_mean_interval_for_full_requested_offset": [0.1497044660616607, 0.345], "allowed_height_tracking_interval": [0.36, 0.4], "full_requested_offset_feasible_with_height_tolerance": false, "pre_wheel_speed_rad_s": [9.660175323486328, 16.962087631225586], "pre_normal_N": [31.801725387573242, 46.35014343261719], "wheel_command_Nm": [-1.126988410949707, 1.4645960330963135], "speed_dependent_command_bounds_Nm": [4.285714285714286, 4.285714285714286], "command_to_bound_ratio": [0.26296396255493165, 0.3417390743891398], "any_exact_zero_normal": false, "any_wheel_near_command_bound": false, "physical_design_passed": true, "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/old_B0/controlled/batch_1/case_6301033.npz", "complete_trace_sha256": "50db5a3f77f3042d718e55cdb445be195b0d43b659a141c67e6b0894d7548c21"}, {"arm": "old_B0", "seed": 6301035, "height": 0.38, "step": 8009, "pre_s": 4.0040000000000004, "post_s": 4.0045, "first_exceeded_axes": ["roll"], "attitude_deg": [5.001451065304832, 0.3020152694802935, 2.7584778857678103], "during_moving_command": true, "public_command": 0.7, "requested_offset_m": 0.035, "selected_offset_m": 0.0, "available_symmetric_room_m": 0.0, "desired_mean_interval_for_full_requested_offset": [0.1497044660616607, 0.345], "allowed_height_tracking_interval": [0.36, 0.4], "full_requested_offset_feasible_with_height_tolerance": false, "pre_wheel_speed_rad_s": [16.363391876220703, 11.043563842773438], "pre_normal_N": [46.88932800292969, 28.284503936767578], "wheel_command_Nm": [1.427194356918335, -1.0412266254425049], "speed_dependent_command_bounds_Nm": [4.285714285714286, 4.285714285714286], "command_to_bound_ratio": [0.33301201661427815, 0.24295287926991782], "any_exact_zero_normal": false, "any_wheel_near_command_bound": false, "physical_design_passed": true, "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/old_B0/controlled/batch_1/case_6301035.npz", "complete_trace_sha256": "3b13b4cc18e867338830a2f225805fba4c850943d86ad241e5bfeb0702cd7cc3"}, {"arm": "old_B0", "seed": 6301037, "height": 0.38, "step": 8242, "pre_s": 4.1205, "post_s": 4.121, "first_exceeded_axes": ["yaw"], "attitude_deg": [-3.232500854333939, -0.42053224172773807, 5.006872271195342], "during_moving_command": true, "public_command": -0.7, "requested_offset_m": -0.035, "selected_offset_m": 0.0, "available_symmetric_room_m": 0.0, "desired_mean_interval_for_full_requested_offset": [0.1497044660616607, 0.345], "allowed_height_tracking_interval": [0.36, 0.4], "full_requested_offset_feasible_with_height_tolerance": false, "pre_wheel_speed_rad_s": [-69.81282806396484, -4.5628228187561035], "pre_normal_N": [0.0, 35.54024124145508], "wheel_command_Nm": [-0.844219446182251, 0.2835625112056732], "speed_dependent_command_bounds_Nm": [0.8442194677348843, 4.285714285714286], "command_to_bound_ratio": [0.9999999744703432, 0.06616458594799042], "any_exact_zero_normal": true, "any_wheel_near_command_bound": true, "physical_design_passed": true, "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/old_B0/controlled/batch_1/case_6301037.npz", "complete_trace_sha256": "8fd783766c7839b7433374fc272e39c345b759a89d7314c38a6faf07df60d971"}, {"arm": "old_B0", "seed": 6301039, "height": 0.38, "step": 8246, "pre_s": 4.1225000000000005, "post_s": 4.123, "first_exceeded_axes": ["yaw"], "attitude_deg": [3.364418571590293, -0.42321431868715764, -5.008361623789869], "during_moving_command": true, "public_command": -0.7, "requested_offset_m": 0.035, "selected_offset_m": 0.0, "available_symmetric_room_m": 0.0, "desired_mean_interval_for_full_requested_offset": [0.1497044660616607, 0.345], "allowed_height_tracking_interval": [0.36, 0.4], "full_requested_offset_feasible_with_height_tolerance": false, "pre_wheel_speed_rad_s": [-4.124205112457275, -70.9460678100586], "pre_normal_N": [39.617042541503906, 0.0], "wheel_command_Nm": [0.14102314412593842, -0.63340824842453], "speed_dependent_command_bounds_Nm": [4.285714285714286, 0.633408251411349], "command_to_bound_ratio": [0.032905400296052295, 0.9999999952845278], "any_exact_zero_normal": true, "any_wheel_near_command_bound": true, "physical_design_passed": true, "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/old_B0/controlled/batch_1/case_6301039.npz", "complete_trace_sha256": "6ae4b1d5b47c8b6edba3be82010d0368953a38074798ce5a5348a6040f4fdf75"}, {"arm": "map_B0", "seed": 6301001, "height": 0.115, "step": 7855, "pre_s": 3.927, "post_s": 3.9275, "first_exceeded_axes": ["yaw"], "attitude_deg": [-4.14161128205801, 0.7574955841534274, -5.008744070895347], "during_moving_command": true, "public_command": 0.7, "requested_offset_m": -0.035, "selected_offset_m": -0.00029553393833930963, "available_symmetric_room_m": 0.00029553393833930963, "desired_mean_interval_for_full_requested_offset": [0.1497044660616607, 0.345], "allowed_height_tracking_interval": [0.095, 0.135], "full_requested_offset_feasible_with_height_tolerance": false, "pre_wheel_speed_rad_s": [72.37162017822266, 8.813210487365723], "pre_normal_N": [0.0, 41.67031478881836], "wheel_command_Nm": [0.3682194948196411, 0.27644768357276917], "speed_dependent_command_bounds_Nm": [0.3682195041039454, 4.285714285714286], "command_to_bound_ratio": [0.9999999747859519, 0.0645044595003128], "any_exact_zero_normal": true, "any_wheel_near_command_bound": true, "physical_design_passed": true, "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/map_B0/controlled/batch_0/case_6301001.npz", "complete_trace_sha256": "aa823dc404f030fb2e1b99e4987dcbaf337a4858629e1451b7a9a90aef363b33"}, {"arm": "map_B0", "seed": 6301003, "height": 0.115, "step": 7855, "pre_s": 3.927, "post_s": 3.9275, "first_exceeded_axes": ["yaw"], "attitude_deg": [4.141976881320267, 0.7574867942958927, 5.010354915729096], "during_moving_command": true, "public_command": 0.7, "requested_offset_m": 0.035, "selected_offset_m": 0.00029553393833930963, "available_symmetric_room_m": 0.00029553393833930963, "desired_mean_interval_for_full_requested_offset": [0.1497044660616607, 0.345], "allowed_height_tracking_interval": [0.095, 0.135], "full_requested_offset_feasible_with_height_tolerance": false, "pre_wheel_speed_rad_s": [8.81413745880127, 72.37163543701172], "pre_normal_N": [41.700538635253906, 0.0], "wheel_command_Nm": [0.2764935791492462, 0.3682166635990143], "speed_dependent_command_bounds_Nm": [4.285714285714286, 0.36821666558377014], "command_to_bound_ratio": [0.06451516846815745, 0.9999999946098153], "any_exact_zero_normal": true, "any_wheel_near_command_bound": true, "physical_design_passed": true, "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/map_B0/controlled/batch_0/case_6301003.npz", "complete_trace_sha256": "7ca7cdbe2084b48c2acdf15a8278bcd100d13e90107f3d92f92e8b1ec7905562"}, {"arm": "map_B0", "seed": 6301005, "height": 0.115, "step": 8282, "pre_s": 4.1405, "post_s": 4.141, "first_exceeded_axes": ["yaw"], "attitude_deg": [-3.7543785245349177, -0.761163752334551, 5.024615420894836], "during_moving_command": true, "public_command": -0.7, "requested_offset_m": -0.035, "selected_offset_m": -0.00029553393833930963, "available_symmetric_room_m": 0.00029553393833930963, "desired_mean_interval_for_full_requested_offset": [0.1497044660616607, 0.345], "allowed_height_tracking_interval": [0.095, 0.135], "full_requested_offset_feasible_with_height_tolerance": false, "pre_wheel_speed_rad_s": [-72.38163757324219, -9.28158950805664], "pre_normal_N": [0.0, 38.895599365234375], "wheel_command_Nm": [-0.3663560152053833, -0.2823256552219391], "speed_dependent_command_bounds_Nm": [0.3663560156093525, 4.285714285714286], "command_to_bound_ratio": [0.9999999988973316, 0.06587598621845246], "any_exact_zero_normal": true, "any_wheel_near_command_bound": true, "physical_design_passed": true, "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/map_B0/controlled/batch_0/case_6301005.npz", "complete_trace_sha256": "7285ca4e2262b159ac2dd242383d03c66ceaf63eb8376fc394660bf232fa6aad"}, {"arm": "map_B0", "seed": 6301007, "height": 0.115, "step": 8282, "pre_s": 4.1405, "post_s": 4.141, "first_exceeded_axes": ["yaw"], "attitude_deg": [3.7539922957190477, -0.7611234403392888, -5.021930906050568], "during_moving_command": true, "public_command": -0.7, "requested_offset_m": 0.035, "selected_offset_m": 0.00029553393833930963, "available_symmetric_room_m": 0.00029553393833930963, "desired_mean_interval_for_full_requested_offset": [0.1497044660616607, 0.345], "allowed_height_tracking_interval": [0.095, 0.135], "full_requested_offset_feasible_with_height_tolerance": false, "pre_wheel_speed_rad_s": [-9.280387878417969, -72.38150787353516], "pre_normal_N": [38.85981750488281, 0.0], "wheel_command_Nm": [-0.2823523283004761, -0.36638015508651733], "speed_dependent_command_bounds_Nm": [4.285714285714286, 0.36638014303083505], "command_to_bound_ratio": [0.06588220993677775, 1.0000000329048462], "any_exact_zero_normal": true, "any_wheel_near_command_bound": true, "physical_design_passed": true, "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/map_B0/controlled/batch_0/case_6301007.npz", "complete_trace_sha256": "72e016013b51fe0c68b4d61fb525ccdf34cb3324c1138e709be4fc97fac86e67"}, {"arm": "map_B0", "seed": 6301033, "height": 0.38, "step": 8022, "pre_s": 4.0105, "post_s": 4.011, "first_exceeded_axes": ["roll"], "attitude_deg": [-5.001537051017289, 0.2475440978174327, -2.588244492297205], "during_moving_command": true, "public_command": 0.7, "requested_offset_m": -0.035, "selected_offset_m": 0.0, "available_symmetric_room_m": 0.0, "desired_mean_interval_for_full_requested_offset": [0.1497044660616607, 0.345], "allowed_height_tracking_interval": [0.36, 0.4], "full_requested_offset_feasible_with_height_tolerance": false, "pre_wheel_speed_rad_s": [9.507447242736816, 17.044384002685547], "pre_normal_N": [0.0, 50.84324645996094], "wheel_command_Nm": [-1.062217116355896, 1.5217583179473877], "speed_dependent_command_bounds_Nm": [4.285714285714286, 4.285714285714286], "command_to_bound_ratio": [0.2478506604830424, 0.35507694085439045], "any_exact_zero_normal": true, "any_wheel_near_command_bound": false, "physical_design_passed": true, "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/map_B0/controlled/batch_1/case_6301033.npz", "complete_trace_sha256": "2682577f5a11d51031929904fe6038f60a66626d168b6b6f89816d0741b27919"}, {"arm": "map_B0", "seed": 6301035, "height": 0.38, "step": 8024, "pre_s": 4.0115, "post_s": 4.0120000000000005, "first_exceeded_axes": ["roll"], "attitude_deg": [5.006797352294312, 0.2390813317643567, 2.2172969093618806], "during_moving_command": true, "public_command": 0.7, "requested_offset_m": 0.035, "selected_offset_m": 0.0, "available_symmetric_room_m": 0.0, "desired_mean_interval_for_full_requested_offset": [0.1497044660616607, 0.345], "allowed_height_tracking_interval": [0.36, 0.4], "full_requested_offset_feasible_with_height_tolerance": false, "pre_wheel_speed_rad_s": [18.526227951049805, 7.7465314865112305], "pre_normal_N": [51.06706619262695, 0.0], "wheel_command_Nm": [1.5125004053115845, -1.0366566181182861], "speed_dependent_command_bounds_Nm": [4.285714285714286, 4.285714285714286], "command_to_bound_ratio": [0.3529167612393697, 0.24188654422760011], "any_exact_zero_normal": true, "any_wheel_near_command_bound": false, "physical_design_passed": true, "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/map_B0/controlled/batch_1/case_6301035.npz", "complete_trace_sha256": "15c8d77c226968e4473cdcf4f2a2a2d41f1ab9d646c5f26b4e3b654539a407aa"}, {"arm": "map_B0", "seed": 6301037, "height": 0.38, "step": 8252, "pre_s": 4.1255, "post_s": 4.126, "first_exceeded_axes": ["yaw"], "attitude_deg": [-3.1929933798937498, -0.36831689470180534, 5.002987814713579], "during_moving_command": true, "public_command": -0.7, "requested_offset_m": -0.035, "selected_offset_m": 0.0, "available_symmetric_room_m": 0.0, "desired_mean_interval_for_full_requested_offset": [0.1497044660616607, 0.345], "allowed_height_tracking_interval": [0.36, 0.4], "full_requested_offset_feasible_with_height_tolerance": false, "pre_wheel_speed_rad_s": [-69.40886688232422, -4.129218578338623], "pre_normal_N": [0.0, 36.36634063720703], "wheel_command_Nm": [-0.9193664789199829, 0.3766911029815674], "speed_dependent_command_bounds_Nm": [0.9193664508359418, 4.285714285714286], "command_to_bound_ratio": [1.0000000305471677, 0.08789459069569906], "any_exact_zero_normal": true, "any_wheel_near_command_bound": true, "physical_design_passed": true, "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/map_B0/controlled/batch_1/case_6301037.npz", "complete_trace_sha256": "72da0423471fc2687f2e3486f75d6441b571feff327262ad4af9ccf96e7f4b40"}, {"arm": "map_B0", "seed": 6301039, "height": 0.38, "step": 8253, "pre_s": 4.126, "post_s": 4.1265, "first_exceeded_axes": ["yaw"], "attitude_deg": [3.2292606674726416, -0.37363410587606266, -5.021363778821585], "during_moving_command": true, "public_command": -0.7, "requested_offset_m": 0.035, "selected_offset_m": 0.0, "available_symmetric_room_m": 0.0, "desired_mean_interval_for_full_requested_offset": [0.1497044660616607, 0.345], "allowed_height_tracking_interval": [0.36, 0.4], "full_requested_offset_feasible_with_height_tolerance": false, "pre_wheel_speed_rad_s": [-4.100632667541504, -71.91407012939453], "pre_normal_N": [38.50135803222656, 0.0], "wheel_command_Nm": [0.01686691679060459, -0.45333537459373474], "speed_dependent_command_bounds_Nm": [4.285714285714286, 0.45333537005802343], "command_to_bound_ratio": [0.003935613917807738, 1.0000000100052007], "any_exact_zero_normal": true, "any_wheel_near_command_bound": true, "physical_design_passed": true, "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/map_B0/controlled/batch_1/case_6301039.npz", "complete_trace_sha256": "24f3cb1a61aa4bfbac65d1b7ad17b93682f6c03f61e4ce102ccf2735a34f9e93"}], "same_failed8": [6301001, 6301003, 6301005, 6301007, 6301033, 6301035, 6301037, 6301039], "new_simulation": 0, "new_training_samples": 0, "old_consistent_pair_review_sha256": "5e9d2397aac1e0ca3aa3dc1391191ba6868d6ed8ef7f363bbcd6bac130eeed03", "finding": "Currentfixedmean symmetriclegoffset room is effectivelyzero atupperheight andtinyatlowerheight. Sixyawfirst failures include unloadedwheel andspeed-bound;twoforwardupper cases firstcrossroll withbothwheels loaded. Same categories persistwithmap.", "limits": "Firstrecorded witnesses are observations,not unique causal attribution orfull friction/controllability certificate. Meaninterval is length-coordinate algebra,not a terrain-height/bodyroll exact model. Requested0.035 offset may itself be infeasible within0.02height tolerance; do notclaim simplychangingmean solves it.", "stopping": "Do not revive closedfixed consistent_pair/fixed damping/governor/continuousmap orrefitgains fromthese points. Needcoupled roll-yaw/load/reference hypothesis andpast-counterexample audit before anynewmethod orPPO.", "next": "288 compare these witnesses with existing consistent_pair/yaw-support counterexamples and derive measurable coupled mechanism;baseline numericdifferences stayunresolved. No new simulation admitted."}
+{
+  "verified": true,
+  "round": 287,
+  "auditor_sha256": "c923effbe89cbbe765a7554f4600641f2a20f2462c21ea5530bef765e0cea377",
+  "task_review_sha256": "2de093419a221cb21001fdb1837b4a8b21a3a575bb8ae476f7e8a6e768d88018",
+  "witnesses": [
+    {
+      "arm": "old_B0",
+      "seed": 6301001,
+      "height": 0.115,
+      "step": 7850,
+      "pre_s": 3.9245,
+      "post_s": 3.9250000000000003,
+      "first_exceeded_axes": [
+        "yaw"
+      ],
+      "attitude_deg": [
+        -4.273600880763397,
+        0.8237032407194406,
+        -5.023087711214443
+      ],
+      "during_moving_command": true,
+      "public_command": 0.7,
+      "requested_offset_m": -0.035,
+      "selected_offset_m": -0.00029553393833930963,
+      "available_symmetric_room_m": 0.00029553393833930963,
+      "desired_mean_interval_for_full_requested_offset": [
+        0.1497044660616607,
+        0.345
+      ],
+      "allowed_height_tracking_interval": [
+        0.095,
+        0.135
+      ],
+      "full_requested_offset_feasible_with_height_tolerance": false,
+      "pre_wheel_speed_rad_s": [
+        72.37194061279297,
+        8.801718711853027
+      ],
+      "pre_normal_N": [
+        0.0,
+        41.907989501953125
+      ],
+      "wheel_command_Nm": [
+        0.3681598901748657,
+        0.27810120582580566
+      ],
+      "speed_dependent_command_bounds_Nm": [
+        0.36815989518027936,
+        4.285714285714286
+      ],
+      "command_to_bound_ratio": [
+        0.9999999864042398,
+        0.06489028135935465
+      ],
+      "any_exact_zero_normal": true,
+      "any_wheel_near_command_bound": true,
+      "physical_design_passed": true,
+      "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/old_B0/controlled/batch_0/case_6301001.npz",
+      "complete_trace_sha256": "110cfe903a4f34c49e4ee26566cc3b7921c6f8983ea74e8b8a54742e596142ad"
+    },
+    {
+      "arm": "old_B0",
+      "seed": 6301003,
+      "height": 0.115,
+      "step": 7849,
+      "pre_s": 3.924,
+      "post_s": 3.9245,
+      "first_exceeded_axes": [
+        "yaw"
+      ],
+      "attitude_deg": [
+        4.2590579004109275,
+        0.8213105864059334,
+        5.003397449806848
+      ],
+      "during_moving_command": true,
+      "public_command": 0.7,
+      "requested_offset_m": 0.035,
+      "selected_offset_m": 0.00029553393833930963,
+      "available_symmetric_room_m": 0.00029553393833930963,
+      "desired_mean_interval_for_full_requested_offset": [
+        0.1497044660616607,
+        0.345
+      ],
+      "allowed_height_tracking_interval": [
+        0.095,
+        0.135
+      ],
+      "full_requested_offset_feasible_with_height_tolerance": false,
+      "pre_wheel_speed_rad_s": [
+        8.771084785461426,
+        72.37130737304688
+      ],
+      "pre_normal_N": [
+        41.7171630859375,
+        0.0
+      ],
+      "wheel_command_Nm": [
+        0.27723023295402527,
+        0.3682776987552643
+      ],
+      "speed_dependent_command_bounds_Nm": [
+        4.285714285714286,
+        0.36827769376752373
+      ],
+      "command_to_bound_ratio": [
+        0.06468705435593923,
+        1.0000000135434228
+      ],
+      "any_exact_zero_normal": true,
+      "any_wheel_near_command_bound": true,
+      "physical_design_passed": true,
+      "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/old_B0/controlled/batch_0/case_6301003.npz",
+      "complete_trace_sha256": "84563482dcf3670859970b4cf9e4970af9b9573b7e021039145ec4c678702659"
+    },
+    {
+      "arm": "old_B0",
+      "seed": 6301005,
+      "height": 0.115,
+      "step": 8274,
+      "pre_s": 4.1365,
+      "post_s": 4.1370000000000005,
+      "first_exceeded_axes": [
+        "yaw"
+      ],
+      "attitude_deg": [
+        -3.788600577507102,
+        -0.8256976383787833,
+        5.008198134766669
+      ],
+      "during_moving_command": true,
+      "public_command": -0.7,
+      "requested_offset_m": -0.035,
+      "selected_offset_m": -0.00029553393833930963,
+      "available_symmetric_room_m": 0.00029553393833930963,
+      "desired_mean_interval_for_full_requested_offset": [
+        0.1497044660616607,
+        0.345
+      ],
+      "allowed_height_tracking_interval": [
+        0.095,
+        0.135
+      ],
+      "full_requested_offset_feasible_with_height_tolerance": false,
+      "pre_wheel_speed_rad_s": [
+        -72.38154602050781,
+        -9.287924766540527
+      ],
+      "pre_normal_N": [
+        0.0,
+        38.880088806152344
+      ],
+      "wheel_command_Nm": [
+        -0.3663730323314667,
+        -0.2833654284477234
+      ],
+      "speed_dependent_command_bounds_Nm": [
+        0.3663730467303993,
+        4.285714285714286
+      ],
+      "command_to_bound_ratio": [
+        0.9999999606987121,
+        0.06611859997113546
+      ],
+      "any_exact_zero_normal": true,
+      "any_wheel_near_command_bound": true,
+      "physical_design_passed": true,
+      "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/old_B0/controlled/batch_0/case_6301005.npz",
+      "complete_trace_sha256": "6f4c216bb964fea766c65e65fb77c2cecdd70161be9a582d804b7557c9f7df27"
+    },
+    {
+      "arm": "old_B0",
+      "seed": 6301007,
+      "height": 0.115,
+      "step": 8274,
+      "pre_s": 4.1365,
+      "post_s": 4.1370000000000005,
+      "first_exceeded_axes": [
+        "yaw"
+      ],
+      "attitude_deg": [
+        3.7880052890128493,
+        -0.8256843807503995,
+        -5.0065285915557265
+      ],
+      "during_moving_command": true,
+      "public_command": -0.7,
+      "requested_offset_m": 0.035,
+      "selected_offset_m": 0.00029553393833930963,
+      "available_symmetric_room_m": 0.00029553393833930963,
+      "desired_mean_interval_for_full_requested_offset": [
+        0.1497044660616607,
+        0.345
+      ],
+      "allowed_height_tracking_interval": [
+        0.095,
+        0.135
+      ],
+      "full_requested_offset_feasible_with_height_tolerance": false,
+      "pre_wheel_speed_rad_s": [
+        -9.28723430633545,
+        -72.38153839111328
+      ],
+      "pre_normal_N": [
+        38.927337646484375,
+        0.0
+      ],
+      "wheel_command_Nm": [
+        -0.28325608372688293,
+        -0.3663744628429413
+      ],
+      "speed_dependent_command_bounds_Nm": [
+        4.285714285714286,
+        0.36637446599048684
+      ],
+      "command_to_bound_ratio": [
+        0.06609308620293936,
+        0.9999999914089386
+      ],
+      "any_exact_zero_normal": true,
+      "any_wheel_near_command_bound": true,
+      "physical_design_passed": true,
+      "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/old_B0/controlled/batch_0/case_6301007.npz",
+      "complete_trace_sha256": "d6e783899ac1af13b92b627588058cc8ce068f2909738e8a74b9f32f0dac702c"
+    },
+    {
+      "arm": "old_B0",
+      "seed": 6301033,
+      "height": 0.38,
+      "step": 8012,
+      "pre_s": 4.0055000000000005,
+      "post_s": 4.006,
+      "first_exceeded_axes": [
+        "roll"
+      ],
+      "attitude_deg": [
+        -5.008004897026644,
+        0.30025100092535645,
+        -2.628000947960518
+      ],
+      "during_moving_command": true,
+      "public_command": 0.7,
+      "requested_offset_m": -0.035,
+      "selected_offset_m": 0.0,
+      "available_symmetric_room_m": 0.0,
+      "desired_mean_interval_for_full_requested_offset": [
+        0.1497044660616607,
+        0.345
+      ],
+      "allowed_height_tracking_interval": [
+        0.36,
+        0.4
+      ],
+      "full_requested_offset_feasible_with_height_tolerance": false,
+      "pre_wheel_speed_rad_s": [
+        9.660175323486328,
+        16.962087631225586
+      ],
+      "pre_normal_N": [
+        31.801725387573242,
+        46.35014343261719
+      ],
+      "wheel_command_Nm": [
+        -1.126988410949707,
+        1.4645960330963135
+      ],
+      "speed_dependent_command_bounds_Nm": [
+        4.285714285714286,
+        4.285714285714286
+      ],
+      "command_to_bound_ratio": [
+        0.26296396255493165,
+        0.3417390743891398
+      ],
+      "any_exact_zero_normal": false,
+      "any_wheel_near_command_bound": false,
+      "physical_design_passed": true,
+      "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/old_B0/controlled/batch_1/case_6301033.npz",
+      "complete_trace_sha256": "50db5a3f77f3042d718e55cdb445be195b0d43b659a141c67e6b0894d7548c21"
+    },
+    {
+      "arm": "old_B0",
+      "seed": 6301035,
+      "height": 0.38,
+      "step": 8009,
+      "pre_s": 4.0040000000000004,
+      "post_s": 4.0045,
+      "first_exceeded_axes": [
+        "roll"
+      ],
+      "attitude_deg": [
+        5.001451065304832,
+        0.3020152694802935,
+        2.7584778857678103
+      ],
+      "during_moving_command": true,
+      "public_command": 0.7,
+      "requested_offset_m": 0.035,
+      "selected_offset_m": 0.0,
+      "available_symmetric_room_m": 0.0,
+      "desired_mean_interval_for_full_requested_offset": [
+        0.1497044660616607,
+        0.345
+      ],
+      "allowed_height_tracking_interval": [
+        0.36,
+        0.4
+      ],
+      "full_requested_offset_feasible_with_height_tolerance": false,
+      "pre_wheel_speed_rad_s": [
+        16.363391876220703,
+        11.043563842773438
+      ],
+      "pre_normal_N": [
+        46.88932800292969,
+        28.284503936767578
+      ],
+      "wheel_command_Nm": [
+        1.427194356918335,
+        -1.0412266254425049
+      ],
+      "speed_dependent_command_bounds_Nm": [
+        4.285714285714286,
+        4.285714285714286
+      ],
+      "command_to_bound_ratio": [
+        0.33301201661427815,
+        0.24295287926991782
+      ],
+      "any_exact_zero_normal": false,
+      "any_wheel_near_command_bound": false,
+      "physical_design_passed": true,
+      "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/old_B0/controlled/batch_1/case_6301035.npz",
+      "complete_trace_sha256": "3b13b4cc18e867338830a2f225805fba4c850943d86ad241e5bfeb0702cd7cc3"
+    },
+    {
+      "arm": "old_B0",
+      "seed": 6301037,
+      "height": 0.38,
+      "step": 8242,
+      "pre_s": 4.1205,
+      "post_s": 4.121,
+      "first_exceeded_axes": [
+        "yaw"
+      ],
+      "attitude_deg": [
+        -3.232500854333939,
+        -0.42053224172773807,
+        5.006872271195342
+      ],
+      "during_moving_command": true,
+      "public_command": -0.7,
+      "requested_offset_m": -0.035,
+      "selected_offset_m": 0.0,
+      "available_symmetric_room_m": 0.0,
+      "desired_mean_interval_for_full_requested_offset": [
+        0.1497044660616607,
+        0.345
+      ],
+      "allowed_height_tracking_interval": [
+        0.36,
+        0.4
+      ],
+      "full_requested_offset_feasible_with_height_tolerance": false,
+      "pre_wheel_speed_rad_s": [
+        -69.81282806396484,
+        -4.5628228187561035
+      ],
+      "pre_normal_N": [
+        0.0,
+        35.54024124145508
+      ],
+      "wheel_command_Nm": [
+        -0.844219446182251,
+        0.2835625112056732
+      ],
+      "speed_dependent_command_bounds_Nm": [
+        0.8442194677348843,
+        4.285714285714286
+      ],
+      "command_to_bound_ratio": [
+        0.9999999744703432,
+        0.06616458594799042
+      ],
+      "any_exact_zero_normal": true,
+      "any_wheel_near_command_bound": true,
+      "physical_design_passed": true,
+      "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/old_B0/controlled/batch_1/case_6301037.npz",
+      "complete_trace_sha256": "8fd783766c7839b7433374fc272e39c345b759a89d7314c38a6faf07df60d971"
+    },
+    {
+      "arm": "old_B0",
+      "seed": 6301039,
+      "height": 0.38,
+      "step": 8246,
+      "pre_s": 4.1225000000000005,
+      "post_s": 4.123,
+      "first_exceeded_axes": [
+        "yaw"
+      ],
+      "attitude_deg": [
+        3.364418571590293,
+        -0.42321431868715764,
+        -5.008361623789869
+      ],
+      "during_moving_command": true,
+      "public_command": -0.7,
+      "requested_offset_m": 0.035,
+      "selected_offset_m": 0.0,
+      "available_symmetric_room_m": 0.0,
+      "desired_mean_interval_for_full_requested_offset": [
+        0.1497044660616607,
+        0.345
+      ],
+      "allowed_height_tracking_interval": [
+        0.36,
+        0.4
+      ],
+      "full_requested_offset_feasible_with_height_tolerance": false,
+      "pre_wheel_speed_rad_s": [
+        -4.124205112457275,
+        -70.9460678100586
+      ],
+      "pre_normal_N": [
+        39.617042541503906,
+        0.0
+      ],
+      "wheel_command_Nm": [
+        0.14102314412593842,
+        -0.63340824842453
+      ],
+      "speed_dependent_command_bounds_Nm": [
+        4.285714285714286,
+        0.633408251411349
+      ],
+      "command_to_bound_ratio": [
+        0.032905400296052295,
+        0.9999999952845278
+      ],
+      "any_exact_zero_normal": true,
+      "any_wheel_near_command_bound": true,
+      "physical_design_passed": true,
+      "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/old_B0/controlled/batch_1/case_6301039.npz",
+      "complete_trace_sha256": "6ae4b1d5b47c8b6edba3be82010d0368953a38074798ce5a5348a6040f4fdf75"
+    },
+    {
+      "arm": "map_B0",
+      "seed": 6301001,
+      "height": 0.115,
+      "step": 7855,
+      "pre_s": 3.927,
+      "post_s": 3.9275,
+      "first_exceeded_axes": [
+        "yaw"
+      ],
+      "attitude_deg": [
+        -4.14161128205801,
+        0.7574955841534274,
+        -5.008744070895347
+      ],
+      "during_moving_command": true,
+      "public_command": 0.7,
+      "requested_offset_m": -0.035,
+      "selected_offset_m": -0.00029553393833930963,
+      "available_symmetric_room_m": 0.00029553393833930963,
+      "desired_mean_interval_for_full_requested_offset": [
+        0.1497044660616607,
+        0.345
+      ],
+      "allowed_height_tracking_interval": [
+        0.095,
+        0.135
+      ],
+      "full_requested_offset_feasible_with_height_tolerance": false,
+      "pre_wheel_speed_rad_s": [
+        72.37162017822266,
+        8.813210487365723
+      ],
+      "pre_normal_N": [
+        0.0,
+        41.67031478881836
+      ],
+      "wheel_command_Nm": [
+        0.3682194948196411,
+        0.27644768357276917
+      ],
+      "speed_dependent_command_bounds_Nm": [
+        0.3682195041039454,
+        4.285714285714286
+      ],
+      "command_to_bound_ratio": [
+        0.9999999747859519,
+        0.0645044595003128
+      ],
+      "any_exact_zero_normal": true,
+      "any_wheel_near_command_bound": true,
+      "physical_design_passed": true,
+      "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/map_B0/controlled/batch_0/case_6301001.npz",
+      "complete_trace_sha256": "aa823dc404f030fb2e1b99e4987dcbaf337a4858629e1451b7a9a90aef363b33"
+    },
+    {
+      "arm": "map_B0",
+      "seed": 6301003,
+      "height": 0.115,
+      "step": 7855,
+      "pre_s": 3.927,
+      "post_s": 3.9275,
+      "first_exceeded_axes": [
+        "yaw"
+      ],
+      "attitude_deg": [
+        4.141976881320267,
+        0.7574867942958927,
+        5.010354915729096
+      ],
+      "during_moving_command": true,
+      "public_command": 0.7,
+      "requested_offset_m": 0.035,
+      "selected_offset_m": 0.00029553393833930963,
+      "available_symmetric_room_m": 0.00029553393833930963,
+      "desired_mean_interval_for_full_requested_offset": [
+        0.1497044660616607,
+        0.345
+      ],
+      "allowed_height_tracking_interval": [
+        0.095,
+        0.135
+      ],
+      "full_requested_offset_feasible_with_height_tolerance": false,
+      "pre_wheel_speed_rad_s": [
+        8.81413745880127,
+        72.37163543701172
+      ],
+      "pre_normal_N": [
+        41.700538635253906,
+        0.0
+      ],
+      "wheel_command_Nm": [
+        0.2764935791492462,
+        0.3682166635990143
+      ],
+      "speed_dependent_command_bounds_Nm": [
+        4.285714285714286,
+        0.36821666558377014
+      ],
+      "command_to_bound_ratio": [
+        0.06451516846815745,
+        0.9999999946098153
+      ],
+      "any_exact_zero_normal": true,
+      "any_wheel_near_command_bound": true,
+      "physical_design_passed": true,
+      "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/map_B0/controlled/batch_0/case_6301003.npz",
+      "complete_trace_sha256": "7ca7cdbe2084b48c2acdf15a8278bcd100d13e90107f3d92f92e8b1ec7905562"
+    },
+    {
+      "arm": "map_B0",
+      "seed": 6301005,
+      "height": 0.115,
+      "step": 8282,
+      "pre_s": 4.1405,
+      "post_s": 4.141,
+      "first_exceeded_axes": [
+        "yaw"
+      ],
+      "attitude_deg": [
+        -3.7543785245349177,
+        -0.761163752334551,
+        5.024615420894836
+      ],
+      "during_moving_command": true,
+      "public_command": -0.7,
+      "requested_offset_m": -0.035,
+      "selected_offset_m": -0.00029553393833930963,
+      "available_symmetric_room_m": 0.00029553393833930963,
+      "desired_mean_interval_for_full_requested_offset": [
+        0.1497044660616607,
+        0.345
+      ],
+      "allowed_height_tracking_interval": [
+        0.095,
+        0.135
+      ],
+      "full_requested_offset_feasible_with_height_tolerance": false,
+      "pre_wheel_speed_rad_s": [
+        -72.38163757324219,
+        -9.28158950805664
+      ],
+      "pre_normal_N": [
+        0.0,
+        38.895599365234375
+      ],
+      "wheel_command_Nm": [
+        -0.3663560152053833,
+        -0.2823256552219391
+      ],
+      "speed_dependent_command_bounds_Nm": [
+        0.3663560156093525,
+        4.285714285714286
+      ],
+      "command_to_bound_ratio": [
+        0.9999999988973316,
+        0.06587598621845246
+      ],
+      "any_exact_zero_normal": true,
+      "any_wheel_near_command_bound": true,
+      "physical_design_passed": true,
+      "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/map_B0/controlled/batch_0/case_6301005.npz",
+      "complete_trace_sha256": "7285ca4e2262b159ac2dd242383d03c66ceaf63eb8376fc394660bf232fa6aad"
+    },
+    {
+      "arm": "map_B0",
+      "seed": 6301007,
+      "height": 0.115,
+      "step": 8282,
+      "pre_s": 4.1405,
+      "post_s": 4.141,
+      "first_exceeded_axes": [
+        "yaw"
+      ],
+      "attitude_deg": [
+        3.7539922957190477,
+        -0.7611234403392888,
+        -5.021930906050568
+      ],
+      "during_moving_command": true,
+      "public_command": -0.7,
+      "requested_offset_m": 0.035,
+      "selected_offset_m": 0.00029553393833930963,
+      "available_symmetric_room_m": 0.00029553393833930963,
+      "desired_mean_interval_for_full_requested_offset": [
+        0.1497044660616607,
+        0.345
+      ],
+      "allowed_height_tracking_interval": [
+        0.095,
+        0.135
+      ],
+      "full_requested_offset_feasible_with_height_tolerance": false,
+      "pre_wheel_speed_rad_s": [
+        -9.280387878417969,
+        -72.38150787353516
+      ],
+      "pre_normal_N": [
+        38.85981750488281,
+        0.0
+      ],
+      "wheel_command_Nm": [
+        -0.2823523283004761,
+        -0.36638015508651733
+      ],
+      "speed_dependent_command_bounds_Nm": [
+        4.285714285714286,
+        0.36638014303083505
+      ],
+      "command_to_bound_ratio": [
+        0.06588220993677775,
+        1.0000000329048462
+      ],
+      "any_exact_zero_normal": true,
+      "any_wheel_near_command_bound": true,
+      "physical_design_passed": true,
+      "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/map_B0/controlled/batch_0/case_6301007.npz",
+      "complete_trace_sha256": "72e016013b51fe0c68b4d61fb525ccdf34cb3324c1138e709be4fc97fac86e67"
+    },
+    {
+      "arm": "map_B0",
+      "seed": 6301033,
+      "height": 0.38,
+      "step": 8022,
+      "pre_s": 4.0105,
+      "post_s": 4.011,
+      "first_exceeded_axes": [
+        "roll"
+      ],
+      "attitude_deg": [
+        -5.001537051017289,
+        0.2475440978174327,
+        -2.588244492297205
+      ],
+      "during_moving_command": true,
+      "public_command": 0.7,
+      "requested_offset_m": -0.035,
+      "selected_offset_m": 0.0,
+      "available_symmetric_room_m": 0.0,
+      "desired_mean_interval_for_full_requested_offset": [
+        0.1497044660616607,
+        0.345
+      ],
+      "allowed_height_tracking_interval": [
+        0.36,
+        0.4
+      ],
+      "full_requested_offset_feasible_with_height_tolerance": false,
+      "pre_wheel_speed_rad_s": [
+        9.507447242736816,
+        17.044384002685547
+      ],
+      "pre_normal_N": [
+        0.0,
+        50.84324645996094
+      ],
+      "wheel_command_Nm": [
+        -1.062217116355896,
+        1.5217583179473877
+      ],
+      "speed_dependent_command_bounds_Nm": [
+        4.285714285714286,
+        4.285714285714286
+      ],
+      "command_to_bound_ratio": [
+        0.2478506604830424,
+        0.35507694085439045
+      ],
+      "any_exact_zero_normal": true,
+      "any_wheel_near_command_bound": false,
+      "physical_design_passed": true,
+      "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/map_B0/controlled/batch_1/case_6301033.npz",
+      "complete_trace_sha256": "2682577f5a11d51031929904fe6038f60a66626d168b6b6f89816d0741b27919"
+    },
+    {
+      "arm": "map_B0",
+      "seed": 6301035,
+      "height": 0.38,
+      "step": 8024,
+      "pre_s": 4.0115,
+      "post_s": 4.0120000000000005,
+      "first_exceeded_axes": [
+        "roll"
+      ],
+      "attitude_deg": [
+        5.006797352294312,
+        0.2390813317643567,
+        2.2172969093618806
+      ],
+      "during_moving_command": true,
+      "public_command": 0.7,
+      "requested_offset_m": 0.035,
+      "selected_offset_m": 0.0,
+      "available_symmetric_room_m": 0.0,
+      "desired_mean_interval_for_full_requested_offset": [
+        0.1497044660616607,
+        0.345
+      ],
+      "allowed_height_tracking_interval": [
+        0.36,
+        0.4
+      ],
+      "full_requested_offset_feasible_with_height_tolerance": false,
+      "pre_wheel_speed_rad_s": [
+        18.526227951049805,
+        7.7465314865112305
+      ],
+      "pre_normal_N": [
+        51.06706619262695,
+        0.0
+      ],
+      "wheel_command_Nm": [
+        1.5125004053115845,
+        -1.0366566181182861
+      ],
+      "speed_dependent_command_bounds_Nm": [
+        4.285714285714286,
+        4.285714285714286
+      ],
+      "command_to_bound_ratio": [
+        0.3529167612393697,
+        0.24188654422760011
+      ],
+      "any_exact_zero_normal": true,
+      "any_wheel_near_command_bound": false,
+      "physical_design_passed": true,
+      "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/map_B0/controlled/batch_1/case_6301035.npz",
+      "complete_trace_sha256": "15c8d77c226968e4473cdcf4f2a2a2d41f1ab9d646c5f26b4e3b654539a407aa"
+    },
+    {
+      "arm": "map_B0",
+      "seed": 6301037,
+      "height": 0.38,
+      "step": 8252,
+      "pre_s": 4.1255,
+      "post_s": 4.126,
+      "first_exceeded_axes": [
+        "yaw"
+      ],
+      "attitude_deg": [
+        -3.1929933798937498,
+        -0.36831689470180534,
+        5.002987814713579
+      ],
+      "during_moving_command": true,
+      "public_command": -0.7,
+      "requested_offset_m": -0.035,
+      "selected_offset_m": 0.0,
+      "available_symmetric_room_m": 0.0,
+      "desired_mean_interval_for_full_requested_offset": [
+        0.1497044660616607,
+        0.345
+      ],
+      "allowed_height_tracking_interval": [
+        0.36,
+        0.4
+      ],
+      "full_requested_offset_feasible_with_height_tolerance": false,
+      "pre_wheel_speed_rad_s": [
+        -69.40886688232422,
+        -4.129218578338623
+      ],
+      "pre_normal_N": [
+        0.0,
+        36.36634063720703
+      ],
+      "wheel_command_Nm": [
+        -0.9193664789199829,
+        0.3766911029815674
+      ],
+      "speed_dependent_command_bounds_Nm": [
+        0.9193664508359418,
+        4.285714285714286
+      ],
+      "command_to_bound_ratio": [
+        1.0000000305471677,
+        0.08789459069569906
+      ],
+      "any_exact_zero_normal": true,
+      "any_wheel_near_command_bound": true,
+      "physical_design_passed": true,
+      "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/map_B0/controlled/batch_1/case_6301037.npz",
+      "complete_trace_sha256": "72da0423471fc2687f2e3486f75d6441b571feff327262ad4af9ccf96e7f4b40"
+    },
+    {
+      "arm": "map_B0",
+      "seed": 6301039,
+      "height": 0.38,
+      "step": 8253,
+      "pre_s": 4.126,
+      "post_s": 4.1265,
+      "first_exceeded_axes": [
+        "yaw"
+      ],
+      "attitude_deg": [
+        3.2292606674726416,
+        -0.37363410587606266,
+        -5.021363778821585
+      ],
+      "during_moving_command": true,
+      "public_command": -0.7,
+      "requested_offset_m": 0.035,
+      "selected_offset_m": 0.0,
+      "available_symmetric_room_m": 0.0,
+      "desired_mean_interval_for_full_requested_offset": [
+        0.1497044660616607,
+        0.345
+      ],
+      "allowed_height_tracking_interval": [
+        0.36,
+        0.4
+      ],
+      "full_requested_offset_feasible_with_height_tolerance": false,
+      "pre_wheel_speed_rad_s": [
+        -4.100632667541504,
+        -71.91407012939453
+      ],
+      "pre_normal_N": [
+        38.50135803222656,
+        0.0
+      ],
+      "wheel_command_Nm": [
+        0.01686691679060459,
+        -0.45333537459373474
+      ],
+      "speed_dependent_command_bounds_Nm": [
+        4.285714285714286,
+        0.45333537005802343
+      ],
+      "command_to_bound_ratio": [
+        0.003935613917807738,
+        1.0000000100052007
+      ],
+      "any_exact_zero_normal": true,
+      "any_wheel_near_command_bound": true,
+      "physical_design_passed": true,
+      "complete_trace_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/map_B0/controlled/batch_1/case_6301039.npz",
+      "complete_trace_sha256": "24f3cb1a61aa4bfbac65d1b7ad17b93682f6c03f61e4ce102ccf2735a34f9e93"
+    }
+  ],
+  "same_failed8": [
+    6301001,
+    6301003,
+    6301005,
+    6301007,
+    6301033,
+    6301035,
+    6301037,
+    6301039
+  ],
+  "new_simulation": 0,
+  "new_training_samples": 0,
+  "old_consistent_pair_review_sha256": "5e9d2397aac1e0ca3aa3dc1391191ba6868d6ed8ef7f363bbcd6bac130eeed03",
+  "finding": "Atheightlimitsrolloffsetroomiszero/tiny. Sixyawfirstfailuresperarm includeunloadedwheel/speed-bound. Twoforwarduppercasesperarm firstcrossroll:old_B0 bothloaded,maponezeronormalbutnotfastspin;do notclaimsamecontactsnapshot.",
+  "limits": "Firstrecorded witnesses are observations,not unique causal attribution orfull friction/controllability certificate. Meaninterval is length-coordinate algebra,not a terrain-height/bodyroll exact model. Requested0.035 offset may itself be infeasible within0.02height tolerance; do notclaim simplychangingmean solves it.",
+  "stopping": "Do not revive closedfixed consistent_pair/fixed damping/governor/continuousmap orrefitgains fromthese points. Needcoupled roll-yaw/load/reference hypothesis andpast-counterexample audit before anynewmethod orPPO.",
+  "next": "288 compare these witnesses with existing consistent_pair/yaw-support counterexamples and derive measurable coupled mechanism;baseline numericdifferences stayunresolved. No new simulation admitted.",
+  "prior_overgeneralized_finding": "Currentfixedmean symmetriclegoffset room is effectivelyzero atupperheight andtinyatlowerheight. Sixyawfirst failures include unloadedwheel andspeed-bound;twoforwardupper cases firstcrossroll withbothwheels loaded. Same categories persistwithmap."
+}

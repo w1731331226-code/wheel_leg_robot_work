@@ -4,7 +4,7 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
-- 第287轮已有raw离线失败机制核：old/map相同8controlled失败×双臂16首次5deg姿态越界witness，scenario/order/source/SHA与physical/design通过核。低.115m四例首次yaw越界时请求rolloffset±.035m、实际仅±.00029553394m；一侧exactnormal0、轮ω约72rad/s且command已到该速度下降后的边界。高.38m四例selectedrolloffset=0；前进两例bothnormal>0先roll越5deg，后退两例unloaded/spinningwheel先yaw越5deg，map同类现象保。0新仿真/训练/FD/optimizer。
+- 第287轮已有raw离线失败机制核：old/map相同8controlled失败×双臂16首次5deg姿态越界witness，scenario/order/source/SHA与physical/design通过核。低.115m四例首次yaw越界时请求rolloffset±.035m、实际仅±.00029553394m；一侧exactnormal0、轮ω约72rad/s且command已到该速度下降后的边界。高.38m四例selectedrolloffset=0；前进两例先roll越5deg（old快照双轮加载，map快照一侧瞬时normal0但轮速未高速饱和），后退两例unloaded/spinningwheel先yaw越5deg。失效轴类别相同而contact快照不相同，原过度概括finding另保并更正。0新仿真/训练/FD/optimizer。
 - 第287轮workspace/reference约束核心事实：原fixedmean room=min(mean−Lmin,Lmax−mean)在上下端使差模腿长修正几乎无空间，source/algebra与记录selected exact对齐；完整desiredoffset .035m需要mean进入[Lmin+.035,Lmax−.035]，与原command±.02height容差在端点无交，不能宣称“只挪均值就能满足全部请求”。这是观测+length坐标可行性，不是唯一因果、完整摩擦/controllability证明，物理与设计约束未违背。
 - 第287轮复用prior round183一致夹腿mean改动已关闭反例：fixedconsistent_pair曾新增upper.38 yaw违规7records/2uniquecases，不能把同方案重命名新方法或重开旧damping/governor/map。288仅对已有对照的roll-yaw/load/reference耦合及counterexamples核，派生可区分、可检的机制前不准新controller/训练/仿真；baseline numeric159差异原因仍未解决，六论文出口/goal active，290深审清理。
 - 第287轮视频规则保持、0新video。原始对象上传仍沿同一helper PID11251/first750MB批次live，远端尚未全部有数据；sourcehook/ignore/localcommit已生效，因主分支新增维护commit，辅助upload程序末尾旧HEAD固定断言会需收尾检查祖先关系后手工快进当前main（不能重启所有上传、不能rewrite）。同步锁随helper存活阻daemon重复大push，guard service恢复active；不能称全部remote一致。

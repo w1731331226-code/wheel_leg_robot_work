@@ -70,7 +70,7 @@ def run():
         verified=True,round=287,auditor_sha256=sha(__file__),task_review_sha256=sha(OUT/'task_review.json'),
         witnesses=witnesses,same_failed8=failed['old_B0'],new_simulation=0,new_training_samples=0,
         old_consistent_pair_review_sha256=sha(prior),
-        finding='Currentfixedmean symmetriclegoffset room is effectivelyzero atupperheight andtinyatlowerheight. Sixyawfirst failures include unloadedwheel andspeed-bound;twoforwardupper cases firstcrossroll withbothwheels loaded. Same categories persistwithmap.',
+        finding='Currentfixedmean symmetriclegoffset room is effectivelyzero atupperheight andtinyatlowerheight. Sixyawfirst failures perarm include unloadedwheel andspeed-bound. Twoforwardupper cases perarm firstcrossroll:old_B0 snapshots havebothwheels loaded,map snapshots haveonezero normal butwheel speedsnot nearspinbound. Attitudefailure categoriespersist,contactsnapshotsnotidentical.',
         limits='Firstrecorded witnesses are observations,not unique causal attribution orfull friction/controllability certificate. Meaninterval is length-coordinate algebra,not a terrain-height/bodyroll exact model. Requested0.035 offset may itself be infeasible within0.02height tolerance; do notclaim simplychangingmean solves it.',
         stopping='Do not revive closedfixed consistent_pair/fixed damping/governor/continuousmap orrefitgains fromthese points. Needcoupled roll-yaw/load/reference hypothesis andpast-counterexample audit before anynewmethod orPPO.',
         next='288 compare these witnesses with existing consistent_pair/yaw-support counterexamples and derive measurable coupled mechanism;baseline numericdifferences stayunresolved. No new simulation admitted.'))
