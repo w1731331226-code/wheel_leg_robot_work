@@ -1,5 +1,11 @@
 # 双轮腿机器人PPO论文方案
 
+第294轮方法前提与基线分歧定位（2026-10-09）：
+
+audit_nominal_reproduction_provenance.py按原164case顺序核所有result/dense来源，原study55项声明源码SHA与当前全部一致、两协议13项共同源相同。初始保存qpos/qvel/ctrl 164/164 exact；完整dense只有5legacy一致，159轨迹首次post差异领先首次pre恰好一步。首次差仅qvel106、qpos+qvel53，记录的实际effort没有同时差异，首差幅5.55e-17…9.54e-6；部分首1…4步已发生。因此不把来源变动、不同初始记录或该步不同指令当既定原因，未存warmstart/contact排序/历史runtime仍需区分。逐case最早差异保存round294_reproduction_provenance.json，0新积分或学习，不改误差容限与原任务门。
+
+方法级缺口仍真实存在：已知阻尼/载体信息不足以证明新颖性；旧成功负对照跨额定490rpm，不能再用单轮速阈值识别失效；mean/difference长度可行性和机械平衡残差不提供正载荷下界或roll-yaw联合动态保证。第295轮深审将有限当前运行重复性定位与直接方法推导的价值比较，再决定是否冻结两次独立原regular batch0的20world×40物理步（总1600world-step）检查。须保存模型/参数/solver初态、runtime与逐步qv/ctrl/effort，保留首步分歧6300013；只查当前重复性，不重跑164或称历史唯一原因，不作为PPO准入。不能无期限重复审计，定位必须影响后续配对实验设计，否则关闭；同轮执行冗余清理，正式方法/对照/五种子/OOD/统计成本/稿仍未完成。
+
 第293轮独立复核与信息分支关闭（2026-10-09）：
 
 review_wheel_momentum_information.py不调用原估计/解码函数，直接从4份原result、80条Actor/dense与80个保存NPZ重算29,708窗口；来源SHA、全部数组、有效端点、同40步指令积分、每case误差/RMS/bias/max/coverage和两组汇总一致，review.json verified。这是已有数值证据的独立公式复核，0新物理积分、优化或PPO；模型编译仅取真实地址，IMU−.5ms与理想链近似边界保留。
