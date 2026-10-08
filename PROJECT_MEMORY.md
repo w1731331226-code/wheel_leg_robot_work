@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第290轮五轮深审结论：286真实328/原门失败，287same8首次越界/load/端点room，288closedpair roll改善但7newyaw，289必要可行性/信息下界和prior重叠，290无合格新controller或novelmethod，不准新PPO/role复活。值得继续仅观测输入/动力遗漏来源校对，不再模拟调参数来恢复已失败gate；六论文出口全部仍缺，goal active。
+- 第290轮wheel_momentum_information_v1冻结80existing controlled轨迹（40×old/map），复用raw39/481history、acceptedcommand mean/elapsed/valid、leg_kinematics parentrate和publicwheelJ/damping/gainrange.95–1.05；比较relative-rotorproxy、carrier-corrected、加damping+gaininterval三项。只sensor时间匹配offline估计，真passiveq/actualactuator/contact仅验证不用输入，不fitforce/load门，残差≠normal/tractioncertificate；291schema/time/kinematicssign sourceunit，292一次80offline，293独立有限去留，295深审清理。
+- 第290轮准静态必要drive/yaw polytope：FL=Fsum/2−Mz/track、FR=Fsum/2+Mz/track且各|F|<=C；oneC0时Fsum>0/Mz0不成立，3代数例过。仍quasisteady条件不是fullgyroscopic/contactimpact guarantee，原LQR/回报/Actor/命令/物理门不变，无newcontroller/simulation/optimizer/FD/学习。
+- 第290轮清理motion_balanced_control.pyc12990B，ignored/untracked/unheld/与sourcecompile codeobject exact，offline已闭fixednodeprototype缓存且非liveupload dependency；SHA/来源保round290_cleanup，科学原始和source/失败/models/CPU-GPUbaseline留。数据helper11251仍同首批live，不重启/不称remote追上，视频零上传/规则持续，guardactive受同步lock约束。
+
 - 第289轮联合约束推导与779格代数检查通过：m=(Ll+Lr)/2,d=(Ll−Lr)/2，mean可行I=[max(Lmin+|d|,h−eps),min(Lmax−|d|,h+eps)]，|d|上界min((Lmax−Lmin)/2,h+eps−Lmin,Lmax−h+eps)。原eps=.02，h.115上界.02029553394/h.38上界.02，原fullrequested.035两端不成立、.01可行；lengthrectangle仅必要，不含closedchain angle/动态bodyroll保证。输入NaN/负eps拒绝，原motorcurve高wheelω可用τ下降核过，0新simulation/controller/PPO/optimizer/FD。
 - 第289轮wheel/contact条件限界明确：R Ft=τ−Jωdot−bω−loss；只有quasisteady poweredrolling可用min(τspeed/R,μlower*Nlower)作持续cap，不能忽略ωdot拿来约束真实瞬态/冲击制动。Nlower=0时稳健保证cap0，当前raw测姿态/gyro/vxyz/主动jointqv/wheelω/publiccmd/inputhistory没有已certifiedpositiveNlower，offline真实normal不能塞给Actor作oracle。本轮不是力/可控性安全证书或新policy。
 - 第289轮一次定向查新+primary跟进，首次读arxiv2609.13779 HTML Method GMO/contactfrictionprojection相关段落（此前228仅摘要），末端forceaware任务已有observer+contactQP+temporalresidual；另IEEE9995759 quadruped MPCreferencegovernor出版社摘要，direct无正文不重试。普通RG/QP/history+PPO非已证新颖，本机coupledroll/yaw/load/workspace方法仍需差异/推导/强对照实证。记录LITERATURE_MATRIX/LEGAL_ACCESS；0视频/图/PDF下载。

@@ -1,0 +1,73 @@
+{
+  "version": "wheel-momentum-information-v1",
+  "round": 290,
+  "status": "offline_only_registered",
+  "input_results": [
+    {
+      "arm": "old_B0",
+      "batch": 0,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/old_B0/controlled/batch_0/result.json",
+      "sha256": "c323682e9673c8894d624a6af2fa955cc79347310fbf2432a465ed3fbdabecac"
+    },
+    {
+      "arm": "old_B0",
+      "batch": 1,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/old_B0/controlled/batch_1/result.json",
+      "sha256": "20f8eaaa4c338feb91f1d178cdc88c0081312cbc27e23771aa45ec9464fced32"
+    },
+    {
+      "arm": "map_B0",
+      "batch": 0,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/map_B0/controlled/batch_0/result.json",
+      "sha256": "cb35a06694406054adfcbfe6b2862eabe8894483e71739dce4a1591ac8d108e9"
+    },
+    {
+      "arm": "map_B0",
+      "batch": 1,
+      "path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/evaluations/map_B0/controlled/batch_1/result.json",
+      "sha256": "da79cc50cf8a1310748233c8b1baf648211aed2308d7062c1bd84ce2bed03dd2"
+    }
+  ],
+  "episodes": 80,
+  "arms": [
+    "old_B0",
+    "map_B0"
+  ],
+  "development_only": true,
+  "finalOOD_opened": false,
+  "scope": "All40controlledcases perarm,notselectonly8fails. Evaluate sensor-timestamp matched20ms public481history intervals,known diagnosticcase labelsneverfitthreshold. No actualphysics/controllerqueries.",
+  "hypothesis": "Existingrelative-rotor discrepancy omits carrier/base angularmomentum andjointdamping. A publicsignal carrier-corrected wheelaxis integral may reduce known omitted-term bias andseparatewheel-body mismatch from actualspin-axisexternalmoment,withoutcallingitnormal/tractionlowerbound.",
+  "public_inputs": "raw39 frames:bodygyro pitch[4],activejointq[12:16]/v[16:20],relativewheelomega[20:22],bodyvx[6]. Delivered meanfinalcommand inputs last6 normalizedbySCALES,elapsed andvalidhistory9. Useleg_kinematics parent_rate forabsoluteaxialomega=relativeomega+gyro_y+carrier_rate;noactualpassiveq/actuator_force/contact/truecasegains as estimatorinputs.",
+  "momentum_model": "Integral externalspinaxistorque proxy interval=[min(glo*U,ghi*U),max(glo*U,ghi*U)]-J*Delta(omega_abs)-b*integral(omega_rel),then /dt. Publicglo.95/ghi1.05 assumesconstantgainoverwindow. NominalaxisymwheelJ anddamping fromfixedpublicmodel. Damping integral onlyavailablecoarse endpointapprox untilbiasvalidated. Retain exactknown omission components separately.",
+  "diagnostic_only": "Fullsavedpre/postqvel/actuator_force/contactwrench mayvalidate reconstruction/omission afterestimates computed,neverforminputs. Needactualq/sensor/contacttime conventions andparentrate sign independentlychecked. Do not fabricateforce labels from commandproxy.",
+  "comparators": [
+    "previousrelative-rotorproxy",
+    "carrier-corrected withoutdamping",
+    "carrier-corrected +endpointdamping +gaininterval"
+  ],
+  "stopping": "Oneofflinepass on80savedepisodes. Freezeinputs/coefficients;nofitnormal/force threshold,newsignal,trueparams orchangeJ/damping toforcecoverage. Ifkinematics/timestamps/units fail,reportfailedsourcequalification andstop,notquerynewphysics. Ifresidualcoverage weak,donotcallitcontactforce/observerguarantee.",
+  "novelty": "Scalarwheelbalance/damping/interval isnotnovelalone;GMO/contactprojection/temporalRL prioralreadyknown. Onlyinformationaudit beforejointreference/wrench mechanism,notnewcontroller orPPOadmission.",
+  "closed_branches": [
+    "fixedconsistent_pair",
+    "fixedwheelgovernor/damping",
+    "continuousnominalmap",
+    "H1generichistorylearning"
+  ],
+  "joint_necessary_force_geometry": "Straight matchedcontactframe:Fl=Fsum/2-Mz/track,Fr=Fsum/2+Mz/track;require|Fl|<=Cl,|Fr|<=Cr. Cl=0 impliespositiveFsum andzeroMz infeasible. Pureconditionalquasisteadynecessaryconstraint,notimpact/dynamiccertificate.",
+  "algebra_examples_passed": 3,
+  "new_simulation_admitted": 0,
+  "new_training_admitted": 0,
+  "controller_admitted": false,
+  "new_optimizer_admitted": 0,
+  "next": "291packet/schema/time/carrier sign andsourceunit usingonlysaveddata;292finiteoffline80intervalaudit;293independentreview/finiteaccept-reject;295nextdeepreviewcleanup. No observerornewpolicy untilobservable/dynamicassumptionsanddistinctmechanism justified.",
+  "source_sha256": {
+    "wheelleg_warp/execution_history_env.py": "5c0f0135df45fa899b03f557dff98da3cabbf58b0afdf5bf6279f470fec4f01b",
+    "wheelleg_warp/execution_input_collector.py": "fa3cb14857e6e95805753b3ca67c07a24092c6ce04943cab51decf8797951ffb",
+    "wheelleg_warp/execution_input_features.py": "cd2c67c328d8a89c17639f87b7f238208de6ead582fb6a5b46c96c21dea1d82c",
+    "wheelleg_warp/wheel_motion_proxy.py": "0de25a0eb98459b596abdda91997eb7b199c9f0c6e1df0f9fb023e9ed8da238b",
+    "wheelleg_ppo/tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+    "wheelleg_ppo/tools/hardware_profile.py": "844688aae7e408bb2ca11d00b192ffaa9e4ad5de06cc8a815d3cf3ddfbe02eba",
+    "wheelleg_ppo/tools/wheelleg_sim.py": "c2dfaae4dc562119fd7916684849ec22fcac3d75dbcfec6a2a0f9452d8f6ee0f",
+    "wheelleg_warp/task_mode_recorder.py": "ff9f2488fe7562ae96127c6810acc192e7d7a665aabed840d94bf47ba8a6d0cc"
+  }
+}

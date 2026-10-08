@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第290轮深审：只准已有输入信息审查，不准新控制/训练（2026-10-09）：
+
+286–289形成明确闭环证据：map真实328原任务收益失败；端点fixedmean限制差模；独立夹腿改mean能救roll但7条newyaw；length必要区间与Nlower0限界清楚。仍没有可辩护的新controller/稳定性证书或新颖贡献，不能复活closed map/clip/damping/governor/H1。下一步值得继续仅公有输入是否包含可分解动力信息、遗漏项是否误导判断；不可拿普通GMO/QP/history组件拼接当论文或上长PPO。
+
+冻结wheel_momentum_information_v1离线80原controlled轨迹（全40×双臂，不只failed8），原packet raw39/481 history提供gyro_y/activeqv/wheelrelativeomega/publiccmd、实际beforegain finalcommand历史mean与elapsed/valid。复用leg_kinematics parent_rate构absoluteaxialomega，publicJ/damping和constantgain .95…1.05窗口界；比较原relative-rotor proxy/carrier corrected/+endpointdamping和gaininterval，未知passive角/实际torque/contact只诊断validation，绝不Actor input或拟合门。残差不是normalbound，gyro/transient/sensorclock/axis convention必须独立核，旧已失败信息学习不重开。
+
+准静态drive-yaw必要集合FL=Fsum/2−Mz/track、FR=Fsum/2+Mz/track，各|F|<=C；onecap0时不支持Fsum>0且Mz0，3例核过。Fullwheel balance仍需ωdot/损耗/接触几何，不能从此称全局力/安全保证。291sourceunit，292一次offline80，293独立接收/拒绝，不新的模拟/优化/回报/命令/Actor/门/控制改动；295下轮五轮深审清理。
+
+按约删12990B已闭fixednode motion_balanced_control.pyc，ignored/untracked/unheld/codeobject exact、SHA保round290_cleanup，所有科学source/raw/失败/模型/基线留。上传同helper11251首批仍live、无video，guard同步lock保护，remote未追上；novelqualifiedmethod、sameinfo/ablation、新3→5seeds/freshOOD/统计训练成本/完整稿六出口仍未齐，goal active。
+
 第289轮jointmean/difference与conditional yaw authority边界（2026-10-09）：
 
 derive_joint_reference_authority.py779格及endpoint/非法输入/原motorcurve代数核过。原长度约束下m,d可行mean区间I=[max(Lmin+|d|,h−eps),min(Lmax−|d|,h+eps)]，存在性等价|d|<=min((Lmax−Lmin)/2,h+eps−Lmin,Lmax−h+eps)。eps=.02，两端最多约.0203/.0200m半差，fullrequested.035不可全部满足；这是长度必要约束、不含joint/closure/body动态保证，不放宽height门。
