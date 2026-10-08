@@ -1,0 +1,58 @@
+{
+  "round": 298,
+  "verified": true,
+  "algebra_unit_rows": 34485,
+  "necessary_geometry_mapping_passed": true,
+  "source_sha256": {
+    "wheelleg_warp/joint_reference_mapping.py": "f7ba76fdb7d5072214b19af5cb678294b8868e30eeac819c6466d6b1aebd48e5",
+    "wheelleg_warp/derive_joint_reference_authority.py": "e5ab1b62b0770094c7712a2ecf37f86b049fb85419dfc18a3c93f0e50afe5c4e",
+    "wheelleg_warp/reference_role_control.py": "7c3297a14d257fcaa952e81b9380537fc76ba11b74a34f3724665455c22acdd7",
+    "wheelleg_warp/native/controller.py": "04d106ae8579118eb306ba2b28037425f81a1f554d4b51fa1eae1ef795fede73"
+  },
+  "domain": {
+    "height_m": [
+      0.115,
+      0.38
+    ],
+    "Lmin_m": 0.1147044660616607,
+    "Lmax_m": 0.38,
+    "height_mean_tolerance_m": 0.02,
+    "original_half_difference_cap_m": 0.035,
+    "original_wheel_residual_per_side_Nm": 0.3
+  },
+  "mapping": "D=min(original .035 cap, geometryD). Select d about original current-step clipped offset d0; select m about projection of original h into I(d). See standalone select().",
+  "proof": "d lies in[-D,D]; D<=geometryD makes I nonempty. m lies inI, hence LOW<=m+d,m-d<=HIGH andabs(m-h)<=.02. The signed affine choices cover each interval, with baseline-zero coordinates preserved. This proves reference-coordinate feasibility only.",
+  "coordinate_zero_identity_passed": true,
+  "full_controller_zero_identity_passed": false,
+  "output_chain": {
+    "injection_point": "After existing lower-floor clamps of left_target/right_target, before height/legacy force and angle projection use.",
+    "keep_original_reference_packet": true,
+    "keep_radial_anchor": true,
+    "reason": "Changing reference[w,2] also changes radial guard anchor, confounding leg-reference coordination with guard changes.",
+    "zero_action_rule": "Bypass candidate replacement for zero mean/difference action; preserve original target computations exactly. Wheel zero must use original residual/filter path. Validate all outputs/state/filter/diag before rollout.",
+    "action_rate_rule": "Not implemented. Any new reference filtering/rate must be explicit and identical across same-permission baselines; no uncontrolled50Hz jumps."
+  },
+  "comparison_requirements": [
+    "Strong analytic controller with same m/d/yaw reference authority, public481 and final limits; retain oldB0/B1 as background.",
+    "Full-space learned reference comparator must include common/differential reference authority, not only oldtorque residualB2.",
+    "Leg-only and yaw-only component removal under same mapping and observations.",
+    "Original task/reward/height/attitude/velocity/progress/physical-design gates unchanged."
+  ],
+  "prior_sources": [
+    {
+      "url": "https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2026.1788395/full",
+      "scope": "Method2.2.3: normalized6 position deviations to target joints, followed byPD; already in localmatrix, reread forreference-action overlap."
+    },
+    {
+      "url": "https://arxiv.org/html/2009.10019v1",
+      "scope": "Method3.1-3.3: learned contact primitives with model-based forceQP andlowlevel control; discretequadrupedcontact selection,notcontinuous wheeledmean/difference geometry. Broad learnedhierarchy isnotnew."
+    }
+  ],
+  "novelty_qualified": false,
+  "controller_admitted": false,
+  "new_simulation": 0,
+  "new_optimizer": 0,
+  "new_training_samples": 0,
+  "formal_PPO_admitted": false,
+  "next": "299 assess isolated candidate output-chain implementation and fair same-reference-authority controls. No production replacement, dynamic safety claim ornewPPO fromalgebra alone;300deepreview/cleanup."
+}

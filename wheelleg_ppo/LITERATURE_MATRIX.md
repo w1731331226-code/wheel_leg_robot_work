@@ -157,3 +157,8 @@ GitHub 代码近邻（仓库均可访问；只核 README 与相关实现，不�
 **本轮方向排序：** 第一，接触及电机包络约束下的动作可达性、可观测性和残差分配，直接对应现有 2 kHz 失败链且可通过单变量干预证伪；若形成方法，须对已有变高度LQR/MPC、闭链CBF-QP、轮腿CBF/NMPC、T-RO接触规划及RA-L强经典说明差异。第二，保留差模 PPO 作为已注册的比较手段，在上述机制允许有效控制后再检验其相对 B1/M1/N3±/B2-V 的额外收益。第三，当前无证据支持优先改 PPO 损失、网络或另建教师/世界模型：物理可达性与观测不足尚未排除，修改优化器只会叠加解释变量。上述排序是根据本机与论文证据作出的研究决策，**不是已确立的新方法或可发表性保证**。
 
 第157轮轮内投影近邻（2026-10-06）：[Harkegard作者机构报告2594](https://www.diva-portal.org/smash/get/diva2:316757/FULLTEXT01.pdf)，封面2004、题为Dynamic control allocation using constrained quadratic programming；本轮核摘要/绪论关于约束、执行器饱和及控制重分配。它研究动态控制分配，不是本轮普通双轮box投影，也不认证本机闭链/任务/学习收益；基础限幅、投影或分配类别不单独作创新。[Control Allocation for Wheeled Mobile Robots Subject to Input Saturation出版入口](https://www.sciencedirect.com/science/article/pii/S2405896320327683)有搜索元数据/摘要线索，直接403，未取全文。只限定已有研究类别，不据摘要声称本机实现与其完全同一。
+# 第298轮参考动作候选重合核对（2026-10-09）
+
+一轮定向检索、一次primary方法跟进。[Frontiers 2026既有六维参考动作论文](https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2026.1788395/full)重新定位2.2.3：归一化位置偏差映射为关节目标，低层PD执行；不能把“Actor输出参考而非力矩”称新颖。[Contact-Adaptive Controller作者HTML](https://arxiv.org/html/2009.10019v1)核3.1—3.3：高层学习离散接触primitive，低层基于模型求支撑力QP及摆腿控制；四足离散接触选择，与本候选连续双轮mean/difference长度域不同，但学习高层与模型低层组合已有先例。
+
+本候选尚未有收益或新颖性证据，只推导原±.035半差上限与height±.02下的参考坐标可行映射。原kernel直接改reference均值会改径向保护anchor，需保持原packet只替换跟踪target以避免额外解释；公平对照要拥有相同均值/半差参考权限，旧力矩残差对照不能单独排除接口优势。参考几何不等实际闭链/姿态/接触稳定保证；未新增MoE、接触primitive或QP，也未复现这两篇数值结果。

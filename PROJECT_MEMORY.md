@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第298轮joint_reference_mapping.py必要几何映射实现与34485格单元过：19height×5合法baseline d0×11mean×11difference×3yaw动作，检查m±d长度/mean±.02、原half-difference±.035/原wheel±.3、零坐标exact、两端覆盖及非法输入拒绝。修正297候选D为min(original .035 cap, geometryD)，依据原源码已有请求上限，不扩中间高度左右参考权限；这是实现前设计核对而非成绩调门。只CPU代数，0controller query/新积分/优化/PPO，derivation.json与unit.log保存。
+- 第298轮输出链找到具体混杂：reference_role_control的reference[w,2]既定trackingmean又决定radial_reference，直接改它会同时改变保护anchor。候选应保原16列packet/phase/radialanchor，只在原left/right target及floor clamp之后、force/angle projection之前替换跟踪目标；零m/d动作显式绕过replacement，wheel沿原residual/filter。coordinate zero过不等完整ctrl/filter/memory/diag零动作验收，尚未实现新controller或新reference slew，同权限对照也待源资格。
+- 第298轮一轮检索+primary方法跟进：重核既有Frontiers2026 2.2.3六位置偏差参考→PD；首次定向读arxiv2009.10019v1 HTML3.1–3.3学习离散contactprimitive与模型forceQP低层。genericreference RL/高低层组合已有，连续mean/difference几何候选仍未qualifiednovel；LITERATURE_MATRIX/LEGAL_ACCESS记录，未取视频/图/PDF或复现他人结果。299只评估isolated输出链与公平same-reference权限analytic/full-space/leg-only/yaw-only对照，未准新PPO；300深审清理如期，六出口仍缺。数据helper11251仍live首批，remote未全同步。
+
 - 第297轮独立有限失败复核完成，baseline_repeatability_v1/review.json关闭本次重复性尝试：PID27966 terminal/139、源码55与runner/proposal/log/native栈/六契约SHA、完整初态/准入/prefix与第二构建缺失均核。无新执行，禁止自动修补rollout/扩budget。原生D2H调用栈只定故障显现路径，可能存在更早异步GPU错误，不能断言snapshot数组唯一根因；只读意图也不证明新增捕获已无干扰。repeatability、历史159因果、成本零、物理失稳等结论全部拒绝，未知FD保null。
 - 第297轮回到一个可证伪候选而非实现：policy联合选择mean m、half-difference d与原wheel yaw残差，原height±.02/长度/实际输出门不变；相对原fixedmean/被动clip-pair，检验是否主动利用几何均值空间缓解roll-yaw竞争。只能先称候选应用设计，generic learnedreference/manifold mapping不自动新颖、长度参考可行不保证实际动态/normal。零动作必须恢复原当步m=h/d=d0及完整控制/滤波/记忆链，强sameinfo analytic/full空间及leg-only/yaw-only对照必须有。
 - 298只推导及代数单元、查已有先例区别并核零动作输出链可实现性；未通过则拒绝候选，不换reward/阈值/传感oracle或直接PPO。299根据实证决定是否能冻结有限源码/机制验证，300如期深审清理，正式3→5seed/新ID-OOD/统计真实成本/完整稿仍缺。无新增simulation/training；同上传helper11251本轮live首批，remote未全同步，视频不上传规则持续。

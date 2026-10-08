@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第298轮必要几何与输出链混杂核对（2026-10-09）：
+
+joint_reference_mapping.py实现候选参考坐标选择；D采用min(.035原请求上限,297的geometryD)，不扩中间高度半差权限。34485格代数单元（19h×5合法d0×11a_m×11a_d×3a_y）长度、mean±.02、原±.035/±.3、零坐标exact与endpoint覆盖及非法输入拒绝过。d∈[-D,D]使I非空，m∈I故m±d合法；这是参考坐标必要几何条件，不保证actual closedchain、动态姿态/支撑、motor或normal。0controllerquery/积分/优化/PPO，joint_reference_candidate_v1/derivation.json绑定源码与单位日志。
+
+实际源码表明reference[w,2]同时影响左右tracking目标和radial保护锚点；因此不能直接改该packet均值冒充单一参考协调。候选保原packet及phase/radialanchor，在原左右目标及floor clamp之后、后续force与angle projection之前替换两个tracking目标；零mean/difference动作绕过新计算以保原浮点表达式，wheel仍走原residual/filter。当前仅坐标zero通过，完整ctrl/filter/memory/diag零动作一致与新参考slew尚未实现/验收，不能据本轮称新controller合格。
+
+一轮定向检索、一次primary方法定位确认generic learnedreference/hierarchicalcontrol已有先例（Frontiers2026位置参考→PD，arxiv2009.10019离散contactprimitive→模型forceQP）。本机连续mean/difference必要域及保旧anchor是待检区别，不是已证贡献。299只评估isolated输出链及强同raw481/同参考权限/同速率和最终边界的analytic/full-space参考RL与leg-only/yaw-only对照；旧B0/B1及旧仅torqueB2为背景，不能用缺少共模reference能力的对照宣称结构优势。未改奖励/命令/门或私有传感输入，正式PPO仍未准。300按约方向深审清理。
+
 第297轮关闭未完成重复性尝试并回到方法（2026-10-09）：
 
 baseline_repeatability_v1/review.json独立核PID27966终止139、55源/runner/proposal/runlog/原生栈/六构建契约哈希、完整initial/准入/prefix与第二构建均缺失。一次尝试正式关闭，不自动修复rollout或扩budget。CUDA D2H栈仅证明故障显现调用路径，不排除此前异步GPU错误，未证明某一snapshot数组根因或只读捕获无干扰。重复性inconclusive、历史159原因未确定，不宣称物理失稳、已完成1600步或构造成本零，FD未知仍null；不继续工具调试线。
