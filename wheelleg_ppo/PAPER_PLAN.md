@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第287轮端点不对称失败的已存数据机制审查（2026-10-09）：
+
+audit_controlled_task_failures.py读同8failedcase双臂16firstattitude5degwitness，保持physical/design通过且全部在非零运动cmd阶段。Low .115m四例 yawfirst：请求rolloffset±.035m被fixedmeanroom夹到±.00029553394m，一侧normalexact0、wheelω约72rad/s、当前速度相关commandbound已用尽。High .38m selectedoffset0：forward两例双轮加载但rollfirst>5deg，backward两例unloaded/highspeed yawfirst。Map同类别失败不变，支持差模/载荷/可行参考瓶颈而非小Nominalfeed差是全部原因；0仿真/FD/optimizer/学习。
+
+可行性algebra独立核source room min(mean−Lmin,Lmax−mean)与actualoffset一致；fullrequested .035需要mean∈[Lmin+.035,Lmax−.035]，端点和command±.02heighttolerance无交。因此不能直接说放开mean能全满足，也不能把零normal快照当完整摩擦或可控性证书。Current physical模型约束过，reference固定均值与差模目标竞争是具体机制，需耦合处理roll与yaw及支撑，而不放宽性能门。
+
+既有round183 fixedconsistent_pair 已出现upper.38新增yaw7records/2uniquecase，禁止直接复活同clip-pair/固定damping/governor/连续map。288对已有过去对照/反例检查reference—roll—yaw—load耦合，并形成可区别的机制与推导；当前不准新控制器/仿真/PPO，六论文出口缺口仍在。159旧numeric复现差异仍不唯一归因，290按约深审清理。
+
+视频ignore/commitguard生效，无新视频；数据helper同PID11251首<=750MB批次仍upload，未完全remote。主HEAD因维护commit前进，辅助程序原HEAD固定末断言届时要核祖先后手工快进新main，不重启数据push或rewrite。专用同步lock阻止daemon并行重复大上传，guard active；本轮分析稳定记录中文commit，本地所有科学raw保持，不声称同步完成。
+
 第286轮328真实任务终态与收益门关闭（2026-10-09）：
 
 Worker成功终止MainPID0/dead/exit0，328评估全部完成，queue687.644050s、firstepisode physicalsteps4,854,051，既有Nombankconstructor115FD（source预检15），0新实验FD/优化/PPO。完整20job/source/cases/SHA及原physical/gyro/role/phase/parking checker、2132streamfiles/3,090,756,013B、Actor968/zero6与164map9列逐物理步数据审核过，所有firstepisode/真实cmd/publich/zero delta一致。评估计时不当PPO加速，source/raw完整不等方法优势。
