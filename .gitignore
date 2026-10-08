@@ -27,3 +27,19 @@ MUJOCO_LOG.txt
 # Local original training frames and rendered recordings (reproducible, kept on disk)
 /wheelleg_warp/dashboard/local_data/
 /wheelleg_warp/results/*/*/live/
+
+# 用户要求：视频仅本地保留必要素材，不上传
+*.[mM][pP]4
+*.[aA][vV][iI]
+*.[mM][oO][vV]
+*.[mM][kK][vV]
+*.[wW][eE][bB][mM]
+*.[mM]4[vV]
+*.[mM][pP][eE][gG]
+*.[mM][pP][gG]
+*.[wW][mM][vV]
+*.[fF][lL][vV]
+*.[oO][gG][vV]
+*.[mM][tT][sS]
+*.[mM]2[tT][sS]
+*.3[gG][pP]

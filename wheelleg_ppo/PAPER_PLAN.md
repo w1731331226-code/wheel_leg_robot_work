@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第286轮328真实任务终态与收益门关闭（2026-10-09）：
+
+Worker成功终止MainPID0/dead/exit0，328评估全部完成，queue687.644050s、firstepisode physicalsteps4,854,051，既有Nombankconstructor115FD（source预检15），0新实验FD/优化/PPO。完整20job/source/cases/SHA及原physical/gyro/role/phase/parking checker、2132streamfiles/3,090,756,013B、Actor968/zero6与164map9列逐物理步数据审核过，所有firstepisode/真实cmd/publich/zero delta一致。评估计时不当PPO加速，source/raw完整不等方法优势。
+
+原工程门未通过，关闭连续map任务收益而不继续调表/扩参考/改门或加训练：old/map均regular96、controlled32、legacy28成功，全部physical/design安全通过，各panel lost/gained都空；controlled34和新增2条件均失败。J regular .387099858→.385500395、controlled1.060214242→1.050030851虽稍降，legacy .503696170→.512803969上升。不能把少量指标变化/保持安全替代预先任务成功门、新方法贡献或至少核心论文证明。
+
+旧archive标签全一致，159case数值/终止步不exact、numeric复现False，原因未明，不事后放宽epsilon或宣称因果收益。所有反例/失败/static2worse/source都保，旧失败20/H1不复活。287转已有raw的baseline source/backend及8controlled failure机制核，不新仿真；290如期深审清理。新颖方法/强sameinfo消融/formal5/freshOOD/统计真实训练成本/完整稿六出口仍缺，goal active，production/PPO未准。
+
+终态自动守护已将raw本地归档f7d3c317，但3.09GB单commit同步遇TLS/120s超时；GitHub单push2GiB限制需避开。保main历史，临时稀疏worktree按<=750MB对象批次普通中文commit/原hook和memory更新，先辅助branch传已有对象再快进main，不rebase/force。完整remoteHEAD和临时清理以实际收尾证据为准，未上传完成前不称同步。
+
 第285轮方向深审、稳定metadata与进程跟进、清理（2026-10-08）：
 
 同worker PID32686 active/running、实际CPU活动且队列推进，无重启或capture源修改。round285_direction_review在260完成项核：oldregular96/96、controlled32/40、legacy28/28以及全部physical/design；map regular96/96与全部physical/design96/96，partial无法宣布完整工程门。最新实际280completed/300reserved、mapcontrolledbatch1评估，FD95随构造累计，0新learning/optimizer/实验FD。

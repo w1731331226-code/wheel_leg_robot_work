@@ -14,8 +14,12 @@ if 'PROJECT_MEMORY.md' not in paths:
     sys.exit('拒绝提交：每次提交必须同步更新并暂存 PROJECT_MEMORY.md。')
 for path in filter(None, paths):
     name = Path(path).name
+    blob = subprocess.run(['git', 'cat-file', '-s', ':' + path], capture_output=True)
+    if blob.returncode == 0 and Path(path).suffix.lower() in {
+            '.mp4', '.avi', '.mov', '.mkv', '.webm', '.m4v', '.mpeg', '.mpg',
+            '.wmv', '.flv', '.ogv', '.mts', '.m2ts', '.3gp'}:
+        sys.exit(f'拒绝提交视频文件（用户要求不上传）：{path}')
     if name == '.env' or (name.startswith('.env.') and name != '.env.example') or name.endswith(('.pem', '.key')):
         sys.exit(f'拒绝提交凭据文件：{path}')
-    blob = subprocess.run(['git', 'cat-file', '-s', ':' + path], capture_output=True)
     if blob.returncode == 0 and int(blob.stdout) >= 95 * 1024**2:
         sys.exit(f'拒绝提交超过95MiB的文件：{path}')

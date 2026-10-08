@@ -2,7 +2,15 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：按北大核心纯仿真补充计划执行（2026-10-08，目标active）
+## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
+
+- 用户新增要求（2026-10-09）：视频不上传，无用视频确认后及时删除。已将常见格式大小写扩展忽略与commit-msg拒绝新增/修改视频（允许删除）落地，项目guard加入长期规则。当前2319上传对象无video，Git当前tracked无video；唯一全项目video为build/_deps MuJoCo文档example.mp4423387B，untracked/ignored/unheld且不属实验、复现或展示，删除并保存video_cleanup记录。原数值证据和必要素材不混删，不重写已有history。
+- 第286轮328队列终态核：原worker MainPID0/inactive/dead/Resultsuccess/ExecMainStatus0，completed328、无重启；总queue687.644050s、实际firstepisode4,854,051physicalsteps，原baselineconstructor115transitionFD（含preflight15），0新实验FD/optimizer/PPO。Timing仅完整evaluation/capture/serialization，不是训练加速。
+- 第286轮完整raw/task审核过：20job顺序/案例/source/resultSHA、既有complete/gyro/role/phase/parking geometrychecker和所有stream SHA，Actor968形状/同raw481/zero6，164map9列每物理步command/h/delta/flag及zero精确0，2132原streamfiles/3,090,756,013B（全evaluations2312files/3,093,782,775B）核。已reuse原checker而非宣称独立重算全部物理，source与原门、pair success/lost/gained另独立核；0额外仿真。
+- 第286轮engineering门False，正式关闭连续map任务收益分支：old/map regular均96/96、controlled均32/40、legacy均28/28，全部physical/design过、lost/gained各panel都空；要求controlled>=34/至少2新增未达到。J old→map regular .387099858→.385500395、controlled1.060214242→1.050030851、legacy .503696170→.512803969变差；不拿微小J改善救原门，不refit/改阈值/加PPO预算，保static2worse及全部任务失败。六论文出口/goal active，生产/正式PPO/OOD未准。
+- 第286轮baseline旧归档success/reason/physical/design/terrain labels全一致，但159case数值/步数不exact，original_numeric_reproduction gateFalse、原因未确立；数据只支持工程失败结论，不因果收益或新颖贡献。下一步287优先源/backend/原受控8failure机制审查（已有raw，不新simulation），停止本map/参考求解扩展；290深审清理。
+- 第286轮归档同步修复：守护在终态后自动把2319新增项单commit f7d3c317归档到本地，含3.09GB，远端仍6814e842且journal有TLS中断/120s超时。不重写/强推；临时稀疏worktree/codex上传分支以<=750MB对象批次、原commit-msg钩子+每commitmemory更新先传已有对象，再快进原main。临时构造失败仅branch-name字符串检查（0上传），已修；主历史保持。完整remote一致及temporarycleanup须实际核，不在此提前称同步完成。
+
 
 - 第285轮五轮深审/清理完成并沿同worker跟进：PID32686仍active/running、有实际CPU活动且新job推进，未重启/中断/修改capture源。snapshot round285_direction_review核到completed260metadata：旧B0全96/32/28成功、所有164physical/design；map regular96/96及physical/design96/96，controlled/legacy当时未全齐，不提前declare完整工程门。本条最新观察completed280/reserved300、mapcontrolledbatch1运行，FD累计95，0新learning/optimizer/实验FD。
 - 第285轮old164归档source/cases/order/results SHA逐job核，159cases有numeric/step差、success/reason/physical/design/terrain labels全部一致；不额外设epsilon/把label一致当完全numeric复现，pairedcausalbenefit仍未准，原因待完整source/backend/reproduction分析。当前方向只完成同一328任务队列与终态fullraw/gates审核，不refit/table/gain/扩静态或求解点救分，不把partialregular96保住替代controlled>=34/完整论文资格。
