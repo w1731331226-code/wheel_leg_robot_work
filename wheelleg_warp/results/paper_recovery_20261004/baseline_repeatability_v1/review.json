@@ -1,0 +1,32 @@
+{
+  "round": 297,
+  "verified": true,
+  "failure_sha256": "e404f09a52f28b21d15cd82323d80f770896d51a853fd9760f55c78f6f4c5f6d",
+  "inputs_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/baseline_repeatability_v1/proposal.json": "562eb0b214a64f3c2df0a3c3b453f7c3318d76d3206362c402a796fc236618b7",
+    "wheelleg_warp/results/paper_recovery_20261004/baseline_repeatability_v1/started.json": "d6595c3e81d080bc34f32f60032cea12b2caa636912595dfe69d33aa6abcdde2",
+    "wheelleg_warp/results/paper_recovery_20261004/baseline_repeatability_v1/run.log": "4749db0db5ab59b8e17c1bc859a3edd92dbe2b9309e3085b16311c6886959312",
+    "wheelleg_warp/results/paper_recovery_20261004/baseline_repeatability_v1/native_backtrace.log": "44d7e8bf902ae1ac1f06ea5524d07430f7ae6576fd18276f8f7c6529da10df3b"
+  },
+  "process_terminal_verified": true,
+  "declared55_source_hashes_unchanged": true,
+  "original_attempt_preserved": true,
+  "complete_initial_and_prefix_absent": true,
+  "repeatability_conclusion": "inconclusive",
+  "unique_cause_established": false,
+  "experiment_closed": true,
+  "automatic_retry_admitted": false,
+  "interpretation": "The native stack establishes a CUDA device-to-host copy call at failure, not the initiating GPU operation or a specific Python array. Earlier asynchronous CUDA faults are not excluded. Readonly intent does not establish noninterference of the added capture without successful qualification.",
+  "rejected_claims": [
+    "GPU physical nondeterminism proven",
+    "Robot physical instability proven",
+    "1600world-step repeatability experiment completed",
+    "All actual construction/FD cost zero",
+    "Historical159 differences explained"
+  ],
+  "no_production_controller_or_model_change": true,
+  "new_simulation": 0,
+  "new_training_samples": 0,
+  "formal_PPO_admitted": false,
+  "next": "Return to one explicit candidate: policy-selected mean/difference leg references jointly with yaw residual under the unchanged height and leg-length necessary bounds. First establish baseline-zero identity, same-information/full-action comparators and distinction from existing fixed clip-pair/reference-budget branches. Do not call generic learned-reference mapping novel or dynamically safe."
+}

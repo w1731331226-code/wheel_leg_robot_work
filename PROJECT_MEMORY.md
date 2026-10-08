@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第297轮独立有限失败复核完成，baseline_repeatability_v1/review.json关闭本次重复性尝试：PID27966 terminal/139、源码55与runner/proposal/log/native栈/六契约SHA、完整初态/准入/prefix与第二构建缺失均核。无新执行，禁止自动修补rollout/扩budget。原生D2H调用栈只定故障显现路径，可能存在更早异步GPU错误，不能断言snapshot数组唯一根因；只读意图也不证明新增捕获已无干扰。repeatability、历史159因果、成本零、物理失稳等结论全部拒绝，未知FD保null。
+- 第297轮回到一个可证伪候选而非实现：policy联合选择mean m、half-difference d与原wheel yaw残差，原height±.02/长度/实际输出门不变；相对原fixedmean/被动clip-pair，检验是否主动利用几何均值空间缓解roll-yaw竞争。只能先称候选应用设计，generic learnedreference/manifold mapping不自动新颖、长度参考可行不保证实际动态/normal。零动作必须恢复原当步m=h/d=d0及完整控制/滤波/记忆链，强sameinfo analytic/full空间及leg-only/yaw-only对照必须有。
+- 298只推导及代数单元、查已有先例区别并核零动作输出链可实现性；未通过则拒绝候选，不换reward/阈值/传感oracle或直接PPO。299根据实证决定是否能冻结有限源码/机制验证，300如期深审清理，正式3→5seed/新ID-OOD/统计真实成本/完整稿仍缺。无新增simulation/training；同上传helper11251本轮live首批，remote未全同步，视频不上传规则持续。
+
 - 第296轮唯一重复性尝试未通过源/快照资格：check_baseline_repeatability.py按原55源/20case及zero6/B0路径，捕获前后只读solver拷贝和全Model/Data dataclass/控制history初态保存；两构建/1600world-step实际未完成。首次构建/reset/全快照阶段原生SIGSEGV退出139（PID27966已消失），无完整initial.npz/source_admission/prefix，不有合格物理重复性结论。一次尝试按冻结停止，不自动修补重跑或扩大预算。
 - 第296轮从系统apport本次报告提取原生调用栈：libcuda cuMemcpyDtoHAsync_v2→warp.so wp_memcpy_d2h，定位到设备→主机拷贝路径，不证明是哪一数组/唯一根因；gdb无py-bt，不安装调试依赖。报告核command/signal，native_backtrace.log及failure/runtime/六构建契约/原run.log保。没有完成注册policy step或prefix，baseline FD计数因原生退出未落盘明确null，不能以未完成预算当0总成本或性能证据。
 - 临时提取内存core已删除，系统原始apport保本地、不上传；无视频。本轮不修改旧控制器或模型/门，不得从记录器失败推物理不稳定/GPU非确定性。297独立有限失败去留，关闭这一尝试并回方法级综合，300深审清理仍按约；正式PPO/完整论文六出口未准。数据helper11251本轮仍live首批，remote未全同步。

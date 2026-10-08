@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第297轮关闭未完成重复性尝试并回到方法（2026-10-09）：
+
+baseline_repeatability_v1/review.json独立核PID27966终止139、55源/runner/proposal/runlog/原生栈/六构建契约哈希、完整initial/准入/prefix与第二构建均缺失。一次尝试正式关闭，不自动修复rollout或扩budget。CUDA D2H栈仅证明故障显现调用路径，不排除此前异步GPU错误，未证明某一snapshot数组根因或只读捕获无干扰。重复性inconclusive、历史159原因未确定，不宣称物理失稳、已完成1600步或构造成本零，FD未知仍null；不继续工具调试线。
+
+方法候选收敛为一个具体假设：在同公有raw481及原命令、height/任务门下，策略联合选择腿参考均值m、半差d和原轮差矩残差，主动利用可行均值空间，能否同时改善roll-yaw而保速度、进度、height和其余能力。它不同于先前由roll请求被动clip得到mean的fixed consistent_pair，也不同于仅分配原Nom/残差力矩的reference-budget，但是否有价值/新颖性尚未证明；普通reference RL或可行映射不自动是贡献。
+
+298先推导候选的必要几何映射：D(h)=min((Lmax−Lmin)/2,h+.02−Lmin,Lmax−h+.02)，原当步d0由原控制器请求及原fixedmean room算得；a_d≥0时d=d0+a_d(D−d0)，a_d<0时d=d0+a_d(D+d0)。I(d)=[max(Lmin+|d|,h−.02),min(Lmax−|d|,h+.02)]，mc=clip(h,I)，a_m≥0时m=mc+a_m(I_hi−mc)，a_m<0时m=mc+a_m(mc−I_lo)。左右参考m±d，轮差矩仍原±.3Nm/侧；全零须exact恢复原m=h、d=d0及实际controller/filter/memory输出链，不只公式。该映射只保证参考长度与命令均值容差的必要条件，不保证actual geometry/姿态/接触或normal下界。
+
+必须提供同观测/历史、同参考变化权限/速率与最终执行边界的强解析joint-reference对照、包含共模能力的完整空间RL对照，以及leg-only/yaw-only去除机制项；原B0/B1保持作为额外参照，不能只和缺少新增权限的旧基线比。不改原奖励/速度命令/成功或5°门，不用私有normal/gain，也不从八失败点拟合新阈值。298完成代数单元、先例区别及零动作链可实现性；299只有得到可检机制与公平对照才冻结有限source验证，否则拒绝候选而非盲训。300按约深审清理；正式新3seed→5、freshID/OOD/能力保持、层级统计实际PPO成本和完整稿依然未完成。
+
 第296轮有限重复性检查未完成（2026-10-09）：
 
 check_baseline_repeatability.py实施原B0/20case/55源不变的只读solver记录和全Model/Data dataclass及控制/history初态快照，计划只有两独立构建各40物理步。首次构建/reset/快照期间SIGSEGV退出139，完整initial/source_admission/物理prefix均未生成，第二构建未开始；注册1600world-step未完成，重复性inconclusive，不能当两次运行相同/不同或正式PPO准入。
