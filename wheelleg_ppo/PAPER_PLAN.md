@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第289轮jointmean/difference与conditional yaw authority边界（2026-10-09）：
+
+derive_joint_reference_authority.py779格及endpoint/非法输入/原motorcurve代数核过。原长度约束下m,d可行mean区间I=[max(Lmin+|d|,h−eps),min(Lmax−|d|,h+eps)]，存在性等价|d|<=min((Lmax−Lmin)/2,h+eps−Lmin,Lmax−h+eps)。eps=.02，两端最多约.0203/.0200m半差，fullrequested.035不可全部满足；这是长度必要约束、不含joint/closure/body动态保证，不放宽height门。
+
+明确轮平衡R Ft=τmotor−Jωdot−bω−loss，只有quasisteady poweredrolling的持续bound可取min(τspeed/R,μlower*Nlower)；真实高ω刹车/碰撞必须计惯性与损耗，不能将τ/R当所有瞬时contactforce上界。没有positiveNlower时μlower*Nlower=0，原Actor raw/commandhistory不含真实normal或真参数，不能由offlinecontact快照假装nonzero robustheading证书。全yaw moment还需实际contact方向/lever/coupling，不当static轮差等式完整控制器。
+
+定向查新+方法段新证据：arxiv2609.13779作者HTML Method首次可读GMO与friction/unilateral contactprojection，普通physicsobserver+QP+history已有；IEEE9995759 MPCreferencegovernor quadruped仅publisher摘要，direct无正文，不复现或重试既有blocked站。详细记录两文献入口，未下载video/image/PDF。新coupled工作空间与load/yaw/publicinfo区别未证明，290深审清理前不准controller/rollout/PPO，旧闭分支不复活，六论文出口仍待。上传同helper live/remote未全一致，目标active。
+
 第288轮consistent_pair闭分支roll-yaw交换反例核（2026-10-09）：
 
 audit_reference_roll_yaw_tradeoff.py核既有upper.38两unique case×clean/noisy×B0/B1-route8比较，完整scenario/source/SHA/trace/role对齐。Old/floor横滚约5.88deg，pair约1.97deg全部8降低，但原yaw<=5变pair>5有7条（峰值约5.06deg），与原183资格关闭一致。不能称无作用或无解，也不能只报告roll降低；改mean/差模目标的单轴方案未守住heading，floor_only对照更接近分离reference角色但仍非完整factorial因果实验。

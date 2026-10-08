@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第289轮联合约束推导与779格代数检查通过：m=(Ll+Lr)/2,d=(Ll−Lr)/2，mean可行I=[max(Lmin+|d|,h−eps),min(Lmax−|d|,h+eps)]，|d|上界min((Lmax−Lmin)/2,h+eps−Lmin,Lmax−h+eps)。原eps=.02，h.115上界.02029553394/h.38上界.02，原fullrequested.035两端不成立、.01可行；lengthrectangle仅必要，不含closedchain angle/动态bodyroll保证。输入NaN/负eps拒绝，原motorcurve高wheelω可用τ下降核过，0新simulation/controller/PPO/optimizer/FD。
+- 第289轮wheel/contact条件限界明确：R Ft=τ−Jωdot−bω−loss；只有quasisteady poweredrolling可用min(τspeed/R,μlower*Nlower)作持续cap，不能忽略ωdot拿来约束真实瞬态/冲击制动。Nlower=0时稳健保证cap0，当前raw测姿态/gyro/vxyz/主动jointqv/wheelω/publiccmd/inputhistory没有已certifiedpositiveNlower，offline真实normal不能塞给Actor作oracle。本轮不是力/可控性安全证书或新policy。
+- 第289轮一次定向查新+primary跟进，首次读arxiv2609.13779 HTML Method GMO/contactfrictionprojection相关段落（此前228仅摘要），末端forceaware任务已有observer+contactQP+temporalresidual；另IEEE9995759 quadruped MPCreferencegovernor出版社摘要，direct无正文不重试。普通RG/QP/history+PPO非已证新颖，本机coupledroll/yaw/load/workspace方法仍需差异/推导/强对照实证。记录LITERATURE_MATRIX/LEGAL_ACCESS；0视频/图/PDF下载。
+- 第289轮290如期深审/cleanup判断是否能给distincttestablepublicinfo机制，不实施clip-pair/旧damping/governor/map或宣称nonzero traction robust guarantee；新方法/同info消融/formal5/freshOOD/统计真实训练成本/完整稿六出口缺。原始对象helper同PID11251仍首批live，guardactive受同步lock，不重启/不称remote全一致，goal active。
+
 - 第288轮已有closed consistent_pair反例独立离线核：20case旧study中upper.38的6301033/35×clean/noisy×B0/B1-route共8comparison、2unique，不是8独立seeds；old/floor/pair源result/trace/role SHA及scenario一致。横滚old约5.88deg→pair约1.97deg（8/8减少），yaw新增>5deg7/8（最高约5.06deg），复核原round183关闭门不变。floor-only对照保floor设置，改善roll不能抵消新增yaw，不能复活单轴clip-pair。
 - 第288轮candidate7个yawfirst crossing全部actualcmd=.7行驶期、双轮normal均>0但一个wheelω约49…68rad/s vs另一≈9…10；不等“所有yaw都来自卸载轮”。保存role实际governedmean，最大下调约.0132… .0136m和首mean差/首yaw越界chronology及速度/normal/commandbounds。Exactmean非零首step2可能float/noise微扰，不能据此定唯一介入/因果；contactnormal不是全部摩擦/traction认证，既有多noise场景非factorial。
 - 第288轮0simulation/PPO/optimizer/FD，不改oldrows、阈值/表/ gain，round288_roll_yaw_tradeoff验证8/8roll改善及7新yaw反例。289仅jointmean/difference workspace及heading/load/speed约束推导与查新；290深审接受可区分可检机制前不准新controller/rollout/PPO。当前还差novelqualifiedmethod/强sameinfo+ablation/formal5/freshOOD/统计真实成本/完整稿，goal active。
