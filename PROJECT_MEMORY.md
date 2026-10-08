@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第288轮已有closed consistent_pair反例独立离线核：20case旧study中upper.38的6301033/35×clean/noisy×B0/B1-route共8comparison、2unique，不是8独立seeds；old/floor/pair源result/trace/role SHA及scenario一致。横滚old约5.88deg→pair约1.97deg（8/8减少），yaw新增>5deg7/8（最高约5.06deg），复核原round183关闭门不变。floor-only对照保floor设置，改善roll不能抵消新增yaw，不能复活单轴clip-pair。
+- 第288轮candidate7个yawfirst crossing全部actualcmd=.7行驶期、双轮normal均>0但一个wheelω约49…68rad/s vs另一≈9…10；不等“所有yaw都来自卸载轮”。保存role实际governedmean，最大下调约.0132… .0136m和首mean差/首yaw越界chronology及速度/normal/commandbounds。Exactmean非零首step2可能float/noise微扰，不能据此定唯一介入/因果；contactnormal不是全部摩擦/traction认证，既有多noise场景非factorial。
+- 第288轮0simulation/PPO/optimizer/FD，不改oldrows、阈值/表/ gain，round288_roll_yaw_tradeoff验证8/8roll改善及7新yaw反例。289仅jointmean/difference workspace及heading/load/speed约束推导与查新；290深审接受可区分可检机制前不准新controller/rollout/PPO。当前还差novelqualifiedmethod/强sameinfo+ablation/formal5/freshOOD/统计真实成本/完整稿，goal active。
+- 第288轮同上传helper PID11251仍live首对象批次，0video/currenttrackedvideo，源规则持续。Main本地commit继续前进，不能重启正在推进的数据push或声称remote追上；结束后须核现HEAD为原f7后代再手工快进，辅助ref/worktree清理待sync完成，guardactive受同步lock阻止重复主大push。
+
 - 第287轮已有raw离线失败机制核：old/map相同8controlled失败×双臂16首次5deg姿态越界witness，scenario/order/source/SHA与physical/design通过核。低.115m四例首次yaw越界时请求rolloffset±.035m、实际仅±.00029553394m；一侧exactnormal0、轮ω约72rad/s且command已到该速度下降后的边界。高.38m四例selectedrolloffset=0；前进两例先roll越5deg（old快照双轮加载，map快照一侧瞬时normal0但轮速未高速饱和），后退两例unloaded/spinningwheel先yaw越5deg。失效轴类别相同而contact快照不相同，原过度概括finding另保并更正。0新仿真/训练/FD/optimizer。
 - 第287轮workspace/reference约束核心事实：原fixedmean room=min(mean−Lmin,Lmax−mean)在上下端使差模腿长修正几乎无空间，source/algebra与记录selected exact对齐；完整desiredoffset .035m需要mean进入[Lmin+.035,Lmax−.035]，与原command±.02height容差在端点无交，不能宣称“只挪均值就能满足全部请求”。这是观测+length坐标可行性，不是唯一因果、完整摩擦/controllability证明，物理与设计约束未违背。
 - 第287轮复用prior round183一致夹腿mean改动已关闭反例：fixedconsistent_pair曾新增upper.38 yaw违规7records/2uniquecases，不能把同方案重命名新方法或重开旧damping/governor/map。288仅对已有对照的roll-yaw/load/reference耦合及counterexamples核，派生可区分、可检的机制前不准新controller/训练/仿真；baseline numeric159差异原因仍未解决，六论文出口/goal active，290深审清理。

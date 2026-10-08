@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第288轮consistent_pair闭分支roll-yaw交换反例核（2026-10-09）：
+
+audit_reference_roll_yaw_tradeoff.py核既有upper.38两unique case×clean/noisy×B0/B1-route8比较，完整scenario/source/SHA/trace/role对齐。Old/floor横滚约5.88deg，pair约1.97deg全部8降低，但原yaw<=5变pair>5有7条（峰值约5.06deg），与原183资格关闭一致。不能称无作用或无解，也不能只报告roll降低；改mean/差模目标的单轴方案未守住heading，floor_only对照更接近分离reference角色但仍非完整factorial因果实验。
+
+七newyaw crossing都在cmd.7行驶而非parking，normal双侧>0、一个wheelω约49…68rad/s另一约9…10；对照287卸载快照说明“只监视zero-load”不足以覆盖所有偏航。Rolegovernedmean最大下调约.0132… .0136m，完整mean时间/firstyaw/速度/载荷/命令边界保留；首exactmean变化step2可能float/noise级，不当唯一因果起点，normalload不当全摩擦support证明。8比较只有2unique cases/固定噪声实现，不是假8seeds。
+
+0新simulation/optimizer/FD/PPO，数据/门不改，closedpair/damping/governor/map不复活。289联合mean-difference feasible集、heading/load/speed约束推导与针对性查新，290深审确认distincttestablemechanism后才考虑有限新实验；新方法资格/strongsameinfo ablation/formal5/freshOOD/统计成本/完整稿仍缺，目标active。原始对象上传继续同helper首批，视频无上传，remote完整性/临时cleanup未完成，不重启求匹配。
+
 第287轮端点不对称失败的已存数据机制审查（2026-10-09）：
 
 audit_controlled_task_failures.py读同8failedcase双臂16firstattitude5degwitness，保持physical/design通过且全部在非零运动cmd阶段。Low .115m四例 yawfirst：请求rolloffset±.035m被fixedmeanroom夹到±.00029553394m，一侧normalexact0、wheelω约72rad/s、当前速度相关commandbound已用尽。High .38m selectedoffset0：forward两例rollfirst>5deg，old快照双轮加载、map快照一侧瞬时normal0但轮速未高速饱和；backward两例unloaded/highspeed yawfirst。Map失效轴类别不变而contact瞬时状态不一致，支持差模/载荷/可行参考瓶颈而非小Nominalfeed差是全部原因；0仿真/FD/optimizer/学习。原finding过度概括文本保留并更正，不改变rawwitness。
