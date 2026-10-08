@@ -1,0 +1,66 @@
+{
+  "round": 295,
+  "verified": true,
+  "reviewed_rounds": [
+    291,
+    292,
+    293,
+    294,
+    295
+  ],
+  "evidence_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/wheel_momentum_information_v1/source_admission.json": "91618465fd6c582bba34329ed409eadb7e8cfbc9586696819fc70965df993cc6",
+    "wheelleg_warp/results/paper_recovery_20261004/wheel_momentum_information_v1/audit_completion.json": "a53d946f1accb449cf2855fb752dac608de99bfe3d22f5d94aa32750e4a7d44d",
+    "wheelleg_warp/results/paper_recovery_20261004/wheel_momentum_information_v1/review.json": "da3dc2580e3ad69a58454c67c604616377c563b758ad073ecd27f149ec6a3132",
+    "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/task_review.json": "2de093419a221cb21001fdb1837b4a8b21a3a575bb8ae476f7e8a6e768d88018",
+    "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/round287_failure_mechanism.json": "75922bf8ecc16edc7157f153c54fe8c52a56806e709250096b6ca798ded780c4",
+    "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/round288_roll_yaw_tradeoff.json": "15763059b2a0fa2cb8a941db3a162c36df151a9fcc22a0ccc9da6e68c28b427a",
+    "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/round289_joint_constraint_derivation.json": "ba4612c557f3794449ac475b467bbfbe6640b0ad10e6bd35e48ad1c64d812859",
+    "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_task_pair_v1/round294_reproduction_provenance.json": "9ebafe977edd80d5bec220a58ce3c0e5198e750b5ad31946fc930595e4c63c32"
+  },
+  "worth_continuing": {
+    "information_correction_as_new_method": false,
+    "more_same_branch_rollouts": false,
+    "finite_runtime_repeatability_check": true,
+    "method_level_roll_yaw_reference_synthesis": true
+  },
+  "method_assessment": "Public-input provenance and independent saved-data checks were appropriate; known damping correction and geometric necessary constraints are engineering/mechanism evidence. They do not establish novel control, normal-force bounds or learned advantage. Repeated source-only audits cannot fill those gaps.",
+  "additional_experiment": {
+    "proposal": "wheelleg_warp/results/paper_recovery_20261004/baseline_repeatability_v1/proposal.json",
+    "sha256": "562eb0b214a64f3c2df0a3c3b453f7c3318d76d3206362c402a796fc236618b7",
+    "world_steps": 1600,
+    "why": "159 saved trajectories diverge after integration despite equal declared sources and recorded initial qvctrl; a bounded repetition can affect future paired-runtime replication design."
+  },
+  "closed": [
+    "Carrier/damping force-estimation promotion",
+    "Single rated-wheel-speed contact-failure classifier",
+    "Fixed clip-pair/damping/governor/map benefit rescue",
+    "Unqualified new PPO"
+  ],
+  "paper_missing": [
+    "Distinct defensible method and derivation",
+    "Strong same-information baselines and mechanism ablations",
+    "New3-seed qualification then formal5",
+    "Fresh ID/OOD and capability retention",
+    "Hierarchical statistics and actual end-to-end PPO cost",
+    "Complete reproducible manuscript"
+  ],
+  "next": "296 source capture qualification and bounded experiment if admitted;297 finite review, then return to method contribution.300 next mandatory direction review and cleanup.",
+  "cleanup": {
+    "round": 295,
+    "path": "wheelleg_warp/__pycache__/wheel_momentum_information.cpython-310.pyc",
+    "bytes": 4076,
+    "sha256": "f8fd2934d734b40b223e08bfcef333cc0dd9e82efbd9e54bebe8378cacb9911c",
+    "source_sha256": "98331fdbff64ca4769836ffa799616f31d7575e11ddaa5004b06e4aa955b9d85",
+    "ignored": true,
+    "untracked": true,
+    "unheld": true,
+    "code_object_equal": true,
+    "reason": "Closed wheel-momentum information audit cache; source and all experimental evidence preserved. Not used by the live object uploader.",
+    "deleted": true
+  },
+  "goal_complete": false,
+  "new_simulation": 0,
+  "new_training_samples": 0,
+  "formal_PPO_admitted": false
+}

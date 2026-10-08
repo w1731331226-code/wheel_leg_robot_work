@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第295轮五轮方向深审与冗余清理（2026-10-09）：
+
+291—294完成了来源、实际计算、独立重算和全164首次分歧定位，方法适当且有证据进展。结论不是新算法：known阻尼修正不值得扩大成论文方法，单载体补偿总体误差无改善、区间漏覆盖、positive normal下界没有证据；已有成功负对照也跨额定轮速，故不再重复轮速阈值识别器。旧clip-pair/固定damping/governor/map收益救门保持关闭，不加场景或延长PPO掩盖方法缺口。
+
+有必要补充但严格有限的是当前GPU重复性实验：baseline_repeatability_v1/proposal.json冻结原regular batch0完整20world，两次独立同配置B0构建各40物理步，总1600world-step。它可决定后续配对实验是否需共同runtime重复对照，不能证明历史唯一原因或新控制贡献。先验收55源/20case/真实graph40步/只读捕获和完整初态可比；保存runtime、模型参数、solver初态及逐步qvctrl/实际effort/warmstart/qacc/constraint/可得contact排序，缺失记录则结论inconclusive并停止，失败partial全留。只一次两构建尝试，不追加seed、步数、自动retry或重跑164；原baseline构造FD成本另计。296资格与执行，297独立有限去留后回方法级roll-yaw/reference假设推导，不再无限审计。
+
+后续方法必须给出可区别、可证伪的联合动态机制及同公有输入的强解析对照，检查新增腿共模是否本身解释收益、轮差矩单通道是否已足够、height/roll/yaw/速度与能力保持是否同时成立，不能以减速或降低目标冒充同任务收益。只有新3seed资格通过才开fresh正式5及ID/OOD，完整层级统计与真实PPO成本、稿件仍必需。六论文出口未齐；未合格时不盲训。300下一深审与清理。
+
+本轮删已关闭审查的wheel_momentum_information.pyc4076B，ignored/untracked/unheld、编译code一致，保source/原始/失败/模型/CPU-GPU证据；round295_direction_review.json和round295_cleanup.json绑定证据与删除结果。0新积分/优化/学习，唯一实验仍待源资格，视频禁上传持续。
+
 第294轮方法前提与基线分歧定位（2026-10-09）：
 
 audit_nominal_reproduction_provenance.py按原164case顺序核所有result/dense来源，原study55项声明源码SHA与当前全部一致、两协议13项共同源相同。初始保存qpos/qvel/ctrl 164/164 exact；完整dense只有5legacy一致，159轨迹首次post差异领先首次pre恰好一步。首次差仅qvel106、qpos+qvel53，记录的实际effort没有同时差异，首差幅5.55e-17…9.54e-6；部分首1…4步已发生。因此不把来源变动、不同初始记录或该步不同指令当既定原因，未存warmstart/contact排序/历史runtime仍需区分。逐case最早差异保存round294_reproduction_provenance.json，0新积分或学习，不改误差容限与原任务门。

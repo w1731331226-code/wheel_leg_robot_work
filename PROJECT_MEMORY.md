@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第295轮五轮方向深审完成：291来源限制、292实际80计算、293独立重算、294全164首差定位均有新证据；方法正确但证据性质为工程/机理，已知阻尼/单载体修正不值得扩成方法，额定轮速识别器/旧clip-pair与governor/map救门维持关闭。原5°/height/任务门和所有失败保留，方法贡献/sameinfo消融/new3→formal5/freshID-OOD保持/层级统计真实PPO成本/完整稿六出口未齐，不能用继续审计替代论文。
+- 第295轮只冻结一项能改变后续比较设计的有限实验：baseline_repeatability_v1/proposal.json，原regular batch0完整20world及6300013位置不改，两次独立原B0构建各一20ms/40步，共1600world-step；源/实际graph计数/只读solver捕获和完整初态可比先验收，原FD构造另计。保存运行版本、模型/参数/完整solver初态及逐步qvctrl/effort/warmstart/qacc/constraint/可得contact排序，缺项或源错误留partial停止，只有一次尝试，不扩预算/重试/重跑164或判历史唯一原因。结果用于是否重复runtime对照，不支持新方法/PPO。
+- 296资格及唯一有限检查，297独立去留后必须回方法级roll-yaw/reference推导与可证伪贡献，不继续无限重复性审计；300下一五轮深审清理。没有合格新方法时不以更多场景、更长PPO或调门填补贡献。295本轮0新积分/训练/优化，proposal待源资格，不已执行。
+- 第295轮冗余清理：删除wheel_momentum_information.pyc4076B，ignored/untracked、fuser无持有、marshal code与现源码compile exact，SHA/来源/删除验收存round295_cleanup.json。科学source/80NPZ/旧失败及CPU-GPU基线保留；用户视频禁上传规则持续。上传helper11251本轮确认live首批，不重启/不重写，远端尚未全同步；收尾恢复guard active。
+
 - 第294轮方法前提复核取得新定位证据：原study声明55项源码当前SHA全部一致，新task声明中13项共同源也一致；164case顺序/scenario/原result与dense SHA核。初始保存qpos/qvel/ctrl全部164exact；dense仅5legacy完整一致，159不同。每条差异都是post先出现、下一步pre出现（159/159），首次post仅qvel106或qpos+qvel53，effort无首差；首次差幅5.55e-17…9.54e-6，部分首1…4步发生，不能直接归因为触障或控制请求变化。完整逐case onset与数值保round294_reproduction_provenance.json，0新积分/优化/PPO。
 - 第294轮方向判断：已知carrier/damping信息修正不足以形成方法贡献；此前成功负对照也跨490rpm，不重复“额定轮速识别接触失效”方案。可得公有信息、mean/difference必要几何、roll-yaw耦合反例并不自动导出接触载荷保证，尚无合格新假设。源码与记录初态一致只排除所核来源差异，未保存的warmstart/contact排序/历史运行版本仍未知，不声称已证明GPU非确定性或唯一物理根因。
 - 295深审必须决定有限复现定位是否值得继续：建议仅用原regular batch0含首步分歧的6300013，保原20world批处理，做两次独立同配置40物理步重复（共1600world-step），记录完整模型参数/solver初态和runtime，比较逐步qv/ctrl/effort/solver状态；必须295先冻结预算、记录与停止条件，不默认launch。该实验只检当前运行重复性，不重跑164历史或要求旧浮点全部exact，不是方法或PPO准入。六论文出口仍缺；若定位不能改变方法比较设计则停，不再无限审计。295同时按约冗余清理；同上传helper11251确认live首批，视频零上传、remote仍未全同步。
