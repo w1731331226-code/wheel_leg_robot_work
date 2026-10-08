@@ -1,0 +1,58 @@
+{
+  "round": 296,
+  "terminal": true,
+  "process_pid": 27966,
+  "exit_code": 139,
+  "signal": "SIGSEGV",
+  "stage": "First construction/reset/full snapshot before initial qualification; exact native fault location unknown",
+  "proposal_sha256": "562eb0b214a64f3c2df0a3c3b453f7c3318d76d3206362c402a796fc236618b7",
+  "runner_sha256": "977cd438811819c6bf9a9768cb4fac96ed2fe5fb9fe7180ad2c4bed52da830ab",
+  "run_log_sha256": "4749db0db5ab59b8e17c1bc859a3edd92dbe2b9309e3085b16311c6886959312",
+  "retained_contracts": [
+    {
+      "path": "construction_0/broad_contract.json",
+      "sha256": "78025d7da956bee5eadac3fa4142590a0fdfd3a6eeb098eb8b0731196d404bdf"
+    },
+    {
+      "path": "construction_0/geometry.json",
+      "sha256": "cef93296bbddd6c3ea7fef4a5f1cce5573b62b65900a8fe649a706ff0043316f"
+    },
+    {
+      "path": "construction_0/gyro_contract.json",
+      "sha256": "8c4e2a40262c803b6c9b1f3ae0234fc1312f0fc2aa525186c9eb54d0749217a6"
+    },
+    {
+      "path": "construction_0/parking_contract.json",
+      "sha256": "3555f064e5aec89896b3dea68c687958f6f86269a6d4249c8c8dd72ea8b127ba"
+    },
+    {
+      "path": "construction_0/phase_contract.json",
+      "sha256": "d7eb2c3c84ba65ea475cba445b1123a1c8c89a698020b81ba3071f1da0494af4"
+    },
+    {
+      "path": "construction_0/role_contract.json",
+      "sha256": "eb781a1ffc0bf69366d2a9a7e5ec46113f065b11a4872df08e6b3877f8c74bba"
+    }
+  ],
+  "initial_snapshot_saved": false,
+  "source_admission_generated": false,
+  "registered_policy_step_calls_completed": 0,
+  "registered_physical_prefixes_saved": 0,
+  "new_training_samples": 0,
+  "baseline_constructor_transitionFD_calls": null,
+  "FD_count_unavailable_after_native_crash": true,
+  "coredumpctl_available": false,
+  "unique_cause_established": false,
+  "repeatability_conclusion": "inconclusive",
+  "implicit_retry": false,
+  "experiment_closed_pending_independent_review": true,
+  "formal_PPO_admitted": false,
+  "limits": "No successful full initial-state snapshot or physical prefix; do not interpret native crash as nondeterminism, physical instability or contact-estimator evidence. The intended1600step experiment was not completed.",
+  "next": "297 finite independent terminal/source/failure review, then close this audit and return to method-level synthesis. No automatic replay, source repair rollout or larger budget.",
+  "native_backtrace_sha256": "44d7e8bf902ae1ac1f06ea5524d07430f7ae6576fd18276f8f7c6529da10df3b",
+  "crash_report_path": "/var/crash/_usr_bin_python3.10.1000.crash",
+  "crash_report_matches_command_and_signal": true,
+  "native_fault_path": "CUDA device-to-host copy: cuMemcpyDtoHAsync_v2 via warp.so wp_memcpy_d2h",
+  "python_frame_and_specific_array_unavailable": true,
+  "native_backtrace_only": true
+}

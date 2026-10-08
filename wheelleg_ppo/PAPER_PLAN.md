@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第296轮有限重复性检查未完成（2026-10-09）：
+
+check_baseline_repeatability.py实施原B0/20case/55源不变的只读solver记录和全Model/Data dataclass及控制/history初态快照，计划只有两独立构建各40物理步。首次构建/reset/快照期间SIGSEGV退出139，完整initial/source_admission/物理prefix均未生成，第二构建未开始；注册1600world-step未完成，重复性inconclusive，不能当两次运行相同/不同或正式PPO准入。
+
+系统apport匹配本次command/signal，提取调用栈为libcuda cuMemcpyDtoHAsync_v2经warp.so wp_memcpy_d2h的设备到主机拷贝；具体Python帧/数组与唯一原因不可得，gdb py-bt不可用。原日志、runtime、六构建契约及failure.json/native_backtrace.log保，baseline构造FD计数因崩溃未落盘明确null，不宣称成本为0。临时提取core删除，系统转储仅本地，不加入Git。按冻结一次尝试停止，不自动修复重跑、更换seed或扩大预算。
+
+297独立核终态/原源码与失败证据后有限去留，随后回方法级roll-yaw/reference综合，不把记录工具崩溃转成新物理结论或无限调试线。300深审清理，六论文出口仍未齐；原控制/物理门/视频禁上传约束保持。
+
 第295轮五轮方向深审与冗余清理（2026-10-09）：
 
 291—294完成了来源、实际计算、独立重算和全164首次分歧定位，方法适当且有证据进展。结论不是新算法：known阻尼修正不值得扩大成论文方法，单载体补偿总体误差无改善、区间漏覆盖、positive normal下界没有证据；已有成功负对照也跨额定轮速，故不再重复轮速阈值识别器。旧clip-pair/固定damping/governor/map收益救门保持关闭，不加场景或延长PPO掩盖方法缺口。

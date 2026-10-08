@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第296轮唯一重复性尝试未通过源/快照资格：check_baseline_repeatability.py按原55源/20case及zero6/B0路径，捕获前后只读solver拷贝和全Model/Data dataclass/控制history初态保存；两构建/1600world-step实际未完成。首次构建/reset/全快照阶段原生SIGSEGV退出139（PID27966已消失），无完整initial.npz/source_admission/prefix，不有合格物理重复性结论。一次尝试按冻结停止，不自动修补重跑或扩大预算。
+- 第296轮从系统apport本次报告提取原生调用栈：libcuda cuMemcpyDtoHAsync_v2→warp.so wp_memcpy_d2h，定位到设备→主机拷贝路径，不证明是哪一数组/唯一根因；gdb无py-bt，不安装调试依赖。报告核command/signal，native_backtrace.log及failure/runtime/六构建契约/原run.log保。没有完成注册policy step或prefix，baseline FD计数因原生退出未落盘明确null，不能以未完成预算当0总成本或性能证据。
+- 临时提取内存core已删除，系统原始apport保本地、不上传；无视频。本轮不修改旧控制器或模型/门，不得从记录器失败推物理不稳定/GPU非确定性。297独立有限失败去留，关闭这一尝试并回方法级综合，300深审清理仍按约；正式PPO/完整论文六出口未准。数据helper11251本轮仍live首批，remote未全同步。
+
 - 第295轮五轮方向深审完成：291来源限制、292实际80计算、293独立重算、294全164首差定位均有新证据；方法正确但证据性质为工程/机理，已知阻尼/单载体修正不值得扩成方法，额定轮速识别器/旧clip-pair与governor/map救门维持关闭。原5°/height/任务门和所有失败保留，方法贡献/sameinfo消融/new3→formal5/freshID-OOD保持/层级统计真实PPO成本/完整稿六出口未齐，不能用继续审计替代论文。
 - 第295轮只冻结一项能改变后续比较设计的有限实验：baseline_repeatability_v1/proposal.json，原regular batch0完整20world及6300013位置不改，两次独立原B0构建各一20ms/40步，共1600world-step；源/实际graph计数/只读solver捕获和完整初态可比先验收，原FD构造另计。保存运行版本、模型/参数/完整solver初态及逐步qvctrl/effort/warmstart/qacc/constraint/可得contact排序，缺项或源错误留partial停止，只有一次尝试，不扩预算/重试/重跑164或判历史唯一原因。结果用于是否重复runtime对照，不支持新方法/PPO。
 - 296资格及唯一有限检查，297独立去留后必须回方法级roll-yaw/reference推导与可证伪贡献，不继续无限重复性审计；300下一五轮深审清理。没有合格新方法时不以更多场景、更长PPO或调门填补贡献。295本轮0新积分/训练/优化，proposal待源资格，不已执行。

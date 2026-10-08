@@ -1,0 +1,19 @@
+Warp 1.17.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 5060 Laptop GPU" (8 GiB, sm_120, mempool enabled)
+   Kernel cache:
+     /home/wmt/.cache/warp/1.17.0
+Module execution_input_collector 7aab969 load on device 'cuda:0' took 3.00 ms  (cached)
+Module parking_withdrawal_probe f69e11a load on device 'cuda:0' took 3.11 ms  (cached)
+reduction {"order": 6, "method": "modal", "vmc_condition": 1.3782055460660536, "projection_condition": 20.20539014108477, "omitted_radius": 0.9935566191757785, "max_relative_frf_error": 0.0028123571312865282, "reduced_closed_radius": 0.9989507930323593, "full_closed_radius": 0.9989516950214622, "linear_pass": true}
+reduction {"order": 6, "method": "modal", "vmc_condition": 1.4999430560359601, "projection_condition": 20.316571278155383, "omitted_radius": 0.9870654971676265, "max_relative_frf_error": 0.002604862399465738, "reduced_closed_radius": 0.9989220534129091, "full_closed_radius": 0.9989229385579487, "linear_pass": true}
+reduction {"order": 6, "method": "modal", "vmc_condition": 1.1692020288503353, "projection_condition": 24.928412986500543, "omitted_radius": 0.986525386712174, "max_relative_frf_error": 0.0028457372278306503, "reduced_closed_radius": 0.998875960691861, "full_closed_radius": 0.9988769768204375, "linear_pass": true}
+reduction {"order": 6, "method": "modal", "vmc_condition": 1.0703721088466125, "projection_condition": 26.96332831445564, "omitted_radius": 0.9865003916921553, "max_relative_frf_error": 0.0029245363631001517, "reduced_closed_radius": 0.9988613177526111, "full_closed_radius": 0.9988623451106616, "linear_pass": true}
+reduction {"order": 6, "method": "modal", "vmc_condition": 1.898231218528725, "projection_condition": 29.632941238874096, "omitted_radius": 0.9900192987081642, "max_relative_frf_error": 0.003472138238343771, "reduced_closed_radius": 0.9988501522974549, "full_closed_radius": 0.998851314107305, "linear_pass": true}
+reduction {"order": 6, "method": "modal", "vmc_condition": 1.3782055460660536, "projection_condition": 22.807120144044745, "omitted_radius": 0.9935578112614408, "max_relative_frf_error": 0.002848389025117791, "reduced_closed_radius": 0.9989510591868617, "full_closed_radius": 0.998951972942502, "linear_pass": true}
+reduction {"order": 6, "method": "modal", "vmc_condition": 1.4999430560359601, "projection_condition": 20.927270009449636, "omitted_radius": 0.9870748210524375, "max_relative_frf_error": 0.0025988345424261435, "reduced_closed_radius": 0.9989220057139586, "full_closed_radius": 0.9989229199995769, "linear_pass": true}
+reduction {"order": 6, "method": "modal", "vmc_condition": 1.1692020288503353, "projection_condition": 24.77954529917417, "omitted_radius": 0.9865248329640839, "max_relative_frf_error": 0.0028353847996350056, "reduced_closed_radius": 0.998875822776472, "full_closed_radius": 0.9988768546432709, "linear_pass": true}
+reduction {"order": 6, "method": "modal", "vmc_condition": 1.0703721088466125, "projection_condition": 26.86518990156714, "omitted_radius": 0.9865208575083134, "max_relative_frf_error": 0.0029161310892778748, "reduced_closed_radius": 0.9988611909147412, "full_closed_radius": 0.9988622275746445, "linear_pass": true}
+reduction {"order": 6, "method": "modal", "vmc_condition": 1.898231218528725, "projection_condition": 30.430514512924493, "omitted_radius": 0.9900095341205083, "max_relative_frf_error": 0.003464656240716812, "reduced_closed_radius": 0.9988503518062063, "full_closed_radius": 0.9988515290564789, "linear_pass": true}
