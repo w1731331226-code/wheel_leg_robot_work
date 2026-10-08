@@ -1,5 +1,17 @@
 # 双轮腿机器人PPO论文方案
 
+第300轮五轮方向深审、独立复核与清理（2026-10-09）：
+
+296—299完成失败有限关闭、候选必要几何、先例重合边界和实际100GPU静态source；独立核三报告/源码与输出SHA、单targetblock逆还原source/AST、old/zero输出与原fixture exact及非零目标独立公式重算一致。方法适当但只证明有限source/静态性质，尚无动态收益、新颖性或学习必要性。继续价值在有限接口资格与强同权限机制对照，不再扩失败repeatability/旧map-damping、场景或训练预算救门。
+
+接入前的具体问题是日志语义：旧role checker默认targetmean=trackingmean=nominalh，新nonzero25/25不满足。新adapter应明确nominalh与实际m/d、request/filter/target/phase/reset各字段及新reference一致性核；原physical/design/task/height/5°/velocity/progress门保持，不能静默skip旧rolecheck、改历史日志或用当前static成功假装新wholepipeline通过。
+
+公平对照canonical fullreference6为[m,d,hubL,hubR,wL,wR]，M3 embedding=[a_m,a_d,0,0,a_y,−a_y]（rank3/128合成样本过）。U6共享m/d映射和filter，独立hub用原±1Nm、wheel原±.3Nm及原最终限制，确实覆盖M3参考权限；旧仅torqueB2只作背景。强解析joint-reference和leg-only/yaw-only去除项也必须共享raw481、范围/速率/输出门/奖励与案例。集合包含不证明初始探索协方差或模型参数量相同，须报告实际RMS/饱和/协方差与参数数，不能从网络维度差异直接声称结构贡献。
+
+301只实现isolated action/capture/reset/新日志与公平decoder；302通过有限source/非对称/phase/reset资格后，303才登记唯一有限paired动态机制协议，304沿终态或livehandle消费，305下一深审清理。当前无sourcecapture/rollout/新PPO资格，正式3seed→5/freshID-OOD保持/层级统计真实训练成本/完整稿仍未完成。用户完整论文目标不因静态通过缩小。
+
+清理旧closed anchored-study缓存nominal_mean_policy.pyc3266B，ignored/untracked/unheld、codeobject与src一致，round300_cleanup保存SHA和删除验收；所有源、模型RMS/raw/失败和CPU-GPU证据保留。视频不上传，数据helper仍live首批，remote未全同步。
+
 第299轮隔离输出链与GPU静态核对（2026-10-09）：
 
 joint_reference_control在原floor clamp之后单block选择左右跟踪target，删除block可完整source/AST还原旧control。原packet16列/phase/radialanchor保，额外两filteredaction列由joint_reference_prepare按normalized每.5ms±.01更新；40次到±.4、inactive冻结、旧packet只读及非法action拒绝过。暂未改生产环境/capture/reset/Actor，也未实现公平同参考权限对照。

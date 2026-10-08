@@ -4,6 +4,12 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第300轮五轮深审/独立复核完成：296失败有限停止、297关闭并回方法、298必要几何/先例与source耦合、299实际isolated100static均有证据进展。独立核start/completion/delivery及源码SHA、单targetpatch逆还原AST、old/zero NPZ ctrl/diag/memory与原fixture exact，非零目标以独立显式公式重算一致；不是动态/novelty或PPO通过。方向值得继续仅有限接口/source资格，不复活失败重复性/旧map与damping收益线，不扩场景或训练代替六论文出口。
+- 第300轮发现必要接入工作：旧reference_role_probe.check_log要求左右目标mean等于其trackingmean且mode0 trackingmean=h；新非零25/25 mean不同于h，当前旧角色日志/检查不能验收新candidate。新adapter必须分别记录original nominalh和实际m/d、request/filter/target/phase/reset，source检查新的reference一致性；原actualphysical/design/task/height/5°/velocity/progress门保持，不静默skip角色验收或改旧历史日志。
+- 第300轮公平对照坐标明确：canonical fullreference6=[m,d,hubL,hubR,wL,wR]，M3嵌入=[a_m,a_d,0,0,a_y,−a_y]；128合成action与rank3 embedding过，U6必须用同mean/difference映射/filter、hub原±1Nm、wheel原±.3Nm及同最终限幅。原只torqueB2不能当同参考权限对照；强解析joint-reference与leg-only/yaw-only必要。集合包含不是探索协方差/参数量相等，后续须报告初始化实际RMS/饱和/协方差及各模型参数数，不用未匹配探索宣称纯结构收益。
+- 第300轮仅准301实现isolated action/capture/reset与新日志/公平decoder，302有限source/非对称/phase/reset资格，303通过后才登记一个有限动态机制协议；当前sourcecapture/rollout/正式PPO均未准，305下一方向深审清理。round300_direction_review.json绑定判断和证据，完整贡献/strongsameinfo+消融/new3→5/freshID-OOD保持/统计真实PPOcost/稿仍缺，goal active。
+- 第300轮删nominal_mean_policy.pyc3266B，ignored/untracked、fuser无持有、marshalcode与现源码compile exact，SHA/源/删除结果存round300_cleanup.json；旧anchored模型/RMS/全raw/source/失败/CPU-GPU基线全保，缓存可再生不称永久节约。视频零上传约束保持；helper11251本轮确认live首批，remote尚未全同步，不重启/不重写。
+
 - 第299轮isolated joint_reference_control仅在原floor clamp后加入跟踪target选择，删除该单block后全source/AST exact回原reference_role_control；原packet/phase/radialanchor不改。joint_reference_prepare独立两参数filter按原normalized每.5ms±.01 slew，40更新到±.4、inactive冻结、原16列copy与非法action拒绝过；未挂生产环境或policy/capture/reset，所有faircomparators仍未实现。
 - 第299轮100GPU静态query完成（25保存fixture×old/zero/reference/yaw），不构建env或physicsgraph、不solve/FD/积分/PPO，仅CPU编译模型取实际joint/sensor地址。Old25 exact复现保存ctrl/diag/memory；candidatezero25三输出exact，nonzero25targets与CPU映射对齐、yaw25沿原wheel/filter且原target不变。全部100finalcommand按namedjoint/hw曲线核bounds、diag14全0，readonlyargs不变；四NPZ完整输入/输出SHA与control_started/completion/delivery/log保。首model_lqr import顺序错误在0query/0physics前发生，修导入bootstrap后执行唯一100，旧log保。
 - 第299轮更正298径向混杂陈述：reference[2]只影响默认anchor，positive reference[15]会覆盖；本25fixture全部覆盖（.115/.16），不能称这些状态或全部旧研究实际发生anchor混杂。保原anchor是设计约束，不是新增收益机制证据。当前static单步zero不是全trajectory/phase/delay/reset或CPU-GPUtask资格，普通learnedreference仍未qualifiednovel。

@@ -1,0 +1,98 @@
+{
+  "round": 300,
+  "verified": true,
+  "reviewed_rounds": [
+    296,
+    297,
+    298,
+    299,
+    300
+  ],
+  "inputs_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/derivation.json": "1484d29980d9ea61799ef4f6f64919e64ac4d632be5ae4ff2c641a1f9c3863c3",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/control_started.json": "2438a9370d6648e0294ee51cfc90f796ee06b0ea70d54afb0f65dc4842e30002",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/control_completion.json": "e896d15faf54b7cc5c6bd031afbf5f5e9fe99f736182267ea70b7a8639fe2038",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/control_delivery.json": "690b5a232a1cab445a3b2b4fc490e10c3aedcb70e52cad35137d2da73450f2dd",
+    "wheelleg_warp/results/paper_recovery_20261004/baseline_repeatability_v1/review.json": "96d35e963f4a868ecbcad1bf4d1aa9d8342d0c486f0552d72c7e35af1de40943"
+  },
+  "reversible_target_only_patch_verified": true,
+  "independent_zero_saved_outputs_exact": true,
+  "independent_reference_formula_verified": true,
+  "old_role_mean_invariant_violated_nonzero_cases": 25,
+  "required_integration_change": "Keep nominal command h and actual selected trackingmean separate in new action/reference trace; old role checker assumes their equality and cannot certify nonzero candidate. Preserve original physical/design/task gates; never skip role validation silently.",
+  "six_coordinate_embedding": [
+    [
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ],
+    [
+      0.0,
+      0.0,
+      -1.0
+    ]
+  ],
+  "canonical_full_reference_coordinates": [
+    "mean",
+    "half_difference",
+    "hub_left",
+    "hub_right",
+    "wheel_left",
+    "wheel_right"
+  ],
+  "comparator_scope": "U6 uses the same mean/difference mapping/filter and original independent hub residual +/-1Nm andwheel +/-0.3Nm. Candidate hub=0/wheel antisymmetric. This covers candidate authority; it is a new reference comparator,not reuse of oldtorqueB2.",
+  "worth_continuing": "Limited integration/source qualification worth continuing; genericreference mapping isnot qualifiednovelty orbenefit. No newPPO ormethodsuccess claim yet.",
+  "methods_assessment": "Static saved-fixture reversal/zero/target checks are adequate for isolatedsource; insufficient for nonasymmetric,phase,reset,delay orclosed-loop performance. Failure repeatability branch remainsclosed.",
+  "additional_work": [
+    "Implement reference action/capture/reset interface and correct nominal-versus-selected reference logs in an isolated adapter.",
+    "Build same-reference analytic/full6 andleg-only/yaw-only decoders under same public481, rates andfinal limits.",
+    "Source/capture/reset/noop/saved-state asymmetric checks before finite dynamic mechanisms; noformalPPO yet."
+  ],
+  "paper_missing": [
+    "Distinct defensible contribution",
+    "Strong same-information baseline/ablations",
+    "New3seed qualification thenformal5",
+    "FreshID/OOD andcapabilityretention",
+    "Hierarchicalstatistics/actualPPOcost",
+    "Complete reproducible manuscript"
+  ],
+  "source_capture_admitted": false,
+  "dynamic_rollout_admitted": false,
+  "formal_PPO_admitted": false,
+  "new_simulation": 0,
+  "new_training_samples": 0,
+  "next": "301 isolated adapter/decoder/source logging;302 finite source andreset/capture/asymmetric qualification if interfacepasses;303 register only one finite paired dynamic mechanism protocol if admitted;305next direction review/cleanup.",
+  "cleanup": {
+    "round": 300,
+    "path": "wheelleg_warp/__pycache__/nominal_mean_policy.cpython-310.pyc",
+    "bytes": 3266,
+    "sha256": "229917bae09cae03d35a7b29408330a1c8ec212ae8dbc198645b409b9640f36b",
+    "source_sha256": "d85f3a26c0de5178ac74a2c6bef8f9bc725a9675433ea044f433aeec3ec79b57",
+    "ignored": true,
+    "untracked": true,
+    "unheld": true,
+    "code_object_equal": true,
+    "reason": "Closed anchored-policy study cache,not currentcandidate or liveuploader dependency; preserve source/models/RMS/allraw/failedstudies.",
+    "deleted": true
+  }
+}
