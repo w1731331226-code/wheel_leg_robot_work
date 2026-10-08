@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第293轮独立复核完成：不调用原decode/estimates/features，从原始Actor与dense记录重算80条轨迹、29,708窗口；检查4份result和80组来源SHA、每个保存数组、端点/有效包/同40步指令积分、误差/RMS/bias/max/coverage及汇总。review.json verified，日志保存；公开IMU与关节采样时间差仍保留，不把机械平衡诊断量当独立接触力真值。
+- 第293轮信息审查关闭：两组carrier单项pooled误差均比原relative略大，已知阻尼补偿后RMS约.003417/.003103Nm，gain-only区间覆盖90.7189%/90.7541%。仅支持已知遗漏项修正，不支持精确接触力、正normal下界、稳健牵引、新控制器或新颖方法；正式PPO未准。不调J/阻尼/阈值/区间救覆盖，不再扩大本分支轨迹。0新物理积分/优化/训练，仅编译模型取地址。
+- 第294轮应整合已有失败及公有信息限制，判断能否形成可区别、可证伪的方法假设；295按约做方向深审与冗余清理。论文六出口仍未齐，目标active。视频规则继续；同数据上传helper11251本轮确认live首批，remote未全同步，不重启或重写历史。
+
 - 第292轮冻结80existingcontrolled轨迹一次offlineaudit完成，29,708个有两valid端点的20ms窗口（old14,842/map14,866），最后Actor未存terminal包排除、无privatedata补publicinput。输入only public481/SCALES/elapsed/activeencoders+gyro/旧prefix指令，全部estimate算完后才读dense actualtorque/truepassivecarrier/damping作机械balance诊断；不是独立contactwrench/normal真值，gyro.5ms/softclosure/endpointω近似明确。
 - 第292轮known遗漏量有实证但不新颖：pooledRMS old relativeproxy .05599149、+carrier .05609171、+damping .00341736Nm；map .05583417/.05596726/.00310326Nm，corrected在每组40/40case RMS低于原proxy。总体改进主要knownjointdamping，不是单carrier补偿有效或newcontactforce算法；gain-only区间coverage约90.7189%/90.7541%，仍非证书，不能fit区间/J/bω/阈值让coverage全过或将约9%miss删样本。
 - 第292轮80NPZ保存public端点/U/dt/三estimate/区间/私有diagnosticbalance及truecarrier/actualimpulse/damping和errors，各source/样本count/SHA/误差公式/RMS已核；0新simulation/optimizer/controller/PPO。首NumPy先进索引shape错误在0record/0interval前失败，log/start/failure保，改slice索引后全80完成，未重跑任何physical。293独立接收/拒绝informationutility，295深审清理，精确力/normal/新controller/论文六出口仍未准/goal active。

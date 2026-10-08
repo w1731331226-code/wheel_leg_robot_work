@@ -1,5 +1,11 @@
 # 双轮腿机器人PPO论文方案
 
+第293轮独立复核与信息分支关闭（2026-10-09）：
+
+review_wheel_momentum_information.py不调用原估计/解码函数，直接从4份原result、80条Actor/dense与80个保存NPZ重算29,708窗口；来源SHA、全部数组、有效端点、同40步指令积分、每case误差/RMS/bias/max/coverage和两组汇总一致，review.json verified。这是已有数值证据的独立公式复核，0新物理积分、优化或PPO；模型编译仅取真实地址，IMU−.5ms与理想链近似边界保留。
+
+关闭这一有限信息审查：carrier补偿单项在两组pooled误差均略增，主要改善来自已知阻尼；gain-only区间仍约9.3%未覆盖。不能称真实contact/normal估计、新颖observer、稳健牵引证书或新控制方法，不准正式PPO，也不调惯量/阻尼/区间或扩大轨迹救门。第294轮汇总方法级缺口、判定可区别可证伪的假设是否成立；第295轮按约深审方向、方法和补充实验必要性并清理冗余。完整论文六出口仍未达成。
+
 第292轮80轨迹信息遗漏审查一次计算完成（2026-10-09）：
 
 audit_wheel_momentum_information.py固定全40controlled×双臂80，29,708正dt双valid公有packet窗口；逐publicestimate后才用dense actualtorque/truepassivecarrier/damping生成mechanicalspinaxis诊断reference。记录public旧新packet/commandintegral/dt/三估计/gaininterval、所有diagnostic项及errors，80文件计数/SHA/source和重算RMS核；最后terminalpacket缺失不借真state补输入，gyro−.5ms和理想链及trapezoid近似保。首诊断索引shapebug在0record前修slice，旧失败log保，0physical rerun/学习/优化/控制query。

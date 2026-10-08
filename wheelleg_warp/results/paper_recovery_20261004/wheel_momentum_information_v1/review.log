@@ -1,0 +1,5 @@
+REVIEWED old_B0 0 20
+REVIEWED old_B0 1 40
+REVIEWED map_B0 0 60
+REVIEWED map_B0 1 80
+PASS293 independent 80-episode source/array/statistic review; information audit closed {'old_B0': {'episodes': 40, 'intervals': 14842, 'pooled_rmse_Nm': {'relative_proxy_Nm': 0.05599148703471868, 'carrier_proxy_Nm': 0.05609171345016134, 'corrected_proxy_Nm': 0.0034173574339083183}, 'corrected_rmse_lower_than_relative_cases': 40, 'gain_only_interval_coverage': 0.9071890580784261}, 'map_B0': {'episodes': 40, 'intervals': 14866, 'pooled_rmse_Nm': {'relative_proxy_Nm': 0.055834167245119526, 'carrier_proxy_Nm': 0.05596725970559809, 'corrected_proxy_Nm': 0.0031032562435865134}, 'corrected_rmse_lower_than_relative_cases': 40, 'gain_only_interval_coverage': 0.9075406968922374}}
