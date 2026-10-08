@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第292轮80轨迹信息遗漏审查一次计算完成（2026-10-09）：
+
+audit_wheel_momentum_information.py固定全40controlled×双臂80，29,708正dt双valid公有packet窗口；逐publicestimate后才用dense actualtorque/truepassivecarrier/damping生成mechanicalspinaxis诊断reference。记录public旧新packet/commandintegral/dt/三估计/gaininterval、所有diagnostic项及errors，80文件计数/SHA/source和重算RMS核；最后terminalpacket缺失不借真state补输入，gyro−.5ms和理想链及trapezoid近似保。首诊断索引shapebug在0record前修slice，旧失败log保，0physical rerun/学习/优化/控制query。
+
+PooledRMS old relative/carrier/+damping为 .05599149/.05609171/.00341736Nm，map .05583417/.05596726/.00310326Nm；corrected全两组40case误差较小，但carrier单项总体没有改善，主要项是已知damping .005，不能称新observer/真实load识别。只gainuncertainty区间包含diagnostic比例约.907189/.907541，约9%未覆盖，禁止事后宽区间/fitJ/damping/force或load阈值。Mechanicalbalance不是独立contact/normal真值，更不是全部牵引安全证明。
+
+293独立saved80/time/单位/误差接受拒绝，不继续PPO或normalforceoracle。295按约深审清理；可检信息修正不单独构成方法贡献，六论文出口仍缺，目标active。原datahelper11251同首批live、video无上传、remote未全追上，不改main历史/盲重启dataqueue。
+
 第291轮历史积分/端点来源核与同步限制（2026-10-09）：
 
 wheel_momentum_information.py复用leg_kinematics/原features/SCALES解析raw481，last两valid39包、last6实际beforegain全ctrlmean×dt，decode968/elapsed/invalidshape、合成正负command+gyro项/gain区间unit过。check_wheel_momentum_information.py冻结4job各firstcase来源核：activeq/v/relativeomega与post端点exact，历史积分与同40densepre控制相符（Float32量化），未跨episode。最后terminal rawpacket没存Actorlog就不借私有post state补成Estimator输入。0新controller/physics/FD/optimizer/PPO，只读取公有模型spinJ=.00076510625/damping=.005。

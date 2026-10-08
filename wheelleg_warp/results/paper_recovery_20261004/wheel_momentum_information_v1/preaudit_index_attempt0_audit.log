@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/audit_wheel_momentum_information.py", line 98, in <module>
+    if __name__=='__main__':run()
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/audit_wheel_momentum_information.py", line 45, in run
+    after=post[end-1,nq+np.array(wheels)]+post[end-1,nq+4,None]
+IndexError: shape mismatch: indexing arrays could not be broadcast together with shapes (373,) (2,) 

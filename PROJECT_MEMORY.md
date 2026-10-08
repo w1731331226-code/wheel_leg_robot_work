@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第292轮冻结80existingcontrolled轨迹一次offlineaudit完成，29,708个有两valid端点的20ms窗口（old14,842/map14,866），最后Actor未存terminal包排除、无privatedata补publicinput。输入only public481/SCALES/elapsed/activeencoders+gyro/旧prefix指令，全部estimate算完后才读dense actualtorque/truepassivecarrier/damping作机械balance诊断；不是独立contactwrench/normal真值，gyro.5ms/softclosure/endpointω近似明确。
+- 第292轮known遗漏量有实证但不新颖：pooledRMS old relativeproxy .05599149、+carrier .05609171、+damping .00341736Nm；map .05583417/.05596726/.00310326Nm，corrected在每组40/40case RMS低于原proxy。总体改进主要knownjointdamping，不是单carrier补偿有效或newcontactforce算法；gain-only区间coverage约90.7189%/90.7541%，仍非证书，不能fit区间/J/bω/阈值让coverage全过或将约9%miss删样本。
+- 第292轮80NPZ保存public端点/U/dt/三estimate/区间/私有diagnosticbalance及truecarrier/actualimpulse/damping和errors，各source/样本count/SHA/误差公式/RMS已核；0新simulation/optimizer/controller/PPO。首NumPy先进索引shape错误在0record/0interval前失败，log/start/failure保，改slice索引后全80完成，未重跑任何physical。293独立接收/拒绝informationutility，295深审清理，精确力/normal/新controller/论文六出口仍未准/goal active。
+- 第292轮datauploadhelper同11251仍live首批，无video，root新提交不改原f7历史或helper对象集。Guardactive受上传lock限制，remote未全同步；后续必须沿已有进程/远端实际objects审查，不能盲目重启完整data push。
+
 - 第291轮public481来源unit过（冻结4job各首case，不当80全部audit）：最新packet activeq/v和wheelrelativeω与保存post端点逐值exact；历史last6mean×SCALES×dt与同40物理步实际beforegain全ctrl积分在Float32量化内，valid/dt/无跨episode、解码schema/符号/gaininterval代数过。前2包已可用窗口才计，Actorlog缺最后terminal packet不从privatesim补输入。源/原80结果SHA保持，0新仿真/控制/优化/FD/学习，仅模型compile查publicwheelJ/damping。
 - 第291轮完整同步角动量源并未qualified：IMUgyro body_y对应preintegration(约−.0005s)，wheel/activeqv是post，例gyropre匹配约7.45e-8而gyro-post差可.0078rad/s以上；idealclosed-chain parentrate重建相对true passive_chain有误差（示例max .02767rad/s、RMSE .00151，反号明显更差），不是精确载体真值。公开模型axisymspinJ=.00076510625、jointdamping=.005，未用actualtorque/contact/truegain做estimator输入。
 - 第291轮wheel_momentum_information.py只近似信息函数，不接Actor/controller；source_admission明确exact_synchronous_absolute_momentum_source=False、normal/load guaranteeFalse。292只既定80的近似遗漏项/bias审查，必须保gyro0.5ms/closure/damping近似和终包缺失，不以gain区间掩盖模型误差或称normalforce，若schema/时间/单位真实不匹配仍停。293独立去留、295深审清理，新controller/PPO和六论文出口仍未准/goal active。

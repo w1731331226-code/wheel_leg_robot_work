@@ -1,0 +1,5 @@
+AUDITED old_B0 0 episodes 20 intervals 7442
+AUDITED old_B0 1 episodes 40 intervals 14842
+AUDITED map_B0 0 episodes 60 intervals 22298
+AUDITED map_B0 1 episodes 80 intervals 29708
+DONE29280offlineapproximationaudit {'old_B0': {'episodes': 40, 'intervals': 14842, 'pooled_rmse_Nm': {'relative_proxy_Nm': 0.05599148703471868, 'carrier_proxy_Nm': 0.05609171345016133, 'corrected_proxy_Nm': 0.0034173574339083188}, 'corrected_rmse_lower_than_relative_cases': 40, 'gain_only_interval_coverage': 0.9071890580784261}, 'map_B0': {'episodes': 40, 'intervals': 14866, 'pooled_rmse_Nm': {'relative_proxy_Nm': 0.055834167245119526, 'carrier_proxy_Nm': 0.05596725970559809, 'corrected_proxy_Nm': 0.003103256243586514}, 'corrected_rmse_lower_than_relative_cases': 40, 'gain_only_interval_coverage': 0.9075406968922374}}
