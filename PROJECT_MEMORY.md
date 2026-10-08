@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第291轮public481来源unit过（冻结4job各首case，不当80全部audit）：最新packet activeq/v和wheelrelativeω与保存post端点逐值exact；历史last6mean×SCALES×dt与同40物理步实际beforegain全ctrl积分在Float32量化内，valid/dt/无跨episode、解码schema/符号/gaininterval代数过。前2包已可用窗口才计，Actorlog缺最后terminal packet不从privatesim补输入。源/原80结果SHA保持，0新仿真/控制/优化/FD/学习，仅模型compile查publicwheelJ/damping。
+- 第291轮完整同步角动量源并未qualified：IMUgyro body_y对应preintegration(约−.0005s)，wheel/activeqv是post，例gyropre匹配约7.45e-8而gyro-post差可.0078rad/s以上；idealclosed-chain parentrate重建相对true passive_chain有误差（示例max .02767rad/s、RMSE .00151，反号明显更差），不是精确载体真值。公开模型axisymspinJ=.00076510625、jointdamping=.005，未用actualtorque/contact/truegain做estimator输入。
+- 第291轮wheel_momentum_information.py只近似信息函数，不接Actor/controller；source_admission明确exact_synchronous_absolute_momentum_source=False、normal/load guaranteeFalse。292只既定80的近似遗漏项/bias审查，必须保gyro0.5ms/closure/damping近似和终包缺失，不以gain区间掩盖模型误差或称normalforce，若schema/时间/单位真实不匹配仍停。293独立去留、295深审清理，新controller/PPO和六论文出口仍未准/goal active。
+- 第291轮数据helper11251仍同首批live、无video、未称remote同步，源规则/提交hook生效；专用上传lock抑制daemon大包重传，service恢复active，本地sourceunit/记忆及时commit，不重启任务或上传为求match。
+
 - 第290轮五轮深审结论：286真实328/原门失败，287same8首次越界/load/端点room，288closedpair roll改善但7newyaw，289必要可行性/信息下界和prior重叠，290无合格新controller或novelmethod，不准新PPO/role复活。值得继续仅观测输入/动力遗漏来源校对，不再模拟调参数来恢复已失败gate；六论文出口全部仍缺，goal active。
 - 第290轮wheel_momentum_information_v1冻结80existing controlled轨迹（40×old/map），复用raw39/481history、acceptedcommand mean/elapsed/valid、leg_kinematics parentrate和publicwheelJ/damping/gainrange.95–1.05；比较relative-rotorproxy、carrier-corrected、加damping+gaininterval三项。只sensor时间匹配offline估计，真passiveq/actualactuator/contact仅验证不用输入，不fitforce/load门，残差≠normal/tractioncertificate；291schema/time/kinematicssign sourceunit，292一次80offline，293独立有限去留，295深审清理。
 - 第290轮准静态必要drive/yaw polytope：FL=Fsum/2−Mz/track、FR=Fsum/2+Mz/track且各|F|<=C；oneC0时Fsum>0/Mz0不成立，3代数例过。仍quasisteady条件不是fullgyroscopic/contactimpact guarantee，原LQR/回报/Actor/命令/物理门不变，无newcontroller/simulation/optimizer/FD/学习。

@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第291轮历史积分/端点来源核与同步限制（2026-10-09）：
+
+wheel_momentum_information.py复用leg_kinematics/原features/SCALES解析raw481，last两valid39包、last6实际beforegain全ctrlmean×dt，decode968/elapsed/invalidshape、合成正负command+gyro项/gain区间unit过。check_wheel_momentum_information.py冻结4job各firstcase来源核：activeq/v/relativeomega与post端点exact，历史积分与同40densepre控制相符（Float32量化），未跨episode。最后terminal rawpacket没存Actorlog就不借私有post state补成Estimator输入。0新controller/physics/FD/optimizer/PPO，只读取公有模型spinJ=.00076510625/damping=.005。
+
+不能称精确同步绝对角动量：gyro IMU取preintegration、activeqv/wheelomega是post，gyro lag约.5ms；模型链软闭合使activeencoder理想parentrate和truepassive sum有差（首例max.02767rad/s/RMSE.00151，符号正向明显优于反号）。这是明确动态/观测近似，不设新阈值让它过证书。source_admission把exactforce源资格False、positiveNlower/traction保证False；4sourceunit不是完整80counterexample proof。
+
+292仍限80已有episode的近似information/遗漏bias检查，保gyro lag/closure/endpointdamping/终包缺失，真实contact/actuator只validation而非inputs，gaininterval不包含所有model误差、不当force/normal认证。若真实schema/clock/unit不符立即保fail停，不新物理或偷偷补privilegedsignals。293独立有限接受/拒绝、295如期深审清理，新method/formalPPO仍未准，六论文出口/goal active。上传同helper firstbatch继续live、video无上传、remote尚未追上。
+
 第290轮深审：只准已有输入信息审查，不准新控制/训练（2026-10-09）：
 
 286–289形成明确闭环证据：map真实328原任务收益失败；端点fixedmean限制差模；独立夹腿改mean能救roll但7条newyaw；length必要区间与Nlower0限界清楚。仍没有可辩护的新controller/稳定性证书或新颖贡献，不能复活closed map/clip/damping/governor/H1。下一步值得继续仅公有输入是否包含可分解动力信息、遗漏项是否误导判断；不可拿普通GMO/QP/history组件拼接当论文或上长PPO。
