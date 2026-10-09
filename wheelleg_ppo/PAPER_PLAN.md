@@ -1,5 +1,14 @@
 # 双轮腿机器人PPO论文方案
 
+第333轮同内核100环境课程与冻结force模型评估资格（2026-10-10，0学习）：
+
+保护数学函数gain/inside/project/clear/guard相对旧快照AST完全不变，wrapper新增light<=100/40nodes，不完整contact/chunk归档，原dense<=20/80nodes默认保；originalforce.make_env可选guarded与同resetkernel/online统计，原行为保。PolicyActor frozen deterministic潜3/6→canonical6，PriorActor随机契约不改；源码快照、fakefactoryrestore及模式边界unit过。
+
+Actual两100环境3stage cache构建、481reset/40capture过，counter工程加速但物理clock/真实episodeend不改；每arm world24 stage1→2/world34 stage1→3各1，done-only切换/cache/memory/history/collectorreset过，共4episode physicaldesign过。不是100world完整学习/全部终态/sameworld2→3。两oldshort末4000模型frozenRMS/12pressure各12physicaldesign过（共24），8193Raw481→normalize→model→6cmd独立重算过，GPU分批diff<8.2e-8，Nomguard interventions4935/4947，residualreduced0；仅API与主动Nom保护证据，不science收益/选shortwinner。
+
+Actual2865600graphworldsteps/45FD/0optimizer，原bank和pressure重复开发而非freshholdout。D3 minmargin2.38e-8rad（单精度1.4舍入差），V6 1.43e-7，贴界与模型/传感误差缺界仍严峻，不能以数学内核/API通过作真实安全证书。334复用主runner/source/cost/状态准入，335深审清理才冻新科学配对3seed预算，不source-only新表示循环或自动longtraining/formal5。完整六出口与核心论文资格尚缺、goalactive。视频不上传、remote未全同步。
+
+
 第332轮独立16真实模型与20回合保护归档接收（2026-10-10）：
 
 CPU读取全部PPO zip/Adam/RMS，step500…4000计数与10…80epochs/20…160Adam递增、参数状态finite/weights确变/hash/metricsfinite；obsRMS step+10.0001、481→3/6实际空间及128synthetic normalizeddetpredict bounded核。实际初始emptyAdam/head0/std.25/sharedfeatures/value和Nom world数组exact、末history shapes与finite核，无新CPUrobot/physics/optimization。

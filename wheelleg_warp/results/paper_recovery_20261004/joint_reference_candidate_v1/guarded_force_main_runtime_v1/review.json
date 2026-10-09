@@ -1,0 +1,30 @@
+{
+  "round": 333,
+  "verified": true,
+  "completion_sha256": "b92a702fb070123875a14d243a9586b593074916edc0941ffa9d88d2d25e159f",
+  "proposal_sha256": "cf4ea9e6284d7346ebc1229d0c9eebbe04ecf0e32406c6fdfbd55472d6696c06",
+  "kernel_math_AST_unchanged": true,
+  "records": {
+    "D3": {
+      "physical_design": 12,
+      "max_action_difference": 8.195638656616211e-08,
+      "nominal_corrected_substeps": 4935,
+      "residual_reduced_substeps": 0,
+      "predicted_infeasible": 0,
+      "minimum_design_margin_rad": 2.3841857821338408e-08
+    },
+    "V6": {
+      "physical_design": 12,
+      "max_action_difference": 7.450580596923828e-08,
+      "nominal_corrected_substeps": 4947,
+      "residual_reduced_substeps": 0,
+      "predicted_infeasible": 0,
+      "minimum_design_margin_rad": 1.4305114737211966e-07
+    }
+  },
+  "normalized_force_actor_rows_recomputed": 8193,
+  "scope": "100world zero-action source/curriculum only,4actual terminaleventsstage1to2and1to3 acrossdifferentworlds;notall100terminal orsameworld2to3/fulllearning. Old4k frozenmodels engineeringpressureeval only,no science/checkpointselection.",
+  "new_learning_samples": 0,
+  "formal5_admitted": false,
+  "next": "334 independentcapacity/cost/state qualification andmain runner reuse;335directionreview decidesnewscientific pairedthree-seed fixedbudget;no autoformal5"
+}

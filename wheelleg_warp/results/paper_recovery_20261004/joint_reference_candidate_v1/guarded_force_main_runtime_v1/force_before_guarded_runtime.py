@@ -22,19 +22,14 @@ class ForceActions(VecEnvWrapper):
     def step_wait(self):return self.venv.step_wait()
 
 
-def make_env(protocol,arm,seed,guarded=False):
+def make_env(protocol,arm,seed):
     if arm not in ('D3','V6') or not 1<=protocol['worlds']<=100:raise ValueError('Registered force arm and1…100 worlds required')
     # Same fixed-reference construction as execution_input_study, before normalization.
     import execution_history_engineering as engine
     from execution_history_env import ExecutionHistory
     from route_state import RouteState
     factory=engine.base.raw_env
-    def build(rows,mode):
-        original=lambda:engine.collector.instrument(lambda a,b:engine.parking.instrument(factory,a,b),rows,mode)
-        if not guarded:return original()
-        import joint_state_guard
-        return joint_state_guard.instrument(lambda:(original(),),rows,None,dense=False)[0]
-    engine.base.raw_env=build
+    engine.base.raw_env=lambda rows,mode:engine.collector.instrument(lambda a,b:engine.parking.instrument(factory,a,b),rows,mode)
     try:curriculum=engine.base.CurriculumEnv(protocol,'virtual6',seed,protocol['worlds'])
     finally:engine.base.raw_env=factory
     raw=curriculum.venv;history=ExecutionHistory(RouteState(curriculum),raw,'H1')
@@ -42,21 +37,16 @@ def make_env(protocol,arm,seed,guarded=False):
     return curriculum,raw,history,norm
 
 
-class PolicyActor:
-    """Adapt a frozen latent force policy to the existing six-command evaluator."""
+class PriorActor:
+    """Fresh zero-head Gaussian prior for regression, not a trained control policy."""
     def __init__(self,model,arm):self.model=model;self.arm=arm;self.policy=model.policy
     @property
     def num_timesteps(self):return self.model.num_timesteps
     @property
     def _n_updates(self):return self.model._n_updates
     def predict(self,obs,deterministic=True):
-        action,state=self.model.predict(obs,deterministic=deterministic)
+        action,state=self.model.predict(obs,deterministic=False)
         return embed(action,self.arm,len(obs)),state
-
-
-class PriorActor(PolicyActor):
-    """Regression always samples its fresh Gaussian, retaining the original contract."""
-    def predict(self,obs,deterministic=True):return super().predict(obs,deterministic=False)
 
 
 def self_check():

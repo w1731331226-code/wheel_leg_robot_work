@@ -131,9 +131,8 @@ def guard(slot:int,q:wp.array2d[float],v:wp.array2d[float],active:wp.array[int],
     for j in range(6):memory[w,5+j]=final[j]
 
 
-def instrument(factory,cases,directory,dense=True):
-    if type(dense) is not bool or not cases or len(cases)>(20 if dense else 100) or (dense and directory is None) or (not dense and directory is not None):
-        raise ValueError('Dense guard requires<=20worlds/output;light requires<=100worlds/no dense output')
+def instrument(factory,cases,directory):
+    if not cases or len(cases)>20 or directory is None:raise ValueError('Guard diagnostic requires1…20 cases andoutput directory')
     n=len(cases);memory=wp.zeros((n,16),dtype=D);log=wp.zeros((40,n,62),dtype=D);mask=wp.ones(n,dtype=int)
     launch=wp.launch;calls=0
     def intercept(kernel,dim,inputs=None,**kwargs):
@@ -146,24 +145,15 @@ def instrument(factory,cases,directory,dense=True):
     wp.launch=intercept
     try:result=factory()
     finally:wp.launch=launch
-    raw=result[0];assert calls==(80 if dense else 40) and raw.num_envs==n
-    raw._joint_guard_topology=dict(captured_controller_calls=calls,dense_recording=dense,worlds=n,shared_kernel=True)
-    raw._joint_guard_stats=dict(valid_substeps=0,nominal_corrected_substeps=0,residual_reduced_substeps=0,infeasible_substeps=0,maximum_model_error=0.)
+    raw=result[0];assert calls==80 and raw.num_envs==n
     reset,wait=raw.reset,raw.step_wait;chunks=[[] for _ in cases];frozen=set()
     def reset_all():
         value=reset();memory.zero_();log.zero_();frozen.clear()
         for part in chunks:part.clear()
-        for key in raw._joint_guard_stats:raw._joint_guard_stats[key]=0
         return value
     def step_wait():
         value=wait();frames=log.numpy()
-        valid=frames[frames[:,:,0]==1];stats=raw._joint_guard_stats
-        if len(valid):
-            stats['valid_substeps']+=len(valid);stats['nominal_corrected_substeps']+=int((valid[:,60]>1e-12).sum())
-            stats['residual_reduced_substeps']+=int((valid[:,27]<1-1e-9).sum());stats['infeasible_substeps']+=int((valid[:,28:30]==0).any(axis=1).sum())
-            stats['maximum_model_error']=max(stats['maximum_model_error'],float(abs(valid[:,38:42]).max()))
         for w in range(n):
-            if not dense:break
             if w in frozen:continue
             keep=frames[:,w,0]==1
             if keep.any():chunks[w].append(frames[keep,w].copy())
