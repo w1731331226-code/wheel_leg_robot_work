@@ -1,0 +1,161 @@
+{
+  "round": 330,
+  "verified": true,
+  "episodes": 12,
+  "completion_sha256": "2b1179dab2d575d82580566600d086f3fc756c8e02f14930011df04f4d42c08b",
+  "source_proposal_sha256": "cf9a9f0ff7ca9ea096b8c657e5a0fd7aeab7a634e0b069074de2d9ccd062dd54",
+  "noise_table_sha256": "fe1ca1452938c3b6e400b5e6a9df5a41c71391dbfd46c08ad55b50ad3d4c3f84",
+  "same_actor_prefix_rows": 4113,
+  "measurement_application_exact": true,
+  "physical": 12,
+  "design": 12,
+  "success": 5,
+  "minimum_actual_margin_rad": 0.00013425350189200103,
+  "predicted_infeasible": 0,
+  "prediction_error_max_rad_s2": 959.1775762452385,
+  "active_prediction_error_max_rad_s2": 374.7548006954584,
+  "secondary_barrier_min_measured": -0.0006366488523825709,
+  "nominal_corrected_steps": 4778,
+  "residual_reduced_steps": 501,
+  "measured_velocity_noise_acceleration_std_rad_s2": 2.8297712802886963,
+  "pairs": [
+    {
+      "case": 32900000,
+      "ideal_design": true,
+      "noisy_design": true,
+      "ideal_success": true,
+      "noisy_success": true,
+      "ideal_margin": 0.001338624954223544,
+      "noisy_margin": 0.001766467094421298
+    },
+    {
+      "case": 32900001,
+      "ideal_design": true,
+      "noisy_design": true,
+      "ideal_success": true,
+      "noisy_success": true,
+      "ideal_margin": 0.008916759490966708,
+      "noisy_margin": 0.008916759490966708
+    },
+    {
+      "case": 32900002,
+      "ideal_design": true,
+      "noisy_design": true,
+      "ideal_success": false,
+      "noisy_success": false,
+      "ideal_margin": 6.198883055752447e-07,
+      "noisy_margin": 0.00020458698272696196
+    },
+    {
+      "case": 32900003,
+      "ideal_design": true,
+      "noisy_design": true,
+      "ideal_success": false,
+      "noisy_success": false,
+      "ideal_margin": 1.4305114737211966e-07,
+      "noisy_margin": 0.00013711452484121978
+    },
+    {
+      "case": 32900004,
+      "ideal_design": true,
+      "noisy_design": true,
+      "ideal_success": true,
+      "noisy_success": true,
+      "ideal_margin": 0.0006561517715453213,
+      "noisy_margin": 0.0008329391479491299
+    },
+    {
+      "case": 32900005,
+      "ideal_design": true,
+      "noisy_design": true,
+      "ideal_success": true,
+      "noisy_success": true,
+      "ideal_margin": 0.0007499694824217862,
+      "noisy_margin": 0.00138225555419913
+    },
+    {
+      "case": 32900006,
+      "ideal_design": true,
+      "noisy_design": true,
+      "ideal_success": false,
+      "noisy_success": false,
+      "ideal_margin": 7.390975951260259e-07,
+      "noisy_margin": 0.00021054744720450103
+    },
+    {
+      "case": 32900007,
+      "ideal_design": true,
+      "noisy_design": true,
+      "ideal_success": false,
+      "noisy_success": false,
+      "ideal_margin": 2.622604369229009e-07,
+      "noisy_margin": 0.00013425350189200103
+    },
+    {
+      "case": 32900008,
+      "ideal_design": true,
+      "noisy_design": true,
+      "ideal_success": false,
+      "noisy_success": false,
+      "ideal_margin": 0.13477435111999503,
+      "noisy_margin": 0.13477673530578604
+    },
+    {
+      "case": 32900009,
+      "ideal_design": true,
+      "noisy_design": true,
+      "ideal_success": true,
+      "noisy_success": true,
+      "ideal_margin": 0.6300131916999816,
+      "noisy_margin": 0.629978859424591
+    },
+    {
+      "case": 32900010,
+      "ideal_design": true,
+      "noisy_design": true,
+      "ideal_success": false,
+      "noisy_success": false,
+      "ideal_margin": 0.9034572184085845,
+      "noisy_margin": 0.9034385323524474
+    },
+    {
+      "case": 32900011,
+      "ideal_design": true,
+      "noisy_design": true,
+      "ideal_success": false,
+      "noisy_success": false,
+      "ideal_margin": 0.35053529739379874,
+      "noisy_margin": 0.3505220651626586
+    }
+  ],
+  "artifact_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_measurement_noise_v1/noisy_D3/case_32900000.npz": "410bca7aeb4eb67e9a4aee35394963ec5d359dd2aa506a130ee6b8033ab4a579",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_measurement_noise_v1/noisy_D3/joint_guard_32900000.npz": "8c03ee6d99b2507c0d82b32a3f8ac1f23807fffb8421798da136047d691b3c35",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_measurement_noise_v1/noisy_D3/case_32900001.npz": "b713b974952bd5e6f40fb48f5ce35d0b70c0bedf8a10a5efb6e90e2c177d5ee8",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_measurement_noise_v1/noisy_D3/joint_guard_32900001.npz": "ddc846e84e57c7bd69446337d3b09d4f6de1aa3a8833ad63ee0b1298fc2705fa",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_measurement_noise_v1/noisy_D3/case_32900002.npz": "c97b72ddf1341e6c2533867436bdb5bed8b0fca0bf338c275552ad26d83e7509",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_measurement_noise_v1/noisy_D3/joint_guard_32900002.npz": "ca0ea1276d43fac403e393794b9a6a0e5c6d85986f05d1050b50d7eb6fbcaa8b",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_measurement_noise_v1/noisy_D3/case_32900003.npz": "e1a295bcc74a7bedd057496c76312366dbc625f6a21d4437bc02e8ba7f1152ca",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_measurement_noise_v1/noisy_D3/joint_guard_32900003.npz": "7d54d1bf006b5c036793c2e1a82da2f94cce168ace26e70bb5edcbfb503b7329",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_measurement_noise_v1/noisy_D3/case_32900004.npz": "5376f6c049cd008c00ae9610890d568b388bd2312639add92e808990cc927fc0",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_measurement_noise_v1/noisy_D3/joint_guard_32900004.npz": "3ae1dd46ff629b01ebec93c40e3d34012029ffaed61dd78ca33c99f86be22a6c",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_measurement_noise_v1/noisy_D3/case_32900005.npz": "b51a216ae7a688f5b5ce293c880c4c8797e71424669fac0820cac552336b4d89",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_measurement_noise_v1/noisy_D3/joint_guard_32900005.npz": "ad01c7a1d1815e29fec89b47582060150c9f52a2d53eb0902197e9b59d6892ce",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_measurement_noise_v1/noisy_D3/case_32900006.npz": "1e8129f002a0e0bbfc0702080789499f7dd7c34c83cb9f0fb48c3f5b9ff279d3",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_measurement_noise_v1/noisy_D3/joint_guard_32900006.npz": "aaf4f8e8698c9ecc1cb3ea48e37f324573c64175c9230579337d1d2024a29d26",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_measurement_noise_v1/noisy_D3/case_32900007.npz": "a14d26196727c93f5efafe84fc64e6ae3f2f662b722153e7e3fe822e2a3fa618",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_measurement_noise_v1/noisy_D3/joint_guard_32900007.npz": "3f4994e8eead4a98f69b6ccda5be3e461ad96ff042d447931eb13eef0a2721b3",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_measurement_noise_v1/noisy_D3/case_32900008.npz": "494110f404595168df6bfe75d692c3e613c079d6cab47f4c2d6d7f4f566f073d",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_measurement_noise_v1/noisy_D3/joint_guard_32900008.npz": "97a857b32cd2d2ba93081bbe3704e0e7b44a957d9df8638cfb33f699194a134c",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_measurement_noise_v1/noisy_D3/case_32900009.npz": "a7f28300eb00ae88b81556eb9f1826bd5b46bcd8e6ad0d38bf54b19ce3308271",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_measurement_noise_v1/noisy_D3/joint_guard_32900009.npz": "53d93ffa0bd2ad2983225861ecb2b1059b47e0524d468b58d664d91ae26fcbc0",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_measurement_noise_v1/noisy_D3/case_32900010.npz": "935c644f1917b61c3300a6389b486734ec4d9b49b11cc31b4a24023c015890b5",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_measurement_noise_v1/noisy_D3/joint_guard_32900010.npz": "5273a263533ee193ac725bc53f9a7b0174809087c334f33fb62273402fa1504a",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_measurement_noise_v1/noisy_D3/case_32900011.npz": "a8b2de1e300aa5b601738b019506ab9d01abdcb0eef4c75c1f3e7912b56949ef",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_measurement_noise_v1/noisy_D3/joint_guard_32900011.npz": "7d5cc481a14b39e5130388d93b93b8b25db84a0b119a9595a6dea87b811ddc5c"
+  },
+  "scope": "onesigma pair/one realization/guard-only observations;Nom/actor ideal unchanged. Passedfinite12sample doesnotcertifywholecontroller sensornoise/hardware/unknownmodel invariance. No physicsq/v directwrites,onlyissuedcommand intervention.",
+  "formal5_admitted": false,
+  "new_learning_admitted": false,
+  "next": "330direction decision onlyboundedfresh force-space lifecycle if source/API qualifies;notlongstudy/guard tuning/noise probability claim"
+}

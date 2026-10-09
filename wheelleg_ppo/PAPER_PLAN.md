@@ -1,5 +1,16 @@
 # 双轮腿机器人PPO论文方案
 
+第330轮深审/清理与局部测量噪声敏感性（2026-10-10）：
+
+326—329证据支持fixedNom force主线与sharedstate guard工程修复，但理想测量oneULP余量、负ψ/大modelerror无真实安全证书或学习优势。注册唯一12case guard-only测量副本扰动（σq1e-5rad/σv.001rad/s/seed33031），原Nom/actor仍ideal，actualq/v不写；不是物理传感器标定/整机噪声鲁棒数据。参数、严格门、原源/失败不改。
+
+实际12physical/design过、task5，173760graphworldsteps/164252firstepisode、10FD、0learning；minmargin .000134rad/infeasible0。activepredictionerror约375rad/s²、差分noise acceleration std2.82977rad/s²，12原始pre/post/savednoise exact重生成与q/v测量副本、actor同请求prefix对齐核。没证明未知接触/measurement全范围安全，不因noise realizationmargin变大挑“噪声版”控制器。
+
+方向仅准source-gated prospective freshforce D3/V6各4000总8000工程lifecycle（seed33131，10原五height×方向、共同init、481normalize、std/guard unchanged，每500保存，8rollout/80epochs/160Adam、model/Adam/RMS/RNG/physics/history/guard/cost重载证据）。331复用/API同轮合格才run、332独立接收，不单开更多generic源资格轮、旧reference模型不得改名/warmstart、不sciencecheckpoint选择或自动新3/formal5。六论文出口仍未达，goal active，335下次深审清理。
+
+按约删6805B closedadapter test可再生pyc，ignored/untracked/unheld/code-source一致，有SHA/删除核，实际source/raw/模型/失败/CPU-GPU均保；视频不上传，remote仍未全同步。
+
+
 第329轮12新开发压力case的72回合配对验收（2026-10-10）：
 
 既有guard rate50/publicmass8/std.25不改，严格actual1.4/physical/task门及Nom/physics不改；12新development跨low115高速±.98、mass8、friction.4/1.2（障碍<.016）、delay20/drive±.05/混合地形、other4height单侧±5°坡。validated原Scenario域，reserved高障碍+摩擦差组合排除，未打开sealedfinal/OOD。one6condition queue72episode，actual1,042,080graphworldsteps/985,695firstepisode、35FD、177.16s，0learn。
