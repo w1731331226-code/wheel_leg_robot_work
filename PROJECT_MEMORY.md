@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第307轮完整200独立review过：10job源/order/result SHA、原geometry/dense/contacts/physical/design/task checker、840raw streams、Actor每row public481→登记dispatch exact、reference每physicalstep canonical请求与其decisionrow匹配，effective/filter/phase/target及dense左右目标一致。review.json绑定source/completion和实际cost/计数；0新simulation/query/training。首review把同batch rows在每row重复extend的计数bug在已有raw核后触发总数断言，修indent并保review_count_failure.log，仅重读数据不物理重跑。
+- 第307轮事前utility门正式失败、关闭center/lower固定feedback：三baseline各32/40，两reference各29；center丢6301021/25/31、lower丢6301023/27/29，对每baseline均3lost、0gained且physical/design全部40。meanJ oldB0 1.062661537、oldB1_route .825243608、joint_yaw .869322938、center .959060694、lower .954692453，两reference相对same-interface yaw更差。+2成功/不丢/更低J三条件均false，不调gain/threshold救分、不新增PPO/U6random或regular扩展来替代门。
+- 第307轮308仅用已有新增失败与matchedbaseline raw核roll/yaw/height/reference/actuation时序，定可证伪机制；不直接复活fixed反馈，失败不证明所有reference学习无效。310如期深审清理，完整贡献/strongsameinfo-fullref与消融/new3→formal5/freshID-OOD/统计真实PPOcost/稿六出口缺，goal active。helper11251本轮仍live首批，remote未全同步，无video上传。
+
 - 第306轮实际fixed200队列完成：40controlled×oldB0/oldB1_route/joint_yaw/joint_center/joint_lower，各两20world batch，10result/200episode全部原physical/design过。成功oldB0/oldB1/joint_yaw各32/40，center/lower各29/40；fixedreference没有初步任务增益，不据部分结果拟合/挑winner或PPO。307必须逐case lost/gained、J及完整raw/source/事前门独立核，旧数值差异和所有失败留。
 - 第306轮actualgraph worldsteps2,988,000<=5M，firstepisode2,972,442、autoreset surplus另计，原constructor55FD<=80，wall331.068051s含construction/evaluation/记录/check，不PPO加速。admission/proposal/sourceSHA及10resultSHA/计数预算核；complete记录模型更新0，真实run terminal exit0。完整RAW保存，将随本轮归档，远端尚未同步不能声称全remote。
 - 第306轮共享evaluate查所有caller后泛化batch5→n≤20和registeredfeedback动作，原zero默认调用兼容；oldB1沿原不撤回、joint_yaw/center/lower同新adapter停车规则，raw481输入/同yaw请求、bodymean/diff差异明确。128合成dispatch/范围/zero/mirror/unusedfield与55原源不变验收，无hiddenoracle/新reward/命令/gain。原zeroevaluator/classical版本归档，不覆盖304原结果。

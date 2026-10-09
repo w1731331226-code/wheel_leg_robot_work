@@ -1,0 +1,16 @@
+REVIEWED307 old_B0 0 streams 120
+REVIEWED307 old_B0 1 streams 240
+REVIEWED307 old_B1_route 0 streams 360
+REVIEWED307 old_B1_route 1 streams 480
+REVIEWED307 joint_yaw 0 streams 540
+REVIEWED307 joint_yaw 1 streams 600
+REVIEWED307 joint_center 0 streams 660
+REVIEWED307 joint_center 1 streams 720
+REVIEWED307 joint_lower 0 streams 780
+REVIEWED307 joint_lower 1 streams 840
+Traceback (most recent call last):
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/review_nonzero_reference_mechanism.py", line 89, in <module>
+    run()
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/review_nonzero_reference_mechanism.py", line 55, in run
+    assert len(data)==5 and all(len(x)==40 for x in data.values())
+AssertionError

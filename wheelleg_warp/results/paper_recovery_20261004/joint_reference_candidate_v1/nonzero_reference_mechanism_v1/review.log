@@ -1,0 +1,11 @@
+REVIEWED307 old_B0 0 streams 120
+REVIEWED307 old_B0 1 streams 240
+REVIEWED307 old_B1_route 0 streams 360
+REVIEWED307 old_B1_route 1 streams 480
+REVIEWED307 joint_yaw 0 streams 540
+REVIEWED307 joint_yaw 1 streams 600
+REVIEWED307 joint_center 0 streams 660
+REVIEWED307 joint_center 1 streams 720
+REVIEWED307 joint_lower 0 streams 780
+REVIEWED307 joint_lower 1 streams 840
+DONE307 full200 frozen gate False scores {'old_B0': {'total': 40, 'success_count': 32, 'complete': True, 'mean_yaw_score_deg': 1.0626615374638173}, 'old_B1_route': {'total': 40, 'success_count': 32, 'complete': True, 'mean_yaw_score_deg': 0.8252436075402689}, 'joint_yaw': {'total': 40, 'success_count': 32, 'complete': True, 'mean_yaw_score_deg': 0.869322938321282}, 'joint_center': {'total': 40, 'success_count': 29, 'complete': True, 'mean_yaw_score_deg': 0.9590606936317361}, 'joint_lower': {'total': 40, 'success_count': 29, 'complete': True, 'mean_yaw_score_deg': 0.9546924534829813}} pairs {'joint_center': {'old_B0': {'lost': [6301021, 6301025, 6301031], 'gained': []}, 'old_B1_route': {'lost': [6301021, 6301025, 6301031], 'gained': []}, 'joint_yaw': {'lost': [6301021, 6301025, 6301031], 'gained': []}}, 'joint_lower': {'old_B0': {'lost': [6301023, 6301027, 6301029], 'gained': []}, 'old_B1_route': {'lost': [6301023, 6301027, 6301029], 'gained': []}, 'joint_yaw': {'lost': [6301023, 6301027, 6301029], 'gained': []}}}

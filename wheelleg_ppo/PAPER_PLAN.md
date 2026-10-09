@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第307轮完整raw/实际动作/事前门独立审查与固定feedback关闭（2026-10-09）：
+
+review_nonzero_reference_mechanism核10job/order/source/result、原geometry/dense/contacts和所有flags、840rawstream SHA；每Actor row实际动作等于其public481登记dispatch，每新reference physicalstep canonical请求等于相应20ms decision动作，effective/filter/phase/targets及dense左右目标一致。所有200数据完整，0新query/physics/PPO。首review计数重复extend bug修缩进并留失败日志，仅offline重读，无hiddenphysical重播。
+
+事前门未通过，关闭两固定feedback，不调增益或阈值：center/lower各29success，三baseline均32，均0gained；center lost6301021/25/31、lower lost6301023/27/29，对任一baseline3lost，全部physical/design40。meanJ oldB0 1.062661537/oldB1_route .825243608/joint_yaw .869322938/center .959060694/lower .954692453；相对同adapter/parking的joint_yaw也更差，故新增>=2、不丢、J下降均false。工程safe200不能冒充方法收益或PPO准入，也不证明所有learnedreference不可行。
+
+308只已有lostcase matchedraw的roll/yaw/height/reference/actuation时序机制核，不直接重新设计gain/重跑closedfixedvariants或用regular/legacy扩展救门。310深审清理；六论文出口仍未完成，goal active，所有负结果保。
+
 第306轮fixed200真实队列终态（2026-10-09）：
 
 注册五臂×40controlled=200episode一次队列全部完成，10batch、全部physical/design通过。oldB0/oldB1_route/joint_yaw各32success，joint_center/joint_lower各29；初步不支持这两固定reference反馈的任务增益，307须独立逐case lost/gained/J及fullraw/source/继续门，不从局部成绩改系数或启PPO。所有失败原始留存，40unique development不是200独立实验seed。
