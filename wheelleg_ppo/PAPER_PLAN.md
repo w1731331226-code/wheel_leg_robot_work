@@ -1,5 +1,16 @@
 # 双轮腿机器人PPO论文方案
 
+第337轮完整新三seed训练接收与固定984模型评估启动（2026-10-10）：
+
+6freshforce runs真实completeexit0：1.2M策略样本/48Mactualcaptureworldsteps/95FD，2876trainingepisode严格physicaldesign过，40rollout/400epochs/8000Adam每run及RMS200100.0001。100world实际Guard/Ledger/模型课程counter工作；thirdseed D3/V6 Nomcorrect204/50、residual652/245，另D3第二seed residual73，infeasible0。非Nom保护理论证书/未知errorbound或method优势。
+
+独立60真实zip/Adam/RMS完整读取，初始feature/value/world逐seedpair exact、head0/emptyAdam、权重更新/hash/finite/count/64syntheticnormalization inference/checkpoint标签及actualepisode课程日志核过，fullsource/review绑定。只最终200k进入science，拒seed/shortmodel/ckpt选择。
+
+六final200k model/RMS/evaluation许可SHA锁定，固定984eval实际开始单进程pid112841/unified21173，截至本轮136/984、7/60jobs；338继续同handle及其source不restart，完整后main controlled/regular/legacy/currentclassic与V6/no-lost/strictactualgate才能判论文资格。原baseline492和CPU28numeric能力接收完整保，总eval1476，无当前partial效果判断或多budget救门。
+
+perrun总wall約115—139s包括construct/saves/reload，非CPU比较/吞吐speedup。formal5/newindependentID-OOD/机制消融/统计稿sixexits未完成，goalactive，340方向深审与冗余清理。稳定training archive提交、models live写入暂不gitadd，snapshot只archive非验收；video不上传/remote未齐。
+
+
 第336轮经典基线492完整接收与NEW固定预算学习启动（2026-10-10）：
 
 唯一baseline完成exit0，8,602,440actualgraph/7,276,949firstepisode、155FD、1182.54s构建/物理/完整记录压缩，非PPO计时。三当前sharedguard经典全部phys/design合格，controlled32/40各，regular B096/B1原95/withdraw95，legacy三者28。最佳controlled J .82485252deg，主≥34/15%+.05deg可达检查过；base不削弱，不把不满分当系统必然不可达。

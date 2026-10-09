@@ -4,6 +4,13 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-10，目标active）
 
+- 第337轮续唯一train pid94214/unified16113至exit0，不restart/seed替换。6fresh33531/2/3×D3/V6各200k完整，总1.2M策略样本/48M直接captureworldsteps、95FD，2876训练完成episode全部physical/design。perrun总117.82/114.63/118.22/115.89/138.52/138.71s（含构建/checkpoint/reload非CPU加速）。实际validguard counts约7.99M/run，各已完成+partial守恒过，complete与autoreset/inactive surplus明确。
+- independent review CPU读取全部60实际PPO zip/Adam/RMS，不只标志，20k…200k计数/40…400epochs/800…8000Adam、参数/momentsfinite、weightsdigest/相邻权重更新、trainmetricsfinite、481→3/6空间、64syntheticnormalizeddetpredict bounded、RMSstep+100.0001核。每seed初始featureMLP/value/world exact、head0/emptyAdam，finalstate100×history/memory/stagesfinite及actualepisodeend curriculum日志过。
+- newpolicy实际training保护干预：D3_33532 residualscale73substeps；thirdseedD3 Nomcorrect204/residual652，V6 Nomcorrect50/residual245，infeasible0，前两其它0。补short331全部inactive限制，但modelerror max约988…1018rad/s²无certified界，仍不能真实安全或独立性能主张；training数据不是heldout优势，不选择最好seed/checkpoint。
+- training_review绑定60真实model/Adam/RMS metadata、2876episodes/finalhistory/source/commoninit。model_evaluation_admission仅锁6final200k模型/RMS SHA与fulltraining review，禁止其它checkpoint/partial替代。固定984模型eval唯一进程已实际启动，unified21173/PID112841本轮确认live，截至本轮progress136/984、7/60jobs，无completion/failure；338续同handle/存活核勿重启，不据partial success/J调case/模型。全部30baseline492之前完整接收，总1476科学evalsource锁。
+- 原CPU28paired能力检查和oldNoGuard/mean-failed/historical models/raw保，不改strongbaseline或std/rate/mass/gate。formal5/OOD/消融/层级科学stats/完整稿sixexits仍缺，goalactive，340下一五轮deepreview清理。训练完不代表原methodqualified，必须984当前body指标/no-lostability/fullsameinfoV6 gate并独立raw/统计。
+- 本轮只额外CPUmodel读/synthetic推理（无新robotphysics/学习），实际evaluation继续原source已授权预算。稳定6训练data可归档，运行中models evalraw本提交不暂存，snapshot仅archive非验收。视频未生成/提交，中文commit/记忆/守护恢复，remote未全同步。
+
 - 第336轮收尾追加actualmain状态：全200k verified已完成['D3_33531', 'V6_33532', 'V6_33531', 'D3_33532']，当前checkpoint进度[{'name': 'D3_33533', 'last_saved_samples': 180000}]；pid94214/unified16113确认live，未global completion/failure。本条仅运行状态，不科学评估；337继续同进程。
 - 第336轮续唯一baseline pid47985/unified31424至terminal exit0，492/30jobs完整，0重启/重跑；actual8,602,440graphworldsteps/7,276,949firstepisode、155FD、1182.5434s含construction/fullrecord/compress，不PPOcost。三baseline全部physical/design492，guard_B0 regular96/96 controlled32/40 legacy28/28；guard_B1route regular95/96 ctl32/40 legacy28/28；withdraw同95/32/28。controlled J分别1.06373716/.82485252/.87053849deg，主成功≥34与15%+.05deg非ceiling/效应不可达。
 - 独立receiver聚集orderedindices每panel/task flags/sha/J等准入True；CPU28scenario子集逐值同，currentguardB0 success/velocity<=1.05old+.005/arrival<=1.05old+.05/rollpitchpeak<=old+.1deg全部pass。CPU_legacy_pair保原fileSHA/28数值；不是trajectory bitexact/基线替代。review baseline hardgate新增CPU_pair SHA与passed避免仅28成功标签放行。
