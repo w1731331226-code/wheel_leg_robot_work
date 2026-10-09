@@ -1,0 +1,32 @@
+{
+  "round": 315,
+  "status": "frozen_pending_runtime_and_policy_source_admission",
+  "arms": [
+    "M_ref3",
+    "U_ref6"
+  ],
+  "prospective_engineering_seed": 31531,
+  "worlds": 10,
+  "policy_samples_per_arm": 4000,
+  "total_engineering_policy_samples": 8000,
+  "policy_device": "cuda",
+  "physics_backend": "MuJoCoWarp CUDA",
+  "role": "Fresh short lifecycle/source test only; no science checkpointselection,finalOOD,formal5 orwarmstart fromH1/fixednegative policies.",
+  "shared_scope": "SAME currentreference mapping/parking/slew/public481/Nom/reward/worldcases andoriginalphysical/design/taskgates. Mref3explicitcommonmean+half-difference+wheel-diff;Uref6samemean/d plushubL/R andwheelL/R. Notoriginalpure differentialcontribution.",
+  "source_before_launch": [
+    "Reuse existing SB3 PPO andshared normalization/history lifecycle;do notfork PPO density/optimizer code.",
+    "Declare frozen rollout/batch/epochs/reward/worldcases/initial logstd andtiming so4000 iswholeupdates;nohyperparameter sweep.",
+    "Validate actualinput/action/capture/terminal/reset andlight/runtime compatibility,sourcehashes andoutputownership beforelearning.",
+    "Report policy/value parameters,CPU/GPU device proof,actualtimesteps/updates/finiteAdam androundtrip reload with481 RMS.",
+    "Compare initialactualcommand RMS/covariance/accepted requests/limits andzero meancontrol function;nominalbounds/MLPwidth do notprove explorationsmatch."
+  ],
+  "data_recording": "Keep both freshinitial states/weights/RNG/worldbank,alltraining metrics/losses/checkpoints+Adam/RMS/reload verification,episodephysical/design/terminal/ref action evidence andactualconstruction/FD/sample/update/serializewall. Noremovefailedmodels orvideo uploads.",
+  "acceptance": "Only source/lifecycle passed=true after4000each wholebudget,finiteupdates andexact reload/frozenRMS,properresets andoriginalsafety/accounting. NOT newmethodqualification. Anyfailure savesandstops,noauto retries orbudgetgrowth.",
+  "decisions_after": "318/319 independent shortengineering receive;320deepreview mayfreezeNEW3pairedseed prequalification ONLY ifsource/device/initialphysical distributions sufficientlyunderstood andclaim/controlprotocol explicitly justified. Formal5/freshOODA remainclosed.",
+  "no_science_performance_selection": true,
+  "new_training_budget_admitted_now": 0,
+  "total_prospective_engineering_steps": 8000,
+  "formal5_admitted": false,
+  "formal_PPO_admitted": false,
+  "next": "316 implement boundedtrainingruntime/policy source reuse;317 verifybefore anyregisteredshortGPUlearn. Sourceadmission isrequired,notpermission to startnow."
+}

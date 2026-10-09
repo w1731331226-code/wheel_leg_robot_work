@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第315轮五轮深审与待准入短GPU学习工程（2026-10-09）：
+
+311—314必要代数有限关闭、旧GPU1.2M学习优势negative、单一empiricallearnedreference协调问题与反证已明确。继续价值只在一项freshmatched短学习链工程：不新增controllerrepresentation/rate/gain，不复活fixedfeedback，不更多zero/refprojection资格循环；普通referenceRL不当新理论，含commonmean的Mref3不冒充originalpure differential贡献。
+
+reference_learning_engineering_v1冻结prospective10GPUworld、freshseed31531、Mref3/Uref6各4000策略步，共8000，仅lifecycle/source检查。实际launch前必须冻结sameworld/reward/481 RMS/Nom/ref mapping/filter/parking/limits和wholeupdate rollout/batch/epochs/logstd、初始参数量/actualactuation分布，复用SB3 PPO，不自写密度/Adam。capture/terminal/reset、真实CUDA/device/timestep/update、有限损失/Adam与model/RMS exact reload核完才pass；shortchecks不作科学checkpoint选择/收益，禁止旧H1warmstart或oracle输入。
+
+316实现reuse runtime/policy，317source准后才short，318/319独立接收；320深审清理后才可另冻NEW3seed资格协议，formal5/freshID-OOD仍关闭。shortfailure原数据/weights/RMS/Adam及实际FD/sample/update/serializewall全留、停止不隐藏retry/扩budget。本轮0newquery/physics/training，prospective预算不等已训练。
+
+按约删closed engineering缓存execution_history_engineering.pyc9482B，ignored/untracked/unheld、codeobject匹配，SHA/删除保round315_cleanup；原源及学习Adam/model/RMS/raw/negative/CPU-GPU证据全保。完整六论文出口仍缺、goal active，data上传修复进程live持锁，remote未全同步，video不上传。
+
 第314轮有限学习机制选择备忘（2026-10-09，未准训练）：
 
 learning_mechanism_selection_memo仅提出一个可证伪empirical问题：同public481、固定Nomdesign/参考mapping/slew/最终cap及原reward/task门，学得sign/timing/yaw协调能否优于fixedpublicPD及fullsame-reference learnedU6并保regular/legacy。三lost请求/filter冲突是具体动机，不证明PPO会成功或反向action总错，不改reward加sign惩罚。普通referenceRL、降维、history或filter已有，不能当理论新颖性。

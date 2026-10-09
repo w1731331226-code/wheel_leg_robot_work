@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第315轮五轮深审决定：311/312必要参考位置-rate代数已有限关闭，313整体PPO证据明确旧1.2M研究negative，314只single可证伪learnedreference协调memo，不再新坐标/rate/gain/zero资格循环。新同接口Mref3/Uref6问题值得仅SHORT GPU学习生命周期工程，subject runtime/source/initialactuation准入；不是方法收益/新颖性/正式PPO已准，原差模贡献与含共模mean候选不混写。
+- 第315轮reference_learning_engineering_v1冻结prospective freshseed31531、10GPUworld、Mref3/Uref6各4000policy samples共8000，beforelaunch必须冻结wholeupdate rollout/batch/epochs/reward/worldbank/logstd，复用SB3 PPO及同481 RMS/history/filter/control/parking/原门，核capture/terminal/reset及policyoptimizer/RMS save-reload和真实计数device。初始actualRMS/协方差/λ/饱和/参数数必须报告，不把bounds/width当匹配；禁止scientificcheckpoint选择、oldH1 warmstart/隐私contact/新reward。budget当前source-gated未开始，正式5/freshOODA关闭。
+- 316只reuse训练runtime/policy实现，317source过才short8000，318/319独立接收，320下一深审清理才可能冻结NEW3pairedseed prequalification（另有收益/能力/strongclassic-U6/消融/独立集门），不自动扩训练或选shortwinner。shortfailure保全部checkpoint/RMS/Adam与成本、停止不budgetgrowth；完整六论文出口未齐、goal active。
+- 第315轮删old execution_history_engineering.pyc9482B，ignored/untracked/fuser无持有、marshalcode与srccompile exact，源/Adam/model/RMS/raw/negative保，futureimport再生不称永久节省；round315_cleanup存SHA/删除。round315_direction_review绑定五轮证据及source-gated工程protocol。本轮0新query/physics/training；git61733仍live bufferedfirstpush持锁，remote未全同步，video禁上传。
+
 - 第314轮有限learning mechanism selection memo完成，仅candidate待315判断：不变public481/名义design/参考与最终力矩及原task门下，learnedreference sign/timing/yaw协调是否胜fixedPD且胜fullsame-reference learnedU6、保持regular/legacy。三firstyaw请求/filter瞬态冲突只是动机，不证明learning必需/有效或相反sign总错误；不加sign惩罚reward。保旧fixedfailure与interval分支关闭。
 - 第314轮scope明确：原VMC+六stateLQR差模residual主线保；M_ref3含commonmean，与originalpure differentialM3不同，不能改名冒充原结构贡献。强新U_ref6需同mean/d mapping/filter/parking/481/reward/worldbank/训练预算，不用旧H1torque6代替；若初步效应过才fresh独立leg-only/yaw-only机制消融，posthoc mask不能代替学习消融。
 - 初始实际actuation RMS/协方差/λ/饱和与参数量、能力保持/强classic/allpairedseed效应、freshID-OOD/realPPOcost缺一不可；samecanonicalrange/MLPwidth不当探索相同，不能额外mean权限或parking解释冒充差模优势。任何违原physical/design/能力门、未胜U6/经典、移除leg/yaw无影响或freshOODA失效即反证，不筛seed/checkpoint救分。
