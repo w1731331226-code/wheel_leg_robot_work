@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第309轮动作混合语义与时序边界（2026-10-09）：
+
+原signedspan mapping代数等价d=(1−|a|)d0+D*a：zero保基线，非zero将当前基补偿与signedendpoint混合，固定a/D时d对d0斜率为1−|a|，不只是固定物理加量。80保存轨迹与882端点格核过；有限差分Delta_d=(1−|a_t|)Delta_d0+D_prevDelta_a−d0_prevDelta_|a|+a_tDelta_D亦一致。恒normalizeda=.5而d0从−.01到+.01可使physicald变.01m；所以每substep±.01 normalizedslew本身不是物理参考rate界或动态证书。
+
+3firstcross（center6301021/31、lower6301027）publicrequestedad已与currentd0同号但filteredad仍反，targetgap .548/.545/.429，holdage2/10/1ms。其他case含publicrequest也反号及filtered同号，不能把所有新增yaw失败定为单一双重增强/滤波根因。action_semantics_audit保80逐case步幅、6请求/filter/time与代数反例；0新physics/controller/PPO，不改actor/滤波/gain、不复活fixedfeedback。310按约深审清理决定是否有区别明确、可证伪的新动作语义对照，六出口仍未齐。
+
+原数据helper firstbatch已RPC失败terminal，数据/commit保留、remote尚未全齐。只对原firstcommit用日志所指的postbuffer/HTTP1.1单批传输修复，不完整helper重启或rewrite；flock阻daemon并发，source/科学工作不因上传无结果而称完成，视频不上传规则持续。
+
 第308轮新增失败机制的已有数据核对（2026-10-09）：
 
 audit_reference_lost_cases对两reference全部80episode保存m/d/filteredad与originalrequested/room重算代数，再对6lost和同casejoint_yaw成功轨迹核首次5°crossing。全六为中间height .24/.30 firstyaw，原mean workspace room未绑定；不是端点height需求不可行，不能因此继续meanroom救门。三case每fixedfamily关闭不变，0新query/physics/training。

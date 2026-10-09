@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第309轮动作语义与有限差分核：全部80已有reference轨迹d=(1−|a|)d0+D*a逐值重算过，等价原signedspan映射，882端点格代数过；固定a/D时原补偿斜率1−|a|，非恒定物理补量。Delta_d=(1−|a_t|)Delta_d0+D_prevDelta_a−d0_prevDelta_|a|+a_tDelta_D亦全部过。恒a=.5、d0 −.01→+.01时d仍变化.01m，证明normalizedslew不是独立physicalreference rate证书；不改物理/任务门。
+- 第309轮六firstyaw上下文：3例（center6301021/31、lower6301027）当前public请求与d0同号但filteredad反号，targetgap约.548/.545/.429，firstcross位于新hold周期2/10/1ms；另外2例当前request也反向、2filteredad同号（分类可交叠，不总和伪计）。全80saved请求/filtered/物理d/m步幅统计与sourceSHA保action_semantics_audit，支持双时间尺度竞争可检假设，不是唯一接触原因/稳定性/新算法proof。0newquery/physics/learning，closed center/lower维持。
+- 310五轮深审清理必须据五轮数据决定新动作语义问题是否值得有限推导/对照，不refit旧反馈或autoPPO，六论文出口缺/goal active。本轮uploadhelper11251已terminal：first744MB push失败RPC curl56/ioctl2/无法rewind。旧main/auxcommit和数据保，不重启整个helper；确认remote无auxref后，仅同firstcommit以per-command http.postBuffer800MiB/HTTP1.1重传，session47875/git61733本轮确认live、flock排他防daemon重复上传。无video，remote仍未全同步，待具体terminal再沿objects状态处理后续批次，不重写main历史。
+
 - 第308轮已有80reference episode及6lost/matchedjoint_yaw轨迹audit完成，全部source/result/reference/dense SHA与d=d0+ad*(D−d0或D+d0)重算过；非零same-sign增大|d|代数成立。六新增失败全h .24/.30、首次yaw>5deg，roll/pitch不到门，首次原mean几何room不绑定，所以不是端点heightroom反例；center/lower固定反馈关闭不变，0新query/physics/learning。
 - 第308轮firstcross不能一概“双重增强”：六见证中2same-sign，4filteredad与currentbaseline_d0反向，有d0正而实际d负或反之。中心例6301021基d0 .003694→selected−.006852、6301031 −.005766→+.007954，体现public20ms请求/参考slew与2kHz内基控制的时序竞争，非唯一因果证明。firstnormal5例单轮0、1例双轮承载（6301025约119.7/38.9N），wheelω多数约72rad/s，snapshot及pre/post不同步限制保，不为Actor输入或load安全证书。
 - 第308轮已核matched同casejoint_yaw原success、firststep yaw与peak、actualm/d/available room/reqfilter/wheelcommands/caps/normal/ω，lost_case_audit绑定80全case统计和6witness。309只actionsemantics与必要几何/双时间尺度代数评估，不改gain/replayclosedfeedback或直接PPO；310按约深审清理。六论文出口仍缺/goal active；helper11251本轮仍live首批，remote未全同步，video禁上传持续。
