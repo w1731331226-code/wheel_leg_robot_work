@@ -1,5 +1,11 @@
 # 双轮腿机器人PPO论文方案
 
+第312轮exact reference条件复核与有限关闭（2026-10-09）：
+
+独立Fraction540 current/previous/rate组合，直接12半平面顶点精确枚举而不调用311helper，M/J判定一致，284可行、其中213退化边界可行，构造点精确满足全部约束；source/derivation/proposalSHA核。无浮点门宽、优化器/模型/控制/物理/学习。
+
+reference_correction_feasibility有限问题关闭，保必要参考坐标兼容、emptyintersection及zero前状态条件为工程附录；未产生distinctdynamic机制、taskbenefit或novelty，不继续普通projection/rate再包装新controller。既有fixedfeedback失败不复活，PPO不准。313整合原PPO贡献要求、accepted/rejected证据与先例，避免更多坐标/source资格循环；315深审清理，六论文出口仍缺，目标active。
+
 第311轮位置与修正rate的二维必要参考条件（2026-10-09）：
 
 derive_correction_feasibility只推参考坐标polytope：M由原length范围、h±.02与h+em_prev±sm相交；K=min(original .035cap,(Lmax−Lmin)/2,Mhi−Lmin,Lmax−Mlo)，J将d0+ed_prev±sd与[-K,K]相交。M/J非空时任选d∈J再取m∈[max(Mlo,Lmin+|d|),min(Mhi,Lmax−|d|)]，给出length/mean/rate合法点。2025格独立12约束所有边界交点oracle一致，1329可行/696不可行，构造点再逐约束核，非调用optimizer或模型。

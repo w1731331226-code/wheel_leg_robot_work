@@ -1,0 +1,20 @@
+{
+  "round": 312,
+  "verified": true,
+  "derivation_sha256": "ea421c2c51ce2791e61dec3cb482d1f1ee0e43834ecb7cf293ceb150baf2e397",
+  "proposal_sha256": "014c3cbd8406db34a9dd10f847fea796068e28718cab62e0e82fdbded081a6d9",
+  "independent_exact_fraction_cases": 540,
+  "exact_feasible_cases": 284,
+  "exact_degenerate_feasible_cases": 213,
+  "exact_boundary_vertex_oracle_agrees": true,
+  "reference_condition_supported": true,
+  "finite_algebra_question_closed": true,
+  "new_controller_admitted": false,
+  "new_physics_budget": 0,
+  "new_training_budget": 0,
+  "novelty_qualified": false,
+  "task_advantage_established": false,
+  "formal_PPO_admitted": false,
+  "decision": "Close this finitealgebra branch. Keep necessaryreference compatibility andcounterexamples asengineering appendix;no distinctdynamicmechanism/advantage wasestablished,so do notturn ordinaryprojection/rate clipping into anothercontroller trial.",
+  "next": "313 consolidate accepted/rejected mechanism evidence against the originalPPO paperrequirements and nearestpriorwork,without newcoordinate/feedback/PPO ormorecontrollerqualifications.315deepreview/cleanup."
+}
