@@ -1,5 +1,18 @@
 # 双轮腿机器人PPO论文方案
 
+第335轮深审清理与NEWforce科学协议预登记（2026-10-10，基线先行）：
+
+331—334真实学习/归档/100runtime/counter证据足以仅支持一次可证伪newguardedfixedNom D3/V6问题，不支持论文优势/安全定理/guard新颖性。理想innermeasurement/未知modelerror/FP贴界实证明确。fresh33531/2/3×2arm×200k=1.2M、100world、固定PPO/std/guard/物理/严格1.4；旧bankphysical参数按newseed映射复用，非新训练域，无shortwarmstart或旧reference变体改名。
+
+NEW primary controlled40heading：每seed胜current3经典和same-seedV6，三seed平均15%+.05deg、success>=34、不丢任基线成功/严格physicaldesign；regular secondary方向改善与速度/arrival/height保持，legacy28原CPU能力保持，避免近零legacyJ绝对+.05deg不合理效应要求。不是更改oldfailedreference gate，该候选永久记录failed。fixedfinal200k、每20k仅曲线、不挑model/seed。看到newscience结果前已注册目标。
+
+学习必须先完整currentguard classical3×164=492、raw/task/physicaldesign门与controlledJ>=.05效应可达/CPUlegacy保持核。当前经典B0、B1原parking、B1withdraw均sharedguard，场景96regular/40controlled/28legacy已见开发集，不最终holdout；sealedfinal/保留联合区未读。已启动唯一baselinequeue，截至本轮260/492、15/30jobs，B0controlled32/40，无完整门判定。pid47985/unified31424 live，336续同进程勿重跑，完整后receiver才baseline_gate，不源码许可即learn。
+
+新主worker必须baseline SHA/pass，末model eval必须全6完整200k与modelhash许可；现无main sourceadmission/training，未来sourcegate未开放。总科学eval1476（经典492+模型984），任软件/安全/录证失败保所有终态计数后停，不换seed/调reward/gain/filter救门，不autoformal5。字段声明不能代实际qualifiedseed/independentID-OOD/消融/有效stats稿，goalactive。
+
+删6764B已关闭meanrunner可再生cache、ignored/untracked/unheld/code-source一致，原源/失败/raw/模型/CPU-GPU保。340下次五轮深审清理。视频不上传、remote未齐；本轮提交稳定source/protocol，不暂存正在写的baseline raw，后续snapshot非验收。
+
+
 第334轮固定名义force主worker与真实计数守恒（2026-10-10，0学习）：
 
 主入口复用guarded100world force/PPO/ledger，锁schema100world/D3-V6/3unique freshseeds/200k/rollout5000/batch250/epochs10/每20k保存，缺proposal/sourceadmission在输出创建前拒。当前没有主预算或准入，代码就绪不等科学训练permission；oldclosedmean runner/source/model不改。

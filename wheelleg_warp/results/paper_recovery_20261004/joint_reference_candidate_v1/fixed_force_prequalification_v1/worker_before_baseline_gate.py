@@ -37,8 +37,6 @@ class StudyLedger(Ledger):
 def verify():
     p=json.loads((OUT/'proposal.json').read_text());a=json.loads((OUT/'source_admission.json').read_text())
     assert a['verified'] and a['proposal_sha256']==sha(OUT/'proposal.json') and all(sha(ROOT/f)==h for f,h in a['source_sha256'].items())
-    baseline=json.loads((OUT/'baseline_gate.json').read_text())
-    assert a['baseline_gate_sha256']==sha(OUT/'baseline_gate.json') and baseline['passed'] and baseline['proposal_sha256']==sha(OUT/'proposal.json')
     assert p['worlds']==100 and p['arms']==['D3','V6'] and len(p['seeds'])==len(set(p['seeds']))==3
     assert p['policy_samples_per_run']==200000 and p['checkpoints']==list(range(20000,200001,20000))
     assert p['ppo']['n_steps']==50 and p['ppo']['batch_size']==250 and p['ppo']['n_epochs']==10
