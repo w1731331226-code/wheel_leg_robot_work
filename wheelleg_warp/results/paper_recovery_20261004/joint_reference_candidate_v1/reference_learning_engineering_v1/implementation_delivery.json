@@ -1,0 +1,25 @@
+{
+  "round": 316,
+  "verified": true,
+  "runtime_config_sha256": "e58ba8e490d3a4ad208750df2021d679e53755a30c319508eabc9f5a556c132b",
+  "policy_unit_log_sha256": "1f1aa5754f56a58c397d1abc92a30c48b4b40ca8cc02da31c740ccd361aae367",
+  "source_sha256": {
+    "wheelleg_warp/reference_learning_engineering.py": "6edc8435756bead51c7a553f9fc66a63af071fc3c7399c6a490972a5303c22e3",
+    "wheelleg_warp/test_reference_learning_policy.py": "d6c665cd5a2fc7e2ec95dc7208bfd2c8be2b5d7a2e2388513eac3daaeb8de25c"
+  },
+  "fresh3and6CUDA_models_created": true,
+  "sharedfeature_andcritic_initial_function_checked": true,
+  "zero_policy_mean": true,
+  "normalized_std_per_coordinate": 0.25,
+  "optimizer_all_live_parameters_owned": true,
+  "initial_container_policy_Adam_empty_reload_exact": true,
+  "real_learning_started": false,
+  "training_metrics_recording_implemented_but_not_run": true,
+  "actual_initial_actuation_comparison_pending": true,
+  "runtime_actual_capture_learning_safety_pending": true,
+  "new_policy_samples": 0,
+  "new_physics_steps": 0,
+  "source_admission_for8000": false,
+  "formal_PPO_admitted": false,
+  "next": "317 actualruntime/initialactuation/policy-source admission;nolearnuntilsource_admission exists andhashesmatch.318onlyshortengineering ifadmitted,320deepreview."
+}

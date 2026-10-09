@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第316轮短GPU学习入口与policy源单元（2026-10-09，未learn）：
+
+reference_learning_engineering复用SB3 PPO、原VecNormalize/CheckNan、public481历史与当前referenceadapter，没有forkGaussian/logprob/optimizer算法。runtime_config沿旧n_steps50、10world、batch250、epochs10：buffer500，4000每arm=8rollouts/80epochs/160Adam整除；原reward、normalization及五controlledheight×±.7十case不改。初始normalizedstd=.25同活跃坐标，是工程尺度声明，不证明M/U实际torque探索分布相同。
+
+NoStep真CUDApolicy3/6单元核zero mean、sharedMLPfeatures/critic函数exact、optimizer所有liveparams、0samples/0updates/空Adam、model/container重载exact。copyfeature/value初态避免不同outputshape改变critic随机初始化；actionhead都0。未任何真实env构建/controlquery/physics/learn，actualactuationRMS/协方差/λ、训练loss与terminal/reset待317，不sourceadmit8000。
+
+入口sourceadmission文件/hashes硬检查后才可run，拟记录每500postupdateweights/RMS/metrics、initialworldpolicy/RNG、episode、末history与实际CUDA/FD/wall/sample/update，4000后weights/非空Adam/RMS/frozenprediction exact重载与失败保留。dense10仅短诊断、非100world主训练。317actualsource/initial输出验收，318只short如全过，320深审清理；六论文出口仍未齐，formal5/freshOODA不准。
+
 第315轮五轮深审与待准入短GPU学习工程（2026-10-09）：
 
 311—314必要代数有限关闭、旧GPU1.2M学习优势negative、单一empiricallearnedreference协调问题与反证已明确。继续价值只在一项freshmatched短学习链工程：不新增controllerrepresentation/rate/gain，不复活fixedfeedback，不更多zero/refprojection资格循环；普通referenceRL不当新理论，含commonmean的Mref3不冒充originalpure differential贡献。

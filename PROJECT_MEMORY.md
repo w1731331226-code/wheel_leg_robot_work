@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第316轮reference_learning_engineering复用现SB3 PPO/VecNormalize/VecCheckNan/ExecutionHistory及jointadapter实现source-gated短运行入口，未新写Gaussian/Adam/PPO算法。runtime_config沿旧PPO n_steps50×10world=500、batch250、epochs10，4000每arm=8wholeupdates/80epochs/160Adam；原normalization/reward/10原controlled五height×±.7 cases冻结，sharedpublic481/refmap/停车/slew保持，初始normalizedstd=.25只是工程尺度不当实际探索匹配。
+- 第316轮fresh3/6 CUDApolicy NoStep单元过：空Adam/0timesteps/0epochs、全CUDAfiniteparams、policy均值0、共同MLP特征/critic函数逐值相同（跨armcopyfeature/value，actionhead零）、optim所有liveparams归属、容器policy/空Adam/输出保存重载exact。GPU实际control/λ/协方差与真实learnloss/reset资格未验；0realenv/modelquery/physics/learning，不是8000源准入完成。implementation_delivery绑定config/source/unit。
+- 源code记录每500postupdatecheckpoint+RMS/hash/trainmetrics、完整episodes、initialpolicy/RNG/worldbank、最后历史与真实device/计数/FD/learn+serialize成本，真实4000后weights/Adam/RMS/prediction验证和failed保存停止；此逻辑尚未learn执行。dense10短诊断在20world上限内，不假装100world主训练runtime。317必须actualinitactuation/runtime/sourceadmission文件及hash通过后318才short；320深审清理，六论文出口/goal仍active。
+- git61733本轮仍live bufferedfirstpush持锁，remote未全同步，无video上传。
+
 - 第315轮五轮深审决定：311/312必要参考位置-rate代数已有限关闭，313整体PPO证据明确旧1.2M研究negative，314只single可证伪learnedreference协调memo，不再新坐标/rate/gain/zero资格循环。新同接口Mref3/Uref6问题值得仅SHORT GPU学习生命周期工程，subject runtime/source/initialactuation准入；不是方法收益/新颖性/正式PPO已准，原差模贡献与含共模mean候选不混写。
 - 第315轮reference_learning_engineering_v1冻结prospective freshseed31531、10GPUworld、Mref3/Uref6各4000policy samples共8000，beforelaunch必须冻结wholeupdate rollout/batch/epochs/reward/worldbank/logstd，复用SB3 PPO及同481 RMS/history/filter/control/parking/原门，核capture/terminal/reset及policyoptimizer/RMS save-reload和真实计数device。初始actualRMS/协方差/λ/饱和/参数数必须报告，不把bounds/width当匹配；禁止scientificcheckpoint选择、oldH1 warmstart/隐私contact/新reward。budget当前source-gated未开始，正式5/freshOODA关闭。
 - 316只reuse训练runtime/policy实现，317source过才short8000，318/319独立接收，320下一深审清理才可能冻结NEW3pairedseed prequalification（另有收益/能力/strongclassic-U6/消融/独立集门），不自动扩训练或选shortwinner。shortfailure保全部checkpoint/RMS/Adam与成本、停止不budgetgrowth；完整六论文出口未齐、goal active。
