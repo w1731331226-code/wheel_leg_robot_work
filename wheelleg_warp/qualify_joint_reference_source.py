@@ -32,9 +32,10 @@ def prepare(raw, slot=0):
     return args
 
 
-def run():
-    assert not any((OUT / f).exists() for f in ('source_check_started.json', 'source_check_completion.json', 'source_check_failure.json'))
-    p = json.loads((OUT / 'source_check_proposal.json').read_text())
+def run(directory=OUT):
+    out = Path(directory)
+    assert not any((out / f).exists() for f in ('source_check_started.json', 'source_check_completion.json', 'source_check_failure.json'))
+    p = json.loads((out / 'source_check_proposal.json').read_text())
     assert all(sha(ROOT / name) == h for name, h in p['source_sha256'].items())
     fixture = ROOT / p['fixture_path']; assert sha(fixture) == p['fixture_sha256']
     with np.load(fixture, allow_pickle=False) as z:
@@ -51,12 +52,12 @@ def run():
     def reject(*args, **kwargs):
         raise AssertionError('No physical graph launch admitted')
     mujoco.mjd_transitionFD, wp.capture_launch = counted, reject
-    atomic_json(OUT / 'source_check_started.json', dict(round=302, runner_sha256=sha(__file__),
-        proposal_sha256=sha(OUT / 'source_check_proposal.json'), static_query_budget=80,
+    atomic_json(out / 'source_check_started.json', dict(round=p['round'], runner_sha256=sha(__file__),
+        proposal_sha256=sha(out / 'source_check_proposal.json'), static_query_budget=p['static_controller_queries'],
         real_constructor_budget=1, physics_graph_launch_budget=0))
     start = time.perf_counter()
     try:
-        directory = OUT / 'source_constructor'; directory.mkdir(exist_ok=False)
+        directory = out / 'source_constructor'; directory.mkdir(exist_ok=False)
         raw = adapter.instrument(raw_env, p['cases'], 'virtual6', directory)
         assert raw._joint_topology['captured_controller_calls'] == 80
         assert raw._complete_topology['physics_calls'] == 40
@@ -109,7 +110,7 @@ def run():
                     memory_after=raw.k['state'].numpy().copy(), ctrl=raw.data.ctrl.numpy().copy(),
                     diag=raw.diag.numpy().copy(), trace=raw._joint_buffers[11].numpy()[0].copy(),
                     role=raw._joint_buffers[8].numpy()[0].copy(), phase=raw._joint_buffers[9].numpy()[0].copy())
-                file = OUT / f'source_{phase}_{arm}.npz'; np.savez_compressed(file, **result)
+                file = out / f'source_{phase}_{arm}.npz'; np.savez_compressed(file, **result)
                 records.append(dict(phase=phase, arm=arm, path=file.name, sha256=sha(file), queries=5))
                 for key, value in readonly.items():
                     np.testing.assert_array_equal(args[int(key)].numpy(), value)
@@ -122,7 +123,7 @@ def run():
                 print('STATIC', phase, arm, count, flush=True)
             for name in ('ctrl', 'diag', 'memory_after'):
                 np.testing.assert_array_equal(results[phase, 'old_zero'][name], results[phase, 'new_zero'][name])
-        assert count == 80
+        assert count == p['static_controller_queries']
         # Real state fields reset through the existing reset_rows kernel plus the exact adapter done-mask clear.
         raw._joint_requested.fill_(.5); raw._joint_buffers[4].fill_(.4); raw._joint_buffers[5].fill_(1)
         mask = np.array([0, 1, 0, 1, 0], np.int32); raw.mask.assign(mask)
@@ -136,18 +137,18 @@ def run():
         np.testing.assert_array_equal(raw._joint_requested.numpy()[mask == 0], .5)
         obs = env.reset(); assert obs.shape == (5, 481)
         np.testing.assert_array_equal(raw._joint_buffers[4].numpy(), 0)
-        atomic_json(OUT / 'source_check_completion.json', dict(verified=True, round=302,
+        atomic_json(out / 'source_check_completion.json', dict(verified=True, round=p['round'],
             records=records, individual_static_queries=count, constructor_count=1,
             baseline_constructor_transitionFD_calls=fd_calls, topology=raw._joint_topology,
-            real_capture_qualified=True, phase_startup_asymmetric_static_qualified=True,
+            real_capture_qualified=True, static_phases_checked=p['phases'],
             zero_static_output_identity=True, masked_native_reset_and_adapter_clear_checked=True,
             actual_episode_autoreset_qualified=False, physics_graph_launches=0, new_training_samples=0,
             wall_seconds=time.perf_counter()-start, runner_sha256=sha(__file__),
             formal_PPO_admitted=False, full_task_rollout_admitted=False,
             next='303 independent finite source review and register one paired dynamic mechanism only if sourcepassed andsame-reference analytic controls specified. No newPPO.'))
-        print('PASS302 real capture/80static/phase/maskedreset;0graphphysics/PPO', flush=True)
+        print('PASS source capture/static/phase/maskedreset;0graphphysics/PPO', flush=True)
     except BaseException as error:
-        atomic_json(OUT / 'source_check_failure.json', dict(error=repr(error), records=records,
+        atomic_json(out / 'source_check_failure.json', dict(error=repr(error), records=records,
             attempted_static_queries=count, baseline_constructor_transitionFD_calls=fd_calls,
             implicit_retry=False, physics_graph_launches=0, formal_PPO_admitted=False))
         raise

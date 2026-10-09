@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第303轮独立续查停车/静止与实际maskreset（2026-10-09）：
+
+source_continuation_v2明确冻结新增同5case一次构建/40staticquery/FD<=15/0物理图，其中35是未执行项、5是新构建oldparking同次对照，不假装原80重跑通过。新parking/stationary各oldzero/newzero/M3/U6×5全部checker/readonly/diag14过，两个phase新旧zero ctrl/diag/memory exact；真实两捕获/80control节点与481reset过。原Native reset_rows及adapter clear对world1/3实际mask复位，其他world qpos/request不变，full481/filterreset过。
+
+累计实际85query=80唯一state-arm+5重复oldparking，两constructor各10FD总20；物理图launch/训练/优化0，不能把构造FD成本叫0或PPO加速。旧root80协议failure及45query/10FD的hash保持、completion仍无，continuation独立started/proposal/completion/delivery及8NPZ/runlog绑定来源。共享qualifier按显式目录/budget/round复用，原版本仍归档；same-process零配对、源hash与输出sha独立核过。
+
+source捕获、四mode静态及真实masked/fullreset已获有限资格，actualepisode/autoreset/完整trajectoryzero和CPU-GPUtask仍缺，synthetic q/gyro/ω不等真实contactstate。304先定义same-reference解析feedback及唯一paired零动作完整回合工程协议，核新evaluator/log/terminal/reset，再决定科学机制预算；不能源通过直接PPO或宣称收益。305按约深审清理，完整论文六出口仍缺。
+
 第302轮真实捕获与45静态记录、检查器window前提修正（2026-10-09）：
 
 source_check_proposal冻结原controlled五高度.115/.16/.24/.3/.38、一次5world构建、80query、原constructor FD<=15及0物理图/训练。真实构建两capture/80control调用与原complete/collector每40step拓扑、481reset过；实际10FD(1e-6)有成本，全程拒绝wp.capture_launch。保存五pose之一是.25，对第三case原.24目标作静态跟踪扰动查询，reference/命令case不改，明确synthetic controllerinputs，不称可实现contact状态或真实episode。

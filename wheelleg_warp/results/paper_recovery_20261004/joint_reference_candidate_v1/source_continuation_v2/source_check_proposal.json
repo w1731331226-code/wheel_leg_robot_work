@@ -1,0 +1,183 @@
+{
+  "round": 303,
+  "cases": [
+    {
+      "seed": 6301000,
+      "scenario": {
+        "speed": 0.7,
+        "mass": 7.0,
+        "height_l": 0.01,
+        "height_r": 0.0,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 4600000,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.115
+      }
+    },
+    {
+      "seed": 6301008,
+      "scenario": {
+        "speed": 0.7,
+        "mass": 7.0,
+        "height_l": 0.01,
+        "height_r": 0.0,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 4600008,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.16
+      }
+    },
+    {
+      "seed": 6301016,
+      "scenario": {
+        "speed": 0.7,
+        "mass": 7.0,
+        "height_l": 0.01,
+        "height_r": 0.0,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 4600016,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.24
+      }
+    },
+    {
+      "seed": 6301024,
+      "scenario": {
+        "speed": 0.7,
+        "mass": 7.0,
+        "height_l": 0.01,
+        "height_r": 0.0,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 4600024,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.3
+      }
+    },
+    {
+      "seed": 6301032,
+      "scenario": {
+        "speed": 0.7,
+        "mass": 7.0,
+        "height_l": 0.01,
+        "height_r": 0.0,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 4600032,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.38
+      }
+    }
+  ],
+  "parent_proposal_sha256": "7450eddeb3406059207629f94549b65f064168a7866d18d5f13596abcf929b2e",
+  "unit_sha256": "ca001909eec5edae48a42830bc60bc88a77e4ece4a49341369d6e95a09052933",
+  "fixture_path": "wheelleg_warp/results/paper_recovery_20261004/continuous_nominal_map_v1/queries_old.npz",
+  "fixture_sha256": "8b6b76abedc64de3150ebad9ebddacab14864ddbe2d2e01f311e128eb34f3a84",
+  "fixture_rows": [
+    20,
+    21,
+    22,
+    23,
+    24
+  ],
+  "constructor_heights_m": [
+    0.115,
+    0.16,
+    0.24,
+    0.3,
+    0.38
+  ],
+  "saved_pose_heights_m": [
+    0.115,
+    0.16,
+    0.25,
+    0.3,
+    0.38
+  ],
+  "real_environment_constructions": 1,
+  "static_controller_queries": 40,
+  "baseline_constructor_FD_budget": 15,
+  "phases": [
+    "parking_after_motion",
+    "stationary_before_motion"
+  ],
+  "arms": [
+    "old_zero",
+    "new_zero",
+    "M3",
+    "U6"
+  ],
+  "new_physics_graph_launches": 0,
+  "new_training_samples": 0,
+  "scope": "Explicit corrected-window continuation.35 formerly unexecuted queries plus5oldparking repeats in SAME newconstructor for zero-control pairing; totals actual85queries/two constructors. Do not call originalfailed80 protocol completed.",
+  "stopping": "Single separateconstructor/40query attempt;preserve andstop on failure,no implicit full replay orphysics/PPO.",
+  "source_sha256": {
+    "wheelleg_warp/joint_reference_adapter.py": "8b41c22062cd08f476860684751772208e787ec79bdbf0f8bf87d4359369400d",
+    "wheelleg_warp/test_joint_reference_adapter.py": "d815aa27b6bba7b1c875577dc9f48774ac9402f560ca38c5968512d3e0cfd2e0",
+    "wheelleg_warp/joint_reference_prepare.py": "5f68c411073c48386889ea0c7b68173585cc489164e45c54172fec0cafe4cc1d",
+    "wheelleg_warp/joint_reference_control.py": "a8b5dae529d0ab093a19f106e602069c69208c87c6930340f07f97360759b2fc",
+    "wheelleg_warp/qualify_joint_reference_source.py": "16054d26819e856904f6f0fe742d82bf8622c569fbfab15b1e00394092aad569",
+    "wheelleg_warp/continue_joint_reference_source.py": "93ef136cfc7834f94f1fd3045f27b9cde569470fa160d2eac5eb38c94a56993e"
+  },
+  "formal_PPO_admitted": false,
+  "original_attempt_sha256": "12b260e07bb63c7f8a8624e2bf131a9f04d54f6955f1e01a29f795294ad1b4fb",
+  "original_delivery_sha256": "cc98ebf5f1eb2e2534b44ea6e0ee488219c45af56ad0ffb46df1a2522f24fb83"
+}

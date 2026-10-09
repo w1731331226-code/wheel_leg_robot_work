@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第303轮显式独立source_continuation_v2通过，不重放旧80：新增一次同5case真实构建、剩35query加同次oldparking5作为公平zero对照，共新40。两capture80实际controller节点/每capture40物理节点与481reset过；parking/stationary四臂各5全部source/日志/readonly/diag14检查过，同次old/newzero ctrl/diag/memory exact。原Native reset_rows+adapter clear实际mask选world1/3，其他world qpos及request不变，full481reset/filter清0过。
+- 第303轮实际累计85controllerqueries（唯一四mode×四臂×五状态80，加oldparking重复5）、两真实constructor各10FD累计20。源预算每attempt15不扩80原attempt，旧source_check_failure及45/10FD记录原SHA保持，原80仍failed/未completed；continuation started/proposal/completion/delivery/8NPZ与新helper/runlog保。全程禁止wp.capture_launch，0GPU物理图/learning/optimizer，synthetic姿态/轮速仍非contact状态证书或PPO成本结论。
+- 第303轮qualifier仅复用目录/JSON预算与round，CPUcontext修正来源留旧代码；current	source SHA全部核、输出8sha、两phase zero pairs独立重核过。actualepisode/autoreset/完整轨迹zero/CPU-GPUtask未qualified，strongsame-reference analytic feedback仍待实现，动态性能/正式PPO未准。
+- 304定义same-reference解析feedback和唯一paired零动作完整回合工程协议，先核新evaluator/log/终态/reset，不用源静态成功替代收益或盲学；305如期五轮深审清理。完整论文六出口缺、goal active。helper11251本轮仍live首批，remote未全同步；video不上传。
+
 - 第302轮真实源检查部分完成而非全80过：原controlled五h=.115/.16/.24/.3/.38建一次5world真实GPU环境，两capture80controller调用/每capture40integration节点与complete/collector topology成立，481reset正常；wp.capture_launch全程拒绝，0实际GPU物理图/训练。原constructor FD实际10次1e-6<=15预算。保存态第3q/v来自.25并对原.24命令查询，明确synthetic controller输入、未改case/goal、非物理contact状态证书。
 - 第302轮40query（startup/asymmetric moving×oldzero/newzero/M3/U6×5）完全检查过，old/newzero ctrl/diag/memory逐值一致；第45query parking旧零输出已保存但完整回合checker误用于预置seen=True的单步停车window，违反其zero-origin假设后按冻结停止。source_check_failure保真实45/10FD/0graph，不自动构建重跑，剩35query及native maskedreset尚未执行，不准动态/PPO。
 - 第302轮修根因只扩CPU日志checker显式Boolean initial_seen，完整episode仍默认False且漏声明seen=True仍拒绝；test加已声明/未声明停车window，GPUbuffer等原单元再过。原adapter/test/qualifier源码按旧SHA归档，AST核其他全部节点（包括capture/decoder/所有Warpkernels）未变。离线用正确声明复核9已保存NPZ×5=45全部过且diag14全0，0新controllerquery；source_check_delivery记录partial资格，旧失败不覆盖/不冒充80completed。
