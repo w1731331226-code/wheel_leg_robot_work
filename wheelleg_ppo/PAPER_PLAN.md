@@ -1,5 +1,17 @@
 # 双轮腿机器人PPO论文方案
 
+第320轮五轮深审与NEW三seed预资格登记（2026-10-09，未learn）：
+
+316—319证明fresh短GPU链可更新/记录/重载，actualinitial分布差异已声明、16模型独立接收；工程不是收益证据。只值得一次NEW matchedreference3seed问题，不再旧H1/短模型warmstart、gain/filter/reward救门，也不启动formal5。含commonmean候选与原pure差模贡献分开，原负反馈/必要代数保。
+
+reference_learning_prequalification_v1冻结seeds32031/2/3×M_ref3/U_ref6×200000策略步，总1.2M，100GPUworld、旧PPO配置与481normalize/currentNom/mapping/parking/std.25不变。旧23301/2/3 trainingcasebanks原样复用、explicit非freshholdout；仅policy/actionRNG新seed，不假称训练地形未见。课程20k/100k只真实episode终态切换，initialfeatures/value/world逐pair同。每20k保曲线，scientificcheckpoint唯一final200k，不挑checkpoint/seed。
+
+固定评估预算sixfinalmodel×164=984，freshcurrent经典B0/B1_route/joint_yaw×164=492，总1476，原regular96/controlled40/legacy28保持。每seed controlled至少34、不丢任经典成功、全physicaldesign；各panel J低于最强currentclassic及same-seedU6、跨3平均相对best至少15%与.05deg，还须CPUlegacy保持校对。任何门失败就关fixedbudget，不自动长训/调gain/reward，过也先另冻独立leg/yaw/commonmean解释、新formal5/freshID-OOD/层级统计真实PPOcost与稿。
+
+321只light100world训练/curriculum及学得3/6policy/evaluator source reuse，322beforelaunch资格，323如全过才main；20worlddense评估器不能blind套100world。当前main源准入False、0newlearning，fullgoalactive。325下一directionreview/cleanup。
+
+删除completedpreflight缓存qualify_joint_reference_source.pyc9104B，ignored/untracked/unheld、code等src，SHA/删除保round320_cleanup；source/raw/AdamRMS/models/失败/CPU-GPU保留，remote未全同步，video不上传。
+
 第319轮独立actualcheckpoint/Adam/RMS工程接收（2026-10-09）：
 
 review_reference_learning_engineering在CPU读取16实际保存PPO archive/Adam与RMS，每500计数和epochs/Adamsteps递增、weights变化/finite、指标finite、481→3/6space、RMS countstep+10.0001及128syntheticdeterministic输出finite核，不仅依赖runnerverification。初始commonMLP/critic state exact、actorhead0/emptyAdam、两Nomworld arrays exact；finalhistory/20episode physical/design过，source/completion/文件hash绑定。

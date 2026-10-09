@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第320轮五轮深审：316policy/runtimereuse、317actual初始RMS/协方差非matched声明、318真CUDA8k、319实际16模型/Adam/RMS独立接收，短工程有效但0science/方法优势。值得只一次NEWfreshmatched3seed prequalification，不formal5、不旧H1/smoke warmstart或reward/gain/rate救分，原commonmean候选与pure差模贡献保持区分。
+- reference_learning_prequalification_v1冻结prospective seeds32031/2/3×Mref3/Uref6×200000=1.2M policy steps，100GPUworld、旧PPO50steps/batch250/10epochs及normalization/std.25、课程20k/100k仅实际episode结束切换，old23301/2/3 trainingcasebanks明确原样复用且非freshholdout。每20k保存、只final200k科学评分；两arm每seed初始features/value/world同，禁止resume/seed/ckpt选择。321light100worldruntime/curriculum/evaluator source准入前本轮0新learning；不能blind复制20worlddense诊断。
+- 前瞻固定final6model×164=984eval、新classicB0/B1_route/joint_yaw×164=492，总1476science eval；保持原96regular/40controlled/28legacy，同info U6不可旧H1torque代替。每seed controlled>=34、任classic成功不丢/全physicaldesign、eachpanel J低于strongclassic与same-seedU6且三seed平均至少15%与.05deg，CPUlegacy能力校对也需。任门失败关闭固定budget不扩steps/改reward/gain；过仍新消融/commonmean解释/freshID-OOD/formal5/statisticalcost/稿缺，goal active。
+- 第320轮删qualify_joint_reference_source.pyc9104B，ignored/untracked/fuser無持有、marshalcode与srccompile exact，保实际源/模型AdamRMS/raw/failedattempt/CPU-GPU，round320_cleanup有SHA/删除核。round320_direction_review绑定工程与新source-gated协议；325下一深审清理。git61733本轮仍live bufferedfirstpush持锁，remote未全同步、video禁上传。
+
 - 第319轮independent shortengineering接收通过：CPU读取16实际PPO zip/Adam/RMS而非仅verification标志，每500样本num_timesteps/_n_updates和20Adam递增steps、每阶段weights变化、所有weights/moments/metricsfinite、policy dims481→3/6、obsRMS countstep+10.0001、synthetic128deterministic输出finite核。没有CPUrobotrollout/新learning/重跑GPU。
 - 两initialpolicy FeatureMLP/value共有state_dict exact、actionhead零、emptyAdam、initialworld四arrays exact；两finalhistory shapes及finite、20episode physical/design核。engineering_review绑定completion/source/reviewer与16records，actual8000samples/320000graphworldsteps/15FD记录，不physicalexploration匹配/收益主张，短models不科学selection。
 - 320如期五轮directionreview/cleanup决定是否值得显式NEW3pairedseed prequalification并原method/strongU6-classic/能力/独立集门，不自动formal5或凭engineering成功新长训。六论文出口仍缺、goal active；git61733本轮确认live firstbufferedpush持锁，remote未全同步，video禁上传。
