@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第302轮真实捕获与45静态记录、检查器window前提修正（2026-10-09）：
+
+source_check_proposal冻结原controlled五高度.115/.16/.24/.3/.38、一次5world构建、80query、原constructor FD<=15及0物理图/训练。真实构建两capture/80control调用与原complete/collector每40step拓扑、481reset过；实际10FD(1e-6)有成本，全程拒绝wp.capture_launch。保存五pose之一是.25，对第三case原.24目标作静态跟踪扰动查询，reference/命令case不改，明确synthetic controllerinputs，不称可实现contact状态或真实episode。
+
+startup及asymmetric moving40query通过，oldzero/newzero各状态ctrl/diag/memory exact。第45query为预置此前已移动seen=True的停车窗口，输出已保存、CPU checker却要求full zero-origin episode，失败后原attempt按登记停止，source_check_failure保45query/10FD/0graph；余35与真实maskreset未执行。不能声称全80source资格、动态/PPO准入。
+
+只修改shared日志checker支持显式Boolean initial_seen，完整episode默认False；修调用window的声明，保原adapter/test/qualifier原SHA源码，AST确认capture/decoder/Warpkernels及其他节点不变。新window声明/漏声明拒绝及原单元过；对9保存NPZ×5=45用正确前提离线复核全部过，diag14全0，未新构建或query、旧失败未覆盖。source_check_delivery只承认partial。最初误找controlled .25导致proposal未生成/0constructor，登记改实际.24后保preconstructor log，未改原开发案例。
+
+303先独立有限去留及明确剩35/reset续查范围、额外构造成本与source新版本，保原80失败不复活；完整资格之前不注册动态protocol或PPO。305五轮深审清理，完整方法/强对照/新3→5/freshID-OOD/统计成本/稿六出口仍缺。
+
 第301轮隔离动作/复位/日志接入与单元（2026-10-09）：
 
 joint_reference_adapter实现M3/U6/leg-only/yaw-only canonical6解码，reference m/d与原motor hub/wheel通道分开，reference在原normalized±.01/物理步filter上，复用原parking请求撤回和phase anchor选择、complete physical/contact recorder与commandprefix。clean gyro诊断限定≤20同solver world；全局hook构建后/异常均恢复，原baseline/model/reward/物理及性能门不变。暂未用于真实环境或训练，解析feedback未实现。

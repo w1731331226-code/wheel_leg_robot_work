@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第302轮真实源检查部分完成而非全80过：原controlled五h=.115/.16/.24/.3/.38建一次5world真实GPU环境，两capture80controller调用/每capture40integration节点与complete/collector topology成立，481reset正常；wp.capture_launch全程拒绝，0实际GPU物理图/训练。原constructor FD实际10次1e-6<=15预算。保存态第3q/v来自.25并对原.24命令查询，明确synthetic controller输入、未改case/goal、非物理contact状态证书。
+- 第302轮40query（startup/asymmetric moving×oldzero/newzero/M3/U6×5）完全检查过，old/newzero ctrl/diag/memory逐值一致；第45query parking旧零输出已保存但完整回合checker误用于预置seen=True的单步停车window，违反其zero-origin假设后按冻结停止。source_check_failure保真实45/10FD/0graph，不自动构建重跑，剩35query及native maskedreset尚未执行，不准动态/PPO。
+- 第302轮修根因只扩CPU日志checker显式Boolean initial_seen，完整episode仍默认False且漏声明seen=True仍拒绝；test加已声明/未声明停车window，GPUbuffer等原单元再过。原adapter/test/qualifier源码按旧SHA归档，AST核其他全部节点（包括capture/decoder/所有Warpkernels）未变。离线用正确声明复核9已保存NPZ×5=45全部过且diag14全0，0新controllerquery；source_check_delivery记录partial资格，旧失败不覆盖/不冒充80completed。
+- 第302轮前protocol查错controlled .25（实际.24）导致preconstructor FileNotFound/0constructor，修登记实际case heights并保preconstructor log，不作为真实源尝试或科学失败。303有限复核并判断是否明确冻结剩35/reset新源续查，原80失败状态保持、增加构造成本须另记，资格未齐前不注册动态/长PPO。305深审清理如期；论文六出口缺/goal active。helper11251本轮live首批，remote未全同步，视频禁上传保持。
+
 - 第301轮joint_reference_adapter实现isolated动作/捕获/复位/日志接入：M3/U6/leg-only/yaw-only→canonical[m,d,hubL,hubR,wL,wR]，前两项进独立参考filter，原virtual6 force槽清0、hub/wheel沿原通道；复用原parking.prepare撤回请求、roles.prepare与phase.select_anchor、完整物理/contacts recorder和commandprefix。仅clean gyro诊断≤20同solver worlds，未挂生产或训练；保originalgeometry空障碍处理及捕获watcher，构建异常恢复所有全局hook。
 - 第301轮34列日志区分nominalh、actualm/d/两target、guard、requested/effective6、reference2/motor6 filter、phase与geometry范围；保旧role内容并重命名nominal_tracking_reference/phase nominalh字段，新增reference一致性检查替代不适用的旧m=h角色等式，原actualphysical/design/task/height/5°/速度/进度门不改。每world终态先保原始新日志再验收，request/effective/convert/motor/filter/latch/private均按done mask清零且其他world不动。
 - 第301轮unit过：128M3→U6 exact嵌入与两消融；非法shape/NaN/float64微越界在F32cast前拒绝；NoPhysics481wrapper输入不变；synthetic moving→parking日志及6项篡改拒绝；GPU独立buffers maskedreset和假factory异常hook恢复。adapter_unit.json绑定源/log。0真env构建、controllerquery、物理步、FD/PPO；真实capture/reset/异步episode资格未过，不能以unit称训练ready，解析feedback尚未实现、U6仅decoder可用。

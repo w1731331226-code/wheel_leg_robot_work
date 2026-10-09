@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/qualify_joint_reference_source.py", line 164, in <module>
+    run()
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/qualify_joint_reference_source.py", line 37, in run
+    p = json.loads((OUT / 'source_check_proposal.json').read_text())
+  File "/usr/lib/python3.10/pathlib.py", line 1134, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+  File "/usr/lib/python3.10/pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+FileNotFoundError: [Errno 2] No such file or directory: '/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/source_check_proposal.json'

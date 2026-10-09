@@ -115,9 +115,7 @@ def clear(mask: wp.array[int], requested: wp.array2d[float], effective: wp.array
     seen[w] = 0
 
 
-def check_log(data, role, phase, initial_seen=False):
-    if not isinstance(initial_seen, (bool, np.bool_)):
-        raise ValueError('Explicit Boolean initial motion latch required')
+def check_log(data, role, phase):
     assert data.ndim == 2 and data.shape[1] == len(COL) and len(data)
     assert role.shape == (len(data), 11) and phase.shape == (len(data), 6)
     assert all(np.isfinite(x).all() for x in (data, role, phase))
@@ -131,7 +129,7 @@ def check_log(data, role, phase, initial_seen=False):
     np.testing.assert_array_equal(data[:, 7], phase[:, 5])
     parking.phase.check_log(phase, 'phase_support')
     assert np.all(role[:, 10] >= 0) and np.all(role[:, 10] <= role[:, 9]+1e-9)
-    np.testing.assert_array_equal(data[:, 8], np.maximum.accumulate((data[:, 31] != 0) | initial_seen))
+    np.testing.assert_array_equal(data[:, 8], np.maximum.accumulate(data[:, 31] != 0))
     withdrawn = (data[:, 8] != 0) & (data[:, 31] == 0)
     np.testing.assert_array_equal(data[:, 9], withdrawn)
     np.testing.assert_array_equal(data[:, 16:22], np.where(withdrawn[:, None], 0, data[:, 10:16]))

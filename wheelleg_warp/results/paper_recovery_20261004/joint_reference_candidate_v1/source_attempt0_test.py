@@ -80,19 +80,6 @@ def run():
     phase[:, 4] = .38; phase[:, 5] = data[:, 7]
     adapter.check_log(data, role, phase)
     assert np.any(data[:, 3] != data[:, 2])
-    # A declared parking window can start with a set latch; full episodes still default to zero.
-    window = data[:1].copy(); r = role[:1].copy(); ph = phase[:1].copy()
-    window[:, 3:7] = [.38, 0, .38, .38]
-    window[:, 7] = .16; window[:, 8:10] = 1
-    window[:, 16:30] = 0; window[:, 31] = 0
-    r[:, 7:9] = .38; ph[:, 2:4] = [0, 1]; ph[:, 5] = .16
-    adapter.check_log(window, r, ph, initial_seen=True)
-    try:
-        adapter.check_log(window, r, ph)
-    except AssertionError:
-        pass
-    else:
-        raise AssertionError('Undeclared initial latch accepted')
     for field in (3, 5, 7, 16, 22, 24):
         bad = data.copy(); bad[0, field] += .001
         try:
