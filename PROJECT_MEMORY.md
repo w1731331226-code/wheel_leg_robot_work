@@ -4,6 +4,14 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第327轮原fixedNom force-space接口与唯一33episode dynamicregression完成：fixed_reference_force以D3→[F,−F,H,−H,Y,−Y]或V6独立6channel，复用原virtual6 control/parking/filter/481history/normalizer/Curriculum，无private mean/diff参考或controlkernel修改。训练make_env的100world新薄封装本轮未实际构建，不宣称已qualified；wrapper/128组合antisym/commonvirtualinput0/非法边界/3space→6delivery selfcheck通过。
+- regression10旧工程height×direction cases加323failedstresscase共11 seen cases×zero/D3/V6=33；fresh zero-headCUDA Gaussian std.25/sharedfeatures/value/emptyAdam，raw481无normalizer但meanhead0故prior distribution不随obs变；不是learnedcontrollers或旧Mref3/Uref6改名，不模型warmstart/optimization。policy与physicsCUDA，实际493680graphworldsteps/486567firstepisode、20FD、79.86905s，0learning。
+- 所有33physical过，zero11design过、D3/V6各10/11design过，三组任务各10/11成功；唯一stresscase32700000（原23302032 exact scenario）各组taskfail。D3 minactive margin−.004378533rad、V6−.002345300rad，工程gate False、longlearning/formal5仍关闭，不能用input antisym或Nom refs不变冒称actualjoint状态安全。
+- 新问题覆盖运动全阶段：D3 firstcross betaL at1.8915s、V6 betaL1.938s，在加速段/停车前约2.98/2.93s，lambda1、非withdraw，实际正torque抵抗负jointvelocity；不是停车交接也不是mean-reference恢复。旧325frozenreference alphaR停车违例仍有效，不回填或用新例覆盖旧例。即使固定Nom reference，瞬间motorcapacity gate也不能保证actual1.4rad界。
+- 独立读取33完整pre/post/dense flags/joint min/连续qv/所有Nomrole trackingmean等height，D3 requested/effective/filtered pairs全anti；D3/V6各4061actorrows按freshweights/初始TorchRNG/原batch11重放exact，共8122。原监督core与world初始qv跨组同，fullsource/hash/失败及模型/actor/物理记录保；prior无学习/无obs依赖的工程结果，不能方法排名/独立概率或exposure完全匹配。
+- 328先设计共享actualjoint q/qd与动态制动能力的constraint/admission layer，覆盖acceleration/motion/parking，Nom design固定/公共传感，不读真实mass/μ/contact强制参数；必须区分预测约束与真实状态证据、保infeasible/model-error证据，不qclip/冻结场景伪装安全。既有Nom不足时只缩NN residual不够，shared可接管base需先qualified；knownCBF/filter仅工程baseline，不自动新PPO理论或安全保证。严格1.4/eightphysical/task门保持，不再换actionspace/seed或扩训练救失败；原CPU/GPU基线保留，330下一五轮direction审查清理。
+- 原commonmean参考候选closed，整体PPO论文six exits/strongsameinfo及消融/new3→5/freshID-OOD/有效stats成本/稿仍缺，goal active。无视频生成/提交；收尾中文提交/记忆/恢复守护，remote仍未全同步。
+
 - 第326轮已有20完整轨迹handover审计/8peak-pose分解通过，0新physics/query/learning。修正“交接前关节速度太大/位置太接近界”的简单解释：代表case frozenMdet/stoch停车时alphaR分别.9974/.9382rad、速度−.0834/−.7406rad/s（向内），比jointzero1.0488rad/+.1619有更大位置余量；转为parking制动及reference归零后才向界外运动。
 - 代表case right trackingtarget：det .1207617→.1147045m用8ms、stoch .1255794→.1147045m用13.5ms；径向长度实际先峰后回缩，同时leg角度约−9.45deg制动。原jointzero在自身峰值r=.1166796m/θ−.1666492rad/alphaR1.3975762；det r=.1162249/θ−.1649914/alpha1.4020262，stoch r=.1160746/θ−.1649603/alpha1.4049698。learned峰时角度更小，但radius更短，legfloor仍过；耦合fullpose边界才决定q。
 - 对FK/IK connectedstanding branch做对称精确两因素分解、每0.5ms路径telescoping核。代表det对jointzero的peak alpha差+.00444996rad=radial+.00903052+angle−.00458056；stoch+.00739360=radial+.01207418+angle−.00468058。这只是kinematic attribution、不同peak时刻，不是force因果或制动证书；constant stopping-deceleration proxy也无已证可用acceleration下界。plot PNG/SVG视检通过，展示单seen工程case，不science效果。

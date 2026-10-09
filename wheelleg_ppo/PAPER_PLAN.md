@@ -1,5 +1,16 @@
 # 双轮腿机器人PPO论文方案
 
+第327轮原差模force空间动态回归未通过（2026-10-09）：
+
+复用fixedNom virtual6动力/parking/filter/481history/Curriculum，D3原F/H/Y差模→[F,−F,H,−H,Y,−Y]、V6独立六channel。仅新小型动作wrapper，Nom reference/controller/physics不改；128组合/非法边界/3actionspace到6delivery自检过。新100world训练薄封装本轮没实际构建，不代替训练资格。
+
+唯一10旧五height×±direction工程case加既有failedstresscase×3条件=33episode，fresh zero-headGaussian CUDApolicy、std.25、sharedfeature/value/emptyAdam，raw481无normalizer且zerohead distribution独立obs；不是新learnedpolicy或oldreference model warmstart。实际493680graphworldsteps/486567firstepisode、20FD、79.87s、0learning。33physical全过，zero design11/11、D3/V6均10/11，task三组10/11，工程gate False。
+
+违例同stressscene（h115/mass7.493/−.936/mixedright.019/delay8.5）：D3在1.8915s betaL首次越下界，minmargin−.004378533rad；V6在1.938s betaL，min−.002345300rad；都加速期、停车前、lambda1/非withdraw。固定Nom reference不能解决全阶段actualjoint安全，不能只补停车或以虚拟input共模恒等保证body轨迹。
+
+33raw pre/post/qv/physical/design/Nommean/source核过，D3的requested/effective/filter全anti；两组共8122raw481及保存RNG/batch11/freshweights动作重放exact。数据只是seen工程case/singleGaussian seed，不science优势或独立概率，oldreference候选仍closed。328先共享actualjoint/dynamiccapacity约束层设计与准入，Nom参数固定/公共测量/不读trueplant，预测失败/模型误差/不可行必须记录、禁止q硬clip或冻结场景作安全成功；不能仅缩residual而忽略base接管。KnownCBF/filter是工程对照，无新PPO理论或无条件安全声称，不重训/换坐标救门。严格门/旧CPU-GPU基线不改，330下一深审清理，完整论文goal active。
+
+
 第326轮停车交接轨迹分解与方法级收敛（2026-10-09，0新物理/学习）：
 
 已有20stream和8对peak-pose FK/IK分解通过。learned进入parking时alphaR位置更远离1.4且速度向内，不能简单认为交接前已无jointmargin；实际是恢复Nom reference与倾斜制动共同作用后向外。代表det righttarget回缩6.057mm/8ms，stoch10.875mm/13.5ms；归零控制不等于闭环状态已回到Nom轨迹。
