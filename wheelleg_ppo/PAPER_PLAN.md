@@ -1,5 +1,14 @@
 # 双轮腿机器人PPO论文方案
 
+第322轮实际100环境工程资格及主训练入口（2026-10-09）：
+
+M_ref3/U_ref6各fresh5000samples、50step×100world完整一次PPO更新、10epochs/200Adam，CUDApolicy/physics，shared初始world/features/critic、权重确变、模型Adam/RMS重载与count5100.0001核过。工程总10000samples/2669400实际graphworldsteps/45FD；两arm约25.13/23.23s含构建/学习/课程探针等，不完整主课程性能benchmark。
+
+通过工程counter19900/99900加速，观察world24真实终态stage1→2、world34真实终态stage1→3，4回合physical/design全过；done-only切换/cache一致、参考buffers/filter/latch及481history/collector复位过。没有全100world终态或同world2→3覆盖，物理episode时钟不改变。旧短模型各5开发case真实完整评估接口过，10physicaldesign全过；review独立重算3716raw/normalized/action，maxGPU分批误差4.47035e-8。都不是science selection。
+
+新增主入口复用PPO/课程/ledger，仅20k保存至200k、六run实际48M图步上限、共享初始化/RNG/成本/失败模型AdamRMS及raw/history留档，缺source准入或已有training目录拒跑；单元检查通过。runtime_delivery与runtime_qualification/review绑定源/实际证据。main_source_admission未写、主六run尚未学习；323完成initial100world实际分布/成本源码锁定后进入既定六run，不再短学习。formal5/freshID-OOD/消融/论文六出口仍未达，325如期五轮方向深审与清理。
+
+
 第321轮共享轻记录训练/学得评估接口交付（2026-10-09，尚未实际100world资格）：
 
 jointadapter新增dense=False，与旧dense同一control/filter/parking/reset实现，单capture40节点，免完整contact buffers；原dense<=20world保留。ReferenceCurriculum复用原真实episode终态课程，仅done rows清参考动作/历史状态，接原481 history/normalization与3/6动作接口。evaluator复用旧完整物理证据路径，新增frozen learned policy/obsRMS、raw及normalized481/action记录，拒绝未登记learned arms。

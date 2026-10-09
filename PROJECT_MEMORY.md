@@ -4,6 +4,12 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第322轮实际100world轻记录GPU资格完成exit0：M_ref3/U_ref6各5000策略样本、一次50step rollout/10epochs/200Adam，总10000engineering样本。policyCUDA/physicsCUDA、初始Nom world/features/value逐pair同、权重更新/Adam/RMS保存重载exact/count5100.0001。实际1377capture/2669400graphworldsteps、45FD；仅工程，不主六run预算或科学选择。
+- 两arm各观察2个真实terminal事件，counter工程加速19900/99900但物理时钟/episode终止不改；world24从stage1→2、world34从stage1→3，仅done切换、缓存param/q0/reference相符、requested/effective/filter/latch/private与481history/collector reset核过。不是全100world终态覆盖或同world2→3证据；4episode physical/design全部过。
+- 旧4000工程models经新冻结evaluator各5原开发case，共10episode/各5physicaldesign过，完整dense/reference/actor/raw保持；独立review重算3716raw481→normalized481→deterministicaction，最大GPU分批误差4.47035e-8，初始pair/实际Adam/RMS/source核。只接口工程，不科学收益或选择短模型。
+- train_reference_prequalification主入口复用现PPO/课程/记录，登记6run×200k/100world、真实capture计数上限48M、每20k保存、末200k唯一科学模型、禁止已有training目录/缺source准入启动，初始RNG/Nom与failure模型Adam/RMS/RNG/world/history/episode留档；单元保存20k…200k及错误准入拒绝通过。runtime_delivery绑定源/协议/完成/review；main_source_admission尚未写、主学习0，323仅补initial100world分布/成本源锁定后执行注册六run，不再短学习循环。
+- formal5、freshID/OOD、消融/commonmean解释、正式能力/收益/统计成本与稿仍缺，goal active；325五轮方向深审/清理。视频未生成/提交；remote仍6814e842未全同步，保数据与上次HTTP408失败，收尾恢复守护。
+
 - 第321轮实现共享light训练接口：jointadapter dense=False复用同一控制/参考/parking/filter/reset，只捕获40controller节点、免完整contact诊断；原dense评估仍<=20world/80节点。ReferenceCurriculum复用原真实episode结束切换，清额外reference buffers；复用481 history/VecNormalize，M_ref3/U_ref6接口可构建100world（尚未实际构建验证）。
 - 共享evaluator新增冻结学得3/6策略与normalizer入口，记录raw481/normalized481/action，冻结weights/obsRMS核；仅登记learned arms，原fixed调用兼容。单元exit0：原adapter GPUbuffer/checker测试、fakefactory全hook恢复、synthetic done-mask清理、错误policy接口拒绝。初版fake fixture继承错误及失败log保留，修后通过；0实际robot构建/physics/learning。
 - implementation_delivery绑定源/旧adapter与evaluator快照/日志/协议SHA；322须实际100world capture、真实终态课程/history/filter复位与学得评估资格，main runner/checkpoint/cost ledger仍需实现，当前source_admission=False，不能据单元通过启动1.2M或formal5。325下一方向深审清理。

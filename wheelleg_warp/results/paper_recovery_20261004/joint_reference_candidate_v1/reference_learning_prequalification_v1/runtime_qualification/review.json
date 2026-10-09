@@ -1,0 +1,41 @@
+{
+  "round": 322,
+  "verified": true,
+  "qualification_proposal_sha256": "1fe6c9e3604e5e0c0e8681465ecbb67f0b011e3292035404e0853c11d3c482bd",
+  "completion_sha256": "d278eaad5a3cd0bb67eeee2ffdd8128c0ad1b851acf0fa17170e80303406659c",
+  "source_sha256": {
+    "wheelleg_warp/qualify_reference_main_runtime.py": "50385acf2ac7ce1f44245e38460b186f65834a706fe9323da93d0d712f32b906",
+    "wheelleg_warp/reference_learning_runtime.py": "9947050624e901f94ea2f5116a3d6558289e7cd043de4bc45b60f36d1f213c1b",
+    "wheelleg_warp/reference_learning_engineering.py": "6edc8435756bead51c7a553f9fc66a63af071fc3c7399c6a490972a5303c22e3",
+    "wheelleg_warp/joint_reference_adapter.py": "333e27f0b0d1508d7b6fa5be67179129dea69b580d2ba78b9e77a54ef68ada77",
+    "wheelleg_warp/joint_reference_control.py": "a8b5dae529d0ab093a19f106e602069c69208c87c6930340f07f97360759b2fc",
+    "wheelleg_warp/joint_reference_prepare.py": "5f68c411073c48386889ea0c7b68173585cc489164e45c54172fec0cafe4cc1d",
+    "wheelleg_warp/joint_reference_mapping.py": "f7ba76fdb7d5072214b19af5cb678294b8868e30eeac819c6466d6b1aebd48e5",
+    "wheelleg_warp/run_joint_reference_zero_pair.py": "0eb1789ed2d01da306f22a06da72052a938c348738d81d90a28f0ff40266c76f",
+    "wheelleg_warp/execution_history_env.py": "5c0f0135df45fa899b03f557dff98da3cabbf58b0afdf5bf6279f470fec4f01b",
+    "wheelleg_warp/execution_input_collector.py": "fa3cb14857e6e95805753b3ca67c07a24092c6ce04943cab51decf8797951ffb",
+    "wheelleg_warp/route_state.py": "c0ead1a487b1baf2b644b7104537349a1ea92603121e765d507793833b03e28a",
+    "wheelleg_warp/train_height_comparison.py": "e4569d6079d0b8e1362fd0e3b263b5ee0b26d67f11246c8c9cbc2f710a88ccfc",
+    "wheelleg_warp/complete_contact_witness.py": "008482389167144b377e54257e7bf0922f5e131cf9ecd04eb1f1768d06c22c98",
+    "wheelleg_warp/complete_contact_recorder.py": "81ed3df9c2bf2f0a53955949a4ffa5afb240503d364749b7137fdacb96ed7cc6",
+    "wheelleg_warp/parking_withdrawal_probe.py": "19882d6fbce597f96a4ffad72a1c6d17b03e05dd7ff2ec89067c08c9cd2ab6ef",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_learning_prequalification_v1/proposal.json": "4add8f919447f1dbae50b4998104c4a3ae4739f48571301c34ae0e5e02c5213f",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_learning_engineering_v1/M_ref3/step_4000.zip": "1f6f3a1331ea6ccf2b03fc899ae6fcfd33bb998623b30ed24ae3213a964fbd9b",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_learning_engineering_v1/M_ref3/step_4000.pkl": "b57888482541f6933c45c9709271e22fb591e1d22cecb1040b9b7d2e2a46cc77",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_learning_engineering_v1/U_ref6/step_4000.zip": "35376ae5e510479752008d332f11778ac90a4d47a93d24ca6e571a66ce113e8d",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_learning_engineering_v1/U_ref6/step_4000.pkl": "054230ac42c0e33727eea4097224f825e21c66541c9bd13a7a02d5d88099e3b4"
+  },
+  "actual_100world_fullupdates": 2,
+  "actual_Adam_steps_per_arm": 200,
+  "real_terminal_reset_world_events": 4,
+  "engineering_counter_accelerated": true,
+  "transition_scope": "stage1-to2 andstage1-to3 ondifferent actualcompletedworlds;notall100worlds orsameworld2-to3 coverage",
+  "recomputed_raw_to_normalized_to_policy_action_rows": 3716,
+  "max_GPU_prediction_difference": {
+    "M_ref3": 4.470348358154297e-08,
+    "U_ref6": 4.470348358154297e-08
+  },
+  "shared_initial_nominal_world_features_value_verified": true,
+  "main_training_admitted": false,
+  "pending": "lock complete main runner and initial100world actual distribution/cost source review before six-run launch; no further short learning"
+}

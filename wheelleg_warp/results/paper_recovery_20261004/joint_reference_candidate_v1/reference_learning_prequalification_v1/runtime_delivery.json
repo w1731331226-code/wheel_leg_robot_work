@@ -1,0 +1,21 @@
+{
+  "round": 322,
+  "verified": true,
+  "source_and_evidence_sha256": {
+    "wheelleg_warp/qualify_reference_main_runtime.py": "50385acf2ac7ce1f44245e38460b186f65834a706fe9323da93d0d712f32b906",
+    "wheelleg_warp/train_reference_prequalification.py": "8beed235801a352d512ae404cd1634bc327ab8ece91274e66bbe8f4ee9f31d33",
+    "wheelleg_warp/test_reference_prequalification.py": "e58985ea7a78f6ad5f4ad7f41a5acec66a45e6c3c06a5016f21b64c94efe8fbf",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_learning_prequalification_v1/main_runner_unit.log": "ee48a37760fb9702aeec028e1eda094b94b73afe22d91bc85e672dfebbcbc3cf",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_learning_prequalification_v1/runtime_qualification/proposal.json": "1fe6c9e3604e5e0c0e8681465ecbb67f0b011e3292035404e0853c11d3c482bd",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_learning_prequalification_v1/runtime_qualification/completion.json": "d278eaad5a3cd0bb67eeee2ffdd8128c0ad1b851acf0fa17170e80303406659c",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_learning_prequalification_v1/runtime_qualification/review.json": "0e254361847bd7ff71c7f8753b284b36d0c31e9d2aadea7b738285aaae7884b1"
+  },
+  "actual_engineering_samples": 10000,
+  "actual_graph_world_steps": 2669400,
+  "baseline_constructor_FD_calls": 45,
+  "engineering_evaluation_episodes": 10,
+  "main_runner_implemented": true,
+  "main_training_admitted": false,
+  "next": "323 initial100world distribution/source lock then registered six-run study; no extra short learning",
+  "formal5_admitted": false
+}
