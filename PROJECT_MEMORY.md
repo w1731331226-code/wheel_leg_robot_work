@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第319轮independent shortengineering接收通过：CPU读取16实际PPO zip/Adam/RMS而非仅verification标志，每500样本num_timesteps/_n_updates和20Adam递增steps、每阶段weights变化、所有weights/moments/metricsfinite、policy dims481→3/6、obsRMS countstep+10.0001、synthetic128deterministic输出finite核。没有CPUrobotrollout/新learning/重跑GPU。
+- 两initialpolicy FeatureMLP/value共有state_dict exact、actionhead零、emptyAdam、initialworld四arrays exact；两finalhistory shapes及finite、20episode physical/design核。engineering_review绑定completion/source/reviewer与16records，actual8000samples/320000graphworldsteps/15FD记录，不physicalexploration匹配/收益主张，短models不科学selection。
+- 320如期五轮directionreview/cleanup决定是否值得显式NEW3pairedseed prequalification并原method/strongU6-classic/能力/独立集门，不自动formal5或凭engineering成功新长训。六论文出口仍缺、goal active；git61733本轮确认live firstbufferedpush持锁，remote未全同步，video禁上传。
+
 - 第318轮实际fresh短GPU学习完成exit0：Mref3/Uref6各4000policy samples=8rollout/80epochs/160Adam，总8000、rawgraphworldsteps320000、constructor15FD。每arm训练/保存/重载约21.71418/21.19115s（非完整课程性能benchmark），policy cuda/physics cuda0实际核；sharedinitialworld、features/critic保持，禁止旧H1warmstart/科学选择/宣称收益。
 - 全每500postupdate×8×两arm checkpoint/model/Adam/RMS及training metrics保，16metrics记录finite、weights确更新、非空Adamstep160、CUDAmoments/params finite；末model+optimizer+481/retRMS逐值重载、deterministicprediction exact核，obsRMS count4010.0001；末history及initialweights/RNG/world和episode logs保。两arm各10episode原physical/design全过，不据训练回报或这些已见cases选模型；0scientificeval。
 - short_engineering_delivery绑定source/currentconfig、全部checkpoint/RMS metadata/hash/count/metrics及completion，源run前后不变、partialfailure无。319独立models/Adam/RMS/episodes/runtime/cost接收，320深审清理才决定新3seed资格，formal5/freshID-OOD仍未准；六论文出口缺、goal active。git61733本轮仍live bufferedfirstpush持锁，remote未全同步，video禁上传。

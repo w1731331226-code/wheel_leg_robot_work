@@ -1,5 +1,11 @@
 # 双轮腿机器人PPO论文方案
 
+第319轮独立actualcheckpoint/Adam/RMS工程接收（2026-10-09）：
+
+review_reference_learning_engineering在CPU读取16实际保存PPO archive/Adam与RMS，每500计数和epochs/Adamsteps递增、weights变化/finite、指标finite、481→3/6space、RMS countstep+10.0001及128syntheticdeterministic输出finite核，不仅依赖runnerverification。初始commonMLP/critic state exact、actorhead0/emptyAdam、两Nomworld arrays exact；finalhistory/20episode physical/design过，source/completion/文件hash绑定。
+
+独立读取没有CPUrobot/新GPUphysics/learn，仍仅short8000工程、15FD/320000graphsteps和保存验证，不方法收益/预实验passed、初始实际探索仍非完全匹配。不选shortcheckpoint或用trainingreturn做科学比较。320五轮深审清理才可登记NEW3seed资格协议与强同info U6/经典/独立能力门；formal5/freshOODA当前未准，完整六出口未齐。
+
 第318轮注册短GPU工程完成（2026-10-09）：
 
 source验收不变后唯一freshMref3/Uref6各4000策略步实际完成，总8000，每arm8rollout/80epochs/160Adam，真实policyCUDA、physicsCUDA，原constructor15FD、实际graphworldsteps320000。每armlearn+checkpoint+reload约21.71418/21.19115s，construction/FD另记，不外推主课程/PPO加速或方法优势。
