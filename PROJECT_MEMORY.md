@@ -4,6 +4,12 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-10，目标active）
 
+- 第331轮按330固定short预算真实学习完成exit0，原fixedNom force D3/V6 freshseed33131各4000共8000，不旧Mref3/Uref6 warmstart。复用SB3/agent/Ledger/481history/ForceActions/VecNormalize及experimental sharedguard，realpolicyCUDA/physicsCUDA，每arm8rollout/80epochs/160Adam/8postupdate checkpoints；actual总320000captureworldsteps，constructorFD见completion。sharedinitialfeatures/value/world逐值一致，actionhead0/std.25起始、emptyAdam到finiteCUDAAdam、weights确变。
+- 实际10world/两capture80节点/interface481→3/6/reset guardprivate全0 beforelearn核；qualification norm.training=False reset不更新RMS，再真实learn仅initialreset一次计数，final obsRMS4010.0001。两末模型/Adam/RMS字段和detprediction逐值重载exact，policy参数70279/70477、learn+save/reload26.68457/26.20608s，total29.80190/27.77563s含构建；不能外推100world主课程或PPO加速。
+- 16checkpoint json/model/RMS hash/step/epochs/metricsfinite记录保，初始policy/RNG/world、末history与10episode/arm及completeguard/dense/role/contact日志保；20trainingepisode全部physical/design过，非独立science收益；0科学评估/模型checkpoint选择。失败分支额外保terminal stopped_q/v、模型/RMS/RNG/guard/history/episode，避免323丢peak-terminal的限制再发生；本次无failure。delivery绑定源/预算/实际计数/16记录。
+- 332必须读取actual16PPO/Adam/RMS、commoninit/value/world、history/guard/episodes独立接收，不能只信verification bool，不扩测试/物理或自动formal5。100world guardedlight/main课程未qualified（本轮dense10），未知扰动界/全测量noise/薄jointmargin仍无鲁棒证明，六论文出口/strongsameinfo新3seed/消融/ID-OOD/statistics稿还缺，goal active，335下一五轮深审清理。
+- uservideo禁上传仍有效，本轮无video，全部模型与原始数值和失败保；中文提交/记忆/守护恢复，remote未全同步。
+
 - 第330轮五轮深审（326—330）与冗余清理完成：fixedNom force方法原scope保持，旧mean-reference候选仍closed。328/329 sharedguard修复finiteactualjoint失败，但oneULPmargin、负secondarybarrier及无modelerrorbound否定强安全保证；Gaussprior不PPO优势/三seed科学资格，six论文出口仍缺。只值得一次guard局部encoder测量敏感性，不改rate50/mass8/std.25/gates/physics或选新表示/seed救分。
 - 冻结单12noise工程验收，σq1e-5rad/σv.001rad/s、独立noise seed33031/逐.5ms预生成30000×12×8表，same329D3seed32931/场景/freshzeroheadbodypolicy。只在guard测量副本active4q/v加噪，Nom/actor维持原ideal，actualq/v始终不直接修改；不是真实encoder规格或整机噪声鲁棒论文主实验，QP不是新PPO/CBF理论。
 - 实际exit0：12physical/design通过、task5/12，actual173760graphworldsteps/164252firstepisode、10FD、0learning。observedminimumactual margin .0001342535rad，infeasible0/activepredictionerror374.755rad/s²，measuredsecondarybarrier min仍需按context解读；不能以该noise realization的margin比ideal大来选择“加噪更安全”或提升机制概率。finite差分噪声a_std2.82977rad/s²独立重算（对预定义σv/dt的expected√2σv/.0005），未知未来扰动bound仍无。

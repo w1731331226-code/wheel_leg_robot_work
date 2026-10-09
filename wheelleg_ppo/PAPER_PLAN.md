@@ -1,5 +1,14 @@
 # 双轮腿机器人PPO论文方案
 
+第331轮fixedNom force真实GPU短学习生命周期完成（2026-10-10）：
+
+仅330注册freshseed33131 D3/V6各4000samples，复用PPO/guard/forceembed/history/normalize，无旧mean-reference warmstart。实际481→3/6接口、dense10world每80controller capture、qualification reset不额外更新RMS核；每arm8rollout/80epochs/160CUDAAdam、权重更新/finite loss，真实总8000samples/320000graphworldsteps。初始commonfeatures/value/world一致、head0/std.25/emptyAdam。
+
+16每500postupdate checkpoints/model/Adam/RMS及metrics/hash/count、initialpolicy+RNG/world、末history/每arm10episode/dense/contact/guard/role数据保。末model/Adam/RMS/deterministicaction重载exact、obsRMS4010.0001；20episode physical/design全过。学习+保存重载26.68/26.21s、total29.80/27.78s含构建，非100world主课程benchmark或GPU加速/方法优势。0science/不挑engineeringcheckpoint。
+
+failure path now保terminalstoppedq/v和模型RMS/RNG/guard/history/episode，原案例失败不覆盖；本次没有failure。delivery绑定source/proposal/completion/16checkpointmetadata。332独立actual模型/Adam/RMS/init/world/history/guard archive接收，再决定科学问题预算，formal5未准；guarded100world light/main、未知模型误差/全面sensornoise/薄margin及完整论文六出口仍缺，goal active。335下一五轮深审清理，视频不上传、remote未齐。
+
+
 第330轮深审/清理与局部测量噪声敏感性（2026-10-10）：
 
 326—329证据支持fixedNom force主线与sharedstate guard工程修复，但理想测量oneULP余量、负ψ/大modelerror无真实安全证书或学习优势。注册唯一12case guard-only测量副本扰动（σq1e-5rad/σv.001rad/s/seed33031），原Nom/actor仍ideal，actualq/v不写；不是物理传感器标定/整机噪声鲁棒数据。参数、严格门、原源/失败不改。
