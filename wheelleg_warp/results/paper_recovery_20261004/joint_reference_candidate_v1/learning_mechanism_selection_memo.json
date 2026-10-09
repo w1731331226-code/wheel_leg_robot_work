@@ -1,0 +1,50 @@
+{
+  "round": 314,
+  "status": "candidate_question_only_pending315review",
+  "evidence_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/paper_claim_ledger.json": "93d33930d09f27dd1ddef6d57ca942e9b6ed939e39fd0c2137a14961f1dc7c6d",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/nonzero_reference_mechanism_v1/review.json": "a84ec68416b8871b441eb663618d6a6b9402cd6d1ec788e89ca688aa28433dda",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/nonzero_reference_mechanism_v1/action_semantics_audit.json": "eee9beb5254c7a676f7419f923e64416abc23d69d36de55ff882b2200efe2504",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_correction_feasibility_v1/review.json": "a8e267d72b82335cb213b1fe938d91871abbea564a59baf46af5b4fa673523ea",
+    "wheelleg_warp/joint_reference_adapter.py": "8b41c22062cd08f476860684751772208e787ec79bdbf0f8bf87d4359369400d",
+    "wheelleg_ppo/LITERATURE_MATRIX.md": "025a92c55fb0b09b513a857836b337986d17891356dfddc9339e1504317c17c7"
+  },
+  "primary_scope": "Preserve originalVMC+six-stateLQR differential-residualPPO work andpure-simulation goal. Commonmean reference arm is an explicit separatecandidate; do not relabel it asoriginalpure differential contribution.",
+  "question": "Can a learned policy on unchanged public481,nominaldesign,referenceposition/rate/actuator/task gates coordinate referencecorrection sign,timing andyaw betterthan fixedpublicPD AND a fullsame-reference learnedarm,while retainingregular/legacy capabilities?",
+  "motivating_observation": "Three fixedfeedback newyawloss witnesses have currentrequest signagreeing withbaseline butfilteredsignstillopposed. This supports a testabletiming interaction,not proof thatlearning solvesit orthat oppositeactions arealwayswrong.",
+  "distinction": "Test empirical closed-loop coordination on this fivebar variableheight/wheel-speed-envelope system. OrdinaryPPO,referenceposition policy,three-dimensional reduction/history/filter are nottheoreticalnovelty; proof of contribution would require effect plusmechanism/strongcontrols/retention.",
+  "required_controls": [
+    "CurrentB0/B1-route andsame-adapter joint_yaw/fixedcenter/lower retained withoutweakenedgates;fixednegative resultsremainnegative.",
+    "FreshM_ref3 versusfreshU_ref6 use SAMEcurrentrefmapping/filter/parking/raw481/reward/worldbanks andbudget. U6includescommon/differentialmean references plusoriginalindependenthub/wheelchannels,not reuse of H1torque6.",
+    "Ifcandidatebenefitfirstpasses, independentlylearned leg-only2/yaw-only1 removals testnecessity; posthoc zeroingonly cannot standinfor mechanism ablation.",
+    "Original differentialtorqueM3 remains background/sourcecalibration. Commonmean effect must be distinguished before claiming pure differentialstructure advantage."
+  ],
+  "confound_checks": [
+    "Actual initialcommand RMS/covariance/limits/accepted requestdistribution andcontrollerparameter counts must be reported;samecanonicalbounds orsameMLPwidth are notidenticalphysicalexploration.",
+    "No hiddennormal/truegains/futureterrain/diagnosticprivatestates enter Actor orclassicfeedback.",
+    "No checkpoint/seedselection fromfreshfinalholdout;freshID/OOD andrealend-to-endcost stillrequired.",
+    "An opposite-sign request may intentionallyattenuatebaseline;do notadd a signpenalty reward orfreezeusefulnegativeactions to fitthese6cases.",
+    "Nominalcontrollerzero identity andphysicalreference compatibility areengineering,notstabilityorpublicationguarantees."
+  ],
+  "prospective_refutation": [
+    "Fails any originalphysical/design/regular/legacy preservation gate.",
+    "Doesnot beat strongestclassic inallpaired qualificationseeds at preregisteredsuccess/J thresholds.",
+    "Doesnot beat matchedU_ref6 orleg/yaw removal leavesperformanceunchanged.",
+    "Benefits disappear after initialactuation/budget comparability or are onlyfromextra commonmean authority/parkingwithdrawal.",
+    "Onlysamefewdevelopmentcases improve withoutnewfreshID/OODretention."
+  ],
+  "not_admitted": [
+    "Newcontrollerrepresentation/rate/gain rescue",
+    "Reuse oldH1weights asreference-policy warmstart",
+    "Unqualified fullformal5PPO",
+    "Reward change to force requested/filteredsignagreement",
+    "Negativevariants declaredoptimalclassic orallreferenceRL declaredimpossible"
+  ],
+  "next_decision": "315deepreview determines if thisexplicit empirical mechanism merits a boundedNEW GPUlearner engineering/prequalification protocol or shouldbe rejected. Newbudget mustfreeze sources,initialactuation,3pairedseeds/checkpointselection/continuation gatesbeforelearning. Noautomatictraining frommemo.",
+  "source_prerequisites": "Existing20world dense evaluator isnot100worldGPU trainingruntime. Any approvedlightlearner mustreuse control/actionsemantics andterminalreset with explicit newcapture/normalization/policy source evidence andactualcost; noblinddense100world build.",
+  "new_physics_steps": 0,
+  "new_training_samples": 0,
+  "formal_PPO_admitted": false,
+  "novelty_qualified": false,
+  "goal_complete": false
+}

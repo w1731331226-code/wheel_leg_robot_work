@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第314轮有限学习机制选择备忘（2026-10-09，未准训练）：
+
+learning_mechanism_selection_memo仅提出一个可证伪empirical问题：同public481、固定Nomdesign/参考mapping/slew/最终cap及原reward/task门，学得sign/timing/yaw协调能否优于fixedpublicPD及fullsame-reference learnedU6并保regular/legacy。三lost请求/filter冲突是具体动机，不证明PPO会成功或反向action总错，不改reward加sign惩罚。普通referenceRL、降维、history或filter已有，不能当理论新颖性。
+
+scope不混写：originalVMC+六stateLQR差模residual保持，M_ref3含commonmean是单独candidate，不冒充originalpure differentialM3贡献。新M_ref3/U_ref6必须同reference权限/mapping/filter/parking/481/reward/worldbanks及budget；旧H1torque6不替代U_ref6，original差模torque为背景/校对。初步效应过后再freshleg-only2/yaw-only1学习消融，单纯trainedmask不是完整机制证据。
+
+反证包括任一原physical/design/regular/legacy能力门失败、qualification各配对seed未胜最强经典及matchedU6、leg/yaw删除不影响、效应仅额外commonmean/parking/初始actuation差异或freshID/OOD不保持。要报告真实初始RMS/协方差/λ/饱和和参数量，同范围/隐层不当探索相同；不筛seed或用最终保留集选checkpoint。formal5/freshOODA/统计realPPOcost/稿仍需。
+
+315五轮深审清理再决定是否冻结有限NEW GPUlearner工程/三seed资格协议，当前0newphysics/query/training。已有20worlddense评估器不等100world训练runtime；若准只复用当前control语义，补lightcapture/reset/normalization/policy生命周期与实际成本，不能盲套dense或重开多controller变换。旧fixedfeedback/interval问题不复活，完整目标active。
+
 第313轮原PPO论文主张与证据整合（2026-10-09）：
 
 当前主瓶颈是可辩护贡献及学习优势，而非GPU不能运行或数据量不够。已有H0/H1×23301/02/03六GPUrun完成1.2M samples、1312evaluation；H1controlled29/29/26、regular87/85/70、legacy27/27/26，未保B0的96/32/28且三种子history机制门均失败。不得将已完成旧预实验写成新的passedqualification、正式5seed或方法优越性；不只是“没训练过所以直接长训”。

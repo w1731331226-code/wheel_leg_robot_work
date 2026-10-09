@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第314轮有限learning mechanism selection memo完成，仅candidate待315判断：不变public481/名义design/参考与最终力矩及原task门下，learnedreference sign/timing/yaw协调是否胜fixedPD且胜fullsame-reference learnedU6、保持regular/legacy。三firstyaw请求/filter瞬态冲突只是动机，不证明learning必需/有效或相反sign总错误；不加sign惩罚reward。保旧fixedfailure与interval分支关闭。
+- 第314轮scope明确：原VMC+六stateLQR差模residual主线保；M_ref3含commonmean，与originalpure differentialM3不同，不能改名冒充原结构贡献。强新U_ref6需同mean/d mapping/filter/parking/481/reward/worldbank/训练预算，不用旧H1torque6代替；若初步效应过才fresh独立leg-only/yaw-only机制消融，posthoc mask不能代替学习消融。
+- 初始实际actuation RMS/协方差/λ/饱和与参数量、能力保持/强classic/allpairedseed效应、freshID-OOD/realPPOcost缺一不可；samecanonicalrange/MLPwidth不当探索相同，不能额外mean权限或parking解释冒充差模优势。任何违原physical/design/能力门、未胜U6/经典、移除leg/yaw无影响或freshOODA失效即反证，不筛seed/checkpoint救分。
+- 315如期深审/清理判断该明确empirical问题是否值得冻结新GPUlearner工程/三seed资格预算，memo本轮不准新query/physics/PPO或新representation/rate/gain。当前dense evaluator≤20不是100world训练runtime，若准须light共用semantics及实际capture/reset/normalization/policy/成本证据，非再开多controller循环。完整论文六出口缺/goal active。git61733本轮仍live firstbufferedpush、remote未全同步、video禁上传。
+
 - 第313轮paper_claim_ledger统一原PPO贡献与证据SHA：existing六GPU H0/H1三seed1.2M/1312确已完成但wholequalified False，H1controlled29/29/26、regular87/85/70、legacy27/27/26，未保持B0 96/32/28、history3panel机制门False。不是GPU没就绪/还没训练的瓶颈，直接长训/扩场景或更多坐标source测试不补贡献。
 - 第313轮六出口matrix写PAPER_PLAN：区别贡献缺；同info经典/旧history/fixedreference部分已有而newfullreflearnedU6/机制消融缺；新3→formal5未准；freshID/OOD保持未做；旧统计真实计数可用但新PPO成本/统计缺；完整贡献稿未成。允许工程运行、必要geometry和负结果，不允许PPO优势/参考history收益/force稳定证书/核心录用保证；不把safe/数据volume当论文完成。
 - 314有限机制选择memo回原VMC+六stateLQR/差模残差主线，排除closedfeedback/interval/sourcequalification循环，先明确一个可证伪learning问题和强sameinfo对照再新预算；315方向深审清理，goal active。0新query/physics/training。git61733本轮仍live firstbufferedpush，remote未全同步，video禁上传持续。
