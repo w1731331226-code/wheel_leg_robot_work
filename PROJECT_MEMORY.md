@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第321轮实现共享light训练接口：jointadapter dense=False复用同一控制/参考/parking/filter/reset，只捕获40controller节点、免完整contact诊断；原dense评估仍<=20world/80节点。ReferenceCurriculum复用原真实episode结束切换，清额外reference buffers；复用481 history/VecNormalize，M_ref3/U_ref6接口可构建100world（尚未实际构建验证）。
+- 共享evaluator新增冻结学得3/6策略与normalizer入口，记录raw481/normalized481/action，冻结weights/obsRMS核；仅登记learned arms，原fixed调用兼容。单元exit0：原adapter GPUbuffer/checker测试、fakefactory全hook恢复、synthetic done-mask清理、错误policy接口拒绝。初版fake fixture继承错误及失败log保留，修后通过；0实际robot构建/physics/learning。
+- implementation_delivery绑定源/旧adapter与evaluator快照/日志/协议SHA；322须实际100world capture、真实终态课程/history/filter复位与学得评估资格，main runner/checkpoint/cost ledger仍需实现，当前source_admission=False，不能据单元通过启动1.2M或formal5。325下一方向深审清理。
+- 本轮原单批buffered上传git61733已退出，日志HTTP408/RPC断连；remote main仍6814e842、无aux ref，未同步完成。保留本地数据与临时upload工作树，不重启旧helper或重复长push。视频忽略/提交拦截持续有效，未生成/提交视频；收尾恢复同步守护。
+
 - 第320轮五轮深审：316policy/runtimereuse、317actual初始RMS/协方差非matched声明、318真CUDA8k、319实际16模型/Adam/RMS独立接收，短工程有效但0science/方法优势。值得只一次NEWfreshmatched3seed prequalification，不formal5、不旧H1/smoke warmstart或reward/gain/rate救分，原commonmean候选与pure差模贡献保持区分。
 - reference_learning_prequalification_v1冻结prospective seeds32031/2/3×Mref3/Uref6×200000=1.2M policy steps，100GPUworld、旧PPO50steps/batch250/10epochs及normalization/std.25、课程20k/100k仅实际episode结束切换，old23301/2/3 trainingcasebanks明确原样复用且非freshholdout。每20k保存、只final200k科学评分；两arm每seed初始features/value/world同，禁止resume/seed/ckpt选择。321light100worldruntime/curriculum/evaluator source准入前本轮0新learning；不能blind复制20worlddense诊断。
 - 前瞻固定final6model×164=984eval、新classicB0/B1_route/joint_yaw×164=492，总1476science eval；保持原96regular/40controlled/28legacy，同info U6不可旧H1torque代替。每seed controlled>=34、任classic成功不丢/全physicaldesign、eachpanel J低于strongclassic与same-seedU6且三seed平均至少15%与.05deg，CPUlegacy能力校对也需。任门失败关闭固定budget不扩steps/改reward/gain；过仍新消融/commonmean解释/freshID-OOD/formal5/statisticalcost/稿缺，goal active。

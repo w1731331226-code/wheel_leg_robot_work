@@ -17,29 +17,18 @@ from dashboard.live_env import atomic_json
 OUT = ROOT / 'wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/zero_episode_pair_v1'
 
 
-def candidate(cases, directory, arm='M_ref3'):
+def candidate(cases, directory):
     raw = adapter.instrument(raw_env, cases, 'virtual6', directory)
     history = ExecutionHistory(RouteState(raw), raw, 'H1')
-    return raw, adapter.JointReferenceActions(history, raw, 'U6' if arm=='U_ref6' else 'M3')
+    return raw, adapter.JointReferenceActions(history, raw, 'M3')
 
 
-def evaluate(cases, arm, directory, graph_budget, yaw_config=None, model=None, normalization=None):
-    if model is not None and (arm not in ('M_ref3','U_ref6') or normalization is None or model.observation_space.shape!=(481,) or
-            model.action_space.shape!=((6,) if arm=='U_ref6' else (3,))):
-        raise ValueError('Frozen481 normalizer and correct reference policy action space required')
+def evaluate(cases, arm, directory, graph_budget, yaw_config=None):
     if arm in ('old_B0', 'old_B1_route'):
-        raw, _, raw_history, _, env = original.make_env(cases, 'B0' if arm == 'old_B0' else 'B1-route', None, directory)
+        raw, _, _, _, env = original.make_env(cases, 'B0' if arm == 'old_B0' else 'B1-route', None, directory)
         dimension = 6
     else:
-        raw, env = candidate(cases,directory,arm); dimension=6 if arm=='U_ref6' else 3
-        raw_history=env.venv
-    norm=None;frozen_stats=None;frozen_weights=None
-    if model is not None:
-        from stable_baselines3.common.vec_env import VecNormalize,VecCheckNan
-        from smoke_reward_training import weight_digest
-        norm=VecNormalize.load(str(normalization),VecCheckNan(env,raise_exception=True));norm.training=False;norm.norm_reward=False
-        frozen_stats=(norm.obs_rms.mean.copy(),norm.obs_rms.var.copy(),norm.obs_rms.count)
-        frozen_weights=weight_digest(model);env=norm
+        raw, env = candidate(cases, directory); dimension = 3
     rows = [None]*len(cases); actors = [[] for _ in cases]
     try:
         n=len(cases); obs = env.reset(); assert obs.shape == (n, 481)
@@ -50,12 +39,10 @@ def evaluate(cases, arm, directory, graph_budget, yaw_config=None, model=None, n
         ids = raw.ids.numpy(); calls = 0
         for _ in range(deadline):
             assert (calls+1)*40*len(cases) <= graph_budget, 'Registered graph-step budget exceeded'
-            action=model.predict(obs,deterministic=True)[0] if model is not None else dispatch(obs,arm,yaw_config)
-            raw_obs=raw_history.encode() if model is not None else obs
+            action=dispatch(obs,arm,yaw_config)
             for w in range(n):
                 if rows[w] is None:
-                    prefix=np.r_[raw_obs[w],obs[w]] if model is not None else obs[w]
-                    actors[w].append(np.r_[prefix,action[w]].astype(np.float32))
+                    actors[w].append(np.r_[obs[w], action[w]].astype(np.float32))
             obs, _, done, infos = env.step(action); calls += 1
             stopped = raw.stopped_q.numpy() if done.any() else None
             for w in np.flatnonzero(done):
@@ -63,7 +50,7 @@ def evaluate(cases, arm, directory, graph_budget, yaw_config=None, model=None, n
                     continue
                 length = float(np.mean([sim.fk_joints(float(stopped[w, ids[2*s]]),float(stopped[w, ids[2*s+1]]))['leg_len'] for s in range(2)]))
                 rows[w] = dict(**cases[w], **{k:v for k,v in infos[w].items() if k != 'terminal_observation'}, final_mean_fk_leg_m=length)
-                if hasattr(raw,'_joint_buffers'):
+                if arm.startswith('joint_'):
                     np.testing.assert_array_equal(raw._joint_requested.numpy()[w], 0)
                     np.testing.assert_array_equal(raw._joint_buffers[4].numpy()[w], 0)
                     assert raw._joint_buffers[5].numpy()[w] == 0
@@ -71,12 +58,11 @@ def evaluate(cases, arm, directory, graph_budget, yaw_config=None, model=None, n
                 break
         assert all(r is not None for r in rows)
         for w, row in enumerate(rows):
-            trace = np.array(actors[w]); assert trace.shape == (int(np.ceil(row['physical_steps']/40)),(962 if model is not None else 481)+dimension)
+            trace = np.array(actors[w]); assert trace.shape == (int(np.ceil(row['physical_steps']/40)),481+dimension)
             if arm in ('old_B0','joint_zero'):
                 np.testing.assert_array_equal(trace[:, 481:], 0)
             file = directory/f'actor_{row["seed"]}.npz'; np.savez_compressed(file, trace=trace)
-            row['zero_actor_trace' if arm in ('old_B0','joint_zero') else 'reference_actor_trace'] = dict(path=file.name,sha256=sha(file),dimension=dimension,
-                layout='raw481-normalized481-submitted' if model is not None else 'raw481-submitted')
+            row['zero_actor_trace' if arm in ('old_B0','joint_zero') else 'reference_actor_trace'] = dict(path=file.name,sha256=sha(file),dimension=dimension)
         result = dict(runs=rows, summary=summary(rows), physics_calls=calls,
             physical=sum(r['physical_safety_passed'] for r in rows),design=sum(r['design_joint_passed'] for r in rows),
             first_episode_world_steps=sum(r['physical_steps'] for r in rows),
@@ -84,20 +70,17 @@ def evaluate(cases, arm, directory, graph_budget, yaw_config=None, model=None, n
         atomic_json(directory/'result.json', result)
         checked = witness.check_files(directory, cases, {r['seed']:r for r in rows})
         assert checked['physics_steps'] == result['first_episode_world_steps']
-        if hasattr(raw,'_joint_buffers'):
+        if arm.startswith('joint_'):
             for row in rows:
                 file = directory/row['joint_reference_trace']['path']; assert sha(file) == row['joint_reference_trace']['sha256']
                 with np.load(file) as z:
                     adapter.check_log(z['trace'],z['role'],z['phase'])
                     if arm == 'joint_zero':
                         np.testing.assert_array_equal(z['trace'][:, 10:16], 0)
-        if model is not None:
-            assert weight_digest(model)==frozen_weights
-            np.testing.assert_array_equal(norm.obs_rms.mean,frozen_stats[0]);np.testing.assert_array_equal(norm.obs_rms.var,frozen_stats[1]);assert norm.obs_rms.count==frozen_stats[2]
         return result, checked
     except BaseException:
         witness.preserve_partial(raw,directory,cases)
-        if hasattr(raw,'_joint_buffers'):
+        if arm.startswith('joint_'):
             np.savez_compressed(directory/'partial_reference_buffers.npz',trace=raw._joint_buffers[11].numpy(),
                 requested=raw._joint_requested.numpy(),filtered=raw._joint_buffers[4].numpy())
         raise

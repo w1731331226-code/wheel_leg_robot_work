@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第321轮共享轻记录训练/学得评估接口交付（2026-10-09，尚未实际100world资格）：
+
+jointadapter新增dense=False，与旧dense同一control/filter/parking/reset实现，单capture40节点，免完整contact buffers；原dense<=20world保留。ReferenceCurriculum复用原真实episode终态课程，仅done rows清参考动作/历史状态，接原481 history/normalization与3/6动作接口。evaluator复用旧完整物理证据路径，新增frozen learned policy/obsRMS、raw及normalized481/action记录，拒绝未登记learned arms。
+
+单元exit0，覆盖原GPUbuffer/embedding/log checks、fakefactory hook restoration、synthetic episode-end clear mask和policy边界；0真实robot构建/physics/learning。保初版fake fixture继承失败log与oldadapter/evaluator快照。implementation_delivery绑定源/协议/日志SHA，actual100world/真实课程复位/学得评估未准；main runner及checkpoint/cost ledger尚缺，322补资格前禁止启动1.2M，formal5与完整论文目标仍未达。
+
+原first辅助数据push本轮HTTP408终止，remote未全同步，保本地数据/辅助工作树，不重启旧helper。视频不上传，325按约方向审查/清理。
+
 第320轮五轮深审与NEW三seed预资格登记（2026-10-09，未learn）：
 
 316—319证明fresh短GPU链可更新/记录/重载，actualinitial分布差异已声明、16模型独立接收；工程不是收益证据。只值得一次NEW matchedreference3seed问题，不再旧H1/短模型warmstart、gain/filter/reward救门，也不启动formal5。含commonmean候选与原pure差模贡献分开，原负反馈/必要代数保。

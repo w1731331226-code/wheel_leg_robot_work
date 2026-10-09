@@ -155,11 +155,9 @@ def check_log(data, role, phase, initial_seen=False):
     np.testing.assert_allclose(data[:, 4], (data[:, 5]-data[:, 6])/2, rtol=0, atol=1e-12)
 
 
-def instrument(factory, cases, mode, directory=None, dense=True):
-    if type(dense) is not bool or mode != 'virtual6' or not cases or len({c['scenario']['solver_iterations'] for c in cases}) != 1:
-        raise ValueError('Homogeneous-solver virtual6 worlds and explicit dense mode required')
-    if (dense and len(cases)>20) or (not dense and directory is not None):
-        raise ValueError('Dense diagnostics need<=20 worlds; light training does not export dense episodes')
+def instrument(factory, cases, mode, directory=None):
+    if mode != 'virtual6' or not cases or len(cases) > 20 or len({c['scenario']['solver_iterations'] for c in cases}) != 1:
+        raise ValueError('Diagnostic reference capture needs1…20 homogeneous-solver virtual6 worlds')
     n = len(cases); device = 'cuda:0'
     requested = wp.zeros((n, 6), dtype=float, device=device)
     effective = wp.zeros((n, 6), dtype=float, device=device)
@@ -203,21 +201,20 @@ def instrument(factory, cases, mode, directory=None, dense=True):
     complete.old.control_physical_nominal = parking.phase.roles.experimental.control_physical_nominal
     complete.old.geometry = parking.phase.broad.geometry
     try:
-        build = (lambda rows,m: complete.instrument(factory,rows,m,directory)) if dense else factory
-        raw = collector.instrument(build,cases,mode,expected_captures=2 if dense else 1)
+        raw = collector.instrument(lambda rows, m: complete.instrument(factory, rows, m, directory),
+                                   cases, mode, expected_captures=2)
     finally:
         wp.launch, environment.control_physical_nominal = launch, kernel
         complete.old.control_physical_nominal, complete.old.geometry = watched, geometry
-    assert len(signatures)==(80 if dense else 40)
-    if dense:assert signatures[:40]==signatures[40:]
+    assert len(signatures) == 80 and signatures[:40] == signatures[40:]
     assert all(s[14] == signature(raw.data.ctrl) for s in signatures)
     raw._joint_requested = requested
     raw._joint_control_kernel = candidate.control_physical_nominal
     raw._joint_buffers = (requested, effective, doubles, motor, filtered, seen, base, private, role, phase, park, trace, mask)
-    raw._joint_topology = dict(version='joint-reference-v1', captured_controller_calls=len(signatures),
-        control_steps_per_capture=40, matching_capture_signatures=dense, final_ctrl_owner=True,
+    raw._joint_topology = dict(version='joint-reference-v1', captured_controller_calls=80,
+        control_steps_per_capture=40, matching_capture_signatures=True, final_ctrl_owner=True,
         nominal_height_separate_from_tracking_mean=True, parking_request_withdrawal_preserved=True,
-        clean_gyro_only=True, gyro_filter_alpha=.025, diagnostic_world_limit=20,dense_physical_recording=dense,
+        clean_gyro_only=True, gyro_filter_alpha=.025, diagnostic_world_limit=20,
         columns=COL, source_capture_qualified=False)
     chunks = [[] for _ in cases]; frozen = set()
     reset, wait = raw.reset, raw.step_wait
@@ -230,8 +227,7 @@ def instrument(factory, cases, mode, directory=None, dense=True):
             parts.clear()
         return result
     def step_wait():
-        result = wait()
-        frames = raw._complete_buffers[0].numpy() if dense else trace.numpy()
+        result = wait(); frames = raw._complete_buffers[0].numpy()
         values, roles, phases = [b.numpy() for b in (trace, role, phase)]
         for w in range(n):
             if w in frozen:

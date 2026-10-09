@@ -1,0 +1,39 @@
+{
+  "round": 321,
+  "status": "implementation_unit_checks_passed_actual_runtime_pending",
+  "source_and_evidence_sha256": {
+    "wheelleg_warp/joint_reference_adapter.py": "333e27f0b0d1508d7b6fa5be67179129dea69b580d2ba78b9e77a54ef68ada77",
+    "wheelleg_warp/run_joint_reference_zero_pair.py": "0eb1789ed2d01da306f22a06da72052a938c348738d81d90a28f0ff40266c76f",
+    "wheelleg_warp/reference_learning_runtime.py": "9947050624e901f94ea2f5116a3d6558289e7cd043de4bc45b60f36d1f213c1b",
+    "wheelleg_warp/test_reference_learning_runtime.py": "31befe15269d91021af699a8000c327b00cffd5ff7930f869563386b5dab08da",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_learning_prequalification_v1/proposal.json": "4add8f919447f1dbae50b4998104c4a3ae4739f48571301c34ae0e5e02c5213f",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_learning_prequalification_v1/adapter_before_light.py": "8b41c22062cd08f476860684751772208e787ec79bdbf0f8bf87d4359369400d",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_learning_prequalification_v1/evaluator_before_learned.py": "1bc878c330f92691253e660bd909e5d45139977f299c11f362edaee71f088748",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_learning_prequalification_v1/fake_fixture_type_failure.log": "0d49018ca8d1650604226a51010c7613483f08fec97d47b116da730141c1d043",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_learning_prequalification_v1/runtime_unit.log": "92c20c76e77546b18aa2357f0a6980d04df5a06bbf4403925a1d2ba662023f3f"
+  },
+  "unit_exit_code": 0,
+  "checks": [
+    "shared dense/light reference control, filter, parking and terminal reset",
+    "fake factory restores all intercepted hooks",
+    "synthetic curriculum terminal mask clears completed worlds",
+    "learned evaluator restricts registered 481-to-3/6 arms"
+  ],
+  "actual_robot_constructors": 0,
+  "actual_physics_graph_steps": 0,
+  "learning_samples": 0,
+  "source_admission": false,
+  "pending": [
+    "actual100world capture and episode-end curriculum/history reset qualification",
+    "frozen learned evaluator actual3/6 qualification",
+    "main training runner with source admission, checkpoint and cost ledger"
+  ],
+  "upload": {
+    "status": "same_first_auxiliary_push_terminated_HTTP408",
+    "log": "/tmp/wheelleg-upload-buffered-first.log",
+    "log_sha256": "aa7602d000b7133f3c471a163ad6f3a4dec974cdcf9d1b286b45b4e507f25bce",
+    "remote_main": "6814e8429bcd11e01c5cf2d989e5ec109f39c792",
+    "aux_remote_exists": false,
+    "no_video_upload": true
+  }
+}

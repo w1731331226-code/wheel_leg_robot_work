@@ -1,0 +1,11 @@
+Warp 1.17.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 5060 Laptop GPU" (8 GiB, sm_120, mempool enabled)
+   Kernel cache:
+     /home/wmt/.cache/warp/1.17.0
+Module joint_reference_adapter acfdf4b load on device 'cuda:0' took 0.43 ms  (cached)
+Module execution_input_collector 7aab969 load on device 'cuda:0' took 0.56 ms  (cached)
+PASS301 128M3/U6 exact embeds, ablations/boundaries/481 wrapper, nominal-vs-selected/parking/filter log,6 corruption checks,GPU masked reset;0controller/physics
+PASS321 shareddense/light control implementation,fakefactory hookrestoration,episode-endcurriculum resetmask/policy-boundary;0realenv/physics/learning
