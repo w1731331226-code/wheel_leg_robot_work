@@ -1,0 +1,19 @@
+{
+  "round": 334,
+  "verified_implementation_and_counter": true,
+  "source_and_evidence_sha256": {
+    "wheelleg_warp/train_fixed_force_study.py": "7ef9038cc768976d372602ea79216b6d564bf15b4a0db888a389fbb23c90e3e2",
+    "wheelleg_warp/test_fixed_force_study.py": "f6ed4e4778d275313a8402978a5ee9695cbfe0fad3ece5357ad8f4c17873e6cd",
+    "wheelleg_warp/qualify_force_counter.py": "78259856c93ec39fbddcd461153e42cb03c464995e7ff1e10fc5c5ea587e7c0e",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_main_worker_v1/unit.log": "e33e8b04bffc14f87e6ccd752bbb00b2bd6d491df33800886eb7ee7a1e6298df",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_main_worker_v1/counter_proposal.json": "85a196fe99952124a55e55c5cd6513d7284e2e5ba4cc8da6e73bfa65f2658861",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_main_worker_v1/counter_completion.json": "a2883e5555556ce1b720d5c7671ba100fc0bea47d1f90ee7c1069c3e0021c50a",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_main_worker_v1/terminal_snapshot.npz": "9f630a7611159cc3ee9f443cb4517d0aafac7812362c2cf087a1970fe77828c4"
+  },
+  "actual_graph_world_steps": 29520,
+  "FD_calls": 20,
+  "new_learning_samples": 0,
+  "scientific_budget_admitted": false,
+  "formal5_admitted": false,
+  "next": "335mandatory directionreview/cleanup decideswhether NEWguardedfixedforce paired3seedscience meritsfixedbudget;do notstartmainbeforeproposal/admission"
+}

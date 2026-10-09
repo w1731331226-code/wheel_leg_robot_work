@@ -1,5 +1,16 @@
 # 双轮腿机器人PPO论文方案
 
+第334轮固定名义force主worker与真实计数守恒（2026-10-10，0学习）：
+
+主入口复用guarded100world force/PPO/ledger，锁schema100world/D3-V6/3unique freshseeds/200k/rollout5000/batch250/epochs10/每20k保存，缺proposal/sourceadmission在输出创建前拒。当前没有主预算或准入，代码就绪不等科学训练permission；oldclosedmean runner/source/model不改。
+
+直接capture硬限12000=48Mworldstep，并记录perrun/failedpartialcounter、guardstats/curriculum、初始sharedworld/features/critic与RNG、每checkpointAdamRMS/finite metrics/末exact reload。失败回合保worldindex+terminalstoppedq/v，当前完整body/guard/history/所有episode保存后停，不隐式resume/选择seed。小unit拒不准入、postupdate20k时机、标签/guardstage/failedworld留档通过。
+
+为新counter规则进行一次actual2world zero-action probe（预算700ticks/56000graph/30FD）：tick368真实done，14730complete+14760currentpartial=29490validguard、29520actualgraph另计，所有每step equality及maskedreset/terminalqv留档过。实际29520graph/20FD/0learner/0science，这只验证源运行计数及partial职责，不整100world学习。delivery绑定源/证据。
+
+335五轮深审清理须按326—334现有negative/工程 evidence判断NEWfixedforce paired3seed scientificbudget是否值得，并冻结强同info当前经典/完整6modalbaseline等最终协议，不能自动formal5/多长train或相同短模型science选择。预测未知误差/全noise/浮点边界薄裕量、论文优势与完整sixexits仍缺，goalactive；video不上传、remote未齐。
+
+
 第333轮同内核100环境课程与冻结force模型评估资格（2026-10-10，0学习）：
 
 保护数学函数gain/inside/project/clear/guard相对旧快照AST完全不变，wrapper新增light<=100/40nodes，不完整contact/chunk归档，原dense<=20/80nodes默认保；originalforce.make_env可选guarded与同resetkernel/online统计，原行为保。PolicyActor frozen deterministic潜3/6→canonical6，PriorActor随机契约不改；源码快照、fakefactoryrestore及模式边界unit过。
