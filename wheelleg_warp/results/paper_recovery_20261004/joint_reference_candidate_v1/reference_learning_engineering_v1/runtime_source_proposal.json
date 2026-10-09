@@ -1,0 +1,21 @@
+{
+  "round": 317,
+  "arms": [
+    "M_ref3",
+    "U_ref6"
+  ],
+  "constructors": 2,
+  "worlds": 10,
+  "samples_per_arm": 64,
+  "static_controller_query_budget": 1300,
+  "constructor_FD_budget": 25,
+  "physics_graph_launches": 0,
+  "learning_updates": 0,
+  "random_seed": 31731,
+  "normalized_std": 0.25,
+  "states": "Realreset controllerstate/startup; one0.5ms firstsubstep perindependentGaussian request. Existing40-step filter unit/capture remainsseparate. Notfullpolicy-interval ortrajectory explorationmatching.",
+  "comparison": "Commonmean/difference andleftwheel Gaussian components paired;M3rightwheel isnegativeleft,U6rightwheel independent/hubnonzero. Report actualcaps/RMS/covariance/lambda;do notclaimsameexploration orrescalefromperformance.",
+  "runtime_config_sha256": "e58ba8e490d3a4ad208750df2021d679e53755a30c319508eabc9f5a556c132b",
+  "source_admission_if_passes": "Onlyshort4000each lifecycle source;formal5 andmethodadvantageclosed.",
+  "stop": "Oneboundedsourcecheckattempt;failure preserves andstops,no learnorretry until explicitsourceissue handled."
+}

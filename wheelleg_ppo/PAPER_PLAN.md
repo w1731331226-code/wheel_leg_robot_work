@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第317轮真实runtime与初始实际输出准入（2026-10-09，未learn）：
+
+runtime_source_proposal先冻二个10world构建、64Gaussian每arm+各zero共1300第一.5ms staticqueries、ctorFD<=25/0物理图。实际15FD、两capture与sharedNom world/481reset/真CUDApolicy过；Zero ctrl/diag/memory相同，query不更新normalizedRMS，全部finite/diag14=0，禁止wp.capture_launch，0learning。
+
+同m/d/leftwheel高斯量成对，Mrightwheel负left而U独立/hub非零；保存requested/canonical/actualctrl/lambda、初始化world和RMS/协方差。独立NP重算deltaCtrl legRMS约.1106… .1129Nm、wheel .00296，lambda均1、zero比例0；params70279/70477。不可称physicalexplorationexact，且只是startupfirstsubstep，非全40step或trajectory匹配，不用效果调std。
+
+source_admission/config/源码/实际输入输出hash绑定，许可仅318已注册each4000短GPU生命周期，当前started不存在/未学。runtime `verify`强制source准入，不任意formal5/science选择。319独立检查模型/Adam/RMS/episodes/loss/count/cost，320五轮深审清理；完整论文六出口仍缺，goal active。
+
 第316轮短GPU学习入口与policy源单元（2026-10-09，未learn）：
 
 reference_learning_engineering复用SB3 PPO、原VecNormalize/CheckNan、public481历史与当前referenceadapter，没有forkGaussian/logprob/optimizer算法。runtime_config沿旧n_steps50、10world、batch250、epochs10：buffer500，4000每arm=8rollouts/80epochs/160Adam整除；原reward、normalization及五controlledheight×±.7十case不改。初始normalizedstd=.25同活跃坐标，是工程尺度声明，不证明M/U实际torque探索分布相同。

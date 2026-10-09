@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第317轮actualGPU runtime/initial输出source准入过：二次同10case构建/每80control capture节点、sharedNom q0/param/gains/reference逐值同、481normalize reset和fresh3/6CUDApolicy，零ctrl/diag/memory同。登记64Gaussian×10world×两arm及各10zero，共1300static第一substep query，原ctor15FD<=25；wp.capture_launch拒绝，0realphysicsgraph/learn。
+- 初始m/d/leftwheel随机量成对，Mrightwheel反号/U独立且hub非零。deltaCtrl legRMS约.1106… .1129Nm、wheel约.00296Nm，lambda全1/零lambda0，policy params70279/70477；RMS/协方差已独立从NP重算、不同exploration不能称matched，仅startupfirst.5ms而非40步/实际初始轨迹。未看效果调scale，normalizedstd固定.25和sharedfeature/critic保持；RMS统计不因raw静态query更新核过。
+- source_admission/source_delivery绑定config/proposal/current源/实际分布，许可仅318freshMref3/Uref6各4000短工程，runtime已可sourcehash硬拒未准run；0learn当前started文件仍无，不自动formal5或sciencecheckpoint选择。319独立short receive，320五轮深审清理再决定预资格预算；六论文出口缺，goal active。git61733本轮仍live firstbufferedpush，remote未全同步、video禁上传。
+
 - 第316轮reference_learning_engineering复用现SB3 PPO/VecNormalize/VecCheckNan/ExecutionHistory及jointadapter实现source-gated短运行入口，未新写Gaussian/Adam/PPO算法。runtime_config沿旧PPO n_steps50×10world=500、batch250、epochs10，4000每arm=8wholeupdates/80epochs/160Adam；原normalization/reward/10原controlled五height×±.7 cases冻结，sharedpublic481/refmap/停车/slew保持，初始normalizedstd=.25只是工程尺度不当实际探索匹配。
 - 第316轮fresh3/6 CUDApolicy NoStep单元过：空Adam/0timesteps/0epochs、全CUDAfiniteparams、policy均值0、共同MLP特征/critic函数逐值相同（跨armcopyfeature/value，actionhead零）、optim所有liveparams归属、容器policy/空Adam/输出保存重载exact。GPU实际control/λ/协方差与真实learnloss/reset资格未验；0realenv/modelquery/physics/learning，不是8000源准入完成。implementation_delivery绑定config/source/unit。
 - 源code记录每500postupdatecheckpoint+RMS/hash/trainmetrics、完整episodes、initialpolicy/RNG/worldbank、最后历史与真实device/计数/FD/learn+serialize成本，真实4000后weights/Adam/RMS/prediction验证和failed保存停止；此逻辑尚未learn执行。dense10短诊断在20world上限内，不假装100world主训练runtime。317必须actualinitactuation/runtime/sourceadmission文件及hash通过后318才short；320深审清理，六论文出口/goal仍active。
