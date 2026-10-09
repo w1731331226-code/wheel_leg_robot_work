@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第308轮已有80reference episode及6lost/matchedjoint_yaw轨迹audit完成，全部source/result/reference/dense SHA与d=d0+ad*(D−d0或D+d0)重算过；非零same-sign增大|d|代数成立。六新增失败全h .24/.30、首次yaw>5deg，roll/pitch不到门，首次原mean几何room不绑定，所以不是端点heightroom反例；center/lower固定反馈关闭不变，0新query/physics/learning。
+- 第308轮firstcross不能一概“双重增强”：六见证中2same-sign，4filteredad与currentbaseline_d0反向，有d0正而实际d负或反之。中心例6301021基d0 .003694→selected−.006852、6301031 −.005766→+.007954，体现public20ms请求/参考slew与2kHz内基控制的时序竞争，非唯一因果证明。firstnormal5例单轮0、1例双轮承载（6301025约119.7/38.9N），wheelω多数约72rad/s，snapshot及pre/post不同步限制保，不为Actor输入或load安全证书。
+- 第308轮已核matched同casejoint_yaw原success、firststep yaw与peak、actualm/d/available room/reqfilter/wheelcommands/caps/normal/ω，lost_case_audit绑定80全case统计和6witness。309只actionsemantics与必要几何/双时间尺度代数评估，不改gain/replayclosedfeedback或直接PPO；310按约深审清理。六论文出口仍缺/goal active；helper11251本轮仍live首批，remote未全同步，video禁上传持续。
+
 - 第307轮完整200独立review过：10job源/order/result SHA、原geometry/dense/contacts/physical/design/task checker、840raw streams、Actor每row public481→登记dispatch exact、reference每physicalstep canonical请求与其decisionrow匹配，effective/filter/phase/target及dense左右目标一致。review.json绑定source/completion和实际cost/计数；0新simulation/query/training。首review把同batch rows在每row重复extend的计数bug在已有raw核后触发总数断言，修indent并保review_count_failure.log，仅重读数据不物理重跑。
 - 第307轮事前utility门正式失败、关闭center/lower固定feedback：三baseline各32/40，两reference各29；center丢6301021/25/31、lower丢6301023/27/29，对每baseline均3lost、0gained且physical/design全部40。meanJ oldB0 1.062661537、oldB1_route .825243608、joint_yaw .869322938、center .959060694、lower .954692453，两reference相对same-interface yaw更差。+2成功/不丢/更低J三条件均false，不调gain/threshold救分、不新增PPO/U6random或regular扩展来替代门。
 - 第307轮308仅用已有新增失败与matchedbaseline raw核roll/yaw/height/reference/actuation时序，定可证伪机制；不直接复活fixed反馈，失败不证明所有reference学习无效。310如期深审清理，完整贡献/strongsameinfo-fullref与消融/new3→formal5/freshID-OOD/统计真实PPOcost/稿六出口缺，goal active。helper11251本轮仍live首批，remote未全同步，无video上传。

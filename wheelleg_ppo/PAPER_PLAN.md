@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第308轮新增失败机制的已有数据核对（2026-10-09）：
+
+audit_reference_lost_cases对两reference全部80episode保存m/d/filteredad与originalrequested/room重算代数，再对6lost和同casejoint_yaw成功轨迹核首次5°crossing。全六为中间height .24/.30 firstyaw，原mean workspace room未绑定；不是端点height需求不可行，不能因此继续meanroom救门。三case每fixedfamily关闭不变，0新query/physics/training。
+
+同号ad时d0+normalizeddelta可放大原roll补偿，这是代数事实但不解释全部firstcross：仅2/6同号、4/6反向，出现baseline_d0与selectedd符号反转，public20ms反馈/参考slew与2kHz基控制可能在瞬态竞争。firstnormal5单轮0、1双轮承载、若干wheelω近72rad/s；保pre/post时间约定与diagnostic-only，不把snapshot或相关时序当唯一接触原因/normal下界，更不塞策略oracle。
+
+lost_case_audit保存80全case统计、6firstyaw见证及matchedyaw/peak、reference/commands/caps/contact SHA。309只动作相对基补偿语义与双时间尺度/必要几何代数评估，不复活/调gain/重跑closedfixedfeedback或自动PPO。310五轮深审清理，贡献/强sameinfo及消融/new3→5/freshID-OOD/统计成本/稿六出口未齐。
+
 第307轮完整raw/实际动作/事前门独立审查与固定feedback关闭（2026-10-09）：
 
 review_nonzero_reference_mechanism核10job/order/source/result、原geometry/dense/contacts和所有flags、840rawstream SHA；每Actor row实际动作等于其public481登记dispatch，每新reference physicalstep canonical请求等于相应20ms decision动作，effective/filter/phase/targets及dense左右目标一致。所有200数据完整，0新query/physics/PPO。首review计数重复extend bug修缩进并留失败日志，仅offline重读，无hiddenphysical重播。
