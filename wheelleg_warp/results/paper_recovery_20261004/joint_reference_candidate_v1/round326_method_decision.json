@@ -1,0 +1,81 @@
+{
+  "round": 326,
+  "decision": "close learnedmean/difference referencefamily; retain originalfixedNom differentialforce/hip/yaw residual thesis scope",
+  "evidence": {
+    "handover_audit_sha256": "124c9920253b2adf4e4d29cfa1d03234a958e595ffea7a821a9f533c08e89da2",
+    "task_failure_terms_by_condition": {
+      "old_B0": {
+        "yaw_over5deg": 4,
+        "relative_attitude_over5deg": 4,
+        "roll_over5deg": 4,
+        "design_failed": 0,
+        "physical_failed": 0,
+        "terrain_evidence_failed": 0,
+        "velocity_failed": 0,
+        "stop_distance_failed": 0,
+        "tail_speed_failed": 0,
+        "height_failed": 0
+      },
+      "joint_zero": {
+        "yaw_over5deg": 4,
+        "relative_attitude_over5deg": 4,
+        "roll_over5deg": 4,
+        "design_failed": 0,
+        "physical_failed": 0,
+        "terrain_evidence_failed": 0,
+        "velocity_failed": 0,
+        "stop_distance_failed": 0,
+        "tail_speed_failed": 0,
+        "height_failed": 0
+      },
+      "joint_yaw": {
+        "yaw_over5deg": 4,
+        "relative_attitude_over5deg": 4,
+        "roll_over5deg": 4,
+        "design_failed": 0,
+        "physical_failed": 0,
+        "terrain_evidence_failed": 0,
+        "velocity_failed": 0,
+        "stop_distance_failed": 0,
+        "tail_speed_failed": 0,
+        "height_failed": 0
+      },
+      "frozen_M_det": {
+        "yaw_over5deg": 4,
+        "relative_attitude_over5deg": 4,
+        "roll_over5deg": 0,
+        "design_failed": 4,
+        "physical_failed": 0,
+        "terrain_evidence_failed": 4,
+        "velocity_failed": 0,
+        "stop_distance_failed": 0,
+        "tail_speed_failed": 0,
+        "height_failed": 0
+      },
+      "frozen_M_stochastic": {
+        "yaw_over5deg": 4,
+        "relative_attitude_over5deg": 4,
+        "roll_over5deg": 2,
+        "design_failed": 4,
+        "physical_failed": 0,
+        "terrain_evidence_failed": 2,
+        "velocity_failed": 0,
+        "stop_distance_failed": 0,
+        "tail_speed_failed": 0,
+        "height_failed": 0
+      }
+    }
+  },
+  "core_problem": "coupled actualradial length/legangle evolution inparking violatesactivejoint limit despitelegalreference/motorcapacity;baseline heading/roll alsofail,thisisnotonlylearning safety",
+  "requirements_before_new_learning": [
+    "same fixednominal reference/design andpublic481 information fororiginaldifference residualandfullsix-channel comparison",
+    "shared physical/actualactivejoint/motion-to-parking acceptance;preservingreference orvirtualcommonwrench cannotbe claimedtopreserveactualbodytrajectory",
+    "initial actualcommandRMS/covariance andstochastic representation differences reported;oldMref3/Uref6 checkpoints cannotbe relabeled asforcepolicies",
+    "registered finite dynamicregression onfixed-reference force-space implementation,then explicitgo/no-go;noautomaticnewseed/candidate/longrun ifboundaryfails",
+    "strongsame-information reference/taskability andlater independentseed/holdout/ablation/statistics/cost/manuscript gates remain"
+  ],
+  "next": "327 reuseexistingfixed-reference force runtime fororiginal3-vs6 interface andoneprospective dynamicregression;avoidnewmean/difference family orgeneric sourcequalification loops",
+  "formal5_admitted": false,
+  "new_training_budget_admitted": false,
+  "scope": "engineering mechanism andthesis architecture decision,notnewPPO theory/safetycertificate orperformanceclaim"
+}

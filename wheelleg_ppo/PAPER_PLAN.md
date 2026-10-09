@@ -1,5 +1,16 @@
 # 双轮腿机器人PPO论文方案
 
+第326轮停车交接轨迹分解与方法级收敛（2026-10-09，0新物理/学习）：
+
+已有20stream和8对peak-pose FK/IK分解通过。learned进入parking时alphaR位置更远离1.4且速度向内，不能简单认为交接前已无jointmargin；实际是恢复Nom reference与倾斜制动共同作用后向外。代表det righttarget回缩6.057mm/8ms，stoch10.875mm/13.5ms；归零控制不等于闭环状态已回到Nom轨迹。
+
+对jointzero peak，det alpha差+.004450rad中径向差+.009031、角度差−.004581；stoch+.007394中径向+.012074、角度−.004681。learned peak legangle略小却radius更短，actualleg length仍高于floor，说明长度和姿态联合的实际关节轨迹才决定设计界。每0.5ms精确对称分解/末端telescoping只是kinematic identity，不是唯一force因果、制动能力证书或不同peak时刻的受控因果实验；单工程case图PNG/SVG视检过。
+
+方法选择关闭commonmean learned-reference变体，回original fixedNom/reference differential-force/hip/yaw residual主线；不把原mean-model改名/复用为forcepolicy。original3和同info full6共享实际物理、joint、parking交接验收，参考/虚拟共模输入恒等不等actualtrajectory安全。327复用既有fixed-reference force runtime做一次注册有限dynamicregression，无即时新长训/formal5；不再mean/diff表示家族或generic sourcequalification循环。
+
+任务维度也需同时过：20诊断case均yaw>5deg，12classic roll均失败；det4 terrain evidence失败，stoch2roll/2terrain失败。所有速度/停止距离/尾速/高度及物理门过，不证明任务本身不可达，也不能仅修joint门即称performance达标。round326_method_decision绑定证据与下一gate，完整六论文出口仍未齐、goal active，330下一五轮directionreview/cleanup。视频不上传，remote未完全同步。
+
+
 第325轮五轮深审、清理及唯一20回合约束诊断（2026-10-09）：
 
 方向判断：321—324已经证明GPU工程运行链，同时323证明commonmean参考候选在thirdseed主动关节design门失败。当前路线不值得继续长训/加terrain或坐标/gain/reward救分；原pure differentialtorque主题与commonmean变体严格分开。六论文出口仍未达，方法级机制与同信息强对照缺，不能用数据量/工程过关保证核心录用。只值得一次有限samecase first-crossing诊断，原science1476/formal5关闭。
