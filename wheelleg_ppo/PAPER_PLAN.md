@@ -1,5 +1,22 @@
 # 双轮腿机器人PPO论文方案
 
+第313轮原PPO论文主张与证据整合（2026-10-09）：
+
+当前主瓶颈是可辩护贡献及学习优势，而非GPU不能运行或数据量不够。已有H0/H1×23301/02/03六GPUrun完成1.2M samples、1312evaluation；H1controlled29/29/26、regular87/85/70、legacy27/27/26，未保B0的96/32/28且三种子history机制门均失败。不得将已完成旧预实验写成新的passedqualification、正式5seed或方法优越性；不只是“没训练过所以直接长训”。
+
+| 论文需求 | 当前证据与判定 |
+|---|---|
+| 可区别贡献/推导 | 必要geometry与rate兼容已核，普通residual/reference/投影有先例；新动态机制/收益未成立 |
+| 强同信息对照/消融 | 经典/旧history学习/固定reference有比较，新的fullreference learnedU6及合格机制消融未完成 |
+| 新3seed资格→正式5 | 旧H1三seed失败，不能当passed准入；新正式5未准 |
+| freshID/OOD与能力保持 | 当前为development及legacy，不替代新候选独立保留集 |
+| 层级统计与真实PPO成本 | 旧研究统计/真实计数可保；200回合331s是eval不是PPO训练速度，新合格方法证据缺 |
+| 完整复现稿 | 源/数据/报告可复用，完整有效贡献稿未成 |
+
+paper_claim_ledger.json将主张、禁止推论、三seed数据与证据SHA统一，避免工程/negative与论文出口混写。仅能称GPU工程/学习链运行、有限物理设计校对、必要参考代数及保留固定反馈负结果；不能称PPO胜强经典、history/reference收益、normal稳定证书或核心录用保证。
+
+314基于已有证据与原VMC+六stateLQR/差模残差PPO主线，完成有限mechanism-selection memo：排除closedfixedfeedback/interval/更强source资格循环，只有明确可证伪学习问题及更强同info对照才考虑新预算。当前0新physics/PPO；315深审清理，完整目标仍active。
+
 第312轮exact reference条件复核与有限关闭（2026-10-09）：
 
 独立Fraction540 current/previous/rate组合，直接12半平面顶点精确枚举而不调用311helper，M/J判定一致，284可行、其中213退化边界可行，构造点精确满足全部约束；source/derivation/proposalSHA核。无浮点门宽、优化器/模型/控制/物理/学习。

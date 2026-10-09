@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第313轮paper_claim_ledger统一原PPO贡献与证据SHA：existing六GPU H0/H1三seed1.2M/1312确已完成但wholequalified False，H1controlled29/29/26、regular87/85/70、legacy27/27/26，未保持B0 96/32/28、history3panel机制门False。不是GPU没就绪/还没训练的瓶颈，直接长训/扩场景或更多坐标source测试不补贡献。
+- 第313轮六出口matrix写PAPER_PLAN：区别贡献缺；同info经典/旧history/fixedreference部分已有而newfullreflearnedU6/机制消融缺；新3→formal5未准；freshID/OOD保持未做；旧统计真实计数可用但新PPO成本/统计缺；完整贡献稿未成。允许工程运行、必要geometry和负结果，不允许PPO优势/参考history收益/force稳定证书/核心录用保证；不把safe/数据volume当论文完成。
+- 314有限机制选择memo回原VMC+六stateLQR/差模残差主线，排除closedfeedback/interval/sourcequalification循环，先明确一个可证伪learning问题和强sameinfo对照再新预算；315方向深审清理，goal active。0新query/physics/training。git61733本轮仍live firstbufferedpush，remote未全同步，video禁上传持续。
+
 - 第312轮独立exact rational review过：不调用311interval/oracle函数，Fraction对540不同current/prev/rate组合、12半平面所有边界交点精确枚举核相同M/J条件，284可行、213退化可行（line/point边界），构造点精确逐不等式满足；derivation/source/proposalSHA核。0新optimization/controller/model/physics/training，无数值epsilon扩门。
 - 第312轮有限reference_correction_feasibility分支关闭：保必要坐标兼容条件/空交集与zero-before条件为工程附录，没有distinct动态机制/任务收益/新颖性，不把普通projection/rate换滤波位置发展成又一controller试跑。center/lower fixedfeedback失败关闭仍保持，正式PPO未准。
 - 313整合已accepted/rejected机制证据与原PPO论文/先例要求，确定真实贡献缺口，不新增坐标/反馈/PPO或继续sourcequalification循环；315按约方向深审清理。六论文出口仍缺、goal active。git61733本轮确认live bufferedfirstpush，remote未全同步，无video上传。

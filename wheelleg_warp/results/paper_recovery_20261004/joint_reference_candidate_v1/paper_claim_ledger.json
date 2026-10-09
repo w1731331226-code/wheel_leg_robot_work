@@ -1,0 +1,106 @@
+{
+  "round": 313,
+  "verified": true,
+  "evidence_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_review.json": "3c5e3344f92f74af14920317eba66e5ef937fbb26f84f472a43c224f95b5a437",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_completion.json": "73c96cf37cdc1b599fb87339e0fdf514f90c24734f1b2a79e8297f2066f4df86",
+    "wheelleg_warp/results/paper_recovery_20261004/execution_input_history_v1/study_contract.json": "558eb730a80c68a98fc1ef7b0969ae9112dd2ce5ce8b9cb4f631786b73ffdc68",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/zero_episode_pair_v1/delivery.json": "eff27dd08908ab106ef27f03e859062684b1cd9ee1d29b516c9918853e823255",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/nonzero_reference_mechanism_v1/review.json": "a84ec68416b8871b441eb663618d6a6b9402cd6d1ec788e89ca688aa28433dda",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/nonzero_reference_mechanism_v1/action_semantics_audit.json": "eee9beb5254c7a676f7419f923e64416abc23d69d36de55ff882b2200efe2504",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_correction_feasibility_v1/review.json": "a8e267d72b82335cb213b1fe938d91871abbea564a59baf46af5b4fa673523ea",
+    "wheelleg_ppo/LITERATURE_MATRIX.md": "025a92c55fb0b09b513a857836b337986d17891356dfddc9339e1504317c17c7"
+  },
+  "main_objective": "Simulation PPO paper with sufficient defensible evidence; publicationlevel oracceptance cannotbe inferred from engineering checks or rawvolume.",
+  "allowed_claims": [
+    "CurrentGPU pipeline canexecute/serialize andlearn; existing six H0/H1 GPU runs completed1.2M samples.",
+    "Defineddevelopment classical controls andfullphysical/design recorder checks areavailable.",
+    "Necessary referenceworkspace/position-rate algebra andfixedfeedback negative results areverified.",
+    "Currentreference zero5case engineering preserves labels,but only4/5 trajectories exact."
+  ],
+  "unsupported_claims": [
+    "PPO consistently beats strongestclassic/currentbaseline",
+    "Morehistory provides a stable methodbenefit",
+    "Jointreference fixedfeedback improves tasks",
+    "Necessaryreference polygon guarantees physical contact/traction/dynamicstability",
+    "Formalnew5seed/freshID-OOD/capabilityretention complete",
+    "GPU physicalthroughput equals PPOend-to-end speedup",
+    "Corejournal publicationguaranteed"
+  ],
+  "learned_evidence": {
+    "samples": 1200000,
+    "evaluations": 1312,
+    "arms": [
+      "H0",
+      "H1"
+    ],
+    "training_seeds": [
+      23301,
+      23302,
+      23303
+    ],
+    "H1_controlled_success": [
+      29,
+      29,
+      26
+    ],
+    "H1_regular_success": [
+      87,
+      85,
+      70
+    ],
+    "H1_legacy_success": [
+      27,
+      27,
+      26
+    ],
+    "B0_regular_success": 96,
+    "B0_controlled_success": 32,
+    "B0_legacy_success": 28,
+    "whole_protocol_passed": false,
+    "H1_vs_H0_mechanism_passed": {
+      "regular": false,
+      "controlled": false,
+      "legacy": false
+    },
+    "formal5_admitted": false
+  },
+  "paper_requirement_matrix": [
+    {
+      "requirement": "Distinct contribution/derivation",
+      "status": "incomplete",
+      "evidence": "Priorwork already includes residual/modelbased RL/actionrepresentations/referencepolicies; verified necessarygeometry aloneisnot distinctdynamicmechanism."
+    },
+    {
+      "requirement": "Strongsameinfo comparators/ablations",
+      "status": "partial",
+      "evidence": "Classical/learninghistory/fixedreference matchedcontrols exist; newfullreference learnedU6 andvalidmechanism ablations do not."
+    },
+    {
+      "requirement": "Qualifiednew3 thenformal5",
+      "status": "incomplete",
+      "evidence": "Old3seedH1 studyfailed; do notreuseit aspassedqualification orstartformal5."
+    },
+    {
+      "requirement": "FreshID/OOD andretention",
+      "status": "incomplete",
+      "evidence": "Currentevidence isreuseddevelopment/legacy;newcandidate freshholdout resultsnotproduced."
+    },
+    {
+      "requirement": "Hierarchicalstatistics/actualPPOcost",
+      "status": "partial",
+      "evidence": "Existingstudy statistics andrealcounts preserved;newqualifiedmethod learningcost/statistics missing. Nonzero200 wall331s isnot trainingcost."
+    },
+    {
+      "requirement": "Reproduciblecomplete manuscript",
+      "status": "incomplete",
+      "evidence": "Plans/evidence/source archive exist;no coherentvalidated finalcontribution manuscript."
+    }
+  ],
+  "immediate_problem": "Researchclaim/method utility,not unavailableGPU trainingorinsufficientrawvolume. Morecontroller qualification,coordinateclipping orunqualifiedlongPPO doesnot closeit.",
+  "next": "314 boundedmechanism-selection memo usingexisting evidence andoriginaldifference-action PPO scope;exclude closedfeedback/interval branches andstate one falsifiablelearningquestion with strongercontrols before anynewbudget.315directionreview/cleanup.",
+  "new_physics_steps": 0,
+  "new_training_samples": 0,
+  "formal_PPO_admitted": false,
+  "goal_complete": false
+}
