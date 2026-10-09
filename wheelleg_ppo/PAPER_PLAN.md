@@ -1,5 +1,18 @@
 # 双轮腿机器人PPO论文方案
 
+第324轮已存数据的设计失败审计（2026-10-09，0新仿真/控制query/学习）：
+
+读取2319episode、原frozen source与failed world32/scenario/source gating，唯一active1.4rad违例与physical True一致，分别是active设计界与实际两支链geometry/eight机械joint/torque门；actual最短leg .114963888>LOW，长度余量.259422mm。设计越界约30553 float32ULP，不能用数值容差取消。
+
+同一failedcase已有Mref3第三seed两训练回合，active margin先+.001639986rad后−.003642178rad；二者task success False、yawpeak9.059/11.772deg，baseinvalid211/234。径向guard两次limitedsteps0，失败requested/applied max均161.96N，故没有据此“调大径向力上限”的证据；wholeepisode极值/aggregate没有峰值时间对齐，不能认定唯一动力学原因。
+
+低115组157回合69个active margin<=.01rad，其他2162中10个，描述性反映低高度动态余量紧；训练stage/参数/策略/随机动作不一致，不能当独立holdout、概率、方法排名或显著性。只有该seed两回合exact scenario，其他4run不存在该case、第三U6未启动，没有零/经典配对。
+
+纯CPU IK/FK自检：L .115直立q≈±1.048875、active margin .351125rad；L同.115、leg angle .16rad则q≈.778079/−1.413183、设计界失败，长度仍正确。这是必要长度条件不能推出全pose/joint条件的staticcounterexample，不是失败峰值姿态或接触保证。当前源码的tracking-length bounds、reference-standingpose projection、radial length/rateguard和motorcapacity clamp，并不构成已验证的actualjoint动态不变性保证；actual1.4门逐0.5ms评分是真实失败。
+
+现模型不能重放原随学习更新策略的回合；savedq是autoreset后，peakjoint/peak-timeinput/contact/terminal stoppedq缺证。design_failure_audit绑定source/data/自检。325深审/清理必须围绕是否只值得一次小预算的同case zero/经典/frozenfailedpolicy first-crossing诊断、或关闭新增reference路线；不续sixrun、不拿四完成模型当三seed优势，不简单调门/gain/reward救旧资格。完整论文目标继续active。
+
+
 第323轮真实主预资格失败停止（2026-10-09）：
 
 100world startup初始实际输出审查已过：13000静态query/35FD，无物理图/学习；zero/Nom一致、RMS/cov/filter/embedding独立重算，lambda均1。只seed32031 stage1首.5ms，不完全探索匹配或完整rollout校准，无效果调std。48记录模型/Adam/RMS接收通过。

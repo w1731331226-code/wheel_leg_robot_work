@@ -4,6 +4,13 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第324轮existing-only约束审计完成，audit_reference_design_failure读取2319训练episode、匹配冻结failedbank world32/scenario及actual0.5ms证据步数/design gate、源码/hash核。唯一design违例不与physical True矛盾：1.4 active设计界与eight机械joint/actual两支链长度/力矩门不同。wholeepisode actual最短leg .114963888>LOW .114704466、余量.000259422m；设计越界是约30552.8 float32 ULP，不能当比较容差噪声放宽。
+- 同failedcase在Mref3 seed32033 stage3有两回合：先minactive margin +.001639986rad、baseinfeasible211，后−.003642178rad/234；两case success False，yawpeak9.0593/11.7722deg。两回合radial_guard_limited_steps均0/requested与applied max同（136.137/161.960N），失败已记geometry/physical过；不能仅据这些wholeepisode不同时间极值定baseinvalid或guard saturation为唯一根因，也不能据唯一设计失败宣称其余task足够。
+- 训练日志描述：低115组157episode中69个active margin<=.01rad；其他高度2162中10个，M/U两arm都低高差明显。是训练中不同stage/参数/策略/随机动作的描述，非独立测试概率、方法优势或因果/统计显著性。其他4run没有同failedscenario，第三U6未运行；当前没有该case零动作/经典对照。
+- CPU纯kinematics自检：L=.115/angle0时q≈±1.048875、active margin .351125rad；同L/angle.16rad时q≈.778079/−1.413183而FK长度仍.115、active margin−.013183。证明lengthfloor alone不蕴含actualjoint界，LOW不是直立115主动关节1.4奇点；该staticcounterexample不是失败峰值姿态/接触证书。sourcechain区分target geometry、standing-reference pose projection、radial length/rate guard、finalmotor clamp和每step actualposition gate，现代码没有据此已验证的dynamic forward-invariance保证。
+- design_failure_audit.json/log绑定现data/source，0new query/physics/learning；完整peak-time关节/接触/动作和terminal stoppedq仍缺。冻结interrupted policy也不能重放原训练回合（其间策略会更新），后续只可作新的注册诊断，不补写原因果证据。325必须五轮深审与清理；仅建议有限currentcase baseline vsfrozenpolicy first-crossing配对诊断用于分清基控制脆弱性与新增reference问题，是否值得及预算由325决策，不续原sixrun或调gain/reward/门。
+- 原主候选预资格仍failed，科学1476队列关闭、formal5/OOD/消融/核心论文全目标仍active；视频未生成，remote仍未全同步，收尾中文提交并恢复守护。
+
 - 第323轮首次主预资格队列已真实运行并按design门停止exit1，不能称三seed qualified。M_ref3/U_ref6 seeds32031/32032四run各200k/400epochs/8000Adam/8M实际capture-worldsteps完成，约107.13/107.17/109.92/109.06s含构建；M_ref3 seed32033在171700samples触发active-1p4-v1设计关节违例，U_ref6 seed32033未启动。实际消耗971700samples，已完成4run direct32M加partial推算6.868M（failure handler未保存末capturecounter，不能把推算说成直接计数）；main constructor80FD。
 - 失败是stage3 world32/seed23302032，冻结trainingbank scenario逐值一致，h=.115m/mass7.49303kg/speed−.936409/左0右.019015m混合地形/delay8.5ms。physical_safety=True/geometric_margin=True/机械joint margin .0963578rad，但active design margin −.00364217758rad，即max|activeq|推算1.40364218rad、越1.4界约.2086814deg；base_infeasible_steps234。case reason completed不等于design达标，不放宽门或认定单一原因。
 - 48实际checkpoint模型/Adam/RMS独立读取过：四run每20k至200k加失败run至160k，RMS countstep+100.0001，epochs/Adam数/finite/hash/标签核；失败interrupted model171700samples/340epochs/6800Adam、RMS count171800.0001，模型Adam/RMS/RNG/world/history/411episode留档。只有1个design违例。interrupted q是autoreset后现场，terminal stopped_q/peak关节身份未归档，不能用该q确定峰值关节或唯一动力学原因；原源码/hash与失败证据保留。
