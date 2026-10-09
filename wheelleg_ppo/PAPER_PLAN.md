@@ -1,5 +1,16 @@
 # 双轮腿机器人PPO论文方案
 
+第328轮共享实际关节保护原型工程改善（2026-10-10）：
+
+保持Nom设计/reference、原CPU/GPU/core/strict1.4/eightphysical/任务门，新增独立postNom/prephysical保护：publicmassupper8+rotor+kinematicJac的局部增量acc模型，每leg Nom最小2D修正（含不包含0的可行集）后共同λ投影original capacitylimited residual，当前encoder q/v/过去issued command可得，无trueplant/contact参数。k50由actor20ms预先冻结，非case调参；无qclip/物理冻结。旧cone solver需要0feasible，故新nonzero Nom correction solver不改旧源。
+
+GPU127QP/SciPy独立一致、infeasible/全kernel synthetic Nomcorrect/reset等检查通过；实际same33seen/sameGaussian requests回归完成：33physical/design全部过，30task成功（仍stresscase三个taskfail），493680actualgraphworldsteps/486568firstepisode、20FD、98.46s含构建，0learning/non-PPOspeedbenchmark。D3和V6旧designfail此次消失，不更改旧source或替换旧CPU基线。33complete/62列guard trace/source/schema独立重算preqv/control/acc/error/feasible/commands、相同actorrequestprefix核过。
+
+D3最小margin .000207567rad、48Nom correctionsteps(maxnorm .01912Nm)/152residual reduced；V6 .000155830rad/0Nomcorrect/187reduced，zero .00243392rad不干预。模型QP全feasible、predconstraint浮点量化残差<=1.4e-6，实际角度1.4门不放宽。模型整体error可达580rad/s²；guardactive D3约5.15/V6 .582。finite-step观测加速度CBF代理74/83steps不满足，不是actualjoint失败或连续CBF反证；没有未来扰动误差界，不能当实际forward-invariance证书，薄margin仍关learning。
+
+[Choi2020 primary摘要](https://arxiv.org/abs/2004.07584)已Nom-CBF/CLF-QP+RL处理modeluncertainty，本原型作为工程baseline、非复现或PPO新理论。329先固定budget更广independentdevelopment stress/预测误差验证，不改变rate/mass/std/门或自动长训；330按约direction深审清理。formal5/freshID-OOD/完整seed对照消融/统计成本/稿仍未达，goal active。video不生成/上传，remote未全同步。
+
+
 第327轮原差模force空间动态回归未通过（2026-10-09）：
 
 复用fixedNom virtual6动力/parking/filter/481history/Curriculum，D3原F/H/Y差模→[F,−F,H,−H,Y,−Y]、V6独立六channel。仅新小型动作wrapper，Nom reference/controller/physics不改；128组合/非法边界/3actionspace到6delivery自检过。新100world训练薄封装本轮没实际构建，不代替训练资格。

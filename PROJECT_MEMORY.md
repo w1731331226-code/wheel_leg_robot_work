@@ -2,7 +2,15 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
+## 当前状态：按北大核心纯仿真补充计划执行（2026-10-10，目标active）
+
+- 第328轮sharedjoint-state原型+同33regression实际完成。新joint_state_guard独立experimental branch，不改原Native/CPU/kernel增益/physics/strict1.4门；afterNom与originalmotor-residual projection、beforephysical/acceptedcommand collector，Nom每leg2D最小修正再max共同λ缩residual，relativeNomSafe input结构保留（不保证actualbody/force共模）。当前q/v/过去issuedcmd/增量acc、公有massupper8及rotor/kinematicJac，没读true mass/μ/contact参数；k=50按20ms actor间隔预先冻结，不afterresult tuning。
+- GPU127convexQP与独立SciPy SLSQP一致、明确infeasible、synthetic wholekernel Nom修正/pred constraints/inactive/maskedreset过，0robot/query/physics；旧leg_residual_cone solver假设zero feasible不适用Nom correction含非零-only feasible set，未改旧solver/旧closedbranch。模块/source/refbeforephysics finalctrl ownership实际80captures；完整62列prestate/nom/res/safe/final/lambda/QP/acc/error/margins日志及schema保。
+- 实际33（同327 elevenseen案例×zero/D3/V6、同Gaussian seed/新zeroheadpolicy、无optimization）全部physical/design通过，各组task10/11、总30/33，stressyaw/roll等任务仍未解决。actual493680graphworldsteps/486568firstepisode、20FD、98.455718s（含构建等，不能PPO训练speedclaim），相对旧33两个design失败本次消失。原Nom references、初始物理布局/actor随机请求前缀相同，oldNoGuard baseline/source/raw不覆盖，不替换旧CPU/GPU基线。
+- 独立33raw/prepost/连续qv/guard当前preqv、issuedctrl、measuredacc差分/next-error、QP feasible、model/CMD bounds/actor同随机请求核过。zero minactive margin .00243392rad/无Nom修正；D3 .000207567rad、Nom修正48steps maxnorm.01911975Nm、residual限制152steps；V6 .000155830rad/Nom修正0、residual限制187steps；模型预测QP全部feasible，predCBF violation仅floatquant<=1.4e-6（实际1.4 gate不改）。裕量很薄，不longlearning admission。
+- 模型误差全场景最大530/535/580rad/s²，guard active时D3 max5.1533/V6 .5823；按(preq/prevel,finite-step observedacc)计算的CBF代理D3有74steps/V6 83steps不满足（max .5963/.1778），不等实际角关节违例或连续time theorem反证。实际secondarybarrier min .0026598/.0019058>0，所有有限原始q过1.4；model无certified未来扰动界，因此预测满足不能当真实不变性。需独立压力/噪声及模型误差验证。
+- 查新一轮search transport连接失败，直接primary arxiv2004.07584摘要可读，Nom CBF/CLF-QP+RL model uncertainty早已有；本原型非该论文复现或新PPO/CBF理论。329保持rate/mass/std/strict门，注册一轮更广独立development stress与误差接收，不blind长训/调参；330如期五轮深审与冗余清理。formal5/newlearning/六论文出口仍未达，goal active。
+- 本轮无视频，全部GPU单元/33physics/source/模型/日志/失败baseline保。收尾中文提交/记忆/恢复守护，remote仍未全同步。
 
 - 第327轮原fixedNom force-space接口与唯一33episode dynamicregression完成：fixed_reference_force以D3→[F,−F,H,−H,Y,−Y]或V6独立6channel，复用原virtual6 control/parking/filter/481history/normalizer/Curriculum，无private mean/diff参考或controlkernel修改。训练make_env的100world新薄封装本轮未实际构建，不宣称已qualified；wrapper/128组合antisym/commonvirtualinput0/非法边界/3space→6delivery selfcheck通过。
 - regression10旧工程height×direction cases加323failedstresscase共11 seen cases×zero/D3/V6=33；fresh zero-headCUDA Gaussian std.25/sharedfeatures/value/emptyAdam，raw481无normalizer但meanhead0故prior distribution不随obs变；不是learnedcontrollers或旧Mref3/Uref6改名，不模型warmstart/optimization。policy与physicsCUDA，实际493680graphworldsteps/486567firstepisode、20FD、79.86905s，0learning。

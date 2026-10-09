@@ -1,0 +1,10 @@
+Warp 1.17.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 5060 Laptop GPU" (8 GiB, sm_120, mempool enabled)
+   Kernel cache:
+     /home/wmt/.cache/warp/1.17.0
+Module __main__ 635185a load on device 'cuda:0' took 1717.85 ms  (compiled)
+Module joint_state_guard 7ad65dc load on device 'cuda:0' took 5697.12 ms  (compiled)
+PASS328 GPU127convexQP vsSciPy/infeasible,syntheticNom correction/constraints/inactive/maskedreset;0robot/physics/learning
