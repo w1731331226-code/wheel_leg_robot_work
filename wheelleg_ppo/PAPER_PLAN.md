@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第311轮位置与修正rate的二维必要参考条件（2026-10-09）：
+
+derive_correction_feasibility只推参考坐标polytope：M由原length范围、h±.02与h+em_prev±sm相交；K=min(original .035cap,(Lmax−Lmin)/2,Mhi−Lmin,Lmax−Mlo)，J将d0+ed_prev±sd与[-K,K]相交。M/J非空时任选d∈J再取m∈[max(Mlo,Lmin+|d|),min(Mhi,Lmax−|d|)]，给出length/mean/rate合法点。2025格独立12约束所有边界交点oracle一致，1329可行/696不可行，构造点再逐约束核，非调用optimizer或模型。
+
+60组从zero priorcorrection选择zero当前修正可行；不保证从nonzero前状态瞬时回zero。二维反例继续空（m区间[.2398,.2402]，d区间[.04465,.035]），缺d0动态界，不声称实际.5ms可达。NaN/负rate/越domain或非法baseline拒绝，0controllerquery/physics/training/optimizer，只NumPy代数。derivation.json/source/log绑定；不接新controller或称ordinarypolygon新颖/动态安全/任务收益。
+
+312独立有限review去留，如无distinct testableproperty则关，不扩大source/新rollout或PPO；315按约深审清理，完整贡献/强sameinfo+消融/new3→5/freshID-OOD/统计真实成本/稿仍缺，goal active。
+
 第310轮五轮方向深审、有限位置-rate问题与清理（2026-10-09）：
 
 306—309获得真实200、完整source/raw/实际动作独立审查、lostcase和混合/有限差分证据，方法适当、负结果保留。但两固定reference family utility失败，无新颖方法/稳定性/学习优势证据；继续调gain/filter速度、更多zero/sourceaudit或盲PPO不值得。五轮review不把工程安全及数据量当核心论文出口。

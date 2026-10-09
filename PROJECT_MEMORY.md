@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第311轮reference correction必要条件推导/单元完成：M=[max(Lmin,h−eps,h+em_prev−sm),min(Lmax,h+eps,h+em_prev+sm)]，K=min(.035,(Lmax−Lmin)/2,Mhi−Lmin,Lmax−Mlo)，J=[max(d0+ed_prev−sd,−K),min(d0+ed_prev+sd,K)]；M/J非空等价存在length/mean容差/修正rate合法m,d。2025格由独立12线性约束所有两边界交点枚举一致，1329 feasible/696 infeasible；可行构造点逐约束核。
+- 第311轮60zero-baseline条件过：从e_prev=(0,0)在合法baseline(h,d0)选择e=0可行，不证明非零前状态可瞬时zero或完整闭环不变。310 movinginterval反例二维继续为空，m∈[.2398,.2402]、d interval[.04465,.035]；没有d0动态界，不称实际.5ms该跳变可达。非法NaN/height/baseline/rate拒绝；0优化器/模型query/physics/training，仅NumPy线性代数。
+- derive_correction_feasibility.py/derivation.json/log保公式/source/proposal SHA与独立oracle，ordinary reference polygon不是新理论/force稳定或任务收益，不接controller。312独立有限去留，若无区别机制关闭该问题；315五轮深审清理。完整论文六出口缺、goal active。git61733本轮仍live firstauxcommit bufferedpush持锁，remote未全同步，无video。
+
 - 第310轮五轮深审完成：306真实200/307独立完整raw+74418请求/308六lost/309全80混合有限差分证据有效，但固定reference反馈净负utility、普通reference映射无新颖性/稳定性/学习优势资格。center/lower增益/滤波速率救门、repeatability/debug/更多zero、blindPPO关闭，不以安全工程数据缩小核心论文目标或伪称完成。原五轮失败/负结果与所有raw保。
 - 第310轮仅值得有限代数reference_correction_feasibility_v1：e=d−d0的可行区间[-D−d0,D−d0]随baseline变化，与e_prev±rate_step不保证有交集。D=.035,d0−.01→+.01,e_prev=.035原合法，新geometry要求e<=.025而rateinterval[.03465,.03535]，交集空；这是未声明d0动态界下的代数反例，不证明实际0.5ms该跳变可达。不准以全target限速改变a0原baseline或声称只filter correction就率/几何都保证。
 - 311仅pure interval/zero identity/位置-rate条件及boundedmapping对比，312独立有限去留，若无distinct可证伪性质则停该问题，不无穷重参数化。新controllerquery/physics/training预算全0，未准PPO；完整贡献/fullsameinfo+消融/new3→5/freshID-OOD/层级stats实际PPOcost/稿六出口缺，goal active。315下一方向深审清理。
