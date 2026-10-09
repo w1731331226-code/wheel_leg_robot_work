@@ -4,6 +4,10 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第318轮实际fresh短GPU学习完成exit0：Mref3/Uref6各4000policy samples=8rollout/80epochs/160Adam，总8000、rawgraphworldsteps320000、constructor15FD。每arm训练/保存/重载约21.71418/21.19115s（非完整课程性能benchmark），policy cuda/physics cuda0实际核；sharedinitialworld、features/critic保持，禁止旧H1warmstart/科学选择/宣称收益。
+- 全每500postupdate×8×两arm checkpoint/model/Adam/RMS及training metrics保，16metrics记录finite、weights确更新、非空Adamstep160、CUDAmoments/params finite；末model+optimizer+481/retRMS逐值重载、deterministicprediction exact核，obsRMS count4010.0001；末history及initialweights/RNG/world和episode logs保。两arm各10episode原physical/design全过，不据训练回报或这些已见cases选模型；0scientificeval。
+- short_engineering_delivery绑定source/currentconfig、全部checkpoint/RMS metadata/hash/count/metrics及completion，源run前后不变、partialfailure无。319独立models/Adam/RMS/episodes/runtime/cost接收，320深审清理才决定新3seed资格，formal5/freshID-OOD仍未准；六论文出口缺、goal active。git61733本轮仍live bufferedfirstpush持锁，remote未全同步，video禁上传。
+
 - 第317轮actualGPU runtime/initial输出source准入过：二次同10case构建/每80control capture节点、sharedNom q0/param/gains/reference逐值同、481normalize reset和fresh3/6CUDApolicy，零ctrl/diag/memory同。登记64Gaussian×10world×两arm及各10zero，共1300static第一substep query，原ctor15FD<=25；wp.capture_launch拒绝，0realphysicsgraph/learn。
 - 初始m/d/leftwheel随机量成对，Mrightwheel反号/U独立且hub非零。deltaCtrl legRMS约.1106… .1129Nm、wheel约.00296Nm，lambda全1/零lambda0，policy params70279/70477；RMS/协方差已独立从NP重算、不同exploration不能称matched，仅startupfirst.5ms而非40步/实际初始轨迹。未看效果调scale，normalizedstd固定.25和sharedfeature/critic保持；RMS统计不因raw静态query更新核过。
 - source_admission/source_delivery绑定config/proposal/current源/实际分布，许可仅318freshMref3/Uref6各4000短工程，runtime已可sourcehash硬拒未准run；0learn当前started文件仍无，不自动formal5或sciencecheckpoint选择。319独立short receive，320五轮深审清理再决定预资格预算；六论文出口缺，goal active。git61733本轮仍live firstbufferedpush，remote未全同步、video禁上传。

@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第318轮注册短GPU工程完成（2026-10-09）：
+
+source验收不变后唯一freshMref3/Uref6各4000策略步实际完成，总8000，每arm8rollout/80epochs/160Adam，真实policyCUDA、physicsCUDA，原constructor15FD、实际graphworldsteps320000。每armlearn+checkpoint+reload约21.71418/21.19115s，construction/FD另记，不外推主课程/PPO加速或方法优势。
+
+每500更新后8checkpoint/arm，共16model/RMS及finite trainloss metrics保存；weights更新、CUDAfiniteparams/Adamstep160/moments，末policy/Adam/RMS字段和deterministicpredict重载exact，obsRMS count4010.0001；initialworld/weights/RNG、末history及episodes保。两arm各10训练episode physical/design全部过，非科学独立评估或学成策略，不据return挑winner/seed/checkpoint。
+
+short_engineering_delivery核源hash/计数/metrics/模型RMSsha，仅工程过，0scientific eval，formal5/freshOODA未准。319独立实模型/Adam/RMS/训练episode/cost源审查，320深审清理再决定是否冻结NEW3pairedseed资格；完整六论文出口仍缺。
+
 第317轮真实runtime与初始实际输出准入（2026-10-09，未learn）：
 
 runtime_source_proposal先冻二个10world构建、64Gaussian每arm+各zero共1300第一.5ms staticqueries、ctorFD<=25/0物理图。实际15FD、两capture与sharedNom world/481reset/真CUDApolicy过；Zero ctrl/diag/memory相同，query不更新normalizedRMS，全部finite/diag14=0，禁止wp.capture_launch，0learning。
