@@ -1,0 +1,326 @@
+{
+  "round": 325,
+  "verified": true,
+  "episodes_independently_read": 20,
+  "first_episode_world_steps": 274479,
+  "source_admission_sha256": "52937890d1ea9cdb8d5a21c49955774ca458132c7afb473a984529bbe502ed16",
+  "completion_sha256": "f277d732d9be81d694f00934511738e250a3ed4301196acd370ed88121b535d8",
+  "witnesses": [
+    {
+      "condition": "frozen_M_det",
+      "case": 32500000,
+      "first_step": 10246,
+      "first_time_s": 5.123,
+      "joint": "alphaR",
+      "q_rad": 1.4000554084777832,
+      "qdot_rad_s": 0.153492271900177,
+      "pre_qdot_rad_s": 0.15707983076572418,
+      "observed_joint_acceleration_rad_s2": -7.17511773109436,
+      "ctrl_Nm": -0.6310655474662781,
+      "force_Nm": -0.6310655474662781,
+      "zero_request_handover_step": 9720,
+      "seconds_after_withdrawal": 0.263,
+      "effective_and_filtered_requests_allzero": true,
+      "actual_leg_pose": [
+        {
+          "length_m": 0.11589535441802387,
+          "angle_rad": -0.15817162373169036
+        },
+        {
+          "length_m": 0.11580331786902844,
+          "angle_rad": -0.1612319798802948
+        }
+      ],
+      "pre_wheel_normal_N": [
+        36.80064392089844,
+        36.909881591796875
+      ],
+      "min_margin_rad": -0.0020261764526368076
+    },
+    {
+      "condition": "frozen_M_det",
+      "case": 32500001,
+      "first_step": 10254,
+      "first_time_s": 5.127,
+      "joint": "alphaR",
+      "q_rad": 1.4000025987625122,
+      "qdot_rad_s": 0.1026160717010498,
+      "pre_qdot_rad_s": 0.1053910106420517,
+      "observed_joint_acceleration_rad_s2": -5.549877882003784,
+      "ctrl_Nm": -0.6068470478057861,
+      "force_Nm": -0.6068470478057861,
+      "zero_request_handover_step": 9710,
+      "seconds_after_withdrawal": 0.272,
+      "effective_and_filtered_requests_allzero": true,
+      "actual_leg_pose": [
+        {
+          "length_m": 0.11622683598083852,
+          "angle_rad": -0.16009933627744966
+        },
+        {
+          "length_m": 0.11593354829613514,
+          "angle_rad": -0.1621566423411862
+        }
+      ],
+      "pre_wheel_normal_N": [
+        36.630332946777344,
+        36.944969177246094
+      ],
+      "min_margin_rad": -0.001096820831298917
+    },
+    {
+      "condition": "frozen_M_det",
+      "case": 32500002,
+      "first_step": 10245,
+      "first_time_s": 5.1225000000000005,
+      "joint": "alphaR",
+      "q_rad": 1.400041937828064,
+      "qdot_rad_s": 0.15680277347564697,
+      "pre_qdot_rad_s": 0.16039255261421204,
+      "observed_joint_acceleration_rad_s2": -7.179558277130127,
+      "ctrl_Nm": -0.6326227784156799,
+      "force_Nm": -0.6326227784156799,
+      "zero_request_handover_step": 9720,
+      "seconds_after_withdrawal": 0.2625,
+      "effective_and_filtered_requests_allzero": true,
+      "actual_leg_pose": [
+        {
+          "length_m": 0.11587932150468,
+          "angle_rad": -0.15807319679567633
+        },
+        {
+          "length_m": 0.11579425270490731,
+          "angle_rad": -0.16116139363992166
+        }
+      ],
+      "pre_wheel_normal_N": [
+        36.82041931152344,
+        36.98106384277344
+      ],
+      "min_margin_rad": -0.002077198028564542
+    },
+    {
+      "condition": "frozen_M_det",
+      "case": 32500003,
+      "first_step": 10245,
+      "first_time_s": 5.1225000000000005,
+      "joint": "alphaR",
+      "q_rad": 1.4000738859176636,
+      "qdot_rad_s": 0.15679362416267395,
+      "pre_qdot_rad_s": 0.16036899387836456,
+      "observed_joint_acceleration_rad_s2": -7.150739431381226,
+      "ctrl_Nm": -0.6327396631240845,
+      "force_Nm": -0.6327396631240845,
+      "zero_request_handover_step": 9720,
+      "seconds_after_withdrawal": 0.2625,
+      "effective_and_filtered_requests_allzero": true,
+      "actual_leg_pose": [
+        {
+          "length_m": 0.11587632450668776,
+          "angle_rad": -0.15807082109559434
+        },
+        {
+          "length_m": 0.11579390326880981,
+          "angle_rad": -0.16117033195891128
+        }
+      ],
+      "pre_wheel_normal_N": [
+        36.699100494384766,
+        37.00907897949219
+      ],
+      "min_margin_rad": -0.002103781700134366
+    },
+    {
+      "condition": "frozen_M_stochastic",
+      "case": 32500000,
+      "first_step": 10231,
+      "first_time_s": 5.1155,
+      "joint": "alphaR",
+      "q_rad": 1.4000052213668823,
+      "qdot_rad_s": 0.27420681715011597,
+      "pre_qdot_rad_s": 0.27900615334510803,
+      "observed_joint_acceleration_rad_s2": -9.59867238998413,
+      "ctrl_Nm": -0.6627340912818909,
+      "force_Nm": -0.6627340912818909,
+      "zero_request_handover_step": 9721,
+      "seconds_after_withdrawal": 0.255,
+      "effective_and_filtered_requests_allzero": true,
+      "actual_leg_pose": [
+        {
+          "length_m": 0.11645280777896364,
+          "angle_rad": -0.15714646581757652
+        },
+        {
+          "length_m": 0.11558169066524014,
+          "angle_rad": -0.15960424260478523
+        }
+      ],
+      "pre_wheel_normal_N": [
+        37.00749206542969,
+        36.727088928222656
+      ],
+      "min_margin_rad": -0.004969811439514249
+    },
+    {
+      "condition": "frozen_M_stochastic",
+      "case": 32500001,
+      "first_step": 10215,
+      "first_time_s": 5.1075,
+      "joint": "alphaR",
+      "q_rad": 1.4000535011291504,
+      "qdot_rad_s": 0.18103130161762238,
+      "pre_qdot_rad_s": 0.18494999408721924,
+      "observed_joint_acceleration_rad_s2": -7.837384939193726,
+      "ctrl_Nm": -0.6414881944656372,
+      "force_Nm": -0.6414881944656372,
+      "zero_request_handover_step": 9695,
+      "seconds_after_withdrawal": 0.26,
+      "effective_and_filtered_requests_allzero": true,
+      "actual_leg_pose": [
+        {
+          "length_m": 0.11598994520366795,
+          "angle_rad": -0.15771947255099383
+        },
+        {
+          "length_m": 0.11575868195802089,
+          "angle_rad": -0.1609074774983219
+        }
+      ],
+      "pre_wheel_normal_N": [
+        36.791725158691406,
+        36.950504302978516
+      ],
+      "min_margin_rad": -0.002512073516845792
+    },
+    {
+      "condition": "frozen_M_stochastic",
+      "case": 32500002,
+      "first_step": 10252,
+      "first_time_s": 5.126,
+      "joint": "alphaR",
+      "q_rad": 1.4000227451324463,
+      "qdot_rad_s": 0.04987350106239319,
+      "pre_qdot_rad_s": 0.051678113639354706,
+      "observed_joint_acceleration_rad_s2": -3.6092251539230347,
+      "ctrl_Nm": -0.5775195956230164,
+      "force_Nm": -0.5775195956230164,
+      "zero_request_handover_step": 9681,
+      "seconds_after_withdrawal": 0.28550000000000003,
+      "effective_and_filtered_requests_allzero": true,
+      "actual_leg_pose": [
+        {
+          "length_m": 0.11659271193459755,
+          "angle_rad": -0.1644288465881838
+        },
+        {
+          "length_m": 0.11591849501831165,
+          "angle_rad": -0.16205489916006655
+        }
+      ],
+      "pre_wheel_normal_N": [
+        36.724090576171875,
+        36.816890716552734
+      ],
+      "min_margin_rad": -0.0004167318344117099
+    },
+    {
+      "condition": "frozen_M_stochastic",
+      "case": 32500003,
+      "first_step": 10272,
+      "first_time_s": 5.136,
+      "joint": "alphaR",
+      "q_rad": 1.4000301361083984,
+      "qdot_rad_s": 0.12855707108974457,
+      "pre_qdot_rad_s": 0.13179638981819153,
+      "observed_joint_acceleration_rad_s2": -6.478637456893921,
+      "ctrl_Nm": -0.6231691837310791,
+      "force_Nm": -0.6231691837310791,
+      "zero_request_handover_step": 9739,
+      "seconds_after_withdrawal": 0.2665,
+      "effective_and_filtered_requests_allzero": true,
+      "actual_leg_pose": [
+        {
+          "length_m": 0.11596897935399413,
+          "angle_rad": -0.15883048745085349
+        },
+        {
+          "length_m": 0.1158668108228757,
+          "angle_rad": -0.16168317828678047
+        }
+      ],
+      "pre_wheel_normal_N": [
+        36.65642547607422,
+        36.9929313659668
+      ],
+      "min_margin_rad": -0.0015176296234131748
+    }
+  ],
+  "artifact_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/old_B0/case_32500000.npz": "d9e53a450b2eb82afc5d3af11d72e437ede1e82528c348a2d84ce5a72f27c906",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/old_B0/actor_32500000.npz": "f2f950085e4ac92609ecc2d57bad8476add591651fe6a2dd846c59e9052a493c",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/old_B0/case_32500001.npz": "c98d3afb501743fad3bce1ec334fbfd1e0f23ace9576893ff4a4a2df522ee55c",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/old_B0/actor_32500001.npz": "14033db6a642d93c8fea72212ad39ba1b85efb453e43089ae7f38c427599835e",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/old_B0/case_32500002.npz": "5a54b09241f24fa77567370b2456ca550e6912798994a9082bdd323bd8311f27",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/old_B0/actor_32500002.npz": "52304f4c648a51b5d3eea522bde7071687ac8fb7e3c662cf1530aa894cebd72d",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/old_B0/case_32500003.npz": "5113a33a07eb06dff8a06ac8da0cec2960b0c52f55264b8f2d939485804854ae",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/old_B0/actor_32500003.npz": "99f05eb6bd38315b2aa0012210374784cbf858d8a2f42cc10133421d6735a2bf",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/joint_zero/case_32500000.npz": "0b1f4cd0d66012bf9721510e2db16650ce769ab5deb56d6f0d1aa48d09eee2d5",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/joint_zero/actor_32500000.npz": "a424eb1a06c2d69bdf0734a3d62337661a65b933ba85614370aef7df197efc87",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/joint_zero/case_32500001.npz": "96a317f92828840ee9a34dbdbeccadb995ee43df393bdad80d71bdd776be8356",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/joint_zero/actor_32500001.npz": "b2bfdaddb5ff3ff8061863f6732095b6c9094c176dfe7a0a243e14ab4afe587c",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/joint_zero/case_32500002.npz": "fd51fc772116eb40486399ee7dc8c10243326be31b0578708b20630d1280d0a8",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/joint_zero/actor_32500002.npz": "b97ff6aea12457d502bd78a0da33b74d2d452a74f198220b9e507565541a94cd",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/joint_zero/case_32500003.npz": "2d51fe188834cf9654ad241ca4898638820b13b949cf40f67e6b3efc7d002dd8",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/joint_zero/actor_32500003.npz": "c5e3d2351708aa901393bfc2b35954d591f6f7e3070ca190907d2e7bbc7706e5",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/joint_yaw/case_32500000.npz": "b112ec5fb92413c4324e377742f185e2be80e7b251758cfbbb1198930706f591",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/joint_yaw/actor_32500000.npz": "b417fd708f39f0bb0c79b1716429614145c5e4b6b9f57f7ae5006caa1e7e46ab",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/joint_yaw/case_32500001.npz": "d25c0dddf4af6964bee9b30bfb1bfd7e573cb44a4cd19576f2d7540e6a2d21ad",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/joint_yaw/actor_32500001.npz": "aa3208eb6c30c9b687c2d3020423dfd6c7f25f07682750a758d6292419d87634",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/joint_yaw/case_32500002.npz": "9b4cf167cac7794088267e8de2590771c3ce00e04c773a8b8a0d814af9a8ac8b",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/joint_yaw/actor_32500002.npz": "502fa4039a42efb7cf8db7affb613b7b8588ce8d14e6a3eee2b7d0bf2191d196",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/joint_yaw/case_32500003.npz": "c46287a5de215bacc519592bc02742d52e8c7161d9c2d4fdaeaa30df47b42e1b",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/joint_yaw/actor_32500003.npz": "0dcead3d8798edc9d6dce4dd332a53914952ca70acddfe06de095ee150bec4ee",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/frozen_M_det/case_32500000.npz": "e7d724df596f634f36a26c45ad5ff626132741f13f03749efc539d7651085bd7",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/frozen_M_det/actor_32500000.npz": "b2bd55dc5e1e0a25894d2b43e9a6fadbac97c3751fea778fcfa5da8bd7d3356a",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/frozen_M_det/case_32500001.npz": "2a4765b5475b0906da8abfb77df26997247b50f6d4dcb23bc27bfeb9601ae315",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/frozen_M_det/actor_32500001.npz": "0c6a626d9d957bad2fd8629bd796f5cbaec3891d27a848a4a802afb354274004",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/frozen_M_det/case_32500002.npz": "6513c99eff6da05bd57a0a237db2ffa6e4ef901c7469154c8ee491817f12921b",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/frozen_M_det/actor_32500002.npz": "f2867c771ccb34fa90f624a2a7337d10177f2f4f6eabf7772e9fb44a255d2381",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/frozen_M_det/case_32500003.npz": "37194da8f294328889dddfeb23e7bf955738d0cf64433ad1f830b4e547645cb4",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/frozen_M_det/actor_32500003.npz": "f007c879b83731f3f8197b57773fe730b1b84f8812b623c237013b2b15864906",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/frozen_M_stochastic/case_32500000.npz": "f6de01583a85dd15d02c8bf50c25634f8ab6839fc387709ceb7dd49f57ff4748",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/frozen_M_stochastic/actor_32500000.npz": "669e9ab3629aef7d7a0525ef03a2e911342441032722b10443e90b249513159c",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/frozen_M_stochastic/case_32500001.npz": "a3dcdfae22b531d426cc0e236e7ed4f2478eb489db9dd168688a3fb04750e3a9",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/frozen_M_stochastic/actor_32500001.npz": "5aba7d61180ec06d6dda744c8ee6d854a642a3c5dab23af290de1d9277406757",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/frozen_M_stochastic/case_32500002.npz": "065731c1df20691c9164cb2cdec30d68d2b258f30714fe95972d3b3f492f27a8",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/frozen_M_stochastic/actor_32500002.npz": "0a0fb9e5adb1ff94d35aa48bf374c964b9ec1cb185c9a18c5784a7fee27c4dd4",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/frozen_M_stochastic/case_32500003.npz": "703c148eeba99d48e13a7cab5b0c69a858db79661f9bfd85e16c2b0b83a14268",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/frozen_M_stochastic/actor_32500003.npz": "eda9ac7b3b45f99da7a561de350fb2ce0a6a7920d184d7a8d7a02e5808bda11e"
+  },
+  "findings": [
+    "all12zero/classic designpass,all8frozenlearned designfail;all20physicalpass/taskfail;notqualificationbenefit",
+    "all8firstcrossings atalphaR duringparkingafterwithdrawal,effective mean/d/motor andfilters alreadyzero,lambda1;earlier learnedtrajectory affects classical fallback state,notinstantaneous nonzero policyforce atcrossing",
+    "jointqdot pointsoutward whileactualmotor torque opposes it;static target/motor capacity constraints do notensureactualjoint stoppingmargin",
+    "deterministic failures exclude stochastic exploration assoleexplanation;newfrozen runs arenotoriginaltraining replay orproof ofuniquecause"
+  ],
+  "original_qualification_remains_failed": true,
+  "new_learning_samples": 0,
+  "next": "326 existing20stream handover/trajectory mechanism andmethod-level decision; no furtherdiagnostic reruns,sourcequalification loop,newcoordinatefamily orresumedtraining",
+  "formal5_admitted": false,
+  "actor_input_and_RNG_replay": {
+    "frozen_M_det": {
+      "reconstructed_decision_rows": 1372,
+      "max_action_difference": 0,
+      "normalized_inputs_exact": true,
+      "stochastic_initial_RNG_replay": false,
+      "limits": "finishedworlds missingpost-firstepisode actor packets filled0;independent MLP rows preserve checkedactiveworlds,notexactwholelaterworldtrajectory replay"
+    },
+    "frozen_M_stochastic": {
+      "reconstructed_decision_rows": 1372,
+      "max_action_difference": 0,
+      "normalized_inputs_exact": true,
+      "stochastic_initial_RNG_replay": true,
+      "limits": "finishedworlds missingpost-firstepisode actor packets filled0;independent MLP rows preserve checkedactiveworlds,notexactwholelaterworldtrajectory replay"
+    }
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "round": 325,
+  "role": "engineering firstcrossing diagnosis only,notqualification rescue orscientific modelselection",
+  "failed_case_source_seed": 23302032,
+  "source_sha256": "ca01ff002a6b8162d1f9df4f9bbbb36c6d9936b60c7bbd62b2e911c3c74744d6",
+  "cases": [
+    {
+      "seed": "diag325_0",
+      "scenario": {
+        "speed": -0.9364089513303269,
+        "mass": 7.493030793780774,
+        "height_l": 0.0,
+        "height_r": 0.019015132004143172,
+        "center": 1.6245307484346838,
+        "offset": 0.01990771664331907,
+        "mu_l": 0.7502092232917685,
+        "mu_r": 0.876382432274782,
+        "drive_difference": -0.0227770717581802,
+        "delay_ms": 8.5,
+        "solver_iterations": 100,
+        "terrain": "mixed",
+        "grade_deg": 0.0,
+        "roughness_m": 0.002014048565406831,
+        "step_height_m": 0.0,
+        "terrain_seed": 23302032,
+        "relative_attitude": true,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.115
+      }
+    },
+    {
+      "seed": "diag325_1",
+      "scenario": {
+        "speed": -0.9364089513303269,
+        "mass": 7.493030793780774,
+        "height_l": 0.0,
+        "height_r": 0.019015132004143172,
+        "center": 1.6245307484346838,
+        "offset": 0.01990771664331907,
+        "mu_l": 0.7502092232917685,
+        "mu_r": 0.876382432274782,
+        "drive_difference": -0.0227770717581802,
+        "delay_ms": 8.5,
+        "solver_iterations": 100,
+        "terrain": "mixed",
+        "grade_deg": 0.0,
+        "roughness_m": 0.002014048565406831,
+        "step_height_m": 0.0,
+        "terrain_seed": 23302032,
+        "relative_attitude": true,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.115
+      }
+    },
+    {
+      "seed": "diag325_2",
+      "scenario": {
+        "speed": -0.9364089513303269,
+        "mass": 7.493030793780774,
+        "height_l": 0.0,
+        "height_r": 0.019015132004143172,
+        "center": 1.6245307484346838,
+        "offset": 0.01990771664331907,
+        "mu_l": 0.7502092232917685,
+        "mu_r": 0.876382432274782,
+        "drive_difference": -0.0227770717581802,
+        "delay_ms": 8.5,
+        "solver_iterations": 100,
+        "terrain": "mixed",
+        "grade_deg": 0.0,
+        "roughness_m": 0.002014048565406831,
+        "step_height_m": 0.0,
+        "terrain_seed": 23302032,
+        "relative_attitude": true,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.115
+      }
+    },
+    {
+      "seed": "diag325_3",
+      "scenario": {
+        "speed": -0.9364089513303269,
+        "mass": 7.493030793780774,
+        "height_l": 0.0,
+        "height_r": 0.019015132004143172,
+        "center": 1.6245307484346838,
+        "offset": 0.01990771664331907,
+        "mu_l": 0.7502092232917685,
+        "mu_r": 0.876382432274782,
+        "drive_difference": -0.0227770717581802,
+        "delay_ms": 8.5,
+        "solver_iterations": 100,
+        "terrain": "mixed",
+        "grade_deg": 0.0,
+        "roughness_m": 0.002014048565406831,
+        "step_height_m": 0.0,
+        "terrain_seed": 23302032,
+        "relative_attitude": true,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.115
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "label": "old_B0",
+      "arm": "old_B0",
+      "learned": false
+    },
+    {
+      "label": "joint_zero",
+      "arm": "joint_zero",
+      "learned": false
+    },
+    {
+      "label": "joint_yaw",
+      "arm": "joint_yaw",
+      "learned": false
+    },
+    {
+      "label": "frozen_M_det",
+      "arm": "M_ref3",
+      "learned": true,
+      "deterministic": true
+    },
+    {
+      "label": "frozen_M_stochastic",
+      "arm": "M_ref3",
+      "learned": true,
+      "deterministic": false
+    }
+  ],
+  "episodes": 20,
+  "world_step_budget": 600000,
+  "constructor_FD_budget": 50,
+  "model": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_learning_prequalification_v1/training/M_ref3_32033/interrupted_model.zip",
+  "model_sha256": "9951b6596a252a7106462fb6951543a4884c8ad604a0bf66e68420a0f8fd82c1",
+  "normalization": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_learning_prequalification_v1/training/M_ref3_32033/interrupted_RMS.pkl",
+  "normalization_sha256": "d60f5da76e509c9b7ccbddc56a7ab521af0e9316a9b79d747d3819c47531ac79",
+  "stochastic_action_seed": 32531,
+  "yaw_config": {
+    "candidate": {
+      "name": "B1_3",
+      "kp": 0.4,
+      "kd": 0.3,
+      "roll_gain": 0
+    },
+    "arm": 1
+  },
+  "recording": "fullpre/post q-v-ctrl/force,contacts,Actor raw481/normalized481/submitted,reference request/filter/nominal/targets;first designcrossing andglobalminimum pose/caps/force/contacts",
+  "decision_rules": [
+    "anyold_B0/jointzero baseline active-design failure:inner model/controller envelopeneedspriorityreview;notjustlearnedmean/difference tuning",
+    "baseline safe butfrozenlearned fail:reference-policy interaction needsmechanism review;diagnostic only,notoriginalcausality",
+    "all20 pass:originalnonstationary failure notreproduced;retainfailedqualification,close thisdiagnostic withno seed search orscopegrowth"
+  ],
+  "limits": "samecase replicated4times for engineering/capture robustness,noIIDholdoutinference;frozeninterruptedpolicy cannotreplay originaltraining episode wherepolicyupdates andRNG/history varied; no contact/trueparams actorinput",
+  "stopping": "one20episode attempt;noimplicitretry orcheckpoint/seedselection;software orrecordingerror preservespartial",
+  "new_training_samples": 0,
+  "formal5_admitted": false
+}

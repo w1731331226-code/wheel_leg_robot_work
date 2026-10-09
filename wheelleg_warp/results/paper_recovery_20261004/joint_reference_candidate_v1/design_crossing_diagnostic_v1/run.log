@@ -1,0 +1,33 @@
+/home/wmt/wheel_leg_robot_work/.venv/lib/python3.10/site-packages/stable_baselines3/common/on_policy_algorithm.py:150: UserWarning: You are trying to run PPO on the GPU, but it is primarily intended to run on the CPU when not using a CNN policy (you are using ActorCriticPolicy which should be a MlpPolicy). See https://github.com/DLR-RM/stable-baselines3/issues/1245 for more info. You can pass `device='cpu'` or `export CUDA_VISIBLE_DEVICES=` to force using the CPU.Note: The model will train, but the GPU utilization will be poor and the training might take longer than on CPU.
+  warnings.warn(
+Warp 1.17.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 5060 Laptop GPU" (8 GiB, sm_120, mempool enabled)
+   Kernel cache:
+     /home/wmt/.cache/warp/1.17.0
+Module execution_input_collector 7aab969 load on device 'cuda:0' took 0.60 ms  (cached)
+Module parking_withdrawal_probe f69e11a load on device 'cuda:0' took 0.72 ms  (cached)
+Traceback (most recent call last):
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/run_design_crossing_diagnostic.py", line 114, in <module>
+    if __name__=='__main__':run()
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/run_design_crossing_diagnostic.py", line 92, in run
+    before=steps;result,checked=evaluate(q['cases'],condition['arm'],directory,q['world_step_budget']-steps,q['yaw_config'],model=actor,normalization=ROOT/q['normalization'] if actor else None)
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/run_joint_reference_zero_pair.py", line 31, in evaluate
+    raw, _, raw_history, _, env = original.make_env(cases, 'B0' if arm == 'old_B0' else 'B1-route', None, directory)
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/execution_history_evaluation.py", line 19, in make_env
+    raw = collector.instrument(lambda rows,mode: parking.instrument(rows,mode,condition,directory),
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/execution_input_collector.py", line 75, in instrument
+    try: raw = factory(cases, mode)
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/execution_history_evaluation.py", line 19, in <lambda>
+    raw = collector.instrument(lambda rows,mode: parking.instrument(rows,mode,condition,directory),
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/parking_withdrawal_probe.py", line 81, in instrument
+    try:raw=BASE_FACTORY(cases,mode,directory=directory)
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/phase_support_probe.py", line 94, in instrument
+    raw = broad.instrument(cases, native_mode, 'floor_only' if arm == 'floor_only' else 'original', directory)
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/floor_broad_adapter.py", line 44, in instrument
+    recording=[dict(c,seed=names[c['seed']]) if isinstance(c['seed'],str) else c for c in cases]
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/floor_broad_adapter.py", line 44, in <listcomp>
+    recording=[dict(c,seed=names[c['seed']]) if isinstance(c['seed'],str) else c for c in cases]
+KeyError: 'diag325_0'

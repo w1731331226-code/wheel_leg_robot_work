@@ -1,5 +1,18 @@
 # 双轮腿机器人PPO论文方案
 
+第325轮五轮深审、清理及唯一20回合约束诊断（2026-10-09）：
+
+方向判断：321—324已经证明GPU工程运行链，同时323证明commonmean参考候选在thirdseed主动关节design门失败。当前路线不值得继续长训/加terrain或坐标/gain/reward救分；原pure differentialtorque主题与commonmean变体严格分开。六论文出口仍未达，方法级机制与同信息强对照缺，不能用数据量/工程过关保证核心录用。只值得一次有限samecase first-crossing诊断，原science1476/formal5关闭。
+
+冻结failedscenario4replicas×5条件（old_B0/jointzero/jointyaw/frozenMdet/frozenMstoch）20episode，模型取已停止的interrupted171700，不挑checkpoint。v1 string标签被旧记录器拒、0FD/0physics，保所有失败；explicit v2只改integercase IDs，scenario/RMS/model/条件和600kgraph/50FD预算不变，无已运行回合重放。v2真实275040graphworldsteps/274479firstepisode、30FD、72.32s完成，0learning：12零/经典design通过，8冻结学习全部design失败（deterministic也失败），20physical均过、task均失败。不是独立science、方法效应或恢复原资格。
+
+完整20dense/contact/actor/reference/pre-postqv/command-force独立核：八次首次越界都是alphaR、cmd归零后.255—.2855s，policy effective/reference/motor filters已全0、lambda1，关节仍向外而电机负向制动。关键缺口是先前学得运动轨迹到基础parking接管的动态余量；不能只以当前reference合法/电机限幅/随机探索解释。冻结diagnostic不是原非平稳训练回合重放，也不证明唯一物理原因。
+
+actor raw→frozennormalized inputs及保存RNG/batch4重放2744decision rows均exact；初始physical q/v/memory/param/ref跨条件exact。保存完整源/proposal/unit/failure/continuation/result/dense与first/min crossing审核。下一326仅现有20完整trajectory的handover/控制方向及基线任务可达性分析，然后决定可证伪的方法级论文问题；不回generic源准入/不等式或扩candidate/training。CBF/referencegovernor/history等已有文献近邻，工程安全修复本身不冒充新算法，330下一深审清理。
+
+删除source已更新后留下的过期evalqueue.pyc5513B，ignored/untracked/unheld、header source大小不符、当前源compile过；首次相等检查未删除，后确认stale才删，SHA与验证保round325_cleanup。保全部源/失败/raw/模型AdamRMS/CPU-GPU。视频不上传、remote未全同步，论文目标继续active。
+
+
 第324轮已存数据的设计失败审计（2026-10-09，0新仿真/控制query/学习）：
 
 读取2319episode、原frozen source与failed world32/scenario/source gating，唯一active1.4rad违例与physical True一致，分别是active设计界与实际两支链geometry/eight机械joint/torque门；actual最短leg .114963888>LOW，长度余量.259422mm。设计越界约30553 float32ULP，不能用数值容差取消。

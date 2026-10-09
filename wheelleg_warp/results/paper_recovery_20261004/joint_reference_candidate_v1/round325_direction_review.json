@@ -1,0 +1,52 @@
+{
+  "round": 325,
+  "reviewed_rounds": [
+    321,
+    322,
+    323,
+    324,
+    325
+  ],
+  "evidence_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_learning_prequalification_v1/implementation_delivery.json": "082bbb24d8a6ee1755c3c20a8d565cefd9da342f094fd450045863aceb360605",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_learning_prequalification_v1/runtime_delivery.json": "53fcd9c5eec9f6112306e485584e1cc2caf8e19397151d0508ef95fbde235950",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_learning_prequalification_v1/runtime_qualification/review.json": "0e254361847bd7ff71c7f8753b284b36d0c31e9d2aadea7b738285aaae7884b1",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_learning_prequalification_v1/main_delivery.json": "0a444c27ade6833a1ec19ab38ad2b6b84eb8f1352fd16f84e0299e315d34835f",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_learning_prequalification_v1/training_failure_review.json": "ca01ff002a6b8162d1f9df4f9bbbb36c6d9936b60c7bbd62b2e911c3c74744d6",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_learning_prequalification_v1/design_failure_audit.json": "4cd6dfb5c0965f5ad85a2ca746df8823240076e049845e8af41a02554a15732b",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round320_direction_review.json": "567672976e7f095931daa09bd1ea20dbd56f8ae94ac7cb265923fbff1d704ee8"
+  },
+  "worth_continuing": "GPU/runtime evidence isadequate. Currentcommonmean referencecandidate isfailed/closedforexpansion;onlyone20episode firstcrossing diagnosis isworthcontinuing beforemethod-level decision.",
+  "methodology": "Source-gated fixedbudget andstop ondesign violation wereappropriate;training casebanks areseen,initialexploration notmatched,andchanging-policy episodes arenotscience tests. Missingterminalq/firstcrossing trace prevented uniqueattribution;diagnosis mustcapture completeevidence ratherthantune knobs.",
+  "supplementary_experiments": {
+    "admitted_now": "registered20 engineeringcaseepisodes acrosszero/classic/frozendet/stoch;0learning",
+    "not_admitted": "resumeunfinishedruns,formalfive,newreward/gain/thresholdorcoordinatefamily,morecomplexcurriculum or1476sciencepartialwinner selection",
+    "after": "reviewdiagnostic tochooseexplicitmethod-level question withstrongsameinfo baseline andmechanism. KnownCBF/governor/PPO/observer combinations arealready inliteraturematrix;nosafetyguarantee/novelty fromstatic geometry."
+  },
+  "paper_exit_status": {
+    "distinct_contribution": "missing;originalpure differentialtorque andcommonmean referencefamily muststaydistinct",
+    "strong_baselines_ablations": "currentreference learned comparison incomplete;newdynamicfailurebaseline diagnostic necessary",
+    "independent_seeds": "thirdseed aborted,notqualified3norformal5",
+    "ID_OOD_retention": "freshqualifiedholdout notopened",
+    "statistics_PPO_cost": "realtrainingcost andnegativearchive available;qualifiedscience inference missing",
+    "manuscript": "complete defensiblecontribution notready"
+  },
+  "new_protocol": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v1/proposal.json",
+  "new_protocol_sha256": "d3877c6bf018214dece2c70c487f6c53437fa12f6c1221acaeeb8c00ff1afae4",
+  "cleanup_sha256": "8278f93a52e737b7afb74a49429c1ee70649076ae4100a05aa7fac2e9b8cfbfe",
+  "new_learning_admitted": false,
+  "formal5_admitted": false,
+  "goal_complete": false,
+  "next": "326 useexisting20complete streams forhandover/controllable-direction analysis andmethod-level thesis decision;no diagnostic reruns orsourcequalification/coordinate loops.330 nextfive-round deepreview/cleanup.",
+  "explicit_protocol_continuation": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v2/proposal.json",
+  "startup_failure": {
+    "prior_failure_path": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/design_crossing_diagnostic_v1/failure.json",
+    "prior_failure_sha256": "c44b78e8cee32b10834c7dfd07ce9ff71f64faff17bd454a020e2a02343fb793",
+    "prior_graph_world_steps": 0,
+    "prior_constructor_FD_calls": 0,
+    "change": "onlyfresh integercase labels supportedby legacyfloor recorder;allscenarios/model/RMS/conditions/budgetunchanged;no replay ofsimulatedepisodes"
+  },
+  "diagnostic_completion_sha256": "f277d732d9be81d694f00934511738e250a3ed4301196acd370ed88121b535d8",
+  "diagnostic_review_sha256": "e2aa5a18bcd88f319b766fc08a568f9789cb387f80b88b1a9d9849c2e5704c61",
+  "post_diagnostic_decision": "Currentcommonmean referencelearning remainsclosed. All12zero/classic designpass butall8frozenlearned designfail;all20taskfail. Firstcrossings alphaR0.255… .2855s afterparking withdrawal,allpolicy effective/filter0 andlambda1. Priority istrajectory-to-classical-handover dynamicjointmargin plusbaseline taskviability,notmorelearning/terrain/gainfit."
+}
