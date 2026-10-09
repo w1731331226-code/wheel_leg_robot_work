@@ -1,5 +1,16 @@
 # 双轮腿机器人PPO论文方案
 
+第323轮真实主预资格失败停止（2026-10-09）：
+
+100world startup初始实际输出审查已过：13000静态query/35FD，无物理图/学习；zero/Nom一致、RMS/cov/filter/embedding独立重算，lambda均1。只seed32031 stage1首.5ms，不完全探索匹配或完整rollout校准，无效果调std。48记录模型/Adam/RMS接收通过。
+
+唯一六run主attempt中，前两seed的M_ref3/U_ref6四run各200000samples完整、400epochs/8000Adam/8M actualgraphworldsteps；第三seed M_ref3在171700samples触发设计门，总971700samples，U_ref6第三seed未启动，main exit1。失败world32/seed23302032冻结stage3 scenario一致，h .115m、mass7.493kg、speed−.9364、mixed左右0/.019015m、delay8.5ms。物理/几何/机械joint门过，active-1p4-v1 minmargin −.00364218rad（maxactive|q|推算1.40364218rad，越界.208681deg），234base infeasible steps；reason completed不能覆盖design失败，不能据此定单一根因或说模型必然错误。
+
+四run完成模型与失败model171700/340epochs/6800Adam、RMS171800.0001及RNG/raw/history/411episode留档；48每20k模型独立hash/finite/计数/RMS核过。partialgraph6.868M由callbacksamples×40推算，failure handler缺末capturecounter；interrupted q为autoreset后而非terminal峰值，故峰值关节身份/唯一原因缺证，不能编造。原source和失败保持。
+
+1476固定科学队列入口/selfcheck已有，main未完整且design门失败使其关闭，本轮0science；不resume、换seed、改reward/gain或放宽设计门，不拿4完整run当三seed资格。324只用已有数据核约束/失败，325按约深审与清理，决定baseline/candidate配对失败补实验是否值得并另冻预算。formal5/freshID-OOD/机制消融/层级统计/完整稿仍未达，goal active；视频不上传、remote未全同步。
+
+
 第322轮实际100环境工程资格及主训练入口（2026-10-09）：
 
 M_ref3/U_ref6各fresh5000samples、50step×100world完整一次PPO更新、10epochs/200Adam，CUDApolicy/physics，shared初始world/features/critic、权重确变、模型Adam/RMS重载与count5100.0001核过。工程总10000samples/2669400实际graphworldsteps/45FD；两arm约25.13/23.23s含构建/学习/课程探针等，不完整主课程性能benchmark。

@@ -1,0 +1,33 @@
+{
+  "verified": true,
+  "proposal_sha256": "2768ebd2db58a6711556c38d1d6c94d1a491d18d881fd7dacb92c75d62a7e618",
+  "completion_sha256": "ba327b75d1fce99625b1cfcb400f6621f16c96d834e4f9d13d938637f1503f0a",
+  "sample_pairs_reconstructed": 6400,
+  "exact_exploration_matching": false,
+  "records": {
+    "M_ref3": {
+      "delta_ctrl_RMS_Nm": [
+        0.12201404571533203,
+        0.12201404571533203,
+        0.11855126172304153,
+        0.11855126172304153,
+        0.002966831671074033,
+        0.002966831671074033
+      ],
+      "mean_lambda": 1.0,
+      "parameters": 70279
+    },
+    "U_ref6": {
+      "delta_ctrl_RMS_Nm": [
+        0.12200312316417694,
+        0.12212122976779938,
+        0.1185736283659935,
+        0.11862798035144806,
+        0.002966831671074033,
+        0.0029682156164199114
+      ],
+      "mean_lambda": 1.0,
+      "parameters": 70477
+    }
+  }
+}

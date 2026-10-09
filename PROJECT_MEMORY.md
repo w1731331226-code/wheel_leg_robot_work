@@ -4,6 +4,13 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第323轮首次主预资格队列已真实运行并按design门停止exit1，不能称三seed qualified。M_ref3/U_ref6 seeds32031/32032四run各200k/400epochs/8000Adam/8M实际capture-worldsteps完成，约107.13/107.17/109.92/109.06s含构建；M_ref3 seed32033在171700samples触发active-1p4-v1设计关节违例，U_ref6 seed32033未启动。实际消耗971700samples，已完成4run direct32M加partial推算6.868M（failure handler未保存末capturecounter，不能把推算说成直接计数）；main constructor80FD。
+- 失败是stage3 world32/seed23302032，冻结trainingbank scenario逐值一致，h=.115m/mass7.49303kg/speed−.936409/左0右.019015m混合地形/delay8.5ms。physical_safety=True/geometric_margin=True/机械joint margin .0963578rad，但active design margin −.00364217758rad，即max|activeq|推算1.40364218rad、越1.4界约.2086814deg；base_infeasible_steps234。case reason completed不等于design达标，不放宽门或认定单一原因。
+- 48实际checkpoint模型/Adam/RMS独立读取过：四run每20k至200k加失败run至160k，RMS countstep+100.0001，epochs/Adam数/finite/hash/标签核；失败interrupted model171700samples/340epochs/6800Adam、RMS count171800.0001，模型Adam/RMS/RNG/world/history/411episode留档。只有1个design违例。interrupted q是autoreset后现场，terminal stopped_q/peak关节身份未归档，不能用该q确定峰值关节或唯一动力学原因；原源码/hash与失败证据保留。
+- 本轮beforelaunch完成两个100world/64Gaussian每world+zero共13000startup静态control query、35FD/0physicsgraph/0learning，zero功能与Nom world相同，初始delta legRMS约.11855… .12212Nm、wheel约.002967Nm、lambda均1，实际cov/embedding/filter独立重算。只first.5ms/seed32031 stage1，不allseed/stage/40steps/fullrollout探索匹配；无effect调std。复核first期望误用float32 clip，按实际convert升float64修期望，容差不改、失败记录保；缺admission的提前入口被拒、0learning日志保，然后正确源锁定启动唯一主attempt。
+- 新fixed末模型evaluation队列代码与90batch/1476episode selfcheck就绪，但因main未完整且design门失败，未准/未跑science。主fixed candidate budget当前停止，不resume、不换seed、不调reward/gain/放宽设计门，不用四完成run做成功声明。324只现有failure/必要几何与动力学约束核，325五轮direction review/冗余清理决定新的可证伪补实验是否值得，formal5/freshOOD/消融/统计/稿等完整论文目标仍active。
+- 本轮无视频生成/提交，数据和失败保留；remote仍6814e842未全同步，原HTTP408不重试求同步。收尾中文提交并恢复守护。
+
 - 第322轮实际100world轻记录GPU资格完成exit0：M_ref3/U_ref6各5000策略样本、一次50step rollout/10epochs/200Adam，总10000engineering样本。policyCUDA/physicsCUDA、初始Nom world/features/value逐pair同、权重更新/Adam/RMS保存重载exact/count5100.0001。实际1377capture/2669400graphworldsteps、45FD；仅工程，不主六run预算或科学选择。
 - 两arm各观察2个真实terminal事件，counter工程加速19900/99900但物理时钟/episode终止不改；world24从stage1→2、world34从stage1→3，仅done切换、缓存param/q0/reference相符、requested/effective/filter/latch/private与481history/collector reset核过。不是全100world终态覆盖或同world2→3证据；4episode physical/design全部过。
 - 旧4000工程models经新冻结evaluator各5原开发case，共10episode/各5physicaldesign过，完整dense/reference/actor/raw保持；独立review重算3716raw481→normalized481→deterministicaction，最大GPU分批误差4.47035e-8，初始pair/实际Adam/RMS/source核。只接口工程，不科学收益或选择短模型。

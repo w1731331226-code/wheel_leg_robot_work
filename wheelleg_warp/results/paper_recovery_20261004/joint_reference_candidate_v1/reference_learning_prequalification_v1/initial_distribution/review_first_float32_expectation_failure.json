@@ -1,0 +1,6 @@
+{
+  "error": "NumPy float32 clip fixture was compared with actual float64 reference/motor filter",
+  "max_difference": 2.23517418e-10,
+  "correction": "promote canonical float32 requests to float64 before clipping,matching actual convert kernel; keep tolerance1e-12",
+  "new_physics_or_learning": 0
+}

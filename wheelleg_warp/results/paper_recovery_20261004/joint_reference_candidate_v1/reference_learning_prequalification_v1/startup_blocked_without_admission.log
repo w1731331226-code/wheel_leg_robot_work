@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/train_reference_prequalification.py", line 100, in <module>
+    if __name__=='__main__':run()
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/train_reference_prequalification.py", line 40, in run
+    p=verify();directory=OUT/'training';directory.mkdir(exist_ok=False)
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/train_reference_prequalification.py", line 31, in verify
+    admit=json.loads((OUT/'main_source_admission.json').read_text())
+  File "/usr/lib/python3.10/pathlib.py", line 1134, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+  File "/usr/lib/python3.10/pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+FileNotFoundError: [Errno 2] No such file or directory: '/home/wmt/wheel_leg_robot_work/wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_learning_prequalification_v1/main_source_admission.json'

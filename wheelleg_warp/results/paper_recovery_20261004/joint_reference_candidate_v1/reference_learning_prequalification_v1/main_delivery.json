@@ -1,0 +1,20 @@
+{
+  "round": 323,
+  "status": "registered_main_attempt_stopped_design_gate_failed",
+  "qualification_passed": false,
+  "source_sha256": {
+    "wheelleg_warp/admit_reference_main_source.py": "f2ec4f17fbd9ec9ce75787ac67c4b795de4229300031da2bdf6eff91471ce02a",
+    "wheelleg_warp/evaluate_reference_prequalification.py": "0d75771ce702e0e5f75e6c410a856dfaa1bbd11b00823b3a8c55048b3da1a792",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_learning_prequalification_v1/main_source_admission.json": "470ba8b6a4af5ce67d3428d5e8e12b2af373118ced8c6ffc12e29df5f6e85082",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_learning_prequalification_v1/initial_distribution/proposal.json": "2768ebd2db58a6711556c38d1d6c94d1a491d18d881fd7dacb92c75d62a7e618",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_learning_prequalification_v1/initial_distribution/completion.json": "ba327b75d1fce99625b1cfcb400f6621f16c96d834e4f9d13d938637f1503f0a",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_learning_prequalification_v1/initial_distribution/review.json": "c07c77e15a319f901673c4267aa315512687db8219b6d3b02cccfdbba22c29ca",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_learning_prequalification_v1/training_failure_review.json": "ca01ff002a6b8162d1f9df4f9bbbb36c6d9936b60c7bbd62b2e911c3c74744d6",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_learning_prequalification_v1/evaluator_schedule_unit.log": "7f70d538a15eaddcb8c7bdca5447f4a9df3837e5ada77d422c1b0c8b7b004f75"
+  },
+  "consumed_policy_samples": 971700,
+  "checkpoint_models_independently_read": 48,
+  "science_evaluations": 0,
+  "formal5_admitted": false,
+  "next": "324 existing failure/constraint audit;325direction review andcleanup;no implicit resume"
+}
