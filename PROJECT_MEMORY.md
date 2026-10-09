@@ -4,6 +4,7 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-10，目标active）
 
+- 第336轮收尾追加actualmain状态：全200k verified已完成['D3_33531', 'V6_33532', 'V6_33531', 'D3_33532']，当前checkpoint进度[{'name': 'D3_33533', 'last_saved_samples': 180000}]；pid94214/unified16113确认live，未global completion/failure。本条仅运行状态，不科学评估；337继续同进程。
 - 第336轮续唯一baseline pid47985/unified31424至terminal exit0，492/30jobs完整，0重启/重跑；actual8,602,440graphworldsteps/7,276,949firstepisode、155FD、1182.5434s含construction/fullrecord/compress，不PPOcost。三baseline全部physical/design492，guard_B0 regular96/96 controlled32/40 legacy28/28；guard_B1route regular95/96 ctl32/40 legacy28/28；withdraw同95/32/28。controlled J分别1.06373716/.82485252/.87053849deg，主成功≥34与15%+.05deg非ceiling/效应不可达。
 - 独立receiver聚集orderedindices每panel/task flags/sha/J等准入True；CPU28scenario子集逐值同，currentguardB0 success/velocity<=1.05old+.005/arrival<=1.05old+.05/rollpitchpeak<=old+.1deg全部pass。CPU_legacy_pair保原fileSHA/28数值；不是trajectory bitexact/基线替代。review baseline hardgate新增CPU_pair SHA与passed避免仅28成功标签放行。
 - 独立重读492完整dense pre/post连续qv、actual1.4margin、issuedguardctrl/preqv、QP/capacity、rawcontact counts/meta/SHAs，7,276,949firstphyssteps逐row覆盖，baseline_raw_review保492原始SHA。threebaseline Nom/residualguard干预均0，minactualmargin .00380/.00391/.00386rad；不能从baseline正margin写全state guarantee。此前modelerror/encoder理想/guard露FP边界的已知限制不因GateTrue改变。
