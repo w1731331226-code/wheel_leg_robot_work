@@ -1,0 +1,46 @@
+{
+  "round": 310,
+  "status": "algebra_only_registered",
+  "question": "Can a baseline-zero-preserving correction coordinate respect moving length-domain constraints and a declared correctionrate? Check feasibility before designing controller.",
+  "hypothesis": "Interior additive correction may avoid theblend gain1-|a|,but projection can changeexecuted correction andmoving bounds may make rate andgeometry constraints incompatible. No fixedfeedback revival ornovelty assumption.",
+  "examples": [
+    {
+      "D": 0.035,
+      "baseline_before": -0.01,
+      "baseline_after": 0.01,
+      "previous_correction": 0.035,
+      "requested_correction_step_cap": 0.00035,
+      "old_feasible_correction_interval": [
+        -0.025,
+        0.045000000000000005
+      ],
+      "new_feasible_correction_interval": [
+        -0.045000000000000005,
+        0.025
+      ],
+      "rate_interval": [
+        0.03465,
+        0.035350000000000006
+      ],
+      "intersection": [
+        0.03465,
+        0.025
+      ],
+      "infeasible": true
+    }
+  ],
+  "source_semantics_sha256": "eee9beb5254c7a676f7419f923e64416abc23d69d36de55ff882b2200efe2504",
+  "allowed_work": "311pure interval algebra/zero-baseline/position-rate compatibility andboundedmapping comparisons;312independentreview. Stop if no distinct testableproperty remains;no rollout/source rewrite/PPO fromthisdiagnostic.",
+  "forbidden": [
+    "Fit newrate/gain fromsixlostcases",
+    "Clip entirebaseline reference underclaim ofzero-controller identity",
+    "Guarantee nonemptyposition-rate intersection withoutproof",
+    "Use privatecontact/gain truth aspolicyinputs",
+    "Reopen fixedcenter/lower",
+    "Treat ordinaryprojection/rate limiter asnovel"
+  ],
+  "new_physics_budget": 0,
+  "new_controller_query_budget": 0,
+  "new_training_budget": 0,
+  "formal_PPO_admitted": false
+}

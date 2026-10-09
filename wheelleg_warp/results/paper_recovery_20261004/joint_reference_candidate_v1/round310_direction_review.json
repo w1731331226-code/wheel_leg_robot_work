@@ -1,0 +1,73 @@
+{
+  "round": 310,
+  "verified": true,
+  "reviewed_rounds": [
+    306,
+    307,
+    308,
+    309,
+    310
+  ],
+  "evidence_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/nonzero_reference_mechanism_v1/completion.json": "11e57d28a41610683c3749176442226ea1100644ae2670f6d157c5e3c86263ed",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/nonzero_reference_mechanism_v1/review.json": "a84ec68416b8871b441eb663618d6a6b9402cd6d1ec788e89ca688aa28433dda",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/nonzero_reference_mechanism_v1/lost_case_audit.json": "97e3753c43b3c68251c7b8c1fcfeacda3be6adc930c95d26ebe3a5dc6009a111",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/nonzero_reference_mechanism_v1/action_semantics_audit.json": "eee9beb5254c7a676f7419f923e64416abc23d69d36de55ff882b2200efe2504"
+  },
+  "real_progress": "200realepisodes/independent840streams+74418actions/lostcase andmapping semantics; no taskutility fromclosedfixedfeedback.",
+  "direction_decision": "Close fixedreference feedback gain/rate rescue anddo nottrainPPO. Only one finitealgebra feasibility question for correctioncoordinates isworth resolving; cannot substitute thisengineering question forpapercontribution.",
+  "methodology_assessment": "Frozen matchedsame-interface yaw control,retainedallnegative evidence andposthoc diagnosis boundaries were appropriate. Repeated controllercoordinate tweaks withoutdistinguishable property wouldbe wasted work.",
+  "supplementary_experiments_needed": "No new physicalexperiment admitted now. Newmethod must firststate distincttestableclaim,nonemptyfeasible conditions,strong sameinfo fullreference/analytic controls andbenefit gate; formal3/5 andfreshOOD remainpending.",
+  "position_rate_counterexample": {
+    "D": 0.035,
+    "baseline_before": -0.01,
+    "baseline_after": 0.01,
+    "previous_correction": 0.035,
+    "requested_correction_step_cap": 0.00035,
+    "old_feasible_correction_interval": [
+      -0.025,
+      0.045000000000000005
+    ],
+    "new_feasible_correction_interval": [
+      -0.045000000000000005,
+      0.025
+    ],
+    "rate_interval": [
+      0.03465,
+      0.035350000000000006
+    ],
+    "intersection": [
+      0.03465,
+      0.025
+    ],
+    "infeasible": true
+  },
+  "next_algebra_proposal": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reference_correction_feasibility_v1/proposal.json",
+  "next_algebra_sha256": "014c3cbd8406db34a9dd10f847fea796068e28718cab62e0e82fdbded081a6d9",
+  "paper_missing": [
+    "Qualified contribution",
+    "Stronglearned fullreference comparators/ablations",
+    "New3thenformal5",
+    "FreshID/OOD andretention",
+    "Hierarchicalstatistics/actualPPOcost",
+    "Reproducible manuscript"
+  ],
+  "cleanup": {
+    "round": 310,
+    "path": "wheelleg_warp/__pycache__/query_nominal_compatibility.cpython-310.pyc",
+    "bytes": 7364,
+    "sha256": "194a4533fa27e6b64752935602dc7faf93bd1425c0878d8e1e82181780b4eeb6",
+    "source_sha256": "30d33d7d816a3e202f8e8fc778d562f11b5ed98ed8d9ebb677f301b7dc81bd49",
+    "ignored": true,
+    "untracked": true,
+    "unheld": true,
+    "code_object_equal": true,
+    "reason": "Closed staticnominal commandcompatibility cache;not currentworker/uploader dependency. Preserve source,oldraw/solverfailures/models/CPU-GPU evidence.",
+    "deleted": true
+  },
+  "goal_complete": false,
+  "new_physics_steps": 0,
+  "new_training_samples": 0,
+  "formal_PPO_admitted": false,
+  "next": "311boundedalgebra/312independent go-no-go;315nextdeepreview/cleanup;notrate-tuning oroldfeedbackPPO."
+}

@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第310轮五轮方向深审、有限位置-rate问题与清理（2026-10-09）：
+
+306—309获得真实200、完整source/raw/实际动作独立审查、lostcase和混合/有限差分证据，方法适当、负结果保留。但两固定reference family utility失败，无新颖方法/稳定性/学习优势证据；继续调gain/filter速度、更多zero/sourceaudit或盲PPO不值得。五轮review不把工程安全及数据量当核心论文出口。
+
+仅登记reference_correction_feasibility_v1纯代数问题：位置合法e=d−d0∈[-D−d0,D−d0]是移动区间，和e_prev±rate_step可能无交集。D=.035,d0从−.01变+.01、原e_prev=.035合法，新position上界.025而rate下界.03465，二者不兼容。反例没有d0动态界，不能当实际0.5ms可达contact状态；它拒绝“直接给物理修正限速就同时保证rate/geometry”的未经证明推论。给整个target限速会潜在改变zero原baseline，不能暗称no-op identity。
+
+311只interval/zero/移动约束可行条件及有限mapping代数，312独立去留；若剩余性质仅普通projection/rate限定且无区别机制则关闭，不无限参数化。新physics/controllerquery/training预算0，正式PPO不准；贡献/强同信息fullreference+消融/新3→5/freshID-OOD保持/层级stats真实训练成本/稿仍缺，goal active。315下一深审清理。
+
+按约删closed static helper query_nominal_compatibility.pyc7364B，ignored/untracked/unheld及code匹配源码，SHA与删除验收保round310_cleanup；科学source/模型/RMS/raw/失败/CPU-GPU保留。firstauxcommit传输修复进程live并持锁，不改科学记录或主历史，remote未全同步，video不上传持续。
+
 第309轮动作混合语义与时序边界（2026-10-09）：
 
 原signedspan mapping代数等价d=(1−|a|)d0+D*a：zero保基线，非zero将当前基补偿与signedendpoint混合，固定a/D时d对d0斜率为1−|a|，不只是固定物理加量。80保存轨迹与882端点格核过；有限差分Delta_d=(1−|a_t|)Delta_d0+D_prevDelta_a−d0_prevDelta_|a|+a_tDelta_D亦一致。恒normalizeda=.5而d0从−.01到+.01可使physicald变.01m；所以每substep±.01 normalizedslew本身不是物理参考rate界或动态证书。

@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第310轮五轮深审完成：306真实200/307独立完整raw+74418请求/308六lost/309全80混合有限差分证据有效，但固定reference反馈净负utility、普通reference映射无新颖性/稳定性/学习优势资格。center/lower增益/滤波速率救门、repeatability/debug/更多zero、blindPPO关闭，不以安全工程数据缩小核心论文目标或伪称完成。原五轮失败/负结果与所有raw保。
+- 第310轮仅值得有限代数reference_correction_feasibility_v1：e=d−d0的可行区间[-D−d0,D−d0]随baseline变化，与e_prev±rate_step不保证有交集。D=.035,d0−.01→+.01,e_prev=.035原合法，新geometry要求e<=.025而rateinterval[.03465,.03535]，交集空；这是未声明d0动态界下的代数反例，不证明实际0.5ms该跳变可达。不准以全target限速改变a0原baseline或声称只filter correction就率/几何都保证。
+- 311仅pure interval/zero identity/位置-rate条件及boundedmapping对比，312独立有限去留，若无distinct可证伪性质则停该问题，不无穷重参数化。新controllerquery/physics/training预算全0，未准PPO；完整贡献/fullsameinfo+消融/new3→5/freshID-OOD/层级stats实际PPOcost/稿六出口缺，goal active。315下一方向深审清理。
+- 第310轮删query_nominal_compatibility.pyc7364B，ignored/untracked/fuser无持有、marshalcode与srccompile exact，SHA/源/删除核保round310_cleanup；旧source/raw/solver失败/模型与CPU-GPU全保，可再生不永久省空间。round310_direction_review绑定五轮证据/反例/新纯代数协议。uploadfirst同git61733本轮仍live、percommand postbuffer传原auxcommit且flock防重复daemonpush，remote未全同步，no video。
+
 - 第309轮动作语义与有限差分核：全部80已有reference轨迹d=(1−|a|)d0+D*a逐值重算过，等价原signedspan映射，882端点格代数过；固定a/D时原补偿斜率1−|a|，非恒定物理补量。Delta_d=(1−|a_t|)Delta_d0+D_prevDelta_a−d0_prevDelta_|a|+a_tDelta_D亦全部过。恒a=.5、d0 −.01→+.01时d仍变化.01m，证明normalizedslew不是独立physicalreference rate证书；不改物理/任务门。
 - 第309轮六firstyaw上下文：3例（center6301021/31、lower6301027）当前public请求与d0同号但filteredad反号，targetgap约.548/.545/.429，firstcross位于新hold周期2/10/1ms；另外2例当前request也反向、2filteredad同号（分类可交叠，不总和伪计）。全80saved请求/filtered/物理d/m步幅统计与sourceSHA保action_semantics_audit，支持双时间尺度竞争可检假设，不是唯一接触原因/稳定性/新算法proof。0newquery/physics/learning，closed center/lower维持。
 - 310五轮深审清理必须据五轮数据决定新动作语义问题是否值得有限推导/对照，不refit旧反馈或autoPPO，六论文出口缺/goal active。本轮uploadhelper11251已terminal：first744MB push失败RPC curl56/ioctl2/无法rewind。旧main/auxcommit和数据保，不重启整个helper；确认remote无auxref后，仅同firstcommit以per-command http.postBuffer800MiB/HTTP1.1重传，session47875/git61733本轮确认live、flock排他防daemon重复上传。无video，remote仍未全同步，待具体terminal再沿objects状态处理后续批次，不重写main历史。
