@@ -29,12 +29,16 @@ def run():
     complete=all(r['summary']['complete'] for r in controlled);j=min(r['summary']['mean_yaw_score_deg'] for r in controlled) if complete else None
     physical=all(r['physical']==r['design']==r['episodes'] for r in panels.values())
     legacy=panels['guard_B0','legacy']['summary']['success_count']==28
+    cpu_pair=json.loads((OUT/'CPU_legacy_pair.json').read_text())
+    assert cpu_pair['verified_pairs'] and cpu_pair['proposal_sha256']==sha(OUT/'proposal.json')
+    legacy=legacy and cpu_pair['passed']
     attainable=complete and j is not None and j>=.05
     passed=physical and legacy and attainable
     atomic_json(OUT/'baseline_gate.json',dict(round=335,passed=passed,proposal_sha256=sha(OUT/'proposal.json'),completion_sha256=sha(OUT/'baseline/completion.json'),
         all_current_physical_design=physical,guard_B0_legacy28_retained=legacy,primary_absolute005_attainable=attainable,best_current_controlled_J_deg=j,
+        CPU_legacy_pair_sha256=sha(OUT/'CPU_legacy_pair.json'),
         controlled_success_target=max(34,max(r['summary']['success_count'] for r in controlled)),panels={f'{label}/{panel}':r for (label,panel),r in panels.items()},input_sha256=inputs,
-        new_learning_admitted=False,formal5_admitted=False,limits='source/results/task flags received;raw dense independentreview/main source lock stillneeded. CPU28retention reference check notfullnumeric trajectory pair.'))
+        new_learning_admitted=False,formal5_admitted=False,limits='source/results/task flags andCPU28 numericalcapability tolerance received;raw dense independentreview/main source lock stillneeded,nottrajectory bitidentity.'))
     print('BASELINE335 received492;gate',passed,'controlledJ',j,'controlledcounts',[r['summary']['success_count'] for r in controlled])
 
 

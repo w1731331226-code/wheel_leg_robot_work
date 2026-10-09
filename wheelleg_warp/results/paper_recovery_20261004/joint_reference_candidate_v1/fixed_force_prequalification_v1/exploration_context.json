@@ -1,0 +1,159 @@
+{
+  "round": 336,
+  "verified": true,
+  "records": {
+    "D3": {
+      "actual_control_substeps": 164268,
+      "accepted_residual_command_RMS_Nm": [
+        0.057046241753647524,
+        0.05794936223697121,
+        0.05699820768212055,
+        0.05797163057889126,
+        0.04750905383097804,
+        0.04750905383765134
+      ],
+      "accepted_residual_command_covariance_Nm2": [
+        [
+          0.0032533908144501203,
+          0.0010191223526930203,
+          -0.003248617020024335,
+          -0.001023371907220815,
+          -5.5930455669045277e-05,
+          5.593045934963082e-05
+        ],
+        [
+          0.0010191223526930203,
+          0.0033571352804462524,
+          -0.0010218102157707476,
+          -0.0033566870974410866,
+          0.0001464862607381615,
+          -0.00014648625930105804
+        ],
+        [
+          -0.003248617020024335,
+          -0.0010218102157707476,
+          0.0032478963883784853,
+          0.001024048372728344,
+          5.72763517648687e-05,
+          -5.7276355576334475e-05
+        ],
+        [
+          -0.001023371907220815,
+          -0.0033566870974410866,
+          0.001024048372728344,
+          0.0033597128956206917,
+          -0.00014672377727262414,
+          0.0001467237756360354
+        ],
+        [
+          -5.5930455669045277e-05,
+          0.0001464862607381615,
+          5.72763517648687e-05,
+          -0.00014672377727262414,
+          0.0022570896799438242,
+          -0.002257089680255922
+        ],
+        [
+          5.593045934963082e-05,
+          -0.00014648625930105804,
+          -5.7276355576334475e-05,
+          0.0001467237756360354,
+          -0.002257089680255922,
+          0.002257089680568084
+        ]
+      ],
+      "raw_sha256": {
+        "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_pressure_v1/guarded_D3/joint_guard_32900000.npz": "a651b88fed030c92fa4b9318550cd128ca4388f5e0aa4b5051de65d3c37299e8",
+        "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_pressure_v1/guarded_D3/joint_guard_32900001.npz": "d1ca01f712d70210e3d64f9e014f2ef1a61bc9d03888b5a8f073e374ddc4a257",
+        "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_pressure_v1/guarded_D3/joint_guard_32900002.npz": "24fa31bf43ef1853e4362cab5235dc39996c675ae3234d2350c5fe262b41db8c",
+        "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_pressure_v1/guarded_D3/joint_guard_32900003.npz": "1d19996b9ba58dd27ce5ccf383426eb47e5774bb70f69cb117a22a8c651048c0",
+        "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_pressure_v1/guarded_D3/joint_guard_32900004.npz": "788e33fd8f03d0a0e4eb9e454956e6fb9705a64bd8f422a79b77f7a6fed2c464",
+        "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_pressure_v1/guarded_D3/joint_guard_32900005.npz": "07fa27997d0790c3c87d02ca44c9f5561a84ad3555d0857b4bd51766fb1b247c",
+        "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_pressure_v1/guarded_D3/joint_guard_32900006.npz": "084a7f1d68704f7dcf74f187aa1f50d5fa78ae891cd0e6eb2289954f6c2bf0fe",
+        "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_pressure_v1/guarded_D3/joint_guard_32900007.npz": "e10199585c5e5ce821f3176855f8189f3e582f5b909966afdde508801e982e8e",
+        "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_pressure_v1/guarded_D3/joint_guard_32900008.npz": "154f50eb7cfd272af9c561e04b4bb31114aa6d6adfb3017f09271d94b935fc73",
+        "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_pressure_v1/guarded_D3/joint_guard_32900009.npz": "09ac45619af9b12336e12e9f0a9d0ef16bd9a9268bfd2feacc9d4bd2a32c445b",
+        "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_pressure_v1/guarded_D3/joint_guard_32900010.npz": "02031d7d39a009add209c24ba67266a65acc7c6738b6b9b9a8161c2e9d2cd142",
+        "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_pressure_v1/guarded_D3/joint_guard_32900011.npz": "f21ec66e62bfd5835adb0696f776f19f02c7a1e2501d85049463b5db3e141de9"
+      }
+    },
+    "V6": {
+      "actual_control_substeps": 164313,
+      "accepted_residual_command_RMS_Nm": [
+        0.05785442500179906,
+        0.055791345102292486,
+        0.05712967544641915,
+        0.057634160100484534,
+        0.04703324848178559,
+        0.0470651888250178
+      ],
+      "accepted_residual_command_covariance_Nm2": [
+        [
+          0.0033471529502158534,
+          0.001016306490821296,
+          1.4425445507092194e-05,
+          1.9341770406947367e-05,
+          -0.0001081799864172009,
+          -5.9131004791982175e-06
+        ],
+        [
+          0.001016306490821296,
+          0.003109058328971523,
+          3.930750491955893e-05,
+          4.264227508401928e-05,
+          -5.986736215615614e-05,
+          2.418311791955619e-05
+        ],
+        [
+          1.4425445507092194e-05,
+          3.930750491955893e-05,
+          0.0032637728469900613,
+          0.001026156725980909,
+          5.108742136158599e-05,
+          -8.038870949566008e-05
+        ],
+        [
+          1.9341770406947367e-05,
+          4.264227508401928e-05,
+          0.001026156725980909,
+          0.0033209645983737776,
+          9.097145412869893e-05,
+          -0.00013159283806976662
+        ],
+        [
+          -0.0001081799864172009,
+          -5.986736215615614e-05,
+          5.108742136158599e-05,
+          9.097145412869893e-05,
+          0.002211807226283946,
+          5.662651370755048e-05
+        ],
+        [
+          -5.9131004791982175e-06,
+          2.418311791955619e-05,
+          -8.038870949566008e-05,
+          -0.00013159283806976662,
+          5.662651370755048e-05,
+          0.0022151169261601534
+        ]
+      ],
+      "raw_sha256": {
+        "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_pressure_v1/guarded_V6/joint_guard_32900000.npz": "bf0dfd3d138f9bdb95ee29377a69c0753e4f3cbc757ffa754cdaab938494eb27",
+        "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_pressure_v1/guarded_V6/joint_guard_32900001.npz": "f22f06fe21aeac294a9b664a1782a23cdc9787a96802b426e14905c7b39be0a2",
+        "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_pressure_v1/guarded_V6/joint_guard_32900002.npz": "f48dd297c826e8e7646d9764c82358774981de7375098dfd33265fb5e894058c",
+        "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_pressure_v1/guarded_V6/joint_guard_32900003.npz": "0a4d6367b96f0ae593b5207ea84138a8734255598ee9a0a475bd49bc56a223ab",
+        "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_pressure_v1/guarded_V6/joint_guard_32900004.npz": "c2eca33fa3a64276cff3de67b38390fcda641d74192593107431bd959ede2159",
+        "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_pressure_v1/guarded_V6/joint_guard_32900005.npz": "3639941dde85b5fe07c7577b3e1d0e2d30bfe74783df927527e3beecc2892be9",
+        "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_pressure_v1/guarded_V6/joint_guard_32900006.npz": "3af6d42711760536b7737f1359326ca285ca3dca8c7930503ebdbbec15569a16",
+        "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_pressure_v1/guarded_V6/joint_guard_32900007.npz": "687eb8d237fa5e1116cbb3d21ae934153f3ab25016e37c3ba43f47e4a81d7d7c",
+        "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_pressure_v1/guarded_V6/joint_guard_32900008.npz": "35be9312317a334afc0a2cb57c46a667a8c950ee04af1d88607846c6f3eb03e1",
+        "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_pressure_v1/guarded_V6/joint_guard_32900009.npz": "a41894e58a9a262741b7d3951e3bbc0ad57858cfad93a0ab7268b8a139674efb",
+        "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_pressure_v1/guarded_V6/joint_guard_32900010.npz": "69ab2b8d44a3240596097d0708195e12edaee71811669ba000fe928315491395",
+        "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/joint_guard_pressure_v1/guarded_V6/joint_guard_32900011.npz": "d00eeae77b1ea95d4658f61e7cf5e623a3241f8fb076c945c47a3f75ad5e0245"
+      }
+    }
+  },
+  "scope": "real issued-minus-current correctedNom command in12priorpressuretrajectories,nottruegroundforce/policyinitialdistribution atidenticalstates;trajectories/cov/λ differences areexplicit parameterizationeffects,notexactmatching",
+  "matched_physical_exploration": false,
+  "source_review_sha256": "693810783437daac99d560ff8e2d6b59d6d1f0505e8ab4d29731fd4c9cea4b84"
+}

@@ -1,5 +1,16 @@
 # 双轮腿机器人PPO论文方案
 
+第336轮经典基线492完整接收与NEW固定预算学习启动（2026-10-10）：
+
+唯一baseline完成exit0，8,602,440actualgraph/7,276,949firstepisode、155FD、1182.54s构建/物理/完整记录压缩，非PPO计时。三当前sharedguard经典全部phys/design合格，controlled32/40各，regular B096/B1原95/withdraw95，legacy三者28。最佳controlled J .82485252deg，主≥34/15%+.05deg可达检查过；base不削弱，不把不满分当系统必然不可达。
+
+CPUlegacy28同scenario/0.3target、成功及预设velocity/arrival/rollpitch容差逐数通过，非bitwise trajectory。492raw pre/postqv与contacts/meta/actualjoint/issuedctrl/guard预测和capacity独立核；source、orderedpanel/taskeval、rawSHA与CPUpair锁定。Model数学有效性/理想sensor范围/FP薄margin已知限制仍在，baseline公有Nom/actorinfo不变，无声明实机安全/新CBF理论。
+
+335科学协议fresh33531/2/3×D3/V6×200k/100GPU、全1.2M/source/bodyfeature-value/world成对相同，在baseline_gate与independent raw接受后source_admission已准。实际主worker启动唯一pid94214/unified16113，本轮D3_33531全200k完成、V6同seed进行；只final200k后固定评估，0science scores/intermediate selection。337续同进程，无隐式restart/seedreplacement/gain-reward-filter救门。984learned finaleval后才能判methodadvantage，formal5/OOD/消融/statistics/manuscript六出口仍缺，goalactive。
+
+本轮归档completed492raw、保护旧CPU/GPU/所有失败/source/model，运行中main raw不暂存，snapshot仅归档。无video，remote仍未齐，340下一五轮深审清理。
+
+
 第335轮深审清理与NEWforce科学协议预登记（2026-10-10，基线先行）：
 
 331—334真实学习/归档/100runtime/counter证据足以仅支持一次可证伪newguardedfixedNom D3/V6问题，不支持论文优势/安全定理/guard新颖性。理想innermeasurement/未知modelerror/FP贴界实证明确。fresh33531/2/3×2arm×200k=1.2M、100world、固定PPO/std/guard/物理/严格1.4；旧bankphysical参数按newseed映射复用，非新训练域，无shortwarmstart或旧reference变体改名。

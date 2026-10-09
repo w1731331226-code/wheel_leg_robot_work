@@ -1,0 +1,463 @@
+{
+  "round": 336,
+  "verified_pairs": true,
+  "passed": true,
+  "CPU_baseline_sha256": "bb5ed0f2ba65ee93d2a411d0236a9b04340c0966d68da2858d5e1ce65a7e3ff8",
+  "proposal_sha256": "18d753cab57ed63703e29008ce461731e5713c37aa1320ddaeb7466a44813563",
+  "input_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/baseline/guard_B0/legacy/0/result.json": "ad464db1a2ef98627159b437d29e5b9c998a6d92cbc1872a03423e8207ba8c52",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/baseline/guard_B0/legacy/1/result.json": "3e565f51b16a1940f0aadcc3c546b08749e73b951469315bc010ae4d19ee008c",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/baseline/guard_B0/legacy/2/result.json": "ce375a35a49e04cffb14426031a22f7beb6a331b5d1bcd9e527952cdf4d8e40d"
+  },
+  "records": [
+    {
+      "case": "nominal_-1.0",
+      "checks": {
+        "success": true,
+        "velocity": true,
+        "arrival": true,
+        "roll": true,
+        "pitch": true
+      },
+      "old_velocity": 0.12826822961978582,
+      "new_velocity": 0.12875543892539706,
+      "old_arrival": 4.503500000000224,
+      "new_arrival": 4.505,
+      "roll_delta": 7.797956379207452e-06,
+      "pitch_delta": 0.002688985146743761
+    },
+    {
+      "case": "nominal_-0.5",
+      "checks": {
+        "success": true,
+        "velocity": true,
+        "arrival": true,
+        "roll": true,
+        "pitch": true
+      },
+      "old_velocity": 0.04816368881020457,
+      "new_velocity": 0.04835201517897543,
+      "old_arrival": 7.2444999999987045,
+      "new_arrival": 7.246,
+      "roll_delta": 1.076787878251173e-05,
+      "pitch_delta": -0.007128949205958218
+    },
+    {
+      "case": "nominal_0.5",
+      "checks": {
+        "success": true,
+        "velocity": true,
+        "arrival": true,
+        "roll": true,
+        "pitch": true
+      },
+      "old_velocity": 0.04816942865892746,
+      "new_velocity": 0.04835802588477834,
+      "old_arrival": 7.2444999999987045,
+      "new_arrival": 7.246,
+      "roll_delta": 1.1229522620253965e-05,
+      "pitch_delta": 0.00319163565834904
+    },
+    {
+      "case": "nominal_1.0",
+      "checks": {
+        "success": true,
+        "velocity": true,
+        "arrival": true,
+        "roll": true,
+        "pitch": true
+      },
+      "old_velocity": 0.12830083455308386,
+      "new_velocity": 0.12878941778688338,
+      "old_arrival": 4.503500000000224,
+      "new_arrival": 4.505,
+      "roll_delta": 5.4597462511167505e-06,
+      "pitch_delta": -0.0157636694681762
+    },
+    {
+      "case": "symmetric_-1.0",
+      "checks": {
+        "success": true,
+        "velocity": true,
+        "arrival": true,
+        "roll": true,
+        "pitch": true
+      },
+      "old_velocity": 0.1292855346881777,
+      "new_velocity": 0.12975769397232564,
+      "old_arrival": 4.527000000000211,
+      "new_arrival": 4.5285,
+      "roll_delta": 0.00043150379793407024,
+      "pitch_delta": 0.0026623687354099257
+    },
+    {
+      "case": "symmetric_1.0",
+      "checks": {
+        "success": true,
+        "velocity": true,
+        "arrival": true,
+        "roll": true,
+        "pitch": true
+      },
+      "old_velocity": 0.12918686324843057,
+      "new_velocity": 0.129700565692377,
+      "old_arrival": 4.526000000000211,
+      "new_arrival": 4.5280000000000005,
+      "roll_delta": 0.0027785201367105557,
+      "pitch_delta": -0.015856214043078243
+    },
+    {
+      "case": "legacy_bump_-1.0_l_0.01",
+      "checks": {
+        "success": true,
+        "velocity": true,
+        "arrival": true,
+        "roll": true,
+        "pitch": true
+      },
+      "old_velocity": 0.1282643278905094,
+      "new_velocity": 0.12875807542064616,
+      "old_arrival": 4.511500000000219,
+      "new_arrival": 4.5125,
+      "roll_delta": -1.7528009367051567e-05,
+      "pitch_delta": 0.00015705294908618939
+    },
+    {
+      "case": "legacy_bump_-1.0_l_0.015",
+      "checks": {
+        "success": true,
+        "velocity": true,
+        "arrival": true,
+        "roll": true,
+        "pitch": true
+      },
+      "old_velocity": 0.12848271973089312,
+      "new_velocity": 0.12896409644689463,
+      "old_arrival": 4.515500000000217,
+      "new_arrival": 4.517,
+      "roll_delta": -1.6431870468180954e-05,
+      "pitch_delta": 0.023764347051726586
+    },
+    {
+      "case": "legacy_bump_-1.0_r_0.01",
+      "checks": {
+        "success": true,
+        "velocity": true,
+        "arrival": true,
+        "roll": true,
+        "pitch": true
+      },
+      "old_velocity": 0.12826432673492663,
+      "new_velocity": 0.12875801095048545,
+      "old_arrival": 4.511500000000219,
+      "new_arrival": 4.5125,
+      "roll_delta": -0.00023350264978649893,
+      "pitch_delta": 0.0001556511628930668
+    },
+    {
+      "case": "legacy_bump_-1.0_r_0.015",
+      "checks": {
+        "success": true,
+        "velocity": true,
+        "arrival": true,
+        "roll": true,
+        "pitch": true
+      },
+      "old_velocity": 0.1284823409008416,
+      "new_velocity": 0.12896387882132188,
+      "old_arrival": 4.515500000000217,
+      "new_arrival": 4.517,
+      "roll_delta": -0.00027760342349691935,
+      "pitch_delta": 0.02376245814500222
+    },
+    {
+      "case": "legacy_bump_1.0_l_0.01",
+      "checks": {
+        "success": true,
+        "velocity": true,
+        "arrival": true,
+        "roll": true,
+        "pitch": true
+      },
+      "old_velocity": 0.12829327947295524,
+      "new_velocity": 0.12877934049037695,
+      "old_arrival": 4.5110000000002195,
+      "new_arrival": 4.5125,
+      "roll_delta": -0.00014911497513780958,
+      "pitch_delta": -0.012161121908482952
+    },
+    {
+      "case": "legacy_bump_1.0_l_0.015",
+      "checks": {
+        "success": true,
+        "velocity": true,
+        "arrival": true,
+        "roll": true,
+        "pitch": true
+      },
+      "old_velocity": 0.12848101133200943,
+      "new_velocity": 0.12897556084452635,
+      "old_arrival": 4.515500000000217,
+      "new_arrival": 4.517,
+      "roll_delta": 0.0004359473214563536,
+      "pitch_delta": -0.0020663276593388957
+    },
+    {
+      "case": "legacy_bump_1.0_r_0.01",
+      "checks": {
+        "success": true,
+        "velocity": true,
+        "arrival": true,
+        "roll": true,
+        "pitch": true
+      },
+      "old_velocity": 0.12829329067793074,
+      "new_velocity": 0.12877938001669578,
+      "old_arrival": 4.5110000000002195,
+      "new_arrival": 4.5125,
+      "roll_delta": 0.0002067928587085044,
+      "pitch_delta": -0.012147088016703389
+    },
+    {
+      "case": "legacy_bump_1.0_r_0.015",
+      "checks": {
+        "success": true,
+        "velocity": true,
+        "arrival": true,
+        "roll": true,
+        "pitch": true
+      },
+      "old_velocity": 0.1284807239160126,
+      "new_velocity": 0.12897553759653854,
+      "old_arrival": 4.515500000000217,
+      "new_arrival": 4.517,
+      "roll_delta": 0.0005060150030021804,
+      "pitch_delta": -0.002050004227914126
+    },
+    {
+      "case": "validation_0",
+      "checks": {
+        "success": true,
+        "velocity": true,
+        "arrival": true,
+        "roll": true,
+        "pitch": true
+      },
+      "old_velocity": 0.11417831521001161,
+      "new_velocity": 0.11460357337394063,
+      "old_arrival": 4.642500000000147,
+      "new_arrival": 4.644,
+      "roll_delta": 0.00036842841762330103,
+      "pitch_delta": 0.007017012603190986
+    },
+    {
+      "case": "validation_1",
+      "checks": {
+        "success": true,
+        "velocity": true,
+        "arrival": true,
+        "roll": true,
+        "pitch": true
+      },
+      "old_velocity": 0.12548269577523086,
+      "new_velocity": 0.1259346882008867,
+      "old_arrival": 4.622000000000158,
+      "new_arrival": 4.6235,
+      "roll_delta": -2.0827509838755587e-05,
+      "pitch_delta": 0.0029735769214540575
+    },
+    {
+      "case": "validation_2",
+      "checks": {
+        "success": true,
+        "velocity": true,
+        "arrival": true,
+        "roll": true,
+        "pitch": true
+      },
+      "old_velocity": 0.1028544164284266,
+      "new_velocity": 0.10324888614429852,
+      "old_arrival": 4.856500000000028,
+      "new_arrival": 4.8580000000000005,
+      "roll_delta": -0.0008357931639006999,
+      "pitch_delta": 0.016056898621027438
+    },
+    {
+      "case": "validation_3",
+      "checks": {
+        "success": true,
+        "velocity": true,
+        "arrival": true,
+        "roll": true,
+        "pitch": true
+      },
+      "old_velocity": 0.1297326584007257,
+      "new_velocity": 0.1302163202781117,
+      "old_arrival": 4.339000000000315,
+      "new_arrival": 4.3405000000000005,
+      "roll_delta": -0.0007842581523874737,
+      "pitch_delta": 0.006783320595992626
+    },
+    {
+      "case": "validation_4",
+      "checks": {
+        "success": true,
+        "velocity": true,
+        "arrival": true,
+        "roll": true,
+        "pitch": true
+      },
+      "old_velocity": 0.09170498388326238,
+      "new_velocity": 0.09205121770664791,
+      "old_arrival": 5.404499999999724,
+      "new_arrival": 5.406,
+      "roll_delta": 0.0004062033790181996,
+      "pitch_delta": 0.02287998403832714
+    },
+    {
+      "case": "validation_5",
+      "checks": {
+        "success": true,
+        "velocity": true,
+        "arrival": true,
+        "roll": true,
+        "pitch": true
+      },
+      "old_velocity": 0.05610174055225995,
+      "new_velocity": 0.05630991077225901,
+      "old_arrival": 6.612499999999055,
+      "new_arrival": 6.614,
+      "roll_delta": -4.784188147521906e-05,
+      "pitch_delta": 0.00032950894164524014
+    },
+    {
+      "case": "validation_6",
+      "checks": {
+        "success": true,
+        "velocity": true,
+        "arrival": true,
+        "roll": true,
+        "pitch": true
+      },
+      "old_velocity": 0.10148821698610268,
+      "new_velocity": 0.10187266244762283,
+      "old_arrival": 4.918499999999994,
+      "new_arrival": 4.92,
+      "roll_delta": -0.00023625756077272353,
+      "pitch_delta": 0.010013846077637223
+    },
+    {
+      "case": "validation_7",
+      "checks": {
+        "success": true,
+        "velocity": true,
+        "arrival": true,
+        "roll": true,
+        "pitch": true
+      },
+      "old_velocity": 0.08826564280583532,
+      "new_velocity": 0.08859908371217907,
+      "old_arrival": 5.517999999999661,
+      "new_arrival": 5.5195,
+      "roll_delta": -0.00044336618458418187,
+      "pitch_delta": 0.004939399724493532
+    },
+    {
+      "case": "validation_8",
+      "checks": {
+        "success": true,
+        "velocity": true,
+        "arrival": true,
+        "roll": true,
+        "pitch": true
+      },
+      "old_velocity": 0.06972559826917094,
+      "new_velocity": 0.0699891917561783,
+      "old_arrival": 6.217999999999273,
+      "new_arrival": 6.2195,
+      "roll_delta": 0.00030094168978167524,
+      "pitch_delta": 0.00389735491380383
+    },
+    {
+      "case": "validation_9",
+      "checks": {
+        "success": true,
+        "velocity": true,
+        "arrival": true,
+        "roll": true,
+        "pitch": true
+      },
+      "old_velocity": 0.0508799874880729,
+      "new_velocity": 0.05109534564788539,
+      "old_arrival": 7.4844999999985715,
+      "new_arrival": 7.485,
+      "roll_delta": -0.0030731355506067315,
+      "pitch_delta": 0.012549877535289578
+    },
+    {
+      "case": "validation_10",
+      "checks": {
+        "success": true,
+        "velocity": true,
+        "arrival": true,
+        "roll": true,
+        "pitch": true
+      },
+      "old_velocity": 0.10047982642929647,
+      "new_velocity": 0.10086085641962206,
+      "old_arrival": 4.844000000000035,
+      "new_arrival": 4.845,
+      "roll_delta": -8.701668794997008e-05,
+      "pitch_delta": 0.004337143104029106
+    },
+    {
+      "case": "validation_11",
+      "checks": {
+        "success": true,
+        "velocity": true,
+        "arrival": true,
+        "roll": true,
+        "pitch": true
+      },
+      "old_velocity": 0.07771746900489451,
+      "new_velocity": 0.07801261403842533,
+      "old_arrival": 5.923499999999437,
+      "new_arrival": 5.925,
+      "roll_delta": 0.0038161616705889856,
+      "pitch_delta": 0.013571691616686754
+    },
+    {
+      "case": "development_friction",
+      "checks": {
+        "success": true,
+        "velocity": true,
+        "arrival": true,
+        "roll": true,
+        "pitch": true
+      },
+      "old_velocity": 0.1282987056596651,
+      "new_velocity": 0.12878726562783493,
+      "old_arrival": 4.503500000000224,
+      "new_arrival": 4.505,
+      "roll_delta": -0.011604179645038841,
+      "pitch_delta": 0.028845394488714593
+    },
+    {
+      "case": "development_solver",
+      "checks": {
+        "success": true,
+        "velocity": true,
+        "arrival": true,
+        "roll": true,
+        "pitch": true
+      },
+      "old_velocity": 0.12848101133200943,
+      "new_velocity": 0.12897561672880817,
+      "old_arrival": 4.515500000000217,
+      "new_arrival": 4.517,
+      "roll_delta": 0.0002362640768849289,
+      "pitch_delta": -0.002070373736135167
+    }
+  ],
+  "scope": "same28scenarios/target.3GPUcurrentguardB0 vsoldCPU success/velocity/arrival/rollpitch capabilitytolerance;notexacttrajectory equality/physicskernel equivalence orbaseline replacement"
+}
