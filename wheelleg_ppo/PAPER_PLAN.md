@@ -1,5 +1,14 @@
 # 双轮腿机器人PPO论文方案
 
+第332轮独立16真实模型与20回合保护归档接收（2026-10-10）：
+
+CPU读取全部PPO zip/Adam/RMS，step500…4000计数与10…80epochs/20…160Adam递增、参数状态finite/weights确变/hash/metricsfinite；obsRMS step+10.0001、481→3/6实际空间及128synthetic normalizeddetpredict bounded核。实际初始emptyAdam/head0/std.25/sharedfeatures/value和Nom world数组exact、末history shapes与finite核，无新CPUrobot/physics/optimization。
+
+重读20denseguard episode、296897firstepisode物理步，actual1.4min/dense/prepostqv/issuedctrl/guardqv/predQP/commandbounds/physicaldesign严格关联核过。注意这批shortepisode guard干预全0，故仅证明学习生命周期与保护运行链同处一张graph，不证明learnedpolicy触发保护时的闭环有效性；此前priorpressure/noise证据独立保。当前数学/未知modelerror/全sensornoise缺界，不能凭engineered接收写绝对安全/方法优势。
+
+333复用同kernel light100world/curriculum终态切换和frozenforce模型评估入口，不另发散controller/gain/source-only循环；实际runtime资格过后335如期五轮深审/清理才决定新科学3seed预算。工程checkpoint不选winner/不warmstart，formal5/独立科学收益/完整六论文出口仍未达，goal active。无新视频，remote未齐。
+
+
 第331轮fixedNom force真实GPU短学习生命周期完成（2026-10-10）：
 
 仅330注册freshseed33131 D3/V6各4000samples，复用PPO/guard/forceembed/history/normalize，无旧mean-reference warmstart。实际481→3/6接口、dense10world每80controller capture、qualification reset不额外更新RMS核；每arm8rollout/80epochs/160CUDAAdam、权重更新/finite loss，真实总8000samples/320000graphworldsteps。初始commonfeatures/value/world一致、head0/std.25/emptyAdam。
