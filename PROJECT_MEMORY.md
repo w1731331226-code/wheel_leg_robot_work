@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第304轮真实完整零动作工程pair通过：原5开发case×old_B0/joint_zero共10episode/5unique，各5/5task/physical/design，成功/原因/terrain/exit标签无差。复用原dense/contact checker、新reference整回合34列一致性、zeroActor维数6/3与full481输入、真实terminal/autoreset后request/filter/latch清0核。initial q/v/memory/param/reference及同physicalstep qv前缀数值对比存delivery，不从标签相同擅称全float trajectory exact；工程不等方法优势/正式PPO。
+- 第304轮一次old5回合完成后新evaluator缺physical/design聚合字段，公共checker KeyError，保failure/原runner/原result；根因补聚合并按保存rows离线check旧5，不重跑。显式continuation只执行从未尝试的候选5，在原250000graphworldstep/25FD总预算内完成，两constructorFD分别10+10，实际graph/firstepisode计数及surplus分别保存；旧失败和sourceSHA保持，不冒充原attempt无错误完成。
+- 第304轮joint_reference_classical两固定family center/lower实现：publicraw481最后39的roll/rollgyro用原.30/.12和.035 cap，mean nearest或roll-scaled lower，yaw复用既有B1-route(.4/.3/rollgain0/route1)；zero/mirror/范围/unusedfield独立单元过，普通PD/heuristic不称新理论或最强经典，未在本零动作pair执行/拟合。U6参照及探索匹配仍须正式机制对照。
+- 305按约深审/清理并独立核完整pair与成本，决定是否值得唯一有限非零reference解析/U6机制比较，不先PPO或用zero通过当收益；完整方法/sameinfo消融/new3→5/freshID-OOD保持/层级统计真实PPOcost/稿六出口仍缺，goal active。helper11251本轮仍live首批，remote未全同步；无视频上传。
+
 - 第303轮显式独立source_continuation_v2通过，不重放旧80：新增一次同5case真实构建、剩35query加同次oldparking5作为公平zero对照，共新40。两capture80实际controller节点/每capture40物理节点与481reset过；parking/stationary四臂各5全部source/日志/readonly/diag14检查过，同次old/newzero ctrl/diag/memory exact。原Native reset_rows+adapter clear实际mask选world1/3，其他world qpos及request不变，full481reset/filter清0过。
 - 第303轮实际累计85controllerqueries（唯一四mode×四臂×五状态80，加oldparking重复5）、两真实constructor各10FD累计20。源预算每attempt15不扩80原attempt，旧source_check_failure及45/10FD记录原SHA保持，原80仍failed/未completed；continuation started/proposal/completion/delivery/8NPZ与新helper/runlog保。全程禁止wp.capture_launch，0GPU物理图/learning/optimizer，synthetic姿态/轮速仍非contact状态证书或PPO成本结论。
 - 第303轮qualifier仅复用目录/JSON预算与round，CPUcontext修正来源留旧代码；current	source SHA全部核、输出8sha、两phase zero pairs独立重核过。actualepisode/autoreset/完整轨迹zero/CPU-GPUtask未qualified，strongsame-reference analytic feedback仍待实现，动态性能/正式PPO未准。

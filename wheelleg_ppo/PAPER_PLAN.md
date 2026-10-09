@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第304轮完整零动作配对与同参考解析family（2026-10-09）：
+
+zero_episode_pair_v1冻结原五开发case×old_B0/joint_zero十回合，仅工程no-op/log/terminal/autoreset，总250000graphworldsteps/25constructorFD上限，不训练或改原门。最终两臂各5task/physical/design全部过、标签一致，原dense/contact checker及candidate fullreference日志、zeroActor6/3与真实terminal/autoreset清零核过。实际graph计数与firstepisode计数（包括/排除autoreset surplus）分别记录，initial和同step qv数值对比及全NPZ SHA保存delivery；标签相同不自动是全浮点trajectory exact。
+
+旧5episode完成后evaluator遗漏公共schema physical/design计数，保存failure/原runner/原result；只根据保存rows补汇总并离线旧checker，不重放旧物理。显式continuation新增此前未执行的candidate5完成，总预算保持、FD10+10，旧failure原SHA不变。没有隐藏重试或将元数据失败抹成无错误原attempt。
+
+joint_reference_classical给出center/lower两固定同参考authority反馈：raw481最后39的roll和gyro_x用原.30/.12、.035归一化，mean nearest或随roll归一化下调，yaw沿既有B1-route参数和route1。zero/mirror/bounds/unusedfield单元过，无调参；这只是普通解析候选family，不代表经典上限或新理论，本工程pair未执行非零feedback。305按约深审清理并核完整pair/成本，决定有限非零机制对照是否值得继续；U6/消融/初始化实际探索匹配及正式3→5/freshID-OOD/统计PPO成本/稿仍未完成，正式PPO未准。
+
 第303轮独立续查停车/静止与实际maskreset（2026-10-09）：
 
 source_continuation_v2明确冻结新增同5case一次构建/40staticquery/FD<=15/0物理图，其中35是未执行项、5是新构建oldparking同次对照，不假装原80重跑通过。新parking/stationary各oldzero/newzero/M3/U6×5全部checker/readonly/diag14过，两个phase新旧zero ctrl/diag/memory exact；真实两捕获/80control节点与481reset过。原Native reset_rows及adapter clear对world1/3实际mask复位，其他world qpos/request不变，full481/filterreset过。
