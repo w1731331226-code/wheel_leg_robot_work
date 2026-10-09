@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第306轮fixed200真实队列终态（2026-10-09）：
+
+注册五臂×40controlled=200episode一次队列全部完成，10batch、全部physical/design通过。oldB0/oldB1_route/joint_yaw各32success，joint_center/joint_lower各29；初步不支持这两固定reference反馈的任务增益，307须独立逐case lost/gained/J及fullraw/source/继续门，不从局部成绩改系数或启PPO。所有失败原始留存，40unique development不是200独立实验seed。
+
+真实graphworldsteps2,988,000<=5M、firstepisode2,972,442（autoreset surplus分开）、55baselineconstructorFD<=80；wall331.068051s包含构建、物理、采样/序列化/检查，0modelupdates，不能称PPO端到端加速。started/admission/completion/source及10result SHA与预算计数核过，真实exit0。
+
+共享evaluator查caller后兼容zero默认并改batch5→n、registeredpublic481 feedbackdispatch/真实actoractions存档；oldB1不撤回保历史，joint_yaw/center/lower共享adapter/停车规则，yaw请求逐值相同，128synthetic unit与原55源不变准入后才launch。zeroevaluator/classical旧source归档，304旧结果不改；source/记录错误仍保partial停止，没隐藏重试。307独立去留，不把安全工程通过当新方法/学习优势或所有referenceRL不可行；310深审清理，六论文出口仍缺。
+
 第305轮五轮深审、数值边界与非零机制冻结（2026-10-09）：
 
 301—304取得从动作/日志/复位到真实source/static和完整zero10episode的工程进展，独立核48NPZ/initial及成本。数值zero只4/5轨迹exact；6301008第5600步post首freevz/rollrate差9.094947e-13，同步precommand/posteffort相同，之后maxq差.00883484/v .95854568，指标差小但不能据label一致称全float复现或推唯一solver原因。工程/必要几何不等方法优势，window/schema失败原记录保留、不旧物理重放；不继续重复性调试或zero堆叠。

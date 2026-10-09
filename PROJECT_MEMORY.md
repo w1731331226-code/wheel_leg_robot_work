@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第306轮实际fixed200队列完成：40controlled×oldB0/oldB1_route/joint_yaw/joint_center/joint_lower，各两20world batch，10result/200episode全部原physical/design过。成功oldB0/oldB1/joint_yaw各32/40，center/lower各29/40；fixedreference没有初步任务增益，不据部分结果拟合/挑winner或PPO。307必须逐case lost/gained、J及完整raw/source/事前门独立核，旧数值差异和所有失败留。
+- 第306轮actualgraph worldsteps2,988,000<=5M，firstepisode2,972,442、autoreset surplus另计，原constructor55FD<=80，wall331.068051s含construction/evaluation/记录/check，不PPO加速。admission/proposal/sourceSHA及10resultSHA/计数预算核；complete记录模型更新0，真实run terminal exit0。完整RAW保存，将随本轮归档，远端尚未同步不能声称全remote。
+- 第306轮共享evaluate查所有caller后泛化batch5→n≤20和registeredfeedback动作，原zero默认调用兼容；oldB1沿原不撤回、joint_yaw/center/lower同新adapter停车规则，raw481输入/同yaw请求、bodymean/diff差异明确。128合成dispatch/范围/zero/mirror/unusedfield与55原源不变验收，无hiddenoracle/新reward/命令/gain。原zeroevaluator/classical版本归档，不覆盖304原结果。
+- 307只独立证据去留，不能将29/40失败解释为所有reference学习无效，也不以safe200替代贡献/正式3→5/freshID-OOD/统计成本/完整稿六出口，goal active。310下一方向深审清理；helper11251本轮仍live首批，remote未全同步，无video。
+
 - 第305轮五轮深审与独立pair核完成：301decoder/log/reset、302真实capture及45query窗口错误、303显式续查40、304真实完整zero10都有实证，元数据/window失败原证据不覆盖且没有旧物理重放。pair48NPZ SHA/initial全部fields exact核；4/5同step轨迹exact，6301008首次post5600 freevz/rollrate两字段差9.094947e-13，首prectrl/posteffort相同，后maxq .00883484/v .95854568、任务numeric差很小但不能全trajectoryexact或定唯一solver原因。旧重复性调试线不复活，不以label一致代替数值证据。
 - 第305轮继续方向限定非零机制：nonzero_reference_mechanism_v1/proposal冻结40原controlled×5arm200episode，oldB0/oldB1_route/joint_yaw/joint_center/joint_lower。joint_yaw与center/lower共享jointadapter/parking撤回/参考权限和oldyaw参数，隔离旧B1不撤回parking的混杂；U6尚无trainedpolicy，不拿randomU6当强学习基线。唯一队列总graphworldsteps≤5M、原constructorFD≤80、0training/finalOOD；source/dispatcher/evaluator/accounting先验收，原task/physical/design/height/velocity/progress门保持。
 - 第305轮事前fixedreferenceutility门：至少一reference固定family比oldB0/oldB1/joint_yaw最佳success多≥2、不丢任一baseline已成功case、全physical/design通过、meanJ低于joint_yaw；否则关闭这两个fixedfeedback不调gain/阈值救分、不自动PPO，不据其失败证明所有reference学习无效。通过仍须regular/legacy保持、同info fullreference learnedbaseline/消融与后续独立数据，六论文出口未齐，goal active。

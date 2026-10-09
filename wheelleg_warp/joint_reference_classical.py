@@ -32,3 +32,21 @@ def unit(yaw_config):
     np.testing.assert_array_equal(c[:, 0], b[:, 0]); np.testing.assert_array_equal(c[:, 1:], -b[:, 1:])
     assert np.all(abs(b) <= 1)
     print('PASS public481 feedback,zero/mirror/bounds andunused-field independence;0physics', flush=True)
+
+
+def dispatch(history, arm, yaw_config=None):
+    x = np.asarray(history)
+    if x.ndim != 2 or x.shape[1] != 481 or not np.isfinite(x).all():
+        raise ValueError('Finite unnormalized raw481 required')
+    if arm in ('old_B0', 'joint_zero'):
+        return np.zeros((len(x), 6 if arm == 'old_B0' else 3), np.float32)
+    if arm not in ('old_B1_route', 'joint_yaw', 'joint_center', 'joint_lower') or yaw_config is None:
+        raise ValueError('Registered arm and frozen yaw configuration required')
+    if arm == 'old_B1_route':
+        yaw = route_actions(x[:, 351:390], yaw_config['candidate'], yaw_config['arm'])[0][:, 2]
+        result = np.zeros((len(x), 6), np.float32); result[:, 4] = yaw; result[:, 5] = -yaw
+        return result
+    result = actions(x, 'lower' if arm == 'joint_lower' else 'center', yaw_config)
+    if arm == 'joint_yaw':
+        result[:, :2] = 0
+    return result
