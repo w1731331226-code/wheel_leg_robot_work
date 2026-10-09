@@ -1,5 +1,15 @@
 # 双轮腿机器人PPO论文方案
 
+第305轮五轮深审、数值边界与非零机制冻结（2026-10-09）：
+
+301—304取得从动作/日志/复位到真实source/static和完整zero10episode的工程进展，独立核48NPZ/initial及成本。数值zero只4/5轨迹exact；6301008第5600步post首freevz/rollrate差9.094947e-13，同步precommand/posteffort相同，之后maxq差.00883484/v .95854568，指标差小但不能据label一致称全float复现或推唯一solver原因。工程/必要几何不等方法优势，window/schema失败原记录保留、不旧物理重放；不继续重复性调试或zero堆叠。
+
+唯一nonzero_reference_mechanism_v1协议冻结40controlled×oldB0/oldB1_route/joint_yaw/joint_center/joint_lower=200实际episode、40unique。joint_yaw必须用同jointadapter/parking撤回且m/d请求0，以免旧B1不撤回与新reference变化同时成为解释；两固定center/lower共享相同public481、oldyaw参数、m/d filter/range和finalcap。没有U6 trainedpolicy，不用随机U6假装强学习对照。队列总graphworldsteps<=5M、constructorFD<=80，0training/finalOOD；先验收dispatcher/evaluator/记录/计数/失败保存，再一次执行，原全部task/physical/design/height/5°/velocity/progress门不改。
+
+事前继续门仅针对fixedreference utility：至少一family相对oldB0/oldB1/joint_yaw最大success新增≥2，任一baseline成功不丢、全physical/design过且meanJ低于joint_yaw，否则关闭这两个fixedfeedback，不事后fitgain/阈值或自动PPO；也不能证明所有reference学习不可行。即便通过，regular/legacy保持、sameinfo fullreference learnedbaseline与消融、new3→formal5/freshID-OOD/统计实际PPO成本和稿仍必需。306source准入后才fixed200，307实际终态消费，310下次五轮深审清理，目标active。
+
+按约删closed nominal-map缓存motion_balanced_nominal.pyc6742B，ignored/untracked/unheld且codeobject匹配源码，round305_cleanup保SHA与删除证据；source/raw/失败/CPU-GPU均保。round305_direction_review绑定判断/协议/数值边界；无新物理/训练，video禁上传继续，helper原批live、remote未全同步。
+
 第304轮完整零动作配对与同参考解析family（2026-10-09）：
 
 zero_episode_pair_v1冻结原五开发case×old_B0/joint_zero十回合，仅工程no-op/log/terminal/autoreset，总250000graphworldsteps/25constructorFD上限，不训练或改原门。最终两臂各5task/physical/design全部过、标签一致，原dense/contact checker及candidate fullreference日志、zeroActor6/3与真实terminal/autoreset清零核过。实际graph计数与firstepisode计数（包括/排除autoreset surplus）分别记录，initial和同step qv数值对比及全NPZ SHA保存delivery；标签相同不自动是全浮点trajectory exact。

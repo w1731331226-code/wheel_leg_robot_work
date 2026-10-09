@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第305轮五轮深审与独立pair核完成：301decoder/log/reset、302真实capture及45query窗口错误、303显式续查40、304真实完整zero10都有实证，元数据/window失败原证据不覆盖且没有旧物理重放。pair48NPZ SHA/initial全部fields exact核；4/5同step轨迹exact，6301008首次post5600 freevz/rollrate两字段差9.094947e-13，首prectrl/posteffort相同，后maxq .00883484/v .95854568、任务numeric差很小但不能全trajectoryexact或定唯一solver原因。旧重复性调试线不复活，不以label一致代替数值证据。
+- 第305轮继续方向限定非零机制：nonzero_reference_mechanism_v1/proposal冻结40原controlled×5arm200episode，oldB0/oldB1_route/joint_yaw/joint_center/joint_lower。joint_yaw与center/lower共享jointadapter/parking撤回/参考权限和oldyaw参数，隔离旧B1不撤回parking的混杂；U6尚无trainedpolicy，不拿randomU6当强学习基线。唯一队列总graphworldsteps≤5M、原constructorFD≤80、0training/finalOOD；source/dispatcher/evaluator/accounting先验收，原task/physical/design/height/velocity/progress门保持。
+- 第305轮事前fixedreferenceutility门：至少一reference固定family比oldB0/oldB1/joint_yaw最佳success多≥2、不丢任一baseline已成功case、全physical/design通过、meanJ低于joint_yaw；否则关闭这两个fixedfeedback不调gain/阈值救分、不自动PPO，不据其失败证明所有reference学习无效。通过仍须regular/legacy保持、同info fullreference learnedbaseline/消融与后续独立数据，六论文出口未齐，goal active。
+- 第305轮删motion_balanced_nominal.pyc6742B，ignored/untracked/fuser无持有、marshalcode与srccompile exact，SHA/源/删除核存round305_cleanup，全部scientific source/静动态/失败/CPU-GPU保。round305_direction_review绑定pair/onset/协议；306source准入后才执行fixed200、307实terminal消费、310下次深审清理。helper11251本轮live首批，remote未全同步，video禁上传持续。
+
 - 第304轮真实完整零动作工程pair通过：原5开发case×old_B0/joint_zero共10episode/5unique，各5/5task/physical/design，成功/原因/terrain/exit标签无差。复用原dense/contact checker、新reference整回合34列一致性、zeroActor维数6/3与full481输入、真实terminal/autoreset后request/filter/latch清0核。initial q/v/memory/param/reference及同physicalstep qv前缀数值对比存delivery，不从标签相同擅称全float trajectory exact；工程不等方法优势/正式PPO。
 - 第304轮一次old5回合完成后新evaluator缺physical/design聚合字段，公共checker KeyError，保failure/原runner/原result；根因补聚合并按保存rows离线check旧5，不重跑。显式continuation只执行从未尝试的候选5，在原250000graphworldstep/25FD总预算内完成，两constructorFD分别10+10，实际graph/firstepisode计数及surplus分别保存；旧失败和sourceSHA保持，不冒充原attempt无错误完成。
 - 第304轮joint_reference_classical两固定family center/lower实现：publicraw481最后39的roll/rollgyro用原.30/.12和.035 cap，mean nearest或roll-scaled lower，yaw复用既有B1-route(.4/.3/rollgain0/route1)；zero/mirror/范围/unusedfield独立单元过，普通PD/heuristic不称新理论或最强经典，未在本零动作pair执行/拟合。U6参照及探索匹配仍须正式机制对照。

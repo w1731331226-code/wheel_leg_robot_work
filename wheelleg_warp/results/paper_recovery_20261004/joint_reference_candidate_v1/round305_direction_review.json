@@ -1,0 +1,65 @@
+{
+  "round": 305,
+  "verified": true,
+  "reviewed_rounds": [
+    301,
+    302,
+    303,
+    304,
+    305
+  ],
+  "evidence_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/adapter_unit.json": "ca001909eec5edae48a42830bc60bc88a77e4ece4a49341369d6e95a09052933",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/source_check_delivery.json": "cc98ebf5f1eb2e2534b44ea6e0ee488219c45af56ad0ffb46df1a2522f24fb83",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/source_continuation_v2/delivery.json": "11e7d3d24b46899a8b376fe5ef3d28d72e6a1e3b2dfd2f14783ce446aef77a7a",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/zero_episode_pair_v1/delivery.json": "eff27dd08908ab106ef27f03e859062684b1cd9ee1d29b516c9918853e823255",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/zero_episode_pair_v1/continuation_completion.json": "c92857cd8246738d84455ac2cc85a93929a494a18f222a80b8dff6c7d8c77adf"
+  },
+  "zero_engineering_confirmed": true,
+  "initial_recorded_fields_equal": true,
+  "exact_trajectory_cases": 4,
+  "trajectory_cases": 5,
+  "numeric_onset": {
+    "seed": 6301008,
+    "first_post_step": 5600,
+    "fields": [
+      19,
+      20
+    ],
+    "first_difference": 9.094947017729282e-13,
+    "pre_command_equal": true,
+    "post_effort_equal": true,
+    "max_later_q_difference": 0.0088348388671875,
+    "max_later_v_difference": 0.9585456848144531,
+    "unique_cause_established": false
+  },
+  "worth_continuing": "One preregistered nonzero same-reference mechanism comparison; not morezero checks,repeatability debugger,moreoldmap/damping orblindPPO.",
+  "methods_assessment": "Implementation/source/completezero engineering appropriate;schema/window bugs preserved andfixed withoutphysics replay. Engineeringstability andgenericreference mapping are notmethodadvantage ornovelty. Strong same-interface yaw control isneededto isolatelegreference fromparkingwithdrawal.",
+  "additional_experiment_proposal": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/nonzero_reference_mechanism_v1/proposal.json",
+  "additional_experiment_sha256": "9a768522c3bcc92791d6836e81882774a6386c5da0342df6fca91e0c65f4aa89",
+  "paper_missing": [
+    "Distinct defensible contribution",
+    "Full same-information/fullreference learnedbaselines andablations",
+    "New3qualification thenformal5",
+    "FreshID/OOD/retention",
+    "Hierarchicalstatistics/actualendtoendPPOcost",
+    "Complete reproducible manuscript"
+  ],
+  "cleanup": {
+    "round": 305,
+    "path": "wheelleg_warp/__pycache__/motion_balanced_nominal.cpython-310.pyc",
+    "bytes": 6742,
+    "sha256": "aea3f08eab7a9ef5cc097c66af1f64d90bb9fa5b792543b130ca0605f7d6882e",
+    "source_sha256": "52587afaa569de84527dafbea7b536f83bad2e2d5626617caf886d593c20e2e9",
+    "ignored": true,
+    "untracked": true,
+    "unheld": true,
+    "code_object_equal": true,
+    "reason": "Closed exactnode nominal-map prototype cache; preserve source/static/dynamic/raw/failures andCPU-GPUbaselines.",
+    "deleted": true
+  },
+  "new_physics_steps": 0,
+  "new_training_samples": 0,
+  "formal_PPO_admitted": false,
+  "next": "306 sourceadmit fixed200 mechanism;310nextdeepreview/cleanup. Do notcallstatic/zero integrationcorepaper completion."
+}
