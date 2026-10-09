@@ -1,5 +1,13 @@
 # 双轮腿机器人PPO论文方案
 
+第301轮隔离动作/复位/日志接入与单元（2026-10-09）：
+
+joint_reference_adapter实现M3/U6/leg-only/yaw-only canonical6解码，reference m/d与原motor hub/wheel通道分开，reference在原normalized±.01/物理步filter上，复用原parking请求撤回和phase anchor选择、complete physical/contact recorder与commandprefix。clean gyro诊断限定≤20同solver world；全局hook构建后/异常均恢复，原baseline/model/reward/物理及性能门不变。暂未用于真实环境或训练，解析feedback未实现。
+
+新34列日志显式记录nominalh与actualm/d/targets、guard、原请求/撤回后effective、reference及motor filters、phase/geometry。旧role保内容但字段明确nominal_tracking_reference，新增checker核actual目标映射、height容差与范围/filter/phase/force一致性，不能继续拿旧m=h等式验收，也不静默skip。done mask清request/effective/convert/motor/filter/latch/private，其他world保；终态原始记录先落盘后check，失败留证。
+
+test_joint_reference_adapter单元通过128M3/U6 exact嵌入及两消融、shape/NaN/微越界拒绝、NoPhysics481 wrapper不改输入、synthetic moving→parking与6项日志篡改拒绝、GPU独立buffer逐worldreset、假factory异常恢复所有hook。adapter_unit.json绑定源和日志；0真robotenv构建/controllerquery/physics/FD/PPO。真实graph捕获、实际异步终态/reset和不对称/启动/停车资格仍待302，不能将接口单元称整体source/训练ready。303只有source资格过才登记有限paired机制协议；305深审清理，六论文出口仍未达到。
+
 第300轮五轮方向深审、独立复核与清理（2026-10-09）：
 
 296—299完成失败有限关闭、候选必要几何、先例重合边界和实际100GPU静态source；独立核三报告/源码与输出SHA、单targetblock逆还原source/AST、old/zero输出与原fixture exact及非零目标独立公式重算一致。方法适当但只证明有限source/静态性质，尚无动态收益、新颖性或学习必要性。继续价值在有限接口资格与强同权限机制对照，不再扩失败repeatability/旧map-damping、场景或训练预算救门。

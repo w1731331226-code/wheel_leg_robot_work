@@ -1,0 +1,34 @@
+{
+  "round": 301,
+  "verified": true,
+  "source_sha256": {
+    "wheelleg_warp/joint_reference_adapter.py": "ef63a84050d58201d7e40c88a9cc7dcbd7593003f11ee360e88ffaaee608fb1c",
+    "wheelleg_warp/test_joint_reference_adapter.py": "5f9578cf6bedb0985a5e5d04e62d7466089bcc994944a2c0f8fc69aeb48043a7",
+    "wheelleg_warp/joint_reference_prepare.py": "5f68c411073c48386889ea0c7b68173585cc489164e45c54172fec0cafe4cc1d",
+    "wheelleg_warp/joint_reference_control.py": "a8b5dae529d0ab093a19f106e602069c69208c87c6930340f07f97360759b2fc"
+  },
+  "unit_log_sha256": "82b3f85b2df9156f798db3975b810f6733309fb24374a664400a97c0182cc512",
+  "checks": [
+    "128M3/U6 exact canonical embedding andleg-only/yaw-only decoding",
+    "Action shape/NaN/oversized range rejection beforeFloat32 cast",
+    "481D NoPhysics wrapper preserves observation andsends reference/motor channels separately",
+    "Separate nominalh/actualm andindependent target/filter/parking/phase consistency checks",
+    "Six log corruptions rejected",
+    "GPU per-world reset clears requested/effective/conversion/motor/reference filter/latch/private fields andpreserves otherworlds",
+    "Deliberatelyfailed fakefactory restores wp/environment/recorder/geometry hooks"
+  ],
+  "diagnostic_world_limit": 20,
+  "clean_gyro_only": true,
+  "real_robot_environment_constructed": false,
+  "real_capture_qualified": false,
+  "real_episode_or_autoreset_qualified": false,
+  "new_controller_queries": 0,
+  "new_physics_steps": 0,
+  "new_training_samples": 0,
+  "transitionFD_calls": 0,
+  "source_hooks_implemented_but_not_capture_admitted": true,
+  "analytic_feedback_not_yet_implemented": true,
+  "fullspace_decoder_available_but_not_trained": true,
+  "formal_PPO_admitted": false,
+  "next": "302 one bounded real constructor/capture plus saved-state asymmetric/startup/parking/reset source checks; preserve actual FD count and failure. No fulltask rollout orPPO until source qualification."
+}

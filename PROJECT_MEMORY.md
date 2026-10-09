@@ -4,6 +4,11 @@
 
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-09，目标active）
 
+- 第301轮joint_reference_adapter实现isolated动作/捕获/复位/日志接入：M3/U6/leg-only/yaw-only→canonical[m,d,hubL,hubR,wL,wR]，前两项进独立参考filter，原virtual6 force槽清0、hub/wheel沿原通道；复用原parking.prepare撤回请求、roles.prepare与phase.select_anchor、完整物理/contacts recorder和commandprefix。仅clean gyro诊断≤20同solver worlds，未挂生产或训练；保originalgeometry空障碍处理及捕获watcher，构建异常恢复所有全局hook。
+- 第301轮34列日志区分nominalh、actualm/d/两target、guard、requested/effective6、reference2/motor6 filter、phase与geometry范围；保旧role内容并重命名nominal_tracking_reference/phase nominalh字段，新增reference一致性检查替代不适用的旧m=h角色等式，原actualphysical/design/task/height/5°/速度/进度门不改。每world终态先保原始新日志再验收，request/effective/convert/motor/filter/latch/private均按done mask清零且其他world不动。
+- 第301轮unit过：128M3→U6 exact嵌入与两消融；非法shape/NaN/float64微越界在F32cast前拒绝；NoPhysics481wrapper输入不变；synthetic moving→parking日志及6项篡改拒绝；GPU独立buffers maskedreset和假factory异常hook恢复。adapter_unit.json绑定源/log。0真env构建、controllerquery、物理步、FD/PPO；真实capture/reset/异步episode资格未过，不能以unit称训练ready，解析feedback尚未实现、U6仅decoder可用。
+- 302必须先冻结有限真实构建/capture与保存态不对称/startup/parking/reset检查预算、原FD成本计数并保失败，source过后303才登记动态机制。305如期深审清理；完整论文六出口仍缺/goal active。helper11251本轮仍live首批，remote未全同步；无视频上传。
+
 - 第300轮五轮深审/独立复核完成：296失败有限停止、297关闭并回方法、298必要几何/先例与source耦合、299实际isolated100static均有证据进展。独立核start/completion/delivery及源码SHA、单targetpatch逆还原AST、old/zero NPZ ctrl/diag/memory与原fixture exact，非零目标以独立显式公式重算一致；不是动态/novelty或PPO通过。方向值得继续仅有限接口/source资格，不复活失败重复性/旧map与damping收益线，不扩场景或训练代替六论文出口。
 - 第300轮发现必要接入工作：旧reference_role_probe.check_log要求左右目标mean等于其trackingmean且mode0 trackingmean=h；新非零25/25 mean不同于h，当前旧角色日志/检查不能验收新candidate。新adapter必须分别记录original nominalh和实际m/d、request/filter/target/phase/reset，source检查新的reference一致性；原actualphysical/design/task/height/5°/velocity/progress门保持，不静默skip角色验收或改旧历史日志。
 - 第300轮公平对照坐标明确：canonical fullreference6=[m,d,hubL,hubR,wL,wR]，M3嵌入=[a_m,a_d,0,0,a_y,−a_y]；128合成action与rank3 embedding过，U6必须用同mean/difference映射/filter、hub原±1Nm、wheel原±.3Nm及同最终限幅。原只torqueB2不能当同参考权限对照；强解析joint-reference与leg-only/yaw-only必要。集合包含不是探索协方差/参数量相等，后续须报告初始化实际RMS/饱和/协方差及各模型参数数，不用未匹配探索宣称纯结构收益。
