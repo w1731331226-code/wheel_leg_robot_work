@@ -1,5 +1,16 @@
 # 双轮腿机器人PPO论文方案
 
+第329轮12新开发压力case的72回合配对验收（2026-10-10）：
+
+既有guard rate50/publicmass8/std.25不改，严格actual1.4/physical/task门及Nom/physics不改；12新development跨low115高速±.98、mass8、friction.4/1.2（障碍<.016）、delay20/drive±.05/混合地形、other4height单侧±5°坡。validated原Scenario域，reserved高障碍+摩擦差组合排除，未打开sealedfinal/OOD。one6condition queue72episode，actual1,042,080graphworldsteps/985,695firstepisode、35FD、177.16s，0learn。
+
+Original物理36过/design22（zero8/D36/V68）/task13（5/3/5）；guarded物理design36过/task15（各5）、模型QP预测不可行0。独立72raw qv/actualgate/guard/model/caps/physicalinitial、36casepairs和12340sameGaussian请求prefix核过，模型源码和参数前后不变。Decl pressuregate True只说明当前有限idealencoder观测，并非稳健安全或新PPO优势。
+
+Guard最小active margin1.43e-7rad约一个float32步长，secondarybarrier变负至−.000185；全局modelerror最高969rad/s²、active时约355—368。finite-step加速度CBF代理不满足3927/4200/4190steps，不能当continuous CBF定理反证或actual角度失败，但否定“预测满足即可安全保证/已足够鲁棒准入”的表述。Nomcorrect约5000substeps/condition，不能只缩NN而忽略Base correction；闭链maxlooperror约.00016m另保，physicsgate不等全部精度证书。
+
+330五轮审查/冗余清理须判断是否只值得一次局部encoder测量噪声敏感性，或转Nom模型误差/状态安全裕量修正；不直接长训/增加case救分/事后改rate/mass/std/gate。Actor仍freshzeroheadprior、未learning，不IIDholdout效应/方法seed结果。完整论文sixexits/new3→formal5仍缺、goal active；视频不上传，remote未齐。
+
+
 第328轮共享实际关节保护原型工程改善（2026-10-10）：
 
 保持Nom设计/reference、原CPU/GPU/core/strict1.4/eightphysical/任务门，新增独立postNom/prephysical保护：publicmassupper8+rotor+kinematicJac的局部增量acc模型，每leg Nom最小2D修正（含不包含0的可行集）后共同λ投影original capacitylimited residual，当前encoder q/v/过去issued command可得，无trueplant/contact参数。k50由actor20ms预先冻结，非case调参；无qclip/物理冻结。旧cone solver需要0feasible，故新nonzero Nom correction solver不改旧源。
