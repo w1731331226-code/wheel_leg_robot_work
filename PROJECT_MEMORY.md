@@ -2,7 +2,14 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：第364轮队列零门失败、根因定位与v2单元修复完成（2026-10-12，整体目标active）
+## 第365轮方向/清理与独立修复队列入口（2026-10-12）
+
+- 364为progress。365完成361—365方向深审：只值得一次已定位投影模式错误的完整链修复，不据命令代数/fixture或物理同轨迹晋升学习。原λ门、失败及v1源码保留；CartLive3/CartReset3主配对和原D3/V6/强经典比较要求保持，新颖性/六论文出口仍缺。370下次方向/清理及整体框架。
+- 新cartesian_pair_delivery_repair_v2独立注册20条件，cases/profile/所有门/640000图步/210FD/26000单job/16000actor均同原；只换v2 accepted-Nom kernel。明确一次repair，无隐式重试或调幅/换例/放门，原runtime目录仍failed。若通过仅交付资格，须后续独立完整接收。
+- run_cartesian_repair复用冻结364引擎，通过作用域绑定OUT/QUEUE/verify/Cart kernel与factory guard，不复制旧编排、不改原源。额外在首次graph launch前要求shared reference、nominal correction、确切reference_role_control kernel与公开gain upper。v2真实guard路由spy、作用域恢复及四类不合格Nom接口拒绝自检过；96源/runtime/原失败/v2回归绑定。原引擎completion的round364仅版本代号，独立run_receipt记录实际365并绑定原始结果，不改产出数值。先提交准入后首次新20。
+- 365冗余仅删audit_policy_reflection.cpython-310.pyc 7602B，现源码重编译code相同、ignored/untracked/fuser无持有；cleanup保SHA，原科学数据/源码/模型/失败保持。本入口尚0新physics/学习。同步原pid22912/unified21712仍live，本轮已由195推进222/226，未重启，具体看state；编辑停daemon、收尾恢复。
+
+## 历史状态：第364轮队列零门失败、根因定位与v2单元修复完成（2026-10-12，整体目标active）
 
 - 364中断前已有progress：f61764bb准入后唯一pid202230/unified27325执行，现确认exit1/进程无，原20队列已终止，未重启。B0zero与CartLive3zero各14994子步完整写出，只有B0进入accepted progress；actual graph30000、first29988、actor750、FD15，余18未运行，preservation_error None。中断期间daemon已自动归档48项为c4b53eff，归档不是验收；本轮先复核终态再停止daemon编辑。
 - zero_failure_audit复核两条全部标准流：共享初终态、pre/post qv/issued control、完整contacts/contact_steps/meta、保存gyro/role/phase/parking/actor数组同；两physical/design过、fulltask flags同且均任务失败。唯一标准流差异为complete trace53(original_lambda)及jointguard26各140元素，1→0，首pre_s3.892。轮Nom先峰值裁剪后仍超当时速度包络的支集恰等这140步；两条base_infeasible_steps均140，但residual_limited_steps0→140、meanlambda1→.9906629318。不能因物理相同排除lambda门改判通过。
