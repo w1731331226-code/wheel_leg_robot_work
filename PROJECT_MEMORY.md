@@ -2,7 +2,14 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 第356轮18回合经典路线诊断入口准入（2026-10-12，整体目标active）
+## 当前状态：第356轮18回合经典路线诊断完成（2026-10-12，整体目标active）
+
+- 准入3cd3f8ce后首次唯一pid142385/unified56949，现exit0，18/18完成、生产者physical/design18/18过；targety=0/+.05/−.05m各0/6task成功。actual graph268120、firstepisode267768、classical action6703、FD95、wall234.996512s（含构造/记录），0model forward/learning/retry。全部原始接触、qv/guard、真实raw481和route error/reference/action、按case完整初态与终态保存。
+- 生产者manifest/18顺序/输入源/输出SHA/计数守恒收尾通过，六freshzero完整task flags初核与历史B1-route一致。357仍须独立完整物理、初态及经典动作重放接收，再按预注册阴性规则正式关闭此固定偏移分支。当前不扫幅/调增益/换case救分，不从18否定所有经典路线或宣称RL必要；原PPO贡献/保持/独立评估缺口仍在。
+- 同步新证据：229批remote辅助已有，但git rev-list snapshot ^aux ^old仍枚举71commit/627tree/8054blob，blob raw14576409798B；小临时repo的pack-objects在flat/same-tree/shared-parent变体仍打入3对象，未达到仅新commit的1对象目标。现有预传方式并未可靠减少最后push，不能再只归因HTTP500网络。确认自有push PID140128及snapshot参数后只SIGTERM该进程组，父140093 exit1落failed，保229远端批次/helper/state，无强推/历史改写。round356_sync_transport_audit保证据；后续须先复现有界pack排除，再修传输，禁止原样重试大包。该工程缺陷不影响独立科学队列。
+- 本轮完成工件/README/记忆及时中文提交，收尾恢复守护、核本地与remote；远端仍未追平，后续0beacdc3大归档还不在旧snapshot内。360方向/清理/整体框架保持，无视频，goal active。
+
+## 第356轮18回合经典路线诊断入口准入（2026-10-12）
 
 - 355为progress（方向/清理/18登记），本轮实现run_classical_route_reference，复用既有eval、guard、完整物理监测、runtime与按case初态helper，旧冻结源码不改。仅在raw39副本slot38减固定参考，真实raw481/history不改，保B1-route原停车行为；另存raw39/target/error/refyaw/wheel请求逐行日志，绑定actor最新frame和提交轮命令。
 - 同case三臂初态含ctrl/time/warm/sensors，完整qv/接触/guard/终态保留；图步/FD/动作行调用前限额，0模型查询/学习，失败保现场无重试。零偏移逐值等旧动作、反射输入+反号offset输出互反、raw不可变/静止/饱和/坏offset/初态错配拒绝自检通过；缺准入在机器人构造前拒绝。首个单测因float32的.05与原函数float64比较语义不同失败，已修单测使用同原函数精度，未改控制阈值。

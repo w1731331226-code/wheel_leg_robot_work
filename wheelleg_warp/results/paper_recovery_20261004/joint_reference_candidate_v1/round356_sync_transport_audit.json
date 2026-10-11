@@ -1,0 +1,28 @@
+{
+  "round": 356,
+  "status": "transport_preseed_insufficient_do_not_retry_final_unchanged",
+  "snapshot_head": "02e08d8f8b025a7f2e4be98c82290776dc918e95",
+  "remote_auxiliary_head": "c8144b7d92389333220a0755e6099d02c5d83951",
+  "completed_chunks": 229,
+  "actual_reachability_check": {
+    "command": "git rev-list --objects SNAPSHOT ^AUXILIARY ^ORIGINAL_REMOTE followed by git cat-file sizes",
+    "remaining_commits": 71,
+    "remaining_trees": 627,
+    "remaining_blobs": 8054,
+    "remaining_blob_raw_bytes": 14576409798
+  },
+  "local_small_pack_check": {
+    "command": "git pack-objects --revs --stdout --thin",
+    "flat_auxiliary_packed_objects": 3,
+    "same_tree_auxiliary_packed_objects": 3,
+    "shared_parent_flat_packed_objects": 3,
+    "shared_parent_same_tree_packed_objects": 3,
+    "expected_minimal_only_new_commit_objects": 1,
+    "temporary_repositories_removed": true
+  },
+  "action": "Confirmed own final push PID140128/process group and snapshot arguments; sent SIGTERM only to that group. Parent140093 exited1 and recorded failed. All229 remote auxiliary batches and local helper/state preserved. No history rewrite or repeated blob upload.",
+  "limitation": "Small local pack and real object enumeration identify ineffective exclusion. They do not measure complete real network bytes or prove a replacement transport. Original HTTP500/408 failures cannot be explained solely as transient network errors.",
+  "next": "Before resuming, reproduce a bounded pack that excludes already remote blobs and then verify real pending-object/pack budget. Retain old refs/state; no blind final-push retry. Subsequent giant archive still outside this frozen snapshot.",
+  "state_sha256": "fd598903e96a7a10f9bb7cfd10814be9fa3ebb8b879e553cf05c3776fb281a03",
+  "science_queue_unaffected": true
+}
