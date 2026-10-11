@@ -2,6 +2,14 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
+## 当前状态：第347轮19回合反射双查询独立接收通过（2026-10-11，整体目标active）
+
+- 346为progress（唯一19队列完成），本轮复用全部已存工件、0physics/learning。review_frozen_reflection继承既有物理接收检查并适配19操作：初态数组全同、351340首回合子步/接触/连续prepost/真A-B链/八关节/1.4设计/扭矩包络/终态qv/guard前缀核过，245工件SHA，19物理设计全过。未修改任何冻结运行源或重跑实验。
+- 8794条策略记录及11108网络查询独立核；original=mu(Nraw)、secondary=mu(NSraw)从原模型/RMS CPU重放，最大误差均2.682209015e-7；secondary_normalized与N(Sraw)逐值同，所有提交与original/half/群平均精确相符，非反射条件secondary形状0避免伪装查询。D3反射reset0、停车请求逐子步与actor提交同，查询/图步/FD计数守恒；操作公式错误反例自检通过。
+- 19新B0与六原臂完整task flags复现，历史341 completion SHA对342已接受review再核且各历史结果SHA均在旧raw清单。主要D3_33532 reflection成功且yaw优于half .408303°，路径峰.132015→.106692m改善.025323m；但roll峰.044324→.065209°、速度RMSE略增、最小设计余量略减，不能将主要heading比较当全指标支配。两个V6(33531/33532) reflection yaw相对half分别恶化.021091/.060658°；33532路径反而改善.0125m，分项权衡保留。所有reflection yaw仍差于B0。
+- 本次证据仅函数干预/单seen平地，不能称学习算法优势、全动力学等变或稳定性；mean reset零不保证随后闭环漂移消失。新guard各条件无干预，旧fixedforce收益与formal5仍关闭，完整六论文出口缺口不变，goal active。
+- 348只用已接收19轨迹核剩余漂移、请求反馈与parking时间和分指标权衡，决定是否存在区别明确的下一机制，不能无界扩对称场景或新PPO。350按期方向/清理与整体框架。更新README/记忆及reviewer/json/log，编译与独立接收通过，中文提交后恢复守护并核remote；无新视频。
+
 ## 当前状态：第346轮唯一19回合反射诊断完成（2026-10-11，整体目标active）
 
 - 345为progress（方向/清理/有限反射性质与19协议），346准入6eca0782后首次启动唯一pid42090/unified38549，现正常exit0。19jobs完整、生产者physical/design19/19，actual graph351760/firstepisode351340、FD100、model forward rows11108，wall309.95294s含构建/记录非PPO加速，0学习/0重试。全程project-write.lock，旧341源与原模型/控制不变，完整390MiB数据及两网络查询/初终态保留。
