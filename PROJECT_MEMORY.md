@@ -2,6 +2,17 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
+## 当前状态：第338轮Warp固定力候选完整接收，收益扩展关闭（2026-10-11，整体目标active）
+
+- 按Warp冻结fixed_force_prequalification_v1推进，复用984已完成模型评价，无新physics/学习/选checkpoint。review_fixed_force_evaluation.py通过门边界自检、编译及唯一最终完整离线接收：60jobs/984episodes、14,548,000firstepisode substeps、364,175actor rows、6888原始文件SHA。冻结源码/六final200k模型RMS/训练review与admission、492经典原始SHA及逐case排序核；全部984physical/design过。
+- 独立全量dense pre/post连续qv/contactcount/meta/几何、A/B两闭链支路长度/闭链误差、八关节余量、pre速度对应issued/actual扭矩包络与strict1.4、guard preqv/issuedctrl/加速度差分/模型误差核。冻结归一化逐值重算，CPU frozenactor重放全部真实记录，最大动作误差4.768371582e-7（仅CPU/GPU推理数值校对，不放松科学成功门）；保存请求与停车日志逐步逐值同。原CPU28源码文件SHA/场景/每模型success、velocity、arrival、rollpitch直接能力保持核，不仅继承guardB0校对标志。
+- D3三seed33531/2/3 regular73/43/80（各96）、controlled23/16/27（各40）、legacy27/13/27（各28）；V6为78/86/79、29/32/27、28/27/28。D3 controlled J=1.5005329431/2.0396439301/1.1405940115deg；所有D3未达34/40、不保经典逐case成功与28旧能力，跨seed相对bestclassic及V6均未达15%AND.05deg。evaluation_review.json verified=True仅接收通过，candidate_qualification_passed=False、candidate_benefit_branch_closed=True、formal5=False。关闭本fixedbudget候选收益扩展，不能更多epochs/scene/seed/改门救分，不把失败推出所有差模RL不可能。
+- 实际科学984回合新增guard Nomcorrect/residualreduce/infeasible各0，最小actual design margin约.004118rad；全局modelerror仍约794—1000rad/s²、无certified未来界。本批失败不能直接归因新增guard压掉动作；原control projection/filter/执行权限及学习与完整task对齐仍需已有raw诊断。早期压力贴浮点界/未知误差及idealencoder限制保，有限984物理门通过不是实机安全或独立泛化。
+- 接收attempt0把A/B误读为left/right而断言失败，修成两支链各取左右腿min并从postq按原model几何重算，差异定义已解释且日志保。attempt1明确中断只读进程以补直接CPU对照和全八关节/电机包络核；attempt2最终exit0，未重跑任何机器人实验。新receiver/source及两attempt日志全部保。
+- 磁盘ENOSPC使编译缓存失败，发现无Git GC/repack进程、fuser无持有的未索引.git/objects/pack/tmp_pack_gvpL4U（13,482,561,536B）。前SHA与stat稳定、删除前后git fsck --connectivity-only通过后仅删该失败打包临时文件，释放约13.48GB；round338_storage_cleanup.json记证。未动indexed packs/loose objects/refs、实验raw、模型或失败数据，340定期清理仍到期。
+- Warp README新增最新冻结计划/338接收入口，旧第30轮“当前训练前状态”标为历史，避免误沿旧1024/terrain-v4路线。339仅已有失败/丢失case做同case D3/V6/classic请求与实际执行/首次越界/接触-停车时序机制核；340按五轮做方向深审和确认冗余删除，同时按十轮深查整体框架/遗漏/方法是否需调整。distinct机制、强同info消融、新qualified3→formal5、新独立ID/OOD、层级统计/实耗及完整新方法稿仍缺，整体goal active。
+- 中文提交本轮receiver/小型接收证据/README/记忆，运行中数据不暂存；无新视频或baseline替换。提交使用单次gc.auto=0避免低空间重复自动打包，未绕过commit-msg。收尾恢复守护并核远端；目前remote未齐，不能称完整同步。
+
 ## 2026-10-11 论文下一步只读分析
 
 - 核对最新计划与fixed_force_prequalification_v1实际文件：models/completion.json已verified、984回合/60jobs完成、17,202,920 actual graph world steps、wall2915.308s、newlearning0；原pid112841不再存活。第337轮136/984是历史快照，不能继续当live状态或重启评估。

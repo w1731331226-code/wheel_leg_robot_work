@@ -1,5 +1,11 @@
 # WheelLeg 原生GPU并行基线
 
+## 当前论文计划（第338轮，2026-10-11）
+
+当前冻结方案是 [fixed_force_prequalification_v1](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/proposal.json)：共享名义设计、公开481维输入与关节保护，D3差模力残差与同信息V6残差各三种子、各200k策略样本，只评价最终模型。492回合经典对照、六模型训练和984回合固定评估均已完成；第338轮[独立接收与资格报告](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/evaluation_review.json)通过记录核验，但D3的主任务成功、航向收益和旧能力保持门未通过，本候选收益扩展关闭，正式五种子未准入。
+
+下一步第339轮只分析已保存的失败轨迹；第340轮进行方向深审、确认冗余清理及整体代码框架核查。当前164个场景是已见开发案例，不能冒充新独立ID/OOD；新增保护层在本批984回合中未修正名义命令或缩减残差，任务失败原因仍需诊断。旧CPU/GPU基线及全部负结果保留。下文训练说明和早期通道审计稿均有各自历史范围。
+
 ## 给老师展示：115～380mm手动控制
 
 在项目根目录的桌面终端运行：
@@ -43,9 +49,9 @@ OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 /home/wmt/wheel_leg_r
 
 障碍来自现有地形生成器，橙色显示其真实碰撞几何，尺寸、接触、摩擦及控制门保持原值。可用`--scene step`等名字直接启动场景。12场景×5高度×正反共120例，物理/关节设计120/120，完整任务113/120；不对称障碍115/160mm、坡道115mm及起伏坡115mm仍有7例失败，窗口如实显示FAIL。GPU跳跃已验证115/160/250/300/380mm交接及300mm带前进速度起跳，经历蹲伏→起跳→腾空→落地→地面；跳跃与地面任务评分分开。[本轮完整证据](results/manual_scenes_jump_check_20261003/verification.json)
 
-## 当前训练前状态
+## 历史训练前状态（第30轮）
 
-当前height-115统一入口为`NativeEnv.height115_candidate(shared_reference=True)`，v8-design-floor-support、38维观测，固定7kg当前J设计位于`native/design.py`。第30轮CUDA PPO工程准入已通过，活动协议和readiness见[训练说明](NATIVE_TRAINING.md)。原28全部成功，当前公共148例仍有一例航向失败；工程准入不证明学习优势或高鲁棒性，尚未启动新的长训练。下面是历史0.30m训练记录。
+第30轮height-115统一入口为`NativeEnv.height115_candidate(shared_reference=True)`，v8-design-floor-support、38维观测，固定7kg的J设计位于`native/design.py`。当时CUDA PPO工程准入已通过，协议和readiness见[训练说明](NATIVE_TRAINING.md)。原28全部成功，当时公共148例仍有一例航向失败；工程准入不证明学习优势或高鲁棒性。下面是历史0.30m训练记录。
 
 唯一1024个MuJoCo Warp并行环境基线已经完成正式分轮训练；旧CPU训练实例和CPU/Warp对照实例已退役，公共控制、物理和评估代码保留。
 
