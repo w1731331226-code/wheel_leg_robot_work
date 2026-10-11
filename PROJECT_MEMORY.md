@@ -2,6 +2,13 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
+## 2026-10-11 论文下一步只读分析
+
+- 核对最新计划与fixed_force_prequalification_v1实际文件：models/completion.json已verified、984回合/60jobs完成、17,202,920 actual graph world steps、wall2915.308s、newlearning0；原pid112841不再存活。第337轮136/984是历史快照，不能继续当live状态或重启评估。
+- 只读聚合60 result.json：D3 seeds33531/2/3 regular73/43/80（各96）、controlled23/16/27（各40）、legacy27/13/27（各28）；V6对应78/86/79、29/32/27、28/27/28。D3 controlled J=1.500533/2.039644/1.140594deg。所有D3均未达预注册34/40且旧能力退化，当前汇总不支持扩formal5；尚未独立重读本次全部dense raw/接收模型评估，不能称正式完整审核已过。
+- 下一步：复用完整984和492经典证据做独立source/model/RMS/orderedcase/physicaldesign/raw与全资格门接收，明确关闭本候选收益扩展；随后仅已有失败轨迹做有限samecase D3/V6/classic首次越界与执行通道诊断，决定是否存在可证伪新机制。不得改门、选seed/checkpoint或加预算救分。formal5、新ID/OOD、机制消融、层级统计及完整新方法稿仍未完成；paper.tex仍为早期通道审计稿，不应混写当前方法优势。
+- 本轮仅计划/结果分析与记忆更新，无新仿真/学习/源码修改/视频。核查守护active但远端HEAD与本地不同，不能称完整同步。
+
 ## 当前状态：按北大核心纯仿真补充计划执行（2026-10-10，目标active）
 
 - 第337轮续唯一train pid94214/unified16113至exit0，不restart/seed替换。6fresh33531/2/3×D3/V6各200k完整，总1.2M策略样本/48M直接captureworldsteps、95FD，2876训练完成episode全部physical/design。perrun总117.82/114.63/118.22/115.89/138.52/138.71s（含构建/checkpoint/reload非CPU加速）。实际validguard counts约7.99M/run，各已完成+partial守恒过，complete与autoreset/inactive surplus明确。
