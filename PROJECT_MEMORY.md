@@ -2,7 +2,14 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：第363轮GPU残差段核对及20回合集成协议完成（2026-10-12，整体目标active）
+## 第364轮Cartesian完整链入口准入（2026-10-12，队列尚未执行）
+
+- 363为progress（GPU残差核对/20注册）。新增最小cartesian_pair_runtime与唯一worker，外层Cartesian/内层原jointguard/原evaluation；Nom零target后candidate再guard，prepare/finish换latent shadow、after仅改obs32:38，constructor/public reset与auto terminal-before-clear按既有合同处理。私有buffer强持有；actual canonical仍在真实controller state16:22，旧物理记录列不冒充latent。
+- 首次非执行launch-spy自检发现kernel身份不是native.controller入口，而是当前reference_role_control包装入口，guard已用后者；在0机器人/0FD时修为与原guard相同kernel对象。真实guard包装参与的80调用顺序、shadow/zero指针分离、两capture签名、错误恢复与construction保存自检现过。脚本zero/sine请求自检过；93源码/runtime、kernel receipt与20proposal绑定，实际constructor80拓扑仍须在首次capture_launch前验证。
+- 先提交本入口准入，再首次唯一20队列；每actor包检查实际物理/关节/扭矩，按case共同初态、8zero对freshB0完整流及flags必须同；源/物理/记录失败保现场停，不重试，不用工程结果主张PPO收益。365方向/清理，370框架保持，goal active。
+- 同步133/226后原进程终止，再次核remote辅助为pending134或其父提交、旧pid无后显式续接同待传提交；不从头重传。精确错误和新pid见state/log，仍未全同步。
+
+## 历史状态：第363轮GPU残差段核对及20回合集成协议完成（2026-10-12，整体目标active）
 
 - 362为progress（55296顺序/尺度反例与匹配对照），363读实际Native/parking/guard/collector，明确clock和指针而非复制Nom。原obs0:32走延迟history，32:38原本即当前滤波memory；新两Cart在同一时刻只写latent pairs。真canonical/alpha留诊断，不额外进Actor。现实kstate16:22保canonical，另shadow给原parking prepare/finish检查latent slew，不能混称一组filter。
 - 已注册runtime_proposal四case6301003/1005/1033/1037，B0zero/Livezero/Resetzero及Live/Reset固定.15正弦共20，graph640000/FD210/每jobfirst26000/actor16000，0学习。sin profile全案例相同且停车仍请求非零以查withdraw；task失败保留、物理/源/记录失败停。零门是freshB0与两Cart共同初态/每步命令qv/观测/原flag一致，不要求这些hardcase的B0成功；Cart私有初终buffer另验。
