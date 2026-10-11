@@ -1,6 +1,6 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（第342轮，2026-10-11）
+## 当前论文计划（第343轮，2026-10-11）
 
 当前冻结方案是 [fixed_force_prequalification_v1](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/proposal.json)：共享名义设计、公开481维输入与关节保护，D3差模力残差与同信息V6残差各三种子、各200k策略样本，只评价最终模型。492回合经典对照、六模型训练和984回合固定评估均已完成；第338轮[独立接收与资格报告](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/evaluation_review.json)通过记录核验，但D3的主任务成功、航向收益和旧能力保持门未通过，本候选收益扩展关闭，正式五种子未准入。
 
@@ -10,7 +10,9 @@
 
 第341轮完成[13回合冻结轮请求诊断](results/paper_recovery_20261004/joint_reference_candidate_v1/frozen_wheel_interference_diagnostic_v1/completion.json)，第342轮[独立接收](results/paper_recovery_20261004/joint_reference_candidate_v1/frozen_wheel_interference_diagnostic_v1/review.json)通过：13初态、全部实际物理子步、模型/RMS重放、原始/掩码请求及原臂历史任务标志一致。D3_33532原输出偏航峰5.44446°且任务失败，关闭轮请求后0.73825°并成功，六对峰值均降；所有关闭轮请求模型的偏航仍高于新B0。支持该固定平地反例中的轮请求干预效应，不证明学习优势或瞬时纯轮力学因果；旧候选收益扩展仍关闭。
 
-第343轮优先使用已接受的13条轨迹，核对训练回报与任务改善的排序及剩余腿通道/时序影响，不新增训练或扩大掩码队列。第345轮继续方向深审和清理，第350轮再次整体框架核查。当前案例为已见开发数据；旧CPU/GPU基线及全部负结果保留。下文训练说明和早期通道审计稿均有各自历史范围。
+第343轮[奖励重建与排序核对](results/paper_recovery_20261004/joint_reference_candidate_v1/frozen_wheel_interference_diagnostic_v1/reward_audit.json)通过，13回合总奖励最大重建误差3.91e-14。按原20ms策略时钟gamma=.99折扣，六组关闭轮请求后回报均提高；D3_33532为1.46835→1.97181，B0为1.97910且仍高于所有学习臂。本批不支持“原奖励把该失败排在改善前面”，不据此改奖励或追加训练；也不能推广为全分布奖励正确或PPO收敛证明。
+
+第344轮收束已有干预、奖励排序和训练/探索限制，形成有限的方法方向决策；第345轮方向深审和清理、第350轮整体框架核查保持。当前案例为已见开发数据；旧CPU/GPU基线及全部负结果保留。下文训练说明和早期通道审计稿均有各自历史范围。
 
 ## 给老师展示：115～380mm手动控制
 
