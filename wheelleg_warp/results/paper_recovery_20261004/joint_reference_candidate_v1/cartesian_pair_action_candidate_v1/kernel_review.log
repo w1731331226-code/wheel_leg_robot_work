@@ -1,0 +1,13 @@
+Warp 1.17.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 5060 Laptop GPU" (8 GiB, sm_120, mempool enabled)
+   Kernel cache:
+     /home/wmt/.cache/warp/1.17.0
+Module cartesian_pair_kernel c36b353 load on device 'cuda:0' took 4149.74 ms  (compiled)
+PASS363 inactive/upstream-error/bad-pair/cold-zero/masked-reset/observation ownership
+KERNEL363 {'mode': 0, 'near_limit': False, 'rows': 55296, 'canonical_error': 1.9984014443252818e-15, 'motor_request_error_Nm': 8.604228440844963e-16, 'issued_error_Nm': 0.0, 'bound_excess_Nm': 0.0, 'projected_rows': 0, 'cold_zero_rows': 512}
+KERNEL363 {'mode': 0, 'near_limit': True, 'rows': 55296, 'canonical_error': 1.9984014443252818e-15, 'motor_request_error_Nm': 8.604228440844963e-16, 'issued_error_Nm': 0.0, 'bound_excess_Nm': 1.8255631895058855e-08, 'projected_rows': 13172, 'cold_zero_rows': 512}
+KERNEL363 {'mode': 1, 'near_limit': False, 'rows': 55296, 'canonical_error': 2.220446049250313e-16, 'motor_request_error_Nm': 5.551115123125783e-16, 'issued_error_Nm': 0.0, 'bound_excess_Nm': 0.0, 'projected_rows': 0, 'cold_zero_rows': 512}
+KERNEL363 {'mode': 1, 'near_limit': True, 'rows': 55296, 'canonical_error': 2.220446049250313e-16, 'motor_request_error_Nm': 5.551115123125783e-16, 'issued_error_Nm': 0.0, 'bound_excess_Nm': 1.8255631895058855e-08, 'projected_rows': 13824, 'cold_zero_rows': 512}

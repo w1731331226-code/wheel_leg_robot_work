@@ -1,0 +1,775 @@
+{
+  "round": 363,
+  "status": "registered_pending_complete_runtime_admission",
+  "cases": [
+    {
+      "seed": 6301003,
+      "scenario": {
+        "speed": 0.7,
+        "mass": 7.0,
+        "height_l": 0.0,
+        "height_r": 0.02,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 4600003,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.115
+      }
+    },
+    {
+      "seed": 6301005,
+      "scenario": {
+        "speed": -0.7,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 4600005,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.115
+      }
+    },
+    {
+      "seed": 6301033,
+      "scenario": {
+        "speed": 0.7,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 4600033,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.38
+      }
+    },
+    {
+      "seed": 6301037,
+      "scenario": {
+        "speed": -0.7,
+        "mass": 7.0,
+        "height_l": 0.02,
+        "height_r": 0.0,
+        "center": 1.8,
+        "offset": 0.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "drive_difference": 0.0,
+        "delay_ms": 0.0,
+        "solver_iterations": 100,
+        "terrain": "legacy",
+        "grade_deg": 0.0,
+        "roughness_m": 0.0,
+        "step_height_m": 0.0,
+        "terrain_seed": 4600037,
+        "relative_attitude": false,
+        "transition_run_m": 0.0,
+        "lateral_margin_m": 0.0,
+        "stand_height_m": 0.38
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "label": "6301003_B0_zero",
+      "case": {
+        "seed": 6301003,
+        "scenario": {
+          "speed": 0.7,
+          "mass": 7.0,
+          "height_l": 0.0,
+          "height_r": 0.02,
+          "center": 1.8,
+          "offset": 0.0,
+          "mu_l": 0.8,
+          "mu_r": 0.8,
+          "drive_difference": 0.0,
+          "delay_ms": 0.0,
+          "solver_iterations": 100,
+          "terrain": "legacy",
+          "grade_deg": 0.0,
+          "roughness_m": 0.0,
+          "step_height_m": 0.0,
+          "terrain_seed": 4600003,
+          "relative_attitude": false,
+          "transition_run_m": 0.0,
+          "lateral_margin_m": 0.0,
+          "stand_height_m": 0.115
+        }
+      },
+      "arm": "B0",
+      "profile": "zero"
+    },
+    {
+      "label": "6301003_CartLive3_zero",
+      "case": {
+        "seed": 6301003,
+        "scenario": {
+          "speed": 0.7,
+          "mass": 7.0,
+          "height_l": 0.0,
+          "height_r": 0.02,
+          "center": 1.8,
+          "offset": 0.0,
+          "mu_l": 0.8,
+          "mu_r": 0.8,
+          "drive_difference": 0.0,
+          "delay_ms": 0.0,
+          "solver_iterations": 100,
+          "terrain": "legacy",
+          "grade_deg": 0.0,
+          "roughness_m": 0.0,
+          "step_height_m": 0.0,
+          "terrain_seed": 4600003,
+          "relative_attitude": false,
+          "transition_run_m": 0.0,
+          "lateral_margin_m": 0.0,
+          "stand_height_m": 0.115
+        }
+      },
+      "arm": "CartLive3",
+      "profile": "zero"
+    },
+    {
+      "label": "6301003_CartReset3_zero",
+      "case": {
+        "seed": 6301003,
+        "scenario": {
+          "speed": 0.7,
+          "mass": 7.0,
+          "height_l": 0.0,
+          "height_r": 0.02,
+          "center": 1.8,
+          "offset": 0.0,
+          "mu_l": 0.8,
+          "mu_r": 0.8,
+          "drive_difference": 0.0,
+          "delay_ms": 0.0,
+          "solver_iterations": 100,
+          "terrain": "legacy",
+          "grade_deg": 0.0,
+          "roughness_m": 0.0,
+          "step_height_m": 0.0,
+          "terrain_seed": 4600003,
+          "relative_attitude": false,
+          "transition_run_m": 0.0,
+          "lateral_margin_m": 0.0,
+          "stand_height_m": 0.115
+        }
+      },
+      "arm": "CartReset3",
+      "profile": "zero"
+    },
+    {
+      "label": "6301003_CartLive3_sine",
+      "case": {
+        "seed": 6301003,
+        "scenario": {
+          "speed": 0.7,
+          "mass": 7.0,
+          "height_l": 0.0,
+          "height_r": 0.02,
+          "center": 1.8,
+          "offset": 0.0,
+          "mu_l": 0.8,
+          "mu_r": 0.8,
+          "drive_difference": 0.0,
+          "delay_ms": 0.0,
+          "solver_iterations": 100,
+          "terrain": "legacy",
+          "grade_deg": 0.0,
+          "roughness_m": 0.0,
+          "step_height_m": 0.0,
+          "terrain_seed": 4600003,
+          "relative_attitude": false,
+          "transition_run_m": 0.0,
+          "lateral_margin_m": 0.0,
+          "stand_height_m": 0.115
+        }
+      },
+      "arm": "CartLive3",
+      "profile": "sine"
+    },
+    {
+      "label": "6301003_CartReset3_sine",
+      "case": {
+        "seed": 6301003,
+        "scenario": {
+          "speed": 0.7,
+          "mass": 7.0,
+          "height_l": 0.0,
+          "height_r": 0.02,
+          "center": 1.8,
+          "offset": 0.0,
+          "mu_l": 0.8,
+          "mu_r": 0.8,
+          "drive_difference": 0.0,
+          "delay_ms": 0.0,
+          "solver_iterations": 100,
+          "terrain": "legacy",
+          "grade_deg": 0.0,
+          "roughness_m": 0.0,
+          "step_height_m": 0.0,
+          "terrain_seed": 4600003,
+          "relative_attitude": false,
+          "transition_run_m": 0.0,
+          "lateral_margin_m": 0.0,
+          "stand_height_m": 0.115
+        }
+      },
+      "arm": "CartReset3",
+      "profile": "sine"
+    },
+    {
+      "label": "6301005_B0_zero",
+      "case": {
+        "seed": 6301005,
+        "scenario": {
+          "speed": -0.7,
+          "mass": 7.0,
+          "height_l": 0.02,
+          "height_r": 0.0,
+          "center": 1.8,
+          "offset": 0.0,
+          "mu_l": 0.8,
+          "mu_r": 0.8,
+          "drive_difference": 0.0,
+          "delay_ms": 0.0,
+          "solver_iterations": 100,
+          "terrain": "legacy",
+          "grade_deg": 0.0,
+          "roughness_m": 0.0,
+          "step_height_m": 0.0,
+          "terrain_seed": 4600005,
+          "relative_attitude": false,
+          "transition_run_m": 0.0,
+          "lateral_margin_m": 0.0,
+          "stand_height_m": 0.115
+        }
+      },
+      "arm": "B0",
+      "profile": "zero"
+    },
+    {
+      "label": "6301005_CartLive3_zero",
+      "case": {
+        "seed": 6301005,
+        "scenario": {
+          "speed": -0.7,
+          "mass": 7.0,
+          "height_l": 0.02,
+          "height_r": 0.0,
+          "center": 1.8,
+          "offset": 0.0,
+          "mu_l": 0.8,
+          "mu_r": 0.8,
+          "drive_difference": 0.0,
+          "delay_ms": 0.0,
+          "solver_iterations": 100,
+          "terrain": "legacy",
+          "grade_deg": 0.0,
+          "roughness_m": 0.0,
+          "step_height_m": 0.0,
+          "terrain_seed": 4600005,
+          "relative_attitude": false,
+          "transition_run_m": 0.0,
+          "lateral_margin_m": 0.0,
+          "stand_height_m": 0.115
+        }
+      },
+      "arm": "CartLive3",
+      "profile": "zero"
+    },
+    {
+      "label": "6301005_CartReset3_zero",
+      "case": {
+        "seed": 6301005,
+        "scenario": {
+          "speed": -0.7,
+          "mass": 7.0,
+          "height_l": 0.02,
+          "height_r": 0.0,
+          "center": 1.8,
+          "offset": 0.0,
+          "mu_l": 0.8,
+          "mu_r": 0.8,
+          "drive_difference": 0.0,
+          "delay_ms": 0.0,
+          "solver_iterations": 100,
+          "terrain": "legacy",
+          "grade_deg": 0.0,
+          "roughness_m": 0.0,
+          "step_height_m": 0.0,
+          "terrain_seed": 4600005,
+          "relative_attitude": false,
+          "transition_run_m": 0.0,
+          "lateral_margin_m": 0.0,
+          "stand_height_m": 0.115
+        }
+      },
+      "arm": "CartReset3",
+      "profile": "zero"
+    },
+    {
+      "label": "6301005_CartLive3_sine",
+      "case": {
+        "seed": 6301005,
+        "scenario": {
+          "speed": -0.7,
+          "mass": 7.0,
+          "height_l": 0.02,
+          "height_r": 0.0,
+          "center": 1.8,
+          "offset": 0.0,
+          "mu_l": 0.8,
+          "mu_r": 0.8,
+          "drive_difference": 0.0,
+          "delay_ms": 0.0,
+          "solver_iterations": 100,
+          "terrain": "legacy",
+          "grade_deg": 0.0,
+          "roughness_m": 0.0,
+          "step_height_m": 0.0,
+          "terrain_seed": 4600005,
+          "relative_attitude": false,
+          "transition_run_m": 0.0,
+          "lateral_margin_m": 0.0,
+          "stand_height_m": 0.115
+        }
+      },
+      "arm": "CartLive3",
+      "profile": "sine"
+    },
+    {
+      "label": "6301005_CartReset3_sine",
+      "case": {
+        "seed": 6301005,
+        "scenario": {
+          "speed": -0.7,
+          "mass": 7.0,
+          "height_l": 0.02,
+          "height_r": 0.0,
+          "center": 1.8,
+          "offset": 0.0,
+          "mu_l": 0.8,
+          "mu_r": 0.8,
+          "drive_difference": 0.0,
+          "delay_ms": 0.0,
+          "solver_iterations": 100,
+          "terrain": "legacy",
+          "grade_deg": 0.0,
+          "roughness_m": 0.0,
+          "step_height_m": 0.0,
+          "terrain_seed": 4600005,
+          "relative_attitude": false,
+          "transition_run_m": 0.0,
+          "lateral_margin_m": 0.0,
+          "stand_height_m": 0.115
+        }
+      },
+      "arm": "CartReset3",
+      "profile": "sine"
+    },
+    {
+      "label": "6301033_B0_zero",
+      "case": {
+        "seed": 6301033,
+        "scenario": {
+          "speed": 0.7,
+          "mass": 7.0,
+          "height_l": 0.02,
+          "height_r": 0.0,
+          "center": 1.8,
+          "offset": 0.0,
+          "mu_l": 0.8,
+          "mu_r": 0.8,
+          "drive_difference": 0.0,
+          "delay_ms": 0.0,
+          "solver_iterations": 100,
+          "terrain": "legacy",
+          "grade_deg": 0.0,
+          "roughness_m": 0.0,
+          "step_height_m": 0.0,
+          "terrain_seed": 4600033,
+          "relative_attitude": false,
+          "transition_run_m": 0.0,
+          "lateral_margin_m": 0.0,
+          "stand_height_m": 0.38
+        }
+      },
+      "arm": "B0",
+      "profile": "zero"
+    },
+    {
+      "label": "6301033_CartLive3_zero",
+      "case": {
+        "seed": 6301033,
+        "scenario": {
+          "speed": 0.7,
+          "mass": 7.0,
+          "height_l": 0.02,
+          "height_r": 0.0,
+          "center": 1.8,
+          "offset": 0.0,
+          "mu_l": 0.8,
+          "mu_r": 0.8,
+          "drive_difference": 0.0,
+          "delay_ms": 0.0,
+          "solver_iterations": 100,
+          "terrain": "legacy",
+          "grade_deg": 0.0,
+          "roughness_m": 0.0,
+          "step_height_m": 0.0,
+          "terrain_seed": 4600033,
+          "relative_attitude": false,
+          "transition_run_m": 0.0,
+          "lateral_margin_m": 0.0,
+          "stand_height_m": 0.38
+        }
+      },
+      "arm": "CartLive3",
+      "profile": "zero"
+    },
+    {
+      "label": "6301033_CartReset3_zero",
+      "case": {
+        "seed": 6301033,
+        "scenario": {
+          "speed": 0.7,
+          "mass": 7.0,
+          "height_l": 0.02,
+          "height_r": 0.0,
+          "center": 1.8,
+          "offset": 0.0,
+          "mu_l": 0.8,
+          "mu_r": 0.8,
+          "drive_difference": 0.0,
+          "delay_ms": 0.0,
+          "solver_iterations": 100,
+          "terrain": "legacy",
+          "grade_deg": 0.0,
+          "roughness_m": 0.0,
+          "step_height_m": 0.0,
+          "terrain_seed": 4600033,
+          "relative_attitude": false,
+          "transition_run_m": 0.0,
+          "lateral_margin_m": 0.0,
+          "stand_height_m": 0.38
+        }
+      },
+      "arm": "CartReset3",
+      "profile": "zero"
+    },
+    {
+      "label": "6301033_CartLive3_sine",
+      "case": {
+        "seed": 6301033,
+        "scenario": {
+          "speed": 0.7,
+          "mass": 7.0,
+          "height_l": 0.02,
+          "height_r": 0.0,
+          "center": 1.8,
+          "offset": 0.0,
+          "mu_l": 0.8,
+          "mu_r": 0.8,
+          "drive_difference": 0.0,
+          "delay_ms": 0.0,
+          "solver_iterations": 100,
+          "terrain": "legacy",
+          "grade_deg": 0.0,
+          "roughness_m": 0.0,
+          "step_height_m": 0.0,
+          "terrain_seed": 4600033,
+          "relative_attitude": false,
+          "transition_run_m": 0.0,
+          "lateral_margin_m": 0.0,
+          "stand_height_m": 0.38
+        }
+      },
+      "arm": "CartLive3",
+      "profile": "sine"
+    },
+    {
+      "label": "6301033_CartReset3_sine",
+      "case": {
+        "seed": 6301033,
+        "scenario": {
+          "speed": 0.7,
+          "mass": 7.0,
+          "height_l": 0.02,
+          "height_r": 0.0,
+          "center": 1.8,
+          "offset": 0.0,
+          "mu_l": 0.8,
+          "mu_r": 0.8,
+          "drive_difference": 0.0,
+          "delay_ms": 0.0,
+          "solver_iterations": 100,
+          "terrain": "legacy",
+          "grade_deg": 0.0,
+          "roughness_m": 0.0,
+          "step_height_m": 0.0,
+          "terrain_seed": 4600033,
+          "relative_attitude": false,
+          "transition_run_m": 0.0,
+          "lateral_margin_m": 0.0,
+          "stand_height_m": 0.38
+        }
+      },
+      "arm": "CartReset3",
+      "profile": "sine"
+    },
+    {
+      "label": "6301037_B0_zero",
+      "case": {
+        "seed": 6301037,
+        "scenario": {
+          "speed": -0.7,
+          "mass": 7.0,
+          "height_l": 0.02,
+          "height_r": 0.0,
+          "center": 1.8,
+          "offset": 0.0,
+          "mu_l": 0.8,
+          "mu_r": 0.8,
+          "drive_difference": 0.0,
+          "delay_ms": 0.0,
+          "solver_iterations": 100,
+          "terrain": "legacy",
+          "grade_deg": 0.0,
+          "roughness_m": 0.0,
+          "step_height_m": 0.0,
+          "terrain_seed": 4600037,
+          "relative_attitude": false,
+          "transition_run_m": 0.0,
+          "lateral_margin_m": 0.0,
+          "stand_height_m": 0.38
+        }
+      },
+      "arm": "B0",
+      "profile": "zero"
+    },
+    {
+      "label": "6301037_CartLive3_zero",
+      "case": {
+        "seed": 6301037,
+        "scenario": {
+          "speed": -0.7,
+          "mass": 7.0,
+          "height_l": 0.02,
+          "height_r": 0.0,
+          "center": 1.8,
+          "offset": 0.0,
+          "mu_l": 0.8,
+          "mu_r": 0.8,
+          "drive_difference": 0.0,
+          "delay_ms": 0.0,
+          "solver_iterations": 100,
+          "terrain": "legacy",
+          "grade_deg": 0.0,
+          "roughness_m": 0.0,
+          "step_height_m": 0.0,
+          "terrain_seed": 4600037,
+          "relative_attitude": false,
+          "transition_run_m": 0.0,
+          "lateral_margin_m": 0.0,
+          "stand_height_m": 0.38
+        }
+      },
+      "arm": "CartLive3",
+      "profile": "zero"
+    },
+    {
+      "label": "6301037_CartReset3_zero",
+      "case": {
+        "seed": 6301037,
+        "scenario": {
+          "speed": -0.7,
+          "mass": 7.0,
+          "height_l": 0.02,
+          "height_r": 0.0,
+          "center": 1.8,
+          "offset": 0.0,
+          "mu_l": 0.8,
+          "mu_r": 0.8,
+          "drive_difference": 0.0,
+          "delay_ms": 0.0,
+          "solver_iterations": 100,
+          "terrain": "legacy",
+          "grade_deg": 0.0,
+          "roughness_m": 0.0,
+          "step_height_m": 0.0,
+          "terrain_seed": 4600037,
+          "relative_attitude": false,
+          "transition_run_m": 0.0,
+          "lateral_margin_m": 0.0,
+          "stand_height_m": 0.38
+        }
+      },
+      "arm": "CartReset3",
+      "profile": "zero"
+    },
+    {
+      "label": "6301037_CartLive3_sine",
+      "case": {
+        "seed": 6301037,
+        "scenario": {
+          "speed": -0.7,
+          "mass": 7.0,
+          "height_l": 0.02,
+          "height_r": 0.0,
+          "center": 1.8,
+          "offset": 0.0,
+          "mu_l": 0.8,
+          "mu_r": 0.8,
+          "drive_difference": 0.0,
+          "delay_ms": 0.0,
+          "solver_iterations": 100,
+          "terrain": "legacy",
+          "grade_deg": 0.0,
+          "roughness_m": 0.0,
+          "step_height_m": 0.0,
+          "terrain_seed": 4600037,
+          "relative_attitude": false,
+          "transition_run_m": 0.0,
+          "lateral_margin_m": 0.0,
+          "stand_height_m": 0.38
+        }
+      },
+      "arm": "CartLive3",
+      "profile": "sine"
+    },
+    {
+      "label": "6301037_CartReset3_sine",
+      "case": {
+        "seed": 6301037,
+        "scenario": {
+          "speed": -0.7,
+          "mass": 7.0,
+          "height_l": 0.02,
+          "height_r": 0.0,
+          "center": 1.8,
+          "offset": 0.0,
+          "mu_l": 0.8,
+          "mu_r": 0.8,
+          "drive_difference": 0.0,
+          "delay_ms": 0.0,
+          "solver_iterations": 100,
+          "terrain": "legacy",
+          "grade_deg": 0.0,
+          "roughness_m": 0.0,
+          "step_height_m": 0.0,
+          "terrain_seed": 4600037,
+          "relative_attitude": false,
+          "transition_run_m": 0.0,
+          "lateral_margin_m": 0.0,
+          "stand_height_m": 0.38
+        }
+      },
+      "arm": "CartReset3",
+      "profile": "sine"
+    }
+  ],
+  "evaluations": 20,
+  "actual_graph_world_step_budget": 640000,
+  "constructor_FD_budget": 210,
+  "per_job_first_episode_steps_cap": 26000,
+  "actor_row_budget": 16000,
+  "new_learning_samples": 0,
+  "profile": "zero=[0,0,0]. sine at actor time t=k*.02: [.15*sin(pi*t),.15*cos(pi*t),.15*sin(2*pi*t)] same schedule all cases/arms; remains requested in parking to verify existing withdrawal. No case or contact-dependent selection.",
+  "purpose": "Engineering zero-equivalence, paired reset, pipeline/filter/history/park/physical delivery. These seen cases and scripted actions cannot establish PPO/task advantage; task failures retained.",
+  "topology": [
+    "existing shared reference and command_step",
+    "existing parking prepare, reading a separate 22-slot shadow controller state whose16:22 holds paired latent memory",
+    "clear only native controller state16:22; existing original control_physical_nominal called with a dedicated zero-target6 buffer",
+    "candidate .01 latent slew from effective even slots; current/reset geometry; canonical map; existing polar_jac and project_bounds; actual canonical stored in original state16:22",
+    "existing joint_state_guard on candidate residual, retaining its nominal correction and common residual lambda",
+    "existing parking finish reads latent shadow; physical/role recorders read actual canonical native memory",
+    "existing final total-command collector before physical step",
+    "unchanged physical step/contact/physical gate/after; replace only returned obs32:38 by latent pairs after native after, leaving physical history0:32 untouched"
+  ],
+  "reset": "Explicit and auto reset clear only reset worlds latent/shadow/canonical/logs; freeze reset geometry from the returned public reset encoder packet. Terminal observation must capture old latent memory before auto reset. Prove other worlds unchanged in masked reset fixtures.",
+  "zero_gate": "For all4cases, B0/CartLive3zero/CartReset3zero initial arrays, every commanded torque/qv/physical stream, public observation and complete task flags exactly reproduce under shared source. No B0 task-success requirement; physical/design remain mandatory.",
+  "nonzero_gate": "Native GPU formula matches independent CPU request/VMC/projection fixtures; complete 20ms and substep records prove order, same Nom, geometry identity, current J, lambda, reset/park, same actor-memory semantics. Physical/design violation stops preserving consumed budget; task failure alone does not stop.",
+  "recording": "Log requested latent3/effective latent3/filter before+after/canonical6/reset geometry or current geometry/alpha/raw motor residual/scalar projection/final guard issued ctrl, plus standard full qv/contacts/controller initial+terminal and public481 actor records. Shadow latent and actual canonical never mislabeled as one buffer.",
+  "prohibitions": [
+    "no source changes to old frozen controllers or old science outputs",
+    "no second canonical slew after mapping",
+    "no private contact/geometry added to actor",
+    "no additional physical runs or training after a failed gate without new decision"
+  ],
+  "leaf_kernel_check": {
+    "rows": 55296,
+    "modes": [
+      "live",
+      "reset"
+    ],
+    "nominal_fixtures": [
+      "zero",
+      "signed95percentofspeeddependentbounds"
+    ],
+    "total_evaluations": 221184,
+    "new_physics_steps": 0,
+    "new_FD": 0,
+    "cpu_tolerances": {
+      "canonical_abs": 1e-06,
+      "motor_request_Nm": 1e-06,
+      "issued_Nm": 5e-06,
+      "bound_excess_Nm": 1e-06
+    },
+    "limits": "5e-6 issued comparison allows float32 rounding at40Nm; original physical limit check remains1e-6. Leaf test is not actual Nom or joint guard integration."
+  },
+  "before_queue": "Complete adapter/source/runtime admission and masked reset/parking/observation pointer checks, then commit before unique queue. 364 implement/admit/run together or reject;365 direction/cleanup takes actual outcome.",
+  "evidence_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/proposal.json": "51794b3c05c28c3e8933f6b015410961943c050b9353c3f5a4e272fbbfd29d7d",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/review.json": "155dba661b301bf1ee9be3391fb1274a3125d8c53c1698f4b171dfed29ae54cf",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/delivery_proposal.json": "daf23e2841d5779788c7c73f0934f9ddd0aea1e48b4dc8df77695ac4d402c428",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/delivery_review.json": "fc9ab475788ff54f79766b91456a50915eb19aada4c3e48074373caad9527b2c",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/delivery_fixtures.npz": "08051248c4633cebc2db1d5d721e7b40cf26312920bbf175ce48e566388a427e"
+  },
+  "source_sha256": {
+    "wheelleg_warp/native/controller.py": "04d106ae8579118eb306ba2b28037425f81a1f554d4b51fa1eae1ef795fede73",
+    "wheelleg_warp/native/environment.py": "a4fb0a7a5beb08bf23e8e3855f681e8008b79fe5e730d11bc4b5c91674fe8a2b",
+    "wheelleg_warp/joint_state_guard.py": "f99f891175602a8e46e800ecf0230add9369e3d19584d752964d7b619e5191ec",
+    "wheelleg_warp/parking_withdrawal_probe.py": "19882d6fbce597f96a4ffad72a1c6d17b03e05dd7ff2ec89067c08c9cd2ab6ef",
+    "wheelleg_warp/execution_input_collector.py": "fa3cb14857e6e95805753b3ca67c07a24092c6ce04943cab51decf8797951ffb",
+    "wheelleg_warp/execution_history_env.py": "5c0f0135df45fa899b03f557dff98da3cabbf58b0afdf5bf6279f470fec4f01b",
+    "wheelleg_warp/cartesian_pair_action.py": "d8bd86d0146a01ebd11821c72fa5c4cf7ea61449ee8b74abe8203938eb9a5f46"
+  },
+  "formal5_admitted": false
+}

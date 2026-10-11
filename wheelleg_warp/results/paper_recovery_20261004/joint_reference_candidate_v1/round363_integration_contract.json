@@ -1,0 +1,49 @@
+{
+  "round": 363,
+  "status": "kernel_passed_full_graph_pending",
+  "outcome": "实际CUDA残差段、CPU黄金参考与存储所有权过；不等完整Native/关节guard/停车/环境交付。唯一20回合已注册，未执行。",
+  "kernel_receipt": {
+    "evaluations": 221184,
+    "canonical_error_max": 1.9984014443252818e-15,
+    "motor_error_max_Nm": 8.604228440844963e-16,
+    "issued_error_max_Nm": 0.0,
+    "bound_excess_max_Nm": 1.8255631895058855e-08,
+    "projected_rows": 26996
+  },
+  "composition": "cartesian instrument OUTSIDE joint_state_guard.instrument(lambda: existing evaluation.make_env(...)). Thus guard launch delegates to cart wrapper, which calls original zero-target Nom then new residual stage, then returns for the original guard. No copies of original Nom/guard kernels.",
+  "pointer_changes": [
+    "Intercept original parking.prepare and replace ONLY its control_state argument (position5) with latent shadow. Its requested/effective/seen/command/state pointers and gating logic stay original.",
+    "Intercept original control_physical_nominal: clear_native on real state16:22; delegate same kernel with a separate all-zero6 target buffer; call deliver with the original parked effective target pointer. Real controller state16:22 becomes actual canonical; private shadow16:22 becomes latent pairs.",
+    "Intercept parking.finish and replace ONLY state argument (position1) with the latent shadow; independent old check_log can then verify the paired latent slew exactly. Override the candidate parking-contract labels rather than claim original canonical slew.",
+    "Intercept native.environment.after: execute unchanged, then observe_latent overwrites only obs32:38. Native physical0:32/history remain untouched. The old32:38 fields already carry current controller memory, unlike delayed physical32, so preserve that timing explicitly.",
+    "Intercept constructor native.reset_rows and call reset_aux with mask and public obs0 argument12, before any captured controller tick; otherwise CartReset3 geometry would be uninitialized during graph capture."
+  ],
+  "runtime_reset": "After factory restoration, wrap raw.reset and raw.step_wait: manual reset calls reset_aux for all rows using returned public reset packet/raw.obs. Auto-reset captures terminal Cartesian buffers BEFORE old step_wait clears Native state, then clears only done rows using their returned public reset packets. Others retain latent and reference. Preserve private arrays with raw._cartesian_buffers for graph lifetime.",
+  "records": "Keep old dense filtered_F/H/wheel labels mapped to actual canonical real state16:22. Parking before/after columns are explicitly latent pairs via shadow. Actual canonical/alpha remain diagnostic; Actor gets only same latent-memory version in both Cart arms. Private buffers have own initial/terminal records, compared across Cart modes; compare original shared initial fields with B0.",
+  "admission": "Kernel/source/proposal SHA and exact80 controller calls across two captures, control-before-guard order and pointer ownership must be checked before first capture_launch. Complete20 queue must test common initial arrays and all zero-controller streams/flags against fresh B0; private buffers checked separately. No task-success requirement for B0.",
+  "queue": {
+    "cases": 4,
+    "evaluations": 20,
+    "graph_budget": 640000,
+    "FD_budget": 210,
+    "first_episode_cap": 26000,
+    "actor_rows": 16000,
+    "profiles": [
+      "zero",
+      "fixed .15 sine latent profile"
+    ],
+    "implicit_retry": false
+  },
+  "next": "364 implement the minimal adapter and one worker, complete source/runtime admission and commit before unique20 run in the same round; if a contract cannot be met, reject with preserved evidence rather than silently simplify.365 direction/cleanup decides continuation from actual outcome.",
+  "evidence_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/runtime_proposal.json": "420bb125d826a6fe922f52d6bab15e84e945329a7bd7368666214f8cb325a3cb",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/kernel_review.json": "6182985cb1351f4ea6cc23cda297f25ac05ed4d707ecd2d983aee91f480d16c2",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/delivery_review.json": "fc9ab475788ff54f79766b91456a50915eb19aada4c3e48074373caad9527b2c"
+  },
+  "new_physics_steps": 0,
+  "new_FD": 0,
+  "new_model_forward_rows": 0,
+  "new_learning_samples": 0,
+  "formal5_admitted": false,
+  "goal_complete": false
+}

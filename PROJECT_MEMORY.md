@@ -2,7 +2,16 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：第362轮滤波/尺度检查与匹配对照定义完成（2026-10-12，整体目标active）
+## 当前状态：第363轮GPU残差段核对及20回合集成协议完成（2026-10-12，整体目标active）
+
+- 362为progress（55296顺序/尺度反例与匹配对照），363读实际Native/parking/guard/collector，明确clock和指针而非复制Nom。原obs0:32走延迟history，32:38原本即当前滤波memory；新两Cart在同一时刻只写latent pairs。真canonical/alpha留诊断，不额外进Actor。现实kstate16:22保canonical，另shadow给原parking prepare/finish检查latent slew，不能混称一组filter。
+- 已注册runtime_proposal四case6301003/1005/1033/1037，B0zero/Livezero/Resetzero及Live/Reset固定.15正弦共20，graph640000/FD210/每jobfirst26000/actor16000，0学习。sin profile全案例相同且停车仍请求非零以查withdraw；task失败保留、物理/源/记录失败停。零门是freshB0与两Cart共同初态/每步命令qv/观测/原flag一致，不要求这些hardcase的B0成功；Cart私有初终buffer另验。
+- 新cartesian_pair_kernel只含未安装的clear_native/reset_aux/observe_latent/deliver，复用原fk/polar_jac/command_bounds/project_bounds；原Nom、物理、jointguard均未改。221184实际CUDA冻结fixture（55296×两mode×零/95%bound Nom）通过：canonical max1.9984e-15、rawmotor max8.6042e-16Nm、issued对CPU逐值差0，bound误差max1.82556e-8Nm<原1e-6门；26996行λ<1。每组512coldzero保持base；inactive/upstreamerror/badpair/maskedreset/public0:32不改自检过。4份native输出npz及source/runtime/8输入SHA绑定，0新physics/FD/网络forward/学习；不是完整Native/guard/停车交付通过。
+- round363_integration_contract明确外层cart包装内层guard再构造原evaluation：Nom零targets后candidate再guard；parking.prepare的control_state参数5、finish的state参数1换独立shadow；after后仅obs32:38写latent；构造reset_rows后先从public obs0参数12建立frozen geometry。显式/自动reset在恢复wp.launch后由raw方法wrapper处理，先保存terminal私有buffer再清done行，其他行不变，raw._cartesian_buffers强持有。旧filtered_F/H dense列仍是真canonical，不重命名数值冒充；新parking合同必须明示latent semantics。
+- 364必须把最小adapter/worker、完整源/runtime准入与一次20队列放同轮推进；不能满足就保现场拒绝，不静默简化或继续泛化source-only。365方向/清理、370框架；formal5和六论文出口仍缺、goal active。
+- 同步发现原pid159670已退出：88/226后第89批TLS连接断开。remote辅助cb0a3ae4等于pending89 c4b37405父提交，main仍02e08d8f；确认终态后显式--resume复用同pending，unified22728已启动，不重传前88批/不盲增postBuffer，精确以state为准。编辑前停daemon、中文提交后恢复并核remote，仍未全齐。无视频。
+
+## 历史状态：第362轮滤波/尺度检查与匹配对照定义完成（2026-10-12，整体目标active）
 
 - 361为progress（完整候选公式/512姿态代数），362先注册delivery_proposal：同512公开几何×27targets×4previous latent（0、[1,-1,1]、[-1,1,-1]、[.25,.25,-.25]）共55296静态几何单tick算术，dt.0005/latent step.01固定；live、reset固定几何、错误先map再六路slew及原D3同数字latent的尺度参照。全canonical/motor算术/latent/索引存npz，8actor源/父receipt/source SHA绑定。无Native kernel/环境/physics/网络推理。
 - 正确顺序合力分量误差max2.6645e-15N、Hsum max.073175Nm，Box/轮和仍过；但canonical增量19230/55296超过旧.01，max.0158955693。错误六路独立slew有49896组非零合力，maxnorm .1091392687N。cold零精确0、非零previous不能瞬退、.38m映射速率反例和错误顺序反例自检过。拒绝直接作为旧virtual6同滤波替代，不以此宣称实际指令/关节/电机链或闭环通过。
