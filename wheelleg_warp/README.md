@@ -1,6 +1,10 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（第358轮，2026-10-12）
+## 当前论文计划（第359轮，2026-10-12）
+
+第359轮完成[公开历史预测的必要条件检验](results/paper_recovery_20261004/joint_reference_candidate_v1/public_history_prediction_qualification_v1/review.json)：事先固定全部40个B1-route controlled案例、20组左右配对、完整20ms动作周期及1°逐轴工程误差门，读取80份已绑定actor/dense工件。3301次完全相同raw481和当前动作配对中，下一周期姿态半差最大0.424542°（0.16m、+0.7m/s、20mm左右障碍，3.82s处）。由三角不等式，任何同输入确定性点预测器至少需容纳这一下界；它未超过1°，因此未驳倒该误差预算。
+
+[第359轮决定](results/paper_recovery_20261004/joint_reference_candidate_v1/round359_prediction_decision.json)仍不准入控制器或训练：这是误差下界，不是预测器可达到的上界；两组只有reset时精确匹配，现B1仅轮差动动作也未验证六维请求响应。旧静态full32模型不能直接覆盖实际Nom记忆和接触切换。第360轮按期做方向/清理/整体框架审查，必须据公开模型条件和强对照价值决定是否值得有限响应试验，不能把“未驳倒”升级为通过。原5°任务门与全部旧结果不变，本轮无新仿真、FD或学习。
 
 第358轮[方法筛选](results/paper_recovery_20261004/joint_reference_candidate_v1/round358_method_selection.json)只保留“公开执行历史下的短时联合姿态残差分配”为待证假设，尚无新颖性、运行或训练准入。现guard处理分腿关节设计界，不能替代roll/pitch/yaw任务可行性；Nom本来失败时也不能把零残差当安全fallback。先验证接触切换附近的耦合响应与预测误差，再决定是否值得分配器；其确定性部分必须同时成为强经典对照。
 

@@ -1,0 +1,82 @@
+{
+  "round": 359,
+  "status": "necessary_condition_not_falsified_runtime_not_admitted",
+  "proposal_sha256": "0f0e114c1e2689b29ea8644986802dd539559178d444c8bc9293634b13d78584",
+  "review_sha256": "602be06c45a8aed4443b1a773c05cda60f8e9fa092b315e09f916d24229a54a2",
+  "result": {
+    "episodes": 40,
+    "pairs": 20,
+    "matched_complete_packets": 3301,
+    "physical_rows_read": 594515,
+    "minimum_required_worst_axis_error_deg": 0.4245421936463813,
+    "engineering_error_gate_deg": 1.0,
+    "falsifying_pairs": [],
+    "strongest_witness": {
+      "pair": 16,
+      "scenario": {
+        "center": 1.8,
+        "delay_ms": 0.0,
+        "drive_difference": 0.0,
+        "grade_deg": 0.0,
+        "lateral_margin_m": 0.0,
+        "mass": 7.0,
+        "mu_l": 0.8,
+        "mu_r": 0.8,
+        "obstacle_height": 0.02,
+        "offset": 0.0,
+        "relative_attitude": false,
+        "roughness_m": 0.0,
+        "solver_iterations": 100,
+        "speed": 0.7,
+        "stand_height_m": 0.16,
+        "step_height_m": 0.0,
+        "terrain": "legacy",
+        "transition_run_m": 0.0
+      },
+      "cases": {
+        "left": 6301009,
+        "right": 6301011
+      },
+      "matched_complete_packets": 192,
+      "falsifies_gate": false,
+      "maximum_required_component_radius_deg": [
+        0.09319681451798917,
+        3.756473222538137e-06,
+        0.4245421936463813
+      ],
+      "witness_actor_index": 191,
+      "witness_start_s": 3.8200000000000003,
+      "witness_left_next_deg": [
+        -0.09317997981420284,
+        0.2780827831031141,
+        -0.4244961647551983
+      ],
+      "witness_right_next_deg": [
+        0.09321364922177548,
+        0.27809029604955915,
+        0.4245882225375643
+      ]
+    }
+  },
+  "interpretation": "3301次精确同raw481与同submitted6的配对只能给出该样本上的必要误差下界。0.424542deg<1deg没有驳倒候选预算，但不提供可达到1deg的预测器、误差上界或可行控制动作。",
+  "coverage_limits": [
+    "2组只有reset时一次精确匹配：6301013/6301015、6301033/6301035。不能外推为所有接触阶段可预测。",
+    "其余非精确匹配未用近似阈值纳入，避免把状态差异误认隐藏接触效应；本检验不是噪声鲁棒观测性证明。",
+    "这些B1-route动作按原源码只有[0,0,0,0,a,-a]，不能从它们辨识或验证六个独立请求方向的受控响应。",
+    "相同高层动作周期内原Nom/guard仍反馈运行；接触后微步电机输出可能不同，本下界描述整个既定闭环，不单独归因纯外扰或开环plant。"
+  ],
+  "old_model_scope": "256/257只接受静态full32 FD数组/坐标，258拒绝actualNom动态控制准入；不能复用为接触切换姿态预测器。原动力学和训练失败证据不改。",
+  "next": "360五轮方向/清理与十轮框架必须决定是否值得登记真正的有限耦合响应试验；若没有明确公共状态、模型或强对照价值就拒绝此候选。禁止将本次未驳倒升级为方法准确或新增PPO准入。",
+  "execution_note": "首次actor哈希查旧physical receipt产生KeyError，尚未计算预测结果；保metadata_lookup_failure.log。actor改由已绑定completion/result内SHA验证，dense仍对旧physical receipt。样本/20ms/1deg门未改。",
+  "sync_followup": {
+    "status": "failed_preserved_no_retry",
+    "local_sparse_option_check": "临时小repo下--sparse和--no-sparse均仍打3对象，简单关闭sparse未修复预传排除；无真实上传。",
+    "object_metadata": "git count-objects有31个tmp垃圾条目约110MiB，未删除；360清理若处理须先核进程持有和仓库完整性。大量loose/pack对象且磁盘紧张，不能盲目全库repack。"
+  },
+  "new_physics_steps": 0,
+  "new_FD": 0,
+  "new_model_forward_rows": 0,
+  "new_learning_samples": 0,
+  "formal5_admitted": false,
+  "goal_complete": false
+}

@@ -2,7 +2,15 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：第358轮方法筛选与接触前必要边界完成（2026-10-12，整体目标active）
+## 当前状态：第359轮公开历史预测必要条件检验完成（2026-10-12，整体目标active）
+
+- 358为progress（方法选择/8接触前证据），359复核旧255—258静态full32模型范围：无actualNom记忆/接触切换动态准入，不能直接拿它做联合姿态预测。先注册public_history_prediction_qualification_v1，全40个已接受B1-route controlled×20左右配对（5height/±speed/10或20mm障碍），完整20ms周期、raw481+当前canonical6逐值精确匹配，无近似阈值；新点预测误差门1deg（原5deg的20%工程预算，不改旧task），在配对未来响应读取前固定。
+- 读取40actor/40dense，594515物理记录、3301同输入动作周期；逐轴下一周期姿态半差是任何确定性点预测器的最大误差必要下界，配对最坏0.4245421936463813deg，来自6301009/6301011（.16m,+.7m/s,20mm）的3.82s周期，yaw后值−.424496/+ .424588deg。未超过1deg，falsifying pairs空；不是误差上界、完整可观测性或控制可行证明。
+- 两组6301013/15与6301033/35只有reset一次精确匹配；不能宣称接触全阶段过门。B1请求只有[0,0,0,0,a,-a]，六独立方向响应未被识别。Nom/guard在20ms内仍闭环，微步命令接触后可异，不能纯外扰归因。round359_prediction_decision保持runtime/PPO未准入；360须结合公共模型假设与强对照价值决定是否值得真正有界响应试验，不能无限源资格或把未驳倒当通过。
+- checker精确匹配/错动作/无匹配与中点紧下界自检过，80输入SHA/周期时长/Euler无wrap/方案源绑定过。首次旧physical receipt未列actor哈希导致KeyError，未生成结果；保metadata_lookup_failure.log，actor通过已绑定completion/result内SHA核、dense仍对旧physical receipt。样本/时域/误差门未改。0新physics/FD/model forward/learning。
+- 同步仍failed不重试；本地小repo检--sparse/--no-sparse都仍打3对象，单关sparse无效，未实际上传。git count-objects见31个tmp垃圾约110MiB，未删；360清理若处理须先核无持有/完整性，磁盘紧张不盲目repack。原229批及数据/history保留。review/witness/proposal/log/checker/决定/README/记忆中文提交，收尾恢复守护并核remote，远端未齐；360按期方向/清理/整体框架，六论文出口未完成，goal active，无视频。
+
+## 历史状态：第358轮方法筛选与接触前必要边界完成（2026-10-12，整体目标active）
 
 - 357为progress（18独立接收/固定偏移闭合）；358不训练/模拟，只核8个352已接受original gains的24份result/actor/dense SHA及353目标接触时刻。audit_gain_precontact保完整40步周期的post终点严格早于目标接触，等端点和不完整末包排除自检过。全8从reset已有非零请求，1566完整pretarget周期均非零；最后周期公开route-y绝对值0.038613～0.052292m。注释不入policy，地面早有接触；请求不等实际力矩，不证明预动作必要或看见未来障碍，只否定无证据地假定全部零化可保原成功。
 - 定向查新核arxiv2609.21307v1官方摘要/HTML估计器与结论：DOB/history/特权扰动监督/ISS残差界已有且证明有名义ISS前提；ResSafe/Acc-CBF-QP作者项目页已有安全残差与加速度过滤。非全文逐式或复现；IEEE11202537直接失败，沿用既有摘要缺口不升级。文献矩阵追加，普通observer/对称/零点/CBF-QP/多头/奖励重加权不足新贡献。
