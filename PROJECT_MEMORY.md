@@ -2,7 +2,16 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：第361轮完整命令坐标候选与有限代数检查完成（2026-10-12，整体目标active）
+## 当前状态：第362轮滤波/尺度检查与匹配对照定义完成（2026-10-12，整体目标active）
+
+- 361为progress（完整候选公式/512姿态代数），362先注册delivery_proposal：同512公开几何×27targets×4previous latent（0、[1,-1,1]、[-1,1,-1]、[.25,.25,-.25]）共55296静态几何单tick算术，dt.0005/latent step.01固定；live、reset固定几何、错误先map再六路slew及原D3同数字latent的尺度参照。全canonical/motor算术/latent/索引存npz，8actor源/父receipt/source SHA绑定。无Native kernel/环境/physics/网络推理。
+- 正确顺序合力分量误差max2.6645e-15N、Hsum max.073175Nm，Box/轮和仍过；但canonical增量19230/55296超过旧.01，max.0158955693。错误六路独立slew有49896组非零合力，maxnorm .1091392687N。cold零精确0、非零previous不能瞬退、.38m映射速率反例和错误顺序反例自检过。拒绝直接作为旧virtual6同滤波替代，不以此宣称实际指令/关节/电机链或闭环通过。
+- 固定网格live/D3六电机RMS比[2.93534,.30762,2.92717,.30827,.86209,.86209]，说明同Box不能称同探索/权限使用；不是Gaussian或实学动作比较。新增主要匹配对照CartReset3：同latent3/.01 slew/F0/H0/W0/Hsum/Box，仅用本回合公开reset编码器FK冻结映射几何，之后VMC仍当步q。8reset×27×4=864逐值映射相同，live/reset gridRMS比约.98775—.99299，不当全分布或任务优势。
+- round362_delivery_decision要求两个Cart臂同一新版action-memory6（潜变量成对正负编码），实际canonical/alpha只诊断，不额外给actor无延迟geometry；物理raw32/route/全命令历史与sensor clock/valid合同保留。原D3/V6历史接口与强经典仍保留，披露潜变量单位/滤波坐标不同，不能只胜D3就归因geometry。raw26:32与执行命令历史仍同因果时间窗，不能谎称样本数值相同。
+- 363需把完整Native链接口、同Nom/guard/真实motor边界、reset/停车和有限交付预算具体化，然后零/非零实际验收；不能直接PPO，也不能再泛化源资格。当前runtime未准、旧预测QP仍停、六论文出口未完成。365方向/清理，370框架，goal active。
+- 同步仍原pid159670/unified28375 live，本轮开始51/226后继续推进，未重启；精确状态见state。编辑前停daemon、中文提交后恢复并核remote，未全齐。0physics/model forward/learning，无视频。
+
+## 历史状态：第361轮完整命令坐标候选与有限代数检查完成（2026-10-12，整体目标active）
 
 - 360为progress（方向/框架/清理+首快照同步）。新传输pid159670/unified28375本轮核live，开始5/226后继续推进，未重启，精确进度见.git/sync-transfer.json；daemon编辑前停、收尾恢复。旧抽象预测QP资格链继续停止，本轮不复活旧FD/observer/mean-reference/反射分支。
 - 先读实际VMC/virtual6/公共FK，提出cartesian_pair_action_candidate_v1完整公式：a=(x,z,w)，f=3.4335N*(x,z)，左右物理polar F为unit(r)·(+/-f)，H=cross2(r,+/-f)，轮请求±w；alpha=1/max(1,||u||inf,|H_L+H_R|/.1Nm)，输出alpha*u。原F/H/W尺度3.4335N/1Nm/.3Nm；.1Nm为原H尺度十分之一，读样本前固定，无扫参拟合。只保持虚拟端点合力和轮请求和为0，H总和有界不为0，不冒充实际接触力/机身净wrench。

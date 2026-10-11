@@ -1,0 +1,36 @@
+{
+  "round": 362,
+  "status": "drop_in_rejected_matched_pair_specified_not_runtime_admitted",
+  "finding": "原361映射不能直接作为旧六路独立slew下的同滤波D3替代。先latent slew再map仍有19230/55296组canonical步增>.01，最大.0158955693；先map再六路slew有49896组非零合力，max norm .1091392687N。",
+  "valid_properties": "正确顺序的命令层合力抵消仍到2.6645352591e-15N；H总和max.073175Nm，Box/轮和保持。没有在Native控制时钟、实际Nom/关节保护/停车/真实电机包络后运行，不能称实际闭环交付通过。",
+  "comparison": {
+    "primary": [
+      "CartLive3",
+      "CartReset3"
+    ],
+    "shared": "同3维潜变量、同50Hzactor/0.5ms低层tick、同.01 latent slew、同361公式/F0/H0/W0/Hsum/Box及原物理限制。CartReset3只把映射几何固定为本回合公开reset编码器FK；两者之后VMC仍使用当步真实低层编码器。",
+    "initial": "已有8个reset×27targets×4previous memory共864映射比较逐值相同；仅映射相同，尚未创建/验证整套新actor/RMS/rollout。",
+    "auxiliary": "原D3/V6和同权限无学习强经典仍保留。若未来要声称geometry adaptation的增量，必须胜CartReset3；只胜D3不能排除笛卡尔坐标和滤波变化。",
+    "rms": "固定网格的live/D3六电机RMS比约[2.9353,.3076,2.9272,.3083,.8621,.8621]；live/reset约.9877—.99299。它们不是Gaussian探索协方差或任务收益，不能称全状态/初始化分布公平。"
+  },
+  "observation_contract": {
+    "physical": "保持同物理raw32与因果route-y、全命令历史/时间戳/valid，禁止接触/未来状态/隐藏case输入。",
+    "action_memory": "两个Cart臂均只反馈共同潜变量滤波记忆的固定6槽编码[a_x,-a_x,a_z,-a_z,a_w,-a_w]；须显式新观察版本。实际canonical及alpha只诊断记录，不能把实时几何额外注入Actor。旧D3/V6接口保持历史身份，比较时披露动作记忆语义不同。",
+    "residual_feedback": "旧raw26:32与54历史槽若含实际执行残差/总命令，仍按相同传感时间窗与原因果合同对两臂提供；不同自身命令值是闭环差异，不宣称样本数值相同。",
+    "reset": "CartReset3几何须来自同一公开reset编码器包，只在真实episode reset更新；reset/time ownership和两臂初始化必须独立验证。"
+  },
+  "next_required": "363只在完整新接口/相同Nom/公共guard/实际motor包络/按world reset与停车合同明确后登记有限交付验收；需要核真实控制链零动作逐值等B0及非零请求，不能从当前CPU算术自动开闭环或PPO。禁止再泛化连续源审计：下轮须形成具体可执行的有限交付协议或拒绝候选。",
+  "old_canonical_rate_claim": "不声称保旧canonical每通道20/s。新方法如果比较，须作为明确的Cartesian latent滤波+映射组合；不悄悄放宽旧方案的门或改旧结果。",
+  "evidence_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/proposal.json": "51794b3c05c28c3e8933f6b015410961943c050b9353c3f5a4e272fbbfd29d7d",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/review.json": "155dba661b301bf1ee9be3391fb1274a3125d8c53c1698f4b171dfed29ae54cf",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/delivery_proposal.json": "daf23e2841d5779788c7c73f0934f9ddd0aea1e48b4dc8df77695ac4d402c428",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/delivery_review.json": "fc9ab475788ff54f79766b91456a50915eb19aada4c3e48074373caad9527b2c",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/delivery_fixtures.npz": "08051248c4633cebc2db1d5d721e7b40cf26312920bbf175ce48e566388a427e"
+  },
+  "new_physics_steps": 0,
+  "new_model_forward_rows": 0,
+  "new_learning_samples": 0,
+  "formal5_admitted": false,
+  "goal_complete": false
+}

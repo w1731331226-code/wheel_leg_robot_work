@@ -1,0 +1,65 @@
+{
+  "round": 362,
+  "status": "offline_delivery_and_comparison_contract",
+  "parent_proposal_sha256": "51794b3c05c28c3e8933f6b015410961943c050b9353c3f5a4e272fbbfd29d7d",
+  "parent_review_sha256": "155dba661b301bf1ee9be3391fb1274a3125d8c53c1698f4b171dfed29ae54cf",
+  "scope": "Only one-control-tick request/slew/VMC calculations at the same512 saved public-encoder states. No environment construction/integration, physics or policy inference.",
+  "fixture": {
+    "geometry_rows": 512,
+    "targets": "27 Cartesian product {-1,0,1}^3",
+    "previous_latents": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        -1,
+        1
+      ],
+      [
+        -1,
+        1,
+        -1
+      ],
+      [
+        0.25,
+        0.25,
+        -0.25
+      ]
+    ],
+    "combinations": 55296,
+    "tick_s": 0.0005,
+    "step_limit": 0.01,
+    "geometry_during_tick": "fixed, so any observed order/rate issue does not require moving geometry"
+  },
+  "arms": [
+    "live_geometry: a_next=a_prev+clip(a_target-a_prev,+/-.01), then original361 request(r_current,a_next)",
+    "reset_geometry: identical latent/filter and original361 request(r_reset,a_next), then VMC at r_current; r_reset from same accepted public reset packet",
+    "wrong_order_diagnostic: original361 request at a_prev/target with current r, then independently slew six canonical coordinates by .01",
+    "original_D3_scale_reference: same latent_next numerically embedded into originalD3, not claimed same latent physical directions"
+  ],
+  "preregistered_checks": [
+    "live requested common-force component<=1e-10N; |Hsum|<=.1+1e-12Nm; Box<=1+1e-12; wheel sum0",
+    "live and reset maps bitwise identical at each saved reset geometry for all27targets/4previous states",
+    "cold a_prev=0,a_target=0 returns0; nonzero previous latent is not expected to withdraw instantly",
+    "report any mapped canonical per-tick increment exceeding old .01; do not change latent rate after observing it",
+    "report wrong-order force leakage; do not treat it as installed-controller failure",
+    "compute deterministic grid six-motor RMS through common public polar Jacobians for all4arms; ratios are not Gaussian/PPO exploration equivalence"
+  ],
+  "information_contract": "Same actor physical packet and causal total-command history; any future implementation must version action-memory semantics. Live canonical telemetry contains current low-level geometry, so do not append it unconditionally as extra delay-free actor information. Matched Cart live/reset arms need identical latent-memory telemetry; old D3/V6 comparisons must disclose semantic changes and use same obtainable measurements.",
+  "deployment_gate": "The361 law is not a drop-in old virtual6 wrapper. This audit cannot admit the full native Nom/joint-guard/motor-envelope chain or closed-loop task. No runtime until a matched versioned interface and complete delivered-command check exists.",
+  "allowed_interpretation": "Distinguish geometry update from Cartesian chart, slew coordinates and scaling. Same Box is insufficient for equal effective authority/exploration. Actual benefit remains untested.",
+  "source_sha256": {
+    "wheelleg_warp/cartesian_pair_action.py": "d8bd86d0146a01ebd11821c72fa5c4cf7ea61449ee8b74abe8203938eb9a5f46",
+    "wheelleg_warp/native/controller.py": "04d106ae8579118eb306ba2b28037425f81a1f554d4b51fa1eae1ef795fede73",
+    "wheelleg_warp/execution_history_env.py": "5c0f0135df45fa899b03f557dff98da3cabbf58b0afdf5bf6279f470fec4f01b",
+    "wheelleg_warp/execution_history_evaluation.py": "ea19a723fcfe6e878baefe7ab5c2f39d86c937a20b8ccaef78310313122540b5",
+    "wheelleg_ppo/tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af"
+  },
+  "new_physics_steps": 0,
+  "new_model_forward_rows": 0,
+  "new_learning_samples": 0,
+  "formal5_admitted": false
+}

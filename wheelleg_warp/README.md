@@ -1,8 +1,12 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（第361轮，2026-10-12）
+## 当前论文计划（第362轮，2026-10-12）
 
 原目标仍是：在原完整不对称接触任务上，得到一个保持强经典能力并有明确增量的可执行PPO方法。当前没有通过收益资格的新方法，正式五种子、独立ID/OOD、统计与成本分析、新方法稿件均未完成；CPU历史基线继续保留，不将物理吞吐当PPO端到端加速。
+
+第362轮[有限滤波顺序/尺度检查](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/delivery_review.json)发现候选不能直接塞入旧virtual6接口：55296个固定几何单步算术测试中，先latent滤波再映射有19230组canonical增量超过旧.01，最大.01590；先映射再独立六路滤波则合力泄漏最大.10914N。正确顺序仍保命令代数性质，但没有执行Native/关节保护/电机包络后的实际交付或闭环。
+
+[362决定](results/paper_recovery_20261004/joint_reference_candidate_v1/round362_delivery_decision.json)明确主要比较为CartLive3与CartReset3：同潜变量/滤波/公式，只切换当前几何与公开reset时冻结几何，864组reset映射逐值相同。原D3/V6及强经典仍保留；固定网格live/D3电机RMS相差很大，不能把坐标/滤波效应归因几何更新。两Cart臂须使用同一潜变量记忆观察版本，实际canonical与alpha只留诊断，避免额外无延迟几何信息。363须形成完整、有限的原Native链交付协议或拒绝候选；当前不准入PPO，旧canonical速率保持和探索等价均未成立。
 
 第361轮提出了一个[完整定义的命令坐标映射](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/proposal.json)：三维潜变量指定相反的虚拟端点力与轮差矩，由当前腿几何换算回原F/H通道，再统一缩放以满足原动作盒及0.1Nm的H总和上限。[离线检查](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/review.json)覆盖512个已存姿态×27请求，合力抵消及虚功恒等通过；它只保证命令层性质，不代表真实支持力、动态解耦或任务收益。严格要求F/H/轮所有共同量为零的版本在非对称姿态仅剩二维且投影可突变，因此未采用。
 
