@@ -12,6 +12,8 @@ import time
 
 ROOT = Path(__file__).resolve().parents[1]
 MEMORY = 'PROJECT_MEMORY.md'
+SNAPSHOT_BYTES = 256*1024**2
+PUSH_BYTES = 1024**3
 
 
 def git(*args, input=None):
@@ -53,6 +55,13 @@ def sync(previous):
             raise RuntimeError('需要显式远程分支上游')
         current = changes()
         stable = sorted(p for p in current if p in previous and previous[p] == current[p])
+        # 给大批已完成实验分档，避免自动生成无法单次上传的超大提交。
+        selected=[];bytes_=0
+        for path in stable:
+            size=current[path][0] if current[path] else 0
+            if selected and bytes_+size>SNAPSHOT_BYTES:break
+            selected.append(path);bytes_+=size
+        stable=selected
         # 用户暂存区优先；不提交他人正在准备的索引。
         if stable and not git('diff', '--cached', '--name-only', '-z'):
             if MEMORY in current and MEMORY not in stable:
@@ -81,7 +90,15 @@ def sync(previous):
         head = git('rev-parse', 'HEAD').strip()
         remote_head = git('ls-remote', remote, target).split()
         if not remote_head or remote_head[0] != head:
-            print(git('-c','pack.window=0','-c','pack.threads=2','-c','core.compression=1','push', remote, f'{head.decode()}:{target}').decode(), flush=True)
+            next_head=head
+            if remote_head:
+                before=remote_head[0].decode();git('merge-base','--is-ancestor',before,head.decode())
+                next_head=git('rev-list','--first-parent','--reverse',before+'..'+head.decode()).splitlines()[0]
+                objects=git('rev-list','--objects','--no-object-names',next_head.decode(),'^'+before)
+                sizes=git('cat-file','--batch-check=%(objectsize)',input=objects).splitlines()
+                if sum(int(size) for size in sizes)>PUSH_BYTES:
+                    raise RuntimeError('下一个提交超过保守单批预算；需要历史保持的分批对象传输，停止重复整包push')
+            print(git('-c','pack.window=0','-c','pack.threads=2','-c','core.compression=1','push', remote, f'{next_head.decode()}:{target}').decode(), flush=True)
         return current
 
 

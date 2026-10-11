@@ -50,6 +50,28 @@ def main():
         assert sync.git('diff', '--cached') == staged
         assert sync.git('rev-parse', 'HEAD').strip() == head
         run('git', 'reset', '--hard', 'HEAD')
+        heads=[]
+        for number in range(2):
+            (sync.ROOT/'pending.txt').write_text(str(number))
+            with (sync.ROOT/sync.MEMORY).open('a') as stream:stream.write(f'\n待传{number}\n')
+            run('git','add','.');run('git','commit','-m',f'待传测试{number}');heads.append(sync.git('rev-parse','HEAD').strip())
+        sync.sync(sync.changes());assert sync.git('ls-remote','origin','refs/heads/main').split()[0]==heads[0]
+        budget=sync.PUSH_BYTES;sync.PUSH_BYTES=1
+        try:
+            try:sync.sync(sync.changes())
+            except RuntimeError:pass
+            else:raise AssertionError('Oversized pending commit pushed')
+            assert sync.git('ls-remote','origin','refs/heads/main').split()[0]==heads[0]
+        finally:sync.PUSH_BYTES=budget
+        sync.sync(sync.changes());assert sync.git('ls-remote','origin','refs/heads/main').split()[0]==heads[1]
+        budget=sync.SNAPSHOT_BYTES;sync.SNAPSHOT_BYTES=80
+        try:
+            for number in range(3):(sync.ROOT/f'batch{number}.bin').write_bytes(os.urandom(64))
+            sync.sync(sync.changes())
+            remaining=sync.changes();assert sum(name.startswith('batch') for name in remaining)==2
+            sync.sync(remaining);sync.sync(sync.changes())
+            assert not sync.git('status','--porcelain')
+        finally:sync.SNAPSHOT_BYTES=budget
         run('git', 'clone', str(root / 'remote.git'), str(root / 'other'), '-b', 'main')
         other = root / 'other'
         for key, value in [('user.name', '测试'), ('user.email', 'test@example.invalid')]:
