@@ -1,6 +1,6 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（第353轮，2026-10-11）
+## 当前论文计划（第354轮，2026-10-11）
 
 当前冻结方案是 [fixed_force_prequalification_v1](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/proposal.json)：共享名义设计、公开481维输入与关节保护，D3差模力残差与同信息V6残差各三种子、各200k策略样本，只评价最终模型。492回合经典对照、六模型训练和984回合固定评估均已完成；第338轮[独立接收与资格报告](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/evaluation_review.json)通过记录核验，但D3的主任务成功、航向收益和旧能力保持门未通过，本候选收益扩展关闭，正式五种子未准入。
 
@@ -26,7 +26,7 @@
 
 第353轮[完整接触暴露核对](results/paper_recovery_20261004/joint_reference_candidate_v1/reflection_retention_falsification_v1/exposure_audit.json)读469100条接触记录，以每对反射首次姿态越界为共同时间截止：8对目标法向偏航力矩绝对冲量均增加，但低高度3对总法向冲量略减，全接触净偏航冲量并非一致变化。这说明路径/接触几何与控制响应同时变化，不能把结果直接当相同扰动下的抗扰排名，也不能单独归因载荷或一个力矩项。
 
-第354轮收束原任务比较是否混合“扰动暴露”和“扰动抑制”，形成明确的主张边界及后续问题；原成功门不变，不开展新的反射队列。355方向/清理、360整体框架复审保持。
+第354轮[主张与范围决定](results/paper_recovery_20261004/joint_reference_candidate_v1/round354_claims_and_scope.json)保留原完整接触任务为主问题，区分任务达成、等扰动抑制与居中承载越障，后两者不能从现数据推出。现有B1-route以y=0为目标，允许路径与策略族仍需公平审查；待355决定是否仅对全部6个获胜案例登记一次0/±轮半径路线参考的18回合经典对照，检验已知反馈是否也能取得边缘接触成功。现在只是备选，不选符号拼oracle、不修改原门或恢复学习。355方向/清理、360整体框架复审保持。
 
 同步方面已修复超时残留子进程，并启动历史保持的64MiB分批对象传输；临时辅助引用仅用于传输，主分支普通快进后清除。运行状态在`.git/sync-transfer.json`，尚不能声称远端追平；不改主历史或删除研究数据。
 

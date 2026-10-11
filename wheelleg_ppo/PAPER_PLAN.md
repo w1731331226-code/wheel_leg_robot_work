@@ -1,5 +1,7 @@
 # 双轮腿机器人PPO论文方案
 
+当前执行入口见 [`wheelleg_warp/README.md`](../wheelleg_warp/README.md) 与根目录 `PROJECT_MEMORY.md`；以下逐轮记录保留为历史。第354轮主张边界与原任务范围已在 Warp 的 `round354_claims_and_scope.json` 固定，不能把下文旧“正在运行”快照当作当前进程状态。
+
 第337轮完整新三seed训练接收与固定984模型评估启动（2026-10-10）：
 
 6freshforce runs真实completeexit0：1.2M策略样本/48Mactualcaptureworldsteps/95FD，2876trainingepisode严格physicaldesign过，40rollout/400epochs/8000Adam每run及RMS200100.0001。100world实际Guard/Ledger/模型课程counter工作；thirdseed D3/V6 Nomcorrect204/50、residual652/245，另D3第二seed residual73，infeasible0。非Nom保护理论证书/未知errorbound或method优势。

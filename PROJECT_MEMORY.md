@@ -2,6 +2,15 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
+## 当前状态：第354轮论文主张/任务范围收束完成（2026-10-11，整体目标active）
+
+- 353为progress（完整接触共同前缀暴露证据），354形成round354_claims_and_scope，不再复制数值矩阵或开实验。主问题保持原完整不对称接触任务中的单策略能力保持/强同信息经典增量，不缩成负材料完成goal，也不把成功门事后改为居中通过。
+- 三种主张分开：原contact任务成绩有效但当前方法优势未成立；samegeometry不等same外扰，等扰动抗扰优势因路径/接触/控制共变未识别；完整居中承载越障未qualified，原8wins必要centre前提都失败，5reflection centre前提虽过却原task失败。旧paper.tex仍历史通道审计，不覆写其旧readiness冒充新方法稿；PPO计划顶端补Warp最新入口，旧337运行快照标为历史。
+- 给355唯一有限备选：同公开route-y/速度/gyro信息的B1-route，目标y=0与±一个公开wheelradius(.05m)，固定原kp/kd/rollschedule/3degrefcap/.3Nm/所有最终物理task门，仅把已有公式中的y误差换y-yref。全部6unique gaincases×3fixedcontrollers=拟18，0学习；每符号一个统一策略，不按case挑符号/模型，偏移幅值不扫不拟合，日志保真实rawy/参考误差。检验是否缺少合法路径策略的强经典，而非直接宣称旧比较不公平或新算法。事后机制子集阳性仍须全164保持/独立准入，阴性不证明RL必要。当前只是prospective备选，未注册/准入/运行。
+- 所有旧fixedforce/flat/统一reflection分支继续关闭，reward/gamma/预算不改；新学习前仍需区别贡献、同信息权限、可达且预注册的门与未用评估集，formal5及六出口未完成，goal active。355方向/清理、360框架保持。
+- 同步在183/229后第184批HTTP408退出（pid57035已无），实查remote辅助head=893f9d03等于pending ffc09c14的父提交，确认184未上传。显式--resume复用同待传commit，新unified41111继续，未从头重启或强推；精确状态见.git/sync-transfer.json，不能用Everything up-to-date错误尾部宣称成功。原main尚未追平。
+- 本轮0physics/新模型forward/learning，无视频。主张文件、README/PPO入口与记忆完成事实/路径/证据SHA核，中文提交后恢复守护。
+
 ## 当前状态：第353轮完整接触暴露及共同时间前缀核对完成（2026-10-11，整体目标active）
 
 - 352为progress（16独立接收/反射扩展闭合），353仅16已接受完整contact列表，238051子步/469100contacts，0新physics/forward/learning。复用analyze_complete_contact.moments的坐标/geom符号/纯力矩单元；按geom1正/geom0负、local@frame、solver-pre COM，分全外部轮-static yaw moment、normal、tangential+contact torque及目标几何load/upward。全=normal+rest逐步重算过，32原始/几何SHA绑定完成清单与352receipt。
