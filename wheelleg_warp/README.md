@@ -1,8 +1,12 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（第360轮，2026-10-12）
+## 当前论文计划（第361轮，2026-10-12）
 
 原目标仍是：在原完整不对称接触任务上，得到一个保持强经典能力并有明确增量的可执行PPO方法。当前没有通过收益资格的新方法，正式五种子、独立ID/OOD、统计与成本分析、新方法稿件均未完成；CPU历史基线继续保留，不将物理吞吐当PPO端到端加速。
+
+第361轮提出了一个[完整定义的命令坐标映射](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/proposal.json)：三维潜变量指定相反的虚拟端点力与轮差矩，由当前腿几何换算回原F/H通道，再统一缩放以满足原动作盒及0.1Nm的H总和上限。[离线检查](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/review.json)覆盖512个已存姿态×27请求，合力抵消及虚功恒等通过；它只保证命令层性质，不代表真实支持力、动态解耦或任务收益。严格要求F/H/轮所有共同量为零的版本在非对称姿态仅剩二维且投影可突变，因此未采用。
+
+[361方法决定](results/paper_recovery_20261004/joint_reference_candidate_v1/round361_method_decision.json)保留这一明确映射供362有限信息/权限/交付方案判断，尚不准入仿真或PPO。新映射改变动作方向、缩幅和探索分布，必须与原D3/V6及固定参考坐标作公平比较；须先潜变量滤波再逐控制步映射，不能直接塞进旧六路独立滤波后冒称恒等。新颖性和收益未成立，旧预测QP分支继续停止。
 
 第360轮已完成[五轮方向审查](results/paper_recovery_20261004/joint_reference_candidate_v1/round360_direction_review.json)、[十轮框架核查](results/paper_recovery_20261004/joint_reference_candidate_v1/round360_framework_review.json)和[冗余清理](results/paper_recovery_20261004/joint_reference_candidate_v1/round360_cleanup.json)。**停止当前尚未定义预测器的联合姿态QP资格链，不新增仿真或PPO。** 第359轮的0.424542°是同输入预测误差的必要下界，未超过1°不能证明存在合格预测器，也未检验六维动作响应；再开没有明确模型的脉冲试验缺少可证伪对象。
 

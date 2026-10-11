@@ -1,0 +1,56 @@
+{
+  "round": 361,
+  "status": "specified_offline_candidate_no_runtime_or_learning_admission",
+  "input": "3 bounded latent values a=(a_x,a_z,a_w), two active-encoder-derived leg endpoint vectors rL,rR in the common body sagittal plane. No contact/terrain/force truth or learned predictor.",
+  "formula": [
+    "F0=.1*7*9.81/2=3.4335 N; H0=1 Nm; W0=.3 Nm; f=F0*(a_x,a_z).",
+    "u=[dot(rL/|rL|,f)/F0, -dot(rR/|rR|,f)/F0, cross2(rL,f)/H0, -cross2(rR,f)/H0, a_w,-a_w].",
+    "alpha=1/max(1,max(abs(u)),abs(H0*(u2+u3))/0.1Nm); canonical request=alpha*u.",
+    "Decode endpoint force as (r/|r|)*F + (-r_z,r_x)*H/|r|^2. The pair sum and wheel request sum are zero; geometric virtual-H sum magnitude <=0.1Nm."
+  ],
+  "parameters": {
+    "force_scale_N": 3.4335000000000004,
+    "hip_scale_Nm": 1.0,
+    "wheel_scale_Nm": 0.3,
+    "hip_sum_limit_Nm": 0.1
+  },
+  "parameter_basis": "Original virtual-channel scales; one tenth of original unit virtual-H scale selected before reading sampled geometry statistics. No fitting/sweep.",
+  "strict_variant": "Also demanding H_left+H_right=0 adds an independent constraint at unequal endpoint geometry: strict normalized common-force/H/wheel constraint rank generally4, null dimension2; at equal geometry rank3/null3. Exact strict nullspace projection can jump near equality. Check this boundary explicitly, not claim three degrees always survive.",
+  "meaning": "Only commanded virtual endpoint forces and geometric hip moments, not actual ground-reaction forces, total body wrench, dynamics decoupling or safety. Required common low-level geometry is already used by VMC; actor access must not be silently expanded.",
+  "deployment_precondition": "If pursued, apply common latent slew first and current-encoder mapping at every native control tick; mapping once before six independent filtered channels generally loses cancellation. Keep Nom, actuator limits, scalar guard and original gates. Must independently verify issued commands after all stages before any rollout claim.",
+  "information_fairness": "Actor remains same public481. No delay-free geometry appended to actor. Any deterministic current-encoder mapping must be exposed equally to all comparison controller families; audit action/history telemetry for indirect information differences.",
+  "evidence_sample": {
+    "source": "All8 accepted original gains in reflection_retention_falsification_v1;64 uniform actor indices each incl endpoints",
+    "geometry_rows": 512,
+    "latent_actions": "Cartesian product {-1,0,1}^3:27 each",
+    "offline_map_evaluations": 13824,
+    "selection_limit": "seen success-geometry illustration only; no task ranking or dynamics validation"
+  },
+  "checks": [
+    "input shape/finite/Box errors rejected; endpoint force decoding and original virtual work agree",
+    "symmetric and unequal pure-geometric fixtures, strict rank change/projection discontinuity",
+    "all sampled decoded force sums <=1e-10 N, wheel sum<=1e-12 Nm, Box<=1+1e-12, abs virtual-H sum<=.1+1e-12 Nm",
+    "record oldD3 common-force leakage and new attenuation without changing any parameter"
+  ],
+  "comparison_needed": [
+    "original D3",
+    "same-authority V6",
+    "fixed-reference Cartesian chart with matched initialization/exploration before attributing gains to geometry",
+    "same-law no-learning strong controller; any deterministic benefit must be available to classical controls"
+  ],
+  "claim_gate": "Algebra pass does not admit simulation or PPO. Different latent units/covariance and state-dependent attenuation forbid equal-exploration claims without matching. Novelty not established by this kinematic transform.",
+  "source_sha256": {
+    "wheelleg_warp/native/controller.py": "04d106ae8579118eb306ba2b28037425f81a1f554d4b51fa1eae1ef795fede73",
+    "wheelleg_warp/fixed_reference_force.py": "ddacd763ab806a0359e8f4c5a18de7a4508fd9e7d60edc737e2bf2419f36498c",
+    "wheelleg_ppo/tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+    "wheelleg_ppo/tools/wheelleg_sim.py": "c2dfaae4dc562119fd7916684849ec22fcac3d75dbcfec6a2a0f9452d8f6ee0f"
+  },
+  "evidence_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reflection_retention_falsification_v1/review.json": "ca1baf1dc568875de4b58ea8e0c8b507bf910a06390c1f8f0cdbc3108a5a4357",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round360_direction_review.json": "2ffcea512ebf739e302ac945a4b271b25b5a2b3dc4dd60e6dc32672acf201995"
+  },
+  "new_physics_steps": 0,
+  "new_model_forward_rows": 0,
+  "new_learning_samples": 0,
+  "formal5_admitted": false
+}

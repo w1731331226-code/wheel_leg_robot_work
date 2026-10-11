@@ -1,0 +1,35 @@
+{
+  "round": 361,
+  "previous_turn": "progress: 第360轮方向/框架/清理与首轮同步真实验收",
+  "candidate": "Opposite commanded Cartesian endpoint force plus bounded virtual-H sum; exact formula in proposal.json. This is a new fully specified command-coordinate hypothesis, not the stopped predictive QP.",
+  "keep": "保留此完整定义的坐标映射供有限公平性/交付判断；不准入新仿真或PPO，未建立新颖性。",
+  "reject": "严格同时保持端点Fx/Fz、virtual-H和轮共同量且仍普遍三维的版本被rank变化否定：当前512姿态8个rank3、504个rank4。精确零空间投影在对称附近不连续。",
+  "proof": "Given rL,rR and f, use physical polar commands (r_i/|r_i|) dot (+/-f), cross(r_i,+/-f); common scale alpha enforces both original normalized Box and |H_L+H_R|<=.1Nm. Decoding recovers +/-alpha*f exactly. Thus command-force sum and wheel sum cancel; H-sum is bounded, not zero.",
+  "accepted": {
+    "geometry_rows": 512,
+    "offline_requests": 13824,
+    "force_component_error_N": 2.220446049250313e-15,
+    "virtual_work_error_W": 6.661338147750939e-16,
+    "H_sum_peak_Nm": 0.0846386485435825,
+    "min_scale": 0.6291061231109043
+  },
+  "interpretation": "原D3在同512姿态施加单位27网格请求时，虚拟端点合力最大.4493778827N；这是命令坐标反例，不是现模型实际轨迹中的力泄漏或失败根因。新映射改变物理动作方向与分布，并用允许的有限H共同量换取三维连续参数化。",
+  "limitations": [
+    "虚拟端点合力不是实际地面支持力或机身净力/力矩，虚功恒等不构成动态解耦或稳定证明。",
+    "数据取已有8wins的公开腿编码器，示例姿态不当独立泛化或coverage证书；没有新模型推理/控制器。",
+    "0.1Nm是预先固定的原H通道尺度十分之一，不是拟合最优值；本512样本最大.08464Nm，不能由此证明该限幅有闭环贡献。",
+    "相同Box和物理包络不等同探索协方差、可用权限分配或采样成本；原D3/V6与固定参考坐标对照必需。",
+    "必须在潜变量slew之后按当前低层编码器映射；若先map再六路独立slew，原恒等式一般不保。控制器可得几何不得变成给actor额外无延迟观测。"
+  ],
+  "next": "362先形成一次有限、匹配信息与权限的命令交付/机制方案，明确与原D3/V6及固定参考坐标的对照；不能仅凭代数通过直接开训练。若区别仅来自缩幅/额外信息或改变探索，则拒绝方法优势归因。365方向/清理，370框架。",
+  "evidence_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/proposal.json": "51794b3c05c28c3e8933f6b015410961943c050b9353c3f5a4e272fbbfd29d7d",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/review.json": "155dba661b301bf1ee9be3391fb1274a3125d8c53c1698f4b171dfed29ae54cf",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round360_direction_review.json": "2ffcea512ebf739e302ac945a4b271b25b5a2b3dc4dd60e6dc32672acf201995"
+  },
+  "new_physics_steps": 0,
+  "new_model_forward_rows": 0,
+  "new_learning_samples": 0,
+  "formal5_admitted": false,
+  "goal_complete": false
+}
