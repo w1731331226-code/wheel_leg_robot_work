@@ -2,7 +2,13 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：第355轮方向深审/冗余清理及18回合登记完成（2026-10-12，整体目标active）
+## 第356轮18回合经典路线诊断入口准入（2026-10-12，整体目标active）
+
+- 355为progress（方向/清理/18登记），本轮实现run_classical_route_reference，复用既有eval、guard、完整物理监测、runtime与按case初态helper，旧冻结源码不改。仅在raw39副本slot38减固定参考，真实raw481/history不改，保B1-route原停车行为；另存raw39/target/error/refyaw/wheel请求逐行日志，绑定actor最新frame和提交轮命令。
+- 同case三臂初态含ctrl/time/warm/sensors，完整qv/接触/guard/终态保留；图步/FD/动作行调用前限额，0模型查询/学习，失败保现场无重试。零偏移逐值等旧动作、反射输入+反号offset输出互反、raw不可变/静止/饱和/坏offset/初态错配拒绝自检通过；缺准入在机器人构造前拒绝。首个单测因float32的.05与原函数float64比较语义不同失败，已修单测使用同原函数精度，未改控制阈值。
+- 准入前补齐导入helper依赖hash并重建尚未执行的source_admission，87源文件/原proposal/原证据/runtime绑定；未运行过队列。先提交本准入，再首次启动唯一18条件，原科学门/停止规则不变。独立完整接收留下一轮；360方向/清理/整体框架保持，formal5仍未准入、六论文出口未齐。
+
+## 历史状态：第355轮方向深审/冗余清理及18回合登记完成（2026-10-12，整体目标active）
 
 - 上一完成轮354为progress（主张/范围证据已落盘）；中断355仅读状态，本轮续接完成351—355五轮方向深审。统一reflection丢全部8个复现成功，继续关闭；旧fixedforce、平地调优、reward/gamma修改及formal5不准入。353接触暴露与354主张边界保持，原完整接触任务不事后改判，不把负审计当原论文目标完成。
 - 决定只做一次有界强经典策略族核查，classical_route_reference_diagnostic_v1/proposal.json已注册、runtime尚未准入。349全ledger的6unique gaincases（6301003、6301005、6301033、6301035、6301037、6301039）各跑B1-route targety=0/+.05/−.05m共18；幅值等公开wheelradius，固定原kp/kd/rollschedule/3deg/.3Nm/guard/物理设计与task门，原B1停车行为。复制raw39仅减slot38参考误差，日志保真实raw481/history，不能按case/障碍侧/速度切换符号。
