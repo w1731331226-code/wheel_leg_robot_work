@@ -1,12 +1,14 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（第356轮，2026-10-12）
+## 当前论文计划（第357轮，2026-10-12）
 
-第356轮[18回合经典路线参考队列](results/paper_recovery_20261004/joint_reference_candidate_v1/classical_route_reference_diagnostic_v1/completion.json)已在准入提交后唯一执行并完成：目标y=0、+0.05m、−0.05m各0/6成功，生产者物理/设计18/18通过；268120图物理步、267768首回合子步、6703经典动作行、95次构造FD，约235秒含构造/记录，0学习与0重试。完整失败、真实raw与参考误差/动作、初态/终态和接触数据保留。六个零臂完整任务标志初核与历史相同；第357轮独立重放经典动作与完整物理记录后决定是否正式关闭这一固定偏移分支。尚不据生产者结果推广为所有经典路线无效或准入PPO。
+第357轮[18回合独立接收](results/paper_recovery_20261004/joint_reference_candidate_v1/classical_route_reference_diagnostic_v1/review.json)通过：267768物理子步、524577接触、6703行经典动作及234份工件SHA核过；三臂按case完整初态相同，参考误差/原经典公式/真实raw/提交轮请求逐值一致，保留原停车行为。六个零参考臂完整任务标志复现，两个偏移控制器均0/6成功，故按登记规则[关闭这一固定偏移分支](results/paper_recovery_20261004/joint_reference_candidate_v1/classical_route_reference_diagnostic_v1/closure.json)。三臂各6例姿态失败、4例同时偏航失败；六条偏航≤5°仍因其它姿态失败，18例新关节guard未修Nom或缩残差。这些结果不支持仅凭偏航改善解决完整任务，也不证明所有经典路线无效或RL必要。第358轮筛选能同时处理倾斜/航向且保持经典能力的方法假设，先说明机理区别、同信息权限及可证伪预测，禁止扫幅/调增益救此分支或直接开新训练。360方向/清理/整体框架保持。
+
+第356轮[18回合经典路线参考队列](results/paper_recovery_20261004/joint_reference_candidate_v1/classical_route_reference_diagnostic_v1/completion.json)已在准入提交后唯一执行并完成：目标y=0、+0.05m、−0.05m各0/6成功，生产者物理/设计18/18通过；268120图物理步、267768首回合子步、6703经典动作行、95次构造FD，约235秒含构造/记录，0学习与0重试。完整失败、真实raw与参考误差/动作、初态/终态和接触数据保留；第357轮已完成独立接收和上述分支关闭。
 
 第355轮[五轮方向深审与清理](results/paper_recovery_20261004/joint_reference_candidate_v1/round355_direction_review.json)完成：旧固定预算D3、平地调优及统一冻结反射扩展保持关闭。下一步已登记[18回合经典路线参考对照](results/paper_recovery_20261004/joint_reference_candidate_v1/classical_route_reference_diagnostic_v1/proposal.json)：全部6个已知学习增量案例，各运行目标y=0、+0.05m、−0.05m的固定B1-route；只改变原公式的路线误差，保持同公开信息、增益、权限、停车行为及全部原任务门。每个符号跨6例固定，不按案例挑选赢家。零臂须复现历史完整任务标志，全部成功、失败与未解释项均保存。
 
-该事后机制实验检验经典策略族是否遗漏了允许的路径选择。阳性还需另行准入全164例能力保持；阴性只关闭这一个幅值与增益，不证明RL必要。356已完成最小运行器、源/预算准入和唯一队列，357独立接收；不准入新训练或正式五种子。第360轮方向、冗余与整体框架审查保持。355仅删除核实可重建的7179字节编译缓存，未删科学数据。
+该事后机制实验检验经典策略族是否遗漏了允许的路径选择。阳性原本还需另行准入全164例能力保持；现阴性只关闭这一个幅值与增益，不证明RL必要，不准入新训练或正式五种子。第360轮方向、冗余与整体框架审查保持。355仅删除核实可重建的7179字节编译缓存，未删科学数据。
 
 当前冻结方案是 [fixed_force_prequalification_v1](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/proposal.json)：共享名义设计、公开481维输入与关节保护，D3差模力残差与同信息V6残差各三种子、各200k策略样本，只评价最终模型。492回合经典对照、六模型训练和984回合固定评估均已完成；第338轮[独立接收与资格报告](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/evaluation_review.json)通过记录核验，但D3的主任务成功、航向收益和旧能力保持门未通过，本候选收益扩展关闭，正式五种子未准入。
 

@@ -2,7 +2,15 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：第356轮18回合经典路线诊断完成（2026-10-12，整体目标active）
+## 当前状态：第357轮18回合独立接收及固定偏移分支关闭（2026-10-12，整体目标active）
+
+- 356为progress（唯一18队列和同步缺陷证据）；357仅已存数据独立接收，0physics/model forward/learning。review_classical_route_reference复用原完整contact/物理/停车check，以原actions直接重算raw39副本误差、refyaw和wheel请求；不调用新shifted实现作为答案。坏offset/raw/reference/腿/轮请求反例自检通过。
+- 18条/6case完整初态逐数组同（ctrl/time/warm/sensors等齐），起始qv对首pre、终态qv对末post、pre-post连续、双闭链/八关节/实际与命令扭矩/1.4设计/完整接触/guard与原parking、真实raw481及副本route日志逐值核过。267768首回合子步、524577contact、6703经典动作、234工件SHA；实际图268120/FD95与producer计数预算守恒。物理设计18/18，六zero完整原task flags和success均复现。
+- zero/plus/minus各0/6，三臂各attitude失败6、yaw失败4（重叠）；六条yaw<=5°仍因roll/pitch姿态失败。18条新guard修Nom/缩residual均0。closure正式关闭此固定±wheelradius B1-route分支，禁止幅值/增益/案例/符号oracle救分；阴性仅这六seen案例及固定策略，不证明所有经典路径失败或RL必要，不晋升baseline/模型/formal5。
+- 358须把该验收转为方法选择：区别明确且同时处理倾斜/航向与经典能力保持的假设、匹配公开信息/权限和可证伪预测，先对已有relativeCRRL/对称RL边界交代；不再堆泛化源审计、重复平地/反射/固定偏移队列或无据新训练。原六论文出口仍缺，goal active；360方向/清理/整体框架保持。
+- 同步仍failed，356已保229批与无效排除证据，无新push/restart；修复前必须以实际有界pack验证排除远端已有对象，后续大归档仍未上传。review/json/log/closure、README/记忆完成并中文提交，收尾恢复守护及核remote，不能声称已同步。无视频。
+
+## 历史状态：第356轮18回合经典路线诊断完成（2026-10-12，整体目标active）
 
 - 准入3cd3f8ce后首次唯一pid142385/unified56949，现exit0，18/18完成、生产者physical/design18/18过；targety=0/+.05/−.05m各0/6task成功。actual graph268120、firstepisode267768、classical action6703、FD95、wall234.996512s（含构造/记录），0model forward/learning/retry。全部原始接触、qv/guard、真实raw481和route error/reference/action、按case完整初态与终态保存。
 - 生产者manifest/18顺序/输入源/输出SHA/计数守恒收尾通过，六freshzero完整task flags初核与历史B1-route一致。357仍须独立完整物理、初态及经典动作重放接收，再按预注册阴性规则正式关闭此固定偏移分支。当前不扫幅/调增益/换case救分，不从18否定所有经典路线或宣称RL必要；原PPO贡献/保持/独立评估缺口仍在。
