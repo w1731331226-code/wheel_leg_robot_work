@@ -1,0 +1,201 @@
+{
+  "round": 340,
+  "reviewed_rounds": [
+    331,
+    332,
+    333,
+    334,
+    335,
+    336,
+    337,
+    338,
+    339,
+    340
+  ],
+  "scope": "Whole currentWarp research execution framework and CPU/history/presentation/storage interfaces;ROS2 separate. Manual source review plus existing actualreceipts,not whole repository line-by-line ornewruntime regression.",
+  "current80_frozen_runtime_sources_unchanged": true,
+  "source_files_verified": 80,
+  "source_manifest_sha256": "ec7bae177d79cc2347c9dc9fa73df82217c15166d526fbb5c672dd1eec27fa28",
+  "evidence_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/baseline_gate.json": "efb5c1becd646dfc485e3edc256eeaf4005de7bc8141aae9b8647c16729b2144",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/baseline_raw_review.json": "256b03a65695388b1d0e34de085347ed9b24c801bb284827e9e7a1545c66b743",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/CPU_legacy_pair.json": "f8afa8c8bec891b55c099904cfef24f6b6076402e879122d548ee8f0339723c2",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training_review.json": "9e3d2084e773f609e8f47339c7046f7ae309ec240664b2f9f39ba073cc13b546",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/model_evaluation_admission.json": "df593e0b01261728c32c227640ac0b476bca82831c88c9b8e83d150895d12a87",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/evaluation_review.json": "41eed8d3f9472403e40b4447165ad9774ba885d0231cb3f977d0c0b018342244",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/failure_audit.json": "f82d5a55708086f91462c207287ad329cb657ce78bf0cb1362a661ea38cd7138",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round335_direction_review.json": "ad4d3ad258621b3521221dfa22d4b62cbd73dc4925130e62324c56b5e7d69387",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round340_cleanup.json": "f029f48feb212cf1729020633c17aef49c3b214be59ab664b4a4ed50c85d7c74"
+  },
+  "framework_nodes": {
+    "sampling_curriculum": {
+      "wheelleg_warp/train_height_comparison.py": "e4569d6079d0b8e1362fd0e3b263b5ee0b26d67f11246c8c9cbc2f710a88ccfc",
+      "wheelleg_warp/native/terrain.py": "1e462500ae917ba78ce5e4652f7a856bf62658f8573296e9a7d4630517cf1a94",
+      "wheelleg_warp/native/models.py": "59420b688a25e63fb8e0e644f0702025836bea0ed90377e452bcbd919c7216eb",
+      "wheelleg_warp/native/terrain_env.py": "058d155eacd3ed7417523c7fcd5965ebc58215596eda347a0f3e2e8c23720c1c"
+    },
+    "ppo_checkpoint": {
+      "wheelleg_warp/train_fixed_force_study.py": "8fb3320b46a2d01f6c2d39ffdfbceffe0ecc74e579a55c7bf76c501c6a1b9670",
+      "wheelleg_warp/reference_learning_engineering.py": "6edc8435756bead51c7a553f9fc66a63af071fc3c7399c6a490972a5303c22e3",
+      "wheelleg_warp/review_fixed_force_training.py": "03ab2885b17e05b77b4ab4459694059149f94de1bca21cc8399ceb4cbb30d9cc"
+    },
+    "public_observation": {
+      "wheelleg_warp/route_state.py": "c0ead1a487b1baf2b644b7104537349a1ea92603121e765d507793833b03e28a",
+      "wheelleg_warp/probe_packet_odometry.py": "a14e2804acc1212fd6d891a13824b069e09044eac0e959f6ea70cfca9991320d",
+      "wheelleg_warp/execution_history_env.py": "5c0f0135df45fa899b03f557dff98da3cabbf58b0afdf5bf6279f470fec4f01b",
+      "wheelleg_warp/execution_input_collector.py": "fa3cb14857e6e95805753b3ca67c07a24092c6ce04943cab51decf8797951ffb"
+    },
+    "action_nominal": {
+      "wheelleg_warp/fixed_reference_force.py": "ddacd763ab806a0359e8f4c5a18de7a4508fd9e7d60edc737e2bf2419f36498c",
+      "wheelleg_warp/native/controller.py": "04d106ae8579118eb306ba2b28037425f81a1f554d4b51fa1eae1ef795fede73",
+      "wheelleg_warp/native/shared_reference.py": "eb6cc3230d2c853ab4dc63e100143630ddc9b7e33aa8a54d5d3355905818e3f2",
+      "wheelleg_warp/native/design.py": "fcdd61b8a03f7513561a83b67b78c1451a2deede3a6cbc90746096393909598e"
+    },
+    "phase_reset": {
+      "wheelleg_warp/light_parking_request.py": "24d621376009bf3b88466a9557083b2967075082c14d1ebce43f55da8ea62dc5",
+      "wheelleg_warp/light_phase_reference.py": "a2a2c5a52cb9a51591bea44c1c85cb0fd343fe3b5e2526e88ffea461d56e9768",
+      "wheelleg_warp/parking_withdrawal_probe.py": "19882d6fbce597f96a4ffad72a1c6d17b03e05dd7ff2ec89067c08c9cd2ab6ef"
+    },
+    "physics_safety": {
+      "wheelleg_warp/native/environment.py": "a4fb0a7a5beb08bf23e8e3855f681e8008b79fe5e730d11bc4b5c91674fe8a2b",
+      "wheelleg_warp/joint_state_guard.py": "f99f891175602a8e46e800ecf0230add9369e3d19584d752964d7b619e5191ec",
+      "wheelleg_ppo/tools/hardware_profile.py": "844688aae7e408bb2ca11d00b192ffaa9e4ad5de06cc8a815d3cf3ddfbe02eba"
+    },
+    "evaluation_score": {
+      "wheelleg_warp/evaluate_fixed_force_study.py": "b461279a0d84372bc9363d0cf0fd009cc7fb3d345e4f493075804a8d6612e271",
+      "wheelleg_warp/execution_history_evaluation.py": "ea19a723fcfe6e878baefe7ab5c2f39d86c937a20b8ccaef78310313122540b5",
+      "wheelleg_warp/score_reference_learning.py": "81b93a487923b480871406405b6661c1246c2b2b3a70f88df1dcfb9c4c66325e",
+      "wheelleg_warp/review_fixed_force_evaluation.py": "833308e1d8e89d93fc76a76be03cb4d4a4defc8db5016d29aa206e7b7c75de36",
+      "wheelleg_warp/audit_fixed_force_failures.py": "083c86a276cfdfff270305d5a5b57070be846a1de6c6b3674687e023a4103d28"
+    },
+    "recording": {
+      "wheelleg_warp/complete_contact_recorder.py": "81ed3df9c2bf2f0a53955949a4ffa5afb240503d364749b7137fdacb96ed7cc6",
+      "wheelleg_warp/complete_contact_witness.py": "008482389167144b377e54257e7bf0922f5e131cf9ecd04eb1f1768d06c22c98",
+      "wheelleg_warp/task_mode_recorder.py": "ff9f2488fe7562ae96127c6810acc192e7d7a665aabed840d94bf47ba8a6d0cc",
+      "wheelleg_warp/run_phase_support_qualification.py": "14ec95d508262f12c592c148330c6538f9e438cffd5395c794e7e7f8e772ac5f"
+    },
+    "admission": {
+      "wheelleg_warp/train_fixed_force_study.py": "8fb3320b46a2d01f6c2d39ffdfbceffe0ecc74e579a55c7bf76c501c6a1b9670",
+      "wheelleg_warp/evaluate_fixed_force_study.py": "b461279a0d84372bc9363d0cf0fd009cc7fb3d345e4f493075804a8d6612e271"
+    },
+    "storage_sync": {
+      "tools/git_sync.py": "72840b1c0e85c2deb52dab07cd12875556cf109f40ba9ac48e2b9da68aa70f5e",
+      ".githooks/commit-msg": "287fb052f4711b9b70dcfaa4908495fe26c7ce461acde220b18d59ab86c2b34f"
+    },
+    "presentation_boundary": {
+      "wheelleg_warp/README.md": "ab047ea526d1bf1bdea69ee5a743ff402d0cd07b48a31b5e8612d3a06a626d42",
+      "wheelleg_warp/paper.tex": "a3462183a11f4c3130bb46a749b55728a7043886b948a981cb35e079e9f2f2fc"
+    }
+  },
+  "auxiliary_V6_selfcomparison_fix": {
+    "historical_report_preserved": true,
+    "historical_receiver_snapshot": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/receiver_v338.py",
+    "snapshot_sha256": "72407f89ad6df626cfc68114802097c37a4860fe073513081ab8b4c6a9f3799b",
+    "current_receiver_sha256": "833308e1d8e89d93fc76a76be03cb4d4a4defc8db5016d29aa206e7b7c75de36",
+    "corrected_V6_controlled_gates": {
+      "V6_33531": {
+        "success_atleast34": false,
+        "J_lower_than_all_classics": false
+      },
+      "V6_33532": {
+        "success_atleast34": false,
+        "J_lower_than_all_classics": false
+      },
+      "V6_33533": {
+        "success_atleast34": false,
+        "J_lower_than_all_classics": false
+      }
+    },
+    "all_D3_qualification_terms_unchanged": true,
+    "new_frozen_science_orcontroller_change": false
+  },
+  "historical_model_system_info": {
+    "D3_33531": "- OS: Linux-6.8.0-138-generic-x86_64-with-glibc2.35 # 138~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Aug  7 13:43:15 UTC \n- Python: 3.10.12\n- Stable-Baselines3: 2.9.0\n- PyTorch: 2.14.0+cu130\n- GPU Enabled: True\n- Numpy: 2.2.6\n- Cloudpickle: 3.1.2\n- Gymnasium: 1.3.0\n",
+    "V6_33531": "- OS: Linux-6.8.0-138-generic-x86_64-with-glibc2.35 # 138~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Aug  7 13:43:15 UTC \n- Python: 3.10.12\n- Stable-Baselines3: 2.9.0\n- PyTorch: 2.14.0+cu130\n- GPU Enabled: True\n- Numpy: 2.2.6\n- Cloudpickle: 3.1.2\n- Gymnasium: 1.3.0\n",
+    "D3_33532": "- OS: Linux-6.8.0-138-generic-x86_64-with-glibc2.35 # 138~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Aug  7 13:43:15 UTC \n- Python: 3.10.12\n- Stable-Baselines3: 2.9.0\n- PyTorch: 2.14.0+cu130\n- GPU Enabled: True\n- Numpy: 2.2.6\n- Cloudpickle: 3.1.2\n- Gymnasium: 1.3.0\n",
+    "V6_33532": "- OS: Linux-6.8.0-138-generic-x86_64-with-glibc2.35 # 138~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Aug  7 13:43:15 UTC \n- Python: 3.10.12\n- Stable-Baselines3: 2.9.0\n- PyTorch: 2.14.0+cu130\n- GPU Enabled: True\n- Numpy: 2.2.6\n- Cloudpickle: 3.1.2\n- Gymnasium: 1.3.0\n",
+    "D3_33533": "- OS: Linux-6.8.0-138-generic-x86_64-with-glibc2.35 # 138~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Aug  7 13:43:15 UTC \n- Python: 3.10.12\n- Stable-Baselines3: 2.9.0\n- PyTorch: 2.14.0+cu130\n- GPU Enabled: True\n- Numpy: 2.2.6\n- Cloudpickle: 3.1.2\n- Gymnasium: 1.3.0\n",
+    "V6_33533": "- OS: Linux-6.8.0-138-generic-x86_64-with-glibc2.35 # 138~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Aug  7 13:43:15 UTC \n- Python: 3.10.12\n- Stable-Baselines3: 2.9.0\n- PyTorch: 2.14.0+cu130\n- GPU Enabled: True\n- Numpy: 2.2.6\n- Cloudpickle: 3.1.2\n- Gymnasium: 1.3.0\n"
+  },
+  "current_runtime_versions_at_audit": {
+    "mujoco": "3.12.0",
+    "mujoco-warp": "3.12.0",
+    "warp-lang": "1.17.0",
+    "torch": "2.14.0+cu130",
+    "stable-baselines3": "2.9.0",
+    "gymnasium": "1.3.0",
+    "numpy": "2.2.6"
+  },
+  "current_installed_forward_support_sha256": {
+    "/home/wmt/wheel_leg_robot_work/.venv/lib/python3.10/site-packages/mujoco_warp/_src/forward.py": "7b7ffa3d914b6adf65f228261e207998d5bed1e59d4fb17f5bc6ac796aacf490",
+    "/home/wmt/wheel_leg_robot_work/.venv/lib/python3.10/site-packages/mujoco_warp/_src/support.py": "1a08ef15f149d1cf3c9ec5df6c688669fe86aa237ee2512a7463caf1b74e3d54"
+  },
+  "unresolved": [
+    {
+      "id": "science",
+      "finding": "Distinct contribution,qualifiedformal5/independentID-OOD/matchedmechanismstats/fullnewmethodmanuscript stillmissing;records passing isnotcandidate advantage."
+    },
+    {
+      "id": "covariance",
+      "finding": "Equal feature/value init/std/width/bounds are not matched actualexploration covariance orreachable-set comparison;wholeparameterization effects only."
+    },
+    {
+      "id": "safety",
+      "finding": "No certified modelerror/noise bound. Guardinactive in984eval;earlierpressure thinmargin retained. Actualboundedfiniteepisodes cannot establish invariant-safety theorem."
+    },
+    {
+      "id": "admission",
+      "finding": "Oldmodel evaluator checks completion/modelhash but does not directlybind verified/proposal/trainingreview SHA ofmodel admission beforephysics.338independentreceiver did,so pastrecordsaccepted. New13runner mustcheck alladmission links;oldruntime preserved."
+    },
+    {
+      "id": "reproducibility",
+      "finding": "Current maincompletion omits a full engine/driver/installedsource manifest;PPOzip system_info records some library context. Audit-timeversions are not proof ofhistorical MuJoCo/driver versions. Futurediagnostic mustfreeze runtime."
+    },
+    {
+      "id": "storage",
+      "finding": "Remote HEAD remainsbehind;120s ordinarypush timeouts,~13GBfree,failedautoGC orphan wasremoved338. Avoid newlarge queues;nohistoryrewriting/rawdeletion. Lock futureworker andcheckspace/FD/capture budgets."
+    },
+    {
+      "id": "interfaces",
+      "finding": "80source closure includes unusedhistoricalreference/reward imports;currentforce path doesnot callthem. Serialmonkeypatch construction is qualified,not thread-safe;no parallel GPU workers orunrequestedrefactor."
+    },
+    {
+      "id": "task",
+      "finding": "Original success requires contact flags/exit,not fullcenteredloadedtraversal. Source reward has terminal taskfeedback but no denseroutey term;route input alreadyavailable,neither rewardnor perception is unique proven cause."
+    }
+  ],
+  "new_physics_steps": 0,
+  "new_learning_samples": 0,
+  "formal5_admitted": false,
+  "indirect_initial_action_manifest": {
+    "path": "wheelleg_warp/results/twentyninth_round_capped_support_20261003/initial_action_config.json",
+    "sha256": "6408bd0dbdb7227989d96d895f0defb5007f2a2c770cdf7e91799988fdf62a60",
+    "sources": {
+      "wheelleg_warp/training_contract.py": "bb73ab6209b67747e044b2fd4e5eac34f13fcb1c0d46e9cdb108cc2ccfb808e2",
+      "wheelleg_warp/terrain_eval.py": "ed0beafa14e882985ca5c0efe23dad6ff63bd5ae653e54ed0fbbdb7ac881d451",
+      "wheelleg_warp/benchmark_parallel.py": "d17545490ac724b14983e9e6be7131af62cedc28bdeed43af8d6fd5ba5f82a02",
+      "wheelleg_warp/native/terrain.py": "1e462500ae917ba78ce5e4652f7a856bf62658f8573296e9a7d4630517cf1a94",
+      "wheelleg_warp/native/terrain_env.py": "058d155eacd3ed7417523c7fcd5965ebc58215596eda347a0f3e2e8c23720c1c",
+      "wheelleg_warp/native/models.py": "59420b688a25e63fb8e0e644f0702025836bea0ed90377e452bcbd919c7216eb",
+      "wheelleg_warp/native/environment.py": "a4fb0a7a5beb08bf23e8e3855f681e8008b79fe5e730d11bc4b5c91674fe8a2b",
+      "wheelleg_warp/native/controller.py": "04d106ae8579118eb306ba2b28037425f81a1f554d4b51fa1eae1ef795fede73",
+      "wheelleg_warp/native/live.py": "42d1f1a174ffbe6e0906363785743b8411c5d95a7503c96ef3bf503ace0632c3",
+      "wheelleg_warp/native/design.py": "fcdd61b8a03f7513561a83b67b78c1451a2deede3a6cbc90746096393909598e",
+      "wheelleg_warp/native/shared_reference.py": "eb6cc3230d2c853ab4dc63e100143630ddc9b7e33aa8a54d5d3355905818e3f2",
+      "wheelleg_warp/native/shared_reference.npz": "5a2f60e5fef024491858aade7adfe5b2d29f6d8602529c1dfe8c092c79d30c40",
+      "wheelleg_warp/dashboard/live_env.py": "7bbeb958250e24aec26333049279f0b78f2e43f775be28b089892146444aded1",
+      "wheelleg_ppo/tools/ppo_env.py": "8b282c709f4ed0e7da500fb0e78a1a380b08a5467d4155b9cbe56147bff14296",
+      "wheelleg_ppo/tools/pretrain_yaw.py": "ecd5e63a30321a72d7f051198fa00c1bfea4d1008e1ce8d9432e1629c030b24c",
+      "wheelleg_ppo/tools/wheelleg_sim.py": "c2dfaae4dc562119fd7916684849ec22fcac3d75dbcfec6a2a0f9452d8f6ee0f",
+      "wheelleg_ppo/tools/hardware_profile.py": "844688aae7e408bb2ca11d00b192ffaa9e4ad5de06cc8a815d3cf3ddfbe02eba",
+      "wheelleg_ppo/tools/rm_controller.py": "d831408426647aac0c758c82f0972570ad1373798a5e6705d45572384285b35d",
+      "wheelleg_ppo/tools/model_lqr.py": "d63db108ece884340cff2589cf50729ca1dfd2ffd44adb8260b8155570ffbf82",
+      "wheelleg_ppo/tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+      "wheelleg_ppo/xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f",
+      "wheelleg_warp/audit_initial_actions.py": "ea747800ff89952cd3d27dbecd9f7eff50d9e5ac66bea12d6a46bf55ee81368b"
+    },
+    "verified": true,
+    "design_mass_scope": "native.design.current_vmc_table usesfixed sim.load_model nominal7kg;randomplants separate",
+    "timing": "raw_env checks initial() afterconstruction;future13mustcheck beforeconstruction"
+  }
+}

@@ -61,13 +61,6 @@ def retention(candidate,reference,bounds,legacy=False):
                 passed=not(lost or velocity or arrival or attitude))
 
 
-def controlled_gates(count,score,best,arm,v6_score):
-    assert arm in ('D3','V6')
-    gates=dict(success_atleast34=count>=34,J_lower_than_all_classics=score is not None and score<best)
-    if arm=='D3':gates['J_lower_than_same_seedV6']=score is not None and v6_score is not None and score<v6_score
-    return gates
-
-
 def self_check():
     b=dict(velocity_multiplier=1.05,velocity_add_m_s=.005,arrival_multiplier=1.05,arrival_add_s=.05,legacy_roll_pitch_add_deg=.1)
     r=dict(seed=1,success=True,velocity_rmse=.1,arrival_s=2.,peak_deg=[1.,1.,0.])
@@ -82,9 +75,6 @@ def self_check():
     else:raise AssertionError('Mismatched paired case admitted')
     assert yaw_gate([.20,.21,.22],.30) and not yaw_gate([.20,.21,.31],.30)
     assert not yaw_gate([None,.20,.20],.30) and not yaw_gate([.26]*3,.30)
-    assert all(controlled_gates(34,.2,.4,'V6',.2).values())
-    assert not controlled_gates(34,.2,.4,'D3',.2)['J_lower_than_same_seedV6']
-    assert controlled_gates(34,.2,.4,'D3',.3)['J_lower_than_same_seedV6']
     spec=mujoco.MjSpec.from_file(str(ROOT/'wheelleg_ppo/xml/wheelleg.xml'));sim.hw.configure_spec(spec);m=spec.compile()
     pre=np.zeros((1,39));post=pre.copy();post[0,33]=41.
     assert physical_metrics(pre,post,m)[1]==1.
@@ -191,7 +181,7 @@ def run():
             best=min(refs[b,panel]['summary']['mean_yaw_score_deg'] for b in labels)
             score=r['summary']['mean_yaw_score_deg'];vs=models[vlabel,panel]['summary']['mean_yaw_score_deg']
             gate=dict(all_physical_design=r['physical']==r['design']==len(r['runs']),preserve_every_classical_success=all(x['passed'] for x in comparisons.values()))
-            if panel=='controlled':gate.update(controlled_gates(r['summary']['success_count'],score,best,arm,vs))
+            if panel=='controlled':gate.update(success_atleast34=r['summary']['success_count']>=34,J_lower_than_all_classics=score is not None and score<best,J_lower_than_same_seedV6=score is not None and vs is not None and score<vs)
             if panel=='regular':gate.update(success_atleastbestclassic=r['summary']['success_count']>=max(refs[b,panel]['summary']['success_count'] for b in labels),J_lower_than_all_classics=score is not None and score<best)
             if panel=='legacy':gate.update(all28_success=r['summary']['success_count']==28,CPU_capability_pair_received=cpu['passed'])
             detail[panel]=dict(gates=gate,comparisons=comparisons,passed=all(gate.values()))

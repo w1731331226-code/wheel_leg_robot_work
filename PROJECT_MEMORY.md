@@ -2,6 +2,18 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
+## 当前状态：第340轮五轮方向/冗余与十轮整体框架深审完成（2026-10-11，整体目标active）
+
+- 339为progress（1476门重建/378保存轨迹新机制证据），本轮落实336—340方向深审、确认冗余删除及331—340整体研究执行框架核查。80当前直接冻结运行源全部SHA仍一致，另核旧initial_action_config间接22源（含native/design固定7kg），新13运行源闭包合并为84；无机器人physics/新学习/新评价。框架范围为当前Warp采样—PPO—481观测—动作—Nom/guard/phase—物理—任务评分—全记录—准入—复现—存储，并核CPU历史与展示边界；不是ROS2或整个repo逐行审计/新全量回归。
+- 是否值得继续：旧fixed_force_prequalification收益扩展继续closed，不追加epochs/seed/scenes救分。已有source/counter/Adam/RMS/真实data链可复用，无须更多generic controller/sourcequalification循环。339的平地wheel/Nom抵消、早期route漂移与20contact缺支持一次很小的因果诊断，尚非新方法、收益消融或创新。旧4472/6fixedmodels/32D奖励阶段禁轮审计已mean+.625，故不重复全mask/地形大队列；当前481/fixedforce/currentguard六末模型的平地反例需要区别轮与腿作用。
+- 已冻结frozen_wheel_interference_diagnostic_v1/proposal：唯一已见nominal_-0.5案例，六final200k D3/V6模型各original/wheel_off共12，加freshguardB0共13，0训练；保Nom/reference/guard/filter/phase/physics/task，仅canonical4:6请求在PolicyActor embed后、旧filter前置0。F/H保持各自当前状态的原预测，不宣称两反事实轨迹腿命令逐值同。记录unmasked和submitted请求、完整原始物理/phase/guard/actor/RMS/真实成本。硬预算416000actualgraphworldsteps、150constructorFD、每jobfirstepisode<=26000；firstB0任务失败或物理/设计/源/记录失败保消费/前缀/终态后停止，不retry。原D3_33532反例若新原臂不复现，不能宣称恢复；全部六pair报告，不挑seed/mask晋升。341先最小runner+源/模型/版本/记录自检准入，342仅继续同唯一已启动队列，343独立接收；本轮13未执行，runtime尚未admitted，formal5仍False。
+- 方法适当性：本次三seed同预算完整学习/末点/共享Nom及strongsameinfo对照正确实施但科学门失败；同width/初值/std/bounds不等实际covariance/探索可达域匹配。contact+exit的原任务不等居中承载完整traversal；终端±10有失败反馈，dense无route-y项不证明reward唯一根因。当前guard在984科学评估未干预，早期压力贴界/modelerror未知/idealencoder限制保，不将已知CBF工程层宣称创新或真实不变性。
+- 定向近邻只复核现有相对CRRL来源：arxiv2110.02566官方摘要仍可读，约束相对基输出与有前提稳定性已有；Machines2023官方页429，本轮不重复请求或称新全文取得。已有CRRL_FULLTEXT_REVIEW的方法/证明条件继续作为证据，不给轮腿欠驱动接触系统移植定理。论文六出口（区别贡献/强匹配机制、qualifiedformal5、freshID-OOD、层级统计实耗、完整新方法稿）仍缺，不缩成工程或负材料完成全goal。
+- 实质框架修正：review_fixed_force_evaluation原controlled门对V6也做J<V6自身，恒False且无意义；新controlled_gates仅D3做same-seedV6比较，V6只对经典，增加V6自比较回归自检。逐三个D3实际指标前后门项完全同，原失败总资格不变，六个当前V6本身也低于34。旧evaluation_review.json不覆盖，receiver_v338.py逐字节保原sha72407f89…；当前receiver版本独立记录于round340_framework_review。该receiver不在80冻结物理运行源内，未改实验或重跑984raw。
+- 框架未闭缺口：old evaluator在physics前未直接检查model admission verified/proposal/trainingreview SHA全链（338 receiver确已独立检查，过去数据仍接收）；new13必须补全，不改旧frozenrunner。当前maincompletion无完整engine/driver版本清单，六PPOzip system_info确读，340现环境versions及installedforward/support SHA仅audit-time证据，不能倒推历史driver。serialmonkeypatch捕获结构已qualified但非thread-safe，80source含旧reference/reward只导入依赖，当前fixedforce执行不调它们，暂不广泛拆层以免无关破坏源冻结。native/design虽不在直接80内，旧raw_env.initial()确通过初始配置间接保护；检查发生在世界构造后，新13已显式前置其22源与初始配置文件SHA，不误报历史Nom设计未冻结或随机plant泄漏。新增worker须全程project-write.lock/低磁盘与真实FD/graph预算，remote120s push超时和GC临时pack风险仍有，禁止raw/历史删除或强推重写。
+- 340冗余清理：删除旧receiver cpython310缓存18882B，前SHA bb710320…，marshal code逐值等保留338源且不同于现receiver，ignored/untracked/fuser无持有核后删；round340_cleanup保存。导入新receiver可再生新版本缓存，不称永久节省。全部科学raw/模型/失败/源与Git对象保留；338的13.48GB孤立temp_pack清理不替代本次定期义务。
+- round340_direction_review/framework_review/cleanup与新13proposal、README当前入口及记忆已保存；source/helper自检、实际D3 gate invariance/新V6作用域、80运行源、模型哈希及旧receiver绑定核过。中文提交，不生成视频；收尾恢复守护并核远端，仍未完整同步。下一345方向/冗余、350整体框架；整体goal active。
+
 ## 当前状态：第339轮保存轨迹失败机制核对完成（2026-10-11，整体目标active）
 
 - 上轮属于实质progress（完整338receiver及候选闭合），本轮仅推进339的已有证据机制分析。audit_fixed_force_failures.py复用flags/load_rows/既有源与SHA、全部1476模型/经典结果按原门重建，无新physics/学习/权重或控制变更；D3与同seedV6及三classic各panel逐case lost/gained守恒核。
