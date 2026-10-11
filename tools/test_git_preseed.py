@@ -32,7 +32,18 @@ def main():
         assert calls==[root],'Push must use source repository authentication context'
         state=json.loads((root/'.git/sync-transfer.json').read_text());assert state['status']=='failed' and state['completed_chunks']==0
         pending=state['auxiliary_head']
-        transfer.run(root,chunk_bytes=12000,resume=True)
+        measured=transfer.pack_report
+        reports=[]
+        def indexed_report(cwd,tip,excluded,limit=transfer.CHUNK):
+            # Test-only packing makes a bitmap after all auxiliary metadata is present.
+            original_git(cwd,'repack','-a','-d','--write-bitmap-index')
+            report=measured(cwd,tip,excluded,limit);reports.append(report);return report
+        with patch.object(transfer,'pack_report',indexed_report):
+            transfer.run(root,chunk_bytes=12000,resume=True)
+        assert len(reports)==1 and reports[0]['bytes']<4096
+        try:measured(root,head.decode(),[],limit=4096)
+        except RuntimeError as error:assert 'budget' in str(error)
+        else:raise AssertionError('Oversized pack accepted')
         assert transfer.git(root,'rev-parse','HEAD').strip()==head
         assert transfer.git(root,'status','--porcelain')==before
         assert transfer.git(root,'ls-remote','origin','refs/heads/main').split()[0]==head
@@ -42,7 +53,7 @@ def main():
         auxiliary=Path(state['helper_repository'])
         messages=transfer.git(auxiliary,'log','--format=%s').decode().splitlines();assert all(m.startswith('同步：') for m in messages)
         assert len(messages)==state['chunks'] and transfer.git(auxiliary,'rev-list','--max-parents=0','HEAD').decode().strip()==pending
-        print('PASS preseed boundedchunks/hookedcommits/originalHEAD+worktree/remote blobs/temprefcleanup')
+        print('PASS preseed measured small bitmap pack/oversize rejection/hooked commits/original HEAD+worktree/remote data/resume')
 
 
 if __name__=='__main__':main()

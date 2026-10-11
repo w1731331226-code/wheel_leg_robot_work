@@ -6,6 +6,8 @@ from pathlib import Path
 import signal
 import subprocess
 import time
+import selectors
+import tempfile
 
 ROOT=Path(__file__).resolve().parents[1]
 CHUNK=64*1024**2
@@ -27,6 +29,34 @@ def git(root,*args,input=None,timeout=1800):
 
 def save(path,data):
     temp=path.with_suffix('.tmp');temp.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n');temp.replace(path)
+
+
+def pack_report(root,head,excluded,limit=CHUNK):
+    """Measure the actual prospective pack without retaining it or repacking the store."""
+    command=['git','-c','pack.window=0','-c','pack.threads=2','-c','core.compression=1',
+             'pack-objects','--revs','--stdout','--thin','--delta-base-offset']
+    with tempfile.TemporaryFile() as errors, subprocess.Popen(command,cwd=root,stdin=subprocess.PIPE,
+            stdout=subprocess.PIPE,stderr=errors,start_new_session=True) as process:
+        try:
+            process.stdin.write(('\n'.join([head,*['^'+x for x in excluded]])+'\n').encode());process.stdin.close()
+            count=0;prefix=b'';digest=hashlib.sha256();deadline=time.monotonic()+1800
+            with selectors.DefaultSelector() as selector:
+                selector.register(process.stdout,selectors.EVENT_READ)
+                while True:
+                    if time.monotonic()>deadline:raise RuntimeError('Pack preflight timed out')
+                    if not selector.select(timeout=1):continue
+                    data=os.read(process.stdout.fileno(),1024*1024)
+                    if not data:break
+                    count+=len(data)
+                    if count>limit:raise RuntimeError('Prospective pack exceeds bounded transfer budget')
+                    prefix=(prefix+data)[:12];digest.update(data)
+            if process.wait(timeout=10)!=0:
+                errors.seek(0);raise RuntimeError('Pack preflight failed: '+errors.read(2000).decode(errors='replace'))
+            assert len(prefix)==12 and prefix[:4]==b'PACK'
+            return dict(bytes=count,objects=int.from_bytes(prefix[8:12],'big'),sha256=digest.hexdigest(),limit_bytes=limit)
+        except BaseException:
+            if process.poll() is None:os.killpg(process.pid,signal.SIGKILL)
+            process.wait();raise
 
 
 def run(root=ROOT,chunk_bytes=CHUNK,resume=False):
@@ -104,6 +134,9 @@ def run(root=ROOT,chunk_bytes=CHUNK,resume=False):
         # The alternate store knows local main, so this local fetch transfers only auxiliary metadata.
         git(root,'fetch','--no-tags',str(work),f'{ref}:{tracking}')
         current_remote=git(root,'ls-remote',remote,target).decode().split()[0];git(root,'merge-base','--is-ancestor',current_remote,head)
+        auxiliary_remote=git(root,'ls-remote',remote,ref).decode().split()[0]
+        assert auxiliary_remote==state['auxiliary_head'],'Owned auxiliary ref changed externally'
+        state['main_pack']=pack_report(root,head,[auxiliary_remote,current_remote]);save(statefile,state)
         state['status']='pushing_original_history';save(statefile,state)
         git(root,'push',remote,f'{head}:{target}');assert git(root,'ls-remote',remote,target).decode().split()[0]==head
         git(root,'push',remote,'--delete',name);git(root,'update-ref','-d',tracking)
