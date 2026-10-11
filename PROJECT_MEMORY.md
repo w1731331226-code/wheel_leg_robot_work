@@ -2,7 +2,18 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 第365轮方向/清理与独立修复队列入口（2026-10-12）
+## 当前状态：第365轮方向/清理及独立v2二十回合完成（2026-10-12，整体目标active）
+
+- 364为progress，365完成361—365方向深审：只准一次已定位mode错误修复，未改变cases/profile/科学门或恢复旧队列；原v1失败完整保留，研究目标仍是单策略强经典增量与能力保持，六论文出口未齐。370下次同时方向/清理与整体框架。
+- 24755ccc准入后唯一pid32590/unified7748现exit0，v2独立20/20完成、0retry。8个Cart零条件对各freshB0的标准全部流/flags逐值同（含原失败lambda列），生产者physical/design20/20；全部script任务0/20成功，不是PPO或方法优势。actual graph298400、first298123、actor7460、FD105、wall277.835546918s（含构建/记录），0学习/网络forward。
+- 复用冻结364engine，completion.round364为其版本标记；新run_receipt.round365绑定原completion未改数值，scope globals恢复True。收尾已核20顺序/result/initial/terminal与Cart trace/terminal hashes、计数守恒、actual v2 kernel/acceptedNom门、原failure SHA未变；尚不是独立完整非零/guard接收，366必须完成该项，不直接训练。
+- 清理7602B编译缓存外，核16个已完成Cart的cartesian_prefix_0.npz与各保留cartesian_<seed>.npz的trace/clock相同，BytesIO按同NumPy写回SHA逐字节相同、untracked/fuser无持有，已删除共14681297B。cleanup保原SHA/保留路径/重建证据；保全部canonical主记录、guard prefix（后续验收需要）和v1失败前缀。未删任何独有科学证据。
+- 第二轮同步226/226完成、旧pid22912退出，最终包683236B/224对象，snapshot31b901cf已远端核实、辅助ref清除，证明位图预传在第二轮也有效。近期提交和本轮新数据还需普通有界同步，不能称当前HEAD已齐；收尾归档/恢复守护并实查。来源精确状态见.git/sync-transfer.json。
+- direction/cleanup/execution_receipt、完整新数据、README/记忆及时中文归档。366独立接收后再决定方法机制或学习前置；当前formal5/PPO未准入，goal active，无视频。
+
+- 第365轮已完成数据分档归档1/6，本档85文件/62871341B；仅归档，不替代独立科学接收。
+
+## 第365轮方向/清理与独立修复队列入口阶段记录（2026-10-12）
 
 - 364为progress。365完成361—365方向深审：只值得一次已定位投影模式错误的完整链修复，不据命令代数/fixture或物理同轨迹晋升学习。原λ门、失败及v1源码保留；CartLive3/CartReset3主配对和原D3/V6/强经典比较要求保持，新颖性/六论文出口仍缺。370下次方向/清理及整体框架。
 - 新cartesian_pair_delivery_repair_v2独立注册20条件，cases/profile/所有门/640000图步/210FD/26000单job/16000actor均同原；只换v2 accepted-Nom kernel。明确一次repair，无隐式重试或调幅/换例/放门，原runtime目录仍failed。若通过仅交付资格，须后续独立完整接收。
