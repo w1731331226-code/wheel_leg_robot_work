@@ -2,6 +2,14 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
+## 当前状态：第352轮16独立接收通过，统一反射扩展关闭（2026-10-11，整体目标active）
+
+- 351为progress（16队列与同步分档修复），352仅已存数据独立接收，0physics/learning。review_reflection_retention复用物理/双查询checker，以case key核完整初态（ctrl/time/warm/sensors必需），16记录/238051首回合子步/5958策略记录/8937网络查询/208工件SHA过；CPU原始与secondary重放最大误差3.576278687e-7，正确N(Sraw)与提交公式逐值同，终态qv/完整接触/闭链/关节/扭矩/guard及计数守恒核过。
+- 全8fresh original与338已接收历史source/result/task flags相同且success=True，全部reflection失败，16physical/design均过；注册8个保持性反例全部成立，closure.json正式关闭统一frozenreflection扩展，不额外扫幅/seed/检查点/重训救此分支。旧fixedforce/formal5仍关，整体论文目标未完成，不把局部否定推广为全部对称RL不可能。
+- 同次原始几何描述保：original轮心全程中心lane前提0/8，reflection为5/8（全部upper.38对应记录），另3低height记录centre-inside比例由0/.241/.141增至约.776/.753/.849。原接触任务8成功保持有效，中心描述是诊断并非新评分或完整承载证明；变得更居中伴随更强姿态/偏航失败，不独立归因哪条通道或接触暴露。
+- 第353轮只综合已接收路径/载荷/任务含义，形成区别明确的下一研究问题，不重复反射队列或把casewise赢家拼成oracle。355方向/冗余、360整体框架保持，六论文出口仍缺，goal active。readme/reviewer/review/log/closure/记忆保存，编译和操作错误自检通过，中文提交后恢复守护。
+- 分批pid57035仍持续运行，本轮开始104/229，精确以.git/sync-transfer.json为准，未重复启动；原快照同步不等最新0beacdc3大归档已同步，remote未齐。无视频。
+
 ## 当前状态：第351轮16回合保持性证伪队列完成（2026-10-11，整体目标active）
 
 - 350为progress（方向/框架/清理、16登记及同步工程修复），351在准入5a72d0d3后首次启动唯一pid84705/unified2186，现exit0。16job全完成，生产者physical/design16/16，actual graph238320/firstepisode238051、FD85、modelforward8937，wall218.84969s含构建/记录非PPO加速，0学习/0重试。完整原始、双查询、按case初态和终态保留。
