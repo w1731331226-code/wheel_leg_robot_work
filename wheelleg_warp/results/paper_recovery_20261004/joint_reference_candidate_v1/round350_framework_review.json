@@ -1,0 +1,78 @@
+{
+  "round": 350,
+  "reviewed_rounds": [
+    341,
+    342,
+    343,
+    344,
+    345,
+    346,
+    347,
+    348,
+    349,
+    350
+  ],
+  "scope": "Current whole research execution chain andstorage;source review plus341/342/346/347actualreceipts;notallrepositorylines ornewphysicsregression",
+  "frozen346_sources_verified": 88,
+  "source_sha256": {
+    "wheelleg_warp/train_fixed_force_study.py": "8fb3320b46a2d01f6c2d39ffdfbceffe0ecc74e579a55c7bf76c501c6a1b9670",
+    "wheelleg_warp/fixed_reference_force.py": "ddacd763ab806a0359e8f4c5a18de7a4508fd9e7d60edc737e2bf2419f36498c",
+    "wheelleg_warp/execution_history_env.py": "5c0f0135df45fa899b03f557dff98da3cabbf58b0afdf5bf6279f470fec4f01b",
+    "wheelleg_warp/execution_input_collector.py": "fa3cb14857e6e95805753b3ca67c07a24092c6ce04943cab51decf8797951ffb",
+    "wheelleg_warp/route_state.py": "c0ead1a487b1baf2b644b7104537349a1ea92603121e765d507793833b03e28a",
+    "wheelleg_warp/native/models.py": "59420b688a25e63fb8e0e644f0702025836bea0ed90377e452bcbd919c7216eb",
+    "wheelleg_warp/native/environment.py": "a4fb0a7a5beb08bf23e8e3855f681e8008b79fe5e730d11bc4b5c91674fe8a2b",
+    "wheelleg_warp/native/controller.py": "04d106ae8579118eb306ba2b28037425f81a1f554d4b51fa1eae1ef795fede73",
+    "wheelleg_warp/joint_state_guard.py": "f99f891175602a8e46e800ecf0230add9369e3d19584d752964d7b619e5191ec",
+    "wheelleg_warp/execution_history_evaluation.py": "ea19a723fcfe6e878baefe7ab5c2f39d86c937a20b8ccaef78310313122540b5",
+    "wheelleg_warp/run_wheel_interference.py": "1dcaaf9a4e8f005336ba59131d32f4dcfb2e4898b09d22ea616e88ba23fbd675",
+    "wheelleg_warp/run_frozen_reflection.py": "10d64065c678a30bf831ec628ca286ed6cd3fa87913eea013292edf7610b3eb4",
+    "wheelleg_warp/audit_policy_reflection.py": "2a18f465c36edd3212aae565b9605ea746703e608733d3ab43776ad3b85c614c",
+    "wheelleg_warp/review_frozen_reflection.py": "c09f17e514c9251d85ed10abeac61a172e5527e197a781a9688bf697be5c7f98",
+    "wheelleg_warp/audit_current_task_opportunity.py": "bb211bfd2c0137f1f0c85b2b289f9e7024fd5da3137eaa31f89e75fa6ed46b81"
+  },
+  "evidence_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/proposal.json": "18d753cab57ed63703e29008ce461731e5713c37aa1320ddaeb7466a44813563",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/evaluation_review.json": "41eed8d3f9472403e40b4447165ad9774ba885d0231cb3f977d0c0b018342244",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/task_opportunity_audit.json": "0715dbfa0fa68bbb74a08ed4e8d08041df353b878062d735f6e2c3538afcfa9e",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/frozen_reflection_diagnostic_v1/proposal.json": "d7fd6c5ab43d59fdbe6b4bf28a26251aa2f0cc5f28577df35913659c2a457e38",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/frozen_reflection_diagnostic_v1/source_admission.json": "a35459c5749c9afef3fa17faaa11f4a90bad1ad6773c5c9d5c0a58cbc3b7c766",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/frozen_reflection_diagnostic_v1/review.json": "073775fdcf327d3d3aa48d261ca12a36bf722ba12fc2d266bea61cc18da3d13d",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/frozen_reflection_diagnostic_v1/timing_audit.json": "c6b20d8dc78b9a8e8f1fd8408bce2cb666d61884be5141928e0934e86e3af055",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round349_method_decision.json": "39ffd10209fa1fdc44cb2067a3f9de47df882388f91a3ac69f64194c964951e7"
+  },
+  "verified_chain": [
+    "Originaltraining/6finalcheckpoint/RMS/receipt/versions links,88runtime sources unchanged",
+    "Raw481 beforefrozenRMS,correctmotor-vsvirtual S/A,physicalstate/privateparameter separation;2query logging andboundedconvexmean",
+    "Step40physical model/actuator/closedchain/design monitoring,source/modelfreeze,firstB0 checks,fullrecorders/contactcounts/terminalqv andbudget guards",
+    "Independent original/secondary CPU replay andmask/projection exactness,originalfullflags reproduction,allmodel/metric negativecases retained",
+    "Taskcontact/exit semantics separatedfromcentredloadedtraversal;selectedgainwitnesses notfullalgorithmadvantage"
+  ],
+  "necessary_changes_for16": [
+    "Globalinitial equality inoldsinglecase runner isinvalid acrosscases;groupbycase andaddctrl/time/warm/sensor snapshots",
+    "Do not inheritfreshB0 pass gate becausechosenhardcases alreadyfailclassics;freshoriginalreproduction isnewpairedinterpretation gate",
+    "Propagatecase/model/operator identity,initial/geometry/source/query counts perjob,notimplicit globalcase",
+    "Keepoldruntimeversions immutable;avoid a broadrefactor acrossfrozenstudy sources"
+  ],
+  "unresolved": [
+    "No fullcontact/task dynamics equivariance orstability/errorbound proof",
+    "No learningadvantage/qualifiedformal5/freshID-OOD/matchedmechanism/trainingcostclaim/fullnewmethodpaper",
+    "Posthocgain subset andGPU numericalvariation preventgeneralization claims",
+    "Repeated hard-coded runners need a smallversioned sharedorchestration boundary ifnewcase runner wouldotherwise duplicate;not a newframework rewrite"
+  ],
+  "synchronization": {
+    "original_remote_head": "6814e8429bcd11e01c5cf2d989e5ec109f39c792",
+    "ahead_commits_at_audit": 70,
+    "pending_raw_GiB": 13.57755162101239,
+    "pending_stored_GiB": 12.558095945045352,
+    "first_pending_commit": "f7d3c317ba",
+    "first_pending_raw_GiB": 2.8514046790078282,
+    "observed_issue": "120stimeout leftpack children;rootcommit too large forsingle2GiB push",
+    "fix": "Process-group timeout cleanup plusbounded64MiB blobpreseed usingownedtemporaryref/standardhooks/original-repoauth,ordinary mainfastforward,neverforce/rewrite;unitbare/resume/conflict/staging tests passed",
+    "official_limit_source": "https://docs.github.com/en/get-started/using-git/troubleshooting-the-2-gb-push-limit",
+    "actual_transfer_state_path": ".git/sync-transfer.json",
+    "actual_transfer_not_yet_complete": true
+  },
+  "new_physics_steps": 0,
+  "new_learning_samples": 0
+}

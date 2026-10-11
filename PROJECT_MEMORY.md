@@ -2,6 +2,16 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
+## 当前状态：第350轮方向/清理/整体框架完成，16回合协议冻结（2026-10-11，整体目标active）
+
+- 349为progress（全360机会ledger/26轨迹及平地分支停止），350完成346—350五轮方向与341—350框架审查。346冻结88运行源仍一致，19独立双查询/物理/时序和原task/接触意义复核链可复用；无新physics/模型forward/learning。平地调优、旧fixedforce收益和formal5继续关闭，不能把代数、边缘接触或casewise模型oracle变成方法优势；完整六论文出口仍缺。
+- 值得一次有界保持性证伪，已注册reflection_retention_falsification_v1全部8gainrecords×freshoriginal/reflection=16，6unique case/4实际model（注册保6模型目录），明确事后机制子集非独立排名。原模型/原task/物理/设计/源门不变；512000图步、180FD、26000每jobfirst、15600查询行，0学习。原臂全部task成功须复现才可作整体无反例结果；任一复现original成功/reflection失败为保持反例，未复现项保unresolved；任务失败留数据、物理设计/源/记录失败停并保现场，不retry/替换case。阳性不准PPO或164全保持。
+- 新框架必要差异：旧13/19是单case、globalinitial equality不适合跨height/obstacle。16新worker须按case identity比较初态，并补ctrl/time/warmstart/sensors；保存case/model/operator/geometry/query身份。已知经典在该子集失败，不能继承freshB0成功门，须用freshoriginal复现解释门。保持旧运行源不可变，必要时仅新版本提取最小共同编排，避免又复制整套或重构冻结框架。
+- 350冗余删除audit_reflection_timing可再生缓存7940B，code等source重编译、ignored/untracked/fuser无持有核过；round350_cleanup含SHA，未删任何raw/模型/源码/失败。
+- 同步框架发现13.58GiB积压及首提交raw2.85GiB、120s父进程超时却留pack子进程。git_sync进程组超时清理、暂存/分叉/钩子保护测试过；git_preseed本地4批/故障续接/原HEAD工作区与文件内容/辅助ref清理测试过。真实首次0批缺辅助仓库认证而停，现已从原仓库凭据作用域显式续接，不复制凭据、不重复pendingcommit、无强推/主历史重写。助手自有codex/sync-preseed-02e08d8f8b02辅助引用按64MiB传已有对象，最后普通快进快照02e08d8f再清引用；后续主提交由守护跟进。
+- 真实分批进程pid57035/unified78388本轮核live，10/229后继续有推进，精确进度以.git/sync-transfer.json和.git/sync-preseed.log为准。停止守护不影响该独立传输；守护在transfer未complete时不再重复整包push，仍可归档稳定文件。失败保helper和state需显式检查，不隐式重启。传输尚未完成，当前不能声称main远端追平。
+- round350_direction/framework/cleanup/tests与16proposal、README/记忆保存。351源/记录/casepair准入和唯一16队列，352独立接收；355方向/清理、360框架保持，goal active。中文提交后恢复守护并核远端，无新视频。
+
 ## 第350轮分批传输首批认证修正（2026-10-11）
 
 - 实际首批在辅助仓库push时缺原仓库级认证，0/229上传、主remote未动，失败状态及首辅助commit保留。现改成本地fetch仅传辅助元数据，再从原仓库push，沿用其既有认证，不读取/复制credential。显式--resume检查快照/对象批次计划与已提交辅助tree，复用同一待传commit，不重复commit或隐式重启。
