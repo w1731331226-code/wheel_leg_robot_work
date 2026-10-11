@@ -1,0 +1,83 @@
+{
+  "round": 358,
+  "status": "one_conditional_method_hypothesis_no_runtime_or_training_admission",
+  "previous_turn": "progress: 第357轮18独立接收及固定偏移闭合",
+  "primary_scope": "一个可执行PPO策略在原完整不对称接触任务中保持强经典能力并取得增量；原164开发/旧门/未用最终集不变。",
+  "evidence_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round358_gain_precontact.json": "be61584110f7712d367b05898d7b5475403d8eeb5044a977840861c818f7abb5",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/classical_route_reference_diagnostic_v1/review.json": "3b0a48e4d62efb832ea45991a7651376c3eff0e81d89f411e14818aeeebd2f09",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/classical_route_reference_diagnostic_v1/closure.json": "4d20eb0de3d3bc16ddebbb66ee44803a88f9ce043bc1ce2207c297318ceb72a4",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reflection_retention_falsification_v1/closure.json": "d6a238e2a4f1e16c9a3bd1dc9c1d72d46f6d992305896b47b1ae9b8e59f7d460",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reflection_retention_falsification_v1/exposure_audit.json": "54d11017485b9ba160363652024ee430eef2d65d8305542f9a7a6392721412c5",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round354_claims_and_scope.json": "487cdd516ea10ae9920cef8e9f612e65f7451f574fe9f93afe1bfe5720da64f6",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/evaluation_review.json": "41eed8d3f9472403e40b4447165ad9774ba885d0231cb3f977d0c0b018342244"
+  },
+  "precontact_finding": {
+    "accepted_gain_records": 8,
+    "requests_nonzero_from_reset": 8,
+    "complete_precontact_packets": 1566,
+    "last_public_abs_y_range_m": [
+      0.038613125681877136,
+      0.052291519939899445
+    ],
+    "interpretation": "已存在接触前请求和路径变化；请求不等最终实际力矩，地面接触始终存在。不能证明这些动作必要，也不能假定纯接触后补偿/全名义零化会保留原成功。"
+  },
+  "rejected_as_standalone_contributions": [
+    "普通对称化/零点扣除：已有先例，且冻结反射已丢全部8原成功；不得据此否定训练期等变RL。",
+    "DOB加历史编码和ISS残差幅值：近邻2609.21307已有；本机未具备接触切换下所需模型/估计误差界。",
+    "按姿态阈值切回Nom或学习安全残差：已有近邻，且Nom在目标子集本来失败，fallback不构成可行性证书。",
+    "固定路线参考/只调yaw：357阴性闭合，不能按符号oracle或幅值扫描救分。",
+    "单纯增加QP/CBF/多头网络/奖励权重：方法类别已有，且没有本机的区别性收益证据。"
+  ],
+  "selected_hypothesis": {
+    "name": "公开执行历史下的短时联合姿态残差分配",
+    "question": "在同公开信息及原六维权限内，显式联合处理roll/pitch/yaw可行性与不确定性，能否避免轮/腿修正互相损害，同时保留有用路径动作？",
+    "evidence_link": "357全部18姿态失败但物理设计合格且新关节guard不介入；344/348说明差模或reset零响应不限制后续反馈干扰；353说明接触暴露共变。因此要检查实际任务姿态响应，不能只收紧关节或比较单yaw。",
+    "interface": "PPO仍给原6D虚拟请求a。候选分配器在相同最终物理权限内选择a_star；公开raw481、已知固定机械参数/原Nom、对齐的全命令历史可用。真接触、私有qacc/未来状态/地形/案例ID不得成为部署输入。",
+    "mathematical_sketch": "min ||a_star-a||_W^2 subject to original actuator/joint constraints and predicted joint roll,pitch,yaw envelope over a fixed short horizon, with an explicit model-error set. This is a research template, not an implemented or admitted QP; weights/horizon/error bounds remain unfrozen.",
+    "distinction_to_current": "现joint_state_guard以分腿近似加速度处理关节设计界，再沿残差射线缩放；候选问题是跨通道的任务姿态预测及分配。不能从其区别直接推出新颖性或有效性。",
+    "baseline_infeasibility": "若Nom预测已越姿态界，不可假定a=0可行或以关学习视作安全；必须报告有无合法修正及模型不确定性。任何名义修正都要同时给无学习强经典对照，不降低旧基线。",
+    "anticipation": "不能先验抹掉接触前全部残差。需同时检查接近阶段的任务余量和接触后响应，不能只用成功接触末段拟合。",
+    "novelty_status": "尚未建立。可争取的是本机欠驱动/闭链接触切换下、同可得历史的可行分配与误差界及配对收益，绝非QP/observer/PPO的组合命名。",
+    "why_not_full_LQR_restart": "不复活255等已审过的通用共同/差动模型或参考资格分支。任何复用先检旧证据与失败边界，不能因换名称重跑。"
+  },
+  "pretraining_gates": [
+    "先列可得状态/执行间隔与模型假设，禁止将现关节近似当姿态模型或把rotor discrepancy当接触真力。",
+    "359仅制定并核对有限接触切换响应试验：正负请求、零请求和腿轮耦合方向；样本/幅值/时域/误差接受门/预算须在任何新执行前注册。保存全部失败，禁止只拟合八个成功轨迹或以在样本回归误差当资格。",
+    "同一已登记预测器必须通过接近、接触、停车及正反/低高腿长的方向与误差检验；失败先拒绝候选，不加网络/扫参补洞。未通过不得写非退化、安全或闭环定理。",
+    "若有可行可信模型，先无学习分配器与原强经典同权限比较；若它解决剩余缺口，更新强对照再判断PPO问题是否仍值得做。",
+    "PPO准入仍需方法区别、固定预算/消融、单策略全164能力保持及独立新评估银行；旧D3失败和formal5关闭保持。"
+  ],
+  "next_action": "359在旧模型失败边界与公共接口内形成一次有界响应试验的具体可执行注册，若所需状态/误差约束不可成立则直接拒绝候选。360统一方向/清理/框架复审，禁止无限源资格回合。",
+  "literature": [
+    {
+      "url": "https://arxiv.org/html/2609.21307v1",
+      "title": "Stability-aware Residual Reinforcement Learning Framework for Robotic Manipulator Disturbance Compensation",
+      "read_scope": "官方摘要与HTML方法/估计器/结论相关段落，非全文逐式验算或复现",
+      "finding": "DOB、历史估计、特权扰动监督与ISS状态相关残差界已有；作者说明稳定性依赖名义区域的ISS性质，接触丰富任务仍列为扩展方向。不能移植证明到本机。"
+    },
+    {
+      "url": "https://sciautonomy.github.io/ResSafe_Web/",
+      "title": "ResSafe",
+      "read_scope": "作者项目页，非全文复现",
+      "finding": "残差策略学习隐式安全修正、性能/安全分工与生存时间训练已有。"
+    },
+    {
+      "url": "https://safe-rl-qp.github.io/",
+      "title": "Safe Execution of RL Policies via Acceleration-based CBF-QP Constraint Enforcement",
+      "read_scope": "作者项目页，非完整定理/实现复现",
+      "finding": "加速度层CBF-QP过滤RL已有，不能把QP/CBF本身称为贡献。"
+    },
+    {
+      "url": "https://ieeexplore.ieee.org/abstract/document/11202537",
+      "title": "Residual Policy Optimization With Trust Region Constraints",
+      "read_scope": "本轮直接入口失败；沿用既有官方搜索摘要与全文缺口，不升级证据",
+      "finding": "轮腿残差信赖域近邻仍存在，未核实细节，不据此套公式或声称排他新颖性。"
+    }
+  ],
+  "new_physics_steps": 0,
+  "new_model_forward_rows": 0,
+  "new_learning_samples": 0,
+  "formal5_admitted": false,
+  "goal_complete": false
+}

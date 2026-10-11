@@ -2,7 +2,15 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：第357轮18回合独立接收及固定偏移分支关闭（2026-10-12，整体目标active）
+## 当前状态：第358轮方法筛选与接触前必要边界完成（2026-10-12，整体目标active）
+
+- 357为progress（18独立接收/固定偏移闭合）；358不训练/模拟，只核8个352已接受original gains的24份result/actor/dense SHA及353目标接触时刻。audit_gain_precontact保完整40步周期的post终点严格早于目标接触，等端点和不完整末包排除自检过。全8从reset已有非零请求，1566完整pretarget周期均非零；最后周期公开route-y绝对值0.038613～0.052292m。注释不入policy，地面早有接触；请求不等实际力矩，不证明预动作必要或看见未来障碍，只否定无证据地假定全部零化可保原成功。
+- 定向查新核arxiv2609.21307v1官方摘要/HTML估计器与结论：DOB/history/特权扰动监督/ISS残差界已有且证明有名义ISS前提；ResSafe/Acc-CBF-QP作者项目页已有安全残差与加速度过滤。非全文逐式或复现；IEEE11202537直接失败，沿用既有摘要缺口不升级。文献矩阵追加，普通observer/对称/零点/CBF-QP/多头/奖励重加权不足新贡献。
+- round358_method_selection仅保留一个条件性假设：公开raw481/固定机械参数/对齐全命令历史下，短时联合roll/pitch/yaw约束的6D残差分配。现jointguard只是分腿关节近似，原Nom在部分case本来失败，不能把a=0当可行证书；任何名义修正必须给同权限无学习强对照。不可先验抹掉接触前有用路径；不复活255等通用耦合LQR/参考资格失败分支。QP/observer/PPO组合本身不是创新，新颖性与收益尚无。
+- 359唯一前置工作：在旧失败边界/公开接口内定义接近—接触—停车、正反/低高高度的有限耦合响应试验；幅值/方向/时域/预测误差门/预算在新执行前注册，用独立响应检验而非八wins在样本拟合。公共状态或接触切换误差条件不成立就拒绝候选，不加模型/扫参救分；通过后才考虑无学习分配器，仍不自动准入PPO。不能再无限源审计。旧三分支/formal5继续关闭，原全任务/强基线保持/独立新bank/统计稿件六出口缺口保持。
+- 本轮0physics/model forward/learning，method_selection/precontact证据及auditor、README/文献/记忆保存，哈希和边界核对过，中文提交后恢复守护并核remote。同步仍failed且不原样重试，229批辅助保留、远端未追平；下一修复必须验证实际有界pack。360方向/清理/整体框架保持，无视频，goal active。
+
+## 历史状态：第357轮18回合独立接收及固定偏移分支关闭（2026-10-12，整体目标active）
 
 - 356为progress（唯一18队列和同步缺陷证据）；357仅已存数据独立接收，0physics/model forward/learning。review_classical_route_reference复用原完整contact/物理/停车check，以原actions直接重算raw39副本误差、refyaw和wheel请求；不调用新shifted实现作为答案。坏offset/raw/reference/腿/轮请求反例自检通过。
 - 18条/6case完整初态逐数组同（ctrl/time/warm/sensors等齐），起始qv对首pre、终态qv对末post、pre-post连续、双闭链/八关节/实际与命令扭矩/1.4设计/完整接触/guard与原parking、真实raw481及副本route日志逐值核过。267768首回合子步、524577contact、6703经典动作、234工件SHA；实际图268120/FD95与producer计数预算守恒。物理设计18/18，六zero完整原task flags和success均复现。

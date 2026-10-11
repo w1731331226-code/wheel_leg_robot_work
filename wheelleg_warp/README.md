@@ -1,6 +1,10 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（第357轮，2026-10-12）
+## 当前论文计划（第358轮，2026-10-12）
+
+第358轮[方法筛选](results/paper_recovery_20261004/joint_reference_candidate_v1/round358_method_selection.json)只保留“公开执行历史下的短时联合姿态残差分配”为待证假设，尚无新颖性、运行或训练准入。现guard处理分腿关节设计界，不能替代roll/pitch/yaw任务可行性；Nom本来失败时也不能把零残差当安全fallback。先验证接触切换附近的耦合响应与预测误差，再决定是否值得分配器；其确定性部分必须同时成为强经典对照。
+
+同轮[已存成功轨迹接触前时序](results/paper_recovery_20261004/joint_reference_candidate_v1/round358_gain_precontact.json)核全8个获胜记录：1566个完整目标接触前动作周期都已有非零请求，最后周期公开route-y绝对值0.03861～0.05229m；目标接触起始是离线注释，不进策略。它不证明预动作必要，但阻止“接触前全部零化仍能保持成功”的无据假设。观测器＋历史＋残差界、安全残差及加速度CBF-QP均已有近邻，详见PPO文献矩阵；不能用通用组合宣称创新。359需将唯一候选具体化为有界响应试验及预先固定的误差/预算门，若公共信息或模型条件不成立就拒绝，禁止无据训练及无穷源审计。360方向/清理/整体框架保持。
 
 第357轮[18回合独立接收](results/paper_recovery_20261004/joint_reference_candidate_v1/classical_route_reference_diagnostic_v1/review.json)通过：267768物理子步、524577接触、6703行经典动作及234份工件SHA核过；三臂按case完整初态相同，参考误差/原经典公式/真实raw/提交轮请求逐值一致，保留原停车行为。六个零参考臂完整任务标志复现，两个偏移控制器均0/6成功，故按登记规则[关闭这一固定偏移分支](results/paper_recovery_20261004/joint_reference_candidate_v1/classical_route_reference_diagnostic_v1/closure.json)。三臂各6例姿态失败、4例同时偏航失败；六条偏航≤5°仍因其它姿态失败，18例新关节guard未修Nom或缩残差。这些结果不支持仅凭偏航改善解决完整任务，也不证明所有经典路线无效或RL必要。第358轮筛选能同时处理倾斜/航向且保持经典能力的方法假设，先说明机理区别、同信息权限及可证伪预测，禁止扫幅/调增益救此分支或直接开新训练。360方向/清理/整体框架保持。
 

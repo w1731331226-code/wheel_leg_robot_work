@@ -1,5 +1,9 @@
 # PPO论文查新矩阵
 
+第358轮方法筛选补查（2026-10-12）：[Stability-aware Residual RL DOB作者HTML](https://arxiv.org/html/2609.21307v1)核摘要、估计器和结论相关段落，已有DOB、历史编码、特权扰动监督与ISS状态相关残差界；作者明确稳定性依赖名义工作区的ISS性质，不能移植到本机接触切换。仅定向方法阅读，未逐式核全文或复现。[ResSafe作者项目页](https://sciautonomy.github.io/ResSafe_Web/)已有性能/安全分工及残差安全修正；[Acc-CBF-QP作者项目页](https://safe-rl-qp.github.io/)已有加速度CBF-QP过滤RL。普通观测器、零点保持、QP/CBF或安全残差均不能单独主张创新。IEEE11202537直接入口本轮仍失败，沿用既有摘要/全文缺口，不继续尝试或升级证据。
+
+本机358仅保留“公开执行历史下短时联合roll/pitch/yaw残差分配”为条件性研究假设，未证明新颖性或准入训练。357显示物理/关节门过但姿态全失败；358已有8个学习成功记录在目标接触前已有持续请求和约±3.9～5.2cm公开路线偏移，故不能先验删掉全部接触前动作。必须先检接触切换时的预测误差、跨通道响应及Nom失败时是否存在可行修正；任何确定性修正也须给无学习强对照。不复活旧通用耦合LQR/参考资格分支，不把常见方法拼接当贡献。具体证据与停止门见Warp round358_method_selection.json。
+
 第289轮联合参考/接触信息近邻（2026-10-09，定向检索+一次primary方法跟进）：首次取得[Force-Aware RL作者HTML](https://arxiv.org/html/2609.13779v1)II-B/C，核到广义动量观测与单边接触/摩擦约束投影、时序残差；任务重点是末端交互，不把它当本机轮载荷下界证书。仅“observer+QP+history/PPO”不是已证区别。[2022 MPC Reference Governor四足恢复出版社摘要](https://ieeexplore.ieee.org/document/9995759/)已采用状态及约束力预测参考调节；direct正文未取得，不推本机等价或数值结论。当前本机只推导mean/difference长度可行区间及conditional轮速/摩擦边界；完整roll-yaw/load闭环机制、新方法优势仍未成立。
 
 第255轮模型覆盖/gain方向近邻（2026-10-07）：[PMLR2023 Lyapunov Design for Robust and Efficient Robotic Reinforcement Learning官方摘要](https://proceedings.mlr.press/v205/westenbroek23a.html)核CLF costshaping、stabilizing策略及cartpole/A1实机；未复现全文/数值。[2024 affineLPV RL-LQR出版社条目](https://www.tandfonline.com/doi/abs/10.1080/00207721.2024.2321370)仅出版社搜索摘要涉及commonLyapunov，直接403未取全文，不重试。增益调度/CLF+PPO已有，本机有限下一步仅fullcommon/differential模型覆盖准入，不声称新算法/全非线性安全。
