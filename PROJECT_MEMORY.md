@@ -2,6 +2,16 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
+## 当前状态：第345轮方向深审/冗余与有限反射审计完成（2026-10-11，整体目标active）
+
+- 344为progress（实际训练覆盖/同reset非零差模响应），345完成341—345方向深审及冗余清理。旧fixedforce收益继续closed，reward改动/旧预算追加/泛化大mask队列无证据准入。有限公开输入反射核查有具体区分价值，本轮登记后仅CPU推理，不机器人physics或新学习。
+- audit_policy_reflection按六final模型各已存original轨迹等间隔64行（含reset），共384raw481/768forward rows；输入hash对342 receipt一致，模型/RMS/原许可链校对。完整语义：roll/yaw/gyro_x/gyro_z/body_vy/route_y取反，height槽11保持；q/qdot和wheel/leglength/radialvelocity按侧交换；26:32电机残差[2,3,0,1,5,4]整组交换，32:38虚拟请求[1,0,3,2,5,4]成对交换；9段实际全命令历史按motor交换，未用proxy保持0，elapsed/valid不动。不能把旧reset全0处的相等性当一般字段配对语义。S²/A²、坏维/NaN/proxy拒绝、D3嵌入相容自检过。
+- 六canonical mean equivariance defect RMS依次D3/V6 seeds33531/2/3：.179158/.189716、.179761/.165105、.197137/.183533（归一化请求单位，不是物理力矩）。正确N(Sx)与错误S(Nx)最大差.2024—.5448，反射必须在raw域且用各自冻结RMS。离线.5*(mu(Nx)+A mu(NSx))满足函数等变与Box有界，三D3 reset均严格0；只数学/查询证据，没安装为控制器或验证任务收益。
+- 配置后的名义模型chassis及五对腿/轮body质量/位置/COM/完整惯量反射差此次均0；未执行完整动力学/接触/terrain/control反射等价测试。一般场景还须交换摩擦、drive差符号、障碍左右/错相/地图与接触mask，不能将随机rough同seed冒称镜像；当前只flat案例候选。已有ICRA2024/CoRL2023/MS-PPO近邻与relativeCRRL约束不变，已知群平均不是新算法/安全定理。
+- 登记一次frozen_reflection_diagnostic_v1：六模型各original/half/reflection共18＋freshB0=19，同已见nominal_-0.5，0学习；canonical群平均在原parking/filter/guard前，反射分支用真实publichistory及同frozenRMS，记录两次网络查询和提交。硬预算608000actualgraph、210FD、每jobfirst<=26000、15600model forward rows；新B0与六original taskflags复现门、全物理/设计/速度/到达/高度/yaw/path保，任source/model/physicaldesign/record/counter错误保现场停止，不重试或调scale。主要D3_33532反射若失败或不优于half则不扩大这条nominal-bias分支；阳性仍不能当跨任务/相对CRRL/匹配训练/独立泛化优势。当前19未执行、runtime未准入；346把最小wrapper/source检查与一次实际队列结合，不再泛化离线sample/source-only循环；347独立接收。
+- 冗余清理删audit_force_training_scope旧编译缓存6854B，ignored/untracked/fuser无持有，code/const/names与现source重编译相同且source_size匹配。首次直接marshal字节比较因表示差异失败时未删，随后结构code等价核过才删；round345_cleanup保前SHA，全部科学数据/源/失败/模型保。首个direction写入因cleanup未完成而拒，proposal先已落盘，后补齐direction hashes；未发生重复模拟。
+- registration/review/log、round345_direction_review/cleanup、19proposal及README/记忆保存；0新physics/learning、formal5仍关、六论文出口未齐、goal active。350下次同时方向/清理与整体框架核查。中文提交后恢复守护，远端仍需核齐，无视频。
+
 ## 当前状态：第344轮训练覆盖与名义响应审计完成（2026-10-11，整体目标active）
 
 - 上轮343为progress（原奖励局部排序猜测得到证据排查），本轮有限综合训练实际覆盖与接受的reset输入，不模拟/学习/改奖励或银行。audit_force_training_scope核3seed×3stage×100共900登记世界、2876actual completed episodes逐world_index/stage/seed/scenario对原bank一致、60checkpoint统计对337 review SHA一致，并绑定342已接受的六模型reset raw/未掩码请求。

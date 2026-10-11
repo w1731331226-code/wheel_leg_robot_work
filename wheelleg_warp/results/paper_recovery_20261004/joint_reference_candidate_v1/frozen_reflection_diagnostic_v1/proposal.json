@@ -1,0 +1,317 @@
+{
+  "round": 345,
+  "status": "Frozen19case mechanism proposal;new source/runtime admission required",
+  "case": {
+    "seed": "nominal_-0.5",
+    "scenario": {
+      "speed": -0.5,
+      "mass": 7.0,
+      "height_l": 0.0,
+      "height_r": 0.0,
+      "center": 2.0,
+      "offset": 0.0,
+      "mu_l": 0.8,
+      "mu_r": 0.8,
+      "drive_difference": 0.0,
+      "delay_ms": 0.0,
+      "solver_iterations": 100,
+      "terrain": "legacy",
+      "grade_deg": 0.0,
+      "roughness_m": 0.0,
+      "step_height_m": 0.0,
+      "terrain_seed": 0,
+      "relative_attitude": false,
+      "transition_run_m": 0.0,
+      "lateral_margin_m": 0.0,
+      "stand_height_m": 0.3
+    }
+  },
+  "models": [
+    {
+      "label": "D3_33531",
+      "arm": "D3",
+      "seed": 33531,
+      "model": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/D3_33531/step_200000.zip",
+      "normalization": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/D3_33531/step_200000.pkl"
+    },
+    {
+      "label": "V6_33531",
+      "arm": "V6",
+      "seed": 33531,
+      "model": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/V6_33531/step_200000.zip",
+      "normalization": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/V6_33531/step_200000.pkl"
+    },
+    {
+      "label": "D3_33532",
+      "arm": "D3",
+      "seed": 33532,
+      "model": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/D3_33532/step_200000.zip",
+      "normalization": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/D3_33532/step_200000.pkl"
+    },
+    {
+      "label": "V6_33532",
+      "arm": "V6",
+      "seed": 33532,
+      "model": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/V6_33532/step_200000.zip",
+      "normalization": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/V6_33532/step_200000.pkl"
+    },
+    {
+      "label": "D3_33533",
+      "arm": "D3",
+      "seed": 33533,
+      "model": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/D3_33533/step_200000.zip",
+      "normalization": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/D3_33533/step_200000.pkl"
+    },
+    {
+      "label": "V6_33533",
+      "arm": "V6",
+      "seed": 33533,
+      "model": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/V6_33533/step_200000.zip",
+      "normalization": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/V6_33533/step_200000.pkl"
+    }
+  ],
+  "conditions": [
+    {
+      "label": "guard_B0",
+      "model": null,
+      "operator": "zero"
+    },
+    {
+      "label": "D3_33531_original",
+      "model": "D3_33531",
+      "operator": "original"
+    },
+    {
+      "label": "D3_33531_half",
+      "model": "D3_33531",
+      "operator": "half"
+    },
+    {
+      "label": "D3_33531_reflection",
+      "model": "D3_33531",
+      "operator": "reflection"
+    },
+    {
+      "label": "V6_33531_original",
+      "model": "V6_33531",
+      "operator": "original"
+    },
+    {
+      "label": "V6_33531_half",
+      "model": "V6_33531",
+      "operator": "half"
+    },
+    {
+      "label": "V6_33531_reflection",
+      "model": "V6_33531",
+      "operator": "reflection"
+    },
+    {
+      "label": "D3_33532_original",
+      "model": "D3_33532",
+      "operator": "original"
+    },
+    {
+      "label": "D3_33532_half",
+      "model": "D3_33532",
+      "operator": "half"
+    },
+    {
+      "label": "D3_33532_reflection",
+      "model": "D3_33532",
+      "operator": "reflection"
+    },
+    {
+      "label": "V6_33532_original",
+      "model": "V6_33532",
+      "operator": "original"
+    },
+    {
+      "label": "V6_33532_half",
+      "model": "V6_33532",
+      "operator": "half"
+    },
+    {
+      "label": "V6_33532_reflection",
+      "model": "V6_33532",
+      "operator": "reflection"
+    },
+    {
+      "label": "D3_33533_original",
+      "model": "D3_33533",
+      "operator": "original"
+    },
+    {
+      "label": "D3_33533_half",
+      "model": "D3_33533",
+      "operator": "half"
+    },
+    {
+      "label": "D3_33533_reflection",
+      "model": "D3_33533",
+      "operator": "reflection"
+    },
+    {
+      "label": "V6_33533_original",
+      "model": "V6_33533",
+      "operator": "original"
+    },
+    {
+      "label": "V6_33533_half",
+      "model": "V6_33533",
+      "operator": "half"
+    },
+    {
+      "label": "V6_33533_reflection",
+      "model": "V6_33533",
+      "operator": "reflection"
+    }
+  ],
+  "evaluations": 19,
+  "actual_graph_world_step_budget": 608000,
+  "constructor_FD_budget": 210,
+  "per_job_first_episode_steps_cap": 26000,
+  "model_forward_row_budget": 15600,
+  "new_learning_samples": 0,
+  "operators": {
+    "zero": "B0 zero residual",
+    "original": "mu(N(raw481)) canonical6",
+    "half": "0.5*mu(N(raw481)) canonical6",
+    "reflection": "0.5*(mu(N(raw481))+A*mu(N(S(raw481)))) canonical6"
+  },
+  "intervention": "Before originalparking/filter/guard. S uses exact registeredraw481 permutation/signs before SAMEfrozenRMS;A swaps virtualF/H/wheelpairs. Nom/physics/reward/cases/oldgates unchanged. FrozenDeterministic models only;no newnetwork/weightupdates.",
+  "question": "Can removing the non-equivariant mean component reduce nominalflat bias beyond uniformhalf-amplitude attenuation whilekeeping boundedstate-dependent requests? Single-case mechanism,not newmethod superiority.",
+  "acceptance": "FreshB0 fulltask required. All6freshoriginal fulltask flags mustmatchaccepted341 beforeprimaryinterpretation. Reportall6triplets andphysical/design/velocity/arrival/height/yaw/path;no selection. D3 reset reflectionmean mustzero;perstepCPUreplay andprojection identity/bounds checked.",
+  "stopping": "One19jobqueue. FirstB0taskfailure oranysource/model/RMS/physics/design/record/counter failure savesconsumption/terminal/prefixandhalts;no retries/scalesearch/seedreplacement. Ifreflection fails ornotbetterthanhalf inregisteredprimaryD3_33532,do notexpand thisnominal-bias branch. Positive result stillrequires cross-task/strongrelativeCRRL/matchedtraining andnewindependent evidence.",
+  "before_run": [
+    "Reusequalifiedevaluator/recorders/currentguard andfull originaltraining/model admissionlinks",
+    "Bindraw history and frozenNormalizer from actualfactory toactor;never reflectnormalizedpackets or readprivate terrain/plant",
+    "Selfcheck S2/A2,correctmotorversusvirtual swaps,slot11even,proxyzero,bounds,rawnormalization andexactD3resetzero;logbothnetworkqueries/original/half/reflected/submitted",
+    "Freeze fullsource/runtime andacquireexclusiveproject-write.lock;space/FD/physical/query caps beforecalls;freshB0 isoneof19"
+  ],
+  "source_sha256": {
+    "wheelleg_ppo/tools/hardware_profile.py": "844688aae7e408bb2ca11d00b192ffaa9e4ad5de06cc8a815d3cf3ddfbe02eba",
+    "wheelleg_ppo/tools/model_lqr.py": "d63db108ece884340cff2589cf50729ca1dfd2ffd44adb8260b8155570ffbf82",
+    "wheelleg_ppo/tools/ppo_env.py": "8b282c709f4ed0e7da500fb0e78a1a380b08a5467d4155b9cbe56147bff14296",
+    "wheelleg_ppo/tools/pretrain_yaw.py": "ecd5e63a30321a72d7f051198fa00c1bfea4d1008e1ce8d9432e1629c030b24c",
+    "wheelleg_ppo/tools/rm_controller.py": "d831408426647aac0c758c82f0972570ad1373798a5e6705d45572384285b35d",
+    "wheelleg_ppo/tools/score_yaw_gate.py": "68ad1a3e6919e9310c0cb80910705a3e5b532275aac49d3ebbde247485589a87",
+    "wheelleg_ppo/tools/state_estimation.py": "73f333b2155f3531f8c916bb5df9adead2bfab1474015c8bd6283c3415bb46af",
+    "wheelleg_ppo/tools/wheelleg_sim.py": "c2dfaae4dc562119fd7916684849ec22fcac3d75dbcfec6a2a0f9452d8f6ee0f",
+    "wheelleg_ppo/xml/wheelleg.xml": "6b26be1e21770fa4de8fd5c225fecdd082b8ef4f4df3c2a467f0357b47bdd66f",
+    "wheelleg_warp/admit_reference_main_source.py": "f2ec4f17fbd9ec9ce75787ac67c4b795de4229300031da2bdf6eff91471ce02a",
+    "wheelleg_warp/complete_contact_recorder.py": "81ed3df9c2bf2f0a53955949a4ffa5afb240503d364749b7137fdacb96ed7cc6",
+    "wheelleg_warp/complete_contact_witness.py": "008482389167144b377e54257e7bf0922f5e131cf9ecd04eb1f1768d06c22c98",
+    "wheelleg_warp/dashboard/live_env.py": "7bbeb958250e24aec26333049279f0b78f2e43f775be28b089892146444aded1",
+    "wheelleg_warp/execution_history_engineering.py": "2ea2ba591c6ce87ac909e2f87fea7a8eca42f187f1b1190649708d10daeb20b1",
+    "wheelleg_warp/execution_history_env.py": "5c0f0135df45fa899b03f557dff98da3cabbf58b0afdf5bf6279f470fec4f01b",
+    "wheelleg_warp/execution_history_evaluation.py": "ea19a723fcfe6e878baefe7ab5c2f39d86c937a20b8ccaef78310313122540b5",
+    "wheelleg_warp/execution_input_collector.py": "fa3cb14857e6e95805753b3ca67c07a24092c6ce04943cab51decf8797951ffb",
+    "wheelleg_warp/execution_input_features.py": "cd2c67c328d8a89c17639f87b7f238208de6ead582fb6a5b46c96c21dea1d82c",
+    "wheelleg_warp/execution_input_study.py": "001d09f9be3d61e40ca5bffdaa4da3d5bba617591055287e8062706a5f7e4dca",
+    "wheelleg_warp/fixed_residual_budget.py": "41bac5287b3446f8de77f0d8b8937a5a3abaab969582afa4f05645b54834959e",
+    "wheelleg_warp/floor_broad_adapter.py": "04147a7a6450e4b1d026aeac74d01214eae34e663ff342771e95b1dfb77f9edf",
+    "wheelleg_warp/gpu_reference_budget.py": "58b1b400f7a549ce8f193ab52dedabce0d903d5caa04c7ea2d09f0883f60eb4e",
+    "wheelleg_warp/joint_reference_adapter.py": "333e27f0b0d1508d7b6fa5be67179129dea69b580d2ba78b9e77a54ef68ada77",
+    "wheelleg_warp/joint_reference_control.py": "a8b5dae529d0ab093a19f106e602069c69208c87c6930340f07f97360759b2fc",
+    "wheelleg_warp/joint_reference_mapping.py": "f7ba76fdb7d5072214b19af5cb678294b8868e30eeac819c6466d6b1aebd48e5",
+    "wheelleg_warp/joint_reference_prepare.py": "5f68c411073c48386889ea0c7b68173585cc489164e45c54172fec0cafe4cc1d",
+    "wheelleg_warp/light_parking_request.py": "24d621376009bf3b88466a9557083b2967075082c14d1ebce43f55da8ea62dc5",
+    "wheelleg_warp/light_phase_reference.py": "a2a2c5a52cb9a51591bea44c1c85cb0fd343fe3b5e2526e88ffea461d56e9768",
+    "wheelleg_warp/native/controller.py": "04d106ae8579118eb306ba2b28037425f81a1f554d4b51fa1eae1ef795fede73",
+    "wheelleg_warp/native/environment.py": "a4fb0a7a5beb08bf23e8e3855f681e8008b79fe5e730d11bc4b5c91674fe8a2b",
+    "wheelleg_warp/native/models.py": "59420b688a25e63fb8e0e644f0702025836bea0ed90377e452bcbd919c7216eb",
+    "wheelleg_warp/native/shared_reference.npz": "5a2f60e5fef024491858aade7adfe5b2d29f6d8602529c1dfe8c092c79d30c40",
+    "wheelleg_warp/native/shared_reference.py": "eb6cc3230d2c853ab4dc63e100143630ddc9b7e33aa8a54d5d3355905818e3f2",
+    "wheelleg_warp/native/terrain.py": "1e462500ae917ba78ce5e4652f7a856bf62658f8573296e9a7d4630517cf1a94",
+    "wheelleg_warp/native/terrain_env.py": "058d155eacd3ed7417523c7fcd5965ebc58215596eda347a0f3e2e8c23720c1c",
+    "wheelleg_warp/nom_yaw_filter_probe.py": "700c029320fc363a539d9c5b961db601f04fbd7442ee749a59e08a803b617bbc",
+    "wheelleg_warp/parking_withdrawal_probe.py": "19882d6fbce597f96a4ffad72a1c6d17b03e05dd7ff2ec89067c08c9cd2ab6ef",
+    "wheelleg_warp/phase_support_probe.py": "0cd7226a44054701f4c4a728f5a526d35e4f8cc4d29954beac0ed18d7a10e033",
+    "wheelleg_warp/probe_packet_odometry.py": "a14e2804acc1212fd6d891a13824b069e09044eac0e959f6ea70cfca9991320d",
+    "wheelleg_warp/probe_route_feedback.py": "52ba3b70531bc5b91fdefcf5e9c8c8e09d044611333703d18f2c8deb9689edf1",
+    "wheelleg_warp/qualify_joint_reference_source.py": "16054d26819e856904f6f0fe742d82bf8622c569fbfab15b1e00394092aad569",
+    "wheelleg_warp/qualify_reference_main_runtime.py": "50385acf2ac7ce1f44245e38460b186f65834a706fe9323da93d0d712f32b906",
+    "wheelleg_warp/reference_budget_train.py": "6b675da70dde85ce6f3ec31067e79fd85ca22770408fc295197a143d85cc1997",
+    "wheelleg_warp/reference_learning_engineering.py": "6edc8435756bead51c7a553f9fc66a63af071fc3c7399c6a490972a5303c22e3",
+    "wheelleg_warp/reference_learning_runtime.py": "9947050624e901f94ea2f5116a3d6558289e7cd043de4bc45b60f36d1f213c1b",
+    "wheelleg_warp/reference_residual_budget.py": "c0ae521dce96b052ce76d54c9a29de123050b6d9ed0bc12907b88235b1d50c78",
+    "wheelleg_warp/reference_role_control.py": "7c3297a14d257fcaa952e81b9380537fc76ba11b74a34f3724665455c22acdd7",
+    "wheelleg_warp/reference_role_probe.py": "7d082ed526d5d20dc432f9778e5c6dffd92400d71b32f3db15eb010c7d53f95f",
+    "wheelleg_warp/review_yaw_sector.py": "74351cfe5ad4d0477782b0060ea4448f4905e6a9ec436605ed17de38cfd59daf",
+    "wheelleg_warp/reward_pilot_train.py": "58f01ad9a86d2640bb24f63555e610002aaf0b0881bae7c24718a8d0ec69fa7a",
+    "wheelleg_warp/reward_potential.py": "939f8acf89ffe9304c9c0644737b9d1e19cc959f0f26ff69e70677e7b408f99b",
+    "wheelleg_warp/route_pilot.py": "357da431631482283ad6bbbb725f1362c0ca07e0d50f1b4e12486af0f41e6b69",
+    "wheelleg_warp/route_pilot_env.py": "cf685375bf95532a0a1c2df2feb6473c385f7181eff7b4196228e4a845518b76",
+    "wheelleg_warp/route_state.py": "c0ead1a487b1baf2b644b7104537349a1ea92603121e765d507793833b03e28a",
+    "wheelleg_warp/run_floor_broad_qualification.py": "7a2be3878cef6d2fb42315d62ac6572c9a77820b94194ce6dc9f4cab6af0c052",
+    "wheelleg_warp/run_joint_reference_zero_pair.py": "0eb1789ed2d01da306f22a06da72052a938c348738d81d90a28f0ff40266c76f",
+    "wheelleg_warp/run_nom_yaw_filter_probe.py": "c1eebb300fe8c41eefb1898cfcf8beecf41c95ae45507db58679c184b8927775",
+    "wheelleg_warp/run_phase_support_qualification.py": "14ec95d508262f12c592c148330c6538f9e438cffd5395c794e7e7f8e772ac5f",
+    "wheelleg_warp/run_reference_role_probe.py": "48ac2a4420ada20790483168c9d9f67107da7ccf2b91ab0607eca0c473efda92",
+    "wheelleg_warp/score_reference_learning.py": "81b93a487923b480871406405b6661c1246c2b2b3a70f88df1dcfb9c4c66325e",
+    "wheelleg_warp/smoke_reward_training.py": "00c331c0b7d3e4b0acd8b9f5c92e98175fda329bb5b51c01af7de58337ae21a6",
+    "wheelleg_warp/task_mode_recorder.py": "ff9f2488fe7562ae96127c6810acc192e7d7a665aabed840d94bf47ba8a6d0cc",
+    "wheelleg_warp/terrain_eval.py": "ed0beafa14e882985ca5c0efe23dad6ff63bd5ae653e54ed0fbbdb7ac881d451",
+    "wheelleg_warp/test_nom_yaw_filter_probe.py": "88f55ab4042877f871bd0b7263b9285b420c7880d8d469b80d9ec312435e1ef8",
+    "wheelleg_warp/test_reference_prequalification.py": "e58985ea7a78f6ad5f4ad7f41a5acec66a45e6c3c06a5016f21b64c94efe8fbf",
+    "wheelleg_warp/trace_failure_chain.py": "6853cf759e853cba12d11cc1a3bc09b0278982ea4b7214f36fd3f77f75857ff9",
+    "wheelleg_warp/train_height_comparison.py": "e4569d6079d0b8e1362fd0e3b263b5ee0b26d67f11246c8c9cbc2f710a88ccfc",
+    "wheelleg_warp/train_reference_prequalification.py": "8beed235801a352d512ae404cd1634bc327ab8ece91274e66bbe8f4ee9f31d33",
+    "wheelleg_warp/training_contract.py": "bb73ab6209b67747e044b2fd4e5eac34f13fcb1c0d46e9cdb108cc2ccfb808e2",
+    "wheelleg_warp/fixed_reference_force.py": "ddacd763ab806a0359e8f4c5a18de7a4508fd9e7d60edc737e2bf2419f36498c",
+    "wheelleg_warp/run_fixed_force_regression.py": "5b0fe301d15aeb8de80c87cce260cbfda00237a7f618f446594a90a9b2dd2dcb",
+    "wheelleg_warp/joint_state_guard.py": "f99f891175602a8e46e800ecf0230add9369e3d19584d752964d7b619e5191ec",
+    "wheelleg_warp/test_joint_state_guard.py": "af1e524179f1f6474ec54583055e3628ffac18e84abfdfd6ca6459cbf4784e8b",
+    "wheelleg_warp/run_guarded_force_regression.py": "4151d9045f0b7a6c0351906f6ced5ebf64beaaf7fec996c319a5d69d153db90c",
+    "wheelleg_warp/run_joint_guard_pressure.py": "206075e7379547db217eddf7003a3a053fa0e269d6538a8a67c575813135d7c4",
+    "wheelleg_warp/test_guarded_force_runtime.py": "5b1287096ac6b142ecbd5e482341ec7f10174f6be73f6d93a2a974b454253791",
+    "wheelleg_warp/qualify_guarded_force_runtime.py": "d43dd9be1c90ebbe72c89e88adc07c43cb5cbb46394879f503bf801725a97036",
+    "wheelleg_warp/evaluate_fixed_force_study.py": "b461279a0d84372bc9363d0cf0fd009cc7fb3d345e4f493075804a8d6612e271",
+    "wheelleg_warp/train_fixed_force_study.py": "8fb3320b46a2d01f6c2d39ffdfbceffe0ecc74e579a55c7bf76c501c6a1b9670",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/nonzero_reference_mechanism_v1/proposal.json": "9a768522c3bcc92791d6836e81882774a6386c5da0342df6fca91e0c65f4aa89",
+    "wheelleg_warp/benchmark_parallel.py": "d17545490ac724b14983e9e6be7131af62cedc28bdeed43af8d6fd5ba5f82a02",
+    "wheelleg_warp/native/live.py": "42d1f1a174ffbe6e0906363785743b8411c5d95a7503c96ef3bf503ace0632c3",
+    "wheelleg_warp/native/design.py": "fcdd61b8a03f7513561a83b67b78c1451a2deede3a6cbc90746096393909598e",
+    "wheelleg_warp/audit_initial_actions.py": "ea747800ff89952cd3d27dbecd9f7eff50d9e5ac66bea12d6a46bf55ee81368b",
+    "wheelleg_warp/audit_policy_reflection.py": "2a18f465c36edd3212aae565b9605ea746703e608733d3ab43776ad3b85c614c"
+  },
+  "model_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/D3_33531/step_200000.zip": "ee042f2f94fb0eff54290d6b97374bf6723709624f82446a98449dff09dfa78c",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/D3_33531/step_200000.pkl": "1a0d099161364acae5bc1ac89ec8a96c576c30ec1249c4cbb9524e558a5fffd6",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/D3_33531/verification.json": "d091efdc6adc9f647fafcd0c361b16ad6cf20130fec09faba4cbe2332065d5d2",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/V6_33531/step_200000.zip": "a50f62305c5b6d614de5ee4761f390539f7faa5fedcf632d87f3fde4958b39e9",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/V6_33531/step_200000.pkl": "02e48b441c415db8a74d6502a6a99eccc0ec89e4632933a29173d36f5f30b0e8",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/V6_33531/verification.json": "eb02c69536f51798f756db664029a9ee85b4a3102e59b6f62fac7acd89616144",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/D3_33532/step_200000.zip": "99daba405decc824a1f4dee533324eaab0a1d8d2eb18bfe13d1020bf7ba34238",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/D3_33532/step_200000.pkl": "68092776876a8812dac5f27be004e5b14f7d62a5271b45c6d5906fd02fa6128d",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/D3_33532/verification.json": "12b0ba2da910cc95b1a4add7b45eeab2b34d7505b847ee003c1d43e4f49b7782",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/V6_33532/step_200000.zip": "679ec002cfdb5e116aedc0cb13133ced236bb057b1dfdb21c5cef411c52e7121",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/V6_33532/step_200000.pkl": "9dc0bf47c33e65cc78816c54407241abc96b440dd6595d16b1167e9578b2c29e",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/V6_33532/verification.json": "5fdf4bc4ab6b5200c2b8423985ceedf37a664b23fb8e7a29069b6cbc1743c6ab",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/D3_33533/step_200000.zip": "55471497796ff9ea32e031c37edba51a454779e1999cb7ca169b39781f1a3c87",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/D3_33533/step_200000.pkl": "7b5e56454555542f1cc3ecbabdd47c97eb4dc2695f9640d5cb6f94d05d4fdec8",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/D3_33533/verification.json": "ff7222e7a58a7f71c5b4ea30ef40e90d8e2010753e79a5f36ed06fb0193b67f5",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/V6_33533/step_200000.zip": "5de6129e6dfecca11618ed3ee00147550563fc1c35a3a86d61db8ea426266a83",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/V6_33533/step_200000.pkl": "b522d2bd1eb4604a0e84cf8699e2cf893b219f33728e2a8ccc91b7547dda910f",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training/V6_33533/verification.json": "cd17238d54f6702ade574b9862d61b925e6f11c8399879c796ea7bed19f7b154"
+  },
+  "evidence_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/proposal.json": "18d753cab57ed63703e29008ce461731e5713c37aa1320ddaeb7466a44813563",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training_review.json": "9e3d2084e773f609e8f47339c7046f7ae309ec240664b2f9f39ba073cc13b546",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/model_evaluation_admission.json": "df593e0b01261728c32c227640ac0b476bca82831c88c9b8e83d150895d12a87",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/evaluation_review.json": "41eed8d3f9472403e40b4447165ad9774ba885d0231cb3f977d0c0b018342244",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/failure_audit.json": "f82d5a55708086f91462c207287ad329cb657ce78bf0cb1362a661ea38cd7138",
+    "wheelleg_warp/results/twentyninth_round_capped_support_20261003/initial_action_config.json": "6408bd0dbdb7227989d96d895f0defb5007f2a2c770cdf7e91799988fdf62a60",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/frozen_wheel_interference_diagnostic_v1/review.json": "a3f57e9ba49b586412b977e69c939789579b05ef661b203131afda40d83c3dda",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/frozen_wheel_interference_diagnostic_v1/reward_audit.json": "40791be1e8900bc8fe72a82c10d092e073bdd776ee32a800a11aedd4b66fb801",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/policy_reflection_audit_v1/review.json": "86db926862a674600cd5a9e6295a0c49e8ad07c719dbdfeb3fd89dd89ffb7482"
+  },
+  "primary_model": "D3_33532",
+  "all_other_models_retained": true,
+  "old_candidate_benefit_branch_closed": true,
+  "formal5_admitted": false,
+  "new_evaluations_executed": 0,
+  "limitations": "Known C2group-average;not novelty claim. No fullterrain/control/contact reflection theorem. Fixedflat developmentcase;projectedfuturelegoutputs respondtochangedstates. Halfscale controls grossattenuation,not exactmatchedstatewisecovariance.",
+  "next": "346 smallestwrapper/admission andonequeue only;347independentreceipt;350nextdirection/cleanup andframework review"
+}

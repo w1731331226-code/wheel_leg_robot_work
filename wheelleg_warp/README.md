@@ -1,6 +1,6 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（第344轮，2026-10-11）
+## 当前论文计划（第345轮，2026-10-11）
 
 当前冻结方案是 [fixed_force_prequalification_v1](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/proposal.json)：共享名义设计、公开481维输入与关节保护，D3差模力残差与同信息V6残差各三种子、各200k策略样本，只评价最终模型。492回合经典对照、六模型训练和984回合固定评估均已完成；第338轮[独立接收与资格报告](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/evaluation_review.json)通过记录核验，但D3的主任务成功、航向收益和旧能力保持门未通过，本候选收益扩展关闭，正式五种子未准入。
 
@@ -14,7 +14,9 @@
 
 第344轮[训练覆盖与名义响应审计](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training_scope_audit.json)核对900个阶段世界、2876个实际完成训练回合及60份更新统计。登记银行没有完整无障碍平地场景，但仍有平地片段和0.3m高度样本，不能据此判定缺训练是根因。三个D3模型在相同、左右测量相等的reset输入上均发出非零差模请求，说明动作反号结构没有自动约束策略的名义响应。
 
-第345轮方向深审和清理将决定是否值得一次有限的公开输入对称性核查，先核完整481语义、归一化前后变换及机器人/任务假设；现有对称RL已有近邻，不能把mirror投影本身当新颖贡献。当前不改奖励、银行、网络或旧训练预算。第350轮整体框架核查保持。当前案例为已见开发数据；旧CPU/GPU基线及全部负结果保留。下文训练说明和早期通道审计稿均有各自历史范围。
+第345轮[方向深审与清理](results/paper_recovery_20261004/joint_reference_candidate_v1/round345_direction_review.json)完成。[有限反射审计](results/paper_recovery_20261004/joint_reference_candidate_v1/policy_reflection_audit_v1/review.json)核384个已存公开输入、768行冻结推理：需区分电机残差整组交换与虚拟请求成对交换，并在冻结归一化之前变换；六模型均有均值非等变偏差。群平均仅离线验证代数和有界性，未施加于机器人；静态名义形态对照不等于全接触/地形/控制动力学证明。
+
+下一第346轮实现并准入[19回合冻结反射诊断](results/paper_recovery_20261004/joint_reference_candidate_v1/frozen_reflection_diagnostic_v1/proposal.json)：同一已见平地案例、六模型各原输出/半幅/反射群平均，加新B0，0训练。用半幅对照排查一般衰减解释，不晋升旧候选或宣称通用对称RL创新；当前不改奖励、银行、网络或旧训练预算。第350轮方向/清理及整体框架核查保持。旧CPU/GPU基线及全部负结果保留，下文训练说明和早期通道审计稿均有各自历史范围。
 
 ## 给老师展示：115～380mm手动控制
 
