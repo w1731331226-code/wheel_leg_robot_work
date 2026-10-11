@@ -2,6 +2,15 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
+## 当前状态：第348轮反射剩余漂移/反馈/停车时序核对完成（2026-10-11，整体目标active）
+
+- 347为progress（19独立接收），本轮只19已接收五流记录、351340子步，0新physics/模型forward/learning。audit_reflection_timing按实际command及seenmotion分stand/move/park，固定1/2/4/6/7.2/9s和yaw阈值/峰值/首命令事件，source SHA对347绑定；phase分区自检与全部数量守恒通过。初次标准python缺numpy未执行分析，切项目.venv；派生草稿1e-6字段名澄清后重算，未动任何实验原始文件。
+- D3_33532 reflection reset请求0，首>1e-6归一化请求在actor .18s（主要F/H，wheel仅约7.45e-8）；1.0005s开始运动yaw−.001558°，2s−.376437°，4s−1.843166°，6s−2.717013°。2s实际Nom轮半差0、residual半差−.0122589Nm。首次Nom轮差>1e-6Nm于2.021s(yaw−.44068°)，0.5°首次post越界2.043s，不能把post阈值当同刻pre控制error或唯一死区因果。
+- reflection movement12500steps里9884/10446个双方非零子步Nom与res轮差异号（约94.62%）；另2014steps residual非零而Nom轮差近0。stand2000steps里1040有此关系；move原lambda限幅0，newguard仍无干预。7.2505s停车时yaw−3.241287°，7.265s峰−3.244884°且残差已0，主要漂移早在停车前；停车段部分原lambda限制8steps，不能称全程投影不作用，也不能仅修停车当解决根因。
+- 原臂1s yaw−.64748°、half−.54871°，reflection−.00155°表明初始偏置显著减弱但未来状态不再保持反射固定点。normalized N(raw)−N(Sraw)在reflection reset各组0，.2s状态约4.1e-5，2s物理包约1.375/滤波请求约.656，6s约5.55/2.72；此是冻结RMS单位，不是物理距离/因果特征重要度。不能凭大小判定历史自激、真实不稳定或solvernoise唯一来源。
+- 不同seed差异保留：V6_33533 reflection运动yaw峰仅.000381°、停车后峰.000680°，Nom轮差始终接近0；同类操作并非必然产生同程度漂移。Nom源存在heading/rate死区，但实际Nom包括公共修正/时序，当前仅量到命令相互作用，不将wheelhalf×gyro当接触地面yaw功率或稳定性证书。
+- timing_audit记录全19分区/固定事件/请求与执行、gyro、lambda、route及标准化不对称性；未调整任何阈值/控制/训练。349综合这些有界证据形成下一机制或停止决定，避免更多标量筛查/扫幅/新PPO；350按期方向/清理与整体框架。旧收益扩展/formal5继续关闭，六论文出口未齐，goal active。README/记忆更新、中文提交后恢复守护并核remote，无视频。
+
 ## 当前状态：第347轮19回合反射双查询独立接收通过（2026-10-11，整体目标active）
 
 - 346为progress（唯一19队列完成），本轮复用全部已存工件、0physics/learning。review_frozen_reflection继承既有物理接收检查并适配19操作：初态数组全同、351340首回合子步/接触/连续prepost/真A-B链/八关节/1.4设计/扭矩包络/终态qv/guard前缀核过，245工件SHA，19物理设计全过。未修改任何冻结运行源或重跑实验。
