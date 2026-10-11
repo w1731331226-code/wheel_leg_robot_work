@@ -38,7 +38,7 @@
 
 下一候选须先给出完整的公共输入到动作映射、模型/学习定义、同权限无学习强对照和区别性预测，再考虑预注册实验。普通QP、DOB、对称化、安全残差或PPO组合本身不是已证创新，见[文献矩阵](../wheelleg_ppo/LITERATURE_MATRIX.md)。不因当前无合格候选把目标缩为负审计论文，不重复已有失败分支或无限添加源资格回合。下一次方向/清理为365，整体框架为370。
 
-第360轮[同步修复](results/paper_recovery_20261004/joint_reference_candidate_v1/round360_sync_repair.json)已实证：80批有界对象整理与位图生成后，旧快照最后包仅926553字节，已普通快进到远端并清除辅助引用。后续大归档及最新HEAD仍需有界传输，尚非全部同步。主历史和科学数据保留；实时状态见`.git/sync-transfer.json`，以remote与local HEAD一致为最终同步验收。
+第360轮[同步修复](results/paper_recovery_20261004/joint_reference_candidate_v1/round360_sync_repair.json)已实证：80批有界对象整理与位图生成后，旧快照最后包仅926553字节，已普通快进到远端并清除辅助引用。第365轮后续226批也已完成，最后包683236字节；近期提交及本轮完整数据随后按实际包≤64MiB逐提交普通快进，已核对remote与local HEAD一致。主历史和科学数据保留，最新验证快照见[365执行与同步回执](results/paper_recovery_20261004/joint_reference_candidate_v1/round365_execution_receipt.json)。
 
 ## 给老师展示：115～380mm手动控制
 
