@@ -2,6 +2,14 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
+## 当前状态：第353轮完整接触暴露及共同时间前缀核对完成（2026-10-11，整体目标active）
+
+- 352为progress（16独立接收/反射扩展闭合），353仅16已接受完整contact列表，238051子步/469100contacts，0新physics/forward/learning。复用analyze_complete_contact.moments的坐标/geom符号/纯力矩单元；按geom1正/geom0负、local@frame、solver-pre COM，分全外部轮-static yaw moment、normal、tangential+contact torque及目标几何load/upward。全=normal+rest逐步重算过，32原始/几何SHA绑定完成清单与352receipt。
+- 每对用reflection首次post世界姿态>5°的同一elapsed cutoff对齐原/反射前缀（包含产生越界的solver-pre子步），不是各自不同长度接触窗口。8对target-normal yaw absolute impulse均增：约.244→.351、.290→.349、.110→.396、.113→.409、.0886→.4326、.0850→.4335、.3023→.3512、.3033→.4003 Nms。
+- 同前缀total target-normal impulse差（reflection−original）依次−.27789、−.28965、+3.38732、+4.68675、+2.66379、+1.64718、−.20002、+.25934 Ns；低height三例总normal反而下降，而其normal yaw impulse增加，支持接触方向/作用臂也重要，不是简单“更多load”。upward impulse7/8增；所有first target contact早于reflection first attitude5。全外部net yaw signed impulse因摩擦/驱动/接触力矩等组合不一致，不能将单normal项当bodyyaw加速度或唯一因果证书。
+- exposure_audit保8pair/16全程与共同前缀/时间/力矩分解；完整contact而非只选最大witness。原/reflection同时改变path、其它命令、contact，故只能确认暴露已在失败前改变，不能从同case直接宣称等扰动抗扰能力更强/弱或把contact与控制作用独立归因。原contact-task success与closedreflection保持不变；无retroactive centre/loaded gate。
+- 354需有限综合“任务达成”与“同扰动抑制”主张边界，提出区别明确的问题，不复活已闭合反射/平地/旧学习分支。355方向/冗余、360框架保持，六论文出口缺口不变，goal active。README/记忆/脚本/json/log保存、编译和力矩守恒核过，中文提交后恢复守护；分批上传继续原pid，不重复启动，无视频。
+
 ## 当前状态：第352轮16独立接收通过，统一反射扩展关闭（2026-10-11，整体目标active）
 
 - 351为progress（16队列与同步分档修复），352仅已存数据独立接收，0physics/learning。review_reflection_retention复用物理/双查询checker，以case key核完整初态（ctrl/time/warm/sensors必需），16记录/238051首回合子步/5958策略记录/8937网络查询/208工件SHA过；CPU原始与secondary重放最大误差3.576278687e-7，正确N(Sraw)与提交公式逐值同，终态qv/完整接触/闭链/关节/扭矩/guard及计数守恒核过。
