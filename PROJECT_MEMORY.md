@@ -2,6 +2,15 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
+## 当前状态：第349轮原任务机会核对与停止决策完成（2026-10-11，整体目标active）
+
+- 348为progress（19时序机制证据），349按计划有限方法收束，0physics/forward/learning。audit_current_task_opportunity核当前40controlled×9条件=360原门结果，保全6模型gain/loss守恒；经典三臂成功并集32，失败6301001/3/5/7、6301033/5/7/9。
+- 学习gain全留：V6_33531赢6301003/5，V6_33532赢6301033/5/7/9，D3_33533赢6301005，V6_33533赢6301033；共8记录/6unique cases。当前集合仍无成功见证6301001/7，不能说不可达。所有6模型同时丢经典成功，当前没有单策略整体优势，更不能按case挑seed构造部署oracle。
+- 读全部8gain与对应6case×3classic共26已存dense，复用centre_metrics/geometry-prerequisite原有helper及边界自检。8gain全部有positive upward target witness；6记录轮心整个采样纵向区间在70mm障碍宽度投影外，2部分在内，无一通过采样完整中心轮道几何前提。低h=.115的3记录中央半程正目标vertical witnesses各约710—727行；高h=.38五记录其中4中央半程0行、另1有50行。正接触峰69—171N，不能称纯零载荷擦碰/轮胎完全绕过/作弊；中心描述不是全胎几何，原task success不撤销，不外推完整居中承载越障。
+- round349_method_decision正式关闭更多flat-only wheeloff/half/reflection调优和泛化source-only对称核查：平地B0已解决，局部reward也偏好改善，未有学习增量；名义zero/equivariance不等基能力保持或稳定性。旧fixedforce资格/正式5seed仍关。当前应回原不对称接触能力—保持矛盾和成功物理含义，不事后换门或弱化基线。
+- 给350的唯一备选可证伪问题：reflection是否破坏全部8个已有有效contact-task获胜记录？拟每记录fresh original/reflection，共16、0学习，明确事后机制子集而非泛化排名，完整original flags复现/物理设计/接触路径证据及成本，失败不重试；一反例足以否定普遍保持，阳性也不代表164全保持。此仅prospective备选，未注册许可/执行，350方向与整体框架审查决定是否值得，避免自动扩场景或新PPO。
+- task_opportunity_audit/json/log、round349_method_decision、README/记忆已保存；源与结果SHA/原门/计数和已有中心几何helper自检过，无新视频。350按期方向/清理及十轮框架，六论文出口仍缺，goal active。中文提交后恢复守护并核remote。
+
 ## 当前状态：第348轮反射剩余漂移/反馈/停车时序核对完成（2026-10-11，整体目标active）
 
 - 347为progress（19独立接收），本轮只19已接收五流记录、351340子步，0新physics/模型forward/learning。audit_reflection_timing按实际command及seenmotion分stand/move/park，固定1/2/4/6/7.2/9s和yaw阈值/峰值/首命令事件，source SHA对347绑定；phase分区自检与全部数量守恒通过。初次标准python缺numpy未执行分析，切项目.venv；派生草稿1e-6字段名澄清后重算，未动任何实验原始文件。

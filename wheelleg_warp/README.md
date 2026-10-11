@@ -1,6 +1,6 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（第348轮，2026-10-11）
+## 当前论文计划（第349轮，2026-10-11）
 
 当前冻结方案是 [fixed_force_prequalification_v1](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/proposal.json)：共享名义设计、公开481维输入与关节保护，D3差模力残差与同信息V6残差各三种子、各200k策略样本，只评价最终模型。492回合经典对照、六模型训练和984回合固定评估均已完成；第338轮[独立接收与资格报告](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/evaluation_review.json)通过记录核验，但D3的主任务成功、航向收益和旧能力保持门未通过，本候选收益扩展关闭，正式五种子未准入。
 
@@ -20,7 +20,9 @@
 
 第348轮[保存轨迹时序核对](results/paper_recovery_20261004/joint_reference_candidate_v1/frozen_reflection_diagnostic_v1/timing_audit.json)确认：主要反射模型在1.0005s起步时yaw约−.00156°，运动中增至−3.241°，7.2505s停车后仅再增至峰3.24488°。2s处名义轮差为0、残差半差−.01226Nm；运动中两者均非零的10446子步里9884步异号。初始零响应消除了直接起步偏置，但不约束后续反馈增益/历史响应；不能仅归因停车，也未证明死区或数值误差是唯一原因。
 
-第349轮据已有证据形成有限假设与停止决策，不晋升旧候选、追加训练或扩大对称性场景。第350轮方向/清理及整体框架核查保持。旧CPU/GPU基线及全部负结果保留，下文训练说明和早期通道审计稿均有各自历史范围。
+第349轮[当前任务机会核对](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/task_opportunity_audit.json)保留全40×9结果：经典成功并集32例，学习有8次成功覆盖其余6例，但各模型均丢既有经典成功。26条匹配轨迹显示这8次成功均有正向目标接触，6次轮心全程在障碍横向投影外、2次部分在内；原接触任务成功保留，不等于居中承载完整越障。
+
+[第349轮方法决定](results/paper_recovery_20261004/joint_reference_candidate_v1/round349_method_decision.json)关闭进一步平地调优，回到原不对称接触的能力—保持矛盾。第350轮同时做方向/清理和整体框架审查，决定是否值得登记一次“全部8个既有获胜记录×原输出/反射”的16回合保持性证伪；目前仅备选、未准入或执行，不作泛化性能测试。旧CPU/GPU基线、原门及全部负结果保留。
 
 ## 给老师展示：115～380mm手动控制
 
