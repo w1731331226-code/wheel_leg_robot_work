@@ -2,7 +2,16 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：第365轮方向/清理及独立v2二十回合完成（2026-10-12，整体目标active）
+## 当前状态：第366轮v2完整独立接收完成（2026-10-12，整体目标active）
+
+- 365为progress（方向/清理/20修复队列/全部数据同步），366只读已存数据独立接收，无新physics/FD/模型forward/学习。review_cartesian_repair核96冻结源、runtime/proposal/旧failure链与20顺序，298123物理子步、586244完整contact、7460Actor记录及340工件SHA；common初态含ctrl/time/warm/sensors等逐case相同，起止qv/完整连续状态/双链、八关节、1.4设计和实际/命令扭矩门20/20过。
+- 重建10帧历史、9段真实ctrl平均/尺度、elapsed/valid与零proxy，核所有Actor q/qdot和轮速对相应pre、raw=normalized、固定正弦/zero请求。238503Cartesian子步中，Actor最新memory等实际latent_before，shadow停车before/after与.01slew、64000撤回子步匹配；真实canonical仅在物理state/日志，旧物理输入未加私有geometry通道。
+- 每子步用CPU主动编码器FK/原polarJac解当前或reset geometry与原361公式，canonical误差max2.22e-16，rawmotor max1.11e-16Nm，geometry max2.78e-16m。独立速度包络/acceptedNom投影λ及pre-guard ctrl核过，307子步candidate λ受限；guard输入res/原λ、safeNom+jointλ的最终float32 ctrl对实际pre ctrl逐值同。20条新guard修Nom/缩res计数均0，不推广为其永不介入或安全定理。
+- Cart初态reference对公开reset编码器、终态latent/shadow/canonical对末step及auto-reset后的私有清零/ref回归核过；8组zero的7类标准完整流与各freshB0逐值同，包含原失败lambda列。原v1失败及其源未改，producer round364只解释为冻结engine代号，logical run365绑定一致。所有20脚本task仍失败，不当PPO效果。
+- round366_delivery_acceptance只接受四seen/zero-delay/单world交付实现；尚无多world课程/部分reset/延迟训练接口与新策略/方法优势。367需具体化最小CartLive3/CartReset3匹配训练前置（同初始化/采样预算与强经典）或拒绝扩展，不重跑稠密队列、不自动长PPO。原命令合力性质不是实际wrench解耦/稳定；完整六论文出口仍缺、goal active，370方向/清理/整体框架。
+- 错latent/代理字段及accepted-Nom投影边界自检通过；数据/receipt/source哈希一致，README/记忆与独立review/log/接受边界中文提交，收尾恢复守护并核local/remote。无视频。
+
+## 历史状态：第365轮方向/清理及独立v2二十回合完成（2026-10-12，整体目标active）
 
 - 364为progress，365完成361—365方向深审：只准一次已定位mode错误修复，未改变cases/profile/科学门或恢复旧队列；原v1失败完整保留，研究目标仍是单策略强经典增量与能力保持，六论文出口未齐。370下次同时方向/清理与整体框架。
 - 24755ccc准入后唯一pid32590/unified7748现exit0，v2独立20/20完成、0retry。8个Cart零条件对各freshB0的标准全部流/flags逐值同（含原失败lambda列），生产者physical/design20/20；全部script任务0/20成功，不是PPO或方法优势。actual graph298400、first298123、actor7460、FD105、wall277.835546918s（含构建/记录），0学习/网络forward。
