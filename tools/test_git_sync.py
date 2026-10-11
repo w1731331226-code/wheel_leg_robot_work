@@ -4,6 +4,8 @@ from pathlib import Path
 import shutil
 import subprocess
 import tempfile
+import time
+from unittest.mock import patch
 import git_sync as sync
 
 
@@ -67,6 +69,21 @@ def main():
         assert sync.git('ls-remote', 'origin', 'refs/heads/main').split()[0] == remote_head
         assert (sync.ROOT / 'local.txt').exists()
     sync.ROOT = original
+    with tempfile.TemporaryDirectory() as tmp:
+        directory=Path(tmp);childfile=directory/'child.pid';fake=directory/'git'
+        fake.write_text('#!/usr/bin/python3\nimport os,time\npid=os.fork()\nif pid==0:\n open(os.environ["TEST_SYNC_CHILD_PID"],"w").write(str(os.getpid()))\n time.sleep(60)\nelse:\n time.sleep(60)\n')
+        fake.chmod(0o755);real_popen=subprocess.Popen
+        def short_process(*args,**kwargs):
+            process=real_popen(*args,**kwargs);communicate=process.communicate
+            process.communicate=lambda input=None,timeout=None:communicate(input,timeout=.2 if timeout is not None else None)
+            return process
+        with patch.dict(os.environ,PATH=str(directory)+os.pathsep+os.environ['PATH'],TEST_SYNC_CHILD_PID=str(childfile)),patch.object(sync.subprocess,'Popen',short_process):
+            try:sync.git('timeout-fixture')
+            except subprocess.TimeoutExpired:pass
+            else:raise AssertionError('Timeout not raised')
+        child=int(childfile.read_text());status=Path(f'/proc/{child}/stat')
+        assert not status.exists() or status.read_text().split()[2]=='Z','Pack child survived timeout'
+    print('PASS：超时清理整个Git进程组')
     print('PASS：自动同步、中文/记忆约束、暂存保护、分叉不强推')
 
 

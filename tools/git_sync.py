@@ -3,7 +3,9 @@
 import argparse
 from datetime import datetime
 import fcntl
+import json
 import os
+import signal
 from pathlib import Path
 import subprocess
 import time
@@ -13,7 +15,13 @@ MEMORY = 'PROJECT_MEMORY.md'
 
 
 def git(*args, input=None):
-    return subprocess.check_output(['git', '--literal-pathspecs', *args], cwd=ROOT, input=input, stderr=subprocess.STDOUT, timeout=120)
+    command=['git', '--literal-pathspecs', *args]
+    with subprocess.Popen(command,cwd=ROOT,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,start_new_session=True) as process:
+        try:output,_=process.communicate(input,timeout=120)
+        except subprocess.TimeoutExpired:
+            os.killpg(process.pid,signal.SIGKILL);process.communicate();raise
+        if process.returncode:raise subprocess.CalledProcessError(process.returncode,command,output=output)
+        return output
 
 
 def changes():
@@ -66,10 +74,14 @@ def sync(previous):
                              '-m', '记录稳定文件快照并更新长期项目记忆；未额外运行验收。')
                 print(result.decode(), flush=True)
         # 普通 push 不改写历史；远程冲突/认证/网络失败留在日志并重试，不自动合并。
+        transfer=gitdir/'sync-transfer.json'
+        if transfer.exists() and json.loads(transfer.read_text()).get('status')!='complete':
+            # 分批传输拥有远程辅助引用；未完成或失败时禁止再次打包全部积压对象。
+            return current
         head = git('rev-parse', 'HEAD').strip()
         remote_head = git('ls-remote', remote, target).split()
         if not remote_head or remote_head[0] != head:
-            print(git('push', remote, f'HEAD:{target}').decode(), flush=True)
+            print(git('-c','pack.window=0','-c','pack.threads=2','-c','core.compression=1','push', remote, f'{head.decode()}:{target}').decode(), flush=True)
         return current
 
 
