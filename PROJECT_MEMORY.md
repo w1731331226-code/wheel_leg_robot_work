@@ -2,7 +2,16 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：第354轮论文主张/任务范围收束完成（2026-10-11，整体目标active）
+## 当前状态：第355轮方向深审/冗余清理及18回合登记完成（2026-10-12，整体目标active）
+
+- 上一完成轮354为progress（主张/范围证据已落盘）；中断355仅读状态，本轮续接完成351—355五轮方向深审。统一reflection丢全部8个复现成功，继续关闭；旧fixedforce、平地调优、reward/gamma修改及formal5不准入。353接触暴露与354主张边界保持，原完整接触任务不事后改判，不把负审计当原论文目标完成。
+- 决定只做一次有界强经典策略族核查，classical_route_reference_diagnostic_v1/proposal.json已注册、runtime尚未准入。349全ledger的6unique gaincases（6301003、6301005、6301033、6301035、6301037、6301039）各跑B1-route targety=0/+.05/−.05m共18；幅值等公开wheelradius，固定原kp/kd/rollschedule/3deg/.3Nm/guard/物理设计与task门，原B1停车行为。复制raw39仅减slot38参考误差，日志保真实raw481/history，不能按case/障碍侧/速度切换符号。
+- 六zero臂历史均失败且physical/design过，要求fresh完整task flags复现，不继承B0成功门。每符号单一控制器横跨6例，输出完整矩阵；任一固定符号有新增成功只说明有限经典能力，后续须另行准入全164保持，不能立刻晋升基线。全零复现且12偏移全无成功则关闭此幅值/增益；unresolved明确保留，阴性不证明RL必要。禁止扫幅/调增益/重跑或新增学习救分。
+- 注册576000图步/200FD/每job首回合26000/15600经典动作行，0模型查询/0学习。356新worker须复用原eval/guard/监测、按case完整初态（含ctrl/time/warm/sensors）、真实raw与参考误差/动作日志，先零偏移/镜像/停车/饱和不变自检与源/预算准入提交，再唯一18队列；随后独立完整接收。不再增加无决策价值的源审计回合。82源文件与9证据SHA、18矩阵/6case/历史场景与固定配置核过。
+- 冗余清理仅删audit_retention_exposure.cpython-310.pyc 7179B，Python3.10 code等现source重编译、ignored/untracked/fuser无持有核过，round355_cleanup保存前SHA；原始/模型/源码/失败全保。本轮0physics/forward/learning，无视频。round355_direction_review和README/记忆保存，360下次同时方向/清理/整体框架；六论文出口仍缺、goal active。
+- 同步实查原pid123990已退出，229/229辅助批全上传，remote辅助c8144b7d等于状态，main仍6814e842；失败在最后原历史推送HTTP500。显式--resume只续接最后阶段，pid140093/unified19325已核live，status pushing_original_history，未重传229批/强推/重写历史；原快照02e08d8f不含后续0beacdc3大归档，不能以本次结束冒称最新main追平。收尾恢复守护并核实际remote，精确传输状态见.git/sync-transfer.json。
+
+## 历史状态：第354轮论文主张/任务范围收束完成（2026-10-11，整体目标active）
 
 - 353为progress（完整接触共同前缀暴露证据），354形成round354_claims_and_scope，不再复制数值矩阵或开实验。主问题保持原完整不对称接触任务中的单策略能力保持/强同信息经典增量，不缩成负材料完成goal，也不把成功门事后改为居中通过。
 - 三种主张分开：原contact任务成绩有效但当前方法优势未成立；samegeometry不等same外扰，等扰动抗扰优势因路径/接触/控制共变未识别；完整居中承载越障未qualified，原8wins必要centre前提都失败，5reflection centre前提虽过却原task失败。旧paper.tex仍历史通道审计，不覆写其旧readiness冒充新方法稿；PPO计划顶端补Warp最新入口，旧337运行快照标为历史。

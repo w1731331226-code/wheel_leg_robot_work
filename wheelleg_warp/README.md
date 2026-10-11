@@ -1,6 +1,10 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（第354轮，2026-10-11）
+## 当前论文计划（第355轮，2026-10-12）
+
+第355轮[五轮方向深审与清理](results/paper_recovery_20261004/joint_reference_candidate_v1/round355_direction_review.json)完成：旧固定预算D3、平地调优及统一冻结反射扩展保持关闭。下一步已登记[18回合经典路线参考对照](results/paper_recovery_20261004/joint_reference_candidate_v1/classical_route_reference_diagnostic_v1/proposal.json)：全部6个已知学习增量案例，各运行目标y=0、+0.05m、−0.05m的固定B1-route；只改变原公式的路线误差，保持同公开信息、增益、权限、停车行为及全部原任务门。每个符号跨6例固定，不按案例挑选赢家。零臂须复现历史完整任务标志，全部成功、失败与未解释项均保存。
+
+该事后机制实验检验经典策略族是否遗漏了允许的路径选择。阳性还需另行准入全164例能力保持；阴性只关闭这一个幅值与增益，不证明RL必要。第356轮完成最小运行器、源/预算准入并首次执行唯一队列，随后独立接收；当前尚未运行，不准入新训练或正式五种子。第360轮方向、冗余与整体框架审查保持。355仅删除核实可重建的7179字节编译缓存，未删科学数据。
 
 当前冻结方案是 [fixed_force_prequalification_v1](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/proposal.json)：共享名义设计、公开481维输入与关节保护，D3差模力残差与同信息V6残差各三种子、各200k策略样本，只评价最终模型。492回合经典对照、六模型训练和984回合固定评估均已完成；第338轮[独立接收与资格报告](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/evaluation_review.json)通过记录核验，但D3的主任务成功、航向收益和旧能力保持门未通过，本候选收益扩展关闭，正式五种子未准入。
 

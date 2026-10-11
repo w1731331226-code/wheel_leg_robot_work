@@ -1,0 +1,52 @@
+{
+  "round": 355,
+  "reviewed_rounds": [
+    351,
+    352,
+    353,
+    354,
+    355
+  ],
+  "previous_turn_classification": "progress: 第354轮已形成主张范围证据；中断的355仅读状态，现续接完成实质登记。",
+  "findings": [
+    "351/352的8对复现成功→反射失败，直接否定该统一冻结反射的能力保持；维持关闭，不额外训练救分。",
+    "353显示共同失败前缀中接触暴露已经变化；354正确保留原完整接触task，当前不能宣称等外扰抗扰优势或居中承载通过。",
+    "原D3三种子固定预算资格失败，所有当前模型丢经典能力，formal5和方法贡献仍未准入。",
+    "继续堆叠源审计/平地调参不能解决强基线增量缺口；一次有限经典路径对照能决定该缺口是否部分来自允许策略族。"
+  ],
+  "worth_continuing": "值得一次18回合固定经典路线参考对照；只为下一方法选择消除明确基线疑点。其结果不替代单可执行PPO策略的强基线增量与保持要求。",
+  "method_assessment": "使用同信息同权限原B1-route、全6例且每符号跨案例固定；零参考重放/完整初态/实际物理/独立动作接收足以验证该有限问题。事后选例和只一个幅值是明确限制，不能统计泛化。",
+  "additional_experiments": {
+    "admit_now": "仅注册18条件，runtime准入仍必需。",
+    "conditional": "任固定符号有新增成功后才评估是否值得全164能力保持；新学习前必须明确区别贡献、匹配权限与未用评估银行。",
+    "not_admitted": [
+      "新PPO或增训旧种子",
+      "更多平地mask/reflection/幅值扫描",
+      "等扰动因果实验或居中承载新任务",
+      "正式五种子/最终评估集"
+    ]
+  },
+  "diagnostic_proposal": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/classical_route_reference_diagnostic_v1/proposal.json",
+  "diagnostic_proposal_sha256": "9ec708a776e00a538cc112af89d869f80aaf9d6150263d11f698cc5f156fbaca",
+  "cleanup_sha256": "32bc02ebc1dad04de95bcbf12f8f766c42bb6724f6e5ebe248d49deb6a4eef64",
+  "evidence_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/evaluation_review.json": "41eed8d3f9472403e40b4447165ad9774ba885d0231cb3f977d0c0b018342244",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/task_opportunity_audit.json": "0715dbfa0fa68bbb74a08ed4e8d08041df353b878062d735f6e2c3538afcfa9e",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reflection_retention_falsification_v1/review.json": "ca1baf1dc568875de4b58ea8e0c8b507bf910a06390c1f8f0cdbc3108a5a4357",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reflection_retention_falsification_v1/closure.json": "d6a238e2a4f1e16c9a3bd1dc9c1d72d46f6d992305896b47b1ae9b8e59f7d460",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reflection_retention_falsification_v1/exposure_audit.json": "54d11017485b9ba160363652024ee430eef2d65d8305542f9a7a6392721412c5",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round349_method_decision.json": "39ffd10209fa1fdc44cb2067a3f9de47df882388f91a3ac69f64194c964951e7",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round354_claims_and_scope.json": "487cdd516ea10ae9920cef8e9f612e65f7451f574fe9f93afe1bfe5720da64f6",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/baseline/guard_B1_route/controlled/0/result.json": "10bc58b70a0e1ba3f552114b195d548e0f4890d128f292cca37a05af5edd046f",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/baseline/guard_B1_route/controlled/1/result.json": "3d82b20d5793ba0367c63d013537b35fe22e83f3be2c7207ba65881b58492bb7"
+  },
+  "new_physics_steps": 0,
+  "new_model_forward_rows": 0,
+  "new_learning_samples": 0,
+  "new_evaluations_executed": 0,
+  "formal5_admitted": false,
+  "six_paper_exits_complete": false,
+  "goal_complete": false,
+  "next_deep_review_round": 360,
+  "next_whole_framework_round": 360
+}
