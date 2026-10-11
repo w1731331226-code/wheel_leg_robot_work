@@ -4,6 +4,7 @@ import os
 from pathlib import Path
 import shutil
 import tempfile
+from unittest.mock import patch
 import git_preseed as transfer
 
 
@@ -19,7 +20,19 @@ def main():
         for i in range(4):(root/f'data{i}.bin').write_bytes(os.urandom(8192))
         (root/'PROJECT_MEMORY.md').write_text('# 大于单批预算的原提交\n');transfer.git(root,'add','.');transfer.git(root,'commit','-m','保存大批数据')
         head=transfer.git(root,'rev-parse','HEAD').strip();before=transfer.git(root,'status','--porcelain')
-        transfer.run(root,chunk_bytes=12000)
+        original_git=transfer.git;calls=[]
+        def fail_first_push(cwd,*args,**kwargs):
+            if args[0]=='push' and any('refs/heads/codex/sync-preseed-' in str(x) for x in args):
+                calls.append(Path(cwd));raise RuntimeError('Simulated transport failure after auxiliary commit')
+            return original_git(cwd,*args,**kwargs)
+        with patch.object(transfer,'git',fail_first_push):
+            try:transfer.run(root,chunk_bytes=12000)
+            except RuntimeError:pass
+            else:raise AssertionError('Injected transport failure missed')
+        assert calls==[root],'Push must use source repository authentication context'
+        state=json.loads((root/'.git/sync-transfer.json').read_text());assert state['status']=='failed' and state['completed_chunks']==0
+        pending=state['auxiliary_head']
+        transfer.run(root,chunk_bytes=12000,resume=True)
         assert transfer.git(root,'rev-parse','HEAD').strip()==head
         assert transfer.git(root,'status','--porcelain')==before
         assert transfer.git(root,'ls-remote','origin','refs/heads/main').split()[0]==head
@@ -28,6 +41,7 @@ def main():
         for i in range(4):assert transfer.git(remote,'show',f'main:data{i}.bin')==(root/f'data{i}.bin').read_bytes()
         auxiliary=Path(state['helper_repository'])
         messages=transfer.git(auxiliary,'log','--format=%s').decode().splitlines();assert all(m.startswith('同步：') for m in messages)
+        assert len(messages)==state['chunks'] and transfer.git(auxiliary,'rev-list','--max-parents=0','HEAD').decode().strip()==pending
         print('PASS preseed boundedchunks/hookedcommits/originalHEAD+worktree/remote blobs/temprefcleanup')
 
 
