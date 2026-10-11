@@ -6,5 +6,137 @@
   "source_sha256": "2a18f465c36edd3212aae565b9605ea746703e608733d3ab43776ad3b85c614c",
   "code_equal_recompile": true,
   "ignored_untracked_unheld": true,
-  "science_data_sources_models_failures_preserved": true
+  "science_data_sources_models_failures_preserved": true,
+  "completed_duplicate_prefixes": [
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301003_CartLive3_zero/cartesian_prefix_0.npz",
+      "bytes": 843306,
+      "sha256": "97ecf61f3c64ba99bad4005e4fc518587dbf186ea14177102ccfcd0eea06e072",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301003_CartLive3_zero/cartesian_6301003.npz",
+      "retained_sha256": "166f87896c332891ae341bc8ae4696ff43631bf49d826d561fff67493fb04aa6",
+      "byte_exact_reconstruction": true
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301003_CartReset3_zero/cartesian_prefix_0.npz",
+      "bytes": 446737,
+      "sha256": "e21342eb73b0c4fff1a94c5da9dd68499dad24c147cba93ec67f96ad48e1ebd0",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301003_CartReset3_zero/cartesian_6301003.npz",
+      "retained_sha256": "8d0926a37e802ba4069ce3f902d008e6b9daada6b42aefd94f911d275db3cc54",
+      "byte_exact_reconstruction": true
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301003_CartLive3_sine/cartesian_prefix_0.npz",
+      "bytes": 1567778,
+      "sha256": "d1f7db5155505c9a2fda4b9f92a9098079c7c9f4deaa35c566f154514e3ba7ed",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301003_CartLive3_sine/cartesian_6301003.npz",
+      "retained_sha256": "4a414b567383f28eec675867ce3a2badbef7301b02aff437d7f7d16307f92fe0",
+      "byte_exact_reconstruction": true
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301003_CartReset3_sine/cartesian_prefix_0.npz",
+      "bytes": 833935,
+      "sha256": "2b8d129d25c48c2591994689b87ced8e5f2ba4a633b70f4bb8ba5ff58a0912bb",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301003_CartReset3_sine/cartesian_6301003.npz",
+      "retained_sha256": "87efd54abebd1be18aa850d986e192553362929ccaf21d86626210c75ab162d0",
+      "byte_exact_reconstruction": true
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301005_CartLive3_zero/cartesian_prefix_0.npz",
+      "bytes": 840674,
+      "sha256": "4742620f646f729a7b13459e26a342c6c6d5d1ce6831a3c1d96251244cb765ee",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301005_CartLive3_zero/cartesian_6301005.npz",
+      "retained_sha256": "ed49360ad6552f861966d8d3b1d1b3c408e58fbcf375569a3dd3ba1ad9441943",
+      "byte_exact_reconstruction": true
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301005_CartReset3_zero/cartesian_prefix_0.npz",
+      "bytes": 448457,
+      "sha256": "d645f2a74169400514d3927764fbbd2031c6b9aef2b496c298fad1bcd96b2f59",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301005_CartReset3_zero/cartesian_6301005.npz",
+      "retained_sha256": "b93efda8f88a02177199dbb9ba4966b5610419310e31d072724635cf91fbab8d",
+      "byte_exact_reconstruction": true
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301005_CartLive3_sine/cartesian_prefix_0.npz",
+      "bytes": 1568557,
+      "sha256": "b03fa9755d857e0ed1ece8ba4e8b83c128b500be3654e315ad8cf9fa96ed04ad",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301005_CartLive3_sine/cartesian_6301005.npz",
+      "retained_sha256": "3383d6cc9bec8699215bdf29b629bbcfb0ea6f0878dde5811040e4ac4665f114",
+      "byte_exact_reconstruction": true
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301005_CartReset3_sine/cartesian_prefix_0.npz",
+      "bytes": 833280,
+      "sha256": "1018116095947515321e9a609cb85c43dd1450e119285fd88a0d75a9882ae37d",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301005_CartReset3_sine/cartesian_6301005.npz",
+      "retained_sha256": "7f554ef3d2496c8a17e89478972aedca68d9fff5f7d7fec03bc3b18f82d7a9e8",
+      "byte_exact_reconstruction": true
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301033_CartLive3_zero/cartesian_prefix_0.npz",
+      "bytes": 826776,
+      "sha256": "80fd79a48c884b8b026a53e5227485067cdfc876561f44903c682aa71db46511",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301033_CartLive3_zero/cartesian_6301033.npz",
+      "retained_sha256": "7650e3d52dd9923818d7983532a042fb971c2dfee7b398a5b110e1b04ccfd186",
+      "byte_exact_reconstruction": true
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301033_CartReset3_zero/cartesian_prefix_0.npz",
+      "bytes": 432157,
+      "sha256": "42c7061f29a86d9c6ace9ec23659120af755dc85b314b490a891f4bec3bf8ae9",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301033_CartReset3_zero/cartesian_6301033.npz",
+      "retained_sha256": "01e25d304912e536aed630724703d485ca28e043bb9f7a8a1a6a0553109c052b",
+      "byte_exact_reconstruction": true
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301033_CartLive3_sine/cartesian_prefix_0.npz",
+      "bytes": 1567551,
+      "sha256": "944c6c88f4ec17737fdf9e4d270c39abe340c2c945e701e4b5aaad180407f2d9",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301033_CartLive3_sine/cartesian_6301033.npz",
+      "retained_sha256": "d69daeceab55a74185c15fa5fb947225b6cdd2b44b89ea5d855c308ec4d5b366",
+      "byte_exact_reconstruction": true
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301033_CartReset3_sine/cartesian_prefix_0.npz",
+      "bytes": 824764,
+      "sha256": "45bb75175e3daa71f19a1c1353903305e5b954a500fee29c9032155b8cad60e4",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301033_CartReset3_sine/cartesian_6301033.npz",
+      "retained_sha256": "88b11dc637c09be8ca002c6b580c7e19381e1eaaaa75859137cfe116336d7336",
+      "byte_exact_reconstruction": true
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301037_CartLive3_zero/cartesian_prefix_0.npz",
+      "bytes": 822678,
+      "sha256": "c2e8adc9bdba51d3a917b68e8d6e0ae25e128b8d937a1fb45579f2f09a5f13e5",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301037_CartLive3_zero/cartesian_6301037.npz",
+      "retained_sha256": "fbc9e69b2e17430e10a18f5e9854778e4233e0f8c47c4cf5155786bb08745e54",
+      "byte_exact_reconstruction": true
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301037_CartReset3_zero/cartesian_prefix_0.npz",
+      "bytes": 430722,
+      "sha256": "c39f9b1fd3d29740554adcb81d65827514b2486752709c242b3d0d091a6bc50b",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301037_CartReset3_zero/cartesian_6301037.npz",
+      "retained_sha256": "63455fb34b61825073498f6b3079dfa49ee5e686f86dab6e0618f1a924103b61",
+      "byte_exact_reconstruction": true
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301037_CartLive3_sine/cartesian_prefix_0.npz",
+      "bytes": 1568758,
+      "sha256": "aca18418db1cc09240d562ac52e38ef20d3621c8196e4f7e923b06c71f8e9db2",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301037_CartLive3_sine/cartesian_6301037.npz",
+      "retained_sha256": "b56b607ef82994b08c86bd29b0760cae3544be376605a4354ec141588e2e85d4",
+      "byte_exact_reconstruction": true
+    },
+    {
+      "path": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301037_CartReset3_sine/cartesian_prefix_0.npz",
+      "bytes": 825167,
+      "sha256": "d8df13d2e344e9c3e84bd78108a9c5a74d8d4215a76535c83d018077790d0fdb",
+      "retained": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/runtime/6301037_CartReset3_sine/cartesian_6301037.npz",
+      "retained_sha256": "a4714462934afaf29620110903d509a952a4bf8cf37778ac144b5e3d1e8b0e9b",
+      "byte_exact_reconstruction": true
+    }
+  ],
+  "duplicate_prefix_status": "removed",
+  "duplicate_prefix_bytes_removed": 14681297
 }

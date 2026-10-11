@@ -10,6 +10,7 @@
 - 清理7602B编译缓存外，核16个已完成Cart的cartesian_prefix_0.npz与各保留cartesian_<seed>.npz的trace/clock相同，BytesIO按同NumPy写回SHA逐字节相同、untracked/fuser无持有，已删除共14681297B。cleanup保原SHA/保留路径/重建证据；保全部canonical主记录、guard prefix（后续验收需要）和v1失败前缀。未删任何独有科学证据。
 - 第二轮同步226/226完成、旧pid22912退出，最终包683236B/224对象，snapshot31b901cf已远端核实、辅助ref清除，证明位图预传在第二轮也有效。近期提交和本轮新数据还需普通有界同步，不能称当前HEAD已齐；收尾归档/恢复守护并实查。来源精确状态见.git/sync-transfer.json。
 - direction/cleanup/execution_receipt、完整新数据、README/记忆及时中文归档。366独立接收后再决定方法机制或学习前置；当前formal5/PPO未准入，goal active，无视频。
+- 本轮465个新工件已分6档、每档<=60MiB归档完成（至1c7dbf2c）；收尾README/清理/执行摘要另提交。第一次收尾提交因记忆已在分档中提交、暂存中没有新的记忆改动而被钩子拒绝；现补记真实归档状态后正常提交，不绕过钩子。随后逐提交测量<=64MiB pack并普通快进核remote，仍以最终实查为准。
 
 - 第365轮已完成数据分档归档1/6，本档85文件/62871341B；仅归档，不替代独立科学接收。
 

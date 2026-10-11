@@ -1,0 +1,43 @@
+{
+  "round": 365,
+  "status": "producer_complete_independent_receipt_pending",
+  "admission_commit": "24755ccc",
+  "evaluations": 20,
+  "zero_exact": 8,
+  "physical_passed": 20,
+  "design_passed": 20,
+  "task_successes": 0,
+  "actual_graph_world_steps": 298400,
+  "first_episode_world_steps": 298123,
+  "actor_rows": 7460,
+  "FD_calls": 105,
+  "wall_seconds": 277.8355469180001,
+  "completion_sha256": "d29f3112ded9a9e5d038ee8cdd925fc243096bede0a7c8b314dfff66792287ee",
+  "run_receipt_sha256": "ce882a272f16dd82a4a829a2ba68ab542518a0fc7eb1f06b8a47fa812eb03857",
+  "admission_sha256": "c49cbcfc12aac2e13567a43b2e0ffce9739efe4d29b4e07e10f7cd8c1e2dde37",
+  "original_failed_queue_preserved": true,
+  "scoped_bindings_restored": true,
+  "classification": "Engineering producer evidence only; scripted sine actions are not trained policies. All tasks still fail, no method-advantage or PPO admission.366 independent replay of nonzero mapping, parking/reset, guard/physical records required.",
+  "cleanup_sha256": "fd6ffd6f52ee9d56693abac8f6d8dad65408cb50db18ab2f2b3835ba5d345c15",
+  "sync_snapshot": {
+    "status": "complete",
+    "snapshot": "31b901cfdbbba1d1b6982788b7a6616f329655a2",
+    "completed_chunks": 226,
+    "chunks": 226,
+    "main_pack": {
+      "bytes": 683236,
+      "objects": 224,
+      "sha256": "e4f91a70035c02e85fb645a2fe25ec23cb28bfb6346a397b545d8dd8d68162d3",
+      "limit_bytes": 67108864
+    },
+    "remote_snapshot_verified": true,
+    "temporary_ref_removed": true,
+    "latest_head_synchronized": false
+  },
+  "new_learning_samples": 0,
+  "new_model_forward_rows": 0,
+  "formal5_admitted": false,
+  "goal_complete": false,
+  "next_deep_review_round": 370,
+  "next_framework_round": 370
+}

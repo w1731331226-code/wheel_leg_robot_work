@@ -1,12 +1,16 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（第364轮，2026-10-12）
+## 当前论文计划（第365轮，2026-10-12）
 
 原目标仍是：在原完整不对称接触任务上，得到一个保持强经典能力并有明确增量的可执行PPO方法。当前没有通过收益资格的新方法，正式五种子、独立ID/OOD、统计与成本分析、新方法稿件均未完成；CPU历史基线继续保留，不将物理吞吐当PPO端到端加速。
 
+第365轮[方向审查](results/paper_recovery_20261004/joint_reference_candidate_v1/round365_direction_review.json)允许一次独立修复验证；[修复版20回合已完成](results/paper_recovery_20261004/joint_reference_candidate_v1/round365_execution_receipt.json)，原v1失败保持不变。8个Cartesian零动作条件均逐值复现freshB0，20例生产者物理/设计门通过；298400图步、298123首回合子步、7460行动作、105FD，约277.84秒含构建与记录。所有脚本条件仍任务失败，不能据工程验收宣称方法收益。366独立复核非零映射、停车、复位、guard及完整物理证据后再决定下一步；不准入PPO。
+
+[本轮清理](results/paper_recovery_20261004/joint_reference_candidate_v1/round365_cleanup.json)删除7602字节可重建缓存，以及16份已完成回合的重复前缀，共14681297字节；每份均由保留的完整记录逐字节重建并核SHA。所有主记录和v1失败前缀保留。下一次方向/清理与整体框架均为370轮。
+
 第364轮[唯一20回合队列已失败停止](results/paper_recovery_20261004/joint_reference_candidate_v1/round364_failure_decision.json)：实际写完B0与CartLive3零动作两条，消耗30000图步/29988首回合子步、15FD，余18未运行。[失败复核](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/zero_failure_audit.json)确认命令、q/v、接触及保存的gyro/actor记录相同，但140个子步的投影λ不同，不能改判通过。根因是Cart硬编码模式0，而上游已修正Nom实际使用模式1；旧越界标志被错误解释成残差禁用条件，非零请求也会受影响。
 
-已保留v1，并形成[最小v2修复的GPU回归](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/nominal_mode_repair_review.json)：AST核唯一算法变化为投影模式0→1，16行覆盖live/reset、零/非零及历史标志0/1。v2尚未安装或进行完整链验收，原失败队列未重跑。365按期方向/清理审查修复版独立准入及补充实验，370整体框架复审；无PPO训练准入。
+已保留v1，并形成[最小v2修复的GPU回归](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/nominal_mode_repair_review.json)：AST核唯一算法变化为投影模式0→1，16行覆盖live/reset、零/非零及历史标志0/1。随后第365轮已按独立准入完成上述新队列，原失败队列未重跑。
 
 第363轮[GPU残差段核对](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/kernel_review.json)完成221184个冻结状态fixture：两种几何模式、零Nom与95%速度包络Nom，最终float32电机命令对CPU参考误差0；最大边界舍入误差1.83e-8Nm，26996行触发共同缩放。失活/错误输入/cold零/按行复位和观察槽位保护检查通过，**仍未组成或运行完整Native闭环**。
 
