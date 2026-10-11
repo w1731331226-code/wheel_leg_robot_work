@@ -1,0 +1,9 @@
+Warp 1.17.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 5060 Laptop GPU" (8 GiB, sm_120, mempool enabled)
+   Kernel cache:
+     /home/wmt/.cache/warp/1.17.0
+Module __main__ db6386d load on device 'cuda:0' took 614.24 ms  (compiled)
+CONFIRMED364 physical equality;140 lambda mismatches exactly match preclip wheel flags;140x4 projection helper outputs [0,1,0,1];no rerun

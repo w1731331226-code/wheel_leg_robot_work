@@ -1,0 +1,48 @@
+{
+  "round": 364,
+  "status": "original_queue_failed_version2_unit_only",
+  "execution": {
+    "source_admission_commit": "f61764bb",
+    "pid": 202230,
+    "exit_code": 1,
+    "registered_episodes": 20,
+    "complete_episodes_written": 2,
+    "accepted_records": 1,
+    "remaining_unrun": 18,
+    "actual_graph_world_steps": 30000,
+    "first_episode_physical_steps": 29988,
+    "actor_rows": 750,
+    "constructor_FD_calls": 15,
+    "implicit_retry": false,
+    "preservation_error": null
+  },
+  "verified": "共享初终态、pre/post qv、实际命令、全部接触/meta、保存的gyro/actor记录相同；两条physical/design过、task flags同。不是未保存传感器通道的独立核验。",
+  "failure": "140个子步的original_lambda由B0的1变为Cart的0，完整trace53与guard26不等，原零门失败。mean_lambda1→.99066293，limited_steps0→140。",
+  "cause": "全部140差异恰与修正前轮Nom超过速度包络的标志同支集。原reference_role_control在nominal_correction_enabled下强制effective projection_mode=1；Cart v1硬编码0。raw project_clipped_base=False不是实际投影模式，不能直接传该外部布尔值作修复。",
+  "repair": {
+    "file": "wheelleg_warp/cartesian_pair_kernel_v2.py",
+    "kernel": "deliver_accepted_nominal",
+    "only_algorithmic_change": "project_bounds最后参数0→1",
+    "old_sources_unchanged": true,
+    "AST_only_change_checked": true,
+    "GPU_unit_rows": 16,
+    "scope": "两mode×零/非零×历史flag0/1；保原flag、未标志命令不变、零动作保Nom、已可行非零不被压掉。新v2未安装、完整链未验收。",
+    "caller_precondition": "仅用于上游已接受/修正Nom的接口；未来工厂必须明确验证shared nominal correction合同，不能用于任意未处理的Nom。"
+  },
+  "decision": "停止并保留原20队列失败，不删除lambda门或把物理相同改判通过。此次证据定位实现准入错误，几何方法的闭环收益尚未测试。365方向/清理评估只做一次独立修复版本准入的必要性及预算；不得隐式续跑原目录。",
+  "evidence_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/runtime_admission.json": "e362bcf95c181009a5de3c78f8c2faa97a68dcfb04bdb7d6773bc3fe0daf03a0",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/runtime/failure.json": "39e07b65c123011379b4ff4a511699bd4bb197434a26fd27d777c44aa1e5c63f",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/runtime/progress.json": "43244b3ce256e38ef62dc7ca0f15909fbca03c1102af3921453e418da9c13a1b",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/zero_failure_audit.json": "c21e516a69b6efa50f08d3caa1050a032f535874e52062cfe41d20e80e494312",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/projection_mode_witness.npz": "9a3448097208f4c2d680fea55e227ddb64db79d27e73ac325a0663a2285cdd50",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/nominal_mode_repair_review.json": "c0891551e326b26aed6750f9e0ba1c0b56b70df359c8c63729f0c945a64fcc72",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/nominal_mode_repair_fixture.npz": "f0b2258e6fdd3c2c67f1657a65817f166f72108dfbb5aaea7a9144568219bf45"
+  },
+  "new_learning_samples": 0,
+  "new_model_forward_rows": 0,
+  "formal5_admitted": false,
+  "goal_complete": false,
+  "next_deep_review_round": 365,
+  "next_framework_round": 370
+}

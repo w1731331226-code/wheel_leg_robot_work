@@ -2,7 +2,16 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 第364轮Cartesian完整链入口准入（2026-10-12，队列尚未执行）
+## 当前状态：第364轮队列零门失败、根因定位与v2单元修复完成（2026-10-12，整体目标active）
+
+- 364中断前已有progress：f61764bb准入后唯一pid202230/unified27325执行，现确认exit1/进程无，原20队列已终止，未重启。B0zero与CartLive3zero各14994子步完整写出，只有B0进入accepted progress；actual graph30000、first29988、actor750、FD15，余18未运行，preservation_error None。中断期间daemon已自动归档48项为c4b53eff，归档不是验收；本轮先复核终态再停止daemon编辑。
+- zero_failure_audit复核两条全部标准流：共享初终态、pre/post qv/issued control、完整contacts/contact_steps/meta、保存gyro/role/phase/parking/actor数组同；两physical/design过、fulltask flags同且均任务失败。唯一标准流差异为complete trace53(original_lambda)及jointguard26各140元素，1→0，首pre_s3.892。轮Nom先峰值裁剪后仍超当时速度包络的支集恰等这140步；两条base_infeasible_steps均140，但residual_limited_steps0→140、meanlambda1→.9906629318。不能因物理相同排除lambda门改判通过。
+- 根因是新Cart v1的project_bounds末参硬编码0；真实reference_role_control在nominal_correction_enabled=1时先接受/修正Nom并强制effective projection_mode=1，原raw project_clipped_base=False并不代表实际mode0。旧invalid_base作为修正前诊断留存，v1错误地无条件禁残差。140个真实accepted wheel Nom/bound的4种投影helper CUDA核给[zero_mode0,zero_mode1,inward_mode0,inward_mode1]=[0,1,0,1]，不是仅日志美观问题；无新机器人积分或FD。
+- 保留全部v1冻结源/93source admission/原失败记录。新增独立cartesian_pair_kernel_v2.deliver_accepted_nominal，复用原原语、仅复制被冻结失败的kernel体作版本化修复；AST证明唯一算法差异是project_bounds末参0→1。16行实际CUDA回归覆盖live/reset×零/非零×历史flag0/1：标志保留、无flag命令不变、零动作保Nom、可行非零不被禁。v2未接adapter或机器人，不能当完整链/学习收益通过；原队列仍失败。
+- round364_failure_decision明确：365方向/清理审查一次独立修复版准入及补充实验，不隐式续跑原目录、不改旧门/指标或复活已关闭方法。v2调用者须验证上游shared nominal correction的accepted-Nom合同。未来新版本还需非零/停车/复位/原物理设计门和独立接收。370整体框架，六论文出口仍缺、goal active。
+- 同步又在145/226后TLS终止；核旧pid201949无，remote辅助2885401a为pending146 dce3963b父提交、main02e08d8f，已显式续接同待传commit（pid6239/unified53168已核live），随后推进到168/226；不从头重传/不盲改postBuffer，精确进度见state。本轮无额外simulation/学习，只有失败数据复核和CUDA算术单测；中文提交后恢复daemon并核remote，尚未全齐，无视频。
+
+## 第364轮Cartesian完整链入口准入阶段记录（2026-10-12）
 
 - 363为progress（GPU残差核对/20注册）。新增最小cartesian_pair_runtime与唯一worker，外层Cartesian/内层原jointguard/原evaluation；Nom零target后candidate再guard，prepare/finish换latent shadow、after仅改obs32:38，constructor/public reset与auto terminal-before-clear按既有合同处理。私有buffer强持有；actual canonical仍在真实controller state16:22，旧物理记录列不冒充latent。
 - 首次非执行launch-spy自检发现kernel身份不是native.controller入口，而是当前reference_role_control包装入口，guard已用后者；在0机器人/0FD时修为与原guard相同kernel对象。真实guard包装参与的80调用顺序、shadow/zero指针分离、两capture签名、错误恢复与construction保存自检现过。脚本zero/sine请求自检过；93源码/runtime、kernel receipt与20proposal绑定，实际constructor80拓扑仍须在首次capture_launch前验证。

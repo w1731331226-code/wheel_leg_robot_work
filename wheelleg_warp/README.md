@@ -1,12 +1,16 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（第363轮，2026-10-12）
+## 当前论文计划（第364轮，2026-10-12）
 
 原目标仍是：在原完整不对称接触任务上，得到一个保持强经典能力并有明确增量的可执行PPO方法。当前没有通过收益资格的新方法，正式五种子、独立ID/OOD、统计与成本分析、新方法稿件均未完成；CPU历史基线继续保留，不将物理吞吐当PPO端到端加速。
 
+第364轮[唯一20回合队列已失败停止](results/paper_recovery_20261004/joint_reference_candidate_v1/round364_failure_decision.json)：实际写完B0与CartLive3零动作两条，消耗30000图步/29988首回合子步、15FD，余18未运行。[失败复核](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/zero_failure_audit.json)确认命令、q/v、接触及保存的gyro/actor记录相同，但140个子步的投影λ不同，不能改判通过。根因是Cart硬编码模式0，而上游已修正Nom实际使用模式1；旧越界标志被错误解释成残差禁用条件，非零请求也会受影响。
+
+已保留v1，并形成[最小v2修复的GPU回归](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/nominal_mode_repair_review.json)：AST核唯一算法变化为投影模式0→1，16行覆盖live/reset、零/非零及历史标志0/1。v2尚未安装或进行完整链验收，原失败队列未重跑。365按期方向/清理审查修复版独立准入及补充实验，370整体框架复审；无PPO训练准入。
+
 第363轮[GPU残差段核对](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/kernel_review.json)完成221184个冻结状态fixture：两种几何模式、零Nom与95%速度包络Nom，最终float32电机命令对CPU参考误差0；最大边界舍入误差1.83e-8Nm，26996行触发共同缩放。失活/错误输入/cold零/按行复位和观察槽位保护检查通过，**仍未组成或运行完整Native闭环**。
 
-[第363轮集成合同](results/paper_recovery_20261004/joint_reference_candidate_v1/round363_integration_contract.json)明确：原Nom按零残差运行，候选随后生成残差，再进原关节guard；实际canonical状态与停车/Actor用的潜变量shadow分开。构造、显式reset、自动reset及terminal观测都要保持所属回合。已登记[唯一20回合交付验收](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/runtime_proposal.json)：4个低高/正反seen案例，freshB0和两Cart零动作12回合，加两Cart固定正弦请求8回合；640000图步/210FD上限，0学习。364完成最小adapter/worker、先提交准入后一次执行或有证据拒绝；365方向/清理据实际结果决定，不再追加泛化资格回合。
+[第363轮集成合同](results/paper_recovery_20261004/joint_reference_candidate_v1/round363_integration_contract.json)明确：原Nom按零残差运行，候选随后生成残差，再进原关节guard；实际canonical状态与停车/Actor用的潜变量shadow分开。构造、显式reset、自动reset及terminal观测都要保持所属回合。[原20回合协议](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/runtime_proposal.json)包含4个低高/正反seen案例、12个零动作和8个固定正弦条件；其640000图步/210FD上限未耗尽，但第364轮已触发停止门，不能继续消费剩余预算。
 
 第362轮[有限滤波顺序/尺度检查](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/delivery_review.json)发现候选不能直接塞入旧virtual6接口：55296个固定几何单步算术测试中，先latent滤波再映射有19230组canonical增量超过旧.01，最大.01590；先映射再独立六路滤波则合力泄漏最大.10914N。正确顺序仍保命令代数性质，但没有执行Native/关节保护/电机包络后的实际交付或闭环。
 

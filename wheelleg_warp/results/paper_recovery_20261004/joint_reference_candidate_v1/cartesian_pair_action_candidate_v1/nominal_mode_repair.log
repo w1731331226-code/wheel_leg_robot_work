@@ -1,0 +1,10 @@
+Warp 1.17.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 5060 Laptop GPU" (8 GiB, sm_120, mempool enabled)
+   Kernel cache:
+     /home/wmt/.cache/warp/1.17.0
+Module cartesian_pair_kernel c36b353 load on device 'cuda:0' took 4.89 ms  (cached)
+Module cartesian_pair_kernel_v2 6748cdf load on device 'cuda:0' took 3863.38 ms  (compiled)
+PASS364 v2 AST-only projection-mode change; live/reset x zero/nonzero x historical flag0/1; v1 preserved; no physics
