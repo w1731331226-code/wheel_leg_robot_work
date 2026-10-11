@@ -1,6 +1,6 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（第345轮，2026-10-11）
+## 当前论文计划（第346轮，2026-10-11）
 
 当前冻结方案是 [fixed_force_prequalification_v1](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/proposal.json)：共享名义设计、公开481维输入与关节保护，D3差模力残差与同信息V6残差各三种子、各200k策略样本，只评价最终模型。492回合经典对照、六模型训练和984回合固定评估均已完成；第338轮[独立接收与资格报告](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/evaluation_review.json)通过记录核验，但D3的主任务成功、航向收益和旧能力保持门未通过，本候选收益扩展关闭，正式五种子未准入。
 
@@ -16,7 +16,7 @@
 
 第345轮[方向深审与清理](results/paper_recovery_20261004/joint_reference_candidate_v1/round345_direction_review.json)完成。[有限反射审计](results/paper_recovery_20261004/joint_reference_candidate_v1/policy_reflection_audit_v1/review.json)核384个已存公开输入、768行冻结推理：需区分电机残差整组交换与虚拟请求成对交换，并在冻结归一化之前变换；六模型均有均值非等变偏差。群平均仅离线验证代数和有界性，未施加于机器人；静态名义形态对照不等于全接触/地形/控制动力学证明。
 
-下一第346轮实现并准入[19回合冻结反射诊断](results/paper_recovery_20261004/joint_reference_candidate_v1/frozen_reflection_diagnostic_v1/proposal.json)：同一已见平地案例、六模型各原输出/半幅/反射群平均，加新B0，0训练。用半幅对照排查一般衰减解释，不晋升旧候选或宣称通用对称RL创新；当前不改奖励、银行、网络或旧训练预算。第350轮方向/清理及整体框架核查保持。旧CPU/GPU基线及全部负结果保留，下文训练说明和早期通道审计稿均有各自历史范围。
+第346轮[19回合冻结反射诊断](results/paper_recovery_20261004/joint_reference_candidate_v1/frozen_reflection_diagnostic_v1/completion.json)已完成，生产者物理/设计19/19通过，实际351760图步、100FD、11108行模型查询，0训练。主要D3_33532原输出/半幅/反射偏航峰为5.44446/3.65319/3.24488°，后两者任务成功；反射并非对所有模型都优于半幅，B0仍更优。第347轮独立接收真实raw绑定、两次网络查询、初终态与物理轨迹后再解释；不晋升旧候选或宣称通用对称RL创新。第350轮方向/清理及整体框架核查保持。旧CPU/GPU基线及全部负结果保留，下文训练说明和早期通道审计稿均有各自历史范围。
 
 ## 给老师展示：115～380mm手动控制
 
