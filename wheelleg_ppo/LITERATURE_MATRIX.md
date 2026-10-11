@@ -162,3 +162,9 @@ GitHub 代码近邻（仓库均可访问；只核 README 与相关实现，不�
 一轮定向检索、一次primary方法跟进。[Frontiers 2026既有六维参考动作论文](https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2026.1788395/full)重新定位2.2.3：归一化位置偏差映射为关节目标，低层PD执行；不能把“Actor输出参考而非力矩”称新颖。[Contact-Adaptive Controller作者HTML](https://arxiv.org/html/2009.10019v1)核3.1—3.3：高层学习离散接触primitive，低层基于模型求支撑力QP及摆腿控制；四足离散接触选择，与本候选连续双轮mean/difference长度域不同，但学习高层与模型低层组合已有先例。
 
 本候选尚未有收益或新颖性证据，只推导原±.035半差上限与height±.02下的参考坐标可行映射。原kernel直接改reference均值会改径向保护anchor，需保持原packet只替换跟踪target以避免额外解释；公平对照要拥有相同均值/半差参考权限，旧力矩残差对照不能单独排除接口优势。参考几何不等实际闭链/姿态/接触稳定保证；未新增MoE、接触primitive或QP，也未复现这两篇数值结果。
+
+## 2026-10-11 第344轮策略对称性近邻补核
+
+本轮一轮定向检索和一次官方页跟进，仅核摘要/元数据，未声称全文审读或复现。ICRA 2024 [Symmetry Considerations for Learning Task Symmetric Robot Policies](https://arxiv.org/abs/2403.04359)已研究数据增强、mirror loss及在策略样本增强；CoRL 2023 [Equivariant Reinforcement Learning under Partial Observability](https://proceedings.mlr.press/v229/nguyen23a.html)已在部分观测Actor-Critic中编码群等变性。arXiv 2512.00727当前v2标题为[Beyond Topology: A Morphological Symmetry Graph Representation for Locomotion Policy Learning](https://arxiv.org/abs/2512.00727)，摘要将其用于MS-PPO；检索中的旧标题不能冒充当前版本标题。
+
+本机新事实是三D3末模型在相同、左右测量相等且横向/偏航信号为零的reset输入上发出非零差模请求。动作成对反号不等于策略函数等变，也不保证零名义响应；尚未证明整个机器人/任务/481历史及归一化满足反射假设。上述近邻说明对称网络、mirror增强或简单反射投影本身不能称新算法。与原差模物理约束、同信息强经典及相对CRRL的具体区别和额外收益仍需论证；仅将其列为345方向深审可证伪候选，不启动新训练或宣称新颖性。
