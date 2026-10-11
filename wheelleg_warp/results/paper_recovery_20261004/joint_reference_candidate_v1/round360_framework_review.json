@@ -1,0 +1,86 @@
+{
+  "round": 360,
+  "reviewed_rounds": [
+    351,
+    352,
+    353,
+    354,
+    355,
+    356,
+    357,
+    358,
+    359,
+    360
+  ],
+  "scope": "当前论文从CPU参照、Warp物理/观测/动作、训练冻结、完整评估、独立接收、方法准入到归档同步的执行链；不是无关ROS/演示全库逐行审计，也未新增物理回归。",
+  "verified_chains": [
+    {
+      "name": "16 retention",
+      "frozen_sources": 89,
+      "accepted_artifacts": 208,
+      "episodes": 16
+    },
+    {
+      "name": "18 classical route",
+      "frozen_sources": 87,
+      "accepted_artifacts": 234,
+      "episodes": 18
+    }
+  ],
+  "components": [
+    {
+      "component": "CPU参照与物理",
+      "assessment": "原基线未替换；Native/模型/硬件/关节/电机源仍被冻结许可绑定，351/356实际数据和352/357完整qv-contact接收可复用。"
+    },
+    {
+      "component": "公共输入与动作",
+      "assessment": "raw481、冻结RMS和因果全命令历史与私有记录分开；356偏移只改副本，357精确重放。358/359私有接触/后继姿态仅离线诊断，不给控制器。"
+    },
+    {
+      "component": "训练与资格",
+      "assessment": "旧三seed训练及全164评估完整保留但收益未过；工程核验不能晋升formal5。新候选没有具体预测器，属于方法定义缺口。"
+    },
+    {
+      "component": "物理保护与任务",
+      "assessment": "关节guard通过不等姿态/任务保持。Nom在困难例失败，零残差fallback无任务可行证书。中心承载/同外扰主张仍与原完整task分开。"
+    },
+    {
+      "component": "编排与预算",
+      "assessment": "跨case初态分组及ctrl/time/warm/sensors已补；16/18入口冻结与调用前预算、失败记录、独立接收实际过。新runner沿用冻结版本而部分复制监测；无新queue时不重构，未来需要新runner时才提取最小版本化编排边界。"
+    },
+    {
+      "component": "统计与稿件",
+      "assessment": "这些seen/posthoc机制例不当独立泛化或全任务优势；完整新方法/强对照/新formal5/ID-OOD/统计成本/新稿六出口仍缺，旧paper.tex保持历史身份。"
+    },
+    {
+      "component": "同步",
+      "assessment": "原测试未验证包大小的缺口已修：真实80批位图准备和926553B包验收后，旧快照02e08d8f成功普通快进，临时辅助ref清除；后续大归档及最新HEAD仍需有界同步。"
+    }
+  ],
+  "required_adjustments": [
+    "停止抽象预测器资格报告链，先有具体可检验方法再花新仿真预算。",
+    "当前计划入口需压缩历史过程为状态/证据链接，避免旧pending文字与最新闭合混读。",
+    "上传必须以实际pack字节和remote HEAD为验收；保数据、钩子和主历史，不以辅助对象已传计同步完成。"
+  ],
+  "unresolved": [
+    "六论文出口未完成",
+    "联合姿态模型/误差集合未定义，闭环收益与理论无证据",
+    "后续0beacdc3大归档和最新HEAD尚未同步；旧快照已remote验收"
+  ],
+  "evidence_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/classical_route_reference_diagnostic_v1/review.json": "3b0a48e4d62efb832ea45991a7651376c3eff0e81d89f411e14818aeeebd2f09",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/classical_route_reference_diagnostic_v1/closure.json": "4d20eb0de3d3bc16ddebbb66ee44803a88f9ce043bc1ce2207c297318ceb72a4",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reflection_retention_falsification_v1/review.json": "ca1baf1dc568875de4b58ea8e0c8b507bf910a06390c1f8f0cdbc3108a5a4357",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reflection_retention_falsification_v1/closure.json": "d6a238e2a4f1e16c9a3bd1dc9c1d72d46f6d992305896b47b1ae9b8e59f7d460",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round358_method_selection.json": "aaa9f7140d0eed605680bdc630e49810eb842d0d6c8b040806c85de64b18145a",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round358_gain_precontact.json": "be61584110f7712d367b05898d7b5475403d8eeb5044a977840861c818f7abb5",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/public_history_prediction_qualification_v1/proposal.json": "0f0e114c1e2689b29ea8644986802dd539559178d444c8bc9293634b13d78584",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/public_history_prediction_qualification_v1/review.json": "602be06c45a8aed4443b1a773c05cda60f8e9fa092b315e09f916d24229a54a2",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round359_prediction_decision.json": "0b435c0e9bd58cd2229194f0caf0a72a84ebb690b24e640fa10d7282c8800e9c",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/evaluation_review.json": "41eed8d3f9472403e40b4447165ad9774ba885d0231cb3f977d0c0b018342244"
+  },
+  "new_physics_steps": 0,
+  "new_learning_samples": 0,
+  "next_whole_framework_round": 370,
+  "synchronization_repair_sha256": "69e9cced1597168a8d2826f657045a6a2547dc6bf511b70e4e604b662597a996"
+}

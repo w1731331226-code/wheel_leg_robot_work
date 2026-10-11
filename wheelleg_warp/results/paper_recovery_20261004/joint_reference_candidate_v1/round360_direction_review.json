@@ -1,0 +1,51 @@
+{
+  "round": 360,
+  "reviewed_rounds": [
+    356,
+    357,
+    358,
+    359,
+    360
+  ],
+  "previous_turn": "progress: 注册并完成40例预测必要条件检验",
+  "main_decision": "不继续当前泛化联合姿态QP候选的资格链，不准入新的响应仿真或PPO；保留研究问题，拒绝把尚无预测器的概念当可执行方法。",
+  "reasons": [
+    "固定路线18回合已完成并独立接收阴性，不重复扫描。",
+    "358给出min-distance+姿态约束模板，但未定义从公共历史到预测器/误差集合的具体映射；普通QP/CBF/DOB组合已有近邻。",
+    "359只给0.424542deg必要下界，小于1deg不能证明可达到的误差上界；两组只匹配reset，且B1仅轮差动，没有六维独立响应。",
+    "原静态32维plant未覆盖真实Nom滤波/控制记忆/接触切换，不能冒作候选预测器。无具体模型时再做脉冲矩阵也无法检验已定义预测，不值得先开队列再找解释。"
+  ],
+  "worth_continuing": "原完整接触任务、单策略能力保持和强经典增量问题仍有未解决空间；当前没有已准入的新学习方法。下一提案必须给完整映射、信息权限、同权限无学习对照和区别性预测，不能继续只登记通用资格报告。",
+  "additional_experiments": {
+    "admitted": [],
+    "not_admitted": [
+      "新PPO/正式五种子",
+      "固定偏移或冻结反射救分",
+      "无具体预测器的六维脉冲扫描",
+      "私有接触/未来状态输入的隐式扩权"
+    ],
+    "reentry": "真正提出具体候选后另立预注册，不继承本次未驳倒为通过；所有旧失败门与案例保留。"
+  },
+  "objective_not_shrunk": true,
+  "negative_paper_not_substituted": true,
+  "formal5_admitted": false,
+  "six_paper_exits_complete": false,
+  "goal_complete": false,
+  "evidence_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/classical_route_reference_diagnostic_v1/review.json": "3b0a48e4d62efb832ea45991a7651376c3eff0e81d89f411e14818aeeebd2f09",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/classical_route_reference_diagnostic_v1/closure.json": "4d20eb0de3d3bc16ddebbb66ee44803a88f9ce043bc1ce2207c297318ceb72a4",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reflection_retention_falsification_v1/review.json": "ca1baf1dc568875de4b58ea8e0c8b507bf910a06390c1f8f0cdbc3108a5a4357",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/reflection_retention_falsification_v1/closure.json": "d6a238e2a4f1e16c9a3bd1dc9c1d72d46f6d992305896b47b1ae9b8e59f7d460",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round358_method_selection.json": "aaa9f7140d0eed605680bdc630e49810eb842d0d6c8b040806c85de64b18145a",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round358_gain_precontact.json": "be61584110f7712d367b05898d7b5475403d8eeb5044a977840861c818f7abb5",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/public_history_prediction_qualification_v1/proposal.json": "0f0e114c1e2689b29ea8644986802dd539559178d444c8bc9293634b13d78584",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/public_history_prediction_qualification_v1/review.json": "602be06c45a8aed4443b1a773c05cda60f8e9fa092b315e09f916d24229a54a2",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round359_prediction_decision.json": "0b435c0e9bd58cd2229194f0caf0a72a84ebb690b24e640fa10d7282c8800e9c",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/evaluation_review.json": "41eed8d3f9472403e40b4447165ad9774ba885d0231cb3f977d0c0b018342244"
+  },
+  "cleanup_sha256": "912bb1a7bdabadfe54a7981d9c7d05ede7d0766007a099d87bff1541c6632583",
+  "new_physics_steps": 0,
+  "new_model_forward_rows": 0,
+  "new_learning_samples": 0,
+  "next": "361优先完成有界历史同步的实际验证/剩余归档；研究仅接受完整定义的新方法提案，不再延长当前抽象QP资格链。365方向/清理，370整体框架。"
+}

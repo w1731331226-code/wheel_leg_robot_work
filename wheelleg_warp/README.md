@@ -1,50 +1,24 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（第359轮，2026-10-12）
+## 当前论文计划（第360轮，2026-10-12）
 
-第359轮完成[公开历史预测的必要条件检验](results/paper_recovery_20261004/joint_reference_candidate_v1/public_history_prediction_qualification_v1/review.json)：事先固定全部40个B1-route controlled案例、20组左右配对、完整20ms动作周期及1°逐轴工程误差门，读取80份已绑定actor/dense工件。3301次完全相同raw481和当前动作配对中，下一周期姿态半差最大0.424542°（0.16m、+0.7m/s、20mm左右障碍，3.82s处）。由三角不等式，任何同输入确定性点预测器至少需容纳这一下界；它未超过1°，因此未驳倒该误差预算。
+原目标仍是：在原完整不对称接触任务上，得到一个保持强经典能力并有明确增量的可执行PPO方法。当前没有通过收益资格的新方法，正式五种子、独立ID/OOD、统计与成本分析、新方法稿件均未完成；CPU历史基线继续保留，不将物理吞吐当PPO端到端加速。
 
-[第359轮决定](results/paper_recovery_20261004/joint_reference_candidate_v1/round359_prediction_decision.json)仍不准入控制器或训练：这是误差下界，不是预测器可达到的上界；两组只有reset时精确匹配，现B1仅轮差动动作也未验证六维请求响应。旧静态full32模型不能直接覆盖实际Nom记忆和接触切换。第360轮按期做方向/清理/整体框架审查，必须据公开模型条件和强对照价值决定是否值得有限响应试验，不能把“未驳倒”升级为通过。原5°任务门与全部旧结果不变，本轮无新仿真、FD或学习。
+第360轮已完成[五轮方向审查](results/paper_recovery_20261004/joint_reference_candidate_v1/round360_direction_review.json)、[十轮框架核查](results/paper_recovery_20261004/joint_reference_candidate_v1/round360_framework_review.json)和[冗余清理](results/paper_recovery_20261004/joint_reference_candidate_v1/round360_cleanup.json)。**停止当前尚未定义预测器的联合姿态QP资格链，不新增仿真或PPO。** 第359轮的0.424542°是同输入预测误差的必要下界，未超过1°不能证明存在合格预测器，也未检验六维动作响应；再开没有明确模型的脉冲试验缺少可证伪对象。
 
-第358轮[方法筛选](results/paper_recovery_20261004/joint_reference_candidate_v1/round358_method_selection.json)只保留“公开执行历史下的短时联合姿态残差分配”为待证假设，尚无新颖性、运行或训练准入。现guard处理分腿关节设计界，不能替代roll/pitch/yaw任务可行性；Nom本来失败时也不能把零残差当安全fallback。先验证接触切换附近的耦合响应与预测误差，再决定是否值得分配器；其确定性部分必须同时成为强经典对照。
+| 分支 | 当前结论 | 主要证据 |
+| --- | --- | --- |
+| 固定D3差模残差与V6，三种子各200k | 训练和全164评估完成，D3收益/保持资格失败，扩展关闭 | [独立资格报告](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/evaluation_review.json) |
+| 平地轮请求、半幅与冻结反射 | 局部改善不等学习优势，反射仍有动态干扰，继续平地调优已关闭 | [13回合接收](results/paper_recovery_20261004/joint_reference_candidate_v1/frozen_wheel_interference_diagnostic_v1/review.json)、[19回合接收](results/paper_recovery_20261004/joint_reference_candidate_v1/frozen_reflection_diagnostic_v1/review.json) |
+| 跨案例统一冻结反射 | 八原成功全部复现，反射八例全失败，扩展关闭 | [16回合接收与关闭](results/paper_recovery_20261004/joint_reference_candidate_v1/reflection_retention_falsification_v1/closure.json) |
+| B1-route固定0/±0.05m路线参考 | 三臂各0/6成功，18例物理设计通过，六zero复现，固定偏移分支关闭 | [18回合接收](results/paper_recovery_20261004/joint_reference_candidate_v1/classical_route_reference_diagnostic_v1/review.json) |
+| 联合姿态预测与分配 | 只有概念和必要条件，没有具体预测器、误差上界或可行修正证明，不准入控制器 | [方法筛选](results/paper_recovery_20261004/joint_reference_candidate_v1/round358_method_selection.json)、[40例必要条件检验](results/paper_recovery_20261004/joint_reference_candidate_v1/public_history_prediction_qualification_v1/review.json) |
 
-同轮[已存成功轨迹接触前时序](results/paper_recovery_20261004/joint_reference_candidate_v1/round358_gain_precontact.json)核全8个获胜记录：1566个完整目标接触前动作周期都已有非零请求，最后周期公开route-y绝对值0.03861～0.05229m；目标接触起始是离线注释，不进策略。它不证明预动作必要，但阻止“接触前全部零化仍能保持成功”的无据假设。观测器＋历史＋残差界、安全残差及加速度CBF-QP均已有近邻，详见PPO文献矩阵；不能用通用组合宣称创新。359需将唯一候选具体化为有界响应试验及预先固定的误差/预算门，若公共信息或模型条件不成立就拒绝，禁止无据训练及无穷源审计。360方向/清理/整体框架保持。
+原接触任务成功仍有效，但不等于居中承载完整越障或同外扰抗扰优势；路径、接触和控制共变的边界见[第354轮主张决定](results/paper_recovery_20261004/joint_reference_candidate_v1/round354_claims_and_scope.json)。八条已知学习成功在目标接触前已存在请求与横向偏移，不能无据强制其全归零；[时序证据](results/paper_recovery_20261004/joint_reference_candidate_v1/round358_gain_precontact.json)也不证明这些预动作必需。所有旧门、失败、模型、原始数据和历史文稿保留。
 
-第357轮[18回合独立接收](results/paper_recovery_20261004/joint_reference_candidate_v1/classical_route_reference_diagnostic_v1/review.json)通过：267768物理子步、524577接触、6703行经典动作及234份工件SHA核过；三臂按case完整初态相同，参考误差/原经典公式/真实raw/提交轮请求逐值一致，保留原停车行为。六个零参考臂完整任务标志复现，两个偏移控制器均0/6成功，故按登记规则[关闭这一固定偏移分支](results/paper_recovery_20261004/joint_reference_candidate_v1/classical_route_reference_diagnostic_v1/closure.json)。三臂各6例姿态失败、4例同时偏航失败；六条偏航≤5°仍因其它姿态失败，18例新关节guard未修Nom或缩残差。这些结果不支持仅凭偏航改善解决完整任务，也不证明所有经典路线无效或RL必要。第358轮筛选能同时处理倾斜/航向且保持经典能力的方法假设，先说明机理区别、同信息权限及可证伪预测，禁止扫幅/调增益救此分支或直接开新训练。360方向/清理/整体框架保持。
+下一候选须先给出完整的公共输入到动作映射、模型/学习定义、同权限无学习强对照和区别性预测，再考虑预注册实验。普通QP、DOB、对称化、安全残差或PPO组合本身不是已证创新，见[文献矩阵](../wheelleg_ppo/LITERATURE_MATRIX.md)。不因当前无合格候选把目标缩为负审计论文，不重复已有失败分支或无限添加源资格回合。下一次方向/清理为365，整体框架为370。
 
-第356轮[18回合经典路线参考队列](results/paper_recovery_20261004/joint_reference_candidate_v1/classical_route_reference_diagnostic_v1/completion.json)已在准入提交后唯一执行并完成：目标y=0、+0.05m、−0.05m各0/6成功，生产者物理/设计18/18通过；268120图物理步、267768首回合子步、6703经典动作行、95次构造FD，约235秒含构造/记录，0学习与0重试。完整失败、真实raw与参考误差/动作、初态/终态和接触数据保留；第357轮已完成独立接收和上述分支关闭。
-
-第355轮[五轮方向深审与清理](results/paper_recovery_20261004/joint_reference_candidate_v1/round355_direction_review.json)完成：旧固定预算D3、平地调优及统一冻结反射扩展保持关闭。下一步已登记[18回合经典路线参考对照](results/paper_recovery_20261004/joint_reference_candidate_v1/classical_route_reference_diagnostic_v1/proposal.json)：全部6个已知学习增量案例，各运行目标y=0、+0.05m、−0.05m的固定B1-route；只改变原公式的路线误差，保持同公开信息、增益、权限、停车行为及全部原任务门。每个符号跨6例固定，不按案例挑选赢家。零臂须复现历史完整任务标志，全部成功、失败与未解释项均保存。
-
-该事后机制实验检验经典策略族是否遗漏了允许的路径选择。阳性原本还需另行准入全164例能力保持；现阴性只关闭这一个幅值与增益，不证明RL必要，不准入新训练或正式五种子。第360轮方向、冗余与整体框架审查保持。355仅删除核实可重建的7179字节编译缓存，未删科学数据。
-
-当前冻结方案是 [fixed_force_prequalification_v1](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/proposal.json)：共享名义设计、公开481维输入与关节保护，D3差模力残差与同信息V6残差各三种子、各200k策略样本，只评价最终模型。492回合经典对照、六模型训练和984回合固定评估均已完成；第338轮[独立接收与资格报告](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/evaluation_review.json)通过记录核验，但D3的主任务成功、航向收益和旧能力保持门未通过，本候选收益扩展关闭，正式五种子未准入。
-
-第339轮[已有失败轨迹审计](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/failure_audit.json)核对1476条完整任务结果和378条配对稠密轨迹。D3_33532常规53次失败中48次缺地形接触，主任务24次失败中20次缺指定障碍接触；8个主任务案例有记录姿态下的横向几何分离证据。无障碍反向0.5 m/s也在运动中偏航越5°，首次越界时轮残差与名义纠偏半差力矩约−0.06284/+0.05988 Nm；这是通道干扰的线索，未做因果干预。当前路线偏移已在公开输入内，不能仅据失败断言缺感知或扩大权限。[两案例图](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/failure_witnesses.png)
-
-第340轮已完成[五轮方向深审](results/paper_recovery_20261004/joint_reference_candidate_v1/round340_direction_review.json)、[十轮整体框架核查](results/paper_recovery_20261004/joint_reference_candidate_v1/round340_framework_review.json)及确认冗余清理。当前固定预算候选不值得继续长训；运行链与工程守护可复用，方法优势、独立泛化、稳定性证明和新稿仍缺。V6辅助报告与自身比较的逻辑已修正，D3资格项不变；338原报告和对应源码快照保留。80份冻结运行源未改。
-
-第341轮完成[13回合冻结轮请求诊断](results/paper_recovery_20261004/joint_reference_candidate_v1/frozen_wheel_interference_diagnostic_v1/completion.json)，第342轮[独立接收](results/paper_recovery_20261004/joint_reference_candidate_v1/frozen_wheel_interference_diagnostic_v1/review.json)通过：13初态、全部实际物理子步、模型/RMS重放、原始/掩码请求及原臂历史任务标志一致。D3_33532原输出偏航峰5.44446°且任务失败，关闭轮请求后0.73825°并成功，六对峰值均降；所有关闭轮请求模型的偏航仍高于新B0。支持该固定平地反例中的轮请求干预效应，不证明学习优势或瞬时纯轮力学因果；旧候选收益扩展仍关闭。
-
-第343轮[奖励重建与排序核对](results/paper_recovery_20261004/joint_reference_candidate_v1/frozen_wheel_interference_diagnostic_v1/reward_audit.json)通过，13回合总奖励最大重建误差3.91e-14。按原20ms策略时钟gamma=.99折扣，六组关闭轮请求后回报均提高；D3_33532为1.46835→1.97181，B0为1.97910且仍高于所有学习臂。本批不支持“原奖励把该失败排在改善前面”，不据此改奖励或追加训练；也不能推广为全分布奖励正确或PPO收敛证明。
-
-第344轮[训练覆盖与名义响应审计](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/training_scope_audit.json)核对900个阶段世界、2876个实际完成训练回合及60份更新统计。登记银行没有完整无障碍平地场景，但仍有平地片段和0.3m高度样本，不能据此判定缺训练是根因。三个D3模型在相同、左右测量相等的reset输入上均发出非零差模请求，说明动作反号结构没有自动约束策略的名义响应。
-
-第345轮[方向深审与清理](results/paper_recovery_20261004/joint_reference_candidate_v1/round345_direction_review.json)完成。[有限反射审计](results/paper_recovery_20261004/joint_reference_candidate_v1/policy_reflection_audit_v1/review.json)核384个已存公开输入、768行冻结推理：需区分电机残差整组交换与虚拟请求成对交换，并在冻结归一化之前变换；六模型均有均值非等变偏差。群平均仅离线验证代数和有界性，未施加于机器人；静态名义形态对照不等于全接触/地形/控制动力学证明。
-
-第346轮[19回合冻结反射诊断](results/paper_recovery_20261004/joint_reference_candidate_v1/frozen_reflection_diagnostic_v1/completion.json)完成，第347轮[独立接收](results/paper_recovery_20261004/joint_reference_candidate_v1/frozen_reflection_diagnostic_v1/review.json)通过：初态、351340物理子步、8794策略记录及11108网络查询核过，raw反射/冻结RMS/操作公式正确，六原臂任务标志复现。主要D3_33532反射比半幅yaw峰低.40830°、横向峰低.02532m，但roll峰等辅助指标不全改善；两个V6反射yaw差于半幅，全部反射仍差于B0。单案例主要比较不等于普遍优势。
-
-第348轮[保存轨迹时序核对](results/paper_recovery_20261004/joint_reference_candidate_v1/frozen_reflection_diagnostic_v1/timing_audit.json)确认：主要反射模型在1.0005s起步时yaw约−.00156°，运动中增至−3.241°，7.2505s停车后仅再增至峰3.24488°。2s处名义轮差为0、残差半差−.01226Nm；运动中两者均非零的10446子步里9884步异号。初始零响应消除了直接起步偏置，但不约束后续反馈增益/历史响应；不能仅归因停车，也未证明死区或数值误差是唯一原因。
-
-第349轮[当前任务机会核对](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/task_opportunity_audit.json)保留全40×9结果：经典成功并集32例，学习有8次成功覆盖其余6例，但各模型均丢既有经典成功。26条匹配轨迹显示这8次成功均有正向目标接触，6次轮心全程在障碍横向投影外、2次部分在内；原接触任务成功保留，不等于居中承载完整越障。
-
-[第350轮方向深审](results/paper_recovery_20261004/joint_reference_candidate_v1/round350_direction_review.json)、[整体框架核查](results/paper_recovery_20261004/joint_reference_candidate_v1/round350_framework_review.json)和清理已完成。第352轮[16回合独立接收](results/paper_recovery_20261004/joint_reference_candidate_v1/reflection_retention_falsification_v1/review.json)确认原输出8/8成功复现、反射8/8任务失败，物理/设计16/16通过；跨案例初态与238051物理子步、8937网络查询核过。[统一反射扩展已关闭](results/paper_recovery_20261004/joint_reference_candidate_v1/reflection_retention_falsification_v1/closure.json)，不调幅或重训救分。原接触任务成功保留，不因路径描述事后改判，也不推广为所有对称RL无效。
-
-第353轮[完整接触暴露核对](results/paper_recovery_20261004/joint_reference_candidate_v1/reflection_retention_falsification_v1/exposure_audit.json)读469100条接触记录，以每对反射首次姿态越界为共同时间截止：8对目标法向偏航力矩绝对冲量均增加，但低高度3对总法向冲量略减，全接触净偏航冲量并非一致变化。这说明路径/接触几何与控制响应同时变化，不能把结果直接当相同扰动下的抗扰排名，也不能单独归因载荷或一个力矩项。
-
-第354轮[主张与范围决定](results/paper_recovery_20261004/joint_reference_candidate_v1/round354_claims_and_scope.json)保留原完整接触任务为主问题，区分任务达成、等扰动抑制与居中承载越障，后两者不能从现数据推出。现有B1-route以y=0为目标，允许路径与策略族仍需公平审查；待355决定是否仅对全部6个获胜案例登记一次0/±轮半径路线参考的18回合经典对照，检验已知反馈是否也能取得边缘接触成功。现在只是备选，不选符号拼oracle、不修改原门或恢复学习。355方向/清理、360整体框架复审保持。
-
-同步方面已修复超时残留子进程，229批对象已传到辅助引用，但356实查主历史推送仍枚举约14.58GB blob，本地小pack也复现未排除已有对象；[传输缺陷证据](results/paper_recovery_20261004/joint_reference_candidate_v1/round356_sync_transport_audit.json)已保存，已停止自有的冗余最终推送。辅助引用和续接状态保留；需先验证真正有界的对象排除方案，不再原样重试。运行状态在`.git/sync-transfer.json`，远端尚未追平，不改主历史或删除研究数据。
+第360轮[同步修复](results/paper_recovery_20261004/joint_reference_candidate_v1/round360_sync_repair.json)已实证：80批有界对象整理与位图生成后，旧快照最后包仅926553字节，已普通快进到远端并清除辅助引用。后续大归档及最新HEAD仍需有界传输，尚非全部同步。主历史和科学数据保留；实时状态见`.git/sync-transfer.json`，以remote与local HEAD一致为最终同步验收。
 
 ## 给老师展示：115～380mm手动控制
 

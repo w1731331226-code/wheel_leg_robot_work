@@ -134,12 +134,17 @@ def run(root=ROOT,chunk_bytes=CHUNK,resume=False):
         # The alternate store knows local main, so this local fetch transfers only auxiliary metadata.
         git(root,'fetch','--no-tags',str(work),f'{ref}:{tracking}')
         current_remote=git(root,'ls-remote',remote,target).decode().split()[0];git(root,'merge-base','--is-ancestor',current_remote,head)
-        auxiliary_remote=git(root,'ls-remote',remote,ref).decode().split()[0]
-        assert auxiliary_remote==state['auxiliary_head'],'Owned auxiliary ref changed externally'
-        state['main_pack']=pack_report(root,head,[auxiliary_remote,current_remote]);save(statefile,state)
+        auxiliary_remote=git(root,'ls-remote',remote,ref).decode().split()
+        if auxiliary_remote:
+            assert auxiliary_remote[0]==state['auxiliary_head'],'Owned auxiliary ref changed externally'
+        else:assert current_remote==head,'Missing auxiliary ref before main was verified'
+        if current_remote!=head:
+            state['main_pack']=pack_report(root,head,[auxiliary_remote[0],current_remote]);save(statefile,state)
         state['status']='pushing_original_history';save(statefile,state)
-        git(root,'push',remote,f'{head}:{target}');assert git(root,'ls-remote',remote,target).decode().split()[0]==head
-        git(root,'push',remote,'--delete',name);git(root,'update-ref','-d',tracking)
+        if current_remote!=head:git(root,'push',remote,f'{head}:{target}')
+        assert git(root,'ls-remote',remote,target).decode().split()[0]==head
+        if auxiliary_remote:git(root,'push',remote,'--delete',name)
+        git(root,'update-ref','-d',tracking)
         state.update(status='complete',completed_epoch=time.time(),temporary_ref_removed=True,remote_snapshot_verified=True);save(statefile,state)
         print('Original history snapshot synchronized; temporary remote ref removed',flush=True)
     except BaseException as error:

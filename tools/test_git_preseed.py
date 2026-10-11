@@ -38,8 +38,15 @@ def main():
             # Test-only packing makes a bitmap after all auxiliary metadata is present.
             original_git(cwd,'repack','-a','-d','--write-bitmap-index')
             report=measured(cwd,tip,excluded,limit);reports.append(report);return report
-        with patch.object(transfer,'pack_report',indexed_report):
-            transfer.run(root,chunk_bytes=12000,resume=True)
+        def fail_after_delete(cwd,*args,**kwargs):
+            result=original_git(cwd,*args,**kwargs)
+            if args[0]=='push' and '--delete' in args:raise RuntimeError('Simulated interruption after owned ref cleanup')
+            return result
+        with patch.object(transfer,'pack_report',indexed_report),patch.object(transfer,'git',fail_after_delete):
+            try:transfer.run(root,chunk_bytes=12000,resume=True)
+            except RuntimeError as error:assert 'after owned ref cleanup' in str(error)
+            else:raise AssertionError('Post-cleanup failure injection missed')
+        transfer.run(root,chunk_bytes=12000,resume=True)
         assert len(reports)==1 and reports[0]['bytes']<4096
         try:measured(root,head.decode(),[],limit=4096)
         except RuntimeError as error:assert 'budget' in str(error)
