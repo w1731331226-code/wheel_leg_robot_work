@@ -1,10 +1,12 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（第338轮，2026-10-11）
+## 当前论文计划（第339轮，2026-10-11）
 
 当前冻结方案是 [fixed_force_prequalification_v1](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/proposal.json)：共享名义设计、公开481维输入与关节保护，D3差模力残差与同信息V6残差各三种子、各200k策略样本，只评价最终模型。492回合经典对照、六模型训练和984回合固定评估均已完成；第338轮[独立接收与资格报告](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/evaluation_review.json)通过记录核验，但D3的主任务成功、航向收益和旧能力保持门未通过，本候选收益扩展关闭，正式五种子未准入。
 
-下一步第339轮只分析已保存的失败轨迹；第340轮进行方向深审、确认冗余清理及整体代码框架核查。当前164个场景是已见开发案例，不能冒充新独立ID/OOD；新增保护层在本批984回合中未修正名义命令或缩减残差，任务失败原因仍需诊断。旧CPU/GPU基线及全部负结果保留。下文训练说明和早期通道审计稿均有各自历史范围。
+第339轮[已有失败轨迹审计](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/failure_audit.json)核对1476条完整任务结果和378条配对稠密轨迹。D3_33532常规53次失败中48次缺地形接触，主任务24次失败中20次缺指定障碍接触；8个主任务案例有记录姿态下的横向几何分离证据。无障碍反向0.5 m/s也在运动中偏航越5°，首次越界时轮残差与名义纠偏半差力矩约−0.06284/+0.05988 Nm；这是通道干扰的线索，未做因果干预。当前路线偏移已在公开输入内，不能仅据失败断言缺感知或扩大权限。[两案例图](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/failure_witnesses.png)
+
+下一步第340轮进行方向深审、确认冗余清理及整体代码框架核查，判断是否值得补一个限定的冻结模型机制对照；本候选收益扩展保持关闭。当前164个场景是已见开发案例，不能冒充新独立ID/OOD；新增保护层在本批984回合中未修正名义命令或缩减残差。旧CPU/GPU基线及全部负结果保留。下文训练说明和早期通道审计稿均有各自历史范围。
 
 ## 给老师展示：115～380mm手动控制
 

@@ -1,0 +1,9 @@
+PASS339 strictcross/missingevent/projected disjoint-overlap-noapproach;0physics
+Traceback (most recent call last):
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/audit_fixed_force_failures.py", line 168, in <module>
+    self_check() if '--self-check' in sys.argv else run()
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/audit_fixed_force_failures.py", line 91, in run
+    t,columns=read('complete_trace');g,_=read('joint_guard_trace');parking,_=read('parking_trace');actor,_=read('actor_trace')
+  File "/home/wmt/wheel_leg_robot_work/wheelleg_warp/audit_fixed_force_failures.py", line 89, in read
+    assert digest==row[field]['sha256']==expected[str(f.relative_to(ROOT))];raw_inputs[str(f.relative_to(ROOT))]=digest
+KeyError: 'wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/baseline/guard_B0/controlled/0/joint_guard_6301000.npz'

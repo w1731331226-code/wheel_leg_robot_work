@@ -2,6 +2,19 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
+## 当前状态：第339轮保存轨迹失败机制核对完成（2026-10-11，整体目标active）
+
+- 上轮属于实质progress（完整338receiver及候选闭合），本轮仅推进339的已有证据机制分析。audit_fixed_force_failures.py复用flags/load_rows/既有源与SHA、全部1476模型/经典结果按原门重建，无新physics/学习/权重或控制变更；D3与同seedV6及三classic各panel逐case lost/gained守恒核。
+- 分项而非只看yaw：D3_33532 regular53fail中terraincontact48、yaw6；controlled24fail中legacycontact20、yaw12；legacy15fail中legacycontact14、yaw2。失败计数重叠，不能相加；所有physical/design仍过，缺接触与完整姿态是不同任务项。其余D3 regular23/16fail中terraincontact19/14，不能只把瓶颈写成不对称接触后偏航。
+- 按确定规则读全部40controlled + 原注册顺序首个D3_33532且V6_33532/B0成功的regular纯terraincontact loss（6300002）与legacy纯yaw loss（nominal_-0.5），每case全9conditions共378dense、5,633,675已存physical substeps、1512四流SHA；没有重新评价或打开独立/封存集。baseline旧rawreview只列completeSHA，其他流用冻结result SHA绑定的各streamSHA核，首次错误索引baseline单独raw字典KeyError的attempt0日志保，修接收来源后唯一最终audit exit0。
+- controlled D3_33532实际20/40无任目标接触，V6同seed与B0各0/40；8例6301004/5/6/7和6301036/7/8/9的原几何AABB加最大胎半径球界，在记录的候选prepose区间左右轮均横向分离，支持已记录绕开目标，不是全部20病例的几何因果证明。轮包围球负gap不代表必接触，连续域/模型非重放保证不宣称。
+- 控制前漂移及可得信息例：6301000 D3_33532接近目标时y=.0736595m、yaw3.54546°、packet路线y=.0728915m、原λ=1、执行轮半差+.0387352Nm，终态全程y峰.16903m/heading4.17358°但contact缺；V6同seed成功、y峰.030617m。名义3classic均此case成功。当前H1公开输入已含route-y；不能仅据轨迹断言信息缺失或扩大权限，路线估计可得不等policy实际使用。
+- 平地nominal_-0.5 D3_33532在6.6465s运动中首次yaw−5.000161°，y=.147370m、packet y=.147061m、原λ1；名义轮半差+.05987553Nm、执行残差半差−.06284185Nm相互抵消，整个有效运动样本异号约93.52%。无障碍、无新guard干预、全回合原λ不降，支持“残差可能干扰基纠偏”的限定线索，不能只归因触阶、停车撤回、权限清零；腿通道同时变化，尚非轮通道独立因果。
+- 新guard在这378trace亦未修Nom/缩残差；原λ各case时段仍可能限制（D3_33532 controlled最大moving limited比例约1.143%，不能说全批原投影不作用）。source检查fixedforce→Curriculum/Route/History/ForceActions/VecNormalize无PBRS或reward重写，原dense reward速度/姿态/执行残差/平滑及fulltask terminal±10，无dense路线y或预瞄项；并非没有接触失败反馈，也未证明奖励是唯一根因或200k不足。
+- failure_audit.json保存所有overlap counts/pairs/42选择/378事件与命令/源哈希/局限；failure_witnesses PNG/SVG标准绘图且视检通过，固定controlled6301000与flatnominal_-0.5五条condition，不选择seed或checkpoint晋升，非新科学效果测试。strict5° first-cross、missing-event及几何分离/重叠/无approach自检与编译通过。
+- 下一340同时履行五轮方向深审+确认冗余删除与十轮整体代码框架深查：审完整采样/学习/观测/动作/物理/任务评分/guard/录制/准入/证据复现/存储链，检查方法值得继续与真正缺口。只考虑有明确区分预测的有限冻结通道机制对照，并对照历史禁轮及失败分支避免重复；当前fixedbudget候选仍closed，formal5/freshID-OOD/方法优势及完整六论文出口缺口不缩小，不能自动开新PPO或改门。
+- 本轮仅新增离线auditor/有限分析和图证，更新Warp README当前入口及记忆，中文提交；没有视频或baseline替换。收尾恢复同步守护并核remote，本轮开始仍未齐；不声称完整同步。
+
 ## 当前状态：第338轮Warp固定力候选完整接收，收益扩展关闭（2026-10-11，整体目标active）
 
 - 按Warp冻结fixed_force_prequalification_v1推进，复用984已完成模型评价，无新physics/学习/选checkpoint。review_fixed_force_evaluation.py通过门边界自检、编译及唯一最终完整离线接收：60jobs/984episodes、14,548,000firstepisode substeps、364,175actor rows、6888原始文件SHA。冻结源码/六final200k模型RMS/训练review与admission、492经典原始SHA及逐case排序核；全部984physical/design过。
