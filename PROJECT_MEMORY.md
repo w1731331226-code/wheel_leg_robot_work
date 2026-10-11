@@ -2,6 +2,14 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
+## 当前状态：第341轮唯一13回合轮请求诊断完成（2026-10-11，整体目标active）
+
+- 中断恢复先核无进程/无started，source/model/runtime验证通过后提交准入26ee1a29，首次启动唯一pid29263/unified13310。现正常exit0，13/13完整、生产者physical/design13/13，0重启/0学习；actual graph240720、firstepisode240386、FD70、wall212.7392s（含构建/记录，不训练加速）。完整265MiB原始、unmasked6/submitted6、初态/终态/guard前缀和全部成功失败保留。
+- B0成功、yaw峰4.25371e-5°。D3_33531 original/wheeloff 1.559064/.455029°均成功；V6_33531 1.140120/.560763°均成功；D3_33532 5.444460°失败→.738245°成功；V6_33532 .774302/.481459°均成功；D3_33533 1.074876/.782321°均成功；V6_33533 .580965/.516514°均成功。六对峰值均降，原反例标签复现；完整原门逐flags及独立dense/actor/RMS/请求复核仍需下一轮，不从一个seen平地case推广到地形、新训练或模型晋升。
+- 原评估器继续负责所有完整轨迹/接触与不变权重RMS检查；新runner在每20ms后从各0.5ms实际pre/post记录重算A/B链、八关节、1.4设计和真实电机包络，检查初态q/v/param/reference/controller/guard/history/geom逐值同、掩码仅4:6且腿请求等于自身原预测。callback本批未失败；其每20ms检测语义不当连续时间安全保证。全程持有project-write.lock，有限预算均守，source_admission绑定86运行源、六实模型及完整训练许可、现运行版本/driver/installedsource；没有改原控制或冻结科学门。
+- completion/progress/source/model hashes、13顺序、计数和原task谓词收尾核过，生产者verified不代替独立机制验收。因队列已在341结束，第342轮提前原343独立接收项；不空等、不重复run。345方向/冗余、350整体框架要求保持。旧fixedforce资格失败与formal5关闭、完整论文六出口未完成，goal active。
+- 本轮新增完整诊断数据无视频，README与记忆更新，中文提交，守护恢复后核远端；当前remote仍未齐，不声称全部备份完成。
+
 ## 第341轮中断恢复：13回合入口已准入，尚未启动（2026-10-11）
 
 - 中断后核实无run_wheel_interference进程，目录仅proposal/source_admission/admission.log，无started/completion/failure；未消耗机器人实验。新增入口复用PolicyActor与现有完整评估器，记录原始/掩码请求，逐20ms检查完整实际物理/设计记录，保存初态/终态/guard前缀，持有project-write.lock，强制13回合/416000图步/150FD/26000单回合上限。

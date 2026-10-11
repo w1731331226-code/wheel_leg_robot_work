@@ -1,6 +1,6 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（第340轮，2026-10-11）
+## 当前论文计划（第341轮，2026-10-11）
 
 当前冻结方案是 [fixed_force_prequalification_v1](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/proposal.json)：共享名义设计、公开481维输入与关节保护，D3差模力残差与同信息V6残差各三种子、各200k策略样本，只评价最终模型。492回合经典对照、六模型训练和984回合固定评估均已完成；第338轮[独立接收与资格报告](results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/evaluation_review.json)通过记录核验，但D3的主任务成功、航向收益和旧能力保持门未通过，本候选收益扩展关闭，正式五种子未准入。
 
@@ -8,7 +8,7 @@
 
 第340轮已完成[五轮方向深审](results/paper_recovery_20261004/joint_reference_candidate_v1/round340_direction_review.json)、[十轮整体框架核查](results/paper_recovery_20261004/joint_reference_candidate_v1/round340_framework_review.json)及确认冗余清理。当前固定预算候选不值得继续长训；运行链与工程守护可复用，方法优势、独立泛化、稳定性证明和新稿仍缺。V6辅助报告与自身比较的逻辑已修正，D3资格项不变；338原报告和对应源码快照保留。80份冻结运行源未改。
 
-下一步第341轮实现并准入[13回合冻结轮请求诊断](results/paper_recovery_20261004/joint_reference_candidate_v1/frozen_wheel_interference_diagnostic_v1/proposal.json)：全部六个末模型在同一已见平地反例上比较原输出/关闭轮请求，加一个新B0，训练0步。用于区分轮请求干扰与腿通道耦合，不重新选模型、调门或晋升已失败候选；源/模型/RMS/运行版本/记录和计数契约通过前不运行。第345轮继续方向深审和清理，第350轮再次整体框架核查。当前164个场景是已见开发案例，不能冒充新独立ID/OOD；旧CPU/GPU基线及全部负结果保留。下文训练说明和早期通道审计稿均有各自历史范围。
+第341轮已准入并完成[13回合冻结轮请求诊断](results/paper_recovery_20261004/joint_reference_candidate_v1/frozen_wheel_interference_diagnostic_v1/completion.json)：全部六个末模型在同一已见平地反例上比较原输出/关闭轮请求，加新B0，训练0步，实际240720图物理步/70次构造FD。生产者检查13例物理与设计全过；D3_33532原输出偏航峰5.44446°且任务失败，关闭轮请求后0.73825°并成功，六对偏航峰均下降。下一第342轮直接独立接收原始轨迹/未掩码请求/模型重放及复现门（原343项提前），无需等待或重启已完成队列；这不是新方法优势或训练消融，旧候选收益扩展仍关闭。第345轮继续方向深审和清理，第350轮再次整体框架核查。当前案例为已见开发数据；旧CPU/GPU基线及全部负结果保留。下文训练说明和早期通道审计稿均有各自历史范围。
 
 ## 给老师展示：115～380mm手动控制
 
