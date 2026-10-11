@@ -10,6 +10,7 @@
 - 同步根因修复：连接辅助提交小例的对象数不足以证明减包，实际字节测试失败后已撤掉，真实仓库未实施。Git bitmap小例能排除远端已有blob；git_preseed新增64MiB实际pack流式预算/超时拒绝，补“辅助ref已删后中断”显式续接。小仓库分档/字节保留/原HEAD refs与工作区/大包拒绝/续接及钩子测试通过。
 - 有界真实准备a68e6848后pid156832/unified59275现exit0：12679松散对象、raw21013572790B，80批每批<=256MiB，逐pack verify后仅prune-packed重复副本，再生成/验证MIDX bitmap。前后connectivity、HEAD/refs/跟踪工作区一致，磁盘保持约11GiB，无全库大repack/历史重写。实际旧snapshot最后包926553B/698对象（原普通遍历含14.58GBblob），SHA与预算留round360_sync_repair。
 - 显式续接pid158728/unified8043现exit0，旧229批保留复用，remote实查已等02e08d8f8b025a7f2e4be98c82290776dc918e95，临时辅助ref清除，state complete。这仅旧快照，后续0beacdc3大归档和最新HEAD未齐；本轮收尾提交后需启动新有界传输并恢复守护，不声称全同步。下一轮优先完成剩余归档，研究不再延长当前QP资格链。
+- 收尾31b901cf提交后，旧complete状态原样保存为.git/sync-transfer-completed-02e08d8f8b02.json；新传输已首次启动pid159670/unified28375并核live，固定snapshot31b901cf、原remote02e08d8f，登记226批/raw14344517661B，开始uploading（精确进度以state为准）。不是重传旧229批；最终同样须实际pack预算与remote验收。守护恢复后避开active传输，本条后续小提交由其补齐。
 - round360_direction_review/framework_review/cleanup/sync_repair及工具、README/记忆保存，0physics/model forward/learning，无视频。旧失败门保持，研究目标未完成。
 
 ## 第360轮同步修复准入阶段记录（2026-10-12）
