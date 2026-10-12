@@ -1,0 +1,74 @@
+{
+  "round": 377,
+  "verified": true,
+  "source_files": 114,
+  "source_and_manifest_CURRENT_HEAD_and_started_blobs_equal": true,
+  "all163_runtime_artifacts_unchanged": true,
+  "installed_runtime_source_files_checked": 7,
+  "constructors": 6,
+  "arrays_each_constructor": 413,
+  "scalars_each_constructor": 108,
+  "stage_constructors_paired": true,
+  "cache_arrays_each": 113,
+  "cache_matches_constructor": true,
+  "capture_slots_checked": 240,
+  "Nom_zero_candidate_effective_and_guard_same_control_owners_verified": true,
+  "Nom_and_candidate_effective_projection_mode": 1,
+  "bank_snapshots_each": 21,
+  "model_world_arrays_each_snapshot": 106,
+  "meaninertia_also_checked": true,
+  "real_bank_transition_packets_each": 19,
+  "all_model_world_rows_match_stage_cache": true,
+  "episodes_metadata_each": 26,
+  "active_monitor_count_equals_valid_guard": true,
+  "cumulative_monitor_monotonicity_and_reset_sentinels_verified": true,
+  "guard_lambda_product_state17_counter_exact": true,
+  "limited_state16_and_Nom_base_state18_counters_exact": true,
+  "physics_valid_steps_including_zero": {
+    "CartLive3": 479851,
+    "CartReset3": 479856
+  },
+  "visited_delay_steps": [
+    0,
+    1,
+    2,
+    6,
+    8,
+    12,
+    19,
+    20
+  ],
+  "max_visited_delay_ms": 10,
+  "monitors": {
+    "CartLive3": {
+      "min_actual_A_leg_m": 0.11483524388921729,
+      "min_actual_B_leg_m": 0.11488194460032244,
+      "min_eight_joint_margin_rad": 0.11594510078430176,
+      "min_active1_4_margin_rad": 0.01594510078430167,
+      "max_actual_torque_excess_Nm": 0,
+      "max_command_torque_excess_Nm": 0,
+      "max_loop_diagnostic_m": 8.631962119649713e-05
+    },
+    "CartReset3": {
+      "min_actual_A_leg_m": 0.11483464934716911,
+      "min_actual_B_leg_m": 0.1148813802754824,
+      "min_eight_joint_margin_rad": 0.11595618724822998,
+      "min_active1_4_margin_rad": 0.01595618724822989,
+      "max_actual_torque_excess_Nm": 0,
+      "max_command_torque_excess_Nm": 0,
+      "max_loop_diagnostic_m": 8.554833247815655e-05
+    }
+  },
+  "loop_threshold_added": false,
+  "guard_infeasible_prediction_rows": 0,
+  "Nom_base_flags": {
+    "CartLive3": 1377,
+    "CartReset3": 1351
+  },
+  "Nom_projection_errors_each": 0,
+  "scope": "Read-only original cumulative physical/design monitor, runtime source, model and capture topology receipt. No new physics/NN.",
+  "limitations": [
+    "Full passive q,actual actuator_force,contact/body/solver/sensor streams are not archived per physical substep;no complete physical trajectory reconstruction.",
+    "No dynamic stability/true contact-wrench/100world evidence."
+  ]
+}

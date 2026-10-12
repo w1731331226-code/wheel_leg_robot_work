@@ -1,14 +1,18 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（376真实PPO无更新收集完成，待独立完整接收，2026-10-13）
+## 当前论文计划（377已存10world无更新工程接口接收，强经典/主门待定义，2026-10-13）
 
 原目标仍是：在原完整不对称接触任务上，得到一个保持强经典能力并有明确增量的可执行PPO方法。当前没有通过收益资格的新方法，正式五种子、独立ID/OOD、统计与成本分析、新方法稿件均未完成；CPU历史基线继续保留，不将物理吞吐当PPO端到端加速。
 
+第377轮[范围接收](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/interface_acceptance.json)通过：959707有效子步的CPU mapping/full6 speed RPM envelope、真实Nom路由和历史flag1处理、command/history/actual terminal481、同期private/bank/RMS/Gaussian/GAE均核；114源/163原工件不变，0新物理/NN/update。仅接收已存10world和最高10ms访问delay的无更新采集接口，不晋升100world/20ms/实际timeout/optimizer或方法收益；原physical/design累计监测被接收，未重建全部物理轨迹/接触/稳定。
+
+[377研究出口](results/paper_recovery_20261004/joint_reference_candidate_v1/round377_research_exit.json)要求378实做同信息B1 wheel+公开R0腿反馈的Cart力对，先验证单位/符号/Box及gamma{0,.5,1,2}归一化范围，再冻结候选、164开发baseline测量与选择规则。旧经典最强controlled J=.8248525202deg仅历史参照，新chart不能继承；保15%且.05deg改善、≥34成功及完整保持门，不能在prior52/52上设置不可达成功率提升。新测量/学习预算未准入，正式5seed/独立ID-OOD/统计成本/方法稿仍缺。380方向/清理/框架保持。
+
 第376轮[新匹配PPO工程协议](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/proposal.json)及[114源准入](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/source_admission.json)提交后已唯一执行。[实际回执](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/execution_receipt.json)：两Cart各10world/coldzero后24×50真实SB3 rollout、各24完整GAE buffers，共24000policy rows＋480value-only rows，0优化更新，weights/optimizer不变门通过。总960800图world步、959707有效计分子步、35FD、130.60s含构造及录证，secondary空。各臂25 partial、stage2/3各10、positive delay1929，26回合均报告原物理/设计/任务通过；仅未更新Gaussian prior的seen描述，不是PPO收益或训练加速。
 
-新[worker](run_cartesian_ppo_interface.py)已实际保存actual/norm/expected终态、九post+previous/bank四项/wheelv2+Nom flags、原指针路由、Gaussian/clip3/paired6/value/logprob/RMS及buffers。377须独立接收新全部数值后再决定学习前强同信息经典/同chart反馈和可达主门/保持门；不重复此queue。完整接口及100world/科学训练/formal5仍未晋升，380方向/清理/框架保持。
+新[worker](run_cartesian_ppo_interface.py)已实际保存actual/norm/expected终态、九post+previous/bank四项/wheelv2+Nom flags、原指针路由、Gaussian/clip3/paired6/value/logprob/RMS及buffers。377已完成范围内独立数值接收，378定义学习前强同信息经典/同chart反馈和可达主门/保持门；不重复此queue。无限范围接口及100world/科学训练/formal5仍未晋升，380方向/清理/框架保持。
 
-[有限PPO与录证接收](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/readonly_execution_review.json)已独核初始化/终态权重、RMS/RNG、48buffer与包记录，GAE/returns独立重建误差0；实际终态/post/bank分名和同期字段完整。没有actual timeout样本，不能称bootstrap支路已实测；完整命令/映射/wheel limits/路由/物理接收仍待377。
+[有限PPO与录证接收](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/readonly_execution_review.json)已独核初始化/终态权重、RMS/RNG、48buffer与包记录，GAE/returns独立重建误差0；实际终态/post/bank分名和同期字段完整。没有actual timeout样本，不能称bootstrap支路已实测；377已接收这些已存范围，详见上方范围接收及限制。
 
 第373轮[独立v2合同](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v2/proposal.json)已注册，两Cart各10world、1coldzero+1200固定正弦包，总960800图步/FD80，0学习。[同输入语义接受](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v2/semantic_acceptance.json)已完成：20个已存完整输入各运行B0/CartLive/CartReset真实phase/parking/Nom/candidate/guard组合，60 CUDA控制行的16公共状态与最终命令严格同，0solver/FD。仅覆盖残差/latent/shadow全零的冷中性输入，不包含旧latent撤回或长期物理路径等价；原失败封存，不按浮点差设容差。
 

@@ -2,7 +2,19 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：第376轮唯一匹配PPO无更新收集完成，待完整独立接口数值接收（2026-10-13，整体目标active）
+## 当前状态：第377轮接收已存10world无更新PPO工程接口，下一步定义强经典与可达主门（2026-10-13，整体目标active）
+
+- 上轮为progress（376唯一匹配PPO实际采样及24批证据归档）。377新增纯NumPy独立receiver复用冻结375算术，无producer Replay/控制/物理/NN执行；114源/currentHEAD/启动dd7c26ea及manifest、7安装源、163原始工件/旧failure SHA全同，0新物理/FD/网络forward/优化更新，旧queue不重跑。
+- 两臂coldzero+各1200包、959707有效子步完整命令82环/prefix/stamp/total/旧delay窗口与实际returned481、实际done infos481及CPU expected/norm分名严格核过。每包九种post+previous非done保护/规定done清理、bank四项全world按stage cache、public reset/旧episode元数据、RMS公式/returns/规范化和reward float32、原Gaussian/logprob/clip3/paired6、48buffers/GAE全部独立重建；积分max1.7763568394e-15（原1e-10内），logprob CPU/CUDA float32差4.768371582e-7在预定32eps运算预算内；每臂4行真实Gaussian裁剪，未把unclipped样本/logprob冒作交付。
+- 新full6 speed由guard4速度+同期Nom2wheel独立核RPM bound，max误差0；CPU mapping maxcanonical6.83e-16、motor3.33e-16Nm、geometry2.78e-16m，沿363/366原门。Nom13实际flag1曝光1377/1351，非零res606/610，其中λ>原1e-7且实际accepted544/556，mode1未被历史flag错误拒绝，flag1 projection误差0；diag14 projection-error全0。flag生成规则本身仍为旧source/route绑定，未独立反算未clipped Nom torque。
+- 6constructor每413array/108scalar两臂逐stage同，113cache数组对constructor、每臂21全world模型+meaninertia快照/19实际换bank核同；240capture slot逐元组核Nom zero/候选effective/guard及projection_mode1原关系。原monitors累计min/max/重置sentinel、有效count、原26episode metadata与state17λ乘积/state16limited/state18base计数核过，torque excess0，delay实际[0,1,2,6,8,12,19,20]子步即最大10ms；loop只记录无新阈值。未保存完整passive q/actuator force/contact/body/solver/sensor逐步流，不扩称完整物理轨迹或稳定/真实接触wrench。
+- interface_acceptance仅晋升当前已存10world、访问delay和无更新PPO收集的scope，不晋升无限full接口、100world/20ms/optimizer update或actual timeout bootstrap（实际0样本）。六研究出口与强经典/科学收益/formal5仍缺，52/52依旧未优化prior seen描述，goal active。旧373同输入cold语义封存复用，不重验或倒推旧368/371失败通过。
+- checker首版多要求done parking_effective清零，按冻结light parking确认done只清seen，effective旧值保持；已纠正checker并加错误清理反例，原控制/工件不改。只读复核补manifest/proposal/started交叉SHA+current/start Git blobs/安装源/协议常数、fresh ret-RMS四断言；最终全读取exit0且坏history/Gauss/GAE/parking/wheel速度/bounds/flag/geometry反例通过。
+- round377_research_exit要求378先实做同信息B1轮差+R0径向反馈向相反Cartesian力对最小二乘投影：d=clip(.30roll+.12gyro_x,±.035m)，DeltaF=gamma*3.4335*d/.035N，f=DeltaF*(eL+eR)/2；e仅延迟公开关节。gamma预定{0,.5,1,2}，先解析单位/左右符号/对称az=-gamma*d/.035及非对称/共同Box/Hsum限制，aw复用B1，不把旧长度动作改名。撤回未经尺度匹配的c=.5/1×3500N/m（峰61.25/122.5N致常饱和），选择规则在新测量前冻结，不据376结果调gamma。
+- 旧强经典controlled各32/40、最强J=.8248525202deg、regular最佳96/96、legacy28/全部物理设计保留，旧D3分支仍闭；B1仅aw不能唯一检验腿chart，新chart强经典需新独立有界164开发baseline，当前未注册预算/runtime。保原主指标J<=min(.85B,B-.05deg)、controlled≥34及不丢任经典成功/完整保持；B取新旧最强合格经典。B≤.05deg/无合格保持基线/任务指标不对应即在学习前停该研究门，不能换指标降阈值。最终ID/OOD不读不调。
+- 接收/历史map/PPO logs与源、模型/路由/monitors、研究出口/README/记忆保存并中文提交，收尾恢复守护且实核remote；380方向/清理/整体框架保持，无视频。
+
+## 历史状态：第376轮唯一匹配PPO无更新收集完成，待完整独立接口数值接收（2026-10-13，整体目标active）
 
 - dd7c26ea源准入提交及HEAD114源+manifest核过后唯一pid66167/unified55273已exit0。CartLive3/Reset3各10world一个coldzero+24×50真实SB3 collect_rollouts，各12000采样、Curriculum12010、24完整GAE buffer；policy2400calls/24000rows，value-only48calls/480rows，optimizer更新0且weights/optimizer/_n_updates原值门通过，secondary_errors=[]，无retry。
 - 总960800图world步、35FD、130.597051526s含模型构造/采样/全部录证；有效guard物理计分含zero为Live479851+Reset479856=959707，不能与图步或PPO端到端训练加速混称。各臂25 partial、stage2/3各10自然切换、1929正delay行、26已完成回合原physical/design/task报告全通过；均只是既有seen bank未更新Gaussian prior描述，不证明优化策略、方法收益或强经典增量。

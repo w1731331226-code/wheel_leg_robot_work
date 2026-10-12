@@ -1,0 +1,80 @@
+{
+  "round": 377,
+  "status": "scoped_engineering_accepted_research_comparison_definition_required",
+  "interface_acceptance_sha256": "1331a91b23842d7a2a2331e60887f9139a0ca32eb8804c92e00e8558a54ca8f9",
+  "decision": "378先实现同信息且真正进入腿chart的无学习反馈与解析范围/单位/符号验证，冻结候选和选择规则；随后新独立有界开发baseline测量，数值主门依据新旧最强经典绑定后才可学习。现在不准入PPO优化或正式5seed。",
+  "old_baseline": {
+    "reference_only": true,
+    "controlled_classic_success_each": "32/40",
+    "best_controlled_J_deg": 0.8248525202,
+    "best_regular_success": "96/96",
+    "legacy_retention_cases": 28,
+    "old_physical_design_qualified": true,
+    "old_D3_qualification_branch_still_closed": true
+  },
+  "why_new_baseline": [
+    "376 prior52/52不是完整164开发suite，也无强经典对照。",
+    "现B1只输出aw轮差，ax/az零，单独不能检验腿几何更新。",
+    "新增Cart chart/滤波/权限改变后不可继承旧492经典的最强J资格；旧结果继续作能力底线，不复活失败D3分支。"
+  ],
+  "next_implementation": {
+    "method": "B1 wheel feedback + opposite Cartesian force pair from public R0 radial feedback",
+    "public_inputs_only": "Same delayed raw481 yaw/roll/gyro_x/joint encoders and causal route history; no current undelayed geometry/true plant parameters/contact/case identity at highlevel.",
+    "d_formula": "d=clip(.30*roll+.12*gyro_x,-.035m,.035m)",
+    "dmax_m": 0.035,
+    "F0_N": 3.4335,
+    "force_scale": "DeltaF=gamma*F0*d/dmax",
+    "gain_candidates": [
+      0,
+      0.5,
+      1,
+      2
+    ],
+    "direction": "e_L,e_R unit leg endpoint vectors from the same delayed public encoders; f=DeltaF*(e_L+e_R)/2 is least-squares projection of opposite radial requests onto (f,-f).",
+    "latent": "(ax,az)=f/F0 with common shrink into the latent Box; aw uses original public B1. Keep same50Hz,slew,parking,Hsum,guard and chart-specific lowlevel geometry.",
+    "unit_and_sign_checks": [
+      "Derive original radial-force/positive-d/left-right signs from fixed VMC/reference source;prove command sign and virtual work before code admission.",
+      "Symmetric downward vertical legs: ax=0,az=-gamma*d/dmax.",
+      "gamma<=1 input inBox;gamma2 symmetric first saturates atabs(d)>.0175m;asymmetric commonshrink recorded.",
+      "Reject direct renaming of old leg length actions as Fx/Fz."
+    ],
+    "stiffness_N_per_m": [
+      0,
+      49.05,
+      98.1,
+      196.2
+    ],
+    "rejected_unscaled_gain": "Do not usec=.5/1 times3500N/m with .035m offset: peak61.25/122.5N vsF0=3.4335 makes pervasive saturation;gain normalized analytically before any outcome tuning."
+  },
+  "selection_before_measurement": [
+    "Keep oldB0,B1-route original parking,B1-withdraw and full CPU ability references. Newsamechart feedback is an additional strong comparison.",
+    "Freeze candidate list andwhole existing development cases,original monitor/success requirements andfixed gain selection before anynewbaseline.",
+    "Physical/design and full capability retention first;then controlled success/J,regular retention,then fixed candidate index for ties. No per-case controller picking or PPO-outcome tuning."
+  ],
+  "numerical_gate_before_learning": {
+    "original_controlled_metric_retained": true,
+    "controlled_cases": 40,
+    "regular_cases": 96,
+    "legacy_cases": 28,
+    "controlled_success_min": 34,
+    "requirement": "J<=min(.85*B,B-.05deg),whereB is the measured best eligible new/old same-information classic;retain every original classic success and full capability gates.",
+    "unreachable_exit": "IfB<=.05deg or no physical/retention-qualified baseline or original task/metric cannot be matched,stop this scientific gate before learning;never lower threshold/change metric/subgroup to green."
+  },
+  "prospective_baseline_runtime_admitted": false,
+  "prospective_baseline_budget_registered": false,
+  "new_physics_steps": 0,
+  "new_FD": 0,
+  "new_model_forward_rows": 0,
+  "new_optimizer_updates": 0,
+  "formal5_admitted": false,
+  "goal_complete": false,
+  "next_direction_cleanup_and_framework_round": 380,
+  "input_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round375_direction_review.json": "7f3260ef5f44f4ef229d82535093a907d2a0056871a80b6a963d7eef753e30c2",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/interface_acceptance.json": "1331a91b23842d7a2a2331e60887f9139a0ca32eb8804c92e00e8558a54ca8f9",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/baseline_gate.json": "efb5c1becd646dfc485e3edc256eeaf4005de7bc8141aae9b8647c16729b2144",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/evaluation_review.json": "41eed8d3f9472403e40b4447165ad9774ba885d0231cb3f977d0c0b018342244",
+    "wheelleg_warp/probe_route_feedback.py": "52ba3b70531bc5b91fdefcf5e9c8c8e09d044611333703d18f2c8deb9689edf1",
+    "wheelleg_warp/joint_reference_classical.py": "342a033b22f2dbb619729efda9021433e76f18a1b8fac283e5fee04e6914439e"
+  }
+}

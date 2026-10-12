@@ -1,0 +1,46 @@
+{
+  "round": 377,
+  "verified": true,
+  "reports": {
+    "CartLive3": {
+      "packets": 1200,
+      "rollout_buffers": 24,
+      "done_rows": 26,
+      "zero_valid_steps": 400,
+      "rollout_valid_steps": 479451,
+      "max_command_integral_error": 1.7763568394002505e-15,
+      "max_Gaussian_logprob_error": 4.76837158203125e-07,
+      "clipped_Gaussian_rows": 4,
+      "actual_terminal_and_all_returned481_verified": true,
+      "same_packet_post_nine_and_previous_and_bank_four_verified": true,
+      "RMS_normalization_reward_and_returns_reconstructed": true,
+      "GAE_returns_and_buffer_packet_identity_verified": true,
+      "actual_timeout_bootstrap_rows": 0
+    },
+    "CartReset3": {
+      "packets": 1200,
+      "rollout_buffers": 24,
+      "done_rows": 26,
+      "zero_valid_steps": 400,
+      "rollout_valid_steps": 479456,
+      "max_command_integral_error": 1.7763568394002505e-15,
+      "max_Gaussian_logprob_error": 4.76837158203125e-07,
+      "clipped_Gaussian_rows": 4,
+      "actual_terminal_and_all_returned481_verified": true,
+      "same_packet_post_nine_and_previous_and_bank_four_verified": true,
+      "RMS_normalization_reward_and_returns_reconstructed": true,
+      "GAE_returns_and_buffer_packet_identity_verified": true,
+      "actual_timeout_bootstrap_rows": 0
+    }
+  },
+  "source_admission_sha256": "92f51b1da34c67598010f1f26a9c6414509b3b51155e3b99730894342bfda6ca",
+  "execution_receipt_sha256": "c9303358a6477061bc87fd4e8bcc920fa16297c12b3c75ce6dba4ac4f7c8d76f",
+  "sources_unchanged": true,
+  "original_artifacts_unchanged": true,
+  "scope": "Actual terminal/command/history/post/bank/RMS/Gaussian/GAE receipt;wheel/map/routing separately reviewed.",
+  "new_physics_steps": 0,
+  "new_FD_calls": 0,
+  "new_model_forward_rows": 0,
+  "new_optimizer_updates": 0,
+  "actual_timeout_bootstrap_exercised": false
+}

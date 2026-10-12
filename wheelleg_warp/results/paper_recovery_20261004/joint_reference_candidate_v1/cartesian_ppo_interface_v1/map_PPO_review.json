@@ -1,0 +1,77 @@
+{
+  "verified": true,
+  "reports": {
+    "CartLive3": {
+      "prefix_substeps": 400,
+      "rollout_substeps": 479451,
+      "withdrawn_substeps": 113657,
+      "reset_rows": 26,
+      "nominal_flags": {
+        "flag1": 1377,
+        "flag1_nonzero": 606,
+        "flag1_feasible_accepted": 544,
+        "projection_errors": 0
+      },
+      "max_abs_errors": {
+        "geometry": 2.7755575615628914e-16,
+        "canonical": 6.83481049534862e-16,
+        "alpha": 0.0,
+        "motor": 3.3306690738754696e-16,
+        "hip_limits": 0.0,
+        "projection": 0.0,
+        "accepted_residual": 0.0,
+        "six_speed_limits": 0.0,
+        "flag1_projection": 0.0
+      }
+    },
+    "CartReset3": {
+      "prefix_substeps": 400,
+      "rollout_substeps": 479456,
+      "withdrawn_substeps": 113659,
+      "reset_rows": 26,
+      "nominal_flags": {
+        "flag1": 1351,
+        "flag1_nonzero": 610,
+        "flag1_feasible_accepted": 556,
+        "projection_errors": 0
+      },
+      "max_abs_errors": {
+        "geometry": 1.1102230246251565e-16,
+        "canonical": 3.3306690738754696e-16,
+        "alpha": 0.0,
+        "motor": 3.3306690738754696e-16,
+        "hip_limits": 0.0,
+        "projection": 0.0,
+        "accepted_residual": 0.0,
+        "six_speed_limits": 0.0,
+        "flag1_projection": 0.0
+      }
+    }
+  },
+  "tolerances": {
+    "geometry": 1e-07,
+    "canonical": 1e-06,
+    "motor": 1e-06,
+    "alpha": 1e-07,
+    "hip_limits": 1e-12,
+    "projection": 1e-07,
+    "accepted_residual": 1e-12,
+    "six_speed_limits": 1e-12
+  },
+  "source_manifest_sha256": "92f51b1da34c67598010f1f26a9c6414509b3b51155e3b99730894342bfda6ca",
+  "frozen_mapping_sha256": "573460d2ef534f798d90f0722f75589730dfba27f4da292c8ea04f1664e7dff3",
+  "source_files_checked": 114,
+  "metadata_scope": "Only sealed PPO-v1 registered33531 training records; no heldout/future final data.",
+  "scope": "Cold-zero and all recorded Cart mappings, complete six-speed limits, actual Nom flags, parking/latent and Cart3 actual post/reset/final.",
+  "nominal_flag_condition": "diag13=1 is historical invalid-base exposure, not a residual rejection gate; acceptedmode1 lambda is reconstructed with all six actual speed bounds.",
+  "flag1_acceptance_count_condition": "diag13==1, nonzero motor residual and reconstructed lambda>the frozen1e-7 projection tolerance.",
+  "limits": [
+    "Nom flag producer correctness is source/route-bound; unclipped Nom base torque is not recorded per substep for recomputing diag13.",
+    "Command/history/post-bank/RMS/PPO/GAE qualification belongs to the independent aggregate receiver, not this helper."
+  ],
+  "new_physics_steps": 0,
+  "new_FD": 0,
+  "new_model_forward_rows": 0,
+  "new_learning_samples": 0,
+  "full_interface_qualified": false
+}

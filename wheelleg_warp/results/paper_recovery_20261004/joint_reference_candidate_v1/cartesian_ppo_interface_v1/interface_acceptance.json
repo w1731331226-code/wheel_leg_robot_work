@@ -1,0 +1,67 @@
+{
+  "round": 377,
+  "status": "accepted_scoped_10world_no_update_PPO_engineering_interface",
+  "previous_turn": "progress:376 unique real stochastic PPO collection and all original evidence completed",
+  "source_admission_sha256": "92f51b1da34c67598010f1f26a9c6414509b3b51155e3b99730894342bfda6ca",
+  "runtime_completion_sha256": "5800d2c4d5f7735232d7978f913bac2bcc638fd7781edcd3ecd9d50d351021ba",
+  "execution_receipt_sha256": "c9303358a6477061bc87fd4e8bcc920fa16297c12b3c75ce6dba4ac4f7c8d76f",
+  "input_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/execution_receipt.json": "c9303358a6477061bc87fd4e8bcc920fa16297c12b3c75ce6dba4ac4f7c8d76f",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/source_admission.json": "92f51b1da34c67598010f1f26a9c6414509b3b51155e3b99730894342bfda6ca",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/proposal.json": "cea5b86a86b9c978ac6f83164675ae886f6165add1e6aa97e0d2fa259d113a2f",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/readonly_execution_review.json": "7da75ed2e505ef74dfce6dbe8a549651cd2c7e9880012317ffba1a23cf140a0c",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/history_PPO_review.json": "d700d98df964c9f9908603ed82fe1fc2f7097511d0436971087f683e2233f963",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/history_PPO_review.log": "3c3dd1b24539bb304777ac1240c037759a2fa0189a606399d3f3253d0cc1508d",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/map_PPO_review.json": "c357c7804be376c7fdfd2729d217d2b0c8ec5675e9e6bde0a8a495c624e62f4e",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/map_PPO_review.log": "3283c20009455ffabea8350da9ee5a6957f7ed74f35ad07d13d7b541cc7f26d1",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/model_routing_monitor_review.json": "7bd7cf7161266c105cb8e3e629756123a8c38aad109a36edd051a37dac358210"
+  },
+  "reviewer_source_sha256": {
+    "wheelleg_warp/review_cartesian_ppo_interface.py": "09aa69399d2509637bc441827291404af8a51b7a1bf60cf4c3673cad0f7ae9a0",
+    "wheelleg_warp/review_cartesian_ppo_map.py": "d31f1f4479924d8573601ce2bfa68738b786e4e8f0961b1ac9e11f8a0dc8ff9a"
+  },
+  "scope": {
+    "worlds": 10,
+    "arms": [
+      "CartLive3",
+      "CartReset3"
+    ],
+    "bank_seed": 33531,
+    "training_bank_only": true,
+    "cold_semantic_373_reused_sealed": true,
+    "natural_partial_reset_and_stage2_stage3": true,
+    "max_visited_delay_ms": 10,
+    "true_PPO_stochastic_collection": true,
+    "observed_Gaussian_clip_rows_each": 4,
+    "actual_raw_normalized_expected_terminal481": true,
+    "command_history_and_same_packet_private_bank_values": true,
+    "six_speed_RPM_bounds_and_CPU_Cart_mapping": true,
+    "actual_Nom_pointer_routing_and_flag1_accepted_mode1": true,
+    "RMS_GAE_and_optimizer_weights_unchanged": true,
+    "original_source_bound_physical_and_design_monitors": true
+  },
+  "valid_guard_substeps": 959707,
+  "graph_world_steps": 960800,
+  "optimizer_updates": 0,
+  "actual_timeout_bootstrap_rows": 0,
+  "scoped_interface_qualified": true,
+  "full_unrestricted_interface_qualified": false,
+  "scientific_training_admitted": false,
+  "formal5_admitted": false,
+  "method_benefit_accepted": false,
+  "limits": [
+    "Actual timeout bootstrap branch has no observed samples.",
+    "No optimizer update or100world lifecycle qualified.",
+    "Nom flag generation rule is source/route-bound,not independently recomputed from unclipped Nom base torque.",
+    "Original physical/design monitors are independently received;full physical trajectory/contacts/forces/stability/real wrench are not reconstructed.",
+    "Seen unoptimized prior52/52 success is descriptive,no superiority over strong classical controls."
+  ],
+  "next": "378 define same-information and same-chart nonlearning strong controls with prior fixed selection/tuning rules,then a separately admitted bounded development baseline measurement to establish reachable numerical gates before scientific PPO. Do not rerun this interface queue.",
+  "next_direction_cleanup_round": 380,
+  "next_framework_round": 380,
+  "new_physics_steps": 0,
+  "new_FD": 0,
+  "new_model_forward_rows": 0,
+  "new_optimizer_updates": 0,
+  "goal_complete": false
+}
