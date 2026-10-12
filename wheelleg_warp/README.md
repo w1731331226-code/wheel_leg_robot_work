@@ -1,8 +1,12 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（368零前缀失败停止，2026-10-13）
+## 当前论文计划（369数值合同审查完成，2026-10-13）
 
 原目标仍是：在原完整不对称接触任务上，得到一个保持强经典能力并有明确增量的可执行PPO方法。当前没有通过收益资格的新方法，正式五种子、独立ID/OOD、统计与成本分析、新方法稿件均未完成；CPU历史基线继续保留，不将物理吞吐当PPO端到端加速。
+
+第369轮[数值合同审查](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/numerical_contract_review.json)完成：滤波差值绝对值虽小，在该数值处却相隔16066441个double ULP，不能当少量末位舍入。现有组合offset与端点不足以分离中间roll/gyro/算术根因；Cart未直接写memory5，原B0/Cart缓存构造也不同。测量方程欠定反例与ULP自检通过，0新物理/学习，368失败和逐值门保持。
+
+已形成[唯一有限输入链诊断提案](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/proposal.json)：同三bank构造的B0两次、CartLive3一次，各10环境一个fresh zero包，总1200图步/FD80，补中间输入/Nom/Cart边界记录。B0自身不复现即停，未复现原差异记不足、不追加；新记录会影响执行上下文，不能倒推旧结果。370方向/清理/框架审查须决定是否执行或停止当前准入路线，接受后另做实现/源码准入，不继续反复审同一失败数据，也不自动PPO。
 
 第368轮的[轻量执行器](run_cartesian_light_interface.py)在[101源码准入](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/source_admission.json)提交后首次运行，已因[零前缀逐值门失败停止](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/runtime/failure.json)：B0与CartLive3各10环境、一个zero packet，共800图步/800物理证据步、25FD、约5.37秒含构造与记录，0学习/重试。CartReset3和正弦队列未运行，不追加或消费余下预算。
 
@@ -10,7 +14,7 @@
 
 第367轮修复了课程切换的参考更新顺序：父类先执行底层自动复位，再安装新阶段参数并再次复位；仅在底层更新CartReset3参考，会留下旧阶段几何。新增课程收尾刷新，使用返回的公开复位包，只处理done行。[三行回归](results/paper_recovery_20261004/joint_reference_candidate_v1/round367_curriculum_lifecycle.json)运行真实父类逻辑及GPU辅助复位，115→380mm例的旧参考偏差约.265m，修复后1.39e-17m，终态旧回合信息、未结束行和父层mask保持；物理reset/forward采用替身，未验证真实多环境运行。
 
-[下一项接口协议](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/proposal.json)已固定两Cart臂、10环境、旧33531银行每阶段前10例；每臂1200次固定正弦调用，另有三个零前缀，共961200图物理步/80FD上限，0学习。须出现真实部分复位、阶段2/3切换和正延迟执行，并独立核命令时钟/历史；预算内未出现则记不足，不追加。当前稠密适配器的80调用和完整记录依赖不适用于40调用的轻量训练链，368需完成轻量适配与运行准入后才执行；PPO仍未准入。370方向/清理/框架保持。
+[第367轮接口协议](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/proposal.json)固定两Cart臂、10环境、旧33531银行每阶段前10例；每臂1200次固定正弦调用，另有三个零前缀，共961200图物理步/80FD上限，0学习。原门要求真实部分复位、阶段2/3切换和正延迟执行，并独立核命令时钟/历史；预算内事件不足记inconclusive。368已完成40调用轻量实现与源码准入，但该唯一队列在零门失败停止，不能复用稠密80调用资格或剩余预算继续；PPO仍未准入。
 
 第366轮[独立接收通过](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/review.json)：20回合、298123物理子步、586244接触、7460行Actor记录、238503个Cartesian子步及340份工件SHA核过。重建公开历史与执行命令、潜变量记忆、reset几何、CPU映射/VMC/共同投影和最终guard组装，8组零动作完整流与B0相同。最大canonical误差2.22e-16、原始电机请求误差1.11e-16Nm；停车撤回和终态/复位记录一致。
 

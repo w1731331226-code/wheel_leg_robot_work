@@ -2,7 +2,16 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：第368轮唯一轻量队列零门失败停止并完成复核（2026-10-13，整体目标active）
+## 当前状态：第369轮数值合同审查完成，有限输入链诊断待370方向决定（2026-10-13，整体目标active）
+
+- 368为progress（唯一真实队列失败及完整已存输出复核）。369只做指定失败前缀的可识别性和源码写入合同审查，原13工件/101冻结源哈希未变，0新机器人物理/FD/网络forward/学习；原failed目录不修改，不把尚未qualified的接口或PPO晋升。
+- 新review_cartesian_light_contract保存数值尺度与反例：memory5绝对差3.32246212698e-18，在-1.37072775e-9处相隔16066441个double ULP，相对差约2.424e-9，不是一个/少数双精度末位；左右target微差是各1ULP。不能据绝对量小直接设容差或宣称长期无影响。ULP相邻/非法值及measurement方程零空间反例自检通过；零空间仅说明记录方程欠定，不是另一条物理可行轨迹。
+- 原gyro滤波m_next=.95m+.05gyro、offset=.3roll+.12m_next。现有40个组合offset加终点m/sensor缺逐子步body quaternion/gyro/m5，不能确定输入差与具体算术/调度根因；slot5仅首次已见组合量差。Cart直接写native16:22、不写5，sharedreference从offset26写；原B0只建stage1而Cart先建3stage cache，snapshot又无实际模型/meaninertia，不可把两条差异唯一归因Cartesian公式。独立只读审查同结论。
+- 登记独立cartesian_zero_input_diagnostic_v1前瞻proposal（尚未运行/源码准入）：全10旧训练world、不只选world6，三bank同base.CurriculumEnv构造的B0两次和CartLive3一次，各fresh一个20ms zero包，总1200图world步/FD80。补逐slot phase前fullq/v/sensor/m5、Nom前后及Cart边界m5，核实际模型/cache/meaninertia与现有完整common streams；三条件同只读recorder，承认新增记录可影响调度，不能倒推368完整根因。
+- B0自身严格复现失败即停beforeCart；输入先分歧归输入链，输入同但Nom输出或Cart边界5异常归执行错误；未复现记inconclusive、不加packet/order/seed/预算。原逐值门、原368失败全保，不删字段/roundlog/按本次delta选tolerance，也不消耗368余cap。370按期方向/清理/框架必须决定执行这唯一有限诊断或停止当前runtime准入路线，不再用相同数据无限源审计；若执行须新实现/源码准入并先提交，仍无接口/PPO收益资格。
+- numerical_contract_review/log、审查器与新prospective proposal/README/记忆保存，中文提交后恢复守护并核remote。整体论文强经典增量/保持、正式新seed/独立ID-OOD/统计成本与稿件出口仍缺，goal active，无视频。
+
+## 历史状态：第368轮唯一轻量队列零门失败停止并完成复核（2026-10-13）
 
 - 3f82ba37源码准入提交后首次唯一pid28209/unified59549运行，现exit1且failure回执已保存；B0及CartLive3各10world只执行一个zero packet。actual graph800、原physical evidence800、FD25、wall5.370642571s含构造记录，0sine/学习/网络forward/retry；CartReset3及后续1200×2队列均未进入，不消费剩余注册预算。
 - 停于逐值比较controller_memory[6,5]，差3.3224621269817696e-18；该列是原Nom横滚gyro的.05低通，不是Cartesian residual16:22。完整复核另发现phase_role41个内部诊断值微差：requested_offset35个（slot5—39）max1.764642495e-18，left/right target各3个max5.551115123e-17。原逐值门保持，未事后放宽、改判或重跑。
