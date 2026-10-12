@@ -2,7 +2,16 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：第366轮v2完整独立接收完成（2026-10-12，整体目标active）
+## 当前状态：第367轮课程复位顺序修复及无学习接口协议完成（2026-10-12，整体目标active）
+
+- 366为progress；367已修代码并完成具体反例测试，中断续接只核当前文件/哈希，没有重复试验或增加轮数。现有CurriculumEnv先raw.step_wait自动复位，再按真实done安装新bank、调用reset_rows并替换返回obs；旧Cartesian raw层参考刷新会早于新bank。轻量路径另有40调用、无dense buffers，与已验80调用稠密路径不同，不能直接复用为训练资格。
+- 新cartesian_curriculum.CartesianCurriculum复用原父类及reset_aux，在super.step_wait之后用返回public38/raw.obs校对done行再刷新latent/shadow/reference；独立mask不覆盖父层raw.mask，未结束行不动，拒绝非bool mask与不同来源reset包。旧冻结控制、课程与评估源码不改，新类尚未接入真实训练工厂。
+- test_cartesian_curriculum使用真实父类stage/metadata逻辑、物理reset_rows/forward替身和实际GPU reset_aux，三行覆盖换stage的done、同stage的done、未done。公开初态来自366接受的115/380mm B0记录；旧顺序ref误差.264999999512m，新顺序1.38778e-17m；旧episode terminal/seed/stage、未结束私有buffer/模型行、父mask均保，零mask和坏包拒绝过。此非真实机器人多world回归，0新physics/FD/模型forward/学习。
+- 已登记cartesian_training_interface_v1：CartLive3/CartReset3各10world，复用33531每stage前10固定训练例，未按成绩选例/读最终集。每臂1200个正弦actor调用、12000脚本world行，另freshB0及两Cart各1个零前缀；graph总961200、FD80。前缀之后明确reset，课程policy_steps保留其10样本；同public episode clock的.15正弦在done时只清相应时钟。milestones4000/8000，0学习。
+- 接口门需真实部分reset、自然切换到2/3及实际正延迟样本（stage3首10有9个正delay，未保证预算内必然访问），逐event检查新public FK reference、旧terminal/非done行与命令时间窗/历史。事件不足记inconclusive，不延长预算或改例；source/物理/记录失败停保留，无implicitretry。368轻量适配/源码准入提交后才运行；之后的PPO工程与科学训练尚未注册，不用工程权重warmstart。
+- 将来匹配学习必须明确actor+critic/RMS/latent Gaussian初始化、预算与初始实际动作一致，CartReset3主对照之外保原D3/V6和强经典；本轮未构造新PPO或证明收益。round367_training_interface_decision/lifecycle/proposal/helper/test/log及README/记忆保存，中文提交后恢复守护并核remote。370方向/清理/整体框架，六论文出口未齐，goal active，无视频。
+
+## 历史状态：第366轮v2完整独立接收完成（2026-10-12，整体目标active）
 
 - 365为progress（方向/清理/20修复队列/全部数据同步），366只读已存数据独立接收，无新physics/FD/模型forward/学习。review_cartesian_repair核96冻结源、runtime/proposal/旧failure链与20顺序，298123物理子步、586244完整contact、7460Actor记录及340工件SHA；common初态含ctrl/time/warm/sensors等逐case相同，起止qv/完整连续状态/双链、八关节、1.4设计和实际/命令扭矩门20/20过。
 - 重建10帧历史、9段真实ctrl平均/尺度、elapsed/valid与零proxy，核所有Actor q/qdot和轮速对相应pre、raw=normalized、固定正弦/zero请求。238503Cartesian子步中，Actor最新memory等实际latent_before，shadow停车before/after与.01slew、64000撤回子步匹配；真实canonical仅在物理state/日志，旧物理输入未加私有geometry通道。

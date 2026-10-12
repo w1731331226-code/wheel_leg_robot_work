@@ -1,8 +1,12 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（第366轮，2026-10-12）
+## 当前论文计划（第367轮，2026-10-12）
 
 原目标仍是：在原完整不对称接触任务上，得到一个保持强经典能力并有明确增量的可执行PPO方法。当前没有通过收益资格的新方法，正式五种子、独立ID/OOD、统计与成本分析、新方法稿件均未完成；CPU历史基线继续保留，不将物理吞吐当PPO端到端加速。
+
+第367轮修复了课程切换的参考更新顺序：父类先执行底层自动复位，再安装新阶段参数并再次复位；仅在底层更新CartReset3参考，会留下旧阶段几何。新增课程收尾刷新，使用返回的公开复位包，只处理done行。[三行回归](results/paper_recovery_20261004/joint_reference_candidate_v1/round367_curriculum_lifecycle.json)运行真实父类逻辑及GPU辅助复位，115→380mm例的旧参考偏差约.265m，修复后1.39e-17m，终态旧回合信息、未结束行和父层mask保持；物理reset/forward采用替身，未验证真实多环境运行。
+
+[下一项接口协议](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/proposal.json)已固定两Cart臂、10环境、旧33531银行每阶段前10例；每臂1200次固定正弦调用，另有三个零前缀，共961200图物理步/80FD上限，0学习。须出现真实部分复位、阶段2/3切换和正延迟执行，并独立核命令时钟/历史；预算内未出现则记不足，不追加。当前稠密适配器的80调用和完整记录依赖不适用于40调用的轻量训练链，368需完成轻量适配与运行准入后才执行；PPO仍未准入。370方向/清理/框架保持。
 
 第366轮[独立接收通过](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/review.json)：20回合、298123物理子步、586244接触、7460行Actor记录、238503个Cartesian子步及340份工件SHA核过。重建公开历史与执行命令、潜变量记忆、reset几何、CPU映射/VMC/共同投影和最终guard组装，8组零动作完整流与B0相同。最大canonical误差2.22e-16、原始电机请求误差1.11e-16Nm；停车撤回和终态/复位记录一致。
 
