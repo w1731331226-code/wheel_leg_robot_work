@@ -219,6 +219,7 @@ def load_phase(out, proposal, completion, phase, selected=None, runtime=None):
                 assert path.is_relative_to(runtime), 'Result outside admitted runtime directory'
                 value = record.get('result_sha256', record.get('sha256')); assert sha(path) == value
                 result = validated_result(read(path), job['cases']); files[str(path)] = value
+                assert record['first_episode_world_steps'] == sum(row['physical_steps'] for row in result['runs'])
                 for index, row in zip(job['indices'], result['runs']):
                     assert ordered[index] is None; ordered[index] = row
             assert all(row is not None for row in ordered)
@@ -233,7 +234,7 @@ def verify_execution_budget(out, proposal, completion, complete):
     assert budget['totals']['graph_worldstep_cap'] == proposal['prospective_budget']['task_graph_world_step_cap']
     assert budget['totals']['constructors'] == 68 and budget['totals']['episodes'] == 584
     assert len(completion['records']) == (68 if complete else 32)
-    total_graph, total_fd, episodes = 0, 0, 0
+    total_graph, total_fd, episodes, total_first = 0, 0, 0, 0
     ordered_fd = []
     for index, record in enumerate(completion['records']):
         job = next(j for j in budget['jobs'] if (j['phase'], j['panel'], j['batch']) == (record['phase'], record['panel'], record['batch']))
@@ -241,14 +242,35 @@ def verify_execution_budget(out, proposal, completion, complete):
         assert type(record['graph_calls']) is int and 0 < record['graph_calls'] <= job['deadline_packets']
         assert record['actual_graph_world_steps'] == 40 * job['num_envs'] * record['graph_calls'] <= job['graph_worldstep_cap_per_constructor']
         assert len(record['FD_calls']) <= (10 if index == 0 else 5)
+        assert all(finite(value) and value > 0 for value in record['FD_calls'])
+        first = record['first_episode_world_steps']
+        assert type(first) is int and job['num_envs'] <= first <= record['actual_graph_world_steps']
         total_graph += record['actual_graph_world_steps']; total_fd += len(record['FD_calls']); episodes += job['num_envs']
+        total_first += first
         ordered_fd.extend(record['FD_calls'])
     assert completion['episodes'] == episodes == (584 if complete else 256)
     assert total_graph == completion['actual_graph_world_steps'] <= budget['totals']['graph_worldstep_cap']
     assert total_fd == len(completion['FD_calls']) <= proposal['prospective_budget']['constructor_FD_plan']['total_max_calls']
     assert ordered_fd == completion['FD_calls'], 'Per-constructor FD calls differ from the complete ordered ledger'
+    assert completion['first_episode_world_steps'] == total_first
     for key in ('new_model_forward_rows', 'new_optimizer_updates', 'new_learning_samples'):
         assert completion[key] == 0
+
+
+def verify_admission_metadata(out, admitted, runtime):
+    resource_path = out / 'resource_admission.json'
+    budget_path = out / 'job_budget_review.json'
+    assert admitted['verified'] is True
+    assert admitted['resource_admission_sha256'] == sha(resource_path)
+    assert admitted['job_budget_review_sha256'] == sha(budget_path)
+    resource = read(resource_path); budget = read(budget_path)
+    assert resource['verified'] is True and resource['resource_admitted'] is True
+    assert resource['archive_strategy_frozen'] is True
+    assert resource['proposal_sha256'] == budget['proposal_sha256'] == sha(out / 'proposal.json')
+    assert resource['job_budget_review_sha256'] == sha(budget_path)
+    assert Path(resource['durable_root']).is_absolute()
+    assert (Path(resource['durable_root']) / out.name / 'runtime').resolve() == runtime.resolve()
+    assert all(sha(ROOT / name) == value for name, value in budget['current_formula_source_sha256'].items())
 
 
 def independent_raw_receipt(path, out, completion_path, selection_path, runtime, admitted):
@@ -284,7 +306,8 @@ def run(out, completion_path, phase, selection_path=None, raw_review=None, runti
     assert admission in ((out / 'source_admission.json').resolve(), runtime / 'source_admission.json')
     assert sha(admission) == completion['source_admission_sha256']
     admitted = read(admission)
-    assert admitted['verified'] and admitted['proposal_sha256'] == sha(out / 'proposal.json')
+    assert admitted['verified'] is True and admitted['proposal_sha256'] == sha(out / 'proposal.json')
+    verify_admission_metadata(out, admitted, runtime)
     assert str(Path(__file__).resolve().relative_to(ROOT)) in admitted['source_sha256']
     for name, value in admitted['source_sha256'].items():
         assert sha(ROOT / name) == value, 'New admitted source changed: ' + name

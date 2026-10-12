@@ -2,7 +2,18 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：第379轮经典执行器与CPU接收器已准备，完整录证资源门拒绝，尚无新基线测量（2026-10-13，整体目标active）
+## 当前状态：第380轮方向/实际清理/整体框架核查完成，十项遗漏修复；资源仍未准入（2026-10-13，整体目标active）
+
+- 上轮为progress（379执行器/接收器CPU准备及真实资源拒绝提交同步）。380按期完成方向深审、实际冗余清理和完整论文执行链框架核查，0新实验/物理/FD/CUDA/NN/优化；原方法增量+完整能力/formal5/独立ID-OOD/统计成本/方法稿目标不缩。
+- round380_direction_review条件性继续已冻结一次584/68经典baseline：它可判主门与保持是否可达，但资源拒绝不是科学否定。机制假设仍为同公开481/latent3/原Nom/guard/滤波/original停车及fresh匹配训练下Live current-geometry vsReset frozen map的可重复增益；独立gamma经典差异、相对377withdraw prior差异不归因几何，经典有限搜索不是最优性上界。未来PPO探索/authority差异及V6同停车公平须明确，不能把无学习工程/负审计稿当完成出口。
+- 500GB来自现格式fullcontact共享容量和archive/Git翻倍规划，并非科学信息下界或实测必需；保完整原任务/物理证据，下一步有限解决精确存储/流式/chunk及独立raw接收后进真实测量，不再滚动微差或重复scope审计，也不自动把每训练子步全量dense复制给未来全部PPO。原164/selection32、J15%且.05deg/≥34/全能力与旧失败均保持，formal5未准入。
+- round380_cleanup真实删除1832个prune-packable Git松散副本，先逐一解压canonical SHA1/SHA256核同隔离packed-only读出的内容，再git prune-packed；logical50,114,085B、allocated56,143,872B（约53.54MiB），FS实增56,135,680B。refs/HEAD/97packs/167当前原始工件与旧失败SHA均未变，非重复2180loose和31未知tmp_obj不碰；gc.log.lock无持有仍保留。工作区raw/模型/源码未删除，没有对应目标pyc。不能解决现有存储门。
+- round380_framework_review十项遗漏已最小修复：source manifest覆盖旧80源/当前直接链及元数据HEAD；构造实记parking enabled0、Nom separatezero/v2/guard80路由（此轮仅真实Python wrapper+NumPy spy）；构造异常close/失败原始异常链、各流/各world独立保存、待完成guard历史保留；actualterminal先拷后读private、full reset后再核param、仅hash/rows有效完成Cart文件省重复prefix；job解除raw绑定后gc且CPU弱引用确认。未改旧Nom/物理/控制及376/377工件。
+- root补离线接收对source/resource/job SHA、严格verified/archive和durable runtime绑定，首回合步数从已验证runs重算并与global及graph范围核，FD正有限数值及完整逐值链；source包与科学计分不能只信producer字段。worker CPU/mock和receiver11个CPU测试exit0、源/input/log SHA与diff检查过。真实resourcefalse启动仍在runtime/构造/FD/graph/CUDA初始化前拒绝，runtime/locator不存在，不晋升full接口或baseline资格。
+- CUDA allocator实际释放、完整额外内存/归档峰值与≤48MiB策略、真实review_cartesian_classical_raw、实际初态/source/runtime尚未准入；持久空间请求暂无人类答复，不当批准。现约6.6GB资源false保留，不发partial队列绕门、不删科学数据。379准备回执为历史版本，不能拿其旧sourceSHA接收380变更；本轮新scope与source保存到380框架报告。
+- 新代码、三周期报告、tests、README/本记忆中文提交，收尾恢复守护并实核remote。下一方向/实际清理385、整体框架390；381推进上述一次有限完整证据交付关口，科学测量与fresh学习仍按冻结门决定，goal active。
+
+## 历史状态：第379轮经典执行器与CPU接收器已准备，完整录证资源门拒绝，尚无新基线测量（2026-10-13，整体目标active）
 
 - 上轮为progress（378反馈实现/1800算术/584回合协议中文提交同步）。379新增最小run_cartesian_classical_baseline及CPU/mock测试，复用原dense评价、B1-route original parking(enabled0)、scoped accepted-Nom v2模式1与原guard/完整物理接触流，补纯CPU反馈诊断、actual raw terminal481/afterreset端点与actual model。原376/377队列和旧数据不重复、不修改；0新物理/FD/GPU执行/NN/优化。
 - worker逐构造前核协议/源/四JSON committedHEAD，逐job原graph/actual world/param/deadline/delay/solver/contactcapacity和首10后5 FD；退出后只保元数据，释放active raw/graph绑定。修过record缺cases造成receiver不兼容、结束时误重查全队列剩余空间两处问题；initial容量与ongoing reserve分开，首回合计分步与包含autoreset的graph步分列，主因/secondary及各流独立保存。CPU/mock source/HEAD/时限/预算/调用链/actor/终态/reset与错误反例exit0。

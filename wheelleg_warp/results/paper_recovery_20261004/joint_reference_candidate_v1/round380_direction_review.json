@@ -1,0 +1,179 @@
+{
+  "round": 380,
+  "reviewed_rounds": [
+    375,
+    377,
+    378,
+    379
+  ],
+  "previous_turn": "progress:379 prepared bounded classical worker/receiver; complete-evidence resource gate rejected before runtime or constructor",
+  "status": "continue_one_frozen_development_baseline_conditional_on_resource_and_evidence_admission",
+  "decision": "保留Live/Reset几何更新假设并继续已冻结一次584回合强经典baseline；当前资源未准入，不能执行、不能据此否定方法，更不能自动学习。之后须用原停车协议下fresh匹配学习与完整能力保持证实方法增量。无学习效果的工程/负审计稿不是原目标的完成出口。",
+  "current_evidence": {
+    "round377": "已存10world/最高访问delay10ms/0opt的真实NN sampler、RMS/GAE/Cart命令和范围内物理监测接收；52/52只是未优化prior seen描述。",
+    "round378": "公开延迟roll/gyro/关节的R0径向反馈与原B1轮差，gamma0/.5/1/2、单位/符号/Box/1800算术已验证；闭环baseline未测。",
+    "round379": {
+      "implementation_verified": true,
+      "scope": "CPU/mock implementation preparation and real startup rejection only",
+      "baseline_measured": false,
+      "baseline_qualified": false,
+      "resource_admitted": false,
+      "actual_parameter_model_verified": false,
+      "independent_raw_checker_implemented": false
+    },
+    "no_result_substitution": "原335的492经典和CPU28继续作能力底线；新chart gamma0、379 producer_checked或377withdrawal接口均不能继承新original-parking chart资格。旧D3失败分支保持关闭。"
+  },
+  "falsifiable_hypothesis": {
+    "primary": "在同公开481历史、latent3、滤波/限制、Nom/guard、original B1 parking、fresh匹配NN初始化/优化/预算下，current-geometry Live相对public-reset-frozen Reset取得预注册配对J收益，并同时优于最强合格经典、保持全部原能力。",
+    "mechanical_prediction": "源码v2只以mode决定rl/rr来自当前FK还是reset reference，后续latent slew/力幅/共同alpha/当前VMC/电机投影相同。对于同一非零腿latent和变形几何，Live在当前配置保持命令端点力对的几何意义；Reset使用旧几何可能改变当前解码的力对/矩与alpha。此为command-domain预测，不证明真实支撑wrench或稳定。",
+    "negative_controls": "reset几何相同或腿latent为零时，解析上不应产生腿几何机制差异；无需恢复已关闭的跨独立物理轨迹逐值复现门。独立轨迹效果用预注册case/seed配对统计，而非逐bit相等。",
+    "pre_registered_diagnostics": "在下一实际baseline/learning合同中先固定记录actual几何偏离、requested/applied腿残差、alpha/lambda/受限率与原J/成功/速度/到达/姿态。连续诊断不按outcomes选子组或据差值定容差，不能用相关性替代主配对干预。",
+    "exposure_limit": "若预算内没有几何偏离或有效腿交付，只能说机制曝光不足，不能说Live优越或Reset等价；不追加包数/case/随机种子来凑曝光。此诊断不替换已有task主门。",
+    "scientific_failure": "匹配learned Live未胜Reset则几何增量主张失败；未胜同chart/新旧最强经典则PPO增量失败；任何原能力退化均不通过。保留负证据，关闭该收益分支，不用额外epoch/checkpoint/seed补救。"
+  },
+  "classical_strength": {
+    "verdict": "当前方案是合理且保守的有限强benchmark入口，但尚无新测量，不能叫已取得强经典资格或经典最优上界。",
+    "why_nontrivial": "旧B0/B1保留Nom与原全任务能力；新增经典实际进入腿chart，并从同延迟公开传感器给出尺度匹配的R0闭环反馈；NN与经典拥有相同chart/约束/停车权限。四gamma和旧强轮差比仅裸LQR或轮差零腿对照更有决策价值。",
+    "limits": "R0是固定公开反馈结构，gamma仅在预定有限族内选择，不穷尽历史反馈、自适应/MPC或所有经典控制器。学习优势应限定为相对冻结强对照；不能从胜过四gamma推断所有非学习方法不可能达到。",
+    "selection_preserved": {
+      "panel": "existing development selection32; disjoint identities from full164, not final ID/OOD",
+      "choose": "one fixed gamma per chart, before reading new full164 outcomes",
+      "physical_design": "all32 complete and physical/design gates pass; any hard physical/design/source/evidence failure stops the whole queue",
+      "sort_key": [
+        "success_count descending",
+        "original summary mean_yaw_score_deg ascending (must be finite and complete)",
+        "gamma candidate index ascending"
+      ],
+      "forbidden": "No per-case gains, no selection on controlled40/regular96/legacy28 outcomes, no fallback gamma or retry after evaluation. If no eligible gamma, stop scientific gate.",
+      "comparison_scope": "Independently tuned chart classics are strong benchmarks. Their difference includes gamma selection; only equal-gamma selection pairs support a matched classical geometry contrast, and selection32 is not independent confirmation."
+    },
+    "full_suite_preserved": {
+      "selection_candidates": 8,
+      "selection_cases_each": 32,
+      "selected_charts": 2,
+      "regular_each": 96,
+      "controlled_each": 40,
+      "legacy_each": 28,
+      "total_first_episodes": 584,
+      "constructors": 68,
+      "max_worlds": 10,
+      "graph_cap": 12839760,
+      "FD_plan_cap": 345,
+      "new_cold_prefixes": 0
+    },
+    "no_scope_downgrade": "保原regular96，不用旧selection32+gate64替代；164已是development seen，不能称独立final ID/OOD。任何selected gamma接收失败不重新选gain。"
+  },
+  "confounds_and_minimal_controls": [
+    {
+      "confound": "两chart独立选择gamma",
+      "rule": "仅用于强benchmark。其差异含gamma选择，不能归因几何；主learned Live/Reset须同架构/公开输入/权限/初始化/训练预算。需要纯经典几何结论时，仅用事先同gamma对子；既有selection32同gamma对子可作开发描述，不自动新增整套gate测量。"
+    },
+    {
+      "confound": "377 withdrawal parking与379 original B1 parking",
+      "rule": "新baseline/learner必须共同original parking。377只复用已验收SB3生命周期与算术范围，不继承新parking runtime资格或旧weights；必要的fresh无更新集成检查须在新有界合同内针对真正变化的停车/终态/reset路径，不重复旧正弦队列。"
+    },
+    {
+      "confound": "同latent sigma/Box被误叫物理探索等价",
+      "rule": "Live/Reset在reset映射相同，可匹配fresh actor/critic/optimizer/RMS/Python/NumPy/Torch CPU/CUDA及action RNG；离开reset后motor covariance与alpha/lambda变化是机制的一部分，不能称与原D3/V6物理探索分布等价。保留原D3/V6来源，378若继续要求same-seedV6收益，须另外预注册同停车/信息/预算的fresh对照，不借不同停车旧模型分数作干净因果比较。"
+    },
+    {
+      "confound": "NN创新被等同于换PPO库或坐标映射",
+      "rule": "不必为追创新改loss/网络/优化器。缺的是清楚的方法机制、匹配Live/Reset与强经典的学习增量、完整保持和独立验证。PPO/VMC/课程/GPU与普通虚功映射本身不作新颖性排他主张。"
+    }
+  ],
+  "storage_direction": {
+    "observed_admission": "verified=false；没有可用外部持久路径答复，379真实入口已在runtime/FD/constructor前拒绝。",
+    "existing_upper_bound_B": 469781823104,
+    "existing_raw_contact_plan_B": 234823802688,
+    "interpretation": "约500GB建议来自当前旧dense格式、shared contact capacity最坏行数与archive/Git副本规划，仍未含全部额外/失败/headers；不是实测压缩量、不可压缩下界或科学门。不能假定500GB恰好够，也不能把它当唯一合法科学实现。",
+    "scope_boundary": "不削减case/首回合/精度/接触/控制和硬门原值，不删旧科学证据。允许事先证明exact reconstruction的重复字段/精度提升冗余消除、固定块流式保存和持久SHA归档布局；这些改变需新明确resource/source admission，旧failed资源记录保持。",
+    "bounded_deliverable": "将资源路线收敛为一次可验收存储/归档交付：完整内容清单、最坏磁盘/Git/临时/失败峰值、CPU recorder释放/流式上界、<=48MiB块、workspace4GiB与2GiBreserve、持久原始工件定位及hash复核。选定方案后执行一次584baseline，不为重复SHA/微差诊断持续增加资格轮。",
+    "future_training": "不要默认把379每个训练子步的旧全量稠密审计复制到全部PPO学习步。新训练协议须事先定义足以复核updates/checkpoints/RMS/RNG/episode monitors与完整科学评价的录证，并与评价硬门区分；这不改变原评价阈值，不声称未存流的全轨迹证书。完整baseline所需记录仍按当前合同保留。",
+    "if_unavailable": "资源或exact完整方案尚无准入则继续拒绝physical，不能发partial队列绕门。等待storage不构成科学失败；不能用工程已完成来宣布原goal完成。"
+  },
+  "next_finite_path": [
+    "381起先完成一个可执行的持久/可重建完整存储方案及特定真实独立raw receiver；新source/runtime/HEAD和actual model/param/deadline在第一launch前闭合，当前380不实现checker或批准运行。",
+    "通过资源与源准入后，唯一执行原8xselection32+2x164（584回合），固定每chart gamma，独立接收全部原能力。无需新随机case或20ms扩展，因为当前开发suite最大10ms；更大scope另有新合同。",
+    "测量后只按已冻结B=min新旧最强合格经典、原J/成功/完整保持门决定该研究入口可达性；selected chart失败或B<=.05即停当前学习门，不discard强经典或改指标。",
+    "入口通过后再注册fresh original-parking匹配三latent PPO研究协议及必要最小集成验证；固定训练/forward/value/optimizer/eval/停止预算、seed和checkpoint规则，主Live/Reset与强经典/V6保持公平。当前仍0学习准入。",
+    "只有开发收益和完整能力门通过，才另准入formal5、未读独立ID/OOD、预注册种子层统计与端到端PPO成本/方法稿。episode数不当独立training seed样本，physical吞吐不当PPO训练加速。"
+  ],
+  "stopping_rules": {
+    "operational": "资源/源/初態/evidence/hard physical/design/command/history/reset失败立即停、保存首因与secondary；不足inconclusive，不追加或重试。",
+    "baseline": "任何selection hard/evidence failure停止全queue；selected full164失败不换gamma。B<=.05/no合格同chart保持基线/任务metric不对应在学习前停止当前门。",
+    "research": "学到的Live未胜匹配Reset、未胜最强合格经典或任何原能力损失，均停止该收益资格分支。负结果可保存，但不替代用户要求的成功方法目标。",
+    "no_audit_terminal": "不以源码/接口/保存正确或没有学习收益的工程稿标goal_complete；也不恢复已关闭逐值跨轨迹路线或根据观察delta设tol。"
+  },
+  "original_protocol_unchanged": {
+    "controlled_metric": "original summary.mean_yaw_score_deg",
+    "J_limit": "min(.85*B,B-.05deg)",
+    "controlled_success": "at least max(34,strongest eligible classic controlled success),preserve every successful classic case",
+    "regular": "original96/full ability and original J gate",
+    "legacy": "all28/direct frozen publicCPU28/velocity-arrival-rollpitch bounds and original height/task gates",
+    "nondegradation": {
+      "velocity_multiplier": 1.05,
+      "velocity_add_m_s": 0.005,
+      "arrival_multiplier": 1.05,
+      "arrival_add_s": 0.05,
+      "legacy_roll_pitch_add_deg": 0.1
+    },
+    "remaining_original_gates": {
+      "controlled_success_each_seed_atleast34": true,
+      "preserve_any_classical_success_every_panel": true,
+      "all_physical_design_every_episode": true,
+      "eachseed_controlled_J_lower_thanallstrongclassics_and_same_seedV6": true,
+      "controlled_across3mean_reduction_vsbestclassic_andV6_atleast15percent_and005deg": true,
+      "regular_success_atleastbestclassic_and_J_lower_eachseed": true,
+      "legacy_all28_success_CPUcapability_pair_andvelocity_arrival_height_attitude_nondegradation": true
+    },
+    "old_failures_preserved": true
+  },
+  "full_goal_exit_ledger": {
+    "method_increment": false,
+    "strong_classical_full_ability_kept_by_new_method": false,
+    "formal5": false,
+    "independent_ID_OOD": false,
+    "seed_statistics_and_end_to_end_cost": false,
+    "new_method_manuscript": false,
+    "engineering_evidence_is_partial_progress": true
+  },
+  "literature_boundary": {
+    "source": "wheelleg_ppo/LITERATURE_MATRIX.md:69,132,147-168",
+    "use": "仅复用已存VMC/LQR/残差、动作空间、闭链和接触控制边界，不新增事实或检索。宽泛组合不是创新；不作首次/唯一或论文可发表性断言。"
+  },
+  "evidence_references": {
+    "historical_direction": "round375_direction_review.json:insufficient_for_science,learning_prerequisites",
+    "research_entry": "round377_research_exit.json:next_implementation,numerical_gate_before_learning",
+    "current_comparison": "cartesian_classical_candidate_v1/proposal.json:selection_rule,public_contract,capability_and_learning_gate",
+    "resource_and_no_data": "cartesian_classical_candidate_v1/implementation_review.json:scope,open_items,baseline_measured;resource_admission.json:claim,contacts,CPU_memory,excluded_extra_bytes",
+    "method": "wheelleg_warp/cartesian_pair_kernel_v2.py:19-42;cartesian_pair_action.py:17-39;cartesian_classical.py:18-51"
+  },
+  "input_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round375_direction_review.json": "7f3260ef5f44f4ef229d82535093a907d2a0056871a80b6a963d7eef753e30c2",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round377_research_exit.json": "8abb910cd107674fe7aa20e41ee8e3783e402ee9b1bbb1f83970db40aa53868f",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_classical_candidate_v1/proposal.json": "9fea834e24edf1bd9d635cf493c55fb8c935a89b0c2536547cf9cf9a1157ac53",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_classical_candidate_v1/implementation_review.json": "0a1e7ead31a4c95659ceeaff8af25f7388e9fa30aeec44a587b00a37016c7855",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_classical_candidate_v1/resource_admission.json": "fa6594f33c248309c0f75b2b668d6b44362889868bbd8b6a37accd0f92f3da0b",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/baseline_gate.json": "efb5c1becd646dfc485e3edc256eeaf4005de7bc8141aae9b8647c16729b2144",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/interface_acceptance.json": "1331a91b23842d7a2a2331e60887f9139a0ca32eb8804c92e00e8558a54ca8f9",
+    "wheelleg_warp/cartesian_pair_action.py": "d8bd86d0146a01ebd11821c72fa5c4cf7ea61449ee8b74abe8203938eb9a5f46",
+    "wheelleg_warp/cartesian_pair_kernel_v2.py": "02e8268a6b78f4b8a4ff346c164efa1b0caf41c9b51e78ecebc76fe1f738c32e",
+    "wheelleg_warp/cartesian_classical.py": "2aafe2c6d96a80873f2ccefe1fcc7d8c76c2aed2b49cac08a937e16940c7712a",
+    "wheelleg_ppo/LITERATURE_MATRIX.md": "b1ac4125c92fe5e3415052bf50427f6ebc2c297b24b9e96cb24373bb695a0bc2"
+  },
+  "new_physics_steps": 0,
+  "new_FD_calls": 0,
+  "new_GPU_execution_rows": 0,
+  "new_model_forward_rows": 0,
+  "new_optimizer_updates": 0,
+  "new_learning_samples": 0,
+  "new_external_queries": 0,
+  "new_experiments": 0,
+  "runtime_admitted": false,
+  "scientific_learning_admitted": false,
+  "formal5_admitted": false,
+  "objective_not_shrunk": true,
+  "goal_complete": false,
+  "next_deep_review_round": 385,
+  "next_whole_framework_round": 390
+}

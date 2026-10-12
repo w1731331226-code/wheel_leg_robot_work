@@ -1,12 +1,16 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（379执行器与CPU接收已准备，完整录证资源拒绝，2026-10-13）
+## 当前论文计划（380方向/实际清理/框架核查完成，资源仍未准入，2026-10-13）
 
 原目标仍是：在原完整不对称接触任务上，得到一个保持强经典能力并有明确增量的可执行PPO方法。当前没有通过收益资格的新方法，正式五种子、独立ID/OOD、统计与成本分析、新方法稿件均未完成；CPU历史基线继续保留，不将物理吞吐当PPO端到端加速。
 
+380按期完成[方向深审](results/paper_recovery_20261004/joint_reference_candidate_v1/round380_direction_review.json)：条件性继续一次已冻结584回合经典baseline，确认主门/全能力后再决定fresh匹配学习。Live/Reset机制须同公开信息、原停车、初始化和预算；各自gamma经典或相对377撤回停车prior的差异不能独立识别几何收益。有限经典搜索不是最优上界，工程通过尚无学习增量。500GB是现格式最坏接触容量/archive规划，不能表述为科学必需空间；下一步有限解决完整存储与独立接收，不继续滚动微差审计，也不自动把全量dense逐步录证扩到未来所有PPO。
+
+[整体框架核查](results/paper_recovery_20261004/joint_reference_candidate_v1/round380_framework_review.json)修复十项来源闭包、失败保存、构造close、guard前缀、真实terminal/reset和资源/首回合账本遗漏；完成Cart文件经hash/rows核后省重复prefix。worker CPU/mock及receiver11个CPU测试通过，未运行物理/CUDA/FD/NN；实际allocator、完整归档及rawchecker仍缺，不能晋升新基线资格。[实际清理](results/paper_recovery_20261004/joint_reference_candidate_v1/round380_cleanup.json)逐对象证明packed副本内容同后删1832重复loose，释放约53.54MiB；refs/HEAD/packs/167科学工件未变，未删工作区原始数据/模型或未知临时对象。下一方向/清理385、框架390。
+
 379已准备[经典执行器](run_cartesian_classical_baseline.py)与[离线接收器](review_cartesian_classical_baseline.py)，[CPU准备回执](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_classical_candidate_v1/implementation_review.json)通过mock、10个接收器测试与旧输入核对。复用original B1停车、accepted-Nom v2模式1、原guard/稠密物理/接触评价；核每job实际模型/时限/graph/FD及committedHEAD，首回合步数单列，actual terminal481/reset分名。特定的独立raw checker仍未实现，真实584回合尚未运行，不能凭producer完成标记晋升资格。未来匹配PPO也须original停车；377的撤回停车接口是不同范围。
 
-[资源记录明确拒绝](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_classical_candidate_v1/resource_admission.json)：完整旧格式按冻结图上界，未计contacts已37.61GB；按源contact容量规划约218.70GiB raw，archive/Git及包暂存约437.52GiB，模型/header/失败/重复prefix还需核。这是保守空间规划，不能把历史zip率当保证。现仅约6.6GB，已请求持久路径与容量；完整旧格式建议约500GB以上也须实核归档、CPU载荷和≤48MiB文件方案。4GiB门针对工作区磁盘峰值，CPU限额尚未注册。真实启动检查已在runtime/构造/FD/physics前拒绝，未创建队列。下一380按期方向/实际清理/整体框架；资源及证据源准入前不运行部分队列或削减科学证据。
+[资源记录明确拒绝](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_classical_candidate_v1/resource_admission.json)：完整旧格式按冻结图上界，未计contacts已37.61GB；按源contact容量规划约218.70GiB raw，archive/Git及包暂存约437.52GiB，模型/header/失败等还需核。这是保守空间规划，不能把历史zip率当保证或当作信息下界。现约6.6GB，已请求持久路径与容量；完整旧格式约500GB规划也须实际归档/CPU载荷/≤48MiB文件证明。4GiB门针对工作区磁盘峰值，CPU限额未注册。380变更后的真实启动检查仍在runtime/构造/FD/physics前拒绝，未创建队列；下一381推进一次有限完整存储/raw接收交付，资源及证据源准入前不运行部分队列或削减科学证据。
 
 378已实现[同信息Cart经典反馈](cartesian_classical.py)：延迟公开roll/gyro/关节给出有界径向偏置，再最小二乘投影为相反的虚拟端点力对，轮差沿原B1_route。[CPU接收](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_classical_candidate_v1/feedback_review.json)含单位/左右符号/非对称FK/Box/mirror/非法输入，以及30既有reset几何×固定网格共1800算术组合，力重建误差最大1.332e-15N；0新物理/FD/NN/优化。原径向K实际为(7/1.018)×500=3438.1139489N/m，新gamma1峰3.4335N，不冒称原私有Nom复现、完整关节范围或接触/闭环收益。
 

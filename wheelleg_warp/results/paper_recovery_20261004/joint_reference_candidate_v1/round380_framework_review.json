@@ -1,0 +1,152 @@
+{
+  "round": 380,
+  "verified": true,
+  "scope": "Whole worker framework source/CPU/mock review and fail-closed startup only; no physical or scientific receipt",
+  "status": "fixed_prepared_resource_still_rejected",
+  "head_before_commit": "86994cb1976b35f774bc73a57eb50faf676a6767",
+  "source_sha256": {
+    "wheelleg_warp/run_cartesian_classical_baseline.py": "5f257d193c046836a27bcdc27404017bea8ee94af8c5b644dbaa8b38aba57b7f",
+    "wheelleg_warp/test_cartesian_classical_baseline.py": "87062833d6a46eeb0287e7fd94297655d6faea32d4b031a4362f04fa52049b06",
+    "wheelleg_warp/review_cartesian_classical_baseline.py": "7b722dc6a8e7b66e0f177f2dc928da970d23e572ebe7e002d1e588790f5a328b",
+    "wheelleg_warp/test_review_cartesian_classical_baseline.py": "d8c993fbfd56b81420f6576271c33cdaae62c37d11f5445c99d81da01d56b995"
+  },
+  "input_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_classical_candidate_v1/proposal.json": "9fea834e24edf1bd9d635cf493c55fb8c935a89b0c2536547cf9cf9a1157ac53",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_classical_candidate_v1/job_budget_review.json": "c10a6bccc8d50fde8fb6459c77a6c6296307bd1594c07a781c7be9aba1b5de9a",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_classical_candidate_v1/resource_admission.json": "fa6594f33c248309c0f75b2b668d6b44362889868bbd8b6a37accd0f92f3da0b",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/evaluation_source.json": "ec7bae177d79cc2347c9dc9fa73df82217c15166d526fbb5c672dd1eec27fa28",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_classical_candidate_v1/implementation_review.json": "0a1e7ead31a4c95659ceeaff8af25f7388e9fa30aeec44a587b00a37016c7855"
+  },
+  "inherited_baseline_manifest_entries": 80,
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "blocking_before_future_admission",
+      "file": "wheelleg_warp/run_cartesian_classical_baseline.py",
+      "line": 55,
+      "problem": "A manifest with only worker/test/metric reviewer could omit the active inherited baseline and Cartesian/parking/history helper sources; declared sources were not necessarily HEAD-closed.",
+      "fix": "Require inherited baseline manifest, frozen proposal/formula mappings and all direct helper sources in new source_admission; verify capacity resolver/input SHA and committed four-JSON plus source closure before every constructor.",
+      "test": "CPU fixtures reject missing direct/inherited code, wrong metadata HEAD, changed installed resolver and invalid resource byte counts."
+    },
+    {
+      "id": "F2",
+      "severity": "failure_evidence",
+      "file": "wheelleg_warp/run_cartesian_classical_baseline.py",
+      "line": 178,
+      "problem": "The inherited dense saver is internally sequential: a complete/contact save failure skips gyro/role/phase; guard earlier partial rows were held only in a private closure.",
+      "fix": "Independently attempt each existing raw stream and each world prefix; keep a read-only first-episode guard prefix until its done artifact exists.",
+      "test": "Injected full-stream save failure still saves gyro and guard; terminal world0 write failure still saves world1."
+    },
+    {
+      "id": "F3",
+      "severity": "lifecycle",
+      "file": "wheelleg_warp/run_cartesian_classical_baseline.py",
+      "line": 239,
+      "problem": "evaluate makes its environment before its try/finally, so an outer Cartesian construction failure can bypass close; live raw/wait closures form cycles.",
+      "fix": "Worker closes a returned environment after construction failure, keeps one close attempt on normal path, clears active Budget binding and collects unreachable cycles between jobs.",
+      "test": "Outer construction failure reaches close exactly once; a closed Budget no longer retains a cyclic CPU raw object. This is not a CUDA allocator release proof."
+    },
+    {
+      "id": "F4",
+      "severity": "failure_evidence",
+      "file": "wheelleg_warp/run_cartesian_classical_baseline.py",
+      "line": 291,
+      "problem": "Inherited save/close errors can mask the original control/physical exception in the final repr.",
+      "fix": "Store deepest original exception, raised outer exception, complete context chain, current-job graph/FD counters and binding status; independently record secondary save failures.",
+      "test": "Physical assertion followed by an OSError retains both errors in chronology."
+    },
+    {
+      "id": "F5",
+      "severity": "record_integrity",
+      "file": "wheelleg_warp/run_cartesian_classical_baseline.py",
+      "line": 146,
+      "problem": "Actual returned terminal481 was copied only after reading all post-reset private buffers; a private read failure could lose the already returned terminal.",
+      "fix": "Copy actual terminal rows first, then read reset snapshots; add native state/targets/param/active/done/stopped q/v and available native/parking/phase references.",
+      "test": "Injected private read failure preserves actual terminal481; real RouteState/ExecutionHistory with CPU packets verifies VecEnv.step dispatch, partial done terminal and reset history."
+    },
+    {
+      "id": "F6",
+      "severity": "resource",
+      "file": "wheelleg_warp/run_cartesian_classical_baseline.py",
+      "line": 195,
+      "problem": "Completed Cart chunks remained populated and the final preserve wrote a second full Cartesian prefix; Actor.save also rewrote normal output twice.",
+      "fix": "Check completed per-case Cart artifact SHA and row count, omit only its duplicate prefix, save each actor artifact once; keep every interrupted Cart prefix and buffer.",
+      "test": "Completed preserve omits duplicate prefixes while interrupted preserve retains both worlds. Original raw streams are not reduced."
+    },
+    {
+      "id": "F7",
+      "severity": "routing_contract",
+      "file": "wheelleg_warp/run_cartesian_classical_baseline.py",
+      "line": 215,
+      "problem": "Original parking enabled0 and separate-zero/v2 delivery were inferred from condition/source but no new receipt captured actual outer launch arguments.",
+      "fix": "A read-only construction observer checks all 80 parking prepare enabled0 calls, Nom separate-zero target identity, chart mode and Nom-v2-guard order; write classical_delivery_contract.json.",
+      "test": "Real Python cart/guard/parking wrappers with nonexecuting NumPy launch spy pass original parking and reject withdrawal; no kernel body or CUDA executes."
+    },
+    {
+      "id": "F8",
+      "severity": "prelaunch_binding",
+      "file": "wheelleg_warp/run_cartesian_classical_baseline.py",
+      "line": 255,
+      "problem": "Actual param/deadline/delay were checked before full reset only; first-launch binding could differ after reset.",
+      "fix": "Recheck actual contract after full public/private reset before saving initial and allowing the first launch; validate finite positive FD epsilons before the callback.",
+      "test": "A CPU reset parameter drift and invalid FD epsilon are rejected before launch/callback."
+    },
+    {
+      "id": "F9",
+      "problem": "Offline metric/raw qualification did not bind the admitted resource and job metadata.",
+      "resolution": "Bind exact resource/job SHA,strict verified/resource/archive flags,proposal andabsolute durable runtime path,andbudget formula source SHA before processing any new phase.",
+      "validation": "Positive temporary metadata fixture plus resourcefalse/archivefalse/wrongbudget/runtime rejection;0 execution."
+    },
+    {
+      "id": "F10",
+      "problem": "Receiver trusted firstepisode totals and accepted nonnumeric FD ledger values.",
+      "resolution": "Recompute each job firstepisode steps from validated result rows;sum across records with graph-scope bound;require positivefinite numeric FD entries andtheordered complete ledger.",
+      "validation": "Changed global firstepisode count andNaN FD reject;existingordering/graph/case tests preserved."
+    }
+  ],
+  "preserved_contracts": [
+    "Frozen584 first episodes/68 constructors/max10world, selection32 for each of8 then independent per-chart choice before selected full164 outcomes",
+    "Frozen job deadlines and12839760 graph-worldstep cap; no prefix/retry and FD first10/later5/global345",
+    "cases/indices/result SHA and per-record plus total first_episode_world_steps are distinct from all-world graph slots/autoreset surplus",
+    "Original dense physical/contact/task evidence and original B1 parking; Nom zero pointer and accepted-Nom v2; actor pure delayed-public CPU feedback",
+    "Worker completion is producer_completed_pending_independent_raw_receipt and independent_raw_qualified remains false"
+  ],
+  "tests": {
+    "worker_CPU_mock_exit_code": 0,
+    "worker_stdout": "PASS380 CPU/mock: inherited/direct source and metadata HEAD closure; initial/ongoing resource rejection; receiver cases and graph/first-episode binding; separate-zero Nom/v2/original-parking launch routing; independent failure saves/primary chain/close/release; actual terminal/reset and bounded no-NN actor;0physics/CUDA/FD/NN execution",
+    "syntax_AST": true,
+    "diff_check": true,
+    "real_startup_rejection": "Complete dense resource admission verified=false",
+    "real_environment_constructors": 0,
+    "real_FD_calls": 0,
+    "CUDA_kernel_executions": 0,
+    "NN_forwards": 0,
+    "receiver_CPU_unit_tests": 11,
+    "receiver_CPU_exit_code": 0,
+    "receiver_log_sha256": "8dd559cf2beb2247db2464232cba70338b6a35b3ea00892a5ce6ecc55f676737",
+    "current_real_startup_rejection": "Complete dense resource admission verified=false"
+  },
+  "qualification": {
+    "resource_admitted": false,
+    "source_runtime_admitted": false,
+    "actual_model_param_or_CUDA_routing_received": false,
+    "baseline_measured": false,
+    "baseline_qualified": false,
+    "new_learning_admitted": false,
+    "formal5_admitted": false
+  },
+  "known_open_items": [
+    "Complete durable storage/archive/Git/48MiB/workspace4GiB admission remains false; headers/models/private snapshots/interruption and additional guard copies/CPU allocator overhead still need actual bounds",
+    "Python cycle release test does not prove CUDA allocator/cache memory release; no new actual model/param/cache/constructor validation happened",
+    "The specific independent review_cartesian_classical_raw.py is still absent; this known item was not rebuilt in380 and forbids full interface/baseline qualification",
+    "Records support dense per-step streams and first terminal/reset snapshots. Remaining intermediate-private and full numerical receipt coverage has not been accepted by an admitted checker; this CPU/mock review does not promote full interface qualification.",
+    "Round377 used withdrawal parking, so its PPO receipt does not qualify the new original-B1-parking classical or future matched PPO pipeline",
+    "ROOT4GiB disk/temporary/Git andcomplete external archive proof stillrequired; no extrapolation from conservative500GB planning to scientific necessity."
+  ],
+  "new_physics_steps": 0,
+  "new_FD_calls": 0,
+  "new_model_forward_rows": 0,
+  "new_optimizer_updates": 0,
+  "goal_complete": false,
+  "root_receiver_fields_pending": false
+}

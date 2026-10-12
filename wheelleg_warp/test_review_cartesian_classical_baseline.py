@@ -7,7 +7,7 @@ from pathlib import Path
 
 from review_cartesian_classical_baseline import (OUT, OLD, SELECTION, PANELS, RAW_RECEIVER_SOURCE, CPU_REFERENCE, read, sha,
     cases_for, validated_result, selection_decision, baseline_decision, cpu_reference_rows,
-    load_phase, verify_execution_budget, independent_raw_receipt)
+    load_phase, verify_execution_budget, verify_admission_metadata, independent_raw_receipt)
 from train_height_comparison import summary
 
 
@@ -134,17 +134,46 @@ class BaselineReview(unittest.TestCase):
             for job in self.proposal['selection_jobs']:
                 frozen = next(j for j in budget['jobs'] if j['phase'] == 'selection' and j['batch'] == job['batch'])
                 records.append(dict(phase='selection', panel='selection', batch=job['batch'], indices=job['indices'], cases=job['cases'],
-                    graph_calls=frozen['deadline_packets'], actual_graph_world_steps=frozen['graph_worldstep_cap_per_constructor'], FD_calls=[dict(job=len(records), call=i) for i in range(10 if not records else 5)]))
+                    graph_calls=frozen['deadline_packets'], actual_graph_world_steps=frozen['graph_worldstep_cap_per_constructor'],
+                    first_episode_world_steps=sum(r['physical_steps'] for r in self.selection_rows if r['seed'] in {c['seed'] for c in job['cases']}),
+                    FD_calls=[1e-6 + len(records)*1e-12 + i*1e-14 for i in range(10 if not records else 5)]))
         completion = dict(records=records, episodes=256, actual_graph_world_steps=sum(r['actual_graph_world_steps'] for r in records),
+            first_episode_world_steps=sum(r['first_episode_world_steps'] for r in records),
             FD_calls=[value for r in records for value in r['FD_calls']], new_model_forward_rows=0, new_optimizer_updates=0, new_learning_samples=0)
         verify_execution_budget(OUT, self.proposal, completion, False)
         extra = copy.deepcopy(completion); extra['records'].append(extra['records'][-1])
         over = copy.deepcopy(completion); over['records'][0]['graph_calls'] += 1
         network = copy.deepcopy(completion); network['new_model_forward_rows'] = 1
         fd = copy.deepcopy(completion); fd['FD_calls'][0], fd['FD_calls'][1] = fd['FD_calls'][1], fd['FD_calls'][0]
-        for changed in (extra, over, network, fd):
+        first = copy.deepcopy(completion); first['first_episode_world_steps'] += 1
+        invalid = copy.deepcopy(completion); invalid['records'][0]['FD_calls'][0] = float('nan'); invalid['FD_calls'][0] = float('nan')
+        for changed in (extra, over, network, fd, first, invalid):
             with self.assertRaises(AssertionError):
                 verify_execution_budget(OUT, self.proposal, changed, False)
+
+    def test_offline_receiver_binds_resource_budget_and_storage_metadata(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory); out = root / OUT.name; out.mkdir()
+            for name in ('proposal.json', 'job_budget_review.json'):
+                (out / name).write_bytes((OUT / name).read_bytes())
+            resource = dict(verified=True, resource_admitted=True, archive_strategy_frozen=True,
+                proposal_sha256=sha(out / 'proposal.json'), job_budget_review_sha256=sha(out / 'job_budget_review.json'),
+                durable_root=str(root / 'durable'))
+            path = out / 'resource_admission.json'
+            path.write_text(json.dumps(resource))
+            admitted = dict(verified=True, resource_admission_sha256=sha(path), job_budget_review_sha256=sha(out / 'job_budget_review.json'))
+            runtime = root / 'durable' / out.name / 'runtime'
+            verify_admission_metadata(out, admitted, runtime)
+            for key in ('verified', 'resource_admitted', 'archive_strategy_frozen'):
+                denied = dict(resource); denied[key] = False; path.write_text(json.dumps(denied))
+                current = dict(admitted, resource_admission_sha256=sha(path))
+                with self.assertRaises(AssertionError):
+                    verify_admission_metadata(out, current, runtime)
+            path.write_text(json.dumps(resource))
+            with self.assertRaises(AssertionError):
+                verify_admission_metadata(out, dict(admitted, job_budget_review_sha256='wrong'), runtime)
+            with self.assertRaises(AssertionError):
+                verify_admission_metadata(out, admitted, root / 'unadmitted')
 
     def test_wrong_raw_checker_unfrozen_checker_and_unimplemented_checker_are_rejected(self):
         with tempfile.TemporaryDirectory() as directory:
