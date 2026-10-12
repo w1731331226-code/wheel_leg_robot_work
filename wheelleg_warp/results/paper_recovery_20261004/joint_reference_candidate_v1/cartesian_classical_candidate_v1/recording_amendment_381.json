@@ -1,0 +1,217 @@
+{
+  "round": 381,
+  "status": "prospective_recording_schema_extended_resource_still_rejected",
+  "proposal_sha256": "9fea834e24edf1bd9d635cf493c55fb8c935a89b0c2536547cf9cf9a1157ac53",
+  "job_budget_review_sha256": "c10a6bccc8d50fde8fb6459c77a6c6296307bd1594c07a781c7be9aba1b5de9a",
+  "original_protocol_unchanged": true,
+  "control_mapping_gain_candidates_case_list_selection_and_metric_unchanged": true,
+  "zero_new_capture_physics_forward_or_optimizer": true,
+  "reason": "The independent firstepisode receiver needs actual pre-autoreset public38/command interval/rings/private transitions; old380 endpoints alone do not prove allH1 deliveries. Named topology/header metadata makes physical reconstruction possible without newFD/CPU model compile.",
+  "delivery_schema": "classical_firstepisode_delivery_v1",
+  "delivery_fields": {
+    "prewait_public38": {
+      "values_per_worldpacket": 38,
+      "dtype_bytes": 4,
+      "bytes_per_worldpacket": 152
+    },
+    "postwait_public38": {
+      "values_per_worldpacket": 38,
+      "dtype_bytes": 4,
+      "bytes_per_worldpacket": 152
+    },
+    "returned_raw481": {
+      "values_per_worldpacket": 481,
+      "dtype_bytes": 4,
+      "bytes_per_worldpacket": 1924
+    },
+    "prewait_count": {
+      "values_per_worldpacket": 1,
+      "dtype_bytes": 8,
+      "bytes_per_worldpacket": 8
+    },
+    "previous_sensor_steps_before": {
+      "values_per_worldpacket": 1,
+      "dtype_bytes": 8,
+      "bytes_per_worldpacket": 8
+    },
+    "delay_steps": {
+      "values_per_worldpacket": 1,
+      "dtype_bytes": 8,
+      "bytes_per_worldpacket": 8
+    },
+    "post_previous_sensor_steps": {
+      "values_per_worldpacket": 1,
+      "dtype_bytes": 8,
+      "bytes_per_worldpacket": 8
+    },
+    "interval_integral": {
+      "values_per_worldpacket": 6,
+      "dtype_bytes": 8,
+      "bytes_per_worldpacket": 48
+    },
+    "interval_elapsed_s": {
+      "values_per_worldpacket": 1,
+      "dtype_bytes": 8,
+      "bytes_per_worldpacket": 8
+    },
+    "terminal_worlds": {
+      "values_per_worldpacket": 1,
+      "dtype_bytes": 1,
+      "bytes_per_worldpacket": 1
+    },
+    "command_total_before": {
+      "values_per_worldpacket": 6,
+      "dtype_bytes": 8,
+      "bytes_per_worldpacket": 48
+    },
+    "command_prefix_before": {
+      "values_per_worldpacket": 492,
+      "dtype_bytes": 8,
+      "bytes_per_worldpacket": 3936
+    },
+    "command_stamp_before": {
+      "values_per_worldpacket": 82,
+      "dtype_bytes": 4,
+      "bytes_per_worldpacket": 328
+    },
+    "command_total_after": {
+      "values_per_worldpacket": 6,
+      "dtype_bytes": 8,
+      "bytes_per_worldpacket": 48
+    },
+    "command_prefix_after": {
+      "values_per_worldpacket": 492,
+      "dtype_bytes": 8,
+      "bytes_per_worldpacket": 3936
+    },
+    "command_stamp_after": {
+      "values_per_worldpacket": 82,
+      "dtype_bytes": 4,
+      "bytes_per_worldpacket": 328
+    },
+    "guard_memory_before": {
+      "values_per_worldpacket": 16,
+      "dtype_bytes": 8,
+      "bytes_per_worldpacket": 128
+    },
+    "parking_seen_before": {
+      "values_per_worldpacket": 1,
+      "dtype_bytes": 4,
+      "bytes_per_worldpacket": 4
+    },
+    "parking_effective_before": {
+      "values_per_worldpacket": 6,
+      "dtype_bytes": 4,
+      "bytes_per_worldpacket": 24
+    },
+    "native_controller_before": {
+      "values_per_worldpacket": 30,
+      "dtype_bytes": 8,
+      "bytes_per_worldpacket": 240
+    },
+    "phase_reference_before": {
+      "values_per_worldpacket": 16,
+      "dtype_bytes": 8,
+      "bytes_per_worldpacket": 128
+    },
+    "cart_latent_before": {
+      "values_per_worldpacket": 3,
+      "dtype_bytes": 8,
+      "bytes_per_worldpacket": 24
+    },
+    "cart_shadow_before": {
+      "values_per_worldpacket": 22,
+      "dtype_bytes": 8,
+      "bytes_per_worldpacket": 176
+    },
+    "cart_reference_before": {
+      "values_per_worldpacket": 4,
+      "dtype_bytes": 8,
+      "bytes_per_worldpacket": 32
+    },
+    "guard_memory_after": {
+      "values_per_worldpacket": 16,
+      "dtype_bytes": 8,
+      "bytes_per_worldpacket": 128
+    },
+    "parking_seen_after": {
+      "values_per_worldpacket": 1,
+      "dtype_bytes": 4,
+      "bytes_per_worldpacket": 4
+    },
+    "parking_effective_after": {
+      "values_per_worldpacket": 6,
+      "dtype_bytes": 4,
+      "bytes_per_worldpacket": 24
+    },
+    "native_controller_after": {
+      "values_per_worldpacket": 30,
+      "dtype_bytes": 8,
+      "bytes_per_worldpacket": 240
+    },
+    "phase_reference_after": {
+      "values_per_worldpacket": 16,
+      "dtype_bytes": 8,
+      "bytes_per_worldpacket": 128
+    },
+    "cart_latent_after": {
+      "values_per_worldpacket": 3,
+      "dtype_bytes": 8,
+      "bytes_per_worldpacket": 24
+    },
+    "cart_shadow_after": {
+      "values_per_worldpacket": 22,
+      "dtype_bytes": 8,
+      "bytes_per_worldpacket": 176
+    },
+    "cart_reference_after": {
+      "values_per_worldpacket": 4,
+      "dtype_bytes": 8,
+      "bytes_per_worldpacket": 32
+    }
+  },
+  "named_private_scope": [
+    "guard_memory",
+    "phase_reference",
+    "parking_seen",
+    "cart_reference",
+    "cart_latent",
+    "cart_shadow",
+    "native_controller",
+    "parking_effective"
+  ],
+  "worldpacket_cap": 320994,
+  "delivery_payload_bytes_per_worldpacket": 12453,
+  "added_delivery_payload_upper_bytes": 3997338282,
+  "legacy_dense_capacity_payload_upper_bytes": 234823802688,
+  "legacy_plus_delivery_payload_upper_bytes": 238821140970,
+  "byte_archive": {
+    "max_chunk_bytes": 50331648,
+    "exact_source_hash_required": true,
+    "source_retained": true,
+    "compression": false,
+    "record_censoring": false,
+    "external_data_path": null,
+    "raw_plus_all_chunks_plus_Git_may_be_three_full_serialized_copies": true,
+    "copy_space_not_yet_admitted": true
+  },
+  "independence_limits": [
+    "Actual public38 packet is directly recorded; H1/route/windows/delayed encoders are rebuilt independently. Complete gyro/body sensor-origin andall phase role/monitor private bytes are not independently reconstructed.",
+    "Accepted Nom mode1/projection andsixspeed bounds are checked fromdata; historical Nom flag13 generation/exposure is not claimed because notstored.",
+    "Firstepisode evidence only; unscored auto-reset surplus cannot be called received full trajectories."
+  ],
+  "unbounded_extras": [
+    "model/name/header/geometry/initial/terminal/postreset metadata",
+    "classical d/DeltaF/geometry/forces/shrink diagnostics",
+    "NPY/ZIP/header/compression expansion andphysical interruption copies",
+    "CPU pending/concatenation/allocator anddurable archive/Git batch plan"
+  ],
+  "resource_admitted": false,
+  "source_runtime_admitted": false,
+  "real584_received": false,
+  "baseline_qualified": false,
+  "new_physics_steps": 0,
+  "new_FD_calls": 0,
+  "new_model_forward_rows": 0,
+  "new_optimizer_updates": 0
+}

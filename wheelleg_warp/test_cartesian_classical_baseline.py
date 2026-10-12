@@ -68,7 +68,7 @@ def run():
     np.testing.assert_array_equal(actor.terminals[0],terminal);assert actor.policy.state_dict()=={}
     chain_check(raw,Array,descriptor)
     closure_check();record_check();failure_check(Array);delivery_check(Array);wrapper_dispatch_check()
-    print('PASS380 CPU/mock: inherited/direct source and metadata HEAD closure; initial/ongoing resource rejection; receiver cases and graph/first-episode binding; separate-zero Nom/v2/original-parking launch routing; independent failure saves/primary chain/close/release; actual terminal/reset and bounded no-NN actor;0physics/CUDA/FD/NN execution')
+    print('PASS381 CPU/mock: inherited/direct source and metadata HEAD closure; initial/ongoing resource rejection; receiver cases and graph/first-episode binding; separate-zero Nom/v2/original-parking launch routing; independent failure saves/primary chain/close/release; actual terminal/reset and per-packet delivery container;0physics/CUDA/FD/NN execution')
 
 
 def closure_check():
@@ -253,17 +253,23 @@ def chain_check(raw,Array,descriptor):
     raw.data.qpos=Array(np.zeros((n,17)));raw.data.qvel=Array(np.zeros((n,16)));raw.data.ctrl=Array(np.zeros((n,6)))
     raw.targets=Array(np.zeros((n,6)));raw.state=Array(np.zeros((n,39)));raw.active=Array(np.ones(n,int));raw.done=Array(np.zeros(n,int))
     raw.command=Array(np.zeros(n));raw.stopped_q=Array(np.zeros((n,17)));raw.stopped_v=Array(np.zeros((n,16)))
-    raw.obs=Array(np.zeros((n,39)));raw.k={'state':Array(np.zeros((n,30)))};raw.ids=Array([7,10,12,15,4])
+    raw.obs=Array(np.zeros((n,38)));raw.k={'state':Array(np.zeros((n,30)))};raw.ids=Array([7,10,12,15,4])
+    raw._parking_buffers=(Array(np.zeros(n,int)),Array(np.zeros((n,6))),Array(np.zeros((40,n,30))))
+    raw._role_buffers=(Array(np.zeros((n,4))),Array(np.zeros((40,n,11))))
     raw._joint_guard_buffers=(Array(np.zeros((n,16))),Array(np.zeros((40,n,62))))
     raw._execution_buffers=(Array(np.zeros((n,6))),Array(np.zeros((n,82,6))),Array(np.zeros((n,82),int)))
     raw._execution_previous_sensor_steps=np.zeros(n,dtype=np.int64)
     raw._cartesian_buffers={name:Array(np.zeros((n,size))) for name,size in [('latent',3),('shadow',22),('reference',4)]}
     frames=np.zeros((40,n,26));frames[:,:,0]=1;frames[:,:,24]=1
     raw._complete_buffers=(Array(frames),None,None,None,Array(np.zeros((40,n,39))),Array(np.zeros((40,n,39))))
-    raw.step_wait=lambda:(obs.copy(),np.zeros(n),np.ones(n,bool),[dict(terminal_observation=terminal[w].copy()) for w in range(n)])
+    raw._execution_intervals=dict(command_integral=np.zeros((n,6)),sensor_elapsed_s=np.zeros(n),terminal_worlds=np.ones(n,bool))
+    raw.step_wait=lambda:(np.zeros((n,38),np.float32),np.zeros(n),np.ones(n,bool),[dict(terminal_observation=np.zeros(38)) for w in range(n)])
     history=SimpleNamespace(frames=np.zeros((n,10,39),np.float32),inputs=np.zeros((n,9,8),np.float32),
         elapsed=np.zeros((n,9),np.float32),valid=np.zeros((n,10),np.float32),reset=lambda:obs.copy(),close=lambda:events.append('close'))
-    history.step_wait=lambda:raw.step_wait()
+    def history_wait():
+        value=raw.step_wait()
+        return obs.copy(),value[1],value[2],[dict(terminal_observation=terminal[w].copy()) for w in range(n)]
+    history.step_wait=history_wait
     budget=worker.Budget();budget.open(descriptor)
     for _ in range(10):budget.fd(lambda *a:None,None,None,1e-6)
     saved_deliver=worker.cart.deliver;events=[]
@@ -289,6 +295,7 @@ def chain_check(raw,Array,descriptor):
         with patch.object(worker.evaluation,'make_env',base),patch.object(worker.evaluation,'evaluate',evaluate),\
              patch.object(worker.guard,'instrument',guarded),patch.object(worker,'build_delivery',repaired),\
              patch.object(worker,'require_accepted_nominal'),patch.object(worker,'model_values',return_value=({'param':raw.param.numpy()},{})),\
+             patch.object(worker,'model_metadata',return_value=dict(CPU_mock_only=True)),\
              patch.object(worker,'chain_minima',return_value=([1,1],0)),patch.object(worker,'physical_metrics',return_value=(1,0,0)) as metrics,\
              patch.object(worker,'preserve_dense'),\
              patch.object(worker.evaluation.collector,'preserve'),patch.object(worker.cart,'preserve'):
@@ -301,6 +308,9 @@ def chain_check(raw,Array,descriptor):
             with np.load(directory/f'actual_after_reset_{w}.npz',allow_pickle=False) as z:
                 assert z['prefix'].shape==(82,6) and z['frames'].shape==(10,39)
                 np.testing.assert_array_equal(z['cart_reference'],0);np.testing.assert_array_equal(z['cart_latent'],0)
+            with np.load(directory/f'delivery_{w}.npz',allow_pickle=False) as z:
+                assert z['prewait_public38'].shape==(1,38) and z['returned_raw481'].shape==(1,481)
+                np.testing.assert_array_equal(z['interval_integral'],0);assert z['command_prefix_after'].shape==(1,82,6)
         raw.param.x[0,3]+=.01
         with patch.object(worker,'require_accepted_nominal'):
             try:history.reset()

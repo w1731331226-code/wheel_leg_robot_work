@@ -1,6 +1,7 @@
 """Prospective584 first-episode classical queue; refuses missing resource admission."""
 import fcntl
 import gc
+import hashlib
 import json
 import shutil
 import subprocess
@@ -30,6 +31,7 @@ OUT=ROOT/'wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidat
 OLD_SOURCE='wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/evaluation_source.json'
 DIRECT_SOURCES=('run_cartesian_classical_baseline.py','test_cartesian_classical_baseline.py','review_cartesian_classical_baseline.py',
     'test_review_cartesian_classical_baseline.py','cartesian_classical_storage.py',
+    'review_cartesian_classical_raw.py','test_cartesian_classical_raw.py','cartesian_classical_history_receipt.py','test_cartesian_classical_history_receipt.py','cartesian_classical_archive.py',
     'cartesian_pair_runtime.py','cartesian_pair_kernel.py','cartesian_pair_kernel_v2.py','run_cartesian_repair.py','run_cartesian_zero_input.py',
     'run_wheel_interference.py','review_yaw_sector.py','execution_input_collector.py','execution_history_env.py','route_state.py',
     'joint_state_guard.py','parking_withdrawal_probe.py','fixed_reference_force.py','dashboard/live_env.py')
@@ -146,17 +148,53 @@ def state_snapshot(raw,history):
     return result
 
 
+def model_metadata(raw,arrays,scalars,descriptor):
+    m=raw.cpu
+    names=lambda kind,count:[mujoco.mj_id2name(m,kind,i) for i in range(count)]
+    table=dict(joint_names=names(mujoco.mjtObj.mjOBJ_JOINT,m.njnt),body_names=names(mujoco.mjtObj.mjOBJ_BODY,m.nbody),
+        site_names=names(mujoco.mjtObj.mjOBJ_SITE,m.nsite),geom_names=names(mujoco.mjtObj.mjOBJ_GEOM,m.ngeom),
+        actuator_names=names(mujoco.mjtObj.mjOBJ_ACTUATOR,m.nu))
+    for name in ('jnt_qposadr','jnt_dofadr','jnt_bodyid','jnt_type','body_parentid','body_rootid','body_jntadr','body_jntnum','site_bodyid','geom_bodyid','actuator_trnid'):
+        table[name]=np.asarray(getattr(m,name)).tolist()
+    joint=table['joint_names'];body=table['body_names'];site=table['site_names']
+    active=[joint.index(n) for n in ('alphaL','betaL','alphaR','betaR')]
+    motor=active+[joint.index(n) for n in ('wheel1','wheel2')]
+    eight=[joint.index(n) for n in ('alphaL','betaL','passA_L','passC_L','alphaR','betaR','passA_R','passC_R')]
+    physical=dict(active_qpos_ids=np.asarray(m.jnt_qposadr)[active].tolist(),motor_qvel_ids=np.asarray(m.jnt_dofadr)[motor].tolist(),
+        eight_joint_ids=eight,eight_qpos_ids=np.asarray(m.jnt_qposadr)[eight].tolist(),
+        chain_body_ids={s:[body.index(n) for n in ('leg'+s,'kneeA_'+s,'wheel'+s,'leg'+s+'_D','kneeB_'+s)] for s in ('L','R')},
+        chain_site_ids={s:site.index('couplerB_'+s+'_end') for s in ('L','R')})
+    header={n:dict(shape=list(a.shape),dtype=str(a.dtype),sha256=hashlib.sha256(np.ascontiguousarray(a).tobytes()).hexdigest()) for n,a in arrays.items()}
+    return dict(scalars=scalars,ids=raw.ids.numpy().tolist(),descriptor=descriptor,physical_ids=physical,topology=table,
+        dimensions={n:int(getattr(m,n)) for n in ('nq','nv','nu','njnt','nbody','nsite','ngeom')},array_header=header,
+        contact_capacity=int(raw.data.naconmax),solver_iterations=dict(cpu=int(m.opt.iterations),model=int(raw.model.opt.iterations)),
+        model_schema='classical_actual_model_v1')
+
+
+def delivery_private(raw):
+    return {n:b.numpy() for n,b in delivery_buffers(raw).items()}
+
+
+def delivery_buffers(raw):
+    return dict(guard_memory=raw._joint_guard_buffers[0],parking_seen=raw._parking_buffers[0],
+        parking_effective=raw._parking_buffers[1],native_controller=raw.k['state'],phase_reference=raw._role_buffers[0],
+        cart_latent=raw._cartesian_buffers['latent'],cart_shadow=raw._cartesian_buffers['shadow'],cart_reference=raw._cartesian_buffers['reference'],
+        command_total=raw._execution_buffers[0],command_prefix=raw._execution_buffers[1],command_stamp=raw._execution_buffers[2])
+
+
 class Actor:
     num_timesteps=0;_n_updates=0
     def __init__(self,cases,condition,yaw):
         self.cases=cases;self.condition=condition;self.yaw=yaw;self.pending=np.ones(len(cases),bool)
-        self.parts=[[] for _ in cases];self.terminals={};self.resets={};self.policy=SimpleNamespace(state_dict=lambda:{})
+        self.parts=[[] for _ in cases];self.delivery=[[] for _ in cases];self.terminals={};self.resets={};self.policy=SimpleNamespace(state_dict=lambda:{})
     def predict(self,obs,deterministic=True):
         assert deterministic and obs.shape==(len(self.cases),481)
         latent,diagnostic=cartesian_classical.actions(obs,self.condition['gamma'],self.yaw)
         for w in np.flatnonzero(self.pending):self.parts[w].append({n:v[w].copy() for n,v in diagnostic.items()})
         return embed(latent,'D3',len(self.cases)),None
     def received(self,value,raw=None,history=None):
+        for w in np.flatnonzero(self.pending):
+            if self.delivery[w]:self.delivery[w][-1]['returned_raw481']=value[0][w].copy()
         worlds=np.flatnonzero(value[2]&self.pending)
         for w in worlds:
             self.terminals[int(w)]=value[3][w]['terminal_observation'].copy();self.pending[w]=False
@@ -173,6 +211,13 @@ class Actor:
             if part:save(f'classical_request_{w}.npz',lambda part=part:{n:np.stack([r[n] for r in part]) for n in part[0]})
         for w,value in self.terminals.items():save(f'actual_terminal_history_{w}.npz',lambda value=value:dict(actual_raw481=value))
         for w,value in self.resets.items():save(f'actual_after_reset_{w}.npz',lambda value=value:value)
+        for w,part in enumerate(self.delivery):
+            if part:
+                complete=[r for r in part if 'returned_raw481' in r]
+                if complete:save(f'delivery_{w}.npz',lambda complete=complete:{n:np.stack([r[n] for r in complete]) for n in complete[0]})
+                for k,r in enumerate(part):
+                    if 'returned_raw481' not in r:
+                        for name,value in r.items():save(f'delivery_partial_{w}_{k}_{name}.npz',lambda value=value,k=k:dict(value=value,packet_index=np.array(k)))
 
 
 def preserve_dense(raw,directory,cases,errors):
@@ -231,7 +276,7 @@ def build_delivery(factory,cases,directory,mode):
     assert all(t is raw._cartesian_buffers['zero'] for t in targets)
     targets.clear()
     raw._classical_delivery_contract=dict(compiled_parking_prepare_enabled=0,chart_mode=mode,accepted_nominal_mode=1,
-        captured_counts=counts,Nom_target_separate_zero=True,Nom_candidate_guard_order=True)
+        captured_counts=counts,Nom_target_separate_zero=True,Nom_candidate_guard_order=True,delivery_schema='classical_firstepisode_delivery_v1')
     atomic_json(directory/'classical_delivery_contract.json',raw._classical_delivery_contract)
     return result
 
@@ -248,7 +293,7 @@ def measure(cases,condition,descriptor,p,global_budget,directory,errors):
         raw,route,history,norm,env=result;global_budget.bind(raw)
         assert all(all(getattr(s,n)==v for n,v in case['scenario'].items()) for s,case in zip(raw.scenarios,cases))
         arrays,scalars=model_values(raw);np.savez_compressed(directory/'actual_model_before_launch.npz',**arrays)
-        atomic_json(directory/'actual_model_before_launch.json',dict(scalars=scalars,ids=raw.ids.numpy().tolist(),descriptor=descriptor))
+        atomic_json(directory/'actual_model_before_launch.json',model_metadata(raw,arrays,scalars,descriptor))
         raw._classical_guard_chunks=[[] for _ in cases]
         reset=env.reset;wait=history.step_wait;raw_wait=raw.step_wait;close=env.close
         def close_once():
@@ -259,10 +304,26 @@ def measure(cases,condition,descriptor,p,global_budget,directory,errors):
         def waited():
             value=wait();actor.received(value,raw,history);return value
         def physical_wait():
+            pending=np.flatnonzero(actor.pending);before=delivery_private(raw)
+            before.update(prewait_public38=raw.obs.numpy(),prewait_count=raw.state.numpy()[:,0].astype(np.int64),
+                previous_sensor_steps_before=raw._execution_previous_sensor_steps.copy(),delay_steps=raw.param.numpy()[:,4].astype(np.int64))
+            current={}
+            for w in pending:
+                r={n+'_before':a[w].copy() for n,a in before.items() if n not in ('prewait_public38','prewait_count','previous_sensor_steps_before','delay_steps')}
+                r.update({n:a[w].copy() for n,a in before.items() if n in ('prewait_public38','prewait_count','previous_sensor_steps_before','delay_steps')})
+                actor.delivery[w].append(r);current[w]=r
             g=raw._joint_guard_buffers[1].numpy()
             for w in np.flatnonzero(actor.pending):
                 if (g[:,w,0]==1).any():raw._classical_guard_chunks[w].append(g[g[:,w,0]==1,w].copy())
-            value=raw_wait();keep=raw._complete_buffers[0].numpy()[:,:,0]==1
+            value=raw_wait();interval=raw._execution_intervals
+            for w in pending:
+                r=current[w]
+                r.update(interval_integral=interval['command_integral'][w].copy(),interval_elapsed_s=interval['sensor_elapsed_s'][w].copy(),
+                    terminal_worlds=interval['terminal_worlds'][w].copy(),post_previous_sensor_steps=raw._execution_previous_sensor_steps[w].copy(),postwait_public38=value[0][w].copy())
+            for name,buffer in delivery_buffers(raw).items():
+                a=buffer.numpy()
+                for w in pending:current[w][name+'_after']=a[w].copy()
+            keep=raw._complete_buffers[0].numpy()[:,:,0]==1
             before,after=raw._complete_buffers[4].numpy()[keep],raw._complete_buffers[5].numpy()[keep]
             if len(after):
                 length,_=chain_minima(after[:,:17],raw.cpu);margin,actual,issued=physical_metrics(before,after,raw.cpu)

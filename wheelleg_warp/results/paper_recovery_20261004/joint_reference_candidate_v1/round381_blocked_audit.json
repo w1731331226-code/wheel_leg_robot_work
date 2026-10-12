@@ -1,0 +1,62 @@
+{
+  "round": 381,
+  "audited_at": "2026-10-12T22:36:35.304664+00:00",
+  "verified": true,
+  "decision": "blocked_after_commit_and_verified_sync",
+  "goal_achieved": false,
+  "goal_scope_unchanged": true,
+  "same_blocking_condition": "No admitted durable capacity for complete frozen584 evidence/archive/temporary/Git workload.",
+  "consecutive_goal_turns": 3,
+  "rounds": [
+    379,
+    380,
+    381
+  ],
+  "previous_turn_evidence": [
+    "PROJECT_MEMORY.md#第379轮资源拒绝",
+    "PROJECT_MEMORY.md#第380轮资源仍未准入",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_classical_candidate_v1/resource_admission.json"
+  ],
+  "human_storage_answer_received": false,
+  "persistent_writable_mounts": [
+    {
+      "path": "/",
+      "source": "/dev/nvme0n1p6",
+      "fstype": "ext4",
+      "available_bytes": 6623846400
+    },
+    {
+      "path": "/boot/efi",
+      "source": "/dev/nvme0n1p1",
+      "fstype": "vfat",
+      "available_bytes": 42020864
+    }
+  ],
+  "resource_admission_sha256": "fa6594f33c248309c0f75b2b668d6b44362889868bbd8b6a37accd0f92f3da0b",
+  "preparation_receipt_sha256": "62b9026f6c2f64572c0941feff61204d5ad25e1fa8a2482911d2636a73150add",
+  "necessary_CPU_preparation_completed": true,
+  "no_further_meaningful_qualification_progress_without_storage": true,
+  "runtime_exists": false,
+  "execution_locator_exists": false,
+  "actual584_episodes": 0,
+  "new_physics_steps": 0,
+  "new_FD_calls": 0,
+  "new_model_forward_rows": 0,
+  "new_optimizer_updates": 0,
+  "avoid": [
+    "No repeated preparation/audit rounds that substitute for first actual baseline measurement.",
+    "No partial reduced scientific queue or deletion of original evidence.",
+    "No legacy compression ratio or chunking-as-volume-fit admission."
+  ],
+  "resume_condition": "A durable storage path/capacity or external resource state changes; re-audit actual full storage/CPU/allocator/model/source/HEAD before frozen584/68.",
+  "paper_required_work_still_open": [
+    "Strong classical measured qualification and original full ability retention",
+    "Matched fresh learned Live/Reset PPO and original scientific gain gate",
+    "Fresh formal5, independent ID/OOD, seed-level statistics and end-to-end costs",
+    "New method manuscript"
+  ],
+  "next_periodic_reviews": {
+    "direction_and_real_cleanup": 385,
+    "whole_framework": 390
+  }
+}

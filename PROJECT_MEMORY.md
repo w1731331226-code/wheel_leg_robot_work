@@ -2,7 +2,18 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：第380轮方向/实际清理/整体框架核查完成，十项遗漏修复；资源仍未准入（2026-10-13，整体目标active）
+## 当前状态：第381轮完整录证接收准备完成；连续资源阻塞，等待持久存储后恢复（2026-10-13，整体目标未完成）
+
+- 381落实380要求的一次有限交付：新增独立review_cartesian_classical_raw、复用375纯NumPy Receipt的history接收与stdlib逐字节分块归档；最少补实际逐包public38/returned481、interval/rings及八项named-private前后状态、actual model命名拓扑/数组header。原控制、Nom、物理、FD、capture、gamma/cases/selection/主指标保持；0新物理/FD/CUDA/NN/优化。不是把379/380旧source回执直接升级。
+- raw receiver只在实际584回合/68构造全部完整、runtime/source/HEAD/resource/proposal/jobs和raw SHA闭合后接收；独立重算经典反馈、当前几何/原B1轮差、原设计/接触/任务、H1/命令积分/延迟qv、实际terminal/reset。首回合之外autoreset surplus不冒称全轨迹接收；公开gyro来源/solver接触生成、Nom13生成及完整phase-role私有生成仍source-bound，无稳定/学习收益资格。main metric receiver仍负责全部旧成功保持、公开CPU28与主门，不凭producer passed或377撤回停车范围放行。
+- 实际prewait先保存，wait失败也保留已观察字段；完整delivery与最后partial逐字段分别写，不用intersection抹去前面成功包。raw的7个CPU测试、history synthetic 0/10ms与65步部分终态反例、worker CPU/mock通过；只证明接收/保存逻辑准备，不证明actual584/newbaseline/formal5。新tests/log和source SHA封存于381交付记录，旧科学/失败工件保留。
+- archive工具单块≤48MiB，逐块/完整SHA校验，拒坏块/缺块/非法cap/覆盖，源原字节保留。已见31796B cache fixture只产生一块、恢复字节完全同；synthetic多块/空文件正常及错误反例通过，临时测试输出已去。无压缩、删字段、删原始数据或Git大包上传；原raw+全部chunks+Git可能占三份，工具通过不能当容量准入。
+- recording_amendment_381新增12,453B/world-packet，冻结320,994包上界加3,997,338,282B；旧dense/contact加delivery载荷上界238,821,140,970B，diag/model/header/zip/partial/CPU/allocator/归档副本仍未bound。旧500GB是旧格式两份保守规划，不是新方案必需量或科学信息下界；新空间准入必须重算，resource/source/runtime仍false。
+- 实际findmnt/available复核：可写持久根约6.6GB、bootEFI约42MB，其它/dev挂载为只读squashfs；runtime与execution_locator均不存在。379、380、381连续三轮同一持久空间阻塞，人类路径/容量问题尚未答复；必要接收准备已闭合，无法在现空间内推进首个冻结584测量。按持续执行blocked规则收尾提交同步后标记blocked并停止自动续轮，等待持久路径或资源条件变化；不再以准备报告循环代替真实测量。
+- 恢复后：先完成实际存储/完整归档峰值、CPU/allocator、实际模型/初态与source/committedHEAD准入，再唯一执行冻结584/68，独立raw+metric接收；保持原J改善15%且.05deg、≥34及完整经典/CPU能力，合格后另准入fresh匹配Live/Reset PPO。方法增量/全能力/formal5/独立ID-OOD/种子统计/端到端成本/方法稿仍缺，论文目标不缩。下一方向/实际清理385、整体框架390在恢复后按期。
+- 本轮源、381交付/预算/分块/阻塞证据、README与记忆中文提交；恢复同步守护并实核远程HEAD一致。没有科学数据删除、部分队列、长训或视频。
+
+## 历史状态：第380轮方向/实际清理/整体框架核查完成，十项遗漏修复；资源仍未准入（2026-10-13，整体目标active）
 
 - 上轮为progress（379执行器/接收器CPU准备及真实资源拒绝提交同步）。380按期完成方向深审、实际冗余清理和完整论文执行链框架核查，0新实验/物理/FD/CUDA/NN/优化；原方法增量+完整能力/formal5/独立ID-OOD/统计成本/方法稿目标不缩。
 - round380_direction_review条件性继续已冻结一次584/68经典baseline：它可判主门与保持是否可达，但资源拒绝不是科学否定。机制假设仍为同公开481/latent3/原Nom/guard/滤波/original停车及fresh匹配训练下Live current-geometry vsReset frozen map的可重复增益；独立gamma经典差异、相对377withdraw prior差异不归因几何，经典有限搜索不是最优性上界。未来PPO探索/authority差异及V6同停车公平须明确，不能把无学习工程/负审计稿当完成出口。

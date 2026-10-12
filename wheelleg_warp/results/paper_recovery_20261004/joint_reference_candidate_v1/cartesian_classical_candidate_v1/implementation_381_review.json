@@ -1,0 +1,45 @@
+{
+  "round": 381,
+  "status": "CPU_preparation_verified_only",
+  "verified": true,
+  "source_sha256": {
+    "wheelleg_warp/run_cartesian_classical_baseline.py": "c3cf4d61fd92a9d43d950146a6801b88ea783f5006b4e14677f1dcf0300b6be7",
+    "wheelleg_warp/test_cartesian_classical_baseline.py": "3bf466b00f41bd8647540862c0e93fbf4844c2f6875ae765488bf5ed1707c758",
+    "wheelleg_warp/review_cartesian_classical_raw.py": "97acdf268a3d3ec9e909656833e795003ab10da0218f9b0cdfe6e84b7062080c",
+    "wheelleg_warp/test_cartesian_classical_raw.py": "72b1c260fdf2b4884d0fe4623e997ef9a2bbea2b5943d6d3129c223d662140f0",
+    "wheelleg_warp/cartesian_classical_history_receipt.py": "fc1a656b2638e728a6a5bfc59249e48b551aaf74a3e1679ed03ba3e50401db9f",
+    "wheelleg_warp/test_cartesian_classical_history_receipt.py": "35fc581d7ad5a02ed51e728b77387f6fb566865238c7c8da64c2d68b2649dfc8",
+    "wheelleg_warp/cartesian_classical_archive.py": "8ca4b61a7fc3e2d7e575e6ff54269963a7bfb7cfed86e6838bf22378a5795a83"
+  },
+  "test_logs_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_classical_candidate_v1/raw_381_test.log": "a32bafacdfb993e4e2f8be075f77056addadd4978681a5621bd984f3bfe373b8",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_classical_candidate_v1/worker_381_test.log": "52ba14d7f0e9cef8a3a826801eb636ebfbf2da355086df9147eecf4996f36b48",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_classical_candidate_v1/history_381_test.log": "4087521348a36f0776f687721ad8e14c6e6a7f2888ef59dd9f5099a42b0bf615",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_classical_candidate_v1/archive_381_test.log": "dbd103781241fe6240e6881827a13c3f1ca282cf1d36f149f94695507452b597"
+  },
+  "tests": {
+    "raw_unittest_count": 7,
+    "raw_unittest_exit": 0,
+    "worker_CPU_mock_exit": 0,
+    "history_synthetic_0_10ms_65step_partial_exit": 0,
+    "archive_synthetic_and_prior_seen_fixture_exit": 0
+  },
+  "recording_amendment_sha256": "4d8b82b2ba1382861f16e9b8aa6cce315d114d604af6b105f02541db6a07d9bf",
+  "archive_review_sha256": "dd16cca052d5e0fcd47ece3b44fce6654d2e1e90b92b1e06029c937ebf125fba",
+  "resource_admission_sha256": "fa6594f33c248309c0f75b2b668d6b44362889868bbd8b6a37accd0f92f3da0b",
+  "resource_admitted": false,
+  "source_runtime_admitted": false,
+  "real584_received": false,
+  "baseline_qualified": false,
+  "formal5_admitted": false,
+  "new_physics_steps": 0,
+  "new_FD_calls": 0,
+  "new_model_forward_rows": 0,
+  "new_optimizer_updates": 0,
+  "limits": [
+    "CPU normal/corruption fixtures and existing source-byte archive only; not actual new physical qualification.",
+    "Full gyro origin/contact solver/Nom13/full phase-role private generation remains source-bound.",
+    "No volume-fit guarantee; raw/chunks/Git may occupy three full serialized copies."
+  ],
+  "next_action": "Once durable storage exists, prove full storage/CPU/allocator/model/source/HEAD admission before the frozen584/68 queue; independently receive and apply original retention/research gates."
+}
