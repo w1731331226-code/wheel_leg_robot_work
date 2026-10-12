@@ -1,8 +1,10 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（370方向与整体框架核查完成，2026-10-13）
+## 当前论文计划（371三包输入诊断准入完成，2026-10-13）
 
 原目标仍是：在原完整不对称接触任务上，得到一个保持强经典能力并有明确增量的可执行PPO方法。当前没有通过收益资格的新方法，正式五种子、独立ID/OOD、统计与成本分析、新方法稿件均未完成；CPU历史基线继续保留，不将物理吞吐当PPO端到端加速。
+
+第371轮[新执行器](run_cartesian_zero_input.py)与[105源码准入](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/source_admission.json)完成，真实包尚未启动，提交后才唯一运行。每slot三条件同9个只读记录核，保中间完整输入和Nom/Cart边界；三bank实际模型初态匹配，graph身份/world/一次调用与HEAD源码绑定，首因/各份保存错误分列。纯CUDA复制、真实light wrapper路由及预算/错误保存/分类反例通过；原失败与1200图步/FD80保持。B0自身不复现即停beforeCart，事件不复现记inconclusive，不追加或直接PPO。
 
 第370轮[方向深审](results/paper_recovery_20261004/joint_reference_candidate_v1/round370_direction_review.json)保留CartLive3/CartReset3几何更新假设，只批准一次[匹配构造零输入诊断](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/proposal.json)：B0两次、Cart一次，各10环境一个zero包，1200图步/FD80。B0自身严格复现失败即停，事件未复现记不足，不加包/seed或按368微差选容差；368失败目录保持。371须完成新worker、源码/预算准入并提交后唯一执行，再作分支去留判断，不继续反复审同一前缀。当前只批准方向，未准入运行或PPO。
 

@@ -2,7 +2,15 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：第370轮方向/冗余清理/整体框架核查完成，批准一次有限诊断（2026-10-13，整体目标active）
+## 当前状态：第371轮三包输入链诊断源码准入完成，待唯一首跑（2026-10-13，整体目标active）
+
+- 370为progress（方向/42528B清理/全链框架与puremock遗漏确认）。371新增cartesian_zero_input_trace及run_cartesian_zero_input/test，复用原base.CurriculumEnv三bank、light phase/parking/collector/guard和未改Cart v2适配器；B0 repeat1/repeat2先行，严格不复现即停止beforeCart。3×10×40=1200图步/FD80不变，0PPO/网络forward/学习，未恢复368。
+- 每slot三条件相同9个只读observer核：phase前fullq17/v16/sensor28、memory5/gyro/active/step，Nom前后control/diag及clear/deliver边界memory5/canonical；B0不存在Cart操作时同次序记空边界，不改控制。Nom/phase/command实际指针与40拓扑核过。原wait任何检查/autoreset前外层保terminal，失败分别保存common/observer/Cart/terminal；新增记录改变执行上下文的边界保持。
+- 三次实际构造均保存递归Model数组、opt/stat/scalars及q0/obs0/reference/gains/geom，首次graph前逐stage与首次B0核同。F1补review_cartesian_repair，105源码/runtime/370准入决定/369proposal冻结；F3批量核HEAD manifest及全源码blob，绑定原graph与真实world数、每graph仅1包、调用前硬cap；F2保primary与secondary，common写失败继续尝试其它份。只读审查指出并已修原graph可替换及保存份间跳过两项；不是实际队列重试。
+- CUDA纯复制核不改输入，真实light wrapper的spy显示同9记录/slot和NOM-clear-deliver顺序；替换/未知/重复graph、总预算/FD、缺HEAD源码、secondary写失败继续其它份、输入链/Nom/Cart边界/未复现分类反例均通过，0机器人物理。freeze自检及105SHA、validator覆盖、无runtime目录确认完成。源码准入需中文提交后才首个真包；任何实际失败无重跑、不延预算，不因此晋升接口或方法收益。
+- 372接收实际三包或停止分支后作路线决定，375方向/清理、380框架保持；当前目标完整六出口仍缺、goal active。收尾恢复守护并核remote，无视频。
+
+## 历史状态：第370轮方向/冗余清理/整体框架核查完成（2026-10-13）
 
 - 369为progress（ULP/可识别性反例与匹配构造前瞻协议）。370完成366—370方向深审与361—370当前论文全链框架核查，保Cartesian Live/Reset几何更新研究假设，只批准cartesian_zero_input_diagnostic_v1的3个fresh zero、10world、1200图步/FD80；runtime/source尚未准入，0新机器人物理/FD/网络forward/学习，不续368或使用余预算。
 - 一次诊断有决策价值：B0同三bank构造复现两次，成功后才Cart一次，录中间fullq/v/gyro/m5及Nom/Cart边界。B0自身不复现即停并关闭当前严格逐值准入路线；输入链分歧不无据改Cart，确切执行错误才考虑一次显式版本化修正；不复现原差异记inconclusive、不加packet/order/seed/容差。368失败/门/模型与旧D3、路线偏移、反射、未定义QP关闭决定保持，不把脚本0/20当优化策略上限。
