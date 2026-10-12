@@ -2,7 +2,17 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：第375轮独立数值子集接收、方向深审及清理完成；完整接口录证不足（2026-10-13，整体目标active）
+## 当前状态：第376轮匹配PPO无更新接口协议与源码准入完成，待提交后唯一运行（2026-10-13，整体目标active）
+
+- 上轮为progress（375独立数值子集、五轮方向/80299B清理）。新cartesian_ppo_interface_v1独立前瞻协议：CartLive3/CartReset3各10world，旧33531各stage前10，原自然4000/8000；各1coldzero后唯一fresh Norm.reset保prefix10课程样本，再真实SB3 collect_rollouts24×50包。总960800图world步/FD80，policy2400calls/24000rows；value-only最多24048calls/24480rows（48末端batch×10+最坏24000单行timeout），均原调用前核，optimizer/train/learn禁止。
+- 新cartesian_ppo_recorder在原Nom实际zero调用后、candidate前只读记每slot两wheelv与diag13/14，40slot原args及Nom/candidate/guard同对象/zero/effective指针关联保存，旧控制源不改。post_private九buffer+previous及bank_actual四项每包同期存；actual raw infos481在VecNormalize前deepcopy，与normalized/CPU expected终态分名不覆盖。
+- 新worker复用原Nom/guard/light父课程/Replay/physical与ForceActions D3配对嵌入，对外space3但身份Cart；真实PPO buffer包含unclippedGaussian/values/logprob、post-timeout rewards、GAE/returns及末values/done，每包存clipped3/实际6/已有distribution mean/std、raw和normalized481、RMS前后/returns。无额外调试forward、不用buffer.get扰RNG布局；仅收集不更新。
+- 两臂全新且完整actor/critic/zero均值head/logstd=log(.25)/optimizer、RMS、Python/NumPy/Torch CPU/CUDA及已seed action-space RNG、initial raw和normalized逐world行配对。唯一_setup_learn reset后才重建Replay；end只要求weights/logstd/optimizer/_n_updates不变，obs count12010.0001、ret12000.0001，RNG/RMS随采样变化并保存。无旧模型warmstart或heldout访问。
+- 只读审查修首包reward比较为原float64→Norm float32严格cast（算法/容差不改）、holder先登记再bind、raw初态行配对及Replay reset时点。pending期望terminal预填NaN+verified False，成功才赋值，失败不使整批schema丢失；pending Tap逐阶段更新，actor/Tap原infos/post/bank/partial rollout pos/full/network最后输入输出/主因及逐份secondary独立保存。
+- CPU/mock路由/所有权/恢复/清零、fresh两CPU PPO权重/optimizer/全RNG/std（0forward）、真实Norm非精确float64 reward/terminal deepcopy/RMS、policy/value cap/禁止update及失败pending schema自检全部通过；新只读GPU kernel编译和2row复制每次通过，3次累计6只读行，0机器人物理/FD/semantic重验/网络forward。114源、运行版本/CUDA/GPU及SB3相关5源SHA冻结，启动须核HEAD manifest+全部源blob并先中文提交。
+- 当前runtime目录不存在，source/runtime准入只覆盖最小执行器准备，不是实际PPO或方法资格。提交后唯一队列，原物理/design/history/action/RMS/源码/预算/录证失败停全并保留；自然事件不足inconclusive，不追加或调std/课程/bank/seed。旧368/371/374/375工件及门不改，正式五种子未准入；六论文出口仍缺、goal active，380方向/清理/整体框架保持，无视频。
+
+## 历史状态：第375轮独立数值子集接收、方向深审及清理完成；完整接口录证不足（2026-10-13，整体目标active）
 
 - 上轮为progress（374唯一真实双Cart队列完成与109原始工件封存）。375新增纯NumPy review_cartesian_light_history/map，不调用producer Replay/分类、CUDA/solver/semantic；0新物理/FD/网络forward/学习。108冻结源+HEAD manifest、109原始工件及368/371失败SHA均未变，旧队列不续、不改历史失败。
 - 两臂各1200包及coldzero独立核完，959775有效子步：全部82-slot command prefix/stamp/total/旧delay窗口、实际returned481/actor串接/因果route/public reset、26旧episode与实际done一一对应、zero/final九种非done私有buffer及previous通过。原1e-10积分门内，prefix差分重建max1.7763568394e-15；另一独立guard短环sum重建max约2.44e-14，算术顺序不同，不用于跨轨迹放宽。

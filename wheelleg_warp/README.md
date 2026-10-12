@@ -1,8 +1,10 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（375独立数值子集通过，完整接口录证不足，2026-10-13）
+## 当前论文计划（376匹配PPO无更新接口已准入，待唯一队列，2026-10-13）
 
 原目标仍是：在原完整不对称接触任务上，得到一个保持强经典能力并有明确增量的可执行PPO方法。当前没有通过收益资格的新方法，正式五种子、独立ID/OOD、统计与成本分析、新方法稿件均未完成；CPU历史基线继续保留，不将物理吞吐当PPO端到端加速。
+
+第376轮新[匹配PPO工程协议](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/proposal.json)与[114源码准入](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/source_admission.json)已准备，提交并核HEAD后唯一运行。两Cart各10world、1coldzero后fresh Norm.reset保10课程样本、24×50真实SB3 rollout包，总960800图world步/FD80；policy24000rows，value-only另限24480rows，optimizer/train/learn禁止。新[worker](run_cartesian_ppo_interface.py)补actual/norm/expected终态分名、同期九私有+previous和bank四缓冲、轮速/Nom flags与原指针路由；全新actor/critic/RMS/全RNG/σ=.25和初态逐行匹配。CPU/mock及GPU纯复制自检过，0机器人物理/FD/网络forward；当前尚未真实运行，不晋升PPO/方法收益。
 
 第373轮[独立v2合同](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v2/proposal.json)已注册，两Cart各10world、1coldzero+1200固定正弦包，总960800图步/FD80，0学习。[同输入语义接受](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v2/semantic_acceptance.json)已完成：20个已存完整输入各运行B0/CartLive/CartReset真实phase/parking/Nom/candidate/guard组合，60 CUDA控制行的16公共状态与最终命令严格同，0solver/FD。仅覆盖残差/latent/shadow全零的冷中性输入，不包含旧latent撤回或长期物理路径等价；原失败封存，不按浮点差设容差。
 
