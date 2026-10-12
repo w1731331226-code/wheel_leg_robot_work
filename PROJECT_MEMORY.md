@@ -18371,3 +18371,14 @@
 - `wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/runtime/progress.json`
 - `wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/runtime/started.json`
 - `wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_action_candidate_v1/runtime_run.log`
+
+### 自动同步快照 2026-10-12T17:28:57+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_warp/cartesian_curriculum.py`
+- `wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/proposal.json`
+- `wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round367_curriculum_lifecycle.json`
+- `wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round367_curriculum_lifecycle.log`
+- `wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round367_training_interface_decision.json`
+- `wheelleg_warp/test_cartesian_curriculum.py`

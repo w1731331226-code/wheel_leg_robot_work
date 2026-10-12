@@ -1,0 +1,18 @@
+{
+  "round": 367,
+  "status": "post_curriculum_reset_fixed_and_nonlearning_protocol_registered",
+  "evidence": "真实父类step_wait先raw autoreset，后install新bank并reset_rows。新增post-parent auxiliary refresh；三行测试复现旧ref误差.2649999995m，修复后1.3878e-17m，terminal/未结束行/父mask不变。物理reset/forward替身，不当真实多world通过。",
+  "implementation": "cartesian_curriculum.CartesianCurriculum + refresh_after_curriculum; reuses existing reset_aux. Old frozen runtime/training sources untouched. Requires same returned public38 and raw.obs on done rows, rejects foreign packet/non-bool mask.",
+  "remaining": "Current dense adapter needs output directory, complete buffers and80 calls; existing trainer light path has40 calls and no dense buffers. A dedicated light adaptation is necessary before using the class with real curricula. No claim that a reset helper alone admits training.",
+  "protocol": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/proposal.json",
+  "protocol_sha256": "a89c7946e218ae5227ce9b7c5c143b87c64c1888548614d440be592d8c876259",
+  "lifecycle_sha256": "5a702c5d40cabb97c46f498bc806a1c6b1a66b86f71053d2b7fbd7f3e4b7e527",
+  "next": "368 limited real light10world nonlearning qualification, source/admission first. Any later PPO engineering is separate and still unregistered.370 direction/cleanup/framework.",
+  "no_physics_or_learning_this_round": true,
+  "new_physics_steps": 0,
+  "new_FD": 0,
+  "new_model_forward_rows": 0,
+  "new_learning_samples": 0,
+  "formal5_admitted": false,
+  "goal_complete": false
+}
