@@ -6,7 +6,7 @@
 
 - 3f82ba37源码准入提交后首次唯一pid28209/unified59549运行，现exit1且failure回执已保存；B0及CartLive3各10world只执行一个zero packet。actual graph800、原physical evidence800、FD25、wall5.370642571s含构造记录，0sine/学习/网络forward/retry；CartReset3及后续1200×2队列均未进入，不消费剩余注册预算。
 - 停于逐值比较controller_memory[6,5]，差3.3224621269817696e-18；该列是原Nom横滚gyro的.05低通，不是Cartesian residual16:22。完整复核另发现phase_role41个内部诊断值微差：requested_offset35个（slot5—39）max1.764642495e-18，left/right target各3个max5.551115123e-17。原逐值门保持，未事后放宽、改判或重跑。
-- 两臂初态28字段全同，zero31字段除上述2项外29项全同，含q/v/ctrl/warm/time/endpoint sensors、native state/diag、公开38/481、reward、全部40slot guard、collector prefix/stamp/total及history。20行live物理/设计监测全过，Cart400有效子步canonical/latent全零、candidate与guard λ1、无control error。独立final guard积分重建误差max6.938893904e-18且历史匹配；并非完整中间全body/gyro/contact流，不能据端点同锁定具体非确定性根因或称长期等价/完整回合安全。
+- 两臂初态28字段全同，zero31字段除上述2项外29项全同，含q/v/ctrl/warm/time/endpoint sensors、native state/diag、公开38/481、reward、全部40slot guard、collector prefix/stamp/total及history。20行live物理/设计监测全过，Cart400有效子步canonical/latent全零、candidate与guard λ1、无control error。按已落盘audit的sum(ctrl)*dt独立积分聚合，误差max1.387778781e-17且历史匹配；并非完整中间全body/gyro/contact流，不能据端点同锁定具体非确定性根因或称长期等价/完整回合安全。
 - failure.preservation_errors=[]，当前所有buffer、old terminal及101冻结源/准入/日志/初态等均保，zero_failure_audit绑定13输入输出SHA与全部差异坐标；双人只读结论一致。真实partial reset、stage2/3、正delay未验证，轻量接口/PPO/科学种子均未通过。369只做有限已存数据根因与数值合同核对；任何改变执行路径或新prospective协议需另行准入，不续原目录，不以微小差异直接否定或宣称Cartesian方法收益。370方向/清理/整体框架保持。
 - 原failed目录与源码不修改；收尾保存本轮全部证据，中文提交后恢复守护并实核remote。整体论文六出口仍缺、goal active，无视频。
 
