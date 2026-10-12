@@ -2,7 +2,16 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：第372轮独立接收完成，严格逐值跨轨迹准入路线关闭（2026-10-13，整体目标active）
+## 当前状态：第373轮新v2合同与同输入cold-zero控制语义通过（2026-10-13，整体目标active）
+
+- 372为progress（800已存子步独立接收与旧严格跨轨迹路线关闭）。373独立注册cartesian_training_interface_v2：旧33531各stage前10、CartLive3/CartReset3各1coldzero后显式reset及1200原固定正弦、保prefix10课程样本、milestones4000/8000，总960800图world步/FD80、0学习；semantic与单轨迹原hardphysical/reset/history门分开，不重跑B0或旧20，不修改368/371失败及旧门、不用已见delta设容差。
+- check_cartesian_control_semantics读取371B0repeat1全部10初态+10终态，完整q/v/sensor/native30/guard16、reference/gains/feed/angles/5height knots、实际ids、公开gain upper等独立clone。task arrival<0及shared offset26:30零证成共同Nom correction0；不推广至arrival修正场景。真实phase/select-anchor/parking/Nom/v2candidate/guard/finish运行20×3=60 CUDA控制行，0solver/FD/网络forward/学习；只编译CPU XML取ids，无Data/forward，冻结数值资源复用未重做控制设计。
+- B0/CartLive/CartReset的16公共Nom/controller/diag/reference/role/parking/guard/finalfloat32 ctrl与q/v/sensors严格同，cold要求native16:22/latent/shadow都零，有旧memory的零请求反例拒绝。3NPZ/semantic_review/log及semantic_acceptance保存、105旧核心源及旧failure SHA未变。只读复核同结论，runtime独立zero指针仍由原adapter绑定；本次effective零指针值等不证明capture/physics路径一致。
+- 已成功semantic工件封存不重验；checker首跑仅验fixture SHA，接受时补核全部105源及新checker SHA。此首版缺失败前once marker/分支紧急保存，未触失败，不把其列为可重跑worker；未来新语义版本或runtime须前置source/HEAD及primary/逐份secondary保存。新物理worker不能直接复用旧rollout finally不受保护版本；每原graph限1201次（不是371一次），原身份/world/40拓扑与总预算都在调用前核。
+- 同输入cold语义仅去除把基线自身浮点路径变化当Cart语义错误的混杂，不证明跨轨迹或长期数值等价/动态解耦/学习收益。原物理/design、真实partialreset/stage2/3/positive-delay、oldterminal/newpublic reset/命令窗口/raw481/全部non-done行及CPU映射检查保持。新v2 runtime/source尚未准入，无机器人新包；374须实现最小版本化worker、源码与已接受semantic/runtime/budget准入提交后唯一队列，失败停保留，事件不足不追加。
+- 协议/semantic源和接受证据、README/记忆保存并中文提交，收尾恢复守护与核remote。375方向/清理、380框架保持；三维匹配PPO与收益、正式新seed/独立ID-OOD/统计成本/方法稿六出口仍缺，goal active，无视频。
+
+## 历史状态：第372轮独立接收完成，严格逐值跨轨迹准入路线关闭（2026-10-13）
 
 - 371为progress（唯一两B0实际运行与中间输入失败证据）。372新增独立review_cartesian_zero_input，不调用producer分类或物理执行；105冻结源及全部receipt原始SHA核同、3stage各413模型数组/scalars与initial28同，800有效子步/35FD、仅2B0、无Cart/completion、secondary空及原预登记停止条件接收。0新机器人物理/FD/网络forward/学习。
 - 从冻结XML sensor名字与实际Model.sensor_adr重建body_gyro地址4，不用fixture地址10；逐slot核phase/Nom输入、空clear/deliver边界、m5下一步/末终态串接、Nom/guard base/res/λ/最终ctrl与guard记忆。全部40步最终guard命令独立累计，prefix/stamp/总量及20ms窗口按既有1e-10积分核算（不是跨轨迹容差），首次九旧帧+新public/因果route与481编码核过；原live物理/design监测20行过，terminal与preserved归属一致。错误gyro/m5/ctrl副本反例拒绝，原文件不改。
