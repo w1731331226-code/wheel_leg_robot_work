@@ -1,16 +1,18 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（374轨迹执行器已冻结，待唯一执行，2026-10-13）
+## 当前论文计划（374双Cart真实队列完成，待完整独立接收，2026-10-13）
 
 原目标仍是：在原完整不对称接触任务上，得到一个保持强经典能力并有明确增量的可执行PPO方法。当前没有通过收益资格的新方法，正式五种子、独立ID/OOD、统计与成本分析、新方法稿件均未完成；CPU历史基线继续保留，不将物理吞吐当PPO端到端加速。
 
 第373轮[独立v2合同](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v2/proposal.json)已注册，两Cart各10world、1coldzero+1200固定正弦包，总960800图步/FD80，0学习。[同输入语义接受](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v2/semantic_acceptance.json)已完成：20个已存完整输入各运行B0/CartLive/CartReset真实phase/parking/Nom/candidate/guard组合，60 CUDA控制行的16公共状态与最终命令严格同，0solver/FD。仅覆盖残差/latent/shadow全零的冷中性输入，不包含旧latent撤回或长期物理路径等价；原失败封存，不按浮点差设容差。
 
-374已完成[新单轨迹worker](run_cartesian_interface_v2.py)与[108源/runtime准入](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v2/source_admission.json)，提交后唯一运行。每臂原graph限1201包，原物理/design、实际部分reset/stage2/3/正delay、命令时间窗/481/terminal/reset与non-done保护均保；失败停并分别保存首因和各份secondary，事件不足记inconclusive不追加。当前尚无新机器人包或PPO准入，375方向/清理、380框架保持。
+374已完成[新单轨迹worker](run_cartesian_interface_v2.py)、[108源/runtime准入](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v2/source_admission.json)及提交后唯一队列。[实际回执](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v2/execution_receipt.json)记录两Cart各1200正弦包/10world，原graph各1201调用，总960800图world步、35FD、113.21秒含构造与录证，0学习/retry，secondary空。各臂25次部分reset、stage2/3各10行切换、1929行正delay窗口；26个完成回合任务/物理/设计报告均通过。只是原seen训练bank固定脚本描述，不证明PPO增量。所有原单轨迹门实际由producer执行通过，完整独立命令/历史/reset/map数值接收仍待完成，未晋升100world/PPO。
+
+375按期方向/清理，并独立接收已存队列后决定下一有限匹配PPO接口合同；不重复队列或直接进入科学训练。380整体框架保持。
 
 第372轮[独立接收](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/independent_review.json)通过：模型/初态、实际gyro地址、800子步输入/Nom/guard/命令/481历史/终态保存及错误记录反例核过，0新物理或学习。[路线决定](results/paper_recovery_20261004/joint_reference_candidate_v1/round372_route_decision.json)按预登记正式关闭严格跨轨迹内部值等价准入路线，不重跑368/371、不消费余预算，也不归为未执行Cart的方法失败。
 
-373须建立独立前瞻合同：用相同完整输入与控制记忆检验B0/Cart完整控制组合的cold-zero严格语义，另用各自真实轨迹检验原硬物理、部分reset/换bank/正delay和历史归属。两项分开，不据已见ULP差选择容差，不倒推旧失败通过；真实接口/PPO/科学收益各自另行准入。375方向/清理，380整体框架保持。
+373前瞻合同已按374唯一队列执行；同输入coldzero语义与单轨迹硬物理/reset/history分开，未据已见ULP差选择容差或倒推旧失败通过。真实接口、匹配PPO与科学收益仍须分别接收。
 
 第371轮[新执行器](run_cartesian_zero_input.py)与[105源码准入](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/source_admission.json)提交后首次运行，已因[同构造B0自身重复性门失败停止](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/failure.json)。两B0各10world一个zero包，共800图步/800物理证据步、35FD、约7.23秒含构造记录，0学习/retry；未构造或运行Cart，不消费余下400图步。
 

@@ -2,7 +2,17 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：第374轮轨迹worker源码准入完成，待提交后唯一执行（2026-10-13，整体目标active）
+## 当前状态：第374轮唯一双Cart轨迹队列完成，完整独立数值接收仍待完成（2026-10-13，整体目标active）
+
+- b8ada374准入提交后唯一pid44773/unified81806已exit0。CartLive3/CartReset3各10world、1coldzero后显式reset及1200原固定正弦；各原graph1201调用，总960800图world步、FD35、113.210258915s含构造/完整录证，secondary_errors=[]，0学习/网络forward/retry，completion两臂均producer_passed_pending_independent_receipt。
+- 各臂实际25 partialreset、stage2/3各10行自然换bank、1929正delay有效sensor窗口行，26个完成回合均报告physical/design/task通过。任务成功仅既有seen训练bank的固定脚本描述，不是优化PPO/强经典增量或正式能力资格。原physical/design、Replay命令/481/map/parking、oldterminal/new-public reset与non-done门本次producer实际全部执行通过；还需独立数值重建接收，不能只凭completion晋升接口。
+- prefix完整private/pre-autoreset/guard/命令保存及fresh Replay通过；三stage实际constructor/cache两臂前置配对过；每真实换bank及initial/final保存实际所有world模型可变数组/meaninertia，按各自stage逐值核。不会比较独立物理轨迹浮点内部值，也未重跑373 semantic/368/371或改变旧失败。
+- execution_receipt绑定109实际工件/日志的全部SHA，450598929B、最大单文件20812504B，旧源/失败及源码准入均保留。108源/manifest当前HEAD与started历史提交独立SHA核同，runtime版本/CUDA/GPU与安装源码核同；完整独立数值接口仍未接收，100world/3维匹配PPO、正式新seed/独立ID-OOD/统计成本/新方法稿六出口仍缺，goal active。
+- 本轮数据按每包≤64MiB普通快进分批归档与同步，每提交同步本记忆，不重写历史；收尾恢复同步守护并实核remote。375必须按期方向深审/冗余清理，并独立接收已存队列后决定下一有限PPO接口合同，不重复本queue；380框架保持，无视频。
+
+- 第374轮有界归档进度：1/11批已本地归档，每批非视频原始文件≤50MiB；本批25文件/41917075B，等待逐提交实核remote。
+
+## 第374轮轨迹worker源码准入阶段记录（2026-10-13）
 
 - 新run_cartesian_interface_v2按373独立双门合同复用冻结light Replay/physical/script及完整原rollout检查，不改368/371源或失败。try体仅增实际换bank模型录证，其余AST严格一致；每臂coldzero、显式reset保prefix10样本、1200原固定正弦/10world，总960800图world步/FD80，0学习/网络forward，事件不足不追加。
 - 新Budget绑定实际原graph/world、每臂1201调用及总cap，在调用前核；108源含projection helper/新worker/test/semantic checker及runtime/已接受semantic/proposal旧失败/关闭决定冻结，启动须批量核HEAD全部源blob与准入manifest。唯一runtime目录先写started，不重验已封存373语义。
