@@ -1,12 +1,12 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（373同输入控制语义通过，新轨迹接口待准入，2026-10-13）
+## 当前论文计划（374轨迹执行器已冻结，待唯一执行，2026-10-13）
 
 原目标仍是：在原完整不对称接触任务上，得到一个保持强经典能力并有明确增量的可执行PPO方法。当前没有通过收益资格的新方法，正式五种子、独立ID/OOD、统计与成本分析、新方法稿件均未完成；CPU历史基线继续保留，不将物理吞吐当PPO端到端加速。
 
 第373轮[独立v2合同](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v2/proposal.json)已注册，两Cart各10world、1coldzero+1200固定正弦包，总960800图步/FD80，0学习。[同输入语义接受](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v2/semantic_acceptance.json)已完成：20个已存完整输入各运行B0/CartLive/CartReset真实phase/parking/Nom/candidate/guard组合，60 CUDA控制行的16公共状态与最终命令严格同，0solver/FD。仅覆盖残差/latent/shadow全零的冷中性输入，不包含旧latent撤回或长期物理路径等价；原失败封存，不按浮点差设容差。
 
-374须完成新单轨迹worker和源码/HEAD/semantic/runtime/预算准入后唯一运行。每臂原graph限1201包，原物理/design、实际部分reset/stage2/3/正delay、命令时间窗/481/terminal/reset与non-done保护均保；失败停并分别保存首因和各份secondary，事件不足记inconclusive不追加。当前尚无新机器人包或PPO准入，375方向/清理、380框架保持。
+374已完成[新单轨迹worker](run_cartesian_interface_v2.py)与[108源/runtime准入](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v2/source_admission.json)，提交后唯一运行。每臂原graph限1201包，原物理/design、实际部分reset/stage2/3/正delay、命令时间窗/481/terminal/reset与non-done保护均保；失败停并分别保存首因和各份secondary，事件不足记inconclusive不追加。当前尚无新机器人包或PPO准入，375方向/清理、380框架保持。
 
 第372轮[独立接收](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/independent_review.json)通过：模型/初态、实际gyro地址、800子步输入/Nom/guard/命令/481历史/终态保存及错误记录反例核过，0新物理或学习。[路线决定](results/paper_recovery_20261004/joint_reference_candidate_v1/round372_route_decision.json)按预登记正式关闭严格跨轨迹内部值等价准入路线，不重跑368/371、不消费余预算，也不归为未执行Cart的方法失败。
 

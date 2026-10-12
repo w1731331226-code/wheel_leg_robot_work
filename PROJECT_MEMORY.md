@@ -2,7 +2,15 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：第373轮新v2合同与同输入cold-zero控制语义通过（2026-10-13，整体目标active）
+## 当前状态：第374轮轨迹worker源码准入完成，待提交后唯一执行（2026-10-13，整体目标active）
+
+- 新run_cartesian_interface_v2按373独立双门合同复用冻结light Replay/physical/script及完整原rollout检查，不改368/371源或失败。try体仅增实际换bank模型录证，其余AST严格一致；每臂coldzero、显式reset保prefix10样本、1200原固定正弦/10world，总960800图world步/FD80，0学习/网络forward，事件不足不追加。
+- 新Budget绑定实际原graph/world、每臂1201调用及总cap，在调用前核；108源含projection helper/新worker/test/semantic checker及runtime/已接受semantic/proposal旧失败/关闭决定冻结，启动须批量核HEAD全部源blob与准入manifest。唯一runtime目录先写started，不重验已封存373语义。
+- 分别保primary与各secondary，last actor/pending blocks/episodes各尝试保存，失败再分份common/Cart/oldterminal，不因一份写出失败跳过其它。纯mock覆盖1202包/替换graph/总cap/FD拒绝、失败保存首因、错误bank拒绝；自检exit0、0机器人物理。
+- 只读审查指出zero复位前录证与模型切换漏项，已前置修复：prefix完整pre-autoreset/private/guard/command trace与common/interval/actor保存并fresh Replay核窗口/481；三stage实际constructor与cache数组/scalars两臂配对；initial/每真实changed/final保存所有world实际model可变数组/meaninertia并按当前stage cache逐值核，非changed行也核。冷前缀native16:22/latent/shadow零门保留，独立物理路径不互比。
+- 源码准入已完成但仍无机器人新包；本提交后运行唯一已登记队列，任何source/record/budget/physical/design/history门失败即停全队列，保原数据，无implicitretry。后续独立接收及375方向/清理决定，不自动PPO；380整体框架、六论文出口仍缺，goal active，无视频。
+
+## 历史状态：第373轮新v2合同与同输入cold-zero控制语义通过（2026-10-13，整体目标active）
 
 - 372为progress（800已存子步独立接收与旧严格跨轨迹路线关闭）。373独立注册cartesian_training_interface_v2：旧33531各stage前10、CartLive3/CartReset3各1coldzero后显式reset及1200原固定正弦、保prefix10课程样本、milestones4000/8000，总960800图world步/FD80、0学习；semantic与单轨迹原hardphysical/reset/history门分开，不重跑B0或旧20，不修改368/371失败及旧门、不用已见delta设容差。
 - check_cartesian_control_semantics读取371B0repeat1全部10初态+10终态，完整q/v/sensor/native30/guard16、reference/gains/feed/angles/5height knots、实际ids、公开gain upper等独立clone。task arrival<0及shared offset26:30零证成共同Nom correction0；不推广至arrival修正场景。真实phase/select-anchor/parking/Nom/v2candidate/guard/finish运行20×3=60 CUDA控制行，0solver/FD/网络forward/学习；只编译CPU XML取ids，无Data/forward，冻结数值资源复用未重做控制设计。
