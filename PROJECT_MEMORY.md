@@ -2,7 +2,18 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：第376轮匹配PPO无更新接口协议与源码准入完成，待提交后唯一运行（2026-10-13，整体目标active）
+## 当前状态：第376轮唯一匹配PPO无更新收集完成，待完整独立接口数值接收（2026-10-13，整体目标active）
+
+- dd7c26ea源准入提交及HEAD114源+manifest核过后唯一pid66167/unified55273已exit0。CartLive3/Reset3各10world一个coldzero+24×50真实SB3 collect_rollouts，各12000采样、Curriculum12010、24完整GAE buffer；policy2400calls/24000rows，value-only48calls/480rows，optimizer更新0且weights/optimizer/_n_updates原值门通过，secondary_errors=[]，无retry。
+- 总960800图world步、35FD、130.597051526s含模型构造/采样/全部录证；有效guard物理计分含zero为Live479851+Reset479856=959707，不能与图步或PPO端到端训练加速混称。各臂25 partial、stage2/3各10自然切换、1929正delay行、26已完成回合原physical/design/task报告全通过；均只是既有seen bank未更新Gaussian prior描述，不证明优化策略、方法收益或强经典增量。
+- 本次producer实际执行raw/normalized/expected终态分名、同期九post+previous/bank四项/wheelv2+Nom flags、Gaussian原样本/clip3/实际6、value/logprob/mean/std、RMS前后/returns及完整post-bootstrap rewards/GAE buffers。_setup_learn唯一Norm.reset后Replay重建与initial raw/norm每world行/full policy/critic/optimizer/RMS/global及action-space RNG两臂配对通过；obs count12010.0001/ret12000.0001、终态weights/optimizer不变过。
+- execution_receipt绑定163实际工件/日志SHA，768407697B、max单文件32920663B，114冻结源未变；完整独立raw/norm/post/bank/wheel envelope/RMS/GAE数值接收尚待377，producer完成不晋升full接口。未调用learn/train/optimizer.step，确有24000真实收集样本与24480外部网络前向行（policy含actor/critic24000+value480），不把此说成0采样或0forward。
+- 原368/371失败和374/375旧工件/主门保留，正式新seed/强同信息经典+同chart反馈/可达主门与保持/独立ID-OOD/统计/端到端成本/方法稿六出口仍缺，goal active。当前仅工程无更新收集，100world/科学训练/formal5未准入；下一377接收新全部证据后决定学习前权限/可达门，不重复此队列，380方向/清理/整体框架保持。
+- 全部原始证据按每包≤64MiB普通快进分批归档，每提交同步本记忆；最终摘要提交后恢复守护并实核remote，无视频。
+
+- 第376轮有界归档进度：1/24批已本地归档，本批24文件/33426659B；逐提交实核remote。
+
+## 第376轮匹配PPO接口源码准入阶段记录（2026-10-13）
 
 - 上轮为progress（375独立数值子集、五轮方向/80299B清理）。新cartesian_ppo_interface_v1独立前瞻协议：CartLive3/CartReset3各10world，旧33531各stage前10，原自然4000/8000；各1coldzero后唯一fresh Norm.reset保prefix10课程样本，再真实SB3 collect_rollouts24×50包。总960800图world步/FD80，policy2400calls/24000rows；value-only最多24048calls/24480rows（48末端batch×10+最坏24000单行timeout），均原调用前核，optimizer/train/learn禁止。
 - 新cartesian_ppo_recorder在原Nom实际zero调用后、candidate前只读记每slot两wheelv与diag13/14，40slot原args及Nom/candidate/guard同对象/zero/effective指针关联保存，旧控制源不改。post_private九buffer+previous及bank_actual四项每包同期存；actual raw infos481在VecNormalize前deepcopy，与normalized/CPU expected终态分名不覆盖。

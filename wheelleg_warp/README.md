@@ -1,10 +1,12 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（376匹配PPO无更新接口已准入，待唯一队列，2026-10-13）
+## 当前论文计划（376真实PPO无更新收集完成，待独立完整接收，2026-10-13）
 
 原目标仍是：在原完整不对称接触任务上，得到一个保持强经典能力并有明确增量的可执行PPO方法。当前没有通过收益资格的新方法，正式五种子、独立ID/OOD、统计与成本分析、新方法稿件均未完成；CPU历史基线继续保留，不将物理吞吐当PPO端到端加速。
 
-第376轮新[匹配PPO工程协议](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/proposal.json)与[114源码准入](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/source_admission.json)已准备，提交并核HEAD后唯一运行。两Cart各10world、1coldzero后fresh Norm.reset保10课程样本、24×50真实SB3 rollout包，总960800图world步/FD80；policy24000rows，value-only另限24480rows，optimizer/train/learn禁止。新[worker](run_cartesian_ppo_interface.py)补actual/norm/expected终态分名、同期九私有+previous和bank四缓冲、轮速/Nom flags与原指针路由；全新actor/critic/RMS/全RNG/σ=.25和初态逐行匹配。CPU/mock及GPU纯复制自检过，0机器人物理/FD/网络forward；当前尚未真实运行，不晋升PPO/方法收益。
+第376轮[新匹配PPO工程协议](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/proposal.json)及[114源准入](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/source_admission.json)提交后已唯一执行。[实际回执](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/execution_receipt.json)：两Cart各10world/coldzero后24×50真实SB3 rollout、各24完整GAE buffers，共24000policy rows＋480value-only rows，0优化更新，weights/optimizer不变门通过。总960800图world步、959707有效计分子步、35FD、130.60s含构造及录证，secondary空。各臂25 partial、stage2/3各10、positive delay1929，26回合均报告原物理/设计/任务通过；仅未更新Gaussian prior的seen描述，不是PPO收益或训练加速。
+
+新[worker](run_cartesian_ppo_interface.py)已实际保存actual/norm/expected终态、九post+previous/bank四项/wheelv2+Nom flags、原指针路由、Gaussian/clip3/paired6/value/logprob/RMS及buffers。377须独立接收新全部数值后再决定学习前强同信息经典/同chart反馈和可达主门/保持门；不重复此queue。完整接口及100world/科学训练/formal5仍未晋升，380方向/清理/框架保持。
 
 第373轮[独立v2合同](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v2/proposal.json)已注册，两Cart各10world、1coldzero+1200固定正弦包，总960800图步/FD80，0学习。[同输入语义接受](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v2/semantic_acceptance.json)已完成：20个已存完整输入各运行B0/CartLive/CartReset真实phase/parking/Nom/candidate/guard组合，60 CUDA控制行的16公共状态与最终命令严格同，0solver/FD。仅覆盖残差/latent/shadow全零的冷中性输入，不包含旧latent撤回或长期物理路径等价；原失败封存，不按浮点差设容差。
 
