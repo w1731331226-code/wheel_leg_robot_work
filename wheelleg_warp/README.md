@@ -1,10 +1,12 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（367已完成；368进行中，2026-10-13）
+## 当前论文计划（368零前缀失败停止，2026-10-13）
 
 原目标仍是：在原完整不对称接触任务上，得到一个保持强经典能力并有明确增量的可执行PPO方法。当前没有通过收益资格的新方法，正式五种子、独立ID/OOD、统计与成本分析、新方法稿件均未完成；CPU历史基线继续保留，不将物理吞吐当PPO端到端加速。
 
-第368轮已形成[轻量无学习执行器](run_cartesian_light_interface.py)及[源码准入](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/source_admission.json)，冻结101源码，预算调用前限额、按100packet录证、失败保当前buffer。非执行路由与三行部分reset/延迟历史/错误包反例自检通过；独立最终guard命令环核旧delay，done历史从新raw.obs复建，保旧回合信息与全部相关非done私有行。当前真实10环境队列尚未启动，准入提交后才唯一执行并独立接收；通过仅获得已测接口资格，后续匹配PPO生命周期与科学收益协议仍须单独登记。370按期审查方向、清理与整体框架。
+第368轮的[轻量执行器](run_cartesian_light_interface.py)在[101源码准入](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/source_admission.json)提交后首次运行，已因[零前缀逐值门失败停止](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/runtime/failure.json)：B0与CartLive3各10环境、一个zero packet，共800图步/800物理证据步、25FD、约5.37秒含构造与记录，0学习/重试。CartReset3和正弦队列未运行，不追加或消费余下预算。
+
+[完整失败复核](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/zero_failure_audit.json)确认初态28项全同，零前缀31项中29项全同，包括物理端点、公开38/481、完整guard、命令与历史。差异仅原横滚gyro滤波的一个double值（3.32e-18）及41个参考诊断值（最大5.55e-17）；20行原物理/设计监测均过，Cart零请求及λ核过。仍不改判逐值门，端点相同不能确定中间gyro或数值根因。369须有限核对已存数据与数值合同，任何新执行路径/协议另行准入；partial reset、stage2/3、正delay、PPO及收益仍未qualified，370方向/清理/整体框架保持。
 
 第367轮修复了课程切换的参考更新顺序：父类先执行底层自动复位，再安装新阶段参数并再次复位；仅在底层更新CartReset3参考，会留下旧阶段几何。新增课程收尾刷新，使用返回的公开复位包，只处理done行。[三行回归](results/paper_recovery_20261004/joint_reference_candidate_v1/round367_curriculum_lifecycle.json)运行真实父类逻辑及GPU辅助复位，115→380mm例的旧参考偏差约.265m，修复后1.39e-17m，终态旧回合信息、未结束行和父层mask保持；物理reset/forward采用替身，未验证真实多环境运行。
 

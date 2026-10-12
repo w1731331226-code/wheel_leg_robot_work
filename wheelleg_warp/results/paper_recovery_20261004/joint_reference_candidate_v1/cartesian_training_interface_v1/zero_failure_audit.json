@@ -1,0 +1,544 @@
+{
+  "round": 368,
+  "status": "strict_zero_prefix_failed_no_interface_admission",
+  "start_commit": "3f82ba371844631f6ea117ba853589f70493cadf",
+  "actual_graph_world_steps": 800,
+  "actual_first_episode_evidence_substeps": 800,
+  "constructor_FD_calls": 25,
+  "prefix_packets": 2,
+  "scripted_sine_packets": 0,
+  "new_learning_samples": 0,
+  "new_model_forward_rows": 0,
+  "implicit_retry": false,
+  "preservation_errors": [],
+  "comparisons": {
+    "initial.npz": {
+      "fields": 28,
+      "exact_fields": [
+        "q",
+        "v",
+        "ctrl",
+        "warm",
+        "time",
+        "sensors",
+        "state",
+        "controller_memory",
+        "diag",
+        "param",
+        "reference",
+        "public",
+        "guard_memory",
+        "guard",
+        "command_0",
+        "command_1",
+        "command_2",
+        "parking_0",
+        "parking_1",
+        "parking_2",
+        "phase_0",
+        "phase_1",
+        "phase_2",
+        "frames",
+        "inputs",
+        "elapsed",
+        "valid",
+        "previous_sensor_steps"
+      ],
+      "differences": {}
+    },
+    "zero_prefix.npz": {
+      "fields": 31,
+      "exact_fields": [
+        "q",
+        "v",
+        "ctrl",
+        "warm",
+        "time",
+        "sensors",
+        "state",
+        "diag",
+        "param",
+        "reference",
+        "public",
+        "guard_memory",
+        "guard",
+        "command_0",
+        "command_1",
+        "command_2",
+        "parking_0",
+        "parking_1",
+        "parking_2",
+        "phase_0",
+        "phase_2",
+        "frames",
+        "inputs",
+        "elapsed",
+        "valid",
+        "previous_sensor_steps",
+        "returned",
+        "reward",
+        "done"
+      ],
+      "differences": {
+        "controller_memory": {
+          "shape": [
+            10,
+            30
+          ],
+          "count": 1,
+          "max_abs": 3.3224621269817696e-18,
+          "entries": [
+            {
+              "index": [
+                6,
+                5
+              ],
+              "B0": -1.3707277524949678e-09,
+              "CartLive3": -1.3707277491725057e-09
+            }
+          ]
+        },
+        "phase_1": {
+          "shape": [
+            40,
+            10,
+            11
+          ],
+          "count": 41,
+          "max_abs": 5.551115123125783e-17,
+          "entries": [
+            {
+              "index": [
+                5,
+                6,
+                6
+              ],
+              "B0": -9.796088587805603e-12,
+              "CartLive3": -9.796088254738695e-12
+            },
+            {
+              "index": [
+                6,
+                6,
+                6
+              ],
+              "B0": -1.2344602260827426e-11,
+              "CartLive3": -1.2344601611346957e-11
+            },
+            {
+              "index": [
+                7,
+                6,
+                6
+              ],
+              "B0": -1.3253506469005117e-11,
+              "CartLive3": -1.325350551893176e-11
+            },
+            {
+              "index": [
+                8,
+                6,
+                6
+              ],
+              "B0": -9.41127928694086e-12,
+              "CartLive3": -9.411278051304266e-12
+            },
+            {
+              "index": [
+                9,
+                6,
+                6
+              ],
+              "B0": -7.538035446452512e-12,
+              "CartLive3": -7.53803393953084e-12
+            },
+            {
+              "index": [
+                10,
+                6,
+                6
+              ],
+              "B0": -2.913069948426322e-12,
+              "CartLive3": -2.9130681837838265e-12
+            },
+            {
+              "index": [
+                11,
+                6,
+                6
+              ],
+              "B0": 3.649055190480295e-12,
+              "CartLive3": 3.6490568668906654e-12
+            },
+            {
+              "index": [
+                12,
+                6,
+                6
+              ],
+              "B0": 9.21528260616022e-12,
+              "CartLive3": 9.21528419875007e-12
+            },
+            {
+              "index": [
+                13,
+                6,
+                6
+              ],
+              "B0": 1.4516413767621074e-11,
+              "CartLive3": 1.4516415280581436e-11
+            },
+            {
+              "index": [
+                14,
+                6,
+                6
+              ],
+              "B0": 1.703164947652775e-11,
+              "CartLive3": 1.703165091384009e-11
+            },
+            {
+              "index": [
+                15,
+                6,
+                6
+              ],
+              "B0": 2.0833132182344114e-11,
+              "CartLive3": 2.0833133547790838e-11
+            },
+            {
+              "index": [
+                16,
+                6,
+                6
+              ],
+              "B0": 2.0613482631814576e-11,
+              "CartLive3": 2.0613483928988963e-11
+            },
+            {
+              "index": [
+                16,
+                6,
+                7
+              ],
+              "B0": 0.25121892347766483,
+              "CartLive3": 0.2512189234776649
+            },
+            {
+              "index": [
+                16,
+                6,
+                8
+              ],
+              "B0": 0.2512189234364379,
+              "CartLive3": 0.25121892343643787
+            },
+            {
+              "index": [
+                17,
+                6,
+                6
+              ],
+              "B0": 1.8906450607014507e-11,
+              "CartLive3": 1.8906451839330173e-11
+            },
+            {
+              "index": [
+                18,
+                6,
+                6
+              ],
+              "B0": 1.8156400485124228e-11,
+              "CartLive3": 1.815640165582411e-11
+            },
+            {
+              "index": [
+                19,
+                6,
+                6
+              ],
+              "B0": 1.0003414340426132e-11,
+              "CartLive3": 1.0003415452591019e-11
+            },
+            {
+              "index": [
+                19,
+                6,
+                7
+              ],
+              "B0": 0.25121892346705477,
+              "CartLive3": 0.2512189234670548
+            },
+            {
+              "index": [
+                19,
+                6,
+                8
+              ],
+              "B0": 0.251218923447048,
+              "CartLive3": 0.25121892344704794
+            },
+            {
+              "index": [
+                20,
+                6,
+                6
+              ],
+              "B0": 4.295094398263971e-12,
+              "CartLive3": 4.295095454820614e-12
+            },
+            {
+              "index": [
+                21,
+                6,
+                6
+              ],
+              "B0": -7.962773585020295e-12,
+              "CartLive3": -7.962772581291484e-12
+            },
+            {
+              "index": [
+                22,
+                6,
+                6
+              ],
+              "B0": -2.566282216402732e-11,
+              "CartLive3": -2.566282121048495e-11
+            },
+            {
+              "index": [
+                23,
+                6,
+                6
+              ],
+              "B0": -4.1709451243162366e-11,
+              "CartLive3": -4.1709450337297115e-11
+            },
+            {
+              "index": [
+                24,
+                6,
+                6
+              ],
+              "B0": -6.209942116007111e-11,
+              "CartLive3": -6.20994202994991e-11
+            },
+            {
+              "index": [
+                25,
+                6,
+                6
+              ],
+              "B0": -7.89910973129536e-11,
+              "CartLive3": -7.89910964954102e-11
+            },
+            {
+              "index": [
+                26,
+                6,
+                6
+              ],
+              "B0": -9.557194544792991e-11,
+              "CartLive3": -9.557194467126368e-11
+            },
+            {
+              "index": [
+                27,
+                6,
+                6
+              ],
+              "B0": -1.0964417726668225e-10,
+              "CartLive3": -1.0964417652884933e-10
+            },
+            {
+              "index": [
+                28,
+                6,
+                6
+              ],
+              "B0": -1.2612178511992528e-10,
+              "CartLive3": -1.26121784418984e-10
+            },
+            {
+              "index": [
+                29,
+                6,
+                6
+              ],
+              "B0": -1.4463754438195404e-10,
+              "CartLive3": -1.4463754371605985e-10
+            },
+            {
+              "index": [
+                30,
+                6,
+                6
+              ],
+              "B0": -1.622907195349153e-10,
+              "CartLive3": -1.6229071890231578e-10
+            },
+            {
+              "index": [
+                31,
+                6,
+                6
+              ],
+              "B0": -1.758463292589517e-10,
+              "CartLive3": -1.7584632865798218e-10
+            },
+            {
+              "index": [
+                32,
+                6,
+                6
+              ],
+              "B0": -1.8222731670390935e-10,
+              "CartLive3": -1.8222731613298828e-10
+            },
+            {
+              "index": [
+                32,
+                6,
+                7
+              ],
+              "B0": 0.25121892327482404,
+              "CartLive3": 0.2512189232748241
+            },
+            {
+              "index": [
+                32,
+                6,
+                8
+              ],
+              "B0": 0.2512189236392787,
+              "CartLive3": 0.25121892363927867
+            },
+            {
+              "index": [
+                33,
+                6,
+                6
+              ],
+              "B0": -1.8738247194768208e-10,
+              "CartLive3": -1.8738247140530706e-10
+            },
+            {
+              "index": [
+                34,
+                6,
+                6
+              ],
+              "B0": -1.8761812119216415e-10,
+              "CartLive3": -1.876181206769079e-10
+            },
+            {
+              "index": [
+                35,
+                6,
+                6
+              ],
+              "B0": -1.8590558519459192e-10,
+              "CartLive3": -1.8590558470509846e-10
+            },
+            {
+              "index": [
+                36,
+                6,
+                6
+              ],
+              "B0": -1.8187042516331034e-10,
+              "CartLive3": -1.8187042469829155e-10
+            },
+            {
+              "index": [
+                37,
+                6,
+                6
+              ],
+              "B0": -1.761947748276317e-10,
+              "CartLive3": -1.761947743858639e-10
+            },
+            {
+              "index": [
+                38,
+                6,
+                6
+              ],
+              "B0": -1.728767270569006e-10,
+              "CartLive3": -1.7287672663722118e-10
+            },
+            {
+              "index": [
+                39,
+                6,
+                6
+              ],
+              "B0": -1.7141870454158006e-10,
+              "CartLive3": -1.714187041428846e-10
+            }
+          ]
+        }
+      }
+    }
+  },
+  "physical": [
+    {
+      "arm": "B0",
+      "worlds": 10,
+      "evidence_substeps": 400,
+      "min_leg_m": 0.11499645596513662,
+      "min_eight_margin_rad": 0.45112764835357666,
+      "max_torque_excess_Nm": 0.0,
+      "min_active1p4_margin_rad": 0.35112764835357657
+    },
+    {
+      "arm": "CartLive3",
+      "worlds": 10,
+      "evidence_substeps": 400,
+      "min_leg_m": 0.11499645596513662,
+      "min_eight_margin_rad": 0.45112764835357666,
+      "max_torque_excess_Nm": 0.0,
+      "min_active1p4_margin_rad": 0.35112764835357657
+    }
+  ],
+  "input_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/runtime/B0/initial.npz": "e8c7894e48fdb05de0788a3446bac42814ea0a90a55e7d640096262f4f32acce",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/runtime/CartLive3/initial.npz": "e8c7894e48fdb05de0788a3446bac42814ea0a90a55e7d640096262f4f32acce",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/runtime/B0/zero_prefix.npz": "b2058770b75f3e873a52156a83ab3b4d7441260f202bdc931638bd1d95c82d59",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/runtime/CartLive3/zero_prefix.npz": "d8f20efa7762649962fbf2a79054898b36bc0dae1e7e334c9528533ee74283d2",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/runtime/started.json": "b8c1dfb8050f889d7b4b9d19fbc7fde96f5fd22b28242f40819382bbed1e221b",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/runtime/failure.json": "afa049923ccc9e7cd482f0435d009ff93596e9b2310829d6be4e7eb6a4ccf8d0",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/runtime/B0/final_buffers.npz": "a3372670d0cc3d957b657db59daac57d160833538c76f9f7f995c177aa5dc1ff",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/runtime/CartLive3/cartesian_initial.npz": "137e55b0bcdd01cf82287b5455e0eed9ad50915eb2c88378d3c8161f9e7c1297",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/runtime/CartLive3/final_buffers.npz": "ff2cb449e1344c6c39ab069e7d8f2674735ee5338e0b990aaa50288ba69b8b9c",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/runtime/CartLive3/last_before_autoreset.npz": "869576eb3460f86f603732dc2ac6e7e9fee7de947eec6e9a55cf0d401737cdd9",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/proposal.json": "a89c7946e218ae5227ce9b7c5c143b87c64c1888548614d440be592d8c876259",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/source_admission.json": "aefc85c2c0d3073a0f7958e0c35d5dbab496df4da265c9875e532e358732f94f",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/runtime.log": "9cafb9f5cadefede8acf174910f20fd9c3323240ba6908c28a32672a19b9889e"
+  },
+  "frozen_source_count": 101,
+  "candidate_zero": {
+    "valid_substeps": 400,
+    "control_errors": 0,
+    "canonical_request_zero": true,
+    "candidate_lambda_one": true,
+    "guard_lambda_one": true
+  },
+  "mismatch_interpretation": "Controller memory5 is filtered roll gyro. Phase role6 is requested roll offset;role7/8 are diagnostic left/right targets. Differences are tiny internal double values;the saved final physical states,public/history packets and fullguard/command-prefix streams are exact. Their causal origin is not identified by these recordings.",
+  "limits": "Initial/end states and logged guard/command samples are equal,not a complete full-body substep trajectory or contact certificate. CartReset3,sine,partial resets,stage2/3 and positive delays were not run. All current registered equality checks remain unchanged;failure is not retroactively passed.",
+  "next": "369 bounded saved-data failure/root-cause and numerical-contract review. Any changed executor or prospective protocol needs separate admission;do not resume this directory or consume its remaining cap.370 direction/cleanup/framework. No PPO admitted.",
+  "independent_prefix_command_checks": [
+    {
+      "arm": "B0",
+      "integral_max_abs_error_Nms": 1.3877787807814457e-17,
+      "sensor_interval_s": 0.02,
+      "delay_steps": 0
+    },
+    {
+      "arm": "CartLive3",
+      "integral_max_abs_error_Nms": 1.3877787807814457e-17,
+      "sensor_interval_s": 0.02,
+      "delay_steps": 0
+    }
+  ]
+}
