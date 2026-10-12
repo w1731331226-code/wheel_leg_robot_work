@@ -1,0 +1,122 @@
+{
+  "round": 375,
+  "status": "stored_numeric_subsets_accepted_full_interface_recording_incomplete",
+  "previous_turn": "progress:374 unique registered physical queue and sealed evidence completed",
+  "input_receipt_sha256": "91cca65a09475ef71528b6c2c883f1951a86aaf2719169817cdb9f376cf26b54",
+  "source_admission_sha256": "bcc243aedd76b3ec52e4e6896f556880eaa576c5311b4ff27cd685003995d44d",
+  "all109_original_artifacts_unchanged": true,
+  "all108_frozen_sources_and_HEAD_manifest_unchanged": true,
+  "reviewer_source_sha256": {
+    "wheelleg_warp/review_cartesian_light_history.py": "70b4d0f1251d3e2dcec811e9537a6faeb258d55c41569b675f50978c825afaff",
+    "wheelleg_warp/review_cartesian_light_map.py": "573460d2ef534f798d90f0722f75589730dfba27f4da292c8ea04f1664e7dff3"
+  },
+  "review_log_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v2/history_review375.log": "b470231a3a0f9fb5f3076bf0b0aa2683ef6c5cc6082b33a7a5c0aa6d46b132a8",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v2/map_review375.log": "0994dd93a8f0dbb5b06a08bbdcba7ce7a35cc7d53a1f2f4956e1858cbf519d88"
+  },
+  "history": {
+    "CartLive3": {
+      "packets": 1200,
+      "zero_valid_steps": 400,
+      "rollout_valid_steps": 479486,
+      "done_rows": 26,
+      "max_command_integral_error": 1.7763568394002505e-15,
+      "all_stored_returned481_command_rings_windows_and_public_resets_verified": true,
+      "stored_terminal_history_is_reconstructed_expectation_only": true,
+      "actual_done_info_terminal481_independently_verified": false,
+      "zero_and_final_non_done_post_private_directly_verified": true,
+      "intermediate_guard_parking_phase_collector_post_private_independently_verified": false,
+      "actual_per_transition_param_q0_obs0_native_reference_independently_verified": false
+    },
+    "CartReset3": {
+      "packets": 1200,
+      "zero_valid_steps": 400,
+      "rollout_valid_steps": 479489,
+      "done_rows": 26,
+      "max_command_integral_error": 1.7763568394002505e-15,
+      "all_stored_returned481_command_rings_windows_and_public_resets_verified": true,
+      "stored_terminal_history_is_reconstructed_expectation_only": true,
+      "actual_done_info_terminal481_independently_verified": false,
+      "zero_and_final_non_done_post_private_directly_verified": true,
+      "intermediate_guard_parking_phase_collector_post_private_independently_verified": false,
+      "actual_per_transition_param_q0_obs0_native_reference_independently_verified": false
+    }
+  },
+  "mapping": {
+    "verified": true,
+    "reports": {
+      "CartLive3": {
+        "prefix_substeps": 400,
+        "rollout_substeps": 479486,
+        "withdrawn_substeps": 113660,
+        "reset_rows": 26,
+        "max_abs_errors": {
+          "geometry": 2.7755575615628914e-16,
+          "canonical": 2.498001805406602e-16,
+          "alpha": 0.0,
+          "motor": 1.1796119636642288e-16,
+          "hip_limits": 0.0,
+          "projection": 0.0,
+          "accepted_residual": 0.0
+        }
+      },
+      "CartReset3": {
+        "prefix_substeps": 400,
+        "rollout_substeps": 479489,
+        "withdrawn_substeps": 113661,
+        "reset_rows": 26,
+        "max_abs_errors": {
+          "geometry": 1.1102230246251565e-16,
+          "canonical": 1.1102230246251565e-16,
+          "alpha": 0.0,
+          "motor": 1.249000902703301e-16,
+          "hip_limits": 0.0,
+          "projection": 0.0,
+          "accepted_residual": 0.0
+        }
+      }
+    },
+    "tolerances": {
+      "geometry": 1e-07,
+      "canonical": 1e-06,
+      "motor": 1e-06,
+      "alpha": 1e-07,
+      "hip_limits": 1e-12,
+      "projection": 1e-07,
+      "accepted_residual": 1e-12
+    },
+    "scope": "Saved Cartesian mapping, parking, latent and recorded Cart post-reset/private rows only.",
+    "limits": [
+      "Wheel velocities are not stored per substep: wheel speed-dependent limits cannot be independently reconstructed; stored limits checked against public upper bound.",
+      "Intermediate post-wait guard/parking/phase/collector private arrays are absent; producer non-done checks cannot be independently repeated.",
+      "terminal_history was replaced with producer Replay expectations; actual returned done infos481 are not independently archived.",
+      "Per-substep historical Nom flag is absent; accepted-mode1 projection arithmetic checked without claiming flag1 exposure."
+    ],
+    "new_physics_steps": 0,
+    "new_learning_samples": 0,
+    "full_interface_qualified": false
+  },
+  "independently_reviewed_valid_substeps": 959775,
+  "recording_gaps": [
+    "Intermediate actual post-wait guard/parking/phase/collector nine private buffers and previous counter are missing.",
+    "Actual done infos481 was overwritten with producer Replay expectation.",
+    "Actual per-transition param/q0/obs0/native reference buffers were asserted but not archived.",
+    "Per-substep wheel velocities needed for RPM limits are missing.",
+    "Per-substep Nom historical flag exposure is absent; only accepted-mode1 arithmetic/source binding checked."
+  ],
+  "full_interface_qualified": false,
+  "old_queue_sealed_no_rerun": true,
+  "old_failures_unchanged": true,
+  "new_physics_steps": 0,
+  "new_FD_calls": 0,
+  "new_model_forward_rows": 0,
+  "new_learning_samples": 0,
+  "next": "376 new matched latent3 PPO engineering integration and minimum recorder repair under a separate preregistered bounded no-update interface protocol;source/runtime admission and Chinese commit before real execution. No scientific training yet.",
+  "goal_complete": false,
+  "old_episode_rows_bijectively_match_all_done_events": true,
+  "zero_and_final_non_done_post_private_scope": "Exactly nine guard/parking/phase/collector buffers; previous counter also checked by command replay. No intermediate post claim.",
+  "old_failure_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/runtime/failure.json": "afa049923ccc9e7cd482f0435d009ff93596e9b2310829d6be4e7eb6a4ccf8d0",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/failure.json": "60639232e0c27a8669937774edd34870270e63dc7e08509c944a5f81d2f142f2"
+  }
+}

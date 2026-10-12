@@ -2,7 +2,18 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：第374轮唯一双Cart轨迹队列完成，完整独立数值接收仍待完成（2026-10-13，整体目标active）
+## 当前状态：第375轮独立数值子集接收、方向深审及清理完成；完整接口录证不足（2026-10-13，整体目标active）
+
+- 上轮为progress（374唯一真实双Cart队列完成与109原始工件封存）。375新增纯NumPy review_cartesian_light_history/map，不调用producer Replay/分类、CUDA/solver/semantic；0新物理/FD/网络forward/学习。108冻结源+HEAD manifest、109原始工件及368/371失败SHA均未变，旧队列不续、不改历史失败。
+- 两臂各1200包及coldzero独立核完，959775有效子步：全部82-slot command prefix/stamp/total/旧delay窗口、实际returned481/actor串接/因果route/public reset、26旧episode与实际done一一对应、zero/final九种非done私有buffer及previous通过。原1e-10积分门内，prefix差分重建max1.7763568394e-15；另一独立guard短环sum重建max约2.44e-14，算术顺序不同，不用于跨轨迹放宽。
+- 向量CPU FK/Jac/Cart request复核全部valid slot，latent串接/slew、停车latch/撤回/shadow、Cart三种实际*_after/reference reset、候选/final float32重组通过。max geometry2.78e-16m、canonical2.50e-16、电机请求1.25e-16Nm；alpha/hip limits/记录bounds条件下acceptedNom projection误差0，沿363/366原容差，不据374数据选阈值。52/52仍仅seen固定脚本描述，未证明学习/强经典增量。
+- 完整interface_qualified=False：实际done infos481的记录被Replay期望覆盖；中间同包post的guard/parking/phase/collector九buffer+previous未存；换bank实际param/q0/obs0/native reference四项仅assert未存；guard无每slot两轮v，不能独立重建wheel RPM limits；Nom历史flag exposure亦缺，只有mode1算术/冻结源绑定。下一pre、重建term、包端点延迟轮速或producer断言不代同期原始证据，不把缺录证归为已证控制失效。
+- round375_direction_review保留CartLive/Reset同chart几何更新假设，只允许376推进新latent3匹配PPO无更新工程集成与最小录证修复；不重跑1200×2原脚本补绿、不再微差/源审计成轮。新合同须先定world/bank/原自然课程4000/8000/采样/graph/FD/forward cap及事件停止门，再源/runtime/HEAD准入并中文提交后唯一执行；当前未注册新预算或准入runtime，optimizer更新0且forward/采样量须如实计数。
+- 未来复用ForceActions D3嵌入但身份仍Cart3，原公开481/权限、全新actor/critic/RMS/完整RNG/σ=.25与logσ/初始实际map/坐标checkpoint身份匹配，禁用旧工程权重warmstart。记录实际raw infos481于VecNormalize前并与期望分名、九post+previous、bank四项、wheelv2及足够Nom capture路由证据。完整工程接收后另冻强同信息经典/同chart无学习反馈权限调参预算与可达主门/保持门，不用seen52/52上不可达成功率提升，也不动最终保留集。
+- 每五轮清理实际删除8份source-code等当前源、ignored/untracked、fuser无持有的CPython3.10 helper pyc，共80299B；逐份前SHA/源SHA和删除后缺席保存round375_cleanup。首版字符串路径检查拒相对co_filename，解析确指同源后保代码/metadata/无持有门通过才删除。所有科学原始、失败、源、模型及视频保留。
+- 新checker初始synthetic横向轴/route期望和cache32维拼接已纠正；只读审查补episode重复/漏done反例，最终全部真实数据exit0和错误actor/积分/returned/stamp/NaN/重复episode/坏几何拒绝自检通过，非物理队列重试。review/log、方向/清理、README/记忆中文提交后恢复守护并实核remote；下一方向/清理及整体框架均380。完整六论文出口仍缺，goal active，无视频。
+
+## 历史状态：第374轮唯一双Cart轨迹队列完成，完整独立数值接收仍待完成（2026-10-13，整体目标active）
 
 - b8ada374准入提交后唯一pid44773/unified81806已exit0。CartLive3/CartReset3各10world、1coldzero后显式reset及1200原固定正弦；各原graph1201调用，总960800图world步、FD35、113.210258915s含构造/完整录证，secondary_errors=[]，0学习/网络forward/retry，completion两臂均producer_passed_pending_independent_receipt。
 - 各臂实际25 partialreset、stage2/3各10行自然换bank、1929正delay有效sensor窗口行，26个完成回合均报告physical/design/task通过；独立24块SHA/形状及逐行事件重新计数核同。任务成功仅既有seen训练bank的固定脚本描述，不是优化PPO/强经典增量或正式能力资格。原physical/design、Replay命令/481/map/parking、oldterminal/new-public reset与non-done门本次producer实际全部执行通过；还需独立数值重建接收，不能只凭completion晋升接口。

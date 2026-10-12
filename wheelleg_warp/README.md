@@ -1,6 +1,6 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（374双Cart真实队列完成，待完整独立接收，2026-10-13）
+## 当前论文计划（375独立数值子集通过，完整接口录证不足，2026-10-13）
 
 原目标仍是：在原完整不对称接触任务上，得到一个保持强经典能力并有明确增量的可执行PPO方法。当前没有通过收益资格的新方法，正式五种子、独立ID/OOD、统计与成本分析、新方法稿件均未完成；CPU历史基线继续保留，不将物理吞吐当PPO端到端加速。
 
@@ -10,7 +10,11 @@
 
 [只读执行接收](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v2/readonly_execution_review.json)已核来源/runtime/预算、24块SHA与事件计数；有效计分物理子步959775，与960800图world步分开。原物理/design摘要通过，访问delay最高10ms；完整命令/历史/reset/map数值接收仍未完成。
 
-375按期方向/清理，并独立接收已存队列后决定下一有限匹配PPO接口合同；不重复队列或直接进入科学训练。380整体框架保持。
+375的[独立数值接收](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v2/independent_numerical_review.json)已核959775有效子步的CPU映射、latent/停车、实际returned481、命令环/旧delay窗口、公开reset及Cart三项post状态；误差沿原363/366门，原工件与108冻结源未变。**完整接口仍未通过**：实际done infos481被期望覆盖，中间其它九私有状态post/previous、换bank四缓冲、每slot轮速度与Nom历史flag exposure没有独立同期录证；producer断言与下一pre不代原值。仅有zero/final的九私有缓冲实际post可直接核。
+
+[375方向深审](results/paper_recovery_20261004/joint_reference_candidate_v1/round375_direction_review.json)保留Live/Reset几何更新假设；376将最小录证修复并入必要的三维匹配PPO无更新集成验证，不重复1200×2原脚本补绿。新合同先定world/旧bank/原自然课程/采样与graph/FD/forward预算，再源码/runtime/HEAD准入并提交后唯一执行；当前没有新运行预算或学习准入。之后须冻结强同信息经典及同chart无学习反馈与可达数值主门/保持门，52/52脚本不代表PPO优势。正式新seed/ID-OOD/统计/端到端成本与方法稿仍缺。
+
+[375清理](results/paper_recovery_20261004/joint_reference_candidate_v1/round375_cleanup.json)实际删除8份可重建helper pyc，80299B；源/原始数据/模型/失败及视频保留。下一方向/清理与整体框架均为380。
 
 第372轮[独立接收](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/independent_review.json)通过：模型/初态、实际gyro地址、800子步输入/Nom/guard/命令/481历史/终态保存及错误记录反例核过，0新物理或学习。[路线决定](results/paper_recovery_20261004/joint_reference_candidate_v1/round372_route_decision.json)按预登记正式关闭严格跨轨迹内部值等价准入路线，不重跑368/371、不消费余预算，也不归为未执行Cart的方法失败。
 
