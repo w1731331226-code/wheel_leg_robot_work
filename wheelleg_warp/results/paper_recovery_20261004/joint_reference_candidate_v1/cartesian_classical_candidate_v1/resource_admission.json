@@ -1,0 +1,213 @@
+{
+  "round": 379,
+  "verified": false,
+  "status": "resource_rejected_before_constructor_or_FD",
+  "verified_static_layout_arithmetic": true,
+  "resource_admitted": false,
+  "proposal_sha256": "9fea834e24edf1bd9d635cf493c55fb8c935a89b0c2536547cf9cf9a1157ac53",
+  "job_budget_review_sha256": "c10a6bccc8d50fde8fb6459c77a6c6296307bd1594c07a781c7be9aba1b5de9a",
+  "durable_root": null,
+  "workspace_peak_B": null,
+  "free_reserve_B": 2147483648,
+  "required_durable_free_B": null,
+  "archive_strategy_frozen": false,
+  "input_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_classical_candidate_v1/proposal.json": "9fea834e24edf1bd9d635cf493c55fb8c935a89b0c2536547cf9cf9a1157ac53",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_classical_candidate_v1/job_budget_review.json": "c10a6bccc8d50fde8fb6459c77a6c6296307bd1594c07a781c7be9aba1b5de9a",
+    "wheelleg_warp/native/models.py": "59420b688a25e63fb8e0e644f0702025836bea0ed90377e452bcbd919c7216eb"
+  },
+  "installed_capacity_resolver_sha256": {
+    "/home/wmt/wheel_leg_robot_work/.venv/lib/python3.10/site-packages/mujoco_warp/_src/io.py": "f9214e355f92a89583d85af04867403d1e8f81fcd45c907114d0baa279aa507d"
+  },
+  "worldstep_cap": 12839760,
+  "worldpacket_cap": 320994,
+  "stream_layouts": {
+    "complete_trace": {
+      "columns": 112,
+      "dtype_bytes": 8,
+      "per_worldstep_bytes": 896,
+      "workload_payload_bytes": 11504424960
+    },
+    "physical_pre": {
+      "columns": 39,
+      "dtype_bytes": 8,
+      "per_worldstep_bytes": 312,
+      "workload_payload_bytes": 4006005120
+    },
+    "physical_post": {
+      "columns": 39,
+      "dtype_bytes": 8,
+      "per_worldstep_bytes": 312,
+      "workload_payload_bytes": 4006005120
+    },
+    "contact_meta": {
+      "columns": 6,
+      "dtype_bytes": 8,
+      "per_worldstep_bytes": 48,
+      "workload_payload_bytes": 616308480
+    },
+    "gyro_trace": {
+      "columns": 8,
+      "dtype_bytes": 8,
+      "per_worldstep_bytes": 64,
+      "workload_payload_bytes": 821744640
+    },
+    "role_trace": {
+      "columns": 11,
+      "dtype_bytes": 8,
+      "per_worldstep_bytes": 88,
+      "workload_payload_bytes": 1129898880
+    },
+    "phase_trace": {
+      "columns": 6,
+      "dtype_bytes": 8,
+      "per_worldstep_bytes": 48,
+      "workload_payload_bytes": 616308480
+    },
+    "parking_trace": {
+      "columns": 30,
+      "dtype_bytes": 8,
+      "per_worldstep_bytes": 240,
+      "workload_payload_bytes": 3081542400
+    },
+    "joint_guard_trace": {
+      "columns": 62,
+      "dtype_bytes": 8,
+      "per_worldstep_bytes": 496,
+      "workload_payload_bytes": 6368520960
+    },
+    "cartesian_trace": {
+      "columns": 38,
+      "dtype_bytes": 8,
+      "per_worldstep_bytes": 304,
+      "workload_payload_bytes": 3903287040
+    },
+    "cartesian_clock": {
+      "columns": 3,
+      "dtype_bytes": 8,
+      "per_worldstep_bytes": 24,
+      "workload_payload_bytes": 308154240
+    }
+  },
+  "actor_layout": "Original raw481 + second identical raw481 (no normalizer) + submitted6 float32",
+  "actor_payload_bytes": 1242888768,
+  "dense_without_contacts_payload_bytes": 37605089088,
+  "contacts": {
+    "columns": 29,
+    "dtype_bytes": 8,
+    "step_index_bytes": 8,
+    "per_contact_bytes": 240,
+    "capacity_per_allocated_world": 64,
+    "allocation": "naconmax=64*num_envs shared across worlds; not a per-world contact censor",
+    "workload_capacity_rows": 821744640,
+    "workload_payload_bytes": 197218713600,
+    "actual_contact_rows_unknown": true,
+    "require_model_capacity_validation_before_launch": true
+  },
+  "dense_and_capacity_contacts_payload_bytes": 234823802688,
+  "archive_and_Git_without_contacts_plan_bytes": 75344395904,
+  "archive_and_Git_with_capacity_contacts_plan_bytes": 469781823104,
+  "workspace_free_bytes": 6579961856,
+  "required_free_reserve_bytes": 2147483648,
+  "allowed_peak_bytes": 4294967296,
+  "current_peak_guarantee": false,
+  "excluded_extra_bytes": [
+    "models/geometry/metadata/initial/terminal/private snapshots",
+    "Additional classical latent3 and diagnostic arrays",
+    "NPY/ZIP headers and worst-case compression expansion",
+    "Git object headers/pack deltas and interruption copies",
+    "Always-preserved completed Cartesian prefixes can duplicate full Cart traces; exact skip/archive policy not yet frozen."
+  ],
+  "CPU_memory": {
+    "largest_job_graph_worldsteps": 245200,
+    "complete_job_payload_bytes": 4484413760,
+    "old_chunk_lists_plus_concatenated_job_allowance_bytes": 8968827520,
+    "allocator_model_numpy_copy_overhead_not_yet_bounded": true,
+    "CPU_memory_cap_registered": false,
+    "note": "The frozen4GiB cap applies to evidence/temp/Git disk peak, not CPU memory. Host recorder overhead and release between jobs still need a separate bound."
+  },
+  "possible_exact_redundancy": [
+    "No-NN actor second raw481 duplicates the first; actual bit equality must be checked",
+    "pre/post39 originate float32, so storing their exact original precision removes f64 promotion",
+    "Adjacent pre q/v equal preceding post q/v only after explicit bitwise equality; retain mismatches",
+    "History rolling frames can be shared only after verifying exact reconstruction of all raw481"
+  ],
+  "compact_codec_implemented": false,
+  "claim": "This is a conservative byte budget, not measured compression or an irreducible information bound.",
+  "decision": "No physical/FD launch. Preserve complete physical/contact/control evidence; obtain durable storage and bound CPU streaming/Git transients before admission.",
+  "new_physics_steps": 0,
+  "new_FD_calls": 0,
+  "new_model_forward_rows": 0,
+  "schema_provenance": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/baseline/guard_B0/regular/0/case_6300000.npz": {
+      "sha256": "7332a835bb254b89061357bebb6672f3b4ac6de9522a200a87f55a790694a962",
+      "fields": {
+        "trace": {
+          "shape": [
+            13407,
+            112
+          ],
+          "dtype": "float64"
+        },
+        "pre": {
+          "shape": [
+            13407,
+            39
+          ],
+          "dtype": "float64"
+        },
+        "post": {
+          "shape": [
+            13407,
+            39
+          ],
+          "dtype": "float64"
+        },
+        "meta": {
+          "shape": [
+            13407,
+            6
+          ],
+          "dtype": "float64"
+        },
+        "contacts": {
+          "shape": [
+            26575,
+            29
+          ],
+          "dtype": "float64"
+        },
+        "contact_steps": {
+          "shape": [
+            26575
+          ],
+          "dtype": "int64"
+        }
+      }
+    },
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/baseline/guard_B0/regular/0/actor_world_0.npz": {
+      "sha256": "e37469446483d58045d14502c71abfc7def5ee3aea0484cec5243846a5963d41",
+      "fields": {
+        "trace": {
+          "shape": [
+            336,
+            968
+          ],
+          "dtype": "float32"
+        }
+      }
+    },
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/baseline/guard_B0/regular/0/joint_guard_6300000.npz": {
+      "sha256": "1b75f25413f21b3889530fd2e991e5796623c5988444881e7f1531e18335b795",
+      "fields": {
+        "trace": {
+          "shape": [
+            13407,
+            62
+          ],
+          "dtype": "float64"
+        }
+      }
+    }
+  }
+}

@@ -2,7 +2,18 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：第378轮同信息Cart经典反馈及开发选择协议已冻结，下一步准入有界强经典测量（2026-10-13，整体目标active）
+## 当前状态：第379轮经典执行器与CPU接收器已准备，完整录证资源门拒绝，尚无新基线测量（2026-10-13，整体目标active）
+
+- 上轮为progress（378反馈实现/1800算术/584回合协议中文提交同步）。379新增最小run_cartesian_classical_baseline及CPU/mock测试，复用原dense评价、B1-route original parking(enabled0)、scoped accepted-Nom v2模式1与原guard/完整物理接触流，补纯CPU反馈诊断、actual raw terminal481/afterreset端点与actual model。原376/377队列和旧数据不重复、不修改；0新物理/FD/GPU执行/NN/优化。
+- worker逐构造前核协议/源/四JSON committedHEAD，逐job原graph/actual world/param/deadline/delay/solver/contactcapacity和首10后5 FD；退出后只保元数据，释放active raw/graph绑定。修过record缺cases造成receiver不兼容、结束时误重查全队列剩余空间两处问题；initial容量与ongoing reserve分开，首回合计分步与包含autoreset的graph步分列，主因/secondary及各流独立保存。CPU/mock source/HEAD/时限/预算/调用链/actor/终态/reset与错误反例exit0。
+- 新review_cartesian_classical_baseline接收器10个CPU测试及旧输入检查exit0：固定各chart全局gamma、原164/所有旧经典保持、直接读取已绑定的公开历史CPU28（目录名final不是科研保留集）、原B/J与逐值FD链。只接受特定且本次source-admitted的review_cartesian_classical_raw.py真实独立接收；producer自报不晋升，现该rawchecker未实现、584completion不存在，不生成baselinequalified或学习资格。
+- 旧335评价80源及当前运行依赖/安装源均未变；377runtime完整dict多PPO_source_sha256键，公共字段和额外5源SHA同，结构差异不谎报版本漂移。377原light pipeline是parking撤回，378/379协议是original B1停车请求，两者工程范围不同；将来的fresh匹配PPO须original parking，不继承377撤回资格或旧权重。
+- 静态resource_admission明确verified=false/resource_admitted=false。按全稠密字段2832B/worldstep及原968f32 Actor，在冻结12839760图步规划未计contacts已37,605,089,088B；源nconmax64×world共享容量加contact规划234,823,802,688B≈218.70GiB，archive+Git及两64MiB暂存规划469,781,823,104B≈437.52GiB。模型/header/压缩膨胀/失败copy/重复complete Cart prefixes尚未bound；这是保守规划上界，不是实测压缩量或信息论下界，不能据旧zip率给4GiB峰值保证。
+- 最大job旧pending+concat CPU载荷规划约8.35GiB，host overhead仍需另核；4GiB是磁盘工件/临时/Git门，不是已注册CPU门。当前FS约6.6GB无其它持久挂载，不能静态接收；已async请求可用持久路径/容量（接触容量核出后更正原100GB建议，完整旧格式建议约500GB以上仍须实际空间/归档证明）。无答复不得当准入，未删科学数据/无codec/无视频。
+- root用真实resource_admission启动检查，在runtime/构造/FD/graph工具全设禁止的条件下明确ResourceNotAdmitted；execution_locator/runtime均不存在，0机器人物理。implementation_review仅接收CPU/mock与资源拒绝，不是新source/runtime/初态/实验/方法接收。完成代码/证据/README/记忆中文提交后恢复守护并核remote。
+- 下一380必须按期方向深审、实际可证冗余清理及整体框架核查；完整存储/归档/单文件≤48MiB、真实rawchecker、actual初态/source/runtime仍未关闭，不发部分物理队列绕门。原研究J改善15%且.05deg、≥34和完整能力保持、正式5seed/独立ID-OOD/统计成本/方法稿目标不缩，goal active。
+
+## 历史状态：第378轮同信息Cart经典反馈及开发选择协议已冻结，下一步准入有界强经典测量（2026-10-13，整体目标active）
 
 - 378按最新Warp计划推进377研究出口，新增cartesian_classical纯CPU反馈及小测试：latest delayed raw481公开roll/gyro/关节，d=clip(.30roll+.12gyro_x,±.035m)，DeltaF=gamma*3.4335*d/.035N，f=DeltaF*(eL+eR)/2，ax/az共同Box缩幅且aw逐值沿B1_route(kp.4,kd.3,roll_gain0,arm1)。未改原Nom/物理/guard/历史实现，0新物理/FD/NN/优化。
 - 正d原径向改变量为左+K*d、右-K*d，向下对称腿az=-gamma*d/.035；原源K=(7/1.018)*500=3438.1139489N/m，非精确3500。gamma1峰3.4335N仅原未clipped局部120.3339882N的2.8533%，不等同私有LPF/高度room或真实接触力。纯CPU测试含非对称FK/向量最小二乘、mirror/Box/aw/字段独立/非法输入；补arm拒bool/float。final-source1800组合/30既有对称reset几何力重建max1.332e-15N，不能称穷尽合法关节或闭环表现。

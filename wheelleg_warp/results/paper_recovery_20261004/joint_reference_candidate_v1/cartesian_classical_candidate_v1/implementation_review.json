@@ -1,0 +1,81 @@
+{
+  "round": 379,
+  "verified": true,
+  "scope": "CPU/mock implementation preparation and real startup rejection only",
+  "status": "prepared_resource_rejected_before_any_constructor",
+  "parent_head": "18bf64732959daaa646f4fd622346eea9142fe45",
+  "source_sha256": {
+    "wheelleg_warp/run_cartesian_classical_baseline.py": "7d2b5a8a3d87daed541abe3f426aa48a91b6e8189297957c3b0401e9244a0f07",
+    "wheelleg_warp/test_cartesian_classical_baseline.py": "de3999535c5fe912276c1ea4d512bdd6cd1c81aff3d5e50424fcd1b5c8545118",
+    "wheelleg_warp/review_cartesian_classical_baseline.py": "c01c20e93e190577f9653aa59dfdf847c4f315cc91cc64c65514f36f0015bb0b",
+    "wheelleg_warp/test_review_cartesian_classical_baseline.py": "4e2cbe373c0856bb6322cde3278893ac54026f801293ebe804ec46ddb54a854e",
+    "wheelleg_warp/cartesian_classical_storage.py": "fda066f401454983b3f43f1e233f512d381541bc9b9a8b1807e2069b9945fd47"
+  },
+  "input_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_classical_candidate_v1/proposal.json": "9fea834e24edf1bd9d635cf493c55fb8c935a89b0c2536547cf9cf9a1157ac53",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_classical_candidate_v1/job_budget_review.json": "c10a6bccc8d50fde8fb6459c77a6c6296307bd1594c07a781c7be9aba1b5de9a",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_classical_candidate_v1/resource_admission.json": "fa6594f33c248309c0f75b2b668d6b44362889868bbd8b6a37accd0f92f3da0b",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/evaluation_source.json": "ec7bae177d79cc2347c9dc9fa73df82217c15166d526fbb5c672dd1eec27fa28",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/source_admission.json": "92f51b1da34c67598010f1f26a9c6414509b3b51155e3b99730894342bfda6ca"
+  },
+  "tests": {
+    "worker_CPU_mock": "exit0; resourcefalse before runtime,initial/ongoing space,metadata HEAD closure,receiver cases,graph vs firstepisode steps,actual model/param/deadline/contact capacity,FD plan,scoped acceptedNom v2 andoriginal B1 parking,noNN actor andactual terminal/reset",
+    "receiver_CPU_unit_tests": {
+      "tests": 10,
+      "exit_code": 0,
+      "method": "agent ran final source test_review_cartesian_classical_baseline.py",
+      "coverage": "selection ties andglobalchartgain; old/new retention/CPU28/B/J boundaries; wrongcases/forgedflags; wrong ormissing independentraw checker/source provenance; exact FD record chain"
+    },
+    "receiver_old_input_check": "exit0; current source-bound protocol/cases,old80source and9classical aggregates,original predicates andpublic CPU28 exact historicalreference",
+    "storage_boundary_selfcheck": "exit0; conservative layouts/disk cap integers,no codec",
+    "real_startup_rejection": "ResourceNotAdmitted before runtime/constructor/FD/physics; no locator/runtime created",
+    "syntax_AST": "5 new source/test files passed"
+  },
+  "log_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_classical_candidate_v1/worker_379_test.log": "d0386f8c1548255147fa47313f7c384391c57080743efe289164730b7ba71c97",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_classical_candidate_v1/storage_379_check.log": "d6c6133d917fb072da2aa55ee5724550eb03c09624606e87f7090738b2715890",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_classical_candidate_v1/startup_rejection_379.log": "0ff654f3e9de7828ccf7ae1d18b2ff8f610718a464c080ce0c85b350542287ef"
+  },
+  "old_baseline_source_binding": {
+    "sha256": "ec7bae177d79cc2347c9dc9fa73df82217c15166d526fbb5c672dd1eec27fa28",
+    "source_files": 80,
+    "current_source_hashes_verified_unchanged": true
+  },
+  "runtime_comparison": {
+    "parent": "round377",
+    "common_runtime_fields_identical": true,
+    "installed_mujoco_warp_sources": 2,
+    "additional_PPO_sources": 5,
+    "all_source_hashes_unchanged": true,
+    "note": "Old full runtime dict has an extra PPO_source_sha256 field; direct complete-dict comparison differs structurally, not a package/source drift. This is no new execution qualification."
+  },
+  "pipeline": {
+    "parking": "original B1 prepare enabled0",
+    "Nom": "scoped repaired_instrument anddeliver_accepted_nominal_v2; mode1 preserved",
+    "captures": "80 constructor control calls (two captures),actual graph40 physics slots",
+    "actor": "delayed public raw481 pure CPU feedback; original submitted6 is paired latent3 API input, actual canonical/motor data remain dense streams",
+    "new_fields": "classical_request diagnostics, actual_raw terminal481,actual afterreset snapshots,actual model beforelaunch",
+    "accounting": "584 firstepisodes/68constructor/max10world; perjob frozen12839760graph upper,firstepisode steps separate; FD first10/later5/global345",
+    "matched_learner_requirement": "Fresh matching original B1 parking PPO;377withdrawal-parking receipt is a different scope"
+  },
+  "resource_admitted": false,
+  "source_runtime_admitted": false,
+  "actual_parameter_model_verified": false,
+  "independent_raw_checker_implemented": false,
+  "baseline_measured": false,
+  "baseline_qualified": false,
+  "open_items": [
+    "Durable storage path/capacity and archive/Git/chunk<=48MiB/workspace4GiB plan; no historical compression-rate assumption",
+    "Complete transient/header/model/interruption bytes and CPU recorder overhead/release proof;4GiB is disk,not a registeredCPU cap",
+    "Avoid or charge exactly reconstructible duplicate completed Cart prefixes before resource freeze",
+    "Implement andfreeze specific review_cartesian_classical_raw.py before baseline qualification",
+    "Actual initial model/param/deadline/capacity andsource/runtime committedHEAD admission before the sole queue"
+  ],
+  "new_physics_steps": 0,
+  "new_FD_calls": 0,
+  "new_model_forward_rows": 0,
+  "new_optimizer_updates": 0,
+  "formal5_admitted": false,
+  "goal_complete": false,
+  "next": "380 scheduled direction review,actual safe cleanup andwhole framework review. Continue necessary source preparations while awaiting durable storage; never consume a partial physical queue to evade resource admission."
+}
