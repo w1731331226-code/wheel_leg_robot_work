@@ -64,6 +64,10 @@ def instrument(factory,cases,mode):
         saved=dict(trace=values,latent=latent.numpy(),reference=reference.numpy(),shadow=shadow.numpy(),
             terminal_packet=raw.obs.numpy(),state=raw.state.numpy(),done=before_done.copy(),
             guard=raw._joint_guard_buffers[1].numpy(),parking=raw._light_parking_buffers[2].numpy(),
+            guard_memory=raw._joint_guard_buffers[0].numpy(),parking_seen=raw._light_parking_buffers[0].numpy(),
+            parking_effective=raw._light_parking_buffers[1].numpy(),phase_reference=raw._light_phase_buffers[0].numpy(),
+            phase_role=raw._light_phase_buffers[1].numpy(),phase_monitor=raw._light_phase_buffers[2].numpy(),
+            command_total=raw._execution_buffers[0].numpy(),
             command_prefix=raw._execution_buffers[1].numpy(),command_stamp=raw._execution_buffers[2].numpy(),
             previous_sensor_steps=raw._execution_previous_sensor_steps.copy(),delay_steps=raw.param.numpy()[:,4].copy())
         raw._cartesian_last=saved

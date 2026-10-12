@@ -2,7 +2,14 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：第368轮进度保存与最新Warp论文计划核对（2026-10-13，尚未完成，整体目标active）
+## 当前状态：第368轮轻量无学习接口源码准入完成，真实队列待首次运行（2026-10-13，整体目标active）
+
+- 上轮为progress（最新入口核对/未准入进度与终态快照自检）。本轮新增run_cartesian_light_interface，复用原light parking/phase/collector/guard及CartesianCurriculum，不构造PPO或网络；B0与两Cart各一个fresh零前缀，两Cart之后显式reset但课程保留10样本，再各1200调用。101源码与原367协议/runtime冻结，源码准入中文提交后才第一次启动唯一队列，0implicitretry。
+- Budget在调用前限制总961200图world步与FD80；真实父课程自然换bank，部分reset/2与3阶段/实际正delay不足记inconclusive，不延长或择例。每100packet保存全候选/parking/guard、raw481/action、旧terminal/public/reset、全部命令prefix/stamp、阶段和私有状态；失败直接保存当前所有buffer及最后提交动作，不仅依赖可能旧的_cartesian_last。
+- 独立82格最终guard ctrl环重建旧delay的命令积分/elapsed并核prefix端点；从旧raw481滚动重建历史，done新十帧由raw.obs与零route产生，保旧terminal/seed/stage/scenario。Cart/guard/parking/phase/collector非done私有行逐值核，done公开FK参考/清零与新bank参数核。原生live/terminal物理设计门保持，不新增闭链误差阈值或以task success代工程门。
+- 新预算/脚本/原物理拒绝与三行部分reset-delay-history/错误reset和积分反例自检exit0；更新真实light包装的非执行路由/失败保留自检exit0。只读复核两项录证漏项已修，无确认首跑阻断。此前367协议与旧冻结源保持；本入口0新机器人物理/FD/神经网络forward/学习，真实capture、多world及独立接收尚未通过，后续PPO/科学种子未准入。370方向/清理/整体框架保持。
+
+## 第368轮最新Warp论文计划核对阶段记录（2026-10-13）
 
 - 用户最新要求先查看并分析Warp中的最新计划；执行入口是wheelleg_warp/README顶部与本记忆，TERRAIN_PLAN末段属于2026-09旧地形路线，不能覆盖当前Cartesian协议。本次核对没有启动真实队列、PPO或新科学实验，也没有把368标为完成。
 - 367登记的CartLive3/CartReset3各10world、33531每stage前10、各1200正弦调用加3零前缀、961200图步/FD80、milestones4000/8000及停止门保持。368先补轻量执行器、完整录证与源码/预算准入并提交，再唯一运行；须实际出现部分reset、2/3换bank及正delay，预算内事件不足记inconclusive，软件/物理/记录失败停保留，无追加或隐式重试。当前输出仅proposal/routing自检log，没有真实队列结果。
