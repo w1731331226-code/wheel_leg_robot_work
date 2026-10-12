@@ -62,11 +62,14 @@ def instrument(factory,cases,mode):
         before_done=raw.done.numpy()!=0;values=trace.numpy();valid=values[:,:,0]==1
         assert not values[:,:,33][valid].any(),'Cartesian control-stage error'
         saved=dict(trace=values,latent=latent.numpy(),reference=reference.numpy(),shadow=shadow.numpy(),
-            terminal_packet=raw.obs.numpy(),state=raw.state.numpy(),done=before_done.copy())
+            terminal_packet=raw.obs.numpy(),state=raw.state.numpy(),done=before_done.copy(),
+            guard=raw._joint_guard_buffers[1].numpy(),parking=raw._light_parking_buffers[2].numpy(),
+            command_prefix=raw._execution_buffers[1].numpy(),command_stamp=raw._execution_buffers[2].numpy(),
+            previous_sensor_steps=raw._execution_previous_sensor_steps.copy(),delay_steps=raw.param.numpy()[:,4].copy())
+        raw._cartesian_last=saved
         value=wait();np.testing.assert_array_equal(value[2],before_done)
         for w in np.flatnonzero(before_done):np.testing.assert_array_equal(value[3][w]['terminal_observation'],saved['terminal_packet'][w])
         if before_done.any():mask.assign(before_done.astype(np.int32));launch(reset_aux,n,[mask,raw.obs,latent,shadow,reference])
-        raw._cartesian_last=saved
         return value
     raw.reset,raw.step_wait=reset_all,step_wait
     return result

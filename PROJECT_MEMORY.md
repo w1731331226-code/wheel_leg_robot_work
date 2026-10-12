@@ -2,7 +2,15 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：第367轮课程复位顺序修复及无学习接口协议完成（2026-10-12，整体目标active）
+## 当前状态：第368轮进度保存与最新Warp论文计划核对（2026-10-13，尚未完成，整体目标active）
+
+- 用户最新要求先查看并分析Warp中的最新计划；执行入口是wheelleg_warp/README顶部与本记忆，TERRAIN_PLAN末段属于2026-09旧地形路线，不能覆盖当前Cartesian协议。本次核对没有启动真实队列、PPO或新科学实验，也没有把368标为完成。
+- 367登记的CartLive3/CartReset3各10world、33531每stage前10、各1200正弦调用加3零前缀、961200图步/FD80、milestones4000/8000及停止门保持。368先补轻量执行器、完整录证与源码/预算准入并提交，再唯一运行；须实际出现部分reset、2/3换bank及正delay，预算内事件不足记inconclusive，软件/物理/记录失败停保留，无追加或隐式重试。当前输出仅proposal/routing自检log，没有真实队列结果。
+- 轻量适配器与路由测试此前被47a7f7a9自动归档，非准入证据。待保存改动增加terminal前guard/parking/command prefix/stamp/previous sensor steps/old delay快照，并提前于下层wait保存，失败时不丢旧回合记录；补非执行自检覆盖正常快照与下层变异后失败保留。真实40调用捕获、多world物理及延迟区间尚未验收，不能据launch-spy通过晋升接口资格。
+- 科学主对照保持同潜变量/滤波/初始化的CartLive3 vs CartReset3，隔离几何更新；保D3/V6和强同信息经典。单world20回合交付通过但脚本0/20成功不估计最优策略能力，命令合力代数不等实际wrench/稳定证明。接口接收后另登记匹配PPO生命周期和可证伪收益门，科学种子/独立ID-OOD/保持/统计/成本/稿件仍缺，不自动长训或formal5。370方向/清理/整体框架保持。
+- README明确368未完成边界、旧地形入口历史身份及旧60/64撤销证据资格，修正历史段误写的下一365；只复用指定证据，不重跑已接受稠密20。路由/正常快照/等待失败保留自检exit0；原367 proposal及8冻结源码SHA未变，961200预算算式/0学习/无completion回执核过，git diff --check通过。收尾中文进度提交，恢复同步服务并实查remote；0新机器人物理/FD/神经网络forward/学习，无视频。
+
+## 历史状态：第367轮课程复位顺序修复及无学习接口协议完成（2026-10-12，整体目标active）
 
 - 366为progress；367已修代码并完成具体反例测试，中断续接只核当前文件/哈希，没有重复试验或增加轮数。现有CurriculumEnv先raw.step_wait自动复位，再按真实done安装新bank、调用reset_rows并替换返回obs；旧Cartesian raw层参考刷新会早于新bank。轻量路径另有40调用、无dense buffers，与已验80调用稠密路径不同，不能直接复用为训练资格。
 - 新cartesian_curriculum.CartesianCurriculum复用原父类及reset_aux，在super.step_wait之后用返回public38/raw.obs校对done行再刷新latent/shadow/reference；独立mask不覆盖父层raw.mask，未结束行不动，拒绝非bool mask与不同来源reset包。旧冻结控制、课程与评估源码不改，新类尚未接入真实训练工厂。
