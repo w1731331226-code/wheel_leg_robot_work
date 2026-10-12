@@ -1,0 +1,97 @@
+{
+  "round": 374,
+  "status": "independent_execution_and_budget_receipt_accepted_pending_full_numerical_review",
+  "execution_receipt_sha256": "91cca65a09475ef71528b6c2c883f1951a86aaf2719169817cdb9f376cf26b54",
+  "completion_sha256": "7b376f2049ff7973befc8b904eecf0b6728c6426821dd8ad15b5e066aa62f978",
+  "source_admission_sha256": "bcc243aedd76b3ec52e4e6896f556880eaa576c5311b4ff27cd685003995d44d",
+  "source_runtime_budget_review": {
+    "working_HEAD_and_started_commit_source_blobs": 109,
+    "source_files": 108,
+    "source_and_manifest_sha_equal": true,
+    "runtime_versions_cuda_gpu_driver_and_installed_sources_equal": true,
+    "all24_block_sha_equal": true,
+    "started_pid": 44773,
+    "process_exited": true,
+    "completion_present": true,
+    "failure_absent": true,
+    "only_registered_Cart_directories": true,
+    "graph_calls_each": [
+      1201,
+      1201
+    ],
+    "graph_world_steps": 960800,
+    "FD_calls": 35,
+    "FD_cap": 80,
+    "zero_prefix_steps_each": 400,
+    "new_learning_samples": 0,
+    "new_model_forward_rows": 0,
+    "secondary_errors": []
+  },
+  "independent_block_counts": {
+    "CartLive3": {
+      "packets": 1200,
+      "partial_resets": 25,
+      "done_rows": 26,
+      "stage2_rows": 10,
+      "stage3_rows": 10,
+      "positive_delay_rows": 1929,
+      "rollout_valid_guard_and_physics_steps": 479486,
+      "including_zero_valid_steps": 479886,
+      "episodes": 26,
+      "task_successes": 26,
+      "physical_flags_true": 26,
+      "design_flags_true": 26,
+      "minimum_state31_32": 0.11489647690340823,
+      "minimum_state33": 0.11590433120727539,
+      "minimum_state38": 0.015904331207275302,
+      "max_state35_36": 0
+    },
+    "CartReset3": {
+      "packets": 1200,
+      "partial_resets": 25,
+      "done_rows": 26,
+      "stage2_rows": 10,
+      "stage3_rows": 10,
+      "positive_delay_rows": 1929,
+      "rollout_valid_guard_and_physics_steps": 479489,
+      "including_zero_valid_steps": 479889,
+      "episodes": 26,
+      "task_successes": 26,
+      "physical_flags_true": 26,
+      "design_flags_true": 26,
+      "minimum_state31_32": 0.11489645367120832,
+      "minimum_state33": 0.1158607006072998,
+      "minimum_state38": 0.015860700607299716,
+      "max_state35_36": 0
+    }
+  },
+  "total_valid_guard_and_physics_steps_including_zero": 959775,
+  "visited_delay_substeps": [
+    0,
+    1,
+    2,
+    6,
+    8,
+    12,
+    19,
+    20
+  ],
+  "maximum_visited_delay_ms": 10,
+  "completed_episode_plus_final_live_counter_equals_valid_guard_total": true,
+  "review_method": "Two read-only reviewers checked actual disk NPZ/JSON/source/git/runtime values without invoking producer control/physics or reexecuting semantic.",
+  "full_numerical_interface_accepted": false,
+  "PPO_admitted": false,
+  "scientific_benefit_accepted": false,
+  "limitations": [
+    "Independent command integral/history/CPU mapping/reset semantic replay is not yet complete.",
+    "Only existing 10-world training banks and visited delays up to 10ms; no 100-world/PPO/20ms qualification.",
+    "Fixed scripted task success is descriptive and not optimized policy benefit over classical controls."
+  ],
+  "bank_model_review": {
+    "records_each": 21,
+    "initial_plus19_real_transitions_plus_final": true,
+    "all_model_world_rows_and_meaninertia_equal_current_stage_cache": true,
+    "all_three_stage_caches_equal_actual_constructors": true,
+    "all26_old_episode_stage_seed_scenario_metadata_match": true
+  }
+}

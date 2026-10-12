@@ -5,12 +5,12 @@
 ## 当前状态：第374轮唯一双Cart轨迹队列完成，完整独立数值接收仍待完成（2026-10-13，整体目标active）
 
 - b8ada374准入提交后唯一pid44773/unified81806已exit0。CartLive3/CartReset3各10world、1coldzero后显式reset及1200原固定正弦；各原graph1201调用，总960800图world步、FD35、113.210258915s含构造/完整录证，secondary_errors=[]，0学习/网络forward/retry，completion两臂均producer_passed_pending_independent_receipt。
-- 各臂实际25 partialreset、stage2/3各10行自然换bank、1929正delay有效sensor窗口行，26个完成回合均报告physical/design/task通过。任务成功仅既有seen训练bank的固定脚本描述，不是优化PPO/强经典增量或正式能力资格。原physical/design、Replay命令/481/map/parking、oldterminal/new-public reset与non-done门本次producer实际全部执行通过；还需独立数值重建接收，不能只凭completion晋升接口。
-- prefix完整private/pre-autoreset/guard/命令保存及fresh Replay通过；三stage实际constructor/cache两臂前置配对过；每真实换bank及initial/final保存实际所有world模型可变数组/meaninertia，按各自stage逐值核。不会比较独立物理轨迹浮点内部值，也未重跑373 semantic/368/371或改变旧失败。
-- execution_receipt绑定109实际工件/日志的全部SHA，450598929B、最大单文件20812504B，旧源/失败及源码准入均保留。108源/manifest当前HEAD与started历史提交独立SHA核同，runtime版本/CUDA/GPU与安装源码核同；完整独立数值接口仍未接收，100world/3维匹配PPO、正式新seed/独立ID-OOD/统计成本/新方法稿六出口仍缺，goal active。
-- 本轮数据按每包≤64MiB普通快进分批归档与同步，每提交同步本记忆，不重写历史；收尾恢复同步守护并实核remote。375必须按期方向深审/冗余清理，并独立接收已存队列后决定下一有限PPO接口合同，不重复本queue；380框架保持，无视频。
+- 各臂实际25 partialreset、stage2/3各10行自然换bank、1929正delay有效sensor窗口行，26个完成回合均报告physical/design/task通过；独立24块SHA/形状及逐行事件重新计数核同。任务成功仅既有seen训练bank的固定脚本描述，不是优化PPO/强经典增量或正式能力资格。原physical/design、Replay命令/481/map/parking、oldterminal/new-public reset与non-done门本次producer实际全部执行通过；还需独立数值重建接收，不能只凭completion晋升接口。
+- prefix完整private/pre-autoreset/guard/命令保存及fresh Replay通过；三stage实际constructor/cache两臂前置配对过；每真实换bank及initial/final保存实际所有world模型可变数组/meaninertia，按各自stage逐值核；独立读取每臂21份（initial+19真实切换+final）全模型world行/meaninertia均匹配各自stage cache，三stage cache/实际constructor及26旧回合stage/seed/scenario全部核同。不会比较独立物理轨迹浮点内部值，也未重跑373 semantic/368/371或改变旧失败。
+- execution_receipt绑定109实际工件/日志的全部SHA，450598929B、最大单文件20812504B，旧源/失败及源码准入均保留。只读readonly_execution_review已独核108源/manifest当前HEAD与started历史提交109 blobs全同、runtime版本/CUDA/GPU与安装源码全同、启动/终态归属与预算/零前缀及无failure。有效guard/计分physics含zero：Live479886、Reset479889、合计959775，与图world步960800分开；旧完成episode加最终live计数核同。visited delay子步[0,1,2,6,8,12,19,20]，最大10ms，不称20ms或全部delay已通过；实际/命令torque excess最大0、原leg/joint/active1.4门独立汇总通过。完整独立数值接口仍未接收，100world/3维匹配PPO、正式新seed/独立ID-OOD/统计成本/新方法稿六出口仍缺，goal active。
+- 本轮110待归档文件已分11批全部普通快进同步至bc94c2e8，各实测包≤64MiB，每提交同步本记忆，不重写历史；最后摘要提交后恢复同步守护并实核remote。375必须按期方向深审/冗余清理，并独立接收已存队列后决定下一有限PPO接口合同，不重复本queue；380框架保持，无视频。
 
-- 第374轮有界归档进度：11/11批已本地归档，每批非视频原始文件≤50MiB；本批24文件/35737996B，等待逐提交实核remote。
+- 第374轮有界归档进度：11/11批已完成，110文件本地提交且逐批remote HEAD实核一致；只读摘要与最终记忆作为收尾提交保存；source/runtime/HEAD及109原始工件SHA收尾复核未变。
 
 ## 第374轮轨迹worker源码准入阶段记录（2026-10-13）
 

@@ -8,6 +8,8 @@
 
 374已完成[新单轨迹worker](run_cartesian_interface_v2.py)、[108源/runtime准入](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v2/source_admission.json)及提交后唯一队列。[实际回执](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v2/execution_receipt.json)记录两Cart各1200正弦包/10world，原graph各1201调用，总960800图world步、35FD、113.21秒含构造与录证，0学习/retry，secondary空。各臂25次部分reset、stage2/3各10行切换、1929行正delay窗口；26个完成回合任务/物理/设计报告均通过。只是原seen训练bank固定脚本描述，不证明PPO增量。所有原单轨迹门实际由producer执行通过，完整独立命令/历史/reset/map数值接收仍待完成，未晋升100world/PPO。
 
+[只读执行接收](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v2/readonly_execution_review.json)已核来源/runtime/预算、24块SHA与事件计数；有效计分物理子步959775，与960800图world步分开。原物理/design摘要通过，访问delay最高10ms；完整命令/历史/reset/map数值接收仍未完成。
+
 375按期方向/清理，并独立接收已存队列后决定下一有限匹配PPO接口合同；不重复队列或直接进入科学训练。380整体框架保持。
 
 第372轮[独立接收](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/independent_review.json)通过：模型/初态、实际gyro地址、800子步输入/Nom/guard/命令/481历史/终态保存及错误记录反例核过，0新物理或学习。[路线决定](results/paper_recovery_20261004/joint_reference_candidate_v1/round372_route_decision.json)按预登记正式关闭严格跨轨迹内部值等价准入路线，不重跑368/371、不消费余预算，也不归为未执行Cart的方法失败。
