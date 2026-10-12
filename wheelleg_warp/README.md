@@ -1,8 +1,12 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（371匹配B0重复性门失败停止，2026-10-13）
+## 当前论文计划（372接收完成，旧逐值准入路线关闭，2026-10-13）
 
 原目标仍是：在原完整不对称接触任务上，得到一个保持强经典能力并有明确增量的可执行PPO方法。当前没有通过收益资格的新方法，正式五种子、独立ID/OOD、统计与成本分析、新方法稿件均未完成；CPU历史基线继续保留，不将物理吞吐当PPO端到端加速。
+
+第372轮[独立接收](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/independent_review.json)通过：模型/初态、实际gyro地址、800子步输入/Nom/guard/命令/481历史/终态保存及错误记录反例核过，0新物理或学习。[路线决定](results/paper_recovery_20261004/joint_reference_candidate_v1/round372_route_decision.json)按预登记正式关闭严格跨轨迹内部值等价准入路线，不重跑368/371、不消费余预算，也不归为未执行Cart的方法失败。
+
+373须建立独立前瞻合同：用相同完整输入与控制记忆检验B0/Cart完整控制组合的cold-zero严格语义，另用各自真实轨迹检验原硬物理、部分reset/换bank/正delay和历史归属。两项分开，不据已见ULP差选择容差，不倒推旧失败通过；真实接口/PPO/科学收益各自另行准入。375方向/清理，380整体框架保持。
 
 第371轮[新执行器](run_cartesian_zero_input.py)与[105源码准入](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/source_admission.json)提交后首次运行，已因[同构造B0自身重复性门失败停止](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/failure.json)。两B0各10world一个zero包，共800图步/800物理证据步、35FD、约7.23秒含构造记录，0学习/retry；未构造或运行Cart，不消费余下400图步。
 

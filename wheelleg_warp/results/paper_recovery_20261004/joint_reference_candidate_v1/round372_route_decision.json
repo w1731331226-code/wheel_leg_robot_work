@@ -1,0 +1,35 @@
+{
+  "round": 372,
+  "status": "cross_run_strict_value_interface_route_closed",
+  "independent_review_sha256": "2fb875b2b7cbd1e26e998663ec353330d4c107c24e3ecf177214e88f2c492092",
+  "direction_review_sha256": "1616ecabef09163124005bb8806b700f4291f7a1292e570ed7c469f952a86801",
+  "registered_exit": "在Cart前停止；只判同路径重复性未建立，关闭当前严格逐值准入路线，不归因Cart或重复到绿。",
+  "closed_routes": [
+    "cartesian_training_interface_v1失败目录及其剩余预算",
+    "cartesian_zero_input_diagnostic_v1基准重复性失败后的复试",
+    "以独立物理轨迹全部内部值逐值同作后续接口准入"
+  ],
+  "evidence": "同实际模型/meaninertia/scalars与初态的两次B0，在Cart前已不复现。首个已见差是phase/Nom前qvel[3]一float32ULP，先于gyro/滤波；最终公开输入、Nom/guard/命令输出同。",
+  "not_concluded": [
+    "不将该基准重复性失败归为Cart方法失败",
+    "不倒推368通过或删除内部差异",
+    "不宣称长期数值误差无害或已定位solver/contact/GPU具体根因"
+  ],
+  "retained": "CPU历史基线、全部原物理/design/task/能力保持门、368/371失败和冻结源保留；CartLive3/CartReset3几何更新及强经典PPO增量原目标保持。",
+  "next_delivery_373": "建立独立前瞻接口v2合同，将同输入控制语义与各轨迹硬物理/复位历史门分开。若同输入完整控制组合未核正确不得运行新机器人队列；不重复B0轨迹或20单world队列，不按观察delta定义容差。",
+  "prospective_requirements": {
+    "control_semantics": "同一完整q/v/sensor/oldNom memory/reference/gains/command/active/guard状态复制给B0和Cart完整phase-Nom-Cart-guard组合，0物理solver。冷零latent/shadow/native residual=0，公共Nom/guard/最终float32 ctrl严格相同。请求零但有旧latent仅核原撤回合同，不冒充cold-zero。",
+    "trajectory_ownership": "两Cart各自核原硬物理/design、最终ctrl/积分、raw481历史、terminal旧回合、post-parent公开reset参考和全部non-done行，实际部分reset/stage2/3/正delay。不以跨轨迹比特等价代替，不引入按371差值选择的容差。",
+    "bound_and_sources": "373若认可具体新协议，沿用旧33531每stage前10与4000/8000，Cart各fresh zero加显式reset后1200固定正弦包，共960800图world步/FD80、0学习；所有source/HEAD/原graph/首次失败保护先准入提交。此字段是下一交付约束，不是现已注册或运行的新预算。",
+    "scope": "仅合格接口可再登记三维匹配actor/critic/RMS/RNG/探索生命周期；方法收益仍需Live胜Reset与强同信息经典且保持完整能力，原D3/V6/同chart无学习反馈、新seed/ID-OOD/统计成本稿件不省略。"
+  },
+  "new_physics_steps": 0,
+  "new_FD": 0,
+  "new_model_forward_rows": 0,
+  "new_learning_samples": 0,
+  "formal5_admitted": false,
+  "light_interface_admitted": false,
+  "goal_complete": false,
+  "next_direction_round": 375,
+  "next_framework_round": 380
+}

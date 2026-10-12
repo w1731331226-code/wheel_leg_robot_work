@@ -2,7 +2,16 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：第371轮匹配B0自身零门失败停止，Cart未执行（2026-10-13，整体目标active）
+## 当前状态：第372轮独立接收完成，严格逐值跨轨迹准入路线关闭（2026-10-13，整体目标active）
+
+- 371为progress（唯一两B0实际运行与中间输入失败证据）。372新增独立review_cartesian_zero_input，不调用producer分类或物理执行；105冻结源及全部receipt原始SHA核同、3stage各413模型数组/scalars与initial28同，800有效子步/35FD、仅2B0、无Cart/completion、secondary空及原预登记停止条件接收。0新机器人物理/FD/网络forward/学习。
+- 从冻结XML sensor名字与实际Model.sensor_adr重建body_gyro地址4，不用fixture地址10；逐slot核phase/Nom输入、空clear/deliver边界、m5下一步/末终态串接、Nom/guard base/res/λ/最终ctrl与guard记忆。全部40步最终guard命令独立累计，prefix/stamp/总量及20ms窗口按既有1e-10积分核算（不是跨轨迹容差），首次九旧帧+新public/因果route与481编码核过；原live物理/design监测20行过，terminal与preserved归属一致。错误gyro/m5/ctrl副本反例拒绝，原文件不改。
+- 首个pre差仍[4,6,25]（qvel[3]），v slots4..9、gyro5..10；slot5 Nom前m5同而gyro异，Nom后m5异。最终Nom float32 ctrl与完整guard同，输入先于滤波差的结论独立接受；不定位solver/contact/调度具体根因、不当长期安全证明。接收范围为失败与归属，并未完整重建constructor→public初始化或.05滤波/role offset数值语义，未保存逐步actuator_force/contact，不晋升整个控制器/接口。
+- round372_route_decision按370出口正式关闭当前独立物理轨迹全部内部值严格相同的接口准入路线，368/371失败目录及余预算均关闭，不重复B0、调order/seed/包数、roundlog或据delta设容差。Cart尚未被此诊断执行，不把基线重复性失败归为其方法失败；原CPU参照/物理/design/task/保持门与研究假设继续保留，六论文出口仍缺。
+- 373必须具体建立独立前瞻接口v2：同一完整输入/旧Nom及guard状态复制给B0/Cart完整phase-Nom-Cart-guard组合，0solver，cold-zero latent/shadow/native residual都零时公共控制严格相同；有旧latent的零请求只核撤回。另各Cart单轨迹核原硬物理、实际部分reset/stage2/3/正delay、命令窗口/481/旧terminal/new-public reset及non-done行。新合同/源码准入才可再跑；若采用旧固定规模，两Cart各1zero+1200sine总960800图步/FD80、0学习，该数字仅下轮合同约束，当前未注册新执行预算。旧20不重跑，不自动PPO。
+- 独立review/log、closure、README/记忆保存并中文提交，收尾恢复守护及核remote；375方向/清理、380框架保持，goal active，无视频。
+
+## 历史状态：第371轮匹配B0自身零门失败停止，Cart未执行（2026-10-13）
 
 - 2e8c4caf准入提交后首次唯一pid37582/unified65819现exit1，状态baseline_repeat_failure。B0_repeat1/repeat2各10world一个zero packet，actual graph800、物理evidence800、FD35、wall7.230358771s含三bank构造/完整模型记录，0Cart构造/执行、0网络forward/学习/retry；Cart目录与completion均无，不消费剩余400图步。
 - 同构造前置门真实通过：每stage实际Model/opt/stat/meaninertia等413数组与scalars三组全同，initial28字段全同。post common再次仅memory[6,5]3.32246212698e-18和phase41元素最大5.551115123e-17不同，与368数值相同；原物理/design监测20行过、endpoint/公开38与481/完整guard和命令历史同。source105/HEAD/graph原身份/一次调用门生效，secondary_errors=[]，现场分份保留。
