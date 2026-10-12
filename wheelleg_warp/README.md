@@ -8,6 +8,8 @@
 
 新[worker](run_cartesian_ppo_interface.py)已实际保存actual/norm/expected终态、九post+previous/bank四项/wheelv2+Nom flags、原指针路由、Gaussian/clip3/paired6/value/logprob/RMS及buffers。377须独立接收新全部数值后再决定学习前强同信息经典/同chart反馈和可达主门/保持门；不重复此queue。完整接口及100world/科学训练/formal5仍未晋升，380方向/清理/框架保持。
 
+[有限PPO与录证接收](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/readonly_execution_review.json)已独核初始化/终态权重、RMS/RNG、48buffer与包记录，GAE/returns独立重建误差0；实际终态/post/bank分名和同期字段完整。没有actual timeout样本，不能称bootstrap支路已实测；完整命令/映射/wheel limits/路由/物理接收仍待377。
+
 第373轮[独立v2合同](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v2/proposal.json)已注册，两Cart各10world、1coldzero+1200固定正弦包，总960800图步/FD80，0学习。[同输入语义接受](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v2/semantic_acceptance.json)已完成：20个已存完整输入各运行B0/CartLive/CartReset真实phase/parking/Nom/candidate/guard组合，60 CUDA控制行的16公共状态与最终命令严格同，0solver/FD。仅覆盖残差/latent/shadow全零的冷中性输入，不包含旧latent撤回或长期物理路径等价；原失败封存，不按浮点差设容差。
 
 374已完成[新单轨迹worker](run_cartesian_interface_v2.py)、[108源/runtime准入](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v2/source_admission.json)及提交后唯一队列。[实际回执](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v2/execution_receipt.json)记录两Cart各1200正弦包/10world，原graph各1201调用，总960800图world步、35FD、113.21秒含构造与录证，0学习/retry，secondary空。各臂25次部分reset、stage2/3各10行切换、1929行正delay窗口；26个完成回合任务/物理/设计报告均通过。只是原seen训练bank固定脚本描述，不证明PPO增量。所有原单轨迹门实际由producer执行通过，完整独立命令/历史/reset/map数值接收仍待完成，未晋升100world/PPO。
