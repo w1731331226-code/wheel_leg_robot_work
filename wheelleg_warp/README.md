@@ -1,8 +1,16 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（369数值合同审查完成，2026-10-13）
+## 当前论文计划（370方向与整体框架核查完成，2026-10-13）
 
 原目标仍是：在原完整不对称接触任务上，得到一个保持强经典能力并有明确增量的可执行PPO方法。当前没有通过收益资格的新方法，正式五种子、独立ID/OOD、统计与成本分析、新方法稿件均未完成；CPU历史基线继续保留，不将物理吞吐当PPO端到端加速。
+
+第370轮[方向深审](results/paper_recovery_20261004/joint_reference_candidate_v1/round370_direction_review.json)保留CartLive3/CartReset3几何更新假设，只批准一次[匹配构造零输入诊断](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/proposal.json)：B0两次、Cart一次，各10环境一个zero包，1200图步/FD80。B0自身严格复现失败即停，事件未复现记不足，不加包/seed或按368微差选容差；368失败目录保持。371须完成新worker、源码/预算准入并提交后唯一执行，再作分支去留判断，不继续反复审同一前缀。当前只批准方向，未准入运行或PPO。
+
+[整体框架核查](results/paper_recovery_20261004/joint_reference_candidate_v1/round370_framework_review.json)确认后续执行器须补验收helper的冻结覆盖、真实graph/world和已提交源码绑定、首因与二次保存错误分列。未来学习还须三维配对包装和Cart观测/动作/checkpoint身份，不能直接连接当前六维脚本工厂或继承旧D3/V6资格。保原D3/V6、强同信息经典及同chart无学习反馈比较；真实部分reset/换bank/正delay与匹配PPO生命周期、科学收益门各自另行准入。历史[paper.tex](paper.tex)及其readiness是旧奖励/通道审计，不证明当前方法目标完成。
+
+[周期清理](results/paper_recovery_20261004/joint_reference_candidate_v1/round370_cleanup.json)删除3份可由现源码重建的编译缓存，共42528字节，原科学记录、源码、模型与失败保持。下一方向/清理375，整体框架380。
+
+## 近期历史证据
 
 第369轮[数值合同审查](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/numerical_contract_review.json)完成：滤波差值绝对值虽小，在该数值处却相隔16066441个double ULP，不能当少量末位舍入。现有组合offset与端点不足以分离中间roll/gyro/算术根因；Cart未直接写memory5，原B0/Cart缓存构造也不同。测量方程欠定反例与ULP自检通过，0新物理/学习，368失败和逐值门保持。
 

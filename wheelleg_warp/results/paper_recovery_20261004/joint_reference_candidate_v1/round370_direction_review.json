@@ -1,0 +1,87 @@
+{
+  "round": 370,
+  "reviewed_rounds": [
+    366,
+    367,
+    368,
+    369,
+    370
+  ],
+  "previous_turn": "progress：已完成数值可识别性审查并登记匹配构造的前瞻协议",
+  "decision": "保留Cartesian几何更新假设，批准一次有界匹配构造零输入诊断。368失败队列保持停止，不准入PPO/扩展接口、不削弱基线、不恢复已关闭分支。",
+  "why_continue": [
+    "映射已完整定义，Live/Reset同潜变量、滤波和限制，只改变几何参考，具有可证伪的机制比较。",
+    "20个脚本回合0成功既不估计优化策略能力，也不构成新学习理由；其单环境/无延迟交付边界仍需真正接口资格。",
+    "368端点与公开控制流相同，但内部滤波微差及构造不匹配需基线复现和中间输入对照；369已证同一已存数据不能确定根因。",
+    "三包诊断1200图步、FD80并有退出分支，值得一次；反复静态解释、扫参或无决策的新seed不值得继续。"
+  ],
+  "testable_scientific_predictions": [
+    "reset映射须初始相同；同固定请求/状态下，只有腿几何偏离reset时更新chart才产生映射区别。这不等实际接触wrench解耦。",
+    "几何更新收益主张须在预注册完整任务上由CartLive3胜CartReset3及强同信息经典并保持原能力；若Live不胜Reset，几何增量主张失败。",
+    "同chart无学习反馈若取得相当收益，只支持映射机制，不证明PPO增量；原D3/V6及相同公开历史/低层权限的强对照保持。"
+  ],
+  "learning_still_required": [
+    "未来学习前匹配全新actor/critic、RMS、RNG/潜变量Gaussian/logstd（.25参考）、样本/更新预算、初始实际映射和坐标版本；不使用工程权重warmstart。",
+    "新科学训练前冻结数值化且可达的主门/保持门和强经典调参规则，不按训练结果挑阈值或子组。",
+    "再完成新训练种子、独立ID/OOD、预注册消融/种子层统计、实测端到端成本和方法稿件；现在不准入formal5。"
+  ],
+  "supplement": {
+    "proposal": "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/proposal.json",
+    "proposal_sha256": "ca3fef3a7d1df3983b30406718a5984a5565fff92ef8f4e10da4135df2c432c6",
+    "direction_admitted": true,
+    "runtime_admitted": false,
+    "conditions": 3,
+    "worlds": 10,
+    "actor_packets_each": 1,
+    "actual_graph_world_step_budget": 1200,
+    "constructor_FD_budget": 80,
+    "new_learning_samples": 0,
+    "original_gates_unchanged": true,
+    "scope": "只判断根因及当前runtime路线去留，不提供接口或学习资格。",
+    "pre_execution_requirements": [
+      "最小新只读recorder/runner；三bank同构造并核实际模型初态。",
+      "三条件同observer，保原输入输出；完成只读路由spy和fixture反例。",
+      "先落实框架F1—F3的源码、预算、提交与首因保存保护，再冻结新source/runtime/proposal并提交，之后才首个真机器人包。"
+    ],
+    "outcomes": {
+      "baseline_repeat_failure": "在Cart前停止；只判同路径重复性未建立，关闭当前严格逐值准入路线，不归因Cart或重复到绿。",
+      "input_chain_divergence": "定位首个已记录输入差；不凭端点推断改Cart公式/滤波，仅具体可修证据才支持一次版本化修正。",
+      "Nom_or_Cart_direct_execution_error": "保失败和确切边界证据，再决定明确根因修复及独立新准入。",
+      "mismatch_not_reproduced": "在新增记录上下文中记inconclusive，不加packet/order/seed，也不自动开完整接口/PPO；有限诊断后作路线去留决定。"
+    }
+  },
+  "forbidden": [
+    "事后弱化物理/设计/任务/零逐值门",
+    "按368delta挑容差、roundlog或删除不同字段",
+    "续368目录或消费余预算",
+    "恢复旧D3/固定偏移/反射/无预测器QP或用长学习救分"
+  ],
+  "novelty": "坐标映射与PPO组合的新颖性未成立。已有动作表示、HybridLMC与CRRL边界保持；本轮不作排他性查新结论或重复文献检索。",
+  "cleanup_sha256": "040d7b69f120bf36f360cfbd5209c79c0c390cbdc909318a659ebed66b32d21a",
+  "framework_review_sha256": "0346dbc22e4fb4246aa5f9fd7e8a32d4b5f802b614247b40788740117ea0c3c6",
+  "input_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round365_direction_review.json": "91455b2f85f466d90d1013379b7c54e8038e8a386e1582371a86f424b2608ac6",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round361_method_decision.json": "7776f32b599a6020f892cef355d0e02193d7ea8c26d81eef6c3b164efe54bf5f",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round362_delivery_decision.json": "e7340d517c5cb8dea8e65e5d56400a5fd4bcd48a4f98f449035da2582e1f74af",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round366_delivery_acceptance.json": "a16d50b38a44393d1ff5fe782d2cf82b323e16af1a47b05a0a2f5699f4deef84",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/review.json": "a422c880ba4d1842be86a557faaff8636eff7e40913317ac4009035924532db6",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/source_admission.json": "aefc85c2c0d3073a0f7958e0c35d5dbab496df4da265c9875e532e358732f94f",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/runtime/failure.json": "afa049923ccc9e7cd482f0435d009ff93596e9b2310829d6be4e7eb6a4ccf8d0",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/zero_failure_audit.json": "57165fbf989205ea592550a5c1c3ab62c5eb8f332456c0688e98952e6e38cfd1",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/numerical_contract_review.json": "c63dfbbd3e2c0535c3bd3ec79cfebffb27e2a69ec20f1ba239c8c32f7365f856",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/proposal.json": "ca3fef3a7d1df3983b30406718a5984a5565fff92ef8f4e10da4135df2c432c6",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/evaluation_review.json": "41eed8d3f9472403e40b4447165ad9774ba885d0231cb3f977d0c0b018342244",
+    "wheelleg_ppo/LITERATURE_MATRIX.md": "b1ac4125c92fe5e3415052bf50427f6ebc2c297b24b9e96cb24373bb695a0bc2"
+  },
+  "next": "371实现、源码准入、提交并执行唯一1200图步诊断，之后独立决定分支；375方向/清理，380整体框架。",
+  "new_physics_steps": 0,
+  "new_FD": 0,
+  "new_model_forward_rows": 0,
+  "new_learning_samples": 0,
+  "objective_not_shrunk": true,
+  "formal5_admitted": false,
+  "six_paper_exits_complete": false,
+  "goal_complete": false,
+  "next_deep_review_round": 375,
+  "next_whole_framework_round": 380
+}

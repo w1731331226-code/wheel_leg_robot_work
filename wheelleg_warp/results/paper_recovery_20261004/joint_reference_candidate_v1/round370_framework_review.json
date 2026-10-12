@@ -1,0 +1,141 @@
+{
+  "round": 370,
+  "reviewed_rounds": [
+    361,
+    362,
+    363,
+    364,
+    365,
+    366,
+    367,
+    368,
+    369,
+    370
+  ],
+  "scope": "当前论文完整执行链：CPU参照、Warp被控对象与Nom/残差/guard、公开观测与复位历史、源码预算准入、匹配学习、科学评估统计稿件及归档同步。ROS2与演示独立；不声称无关目录逐行审计。",
+  "components": [
+    {
+      "component": "CPU参照与物理设计",
+      "assessment": "CPU历史基线保留；v2接受Nom修正和公开执行器增益上界保持。366完整接收20回合、298123子步和586244接触；物理/设计通过仅为仿真证据，不构成全局稳定或实机安全。"
+    },
+    {
+      "component": "实际构造与模型初态",
+      "assessment": "368初态28数组相同，但未保存实际model/cache/meaninertia；B0与Cart构造不同。有限诊断必须匹配三bank构造并保存、核对实际模型，不倒推旧初态已足够。"
+    },
+    {
+      "component": "公开输入与动作交付",
+      "assessment": "Cart的32:38潜变量记忆有独立语义版本，实际canonical只诊断。raw38、因果route39、历史481与命令窗口/零proxy保持；同Box不等电机探索相同或旧canonical速率保持。"
+    },
+    {
+      "component": "回合、银行与历史生命周期",
+      "assessment": "公开新reset包的post-parent辅助刷新已通过三行假plant/真实GPU辅助核回归；真实组合部分reset、stage2/3及正delay在368停止后仍未访问。"
+    },
+    {
+      "component": "源码、预算与提交绑定",
+      "assessment": "101冻结源当前未变，但漏掉一个直接验收依赖。预算任意capture计400，提交检查只核manifest的HEAD版本。后续应冻结直接helpers并绑定真实graph/world数及已提交源码。"
+    },
+    {
+      "component": "录证与失败保存",
+      "assessment": "368实际保存成功。纯mock确认finally归档错误成为外层异常；原首因仍在Python context，但failureJSON只存外层repr。后续分别保首因与secondary保存错误。"
+    },
+    {
+      "component": "匹配PPO与checkpoint边界",
+      "assessment": "脚本工厂六维space不能直接接要求反号配对的候选PPO。复用ForceActions的D3嵌入暴露三维潜变量，再接VecNormalize；核actor/critic/RMS/RNG/Gaussian/resetmap及坐标、观测与checkpoint身份。旧D3/V6资格不能转给Cart。"
+    },
+    {
+      "component": "科学对照与完整任务",
+      "assessment": "Live/Reset隔离几何更新；保D3/V6及强同信息经典。同chart无学习反馈有助区分映射机制和学习增量；对照、预算和数值主门必须学习前冻结，不削弱原任务/物理/保持门或复活关闭分支。"
+    },
+    {
+      "component": "独立评估、统计与成本",
+      "assessment": "旧三seed D3收益分支已关，seen164不是新ID/OOD，984回合不是984独立统计单位。新Cart科学训练、formal5、独立bank、种子层统计、实测成本及新方法稿均未完成；物理吞吐不当PPO端到端加速。"
+    },
+    {
+      "component": "稿件、状态入口与同步",
+      "assessment": "paper.tex及audit_paper_readiness属于旧奖励/通道审计，不能据旧readiness完成当前方法目标。README/记忆保最新决定并分隔历史；同步验收核实际pack、remote HEAD及active守护。"
+    }
+  ],
+  "findings": [
+    {
+      "id": "F1",
+      "kind": "confirmed_freeze_coverage_gap",
+      "file": "wheelleg_warp/run_cartesian_light_interface.py",
+      "line": 26,
+      "evidence": "projection在第26行导入并在161行用于λ验收，但不在实际101源表；当前零前缀未到Replay。",
+      "required": "新源码准入若使用projection就补review_cartesian_repair.py及所有直接验收helpers；不改368冻结许可。"
+    },
+    {
+      "id": "F2",
+      "kind": "confirmed_structured_failure_primary_masking",
+      "file": "wheelleg_warp/run_cartesian_light_interface.py",
+      "line": 259,
+      "evidence": "补齐raw.obs的纯mock证明外层OSError保存失败保留RuntimeError首因在__context__，但failureJSON只存外层；未改原代码。",
+      "required": "新执行器保首异常和单独secondary写出错误；guard清理写出，并在首跑前做mock保存失败反例。"
+    },
+    {
+      "id": "F3",
+      "kind": "verified_weaker_budget_commit_binding",
+      "file": "wheelleg_warp/run_cartesian_light_interface.py",
+      "line": 80,
+      "evidence": "纯mock的未登记graph仍被按400计数；本次368实际800与原物理计数一致。committed检查未逐个核新执行源的HEAD blob。",
+      "required": "新预算绑定允许raw.graph及真实raw.num_envs，未知graph在调用前拒绝；核新runner/recorder/validator的已提交源码blob。"
+    },
+    {
+      "id": "F4",
+      "kind": "planned_learning_interface_gap_not_current_script_bug",
+      "file": "wheelleg_warp/run_cartesian_light_interface.py",
+      "line": 102,
+      "evidence": "History space为6，v2内核要求三组精确反号。当前脚本已正确嵌入，故此项不是本次零门原因。",
+      "required": "未来学习复用ForceActions(history,D3)，模型标签仍为CartLive3/Reset3；checkpoint/evaluation冻结潜变量记忆/动作坐标、归一化、logstd与源码版本。"
+    }
+  ],
+  "verification": {
+    "frozen_original_sources": 101,
+    "all_current_hashes_match": true,
+    "puremock_log_sha256": "c046b7f08e98ae177de50de1d44b702a8aade80fef01578971a7fd730e18140f",
+    "cleanup_sha256": "040d7b69f120bf36f360cfbd5209c79c0c390cbdc909318a659ebed66b32d21a",
+    "actual_new_physics_steps": 0,
+    "actual_new_FD": 0,
+    "new_model_forward_rows": 0,
+    "new_learning_samples": 0
+  },
+  "current_frozen_source_changed": false,
+  "source_sha256": {
+    "wheelleg_warp/run_cartesian_light_interface.py": "751b71d583e66ff15ac0f65fd7e3b528dd2f35eb7fd074c7a724725b99dbccd5",
+    "wheelleg_warp/cartesian_light_runtime.py": "15b5d6c833b0a3f6a0d14cc08ccf16a7bc99401e9f195cc571919984988f7666",
+    "wheelleg_warp/cartesian_curriculum.py": "4cc2980d5ba4d5341359a6210f6a213fd6b2aed60b767c84f2dd041da7be4f97",
+    "wheelleg_warp/execution_input_collector.py": "fa3cb14857e6e95805753b3ca67c07a24092c6ce04943cab51decf8797951ffb",
+    "wheelleg_warp/execution_history_env.py": "5c0f0135df45fa899b03f557dff98da3cabbf58b0afdf5bf6279f470fec4f01b",
+    "wheelleg_warp/route_state.py": "c0ead1a487b1baf2b644b7104537349a1ea92603121e765d507793833b03e28a",
+    "wheelleg_warp/joint_state_guard.py": "f99f891175602a8e46e800ecf0230add9369e3d19584d752964d7b619e5191ec",
+    "wheelleg_warp/train_height_comparison.py": "e4569d6079d0b8e1362fd0e3b263b5ee0b26d67f11246c8c9cbc2f710a88ccfc",
+    "wheelleg_warp/reference_learning_engineering.py": "6edc8435756bead51c7a553f9fc66a63af071fc3c7399c6a490972a5303c22e3",
+    "wheelleg_warp/train_fixed_force_study.py": "8fb3320b46a2d01f6c2d39ffdfbceffe0ecc74e579a55c7bf76c501c6a1b9670",
+    "wheelleg_warp/evaluate_fixed_force_study.py": "b461279a0d84372bc9363d0cf0fd009cc7fb3d345e4f493075804a8d6612e271",
+    "wheelleg_warp/fixed_reference_force.py": "ddacd763ab806a0359e8f4c5a18de7a4508fd9e7d60edc737e2bf2419f36498c",
+    "wheelleg_warp/review_cartesian_repair.py": "bd74b5edd1e9ff404fde82cdba21192dd806c68fa73eb4021a22c3c12f3a545a",
+    "wheelleg_warp/audit_paper_readiness.py": "18c937c0802c1128f548b68840b158c965a8c4565048d259ddfd8048379b63e5"
+  },
+  "input_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round365_direction_review.json": "91455b2f85f466d90d1013379b7c54e8038e8a386e1582371a86f424b2608ac6",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round361_method_decision.json": "7776f32b599a6020f892cef355d0e02193d7ea8c26d81eef6c3b164efe54bf5f",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round362_delivery_decision.json": "e7340d517c5cb8dea8e65e5d56400a5fd4bcd48a4f98f449035da2582e1f74af",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round366_delivery_acceptance.json": "a16d50b38a44393d1ff5fe782d2cf82b323e16af1a47b05a0a2f5699f4deef84",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_pair_delivery_repair_v2/review.json": "a422c880ba4d1842be86a557faaff8636eff7e40913317ac4009035924532db6",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/source_admission.json": "aefc85c2c0d3073a0f7958e0c35d5dbab496df4da265c9875e532e358732f94f",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/runtime/failure.json": "afa049923ccc9e7cd482f0435d009ff93596e9b2310829d6be4e7eb6a4ccf8d0",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/zero_failure_audit.json": "57165fbf989205ea592550a5c1c3ab62c5eb8f332456c0688e98952e6e38cfd1",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_training_interface_v1/numerical_contract_review.json": "c63dfbbd3e2c0535c3bd3ec79cfebffb27e2a69ec20f1ba239c8c32f7365f856",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/proposal.json": "ca3fef3a7d1df3983b30406718a5984a5565fff92ef8f4e10da4135df2c432c6",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/fixed_force_prequalification_v1/evaluation_review.json": "41eed8d3f9472403e40b4447165ad9774ba885d0231cb3f977d0c0b018342244",
+    "wheelleg_ppo/LITERATURE_MATRIX.md": "b1ac4125c92fe5e3415052bf50427f6ebc2c297b24b9e96cb24373bb695a0bc2"
+  },
+  "required_adjustments": [
+    "F1—F3在新有限诊断执行器首次准入前落实，不补写历史失败runner。",
+    "F4及真实部分reset/delay/100world/PPO生命周期分别另行准入，零诊断不能自动放行。",
+    "停止相同前缀/源审计反复推断；371须实现、准入、提交并执行唯一诊断，或报告具体外部阻碍。",
+    "保完整论文目标，旧审计稿材料就绪不等当前方法完成。"
+  ],
+  "next_whole_framework_round": 380,
+  "goal_complete": false
+}

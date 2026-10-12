@@ -2,7 +2,16 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：第369轮数值合同审查完成，有限输入链诊断待370方向决定（2026-10-13，整体目标active）
+## 当前状态：第370轮方向/冗余清理/整体框架核查完成，批准一次有限诊断（2026-10-13，整体目标active）
+
+- 369为progress（ULP/可识别性反例与匹配构造前瞻协议）。370完成366—370方向深审与361—370当前论文全链框架核查，保Cartesian Live/Reset几何更新研究假设，只批准cartesian_zero_input_diagnostic_v1的3个fresh zero、10world、1200图步/FD80；runtime/source尚未准入，0新机器人物理/FD/网络forward/学习，不续368或使用余预算。
+- 一次诊断有决策价值：B0同三bank构造复现两次，成功后才Cart一次，录中间fullq/v/gyro/m5及Nom/Cart边界。B0自身不复现即停并关闭当前严格逐值准入路线；输入链分歧不无据改Cart，确切执行错误才考虑一次显式版本化修正；不复现原差异记inconclusive、不加packet/order/seed/容差。368失败/门/模型与旧D3、路线偏移、反射、未定义QP关闭决定保持，不把脚本0/20当优化策略上限。
+- 框架确认4项后续补齐：F1 Replay用review_cartesian_repair.projection但该文件漏出实际101源表，尚未执行Replay故不影响368零门；F2 rollout finally二次写出错误成为外层repr，原首因仍在Python context但未进failureJSON primary；F3任意capture固定计400及仅manifest HEAD提交检查较弱；F4脚本工厂space6不能直连要求配对的Cart PPO。新worker落实直接验收helpers冻结、真实graph/world与新源码blob提交绑定、primary/secondary异常保留；未来PPO复用ForceActions D3嵌入暴露潜3，模型仍标Cart，冻结obs/action/checkpoint身份及完整actor/critic/RMS/RNG初始化。不改历史已冻结runner/admission。
+- F2/F3以当前原函数纯mock确认，首次fixture缺raw.obs已补，最终probe exit0、无物理；F1 AST/实际许可核过，101旧源及369协议8源未变。真实Cart部分reset、换bank、正delay、100world/PPO生命周期尚未通过；旧三seed工程/学习可复用实现但不能迁移科学资格。保强同信息经典/同chart无学习反馈及原D3/V6，学习前另冻可达数值主门和保持门，之后新seed/独立ID-OOD/种子层统计/端到端成本与稿件，formal5未准入，六出口仍缺。
+- 周期清理实际删除3份ignored/untracked、fuser无持有且Python3.10 code等现source重编译的pyc，42528B；round370_cleanup保前SHA/源SHA与验证。所有独有科学数据、原始/冻结源码、模型、失败及视频保留，无证据去重。paper.tex/readiness仍旧reward/channel审计范围，不能当新方法目标完成；README分隔当前与历史，减少过期pending误读。
+- direction/framework/probe/cleanup、README/记忆保存并中文提交，收尾恢复守护并核remote。371必须最小实现、完成F1—F3、准入提交后运行唯一诊断，不再同数据源审计回合；随后独立分支决定。375下一方向/清理，380下一整体框架；goal active，无视频。
+
+## 历史状态：第369轮数值合同审查完成（2026-10-13）
 
 - 368为progress（唯一真实队列失败及完整已存输出复核）。369只做指定失败前缀的可识别性和源码写入合同审查，原13工件/101冻结源哈希未变，0新机器人物理/FD/网络forward/学习；原failed目录不修改，不把尚未qualified的接口或PPO晋升。
 - 新review_cartesian_light_contract保存数值尺度与反例：memory5绝对差3.32246212698e-18，在-1.37072775e-9处相隔16066441个double ULP，相对差约2.424e-9，不是一个/少数双精度末位；左右target微差是各1ULP。不能据绝对量小直接设容差或宣称长期无影响。ULP相邻/非法值及measurement方程零空间反例自检通过；零空间仅说明记录方程欠定，不是另一条物理可行轨迹。
