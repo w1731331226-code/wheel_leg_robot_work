@@ -18391,3 +18391,10 @@
 - `wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round367_curriculum_lifecycle.log`
 - `wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/round367_training_interface_decision.json`
 - `wheelleg_warp/test_cartesian_curriculum.py`
+
+### 自动同步快照 2026-10-13T01:01:51+08:00
+
+稳定落盘变动自动归档；本条仅记录文件变化，不代表测试或研究验收通过。
+
+- `wheelleg_warp/cartesian_light_runtime.py`
+- `wheelleg_warp/test_cartesian_light_runtime.py`
