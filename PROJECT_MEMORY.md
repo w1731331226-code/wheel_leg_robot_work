@@ -2,7 +2,15 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：第371轮三包输入链诊断源码准入完成，待唯一首跑（2026-10-13，整体目标active）
+## 当前状态：第371轮匹配B0自身零门失败停止，Cart未执行（2026-10-13，整体目标active）
+
+- 2e8c4caf准入提交后首次唯一pid37582/unified65819现exit1，状态baseline_repeat_failure。B0_repeat1/repeat2各10world一个zero packet，actual graph800、物理evidence800、FD35、wall7.230358771s含三bank构造/完整模型记录，0Cart构造/执行、0网络forward/学习/retry；Cart目录与completion均无，不消费剩余400图步。
+- 同构造前置门真实通过：每stage实际Model/opt/stat/meaninertia等413数组与scalars三组全同，initial28字段全同。post common再次仅memory[6,5]3.32246212698e-18和phase41元素最大5.551115123e-17不同，与368数值相同；原物理/design监测20行过、endpoint/公开38与481/完整guard和命令历史同。source105/HEAD/graph原身份/一次调用门生效，secondary_errors=[]，现场分份保留。
+- 新中间记录首次pre[slot4,world6,col25]即第5子步之前qvel[3]：-6.469283442278595e-10→-6.469282887167083e-10，差5.551115123e-17（float32一ULP），发生在phase/Nom之前。v[3]在slot4..9、首gyro在slot5..10不同；slot5 Nom-before m5仍同但gyro已异，Nom-after m5开始异，next pre m5 slot6起异。Nom pre/post全部float32 ctrl及40slot guard同，Nom diag首异slot16。不是已证同输入Nom先分歧；没有Cart，不能归因其直接写5，也不能排他锁定物理solver/contact排序/GPU调度或证明长期无害。
+- execution_receipt绑定全部runtime工件SHA、实际模型/初态与首次差异，独立只读初核同结果。372须完整接收已存两条，再按370预登记退出规则关闭当前严格逐值接口准入路线；不加packet/order/seed找绿、不重跑368/371、不按本次delta选容差。回到明确科学比较与独立的前瞻数值合同，候选尚无方法/PPO资格，原科学目标不缩小。
+- 本轮全部源/准入/模型数据/trace/failure/receipt保存，中文提交后恢复守护并实核remote；375方向/清理、380框架保持，六出口未齐、goal active，无视频。
+
+## 第371轮三包输入链诊断源码准入阶段记录（2026-10-13）
 
 - 370为progress（方向/42528B清理/全链框架与puremock遗漏确认）。371新增cartesian_zero_input_trace及run_cartesian_zero_input/test，复用原base.CurriculumEnv三bank、light phase/parking/collector/guard和未改Cart v2适配器；B0 repeat1/repeat2先行，严格不复现即停止beforeCart。3×10×40=1200图步/FD80不变，0PPO/网络forward/学习，未恢复368。
 - 每slot三条件相同9个只读observer核：phase前fullq17/v16/sensor28、memory5/gyro/active/step，Nom前后control/diag及clear/deliver边界memory5/canonical；B0不存在Cart操作时同次序记空边界，不改控制。Nom/phase/command实际指针与40拓扑核过。原wait任何检查/autoreset前外层保terminal，失败分别保存common/observer/Cart/terminal；新增记录改变执行上下文的边界保持。

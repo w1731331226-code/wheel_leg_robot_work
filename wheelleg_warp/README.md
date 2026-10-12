@@ -1,10 +1,12 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（371三包输入诊断准入完成，2026-10-13）
+## 当前论文计划（371匹配B0重复性门失败停止，2026-10-13）
 
 原目标仍是：在原完整不对称接触任务上，得到一个保持强经典能力并有明确增量的可执行PPO方法。当前没有通过收益资格的新方法，正式五种子、独立ID/OOD、统计与成本分析、新方法稿件均未完成；CPU历史基线继续保留，不将物理吞吐当PPO端到端加速。
 
-第371轮[新执行器](run_cartesian_zero_input.py)与[105源码准入](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/source_admission.json)完成，真实包尚未启动，提交后才唯一运行。每slot三条件同9个只读记录核，保中间完整输入和Nom/Cart边界；三bank实际模型初态匹配，graph身份/world/一次调用与HEAD源码绑定，首因/各份保存错误分列。纯CUDA复制、真实light wrapper路由及预算/错误保存/分类反例通过；原失败与1200图步/FD80保持。B0自身不复现即停beforeCart，事件不复现记inconclusive，不追加或直接PPO。
+第371轮[新执行器](run_cartesian_zero_input.py)与[105源码准入](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/source_admission.json)提交后首次运行，已因[同构造B0自身重复性门失败停止](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/failure.json)。两B0各10world一个zero包，共800图步/800物理证据步、35FD、约7.23秒含构造记录，0学习/retry；未构造或运行Cart，不消费余下400图步。
+
+[实际执行回执](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/execution_receipt.json)确认三stage各413个实际模型数组/scalars及初态28字段相同；内部微差再次出现。首次已记录差异是第5子步前world6的qvel[3]相差一个float32 ULP，早于gyro与Nom滤波差；Nom最终float32 ctrl、完整guard、公开输入和历史同。证据支持基准输入链先分歧，不能归因未执行的Cart或锁定具体solver/调度原因。372完整独立接收后执行预登记退出规则，关闭当前严格逐值准入路线，不追加复试或按微差定容差；真实课程/延迟接口和PPO收益仍未通过。
 
 第370轮[方向深审](results/paper_recovery_20261004/joint_reference_candidate_v1/round370_direction_review.json)保留CartLive3/CartReset3几何更新假设，只批准一次[匹配构造零输入诊断](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/proposal.json)：B0两次、Cart一次，各10环境一个zero包，1200图步/FD80。B0自身严格复现失败即停，事件未复现记不足，不加包/seed或按368微差选容差；368失败目录保持。371须完成新worker、源码/预算准入并提交后唯一执行，再作分支去留判断，不继续反复审同一前缀。当前只批准方向，未准入运行或PPO。
 

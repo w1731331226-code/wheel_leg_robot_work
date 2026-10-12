@@ -1,0 +1,115 @@
+{
+  "round": 371,
+  "status": "producer_baseline_repeat_failure_pending_independent_receipt",
+  "start_commit": "2e8c4caf2b0c66c3e76d0e6d87e1aff5b5c649d2",
+  "admission_sha256": "926eaef8a3b99b3898bb018cb84d80d94051ba4e06d3a501dfd66b545352829c",
+  "actual_graph_world_steps": 800,
+  "actual_evidence_substeps": 800,
+  "constructor_FD_calls": 35,
+  "wall_seconds": 7.230358771000283,
+  "comparisons": {
+    "constructor_stage1": {
+      "arrays": 413,
+      "all_equal": true
+    },
+    "constructor_stage2": {
+      "arrays": 413,
+      "all_equal": true
+    },
+    "constructor_stage3": {
+      "arrays": 413,
+      "all_equal": true
+    },
+    "initial": {
+      "fields": 28,
+      "all_equal": true
+    }
+  },
+  "earliest_recorded_difference": {
+    "slot_zero_based": 4,
+    "physical_step": 5,
+    "world": 6,
+    "column": 25,
+    "meaning": "qvel[3]: body angular x generalized velocity beforephase/Nom",
+    "B0_repeat1": -6.469283442278595e-10,
+    "B0_repeat2": -6.469282887167083e-10,
+    "difference": 5.551115123125783e-17,
+    "elapsed_before_step_s": 0.002
+  },
+  "reports": [
+    {
+      "condition": "B0_repeat1",
+      "physical_evidence_substeps": 400
+    },
+    {
+      "condition": "B0_repeat2",
+      "physical_evidence_substeps": 400
+    }
+  ],
+  "no_Cart_constructed_or_executed": true,
+  "secondary_errors": [],
+  "implicit_retry": false,
+  "new_learning_samples": 0,
+  "new_model_forward_rows": 0,
+  "input_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/B0_repeat1/constructor_stage1.npz": "876b8f40100a724d58a90768279b3265b34168beec7709cc1dbbba7c3232cf67",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/B0_repeat2/constructor_stage1.npz": "876b8f40100a724d58a90768279b3265b34168beec7709cc1dbbba7c3232cf67",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/B0_repeat1/constructor_stage2.npz": "c4f02bcf7730d4860524e50eee0dc8da5af68c4d3d766752a861bb01e22b2ca3",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/B0_repeat2/constructor_stage2.npz": "c4f02bcf7730d4860524e50eee0dc8da5af68c4d3d766752a861bb01e22b2ca3",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/B0_repeat1/constructor_stage3.npz": "5ececfd2501c1cb0545b898afbbf4892b2fd4cb05fdcb58aa931c102f38243eb",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/B0_repeat2/constructor_stage3.npz": "5ececfd2501c1cb0545b898afbbf4892b2fd4cb05fdcb58aa931c102f38243eb",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/B0_repeat1/constructor_stage1.json": "53e1a6e46e9a8ccc82490e29f0b530a5e3fb7ef95789e3740fc3e00afbb536ea",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/B0_repeat1/constructor_stage2.json": "53e1a6e46e9a8ccc82490e29f0b530a5e3fb7ef95789e3740fc3e00afbb536ea",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/B0_repeat1/constructor_stage3.json": "53e1a6e46e9a8ccc82490e29f0b530a5e3fb7ef95789e3740fc3e00afbb536ea",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/B0_repeat1/initial.npz": "e8c7894e48fdb05de0788a3446bac42814ea0a90a55e7d640096262f4f32acce",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/B0_repeat1/input_trace.npz": "d2eb4d0af00ee262bedfe3428ecd67f3ecfd5d849558b18f45703f05baa94a06",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/B0_repeat1/preserved_common.npz": "a3372670d0cc3d957b657db59daac57d160833538c76f9f7f995c177aa5dc1ff",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/B0_repeat1/preserved_observer.npz": "d2eb4d0af00ee262bedfe3428ecd67f3ecfd5d849558b18f45703f05baa94a06",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/B0_repeat1/preserved_terminal.npz": "20f428762b7dff449c12b40c6aaebea3939bd84c8d9da9b6ceecee967de7fdb4",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/B0_repeat1/terminal_before_wait.npz": "20f428762b7dff449c12b40c6aaebea3939bd84c8d9da9b6ceecee967de7fdb4",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/B0_repeat1/topology.json": "9cd3d5ddf12657d9fd4b62bb55f2d125b59450e82dbf45429e86d19b9c44b4de",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/B0_repeat1/zero_prefix.npz": "b2058770b75f3e873a52156a83ab3b4d7441260f202bdc931638bd1d95c82d59",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/B0_repeat2/constructor_stage1.json": "53e1a6e46e9a8ccc82490e29f0b530a5e3fb7ef95789e3740fc3e00afbb536ea",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/B0_repeat2/constructor_stage2.json": "53e1a6e46e9a8ccc82490e29f0b530a5e3fb7ef95789e3740fc3e00afbb536ea",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/B0_repeat2/constructor_stage3.json": "53e1a6e46e9a8ccc82490e29f0b530a5e3fb7ef95789e3740fc3e00afbb536ea",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/B0_repeat2/initial.npz": "e8c7894e48fdb05de0788a3446bac42814ea0a90a55e7d640096262f4f32acce",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/B0_repeat2/input_trace.npz": "2c75816fb594c9af3ed3deae317570dc510849c97060b0bd991a94196c782d79",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/B0_repeat2/preserved_common.npz": "da66060a534c4757ce9fa52e625f81e88f73aac744a1b21a18e2e080acb39338",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/B0_repeat2/preserved_observer.npz": "2c75816fb594c9af3ed3deae317570dc510849c97060b0bd991a94196c782d79",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/B0_repeat2/preserved_terminal.npz": "a878a35973782c0cae4cca4e83711e117d3ecb6e96ff8b7469b0e6e11ceb133d",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/B0_repeat2/terminal_before_wait.npz": "a878a35973782c0cae4cca4e83711e117d3ecb6e96ff8b7469b0e6e11ceb133d",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/B0_repeat2/topology.json": "2eb5e23930e48ef2d3b2d31ad8fb7377ff2a628185423851cedc474e86d011a5",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/B0_repeat2/zero_prefix.npz": "394024f3a83df3a9d3d6cd99807d7194834f4e0203b15ed9b7733a82e022f488",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/failure.json": "60639232e0c27a8669937774edd34870270e63dc7e08509c944a5f81d2f142f2",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_zero_input_diagnostic_v1/runtime/started.json": "18a64dafcb8cecab4e4efe77b1681986b9f82a28a0659b054817f55fd8e3235f"
+  },
+  "interpretation": "同构造B0自身严格逐值不复现，首个已记录差异是第5子步前的body angular velocity，早于滤波内部差异。不能把此失败归因Cart。新增记录改变执行上下文，不证明368的全部具体根因，也不证明长期误差无害。",
+  "next": "372独立接收后执行370登记的退出规则：关闭当前严格逐值接口准入路线，不增加packet/order/seed来找通过；回到明确科学比较与前瞻数值合同，不自动PPO。",
+  "light_interface_admitted": false,
+  "formal5_admitted": false,
+  "goal_complete": false,
+  "observed_chain": {
+    "body_angular_velocity_x_difference_slots_zero_based": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "firstgyro_difference_slots_zero_based": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "world": 6,
+    "Nom_before_memory5_first_difference_slot": 6,
+    "Nom_after_memory5_first_difference_slot": 5,
+    "Nom_float32_ctrl_all_equal": true,
+    "full_guard_all_equal": true,
+    "interpretation": "slot4输入角速度先不同；slot5 Nom前memory5相同但gyro已不同，Nom后memory5不同。不是已证同输入Nom先分歧；不排他归因solver/contact排序/调度。"
+  }
+}
