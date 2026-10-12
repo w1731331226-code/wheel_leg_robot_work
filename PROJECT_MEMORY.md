@@ -2,7 +2,17 @@
 
 维护规则：每轮大的对话结束前更新当前状态、决策理由、变更及验收证据、未关闭项；每次提交必须包含本文件的更新。此文件是跨对话入口，原始实验数据与历史计划继续保留在各自目录。自动快照条目只证明归档，不证明代码或研究结论通过。
 
-## 当前状态：第377轮接收已存10world无更新PPO工程接口，下一步定义强经典与可达主门（2026-10-13，整体目标active）
+## 当前状态：第378轮同信息Cart经典反馈及开发选择协议已冻结，下一步准入有界强经典测量（2026-10-13，整体目标active）
+
+- 378按最新Warp计划推进377研究出口，新增cartesian_classical纯CPU反馈及小测试：latest delayed raw481公开roll/gyro/关节，d=clip(.30roll+.12gyro_x,±.035m)，DeltaF=gamma*3.4335*d/.035N，f=DeltaF*(eL+eR)/2，ax/az共同Box缩幅且aw逐值沿B1_route(kp.4,kd.3,roll_gain0,arm1)。未改原Nom/物理/guard/历史实现，0新物理/FD/NN/优化。
+- 正d原径向改变量为左+K*d、右-K*d，向下对称腿az=-gamma*d/.035；原源K=(7/1.018)*500=3438.1139489N/m，非精确3500。gamma1峰3.4335N仅原未clipped局部120.3339882N的2.8533%，不等同私有LPF/高度room或真实接触力。纯CPU测试含非对称FK/向量最小二乘、mirror/Box/aw/字段独立/非法输入；补arm拒bool/float。final-source1800组合/30既有对称reset几何力重建max1.332e-15N，不能称穷尽合法关节或闭环表现。
+- cartesian_classical_candidate_v1/proposal冻结8候选（Live/Reset各gamma0/.5/1/2）：旧selection32(2900000—31)每候选一次，共256回合；每chart按成功数→原J→预定gamma索引选一个固定全局gamma，再各测原regular96(6300000—95)+controlled40(6301000—39)+legacy28，共328。总584首回合/68构造/max10world；旧gate64不能替regular96，case身份/source SHA均绑定，无final/heldout访问或后验换gamma。
+- 各chart独立调gamma使经典对手保持强度，二者差异不能单独归因几何；机制主对照仍须公开输入/架构/初态/训练预算匹配的learned Live/Reset，纯经典几何结论只能来自同gamma对子。gamma0是新chart轮差基线，不能继承旧B1资格。
+- job_budget_review已按既存开发task_goal和当前param3公式静态冻结逐case/逐job deadline与graph cap，总12839760图world步/320994world-packet，无额外cold包；只读源/案例/预算SHA核过。明确未读旧raw初态param、未核旧source snapshot身份，379第一launch前必须核新actual model/param/deadline完全同，不能把算术预算称运行准入。FD构造计划单fresh进程首10、后各5、总345，待newworker调用链核；外层65M/1200保险不允许越逐job/构造门、追加或重试。case maxdelay10ms、solver50/100；377接口不是新完整suite准入。现约6.72GB，完整75schema最坏约25.68GB未压缩，禁按历史压缩率猜空间；运行前证明完整录证/临时/Git峰值≤4GiB且留2GiB，或先证明紧凑可重建schema/补存储，不删科学数据。本轮无新物理包。
+- 主门保持J≤min(.85B,B-.05deg)、controlled≥34及最强合格经典成功数、所有原经典成功/完整物理设计/legacy28及CPU数值能力保持；B为新旧最强合格经典。B≤.05deg、无合格同chart保持基线、任务指标不匹配或资源/证据失败即在学习前停，不改指标阈值。正式5seed/独立ID-OOD/统计成本/方法稿均缺，goal active；379实做复用guard的最小baseline worker及源/资源准入后唯一有界测量，380方向/实际清理/整体框架仍按期。
+- 新实现、测试/解析接收、候选/选择/能力/成本门、README/本记忆中文提交后恢复守护并实核远端；原376/377工件和旧失败不重跑、不覆盖，无视频。
+
+## 历史状态：第377轮接收已存10world无更新PPO工程接口，下一步定义强经典与可达主门（2026-10-13，整体目标active）
 
 - 上轮为progress（376唯一匹配PPO实际采样及24批证据归档）。377新增纯NumPy独立receiver复用冻结375算术，无producer Replay/控制/物理/NN执行；114源/currentHEAD/启动dd7c26ea及manifest、7安装源、163原始工件/旧failure SHA全同，0新物理/FD/网络forward/优化更新，旧queue不重跑。
 - 两臂coldzero+各1200包、959707有效子步完整命令82环/prefix/stamp/total/旧delay窗口与实际returned481、实际done infos481及CPU expected/norm分名严格核过。每包九种post+previous非done保护/规定done清理、bank四项全world按stage cache、public reset/旧episode元数据、RMS公式/returns/规范化和reward float32、原Gaussian/logprob/clip3/paired6、48buffers/GAE全部独立重建；积分max1.7763568394e-15（原1e-10内），logprob CPU/CUDA float32差4.768371582e-7在预定32eps运算预算内；每臂4行真实Gaussian裁剪，未把unclipped样本/logprob冒作交付。

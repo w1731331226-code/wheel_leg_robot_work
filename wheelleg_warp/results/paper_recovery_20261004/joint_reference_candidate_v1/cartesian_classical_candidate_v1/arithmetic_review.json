@@ -1,0 +1,48 @@
+{
+  "round": 378,
+  "verified": true,
+  "arithmetic_combinations": 1800,
+  "known_training_reset_geometries": 30,
+  "roll_values": [
+    -0.12,
+    -0.01,
+    0,
+    0.01,
+    0.12
+  ],
+  "gyro_values": [
+    -0.3,
+    0,
+    0.3
+  ],
+  "gamma_candidates": [
+    0.0,
+    0.5,
+    1.0,
+    2.0
+  ],
+  "max_force_reconstruction_error_N": 1.3322676295501878e-15,
+  "max_Hsum_Nm": 0.0,
+  "source_sha256": {
+    "wheelleg_warp/cartesian_classical.py": "2aafe2c6d96a80873f2ccefe1fcc7d8c76c2aed2b49cac08a937e16940c7712a",
+    "wheelleg_warp/test_cartesian_classical.py": "914e7708aa8712dd1384f904bd448bf3c6b1afc7016cf983f3ec7594b695ffae",
+    "wheelleg_warp/cartesian_pair_action.py": "d8bd86d0146a01ebd11821c72fa5c4cf7ea61449ee8b74abe8203938eb9a5f46"
+  },
+  "input_sha256": {
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/runtime/CartLive3/cache_stage1.npz": "7254912906efa3578908ada2f506906b2e5c155830a18039dbec71f9309a5742",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/runtime/CartLive3/cache_stage2.npz": "fc16642a17b226d6ce47641d2c1f02bba762a48639fafffcd921319f54463ec3",
+    "wheelleg_warp/results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/runtime/CartLive3/cache_stage3.npz": "0d2f06af165001399b0211dd543dc54cb5d2b4743b23f0a1f01a4c3295794159"
+  },
+  "yaw_config": {
+    "name": "B1_3",
+    "kp": 0.4,
+    "kd": 0.3,
+    "roll_gain": 0,
+    "arm": 1
+  },
+  "scope": "Fixed arithmetic grid on thirty alreadyseen symmetric training reset geometries,not performance selection;command sagittal virtual forces before slew/parking/guard. Separate CPU tests cover asymmetric FK and vector-fit fixtures;not all valid joint states.",
+  "new_physics_steps": 0,
+  "new_FD_calls": 0,
+  "new_model_forward_rows": 0,
+  "new_optimizer_updates": 0
+}

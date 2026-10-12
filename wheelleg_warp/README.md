@@ -1,16 +1,22 @@
 # WheelLeg 原生GPU并行基线
 
-## 当前论文计划（377已存10world无更新工程接口接收，强经典/主门待定义，2026-10-13）
+## 当前论文计划（378同信息经典反馈与选择协议冻结，下一步强经典有界测量，2026-10-13）
 
 原目标仍是：在原完整不对称接触任务上，得到一个保持强经典能力并有明确增量的可执行PPO方法。当前没有通过收益资格的新方法，正式五种子、独立ID/OOD、统计与成本分析、新方法稿件均未完成；CPU历史基线继续保留，不将物理吞吐当PPO端到端加速。
 
+378已实现[同信息Cart经典反馈](cartesian_classical.py)：延迟公开roll/gyro/关节给出有界径向偏置，再最小二乘投影为相反的虚拟端点力对，轮差沿原B1_route。[CPU接收](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_classical_candidate_v1/feedback_review.json)含单位/左右符号/非对称FK/Box/mirror/非法输入，以及30既有reset几何×固定网格共1800算术组合，力重建误差最大1.332e-15N；0新物理/FD/NN/优化。原径向K实际为(7/1.018)×500=3438.1139489N/m，新gamma1峰3.4335N，不冒称原私有Nom复现、完整关节范围或接触/闭环收益。
+
+[冻结开发协议](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_classical_candidate_v1/proposal.json)：Live/Reset各gamma{0,.5,1,2}先测旧selection32，各选一个全局gamma，再各测原regular96+controlled40+legacy28；总584首回合、68构造、最多10world。旧gate64不能替regular96；164结果出来后不换gamma。两chart独立所选gamma用于强经典benchmark，其差异不能单独归因几何，真正机制主对照仍须匹配的learned Live/Reset。正式ID/OOD未触碰。
+
+下一379复用既有Nom/parking/guard/稠密物理评价链，完成最小新worker、source/HEAD及空间准入后唯一测量。[逐job原deadline算术预算](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_classical_candidate_v1/job_budget_review.json)已绑定既存开发task_goal，共12839760图world步，无新增cold包；未读旧raw初态param或核旧源快照，新worker第一launch前必须核actual model/param/deadline。FD首构造10/后各5、总345仍待调用链确认；外层65M/1200保险不允许越逐job门或延长回合。当前约6.72GB不足保证完整旧75schema最坏录证，必须先证明新工件/临时/Git峰值≤4GiB且保2GiB空闲，或先证明紧凑可重建schema/补存储，禁止删除科学证据。只有测得强经典且原J≤min(.85B,B-.05deg)、≥34/40和全部成功/能力保持门可达，才另准入科学PPO；不可达即停当前门，不降阈值。380方向/实际清理/整体框架仍按期。
+
 第377轮[范围接收](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/interface_acceptance.json)通过：959707有效子步的CPU mapping/full6 speed RPM envelope、真实Nom路由和历史flag1处理、command/history/actual terminal481、同期private/bank/RMS/Gaussian/GAE均核；114源/163原工件不变，0新物理/NN/update。仅接收已存10world和最高10ms访问delay的无更新采集接口，不晋升100world/20ms/实际timeout/optimizer或方法收益；原physical/design累计监测被接收，未重建全部物理轨迹/接触/稳定。
 
-[377研究出口](results/paper_recovery_20261004/joint_reference_candidate_v1/round377_research_exit.json)要求378实做同信息B1 wheel+公开R0腿反馈的Cart力对，先验证单位/符号/Box及gamma{0,.5,1,2}归一化范围，再冻结候选、164开发baseline测量与选择规则。旧经典最强controlled J=.8248525202deg仅历史参照，新chart不能继承；保15%且.05deg改善、≥34成功及完整保持门，不能在prior52/52上设置不可达成功率提升。新测量/学习预算未准入，正式5seed/独立ID-OOD/统计成本/方法稿仍缺。380方向/清理/框架保持。
+[377研究出口](results/paper_recovery_20261004/joint_reference_candidate_v1/round377_research_exit.json)的反馈实做和候选/选择定义已由378完成，实际新baseline及学习仍未准入。旧经典最强controlled J=.8248525202deg仅历史参照，新chart不能继承；保15%且.05deg改善、≥34成功及完整保持门，不能在prior52/52上设置不可达成功率提升。正式5seed/独立ID-OOD/统计成本/方法稿仍缺。
 
 第376轮[新匹配PPO工程协议](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/proposal.json)及[114源准入](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/source_admission.json)提交后已唯一执行。[实际回执](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/execution_receipt.json)：两Cart各10world/coldzero后24×50真实SB3 rollout、各24完整GAE buffers，共24000policy rows＋480value-only rows，0优化更新，weights/optimizer不变门通过。总960800图world步、959707有效计分子步、35FD、130.60s含构造及录证，secondary空。各臂25 partial、stage2/3各10、positive delay1929，26回合均报告原物理/设计/任务通过；仅未更新Gaussian prior的seen描述，不是PPO收益或训练加速。
 
-新[worker](run_cartesian_ppo_interface.py)已实际保存actual/norm/expected终态、九post+previous/bank四项/wheelv2+Nom flags、原指针路由、Gaussian/clip3/paired6/value/logprob/RMS及buffers。377已完成范围内独立数值接收，378定义学习前强同信息经典/同chart反馈和可达主门/保持门；不重复此queue。无限范围接口及100world/科学训练/formal5仍未晋升，380方向/清理/框架保持。
+新[worker](run_cartesian_ppo_interface.py)已实际保存actual/norm/expected终态、九post+previous/bank四项/wheelv2+Nom flags、原指针路由、Gaussian/clip3/paired6/value/logprob/RMS及buffers。377已完成范围内独立数值接收，378已冻结学习前强同信息经典/同chart反馈及主门/保持门，379须完成真实经典测量；不重复此queue。无限范围接口及100world/科学训练/formal5仍未晋升，380方向/清理/框架保持。
 
 [有限PPO与录证接收](results/paper_recovery_20261004/joint_reference_candidate_v1/cartesian_ppo_interface_v1/readonly_execution_review.json)已独核初始化/终态权重、RMS/RNG、48buffer与包记录，GAE/returns独立重建误差0；实际终态/post/bank分名和同期字段完整。没有actual timeout样本，不能称bootstrap支路已实测；377已接收这些已存范围，详见上方范围接收及限制。
 
